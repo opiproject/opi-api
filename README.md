@@ -21,6 +21,17 @@ The focus of the subgroup is:
   - others
 - Create/Define the Backend/Southbound facing interface APIs
 
+---
+
+- Leader
+  - [Mark Sanders](https://github.com/sandersms)
+- Meeting Time & Date
+  - Thursdays 12:00-13:00 ET
+- Slack Channel
+  - [open-api-subgroup](https://opi-project.slack.com/archives/C0344KMEAKB)
+- Status
+  - Active
+
 # I Want To Contribute!
 
 This project welcomes contributions and suggestions.  We are happy to have the Community involved via submission of **Issues and Pull Requests** (with substantive content or even just fixes). We are hoping for the documents, test framework, etc. to become a community process with active engagement.  PRs can be reviewed by by any number of people, and a maintainer may accept.
