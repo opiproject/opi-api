@@ -39,6 +39,8 @@ Following CRUD API (CREATE, READ, UPDATE, and DELETE)
 
 We do want this to be gRPC with protobuf based...
 
+We do want to include statistics for observability on every level...
+
 tbd...
 
 ### Front End (host-facing)
@@ -81,6 +83,12 @@ It should have all the correct controllable parameters according to NVMe spec.
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
+#### `NVMe Subsystem Stats`
+
+| Type           | Parameter           | Details                                      | 
+|----------------|---------------------|----------------------------------------------|
+| string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
+
 #### `NVMe Controller Create`
 
 | Type           | Parameter           | Details                                      | 
@@ -115,6 +123,13 @@ It should have all the correct controllable parameters according to NVMe spec.
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
 #### `NVMe Controller Get`
+
+| Type           | Parameter           | Details                                      | 
+|----------------|---------------------|----------------------------------------------|
+| string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
+| string         | Controller ID       | Unique controller ID                         |
+
+#### `NVMe Controller Stats`
 
 | Type           | Parameter           | Details                                      | 
 |----------------|---------------------|----------------------------------------------|
@@ -169,6 +184,14 @@ It should have all the correct controllable parameters according to NVMe spec.
 | string         | Controller ID       | Unique controller ID                          |
 
 #### `NVMe Namespace Get`
+
+| Type           | Parameter           | Details                                       | 
+|----------------|---------------------|-----------------------------------------------|
+| string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
+| string         | Controller ID       | Unique controller ID                          |
+| string         | NSID                | namespace ID                                  |
+
+#### `NVMe Namespace Stats`
 
 | Type           | Parameter           | Details                                       | 
 |----------------|---------------------|-----------------------------------------------|
