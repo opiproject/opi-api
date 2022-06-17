@@ -34,6 +34,7 @@ tbd...
 ### Architecture
 
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+![Storage APIs High Level Diagram](DPU-API-Storage.png)
 
 Following CRUD API (CREATE, READ, UPDATE, and DELETE)
 
@@ -47,6 +48,14 @@ tbd...
 
 This DPU emulated devices representation to the host.
 It should have all the correct controllable parameters according to NVMe spec.
+
+![NVMe examplained](nvme-sub-ctrl-ns.png)
+
+3 Objects are identified on this layer:
+- NVMe Subsystem - holding all other objects in NVMe world.
+- NVMe Controller - responsible for Queues and Commands handlings. Have to belong to some subsystem.
+- NVMe Namespace - representing remote namespace. Belongs to a apecific controller (private NS) or shared between controllers (usually for Multipathing).
+
 
 #### `NVMe Subsystem Create`
 

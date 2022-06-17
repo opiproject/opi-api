@@ -23,3 +23,5 @@
 - Implementation
   - There are several existing implementations to consider (CSI, SMA, ...)
   - We have to start working in more details on this
+
+![Storage APIs High Level Diagram](DPU-API-Storage.png)
