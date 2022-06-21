@@ -4,9 +4,12 @@ Authors:
 * Boris Glimcher <<boris.glimcher@dell.com>> (@glimchb)
 * tbd...
 
-## Notational Conventions
+## Documentation for reference
 
-tbd
+* https://github.com/spdk/spdk/blob/master/doc/sma.md
+* https://github.com/container-storage-interface/spec/blob/master/spec.md
+* https://spdk.io/doc/jsonrpc.html
+* https://github.com/linux-nvme/nvme-cli
 
 ## Terminology
 
@@ -48,6 +51,10 @@ tbd...
 
 This DPU emulated devices representation to the host.
 It should have all the correct controllable parameters according to NVMe spec.
+
+
+Q: do we need same for VirtIO ?
+
 
 ![NVMe examplained](nvme-sub-ctrl-ns.png)
 
@@ -210,10 +217,48 @@ It should have all the correct controllable parameters according to NVMe spec.
 
 ### Back End (network-facing)
 
-tbd...
+#### `NVMf Remote Controller Connect`
 
+| Type           | Parameter           | Details                                             | 
+|----------------|---------------------|-----------------------------------------------------|
+| string         | trtype              | NVMe-oF target trtype: rdma or tcp or pcie          |
+| string         | traddr              | NVMe-oF target address: ip or BDF                   |
+| string         | adrfam              | NVMe-oF target adrfam: ipv4, ipv6, ib, fc           |
+| string         | trsvcid             | NVMe-oF target trsvcid: port number                 |
+| string         | subnqn              | NVMe-oF target subnqn                               |
+| bool           | hdgst               | Enable TCP header digest                            |
+| bool           | ddgst               | Enable TCP data digest                              |
+| string         | multipath           | Multipathing behavior: disable, failover, multipath |
+| number         | num_io_queues       | The number of IO queues to request on connect       |
+| number         | queue_size          | The number of io queue elements to use (def 128)    |
+
+#### `NVMf Remote Controller Disconnect`
+
+tbd
+
+#### `NVMf Remote Controller Reset`
+
+tbd
+
+#### `NVMf Remote Controller List`
+
+tbd
+
+#### `NVMf Remote Controller Get`
+
+tbd
+
+#### `NVMf Remote Controller Stats`
+
+tbd
+
+Q: do we need same for iSCSI, AIO, NULL, MEM ?
+Q: security authentication (chap) ?
+Q: auto-discovery ?
+Q: custom plugins for custom storage protocols ?
 
 ### Middle End (Storage Services)
 
-tbd...
+Examples: compression, encryption, EC/Raid, lvm, ...
 
+tbd...
