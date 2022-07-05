@@ -1,15 +1,16 @@
 # OPI Storage Interface
 
 Authors:
+
 * Boris Glimcher <<boris.glimcher@dell.com>> (@glimchb)
 * tbd...
 
 ## Documentation for reference
 
-* https://github.com/spdk/spdk/blob/master/doc/sma.md
-* https://github.com/container-storage-interface/spec/blob/master/spec.md
-* https://spdk.io/doc/jsonrpc.html
-* https://github.com/linux-nvme/nvme-cli
+* <https://github.com/spdk/spdk/blob/master/doc/sma.md>
+* <https://github.com/container-storage-interface/spec/blob/master/spec.md>
+* <https://spdk.io/doc/jsonrpc.html>
+* <https://github.com/linux-nvme/nvme-cli>
 
 ## Terminology
 
@@ -32,6 +33,19 @@ tbd...
 
 ## Solution Overview
 
+We identified two levels of API here:
+
+* Low level APIs
+  * give user more flexability and more controkl of what is happening
+  * for example, control what PF/VF exacly is used to expose controller ot the host
+  * this is similar to <https://spdk.io/doc/jsonrpc.html>
+* High Level APIs
+  * give user more simplicity then control
+  * mostly intent based, like I need protected volume of size x-TB
+  * this is similar to PVC (persistent volume claim) in k8s <https://github.com/container-storage-interface/spec/blob/master/spec.md> and in SPDK <https://github.com/spdk/spdk/blob/master/doc/sma.md>
+
+The goal of OPI Storage spec (put this in goals section above) is to provide both levels.
+
 tbd...
 
 ### Architecture
@@ -47,26 +61,36 @@ We do want to include statistics for observability on every level...
 
 tbd...
 
+### Security
+
+* For NVMe/TCP or iSCSI (network facing)
+  * we can/should use TLS (1.3) for secure channel
+  * and Chap-like authentication for PSK generation/exchange
+* Clear text From Host to DPU -> may be sniffed/spoofed
+  * Ether we can use new PCIe encryption specs
+  * Or we can share keys and do SW based encryption on the host and then decryption on DPU/IPU
+  * Or we can use NVMeoF (from fiorst point) instead of PCIe based NVMe
+
 ### Front End (host-facing)
 
 This DPU emulated devices representation to the host.
 It should have all the correct controllable parameters according to NVMe spec.
 
-
 Q: do we need same for VirtIO ?
 
+Q: what NVMe spec version we mandate ? 1.3 ? 1.4 ? 2.0 ?
 
 ![NVMe examplained](nvme-sub-ctrl-ns.png)
 
 3 Objects are identified on this layer:
-- NVMe Subsystem - holding all other objects in NVMe world.
-- NVMe Controller - responsible for Queues and Commands handlings. Have to belong to some subsystem.
-- NVMe Namespace - representing remote namespace. Belongs to a apecific controller (private NS) or shared between controllers (usually for Multipathing).
 
+* NVMe Subsystem - holding all other objects in NVMe world.
+* NVMe Controller - responsible for Queues and Commands handlings. Have to belong to some subsystem.
+* NVMe Namespace - representing remote namespace. Belongs to a apecific controller (private NS) or shared between controllers (usually for Multipathing).
 
 #### `NVMe Subsystem Create`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | SN                  | Subsystem Serial Number                      |
@@ -75,13 +99,13 @@ Q: do we need same for VirtIO ?
 
 #### `NVMe Subsystem Delete`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
 #### `NVMe Subsystem Update`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | SN                  | Subsystem Serial Number                      |
@@ -94,24 +118,24 @@ _Answer: Even in nvme there is no option to update live, one can always bind/unb
 
 #### `NVMe Subsystem List`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 
 #### `NVMe Subsystem Get`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
 #### `NVMe Subsystem Stats`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
 #### `NVMe Controller Create`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | Controller ID       | Unique controller ID                         |
@@ -125,14 +149,14 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Controller Delete`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | Controller ID       | Unique controller ID                         |
 
 #### `NVMe Controller Update`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | Controller ID       | Unique controller ID                         |
@@ -142,27 +166,27 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Controller List`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 
 #### `NVMe Controller Get`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | Controller ID       | Unique controller ID                         |
 
 #### `NVMe Controller Stats`
 
-| Type           | Parameter           | Details                                      | 
+| Type           | Parameter           | Details                                      |
 |----------------|---------------------|----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                         |
 | string         | Controller ID       | Unique controller ID                         |
 
 #### `NVMe Namespace Create`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
@@ -178,7 +202,7 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Namespace Delete`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
@@ -186,7 +210,7 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Namespace Update`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
@@ -202,14 +226,14 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Namespace List`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
 
 #### `NVMe Namespace Get`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
@@ -217,7 +241,7 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMe Namespace Stats`
 
-| Type           | Parameter           | Details                                       | 
+| Type           | Parameter           | Details                                       |
 |----------------|---------------------|-----------------------------------------------|
 | string         | Subsystem NQN       | NVMe subsystem (NQN)                          |
 | string         | Controller ID       | Unique controller ID                          |
@@ -227,7 +251,7 @@ _Answer: Do you see the need to have a separate command for PCIe bus expose? I w
 
 #### `NVMf Remote Controller Connect`
 
-| Type           | Parameter           | Details                                             | 
+| Type           | Parameter           | Details                                             |
 |----------------|---------------------|-----------------------------------------------------|
 | string         | trtype              | NVMe-oF target trtype: rdma or tcp or pcie          |
 | string         | traddr              | NVMe-oF target address: ip or BDF                   |
