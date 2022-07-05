@@ -88,6 +88,10 @@ Q: do we need same for VirtIO ?
 | string         | Model               | Subsystem Model Number                       |
 | string         | Max NS              | Maximum namespaces allowed in this subsystem |
 
+_Question(from Marvel): When is this supposed to be used since there is no way in NVMe protocol for for NVMe subsystem update to be propagated to the host ?_
+
+_Answer: Even in nvme there is no option to update live, one can always bind/unbibd nvme driver to see the change, this is suppose to save delete/add commands_
+
 #### `NVMe Subsystem List`
 
 | Type           | Parameter           | Details                                      | 
@@ -114,6 +118,10 @@ Q: do we need same for VirtIO ?
 | string         | PCIe ID             | Controller PCIe ID (bus, device, PF, VF)     |
 | number         | MaxIOQPs            | Max IO queue pairs (SQ/CQ) supported         |
 | number         | MaxNS               | Max number of namespaces for this controller |
+
+_Question (from Marvel): Does controller create also involve exposing the Controller to the host on PCIe bus or is that a separate operation ?_
+
+_Answer: Do you see the need to have a separate command for PCIe bus expose? I was thinking this command will expose_
 
 #### `NVMe Controller Delete`
 
