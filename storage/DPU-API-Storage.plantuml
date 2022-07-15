@@ -1,9 +1,17 @@
 @startmindmap
 * Device
 ** Front End (host)
-*** NVMe Subsystem
-*** NVMe Controller
-*** NVMe Namespace
+*** NVMe
+**** NVMe Subsystem
+**** NVMe Controller
+**** NVMe Namespace
+*** VirtIO-scsi
+**** tbd
+*** VirtIO-fs
+**** tbd
+*** VirtIO-blk
+**** VirtIO-blk Controller
+**** VirtIO-blk Volume
 ** Middle End (Storage Services)
 *** Compression
 *** RAID (across storage backends)
