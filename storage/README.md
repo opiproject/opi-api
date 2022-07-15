@@ -1,6 +1,14 @@
 # OPI Storage APIs
 
+## Common APIs abstraction layer
+
+![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
+
+## Storage Example use case
+
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+
+## Storage APIs layers
 
 - We identified 3 layers of APIs in Storage
   - Front End
