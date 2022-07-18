@@ -51,6 +51,7 @@ tbd...
 ### Architecture
 
 ![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
+![OPI Storage dual abstraction layer](../doc/minutes/images/OPI-Storage-Layers.png)
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
 ![Storage APIs High Level Diagram](DPU-API-Storage.png)
 

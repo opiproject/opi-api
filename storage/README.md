@@ -4,6 +4,10 @@
 
 ![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
 
+## Storage APIs dual abstraction layer
+
+![OPI Storage dual abstraction layer](../doc/minutes/images/OPI-Storage-Layers.png)
+
 ## Storage Example use case
 
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
