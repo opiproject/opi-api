@@ -21,23 +21,46 @@ Authors:
 
 ## Objective
 
-To define an industry standard “OPI Storage Interface” for IPUs/DPUs that will enable DPU vendors to develop a plugin once and have it work across a number of orchestration systems.
+To define an industry standard “OPI Storage Interface” for IPUs/DPUs that will enable DPU vendors to develop a plugin once and have it work across a number of orchestration systems. The Storage solution is one part of a higher-level architecture API defined for IPUs/DPUs as shown in the following image:
+
+![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png/)
+
+In this document we dive into the **OPI Storage API service**
+The storage DPU plugin will provide several sets of APIs detailed later on which can be summarized into three main areas:
+* Front-end (host facing APIs)
+* Back End (network-facing)
+* Middle End (Storage Services)
+
+![DPU-storage-plugin](../doc/minutes/images/DPU-storage-plugin.png)
+
 
 ### Goals in MVP
 
-tbd..
+tbd...
 
 ### Non-Goals in MVP
 
-tbd...
+Standardize middle-end services
+* compression ()
+* encryption
+* digest
+* etc
+Standardize common things that all DPUs should support for example:
+* basic compression zlib
+* aes-xts
+* nvme o tcp tls
+* rdma over ipsec,
+* t10 dif
+* dix etc
+anything vendors support beyond these would need vendor specific api.
 
 ## Solution Overview
 
 We identified two levels of API here:
 
 * Low level APIs
-  * give user more flexability and more controkl of what is happening
-  * for example, control what PF/VF exacly is used to expose controller ot the host
+  * give user more flexibility and more control of what is happening
+  * for example, control what PF/VF exactly is used to expose controller ot the host
   * this is similar to <https://spdk.io/doc/jsonrpc.html>
 * High Level APIs
   * give user more simplicity then control
@@ -50,8 +73,14 @@ tbd...
 
 ### Architecture
 
-![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
+---
+
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+(TBD: maybe better illustration ? )
+Initiator server has a DPU which handles NVMeoF connection to Network Storage and exposes some interface to host ( nvme, virtio-blk... ) Host is unaware that storage is not local
+
+---
+
 ![Storage APIs High Level Diagram](DPU-API-Storage.png)
 
 Following CRUD API (CREATE, READ, UPDATE, and DELETE)
