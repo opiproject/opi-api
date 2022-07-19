@@ -36,9 +36,22 @@ What would the AI/ML consumption interface look like?
 What are the Security implications on consumption interfaces?
 What are the Security API boundary implications to create the air gap?
 
+## API Abstraction Layer
+
+The API Abstraction Layer provides the interface set for the capabilities provided by the D/IPU.  The layer diagram below illustrated the API gateway and load balancer which provides the gRPC/REST interface to the client (client can be an orchestration agent).  As part of the abstraction layer, the Authentication and Authorization service is needed to verify the user/agent access and authorization for the service.
+
+![API Abstraction Layer](doc/minutes/images/API-abstraction-layer.png)
+
+The direct access to the SDKs is supported via a separate connection from the client to the functions available.  This interface would typically be used by a local orchestration/manager on the D/IPU.
+
+The API gateway would parse the specific payload information to the particular service function as well as provide instrumentation information to the OTEL collector.  The parsed payload would align to the northbound API (configuration interface) of the service.
+
+The particular configuration service functions would handle the service operations based on the configuration requested and utilize the TAL (Target Abstraction Layer) to interface to the particular SDK for the D/IPU platform.
+
 ## Building Blocks
 
 - gRPC
+- ProtoBufs
 - VF/PF
 - Access Security
 
