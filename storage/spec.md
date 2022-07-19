@@ -21,11 +21,43 @@ Authors:
 
 ## Objective
 
-To define an industry standard “OPI Storage Interface” for IPUs/DPUs that will enable DPU vendors to develop a plugin once and have it work across a number of orchestration systems.
+To define an industry standard “OPI Storage Interface” for IPUs/DPUs that will enable DPU vendors to develop a plugin once and have it work across a number of orchestration systems. The Storage solution is one part of a higher-level architecture API defined for IPUs/DPUs as shown in the following image:
+
+![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png/)
+
+In this document we dive into the **OPI Storage API service**
+The storage xPU plugin will provide several sets of APIs detailed later on which can be summarized into three main areas:
+
+* Front-end (host facing APIs)
+* Back End (network-facing)
+* Middle End (Storage Services)
+
+![DPU-storage-plugin](../doc/minutes/images/DPU-storage-plugin.png)
 
 ### Goals in MVP
 
-tbd..
+#### Standardize front-end services
+
+tbd...
+
+#### Standardize back-end services
+
+tbd...
+
+#### Standardize middle-end services
+
+* compression
+* encryption
+* digest
+* etc
+Standardize common things that all DPUs should support for example:
+* basic compression zlib
+* aes-xts
+* nvme o tcp tls
+* rdma over ipsec,
+* t10 dif
+* dix etc
+* Allow vendors to have their own values not conflicting with OPI to allow vendor specific or bypass options.
 
 ### Non-Goals in MVP
 
@@ -36,8 +68,8 @@ tbd...
 We identified two levels of API here:
 
 * Low level APIs
-  * give user more flexability and more controkl of what is happening
-  * for example, control what PF/VF exacly is used to expose controller ot the host
+  * give user more flexibility and more control of what is happening
+  * for example, control what PF/VF exactly is used to expose controller ot the host
   * this is similar to <https://spdk.io/doc/jsonrpc.html>
 * High Level APIs
   * give user more simplicity then control
@@ -50,9 +82,18 @@ tbd...
 
 ### Architecture
 
-![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png)
 ![OPI Storage dual abstraction layer](../doc/minutes/images/OPI-Storage-Layers.png)
+
+This image includes a zoom into the OPI Storage API Service
+
+---
+
 ![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+(TBD: maybe better illustration ? )
+Initiator server has a xPU which handles NVMeoF connection to Network Storage and exposes some interface to host ( nvme, virtio-blk... ) Host is unaware that storage is not local
+
+---
+
 ![Storage APIs High Level Diagram](DPU-API-Storage.png)
 
 Following CRUD API (CREATE, READ, UPDATE, and DELETE)
@@ -88,7 +129,7 @@ Q: what NVMe spec version we mandate ? 1.3 ? 1.4 ? 2.0 ?
 
 * NVMe Subsystem - holding all other objects in NVMe world.
 * NVMe Controller - responsible for Queues and Commands handlings. Have to belong to some subsystem.
-* NVMe Namespace - representing remote namespace. Belongs to a apecific controller (private NS) or shared between controllers (usually for Multipathing).
+* NVMe Namespace - representing remote namespace. Belongs to a specific controller (private NS) or shared between controllers (usually for Multipathing).
 
 #### `NVMe Subsystem Create`
 
