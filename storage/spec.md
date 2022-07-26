@@ -31,7 +31,7 @@ Authors:
 
 To define an industry standard “OPI Storage Interface” for IPUs/DPUs that will enable DPU vendors to develop a plugin once and have it work across a number of orchestration systems. The Storage solution is one part of a higher-level architecture API defined for IPUs/DPUs as shown in the following image:
 
-![OPI Common APIs and SHIM abstraction layer](../doc/minutes/images/API-GW-Layers.png/)
+![OPI Common APIs and SHIM abstraction layer](../doc/images/API-GW-Layers.png/)
 
 In this document we dive into the **OPI Storage API service**
 The storage xPU plugin will provide several sets of APIs detailed later on which can be summarized into three main areas:
@@ -40,7 +40,7 @@ The storage xPU plugin will provide several sets of APIs detailed later on which
 * Back End (network-facing)
 * Middle End (Storage Services)
 
-![DPU-storage-plugin](../doc/minutes/images/DPU-storage-plugin.png)
+![DPU-storage-plugin](../doc/images/DPU-storage-plugin.png)
 
 ### Goals in MVP
 
@@ -90,13 +90,13 @@ tbd...
 
 ### Architecture
 
-![OPI Storage dual abstraction layer](../doc/minutes/images/OPI-Storage-Layers.png)
+![OPI Storage dual abstraction layer](../doc/images/OPI-Storage-Layers.png)
 
 This image includes a zoom into the OPI Storage API Service
 
 ---
 
-![Storage Services Offload Use Case](../doc/minutes/images/API-Storage-Use-Case.png)
+![Storage Services Offload Use Case](../doc/images/API-Storage-Use-Case.png)
 (TBD: maybe better illustration ? )
 Initiator server has a xPU which handles NVMeoF connection to Network Storage and exposes some interface to host ( nvme, virtio-blk... ) Host is unaware that storage is not local
 

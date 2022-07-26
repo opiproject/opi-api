@@ -61,7 +61,7 @@ The particular configuration service functions would handle the service operatio
 
 The Network Services Offload use case will build a foundation for the examples that can be put together for the OPI.  The basic topology is shown in the diagram.  It consists of two servers, with D/IPUs that are connected through a network switch.
 
-![Network Services Offload Use Case](doc/minutes/images/API-Use-Case-1.png)
+![Network Services Offload Use Case](doc/images/API-Use-Case-1.png)
 
 The network switch provides a mechanism to provide any debugging and analysis of the traffic on the network connection.  Each server contains a DPU with its network interface.
 
@@ -72,4 +72,4 @@ Subsequent use cases can be built upon the network services offload.
 The The basic topology is shown in the diagram.
 It consists of SAN/NAS (Network Attached Storage) Array/Applience/Controllers or JBOF/EBOF and a Initiator server, with D/IPUs that are connected through a network switch.
 
-![Storage Services Offload Use Case](doc/minutes/images/API-Storage-Use-Case.png)
+![Storage Services Offload Use Case](doc/images/API-Storage-Use-Case.png)

@@ -34,8 +34,8 @@ Actions:
 
 Diagrams:
 
-![Configuration and Consumption Interface](images/DB-Interface-Layering-3.png)
+![Configuration and Consumption Interface](../images/DB-Interface-Layering-3.png)
 
-![DPU Hosted Services](images/Interface-view-2.png)
+![DPU Hosted Services](../images/Interface-view-2.png)
 
-![Interface Details](images/Interface-detail-view.png)
+![Interface Details](../images/Interface-detail-view.png)

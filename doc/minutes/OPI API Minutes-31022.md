@@ -40,4 +40,4 @@ These will move into the github issues/discussion area:
 - 3/03/2022 -  Create a location on GitHub for brainstorming/collaboration - Complete
 
 Meeting Minutes are at:
-<https://github.com/Diamond-Bluff/dbluff-opi-api/tree/main/doc/minutes>
+<https://github.com/opiproject/opi-api/tree/main/doc/minutes>
