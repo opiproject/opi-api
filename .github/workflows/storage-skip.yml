@@ -1,0 +1,27 @@
+---
+name: 'OPI Storage API CI'
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'storage/proto/**'
+      - 'storage/Makefile'
+      - '.github/workflows/storage.yml'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'storage/proto/**'
+      - 'storage/Makefile'
+      - '.github/workflows/storage.yml'
+
+concurrency:
+  # if workflow for PR or push is already running stop it, and start new one
+  group: storage-api-skip-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-storage-protobuf:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No storage API test run required"'

@@ -1,6 +1,7 @@
 # OPI API and Behavioral Model Group
 
 [![MarkdownLint](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml)
+[![OPI Storage API CI](https://github.com/opiproject/opi-api/actions/workflows/storage.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/storage.yml)
 
 ## Overview
 
