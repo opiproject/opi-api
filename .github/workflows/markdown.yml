@@ -14,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run tests
-        run: docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest --disable=MD013 "**/*.md"
+        run: docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest --ignore ./storage/proto/autogen.md --disable=MD013 "**/*.md"
 
