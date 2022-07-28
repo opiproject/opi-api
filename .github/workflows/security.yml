@@ -1,0 +1,45 @@
+---
+name: 'OPI Security API CI'
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'security/proto/**'
+      - 'security/Makefile'
+      - '.github/workflows/security.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'security/proto/**'
+      - 'security/Makefile'
+      - '.github/workflows/security.yml'
+
+concurrency:
+  # if workflow for PR or push is already running stop it, and start new one
+  group: security-api-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-security-protobuf:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    # Workaround: https://github.com/docker/build-push-action/issues/461
+    - name: Setup Docker buildx
+      uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
+
+    - name: Build protobufs
+      run: make
+      working-directory: security
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        path: security/proto/*.pb.go
+        retention-days: 1

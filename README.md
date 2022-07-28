@@ -2,6 +2,7 @@
 
 [![MarkdownLint](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/markdown.yml)
 [![OPI Storage API CI](https://github.com/opiproject/opi-api/actions/workflows/storage.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/storage.yml)
+[![OPI Security API CI](https://github.com/opiproject/opi-api/actions/workflows/security.yml/badge.svg)](https://github.com/opiproject/opi-api/actions/workflows/security.yml)
 
 ## Overview
 

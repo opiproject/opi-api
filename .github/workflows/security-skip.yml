@@ -1,0 +1,27 @@
+---
+name: 'OPI Security API CI'
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'security/proto/**'
+      - 'security/Makefile'
+      - '.github/workflows/security.yml'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'security/proto/**'
+      - 'security/Makefile'
+      - '.github/workflows/security.yml'
+
+concurrency:
+  # if workflow for PR or push is already running stop it, and start new one
+  group: security-api-skip-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-security-protobuf:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No security API test run required"'
