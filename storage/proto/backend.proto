@@ -22,7 +22,7 @@ service NVMfRemoteControllerService {
 // TODO: NULL - for debug
 
 message NVMfRemoteController {
-    int64 Id = 1;
+    int64 id = 1;
     NvmeTransportType trtype = 2;
     NvmeAddressFamily adrfam = 3;
     string traddr = 4;
@@ -59,7 +59,7 @@ enum NvmeMultipath {
 }
 
 message NVMfRemoteControllerConnectRequest {
-    NVMfRemoteController Controller = 1;
+    NVMfRemoteController ctrl = 1;
 }
 
 message NVMfRemoteControllerConnectResponse {
@@ -67,7 +67,7 @@ message NVMfRemoteControllerConnectResponse {
 }
 
 message NVMfRemoteControllerDisconnectRequest {
-    int64 Id = 1;
+    int64 id = 1;
 }
 
 message NVMfRemoteControllerDisconnectResponse {
@@ -75,7 +75,7 @@ message NVMfRemoteControllerDisconnectResponse {
 }
 
 message NVMfRemoteControllerResetRequest {
-    int64 Id = 1;
+    int64 id = 1;
 }
 
 message NVMfRemoteControllerResetResponse {
@@ -83,27 +83,27 @@ message NVMfRemoteControllerResetResponse {
 }
 
 message NVMfRemoteControllerListRequest {
-    int64 Id = 1;
+    int64 id = 1;
 }
 
 message NVMfRemoteControllerListResponse {
-    repeated NVMfRemoteController Controller = 1;
+    repeated NVMfRemoteController ctrl = 1;
 }
 
 message NVMfRemoteControllerGetRequest {
-    int64 Id = 1;
+    int64 id = 1;
 }
 
 message NVMfRemoteControllerGetResponse {
-    NVMfRemoteController Controller = 1;
+    NVMfRemoteController ctrl = 1;
 }
 
 message NVMfRemoteControllerStatsRequest {
-    int64 Id = 1;
+    int64 id = 1;
 }
 
 message NVMfRemoteControllerStatsResponse {
-    int64 Id = 1;
-    string Stats = 2;
+    int64 id = 1;
+    string stats = 2;
 }
 

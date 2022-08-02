@@ -89,7 +89,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 | trtype | [NvmeTransportType](#opi-storage-v1-NvmeTransportType) |  |  |
 | adrfam | [NvmeAddressFamily](#opi-storage-v1-NvmeAddressFamily) |  |  |
 | traddr | [string](#string) |  |  |
@@ -114,7 +114,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) |  |  |
+| ctrl | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) |  |  |
 
 
 
@@ -139,7 +139,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -164,7 +164,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -179,7 +179,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) |  |  |
+| ctrl | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) |  |  |
 
 
 
@@ -194,7 +194,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -209,7 +209,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) | repeated |  |
+| ctrl | [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController) | repeated |  |
 
 
 
@@ -224,7 +224,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -249,7 +249,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -264,8 +264,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Stats | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
 
 
 
@@ -354,12 +354,12 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Name | [string](#string) |  |  |
-| SubsystemId | [string](#string) |  |  |
-| PCIeID | [string](#string) |  |  |
-| MaxIOQPs | [int64](#int64) |  |  |
-| MaxNs | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| subsystem_id | [string](#string) |  |  |
+| pcie_id | [string](#string) |  |  |
+| max_io_qps | [int64](#int64) |  |  |
+| max_ns | [int64](#int64) |  |  |
 
 
 
@@ -374,7 +374,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
+| controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
 
 
 
@@ -399,8 +399,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
 
 
 
@@ -425,8 +425,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
 
 
 
@@ -441,7 +441,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
+| controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
 
 
 
@@ -456,7 +456,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
 
 
 
@@ -471,7 +471,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMeController](#opi-storage-v1-NVMeController) | repeated |  |
+| controller | [NVMeController](#opi-storage-v1-NVMeController) | repeated |  |
 
 
 
@@ -486,8 +486,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
 
 
 
@@ -502,8 +502,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Stats | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
 
 
 
@@ -518,7 +518,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
+| controller | [NVMeController](#opi-storage-v1-NVMeController) |  |  |
 
 
 
@@ -543,19 +543,19 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Name | [string](#string) |  |  |
-| SubsystemId | [string](#string) |  |  |
-| ControllerId | [int64](#int64) |  |  |
-| NsId | [int64](#int64) |  |  |
-| Bdev | [string](#string) |  |  |
-| BlockSize | [int64](#int64) |  |  |
-| NumBlocks | [int64](#int64) |  |  |
-| NGUID | [string](#string) |  |  |
-| EUI64 | [string](#string) |  |  |
-| UUID | [string](#string) |  |  |
-| Multipath | [string](#string) |  |  |
-| Authentication | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| subsystem_id | [string](#string) |  |  |
+| controller_id | [int64](#int64) |  |  |
+| nsid | [int64](#int64) |  |  |
+| bdev | [string](#string) |  |  |
+| block_size | [int64](#int64) |  |  |
+| num_blocks | [int64](#int64) |  |  |
+| nguid | [string](#string) |  |  |
+| eui64 | [string](#string) |  |  |
+| uuid | [string](#string) |  |  |
+| multipath | [string](#string) |  |  |
+| authentication | [string](#string) |  |  |
 
 
 
@@ -570,7 +570,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
+| namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
 
 
 
@@ -595,9 +595,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
-| NamespaceId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -622,9 +622,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
-| NamespaceId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -639,7 +639,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
+| namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
 
 
 
@@ -654,8 +654,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
 
 
 
@@ -670,7 +670,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) | repeated |  |
+| namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) | repeated |  |
 
 
 
@@ -685,9 +685,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SubsystemId | [int64](#int64) |  |  |
-| ControllerId | [int64](#int64) |  |  |
-| NamespaceId | [int64](#int64) |  |  |
+| subsystem_id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -702,8 +702,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Stats | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
 
 
 
@@ -718,7 +718,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
+| namespace | [NVMeNamespace](#opi-storage-v1-NVMeNamespace) |  |  |
 
 
 
@@ -743,11 +743,11 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| NQN | [string](#string) |  |  |
-| SerialNumber | [string](#string) |  |  |
-| ModelNumber | [string](#string) |  |  |
-| MaxNs | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
+| nqn | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| model_number | [string](#string) |  |  |
+| max_ns | [int64](#int64) |  |  |
 
 
 
@@ -762,7 +762,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
+| subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
 
 
 
@@ -787,7 +787,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -812,7 +812,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -827,7 +827,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
+| subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
 
 
 
@@ -852,7 +852,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) | repeated |  |
+| subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) | repeated |  |
 
 
 
@@ -867,7 +867,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -882,8 +882,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Id | [int64](#int64) |  |  |
-| Stats | [string](#string) |  |  |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
 
 
 
@@ -898,7 +898,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
+| subsystem | [NVMeSubsystem](#opi-storage-v1-NVMeSubsystem) |  |  |
 
 
 
