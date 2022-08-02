@@ -64,10 +64,24 @@
     - [NVMeSubsystemStatsResponse](#opi-storage-v1-NVMeSubsystemStatsResponse)
     - [NVMeSubsystemUpdateRequest](#opi-storage-v1-NVMeSubsystemUpdateRequest)
     - [NVMeSubsystemUpdateResponse](#opi-storage-v1-NVMeSubsystemUpdateResponse)
+    - [VirtioBlk](#opi-storage-v1-VirtioBlk)
+    - [VirtioBlkCreateRequest](#opi-storage-v1-VirtioBlkCreateRequest)
+    - [VirtioBlkCreateResponse](#opi-storage-v1-VirtioBlkCreateResponse)
+    - [VirtioBlkDeleteRequest](#opi-storage-v1-VirtioBlkDeleteRequest)
+    - [VirtioBlkDeleteResponse](#opi-storage-v1-VirtioBlkDeleteResponse)
+    - [VirtioBlkGetRequest](#opi-storage-v1-VirtioBlkGetRequest)
+    - [VirtioBlkGetResponse](#opi-storage-v1-VirtioBlkGetResponse)
+    - [VirtioBlkListRequest](#opi-storage-v1-VirtioBlkListRequest)
+    - [VirtioBlkListResponse](#opi-storage-v1-VirtioBlkListResponse)
+    - [VirtioBlkStatsRequest](#opi-storage-v1-VirtioBlkStatsRequest)
+    - [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse)
+    - [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest)
+    - [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse)
   
     - [NVMeControllerService](#opi-storage-v1-NVMeControllerService)
     - [NVMeNamespaceService](#opi-storage-v1-NVMeNamespaceService)
     - [NVMeSubsystemService](#opi-storage-v1-NVMeSubsystemService)
+    - [VirtioBlkService](#opi-storage-v1-VirtioBlkService)
   
 - [middleend.proto](#middleend-proto)
 - [Scalar Value Types](#scalar-value-types)
@@ -914,6 +928,192 @@ Intentionally empty.
 
 
 
+
+<a name="opi-storage-v1-VirtioBlk"></a>
+
+### VirtioBlk
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| pcie_id | [string](#string) |  |  |
+| bdev | [string](#string) |  |  |
+| max_io_qps | [int64](#int64) |  |  |
+| serial_number | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkCreateRequest"></a>
+
+### VirtioBlkCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioBlk](#opi-storage-v1-VirtioBlk) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkCreateResponse"></a>
+
+### VirtioBlkCreateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkDeleteRequest"></a>
+
+### VirtioBlkDeleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkDeleteResponse"></a>
+
+### VirtioBlkDeleteResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkGetRequest"></a>
+
+### VirtioBlkGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkGetResponse"></a>
+
+### VirtioBlkGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioBlk](#opi-storage-v1-VirtioBlk) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkListRequest"></a>
+
+### VirtioBlkListRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subsystem_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkListResponse"></a>
+
+### VirtioBlkListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioBlk](#opi-storage-v1-VirtioBlk) | repeated |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkStatsRequest"></a>
+
+### VirtioBlkStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkStatsResponse"></a>
+
+### VirtioBlkStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkUpdateRequest"></a>
+
+### VirtioBlkUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioBlk](#opi-storage-v1-VirtioBlk) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioBlkUpdateResponse"></a>
+
+### VirtioBlkUpdateResponse
+Intentionally empty.
+
+
+
+
+
  
 
  
@@ -964,6 +1164,21 @@ Intentionally empty.
 | NVMeSubsystemList | [NVMeSubsystemListRequest](#opi-storage-v1-NVMeSubsystemListRequest) | [NVMeSubsystemListResponse](#opi-storage-v1-NVMeSubsystemListResponse) |  |
 | NVMeSubsystemGet | [NVMeSubsystemGetRequest](#opi-storage-v1-NVMeSubsystemGetRequest) | [NVMeSubsystemGetResponse](#opi-storage-v1-NVMeSubsystemGetResponse) |  |
 | NVMeSubsystemStats | [NVMeSubsystemStatsRequest](#opi-storage-v1-NVMeSubsystemStatsRequest) | [NVMeSubsystemStatsResponse](#opi-storage-v1-NVMeSubsystemStatsResponse) |  |
+
+
+<a name="opi-storage-v1-VirtioBlkService"></a>
+
+### VirtioBlkService
+TODO: Virtio-blk
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| VirtioBlkCreate | [VirtioBlkCreateRequest](#opi-storage-v1-VirtioBlkCreateRequest) | [VirtioBlkCreateResponse](#opi-storage-v1-VirtioBlkCreateResponse) |  |
+| VirtioBlkDelete | [VirtioBlkDeleteRequest](#opi-storage-v1-VirtioBlkDeleteRequest) | [VirtioBlkDeleteResponse](#opi-storage-v1-VirtioBlkDeleteResponse) |  |
+| VirtioBlkUpdate | [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest) | [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse) |  |
+| VirtioBlkList | [VirtioBlkListRequest](#opi-storage-v1-VirtioBlkListRequest) | [VirtioBlkListResponse](#opi-storage-v1-VirtioBlkListResponse) |  |
+| VirtioBlkGet | [VirtioBlkGetRequest](#opi-storage-v1-VirtioBlkGetRequest) | [VirtioBlkGetResponse](#opi-storage-v1-VirtioBlkGetResponse) |  |
+| VirtioBlkStats | [VirtioBlkStatsRequest](#opi-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse) |  |
 
  
 

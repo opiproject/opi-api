@@ -241,13 +241,13 @@ message NVMeNamespaceStatsRequest {
     int64 namespace_id = 3;
 }
 
-message VirtioBlkCreateRequest {
-    VirtioBlk controller = 1;
-}
-
 message NVMeNamespaceStatsResponse {
     int64 id = 1;
     string stats = 2;
+}
+
+message VirtioBlkCreateRequest {
+    VirtioBlk controller = 1;
 }
 
 message VirtioBlkCreateResponse {
@@ -255,8 +255,7 @@ message VirtioBlkCreateResponse {
 }
 
 message VirtioBlkDeleteRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    int64 controller_id = 1;
 }
 
 message VirtioBlkDeleteResponse {
@@ -280,8 +279,7 @@ message VirtioBlkListResponse {
 }
 
 message VirtioBlkGetRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    int64 controller_id = 1;
 }
 
 message VirtioBlkGetResponse {
@@ -289,8 +287,7 @@ message VirtioBlkGetResponse {
 }
 
 message VirtioBlkStatsRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    int64 controller_id = 1;
 }
 
 message VirtioBlkStatsResponse {
