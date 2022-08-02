@@ -24,6 +24,7 @@
     - [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry)
     - [TunnelInterfaces](#opi-security-v1-TunnelInterfaces)
     - [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel)
+    - [Uuid](#opi-security-v1-Uuid)
   
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
     - [IPsecMode](#opi-security-v1-IPsecMode)
@@ -73,7 +74,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -88,7 +89,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -103,7 +104,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -118,7 +119,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -133,7 +134,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 | tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
 | policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
 | sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
@@ -151,7 +152,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -198,7 +199,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 | tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
 | policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
 | sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
@@ -216,7 +217,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [Uuid](#opi-security-v1-Uuid) |  |  |
 
 
 
@@ -395,6 +396,21 @@ Tunnel Interfaces
 | enabled | [bool](#bool) |  | Extra fields related to interface |
 | ip_addresses | [string](#string) | repeated |  |
 | vrf | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Uuid"></a>
+
+### Uuid
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
 
 
 

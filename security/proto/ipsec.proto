@@ -156,6 +156,10 @@ message ResyncRequest {
 	repeated SecurityAssociations.Sa sas = 3;
 }
 
+message Uuid {
+	string value = 1;
+}
+
 message IPsecCreateRequest {
 	TunnelInterfaces tunnel = 1;
 	SecurityPolicyDatabases policy = 2;
@@ -163,30 +167,30 @@ message IPsecCreateRequest {
 }
 
 message IPsecCreateResponse {
-	int64 id =1;
+	Uuid id =1;
 }
 
 message IPsecDeleteRequest {
-	int64 id = 1;
+	Uuid id = 1;
 }
 
 message IPsecDeleteResponse {
-	int64 id =1;
+	Uuid id =1;
 }
 
 message IPsecUpdateRequest {
-	int64 id =1;
+	Uuid id =1;
 	TunnelInterfaces tunnel = 2;
 	SecurityPolicyDatabases policy = 3;
 	SecurityAssociations sa = 4;
 }
 
 message IPsecUpdateResponse {
-	int64 id =1;
+	Uuid id =1;
 }
 
 message IPsecListRequest {
-	int64 id = 1;
+	Uuid id = 1;
 }
 
 message IPsecListResponse {
@@ -199,11 +203,11 @@ message IPsecListResponse {
 }
 
 message IPsecGetRequest {
-	int64 id = 1;
+	Uuid id = 1;
 }
 
 message IPsecGetResponse {
-	int64 id = 1;
+	Uuid id = 1;
 	TunnelInterfaces tunnel = 2;
 	SecurityPolicyDatabases policy = 3;
 	SecurityAssociations sa = 4;
