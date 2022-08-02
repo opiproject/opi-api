@@ -156,19 +156,14 @@ message ResyncRequest {
 	repeated SecurityAssociations.Sa sas = 3;
 }
 
-message IPsecData {
-	int64 id = 1;
-	TunnelInterfaces tunnel = 2;
-	SecurityPolicyDatabases policy = 3;
-	SecurityAssociations sa = 4;
-}
-
 message IPsecCreateRequest {
-	IPsecData ipsec = 1;
+	TunnelInterfaces tunnel = 1;
+	SecurityPolicyDatabases policy = 2;
+	SecurityAssociations sa = 3;
 }
 
 message IPsecCreateResponse {
-	// Intentionally empty for now
+	int64 id =1;
 }
 
 message IPsecDeleteRequest {
@@ -176,15 +171,18 @@ message IPsecDeleteRequest {
 }
 
 message IPsecDeleteResponse {
-	// Intentionally empty for now
+	int64 id =1;
 }
 
 message IPsecUpdateRequest {
-	IPsecData ipsec = 1;
+	int64 id =1;
+	TunnelInterfaces tunnel = 2;
+	SecurityPolicyDatabases policy = 3;
+	SecurityAssociations sa = 4;
 }
 
 message IPsecUpdateResponse {
-	// Intentionally empty for now
+	int64 id =1;
 }
 
 message IPsecListRequest {
@@ -192,6 +190,11 @@ message IPsecListRequest {
 }
 
 message IPsecListResponse {
+	message IPsecData {
+		TunnelInterfaces tunnel = 1;
+		SecurityPolicyDatabases policy = 2;
+		SecurityAssociations sa = 3;
+	}
 	repeated IPsecData ipsec = 1;
 }
 
@@ -200,5 +203,8 @@ message IPsecGetRequest {
 }
 
 message IPsecGetResponse {
-	IPsecData ipsec = 1;
+	int64 id = 1;
+	TunnelInterfaces tunnel = 2;
+	SecurityPolicyDatabases policy = 3;
+	SecurityAssociations sa = 4;
 }
