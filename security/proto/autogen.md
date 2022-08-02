@@ -17,19 +17,19 @@
     - [IPsecUpdateResponse](#opi-security-v1-IPsecUpdateResponse)
     - [ResyncRequest](#opi-security-v1-ResyncRequest)
     - [SecurityAssociations](#opi-security-v1-SecurityAssociations)
-    - [SecurityAssociations.SA](#opi-security-v1-SecurityAssociations-SA)
+    - [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa)
     - [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases)
-    - [SecurityPolicyDatabases.SPD](#opi-security-v1-SecurityPolicyDatabases-SPD)
-    - [SecurityPolicyDatabases.SPD.Interface](#opi-security-v1-SecurityPolicyDatabases-SPD-Interface)
-    - [SecurityPolicyDatabases.SPD.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry)
+    - [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd)
+    - [SecurityPolicyDatabases.Spd.Interface](#opi-security-v1-SecurityPolicyDatabases-Spd-Interface)
+    - [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry)
     - [TunnelInterfaces](#opi-security-v1-TunnelInterfaces)
     - [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel)
   
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
     - [IPsecMode](#opi-security-v1-IPsecMode)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
-    - [SecurityAssociations.SA.IPsecProtocol](#opi-security-v1-SecurityAssociations-SA-IPsecProtocol)
-    - [SecurityPolicyDatabases.SPD.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry-Action)
+    - [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol)
+    - [SecurityPolicyDatabases.Spd.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action)
   
     - [IPsec](#opi-security-v1-IPsec)
   
@@ -81,7 +81,7 @@ Intentionally empty for now
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 | tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
 | policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
 | sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
@@ -99,7 +99,7 @@ Intentionally empty for now
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -154,7 +154,7 @@ Intentionally empty for now
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ID | [int64](#int64) |  |  |
+| id | [int64](#int64) |  |  |
 
 
 
@@ -210,8 +210,8 @@ Intentionally empty for now
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tunnels | [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel) | repeated |  |
-| spds | [SecurityPolicyDatabases.SPD](#opi-security-v1-SecurityPolicyDatabases-SPD) | repeated |  |
-| sas | [SecurityAssociations.SA](#opi-security-v1-SecurityAssociations-SA) | repeated |  |
+| spds | [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd) | repeated |  |
+| sas | [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa) | repeated |  |
 
 
 
@@ -226,16 +226,16 @@ Security Association (SA)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sas | [SecurityAssociations.SA](#opi-security-v1-SecurityAssociations-SA) | repeated |  |
+| sas | [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa) | repeated |  |
 
 
 
 
 
 
-<a name="opi-security-v1-SecurityAssociations-SA"></a>
+<a name="opi-security-v1-SecurityAssociations-Sa"></a>
 
-### SecurityAssociations.SA
+### SecurityAssociations.Sa
 
 
 
@@ -243,7 +243,7 @@ Security Association (SA)
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | security association name |
 | spi | [uint32](#uint32) |  | security parameter index |
-| protocol | [SecurityAssociations.SA.IPsecProtocol](#opi-security-v1-SecurityAssociations-SA-IPsecProtocol) |  |  |
+| protocol | [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol) |  |  |
 | crypto_alg | [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm) |  |  |
 | crypto_key | [string](#string) |  |  |
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
@@ -267,33 +267,33 @@ Security Policy Database (SPD)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spds | [SecurityPolicyDatabases.SPD](#opi-security-v1-SecurityPolicyDatabases-SPD) | repeated | list of all SPDs |
+| spds | [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd) | repeated | list of all SPDs |
 
 
 
 
 
 
-<a name="opi-security-v1-SecurityPolicyDatabases-SPD"></a>
+<a name="opi-security-v1-SecurityPolicyDatabases-Spd"></a>
 
-### SecurityPolicyDatabases.SPD
+### SecurityPolicyDatabases.Spd
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
-| interfaces | [SecurityPolicyDatabases.SPD.Interface](#opi-security-v1-SecurityPolicyDatabases-SPD-Interface) | repeated | list of interfaces belonging to this SPD |
-| policy_entries | [SecurityPolicyDatabases.SPD.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry) | repeated | list of policy entries belonging to this SPD |
+| interfaces | [SecurityPolicyDatabases.Spd.Interface](#opi-security-v1-SecurityPolicyDatabases-Spd-Interface) | repeated | list of interfaces belonging to this SPD |
+| policy_entries | [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry) | repeated | list of policy entries belonging to this SPD |
 
 
 
 
 
 
-<a name="opi-security-v1-SecurityPolicyDatabases-SPD-Interface"></a>
+<a name="opi-security-v1-SecurityPolicyDatabases-Spd-Interface"></a>
 
-### SecurityPolicyDatabases.SPD.Interface
+### SecurityPolicyDatabases.Spd.Interface
 Interface
 
 
@@ -306,9 +306,9 @@ Interface
 
 
 
-<a name="opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry"></a>
+<a name="opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry"></a>
 
-### SecurityPolicyDatabases.SPD.PolicyEntry
+### SecurityPolicyDatabases.Spd.PolicyEntry
 Policy Entry
 
 
@@ -326,7 +326,7 @@ Policy Entry
 | remote_port_stop | [uint32](#uint32) |  |  |
 | local_port_start | [uint32](#uint32) |  |  |
 | local_port_stop | [uint32](#uint32) |  |  |
-| action | [SecurityPolicyDatabases.SPD.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry-Action) |  | policy action |
+| action | [SecurityPolicyDatabases.Spd.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action) |  | policy action |
 
 
 
@@ -428,9 +428,9 @@ Cryptographic algorithm for authentication
 
 
 
-<a name="opi-security-v1-SecurityAssociations-SA-IPsecProtocol"></a>
+<a name="opi-security-v1-SecurityAssociations-Sa-IPsecProtocol"></a>
 
-### SecurityAssociations.SA.IPsecProtocol
+### SecurityAssociations.Sa.IPsecProtocol
 IPsec protocol
 
 | Name | Number | Description |
@@ -440,9 +440,9 @@ IPsec protocol
 
 
 
-<a name="opi-security-v1-SecurityPolicyDatabases-SPD-PolicyEntry-Action"></a>
+<a name="opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action"></a>
 
-### SecurityPolicyDatabases.SPD.PolicyEntry.Action
+### SecurityPolicyDatabases.Spd.PolicyEntry.Action
 Policy action
 
 | Name | Number | Description |

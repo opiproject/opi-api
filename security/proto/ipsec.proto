@@ -78,7 +78,7 @@ message TunnelInterfaces {
 
 /* Security Policy Database (SPD) */
 message SecurityPolicyDatabases {
-	message SPD {
+	message Spd {
 		string name = 1;
 
 		/* Interface */
@@ -117,12 +117,12 @@ message SecurityPolicyDatabases {
 		}
 		repeated PolicyEntry policy_entries = 3;   /* list of policy entries belonging to this SPD */
 	}
-	repeated SPD spds = 1;  /* list of all SPDs */
+	repeated Spd spds = 1;  /* list of all SPDs */
 }
 
 /* Security Association (SA) */
 message SecurityAssociations {
-	message SA {
+	message Sa {
 		string name = 1;    /* security association name */
 		uint32 spi = 2;     /* security parameter index */
 
@@ -147,17 +147,17 @@ message SecurityAssociations {
 
 		bool enable_udp_encap = 12; /* Enable UDP encapsulation for NAT traversal */
 	}
-	repeated SA sas = 1;
+	repeated Sa sas = 1;
 }
 
 message ResyncRequest {
 	repeated TunnelInterfaces.Tunnel tunnels = 1;
-	repeated SecurityPolicyDatabases.SPD spds = 2;
-	repeated SecurityAssociations.SA sas = 3;
+	repeated SecurityPolicyDatabases.Spd spds = 2;
+	repeated SecurityAssociations.Sa sas = 3;
 }
 
 message IPsecData {
-	int64 ID = 1;
+	int64 id = 1;
 	TunnelInterfaces tunnel = 2;
 	SecurityPolicyDatabases policy = 3;
 	SecurityAssociations sa = 4;
@@ -172,7 +172,7 @@ message IPsecCreateResponse {
 }
 
 message IPsecDeleteRequest {
-	int64 ID = 1;
+	int64 id = 1;
 }
 
 message IPsecDeleteResponse {
@@ -188,7 +188,7 @@ message IPsecUpdateResponse {
 }
 
 message IPsecListRequest {
-	int64 ID = 1;
+	int64 id = 1;
 }
 
 message IPsecListResponse {

@@ -206,100 +206,100 @@ func (IPsecMode) EnumDescriptor() ([]byte, []int) {
 }
 
 // Policy action
-type SecurityPolicyDatabases_SPD_PolicyEntry_Action int32
+type SecurityPolicyDatabases_Spd_PolicyEntry_Action int32
 
 const (
-	SecurityPolicyDatabases_SPD_PolicyEntry_BYPASS  SecurityPolicyDatabases_SPD_PolicyEntry_Action = 0
-	SecurityPolicyDatabases_SPD_PolicyEntry_DISCARD SecurityPolicyDatabases_SPD_PolicyEntry_Action = 1
+	SecurityPolicyDatabases_Spd_PolicyEntry_BYPASS  SecurityPolicyDatabases_Spd_PolicyEntry_Action = 0
+	SecurityPolicyDatabases_Spd_PolicyEntry_DISCARD SecurityPolicyDatabases_Spd_PolicyEntry_Action = 1
 	//RESOLVE = 2; // unused in VPP
-	SecurityPolicyDatabases_SPD_PolicyEntry_PROTECT SecurityPolicyDatabases_SPD_PolicyEntry_Action = 3
+	SecurityPolicyDatabases_Spd_PolicyEntry_PROTECT SecurityPolicyDatabases_Spd_PolicyEntry_Action = 3
 )
 
-// Enum value maps for SecurityPolicyDatabases_SPD_PolicyEntry_Action.
+// Enum value maps for SecurityPolicyDatabases_Spd_PolicyEntry_Action.
 var (
-	SecurityPolicyDatabases_SPD_PolicyEntry_Action_name = map[int32]string{
+	SecurityPolicyDatabases_Spd_PolicyEntry_Action_name = map[int32]string{
 		0: "BYPASS",
 		1: "DISCARD",
 		3: "PROTECT",
 	}
-	SecurityPolicyDatabases_SPD_PolicyEntry_Action_value = map[string]int32{
+	SecurityPolicyDatabases_Spd_PolicyEntry_Action_value = map[string]int32{
 		"BYPASS":  0,
 		"DISCARD": 1,
 		"PROTECT": 3,
 	}
 )
 
-func (x SecurityPolicyDatabases_SPD_PolicyEntry_Action) Enum() *SecurityPolicyDatabases_SPD_PolicyEntry_Action {
-	p := new(SecurityPolicyDatabases_SPD_PolicyEntry_Action)
+func (x SecurityPolicyDatabases_Spd_PolicyEntry_Action) Enum() *SecurityPolicyDatabases_Spd_PolicyEntry_Action {
+	p := new(SecurityPolicyDatabases_Spd_PolicyEntry_Action)
 	*p = x
 	return p
 }
 
-func (x SecurityPolicyDatabases_SPD_PolicyEntry_Action) String() string {
+func (x SecurityPolicyDatabases_Spd_PolicyEntry_Action) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (SecurityPolicyDatabases_SPD_PolicyEntry_Action) Descriptor() protoreflect.EnumDescriptor {
+func (SecurityPolicyDatabases_Spd_PolicyEntry_Action) Descriptor() protoreflect.EnumDescriptor {
 	return file_ipsec_proto_enumTypes[3].Descriptor()
 }
 
-func (SecurityPolicyDatabases_SPD_PolicyEntry_Action) Type() protoreflect.EnumType {
+func (SecurityPolicyDatabases_Spd_PolicyEntry_Action) Type() protoreflect.EnumType {
 	return &file_ipsec_proto_enumTypes[3]
 }
 
-func (x SecurityPolicyDatabases_SPD_PolicyEntry_Action) Number() protoreflect.EnumNumber {
+func (x SecurityPolicyDatabases_Spd_PolicyEntry_Action) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use SecurityPolicyDatabases_SPD_PolicyEntry_Action.Descriptor instead.
-func (SecurityPolicyDatabases_SPD_PolicyEntry_Action) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use SecurityPolicyDatabases_Spd_PolicyEntry_Action.Descriptor instead.
+func (SecurityPolicyDatabases_Spd_PolicyEntry_Action) EnumDescriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{1, 0, 1, 0}
 }
 
 // IPsec protocol
-type SecurityAssociations_SA_IPsecProtocol int32
+type SecurityAssociations_Sa_IPsecProtocol int32
 
 const (
-	SecurityAssociations_SA_AH  SecurityAssociations_SA_IPsecProtocol = 0
-	SecurityAssociations_SA_ESP SecurityAssociations_SA_IPsecProtocol = 1
+	SecurityAssociations_Sa_AH  SecurityAssociations_Sa_IPsecProtocol = 0
+	SecurityAssociations_Sa_ESP SecurityAssociations_Sa_IPsecProtocol = 1
 )
 
-// Enum value maps for SecurityAssociations_SA_IPsecProtocol.
+// Enum value maps for SecurityAssociations_Sa_IPsecProtocol.
 var (
-	SecurityAssociations_SA_IPsecProtocol_name = map[int32]string{
+	SecurityAssociations_Sa_IPsecProtocol_name = map[int32]string{
 		0: "AH",
 		1: "ESP",
 	}
-	SecurityAssociations_SA_IPsecProtocol_value = map[string]int32{
+	SecurityAssociations_Sa_IPsecProtocol_value = map[string]int32{
 		"AH":  0,
 		"ESP": 1,
 	}
 )
 
-func (x SecurityAssociations_SA_IPsecProtocol) Enum() *SecurityAssociations_SA_IPsecProtocol {
-	p := new(SecurityAssociations_SA_IPsecProtocol)
+func (x SecurityAssociations_Sa_IPsecProtocol) Enum() *SecurityAssociations_Sa_IPsecProtocol {
+	p := new(SecurityAssociations_Sa_IPsecProtocol)
 	*p = x
 	return p
 }
 
-func (x SecurityAssociations_SA_IPsecProtocol) String() string {
+func (x SecurityAssociations_Sa_IPsecProtocol) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (SecurityAssociations_SA_IPsecProtocol) Descriptor() protoreflect.EnumDescriptor {
+func (SecurityAssociations_Sa_IPsecProtocol) Descriptor() protoreflect.EnumDescriptor {
 	return file_ipsec_proto_enumTypes[4].Descriptor()
 }
 
-func (SecurityAssociations_SA_IPsecProtocol) Type() protoreflect.EnumType {
+func (SecurityAssociations_Sa_IPsecProtocol) Type() protoreflect.EnumType {
 	return &file_ipsec_proto_enumTypes[4]
 }
 
-func (x SecurityAssociations_SA_IPsecProtocol) Number() protoreflect.EnumNumber {
+func (x SecurityAssociations_Sa_IPsecProtocol) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use SecurityAssociations_SA_IPsecProtocol.Descriptor instead.
-func (SecurityAssociations_SA_IPsecProtocol) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use SecurityAssociations_Sa_IPsecProtocol.Descriptor instead.
+func (SecurityAssociations_Sa_IPsecProtocol) EnumDescriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{2, 0, 0}
 }
 
@@ -357,7 +357,7 @@ type SecurityPolicyDatabases struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Spds []*SecurityPolicyDatabases_SPD `protobuf:"bytes,1,rep,name=spds,proto3" json:"spds,omitempty"` // list of all SPDs
+	Spds []*SecurityPolicyDatabases_Spd `protobuf:"bytes,1,rep,name=spds,proto3" json:"spds,omitempty"` // list of all SPDs
 }
 
 func (x *SecurityPolicyDatabases) Reset() {
@@ -392,7 +392,7 @@ func (*SecurityPolicyDatabases) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *SecurityPolicyDatabases) GetSpds() []*SecurityPolicyDatabases_SPD {
+func (x *SecurityPolicyDatabases) GetSpds() []*SecurityPolicyDatabases_Spd {
 	if x != nil {
 		return x.Spds
 	}
@@ -405,7 +405,7 @@ type SecurityAssociations struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sas []*SecurityAssociations_SA `protobuf:"bytes,1,rep,name=sas,proto3" json:"sas,omitempty"`
+	Sas []*SecurityAssociations_Sa `protobuf:"bytes,1,rep,name=sas,proto3" json:"sas,omitempty"`
 }
 
 func (x *SecurityAssociations) Reset() {
@@ -440,7 +440,7 @@ func (*SecurityAssociations) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SecurityAssociations) GetSas() []*SecurityAssociations_SA {
+func (x *SecurityAssociations) GetSas() []*SecurityAssociations_Sa {
 	if x != nil {
 		return x.Sas
 	}
@@ -453,8 +453,8 @@ type ResyncRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	Tunnels []*TunnelInterfaces_Tunnel     `protobuf:"bytes,1,rep,name=tunnels,proto3" json:"tunnels,omitempty"`
-	Spds    []*SecurityPolicyDatabases_SPD `protobuf:"bytes,2,rep,name=spds,proto3" json:"spds,omitempty"`
-	Sas     []*SecurityAssociations_SA     `protobuf:"bytes,3,rep,name=sas,proto3" json:"sas,omitempty"`
+	Spds    []*SecurityPolicyDatabases_Spd `protobuf:"bytes,2,rep,name=spds,proto3" json:"spds,omitempty"`
+	Sas     []*SecurityAssociations_Sa     `protobuf:"bytes,3,rep,name=sas,proto3" json:"sas,omitempty"`
 }
 
 func (x *ResyncRequest) Reset() {
@@ -496,14 +496,14 @@ func (x *ResyncRequest) GetTunnels() []*TunnelInterfaces_Tunnel {
 	return nil
 }
 
-func (x *ResyncRequest) GetSpds() []*SecurityPolicyDatabases_SPD {
+func (x *ResyncRequest) GetSpds() []*SecurityPolicyDatabases_Spd {
 	if x != nil {
 		return x.Spds
 	}
 	return nil
 }
 
-func (x *ResyncRequest) GetSas() []*SecurityAssociations_SA {
+func (x *ResyncRequest) GetSas() []*SecurityAssociations_Sa {
 	if x != nil {
 		return x.Sas
 	}
@@ -515,7 +515,7 @@ type IPsecData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID     int64                    `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Id     int64                    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Tunnel *TunnelInterfaces        `protobuf:"bytes,2,opt,name=tunnel,proto3" json:"tunnel,omitempty"`
 	Policy *SecurityPolicyDatabases `protobuf:"bytes,3,opt,name=policy,proto3" json:"policy,omitempty"`
 	Sa     *SecurityAssociations    `protobuf:"bytes,4,opt,name=sa,proto3" json:"sa,omitempty"`
@@ -553,9 +553,9 @@ func (*IPsecData) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *IPsecData) GetID() int64 {
+func (x *IPsecData) GetId() int64 {
 	if x != nil {
-		return x.ID
+		return x.Id
 	}
 	return 0
 }
@@ -671,7 +671,7 @@ type IPsecDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID int64 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *IPsecDeleteRequest) Reset() {
@@ -706,9 +706,9 @@ func (*IPsecDeleteRequest) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *IPsecDeleteRequest) GetID() int64 {
+func (x *IPsecDeleteRequest) GetId() int64 {
 	if x != nil {
-		return x.ID
+		return x.Id
 	}
 	return 0
 }
@@ -841,7 +841,7 @@ type IPsecListRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ID int64 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *IPsecListRequest) Reset() {
@@ -876,9 +876,9 @@ func (*IPsecListRequest) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *IPsecListRequest) GetID() int64 {
+func (x *IPsecListRequest) GetId() int64 {
 	if x != nil {
-		return x.ID
+		return x.Id
 	}
 	return 0
 }
@@ -1201,18 +1201,18 @@ func (x *TunnelInterfaces_Tunnel) GetVrf() uint32 {
 	return 0
 }
 
-type SecurityPolicyDatabases_SPD struct {
+type SecurityPolicyDatabases_Spd struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	Name          string                                     `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Interfaces    []*SecurityPolicyDatabases_SPD_Interface   `protobuf:"bytes,2,rep,name=interfaces,proto3" json:"interfaces,omitempty"`                            // list of interfaces belonging to this SPD
-	PolicyEntries []*SecurityPolicyDatabases_SPD_PolicyEntry `protobuf:"bytes,3,rep,name=policy_entries,json=policyEntries,proto3" json:"policy_entries,omitempty"` // list of policy entries belonging to this SPD
+	Interfaces    []*SecurityPolicyDatabases_Spd_Interface   `protobuf:"bytes,2,rep,name=interfaces,proto3" json:"interfaces,omitempty"`                            // list of interfaces belonging to this SPD
+	PolicyEntries []*SecurityPolicyDatabases_Spd_PolicyEntry `protobuf:"bytes,3,rep,name=policy_entries,json=policyEntries,proto3" json:"policy_entries,omitempty"` // list of policy entries belonging to this SPD
 }
 
-func (x *SecurityPolicyDatabases_SPD) Reset() {
-	*x = SecurityPolicyDatabases_SPD{}
+func (x *SecurityPolicyDatabases_Spd) Reset() {
+	*x = SecurityPolicyDatabases_Spd{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_ipsec_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1220,13 +1220,13 @@ func (x *SecurityPolicyDatabases_SPD) Reset() {
 	}
 }
 
-func (x *SecurityPolicyDatabases_SPD) String() string {
+func (x *SecurityPolicyDatabases_Spd) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SecurityPolicyDatabases_SPD) ProtoMessage() {}
+func (*SecurityPolicyDatabases_Spd) ProtoMessage() {}
 
-func (x *SecurityPolicyDatabases_SPD) ProtoReflect() protoreflect.Message {
+func (x *SecurityPolicyDatabases_Spd) ProtoReflect() protoreflect.Message {
 	mi := &file_ipsec_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1238,26 +1238,26 @@ func (x *SecurityPolicyDatabases_SPD) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SecurityPolicyDatabases_SPD.ProtoReflect.Descriptor instead.
-func (*SecurityPolicyDatabases_SPD) Descriptor() ([]byte, []int) {
+// Deprecated: Use SecurityPolicyDatabases_Spd.ProtoReflect.Descriptor instead.
+func (*SecurityPolicyDatabases_Spd) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{1, 0}
 }
 
-func (x *SecurityPolicyDatabases_SPD) GetName() string {
+func (x *SecurityPolicyDatabases_Spd) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD) GetInterfaces() []*SecurityPolicyDatabases_SPD_Interface {
+func (x *SecurityPolicyDatabases_Spd) GetInterfaces() []*SecurityPolicyDatabases_Spd_Interface {
 	if x != nil {
 		return x.Interfaces
 	}
 	return nil
 }
 
-func (x *SecurityPolicyDatabases_SPD) GetPolicyEntries() []*SecurityPolicyDatabases_SPD_PolicyEntry {
+func (x *SecurityPolicyDatabases_Spd) GetPolicyEntries() []*SecurityPolicyDatabases_Spd_PolicyEntry {
 	if x != nil {
 		return x.PolicyEntries
 	}
@@ -1265,7 +1265,7 @@ func (x *SecurityPolicyDatabases_SPD) GetPolicyEntries() []*SecurityPolicyDataba
 }
 
 // Interface
-type SecurityPolicyDatabases_SPD_Interface struct {
+type SecurityPolicyDatabases_Spd_Interface struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1273,8 +1273,8 @@ type SecurityPolicyDatabases_SPD_Interface struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"` // interface name
 }
 
-func (x *SecurityPolicyDatabases_SPD_Interface) Reset() {
-	*x = SecurityPolicyDatabases_SPD_Interface{}
+func (x *SecurityPolicyDatabases_Spd_Interface) Reset() {
+	*x = SecurityPolicyDatabases_Spd_Interface{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_ipsec_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1282,13 +1282,13 @@ func (x *SecurityPolicyDatabases_SPD_Interface) Reset() {
 	}
 }
 
-func (x *SecurityPolicyDatabases_SPD_Interface) String() string {
+func (x *SecurityPolicyDatabases_Spd_Interface) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SecurityPolicyDatabases_SPD_Interface) ProtoMessage() {}
+func (*SecurityPolicyDatabases_Spd_Interface) ProtoMessage() {}
 
-func (x *SecurityPolicyDatabases_SPD_Interface) ProtoReflect() protoreflect.Message {
+func (x *SecurityPolicyDatabases_Spd_Interface) ProtoReflect() protoreflect.Message {
 	mi := &file_ipsec_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1300,12 +1300,12 @@ func (x *SecurityPolicyDatabases_SPD_Interface) ProtoReflect() protoreflect.Mess
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SecurityPolicyDatabases_SPD_Interface.ProtoReflect.Descriptor instead.
-func (*SecurityPolicyDatabases_SPD_Interface) Descriptor() ([]byte, []int) {
+// Deprecated: Use SecurityPolicyDatabases_Spd_Interface.ProtoReflect.Descriptor instead.
+func (*SecurityPolicyDatabases_Spd_Interface) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{1, 0, 0}
 }
 
-func (x *SecurityPolicyDatabases_SPD_Interface) GetName() string {
+func (x *SecurityPolicyDatabases_Spd_Interface) GetName() string {
 	if x != nil {
 		return x.Name
 	}
@@ -1313,7 +1313,7 @@ func (x *SecurityPolicyDatabases_SPD_Interface) GetName() string {
 }
 
 // Policy Entry
-type SecurityPolicyDatabases_SPD_PolicyEntry struct {
+type SecurityPolicyDatabases_Spd_PolicyEntry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1330,11 +1330,11 @@ type SecurityPolicyDatabases_SPD_PolicyEntry struct {
 	RemotePortStop  uint32                                         `protobuf:"varint,10,opt,name=remote_port_stop,json=remotePortStop,proto3" json:"remote_port_stop,omitempty"`
 	LocalPortStart  uint32                                         `protobuf:"varint,11,opt,name=local_port_start,json=localPortStart,proto3" json:"local_port_start,omitempty"`
 	LocalPortStop   uint32                                         `protobuf:"varint,12,opt,name=local_port_stop,json=localPortStop,proto3" json:"local_port_stop,omitempty"`
-	Action          SecurityPolicyDatabases_SPD_PolicyEntry_Action `protobuf:"varint,13,opt,name=action,proto3,enum=opi.security.v1.SecurityPolicyDatabases_SPD_PolicyEntry_Action" json:"action,omitempty"` // policy action
+	Action          SecurityPolicyDatabases_Spd_PolicyEntry_Action `protobuf:"varint,13,opt,name=action,proto3,enum=opi.security.v1.SecurityPolicyDatabases_Spd_PolicyEntry_Action" json:"action,omitempty"` // policy action
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) Reset() {
-	*x = SecurityPolicyDatabases_SPD_PolicyEntry{}
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) Reset() {
+	*x = SecurityPolicyDatabases_Spd_PolicyEntry{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_ipsec_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1342,13 +1342,13 @@ func (x *SecurityPolicyDatabases_SPD_PolicyEntry) Reset() {
 	}
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) String() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SecurityPolicyDatabases_SPD_PolicyEntry) ProtoMessage() {}
+func (*SecurityPolicyDatabases_Spd_PolicyEntry) ProtoMessage() {}
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) ProtoReflect() protoreflect.Message {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) ProtoReflect() protoreflect.Message {
 	mi := &file_ipsec_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1360,110 +1360,110 @@ func (x *SecurityPolicyDatabases_SPD_PolicyEntry) ProtoReflect() protoreflect.Me
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SecurityPolicyDatabases_SPD_PolicyEntry.ProtoReflect.Descriptor instead.
-func (*SecurityPolicyDatabases_SPD_PolicyEntry) Descriptor() ([]byte, []int) {
+// Deprecated: Use SecurityPolicyDatabases_Spd_PolicyEntry.ProtoReflect.Descriptor instead.
+func (*SecurityPolicyDatabases_Spd_PolicyEntry) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{1, 0, 1}
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetSa() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetSa() string {
 	if x != nil {
 		return x.Sa
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetPriority() int32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetPriority() int32 {
 	if x != nil {
 		return x.Priority
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetIsOutbound() bool {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetIsOutbound() bool {
 	if x != nil {
 		return x.IsOutbound
 	}
 	return false
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetRemoteAddrStart() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetRemoteAddrStart() string {
 	if x != nil {
 		return x.RemoteAddrStart
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetRemoteAddrStop() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetRemoteAddrStop() string {
 	if x != nil {
 		return x.RemoteAddrStop
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetLocalAddrStart() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetLocalAddrStart() string {
 	if x != nil {
 		return x.LocalAddrStart
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetLocalAddrStop() string {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetLocalAddrStop() string {
 	if x != nil {
 		return x.LocalAddrStop
 	}
 	return ""
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetProtocol() uint32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetProtocol() uint32 {
 	if x != nil {
 		return x.Protocol
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetRemotePortStart() uint32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetRemotePortStart() uint32 {
 	if x != nil {
 		return x.RemotePortStart
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetRemotePortStop() uint32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetRemotePortStop() uint32 {
 	if x != nil {
 		return x.RemotePortStop
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetLocalPortStart() uint32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetLocalPortStart() uint32 {
 	if x != nil {
 		return x.LocalPortStart
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetLocalPortStop() uint32 {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetLocalPortStop() uint32 {
 	if x != nil {
 		return x.LocalPortStop
 	}
 	return 0
 }
 
-func (x *SecurityPolicyDatabases_SPD_PolicyEntry) GetAction() SecurityPolicyDatabases_SPD_PolicyEntry_Action {
+func (x *SecurityPolicyDatabases_Spd_PolicyEntry) GetAction() SecurityPolicyDatabases_Spd_PolicyEntry_Action {
 	if x != nil {
 		return x.Action
 	}
-	return SecurityPolicyDatabases_SPD_PolicyEntry_BYPASS
+	return SecurityPolicyDatabases_Spd_PolicyEntry_BYPASS
 }
 
-type SecurityAssociations_SA struct {
+type SecurityAssociations_Sa struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	Name           string                                `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"` // security association name
 	Spi            uint32                                `protobuf:"varint,2,opt,name=spi,proto3" json:"spi,omitempty"`  // security parameter index
-	Protocol       SecurityAssociations_SA_IPsecProtocol `protobuf:"varint,3,opt,name=protocol,proto3,enum=opi.security.v1.SecurityAssociations_SA_IPsecProtocol" json:"protocol,omitempty"`
+	Protocol       SecurityAssociations_Sa_IPsecProtocol `protobuf:"varint,3,opt,name=protocol,proto3,enum=opi.security.v1.SecurityAssociations_Sa_IPsecProtocol" json:"protocol,omitempty"`
 	CryptoAlg      CryptoAlgorithm                       `protobuf:"varint,4,opt,name=crypto_alg,json=cryptoAlg,proto3,enum=opi.security.v1.CryptoAlgorithm" json:"crypto_alg,omitempty"`
 	CryptoKey      string                                `protobuf:"bytes,5,opt,name=crypto_key,json=cryptoKey,proto3" json:"crypto_key,omitempty"`
 	IntegAlg       IntegAlgorithm                        `protobuf:"varint,6,opt,name=integ_alg,json=integAlg,proto3,enum=opi.security.v1.IntegAlgorithm" json:"integ_alg,omitempty"`
@@ -1475,8 +1475,8 @@ type SecurityAssociations_SA struct {
 	EnableUdpEncap bool                                  `protobuf:"varint,12,opt,name=enable_udp_encap,json=enableUdpEncap,proto3" json:"enable_udp_encap,omitempty"` // Enable UDP encapsulation for NAT traversal
 }
 
-func (x *SecurityAssociations_SA) Reset() {
-	*x = SecurityAssociations_SA{}
+func (x *SecurityAssociations_Sa) Reset() {
+	*x = SecurityAssociations_Sa{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_ipsec_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1484,13 +1484,13 @@ func (x *SecurityAssociations_SA) Reset() {
 	}
 }
 
-func (x *SecurityAssociations_SA) String() string {
+func (x *SecurityAssociations_Sa) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SecurityAssociations_SA) ProtoMessage() {}
+func (*SecurityAssociations_Sa) ProtoMessage() {}
 
-func (x *SecurityAssociations_SA) ProtoReflect() protoreflect.Message {
+func (x *SecurityAssociations_Sa) ProtoReflect() protoreflect.Message {
 	mi := &file_ipsec_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1502,89 +1502,89 @@ func (x *SecurityAssociations_SA) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SecurityAssociations_SA.ProtoReflect.Descriptor instead.
-func (*SecurityAssociations_SA) Descriptor() ([]byte, []int) {
+// Deprecated: Use SecurityAssociations_Sa.ProtoReflect.Descriptor instead.
+func (*SecurityAssociations_Sa) Descriptor() ([]byte, []int) {
 	return file_ipsec_proto_rawDescGZIP(), []int{2, 0}
 }
 
-func (x *SecurityAssociations_SA) GetName() string {
+func (x *SecurityAssociations_Sa) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *SecurityAssociations_SA) GetSpi() uint32 {
+func (x *SecurityAssociations_Sa) GetSpi() uint32 {
 	if x != nil {
 		return x.Spi
 	}
 	return 0
 }
 
-func (x *SecurityAssociations_SA) GetProtocol() SecurityAssociations_SA_IPsecProtocol {
+func (x *SecurityAssociations_Sa) GetProtocol() SecurityAssociations_Sa_IPsecProtocol {
 	if x != nil {
 		return x.Protocol
 	}
-	return SecurityAssociations_SA_AH
+	return SecurityAssociations_Sa_AH
 }
 
-func (x *SecurityAssociations_SA) GetCryptoAlg() CryptoAlgorithm {
+func (x *SecurityAssociations_Sa) GetCryptoAlg() CryptoAlgorithm {
 	if x != nil {
 		return x.CryptoAlg
 	}
 	return CryptoAlgorithm_NONE_CRYPTO
 }
 
-func (x *SecurityAssociations_SA) GetCryptoKey() string {
+func (x *SecurityAssociations_Sa) GetCryptoKey() string {
 	if x != nil {
 		return x.CryptoKey
 	}
 	return ""
 }
 
-func (x *SecurityAssociations_SA) GetIntegAlg() IntegAlgorithm {
+func (x *SecurityAssociations_Sa) GetIntegAlg() IntegAlgorithm {
 	if x != nil {
 		return x.IntegAlg
 	}
 	return IntegAlgorithm_NONE_INTEG
 }
 
-func (x *SecurityAssociations_SA) GetIntegKey() string {
+func (x *SecurityAssociations_Sa) GetIntegKey() string {
 	if x != nil {
 		return x.IntegKey
 	}
 	return ""
 }
 
-func (x *SecurityAssociations_SA) GetUseEsn() bool {
+func (x *SecurityAssociations_Sa) GetUseEsn() bool {
 	if x != nil {
 		return x.UseEsn
 	}
 	return false
 }
 
-func (x *SecurityAssociations_SA) GetUseAntiReplay() bool {
+func (x *SecurityAssociations_Sa) GetUseAntiReplay() bool {
 	if x != nil {
 		return x.UseAntiReplay
 	}
 	return false
 }
 
-func (x *SecurityAssociations_SA) GetTunnelSrcAddr() string {
+func (x *SecurityAssociations_Sa) GetTunnelSrcAddr() string {
 	if x != nil {
 		return x.TunnelSrcAddr
 	}
 	return ""
 }
 
-func (x *SecurityAssociations_SA) GetTunnelDstAddr() string {
+func (x *SecurityAssociations_Sa) GetTunnelDstAddr() string {
 	if x != nil {
 		return x.TunnelDstAddr
 	}
 	return ""
 }
 
-func (x *SecurityAssociations_SA) GetEnableUdpEncap() bool {
+func (x *SecurityAssociations_Sa) GetEnableUdpEncap() bool {
 	if x != nil {
 		return x.EnableUdpEncap
 	}
@@ -1645,19 +1645,19 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x40, 0x0a, 0x04, 0x73, 0x70, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e,
 	0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e,
 	0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x44, 0x61,
-	0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x50, 0x44, 0x52, 0x04, 0x73, 0x70, 0x64,
-	0x73, 0x1a, 0xc5, 0x06, 0x0a, 0x03, 0x53, 0x50, 0x44, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
+	0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x70, 0x64, 0x52, 0x04, 0x73, 0x70, 0x64,
+	0x73, 0x1a, 0xc5, 0x06, 0x0a, 0x03, 0x53, 0x70, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x56, 0x0a,
 	0x0a, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x36, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79,
 	0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x50, 0x6f, 0x6c, 0x69,
-	0x63, 0x79, 0x44, 0x61, 0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x50, 0x44, 0x2e,
+	0x63, 0x79, 0x44, 0x61, 0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x70, 0x64, 0x2e,
 	0x49, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x52, 0x0a, 0x69, 0x6e, 0x74, 0x65, 0x72,
 	0x66, 0x61, 0x63, 0x65, 0x73, 0x12, 0x5f, 0x0a, 0x0e, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f,
 	0x65, 0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x38, 0x2e,
 	0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e,
 	0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x44, 0x61,
-	0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x50, 0x44, 0x2e, 0x50, 0x6f, 0x6c, 0x69,
+	0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x70, 0x64, 0x2e, 0x50, 0x6f, 0x6c, 0x69,
 	0x63, 0x79, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x0d, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x45,
 	0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x1a, 0x1f, 0x0a, 0x09, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x66,
 	0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
@@ -1693,7 +1693,7 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x12, 0x57, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x3f, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e,
 	0x76, 0x31, 0x2e, 0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63,
-	0x79, 0x44, 0x61, 0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x50, 0x44, 0x2e, 0x50,
+	0x79, 0x44, 0x61, 0x74, 0x61, 0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x70, 0x64, 0x2e, 0x50,
 	0x6f, 0x6c, 0x69, 0x63, 0x79, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x2e, 0x0a, 0x06, 0x41, 0x63, 0x74,
 	0x69, 0x6f, 0x6e, 0x12, 0x0a, 0x0a, 0x06, 0x42, 0x59, 0x50, 0x41, 0x53, 0x53, 0x10, 0x00, 0x12,
@@ -1703,14 +1703,14 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x6e, 0x73, 0x12, 0x3a, 0x0a, 0x03, 0x73, 0x61, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x28, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76,
 	0x31, 0x2e, 0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x41, 0x73, 0x73, 0x6f, 0x63, 0x69,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x41, 0x52, 0x03, 0x73, 0x61, 0x73, 0x1a, 0x96,
-	0x04, 0x0a, 0x02, 0x53, 0x41, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x61, 0x52, 0x03, 0x73, 0x61, 0x73, 0x1a, 0x96,
+	0x04, 0x0a, 0x02, 0x53, 0x61, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x73, 0x70, 0x69,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x73, 0x70, 0x69, 0x12, 0x52, 0x0a, 0x08, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x36, 0x2e,
 	0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e,
 	0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x41, 0x73, 0x73, 0x6f, 0x63, 0x69, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x41, 0x2e, 0x49, 0x50, 0x73, 0x65, 0x63, 0x50, 0x72, 0x6f,
+	0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x61, 0x2e, 0x49, 0x50, 0x73, 0x65, 0x63, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x12,
 	0x3f, 0x0a, 0x0a, 0x63, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x5f, 0x61, 0x6c, 0x67, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x20, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69,
@@ -1746,13 +1746,13 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x04, 0x73, 0x70, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x6f, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65,
 	0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x44, 0x61, 0x74, 0x61,
-	0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x50, 0x44, 0x52, 0x04, 0x73, 0x70, 0x64, 0x73, 0x12,
+	0x62, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x53, 0x70, 0x64, 0x52, 0x04, 0x73, 0x70, 0x64, 0x73, 0x12,
 	0x3a, 0x0a, 0x03, 0x73, 0x61, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6f,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x53,
 	0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x41, 0x73, 0x73, 0x6f, 0x63, 0x69, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x41, 0x52, 0x03, 0x73, 0x61, 0x73, 0x22, 0xcf, 0x01, 0x0a, 0x09,
-	0x49, 0x50, 0x73, 0x65, 0x63, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x44, 0x12, 0x39, 0x0a, 0x06, 0x74, 0x75, 0x6e,
+	0x6f, 0x6e, 0x73, 0x2e, 0x53, 0x61, 0x52, 0x03, 0x73, 0x61, 0x73, 0x22, 0xcf, 0x01, 0x0a, 0x09,
+	0x49, 0x50, 0x73, 0x65, 0x63, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x39, 0x0a, 0x06, 0x74, 0x75, 0x6e,
 	0x6e, 0x65, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x2e,
 	0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x76, 0x31, 0x2e, 0x54, 0x75, 0x6e, 0x6e,
 	0x65, 0x6c, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x73, 0x52, 0x06, 0x74, 0x75,
@@ -1771,8 +1771,8 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x69, 0x70, 0x73, 0x65, 0x63, 0x22, 0x15, 0x0a, 0x13, 0x49, 0x50, 0x73, 0x65, 0x63, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x24, 0x0a, 0x12,
 	0x49, 0x50, 0x73, 0x65, 0x63, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
-	0x49, 0x44, 0x22, 0x15, 0x0a, 0x13, 0x49, 0x50, 0x73, 0x65, 0x63, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
+	0x69, 0x64, 0x22, 0x15, 0x0a, 0x13, 0x49, 0x50, 0x73, 0x65, 0x63, 0x44, 0x65, 0x6c, 0x65, 0x74,
 	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x46, 0x0a, 0x12, 0x49, 0x50, 0x73,
 	0x65, 0x63, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x30, 0x0a, 0x05, 0x69, 0x70, 0x73, 0x65, 0x63, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a,
@@ -1781,7 +1781,7 @@ var file_ipsec_proto_rawDesc = []byte{
 	0x63, 0x22, 0x15, 0x0a, 0x13, 0x49, 0x50, 0x73, 0x65, 0x63, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x0a, 0x10, 0x49, 0x50, 0x73, 0x65,
 	0x63, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02,
-	0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x44, 0x22, 0x45, 0x0a, 0x11,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x45, 0x0a, 0x11,
 	0x49, 0x50, 0x73, 0x65, 0x63, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x30, 0x0a, 0x05, 0x69, 0x70, 0x73, 0x65, 0x63, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e,
@@ -1866,8 +1866,8 @@ var file_ipsec_proto_goTypes = []interface{}{
 	(CryptoAlgorithm)(0), // 0: opi.security.v1.CryptoAlgorithm
 	(IntegAlgorithm)(0),  // 1: opi.security.v1.IntegAlgorithm
 	(IPsecMode)(0),       // 2: opi.security.v1.IPsecMode
-	(SecurityPolicyDatabases_SPD_PolicyEntry_Action)(0), // 3: opi.security.v1.SecurityPolicyDatabases.SPD.PolicyEntry.Action
-	(SecurityAssociations_SA_IPsecProtocol)(0),          // 4: opi.security.v1.SecurityAssociations.SA.IPsecProtocol
+	(SecurityPolicyDatabases_Spd_PolicyEntry_Action)(0), // 3: opi.security.v1.SecurityPolicyDatabases.Spd.PolicyEntry.Action
+	(SecurityAssociations_Sa_IPsecProtocol)(0),          // 4: opi.security.v1.SecurityAssociations.Sa.IPsecProtocol
 	(*TunnelInterfaces)(nil),                            // 5: opi.security.v1.TunnelInterfaces
 	(*SecurityPolicyDatabases)(nil),                     // 6: opi.security.v1.SecurityPolicyDatabases
 	(*SecurityAssociations)(nil),                        // 7: opi.security.v1.SecurityAssociations
@@ -1884,18 +1884,18 @@ var file_ipsec_proto_goTypes = []interface{}{
 	(*IPsecGetRequest)(nil),                             // 18: opi.security.v1.IPsecGetRequest
 	(*IPsecGetResponse)(nil),                            // 19: opi.security.v1.IPsecGetResponse
 	(*TunnelInterfaces_Tunnel)(nil),                     // 20: opi.security.v1.TunnelInterfaces.Tunnel
-	(*SecurityPolicyDatabases_SPD)(nil),                 // 21: opi.security.v1.SecurityPolicyDatabases.SPD
-	(*SecurityPolicyDatabases_SPD_Interface)(nil),       // 22: opi.security.v1.SecurityPolicyDatabases.SPD.Interface
-	(*SecurityPolicyDatabases_SPD_PolicyEntry)(nil),     // 23: opi.security.v1.SecurityPolicyDatabases.SPD.PolicyEntry
-	(*SecurityAssociations_SA)(nil),                     // 24: opi.security.v1.SecurityAssociations.SA
+	(*SecurityPolicyDatabases_Spd)(nil),                 // 21: opi.security.v1.SecurityPolicyDatabases.Spd
+	(*SecurityPolicyDatabases_Spd_Interface)(nil),       // 22: opi.security.v1.SecurityPolicyDatabases.Spd.Interface
+	(*SecurityPolicyDatabases_Spd_PolicyEntry)(nil),     // 23: opi.security.v1.SecurityPolicyDatabases.Spd.PolicyEntry
+	(*SecurityAssociations_Sa)(nil),                     // 24: opi.security.v1.SecurityAssociations.Sa
 }
 var file_ipsec_proto_depIdxs = []int32{
 	20, // 0: opi.security.v1.TunnelInterfaces.tunnels:type_name -> opi.security.v1.TunnelInterfaces.Tunnel
-	21, // 1: opi.security.v1.SecurityPolicyDatabases.spds:type_name -> opi.security.v1.SecurityPolicyDatabases.SPD
-	24, // 2: opi.security.v1.SecurityAssociations.sas:type_name -> opi.security.v1.SecurityAssociations.SA
+	21, // 1: opi.security.v1.SecurityPolicyDatabases.spds:type_name -> opi.security.v1.SecurityPolicyDatabases.Spd
+	24, // 2: opi.security.v1.SecurityAssociations.sas:type_name -> opi.security.v1.SecurityAssociations.Sa
 	20, // 3: opi.security.v1.ResyncRequest.tunnels:type_name -> opi.security.v1.TunnelInterfaces.Tunnel
-	21, // 4: opi.security.v1.ResyncRequest.spds:type_name -> opi.security.v1.SecurityPolicyDatabases.SPD
-	24, // 5: opi.security.v1.ResyncRequest.sas:type_name -> opi.security.v1.SecurityAssociations.SA
+	21, // 4: opi.security.v1.ResyncRequest.spds:type_name -> opi.security.v1.SecurityPolicyDatabases.Spd
+	24, // 5: opi.security.v1.ResyncRequest.sas:type_name -> opi.security.v1.SecurityAssociations.Sa
 	5,  // 6: opi.security.v1.IPsecData.tunnel:type_name -> opi.security.v1.TunnelInterfaces
 	6,  // 7: opi.security.v1.IPsecData.policy:type_name -> opi.security.v1.SecurityPolicyDatabases
 	7,  // 8: opi.security.v1.IPsecData.sa:type_name -> opi.security.v1.SecurityAssociations
@@ -1906,12 +1906,12 @@ var file_ipsec_proto_depIdxs = []int32{
 	0,  // 13: opi.security.v1.TunnelInterfaces.Tunnel.crypto_alg:type_name -> opi.security.v1.CryptoAlgorithm
 	1,  // 14: opi.security.v1.TunnelInterfaces.Tunnel.integ_alg:type_name -> opi.security.v1.IntegAlgorithm
 	2,  // 15: opi.security.v1.TunnelInterfaces.Tunnel.mode:type_name -> opi.security.v1.IPsecMode
-	22, // 16: opi.security.v1.SecurityPolicyDatabases.SPD.interfaces:type_name -> opi.security.v1.SecurityPolicyDatabases.SPD.Interface
-	23, // 17: opi.security.v1.SecurityPolicyDatabases.SPD.policy_entries:type_name -> opi.security.v1.SecurityPolicyDatabases.SPD.PolicyEntry
-	3,  // 18: opi.security.v1.SecurityPolicyDatabases.SPD.PolicyEntry.action:type_name -> opi.security.v1.SecurityPolicyDatabases.SPD.PolicyEntry.Action
-	4,  // 19: opi.security.v1.SecurityAssociations.SA.protocol:type_name -> opi.security.v1.SecurityAssociations.SA.IPsecProtocol
-	0,  // 20: opi.security.v1.SecurityAssociations.SA.crypto_alg:type_name -> opi.security.v1.CryptoAlgorithm
-	1,  // 21: opi.security.v1.SecurityAssociations.SA.integ_alg:type_name -> opi.security.v1.IntegAlgorithm
+	22, // 16: opi.security.v1.SecurityPolicyDatabases.Spd.interfaces:type_name -> opi.security.v1.SecurityPolicyDatabases.Spd.Interface
+	23, // 17: opi.security.v1.SecurityPolicyDatabases.Spd.policy_entries:type_name -> opi.security.v1.SecurityPolicyDatabases.Spd.PolicyEntry
+	3,  // 18: opi.security.v1.SecurityPolicyDatabases.Spd.PolicyEntry.action:type_name -> opi.security.v1.SecurityPolicyDatabases.Spd.PolicyEntry.Action
+	4,  // 19: opi.security.v1.SecurityAssociations.Sa.protocol:type_name -> opi.security.v1.SecurityAssociations.Sa.IPsecProtocol
+	0,  // 20: opi.security.v1.SecurityAssociations.Sa.crypto_alg:type_name -> opi.security.v1.CryptoAlgorithm
+	1,  // 21: opi.security.v1.SecurityAssociations.Sa.integ_alg:type_name -> opi.security.v1.IntegAlgorithm
 	10, // 22: opi.security.v1.IPsec.IPsecCreate:input_type -> opi.security.v1.IPsecCreateRequest
 	12, // 23: opi.security.v1.IPsec.IPsecDelete:input_type -> opi.security.v1.IPsecDeleteRequest
 	14, // 24: opi.security.v1.IPsec.IPsecUpdate:input_type -> opi.security.v1.IPsecUpdateRequest
@@ -2128,7 +2128,7 @@ func file_ipsec_proto_init() {
 			}
 		}
 		file_ipsec_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecurityPolicyDatabases_SPD); i {
+			switch v := v.(*SecurityPolicyDatabases_Spd); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2140,7 +2140,7 @@ func file_ipsec_proto_init() {
 			}
 		}
 		file_ipsec_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecurityPolicyDatabases_SPD_Interface); i {
+			switch v := v.(*SecurityPolicyDatabases_Spd_Interface); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2152,7 +2152,7 @@ func file_ipsec_proto_init() {
 			}
 		}
 		file_ipsec_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecurityPolicyDatabases_SPD_PolicyEntry); i {
+			switch v := v.(*SecurityPolicyDatabases_Spd_PolicyEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2164,7 +2164,7 @@ func file_ipsec_proto_init() {
 			}
 		}
 		file_ipsec_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecurityAssociations_SA); i {
+			switch v := v.(*SecurityAssociations_Sa); i {
 			case 0:
 				return &v.state
 			case 1:
