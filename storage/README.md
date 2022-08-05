@@ -1,5 +1,14 @@
 # OPI Storage APIs
 
+## Storage API sub-group Goals & Deliverables
+
+- OPI defines __protobuf__ definitions that every HW or SW vendor can implement easily using their SDKs
+- OPI provides __bridge__ implementation for SPDK because many __(not all)__ companies use SPDK
+- OPI provides __CSI-OPI__ driver to hook into k8s
+- OPI provides cli based proto __client__ that can send gRPC protobuf messages to DPUs and IPUs for storage defined in the spec above
+
+_All implementations above are reference only and __not__ meant to be used as-is in production_
+
 ## Implementation
 
 The [Specification](spec.md) is implemented in proto. Compile it as:
@@ -24,15 +33,15 @@ The [Specification](spec.md) is implemented in proto. Compile it as:
 
 - We identified 3 layers of APIs in Storage
   - Front End
-    - Those are *host* facing APIs
+    - Those are __host__ facing APIs
     - Examples are emulated NVMe devices or Virtio-blk devices
     - The APIs will have all the required properties for NVMe/Vritio specs
   - Middle End
-    - Those are *storage services* APIs
+    - Those are __storage services__ APIs
     - They are implemented in DPU and provide with additional storage services (if applicable)
     - Few example: Raid protection, Compression, Encryption, Multipathing, QoS, and others...
   - Back End
-    - Those are *network* facing APIs
+    - Those are __network__ facing APIs
     - We do want few devices for debug (null, malloc, delay, error injection)
     - Similar to what nvme-connect provides, for example (in a very simplistic way)
 - Security
@@ -43,5 +52,7 @@ The [Specification](spec.md) is implemented in proto. Compile it as:
 - Implementation
   - There are several existing implementations to consider (CSI, SMA, ...)
   - We have to start working in more details on this
+
+## Mindmap Diagram
 
 ![Storage APIs High Level Diagram](DPU-API-Storage.png)
