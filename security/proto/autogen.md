@@ -57,6 +57,7 @@ https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | connection name |
 | tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
 | policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
 | sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |

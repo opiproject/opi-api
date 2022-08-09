@@ -163,13 +163,14 @@ message Uuid {
 }
 
 message IPsecCreateRequest {
-	TunnelInterfaces tunnel = 1;
-	SecurityPolicyDatabases policy = 2;
-	SecurityAssociations sa = 3;
+	string name = 1; /* connection name */
+	TunnelInterfaces tunnel = 2;
+	SecurityPolicyDatabases policy = 3;
+	SecurityAssociations sa = 4;
 }
 
 message IPsecCreateResponse {
-	Uuid id =1;
+	Uuid id = 1;
 }
 
 message IPsecDeleteRequest {
@@ -177,18 +178,18 @@ message IPsecDeleteRequest {
 }
 
 message IPsecDeleteResponse {
-	Uuid id =1;
+	Uuid id = 1;
 }
 
 message IPsecUpdateRequest {
-	Uuid id =1;
+	Uuid id = 1;
 	TunnelInterfaces tunnel = 2;
 	SecurityPolicyDatabases policy = 3;
 	SecurityAssociations sa = 4;
 }
 
 message IPsecUpdateResponse {
-	Uuid id =1;
+	Uuid id = 1;
 }
 
 message IPsecListRequest {
