@@ -77,11 +77,39 @@
     - [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse)
     - [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest)
     - [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse)
+    - [VirtioScsiController](#opi-storage-v1-VirtioScsiController)
+    - [VirtioScsiControllerCreateRequest](#opi-storage-v1-VirtioScsiControllerCreateRequest)
+    - [VirtioScsiControllerCreateResponse](#opi-storage-v1-VirtioScsiControllerCreateResponse)
+    - [VirtioScsiControllerDeleteRequest](#opi-storage-v1-VirtioScsiControllerDeleteRequest)
+    - [VirtioScsiControllerDeleteResponse](#opi-storage-v1-VirtioScsiControllerDeleteResponse)
+    - [VirtioScsiControllerGetRequest](#opi-storage-v1-VirtioScsiControllerGetRequest)
+    - [VirtioScsiControllerGetResponse](#opi-storage-v1-VirtioScsiControllerGetResponse)
+    - [VirtioScsiControllerListRequest](#opi-storage-v1-VirtioScsiControllerListRequest)
+    - [VirtioScsiControllerListResponse](#opi-storage-v1-VirtioScsiControllerListResponse)
+    - [VirtioScsiControllerStatsRequest](#opi-storage-v1-VirtioScsiControllerStatsRequest)
+    - [VirtioScsiControllerStatsResponse](#opi-storage-v1-VirtioScsiControllerStatsResponse)
+    - [VirtioScsiControllerUpdateRequest](#opi-storage-v1-VirtioScsiControllerUpdateRequest)
+    - [VirtioScsiControllerUpdateResponse](#opi-storage-v1-VirtioScsiControllerUpdateResponse)
+    - [VirtioScsiLun](#opi-storage-v1-VirtioScsiLun)
+    - [VirtioScsiLunCreateRequest](#opi-storage-v1-VirtioScsiLunCreateRequest)
+    - [VirtioScsiLunCreateResponse](#opi-storage-v1-VirtioScsiLunCreateResponse)
+    - [VirtioScsiLunDeleteRequest](#opi-storage-v1-VirtioScsiLunDeleteRequest)
+    - [VirtioScsiLunDeleteResponse](#opi-storage-v1-VirtioScsiLunDeleteResponse)
+    - [VirtioScsiLunGetRequest](#opi-storage-v1-VirtioScsiLunGetRequest)
+    - [VirtioScsiLunGetResponse](#opi-storage-v1-VirtioScsiLunGetResponse)
+    - [VirtioScsiLunListRequest](#opi-storage-v1-VirtioScsiLunListRequest)
+    - [VirtioScsiLunListResponse](#opi-storage-v1-VirtioScsiLunListResponse)
+    - [VirtioScsiLunStatsRequest](#opi-storage-v1-VirtioScsiLunStatsRequest)
+    - [VirtioScsiLunStatsResponse](#opi-storage-v1-VirtioScsiLunStatsResponse)
+    - [VirtioScsiLunUpdateRequest](#opi-storage-v1-VirtioScsiLunUpdateRequest)
+    - [VirtioScsiLunUpdateResponse](#opi-storage-v1-VirtioScsiLunUpdateResponse)
   
     - [NVMeControllerService](#opi-storage-v1-NVMeControllerService)
     - [NVMeNamespaceService](#opi-storage-v1-NVMeNamespaceService)
     - [NVMeSubsystemService](#opi-storage-v1-NVMeSubsystemService)
     - [VirtioBlkService](#opi-storage-v1-VirtioBlkService)
+    - [VirtioScsiControllerService](#opi-storage-v1-VirtioScsiControllerService)
+    - [VirtioScsiLunService](#opi-storage-v1-VirtioScsiLunService)
   
 - [middleend.proto](#middleend-proto)
 - [Scalar Value Types](#scalar-value-types)
@@ -1050,11 +1078,6 @@ Intentionally empty.
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| controller | [VirtioBlk](#opi-storage-v1-VirtioBlk) | repeated |  |
-
-
 
 
 
@@ -1108,6 +1131,370 @@ Intentionally empty.
 <a name="opi-storage-v1-VirtioBlkUpdateResponse"></a>
 
 ### VirtioBlkUpdateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiController"></a>
+
+### VirtioScsiController
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| pcie_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerCreateRequest"></a>
+
+### VirtioScsiControllerCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioScsiController](#opi-storage-v1-VirtioScsiController) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerCreateResponse"></a>
+
+### VirtioScsiControllerCreateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerDeleteRequest"></a>
+
+### VirtioScsiControllerDeleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerDeleteResponse"></a>
+
+### VirtioScsiControllerDeleteResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerGetRequest"></a>
+
+### VirtioScsiControllerGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerGetResponse"></a>
+
+### VirtioScsiControllerGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioScsiController](#opi-storage-v1-VirtioScsiController) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerListRequest"></a>
+
+### VirtioScsiControllerListRequest
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerListResponse"></a>
+
+### VirtioScsiControllerListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioScsiController](#opi-storage-v1-VirtioScsiController) | repeated |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerStatsRequest"></a>
+
+### VirtioScsiControllerStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerStatsResponse"></a>
+
+### VirtioScsiControllerStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerUpdateRequest"></a>
+
+### VirtioScsiControllerUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioScsiController](#opi-storage-v1-VirtioScsiController) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiControllerUpdateResponse"></a>
+
+### VirtioScsiControllerUpdateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLun"></a>
+
+### VirtioScsiLun
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| controller_id | [int64](#int64) |  |  |
+| bdev | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunCreateRequest"></a>
+
+### VirtioScsiLunCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| lun | [VirtioScsiLun](#opi-storage-v1-VirtioScsiLun) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunCreateResponse"></a>
+
+### VirtioScsiLunCreateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunDeleteRequest"></a>
+
+### VirtioScsiLunDeleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+| lun_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunDeleteResponse"></a>
+
+### VirtioScsiLunDeleteResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunGetRequest"></a>
+
+### VirtioScsiLunGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+| lun_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunGetResponse"></a>
+
+### VirtioScsiLunGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| lun | [VirtioScsiLun](#opi-storage-v1-VirtioScsiLun) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunListRequest"></a>
+
+### VirtioScsiLunListRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunListResponse"></a>
+
+### VirtioScsiLunListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| lun | [VirtioScsiLun](#opi-storage-v1-VirtioScsiLun) | repeated |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunStatsRequest"></a>
+
+### VirtioScsiLunStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
+| lun_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunStatsResponse"></a>
+
+### VirtioScsiLunStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunUpdateRequest"></a>
+
+### VirtioScsiLunUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| lun | [VirtioScsiLun](#opi-storage-v1-VirtioScsiLun) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-VirtioScsiLunUpdateResponse"></a>
+
+### VirtioScsiLunUpdateResponse
 Intentionally empty.
 
 
@@ -1169,7 +1556,7 @@ Intentionally empty.
 <a name="opi-storage-v1-VirtioBlkService"></a>
 
 ### VirtioBlkService
-TODO: Virtio-blk
+
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -1179,6 +1566,36 @@ TODO: Virtio-blk
 | VirtioBlkList | [VirtioBlkListRequest](#opi-storage-v1-VirtioBlkListRequest) | [VirtioBlkListResponse](#opi-storage-v1-VirtioBlkListResponse) |  |
 | VirtioBlkGet | [VirtioBlkGetRequest](#opi-storage-v1-VirtioBlkGetRequest) | [VirtioBlkGetResponse](#opi-storage-v1-VirtioBlkGetResponse) |  |
 | VirtioBlkStats | [VirtioBlkStatsRequest](#opi-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse) |  |
+
+
+<a name="opi-storage-v1-VirtioScsiControllerService"></a>
+
+### VirtioScsiControllerService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| VirtioScsiControllerCreate | [VirtioScsiControllerCreateRequest](#opi-storage-v1-VirtioScsiControllerCreateRequest) | [VirtioScsiControllerCreateResponse](#opi-storage-v1-VirtioScsiControllerCreateResponse) |  |
+| VirtioScsiControllerDelete | [VirtioScsiControllerDeleteRequest](#opi-storage-v1-VirtioScsiControllerDeleteRequest) | [VirtioScsiControllerDeleteResponse](#opi-storage-v1-VirtioScsiControllerDeleteResponse) |  |
+| VirtioScsiControllerUpdate | [VirtioScsiControllerUpdateRequest](#opi-storage-v1-VirtioScsiControllerUpdateRequest) | [VirtioScsiControllerUpdateResponse](#opi-storage-v1-VirtioScsiControllerUpdateResponse) |  |
+| VirtioScsiControllerList | [VirtioScsiControllerListRequest](#opi-storage-v1-VirtioScsiControllerListRequest) | [VirtioScsiControllerListResponse](#opi-storage-v1-VirtioScsiControllerListResponse) |  |
+| VirtioScsiControllerGet | [VirtioScsiControllerGetRequest](#opi-storage-v1-VirtioScsiControllerGetRequest) | [VirtioScsiControllerGetResponse](#opi-storage-v1-VirtioScsiControllerGetResponse) |  |
+| VirtioScsiControllerStats | [VirtioScsiControllerStatsRequest](#opi-storage-v1-VirtioScsiControllerStatsRequest) | [VirtioScsiControllerStatsResponse](#opi-storage-v1-VirtioScsiControllerStatsResponse) |  |
+
+
+<a name="opi-storage-v1-VirtioScsiLunService"></a>
+
+### VirtioScsiLunService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| VirtioScsiLunCreate | [VirtioScsiLunCreateRequest](#opi-storage-v1-VirtioScsiLunCreateRequest) | [VirtioScsiLunCreateResponse](#opi-storage-v1-VirtioScsiLunCreateResponse) |  |
+| VirtioScsiLunDelete | [VirtioScsiLunDeleteRequest](#opi-storage-v1-VirtioScsiLunDeleteRequest) | [VirtioScsiLunDeleteResponse](#opi-storage-v1-VirtioScsiLunDeleteResponse) |  |
+| VirtioScsiLunUpdate | [VirtioScsiLunUpdateRequest](#opi-storage-v1-VirtioScsiLunUpdateRequest) | [VirtioScsiLunUpdateResponse](#opi-storage-v1-VirtioScsiLunUpdateResponse) |  |
+| VirtioScsiLunList | [VirtioScsiLunListRequest](#opi-storage-v1-VirtioScsiLunListRequest) | [VirtioScsiLunListResponse](#opi-storage-v1-VirtioScsiLunListResponse) |  |
+| VirtioScsiLunGet | [VirtioScsiLunGetRequest](#opi-storage-v1-VirtioScsiLunGetRequest) | [VirtioScsiLunGetResponse](#opi-storage-v1-VirtioScsiLunGetResponse) |  |
+| VirtioScsiLunStats | [VirtioScsiLunStatsRequest](#opi-storage-v1-VirtioScsiLunStatsRequest) | [VirtioScsiLunStatsResponse](#opi-storage-v1-VirtioScsiLunStatsResponse) |  |
 
  
 
