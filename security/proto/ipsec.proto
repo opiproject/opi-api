@@ -19,24 +19,26 @@ service IPsec {
 
 /* Cryptographic algorithm for encryption */
 enum CryptoAlgorithm {
-	NONE_CRYPTO = 0;
-	AES_CBC_128 = 1;
-	AES_CBC_192 = 2;
-	AES_CBC_256 = 3;
-	AES_GCM_128 = 4;
-	AES_GCM_256 = 5;
-	AES_GMAC_128 = 6;
-	AES_GMAC_256 = 7;
+	NONE_CRYPTO  = 0;
+	AES128       = 1;
+	AES192       = 2;
+	AES256       = 3;
+	AES128GCM128 = 4;
+	AES256GCM128 = 5;
+	AES128GMAC   = 6;
+	AES256GMAC   = 7;
 }
 /* Cryptographic algorithm for authentication */
 enum IntegAlgorithm {
 	NONE_INTEG = 0;
-	MD5_96 = 1;
-	SHA1_96 = 2;
-	SHA_256_96 = 3;
-	SHA_256_128 = 4;
-	SHA_384_192 = 5;
-	SHA_512_256 = 6;
+	MD5        = 1;
+	MD5_128    = 2;
+	SHA1       = 3;
+	SHA1_160   = 4;
+	SHA256     = 5;
+	SHA384     = 7;
+	SHA512     = 8;
+	SHA256_96  = 9;
 }
 /* Tunnel mode */
 enum IPsecMode {
