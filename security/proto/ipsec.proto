@@ -40,6 +40,24 @@ enum IntegAlgorithm {
 	SHA512     = 8;
 	SHA256_96  = 9;
 }
+
+/* Diffie Hellman Groups */
+enum DiffieHellmanGroups {
+	NONE_DH_GROUP = 0;
+	MODP768      = 1;
+	MODP1024     = 2;
+	MODP1536     = 3;
+	MODP2048     = 4;
+	MODP3072     = 5;
+	MODP4096     = 6;
+	MODP6144     = 7;
+	MODP8192     = 8;
+	MODP1024S160 = 9;
+	MODP2048S224 = 10;
+	MODP2048S256 = 11;
+	CURVE25519   = 12;
+}
+
 /* Tunnel mode */
 enum IPsecMode {
 	TUNNEL_MODE = 0;
@@ -67,8 +85,10 @@ message TunnelInterfaces {
 		string local_integ_key = 12;
 		string remote_integ_key = 13;
 
+		DiffieHellmanGroups dhgroup = 14;
+
 		/* Tunnel or transport mode */
-		IPsecMode mode = 14;
+		IPsecMode mode = 15;
 
 		/* Extra fields related to interface */
 		bool enabled = 100;
@@ -141,13 +161,15 @@ message SecurityAssociations {
 		IntegAlgorithm integ_alg = 6;
 		string integ_key = 7;
 
-		bool use_esn = 8;          /* Use extended sequence number */
-		bool use_anti_replay = 9;  /* Use anti replay */
+		DiffieHellmanGroups dhgroups = 8;
 
-		string tunnel_src_addr = 10;
-		string tunnel_dst_addr = 11;
+		bool use_esn = 9;          /* Use extended sequence number */
+		bool use_anti_replay = 10;  /* Use anti replay */
 
-		bool enable_udp_encap = 12; /* Enable UDP encapsulation for NAT traversal */
+		string tunnel_src_addr = 11;
+		string tunnel_dst_addr = 12;
+
+		bool enable_udp_encap = 13; /* Enable UDP encapsulation for NAT traversal */
 	}
 	repeated Sa sas = 1;
 }

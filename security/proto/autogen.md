@@ -27,6 +27,7 @@
     - [Uuid](#opi-security-v1-Uuid)
   
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
+    - [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups)
     - [IPsecMode](#opi-security-v1-IPsecMode)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
     - [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol)
@@ -272,6 +273,7 @@ Security Association (SA)
 | crypto_key | [string](#string) |  |  |
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
 | integ_key | [string](#string) |  |  |
+| dhgroups | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
 | use_esn | [bool](#bool) |  | Use extended sequence number |
 | use_anti_replay | [bool](#bool) |  | Use anti replay |
 | tunnel_src_addr | [string](#string) |  |  |
@@ -393,6 +395,7 @@ Tunnel Interfaces
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
 | local_integ_key | [string](#string) |  |  |
 | remote_integ_key | [string](#string) |  |  |
+| dhgroup | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
 | mode | [IPsecMode](#opi-security-v1-IPsecMode) |  | Tunnel or transport mode |
 | enabled | [bool](#bool) |  | Extra fields related to interface |
 | ip_addresses | [string](#string) | repeated |  |
@@ -435,6 +438,29 @@ Cryptographic algorithm for encryption
 | AES256GCM128 | 5 |  |
 | AES128GMAC | 6 |  |
 | AES256GMAC | 7 |  |
+
+
+
+<a name="opi-security-v1-DiffieHellmanGroups"></a>
+
+### DiffieHellmanGroups
+Diffie Hellman Groups
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NONE_DH_GROUP | 0 |  |
+| MODP768 | 1 |  |
+| MODP1024 | 2 |  |
+| MODP1536 | 3 |  |
+| MODP2048 | 4 |  |
+| MODP3072 | 5 |  |
+| MODP4096 | 6 |  |
+| MODP6144 | 7 |  |
+| MODP8192 | 8 |  |
+| MODP1024S160 | 9 |  |
+| MODP2048S224 | 10 |  |
+| MODP2048S256 | 11 |  |
+| CURVE25519 | 12 |  |
 
 
 
