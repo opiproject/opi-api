@@ -6,10 +6,7 @@
 
 ## Overview
 
-OPI subgroup dealing with APIs.
-
----
-The focus of the subgroup is:
+OPI subgroup dealing with APIs.  The focus of the subgroup is:
 
 - Define the object models for each of the components and services on the platform.
   - Define the layering of the capabilities that are abstracted
@@ -17,6 +14,8 @@ The focus of the subgroup is:
   - Discovery and Service Advertisement API
   - Capabilities/Capacity Advertisement API
     - Information such as Processor Cores available, Bandwidth, Memory, etc.
+  - Configuration API
+  - Consumption API for the data connections to the Host Compute
 - Create a Taxonomy for services:
   - [Networking](network/README.md)
   - [Security](security/README.md)
@@ -25,7 +24,12 @@ The focus of the subgroup is:
   - Telemetry
   - [AI/ML](aiml/README.md)
   - others
+- Define recommended industry APIs to be used.
+  - Examples (OVS DB, OpenConfig, VPP)
+- Identify gaps in APIs and recommend extensions for those capabilities
 - Create/Define the Backend/Southbound facing interface APIs
+
+The API subgroup does not want to re-invent any industry standard APIs that already exist.  Standard APIs such as OVS DB, OpenConfig, VPP, etc. that are used for configuration of service capabilities will be reviewed and examined for gaps.  Gaps in capabilities will be addressed either by defining extensions to existing APIs or new APIs will need to be defined (such as Storage APIs).
 
 ---
 
