@@ -395,7 +395,7 @@ Tunnel Interfaces
 | integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
 | local_integ_key | [string](#string) |  |  |
 | remote_integ_key | [string](#string) |  |  |
-| dhgroup | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
+| dhgroups | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
 | mode | [IPsecMode](#opi-security-v1-IPsecMode) |  | Tunnel or transport mode |
 | enabled | [bool](#bool) |  | Extra fields related to interface |
 | ip_addresses | [string](#string) | repeated |  |

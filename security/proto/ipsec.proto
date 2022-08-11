@@ -85,7 +85,7 @@ message TunnelInterfaces {
 		string local_integ_key = 12;
 		string remote_integ_key = 13;
 
-		DiffieHellmanGroups dhgroup = 14;
+		DiffieHellmanGroups dhgroups = 14;
 
 		/* Tunnel or transport mode */
 		IPsecMode mode = 15;
