@@ -4,17 +4,38 @@
 ## Table of Contents
 
 - [ipsec.proto](#ipsec-proto)
-    - [IPsecCreateRequest](#opi-security-v1-IPsecCreateRequest)
-    - [IPsecCreateResponse](#opi-security-v1-IPsecCreateResponse)
-    - [IPsecDeleteRequest](#opi-security-v1-IPsecDeleteRequest)
-    - [IPsecDeleteResponse](#opi-security-v1-IPsecDeleteResponse)
-    - [IPsecGetRequest](#opi-security-v1-IPsecGetRequest)
-    - [IPsecGetResponse](#opi-security-v1-IPsecGetResponse)
-    - [IPsecListRequest](#opi-security-v1-IPsecListRequest)
-    - [IPsecListResponse](#opi-security-v1-IPsecListResponse)
-    - [IPsecListResponse.IPsecData](#opi-security-v1-IPsecListResponse-IPsecData)
-    - [IPsecUpdateRequest](#opi-security-v1-IPsecUpdateRequest)
-    - [IPsecUpdateResponse](#opi-security-v1-IPsecUpdateResponse)
+    - [Addrs](#opi-security-v1-Addrs)
+    - [CaCerts](#opi-security-v1-CaCerts)
+    - [CertPolicy](#opi-security-v1-CertPolicy)
+    - [Certs](#opi-security-v1-Certs)
+    - [Child](#opi-security-v1-Child)
+    - [Connection](#opi-security-v1-Connection)
+    - [Groups](#opi-security-v1-Groups)
+    - [IPsecInitiateReq](#opi-security-v1-IPsecInitiateReq)
+    - [IPsecInitiateResp](#opi-security-v1-IPsecInitiateResp)
+    - [IPsecListCertsReq](#opi-security-v1-IPsecListCertsReq)
+    - [IPsecListCertsResp](#opi-security-v1-IPsecListCertsResp)
+    - [IPsecListConnsReq](#opi-security-v1-IPsecListConnsReq)
+    - [IPsecListConnsResp](#opi-security-v1-IPsecListConnsResp)
+    - [IPsecListSasReq](#opi-security-v1-IPsecListSasReq)
+    - [IPsecListSasResp](#opi-security-v1-IPsecListSasResp)
+    - [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq)
+    - [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp)
+    - [IPsecRekeyReq](#opi-security-v1-IPsecRekeyReq)
+    - [IPsecRekeyResp](#opi-security-v1-IPsecRekeyResp)
+    - [IPsecStatsReq](#opi-security-v1-IPsecStatsReq)
+    - [IPsecStatsResp](#opi-security-v1-IPsecStatsResp)
+    - [IPsecTerminateReq](#opi-security-v1-IPsecTerminateReq)
+    - [IPsecTerminateResp](#opi-security-v1-IPsecTerminateResp)
+    - [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq)
+    - [IPsecUnloadConnResp](#opi-security-v1-IPsecUnloadConnResp)
+    - [IPsecVersionReq](#opi-security-v1-IPsecVersionReq)
+    - [IPsecVersionResp](#opi-security-v1-IPsecVersionResp)
+    - [LocalAuth](#opi-security-v1-LocalAuth)
+    - [Pools](#opi-security-v1-Pools)
+    - [Proposals](#opi-security-v1-Proposals)
+    - [PubKeys](#opi-security-v1-PubKeys)
+    - [RemoteAuth](#opi-security-v1-RemoteAuth)
     - [ResyncRequest](#opi-security-v1-ResyncRequest)
     - [SecurityAssociations](#opi-security-v1-SecurityAssociations)
     - [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa)
@@ -22,14 +43,19 @@
     - [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd)
     - [SecurityPolicyDatabases.Spd.Interface](#opi-security-v1-SecurityPolicyDatabases-Spd-Interface)
     - [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry)
+    - [TrafficSelectors](#opi-security-v1-TrafficSelectors)
+    - [TrafficSelectors.TrafficSelector](#opi-security-v1-TrafficSelectors-TrafficSelector)
     - [TunnelInterfaces](#opi-security-v1-TunnelInterfaces)
     - [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel)
     - [Uuid](#opi-security-v1-Uuid)
+    - [Vips](#opi-security-v1-Vips)
   
+    - [AuthType](#opi-security-v1-AuthType)
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
     - [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups)
     - [IPsecMode](#opi-security-v1-IPsecMode)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
+    - [PseudoRandomFunction](#opi-security-v1-PseudoRandomFunction)
     - [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol)
     - [SecurityPolicyDatabases.Spd.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action)
   
@@ -50,176 +76,540 @@ Major pieces taken from:
 https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
 
 
-<a name="opi-security-v1-IPsecCreateRequest"></a>
+<a name="opi-security-v1-Addrs"></a>
 
-### IPsecCreateRequest
+### Addrs
+IP addresses or hostanmes
 
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| addr | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-CaCerts"></a>
+
+### CaCerts
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| cacert | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-CertPolicy"></a>
+
+### CertPolicy
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| cert_policy | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Certs"></a>
+
+### Certs
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| cert | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Child"></a>
+
+### Child
+Child SA
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Child SA name |
+| ag_proposals | [Proposals](#opi-security-v1-Proposals) |  |  |
+| esp_proposals | [Proposals](#opi-security-v1-Proposals) |  |  |
+| local_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
+| remote_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
+| rekey_time | [uint32](#uint32) |  |  |
+| life_time | [uint32](#uint32) |  |  |
+| rand_time | [uint32](#uint32) |  |  |
+| updown | [string](#string) |  |  |
+| inactivity | [uint32](#uint32) |  |  |
+| mark_in | [uint32](#uint32) |  |  |
+| mark_in_sa | [string](#string) |  |  |
+| mark_out | [uint32](#uint32) |  |  |
+| set_mark_in | [uint32](#uint32) |  |  |
+| set_mark_out | [uint32](#uint32) |  |  |
+| hw_offload | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Connection"></a>
+
+### Connection
+IKE connection
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | connection name |
-| tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
-| policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
-| sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
+| version | [string](#string) |  |  |
+| local_addrs | [Addrs](#opi-security-v1-Addrs) | repeated |  |
+| remote_addrs | [Addrs](#opi-security-v1-Addrs) | repeated |  |
+| local_port | [uint32](#uint32) |  |  |
+| remote_port | [uint32](#uint32) |  |  |
+| proposals | [Proposals](#opi-security-v1-Proposals) |  |  |
+| vips | [Vips](#opi-security-v1-Vips) |  |  |
+| dscp | [uint64](#uint64) |  | We use only the lower 6 bytes |
+| encap | [string](#string) |  |  |
+| mobike | [string](#string) |  |  |
+| dpd_delay | [uint32](#uint32) |  |  |
+| dpd_timeout | [uint32](#uint32) |  |  |
+| reauth_time | [uint32](#uint32) |  |  |
+| rekey_time | [uint32](#uint32) |  |  |
+| pools | [Pools](#opi-security-v1-Pools) |  |  |
+| local_auth | [LocalAuth](#opi-security-v1-LocalAuth) |  |  |
+| remote_auth | [RemoteAuth](#opi-security-v1-RemoteAuth) |  |  |
+| children | [Child](#opi-security-v1-Child) | repeated |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecCreateResponse"></a>
+<a name="opi-security-v1-Groups"></a>
 
-### IPsecCreateResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPsecDeleteRequest"></a>
-
-### IPsecDeleteRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPsecDeleteResponse"></a>
-
-### IPsecDeleteResponse
+### Groups
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
+| group | [string](#string) | repeated |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecGetRequest"></a>
+<a name="opi-security-v1-IPsecInitiateReq"></a>
 
-### IPsecGetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPsecGetResponse"></a>
-
-### IPsecGetResponse
+### IPsecInitiateReq
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
-| tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
-| policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
-| sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
+| child | [string](#string) |  |  |
+| ike | [string](#string) |  |  |
+| timeout | [string](#string) |  |  |
+| loglevel | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecListRequest"></a>
+<a name="opi-security-v1-IPsecInitiateResp"></a>
 
-### IPsecListRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
+### IPsecInitiateResp
+Intentionally empty
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecListResponse"></a>
+<a name="opi-security-v1-IPsecListCertsReq"></a>
 
-### IPsecListResponse
+### IPsecListCertsReq
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ipsec | [IPsecListResponse.IPsecData](#opi-security-v1-IPsecListResponse-IPsecData) | repeated |  |
+| type | [string](#string) |  |  |
+| flag | [string](#string) |  |  |
+| subject | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecListResponse-IPsecData"></a>
+<a name="opi-security-v1-IPsecListCertsResp"></a>
 
-### IPsecListResponse.IPsecData
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
-| policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
-| sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPsecUpdateRequest"></a>
-
-### IPsecUpdateRequest
+### IPsecListCertsResp
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
-| tunnel | [TunnelInterfaces](#opi-security-v1-TunnelInterfaces) |  |  |
-| policy | [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases) |  |  |
-| sa | [SecurityAssociations](#opi-security-v1-SecurityAssociations) |  |  |
+| cert | [Certs](#opi-security-v1-Certs) | repeated |  |
 
 
 
 
 
 
-<a name="opi-security-v1-IPsecUpdateResponse"></a>
+<a name="opi-security-v1-IPsecListConnsReq"></a>
 
-### IPsecUpdateResponse
+### IPsecListConnsReq
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [Uuid](#opi-security-v1-Uuid) |  |  |
+| ike | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecListConnsResp"></a>
+
+### IPsecListConnsResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| connection | [Connection](#opi-security-v1-Connection) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecListSasReq"></a>
+
+### IPsecListSasReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| noblock | [string](#string) |  |  |
+| ike | [string](#string) |  |  |
+| ike_id | [string](#string) |  |  |
+| child | [string](#string) |  |  |
+| child_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecListSasResp"></a>
+
+### IPsecListSasResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| connection | [Connection](#opi-security-v1-Connection) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecLoadConnReq"></a>
+
+### IPsecLoadConnReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| connection | [Connection](#opi-security-v1-Connection) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecLoadConnResp"></a>
+
+### IPsecLoadConnResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecRekeyReq"></a>
+
+### IPsecRekeyReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| child | [string](#string) |  |  |
+| ike | [string](#string) |  |  |
+| child_id | [string](#string) |  |  |
+| ike_id | [string](#string) |  |  |
+| reauth | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecRekeyResp"></a>
+
+### IPsecRekeyResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [string](#string) |  |  |
+| matches | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecStatsReq"></a>
+
+### IPsecStatsReq
+Intentionally empty
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecStatsResp"></a>
+
+### IPsecStatsResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [string](#string) |  | Generic status string for now |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecTerminateReq"></a>
+
+### IPsecTerminateReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| child | [string](#string) |  |  |
+| ike | [string](#string) |  |  |
+| child_id | [string](#string) |  |  |
+| ike_id | [string](#string) |  |  |
+| force | [string](#string) |  |  |
+| timeout | [string](#string) |  |  |
+| loglevel | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecTerminateResp"></a>
+
+### IPsecTerminateResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [string](#string) |  |  |
+| matches | [uint32](#uint32) |  |  |
+| terminated | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecUnloadConnReq"></a>
+
+### IPsecUnloadConnReq
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecUnloadConnResp"></a>
+
+### IPsecUnloadConnResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecVersionReq"></a>
+
+### IPsecVersionReq
+Intentionally empty
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecVersionResp"></a>
+
+### IPsecVersionResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| daemon | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| sysname | [string](#string) |  |  |
+| release | [string](#string) |  |  |
+| machine | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-LocalAuth"></a>
+
+### LocalAuth
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| auth | [AuthType](#opi-security-v1-AuthType) |  |  |
+| id | [string](#string) |  |  |
+| eap_id | [string](#string) |  |  |
+| aaa_id | [string](#string) |  |  |
+| xauth_id | [string](#string) |  |  |
+| certs | [Certs](#opi-security-v1-Certs) |  |  |
+| pubkeys | [PubKeys](#opi-security-v1-PubKeys) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Pools"></a>
+
+### Pools
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pool | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-Proposals"></a>
+
+### Proposals
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| crypto_alg | [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm) | repeated |  |
+| integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) | repeated |  |
+| prf | [PseudoRandomFunction](#opi-security-v1-PseudoRandomFunction) | repeated |  |
+| dhgroups | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-PubKeys"></a>
+
+### PubKeys
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pubkey | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-RemoteAuth"></a>
+
+### RemoteAuth
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| auth | [AuthType](#opi-security-v1-AuthType) |  |  |
+| id | [string](#string) |  |  |
+| eap_id | [string](#string) |  |  |
+| groups | [Groups](#opi-security-v1-Groups) |  |  |
+| cert_policy | [CertPolicy](#opi-security-v1-CertPolicy) |  |  |
+| certs | [Certs](#opi-security-v1-Certs) |  |  |
+| ca_certs | [CaCerts](#opi-security-v1-CaCerts) |  |  |
+| pubkeys | [PubKeys](#opi-security-v1-PubKeys) |  |  |
 
 
 
@@ -359,6 +749,38 @@ Policy Entry
 
 
 
+<a name="opi-security-v1-TrafficSelectors"></a>
+
+### TrafficSelectors
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ts | [TrafficSelectors.TrafficSelector](#opi-security-v1-TrafficSelectors-TrafficSelector) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-TrafficSelectors-TrafficSelector"></a>
+
+### TrafficSelectors.TrafficSelector
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| cidr | [string](#string) |  |  |
+| proto | [string](#string) |  |  |
+| port | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="opi-security-v1-TunnelInterfaces"></a>
 
 ### TunnelInterfaces
@@ -420,7 +842,36 @@ Tunnel Interfaces
 
 
 
+
+<a name="opi-security-v1-Vips"></a>
+
+### Vips
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vip | [string](#string) | repeated |  |
+
+
+
+
+
  
+
+
+<a name="opi-security-v1-AuthType"></a>
+
+### AuthType
+Authentication Type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PUBKEY | 0 |  |
+| PSK | 1 |  |
+| XAUTH | 2 |  |
+| EAP | 3 |  |
+
 
 
 <a name="opi-security-v1-CryptoAlgorithm"></a>
@@ -495,6 +946,24 @@ Cryptographic algorithm for authentication
 
 
 
+<a name="opi-security-v1-PseudoRandomFunction"></a>
+
+### PseudoRandomFunction
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NONE_PRF | 0 |  |
+| PRFMD5 | 1 |  |
+| PRFSHA1 | 2 |  |
+| PRFAESXCBC | 3 |  |
+| PRFAESCMAC | 4 |  |
+| PRFSHA256 | 5 |  |
+| PRFSHA384 | 6 |  |
+| PRFSHA512 | 7 |  |
+
+
+
 <a name="opi-security-v1-SecurityAssociations-Sa-IPsecProtocol"></a>
 
 ### SecurityAssociations.Sa.IPsecProtocol
@@ -531,11 +1000,16 @@ Policy action
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| IPsecCreate | [IPsecCreateRequest](#opi-security-v1-IPsecCreateRequest) | [IPsecCreateResponse](#opi-security-v1-IPsecCreateResponse) |  |
-| IPsecDelete | [IPsecDeleteRequest](#opi-security-v1-IPsecDeleteRequest) | [IPsecDeleteResponse](#opi-security-v1-IPsecDeleteResponse) |  |
-| IPsecUpdate | [IPsecUpdateRequest](#opi-security-v1-IPsecUpdateRequest) | [IPsecUpdateResponse](#opi-security-v1-IPsecUpdateResponse) |  |
-| IPsecList | [IPsecListRequest](#opi-security-v1-IPsecListRequest) | [IPsecListResponse](#opi-security-v1-IPsecListResponse) |  |
-| IPsecGet | [IPsecGetRequest](#opi-security-v1-IPsecGetRequest) | [IPsecGetResponse](#opi-security-v1-IPsecGetResponse) |  |
+| IPsecVersion | [IPsecVersionReq](#opi-security-v1-IPsecVersionReq) | [IPsecVersionResp](#opi-security-v1-IPsecVersionResp) |  |
+| IPsecStats | [IPsecStatsReq](#opi-security-v1-IPsecStatsReq) | [IPsecStatsResp](#opi-security-v1-IPsecStatsResp) |  |
+| IPsecInitiate | [IPsecInitiateReq](#opi-security-v1-IPsecInitiateReq) | [IPsecInitiateResp](#opi-security-v1-IPsecInitiateResp) |  |
+| IPsecTerminate | [IPsecTerminateReq](#opi-security-v1-IPsecTerminateReq) | [IPsecTerminateResp](#opi-security-v1-IPsecTerminateResp) |  |
+| IPsecRekey | [IPsecRekeyReq](#opi-security-v1-IPsecRekeyReq) | [IPsecRekeyResp](#opi-security-v1-IPsecRekeyResp) |  |
+| IPsecListSas | [IPsecListSasReq](#opi-security-v1-IPsecListSasReq) | [IPsecListSasResp](#opi-security-v1-IPsecListSasResp) |  |
+| IPsecListConns | [IPsecListConnsReq](#opi-security-v1-IPsecListConnsReq) | [IPsecListConnsResp](#opi-security-v1-IPsecListConnsResp) |  |
+| IPsecListCerts | [IPsecListCertsReq](#opi-security-v1-IPsecListCertsReq) | [IPsecListCertsResp](#opi-security-v1-IPsecListCertsResp) |  |
+| IPsecLoadConn | [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq) | [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp) |  |
+| IPsecUnloadConn | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) |  |
 
  
 

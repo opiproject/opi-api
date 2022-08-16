@@ -10,11 +10,16 @@ package opi.security.v1;
 option go_package = "github.com/opiproject/opi-api/security/proto";
 
 service IPsec {
-	rpc IPsecCreate (IPsecCreateRequest) returns (IPsecCreateResponse) {}
-	rpc IPsecDelete (IPsecDeleteRequest) returns (IPsecDeleteResponse) {}
-	rpc IPsecUpdate (IPsecUpdateRequest) returns (IPsecUpdateResponse) {}
-	rpc IPsecList   (IPsecListRequest)   returns (IPsecListResponse)   {}
-	rpc IPsecGet    (IPsecGetRequest)    returns (IPsecGetResponse)    {}
+	rpc IPsecVersion (IPsecVersionReq) returns (IPsecVersionResp) {}
+	rpc IPsecStats   (IPsecStatsReq)   returns (IPsecStatsResp)   {}
+	rpc IPsecInitiate (IPsecInitiateReq) returns (IPsecInitiateResp) {}
+	rpc IPsecTerminate (IPsecTerminateReq) returns (IPsecTerminateResp) {}
+	rpc IPsecRekey (IPsecRekeyReq) returns (IPsecRekeyResp) {}
+	rpc IPsecListSas (IPsecListSasReq) returns (IPsecListSasResp) {}
+	rpc IPsecListConns (IPsecListConnsReq) returns (IPsecListConnsResp) {}
+	rpc IPsecListCerts (IPsecListCertsReq) returns (IPsecListCertsResp) {}
+	rpc IPsecLoadConn (IPsecLoadConnReq) returns (IPsecLoadConnResp) {}
+	rpc IPsecUnloadConn (IPsecUnloadConnReq) returns (IPsecUnloadConnReq) {}
 }
 
 /* Cryptographic algorithm for encryption */
@@ -58,10 +63,142 @@ enum DiffieHellmanGroups {
 	CURVE25519   = 12;
 }
 
+enum PseudoRandomFunction {
+	NONE_PRF   = 0;
+	PRFMD5     = 1;
+	PRFSHA1    = 2;
+	PRFAESXCBC = 3;
+	PRFAESCMAC = 4;
+	PRFSHA256  = 5;
+	PRFSHA384  = 6;
+	PRFSHA512  = 7;
+}
+
 /* Tunnel mode */
 enum IPsecMode {
 	TUNNEL_MODE = 0;
 	TRANSPORT_MODE = 1;
+}
+
+/* Authentication Type */
+enum AuthType {
+	PUBKEY = 0;
+	PSK    = 1;
+	XAUTH  = 2;
+	EAP    = 3;
+}
+
+message Proposals {
+	repeated CryptoAlgorithm crypto_alg = 1;
+	repeated IntegAlgorithm integ_alg = 2;
+	repeated PseudoRandomFunction prf = 3;
+	repeated DiffieHellmanGroups dhgroups = 4;
+}
+
+message Vips {
+	repeated string vip = 1;
+}
+
+message Pools {
+	repeated string pool = 1;
+}
+
+message Certs {
+	repeated string cert = 1;
+}
+
+message PubKeys {
+	repeated string pubkey = 1;
+}
+
+message Groups {
+	repeated string group = 1;
+}
+
+message CertPolicy {
+	repeated string cert_policy = 1;
+}
+
+message CaCerts {
+	repeated string cacert = 1;
+}
+
+message LocalAuth {
+	AuthType auth    = 1;
+	string id        = 2;
+	string eap_id    = 3;
+	string aaa_id    = 4;
+	string xauth_id  = 5;
+	Certs certs      = 6;
+	PubKeys pubkeys  = 7;
+}
+
+message RemoteAuth {
+	AuthType auth          = 1;
+	string id              = 2;
+	string eap_id          = 3;
+	Groups groups          = 4;
+	CertPolicy cert_policy = 5;
+	Certs certs            = 6;
+	CaCerts ca_certs       = 7;
+	PubKeys pubkeys        = 8;
+}
+
+message TrafficSelectors {
+	message TrafficSelector {
+		string cidr  = 1;
+		string proto = 2;
+		string port  = 3;
+	}
+	repeated TrafficSelector ts = 1;
+}
+
+/* IP addresses or hostanmes */
+message Addrs {
+	string addr = 1;
+}
+
+/* Child SA */
+message Child {
+	string name                = 1; /* Child SA name */
+	Proposals ag_proposals     = 2;
+	Proposals esp_proposals    = 3;
+	TrafficSelectors local_ts  = 4;
+	TrafficSelectors remote_ts = 5;
+	uint32 rekey_time          = 6;
+	uint32 life_time           = 7;
+	uint32 rand_time           = 8;
+	string updown              = 9;
+	uint32 inactivity          = 10;
+	uint32 mark_in             = 11;
+	string mark_in_sa          = 12;
+	uint32 mark_out            = 13;
+	uint32 set_mark_in         = 14;
+	uint32 set_mark_out        = 15;
+	string hw_offload          = 16;
+}
+
+/* IKE connection */
+message Connection {
+	string name                 = 1; /* connection name */
+	string version              = 2;
+	repeated Addrs local_addrs  = 3;
+	repeated Addrs remote_addrs = 4;
+	uint32 local_port           = 5;
+	uint32 remote_port          = 6;
+	Proposals proposals         = 7;
+	Vips vips                   = 8;
+	uint64 dscp                 = 9; /* We use only the lower 6 bytes */
+	string encap                = 10;
+	string mobike               = 11;
+	uint32 dpd_delay            = 12;
+	uint32 dpd_timeout          = 13;
+	uint32 reauth_time          = 14;
+	uint32 rekey_time           = 15;
+	Pools pools                 = 16;
+	LocalAuth local_auth        = 17;
+	RemoteAuth remote_auth      = 18;
+	repeated Child children     = 19;
 }
 
 /* Tunnel Interfaces */
@@ -184,56 +321,108 @@ message Uuid {
 	string value = 1;
 }
 
-message IPsecCreateRequest {
-	string name = 1; /* connection name */
-	TunnelInterfaces tunnel = 2;
-	SecurityPolicyDatabases policy = 3;
-	SecurityAssociations sa = 4;
+message IPsecVersionReq {
+	/* Intentionally empty */
 }
 
-message IPsecCreateResponse {
-	Uuid id = 1;
+message IPsecVersionResp {
+	string daemon  = 1;
+	string version = 2;
+	string sysname = 3;
+	string release = 4;
+	string machine = 5;
 }
 
-message IPsecDeleteRequest {
-	Uuid id = 1;
+message IPsecStatsReq {
+	/* Intentionally empty */
 }
 
-message IPsecDeleteResponse {
-	Uuid id = 1;
+message IPsecStatsResp {
+	string status = 1; /* Generic status string for now */
 }
 
-message IPsecUpdateRequest {
-	Uuid id = 1;
-	TunnelInterfaces tunnel = 2;
-	SecurityPolicyDatabases policy = 3;
-	SecurityAssociations sa = 4;
+message IPsecInitiateReq {
+	string child    = 1;
+	string ike      = 2;
+	string timeout  = 3;
+	string loglevel = 4;
 }
 
-message IPsecUpdateResponse {
-	Uuid id = 1;
+message IPsecInitiateResp {
+	/* Intentionally empty */
 }
 
-message IPsecListRequest {
-	Uuid id = 1;
+message IPsecTerminateReq {
+	string child    = 1;
+	string ike      = 2;
+	string child_id = 3;
+	string ike_id   = 4;
+	string force    = 5;
+	string timeout  = 6;
+	string loglevel = 7;
 }
 
-message IPsecListResponse {
-	message IPsecData {
-		TunnelInterfaces tunnel = 1;
-		SecurityPolicyDatabases policy = 2;
-		SecurityAssociations sa = 3;
-	}
-	repeated IPsecData ipsec = 1;
+message IPsecTerminateResp {
+	string success    = 1;
+	uint32 matches    = 2;
+	uint32 terminated = 3;
 }
 
-message IPsecGetRequest {
-	Uuid id = 1;
+message IPsecRekeyReq {
+	string child    = 1;
+	string ike      = 2;
+	string child_id = 3;
+	string ike_id   = 4;
+	string reauth   = 5;
 }
 
-message IPsecGetResponse {
-	Uuid id = 1;
-	TunnelInterfaces tunnel = 2;
-	SecurityPolicyDatabases policy = 3;
-	SecurityAssociations sa = 4;
+message IPsecRekeyResp {
+	string success = 1;
+	uint32 matches = 2;
+}
+
+message IPsecListSasReq {
+	string noblock  = 1;
+	string ike      = 2;
+	string ike_id   = 3;
+	string child    = 4;
+	string child_id = 5;
+}
+
+message IPsecListSasResp {
+	repeated Connection connection = 1;
+}
+
+message IPsecListConnsReq {
+	string ike = 1;
+}
+
+message IPsecListConnsResp {
+	repeated Connection connection = 1;
+}
+
+message IPsecListCertsReq {
+	string type    = 1;
+	string flag    = 2;
+	string subject = 3;
+}
+
+message IPsecListCertsResp {
+	repeated Certs cert = 1;
+}
+
+message IPsecLoadConnReq {
+	Connection connection = 1;
+}
+
+message IPsecLoadConnResp {
+	string success = 1;
+}
+
+message IPsecUnloadConnReq {
+	string name = 1;
+}
+
+message IPsecUnloadConnResp {
+	string success = 1;
 }
