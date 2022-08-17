@@ -19,7 +19,7 @@ service IPsec {
 	rpc IPsecListConns (IPsecListConnsReq) returns (IPsecListConnsResp) {}
 	rpc IPsecListCerts (IPsecListCertsReq) returns (IPsecListCertsResp) {}
 	rpc IPsecLoadConn (IPsecLoadConnReq) returns (IPsecLoadConnResp) {}
-	rpc IPsecUnloadConn (IPsecUnloadConnReq) returns (IPsecUnloadConnReq) {}
+	rpc IPsecUnloadConn (IPsecUnloadConnReq) returns (IPsecUnloadConnResp) {}
 }
 
 /* Cryptographic algorithm for encryption */

@@ -1009,7 +1009,7 @@ Policy action
 | IPsecListConns | [IPsecListConnsReq](#opi-security-v1-IPsecListConnsReq) | [IPsecListConnsResp](#opi-security-v1-IPsecListConnsResp) |  |
 | IPsecListCerts | [IPsecListCertsReq](#opi-security-v1-IPsecListCertsReq) | [IPsecListCertsResp](#opi-security-v1-IPsecListCertsResp) |  |
 | IPsecLoadConn | [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq) | [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp) |  |
-| IPsecUnloadConn | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) |  |
+| IPsecUnloadConn | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) | [IPsecUnloadConnResp](#opi-security-v1-IPsecUnloadConnResp) |  |
 
  
 
