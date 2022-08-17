@@ -41,12 +41,40 @@ Actions:
 
 - Agreement on the Objectives for the APIs for Networking, Storage, Security
 
-Upcoming Topics:
+---
+Minutes 8/11/22
 
-- August 11
-  - Storage - goals and deliverables
-  - Marvell - view on API boundary (RPC, Linked Library, etc.) - if ready
-  - Network - Objectives, goals, deliverables
+Agenda:
+
+- Storage - goals and deliverables
+- Marvell - view on API boundary (RPC, Linked Library, etc.) - if ready
+- Network - Objectives, goals, deliverables
+
+Notes:
+
+- Continued discussions around the Control Plane (Configuration)
+
+- Reviewed storage goals and deliverables
+  - Team will review and comment in github site
+  - No comments raised on the initial view
+
+- API boundary for networking presented by Marvell
+- Aligned with the working thinking that multiple API's will need to be recommended to address OVS/OVN, VPP, SONiC and translation layer to map to the underlying SDKs
+- OpenConfig covers many aspects; but will need extensions.
+
+- Discussed whether the Service Chaining is in the OPI Scope or outside of it.  This is likely a question for the TSC.
+
+Actions:
+
+- Define a PoC that can be done with in existing client
+- Define a PR review process that will improve the contribution
+  - Address the needs for multiple timezones to review
+  - Define the mechanisms for Architecture vs editing, bug fixes, etc.
+    - Architecture changes need a longer review cycle
+    - Bug fixes need shorter turn to address issues and additional PRs can be opened
+
+---
+Upcoming Topics:
 
 - August 18
   - Ceph Storage on DPUs - First Agenda Item for 8/18 meeting
