@@ -88,6 +88,33 @@ enum AuthType {
 	EAP    = 3;
 }
 
+/* IKE_SA state */
+enum IkeSaState {
+	CREATED     = 0;
+	CONNECTING  = 1;
+	ESTABLISHED = 2;
+	PASSIVE     = 3;
+	REKEYING    = 4;
+	REKEYED     = 5;
+	DELETING    = 6;
+	DESTROYING  = 7;
+}
+
+/* CHILD_SA state */
+enum ChildSaState {
+	CHILD_CREATED    = 0;
+	CHILD_ROUTED     = 1;
+	CHILD_INSTALLING = 2;
+	CHILD_INSTALLED  = 3;
+	CHILD_UPDATING   = 4;
+	CHILD_REKEYING   = 5;
+	CHILD_REKEYED    = 6;
+	CHILD_RETRYING   = 7;
+	CHILD_DELETING   = 8;
+	CHILD_DELETED    = 9;
+	CHILD_DESTROYING = 10;
+}
+
 message Proposals {
 	repeated CryptoAlgorithm crypto_alg = 1;
 	repeated IntegAlgorithm integ_alg = 2;
@@ -201,122 +228,6 @@ message Connection {
 	repeated Child children     = 19;
 }
 
-/* Tunnel Interfaces */
-message TunnelInterfaces {
-	message Tunnel {
-		string name = 1; /* tunnel name */
-
-		bool esn = 2; /* extended sequence number */
-		bool anti_replay = 3; /* anti replay option */
-
-		string local_ip = 4;
-		string remote_ip = 5;
-		uint32 local_spi = 6;
-		uint32 remote_spi = 7;
-
-		CryptoAlgorithm crypto_alg = 8;
-		string local_crypto_key = 9;
-		string remote_crypto_key = 10;
-
-		IntegAlgorithm integ_alg = 11;
-		string local_integ_key = 12;
-		string remote_integ_key = 13;
-
-		DiffieHellmanGroups dhgroups = 14;
-
-		/* Tunnel or transport mode */
-		IPsecMode mode = 15;
-
-		/* Extra fields related to interface */
-		bool enabled = 100;
-		repeated string ip_addresses = 101;
-		uint32 vrf = 102;
-	}
-	repeated Tunnel tunnels = 1;
-}
-
-/* Security Policy Database (SPD) */
-message SecurityPolicyDatabases {
-	message Spd {
-		string name = 1;
-
-		/* Interface */
-		message Interface {
-			string name = 1;    /* interface name */
-		}
-		repeated Interface interfaces = 2;    /* list of interfaces belonging to this SPD */
-
-		/* Policy Entry */
-		message PolicyEntry {
-			string sa = 1;     /* security association name */
-
-			int32 priority = 2;
-			bool is_outbound = 3;
-
-			string remote_addr_start = 4;
-			string remote_addr_stop = 5;
-			string local_addr_start = 6;
-			string local_addr_stop = 7;
-
-			uint32 protocol = 8;
-
-			uint32 remote_port_start = 9;
-			uint32 remote_port_stop = 10;
-			uint32 local_port_start = 11;
-			uint32 local_port_stop = 12;
-
-			/* Policy action */
-			enum Action {
-				BYPASS = 0;
-				DISCARD = 1;
-				//RESOLVE = 2; // unused in VPP
-				PROTECT = 3;
-			}
-			Action action = 13; /* policy action */
-		}
-		repeated PolicyEntry policy_entries = 3;   /* list of policy entries belonging to this SPD */
-	}
-	repeated Spd spds = 1;  /* list of all SPDs */
-}
-
-/* Security Association (SA) */
-message SecurityAssociations {
-	message Sa {
-		string name = 1;    /* security association name */
-		uint32 spi = 2;     /* security parameter index */
-
-		/* IPsec protocol */
-		enum IPsecProtocol {
-			AH = 0;
-			ESP = 1;
-		}
-		IPsecProtocol protocol = 3;
-
-		CryptoAlgorithm crypto_alg = 4;
-		string crypto_key = 5;
-
-		IntegAlgorithm integ_alg = 6;
-		string integ_key = 7;
-
-		DiffieHellmanGroups dhgroups = 8;
-
-		bool use_esn = 9;          /* Use extended sequence number */
-		bool use_anti_replay = 10;  /* Use anti replay */
-
-		string tunnel_src_addr = 11;
-		string tunnel_dst_addr = 12;
-
-		bool enable_udp_encap = 13; /* Enable UDP encapsulation for NAT traversal */
-	}
-	repeated Sa sas = 1;
-}
-
-message ResyncRequest {
-	repeated TunnelInterfaces.Tunnel tunnels = 1;
-	repeated SecurityPolicyDatabases.Spd spds = 2;
-	repeated SecurityAssociations.Sa sas = 3;
-}
-
 message Uuid {
 	string value = 1;
 }
@@ -390,7 +301,64 @@ message IPsecListSasReq {
 }
 
 message IPsecListSasResp {
-	repeated Connection connection = 1;
+	string name                   = 1; /* IKE_SA name */
+	string uniqueid               = 2;
+	string version                = 3;
+	IkeSaState ikestate           = 4;
+	string local_host             = 5;
+	string local_port             = 6;
+	string local_id               = 7;
+	string remote_host            = 8;
+	string remote_port            = 9;
+	string remote_id              = 10;
+	string remote_xauth_id        = 11;
+	string remote_eap_id          = 12;
+	string initiator              = 13;
+	string initiator_spi          = 14;
+	string responder_spi          = 15;
+	string nat_local              = 16;
+	string nat_remote             = 17;
+	string nat_fake               = 18;
+	string nat_any                = 19;
+	string if_id_in               = 20;
+	string if_id_out              = 21;
+	string encr_alg               = 22;
+	string encr_keysize           = 23;
+	string integ_alg              = 24;
+	string integ_keysize          = 25;
+	string prf_alg                = 26;
+	string dh_group               = 27;
+	string ppk                    = 28;
+	string established            = 29;
+	string rekey_time             = 30;
+	string reauth_time            = 31;
+	repeated string local_vips    = 32;
+	repeated string remote_vips   = 33;
+	repeated string tasks_queued  = 34;
+	repeated string tasks_active  = 35;
+	repeated string tasks_passive = 36;
+	message ListChildSa {
+		string name = 1;
+		string protocol = 2;
+		string encap = 3;
+		string spi_in = 4;
+		string spi_out = 5;
+		string cpi_in = 6;
+		string cpi_out = 7;
+		string mark_in = 8;
+		string mark_mask_in = 9;
+		string mark_out = 10;
+		string mark_mask_out = 11;
+		string if_id_in = 12;
+		string if_id_out = 13;
+		string encr_alg = 14;
+		string encr_keysize = 15;
+		string integ_alg = 16;
+		string integ_keysize = 17;
+		string dh_group = 18;
+		string esn = 19;
+	}
+	repeated ListChildSa childsas = 37;
 }
 
 message IPsecListConnsReq {

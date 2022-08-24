@@ -19,6 +19,7 @@
     - [IPsecListConnsResp](#opi-security-v1-IPsecListConnsResp)
     - [IPsecListSasReq](#opi-security-v1-IPsecListSasReq)
     - [IPsecListSasResp](#opi-security-v1-IPsecListSasResp)
+    - [IPsecListSasResp.ListChildSa](#opi-security-v1-IPsecListSasResp-ListChildSa)
     - [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq)
     - [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp)
     - [IPsecRekeyReq](#opi-security-v1-IPsecRekeyReq)
@@ -36,28 +37,19 @@
     - [Proposals](#opi-security-v1-Proposals)
     - [PubKeys](#opi-security-v1-PubKeys)
     - [RemoteAuth](#opi-security-v1-RemoteAuth)
-    - [ResyncRequest](#opi-security-v1-ResyncRequest)
-    - [SecurityAssociations](#opi-security-v1-SecurityAssociations)
-    - [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa)
-    - [SecurityPolicyDatabases](#opi-security-v1-SecurityPolicyDatabases)
-    - [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd)
-    - [SecurityPolicyDatabases.Spd.Interface](#opi-security-v1-SecurityPolicyDatabases-Spd-Interface)
-    - [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry)
     - [TrafficSelectors](#opi-security-v1-TrafficSelectors)
     - [TrafficSelectors.TrafficSelector](#opi-security-v1-TrafficSelectors-TrafficSelector)
-    - [TunnelInterfaces](#opi-security-v1-TunnelInterfaces)
-    - [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel)
     - [Uuid](#opi-security-v1-Uuid)
     - [Vips](#opi-security-v1-Vips)
   
     - [AuthType](#opi-security-v1-AuthType)
+    - [ChildSaState](#opi-security-v1-ChildSaState)
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
     - [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups)
     - [IPsecMode](#opi-security-v1-IPsecMode)
+    - [IkeSaState](#opi-security-v1-IkeSaState)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
     - [PseudoRandomFunction](#opi-security-v1-PseudoRandomFunction)
-    - [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol)
-    - [SecurityPolicyDatabases.Spd.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action)
   
     - [IPsec](#opi-security-v1-IPsec)
   
@@ -331,7 +323,76 @@ Intentionally empty
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| connection | [Connection](#opi-security-v1-Connection) | repeated |  |
+| name | [string](#string) |  | IKE_SA name |
+| uniqueid | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| ikestate | [IkeSaState](#opi-security-v1-IkeSaState) |  |  |
+| local_host | [string](#string) |  |  |
+| local_port | [string](#string) |  |  |
+| local_id | [string](#string) |  |  |
+| remote_host | [string](#string) |  |  |
+| remote_port | [string](#string) |  |  |
+| remote_id | [string](#string) |  |  |
+| remote_xauth_id | [string](#string) |  |  |
+| remote_eap_id | [string](#string) |  |  |
+| initiator | [string](#string) |  |  |
+| initiator_spi | [string](#string) |  |  |
+| responder_spi | [string](#string) |  |  |
+| nat_local | [string](#string) |  |  |
+| nat_remote | [string](#string) |  |  |
+| nat_fake | [string](#string) |  |  |
+| nat_any | [string](#string) |  |  |
+| if_id_in | [string](#string) |  |  |
+| if_id_out | [string](#string) |  |  |
+| encr_alg | [string](#string) |  |  |
+| encr_keysize | [string](#string) |  |  |
+| integ_alg | [string](#string) |  |  |
+| integ_keysize | [string](#string) |  |  |
+| prf_alg | [string](#string) |  |  |
+| dh_group | [string](#string) |  |  |
+| ppk | [string](#string) |  |  |
+| established | [string](#string) |  |  |
+| rekey_time | [string](#string) |  |  |
+| reauth_time | [string](#string) |  |  |
+| local_vips | [string](#string) | repeated |  |
+| remote_vips | [string](#string) | repeated |  |
+| tasks_queued | [string](#string) | repeated |  |
+| tasks_active | [string](#string) | repeated |  |
+| tasks_passive | [string](#string) | repeated |  |
+| childsas | [IPsecListSasResp.ListChildSa](#opi-security-v1-IPsecListSasResp-ListChildSa) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-v1-IPsecListSasResp-ListChildSa"></a>
+
+### IPsecListSasResp.ListChildSa
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| protocol | [string](#string) |  |  |
+| encap | [string](#string) |  |  |
+| spi_in | [string](#string) |  |  |
+| spi_out | [string](#string) |  |  |
+| cpi_in | [string](#string) |  |  |
+| cpi_out | [string](#string) |  |  |
+| mark_in | [string](#string) |  |  |
+| mark_mask_in | [string](#string) |  |  |
+| mark_out | [string](#string) |  |  |
+| mark_mask_out | [string](#string) |  |  |
+| if_id_in | [string](#string) |  |  |
+| if_id_out | [string](#string) |  |  |
+| encr_alg | [string](#string) |  |  |
+| encr_keysize | [string](#string) |  |  |
+| integ_alg | [string](#string) |  |  |
+| integ_keysize | [string](#string) |  |  |
+| dh_group | [string](#string) |  |  |
+| esn | [string](#string) |  |  |
 
 
 
@@ -616,139 +677,6 @@ Intentionally empty
 
 
 
-<a name="opi-security-v1-ResyncRequest"></a>
-
-### ResyncRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tunnels | [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel) | repeated |  |
-| spds | [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd) | repeated |  |
-| sas | [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa) | repeated |  |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityAssociations"></a>
-
-### SecurityAssociations
-Security Association (SA)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sas | [SecurityAssociations.Sa](#opi-security-v1-SecurityAssociations-Sa) | repeated |  |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityAssociations-Sa"></a>
-
-### SecurityAssociations.Sa
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | security association name |
-| spi | [uint32](#uint32) |  | security parameter index |
-| protocol | [SecurityAssociations.Sa.IPsecProtocol](#opi-security-v1-SecurityAssociations-Sa-IPsecProtocol) |  |  |
-| crypto_alg | [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm) |  |  |
-| crypto_key | [string](#string) |  |  |
-| integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
-| integ_key | [string](#string) |  |  |
-| dhgroups | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
-| use_esn | [bool](#bool) |  | Use extended sequence number |
-| use_anti_replay | [bool](#bool) |  | Use anti replay |
-| tunnel_src_addr | [string](#string) |  |  |
-| tunnel_dst_addr | [string](#string) |  |  |
-| enable_udp_encap | [bool](#bool) |  | Enable UDP encapsulation for NAT traversal |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityPolicyDatabases"></a>
-
-### SecurityPolicyDatabases
-Security Policy Database (SPD)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| spds | [SecurityPolicyDatabases.Spd](#opi-security-v1-SecurityPolicyDatabases-Spd) | repeated | list of all SPDs |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityPolicyDatabases-Spd"></a>
-
-### SecurityPolicyDatabases.Spd
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| interfaces | [SecurityPolicyDatabases.Spd.Interface](#opi-security-v1-SecurityPolicyDatabases-Spd-Interface) | repeated | list of interfaces belonging to this SPD |
-| policy_entries | [SecurityPolicyDatabases.Spd.PolicyEntry](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry) | repeated | list of policy entries belonging to this SPD |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityPolicyDatabases-Spd-Interface"></a>
-
-### SecurityPolicyDatabases.Spd.Interface
-Interface
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | interface name |
-
-
-
-
-
-
-<a name="opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry"></a>
-
-### SecurityPolicyDatabases.Spd.PolicyEntry
-Policy Entry
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sa | [string](#string) |  | security association name |
-| priority | [int32](#int32) |  |  |
-| is_outbound | [bool](#bool) |  |  |
-| remote_addr_start | [string](#string) |  |  |
-| remote_addr_stop | [string](#string) |  |  |
-| local_addr_start | [string](#string) |  |  |
-| local_addr_stop | [string](#string) |  |  |
-| protocol | [uint32](#uint32) |  |  |
-| remote_port_start | [uint32](#uint32) |  |  |
-| remote_port_stop | [uint32](#uint32) |  |  |
-| local_port_start | [uint32](#uint32) |  |  |
-| local_port_stop | [uint32](#uint32) |  |  |
-| action | [SecurityPolicyDatabases.Spd.PolicyEntry.Action](#opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action) |  | policy action |
-
-
-
-
-
-
 <a name="opi-security-v1-TrafficSelectors"></a>
 
 ### TrafficSelectors
@@ -775,53 +703,6 @@ Policy Entry
 | cidr | [string](#string) |  |  |
 | proto | [string](#string) |  |  |
 | port | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-TunnelInterfaces"></a>
-
-### TunnelInterfaces
-Tunnel Interfaces
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tunnels | [TunnelInterfaces.Tunnel](#opi-security-v1-TunnelInterfaces-Tunnel) | repeated |  |
-
-
-
-
-
-
-<a name="opi-security-v1-TunnelInterfaces-Tunnel"></a>
-
-### TunnelInterfaces.Tunnel
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | tunnel name |
-| esn | [bool](#bool) |  | extended sequence number |
-| anti_replay | [bool](#bool) |  | anti replay option |
-| local_ip | [string](#string) |  |  |
-| remote_ip | [string](#string) |  |  |
-| local_spi | [uint32](#uint32) |  |  |
-| remote_spi | [uint32](#uint32) |  |  |
-| crypto_alg | [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm) |  |  |
-| local_crypto_key | [string](#string) |  |  |
-| remote_crypto_key | [string](#string) |  |  |
-| integ_alg | [IntegAlgorithm](#opi-security-v1-IntegAlgorithm) |  |  |
-| local_integ_key | [string](#string) |  |  |
-| remote_integ_key | [string](#string) |  |  |
-| dhgroups | [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups) |  |  |
-| mode | [IPsecMode](#opi-security-v1-IPsecMode) |  | Tunnel or transport mode |
-| enabled | [bool](#bool) |  | Extra fields related to interface |
-| ip_addresses | [string](#string) | repeated |  |
-| vrf | [uint32](#uint32) |  |  |
 
 
 
@@ -871,6 +752,27 @@ Authentication Type
 | PSK | 1 |  |
 | XAUTH | 2 |  |
 | EAP | 3 |  |
+
+
+
+<a name="opi-security-v1-ChildSaState"></a>
+
+### ChildSaState
+CHILD_SA state
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CHILD_CREATED | 0 |  |
+| CHILD_ROUTED | 1 |  |
+| CHILD_INSTALLING | 2 |  |
+| CHILD_INSTALLED | 3 |  |
+| CHILD_UPDATING | 4 |  |
+| CHILD_REKEYING | 5 |  |
+| CHILD_REKEYED | 6 |  |
+| CHILD_RETRYING | 7 |  |
+| CHILD_DELETING | 8 |  |
+| CHILD_DELETED | 9 |  |
+| CHILD_DESTROYING | 10 |  |
 
 
 
@@ -927,6 +829,24 @@ Tunnel mode
 
 
 
+<a name="opi-security-v1-IkeSaState"></a>
+
+### IkeSaState
+IKE_SA state
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CREATED | 0 |  |
+| CONNECTING | 1 |  |
+| ESTABLISHED | 2 |  |
+| PASSIVE | 3 |  |
+| REKEYING | 4 |  |
+| REKEYED | 5 |  |
+| DELETING | 6 |  |
+| DESTROYING | 7 |  |
+
+
+
 <a name="opi-security-v1-IntegAlgorithm"></a>
 
 ### IntegAlgorithm
@@ -961,31 +881,6 @@ Cryptographic algorithm for authentication
 | PRFSHA256 | 5 |  |
 | PRFSHA384 | 6 |  |
 | PRFSHA512 | 7 |  |
-
-
-
-<a name="opi-security-v1-SecurityAssociations-Sa-IPsecProtocol"></a>
-
-### SecurityAssociations.Sa.IPsecProtocol
-IPsec protocol
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AH | 0 |  |
-| ESP | 1 |  |
-
-
-
-<a name="opi-security-v1-SecurityPolicyDatabases-Spd-PolicyEntry-Action"></a>
-
-### SecurityPolicyDatabases.Spd.PolicyEntry.Action
-Policy action
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| BYPASS | 0 |  |
-| DISCARD | 1 |  |
-| PROTECT | 3 | RESOLVE = 2; // unused in VPP |
 
 
  
