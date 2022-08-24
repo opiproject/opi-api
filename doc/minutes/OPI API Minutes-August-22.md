@@ -74,7 +74,37 @@ Actions:
     - Bug fixes need shorter turn to address issues and additional PRs can be opened
 
 ---
+Minutes 8/18/22
+
+Agenda:
+
+- Ceph Storage Overview
+
+Notes:
+
+- Good general overview on Ceph storage provided by Redhat.  Thanks to Sam for providing the overview.
+
+- Revisited the Networking API discussions
+  - Configuration API
+    - The ability to support programmability of the API was discussed as this may need to be considered when looking at the network pipelines that are supported with P4 solutions.
+      - PNA (P4 Network Architecture) support considerations.
+    - Programmable support with Standard Device Usage needs to be kept in the view given the number of various network configuration APIs
+
+    - An action was taken to develop a matrix of the capabilities and the existing APIs for configuration
+    - Fast Path vs Slow Path need to be taken into account
+      - Fast path would include items such as routing updates, etc. that need quick response
+
+    - Performance need to be kept in mind with any of the configuration API functions.
+  
+  - Consumption API
+    - Pipeline for the traffic needs to be separate.
+
+Actions:
+
+- Need to create a Matrix of the available APIs (OpenConfic, OVS DB, VPP, Cyborg, etc) and the configuration capabilities - Mark to work initial cut
+
+---
 Upcoming Topics:
 
-- August 18
-  - Ceph Storage on DPUs - First Agenda Item for 8/18 meeting
+- August 25
+  - TBD
