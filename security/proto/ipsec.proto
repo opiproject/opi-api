@@ -300,7 +300,29 @@ message IPsecListSasReq {
 	string child_id = 5;
 }
 
-message IPsecListSasResp {
+message ListChildSa {
+	string name = 1;
+	string protocol = 2;
+	string encap = 3;
+	string spi_in = 4;
+	string spi_out = 5;
+	string cpi_in = 6;
+	string cpi_out = 7;
+	string mark_in = 8;
+	string mark_mask_in = 9;
+	string mark_out = 10;
+	string mark_mask_out = 11;
+	string if_id_in = 12;
+	string if_id_out = 13;
+	string encr_alg = 14;
+	string encr_keysize = 15;
+	string integ_alg = 16;
+	string integ_keysize = 17;
+	string dh_group = 18;
+	string esn = 19;
+}
+
+message ListIkeSa {
 	string name                   = 1; /* IKE_SA name */
 	string uniqueid               = 2;
 	string version                = 3;
@@ -337,28 +359,11 @@ message IPsecListSasResp {
 	repeated string tasks_queued  = 34;
 	repeated string tasks_active  = 35;
 	repeated string tasks_passive = 36;
-	message ListChildSa {
-		string name = 1;
-		string protocol = 2;
-		string encap = 3;
-		string spi_in = 4;
-		string spi_out = 5;
-		string cpi_in = 6;
-		string cpi_out = 7;
-		string mark_in = 8;
-		string mark_mask_in = 9;
-		string mark_out = 10;
-		string mark_mask_out = 11;
-		string if_id_in = 12;
-		string if_id_out = 13;
-		string encr_alg = 14;
-		string encr_keysize = 15;
-		string integ_alg = 16;
-		string integ_keysize = 17;
-		string dh_group = 18;
-		string esn = 19;
-	}
 	repeated ListChildSa childsas = 37;
+}
+
+message IPsecListSasResp {
+	repeated ListIkeSa ikesas = 1;
 }
 
 message IPsecListConnsReq {

@@ -19,7 +19,6 @@
     - [IPsecListConnsResp](#opi-security-v1-IPsecListConnsResp)
     - [IPsecListSasReq](#opi-security-v1-IPsecListSasReq)
     - [IPsecListSasResp](#opi-security-v1-IPsecListSasResp)
-    - [IPsecListSasResp.ListChildSa](#opi-security-v1-IPsecListSasResp-ListChildSa)
     - [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq)
     - [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp)
     - [IPsecRekeyReq](#opi-security-v1-IPsecRekeyReq)
@@ -32,6 +31,8 @@
     - [IPsecUnloadConnResp](#opi-security-v1-IPsecUnloadConnResp)
     - [IPsecVersionReq](#opi-security-v1-IPsecVersionReq)
     - [IPsecVersionResp](#opi-security-v1-IPsecVersionResp)
+    - [ListChildSa](#opi-security-v1-ListChildSa)
+    - [ListIkeSa](#opi-security-v1-ListIkeSa)
     - [LocalAuth](#opi-security-v1-LocalAuth)
     - [Pools](#opi-security-v1-Pools)
     - [Proposals](#opi-security-v1-Proposals)
@@ -323,76 +324,7 @@ Intentionally empty
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | IKE_SA name |
-| uniqueid | [string](#string) |  |  |
-| version | [string](#string) |  |  |
-| ikestate | [IkeSaState](#opi-security-v1-IkeSaState) |  |  |
-| local_host | [string](#string) |  |  |
-| local_port | [string](#string) |  |  |
-| local_id | [string](#string) |  |  |
-| remote_host | [string](#string) |  |  |
-| remote_port | [string](#string) |  |  |
-| remote_id | [string](#string) |  |  |
-| remote_xauth_id | [string](#string) |  |  |
-| remote_eap_id | [string](#string) |  |  |
-| initiator | [string](#string) |  |  |
-| initiator_spi | [string](#string) |  |  |
-| responder_spi | [string](#string) |  |  |
-| nat_local | [string](#string) |  |  |
-| nat_remote | [string](#string) |  |  |
-| nat_fake | [string](#string) |  |  |
-| nat_any | [string](#string) |  |  |
-| if_id_in | [string](#string) |  |  |
-| if_id_out | [string](#string) |  |  |
-| encr_alg | [string](#string) |  |  |
-| encr_keysize | [string](#string) |  |  |
-| integ_alg | [string](#string) |  |  |
-| integ_keysize | [string](#string) |  |  |
-| prf_alg | [string](#string) |  |  |
-| dh_group | [string](#string) |  |  |
-| ppk | [string](#string) |  |  |
-| established | [string](#string) |  |  |
-| rekey_time | [string](#string) |  |  |
-| reauth_time | [string](#string) |  |  |
-| local_vips | [string](#string) | repeated |  |
-| remote_vips | [string](#string) | repeated |  |
-| tasks_queued | [string](#string) | repeated |  |
-| tasks_active | [string](#string) | repeated |  |
-| tasks_passive | [string](#string) | repeated |  |
-| childsas | [IPsecListSasResp.ListChildSa](#opi-security-v1-IPsecListSasResp-ListChildSa) | repeated |  |
-
-
-
-
-
-
-<a name="opi-security-v1-IPsecListSasResp-ListChildSa"></a>
-
-### IPsecListSasResp.ListChildSa
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| protocol | [string](#string) |  |  |
-| encap | [string](#string) |  |  |
-| spi_in | [string](#string) |  |  |
-| spi_out | [string](#string) |  |  |
-| cpi_in | [string](#string) |  |  |
-| cpi_out | [string](#string) |  |  |
-| mark_in | [string](#string) |  |  |
-| mark_mask_in | [string](#string) |  |  |
-| mark_out | [string](#string) |  |  |
-| mark_mask_out | [string](#string) |  |  |
-| if_id_in | [string](#string) |  |  |
-| if_id_out | [string](#string) |  |  |
-| encr_alg | [string](#string) |  |  |
-| encr_keysize | [string](#string) |  |  |
-| integ_alg | [string](#string) |  |  |
-| integ_keysize | [string](#string) |  |  |
-| dh_group | [string](#string) |  |  |
-| esn | [string](#string) |  |  |
+| ikesas | [ListIkeSa](#opi-security-v1-ListIkeSa) | repeated |  |
 
 
 
@@ -580,6 +512,90 @@ Intentionally empty
 | sysname | [string](#string) |  |  |
 | release | [string](#string) |  |  |
 | machine | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-ListChildSa"></a>
+
+### ListChildSa
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| protocol | [string](#string) |  |  |
+| encap | [string](#string) |  |  |
+| spi_in | [string](#string) |  |  |
+| spi_out | [string](#string) |  |  |
+| cpi_in | [string](#string) |  |  |
+| cpi_out | [string](#string) |  |  |
+| mark_in | [string](#string) |  |  |
+| mark_mask_in | [string](#string) |  |  |
+| mark_out | [string](#string) |  |  |
+| mark_mask_out | [string](#string) |  |  |
+| if_id_in | [string](#string) |  |  |
+| if_id_out | [string](#string) |  |  |
+| encr_alg | [string](#string) |  |  |
+| encr_keysize | [string](#string) |  |  |
+| integ_alg | [string](#string) |  |  |
+| integ_keysize | [string](#string) |  |  |
+| dh_group | [string](#string) |  |  |
+| esn | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-ListIkeSa"></a>
+
+### ListIkeSa
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | IKE_SA name |
+| uniqueid | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| ikestate | [IkeSaState](#opi-security-v1-IkeSaState) |  |  |
+| local_host | [string](#string) |  |  |
+| local_port | [string](#string) |  |  |
+| local_id | [string](#string) |  |  |
+| remote_host | [string](#string) |  |  |
+| remote_port | [string](#string) |  |  |
+| remote_id | [string](#string) |  |  |
+| remote_xauth_id | [string](#string) |  |  |
+| remote_eap_id | [string](#string) |  |  |
+| initiator | [string](#string) |  |  |
+| initiator_spi | [string](#string) |  |  |
+| responder_spi | [string](#string) |  |  |
+| nat_local | [string](#string) |  |  |
+| nat_remote | [string](#string) |  |  |
+| nat_fake | [string](#string) |  |  |
+| nat_any | [string](#string) |  |  |
+| if_id_in | [string](#string) |  |  |
+| if_id_out | [string](#string) |  |  |
+| encr_alg | [string](#string) |  |  |
+| encr_keysize | [string](#string) |  |  |
+| integ_alg | [string](#string) |  |  |
+| integ_keysize | [string](#string) |  |  |
+| prf_alg | [string](#string) |  |  |
+| dh_group | [string](#string) |  |  |
+| ppk | [string](#string) |  |  |
+| established | [string](#string) |  |  |
+| rekey_time | [string](#string) |  |  |
+| reauth_time | [string](#string) |  |  |
+| local_vips | [string](#string) | repeated |  |
+| remote_vips | [string](#string) | repeated |  |
+| tasks_queued | [string](#string) | repeated |  |
+| tasks_active | [string](#string) | repeated |  |
+| tasks_passive | [string](#string) | repeated |  |
+| childsas | [ListChildSa](#opi-security-v1-ListChildSa) | repeated |  |
 
 
 
