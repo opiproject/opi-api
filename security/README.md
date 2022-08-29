@@ -3,7 +3,7 @@
 ## Documentation for Reference
 
 * [strongSwan VICI Protocol](https://www.strongswan.org/apidoc/md_src_libcharon_plugins_vici_README.html)
-* [vici API](https://github.com/strongswan/strongswan/blob/master/src/libcharon/plugins/vici/README.md)
+* [vici protocol](https://github.com/strongswan/strongswan/blob/master/src/libcharon/plugins/vici/README.md)
 * [govici](https://github.com/strongswan/govici)
 
 ## Terminology
@@ -31,7 +31,7 @@ even more specifically. currently on the IPsec portion of that API.
 The OPI Security APIs are currently focusing on implementing an IPsec API which
 maps on top of the [strongSwan](https://www.strongswan.org)
 [vici Plugin](https://docs.strongswan.org/docs/5.9/plugins/vici.html). For
-more details on the vici API, you can look at the strongSwan documentation
+more details on the vici protocol, you can look at the strongSwan documentation
 found [here](https://github.com/strongswan/strongswan/blob/master/src/libcharon/plugins/vici/README.md).
 
 The architecture is seen in the diagram below.
