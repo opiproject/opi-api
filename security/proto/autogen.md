@@ -35,7 +35,6 @@
     - [ListChild](#opi-security-v1-ListChild)
     - [ListChildSa](#opi-security-v1-ListChildSa)
     - [ListConnAuth](#opi-security-v1-ListConnAuth)
-    - [ListConnLocalAuth](#opi-security-v1-ListConnLocalAuth)
     - [ListConnResp](#opi-security-v1-ListConnResp)
     - [ListIkeSa](#opi-security-v1-ListIkeSa)
     - [LocalAuth](#opi-security-v1-LocalAuth)
@@ -297,7 +296,7 @@ Intentionally empty
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| connection | [Connection](#opi-security-v1-Connection) | repeated |  |
+| connection | [ListConnResp](#opi-security-v1-ListConnResp) | repeated |  |
 
 
 
@@ -625,16 +624,6 @@ list-cert
 | group | [Groups](#opi-security-v1-Groups) |  |  |
 | certs | [Certs](#opi-security-v1-Certs) |  |  |
 | cacerts | [CaCerts](#opi-security-v1-CaCerts) |  |  |
-
-
-
-
-
-
-<a name="opi-security-v1-ListConnLocalAuth"></a>
-
-### ListConnLocalAuth
-
 
 
 

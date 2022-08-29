@@ -387,9 +387,6 @@ message IPsecListConnsReq {
 	string ike = 1;
 }
 
-message ListConnLocalAuth {
-}
-
 message ListConnAuth {
 	string  class      = 1;
 	string  eaptype    = 2;
@@ -438,7 +435,7 @@ message ListConnResp {
 }
 
 message IPsecListConnsResp {
-	repeated Connection connection = 1;
+	repeated ListConnResp connection = 1;
 }
 
 message IPsecListCertsReq {
