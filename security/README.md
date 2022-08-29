@@ -40,8 +40,3 @@ The architecture is seen in the diagram below.
 
 The idea here is that DPU and IPU vendors will implement strongSwan plugins to
 offload the tunnels into hardware.
-
-## OPI Security API Spec
-
-The [Security Spec](security-spec.md) is the best place for up to date information on the OPI
-Security API.
