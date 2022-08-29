@@ -618,10 +618,12 @@ list-cert
 | xauth | [string](#string) |  |  |
 | revocation | [string](#string) |  |  |
 | id | [string](#string) |  |  |
+| ca_id | [string](#string) |  |  |
 | aaa_id | [string](#string) |  |  |
 | eap_id | [string](#string) |  |  |
 | xauth_id | [string](#string) |  |  |
 | group | [Groups](#opi-security-v1-Groups) |  |  |
+| cert_policy | [CertPolicy](#opi-security-v1-CertPolicy) |  |  |
 | certs | [Certs](#opi-security-v1-Certs) |  |  |
 | cacerts | [CaCerts](#opi-security-v1-CaCerts) |  |  |
 
@@ -649,8 +651,8 @@ list-cert
 | dpd_timeout | [uint32](#uint32) |  |  |
 | ppk | [string](#string) |  |  |
 | ppk_required | [string](#string) |  |  |
-| local_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
-| remote_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
+| local_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) | repeated |  |
+| remote_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) | repeated |  |
 | children | [ListChild](#opi-security-v1-ListChild) | repeated |  |
 
 

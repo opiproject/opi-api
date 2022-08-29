@@ -388,18 +388,20 @@ message IPsecListConnsReq {
 }
 
 message ListConnAuth {
-	string  class      = 1;
-	string  eaptype    = 2;
-	string  eapvendor  = 3;
-	string  xauth      = 4;
-	string  revocation = 5;
-	string  id         = 6;
-	string  aaa_id     = 7;
-	string  eap_id     = 8;
-	string  xauth_id   = 9;
-	Groups  group      = 10;
-	Certs   certs      = 11;
-	CaCerts cacerts    = 12;
+	string  class          = 1;
+	string  eaptype        = 2;
+	string  eapvendor      = 3;
+	string  xauth          = 4;
+	string  revocation     = 5;
+	string  id             = 6;
+	string  ca_id          = 7;
+	string  aaa_id         = 8;
+	string  eap_id         = 9;
+	string  xauth_id       = 10;
+	Groups  group          = 11;
+	CertPolicy cert_policy = 12;
+	Certs   certs          = 13;
+	CaCerts cacerts        = 14;
 }
 
 message ListChild {
@@ -418,20 +420,20 @@ message ListChild {
 }
 
 message ListConnResp {
-	string name                 = 1; /* Connection name */
-	repeated Addrs local_addrs  = 2;
-	repeated Addrs remote_addrs = 3;
-	string version              = 4;
-	uint32 reauth_time          = 5;
-	uint32 rekey_time           = 6;
-	string unique               = 7;
-	uint32 dpd_delay            = 8;
-	uint32 dpd_timeout          = 9;
-	string ppk                  = 10;
-	string ppk_required         = 11;
-	ListConnAuth local_auth     = 12;
-	ListConnAuth remote_auth    = 13;
-	repeated ListChild children = 14;
+	string name                       = 1; /* Connection name */
+	repeated Addrs local_addrs        = 2;
+	repeated Addrs remote_addrs       = 3;
+	string version                    = 4;
+	uint32 reauth_time                = 5;
+	uint32 rekey_time                 = 6;
+	string unique                     = 7;
+	uint32 dpd_delay                  = 8;
+	uint32 dpd_timeout                = 9;
+	string ppk                        = 10;
+	string ppk_required               = 11;
+	repeated ListConnAuth local_auth  = 12;
+	repeated ListConnAuth remote_auth = 13;
+	repeated ListChild children       = 14;
 }
 
 message IPsecListConnsResp {
