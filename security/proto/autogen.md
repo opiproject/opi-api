@@ -559,8 +559,13 @@ list-cert
 | label | [string](#string) |  |  |
 | rekey_time | [uint32](#uint32) |  |  |
 | rekey_bytes | [uint32](#uint32) |  |  |
+| rekey_packets | [uint32](#uint32) |  |  |
+| dpd_action | [string](#string) |  |  |
+| close_action | [string](#string) |  |  |
 | local_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
 | remote_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
+| interface | [string](#string) |  |  |
+| priority | [string](#string) |  |  |
 
 
 
@@ -650,6 +655,11 @@ list-cert
 | version | [string](#string) |  |  |
 | reauth_time | [uint32](#uint32) |  |  |
 | rekey_time | [uint32](#uint32) |  |  |
+| unique | [string](#string) |  |  |
+| dpd_delay | [uint32](#uint32) |  |  |
+| dpd_timeout | [uint32](#uint32) |  |  |
+| ppk | [string](#string) |  |  |
+| ppk_required | [string](#string) |  |  |
 | local_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
 | remote_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
 | children | [ListChild](#opi-security-v1-ListChild) | repeated |  |
