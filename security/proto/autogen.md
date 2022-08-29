@@ -31,7 +31,12 @@
     - [IPsecUnloadConnResp](#opi-security-v1-IPsecUnloadConnResp)
     - [IPsecVersionReq](#opi-security-v1-IPsecVersionReq)
     - [IPsecVersionResp](#opi-security-v1-IPsecVersionResp)
+    - [ListCert](#opi-security-v1-ListCert)
+    - [ListChild](#opi-security-v1-ListChild)
     - [ListChildSa](#opi-security-v1-ListChildSa)
+    - [ListConnAuth](#opi-security-v1-ListConnAuth)
+    - [ListConnLocalAuth](#opi-security-v1-ListConnLocalAuth)
+    - [ListConnResp](#opi-security-v1-ListConnResp)
     - [ListIkeSa](#opi-security-v1-ListIkeSa)
     - [LocalAuth](#opi-security-v1-LocalAuth)
     - [Pools](#opi-security-v1-Pools)
@@ -44,6 +49,7 @@
     - [Vips](#opi-security-v1-Vips)
   
     - [AuthType](#opi-security-v1-AuthType)
+    - [CertificateType](#opi-security-v1-CertificateType)
     - [ChildSaState](#opi-security-v1-ChildSaState)
     - [CryptoAlgorithm](#opi-security-v1-CryptoAlgorithm)
     - [DiffieHellmanGroups](#opi-security-v1-DiffieHellmanGroups)
@@ -51,6 +57,7 @@
     - [IkeSaState](#opi-security-v1-IkeSaState)
     - [IntegAlgorithm](#opi-security-v1-IntegAlgorithm)
     - [PseudoRandomFunction](#opi-security-v1-PseudoRandomFunction)
+    - [X509CertificateFlag](#opi-security-v1-X509CertificateFlag)
   
     - [IPsec](#opi-security-v1-IPsec)
   
@@ -260,7 +267,7 @@ Intentionally empty
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| cert | [Certs](#opi-security-v1-Certs) | repeated |  |
+| certs | [ListCert](#opi-security-v1-ListCert) | repeated |  |
 
 
 
@@ -518,6 +525,48 @@ Intentionally empty
 
 
 
+<a name="opi-security-v1-ListCert"></a>
+
+### ListCert
+list-cert
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [CertificateType](#opi-security-v1-CertificateType) |  |  |
+| flag | [X509CertificateFlag](#opi-security-v1-X509CertificateFlag) |  |  |
+| hasprivkey | [string](#string) |  |  |
+| data | [string](#string) |  |  |
+| subject | [string](#string) |  |  |
+| notbefore | [string](#string) |  |  |
+| notafter | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-ListChild"></a>
+
+### ListChild
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Child SA name |
+| mode | [string](#string) |  |  |
+| label | [string](#string) |  |  |
+| rekey_time | [uint32](#uint32) |  |  |
+| rekey_bytes | [uint32](#uint32) |  |  |
+| local_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
+| remote_ts | [TrafficSelectors](#opi-security-v1-TrafficSelectors) |  |  |
+
+
+
+
+
+
 <a name="opi-security-v1-ListChildSa"></a>
 
 ### ListChildSa
@@ -545,6 +594,65 @@ Intentionally empty
 | integ_keysize | [string](#string) |  |  |
 | dh_group | [string](#string) |  |  |
 | esn | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-ListConnAuth"></a>
+
+### ListConnAuth
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| class | [string](#string) |  |  |
+| eaptype | [string](#string) |  |  |
+| eapvendor | [string](#string) |  |  |
+| xauth | [string](#string) |  |  |
+| revocation | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| aaa_id | [string](#string) |  |  |
+| eap_id | [string](#string) |  |  |
+| xauth_id | [string](#string) |  |  |
+| group | [Groups](#opi-security-v1-Groups) |  |  |
+| certs | [Certs](#opi-security-v1-Certs) |  |  |
+| cacerts | [CaCerts](#opi-security-v1-CaCerts) |  |  |
+
+
+
+
+
+
+<a name="opi-security-v1-ListConnLocalAuth"></a>
+
+### ListConnLocalAuth
+
+
+
+
+
+
+
+<a name="opi-security-v1-ListConnResp"></a>
+
+### ListConnResp
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Connection name |
+| local_addrs | [Addrs](#opi-security-v1-Addrs) | repeated |  |
+| remote_addrs | [Addrs](#opi-security-v1-Addrs) | repeated |  |
+| version | [string](#string) |  |  |
+| reauth_time | [uint32](#uint32) |  |  |
+| rekey_time | [uint32](#uint32) |  |  |
+| local_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
+| remote_auth | [ListConnAuth](#opi-security-v1-ListConnAuth) |  |  |
+| children | [ListChild](#opi-security-v1-ListChild) | repeated |  |
 
 
 
@@ -771,6 +879,21 @@ Authentication Type
 
 
 
+<a name="opi-security-v1-CertificateType"></a>
+
+### CertificateType
+Certificate type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CERT_X509 | 0 |  |
+| CERT_X509_AC | 1 |  |
+| CERT_X509_CRL | 2 |  |
+| CERT_OCSP_RESPONSE | 3 |  |
+| CERT_PUBKEY | 4 |  |
+
+
+
 <a name="opi-security-v1-ChildSaState"></a>
 
 ### ChildSaState
@@ -897,6 +1020,20 @@ Cryptographic algorithm for authentication
 | PRFSHA256 | 5 |  |
 | PRFSHA384 | 6 |  |
 | PRFSHA512 | 7 |  |
+
+
+
+<a name="opi-security-v1-X509CertificateFlag"></a>
+
+### X509CertificateFlag
+X.509 certificate flag
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| X509_CERT_FLAG_NONE | 0 |  |
+| X509_CERT_FLAG_CA | 1 |  |
+| X509_CERT_FLAG_AA | 2 |  |
+| X509_CERT_FLAG_OCSP | 3 |  |
 
 
  

@@ -115,6 +115,23 @@ enum ChildSaState {
 	CHILD_DESTROYING = 10;
 }
 
+/* Certificate type */
+enum CertificateType {
+	CERT_X509          = 0;
+	CERT_X509_AC       = 1;
+	CERT_X509_CRL      = 2;
+	CERT_OCSP_RESPONSE = 3;
+	CERT_PUBKEY        = 4;
+}
+
+/* X.509 certificate flag */
+enum X509CertificateFlag {
+	X509_CERT_FLAG_NONE = 0;
+	X509_CERT_FLAG_CA   = 1;
+	X509_CERT_FLAG_AA   = 2;
+	X509_CERT_FLAG_OCSP = 3;
+}
+
 message Proposals {
 	repeated CryptoAlgorithm crypto_alg = 1;
 	repeated IntegAlgorithm integ_alg = 2;
@@ -370,6 +387,46 @@ message IPsecListConnsReq {
 	string ike = 1;
 }
 
+message ListConnLocalAuth {
+}
+
+message ListConnAuth {
+	string  class      = 1;
+	string  eaptype    = 2;
+	string  eapvendor  = 3;
+	string  xauth      = 4;
+	string  revocation = 5;
+	string  id         = 6;
+	string  aaa_id     = 7;
+	string  eap_id     = 8;
+	string  xauth_id   = 9;
+	Groups  group      = 10;
+	Certs   certs      = 11;
+	CaCerts cacerts    = 12;
+}
+
+message ListChild {
+	string name                = 1; /* Child SA name */
+	string mode                = 2;
+	string label               = 3;
+	uint32 rekey_time          = 4;
+	uint32 rekey_bytes         = 5;
+	TrafficSelectors local_ts  = 6;
+	TrafficSelectors remote_ts = 7;
+}
+
+message ListConnResp {
+	string name                 = 1; /* Connection name */
+	repeated Addrs local_addrs  = 2;
+	repeated Addrs remote_addrs = 3;
+	string version              = 4;
+	uint32 reauth_time          = 5;
+	uint32 rekey_time           = 6;
+	ListConnAuth local_auth     = 7;
+	ListConnAuth remote_auth    = 8;
+	repeated ListChild children = 9;
+}
+
 message IPsecListConnsResp {
 	repeated Connection connection = 1;
 }
@@ -380,8 +437,19 @@ message IPsecListCertsReq {
 	string subject = 3;
 }
 
+/* list-cert */
+message ListCert {
+	CertificateType type     = 1;
+	X509CertificateFlag flag = 2;
+	string hasprivkey        = 3;
+	string data              = 4;
+	string subject           = 5;
+	string notbefore         = 6;
+	string notafter          = 7;
+}
+
 message IPsecListCertsResp {
-	repeated Certs cert = 1;
+	repeated ListCert certs = 1;
 }
 
 message IPsecLoadConnReq {
