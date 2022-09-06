@@ -785,7 +785,6 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
 | nqn | [string](#string) |  |  |
 | serial_number | [string](#string) |  |  |
 | model_number | [string](#string) |  |  |
@@ -814,7 +813,12 @@ Intentionally empty.
 <a name="opi-storage-v1-NVMeSubsystemCreateResponse"></a>
 
 ### NVMeSubsystemCreateResponse
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
 
 
 
@@ -829,7 +833,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| nqn | [string](#string) |  |  |
 
 
 
@@ -839,7 +843,12 @@ Intentionally empty.
 <a name="opi-storage-v1-NVMeSubsystemDeleteResponse"></a>
 
 ### NVMeSubsystemDeleteResponse
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [uint32](#uint32) |  |  |
 
 
 
@@ -854,7 +863,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| nqn | [string](#string) |  |  |
 
 
 
@@ -909,7 +918,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| nqn | [string](#string) |  |  |
 
 
 
@@ -924,7 +933,6 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -950,7 +958,12 @@ Intentionally empty.
 <a name="opi-storage-v1-NVMeSubsystemUpdateResponse"></a>
 
 ### NVMeSubsystemUpdateResponse
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [uint32](#uint32) |  |  |
 
 
 
