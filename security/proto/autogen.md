@@ -313,9 +313,9 @@ Intentionally empty
 | ----- | ---- | ----- | ----------- |
 | noblock | [string](#string) |  |  |
 | ike | [string](#string) |  |  |
-| ike_id | [string](#string) |  |  |
+| ike_id | [uint64](#uint64) |  |  |
 | child | [string](#string) |  |  |
-| child_id | [string](#string) |  |  |
+| child_id | [uint64](#uint64) |  |  |
 
 
 
@@ -377,8 +377,8 @@ Intentionally empty
 | ----- | ---- | ----- | ----------- |
 | child | [string](#string) |  |  |
 | ike | [string](#string) |  |  |
-| child_id | [string](#string) |  |  |
-| ike_id | [string](#string) |  |  |
+| child_id | [uint64](#uint64) |  |  |
+| ike_id | [uint64](#uint64) |  |  |
 | reauth | [string](#string) |  |  |
 
 
@@ -437,8 +437,8 @@ Intentionally empty
 | ----- | ---- | ----- | ----------- |
 | child | [string](#string) |  |  |
 | ike | [string](#string) |  |  |
-| child_id | [string](#string) |  |  |
-| ike_id | [string](#string) |  |  |
+| child_id | [uint64](#uint64) |  |  |
+| ike_id | [uint64](#uint64) |  |  |
 | force | [string](#string) |  |  |
 | timeout | [string](#string) |  |  |
 | loglevel | [string](#string) |  |  |

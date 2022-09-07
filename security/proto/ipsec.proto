@@ -283,8 +283,8 @@ message IPsecInitiateResp {
 message IPsecTerminateReq {
 	string child    = 1;
 	string ike      = 2;
-	string child_id = 3;
-	string ike_id   = 4;
+	uint64 child_id = 3;
+	uint64 ike_id   = 4;
 	string force    = 5;
 	string timeout  = 6;
 	string loglevel = 7;
@@ -299,8 +299,8 @@ message IPsecTerminateResp {
 message IPsecRekeyReq {
 	string child    = 1;
 	string ike      = 2;
-	string child_id = 3;
-	string ike_id   = 4;
+	uint64 child_id = 3;
+	uint64 ike_id   = 4;
 	string reauth   = 5;
 }
 
@@ -312,9 +312,9 @@ message IPsecRekeyResp {
 message IPsecListSasReq {
 	string noblock  = 1;
 	string ike      = 2;
-	string ike_id   = 3;
+	uint64 ike_id   = 3;
 	string child    = 4;
-	string child_id = 5;
+	uint64 child_id = 5;
 }
 
 message ListChildSa {
