@@ -60,6 +60,26 @@
   
     - [IPsec](#opi-security-v1-IPsec)
   
+- [openoffload.proto](#openoffload-proto)
+    - [ActionParameters](#opi-security-firewall-v1-ActionParameters)
+    - [AddSessionResponse](#opi-security-firewall-v1-AddSessionResponse)
+    - [SessionId](#opi-security-firewall-v1-SessionId)
+    - [SessionRequest](#opi-security-firewall-v1-SessionRequest)
+    - [SessionRequestArgs](#opi-security-firewall-v1-SessionRequestArgs)
+    - [SessionResponse](#opi-security-firewall-v1-SessionResponse)
+    - [SessionResponseError](#opi-security-firewall-v1-SessionResponseError)
+    - [SessionResponses](#opi-security-firewall-v1-SessionResponses)
+  
+    - [ActionType](#opi-security-firewall-v1-ActionType)
+    - [AddSessionStatus](#opi-security-firewall-v1-AddSessionStatus)
+    - [IpVersion](#opi-security-firewall-v1-IpVersion)
+    - [ProtocolId](#opi-security-firewall-v1-ProtocolId)
+    - [RequestStatus](#opi-security-firewall-v1-RequestStatus)
+    - [SessionCloseCode](#opi-security-firewall-v1-SessionCloseCode)
+    - [SessionState](#opi-security-firewall-v1-SessionState)
+  
+    - [SessionTable](#opi-security-firewall-v1-SessionTable)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -1059,6 +1079,328 @@ X.509 certificate flag
 | IPsecListCerts | [IPsecListCertsReq](#opi-security-v1-IPsecListCertsReq) | [IPsecListCertsResp](#opi-security-v1-IPsecListCertsResp) |  |
 | IPsecLoadConn | [IPsecLoadConnReq](#opi-security-v1-IPsecLoadConnReq) | [IPsecLoadConnResp](#opi-security-v1-IPsecLoadConnResp) |  |
 | IPsecUnloadConn | [IPsecUnloadConnReq](#opi-security-v1-IPsecUnloadConnReq) | [IPsecUnloadConnResp](#opi-security-v1-IPsecUnloadConnResp) |  |
+
+ 
+
+
+
+<a name="openoffload-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## openoffload.proto
+
+
+
+<a name="opi-security-firewall-v1-ActionParameters"></a>
+
+### ActionParameters
+MIRROR and SNOOP require an actionNextHop
+DROP and FORWARD do not have an actionNextHop
+The IPV4 nextHop definition maps to the V4 struct returned by inet_pton whcih is a uint32_t.
+The IPV6 nextHop definition maps to the V6 struct returned by inet_ptoN which is a uint8_t s6_addr[16]
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| actiontype | [ActionType](#opi-security-firewall-v1-ActionType) |  |  |
+| actionnexthop | [uint32](#uint32) |  |  |
+| actionnexthopv6 | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-AddSessionResponse"></a>
+
+### AddSessionResponse
+In v1apha4 the errorstatus was added to act as a bitmask
+of errors for each of the sesssions sent in a stream (max 64).
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| requeststatus | [AddSessionStatus](#opi-security-firewall-v1-AddSessionStatus) |  |  |
+| errorstatus | [uint64](#uint64) |  |  |
+| starttime | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| responseerror | [SessionResponseError](#opi-security-firewall-v1-SessionResponseError) | repeated |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionId"></a>
+
+### SessionId
+should the Application assign the sessionID on AddSession and avoid conflicts
+or have the applications have a mechanism to avoid duplicate sessionIDs across 
+applications since there will be many applications instances to 1 switch
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| session_id | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionRequest"></a>
+
+### SessionRequest
+SessionId is returned by server side upon successful addSession
+The IPV4 definition maps to the V4 struct returned by inet_pton whcih is a uint32_t.
+The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8_t s6_addr[16]
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| session_id | [uint64](#uint64) |  |  |
+| inlif | [int32](#int32) |  |  |
+| outlif | [int32](#int32) |  |  |
+| ipversion | [IpVersion](#opi-security-firewall-v1-IpVersion) |  |  |
+| sourceip | [uint32](#uint32) |  |  |
+| sourceipv6 | [bytes](#bytes) |  |  |
+| sourceport | [uint32](#uint32) |  |  |
+| destinationip | [uint32](#uint32) |  |  |
+| destinationipv6 | [bytes](#bytes) |  |  |
+| destinationport | [uint32](#uint32) |  |  |
+| protocolid | [ProtocolId](#opi-security-firewall-v1-ProtocolId) |  |  |
+| action | [ActionParameters](#opi-security-firewall-v1-ActionParameters) |  |  |
+| cachetimeout | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionRequestArgs"></a>
+
+### SessionRequestArgs
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sessionid | [uint64](#uint64) |  | If SessionId is zero, return all sessions |
+| sessionstate | [SessionState](#opi-security-firewall-v1-SessionState) |  | Filter argument to only return sessions of a given state |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionResponse"></a>
+
+### SessionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sessionid | [uint64](#uint64) |  |  |
+| inpackets | [uint64](#uint64) |  |  |
+| outpackets | [uint64](#uint64) |  |  |
+| inbytes | [uint64](#uint64) |  |  |
+| outbytes | [uint64](#uint64) |  |  |
+| sessionstate | [SessionState](#opi-security-firewall-v1-SessionState) |  |  |
+| sessionclosecode | [SessionCloseCode](#opi-security-firewall-v1-SessionCloseCode) |  |  |
+| requeststatus | [RequestStatus](#opi-security-firewall-v1-RequestStatus) |  |  |
+| starttime | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| endtime | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionResponseError"></a>
+
+### SessionResponseError
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sessionid | [uint64](#uint64) |  |  |
+| errorstatus | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-SessionResponses"></a>
+
+### SessionResponses
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sessioninfo | [SessionResponse](#opi-security-firewall-v1-SessionResponse) | repeated |  |
+| nextkey | [uint64](#uint64) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="opi-security-firewall-v1-ActionType"></a>
+
+### ActionType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _DROP | 0 |  |
+| _FORWARD | 1 |  |
+| _MIRROR | 2 |  |
+| _SNOOP | 3 |  |
+
+
+
+<a name="opi-security-firewall-v1-AddSessionStatus"></a>
+
+### AddSessionStatus
+Errors for adding a session
+If all sessions are successful inserted return _ACCEPTED
+
+If check of session capacity in offload device is insufficient to add all sessions 
+do not insert any sessions and return  _REJECTED_SESSION_TABLE_FULL. It is the 
+responsibility of the client to re-try
+
+If the server is unavailable for some other reason then return _REJECTED_SESSION_TABLE_UNAVAILABLE.
+It is the  responsibility of the client to re-try
+
+All other errors will return _REJECTED with a buit mask of the failed sessions and it is the responsibility
+of the client to address the issues
+
+AddSessionStatus Codes Description
+
+_SESSION_ACCEPTED: Session is accepted by the server and the client performs normal operation
+_SESSION_REJECTED: Session is rejected by the server as the message 
+   is invalid, the client needs to correct the error.
+_SESSION_TABLE_FULL: Session is rejected by the server as its session table is full, 
+   the client needs to backoff until more space is available
+_SESSION_TABLE_UNAVAILABLE: Session is rejected by the server due to an internal error 
+   in the server, the client needs to back off until error is corrected.
+_SESSION_ALREADY_EXISTS: Session is rejected by the the server as it already exists 
+   in the server session table, the client will take corrective action to ensure state is consistent.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _SESSION_ACCEPTED | 0 |  |
+| _SESSION_REJECTED | 1 |  |
+| _SESSION_TABLE_FULL | 2 |  |
+| _SESSION_TABLE_UNAVAILABLE | 3 |  |
+| _SESSION_ALREADY_EXISTS | 4 |  |
+
+
+
+<a name="opi-security-firewall-v1-IpVersion"></a>
+
+### IpVersion
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _IPV4 | 0 |  |
+| _IPV6 | 1 |  |
+
+
+
+<a name="opi-security-firewall-v1-ProtocolId"></a>
+
+### ProtocolId
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _HOPOPT | 0 |  |
+| _TCP | 6 |  |
+| _UDP | 17 |  |
+
+
+
+<a name="opi-security-firewall-v1-RequestStatus"></a>
+
+### RequestStatus
+RequestStatus Codes Description
+
+_ACCEPTED: Normal operation
+_REJECTED: Unknown error in the format of the REQUEST message
+_REJECTED_SESSION_NONEXISTENT: In getSession or deleteSession the server does not have the session
+   in its session table. The client needs to reconcile the system state.
+_REJECTED_SESSION_TABLE_FULL: This should never happen as getClosedSessions, getSession, deleteSession never add sessions.
+_REJECTED_SESSION_ALREADY_EXISTS: This should never happen as getClosedSessions, getSession, deleteSession never add sessions.
+_NO_CLOSED_SESSIONS: When getClosedSessions returns with no closed sessions it will return 0 sessions. There should be no
+   message attached so not sure if this is valid.
+_REJECTED_INTERNAL_ERROR: The server has an internal error and cannot serivce the request.
+   The client must log the error and optionally retry or skip the request.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _ACCEPTED | 0 |  |
+| _REJECTED | 1 |  |
+| _REJECTED_SESSION_NONEXISTENT | 2 |  |
+| _REJECTED_SESSION_TABLE_FULL | 3 |  |
+| _REJECTED_SESSION_ALREADY_EXISTS | 4 |  |
+| _NO_CLOSED_SESSIONS | 5 |  |
+| _REJECTED_INTERNAL_ERROR | 6 |  |
+
+
+
+<a name="opi-security-firewall-v1-SessionCloseCode"></a>
+
+### SessionCloseCode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _NOT_CLOSED | 0 |  |
+| _FINACK | 1 |  |
+| _RST | 2 |  |
+| _TIMEOUT | 3 |  |
+| _UNKNOWN_CLOSE_CODE | 4 |  |
+
+
+
+<a name="opi-security-firewall-v1-SessionState"></a>
+
+### SessionState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| _ESTABLISHED | 0 |  |
+| _CLOSING_1 | 1 |  |
+| _CLOSING_2 | 2 |  |
+| _CLOSED | 3 |  |
+| _UNKNOWN_STATE | 4 |  |
+
+
+ 
+
+ 
+
+
+<a name="opi-security-firewall-v1-SessionTable"></a>
+
+### SessionTable
+The session table was combined with the statistices service
+in v1alpha4 to simplfy the code.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| AddSession | [SessionRequest](#opi-security-firewall-v1-SessionRequest) stream | [AddSessionResponse](#opi-security-firewall-v1-AddSessionResponse) | Adds a session This was changed in v1alpha4 to be a streaming API, for performance reasons. |
+| GetSession | [SessionId](#opi-security-firewall-v1-SessionId) | [SessionResponse](#opi-security-firewall-v1-SessionResponse) | Obtains the session |
+| DeleteSession | [SessionId](#opi-security-firewall-v1-SessionId) | [SessionResponse](#opi-security-firewall-v1-SessionResponse) | Delete a session |
+| GetAllSession | [SessionRequestArgs](#opi-security-firewall-v1-SessionRequestArgs) | [SessionResponses](#opi-security-firewall-v1-SessionResponses) | Stream back a specific session or all current sessions To stream a single session, pass SessionId as zero |
 
  
 
