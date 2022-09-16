@@ -15,12 +15,6 @@ service NVMfRemoteControllerService {
     rpc NVMfRemoteControllerStats  (NVMfRemoteControllerStatsRequest)  returns (NVMfRemoteControllerStatsResponse)  {}
 }
 
-// TODO: iSCSI - for older targets before NVMeoF support
-
-// TODO: NVMe/PCIe - for localy attached devices
-
-// TODO: NULL - for debug
-
 message NVMfRemoteController {
     int64 id = 1;
     NvmeTransportType trtype = 2;
