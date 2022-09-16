@@ -1,0 +1,138 @@
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+
+// Front End (host-facing) APIs.
+
+// Virtio-scsi emulation
+
+service VirtioScsiControllerService {
+    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiControllerCreateResponse) {}
+    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (VirtioScsiControllerDeleteResponse) {}
+    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiControllerUpdateResponse) {}
+    rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
+    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiControllerGetResponse)    {}
+    rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
+}
+
+service VirtioScsiLunService {
+    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLunCreateResponse) {}
+    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (VirtioScsiLunDeleteResponse) {}
+    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLunUpdateResponse) {}
+    rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
+    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLunGetResponse)    {}
+    rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
+}
+
+message VirtioScsiController {
+    int64 id = 1;
+    string name = 2;
+    string pcie_id = 4;
+}
+
+message VirtioScsiLun {
+    int64 id = 1;
+    int64 controller_id = 4;
+    string bdev = 6;
+}
+
+message VirtioScsiControllerCreateRequest {
+    VirtioScsiController controller = 1;
+}
+
+message VirtioScsiControllerCreateResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiControllerDeleteRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioScsiControllerDeleteResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiControllerUpdateRequest {
+    VirtioScsiController controller = 1;
+}
+
+message VirtioScsiControllerUpdateResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiControllerListRequest {
+    // Intentionally empty.
+}
+
+message VirtioScsiControllerListResponse {
+    repeated VirtioScsiController controller = 1;
+}
+
+message VirtioScsiControllerGetRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioScsiControllerGetResponse {
+    VirtioScsiController controller = 1;
+}
+
+message VirtioScsiControllerStatsRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioScsiControllerStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}
+
+message VirtioScsiLunCreateRequest {
+    VirtioScsiLun lun = 1;
+}
+
+message VirtioScsiLunCreateResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiLunDeleteRequest {
+    int64 controller_id = 1;
+    int64 lun_id = 2;
+}
+
+message VirtioScsiLunDeleteResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiLunUpdateRequest {
+    VirtioScsiLun lun = 1;
+}
+
+message VirtioScsiLunUpdateResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiLunListRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioScsiLunListResponse {
+    repeated VirtioScsiLun lun = 1;
+}
+
+message VirtioScsiLunGetRequest {
+    int64 controller_id = 1;
+    int64 lun_id = 2;
+}
+
+message VirtioScsiLunGetResponse {
+    VirtioScsiLun lun = 1;
+}
+
+message VirtioScsiLunStatsRequest {
+    int64 controller_id = 1;
+    int64 lun_id = 2;
+}
+
+message VirtioScsiLunStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}

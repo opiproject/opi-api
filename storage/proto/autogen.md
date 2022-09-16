@@ -24,7 +24,7 @@
   
     - [NVMfRemoteControllerService](#opi-storage-v1-NVMfRemoteControllerService)
   
-- [frontend.proto](#frontend-proto)
+- [frontend-nvme-pcie.proto](#frontend-nvme-pcie-proto)
     - [NVMeController](#opi-storage-v1-NVMeController)
     - [NVMeControllerCreateRequest](#opi-storage-v1-NVMeControllerCreateRequest)
     - [NVMeControllerCreateResponse](#opi-storage-v1-NVMeControllerCreateResponse)
@@ -64,6 +64,12 @@
     - [NVMeSubsystemStatsResponse](#opi-storage-v1-NVMeSubsystemStatsResponse)
     - [NVMeSubsystemUpdateRequest](#opi-storage-v1-NVMeSubsystemUpdateRequest)
     - [NVMeSubsystemUpdateResponse](#opi-storage-v1-NVMeSubsystemUpdateResponse)
+  
+    - [NVMeControllerService](#opi-storage-v1-NVMeControllerService)
+    - [NVMeNamespaceService](#opi-storage-v1-NVMeNamespaceService)
+    - [NVMeSubsystemService](#opi-storage-v1-NVMeSubsystemService)
+  
+- [frontend-virtio-blk.proto](#frontend-virtio-blk-proto)
     - [VirtioBlk](#opi-storage-v1-VirtioBlk)
     - [VirtioBlkCreateRequest](#opi-storage-v1-VirtioBlkCreateRequest)
     - [VirtioBlkCreateResponse](#opi-storage-v1-VirtioBlkCreateResponse)
@@ -77,6 +83,11 @@
     - [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse)
     - [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest)
     - [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse)
+  
+    - [VirtioBlkService](#opi-storage-v1-VirtioBlkService)
+  
+- [frontend-virtio-fs.proto](#frontend-virtio-fs-proto)
+- [frontend-virtio-scsi.proto](#frontend-virtio-scsi-proto)
     - [VirtioScsiController](#opi-storage-v1-VirtioScsiController)
     - [VirtioScsiControllerCreateRequest](#opi-storage-v1-VirtioScsiControllerCreateRequest)
     - [VirtioScsiControllerCreateResponse](#opi-storage-v1-VirtioScsiControllerCreateResponse)
@@ -104,10 +115,6 @@
     - [VirtioScsiLunUpdateRequest](#opi-storage-v1-VirtioScsiLunUpdateRequest)
     - [VirtioScsiLunUpdateResponse](#opi-storage-v1-VirtioScsiLunUpdateResponse)
   
-    - [NVMeControllerService](#opi-storage-v1-NVMeControllerService)
-    - [NVMeNamespaceService](#opi-storage-v1-NVMeNamespaceService)
-    - [NVMeSubsystemService](#opi-storage-v1-NVMeSubsystemService)
-    - [VirtioBlkService](#opi-storage-v1-VirtioBlkService)
     - [VirtioScsiControllerService](#opi-storage-v1-VirtioScsiControllerService)
     - [VirtioScsiLunService](#opi-storage-v1-VirtioScsiLunService)
   
@@ -381,10 +388,10 @@ Intentionally empty.
 
 
 
-<a name="frontend-proto"></a>
+<a name="frontend-nvme-pcie-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## frontend.proto
+## frontend-nvme-pcie.proto
 
 
 
@@ -969,6 +976,67 @@ Intentionally empty.
 
 
 
+ 
+
+ 
+
+ 
+
+
+<a name="opi-storage-v1-NVMeControllerService"></a>
+
+### NVMeControllerService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| NVMeControllerCreate | [NVMeControllerCreateRequest](#opi-storage-v1-NVMeControllerCreateRequest) | [NVMeControllerCreateResponse](#opi-storage-v1-NVMeControllerCreateResponse) |  |
+| NVMeControllerDelete | [NVMeControllerDeleteRequest](#opi-storage-v1-NVMeControllerDeleteRequest) | [NVMeControllerDeleteResponse](#opi-storage-v1-NVMeControllerDeleteResponse) |  |
+| NVMeControllerUpdate | [NVMeControllerUpdateRequest](#opi-storage-v1-NVMeControllerUpdateRequest) | [NVMeControllerUpdateResponse](#opi-storage-v1-NVMeControllerUpdateResponse) |  |
+| NVMeControllerList | [NVMeControllerListRequest](#opi-storage-v1-NVMeControllerListRequest) | [NVMeControllerListResponse](#opi-storage-v1-NVMeControllerListResponse) |  |
+| NVMeControllerGet | [NVMeControllerGetRequest](#opi-storage-v1-NVMeControllerGetRequest) | [NVMeControllerGetResponse](#opi-storage-v1-NVMeControllerGetResponse) |  |
+| NVMeControllerStats | [NVMeControllerStatsRequest](#opi-storage-v1-NVMeControllerStatsRequest) | [NVMeControllerStatsResponse](#opi-storage-v1-NVMeControllerStatsResponse) |  |
+
+
+<a name="opi-storage-v1-NVMeNamespaceService"></a>
+
+### NVMeNamespaceService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| NVMeNamespaceCreate | [NVMeNamespaceCreateRequest](#opi-storage-v1-NVMeNamespaceCreateRequest) | [NVMeNamespaceCreateResponse](#opi-storage-v1-NVMeNamespaceCreateResponse) |  |
+| NVMeNamespaceDelete | [NVMeNamespaceDeleteRequest](#opi-storage-v1-NVMeNamespaceDeleteRequest) | [NVMeNamespaceDeleteResponse](#opi-storage-v1-NVMeNamespaceDeleteResponse) |  |
+| NVMeNamespaceUpdate | [NVMeNamespaceUpdateRequest](#opi-storage-v1-NVMeNamespaceUpdateRequest) | [NVMeNamespaceUpdateResponse](#opi-storage-v1-NVMeNamespaceUpdateResponse) |  |
+| NVMeNamespaceList | [NVMeNamespaceListRequest](#opi-storage-v1-NVMeNamespaceListRequest) | [NVMeNamespaceListResponse](#opi-storage-v1-NVMeNamespaceListResponse) |  |
+| NVMeNamespaceGet | [NVMeNamespaceGetRequest](#opi-storage-v1-NVMeNamespaceGetRequest) | [NVMeNamespaceGetResponse](#opi-storage-v1-NVMeNamespaceGetResponse) |  |
+| NVMeNamespaceStats | [NVMeNamespaceStatsRequest](#opi-storage-v1-NVMeNamespaceStatsRequest) | [NVMeNamespaceStatsResponse](#opi-storage-v1-NVMeNamespaceStatsResponse) |  |
+
+
+<a name="opi-storage-v1-NVMeSubsystemService"></a>
+
+### NVMeSubsystemService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| NVMeSubsystemCreate | [NVMeSubsystemCreateRequest](#opi-storage-v1-NVMeSubsystemCreateRequest) | [NVMeSubsystemCreateResponse](#opi-storage-v1-NVMeSubsystemCreateResponse) |  |
+| NVMeSubsystemDelete | [NVMeSubsystemDeleteRequest](#opi-storage-v1-NVMeSubsystemDeleteRequest) | [NVMeSubsystemDeleteResponse](#opi-storage-v1-NVMeSubsystemDeleteResponse) |  |
+| NVMeSubsystemUpdate | [NVMeSubsystemUpdateRequest](#opi-storage-v1-NVMeSubsystemUpdateRequest) | [NVMeSubsystemUpdateResponse](#opi-storage-v1-NVMeSubsystemUpdateResponse) |  |
+| NVMeSubsystemList | [NVMeSubsystemListRequest](#opi-storage-v1-NVMeSubsystemListRequest) | [NVMeSubsystemListResponse](#opi-storage-v1-NVMeSubsystemListResponse) |  |
+| NVMeSubsystemGet | [NVMeSubsystemGetRequest](#opi-storage-v1-NVMeSubsystemGetRequest) | [NVMeSubsystemGetResponse](#opi-storage-v1-NVMeSubsystemGetResponse) |  |
+| NVMeSubsystemStats | [NVMeSubsystemStatsRequest](#opi-storage-v1-NVMeSubsystemStatsRequest) | [NVMeSubsystemStatsResponse](#opi-storage-v1-NVMeSubsystemStatsResponse) |  |
+
+ 
+
+
+
+<a name="frontend-virtio-blk-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## frontend-virtio-blk.proto
+
+
 
 <a name="opi-storage-v1-VirtioBlk"></a>
 
@@ -1148,6 +1216,53 @@ Intentionally empty.
 
 
 
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi-storage-v1-VirtioBlkService"></a>
+
+### VirtioBlkService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| VirtioBlkCreate | [VirtioBlkCreateRequest](#opi-storage-v1-VirtioBlkCreateRequest) | [VirtioBlkCreateResponse](#opi-storage-v1-VirtioBlkCreateResponse) |  |
+| VirtioBlkDelete | [VirtioBlkDeleteRequest](#opi-storage-v1-VirtioBlkDeleteRequest) | [VirtioBlkDeleteResponse](#opi-storage-v1-VirtioBlkDeleteResponse) |  |
+| VirtioBlkUpdate | [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest) | [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse) |  |
+| VirtioBlkList | [VirtioBlkListRequest](#opi-storage-v1-VirtioBlkListRequest) | [VirtioBlkListResponse](#opi-storage-v1-VirtioBlkListResponse) |  |
+| VirtioBlkGet | [VirtioBlkGetRequest](#opi-storage-v1-VirtioBlkGetRequest) | [VirtioBlkGetResponse](#opi-storage-v1-VirtioBlkGetResponse) |  |
+| VirtioBlkStats | [VirtioBlkStatsRequest](#opi-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse) |  |
+
+ 
+
+
+
+<a name="frontend-virtio-fs-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## frontend-virtio-fs.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="frontend-virtio-scsi-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## frontend-virtio-scsi.proto
 
 
 
@@ -1519,66 +1634,6 @@ Intentionally empty.
  
 
  
-
-
-<a name="opi-storage-v1-NVMeControllerService"></a>
-
-### NVMeControllerService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| NVMeControllerCreate | [NVMeControllerCreateRequest](#opi-storage-v1-NVMeControllerCreateRequest) | [NVMeControllerCreateResponse](#opi-storage-v1-NVMeControllerCreateResponse) |  |
-| NVMeControllerDelete | [NVMeControllerDeleteRequest](#opi-storage-v1-NVMeControllerDeleteRequest) | [NVMeControllerDeleteResponse](#opi-storage-v1-NVMeControllerDeleteResponse) |  |
-| NVMeControllerUpdate | [NVMeControllerUpdateRequest](#opi-storage-v1-NVMeControllerUpdateRequest) | [NVMeControllerUpdateResponse](#opi-storage-v1-NVMeControllerUpdateResponse) |  |
-| NVMeControllerList | [NVMeControllerListRequest](#opi-storage-v1-NVMeControllerListRequest) | [NVMeControllerListResponse](#opi-storage-v1-NVMeControllerListResponse) |  |
-| NVMeControllerGet | [NVMeControllerGetRequest](#opi-storage-v1-NVMeControllerGetRequest) | [NVMeControllerGetResponse](#opi-storage-v1-NVMeControllerGetResponse) |  |
-| NVMeControllerStats | [NVMeControllerStatsRequest](#opi-storage-v1-NVMeControllerStatsRequest) | [NVMeControllerStatsResponse](#opi-storage-v1-NVMeControllerStatsResponse) |  |
-
-
-<a name="opi-storage-v1-NVMeNamespaceService"></a>
-
-### NVMeNamespaceService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| NVMeNamespaceCreate | [NVMeNamespaceCreateRequest](#opi-storage-v1-NVMeNamespaceCreateRequest) | [NVMeNamespaceCreateResponse](#opi-storage-v1-NVMeNamespaceCreateResponse) |  |
-| NVMeNamespaceDelete | [NVMeNamespaceDeleteRequest](#opi-storage-v1-NVMeNamespaceDeleteRequest) | [NVMeNamespaceDeleteResponse](#opi-storage-v1-NVMeNamespaceDeleteResponse) |  |
-| NVMeNamespaceUpdate | [NVMeNamespaceUpdateRequest](#opi-storage-v1-NVMeNamespaceUpdateRequest) | [NVMeNamespaceUpdateResponse](#opi-storage-v1-NVMeNamespaceUpdateResponse) |  |
-| NVMeNamespaceList | [NVMeNamespaceListRequest](#opi-storage-v1-NVMeNamespaceListRequest) | [NVMeNamespaceListResponse](#opi-storage-v1-NVMeNamespaceListResponse) |  |
-| NVMeNamespaceGet | [NVMeNamespaceGetRequest](#opi-storage-v1-NVMeNamespaceGetRequest) | [NVMeNamespaceGetResponse](#opi-storage-v1-NVMeNamespaceGetResponse) |  |
-| NVMeNamespaceStats | [NVMeNamespaceStatsRequest](#opi-storage-v1-NVMeNamespaceStatsRequest) | [NVMeNamespaceStatsResponse](#opi-storage-v1-NVMeNamespaceStatsResponse) |  |
-
-
-<a name="opi-storage-v1-NVMeSubsystemService"></a>
-
-### NVMeSubsystemService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| NVMeSubsystemCreate | [NVMeSubsystemCreateRequest](#opi-storage-v1-NVMeSubsystemCreateRequest) | [NVMeSubsystemCreateResponse](#opi-storage-v1-NVMeSubsystemCreateResponse) |  |
-| NVMeSubsystemDelete | [NVMeSubsystemDeleteRequest](#opi-storage-v1-NVMeSubsystemDeleteRequest) | [NVMeSubsystemDeleteResponse](#opi-storage-v1-NVMeSubsystemDeleteResponse) |  |
-| NVMeSubsystemUpdate | [NVMeSubsystemUpdateRequest](#opi-storage-v1-NVMeSubsystemUpdateRequest) | [NVMeSubsystemUpdateResponse](#opi-storage-v1-NVMeSubsystemUpdateResponse) |  |
-| NVMeSubsystemList | [NVMeSubsystemListRequest](#opi-storage-v1-NVMeSubsystemListRequest) | [NVMeSubsystemListResponse](#opi-storage-v1-NVMeSubsystemListResponse) |  |
-| NVMeSubsystemGet | [NVMeSubsystemGetRequest](#opi-storage-v1-NVMeSubsystemGetRequest) | [NVMeSubsystemGetResponse](#opi-storage-v1-NVMeSubsystemGetResponse) |  |
-| NVMeSubsystemStats | [NVMeSubsystemStatsRequest](#opi-storage-v1-NVMeSubsystemStatsRequest) | [NVMeSubsystemStatsResponse](#opi-storage-v1-NVMeSubsystemStatsResponse) |  |
-
-
-<a name="opi-storage-v1-VirtioBlkService"></a>
-
-### VirtioBlkService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| VirtioBlkCreate | [VirtioBlkCreateRequest](#opi-storage-v1-VirtioBlkCreateRequest) | [VirtioBlkCreateResponse](#opi-storage-v1-VirtioBlkCreateResponse) |  |
-| VirtioBlkDelete | [VirtioBlkDeleteRequest](#opi-storage-v1-VirtioBlkDeleteRequest) | [VirtioBlkDeleteResponse](#opi-storage-v1-VirtioBlkDeleteResponse) |  |
-| VirtioBlkUpdate | [VirtioBlkUpdateRequest](#opi-storage-v1-VirtioBlkUpdateRequest) | [VirtioBlkUpdateResponse](#opi-storage-v1-VirtioBlkUpdateResponse) |  |
-| VirtioBlkList | [VirtioBlkListRequest](#opi-storage-v1-VirtioBlkListRequest) | [VirtioBlkListResponse](#opi-storage-v1-VirtioBlkListResponse) |  |
-| VirtioBlkGet | [VirtioBlkGetRequest](#opi-storage-v1-VirtioBlkGetRequest) | [VirtioBlkGetResponse](#opi-storage-v1-VirtioBlkGetResponse) |  |
-| VirtioBlkStats | [VirtioBlkStatsRequest](#opi-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi-storage-v1-VirtioBlkStatsResponse) |  |
 
 
 <a name="opi-storage-v1-VirtioScsiControllerService"></a>

@@ -1,0 +1,73 @@
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+
+// Front End (host-facing) APIs.
+
+// Virtio-blk emulation
+
+service VirtioBlkService {
+    rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlkCreateResponse) {}
+    rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (VirtioBlkDeleteResponse) {}
+    rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlkUpdateResponse) {}
+    rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {}
+    rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlkGetResponse)    {}
+    rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
+}
+
+message VirtioBlk {
+    int64 id = 1;
+    string name = 2;
+    string pcie_id = 3;
+    string bdev = 4;
+    int64 max_io_qps = 5;
+    string serial_number = 6;
+}
+
+message VirtioBlkCreateRequest {
+    VirtioBlk controller = 1;
+}
+
+message VirtioBlkCreateResponse {
+    // Intentionally empty.
+}
+
+message VirtioBlkDeleteRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioBlkDeleteResponse {
+    // Intentionally empty.
+}
+
+message VirtioBlkUpdateRequest {
+    VirtioBlk controller = 1;
+}
+
+message VirtioBlkUpdateResponse {
+    // Intentionally empty.
+}
+
+message VirtioBlkListRequest {
+    int64 subsystem_id = 1;
+}
+
+message VirtioBlkListResponse {
+}
+
+message VirtioBlkGetRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioBlkGetResponse {
+    VirtioBlk controller = 1;
+}
+
+message VirtioBlkStatsRequest {
+    int64 controller_id = 1;
+}
+
+message VirtioBlkStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}

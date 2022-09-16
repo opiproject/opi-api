@@ -1,0 +1,8 @@
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+
+// Front End (host-facing) APIs.
+
+// TODO: Virtio-fs
+
