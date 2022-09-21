@@ -69,6 +69,7 @@
     - [SessionResponse](#opi-security-firewall-v1-SessionResponse)
     - [SessionResponseError](#opi-security-firewall-v1-SessionResponseError)
     - [SessionResponses](#opi-security-firewall-v1-SessionResponses)
+    - [Uuid](#opi-security-firewall-v1-Uuid)
   
     - [ActionType](#opi-security-firewall-v1-ActionType)
     - [AddSessionStatus](#opi-security-firewall-v1-AddSessionStatus)
@@ -1169,7 +1170,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| session_id | [uint64](#uint64) |  |  |
+| session_id | [Uuid](#opi-security-firewall-v1-Uuid) |  |  |
 | inlif | [int32](#int32) |  |  |
 | outlif | [int32](#int32) |  |  |
 | ipversion | [IpVersion](#opi-security-firewall-v1-IpVersion) |  |  |
@@ -1198,7 +1199,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [uint64](#uint64) |  | If SessionId is zero, return all sessions |
+| sessionid | [Uuid](#opi-security-firewall-v1-Uuid) |  | If SessionId is zero, return all sessions |
 | sessionstate | [SessionState](#opi-security-firewall-v1-SessionState) |  | Filter argument to only return sessions of a given state |
 
 
@@ -1214,7 +1215,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [uint64](#uint64) |  |  |
+| sessionid | [Uuid](#opi-security-firewall-v1-Uuid) |  |  |
 | inpackets | [uint64](#uint64) |  |  |
 | outpackets | [uint64](#uint64) |  |  |
 | inbytes | [uint64](#uint64) |  |  |
@@ -1238,7 +1239,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [uint64](#uint64) |  |  |
+| sessionid | [Uuid](#opi-security-firewall-v1-Uuid) |  |  |
 | errorstatus | [int32](#int32) |  |  |
 
 
@@ -1256,6 +1257,21 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 | ----- | ---- | ----- | ----------- |
 | sessioninfo | [SessionResponse](#opi-security-firewall-v1-SessionResponse) | repeated |  |
 | nextkey | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="opi-security-firewall-v1-Uuid"></a>
+
+### Uuid
+Uuid for Session IDs
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
 
 
 
