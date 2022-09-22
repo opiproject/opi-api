@@ -1,0 +1,27 @@
+---
+name: 'OPI Network API CI'
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'network/proto/**'
+      - 'network/Makefile'
+      - '.github/workflows/network.yml'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'network/proto/**'
+      - 'network/Makefile'
+      - '.github/workflows/network.yml'
+
+concurrency:
+  # if workflow for PR or push is already running stop it, and start new one
+  group: network-api-skip-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-network-protobuf:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No network API test run required"'
