@@ -1,8 +1,10 @@
 # Cloud Services APIs
+
 Cloud Service APIs define the objects to manage cloud infrastructure APIS that could be offered by an xPU. These APIs are expected to be called by a cloud controller (definition of which is out of scope of this document).
 
 ## Overview
-The APIs covers various aspects of a functional xPU in cloud deployment, ranging from the device configuration to network datapath and control protocols. 
+
+The APIs covers various aspects of a functional xPU in cloud deployment, ranging from the device configuration to network datapath and control protocols.
 
 - Platform: xPU level Network configuration of platform and device specific APIs
 - Link: APIs to create and manage port, interface, and vnics on the DPU (facing host, or network)
@@ -18,6 +20,7 @@ These APIs can be called from over the network or another processes (controller'
 Metrics, etc. can be exposed for these network and network services objects using mechanism described outside
 
 ## Objects, their structure and relationships
+
 Most of the objects are well known in any public/private cloud deployment; here is a small description of various objects defined
 
 - VPC: Virtual Private Cloud is the key concept in network virutalization, refrering to a seggregated (from other tenants) networks defining overlapping subnets, routes, interfaces, service mappings, etc. for a given tenant
@@ -36,7 +39,8 @@ Most of the objects are well known in any public/private cloud deployment; here 
 - NAT: network address translation for any traffic going in/out of a VPC to public domain or to another VPC
 - NextHop: defines routing peers (adjacencies) for L3 traffic routing/ecmp
 
-Object structure is inspired by Kubernetes object model:
+Object structure is inspired by Kubernetes object model
+
 - Type: either an object or a list
 - Meta: common fields to all the objects e.g. name and UUID
 - Spec: specifices the desired configuration from cloud control plane
