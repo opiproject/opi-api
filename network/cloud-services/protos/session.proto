@@ -1,0 +1,84 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification to manage a specific sessions/flows for debugging, etc
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service SessionSvc {
+  rpc FlowGet (types.Empty) returns (stream FlowGetResponse) {}
+  rpc SessionGet (types.Empty) returns (stream SessionGetResponse) {}
+  rpc FlowClear (FlowClearRequest) returns (FlowClearResponse) {}
+  rpc SessionClear (SessionClearRequest) returns (SessionClearResponse) {}
+}
+
+message Flow {
+  types.FlowKey Key        = 1;
+  uint32        Vpc        = 2;
+  uint32        FlowRole   = 3;
+  uint32        SessionIdx = 4;
+  uint32        Epoch      = 5;
+}
+
+message FlowMsg {
+  uint32 FlowEntryCount = 1;
+  Flow FlowEntry        = 2;
+}
+
+message FlowGetRequest {
+  bool       Summary = 1;
+  FlowFilter Filter  = 2;
+  bool       Alg     = 3;
+}
+
+message Session {
+  Flow InitiatorFlow = 1;
+  Flow ResponderFlow = 2;
+}
+
+message SessionGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated Session Session   = 2;
+}
+
+message FlowGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated Flow    Flow      = 2;
+}
+
+message SessionRange {
+  uint32 Low  = 1;
+  uint32 High = 2;
+}
+
+message SessionClearResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+message SessionClearRequest {
+  SessionRange Range = 1;
+}
+
+message FlowFilter {
+  uint32          Vpc       = 1;
+  types.IPPrefix  SrcPrefix = 2;
+  types.IPPrefix  DstPrefix = 3;
+  uint32          SrcPort   = 4 [(gogoproto.moretags) = "meta:range:0-65535"];
+  uint32          DstPort   = 5 [(gogoproto.moretags) = "meta:range:0-65535"];
+  uint32          IPProto   = 6 [(gogoproto.moretags) = "meta:range:0-255"]; // IP Protocol
+  uint32          Vnic      = 7;
+}
+
+message FlowClearResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+message FlowClearRequest {
+  FlowFilter Filter = 1;
+}
+

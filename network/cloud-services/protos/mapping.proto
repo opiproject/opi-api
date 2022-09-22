@@ -1,0 +1,204 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for IP mappings
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service MappingSvc {
+  rpc MappingCreate (MappingRequest) returns (MappingResponse) {}
+  rpc MappingUpdate (MappingRequest) returns (MappingResponse) {}
+  rpc MappingGet (MappingGetRequest) returns (MappingGetResponse) {}
+  rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
+  rpc MappingDelete (MappingDeleteRequest) returns (MappingDeleteResponse) {}
+}
+
+// L3MappingKey is the 2nd-ary key of the remote IP mapping
+message L3MappingKey {
+  // virtual private cloud of the IP mapping
+  bytes           VPCId  = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // private/overlay IP of the mapping
+  types.IPAddress IPAddr = 2;
+}
+
+// L2MappingKey is the 2nd-ary key of the remote MAC mapping
+message L2MappingKey {
+  // subnet id of this MAC
+  bytes  SubnetId = 1;
+  // MAC address of this mapping
+  uint64 MACAddr  = 2;
+}
+
+// MappingKey is the 2nd-ary key and uniquely identifies a IP/MAC mapping
+message MappingKey {
+  oneof keyinfo {
+    // IP mapping key
+    L3MappingKey IPKey  = 1;
+    // MAC mapping key
+    L2MappingKey MACKey = 2;
+  }
+}
+
+// MappingType captures the type of the mapping
+enum MappingType {
+  MAPPING_TYPE_NONE    = 0;
+  // MAPPING_TYPE_VPC is used for regular VPC endpoints and is the default
+  MAPPING_TYPE_VPC     = 1;
+  // MAPPING_TYPE_SERVICE is used for mappings that represent service endpoints
+  MAPPING_TYPE_SERVICE = 2;
+  // MAPPING_TYPE_LB_VIP is used for mappings that represent load balancer
+  // service VIP
+  MAPPING_TYPE_LB_VIP  = 3;
+}
+
+// MappingSpec captures configuration of each mapping
+// NOTE: Mapping is either on the local host/TEP or remote TEP
+message MappingSpec {
+  // unique mapping id
+  bytes                Id             = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // along with uuid, either IPKey or MACKey attrs
+  oneof mac_or_ip {
+    // IP mapping key
+    L3MappingKey       IPKey          = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+    // MAC mapping key
+    L2MappingKey       MACKey         = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  }
+  // subnet this mapping is in
+  bytes                SubnetId       = 4 [(gogoproto.moretags) = "meta:mandatory"];
+  oneof dstinfo {
+      // if IP is that of local vnic, corresponding vnic id
+      // this is mandatory attribute for local IP mappings
+      bytes            VnicId         = 5;
+      // Tunnel ID of the remote TEP for remote mapping
+      // this is mandatory attribute for remote MAC/IP mappings for
+      // non-ECMP cases
+      bytes            TunnelId       = 6;
+      // overlay nexthop/TEP group for remote mappings
+      // this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+      bytes            NexthopGroupId = 7;
+  }
+  // overlay MAC address of this mapping
+  uint64               MACAddr        = 8 [(gogoproto.moretags) = "meta:mandatory"];
+  // fabric encap information specific to this mapping, if any
+  types.Encap          Encap          = 9;
+  // public IP, if overlay IP has corresponding public IP
+  types.IPAddress      PublicIP       = 10;
+  // tag/label/security group of this IP mapping, these tags/labels/SGs can be
+  // used// in defining security policy rules
+  // NOTE:
+  // 1. service tag 0 is invalid
+  // 2. if this is done in datapath, maximum of tags could be limited
+  repeated uint32      Tags           = 11 [(gogoproto.moretags) = "meta:range:1-4294967294"];
+  // when traffic is initiated from vnic towards another IP mapping destination
+  // in the VPC, such traffic can be metered with the meter class/bucket
+  // configured as TxMeterClass on the mapping object
+  // NOTE:
+  // 1. upto 4K meter classes per vnic are supported, so meter class value must
+  //    be between 1 to 4K - 1
+  // 2. meter class value of 0 is reserved
+  // 3. Tx here indicates that the (outbound) session is created due to a Tx
+  //    (i.e., from vnic) packet
+  // 4. both initiator and responder flows of an outbound session (i.e., session
+  //    initiated from a vnic) use same meter class configured here
+  uint32               TxMeterClass   = 12 [(gogoproto.moretags) = "meta:range:1-4095"];
+  // SvcRewrite contains all the rewrite info for the shared services
+  types.SvcRewriteInfo SvcRewrite     = 13;
+  // type of the IP mapping endpoint
+  MappingType          Type           = 14 [(gogoproto.moretags) = "meta:default=MAPPING_TYPE_VPC"];
+}
+
+// operational status of a mapping
+message MappingStatus {
+  uint32                   PublicIPNatIdx  = 1; // private to public IP xlation nat index
+  uint32                   PrivateIPNatIdx = 2; // public to private IP xlation nat index
+  repeated types.IPAddress TunnelIP        = 3; // tunnel IP address
+  uint32                   SvcPortMapHwId  = 4; // service to backend port mapping h/w id
+  uint32                   VNFTunnelHwId   = 5; // VNF tunnel h/w id
+  uint32                   RewriteIndex    = 6; // rewrite index
+}
+
+// stats of a mapping
+message MappingStats {
+}
+
+// mapping object
+message Mapping {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MappingSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MappingStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MappingStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// mapping create and update request
+message MappingRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  repeated MappingSpec Request   = 2;
+}
+
+// mapping create and update response
+message MappingResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated MappingStatus Response  = 2;
+}
+
+// mapping key type can be L2 or L3
+enum MappingKeyType {
+  MAPPING_KEY_TYPE_NONE = 0;
+  MAPPING_KEY_TYPE_L2   = 1;
+  MAPPING_KEY_TYPE_L3   = 2;
+}
+
+message MappingFilter {
+  // Local is set to true for local mappings or else false
+  bool              Local   = 1;
+  // KeyType is used for query based on L3 or L2 without specifically
+  // providing exact key (i.e. list all L2/L3 mappings)
+  MappingKeyType    KeyType = 2;
+  // Type is used to specify the type of mapping
+  MappingType       Type    = 3;
+  oneof ip_or_mac {
+    // IP mapping key
+    L3MappingKey    IPKey   = 4;
+    // MAC mapping key
+    L2MappingKey    MACKey  = 5;
+    // IP address
+    types.IPAddress IPAddr  = 6;
+    // MAC address
+    uint64          MACAddr = 7;
+    // VPC id
+    bytes           VPCId   = 8;
+  }
+}
+
+// mapping get request
+message MappingGetRequest {
+  repeated bytes Id     = 1;
+  // optional filter
+  MappingFilter  Filter = 2;
+}
+
+// mapping get response
+message MappingGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated Mapping Response = 2;
+}
+
+// mapping delete request
+message MappingDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// mapping delete response
+message MappingDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

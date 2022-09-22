@@ -1,0 +1,42 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for batch APIs
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service BatchSvc {
+  rpc BatchStart (BatchSpec) returns (BatchStatus) {}
+  rpc BatchCommit(types.BatchCtxt) returns (BatchStatus) {}
+  rpc BatchAbort(types.BatchCtxt) returns (BatchStatus) {}
+}
+
+// batch configuration
+message BatchSpec {
+  // epoch number for this batched API transaction
+  // NOTE: epoch value 0 is reserved and invalid
+  uint64 Epoch = 1 [(gogoproto.moretags) = "meta:mandatory, meta:range:1-0xFFFFFFFF"];
+}
+
+// operational status of the batch
+message BatchStatus {
+  // status of the BatchStart() request
+  types.ApiStatus ApiStatus    = 1;
+  // set when ApiStatus is not ok
+  types.ErrorCode ErrorCode    = 2;
+  // batch context to be used in all API calls in this batch
+  types.BatchCtxt BatchContext = 3;
+}
+
+// Batch object
+message Batch {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  BatchSpec     Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  BatchStatus   Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+}

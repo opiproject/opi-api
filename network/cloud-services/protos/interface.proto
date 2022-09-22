@@ -1,0 +1,498 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for interface related objects
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service IfSvc {
+  rpc InterfaceCreate (InterfaceRequest) returns (InterfaceResponse) {}
+  rpc InterfaceUpdate (InterfaceRequest) returns (InterfaceResponse) {}
+  rpc InterfaceDelete (InterfaceDeleteRequest) returns (InterfaceDeleteResponse) {}
+  rpc InterfaceGet (InterfaceGetRequest) returns (InterfaceGetResponse) {}
+  // API to query packets-per-second (pps) statistics of uplink interfaces
+  rpc InterfacePPSStatsGet (InterfacePPSStatsGetRequest) returns (InterfacePPSStatsGetResponse) {}
+  rpc LifGet (LifGetRequest) returns (LifGetResponse) {}
+  // given a uuid of a lif, clear its stats or else clear stats of all lifs
+  rpc LifStatsReset(types.Id) returns (types.Empty) {}
+}
+
+// types of interfaces
+enum IfType {
+  IF_TYPE_NONE      = 0;
+  // uplink interface
+  IF_TYPE_UPLINK    = 1;
+  // uplink port-channel interface
+  IF_TYPE_UPLINK_PC = 2;
+  // L3 interface
+  IF_TYPE_L3        = 3;
+  // loopback interface
+  IF_TYPE_LOOPBACK  = 4;
+  // inband management/control interface
+  IF_TYPE_CONTROL   = 5;
+  // host visible PF/VF device
+  IF_TYPE_HOST      = 6;
+}
+
+// IfStatus status reflects the operational status of Interface
+enum IfStatus {
+  IF_STATUS_NONE = 0;
+  IF_STATUS_UP   = 1;
+  IF_STATUS_DOWN = 2;
+}
+
+message LldpIfStats {
+  uint32 TxCount        = 1; // transmitted pkts
+  uint32 RxCount        = 2; // received pkts
+  uint32 RxDiscarded    = 3; // rx discarded pkts
+  uint32 RxUnrecognized = 4; // rx unrecognized pkts
+  uint32 AgeoutCount    = 5; // count of entry aged out
+  uint32 InsertCount    = 6; // count of inserts
+  uint32 DeleteCount    = 7; // count of deletes
+}
+
+// LLDP chassis/port Identifier key type
+enum LldpIdType {
+  LLDPID_SUBTYPE_NONE    = 0;  //"unknown"
+  LLDPID_SUBTYPE_IFNAME  = 1;  //"ifname"
+  LLDPID_SUBTYPE_IFALIAS = 2;  //"ifalias",
+  LLDPID_SUBTYPE_LOCAL   = 3;  //"local"
+  LLDPID_SUBTYPE_MAC     = 4;  //"mac"
+  LLDPID_SUBTYPE_IP      = 5;  //"ip"
+  LLDPID_SUBTYPE_PORT    = 6;  //"portnum"
+  LLDPID_SUBTYPE_CHASSIS = 7;  //"chasiss-str"
+}
+
+// Protocol used for LLDP
+enum LldpProtoMode {
+  LLDP_MODE_NONE  = 0;
+  LLDP_MODE_LLDP  = 1;
+  LLDP_MODE_CDPV1 = 2;
+  LLDP_MODE_CDPV2 = 3;
+  LLDP_MODE_EDP   = 4;
+  LLDP_MODE_FDP   = 5;
+  LLDP_MODE_SONMP = 6;
+}
+
+// Key-type and value for Identified
+message LldpId {
+  LldpIdType Type  = 1;
+  bytes      Value = 2;
+}
+
+// Capabilities on the interfce
+enum LldpCapType {
+  LLDP_CAPTYPE_OTHER     = 0;
+  LLDP_CAPTYPE_REPEATER  = 1;
+  LLDP_CAPTYPE_BRIDGE    = 2;
+  LLDP_CAPTYPE_ROUTER    = 3;
+  LLDP_CAPTYPE_WLAN      = 4;
+  LLDP_CAPTYPE_TELEPHONE = 5;
+  LLDP_CAPTYPE_DOCSIS    = 6;
+  LLDP_CAPTYPE_STATION   = 7;
+}
+
+message LldpChassisCapabilityInfo {
+  LldpCapType CapType    = 1; // capability type
+  bool        CapEnabled = 2; // enabled/disabled
+}
+
+message LldpIfChassisInfo {
+  string                             SysName    = 1; // system name
+  LldpId                             ChassisId  = 2; // system identifier
+  string                             SysDescr   = 3; // description string
+  types.IPAddress                    MgmtIP     = 4; // management IP
+  repeated LldpChassisCapabilityInfo Capability = 5; // list of capabilities
+}
+
+message LldpSpec {
+  LldpIfChassisInfo LldpIfChassisSpec = 1; // Chassis info
+}
+
+// Uplink configuration (if interface type is IF_TYPE_UPLINK)
+message UplinkSpec {
+  // physical port id corresponding to this interface
+  bytes    PortId       = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // Untagged ingress packets are considered as coming with this VLAN id
+  // Egress packet tagged with this VLAN id are sent untagged
+  uint32   NativeVlanId = 2;
+}
+
+// Uplink port-channel configuration (i.e., if interface type is
+// IF_TYPE_UPLINK_PC)
+message UplinkPCSpec {
+  // member interfaces of this port-channel in the form of bitmap
+  // (e.g. if uplink interfaces 1 and 2 part of this port channel
+  // this is set to 0x11
+  uint64 MemberIfBitmap = 1;
+  // Untagged ingress packets are considered as coming with this VLAN id
+  // Egress packet tagged with this VLAN id are sent untagged
+  uint32 NativeVlanId   = 2;
+}
+
+// L3 interface configuration
+message L3IfSpec {
+  // vpc/vrf this L3 interface belongs to
+  bytes                   VpcId     = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IP address, prefix of this L3 interface
+  repeated types.IPPrefix Prefix     = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // Physical port of this L3 interface
+  bytes                   PortId     = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // (optional) encap used for packet rewrites if this is a L3 sub interface
+  types.Encap             Encap      = 4 [(gogoproto.moretags) = "meta:immutable"];
+  // MAC address of this L3 interface
+  uint64                  MACAddress = 5 [(gogoproto.moretags) = "meta:immutable"];
+}
+
+// Loopback interface configuration
+message LoopbackIfSpec {
+  // IP address hosted on the loopback interface and is the DSC's TEP IP
+  // NOTE: This IP address is in underlay VPC
+  types.IPPrefix              Prefix    = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // BGP standard community values to be attached to the route advertising this
+  // loopback TEP IP
+  repeated types.BGPCommunity Community = 2;
+}
+
+// Inband control interface configuration
+message ControlIfSpec {
+  // IP address hosted on the inband control interface
+  types.IPPrefix Prefix     = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  uint64         MACAddress = 2;
+}
+
+// HostIfSpec represents a host visisble device (e.g. eth interface)
+// NOTE: host interfaces can't be created or deleted via the API, they are
+//       created during bringup of DSC; only policies (for example, (mirror
+//       policy) can be applied on such interfaces and they can't be brought
+//       down or up as they are host devices and DSC has no control over them
+message HostIfSpec {
+  // Vf is set to true, for VF devices
+  bool                Vf            = 1 [(gogoproto.moretags) = "meta:immutable"];
+  // ConnTrackEn, if set to true, will enable full connection tracking
+  // NOTE:
+  // 1. this knob is useful to enable connection tracking on per PF level if
+  //    enabling connection tracking for the entire DSC is not desirable
+  //    i.e, if SecurityProfileSpec has ConnTrackEn set to false but
+  //    ConnTrackEn is set to true in this object, then connection tracking
+  //    is enabled only for traffic from/to this host interface alone
+  // 2. to disable connection tracking only for a PF or subset of PFs but keep
+  //    it enabled for all other PFs the following configuration steps
+  //    should be followed:
+  //    a) set ConnTrackEn attribute in SecurityProfileSpec to false
+  //    b) set ConnTrackEn attribute in HostIfSpec to true on the PFs where
+  //       conneection tracking is needed
+  //    c) set ConnTrackEn attribute in HostIfSpec to false on the PFs where
+  //       conneection tracking is not needed
+  //    In other words, connection tracking is disabled only if ConnTrackEn
+  //    attribute is set to false in BOTH HostIfSpec and SecurityProfileSpec
+  //    and enabled if either of these objects have ConnTrackEn set to true
+  // 3. if ConnTrackEn is modified on the fly, it will take affect only on
+  //    sessions created thereafter and doesn't affect existing sessions
+  bool                ConnTrackEn   = 2 [(gogoproto.moretags) = "meta:default=false"];
+  // Tx policer uuid
+  bytes               TxPolicer     = 3;
+  // by default MAC address is assigned to PF when PF is created and this can be
+  // modified by user provided MAC address by setting MACAddress attribute
+  // NOTE: as PFs are created during initialization time, updating the MAC
+  //       will not take affect immediately, it will take affect only after
+  //       next reboot
+  uint64              MACAddress    = 4 [(gogoproto.moretags) = "persisted"];
+  // controls for flow logging, if FlowLogAction is set to
+  // FLOW_LOG_ACTION_ENABLE either on the interface object or device object and
+  // this configuration is inherited by all the vnics associated with PF/VF
+  // if FLOW_LOG_ACTION_ENABLE is configured on them
+  types.FlowLogSpec   FlowLogSpec   = 5;
+  // MAC/IP learning controls
+  // NOTE: if LearnSpec is not configured, learning related configuration
+  //       is inherited from the global DeviceSpec configuration object
+  types.LearnSpec     LearnSpec     = 6;
+  // VNF (potentially virtualized) workloads/appliances like firewalls, virtual
+  // switches/bridges, security monitoring appliances etc. are the kind of
+  // workloads that act as devices in the middle providing bump in the wire
+  // services and they can receive traffic from various IP and MAC addresses
+  // and also generate traffic with different sources and MAC addresses
+  // (potentially looping back the received traffic after performing the
+  // services and/or doing certain packet rewrites). For such workloads,
+  // VNF attribute is set to true and the source IP address in the traffic from
+  // the PF/VF will be ignored for learning purposes
+  bool                VNF           = 7;
+  // optional name of host interface
+  // NOTE:
+  // 1. this name is used only in host interface create operation where some
+  //    configuration is persisted to take effect on next reboot of the DSC
+  // 2. this attribute is not filled in GET operation, name of the host
+  //    interface is returned in the status portion of GET response
+  string              Name          = 8;
+  // FlowLogAction indicates the PF/VF level flow logging action
+  // NOTE:
+  // 1. unless explicitly disabled, FlowLogAction and/or FlowLogSpec
+  //    are inherited from the device object
+  // 2. when enabled, flow logging configuration is picked from most specific
+  //    object (i.e., from PF/VF) and then from device object
+  // 3. if flow logging is enabled on interface object, but FlowLogSpec is not
+  //    configured on interface and device objects then it defaults to flow
+  //    logging being disabled for all vnics associated with this PF/VF
+  //    unless vnic object has explicit flow logging configuration
+  types.FlowLogAction FlowLogAction = 9;
+}
+
+// InterfaceSpec is used to add or update of an interface
+message InterfaceSpec {
+  // unique interface id
+  // NOTE: interface ids start from 1, for IF_TYPE_UPLINK this id is in the
+  //       range [1...max-ports#] and same for IF_TYPE_UPLINK_PC
+  bytes            Id                = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // 1. AdminState on ethernet interfaces will bring up or down adminstratively
+  // 2. AdminState on host interface (PF/VF etc.) will give the ability to the
+  //    cloud provider to shutdown traffic from/to a PF irrespective of the
+  //    admin state of PF on the host. To bring a PF up, admin state here must
+  //    be configured as UP AND PF should be brought up on host as well
+  //    (e.g. via "ifconfig <intf> up"). If the admin state configured on the
+  //    host OR if the AdminState configured in this object is DOWN, then PF
+  //    will remain in down state and traffic will be dropped and host will see
+  //    this PF as down
+  IfStatus         AdminStatus       = 2 [(gogoproto.moretags) = "meta:default=IF_STATUS_UP"];
+  // interface type specific configuration
+  oneof ifinfo {
+    // uplink specific configuration
+    UplinkSpec     UplinkSpec        = 3 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_UPLINK}"];
+    UplinkPCSpec   UplinkPCSpec      = 4 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_UPLINK_PC}"];
+    L3IfSpec       L3IfSpec          = 5 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_L3}"];
+    LoopbackIfSpec LoopbackIfSpec    = 6 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_LOOPBACK}"];
+    ControlIfSpec  ControlIfSpec     = 7 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_CONTROL}"];
+    HostIfSpec     HostIfSpec        = 8 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_HOST}"];
+  }
+  // Tx/egress mirror session id list, if any
+  repeated bytes   TxMirrorSessionId = 9 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_HOST}"];
+  // Rx/ingress mirror session id list, if any
+  repeated bytes   RxMirrorSessionId = 10 [(gogoproto.moretags) = "meta:constraints={InterfaceSpec.Type==IF_TYPE_HOST}"];
+}
+
+message LldpIfPortStatus {
+  LldpId PortId    = 1; // port identifier
+  string PortDescr = 2; // description string
+  uint32 Ttl       = 3; // TTL
+}
+
+message LldpUnknownTlvStatus {
+  string  Oui     = 1; // OUI string
+  uint32  Subtype = 2; // subtype identifier
+  uint32  Len     = 3; // length of option
+  string  Value   = 4; // option value string
+}
+
+message LldpIfStatus {
+  string                        IfName               = 1; // interface name
+  uint32                        RouterId             = 2; // router-id
+  LldpProtoMode                 Proto                = 3; // LLDP/CDP/EDP/FDP/..
+  bytes                         Age                  = 4; // uptime in string
+  LldpIfChassisInfo             LldpIfChassisStatus  = 5; // chassis info
+  LldpIfPortStatus              LldpIfPortStatus     = 6; // physical port info
+  repeated LldpUnknownTlvStatus LldpUnknownTlvStatus = 7; // unknown TLVs
+}
+
+message LldpStatus {
+  LldpIfStatus  LldpIfStatus  = 1; // Local interface info
+  LldpIfStatus  LldpNbrStatus = 2; // Neighbor info
+}
+
+// operational status of uplink interface
+message UplinkIfStatus {
+  // lif id associated with this uplink
+  uint32     LifId      = 1;
+  LldpStatus LldpStatus = 2; // LLDP status info
+  // port number used by packet buffer in h/w
+  uint32     PBPort     = 3;
+}
+
+// operational status of loopback interface
+message LoopbackIfStatus {
+  // loopback interface name in linux
+  string name = 1;
+}
+
+// operational status of host interfaces
+message HostIfStatus {
+  // host interface can have one or more lifs behind it
+  repeated bytes LifId = 1;
+  // MAC address of this interface
+  uint64   MACAddress  = 2;
+  // operational status of this interface
+  IfStatus Status      = 3;
+  // host interface name
+  string   Name        = 4;
+}
+
+// operational status of an interface, if any
+message InterfaceStatus {
+  // encoded interface index of this interface
+  uint32             IfIndex          = 1;
+  // operational status of the interface
+  IfStatus           OperStatus       = 2;
+  oneof ifstatus {
+    // uplink specific status
+    UplinkIfStatus   UplinkIfStatus   = 3;
+    // loopback interface specific status
+    LoopbackIfStatus LoopbackIfStatus = 4;
+    // host interface specific status
+    HostIfStatus     HostIfStatus     = 5;
+  }
+}
+
+message UplinkIfStats {
+  LldpIfStats LldpIfStats = 1; // LLDP Tx/Rx packet/error stats
+}
+
+message UplinkPCStats {
+}
+
+message L3IfStats {
+}
+
+message LoopbackIfStats {
+}
+
+message ControlIfStats {
+}
+
+// stats for an interface, if any
+message InterfaceStats {
+  oneof ifstats {
+    UplinkIfStats   UplinkIfStats    = 1;
+    UplinkPCStats   UplinkPCStats    = 2;
+    L3IfStats       L3IfStats        = 3;
+    LoopbackIfStats LoopbackIfStats  = 4;
+    ControlIfStats  ControlIfStats   = 5;
+  }
+}
+
+// interface Object
+message Interface {
+  meta.TypeMeta   TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta    ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  InterfaceSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  InterfaceStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  InterfaceStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// interface create and update request
+message InterfaceRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt        BatchCtxt = 1;
+  // batched requests
+  repeated InterfaceSpec Request   = 2;
+}
+
+// interface create and update response
+message InterfaceResponse {
+  types.ApiStatus          ApiStatus = 1;
+  repeated InterfaceStatus Response  = 2; // batched response
+}
+
+// interface get request
+message InterfaceGetRequest {
+  repeated bytes Id = 1;
+}
+
+// interface get response
+message InterfaceGetResponse {
+  types.ApiStatus    ApiStatus = 1; // API status code
+  repeated Interface Response  = 2;
+}
+
+// interface packets-per-second (pps) statistics get request
+message InterfacePPSStatsGetRequest {
+  // list of interface uuids of interest, if list is NULL
+  // all interface pps stats are queried
+  repeated bytes Id = 1;
+}
+
+// per interface pps statsitics record
+message InterfacePPSStats {
+  // interface uuid/key
+  bytes  Id    = 1;
+  // Tx PPS
+  uint64 TxPPS = 2;
+  // Rx PPS
+  uint64 RxPPS = 3;
+  // Tx bits (not bytes) per second
+  uint64 TxBPS = 4;
+  // Rx bits (not bytes) per second
+  uint64 RxBPS = 5;
+}
+
+// interface pps statistics get response
+message InterfacePPSStatsGetResponse {
+  types.ApiStatus            ApiStatus = 1;
+  // per inferface pps statistics
+  repeated InterfacePPSStats Stats     = 2;
+}
+
+// interface delete request
+message InterfaceDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// interface delete response
+message InterfaceDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1; // API status code
+}
+
+/// Lif (Logical interface) object represents a device (eth/storage etc.)
+/// NOTE: Lif objects are internal and host devices can have multiple lifs
+///       behind them
+message LifSpec {
+  // unique key of the lif
+  bytes         Id              = 1;
+  // type of the lif device
+  types.LifType Type            = 2;
+  // MAC address of the lif, if any
+  uint64        MacAddress      = 3;
+  // pinned uplink interface, if applicable for this device
+  bytes         PinnedInterface = 4;
+}
+
+message LifStatus {
+  // encoded ifindex of this lif
+  uint32   IfIndex    = 1;
+  // name of this lif (as seen on the host)
+  string   Name       = 2;
+  // admin state of the lif (reflects PF/VF status on the host/VM)
+  IfStatus AdminState = 3;
+  // operational status of this lif
+  IfStatus Status     = 4;
+  // nexthop hw idx of this lif, if any
+  uint32   NhIndex    = 5;
+  // vnic hw idx of this lif
+  uint32   VnicIndex  = 6;
+}
+
+message LifStats {
+  // info about the various counters for this lif
+  repeated types.Counter Counter = 1;
+}
+
+message Lif {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  LifSpec       Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  LifStatus     Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  LifStats      Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+message LifGetRequest {
+  repeated bytes Id = 1;
+}
+
+message LifGetResponse {
+  types.ApiStatus ApiStatus = 1; // API status code
+  repeated Lif    Response  = 2;
+}

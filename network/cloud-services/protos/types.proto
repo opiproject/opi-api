@@ -1,0 +1,747 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for common types
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+
+import public "gogo.proto";
+import "google/protobuf/any.proto";
+
+package types;
+option go_package="cloudapi";
+
+// empty message
+message Empty {}
+
+// generic request with uuid
+message Id {
+  bytes Id = 1;
+}
+
+// API return codes (more descriptive than protobuf enums)
+enum ApiStatus {
+  API_STATUS_OK                      = 0;  // success
+  API_STATUS_ERR                     = 1;  // catch-all error
+  API_STATUS_INVALID_ARG             = 2;  // invalid argument
+  API_STATUS_EXISTS_ALREADY          = 3;  // object already exists
+  API_STATUS_OUT_OF_MEM              = 4;  // out of memory
+  API_STATUS_NOT_FOUND               = 5;  // object not found
+  API_STATUS_OUT_OF_RESOURCE         = 6;  // out of resource
+  API_STATUS_RETRY                   = 7;  // if operation can be retried
+  API_STATUS_OPERATION_NOT_ALLOWED   = 8;  // if operation is not allowed on
+                                           // specific type of object
+  API_STATUS_TIMEOUT                 = 9;  // operation timed out
+  API_STATUS_HW_ENTRY_EXISTS         = 10; // entry exists in h/w table
+  API_STATUS_OPERATION_NOT_SUPPORTED = 11; // operation not supported
+  API_STATUS_IN_USE                  = 12; // object in use
+}
+
+// API error codes (set in cases where ApiStatus is not API_STATUS_OK)
+// error codes are unique for each object
+enum ErrorCode {
+  ERR_CODE_NONE                           = 0;
+
+  // security policy error codes
+  ERR_CODE_POLICY_MAX_RULES_EXCEEDED      = 128;  // max rules exceeded
+  ERR_CODE_POLICY_MAX_CLASSES_EXCEEDED    = 129;  // max classes exceeded
+  ERR_CODE_POLICY_MAX_TREE_NODES_EXCEEDED = 130;  // max tree nodes exceeded
+
+  // catch all error code
+  ERR_CODE_UNKNOWN                        = 0x1FFFFFFF;
+}
+
+// Sync status codes for s/w datapath
+enum SwDatapathSyncStatus {
+  SW_DP_SYNC_STATUS_NONE        = 0;
+  SW_DP_SYNC_STATUS_ENABLED     = 1; // sync enabled
+  SW_DP_SYNC_STATUS_IN_PROGRESS = 2; // sync in progress
+  SW_DP_SYNC_STATUS_COMPLETED   = 3; // sync completed
+  SW_DP_SYNC_STATUS_FAILED      = 4; // catch-all sync failure
+}
+
+// asic types
+enum AsicType {
+  ASIC_TYPE_NONE  = 0;
+  ASIC_TYPE_CAPRI = 1;
+  ASIC_TYPE_ELBA  = 2;
+}
+
+// IP address families
+enum IPAF {
+  IP_AF_NONE  = 0;
+  IP_AF_INET  = 1; // IPv4
+  IP_AF_INET6 = 2; // IPv6
+}
+
+enum WildcardMatch {
+  MATCH_NONE = 0;
+  MATCH_ANY  = 256;
+}
+
+// IP Address object
+message IPAddress {
+  IPAF      Af     = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // IP address family
+  oneof v4_or_v6 {
+    // IPv4 address
+    fixed32 V4Addr = 2;
+    // IPv6 address
+    bytes   V6Addr = 3;
+  }
+}
+
+// IP Prefix object
+message IPPrefix {
+  // IP prefix address
+  IPAddress Addr = 1;
+  // IP Prefix length
+  uint32    Len  = 2 [(gogoproto.moretags) = "meta:range=0-128"];
+}
+
+// IP Range
+message IPRange {
+  // starting IP address
+  IPAddress Low  = 1;
+  // ending IP address
+  IPAddress High = 2;
+}
+
+// IPEntry represents any form of IP address/prefix/range/tag etc.
+message IPEntry {
+  oneof ip_entry {
+    // IP prefix
+    IPPrefix     Prefix = 1;
+    // IP range
+    AddressRange Range  = 2;
+    // tag that represents IP addres/pfx/range
+    uint32       Tag    = 3 [(gogoproto.moretags) = "meta:range:1-4294967294"];
+  }
+}
+
+// IPList is a list of IPEntry objects
+message IPList {
+  repeated IPEntry IPEntry = 1;
+}
+
+// IPv4 Prefix
+message IPv4Prefix {
+  // IPv4 address portion
+  fixed32 Addr = 1;
+  // prefix length
+  uint32  Len  = 2 [(gogoproto.moretags) = "meta:range=0-32"];
+}
+
+// IPv6 Prefix
+message IPv6Prefix {
+  // IPv6 address bytes
+  bytes  Addr = 1;
+  // prefix length
+  uint32 Len  = 2 [(gogoproto.moretags) = "meta:range=0-128"];
+}
+
+// IPSubnet represents an IPv4 or IPv6 subnet
+message IPSubnet {
+  oneof subnet {
+    // IPv4 subnet
+    IPPrefix IPv4Subnet = 1;
+    // IPv6 subnet
+    IPPrefix IPv6Subnet = 2;
+  }
+}
+
+// AddressRange represents an IPv4 or IPv6 address range
+message AddressRange {
+  oneof range {
+    // IPv4 address range
+    IPRange IPv4Range = 1;
+    // IPv6 address range
+    IPRange IPv6Range = 2;
+  }
+}
+
+// Address object is the prefix or range
+message Address {
+  oneof address {
+    // IPv4 or IPv6 prefix
+    IPSubnet     Prefix = 1;
+    // IPv4 or IPv6 address range
+    AddressRange Range  = 2;
+  }
+}
+
+// PortRange object has low and high end of the port ranges
+message PortRange {
+  uint32 PortLow  = 1 [(gogoproto.moretags) = "meta:range:0-65535"];
+  uint32 PortHigh = 2 [(gogoproto.moretags) = "meta:range:0-65535"];
+}
+
+// direction in which policy is enforced
+// INGRESS/EGRESS is w.r.t vnic (i.e., traffic leaving vnic is marked as
+// EGRESS and traffic going to vnic is marked as INGRESS
+enum PolicyDir {
+  POLICY_DIR_NONE    = 0;
+  POLICY_DIR_INGRESS = 1;
+  POLICY_DIR_EGRESS  = 2;
+}
+
+// L3 rule match criteria
+message RuleL3Match {
+  // IP Protocol
+  // NOTE:
+  // IP protocol match MUST be specified even if it is wildcard
+  oneof protomatch {
+    uint32        ProtoNum      = 1;
+    WildcardMatch ProtoWildcard = 2;  // match ANY protocol
+  }
+  oneof srcmatch {
+    IPPrefix      SrcPrefix     = 3;  // Src IP Prefix
+    AddressRange  SrcRange      = 4;  // Src IP Range
+    uint32        SrcTag        = 5 [(gogoproto.moretags) = "meta:range:1-4294967294"];  // Src Tag
+    IPList        SrcIPList     = 6;  // Src IP List
+  }
+  oneof dstmatch {
+    IPPrefix      DstPrefix     = 7;  // Dst IP Prefix
+    AddressRange  DstRange      = 8;  // Dst IP Range
+    uint32        DstTag        = 9 [(gogoproto.moretags) = "meta:range:1-4294967294"];  // Dst Tag
+    IPList        DstIPList     = 10; // Dst IP List
+  }
+}
+
+// TCP/UDP rule match criteria
+message PortMatch {
+  // source port range
+  PortRange SrcPortRange = 1;
+  // destination port range
+  PortRange DstPortRange = 2;
+}
+
+// ICMPv4/ICMPv6 rule match criteria
+message ICMPMatch {
+  // ICMP type
+  oneof typematch {
+    // match any ICMP type
+    uint32        Type         = 1 [(gogoproto.jsontag) = "Type"];
+    // match any ICMP type
+    WildcardMatch TypeWildcard = 2 [(gogoproto.jsontag) = "TypeWildcard"];
+  }
+  // ICMP code
+  oneof codematch {
+    // match any ICMP code
+    uint32        Code         = 3 [(gogoproto.jsontag) = "Code"];
+    // match any ICMP code
+    WildcardMatch CodeWildcard = 4 [(gogoproto.jsontag) = "CodeWildcard"];
+  }
+}
+
+// TCP/UDP source and destination port list
+message PortListMatch {
+  // list of source ports or port ranges
+  repeated PortRange SrcPortRange = 1;
+  // list of destination ports or port ranges
+  repeated PortRange DstPortRange = 2;
+}
+
+// ICMP type/code match condition list
+message ICMPMatchList {
+  // ICMP type/code list
+  repeated ICMPMatch ICMPMatchList = 1;
+}
+
+// L4 rule match criteria
+message RuleL4Match {
+  oneof l4info {
+    // source and/or destination ports/ranges
+    PortMatch     Ports         = 1;
+    // ICMP type/code match criteria
+    ICMPMatch     TypeCode      = 2;
+    // list of source and/or destination ports/ranges
+    PortListMatch PortList      = 3;
+    // list ICMP type/code match criteria
+    ICMPMatchList ICMPMatchList = 4;
+  }
+}
+
+// rule match criteria
+message RuleMatch {
+  // Layer 3 match criteria
+  RuleL3Match L3Match = 1;
+  // Layer 4 match criteria
+  RuleL4Match L4Match = 2;
+}
+
+// QinQ encap
+message QinQ {
+  // Service VLAN tag
+  uint32 STag = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // Customer VLAN tag
+  uint32 CTag = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// encap types in the network
+enum EncapType {
+  ENCAP_TYPE_NONE     = 0;
+  ENCAP_TYPE_DOT1Q    = 1;
+  ENCAP_TYPE_QINQ     = 2;
+  ENCAP_TYPE_MPLSoUDP = 3;
+  ENCAP_TYPE_VXLAN    = 4;
+  ENCAP_TYPE_NVGRE    = 5;
+}
+
+// based on the encap type in the fabric, one can carry per vnic information
+// for example, in case of MPLSoUDP, MPLS tag (along with source tunnel IP)
+// can uniquely identify the vnic from where the packet is originating and
+// another MPLS tag (along with the destination tunnel IP) can identify the
+// destination VNIC
+message EncapVal {
+  oneof val {
+    // MPLS tag corresponding to the VNIC or mapping
+    uint32  VlanId  = 1;    // VLAN tag
+    uint32  MPLSTag = 2;    // MPLS tag/slot
+    uint32  Vnid    = 3;    // VxLAN vnid
+    QinQ    QinQ    = 4;    // QinQ tag
+    uint32  Vsid    = 5;    // NVGRE VSID
+  }
+}
+
+// fabric encap
+message Encap {
+  EncapType Type  = 1;    // encap type
+  EncapVal  Value = 2;    // encap value
+}
+
+// types of lif
+enum LifType {
+  LIF_TYPE_NONE          = 0;
+  LIF_TYPE_HOST          = 1;
+  LIF_TYPE_HOST_VF       = 2;
+  LIF_TYPE_HOST_MGMT     = 3;
+  LIF_TYPE_OOB_MGMT      = 4;
+  LIF_TYPE_INBAND_MGMT   = 5;
+  LIF_TYPE_INTERNAL_MGMT = 6;
+  LIF_TYPE_DATAPATH      = 7;
+  LIF_TYPE_LEARN         = 8;
+  LIF_TYPE_CONTROL       = 9;
+  LIF_TYPE_UPLINK        = 10;
+  LIF_TYPE_NVME          = 11;
+  LIF_TYPE_UPT           = 12;
+  LIF_TYPE_CRYPTO        = 13;
+  LIF_TYPE_FTL           = 14;
+  LIF_TYPE_ACCEL         = 15;
+  LIF_TYPE_P2P           = 16;
+  LIF_TYPE_CORE          = 17;
+  LIF_TYPE_CRYPTO_SHARED = 18;
+  LIF_TYPE_HOST_VIRTIO   = 19;
+}
+
+// security rule action is one of the below
+enum SecurityRuleAction {
+  SECURITY_RULE_ACTION_NONE  = 0;
+  SECURITY_RULE_ACTION_ALLOW = 1;
+  SECURITY_RULE_ACTION_DENY  = 2;
+}
+
+// SecurityPolicyRuleScale indicates the max. rule scale supported per policy
+// NOTE:
+// 1. this is a global configuration per DSC and all policies
+//    will support the configured max rule scale (it is not possible
+//    to have some policies with rule scale different from others)
+// 2. when rule scale is modified, DSC needs to be rebooted for the
+//    configuration to take effect
+enum SecurityPolicyRuleScale {
+  // if no scale is configured, default value is picked
+  SECURITY_POLICY_RULE_SCALE_NONE = 0;
+  // max rules per policy is 1K
+  // NOTE: this is also the default rule scale
+  SECURITY_POLICY_RULE_SCALE_1K   = 1;
+  // max rules per policy is 4K
+  SECURITY_POLICY_RULE_SCALE_4K   = 2;
+}
+
+// firewall policy action transposition scheme
+// NOTE:
+// for every new session from/to a vnic, there are potentially multiple policies
+// that need to be evaluated. For example, ingress/egress policies attached to
+// vnic's vpc, ingress/egress policies attached to vnic's subnet and
+// ingress/egress policies directly attached to vnic must evaluated. Each policy
+// evaluated may give potentially different and conflicting result compared to
+// the previous other policy evaluated w.r.t the action that needs to
+// be taken (allow or deny). So, users must to be able to specify how to resolve
+// this and arrive at final action to pick for that session.
+// FwPolicyXposn defines how such action transposition has to be performed
+// across policies
+// NOTE:
+// within a policy, always highest priority rule within that policy wins in all
+// transposition schemes
+enum FwPolicyXposn {
+  FW_POLICY_XPOSN_NONE              = 0;
+  // if GLOBAL_PRIORITY transposition scheme is configured, rule that is picked
+  // is the rule with highest priority (numerically lowest value) across all
+  // policies that are evaluated for a given packet
+  FW_POLICY_XPOSN_GLOBAL_PRIORITY   = 1;
+  // if ANY_DENY transposition scheme is configured, and a given packet matches
+  // a deny rule (and that rule has highest priority in that policy) in any of
+  // the policies evaluated for that packet, then session is created with
+  // deny/drop action
+  // NOTE:
+  // 1. once a deny rule is hit as highest prioity rule, in this scheme, rest of
+  //    policies in the chain are not evaluated (even though they might have
+  //    terminating rules) so in ANY_DENY scheme once a DENY rule is picked
+  //    that rule and action wins
+  // 2. priority of rules across policies doesn't matter in this scheme (i.e.
+  //    priority values are local to the policy object)
+  FW_POLICY_XPOSN_ANY_DENY          = 2;
+  // if LAST_MATCHED_RULE transposition scheme is configured
+  // 1. from each policy highest priority rule is picked (note that if no rule
+  //    is matched, policy level default action is picked)
+  // 2. if that rule is a terminating rule, corresponding action is picked and
+  //    no more policies are evaluated (i.e. terminating rule wins)
+  // 3. if that rule is not a terminating rule, next policy in the chain is
+  //    evaluated and action from a matching rule (or default action) is picked
+  // 4. the above steps are repeated until all policies are evaluated
+  //
+  // in this scheme, unless a terminating rule is encountered in some policy,
+  // the rule in the last policy evaluated always wins (so for a packet to be
+  // allowed if last policy has allow rule, then that wins even though all other
+  // policies have deny rule that matches the packet (and are not terminating
+  // rules)
+  FW_POLICY_XPOSN_LAST_MATCHED_RULE = 3;
+}
+
+// types of NAT actions 
+enum NatAction {
+  NAT_ACTION_NONE        = 0;
+  // Address only static NAT
+  NAT_ACTION_STATIC      = 1;
+  // address and port translation to the public (aka. Internet) address space
+  NAT_ACTION_NAPT_PUBLIC = 2;
+  // address and port translation to internal service address space
+  NAT_ACTION_NAPT_SVC    = 3;
+}
+
+// meter classes that can be used on per route basis for accouting
+// (i.e., packet and byte counters)
+enum MeterClass {
+  METER_CLASS_NONE = 0;
+  METER_CLASS_1    = 1;
+  METER_CLASS_2    = 2;
+  METER_CLASS_3    = 3;
+  METER_CLASS_4    = 4;
+  METER_CLASS_5    = 5;
+  METER_CLASS_6    = 6;
+  METER_CLASS_7    = 7;
+  METER_CLASS_8    = 8;
+  METER_CLASS_9    = 9;
+  METER_CLASS_10   = 10;
+  METER_CLASS_11   = 11;
+  METER_CLASS_12   = 12;
+  METER_CLASS_13   = 13;
+  METER_CLASS_14   = 14;
+  METER_CLASS_15   = 15;
+}
+
+// BatchCtxt is opaque to application(s) and is expected to be passed
+// back (to identify the batch) in every API call of this batch until
+// BatchCommit() or BatchAbort()
+message BatchCtxt {
+  // opaque cookie
+  uint64 BatchCookie = 1;
+}
+
+// public/Internet or Service/Infra address
+enum AddressType {
+  ADDR_TYPE_NONE    = 0;
+  ADDR_TYPE_PUBLIC  = 1;
+  ADDR_TYPE_SERVICE = 2;
+}
+
+// flow key for non-IP flows
+message MACFlowKey {
+  // subnet identifier
+  bytes  Subnet    = 1;
+  // source MAC address
+  uint64 SrcMAC    = 2;
+  // destination MAC address
+  uint64 DstMAC    = 3;
+  // 16 bits of Ethertype in the Ethernet header
+  uint32 EtherType = 4;
+}
+
+// L4 portion of flow key tuple
+message FlowL4Info {
+  // key fields for TCP/UDP flows
+  message TCPUDPInfo {
+    uint32 SrcPort  = 1;
+    uint32 DstPort  = 2;
+  }
+  // key fields for ICMP flows
+  message ICMPInfo {
+    uint32 Type = 1;
+    uint32 Code = 2;
+    uint32 Id   = 3;
+  }
+  oneof l4_info {
+    TCPUDPInfo TcpUdpInfo = 1;
+    ICMPInfo   IcmpInfo   = 2;
+  }
+}
+
+// flow key for IP flows
+message IPFlowKey {
+  // VPC identifier
+  bytes      VPCId      = 1;
+  // source IP seen in the packet
+  IPAddress  SrcIP      = 2;
+  // destination IP seen in the packet
+  IPAddress  DstIP      = 3;
+  // IP protocol
+  uint32     IPProtocol = 4;
+  // L4 information of the flow key
+  FlowL4Info L4Info     = 5;
+}
+
+// flow key is either IP flow key or non-IP flow key
+message FlowKey {
+  oneof key {
+    // flow key for the IPv4 and IPv6 flows
+    IPFlowKey  IPFlowKey  = 1;
+    // flow key for the non-IP flows
+    MACFlowKey MACFlowKey = 2;
+  }
+}
+
+// admin state of control plane objects
+enum AdminState {
+  ADMIN_STATE_NONE    = 0;
+  ADMIN_STATE_ENABLE  = 1;
+  ADMIN_STATE_DISABLE = 2;
+}
+
+// route type
+enum RouteType {
+  ROUTE_TYPE_NONE   = 0;
+  ROUTE_TYPE_OTHER  = 1;
+  ROUTE_TYPE_REJECT = 2;
+  ROUTE_TYPE_LOCAL  = 3;
+  ROUTE_TYPE_REMOTE = 4;
+}
+
+// route protocols
+enum RouteProtocol {
+  ROUTE_PROTO_NONE   = 0;
+  ROUTE_PROTO_LOCAL  = 2;
+  ROUTE_PROTO_STATIC = 3;
+  ROUTE_PROTO_BGP    = 14;
+}
+
+// HA owner of an object or state
+enum HAOwner {
+  HA_OWNER_NONE  = 0;
+  // HA owner is the local DSC
+  HA_OWNER_LOCAL = 1;
+  // HA owner is the peer DSC
+  HA_OWNER_PEER  = 2;
+}
+
+// in case of shared services, route/mapping can dictate some rewrites so that
+// the service provider can identify the source subnet/VNET and apply
+// policies etc. on the receiving end
+message SvcRewriteInfo {
+  // IP prefix to embed the source IP of the packet into
+  IPPrefix  SrcPrefix  = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // IP prefix to embed the destination IP of the packet into
+  IPPrefix  DstPrefix  = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // DstNatIP is set, if 1:1 destination NAT needs to be done on the inner
+  // destination IP address inside encapped packet before embedding into
+  // IPv6 DstPrefix
+  // NOTE: DstNatIP must be IPv4 address
+  IPAddress DstNatIP   = 3;
+  // optional service to backend port mapping information (SvcPortMap points
+  // to SvcPortMap object configured to capture the such 1:1 port mappings)
+  bytes     SvcPortMap = 4;
+  // tunnel pointing to intermediate VNF device, if one exists
+  bytes     VNFTunnel  = 5;
+}
+
+// PortSpeed specifies the speed of the port
+enum PortSpeed {
+  PORT_SPEED_NONE = 0;  // port speed not configured
+  PORT_SPEED_10M  = 1;  // port speed is 10Mbps
+  PORT_SPEED_100M = 2;  // port speed is 100Mbps
+  PORT_SPEED_1G   = 3;  // port speed is 1Gbps
+  PORT_SPEED_10G  = 4;  // port speed is 10Gbps
+  PORT_SPEED_25G  = 5;  // port speed is 25Gbps
+  PORT_SPEED_40G  = 6;  // port speed is 40Gbps
+  PORT_SPEED_50G  = 7;  // port speed is 50Gbps
+  PORT_SPEED_100G = 8;  // port speed is 100Gbps
+  PORT_SPEED_200G = 9;  // port speed is 200Gbps
+  PORT_SPEED_RSVD = 10;
+}
+
+// DropNexthop is used to blackhole the traffic
+message DropNexthop {}
+
+// flow role
+enum FlowRole {
+  FLOW_ROLE_NONE      = 0;
+  // initiator flow
+  FLOW_ROLE_INITIATOR = 1;
+  // responder flow
+  FLOW_ROLE_RESPONDER = 2;
+}
+
+// FlowLogAction indicates whether flow logging is enabled or disabled and
+// this log action can be configured on device object or PF/VF object or at
+// a more granular level on per vnic object
+enum FlowLogAction {
+  // FLOW_LOG_ACTION_NONE is invalid and defaults to flow logs being disabled
+  FLOW_LOG_ACTION_NONE    = 0;
+  // FLOW_LOG_ACTION_DISABLE indicates that flow logging is disabled
+  FLOW_LOG_ACTION_DISABLE = 1;
+  // FLOW_LOG_ACTION_ENABLE indicatest that flow logging is enabled
+  FLOW_LOG_ACTION_ENABLE  = 2;
+}
+
+// flow logging specific configuration
+// NOTE:
+// 1. if FlowLogSpec is not configured on device object and PF/host
+//    interface and on vnic object, flow logging is disabled by default
+// 2. flow logging configuration can be applied at the device level or at
+//    more granular level like per PF or a vnic as well (as an override). For
+//    a given packet, the most specific configuration (i.e. vnic
+//    object) is picked first, then less specific one (i.e., PF or host
+//    interface), if not configured on the vnic object and then the least
+//    specific one (i.e., device object), if not configured on interface as
+//    well; the first flow log configuraiton seen in that order will be
+//    picked and applied
+// 3. LogOnCreate and LogOnClose are not mutually exclusive, so for a given
+//    session flow logs can be generated both at the flow create and flow
+//    delete time
+message FlowLogSpec {
+  // if LogOnCreate is set to true, flow log is generated when flow/session
+  // is created
+  bool LogOnCreate       = 1 [(gogoproto.moretags) = "meta:default=false"];
+  // if LogOnClose is set to true, flow log is generated when flow/session
+  // is closed/deleted/purged/aged
+  bool LogOnDelete       = 2 [(gogoproto.moretags) = "meta:default=false"];
+  // LogLongLivedFlows, if set, will result in generation of flow logs for
+  // sessions that are active and are consisdered as long lived flows; just
+  // like flow logs generated during the flow close/delete time carry
+  // flow/session statistics, logs generated for long lived flows also carry
+  // statistics
+  bool LogLongLivedFlows = 3 [(gogoproto.moretags) = "meta:default=false"];
+}
+
+// Learn modes - modes of learning from dataplane (vs control plane)
+enum LearnMode {
+  // when learn mode is set to LEARN_MODE_NONE, learning is completely disabled
+  LEARN_MODE_NONE   = 0;
+  // in LEARN_MODE_NOTIFY mode, when a unknown MAC/IP is seen, notification
+  // is generated via operd to the app, learn module will not populate the
+  // p4 tables with the MAC or IP; they will be programmed when app comes back
+  // and install vnics and/or IP mappings because of these learn notifications
+  // NOTE:
+  // 1. as learn events are simply notified to app, learn module doesn't need to
+  //    perform aging of the MAC/IP entries in this mode.
+  // 2. in order to de-dup back-to-back learn events and not bombard the app
+  //    listening  to these notifications, some state will be maintained about
+  //    the notified MAC/IP entries and will be deleted within short time
+  LEARN_MODE_NOTIFY = 1;
+  // in LEARN_MODE_AUTO, learn module will learn and automatically program the
+  // learnt MAC/IP in the datapath. Additionally, notifications will be
+  // generated for the clients of interest via operd
+  LEARN_MODE_AUTO   = 2;
+}
+
+// Types of packets for learning
+// NOTE: when all learn sources are set to false, LearnMode must be set to
+//       LEARN_MODE_NONE
+message LearnSource {
+  // when ArpLearnEn is set to true, learning will happen from ARP/GARP/RARP
+  // traffic
+  bool ArpLearnEn     = 1 [(gogoproto.moretags) = "meta:default=true"];
+  // when DhcpLearnEn is se to true, learning will happen from DHCP traffic
+  bool DhcpLearnEn    = 2 [(gogoproto.moretags) = "meta:default=true"];
+  // when DataPktLearnEn is set to true, learning will happen from non-protocol
+  // data traffic
+  bool DataPktLearnEn = 3 [(gogoproto.moretags) = "meta:default=true"];
+}
+
+// MAC/IP learning related configuration knobs
+message LearnSpec {
+  // NOTE: when LearnMode mode is modified, it will take affect only after
+  //       next reboot of DSC
+  LearnMode   LearnMode       = 1 [(gogoproto.moretags) = "meta:default=LEARN_MODE_NONE"];
+  // LearnAgeTimeout is the aging timeout (in seconds) for learnt MAC or IP
+  // addresses if LearningEn is set to true. If this is not set and learning is
+  // enabled, default value is assumed for aging
+  uint32      LearnAgeTimeout = 2 [(gogoproto.moretags) = "meta:range:30-86400,meta:default=300"];
+  // LearnSource captures packet types that can result in MAC/IP learning
+  LearnSource LearnSource     = 3 [(gogoproto.moretags) = "LearnMode!=LEARN_MODE_NONE"];
+}
+
+// ServiceRequestOp encodes the API operation in the user
+// issues request via Unix Domain Socket (UDS)
+enum ServiceRequestOp {
+  SERVICE_OP_NONE   = 0;
+  SERVICE_OP_CREATE = 1;
+  SERVICE_OP_DELETE = 2;
+  SERVICE_OP_UPDATE = 3;
+  SERVICE_OP_READ   = 4;
+}
+
+// ServiceRequestMessage represents the config message from the app
+// and the corresponding operation to be performed
+message ServiceRequestMessage {
+  // one of the CRUD operations
+  ServiceRequestOp    ConfigOp  = 1;
+  // ConfigMsg is protobuf encoded config message and it can be any of the
+  // supported config objects (e.g. VPCRequestMsg etc.)
+  google.protobuf.Any ConfigMsg = 2;
+}
+
+// ServiceResponseMessage is the response to ServiceRequestMessage
+message ServiceResponseMessage {
+  // response or reply status for the request
+  ApiStatus           ApiStatus = 1;
+  // content of the response (esp. for Get requests)
+  google.protobuf.Any Response  = 2;
+}
+
+// Counter holding reason and value
+message Counter {
+  // counter name
+  string Name  = 1 [(gogoproto.jsontag) = "Name"];
+  // counter value
+  uint64 Value = 2 [(gogoproto.jsontag) = "Value"];
+}
+
+// BGP standard community
+message BGPCommunity {
+  // first 16-bit of standard community
+  uint32  Asn       = 1 [(gogoproto.moretags) = "meta:range:0-65535,meta:default=0"];
+  // second 16-bit of standard community
+  uint32  Community = 2 [(gogoproto.moretags) = "meta:range:0-65535,meta:default=0"];
+}
+
+message NATAction {
+  // if SrcNatAction is set to NAT_ACTION_STATIC, floating IP of the
+  // local IP mapping is used to NAT the source IP or else (NAT IP, NAT port)
+  // are dynamically allocated in s/w datapath
+  // NOTE: Floating IP (i.e., public IP in local mapping object is always
+  //       preferred over NAPT port block
+  types.NatAction SrcNatAction = 1;
+  // DstNatIP is set, if 1:1 destination NAT needs to be done
+  // NOTE: if DNAT is done, using the DNAT IP route lookup will be done
+  //       in the same routing table to get forwarding information this time
+  types.IPAddress DstNatIP     = 2;
+  // indicate whether a (NAT address, NAT port) pair already allocated for
+  // a different session earlier can be reused for new sessions/flows
+  // that require NAPT
+  // NOTE: this attribute is valid only SrcNatAction is either
+  //       NAT_ACTION_NAPT_PUBLIC or NAT_ACTION_NAPT_SVC and not applicable
+  //       in any other cases
+  bool            PortReuse    = 3 [(gogoproto.moretags) = "meta:constraints=SrcNatAction==NAT_ACTION_NAPT_PUBLIC|SrcNatAction==NAT_ACTION_NAPT_SVC"];
+}
+

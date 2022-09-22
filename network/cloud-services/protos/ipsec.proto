@@ -1,0 +1,242 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for IPSec
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service IpsecSvc {
+  rpc IpsecSAEncryptCreate (IpsecSAEncryptRequest) returns (IpsecSAEncryptResponse) {}
+  rpc IpsecSAEncryptUpdate (IpsecSAEncryptRequest) returns (IpsecSAEncryptResponse) {}
+  rpc IpsecSAEncryptGet (IpsecSAEncryptGetRequest) returns (IpsecSAEncryptGetResponse) {}
+  rpc IpsecSAEncryptDelete (IpsecSAEncryptDeleteRequest) returns (IpsecSAEncryptDeleteResponse) {}
+
+  rpc IpsecSADecryptCreate (IpsecSADecryptRequest) returns (IpsecSADecryptResponse) {}
+  rpc IpsecSADecryptUpdate (IpsecSADecryptRequest) returns (IpsecSADecryptResponse) {}
+  rpc IpsecSADecryptGet (IpsecSADecryptGetRequest) returns (IpsecSADecryptGetResponse) {}
+  rpc IpsecSADecryptDelete (IpsecSADecryptDeleteRequest) returns (IpsecSADecryptDeleteResponse) {}
+}
+
+// IPSec protocols
+enum IpsecProtocol {
+  IPSEC_PROTOCOL_NONE = 0;
+  IPSEC_PROTOCOL_AH   = 1;
+  IPSEC_PROTOCOL_ESP  = 2;
+}
+
+// Encryption algorithms
+enum EncryptionAlgorithm {
+  ENCRYPTION_ALGORITHM_NONE        = 0;
+  ENCRYPTION_ALGORITHM_AES_GCM_128 = 1;
+  ENCRYPTION_ALGORITHM_AES_GCM_256 = 2;
+  ENCRYPTION_ALGORITHM_AES_CCM_128 = 3;
+  ENCRYPTION_ALGORITHM_AES_CCM_192 = 4;
+  ENCRYPTION_ALGORITHM_AES_CCM_256 = 5;
+  ENCRYPTION_ALGORITHM_AES_CBC_128 = 6;
+  ENCRYPTION_ALGORITHM_AES_CBC_192 = 7;
+  ENCRYPTION_ALGORITHM_AES_CBC_256 = 8;
+  ENCRYPTION_ALGORITHM_DES3        = 9;
+  ENCRYPTION_ALGORITHM_CHA_CHA     = 10;
+}
+
+// Authentication algorithms
+enum AuthenticationAlgorithm {
+  AUTHENTICATION_ALGORITHM_NONE        = 0;
+  AUTHENTICATION_ALGORITHM_AES_GCM     = 1;
+  AUTHENTICATION_ALGORITHM_AES_CCM     = 2;
+  AUTHENTICATION_ALGORITHM_HMAC        = 3;
+  AUTHENTICATION_ALGORITHM_AES_CBC_SHA = 4;
+}
+
+// Key object
+message SymmetricKey {
+  oneof key_info {
+    bytes     Key         = 1; // ascii or hex key
+    uint32    KeyLocation = 2; // key index in secure key storage
+  }
+}
+
+// IPSec Security Association object
+message IpsecSAEncryptSpec {
+  // unique identifier of SA
+  bytes                   Id                      = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // ESP or AH
+  IpsecProtocol           Protocol                = 2;
+  // authentication algorithm
+  AuthenticationAlgorithm AuthenticationAlgorithm = 3;
+  // authenticaion key
+  SymmetricKey            AuthenticationKey       = 4;
+  // encryption algorithm
+  EncryptionAlgorithm     EncryptionAlgorithm     = 5;
+  // encryption key
+  SymmetricKey            EncryptionKey           = 6;
+  // security parameters index
+  uint32                  Spi                     = 7;
+  // NAT-T port, if non-zero - NAT-T header is added.
+  uint32                  NatTraversalPort        = 8;
+  // initial random number - 32 bits (need to be same on peer)
+  uint32                  Salt                    = 9;
+  // initial random number that goes in packet - can be assigned from top or
+  // generated locally
+  uint64                  Iv                      = 10;
+}
+
+// operational status of IPSec Encrypt SA, if any
+message IpsecSAEncryptStatus {
+  uint32 KeyIndex = 1;
+  uint64 SeqNo    = 2;
+}
+
+// stats of IPSec Encrypt SA, if any
+message IpsecSAEncryptStats {
+  uint64 RxPkts  = 1;
+  uint64 RxBytes = 2;
+  uint64 TxPkts  = 3;
+  uint64 TxBytes = 4;
+  uint64 RxDrops = 5;
+  uint64 TxDrops = 6;
+}
+
+// IPSec Encrypt SA object
+message IpsecSAEncrypt {
+  meta.TypeMeta        TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta         ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  IpsecSAEncryptSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  IpsecSAEncryptStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  IpsecSAEncryptStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// IPSec SA Encrypt create and update request
+message IpsecSAEncryptRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt             BatchCtxt = 1;
+  repeated IpsecSAEncryptSpec Request   = 2;
+}
+
+// IPSec SA Encrypt create and update response
+message IpsecSAEncryptResponse {
+  types.ApiStatus               ApiStatus = 1;
+  repeated IpsecSAEncryptStatus Response  = 2;
+}
+
+// IPSec SA Encrypt get request
+message IpsecSAEncryptGetRequest {
+  repeated bytes Id = 1;
+}
+
+// IPSec SA Encrypt get response
+message IpsecSAEncryptGetResponse {
+  types.ApiStatus         ApiStatus = 1;
+  repeated IpsecSAEncrypt Response  = 2;
+}
+
+// IPSec SA Encrypt delete request
+message IpsecSAEncryptDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// IPSec SA Encrypt delete response
+message IpsecSAEncryptDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// IPSec Security Association object
+message IpsecSADecryptSpec {
+  // unique identifier of SA
+  bytes                   Id                      = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // ESP or AH
+  IpsecProtocol           Protocol                = 2;
+  // authentication algorithm
+  AuthenticationAlgorithm AuthenticationAlgorithm = 3;
+  // authenticaion key
+  SymmetricKey            AuthenticationKey       = 4;
+  // encryption algorithm
+  EncryptionAlgorithm     DecryptionAlgorithm     = 5;
+  // encryption algorithm
+  EncryptionAlgorithm     RekeyDecAlgorithm       = 6;
+  // encryption key
+  SymmetricKey            DecryptionKey           = 7;
+  // authentication key
+  SymmetricKey            RekeyAuthenticationKey  = 8;
+  // encryption key
+  SymmetricKey            RekeyDecryptionKey      = 9;
+  // security parameters index
+  uint32                  Spi                     = 10;
+  // valid when rekey is active, part of update
+  uint32                  RekeySpi                = 11;
+  // initial Random number - 32 bits (need to be same on peer)
+  uint32                  Salt                    = 12;
+}
+
+// operational status of IPSec Decrypt SA, if any
+message IpsecSADecryptStatus {
+  uint32 KeyIndex        = 1;
+  uint32 NewKeyIndex     = 2;
+  uint32 RekeyActive     = 3;
+  uint64 SeqNo           = 4;
+  uint64 SeqNoBmp        = 5;
+  uint64 LastReplaySeqNo = 6;
+}
+
+// stats of IPSec Decrypt SA, if any
+message IpsecSADecryptStats {
+  uint64 RxPkts  = 1;
+  uint64 RxBytes = 2;
+  uint64 TxPkts  = 3;
+  uint64 TxBytes = 4;
+  uint64 RxDrops = 5;
+  uint64 TxDrops = 6;
+}
+
+// IPSec Decrypt SA object
+message IpsecSADecrypt {
+  meta.TypeMeta        TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta         ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  IpsecSADecryptSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  IpsecSADecryptStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  IpsecSADecryptStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// IPSec SA Decrypt create and update request
+message IpsecSADecryptRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt             BatchCtxt = 1;
+  repeated IpsecSADecryptSpec Request   = 2;
+}
+
+// IPSec SA Decrypt create and update response
+message IpsecSADecryptResponse {
+  types.ApiStatus               ApiStatus = 1;
+  repeated IpsecSADecryptStatus Response  = 2;
+}
+
+// IPSec SA Decrypt get request
+message IpsecSADecryptGetRequest {
+  repeated bytes Id = 1;
+}
+
+// IPSec SA Decrypt get response
+message IpsecSADecryptGetResponse {
+  types.ApiStatus         ApiStatus = 1;
+  repeated IpsecSADecrypt Response  = 2;
+}
+
+// IPSec SA Decrypt delete request
+message IpsecSADecryptDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// IPSec SA Decrypt delete response
+message IpsecSADecryptDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+

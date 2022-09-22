@@ -1,0 +1,148 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Flow Monitor (IPFix)
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service FlowMonSvc {
+  rpc FlowMonCollectorCreate (FlowMonCollectorRequest) returns (FlowMonCollectorResponse) {}
+  rpc FlowMonCollectorUpdate (FlowMonCollectorRequest) returns (FlowMonCollectorResponse) {}
+  rpc FlowMonCollectorGet (FlowMonCollectorGetRequest) returns (FlowMonCollectorGetResponse) {}
+  rpc FlowMonCollectorDelete (FlowMonCollectorDeleteRequest) returns (FlowMonCollectorDeleteResponse) {}
+  // given a uuid of a flowmon collector(s), clear its stats
+  rpc FlowMonCollectorStatsReset(types.Id) returns(types.Empty) {}
+}
+
+// FlowMonExportFormat is a enumeration of flow export formats
+enum ExportFormat {
+  FLOWMON_EXPORT_FORMAT_NONE       = 0;
+  FLOWMON_EXPORT_FORMAT_IPFIX      = 1;
+  FLOWMON_EXPORT_FORMAT_NETFLOW_V9 = 2;
+}
+
+// FlowMonCollectorSpec captures configuration of flowmon collector
+message FlowMonCollectorSpec {
+  // unique identifier of flowmon collector
+  bytes               Id             = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // VPC id
+  // NOTE: currently we support this only in underlay
+  bytes               VPCId          = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // VLAN encap is optional and is applicable only if Dot1Q tagging is needed
+  types.Encap         EncapInfo      = 3;
+  // mandatory field for collector destination
+  oneof flowmondst {
+      // destination IP of the collector
+      types.IPAddress DstIP          = 4;
+      // tunnel (aka. TEP) as the collector
+      bytes           Tunnel         = 5;
+  }
+  // source IP to use in flowmon transport packets (defaults to device-ip if unspecified)
+  types.IPAddress     SrcIP          = 6;
+  // DSCP value to use in export packet (defaults to 0 if unspecified)
+  uint32              Dscp           = 7 [(gogoproto.moretags) = "meta:meta:range:0-63,default=0"];
+  // Protocol defaults to UDP if unspecified
+  uint32              Protocol       = 8 [(gogoproto.moretags) = "meta:default=17"];
+  // destination port for the collector (defaults to 4739 if unspecified)
+  uint32              DstPort        = 9 [(gogoproto.moretags) = "meta:default=4739"];
+  // data template id used to send to the collector 
+  // (defaults to 0 if unspecified)
+  uint32              TemplateId     = 10 [(gogoproto.moretags) = "meta:default=0"];
+  // export interval in seconds 
+  // 10sec is minimum, and is the default when unspecified
+  // there is no upper limit enforced, flow-data will be exported once
+  // the concerned flow is deleted before the export interval duration is reached
+  uint32              ExportInterval = 11 [(gogoproto.moretags) = "meta:default=10"];
+}
+
+// operational status of flowmon collector, if any
+message FlowMonCollectorStatus {
+  // collector id allocated for the flowmon collector
+  uint32 CollectorId = 1;
+}
+
+// stats of flowmon collector, if any
+message FlowMonCollectorStats {
+  // number of packets sent to this flowmon collector
+  uint64 PacketCount           = 1;
+  // number of bytes sent to this flowmon collector
+  uint64 ByteCount             = 2;
+  // number of Non-IP records sent to this flowmon collector
+  uint64 NonIPRecords          = 3;
+  // number of IPv4 TCP records sent to this flowmon collector
+  uint64 IPv4TCPRecords        = 4;
+  // number of IPv4 UDP records sent to this flowmon collector
+  uint64 IPv4UDPRecords        = 5;
+  // number of IPv4 ICMP records sent to this flowmon collector
+  uint64 IPv4ICMPRecords       = 6;
+  // number of IPv6 TCP records sent to this flowmon collector
+  uint64 IPv6TCPRecords        = 7;
+  // number of IPv6 UDP records sent to this flowmon collector
+  uint64 IPv6UDPRecords        = 8;
+  // number of IPv6 ICMP records sent to this flowmon collector
+  uint64 IPv6ICMPRecords       = 9;
+  // number of export triggers
+  uint64 ExportTriggerCount    = 10;
+  // min number of records per packet
+  uint64 MinRecordsPerPacket   = 11;
+  // max number of records per packet
+  uint64 MaxRecordsPerPacket   = 12;
+  // number of packets with min records
+  uint64 MinRecordsPacketCount = 13;
+  // number of packets with max records
+  uint64 MaxRecordsPacketCount = 14;
+  // number of template packets sent out
+  uint64 TemplatePacketCount   = 15;
+  // number of closed sessions export triggers
+  uint64 ClosedSessionsExport  = 16;
+}
+
+// flowmon collector object
+message FlowMonCollector {
+  meta.TypeMeta          TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta           ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  FlowMonCollectorSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  FlowMonCollectorStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  FlowMonCollectorStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// flowmon collector create and update request
+message FlowMonCollectorRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt               BatchCtxt = 1;
+  repeated FlowMonCollectorSpec Request   = 2;
+}
+
+// flowmon collector create and update response
+message FlowMonCollectorResponse {
+  types.ApiStatus                 ApiStatus = 1;
+  repeated FlowMonCollectorStatus Response  = 2;
+}
+
+// flowmon collector get request
+message FlowMonCollectorGetRequest {
+  repeated bytes Id = 1;
+}
+
+// flowmon collector get response
+message FlowMonCollectorGetResponse {
+  types.ApiStatus           ApiStatus = 1;
+  repeated FlowMonCollector Response  = 2;
+}
+
+// flowmon collector delete request
+message FlowMonCollectorDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// flowmon collector delete response
+message FlowMonCollectorDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

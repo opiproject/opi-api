@@ -1,0 +1,127 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for service mapping object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+// service mapping grpc service
+service Svc {
+  rpc SvcMappingCreate (SvcMappingRequest) returns (SvcMappingResponse) {}
+  rpc SvcMappingGet (SvcMappingGetRequest) returns (SvcMappingGetResponse) {}
+  rpc SvcMappingDelete (SvcMappingDeleteRequest) returns (SvcMappingDeleteResponse) {}
+}
+
+// type of the service mapping
+enum SvcMappingType {
+  SVC_MAPPING_TYPE_NONE = 0;
+  // service mapping is for DSR
+  SVC_MAPPING_TYPE_DSR  = 1;
+}
+
+// SvcKey uniquely identifies a service
+// NOTE: as all the fields in SvcKey are key fields, all fields
+//       are mandatory and immutable
+message SvcKey {
+  // virtual private cloud where the backend is running
+  bytes           VPCId       = 1;
+  // vnic of the backend
+  bytes           VnicId      = 2;
+  // overlay/private IP of the backend serving the (VIP, port), i.e., DIP
+  // NOTE: this must be one of the local IP mappings that belongs to the
+  //       vnic of the backend
+  types.IPAddress BackendIP   = 3;
+  // IP protocol
+  uint32          IPProtocol  = 4;
+  // L4 port on the DIP, in case port rewrite needs to be performed,
+  // if the backend port is set to 0, no port rewrite is performed
+  uint32          BackendPort = 5 [(gogoproto.moretags) = "meta:range:0-65535"];
+  // encap received from the service
+  types.Encap     FabricEncap = 6;
+}
+
+// service mapping specification
+// NOTE: update operation does not apply, as all the fields in the
+//       SvcMappingSpec are immutable
+message SvcMappingSpec {
+  // unique service mapping id
+  bytes           Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // key to identify the service
+  SvcKey          Key        = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // service IP (aka. VIP)
+  types.IPAddress IPAddr     = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // L4 port where service is hosted, if this port is not provided no port
+  // rewrite will be done and the incoming port will be carried as-is
+  uint32          SvcPort    = 4 [(gogoproto.moretags) = "meta:range:1-65535,immutable"];
+  // type of the service mapping
+  SvcMappingType  Type       = 5 [(gogoproto.moretags) = "meta:mandatory, immutable"];
+}
+
+// operational status of service mapping, if any
+message SvcMappingStatus {
+  // NAT table index
+  uint32 NatIdx  = 1;
+  // TCAM index used by this entry
+  uint32 TcamIdx = 2;
+}
+
+// stats of service mapping, if any
+message SvcMappingStats {
+}
+
+// service mapping object
+message SvcMapping {
+  meta.TypeMeta    TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta     ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SvcMappingSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SvcMappingStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SvcMappingStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// service mapping create and update request
+message SvcMappingRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt         BatchCtxt = 1;
+  // batched request
+  repeated SvcMappingSpec Request   = 2;
+}
+
+// service mapping create and update response
+message SvcMappingResponse {
+  types.ApiStatus           ApiStatus = 1;
+  // batched response
+  repeated SvcMappingStatus Response  = 2;
+}
+
+// service mapping get request
+message SvcMappingGetRequest {
+  // batched request
+  repeated bytes Id = 1;
+}
+
+// service mapping get response
+message SvcMappingGetResponse {
+  types.ApiStatus     ApiStatus = 1;
+  // batched response
+  repeated SvcMapping Response  = 2;
+}
+
+// service mapping delete request
+message SvcMappingDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated bytes Id         = 2;
+}
+
+// service mapping delete response
+message SvcMappingDeleteResponse {
+  // batched response
+  repeated types.ApiStatus ApiStatus = 1;
+}

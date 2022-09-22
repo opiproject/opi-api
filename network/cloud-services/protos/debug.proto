@@ -1,0 +1,1331 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for the top level debug object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+import "interface.proto";
+import "google/protobuf/any.proto";
+
+service DebugSvc {
+  rpc TraceUpdate (TraceRequest) returns (TraceResponse) {}
+  rpc TraceFlush(types.Empty) returns (types.Empty) {}
+  rpc TraceLevelGet (types.Empty) returns (TraceLevelGetResponse) {}
+  rpc TableStatsGet (types.Empty) returns (TableStatsGetResponse) {}
+  rpc LlcSetup (LlcSetupRequest) returns (LlcSetupResponse) {}
+  rpc LlcStatsGet (types.Empty) returns (LlcStatsGetResponse) {}
+  rpc PbStatsGet (types.Empty) returns (PbStatsGetResponse) {}
+  rpc PbStatsReset (types.Empty) returns (types.Empty) {}
+  rpc PbDropStatsReset (types.Empty) returns (types.Empty) {}
+  rpc PbStatsSummaryGet (types.Empty) returns (PbStatsSummaryGetResponse) {}
+  rpc PbStatsSummaryReset (types.Empty) returns (types.Empty) {}
+  rpc MemTrackGet(MemTrackGetRequest) returns (MemTrackGetResponse) {}
+  rpc SlabGet(types.Empty) returns (SlabGetResponse) {}
+  rpc HeapGet(HeapGetRequest) returns (HeapGetResponse) {}
+  rpc MemoryTrim (types.Empty) returns (types.Empty) {}
+  rpc StartAacsServer (AacsRequest) returns (types.Empty) {}
+  rpc StopAacsServer (types.Empty) returns (types.Empty) {}
+  rpc InternalPortGet (InternalPortRequestMsg) returns (InternalPortResponseMsg) {}
+  rpc InterfacePpsTrackingEnable (types.Empty) returns (types.Empty) {}
+  rpc InterfacePpsTrackingDisable (types.Empty) returns (types.Empty) {}
+  rpc LearnDedupIntervalUpdate (LearnDedupIntervalRequest) returns (types.Empty) {}
+  rpc TcpProxySessionGet (TcpProxySessionGetRequest) returns (TcpProxySessionGetResponse) {}
+  rpc TcpCbGet (TcpCbGetRequest) returns (TcpCbGetResponse) {}
+  rpc TcpProxyGlobalStatsGet (types.Empty) returns (TcpProxyGlobalStatsGetResponse) {}
+  rpc TcpProxyGlobalCfgCreate (TcpProxyGlobalCfgRequest) returns (TcpProxyGlobalCfgResponse) {}
+  rpc ServiceLifEnable (types.Empty) returns (types.Empty) {}
+  rpc ServiceLifDisable (types.Empty) returns (types.Empty) {}
+  rpc FlowTracer (FlowTracerRequest) returns (FlowTracerResponse) {}
+  rpc AsicPerfGet (types.Empty) returns (AsicPerfGetResponse) {}
+  rpc NaclCreate (NaclRequest) returns (NaclResponse) {}
+  rpc NaclDelete (NaclDeleteRequest) returns (NaclDeleteResponse) {}
+  rpc EepromRead (EepromReadRequestMsg) returns (EepromReadResponseMsg) {}
+  rpc EepromWrite (EepromWriteRequestMsg) returns (EepromWriteResponseMsg) {}
+  rpc ElamCaptureGet(types.Empty) returns (ElamResponse) {}
+  rpc ThreadGet (types.Empty) returns (ThreadGetResponse) {}
+  rpc DatapathMemoryGet (types.Empty) returns (DatapathMemoryGetResponse) {}
+  rpc PbConfigGet (types.Empty) returns (PbConfigGetResponse) {}
+}
+
+enum TraceLevel {
+  TRACE_LEVEL_NONE    = 0;    // no tracing at all
+  TRACE_LEVEL_ERROR   = 1;    // enable tracing only for error messages
+  TRACE_LEVEL_WARN    = 2;    // enable tracing only for warn messages
+  TRACE_LEVEL_INFO    = 3;    // enable tracing only for info messages
+  TRACE_LEVEL_DEBUG   = 4;    // enable tracing only for debug messages
+  TRACE_LEVEL_VERBOSE = 5;    // enable tracing only for verbose messages
+}
+
+message TraceRequest {
+  // trace level to set
+  TraceLevel TraceLevel = 1;
+  // enable or disable API tracing
+  bool       ApiTraceEn = 2;
+  // enable or disable PAL tracing
+  bool       PalTraceEn = 3;
+}
+
+message TraceResponse {
+  types.ApiStatus ApiStatus  = 1;
+  // curent trace level
+  TraceLevel      TraceLevel = 2;
+  // API tracing enalbed or not is indicated by ApiTraceEn
+  bool            ApiTraceEn = 3;
+  // PAL tracing enalbed or not is indicated by PalTraceEn
+  bool            PalTraceEn = 4;
+}
+
+// TraceLevelGetResponse carries the current trace level in GET response
+message TraceLevelGetResponse {
+  // curent trace level
+   TraceLevel TraceLevel = 1;
+  // API tracing enalbed or not is indicated by ApiTraceEn
+   bool       ApiTraceEn = 2;
+  // PAL tracing enalbed or not is indicated by PalTraceEn
+   bool       PalTraceEn = 3;
+}
+
+enum TableApiStatsType {
+  TABLE_API_STATS_INSERT           = 0;
+  TABLE_API_STATS_INSERT_DUPLICATE = 1;
+  TABLE_API_STATS_INSERT_FAIL      = 2;
+  TABLE_API_STATS_REMOVE           = 3;
+  TABLE_API_STATS_REMOVE_NOT_FOUND = 4;
+  TABLE_API_STATS_REMOVE_FAIL      = 5;
+  TABLE_API_STATS_UPDATE           = 6;
+  TABLE_API_STATS_UPDATE_FAIL      = 7;
+  TABLE_API_STATS_GET              = 8;
+  TABLE_API_STATS_GET_FAIL         = 9;
+  TABLE_API_STATS_RESERVE          = 10;
+  TABLE_API_STATS_RESERVE_FAIL     = 11;
+  TABLE_API_STATS_RELEASE          = 12;
+  TABLE_API_STATS_RELEASE_FAIL     = 13;
+}
+
+message TableApiStatsEntry {
+  TableApiStatsType Type  = 1;
+  uint32            Count = 2;
+}
+
+message TableApiStats {
+  repeated TableApiStatsEntry Entry = 1;
+}
+
+enum TableStatsType {
+  TABLE_STATS_ENTRIES    = 0;
+  TABLE_STATS_COLLISIONS = 1;
+}
+
+message TableStatsEntry {
+  TableStatsType Type  = 1;
+  uint32         Count = 2;
+}
+
+message TableStats {
+  repeated TableStatsEntry Entry = 1;
+}
+
+message TableStatsResponse {
+  string        TableName  = 1;
+  TableApiStats ApiStats   = 2;
+  TableStats    TableStats = 3;
+  uint32        TableSize  = 4;
+}
+
+message TableStatsGetResponse {
+  types.ApiStatus             ApiStatus = 1;
+  repeated TableStatsResponse Response  = 2;
+}
+
+enum LlcCounterType {
+  LLC_COUNTER_CACHE_NONE        = 0;
+  LLC_COUNTER_CACHE_READ        = 1;
+  LLC_COUNTER_CACHE_WRITE       = 2;
+  LLC_COUNTER_SCRATCHPAD_ACCESS = 3;
+  LLC_COUNTER_CACHE_HIT         = 4;
+  LLC_COUNTER_CACHE_MISS        = 5;
+  LLC_COUNTER_PARTIAL_WRITE     = 6;
+  LLC_COUNTER_CACHE_MAINT_OP    = 7;
+  LLC_COUNTER_EVICTION          = 8;
+  LLC_COUNTER_RETRY_NEEDED      = 9;
+  LLC_COUNTER_RETRY_ACCESS      = 10;
+}
+
+message LlcSetupRequest {
+  LlcCounterType Type = 1;
+}
+
+message LlcSetupResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+message LlcStats {
+  LlcCounterType  Type  = 1;
+  repeated uint32 Count = 2;
+}
+
+message LlcStatsGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  LlcStats        Stats     = 2;
+}
+
+enum OflowFifoDropType {
+  OCCUPANCY_DROP                = 0;    // pkts dropped due to fifo full
+  EMERGENCY_STOP_DROP           = 1;    // pkts dropped due to emergency condition hit due to slow oflow memory to write-buffer communication
+  WRITE_BUFFER_ACK_FILL_UP_DROP = 2;    // pkts dropped due to write buffer's ack fifo filling up
+  WRITE_BUFFER_ACK_FULL_DROP    = 3;    // pkts dropped due to write buffer's ack fifo full
+  WRITE_BUFFER_FULL_DROP        = 4;    // pkts dropped due to write buffer filling up
+  CONTROL_FIFO_FULL_DROP        = 5;    // pkts dropped due to control fifo full
+}
+
+message OflowFifoDropStatsEntry {
+  OflowFifoDropType Type  = 1;
+  uint32            Count = 2;
+}
+
+message OflowFifoDropStats {
+  repeated OflowFifoDropStatsEntry Entry = 1;
+}
+
+// OflowFifoStats captures instantaneous counters at the overflow fifo interface
+message OflowFifoStats {
+  uint32             SopCountIn  = 1;    // count of start-of-packets in
+  uint32             EopCountIn  = 2;    // count of end-of-packets in
+  uint32             SopCountOut = 3;    // count of start-of-packets out
+  uint32             EopCountOut = 4;    // count of end-of-packets out
+  OflowFifoDropStats DropCounts  = 5;    // drop counts
+}
+
+enum BufferDropReasons {
+   INTRINSIC_DROP            = 0;     // pkts dropped due to intrinsic drop bit being set
+   DISCARDED                 = 1;     // pkts dropped due to error
+   ADMITTED                  = 2;     // errored pkts admitted to buffering
+   OUT_OF_CELLS_DROP         = 3;     // pkts dropped due to cell exhaustion (first cell)
+   OUT_OF_CELLS_DROP_2       = 4;     // pkts dropped due to cell exhaustion (subsequent cell)
+   OUT_OF_CREDIT_DROP        = 5;     // pkts dropped due to cell-credits exhaustion
+   TRUNCATION_DROP           = 6;     // pkts dropped due to size bigger than the configured MTU
+   PORT_DISABLED_DROP        = 7;     // pkts dropped due to port disable
+   COPY_TO_CPU_TAIL_DROP     = 8;     // copy-to-cpu pkts tail dropped
+   SPAN_TAIL_DROP            = 9;     // span pkts tail dropped
+   MIN_SIZE_VIOLATION_DROP   = 10;    // pkts dropped due to lesser than min size
+   ENQUEUE_ERROR_DROP        = 11;    // pkts dropped due to enqueue to reserved queues
+   INVALID_PORT_DROP         = 12;    // pkts dropped due to destined to invalid ports
+   INVALID_OUTPUT_QUEUE_DROP = 13;    // pkts dropped due to destined to invalid output queues
+}
+
+message BufferDropStatsEntry {
+  BufferDropReasons Reasons   = 1;    // drop reasons
+  uint32            DropCount = 2;    // drop count for multiple drop reasons
+}
+
+message BufferDropStats {
+  repeated BufferDropStatsEntry StatsEntries = 1;
+}
+
+message BufferStats {
+  uint32          SopCountIn  = 1;    // count of start-of-packets in
+  uint32          EopCountIn  = 2;    // count of end-of-packets in
+  uint32          SopCountOut = 3;    // count of start-of-packets out
+  uint32          EopCountOut = 4;    // count of end-of-packets out
+  BufferDropStats DropCounts  = 5;    // drop counts
+}
+
+enum PacketBufferPortType {
+  PACKET_BUFFER_PORT_TYPE_DMA    = 0;
+  PACKET_BUFFER_PORT_TYPE_P4IG   = 1;
+  PACKET_BUFFER_PORT_TYPE_P4EG   = 2;
+  PACKET_BUFFER_PORT_TYPE_UPLINK = 3;
+}
+
+message PacketBufferPort {
+  PacketBufferPortType PortType = 1;
+  uint32               PortNum  = 2;
+}
+
+message QosInputOflowQueueStats {
+  uint64 GoodPktsIn    = 1;    // cumulative count of good packets in
+  uint64 GoodPktsOut   = 2;    // cumulative count of good packets out
+  uint64 ErroredPktsIn = 3;    // cumulative count of errored packets in
+  uint32 FifoDepth     = 4;    // instantaneous overflow fifo depth in bytes
+  uint32 MaxFifoDepth  = 5;    // maximum overflow fifo depth observed in bytes
+}
+
+message QosInputQueueStats {
+  uint32                  InputQueueIdx   = 1;
+  QosInputOflowQueueStats OflowFifoStats  = 2;    // overflow fifo stats
+  uint32                  BufferOccupancy = 3;    // instantaneous buffer occupancy in bytes
+  uint32                  PeakOccupancy   = 4;    // peak buffer occupancy in bytes
+  uint64                  PortMonitor     = 5;    // port monitor counter
+}
+
+message QosOutputQueueStats {
+  uint32 OutputQueueIdx = 1;
+  uint32 QueueDepth     = 2;    // instantaneous output queue depth in pkts
+  uint64 PortMonitor    = 3;    // port monitor counter
+}
+
+message QosQueueStats {
+  repeated QosInputQueueStats  InputQueueStats  = 1;    // list of input queue statistics per each input queue
+  repeated QosOutputQueueStats OutputQueueStats = 2;    // list of output queue statistics per each output queue
+}
+
+message PacketBufferPortStats {
+  PacketBufferPort PacketBufferPort = 1;    // port identifier
+  BufferStats      BufferStats      = 2;    // PBC block statistics
+  OflowFifoStats   OflowFifoStats   = 3;    // overflow fifo statistics
+  QosQueueStats    QosQueueStats    = 4;    // QoS queue statistics
+}
+
+// PacketBufferStats captures all the statistics of the packet buffering module
+message PacketBufferStats {
+  repeated PacketBufferPortStats PortStats = 1; // list of stats, one per packet buffer port
+}
+
+message PbStatsGetResponse {
+  types.ApiStatus   ApiStatus = 1;
+  PacketBufferStats PbStats   = 2;
+}
+
+message PbStatsSummary {
+  // number of pkts coming into PB from MAC (across all ports)
+  uint64 TotalMacPktsIn   = 1;
+  // number of pkts going out of MAC (across all ports) from PB
+  uint64 TotalMacPktsOut  = 2;
+  // number of pkts coming into PB from Host
+  uint64 TotalHostPktsIn  = 3;
+  // number of pkts towards Host from PB
+  uint64 TotalHostPktsOut = 4;
+  // number of pkts dropped in PB Block
+  uint64 TotalPBDrops     = 5;
+  // number of pkts dropped in PRD Block
+  uint64 TotalPRDDrops    = 6;
+}
+
+message PbStatsSummaryGetResponse {
+  types.ApiStatus ApiStatus      = 1;
+  PbStatsSummary  PbStatsSummary = 2;
+}
+
+message QosInputQueueConfig {
+  // input queue index
+  uint32 InputQueueIdx  = 1;
+  // reserved buffer configured per queue
+  uint32 ReservedBuffer = 2;
+  // headroom buffer configured per queue
+  uint32 HeadroomBuffer = 3;
+}
+
+message BufferConfig {
+  // list of input queue buffer configs per each input queue
+  repeated QosInputQueueConfig InputQueueConfig = 1;
+}
+
+message PacketBufferPortConfig {
+  // port identifier
+  PacketBufferPort PacketBufferPort = 1;
+  // PBC block config
+  BufferConfig     BufferConfig     = 2;
+}
+
+message PacketBufferConfig {
+  // list of configs, one per packet buffer port
+  repeated PacketBufferPortConfig PbPortConfig = 1;
+}
+
+message PbConfigGetResponse {
+  types.ApiStatus    ApiStatus = 1;
+  PacketBufferConfig PbConfig  = 2;
+}
+
+message MemTrackSpec {
+  uint32 AllocId = 1; // allocation id stats are requested for (0xFFFFFFFF for all)
+}
+
+// operational status of memory tracker object
+message MemTrackStatus {
+}
+
+// stats per memory tracker object
+message MemTrackStats {
+  uint32 NumAllocs = 1; // number of allocations with alloc_id
+  uint32 NumFrees  = 2; // number of frees with alloc_id
+}
+
+// MemTrackGetRequest is request msg with allocation id that info is requested for
+message MemTrackGetRequest {
+  MemTrackSpec Spec = 1; // qualifiers
+}
+
+// MemTrackGetResponse captures debug information per allocation id
+message MemTrackGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  MemTrackSpec    Spec      = 2; // spec (aka. identifier of mem track object)
+  MemTrackStatus  Status    = 3; // oper status, if any
+  MemTrackStats   Stats     = 4; // statistics
+}
+
+message HeapStats {
+  uint32 NumArenaBytesAlloc   = 1;
+  uint32 NumFreeBlocks        = 2;
+  uint32 NumFastBinFreeBlocks = 3;
+  uint32 NumMmapBlocksAlloc   = 4;
+  uint32 NumMmapBytesAlloc    = 5;
+  uint32 MaxBlocksAlloc       = 6;
+  uint32 NumFastBinFreeBytes  = 7;
+  uint32 NumBytesAlloc        = 8;
+  uint32 NumFreeBytes         = 9;
+  uint32 ReleasableFreeBytes  = 10;
+}
+
+message HeapGetRequest {
+}
+
+message HeapGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  HeapStats       Stats     = 2;
+}
+
+enum MappingDumpType {
+  MAPPING_DUMP_LOCAL_L2  = 0;
+  MAPPING_DUMP_LOCAL_L3  = 1;
+  MAPPING_DUMP_REMOTE_L2 = 2;
+  MAPPING_DUMP_REMOTE_L3 = 3;
+}
+
+message L3HWMappingKey {
+  uint32          VPCId  = 1;
+  types.IPAddress IPAddr = 2;
+}
+
+message L2HWMappingKey {
+  uint32 SubnetId = 1;
+  uint64 MACAddr  = 2;
+}
+
+message HWMappingKey {
+  oneof keyinfo {
+    L3HWMappingKey IPKey  = 1;
+    L2HWMappingKey MACKey = 2;
+  }
+}
+
+message MappingDumpFilter {
+  HWMappingKey    Key  = 1;
+  MappingDumpType Type = 2;
+}
+
+message CommandUUID {
+  bytes Id = 1;
+}
+
+message InterfaceDumpFilter {
+  oneof ifinfo {
+    CommandUUID Id     = 1;
+    IfType      IfType = 2;
+  }
+}
+
+message DatapathAssist {
+  uint32 NumCores = 1;
+}
+
+message DatapathAssistCps {
+  bool Detail = 1;
+  uint32 Duration = 2;
+}
+
+message IntrDumpArgs {
+  bool Json = 1; // if json format is requested.
+}
+
+enum Command {
+  CMD_NONE                           = 0;
+  CMD_MAPPING_DUMP                   = 1;
+  CMD_RXDMA_MAPPING_DUMP             = 2;
+  CMD_INTR_DUMP                      = 3;
+  CMD_INTR_CLEAR                     = 4;
+  CMD_API_ENGINE_STATS_DUMP          = 5;
+  CMD_FLOW_DUMP                      = 6;
+  CMD_STORE_STATS_DUMP               = 7;
+  CMD_NAT_FLOW_DUMP                  = 8;
+  CMD_NACL_DUMP                      = 9;
+  CMD_PORT_FSM_DUMP                  = 10;
+  CMD_NAT_GLOBAL_STATS               = 11;
+  CMD_LIF_STATS_DUMP                 = 12;
+  CMD_IF_STATS_DUMP                  = 13;
+  CMD_FLOW_TRACE                     = 14;
+  CMD_MIRROR_POLICY_DUMP             = 15;
+  CMD_LIF_VLAN_DUMP                  = 16;
+  CMD_VNI_DUMP                       = 17;
+  CMD_VNI_DB_DUMP                    = 18;
+  CMD_SVC_DB_DUMP                    = 19;
+  CMD_SVC_MAPPING_DUMP               = 20;
+  CMD_SVC_MAPPING_TCAM_DUMP          = 21;
+  CMD_VNIC_TCAM_DUMP                 = 22;
+  CMD_VPC_PEER_TCAM_DUMP             = 23;
+  CMD_MANUFACTURING_MODE_ENABLE      = 24;
+  CMD_MANUFACTURING_MODE_DISABLE     = 25;
+  CMD_DATAPATH_ASSIST                = 26;
+  CMD_INTR_ALL_DUMP                  = 27;
+  CMD_EXTERNAL_GRPC_ENABLE           = 28;
+  CMD_EXTERNAL_GRPC_DISABLE          = 29;
+  CMD_DATAPATH_ASSIST_DUMP           = 30;
+  CMD_TEP_NH_DUMP                    = 31;
+  CMD_TEP_DB_DUMP                    = 32;
+  CMD_DEVICE_TCAM_DUMP               = 33;
+  CMD_TEP_NH_SET_DEFAULT_ECMP        = 34;
+  CMD_TEP_NH_RESET                   = 35;
+  CMD_SYSTEM_DUMP                    = 36;
+  CMD_PIPELINE_DROP_ALL_STATS_DUMP   = 37;
+  CMD_SYSTEM_STATS_GLOBAL_DUMP       = 38;
+  CMD_EPOCH_RECONCILE_ENABLE         = 39;
+  CMD_EPOCH_RECONCILE_DISABLE        = 40;
+  CMD_COPP_TABLE_DUMP                = 41;
+  CMD_REGION_TCAM_DUMP               = 43;
+  CMD_POLICY_SCALE_INFO_DUMP         = 44;
+  CMD_VXLAN_REWRITE_DUMP             = 45;
+  CMD_FLOW_SYNC_OPTIMIZATION_ENABLE  = 46;
+  CMD_FLOW_SYNC_OPTIMIZATION_DISABLE = 47;
+}
+
+message CommandMessage {
+  Command             Command    = 1;
+  google.protobuf.Any CommandMsg = 2;
+}
+
+message AacsRequest {
+  uint32 AacsServerPort = 1;
+}
+
+message SlabSpec {
+  string Name             = 1; // name of the slab
+  uint32 Id               = 2; // slab identifier
+  uint32 ElementSize      = 3; // size of each element
+  uint32 ElementsPerBlock = 4; // # of elements per block
+  bool   ThreadSafe       = 5; // thread safe allocation/free, if TRUE
+  bool   GrowOnDemand     = 6; // grow the slab on demand, if TRUE
+  bool   DelayDelete      = 7; // delay delete each element, if TRUE, instead of freeing immediately
+  bool   ZeroOnAllocation = 8; // zero allocated mem. if TRUE
+  uint32 RawBlockSize     = 9; // raw block size
+}
+
+message SlabStatus {
+}
+
+message SlabStats {
+  uint32 NumElementsInUse = 1; // number of elements in use
+  uint32 NumAllocs        = 2; // number of alloc operations
+  uint32 NumFrees         = 3; // number of free operations
+  uint32 NumAllocErrors   = 4; // number of alloc errors
+  uint32 NumBlocks        = 5; // number of blocks allocated
+}
+
+message Slab {
+  SlabSpec   Spec   = 1;
+  SlabStatus Status = 2;
+  SlabStats  Stats  = 3;
+}
+
+message SlabGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  repeated Slab   Slab      = 2;
+}
+
+// datapath memory usage of various memory segments
+message DatapathMemoryGetResponse {
+  types.ApiStatus ApiStatus                = 1;
+  // uncached lower memory used
+  uint64          UncachedLowMemUsed       = 2;
+  // cached lower memory used
+  uint64          CachedLowMemUsed         = 3;
+  // uncached lower high-mem used
+  uint64          UncachedLowHighMemUsed   = 4;
+  // cached lower high-mem used
+  uint64          CachedLowHighMemUsed     = 5;
+  // uncached higher high-mem used
+  uint64          UncachedHighHighMemUsed  = 6;
+  // cached higher high-mem used
+  uint64          CachedHighHighMemUsed    = 7;
+  // uncached memory reserved for ISSU
+  uint64          UncachedISSUMemRsvd      = 8;
+  // cached memory reserved for ISSU
+  uint64          CachedISSUMemRsvd        = 9;
+  // uncached memory needed for ISSU
+  uint64          UncachedISSUMemNeeded    = 10;
+  // cached memory needed for ISSU
+  uint64          CachedISSUMemNeeded      = 11;
+  // uncached low memory needed for ISSU
+  uint64          UncachedISSULowMemNeeded = 12;
+  // cached low memory needed for ISSU
+  uint64          CachedISSULowMemNeeded   = 13;
+  // uncached hi memory needed for ISSU
+  uint64          UncachedISSUHiMemNeeded  = 14;
+  // cached hi memory needed for ISSU
+  uint64          CachedISSUHiMemNeeded    = 15;
+  // uncached low memory reserved for ISSU
+  uint64          UncachedISSULowMemRsvd   = 16;
+  // cached low memory reserved for ISSU
+  uint64          CachedISSULowMemRsvd     = 17;
+  // uncached hi memory reserved for ISSU
+  uint64          UncachedISSUHiMemRsvd    = 18;
+  // cached hi memory reserved for ISSU
+  uint64          CachedISSUHiMemRsvd      = 19;
+}
+
+enum IntPortDplxMode {
+  HALF_DUPLEX = 0;
+  FULL_DUPLEX = 1;
+}
+
+message InternalPortStatus {
+  pds.IfStatus    PortStatus   = 1;
+  types.PortSpeed PortSpeed    = 2;
+  IntPortDplxMode PortMode     = 3;
+  bool            PortTxPaused = 4;
+  bool            PortFlowCtrl = 5;
+}
+
+message InternalPortStats {
+  uint64  InGoodOctets   = 1;
+  uint64  OutOctets      = 2;
+  uint32  InBadOctets    = 3;
+  uint32  InUnicast      = 4;
+  uint32  Inbroadcast    = 5;
+  uint32  Inmulticast    = 6;
+  uint32  InPause        = 7;
+  uint32  InUndersize    = 8;
+  uint32  InFragments    = 9;
+  uint32  InOversize     = 10;
+  uint32  InJabber       = 11;
+  uint32  InRxErr        = 12;
+  uint32  InFcsErr       = 13;
+  uint32  OutUnicast     = 14;
+  uint32  OutBroadcast   = 15;
+  uint32  OutMulticast   = 16;
+  uint32  OutFcsErr      = 17;
+  uint32  OutPause       = 18;
+  uint32  OutCollisions  = 19;
+  uint32  OutDeferred    = 20;
+  uint32  OutSingle      = 21;
+  uint32  OutMultiple    = 22;
+  uint32  OutExcessive   = 23;
+  uint32  OutLate        = 24;
+}
+
+message InternalPortResponse {
+  uint32              PortNumber     = 1;        // Port number
+  string              PortDescr      = 2;        // Port Description
+  InternalPortStatus  InternalStatus = 3;        // Internal port status
+  InternalPortStats   Stats          = 4;        // Internal ports stats
+}
+
+message InternalPortResponseMsg {
+  repeated InternalPortResponse Response = 1;
+}
+
+message InternalPortRequest {
+  uint32  PortNumber     = 1;
+}
+
+message InternalPortRequestMsg {
+  repeated InternalPortRequest  Request = 1;
+}
+
+message EepromAddress {
+  bytes  PortId = 1;
+  uint32 Page   = 2;
+  uint32 Offset = 3;
+}
+
+message EepromPage {
+  uint32 PageNumber  = 1;
+  bytes  PageContent = 2;
+}
+
+message EepromReadResponse {
+  uint32              IfIndex = 1; // encoded interface index
+  repeated EepromPage Page    = 2;
+}
+
+message EepromReadResponseMsg {
+  types.ApiStatus             ApiStatus = 1;
+  repeated EepromReadResponse Response  = 2;
+}
+
+message EepromReadRequest {
+  EepromAddress Address = 1;
+}
+
+message EepromReadRequestMsg {
+  repeated bytes PortId = 1;
+}
+
+message EepromWriteResponseMsg {
+  types.ApiStatus ApiStatus = 1;
+}
+
+message EepromWriteRequest {
+  EepromAddress Address = 1;
+  uint32        Value   = 2;
+}
+
+message EepromWriteRequestMsg {
+  repeated EepromWriteRequest Request = 1;
+}
+
+message LearnDedupIntervalRequest {
+  uint32 DedupInterval = 1;
+}
+
+message TcpProxySessionFilter {
+  types.IPAddress SrcIp    = 1;
+  types.IPAddress DstIp    = 2;
+  uint32          SrcPort  = 3;
+  uint32          DstPort  = 4;
+  bool            MatchAll = 5;
+}
+
+message TcpProxySessionReq {
+  TcpProxySessionFilter SessionFilter = 1;
+}
+
+message TcpProxyFlow {
+  uint64          Qid1    = 1;
+  uint64          Qid2    = 2;
+  types.IPAddress SrcIp   = 3;
+  types.IPAddress DstIp   = 4;
+  uint32          SrcPort = 5;
+  uint32          DstPort = 6;
+}
+
+// TcpProxySessionGetRequest is batched get request
+message TcpProxySessionGetRequest {
+  repeated TcpProxySessionReq request = 1; // batched get request
+}
+
+message TcpProxySession {
+  types.ApiStatus ApiStatus = 1; // API status code
+  TcpProxyFlow    Flow      = 2;
+}
+
+message TcpProxySessionGetResponse {
+  types.ApiStatus          ApiStatus = 1; // API status code
+  repeated TcpProxySession Response  = 2; // batched response
+}
+
+// Only if ApiStatus indicates success, other fields are valid
+message TcpProxyGlobalStatsGetResponse {
+  types.ApiStatus     ApiStatus   = 1; // API status code
+  TcpProxyGlobalStats GlobalStats = 2;
+}
+
+message TcpProxyGlobalStats {
+  uint64 RxDescFull           = 1;
+  uint64 InvalidTxDesc        = 2;
+  uint64 InvalidRetxDesc      = 3;
+  uint64 PartialPktAck        = 4;
+  uint64 RetxNopSchedule      = 5;
+  uint64 GcFull               = 6;
+  uint64 TlsGcFull            = 7;
+  uint64 OoqFull              = 8;
+  uint64 InvalidRxDesc        = 9;
+  uint64 RcvdCePkts           = 10;
+  uint64 EcnReducedCongestion = 11;
+  uint64 RetxPkts             = 12;
+  uint64 OoqRx2txFull         = 13;
+  uint64 RxAckForUnsentData   = 14;
+  uint64 FinSentCnt           = 15;
+  uint64 RstSentCnt           = 16;
+  uint64 RxWinProbe           = 17;
+  uint64 RxKeepAlive          = 18;
+  uint64 RxPktAfterWin        = 19;
+  uint64 RxPureWinUpd         = 20;
+  uint64 RxDescBigAvail       = 21;
+  uint64 RxDescSmallAvail     = 22;
+  uint64 TxDescAvail          = 23;
+  uint64 OoqAvail             = 24;
+
+  uint64 TcpDebug1            = 1002;
+  uint64 TcpDebug2            = 1003;
+  uint64 TcpDebug3            = 1004;
+  uint64 TcpDebug4            = 1005;
+  uint64 TcpDebug5            = 1006;
+  uint64 TcpDebug6            = 1007;
+  uint64 TcpDebug7            = 1008;
+  uint64 TcpDebug8            = 1009;
+  uint64 TcpDebug9            = 1010;
+  uint64 TcpDebug10           = 1011;
+}
+
+// TcpProxyGlobalCfg captures global TCP configuration
+message TcpProxyGlobalCfg {
+  uint32 Mss         = 1;
+  uint32 CwndInitial = 2;
+  uint32 CwndIdle    = 3;
+}
+
+// TcpProxyGlobalCfgRequest is batched GET requests for tcp global cfg
+message TcpProxyGlobalCfgRequest {
+  repeated TcpProxyGlobalCfg Request = 1;
+}
+
+// Only if ApiStatus indicates success, other fields are valid
+message TcpProxyGlobalCfgResponse {
+  types.ApiStatus ApiStatus = 1; // API status code
+}
+
+// TcpCbSpec captures all the tcp cb level configuration
+message TcpCbSpec {
+  uint32                TcpCbId            = 1;
+  uint32                RcvNxt             = 2;
+  uint32                SndNxt             = 3;
+  uint32                SndUna             = 4;
+  uint32                RcvTsval           = 5;
+  uint32                TsRecent           = 6;
+  fixed64               SerqBase           = 7;
+  uint32                DebugDol           = 8;
+  fixed64               SesqBase           = 9;
+  uint32                SesqPi             = 10;
+  uint32                SesqCi             = 11;
+  uint32                SndWnd             = 12;
+  uint32                SndCwnd            = 13;
+  uint32                RcvMss             = 14;
+  uint32                SourcePort         = 15;
+  uint32                DestPort           = 16;
+  bytes                 HeaderTemplate     = 17;
+  uint32                State              = 18;
+  uint32                SourceLif          = 19;
+  fixed64               AsesqBase          = 20;
+  uint32                AsesqPi            = 21;
+  uint32                AsesqCi            = 22;
+  uint32                DebugDolTx         = 23;
+  uint32                HeaderLen          = 24;
+  bool                  PendingAckSend     = 25;
+  uint32                SesqRetxCi         = 27;
+  uint64                RetxSndUna         = 28;
+  uint64                RxTs               = 29;
+  uint64                Rto                = 30;
+  uint32                SndCwndCnt         = 31;
+  uint32                DebugDolTblsetaddr = 32;
+  uint32                SerqPi             = 33;
+  uint32                PredFlags          = 34;
+  uint32                OtherQid           = 35;
+  uint32                PacketsOut         = 36;
+  uint32                SndSsthresh        = 37;
+  uint32                CcAlgo             = 38;
+  uint32                RtoBackoff         = 39;
+  uint32                CpuId              = 40;
+  uint32                SerqCi             = 41;
+  uint32                RcvWnd             = 42;
+  uint32                SndWscale          = 43;
+  uint32                RcvWscale          = 44;
+  uint32                SesqTxCi           = 45;
+  bool                  DelayAck           = 46;
+  uint32                Ato                = 47;
+  uint32                SndRecover         = 48;
+  uint32                Smss               = 49;
+  uint32                InitialWindow      = 50;
+  uint32                AbcLVar            = 51;
+  bool                  OooQueue           = 52;
+  uint64                OooRx2txQbase      = 53;
+  uint32                RcvWup             = 54;
+  fixed64               CbBase             = 55;
+  fixed64               CbBaseQtype1       = 56;
+  uint32                SrttUs             = 57;
+  bool                  SackPerm           = 58;
+  bool                  Timestamps         = 59;
+  uint32                RttSeqTsoffset     = 60;
+  uint32                RttTime            = 61;
+  uint32                TsLearned          = 62;
+  uint32                TsOffset           = 63;
+  uint32                TsTime             = 64;
+  bool                  Keepalives         = 65;
+  uint32                RttVar             = 66;
+  uint32                AppQid             = 67;
+  uint32                CpDbgOffloadStarts = 68;
+  uint32                CpDbgOffloadEnds   = 69;
+  uint32                CpDbgMagic         = 70;
+  uint32                CpDbgOffloadActive = 71;
+}
+
+message TcpCbOoqStatus {
+  uint64                QueueAddr  = 1;
+  uint32                StartSeq   = 2;
+  uint32                EndSeq     = 3;
+  uint32                NumEntries = 4;
+}
+
+// TcpCbStatus is the operational status of a given tcpcb
+message TcpCbStatus {
+  uint32                  TcpCbId     = 1;
+  bool                    OoqNotEmpty = 2;
+  repeated TcpCbOoqStatus OoqStatus   = 3;
+}
+
+// TcpCbGetRequest is used to get information about a tcpcb
+message TcpCbRequest {
+    uint32 TcpCbId = 1;
+}
+
+// TcpCbGetRequest is batched GET requests for tcpcbs
+message TcpCbGetRequest {
+  repeated TcpCbRequest Request = 1;
+}
+
+// TcpCbStats is the statistics object for each tcpcb
+message TcpCbStats {
+  // rx stats
+  uint64                BytesRcvd        = 1;
+  uint64                PktsRcvd         = 2;
+  uint64                BytesAcked       = 3;
+  uint64                PureAcksRcvd     = 4;
+  uint64                DupAcksRcvd      = 5;
+  uint64                SlowPathCnt      = 6;
+  uint64                SerqFullCnt      = 7;
+  uint64                OooCnt           = 8;
+  uint64                OooFbPkts        = 9;
+  uint64                OooRx2TxProdCnt  = 10;
+  uint64                RxDropCnt        = 11;
+  uint64                PawsDropCnt      = 12;
+  uint64                WinCheckFail     = 13;
+  uint64                OooDropCnt       = 14;
+  uint64                OooQueueFull     = 15;
+  uint64                OooOverlapDrop   = 16;
+  uint64                SerqPi           = 17;
+  uint64                SerqCi           = 18;
+  // tx stats
+  uint64                BytesSent        = 10001;
+  uint64                PktsSent         = 10002;
+  uint64                PureAcksSent     = 10003;
+  uint32                SesqPi           = 10005;
+  uint32                SesqCi           = 10006;
+  uint32                SendAckPi        = 10007;
+  uint32                SendAckCi        = 10008;
+  uint32                FastTimerPi      = 10009;
+  uint32                FastTimerCi      = 10010;
+  uint32                DelAckPi         = 10011;
+  uint32                DelAckCi         = 10012;
+  uint32                OobRstPi         = 10013;
+  uint32                OobRstCi         = 10014;
+  uint32                PendingTxPi      = 10015;
+  uint32                PendingTxCi      = 10016;
+  uint32                FastRetransPi    = 10017;
+  uint32                FastRetransCi    = 10018;
+  uint32                CleanRetxPi      = 10019;
+  uint32                CleanRetxCi      = 10020;
+  uint32                PacketsOut       = 10021;
+  uint32                SesqTxCi         = 10022;
+  uint32                SesqRetxCi       = 10023;
+  uint32                NoWorkSchedEvalCntr = 10024;
+  uint32                TxRingPi         = 10025;
+  uint32                PartialPktAckCnt = 10026;
+  uint32                AtoDeadline      = 10027;
+  uint32                RtoDeadline      = 10028;
+  uint32                CcFlags          = 10029;
+  uint32                KeepaDeadline    = 10030;
+  uint32                WindowFullCnt    = 10031;
+  uint32                OoqRx2txPi       = 10032;
+  uint32                OoqRx2txCi       = 10033;
+  uint32                RetxCnt          = 10034;
+  uint32                WindowUpdatePi   = 10035;
+  uint32                WindowUpdateCi   = 10036;
+  uint32                TxWindowUpdatePi = 10037;
+  uint32                ZeroWindowSent   = 10038;
+}
+
+// TcpCbGetResponse captures all the information about a tcpcb
+// only if ApiStatus indicates success, other fields are valid
+message TcpCbResponse {
+  types.ApiStatus   ApiStatus = 1;    // API status code
+  TcpCbSpec         Spec      = 2;    // tcpcb configuration
+  TcpCbStatus       Status    = 3;    // operational state of tcpcb
+  TcpCbStats        Stats     = 4;    // stats of the tcpcb
+}
+
+// TcpCbGetResponse is batched response to TcpCbGetRequest
+message TcpCbGetResponse {
+  types.ApiStatus        ApiStatus = 1; // API status code
+  repeated TcpCbResponse Response  = 2; // batch get response
+}
+
+message FlowTracerRewriteInfo {
+  // overlay destination mac address
+  uint64            OverlayDstMAC = 1;
+  // overlay source mac address
+  uint64            OverlaySrcMAC = 2;
+  // overlay source IP address
+  types.IPAddress   SrcAddr       = 3;
+  // overlay destination address
+  types.IPAddress   DstAddr       = 4;
+  // L4 information
+  types.FlowL4Info  L4Info        = 5;
+  // VNI
+  uint32            VNI           = 6;
+}
+
+message FlowTracerSpec {
+  // unique key/identifier of VPC which is used to derive the VNI value in
+  // the flowtracer packet
+  bytes             VPC             = 1;
+  // outer encap for the flowtracer packet
+  // NOTE:
+  // 1. if both VPC and VxLAN VNI values are valid then the VNI
+  //    takes precedence and will be used in the flowtracer packet
+  // 2. NVGRE encapsulation type can be used for load balancer flows
+  types.Encap       Encap           = 2;
+  // inner encap for the flowtracer packet
+  types.Encap       InnerEncap      = 3;
+  // overlay source IP address
+  types.IPAddress   SrcAddr         = 4;
+  // overlay destination address
+  types.IPAddress   DstAddr         = 5;
+  // source tunnel address (TEP)
+  types.IPAddress   SrcTunnel       = 6;
+  // IP protocol
+  uint32            IPProto         = 7;
+  // L4 information
+  types.FlowL4Info  L4Info          = 8;
+  // overlay destination mac address
+  uint64            OverlayDstMAC   = 9;
+  // overlay source mac address
+  uint64            OverlaySrcMAC   = 10;
+  // unique key/identifier of source vnic
+  bytes             SrcVnic         = 11;
+  // backend mac address of the workload in load balancing scenarios
+  uint64            BackendMac      = 12;
+  // underlay destination/packets outermost IP header address
+  // NOTE:
+  // 1. for HA nodes, either SrcVnic or UnderlayDstAddr MUST be
+  //    specified to pick the destination VIP. It is optional on non HA nodes
+  // 2. if both SrcVnic and UnderlayDstAddr are specified then
+  //    UnderlayDstAddr will be used
+  types.IPAddress   UnderlayDstAddr = 13;
+}
+
+message FlowTracerRequest {
+  // multiple requests
+  repeated FlowTracerSpec Request  = 1;
+}
+
+message FlowTracerStatus {
+  // unique key/identifier of VPC
+  bytes                    VPC                   = 1;
+  // unique key/identifier of Vnic
+  bytes                    Vnic                  = 2;
+  // unique key/identifier of Ingress SecurityRule
+  bytes                    IngressSecurityRule   = 3;
+  // unique key/identifier of Ingress SecurityPolicy
+  bytes                    IngressSecurityPolicy = 4;
+  // Ingress security rule action
+  types.SecurityRuleAction IngressAction         = 5;
+  // ingress default policy rule hit
+  bool                     IngressDefaultRuleHit = 6;
+  // unique key/identifier of Egress SecurityRule
+  bytes                    EgressSecurityRule    = 7;
+  // unique key/identifier of Egress SecurityPolicy
+  bytes                    EgressSecurityPolicy  = 8;
+  // Egress security rule action
+  types.SecurityRuleAction EgressAction          = 9;
+  // ingress default policy rule hit
+  bool                     EgressDefaultRuleHit  = 10;
+  // unique key/identifier of service mapping id
+  bytes                    SvcMapping            = 11;
+  // unique key/identifier of ingress subnet
+  bytes                    IngressSubnet         = 12;
+  // unique key/identifier of egress subnet
+  bytes                    EgressSubnet          = 13;
+  // meter class
+  uint32                   MeterClass            = 14;
+  // route class priority
+  uint32                   RouteClassPriority    = 15;
+  // FlowHit is set to true if flow tracer injected packet
+  // hit an existing flow
+  bool                     FlowHit               = 16;
+  // role of the flow in case flow tracer injected packet
+  // hit an existing flow (i.e. FlowHit = true)
+  types.FlowRole           FlowRole              = 17;
+  // RouteHit is set when packet hits a route
+  bool                     RouteHit              = 18;
+  // mapping hit
+  bool                     MappingHit            = 19;
+  // destination tunnel address (TEP)
+  types.IPAddress          DstTunnel             = 20;
+  // packet dropped in the datapath
+  bool                     Drop                  = 21;
+  // drop reasons
+  repeated string          DropReason            = 22;
+  // local2local flow
+  bool                     Local2Local           = 23;
+  // packet source is from a local endpoint
+  bool                     SrcLocal              = 24;
+  // flowtracer initiator flow rewrite info
+  FlowTracerRewriteInfo    IFlowInfo             = 25;
+  // flowtracer responder flow rewrite info
+  FlowTracerRewriteInfo    RFlowInfo             = 26;
+  // unique key/identifier of destination Vnic
+  // only valid for local2local flows
+  bytes                    DstVnic               = 27;
+  // unique key/identifier of destination VPC
+  // only valid for VPC peering flows
+  bytes                    DstVPC                = 28;
+  // destination tunnel encap type
+  types.Encap              DstTunnelEncap        = 29;
+  // debug string that contains header information received from
+  // P4 datapath and some metadata from table lookups
+  string                   RawDebugHeader        = 30;
+}
+
+message FlowTracerResponse {
+  types.ApiStatus           ApiStatus = 1;
+  repeated FlowTracerStatus Response  = 2; // batched response
+}
+
+// MPU performance information
+message MPUPerfInfo {
+  // MPU utilization percentage
+  uint32 Utilization = 1;
+  // Cycles Per Instruction (CPI)
+  float  CPI         = 2;
+}
+
+// Pipeline stage performance information
+message PipelineStagePerfInfo {
+  // MPU performance data
+  repeated MPUPerfInfo MPUPerf = 1;
+}
+
+enum Pipeline {
+  PIPELINE_NONE       = 0;
+  PIPELINE_TXDMA      = 1;
+  PIPELINE_RXDMA      = 2;
+  PIPELINE_P4_INGRESS = 3;
+  PIPELINE_P4_EGRESS  = 4;
+  PIPELINE_SXDMA      = 5;
+}
+
+// Pipeline performance information
+message PipelinePerfInfo {
+  // pipeline type
+  Pipeline Pipeline                        = 1;
+  // no. of PHVs seen in the pipe
+  uint64   PHVs                            = 2;
+  // no. of drops in the pipe
+  uint64   Drops                           = 3;
+  // no. of recircs in the pipe
+  uint64   Recircs                         = 4;
+  // no. of packets received from PB
+  uint64   PacketsFromPB                   = 5;
+  // no. of parser drops, if applicable
+  uint64   ParserDrops                     = 6;
+  // per stage peformance information
+  repeated PipelineStagePerfInfo StagePerf = 7;
+}
+
+// DDR performance related information
+message DDRPerfInfo {
+  // number of read transactions
+  uint64 Reads           = 1;
+  // maximum read latency
+  uint64 ReadLatencyMax  = 2;
+  // average read latency
+  uint64 ReadLatencyAvg  = 3;
+  // read Transactions Per Second (TPS) in Millions
+  float  ReadMTPS        = 4;
+  // read bandwidth in Gbps (MPTS * 64 * 8 * 1000000)/(1000000000)
+  float  ReadBandwidth    = 5;
+  // number of write transactions
+  uint64 Writes           = 6;
+  // maximum write latency
+  uint64 WriteLatencyMax = 7;
+  // average write latency
+  uint64 WriteLatencyAvg = 8;
+  // write Transactions Per Second (TPS) in Millions
+  float  WriteMTPS       = 9;
+  // write bandwidth in Gbps (MPTS * 64 * 8 * 1000000)/(1000000000)
+  float  WriteBandwidth  = 10;
+}
+
+// ASIC performance related status information
+message AsicPerfGetResponse {
+  // status reply
+  types.ApiStatus           ApiStatus        = 1;
+  // DDR related performance information
+  repeated DDRPerfInfo      DDRPerfInfo      = 2;
+  // per ASIC pipeline performance information
+  repeated PipelinePerfInfo PipelinePerfInfo = 3;
+}
+
+// NACL request message
+message NaclRequest {
+  enum PacketDir {
+    PACKET_DIR_NONE    = 0;
+    // packets originated from vnic (i.e. sent by vnic)
+    PACKET_DIR_EGRESS  = 1;
+    // packets received by vnic (i.e. sent to vnic)
+    PACKET_DIR_INGRESS = 2;
+  }
+  // match condition for L2 packets (ARP, ARP etc.)
+  message L2PacketMatch {
+  }
+  // IP protocol match condition
+  message IPProtocolMatch {
+    // IP Protocol number
+    uint32 Protocol = 1;
+  }
+  message IPPacketMatch {
+    // TCP or UDP match conditions
+    message TCPUDPMatch {
+      message PortMatch {
+        uint32      Port    = 1;
+      }
+      // source port
+      PortMatch     SrcPort = 1;
+      // destination port
+      PortMatch     DstPort = 2;
+    }
+    // ICMP match conditions
+    message ICMPMatch {
+      message ICMPType {
+        uint32 Type = 1;
+      }
+      message ICMPCode {
+        uint32 Code = 1;
+      }
+      // ICMP type
+      ICMPType Type = 1;
+      // ICMP code
+      ICMPCode Code = 2;
+    }
+    // source IP prefix
+    types.IPPrefix  SrcPrefix  = 1;
+    // destination IP prefix
+    types.IPPrefix  DstPrefix  = 2;
+    IPProtocolMatch IPProto    = 3;
+    // layer 4 match conditions
+    oneof l4_match {
+      // TCP or UDP specific match conditions
+      TCPUDPMatch TcpUdpMatch  = 4;
+      // ICMP specific match conditions
+      ICMPMatch   IcmpMatch    = 5;
+    }
+  }
+  // unique NACL id (used to delete the NACL later)
+  uint32          Id                   = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // indicate whether to match tunneled (overlay) packets
+  bool            TunneledPacket       = 2;
+  // indicate whether to match packets that miss flow table lookup
+  bool            FlowMiss             = 3;
+  // indicate whether to match packets that are from/to unknown local mapping
+  bool            LocalMappingUnknown  = 4;
+  // indicate whether to match IP fragments
+  bool            IPFragment           = 5;
+  // packet direction (w.r.t vnic)
+  PacketDir       Direction            = 6;
+  oneof lif_match {
+    // uuid of the source lif
+    bytes           SrcLif             = 7;
+    // type of the lif
+    types.LifType   SrcLifType         = 8;
+  }
+  oneof match_fields {
+    L2PacketMatch L2Match              = 9;
+    IPPacketMatch IPMatch              = 10;
+  }
+  // action indicates the action to be performed
+  oneof action {
+    // drop the packet
+    bool          Drop                 = 11;
+    // redirect the packet to specified lif
+    bytes         RedirectLifId        = 12;
+  }
+}
+
+// NACL response message
+message NaclResponse {
+  // response code
+  types.ApiStatus ApiStatus = 1;
+}
+
+// NACL delete request
+message NaclDeleteRequest {
+  // unique NACL id
+  uint32 Id = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// NACL delete response
+message NaclDeleteResponse {
+  // status code
+  types.ApiStatus ApiStatus = 1;
+}
+
+message ElamResponse {
+  types.ApiStatus ApiStatus = 1;
+  string          Output    = 2;
+}
+
+// scheduling policy of the thread
+enum SchedPolicy {
+  SCHED_POLICY_NONE  = 0;
+  SCHED_POLICY_OTHER = 1;
+  SCHED_POLICY_FIFO  = 2;
+  SCHED_POLICY_RR    = 3;
+}
+
+// role of the thread
+enum ThreadRole {
+  // invalid thread role
+  THREAD_ROLE_NONE    = 0;
+  // control thread
+  THREAD_ROLE_CONTROL = 1;
+  // data thread
+  THREAD_ROLE_DATA    = 2;
+}
+
+// thread configuration
+message ThreadSpec {
+  // Internal unique thread id
+  uint32      Id          = 1;
+  // pthread identifier
+  uint32      PthreadId   = 2;
+  // Name of the thread
+  string      Name        = 3;
+  // thread priority
+  int32       Priority    = 4;
+  // scheduling policy of the thread (SCHED_FIFO| SCHED_RR | SCHED_OTHER)
+  SchedPolicy SchedPolicy = 5;
+  // role of this thread (CONTROL or DATA)
+  ThreadRole  Role        = 6;
+}
+
+// operational status of the thread
+message ThreadStatus {
+  // Running is true if thread is in running state
+  bool   Running           = 1;
+  // time (in nanoseconds) since last heart beat
+  uint64 LastHeartBeatTime = 2;
+}
+
+// per thread statistics
+message ThreadStats {
+}
+
+message Thread {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  ThreadSpec    Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  ThreadStatus  Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  ThreadStats   Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+message ThreadGetResponse {
+  // response status code
+  types.ApiStatus ApiStatus = 1;
+  // per thread information
+  repeated Thread Response  = 2;
+}

@@ -1,0 +1,283 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Virtual Private Cloud (VPC) object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service VPCSvc {
+  rpc VPCCreate (VPCRequest) returns (VPCResponse) {}
+  rpc VPCUpdate (VPCRequest) returns (VPCResponse) {}
+  rpc VPCGet (VPCGetRequest) returns (VPCGetResponse) {}
+  rpc VPCDelete (VPCDeleteRequest) returns (VPCDeleteResponse) {}
+  rpc VPCPeerCreate (VPCPeerRequest) returns (VPCPeerResponse) {}
+  rpc VPCPeerUpdate (VPCPeerRequest) returns (VPCPeerResponse) {}
+  rpc VPCPeerGet (VPCPeerGetRequest) returns (VPCPeerGetResponse) {}
+  rpc VPCPeerDelete (VPCPeerDeleteRequest) returns (VPCPeerDeleteResponse) {}
+}
+
+// type of the virtual private cloud
+enum VPCType {
+  VPC_TYPE_NONE     = 0;
+  VPC_TYPE_UNDERLAY = 1;
+  VPC_TYPE_TENANT   = 2;
+  VPC_TYPE_CONTROL  = 3;
+}
+
+// VPCSpec captures VPC configuration
+message VPCSpec {
+  // unique key/identifier of VPC
+  bytes            Id                    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // type of the VPC
+  VPCType          Type                  = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // identifier of the IPv4 route table to be used and this route table is
+  // inherited by the subnets under this VPC, if they are created with no route
+  // table explicitly
+  bytes            V4RouteTableId        = 3;
+  // identifier of the IPv6 route table to be used, if any and this route table
+  // is inherited by the subnets under this VPC, if they are created with no
+  // route table explicitly
+  bytes            V6RouteTableId        = 4;
+  // identifier of ingress IPv4 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this VPC will inherit the policies configured under VPC
+  // 2. there can be multiple policies per vnic per direction (ingress/egress)
+  // 3. vpc policy in each direction is to be aggregated to contain all rules in a given direction
+  repeated bytes   IngV4SecurityPolicyId = 5;
+  // identifier of ingress IPv6 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this VPC will inherit the policies configured under VPC
+  // 2. there can be multiple policies per vnic per direction (ingress/egress)
+  // 3. vpc policy in each direction is to be aggregated to contain all rules in a given direction
+  repeated bytes   IngV6SecurityPolicyId = 6;
+  // identifier of egress IPv4 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this VPC will inherit the policies configured under VPC
+  // 2. there can be multiple policies per vnic per direction (ingress/egress)
+  // 3. vpc policy in each direction is to be aggregated to contain all rules in a given direction
+  repeated bytes   EgV4SecurityPolicyId  = 7;
+  // identifier of egress IPv6 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this VPC will inherit the policies configured under VPC
+  // 2. there can be multiple policies per vnic per direction (ingress/egress)
+  // 3. vpc policy in each direction is to be aggregated to contain all rules in a given direction
+  repeated bytes   EgV6SecurityPolicyId  = 8;
+  // Virtual Router (VR) MAC address, any packets originated or routed in this
+  // VPC carry this MAC as source MAC
+  uint64           VirtualRouterMac      = 9;
+  // encapped traffic coming with the specified encap from fabric side will be
+  // mapped to this VPC
+  // NOTE: FabricEncap is needed only for VPCs of type VPC_TYPE_TENANT, for
+  //       other types of VPCs user need not provide fabric encap and will be
+  //       unused when provided
+  types.Encap      FabricEncap           = 10 [(gogoproto.moretags) = "meta:immutable"];
+  // metering policy to be applied for ipv4 traffic ingressing/egressing the vpc
+  bytes            V4MeterPolicy         = 11;
+  // metering policy to be applied for ipv6 traffic ingressing/egressing the vpc
+  bytes            V6MeterPolicy         = 12;
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane
+  // NOTE:
+  // 1. subnets under this VPC don't inherit this ToS value, subnets need to
+  //    be explicitly configured with same ToS value as that of VPC or
+  //    potentially different ToS value of their own
+  // 2. subnet or tunnel objects, if configured with ToS, will override this
+  uint32           ToS                   = 13;
+  // VxLAN Network Identifiers(VNI) associated with this VPC (other than
+  // FabricEncap)
+  // NOTE:
+  // any incoming VxLAN traffic received with the VNI list configured is
+  // associated with the VPC for mapping and flow lookup purposes
+  repeated uint32  VNI                   = 14 [(gogoproto.moretags) = "meta:immutable"];
+  // flow monitoring collector list, if any
+  // NOTE: we support a maximum of two flow monitoring collectors per vpc object
+  repeated bytes   FlowMonCollector      = 15;
+  // uuid of the region associated with the vpc
+  // NOTE: if Region is not set, it is considered as local region
+  bytes            Region                = 16 [(gogoproto.moretags) = "meta:immutable"];
+  // ingress NAT policy is applied for traffic ingressing into the VRF from
+  // other sites or Internet (and eventually into vnic)
+  // NOTE:
+  // 1. only one policy per VPC is allowed at this time
+  repeated bytes   IngNatPolicy          = 17;
+  // egres NAT policy is applied for traffic egressing the VRF and destined to
+  // other sites or Internet
+  // NOTE:
+  // 1. only one policy per VPC is allowed at this time
+  repeated bytes   EgrNatPolicy          = 18;
+}
+
+// operational status of a VPC, if any
+message VPCStatus {
+  // vpc hw id
+  uint32 HwId      = 1;
+  // vpc bd hw id
+  uint32 BdHwId    = 2;
+  // number of subnets in the vpc
+  uint32 NumSubnet = 3;
+}
+
+// stats for a VPC, if any
+message VPCStats {
+}
+
+// Virtual Private Cloud object
+message VPC {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  VPCSpec       Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  VPCStatus     Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  VPCStats      Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// VPC create and update request
+message VPCRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt  BatchCtxt = 1;
+  // batched requests
+  repeated VPCSpec Request   = 2;
+}
+
+// VPC create and update response
+message VPCResponse {
+  types.ApiStatus    ApiStatus = 1;
+  repeated VPCStatus Response  = 2; // batched response
+}
+
+// VPC get request
+message VPCGetRequest {
+  // list of keys of interest
+  repeated bytes Id = 1;
+}
+
+// VPC get response
+message VPCGetResponse {
+  types.ApiStatus ApiStatus = 1; // API status code
+  repeated VPC    Response  = 2;
+}
+
+// VPC delete request
+message VPCDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// VPC delete response
+message VPCDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1; // API status code
+}
+
+// meter policy configuration for vpc peer object
+message VPCPeerMeterPolicy {
+  // meter policy to be used for IPv4 sessions originating from
+  // VPC1 and terminating in VPC2
+  bytes Vpc1ToVpc2V4RxMeterPolicy = 1;
+  // meter policy to be used for IPv6 sessions originating from
+  // VPC1 and terminating in VPC2
+  bytes Vpc1ToVpc2V6RxMeterPolicy = 2;
+  // meter policy to be used for IPv4 sessions originating from
+  // VPC2 and terminating in VPC1
+  bytes Vpc2ToVpc1V4RxMeterPolicy = 3;
+  // meter policy to be used for IPv6 sessions originating from
+  // VPC2 and terminating in VPC1
+  bytes Vpc2ToVpc1V6RxMeterPolicy = 4;
+}
+
+// meter class configuration for vpc peer object
+message VPCPeerMeterClass {
+  // Rx meter class/bucket used for accounting when encapped traffic
+  // received by DSC has VNI of vpc1 and the destination is in vpc2
+  uint32 Vpc1ToVpc2RxMeterClass = 1 [(gogoproto.moretags) = "meta:range:1-4095"];
+  // Rx meter class/bucket used for accounting when encapped traffic
+  // received by DSC has VNI of vpc2 and the destination is in vpc1
+  uint32 Vpc2ToVpc1RxMeterClass = 2 [(gogoproto.moretags) = "meta:range:1-4095"];
+}
+
+// VPCPeerSpec captures configuration for a VPC peering relation
+// NOTE:
+// 1. given two vpcs, only one vpc peering objects needs to be created as
+//    the vpc peering is commutative relation
+// 2. when VPCPeerSpec and VniSpec both specify (Rx) MeterClass/RxMeterPolicy,
+//    meter class/policy from VPCPeerSpec will take precedece if traffic hits
+//    the vpc peering entry as well as the VNI entry in the datapath
+message VPCPeerSpec {
+  // unique id/key idenitifying this VPC peering relation
+  bytes                Id          = 1;
+  // unique key/identifier of VPC1
+  bytes                Vpc1        = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // unique key/identifier of VPC2
+  bytes                Vpc2        = 3 [(gogoproto.moretags) = "meta:mandatory"];
+  // meter configuration
+  oneof meter {
+    // meter class configuration
+    VPCPeerMeterClass  MeterClass  = 4;
+    // meter policy configuration
+    VPCPeerMeterPolicy MeterPolicy = 5;
+  }
+}
+
+// operational status of a VPC peering, if any
+message VPCPeerStatus {
+}
+
+// stats for a VPC peering, if any
+message VPCPeerStats {
+}
+
+// Virtual Private Cloud Peer (aka. pairing) object
+message VPCPeer {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  VPCPeerSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  VPCPeerStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  VPCPeerStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// VPC peer create and update request
+message VPCPeerRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  // batched request
+  repeated VPCPeerSpec Request   = 2;
+}
+
+// VPC peer create and update response
+message VPCPeerResponse {
+  types.ApiStatus        ApiStatus = 1;
+  // batched response
+  repeated VPCPeerStatus Response  = 2;
+}
+
+// VPC peer get request
+message VPCPeerGetRequest {
+  repeated bytes Id = 1;
+}
+
+// VPC peer get response
+message VPCPeerGetResponse {
+  // API status code
+  types.ApiStatus  ApiStatus = 1;
+  repeated VPCPeer Response  = 2;
+}
+
+// VPC peer delete request
+message VPCPeerDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// VPC peer delete response
+message VPCPeerDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}

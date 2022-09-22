@@ -1,0 +1,99 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for the top level pipeline (datapath behavior) object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service PipelineSvc {
+  rpc MeterStatsGet (MeterStatsGetRequest) returns (MeterStatsGetResponse) {}
+  rpc SessionStatsGet (SessionStatsGetRequest) returns (SessionStatsGetResponse) {}
+  rpc FlowStatsSummaryGet (types.Empty) returns (FlowStatsSummaryResponse) {}
+  rpc DataPathAssistStatsGet (types.Empty) returns (DataPathAssistStatsResponse) {}
+  rpc SessionStatisticsEnable (types.Empty) returns (types.Empty) {}
+  rpc SessionStatisticsDisable (types.Empty) returns (types.Empty) {}
+  rpc LifStatisticsEnable (types.Empty) returns (types.Empty) {}
+  rpc LifStatisticsDisable (types.Empty) returns (types.Empty) {}
+  rpc QuiesceStart (types.Empty) returns (types.Empty) {}
+  rpc QuiesceStop (types.Empty) returns (types.Empty) {}
+}
+
+message MeterStatsGetRequest {
+  uint32 StatsIndexLow  = 1;
+  uint32 StatsIndexHigh = 2;
+}
+
+message MeterStatistics {
+  uint32 StatsIndex = 1;
+  uint64 TxBytes    = 2;
+  uint64 RxBytes    = 3;
+}
+
+message MeterStatsGetResponse {
+  types.ApiStatus          ApiStatus = 1;
+  repeated MeterStatistics Stats     = 2;
+}
+
+message SessionStats {
+  uint32 StatsIndex         = 1;
+  uint64 InitiatorFlowPkts  = 2;
+  uint64 InitiatorFlowBytes = 3;
+  uint64 ResponderFlowPkts  = 4;
+  uint64 ResponderFlowBytes = 5;
+}
+
+message SessionStatsGetRequest {
+  uint32 StatsIndexLow  = 1;
+  uint32 StatsIndexHigh = 2;
+}
+
+message SessionStatsGetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated SessionStats Stats     = 2;
+}
+
+message FlowStatsSummaryResponse {
+  types.ApiStatus ApiStatus                 = 1;
+  uint64          IPv4TCPSessions           = 2;
+  uint64          IPv4TCPSessionsDeleted    = 3;
+  uint64          IPv4UDPSessions           = 4;
+  uint64          IPv4UDPSessionsDeleted    = 5;
+  uint64          IPv4ICMPSessions          = 6;
+  uint64          IPv4ICMPSessionsDeleted   = 7;
+  uint64          IPv4OtherSessions         = 8;
+  uint64          IPv4OtherSessionsDeleted  = 9;
+  uint64          IPv6TCPSessions           = 10;
+  uint64          IPv6TCPSessionsDeleted    = 11;
+  uint64          IPv6UDPSessions           = 12;
+  uint64          IPv6UDPSessionsDeleted    = 13;
+  uint64          IPv6ICMPSessions          = 14;
+  uint64          IPv6ICMPSessionsDeleted   = 15;
+  uint64          IPv6OtherSessions         = 16;
+  uint64          IPv6OtherSessionsDeleted  = 17;
+  uint64          L2Sessions                = 18;
+  uint64          L2SessionsDeleted         = 19;
+  uint64          SessionErrors             = 20;
+}
+
+message DataPathAssistStatsResponse {
+  types.ApiStatus ApiStatus                   = 1;
+  uint64          NumPktsRx                   = 2;
+  uint64          NumDrops                    = 3;
+  uint64          NumDHCPPktsRx               = 4;
+  uint64          NumDHCPPktsTxtoProxyServer  = 5;
+  uint64          NumDHCPPktsTxtoRelayServer  = 6;
+  uint64          NumDHCPPktsTxtoRelayClient  = 7;
+  uint64          NumDHCPDrops                = 8;
+  uint64          NumARPPktsRx                = 9;
+  uint64          NumARPRepliesSent           = 10;
+  uint64          NumARPDrops                 = 11;
+  uint64          NumSessionsLearned          = 12;
+  uint64          NumSessionsIdleAged         = 13;
+  uint64          NumSessionsConnTrackAged    = 14;
+}
+

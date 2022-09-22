@@ -1,0 +1,881 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for the top level device object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "google/protobuf/timestamp.proto";
+import "meta.proto";
+import "types.proto";
+
+service DeviceSvc {
+  rpc DeviceCreate (DeviceRequest) returns (DeviceResponse) {}
+  rpc DeviceUpdate (DeviceRequest) returns (DeviceResponse) {}
+  rpc DeviceGet (DeviceGetRequest) returns (DeviceGetResponse) {}
+  rpc DeviceDelete (DeviceDeleteRequest) returns (DeviceDeleteResponse) {}
+  rpc DeviceStatsReset (types.Empty) returns (types.Empty) {}
+}
+
+enum MemoryProfile {
+  MEMORY_PROFILE_DEFAULT = 0;
+  // router profile will support 256K routes per IPv4
+  // route table and a total of 32 such route tables
+  MEMORY_PROFILE_ROUTER  = 1;
+  // use IPSEC memory profile for IPSec feature
+  MEMORY_PROFILE_IPSEC   = 2;
+}
+
+enum DeviceProfile {
+  DEVICE_PROFILE_DEFAULT            = 0;
+  DEVICE_PROFILE_1PF                = 1;
+  DEVICE_PROFILE_2PF                = 2;
+  DEVICE_PROFILE_3PF                = 3;
+  DEVICE_PROFILE_4PF                = 4;
+  DEVICE_PROFILE_5PF                = 5;
+  DEVICE_PROFILE_6PF                = 6;
+  DEVICE_PROFILE_7PF                = 7;
+  DEVICE_PROFILE_8PF                = 8;
+  DEVICE_PROFILE_16PF               = 9;
+  DEVICE_PROFILE_PF2_VF32           = 10;
+  DEVICE_PROFILE_PF2_VF64           = 11;
+  DEVICE_PROFILE_BITW_SMART_SERVICE = 12;
+  DEVICE_PROFILE_BITW_SMART_SWITCH  = 13;
+  DEVICE_PROFILE_PF2_VF32_HOST_MGMT = 14;
+  DEVICE_PROFILE_PF2_VF64_HOST_MGMT = 15;
+  DEVICE_PROFILE_PF2_VF128          = 16;
+  DEVICE_PROFILE_PF2_VF256          = 17;
+  DEVICE_PROFILE_PF2_VF512          = 18;
+}
+
+// operational mode of the device
+// NOTE:
+// multiple connectivity models are possible in SMART_SWITCH and SMART_SERVICE
+// modes:
+//     a. one uplink handles traffic from/to host side and other uplink handles
+//        traffic from/to fabric/sdn
+//     b. both uplinks can send and receive traffic from/to host and from/to
+//        fabric side (i.e., both links are treated the same way and probably
+//        ECMP-ed), this connectivity model is useful when DSC is deployed
+//        behind/alongside a switch and switch is redirecting traffic to DSCs
+//        (aka. sidecar model) and making forwarding decisions
+enum DeviceOperMode {
+  DEVICE_OPER_MODE_NONE                = 0;
+  // HOST mode with workloads on pcie; it is flow based and supports all
+  // features (IP services like firewall, NAT etc.) depending on the memory
+  // profile configured
+  DEVICE_OPER_MODE_HOST                = 1;
+  // in SMART_SWITCH mode, DSC acts as bump-in-the-wire device; it is flow
+  // based and does forwarding (based on mappings and routes) while
+  // supporting all IP (smart) service features (and is flow based) depending
+  // on the memory profile configured; the switch connected via the sdn
+  // port(s) will do only underlay routing on the encapped (by DSC) traiffc
+  DEVICE_OPER_MODE_BITW_SMART_SWITCH   = 2;
+  // in SMART_SERVICE mode, DSC is flow based and provides IP service
+  // features; it doesn't do forwarding (i.e. L2 or L3 lookups), i.e. no
+  // L2/L3 mappings need to be configured and IP routing is not enabled
+  DEVICE_OPER_MODE_BITW_SMART_SERVICE  = 3;
+  // in CLASSIC_SWITCH mode, DSC performs routing and no IP services are
+  // performed; additionally this is not flow based mode and hence every
+  // packet is subjected to route table and/or mapping lookups (routes are
+  // either programmed via grpc or distributed via control protocol like BGP)
+  DEVICE_OPER_MODE_BITW_CLASSIC_SWITCH = 4;
+}
+
+// VNIRange captures a VxLAN VNI (or GRE key) range
+message VNIRange {
+  // low end of the VNI range
+  uint32 VNILow  = 1;
+  // high end of the VNI range
+  uint32 VNIHigh = 2;
+}
+
+// ControlNetworkSpec captures all the configuration required for control
+// network conectivity used for flow sync (and any associated state) etc. to
+// peer DSC
+// NOTE: this information can be used to generate ping-pongs for liveness
+//       detection as well to perform faster failover for convergence
+message ControlNetworkSpec {
+  // LocalIP is the underlay IP address of this DSC that is used while
+  // exchanging flow related state with the peer
+  // NOTE: this IP address can be different from that IPAddr attribute of
+  //       DeviceSpec
+  types.IPAddress             LocalIP      = 1;
+  // PeerIPAddr is the underlay IP address of the peer DSC device with which
+  // control msgs are exchanged (e.g. flow information and associated state
+  // sync messages)
+  types.IPAddress             PeerIP       = 2;
+  // Vlan, if non-zero, to be used for peer-to-peer control messages between
+  // the nodes
+  // NOTE: if Vlan is not configured, peer-to-peer control traffic goes untagged
+  uint32                      Vlan         = 3 [(gogoproto.moretags) = "meta:range:0-4095,default=0"];
+  // BGP communities attached with the route advertisement corresponding to
+  // the LocalIP
+  repeated types.BGPCommunity BGPCommunity = 4;
+}
+
+// MgmtNetworkSpec captures all the management network related parameters
+message MgmtNetworkSpec {
+  // LLDPMgmtIP, if configured, will be used to advertise in LLDP's management
+  // address TLV
+  types.IPAddress LLDPMgmtIP        = 1;
+  // MgmtIP is the management IP address of the DSC
+  // NOTE:
+  // 1. if configured, this IP is used for generating flow logs
+  types.IPAddress MgmtIP            = 2;
+  // Vlan, if non-zero, is the management vlan id
+  // NOTE: if Vlan is not configured, mgmt. traffic goes untagged
+  uint32          Vlan              = 3 [(gogoproto.moretags) = "meta:range:0-4095,default=0"];
+  // IP address of the default gateway in the management vlan
+  types.IPAddress GatewayIP  = 4;
+  // MAC address of the default gateway in the management vlan
+  uint64          GatewayMAC = 5;
+}
+
+// HARole defines the role of the DSC when HA is enabled
+enum HARole {
+  // HA_ROLE_NONE is used when HA feature is not enabled
+  HA_ROLE_NONE    = 0;
+  // HA_ROLE_ACTIVE is configured on the DSC that is active DSC w.r.t forwaring
+  // and flow sync
+  HA_ROLE_ACTIVE  = 1;
+  // HA_ROLE_STANDBY is configured on DSC that is in standby mode receiving
+  // flow informtion from ACTIVE node and not forwarding traffic
+  HA_ROLE_STANDBY = 2;
+}
+
+// VNICs send traffic to the VIP addresses configured on the host side. Traffic
+// from the vnics is sent over VxLAN tunnel with DIPo as the VIP IP vnics are
+// bound to. These VIPs are hosted on the DSCs and for a given VIP at any point
+// in time, there is one DSC that is primary for that VIP and the other DSC acts
+// as seconaary. A given DSC can be primary for multiple virtual IPs and
+// secondary for some other virtual IPs.
+// Underlay VIP can be IPv4 and/or IPv6 and vnics can send traffic to IPv4 VIP
+// and/or IPv6 VIP, hence HA role is configured on per VIP pair basis
+message HAVirtualIP {
+  // unique id associated with the VIP pair
+  uint32          VIPId                 = 1 [(gogoproto.moretags) = "meta:mandatory,meta:range:1-MAX_UINT32"];
+  // IPv4 Virtual IP address
+  types.IPAddress IPv4VirtualIP         = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // IPv6 virtual IP address
+  types.IPAddress IPv6VirtualIP         = 3 [(gogoproto.moretags) = "meta:mandatory"];
+  // High-Availability role of the DSC for the VIPs
+  HARole          HARole                = 4 [(gogoproto.moretags) = "meta:mandatory"];
+  // number of times the local AS number is repeated in the AS path when
+  // advertising this loopback IP via BGP
+  // NOTE:
+  // multiple DSCs can advertise same IP with same AS path length in
+  // an all active configuration or advertise same IP with different
+  // AS path lengths in an active-standby configuration
+  uint32          BGPASPathPrependCount = 5;
+}
+
+// HA deployments can be in one of the following modes
+enum HAMode {
+  HA_MODE_NONE           = 0;
+  // in ACTIVE_STANDBY mode, a VIP is active (i.e., active sending/receiving
+  // traffic from/to that VIP) on one node and is on standby on the peer node
+  HA_MODE_ACTIVE_STANDBY = 1;
+  // in ACTIVE_ACTIVE mode, HA VIP is active on both nodes at the same time
+  HA_MODE_ACTIVE_ACTIVE  = 2;
+}
+
+// HASpec is the configuration for High Availability feature
+message HASpec {
+  // Virtual IP configuration
+  repeated HAVirtualIP VIPInfo                  = 1;
+  // time duration in milliseconds between heartbeat/keepalive messages between
+  // peer DSCs
+  uint32               HeartbeatInterval        = 2 [(gogoproto.moretags) = "meta:default=300"];
+  // HeartbeatCount number of heartbeat/keepalive messages will be sent
+  // every HeartbeatInterval before declaring that peer is unreachable
+  uint32               HeartbeatCount           = 3 [(gogoproto.moretags) = "meta:default=3"];
+  // VIPConvergenceTimeout (in milliseconds) is used in the following
+  // scenarios:
+  // 1. when PreemptionEn is enabled and admin ACTIVE DSC goes down and comes
+  //    back up, it advertises the VIP that is configured as ACTIVE and starts
+  //    a timer with VIPConvergenceTimeout duration as the timeout; when the
+  //    timer expires, it notifies its HA peer to move to STANDBY role
+  // 2. when planned switchover is initiated on a DSC, that DSC withdraws the
+  //    VIP routes and starts a timer with VIPConvergenceTimeout duration as
+  //    the timeout; when the timer expires, its HA peer is notified to move to
+  //    STANDALONE role
+  uint32               VIPConvergenceTimeout    = 4 [(gogoproto.moretags) = "meta:default=100"];
+  // when the ACTIVE (both administratively and operationally) DSC goes down,
+  // its HA peer will assume the (operationally) ACTIVE role and forward the
+  // traffic and later when the admin ACTIVE DSC node comes back up it can
+  // either stay as operationally STANDBY node and let the currently ACTIVE DSC
+  // continue forwarding the traffic or preempt the current ACTIVE DSC and
+  // assume the configured ACTIVE role
+  // PreemptionEn knob is used to control such behavior, it should be set to
+  // true if operationally ACTIVE DSC is expected to be preempted by its peer
+  // DSC that is configured as admin ACTIVE upon coming back up (from either
+  // upgrade or reboot)
+  // NOTE:
+  // 1. this knob needs to have same value on both DSCs that are HA pair
+  // 2. when PreemptionEn is set to false, to active the admin role of VIP
+  //    ActivateHAAdminRole() needs to be called
+  bool                 PreemptionEn             = 5 [(gogoproto.moretags) = "meta:default=false"];
+  // if BGPGracefulShutEn is set to true, enable use of well-known BGP
+  // Graceful Shutdown community (RFC 8326) during planned switchover from
+  // ACTIVE to STANDBY DSC
+  // this can be enabled to minimize network drops that otherwise happen
+  // in the window during which the BGP withdrawal for this VIP is propagated
+  // from the ACTIVE DSC throughout the network followed by the propagation
+  // of the BGP advertisement for this VIP from the STANDBY DSC throughout the
+  // network
+  // NOTE:
+  // enable this only if BGP Graceful shut processing is supported on every
+  // network node along every path between the ACTIVE and STANDBY DSCs
+  bool                 BGPGracefulShutEn        = 6;
+  // when a DSC goes down, its HA peer goes into STANDALONE mode and flows that
+  // were earlier synced to this node will need to be reconciled eventually
+  // with the local config epoch on the DSC
+  // if AutoFlowReconcile is set to true, this reconciliation of flows with
+  // the config will happen automatically, whereas if it is set to false,
+  // FlowReconcile() API must be called by the controller/agent explicitly
+  bool                 AutoFlowReconcileEn      = 7 [(gogoproto.moretags) = "meta:default=false"];
+  /// HA deployment mode
+  HAMode               HAMode                   = 8 [(gogoproto.moretags) = "meta:default=HA_MODE_ACTIVE_STANDBY,meta:immutable"];
+}
+
+// HA role of DSC in DSS (i.e., smart switch) deployment
+// this HA role is used in some scenarios to determine the source of truth
+// when split brain scenarios arise in the network
+enum DSSHARole {
+  DSS_HA_ROLE_NONE       = 0;
+  // DSS is standalone with no HA peer
+  DSS_HA_ROLE_STANDALONE = 1;
+  // DSS is primary
+  DSS_HA_ROLE_PRIMARY    = 2;
+  // DSS is secondary
+  DSS_HA_ROLE_SECONDARY  = 3;
+}
+
+// smart switch specific configuration
+message DSSSpec {
+  // HA role when DSS is paired with another DSS and deployed as
+  // active-active HA pair
+  DSSHARole HARole         = 1;
+  // EdgeServicesEn is expected to be set to true when services like IPSec,
+  // NAT etc. are enabled on the DSS
+  bool      EdgeServicesEn = 2;
+}
+
+message DeviceSpec {
+  // local IPv4 address in the underlay (i.e. MyTEP IP or local TEP IP)
+  // IPv4Addr is the outer destination IPv4 address in the VxLAN header
+  // of the traffic received by the DSC to terminate the VxLAN tunnel and
+  // similarly DSC uses this address as outer source IPv4 in the VxLAN header
+  // of the traffic sent by DSC
+  // NOTE: this is used in non-HA deployments and for HA deployments this
+  //       information must be configured in the HASpec
+  types.IPAddress               IPv4Addr                    = 1;
+  // local IPv6 address in the underlay (i.e. MyTEP IP or local TEP IP)
+  // IPv6Addr is the outer destination IPv6 address in the VxLAN header
+  // of the traffic received by the DSC to terminate the VxLAN tunnel and
+  // similarly DSC uses this address as outer source IPv6 in the VxLAN header
+  // of the traffic sent by DSC
+  // NOTE: this is used in non-HA deployments and for HA deployments this
+  //       information must be configured in the HASpec
+  types.IPAddress               IPv6Addr                    = 2;
+  // system MAC (DSC's system MAC will be used if not provided)
+  uint64                        MACAddr                     = 3;
+  // IP address of the gateway in the underlay
+  types.IPAddress               GatewayIP                   = 4;
+  // operational mode of the device
+  // NOTE: when operational mode is modified, it will take affect only after
+  //       next reboot of DSC
+  DeviceOperMode                DevOperMode                 = 5 [(gogoproto.moretags) = "meta:mandatory, persisted"];
+  // Memory Profile (only MEMORY_PROFILE_DEFAULT is supported)
+  // NOTE: when a device profile is changed, it will take affect after next
+  // reboot of DSC
+  MemoryProfile                 MemoryProfile               = 6 [(gogoproto.moretags) = "meta:mandatory,persisted"];
+  // Device Profile
+  DeviceProfile                 DeviceProfile               = 7 [(gogoproto.moretags) = "meta:mandatory,persisted"];
+  // device_profile_upd_wait_timeout specifies the time in seconds to wait
+  // for the final device_profile configuration
+  // NOTE:
+  // 1. if DeviceProfileUpdWaitTimeout is non-zero in device object
+  //    create or update, a timer will be started with the duration specified
+  //    (in seconds) for the final host PF/VF DeviceProfile to be specified
+  //    in subsequent update call of this object
+  // 2. if the timer expires, before the device object update is received,
+  //    default device profile will be used to create host PF/VF devices (and
+  //    the default depends on the datapath and DevOperMode attribute)
+  // 3. if DeviceProfileUpdWaitTimeout is zero, the DeviceProfile passed
+  //    in the object will take affect immediately
+  // 4. device object can be updated multiple times with non-zero timeout
+  //    until final DeviceProfile is known and eveytime timer is reset
+  //    with specified value
+  // 5. once final DeviceProfile is picked (either because timer expired
+  //    or object is updated with DeviceProfile and zero timeout value), further
+  //    updates to the DeviceProfile will not take affect until next reboot
+  uint32                        DeviceProfileUpdWaitTimeout = 8;
+  // if BridgingEn is true, L2 functionality based on MAC addresses kicks in
+  bool                          BridgingEn                  = 9 [(gogoproto.moretags) = "meta:immutable"];
+  // MAC/IP learning controls
+  // NOTE: if LearnSpec is not configured, learning is disabled by default
+  types.LearnSpec               LearnSpec                   = 10;
+  // priority class of IP mapping entries, is used to break the tie in case
+  // both LPM/prefix and a mapping entry are hit in the datapath (i.e., /32 IP
+  // mapping entry is also in some LPM prefix) for the same packet.
+  // NOTE:
+  // 1. by default IP mapping always takes precedence over LPM hit as the
+  //    default value of this attribute is 0 (and lower the numerical value,
+  //    higher the priority, hence 0 is the highest priority)
+  // 2. valid priority value range is 0 to 31
+  // 3. if mapping and route are both hit and both have same class priority,
+  //    mapping result will take precedence over route (even if it is /32 route)
+  // 4. if the value of this attribute is updated on the fly, it will not
+  //    affect the flows/sessions that are already created, but it will take
+  //    affect only on the new sessions/flows created after such an update
+  uint32                        IPMappingClassPriority      = 11 [(gogoproto.moretags) = "meta:range:0-15,default=0"];
+  // firewall (if enabled) action transposition logic dictates how the policy
+  // lookup results are processed when multiple security policies are applied
+  // on a packet
+  types.FwPolicyXposn           FwPolicyXposnScheme         = 12 [(gogoproto.moretags) = "meta:default=FW_POLICY_XPOSN_GLOBAL_PRIORITY,immutable"];
+  // enable the control plane stack for overlay routing
+  // NOTE: when OverlayRoutingEn is modified, it will take affect only after
+  //       next reboot of DSC
+  bool                          OverlayRoutingEn            = 13 [(gogoproto.moretags) = "meta:mandatory"];
+  // when SymmetricRoutingEn is set to true, its called symmetric routing and
+  // SymmetricRoutingEn is set to false, it is called asymmetric routing
+  // Below is the datapath behavior in various cases:
+  // 1. mapping is hit (or mapping hit result is picked over route hit),
+  //    intra-subnet traffic, SymmetricRoutingEn = true or false:
+  //    a. encapped packets are sent out with destination subnet's vnid
+  //    b. incoming encapped packets are expected with destination subnet's vnid
+  // 2. mapping is hit (or mapping hit result is picked over route hit),
+  //    inter-subnet traffic, SymmetricRoutingEn = true:
+  //    a. encapped packets are sent out with destination vpc's vnid
+  //    b. incoming encapped packets are expected with destination vpc's vnid
+  // 3. mapping is hit (or mapping hit result is picked over route hit),
+  //    inter-subnet traffic, SymmetricRoutingEn = false:
+  //    a. encapped packets are sent out with destination subnet's vnid
+  //    b. incoming encapped packets are expected with destination subnet's vnid
+  // 4. route is hit (route hit result is picked over mapping),
+  //    SymmetricRoutingEn = false:
+  //    a. encapped packets are sent out with vpc's vnid
+  //    b. incoming encapped packets are expected with destination subnet's vnid
+  // 5. route is hit (route hit result is picked over mapping),
+  //    SymmetricRoutingEn = true:
+  //    a. encapped packets are sent out with destination vpc's vnid
+  //    b. incoming encapped packets are expected with destination vpc's vnid
+  // NOTE:
+  // 1. by default SymmetricRoutingEn is false i.e., DSC is in asymmetric
+  //    routing mode
+  // 2. if the value of this attribute is updated on the fly, it will not
+  //    affect the flows/sessions that are already created, but it will take
+  //    affect only on the new sessions/flows created after such an update
+  bool                          SymmetricRoutingEn          = 14 [(gogoproto.moretags) = "meta:default=false"];
+  // TxPolicerId, if configured, will rate limit the Tx bandwidth (bytes per
+  // second) or PPS (packets per second) of all host interfaces put together
+  // to the configured value
+  bytes                         TxPolicerId                 = 15;
+  // LongLivedFlowDuration is the time in seconds after which an existing
+  // flow/session is categorized as "long lived"
+  uint32                        LongLivedFlowDuration       = 16 [(gogoproto.moretags) = "meta:range:30-3600,default=300"];
+  // controls for flow logging, if FlowLogAction is set to
+  // FLOW_LOG_ACTION_ENABLE
+  types.FlowLogSpec             FlowLogSpec                 = 17;
+  // if FlowRefresh is set to true, whenever a policy or routing table
+  // changes happen, flows are re-evaluated and fixed up with appropriate
+  // action (deny/allow) and any change in forwarding information (encap, TEP
+  // etc.) and by default FlowRefresh is set to false (i.e., existing
+  // sessions won't be updated and the policy/routing updates apply only to
+  // future sessions only
+  // NOTE:
+  // to use User Defined Route (UDR) specific features, this must be set to true
+  bool                          FlowRefresh                 = 18;
+  // SysName, if configured, will be used to advertise as system name in
+  // protocols like LLDP etc. it cannot be longer than 64 bytes
+  string                        SysName                     = 19;
+  // MgmtNwSpec, if configured, will contain all the mgmt. network related
+  // configuration
+  MgmtNetworkSpec               MgmtNwSpec                  = 20;
+  // ControlNetworkSpec, if configured, will be used for control traffic
+  // (e.g. flow sync messages to/from peer DSC)
+  ControlNetworkSpec            ControlNwSpec               = 21;
+  // to mirror all the packets that are dropped in the datapath, user can
+  // create a mirror session and attach to this object
+  bytes                         DropMirrorSession           = 22;
+  // delay bringup of host interfaces
+  bool                          DelayHostBringup            = 23;
+  // service virtual IP of this DSC used in some cases to send/receive traffic
+  // to/from service endpoints
+  types.IPAddress               ServiceVIP                  = 24;
+  // UDP destination port number to be considered as VxLAN packet if VxLAN is
+  // used on non-standard VxLAN port
+  uint32                        VxLANPort                   = 25;
+  // if VxLANSrcPorts is configured, all encapped VxLAN packets will carry
+  // outgoing UDP source port assigned in the range specified, picked randomly
+  // (or based on flow hash)
+  types.PortRange               VxLANSrcPorts               = 26;
+  // TrustedVNIs is a list of VNI ranges that are well-known, trusted and all
+  // VPCs are implicitly peer-ed with them
+  repeated VNIRange             TrustedVNIs                 = 27 [(gogoproto.moretags) = "meta:immutable"];
+  // HASpec captures the high-availability related configuration
+  HASpec                        HASpec                      = 28;
+  // FlowLogAction indicates the device level flow logging action (which can be
+  // overridden on per PF/VF or vnic basis)
+  // NOTE:
+  // 1. unless explicitly enabled, flow logging is disabled
+  // 2. when enabled, flow logging configuration is picked from most specific
+  //    object (i.e., vnic) and then from PF/VF and then from device object
+  // 3. if FlowLogAction is set to FLOW_LOG_ACTION_ENABLE but FlowLogSpec
+  //    is not configured on device object, then vnics that inherit this
+  //    config may find FlowLogSpec on either vnic object or its parent PF/VF
+  //    object
+  // 4. even if FlowLogAction is DISABLE and FlowLogSpec is not configured on
+  //    the device object, PF/VF and vnic objects can have flow logging enabled
+  //    explicitly
+  types.FlowLogAction           FlowLogAction               = 29 [(gogoproto.moretags) = "meta:default=FLOW_LOG_ACTION_DISABLE"];
+  // if security policy rule scale is updated, it will take effect only after
+  // next reboot of the DSC and if this attribute is not configured default
+  // rule scle
+  types.SecurityPolicyRuleScale SecurityPolicyRuleScale     = 30 [(gogoproto.moretags) = "meta:persisted"];
+  // Port is used to open tcp server in the DSC for the flow sync scenario.
+  // remote DSC will connect to this port to sync the flows from this DSC.
+  // if port is not specified, then default port is used
+  uint64                        Port                        = 31 [(gogoproto.moretags) = "meta:default=11368"];
+  // flow monitoring collector list, if any
+  // NOTE: we support a maximum of two flow monitoring collectors per device object
+  repeated bytes                FlowMonCollector            = 32;
+  // when DSC is inside a Distributed Smart Switch (DSS), some of the swtich config
+  // must be passed down to the DSCs inside the smart switch
+  // NOTE:
+  // 1. this is relevant only if device mode is DEVICE_OPER_MODE_BITW_SMART_SERVICE
+  DSSSpec                       DSSSpec                     = 33;
+}
+
+// device health status, multiple conditions can happen
+enum DeviceHealth {
+  DEVICE_HEALTH_NONE            = 0;
+  DEVICE_HEALTH_OK              = 1;
+  DEVICE_HEALTH_SERVICE_DOWN    = 2;
+  DEVICE_HEALTH_REBOOT_REQUIRED = 3;
+  DEVICE_HEALTH_LOW_MEMORY      = 4;
+  DEVICE_HEALTH_HARDWARE_ERROR  = 5;
+}
+
+// ControlNetworkStatus captures operational status of
+// control network configuration
+message ControlNetworkStatus {
+  // h/w index of reserved vnic used by control vlan
+  uint32 ControlVlanVnicHwId = 1;
+  /// h/w index of nacl entry used by control network for p4 to arm path
+  uint32 RxNaclHwId          = 2;
+}
+
+// MgmtNetworkStatus captures operational status of
+// management network configuration
+message MgmtNetworkStatus {
+  // h/w index of reserved vnic used by mgmt. vlan
+  uint32 MgmtVlanVnicHwId = 1;
+  /// h/w index of nacl entry used by mgmt. network for p4 to arm path
+  uint32 RxNaclHwId       = 2;
+}
+
+// different initialization modes of the firmware
+enum FirmwareInitMode {
+  FIRMWARE_INIT_MODE_NONE     = 0;
+  // firmware initialized due to cold reboot
+  FIRMWARE_INIT_MODE_DEFAULT  = 1;
+  // firmware initialized due to graceful upgrade
+  FIRMWARE_INIT_MODE_GRACEFUL = 2;
+  // firmware initialized due to hitless upgrade
+  FIRMWARE_INIT_MODE_HITLESS  = 3;
+  // firmware initialized due to stateful upgrade
+  FIRMWARE_INIT_MODE_STATEFUL = 4;
+  // firmware initialized due to failure recovery
+  FIRMWARE_INIT_MODE_RECOVERY = 5;
+}
+
+// penvisor instance in which firware is running
+enum FirmwareInstance {
+  FIRMWARE_INSTANCE_NONE = 0;
+  FIRMWARE_INSTANCE_A    = 1;
+  FIRMWARE_INSTANCE_B    = 2;
+}
+
+// firmware domain indicates which set of resources current instance is using
+enum FirmwareDomain {
+  FIRMWARE_DOMAIN_NONE = 0;
+  FIRMWARE_DOMAIN_A    = 1;
+  FIRMWARE_DOMAIN_B    = 2;
+}
+
+// HAOperRole is the current HA operational role
+enum HAOperRole {
+  // HA_OPER_ROLE_NONE is used HA feature is not enable or in standalone mode
+  HA_OPER_ROLE_NONE               = 0;
+  // HA_OPER_ROLE_PRE_STANDALONE is a transient state in the datapath
+  HA_OPER_ROLE_PRE_STANDALONE     = 1;
+  // DSC is in active role for the VIP
+  HA_OPER_ROLE_ACTIVE             = 2;
+  // DSC is in standby role for the VIP
+  HA_OPER_ROLE_STANDBY            = 3;
+  // DSC not participating in HA anymore
+  HA_OPER_ROLE_SHUTDOWN           = 4;
+  // ready to be in STANDALONE state waiting for activation of admin role
+  HA_OPER_ROLE_DORMANT_STANDALONE = 5;
+  // ready to be in ACTIVE state waiting for activation of admin role
+  HA_OPER_ROLE_DORMANT_ACTIVE     = 6;
+  // ready to be in STANDBY state waiting for activation of admin role
+  HA_OPER_ROLE_DORMANT_STANDBY    = 7;
+}
+
+// per VIP operational status
+message HAVIPStatus {
+  // h/w identifier of the VIP
+  uint32        HwId             = 1;
+  // operational HA FSM (finite state machine) role of the VIP on this DSC
+  HAOperRole    VIPRole          = 2;
+  // role programmed in the datapath for this VIP
+  HAOperRole    DatapathRole     = 3;
+  // switchover epoch is the epoch assigned with the latest
+  // role switch between master ands standby
+  uint32        SwitchoverEpoch  = 4;
+  // bulk sync epoch is associated with the bulk sync of the state
+  // from peer DSC that is triggered during initial DSC bootup or
+  // during role change
+  uint32        BulkSyncEpoch    = 5;
+  // current HA owner of the VIP
+  types.HAOwner HAOwner          = 6;
+  /// FlowFixupPending will be true if we are awaiting agent/controller
+  /// to flip ownership of VIPs after switchover
+  bool          FlowFixupPending = 7;
+}
+
+// operational sync status of High Availability (HA) feature
+message HASyncStatus {
+  // sync status of s/w datapath to peer
+  types.SwDatapathSyncStatus SwDatapathSyncStatus = 1;
+}
+
+// HA peer-to-peer connectivity status
+enum PeerToPeerConnectionStatus {
+  // peer connection status is unknown
+  P2P_CONNECTION_STATUS_NONE = 0;
+  // connection to peer is up
+  P2P_CONNECTION_STATUS_UP   = 1;
+  // connection to peer is down
+  P2P_CONNECTION_STATUS_DOWN = 2;
+}
+
+// operational status of High Availability (HA) feature
+message HAStatus {
+  // HA version DSC negotiated with the peer
+  uint64                     DSCHAVersion       = 1;
+  // P4/datapath version negotiated with the peer
+  uint32                     DatapathHAVersion  = 2;
+  // Inter-DSC tunnel h/w id
+  uint32                     InterDSCTunnelHwId = 3;
+  // peer-to-peer connection status
+  PeerToPeerConnectionStatus P2PCnxnStatus      = 4;
+  // per VIP HA status
+  repeated HAVIPStatus       VIPStatus          = 5;
+  // sync status
+  HASyncStatus               DSCHASyncStatus    = 6;
+}
+
+// system events are the events happened and captures some of
+// the event history of the system
+message SystemEvent {
+  // event timestamp
+  google.protobuf.Timestamp Time  = 1 [(gogoproto.stdtime) = true];
+  // name of the event
+  string                    Event = 2;
+}
+
+// system alerts are the alerts that are currently effecting the
+// health of the system
+// NOTE: by default alerts are for critical system affecting events
+message SystemAlert {
+  // alert timestamp
+  google.protobuf.Timestamp Time  = 1 [(gogoproto.stdtime) = true];
+  // name of the alert
+  string                    Alert = 2;
+}
+
+// operational status of the device, if any
+message DeviceStatus {
+  // system MAC address (can be used to uniquely identify the device in cluster)
+  uint64               SystemMACAddress     = 1;
+  // serial number of the device
+  string               SerialNumber         = 2;
+  // SKU/part numnber
+  string               Sku                  = 3;
+  // version of the firmware running
+  string               FirmwareVersion      = 4;
+  // memory capacity
+  uint32               Memory               = 5;
+  // product name
+  string               ProductName          = 6;
+  // manufacturing date
+  string               ManufacturingDate    = 7;
+  // device description
+  string               Description          = 8;
+  // vendor identifier
+  string               VendorID             = 9;
+  // chip type
+  types.AsicType       ChipType             = 10;
+  // hardware revision
+  string               HardwareRevision     = 11;
+  // CPU vendor
+  string               CpuVendor            = 12;
+  // CPU specification
+  string               CpuSpecification     = 13;
+  // SoC OS version
+  string               SocOSVersion         = 14;
+  // SoC disk size
+  string               SocDiskSize          = 15;
+  // PCIe capability string (not the runtime negotiated status)
+  string               PCIeCapability       = 16;
+  // PCIe bus information for the DSC
+  string               PCIeBusInfo          = 17;
+  // number of PCIe ports
+  uint32               NumPCIePorts         = 18;
+  // Number of uplink ports
+  uint32               NumPorts             = 19;
+  // vendor name
+  string               VendorName           = 20;
+  // PXE version
+  float                PXEVersion           = 21;
+  // UEFI version
+  float                UEFIVersion          = 22;
+  // number of host interfaces
+  uint32               NumHostIf            = 23;
+  // version of the firmware running
+  string               FirmwareDescription  = 24;
+  // version of the firmware running
+  string               FirmwareBuildTime    = 25;
+  // Pipeline
+  string               Pipeline             = 26;
+  // control network status
+  ControlNetworkStatus ControlNwStatus      = 27;
+  // management network status
+  MgmtNetworkStatus    MgmtNwStatus         = 28;
+  // firmware initialization mode
+  FirmwareInitMode     InitMode             = 29;
+  // firmware/instance in which current firmware is running
+  FirmwareInstance     Instance             = 30;
+  // firmware domain
+  FirmwareDomain       Domain               = 31;
+  // operational status of DSC when HA is deployed
+  HAStatus             HAStatus             = 32;
+  // current epoch of grpc client
+  uint32               CurrentConfigEpoch   = 33;
+  // critical system events
+  repeated SystemEvent CriticalEvents       = 34;
+  // alerts currently active
+  repeated SystemAlert Alerts               = 35;
+}
+
+// stats of the device, if any
+message DeviceStatsEntry {
+  // name of the counter
+  string Name  = 1;
+  // value of the counter
+  uint64 Count = 2;
+}
+
+message P2PCnxnStats {
+  // number of socket create attempts
+  uint32 SocketCreate                    = 1;
+  // number of socket create errors
+  uint32 SocketCreateError               = 2;
+  // number of socket bind errors
+  uint32 SocketBindError                 = 3;
+  // number of socket option set errors
+  uint32 SocketSetOptError               = 4;
+  // number of successful messages sent
+  uint32 MsgSent                         = 5;
+  // number of message send errors due to socket not in connected state
+  uint32 InvalidSocketSendError          = 6;
+  // number of socket send errors
+  uint32 SocketSendError                 = 7;
+  // number of times partial data was sent
+  uint32 PartialDataSent                 = 8;
+  // number of send errors due to data exceeding max. buffer size
+  uint32 MaxSizeExceededSendError        = 9;
+  // number of send errors due to queue full
+  uint32 QueueFullSendError              = 10;
+  // number of messages received
+  uint32 MsgReceived                     = 11;
+  // number of socket accept attempts
+  uint32 SocketAccept                    = 12;
+  // number of socket accept errors
+  uint32 SocketAcceptError               = 13;
+  // number of socket connect attempts
+  uint32 SocketConnect                   = 14;
+  // number socket connect errors due to invalid socket
+  uint32 InvalidSocketConnectError       = 15;
+  // number socket connect  errors due to pending bind operation
+  uint32 SocketPendingBindConnectError   = 16;
+  // number of times socket is closed
+  uint32 SocketClose                     = 17;
+}
+
+// statistics related to HA peer connection
+message P2PMsgStats {
+  // number of times client connected to server
+  uint32 ClientConnect                    = 1;
+  // number of times server accepted connection from client
+  uint32 ServerAccept                     = 2;
+  // number of times connection between HA peers went down
+  uint32 ConnectionDown                   = 3;
+  // number of times connection between HA peers was terminated
+  uint32 ConnectionTermination            = 4;
+  // number messages sent to HA peer
+  uint32 MsgSent                          = 5;
+  // number of message send failures
+  uint32 MsgSendError                     = 6;
+  // number of request messages sent
+  uint32 ReqMsgSent                       = 7;
+  // number request message send failures
+  uint32 ReqMsgSendError                  = 8;
+  // number of responses sent to vnic GET requests
+  uint32 VnicGetResponseSent              = 9;
+  // number of errors while sending response to vnic GET request
+  uint32 VnicGetResponseSendError         = 10;
+  // number of notification messages sent
+  uint32 NtfnMsgSent                      = 11;
+  // number of vnic notification messages sent
+  uint32 VnicNtfnSent                     = 12;
+  // number of vnic notification send errors
+  uint32 VnicNtfnSendError                = 13;
+  // number of message marshalling errors while sending to HA peer
+  uint32 MsgMarshallError                 = 14;
+  // number of send errors due to connection down
+  uint32 NoCnxnMsgSendError               = 15;
+  // number of epoch reconciliation initiation errors
+  uint32 EpochReconcileInitiateErr        = 16;
+  // number of epoch reconcile start messages sent
+  uint32 EpochReconcileStartMsgSent       = 17;
+  // number of epoch reconcile start message send errors
+  uint32 EpochReconcileStartMsgSendErr    = 18;
+  // number of epoch reconcile start messages received
+  uint32 EpochReconcileStartMsgRcvd       = 19;
+  // number of epoch reconcile start message processing errors
+  uint32 EpochReconcileStartMsgProcErr    = 20;
+  // number of epoch reconcile start ack message successfully sent
+  uint32 EpochReconcileStartAckMsgSent    = 21;
+  // number of epoch reconcile start ack message send failures
+  uint32 EpochReconcileStartAckMsgSendErr = 22;
+  // number of reconcile start ack messages received
+  uint32 EpochReconcileStartAckMsgRcvd    = 23;
+  // number of epoch reconcile start ack message processing errors
+  uint32 EpochReconcileStartAckMsgProcErr = 24;
+  // number of epoch reconcile end message successfully sent
+  uint32 EpochReconcileEndMsgSent         = 25;
+  // number of epoch reconcile end message send failures
+  uint32 EpochReconcileEndMsgSendErr      = 26;
+  // number of epoch reconcile end messages received
+  uint32 EpochReconcileEndMsgRcvd         = 27;
+  // number of epoch reconcile end message processing errors
+  uint32 EpochReconcileEndMsgProcErr      = 28;
+  /// number of unknown epoch reconcile messages received
+  uint32 UnknownEpochReconcileMsgRcvdErr  = 29;
+  // number of messages received from HA peer
+  uint32 MsgRcvd                          = 30;
+  // number of request messages received from HA peer
+  uint32 ReqMsgRcvd                       = 31;
+  // number of request message processing errors
+  uint32 ReqMsgProcError                  = 32;
+  // number of response messages received from HA peer
+  uint32 RspMsgRcvd                       = 33;
+  // number of notification messages received from HA peer
+  uint32 NtfnMsgRcvd                      = 34;
+  // number notification message processing errors
+  uint32 NtfnMsgProcError                 = 35;
+  // number of vnic notification messages received from HA peer
+  uint32 VnicNtfnMsgRcvd                  = 36;
+  // number of message unmarshalling errors
+  uint32 MsgUnmarshallError               = 37;
+  // number of unknown request messages recevied from HA peer
+  uint32 UnknownReqTypeRcvdError          = 38;
+  // number of unknown response messages recevied from HA peer
+  uint32 UnknownRspTypeRcvdError          = 39;
+  // number of unknown notification messages recevied from HA peer
+  uint32 UnknownNtfnTypeRcvdError         = 40;
+  // number of messages with unknown message type recevied from HA peer
+  uint32 UnknownMsgTypeRcvdError          = 41;
+}
+
+// flow sync stats between HA peers
+message P2PFlowSyncStats {
+  // number of flow sync requests sent to the HA peer
+  uint64 FlowSyncReqSent = 1;
+  // number of flow sync acks received from the HA peer
+  uint64 FlowSyncAckRcvd = 2;
+}
+
+// HAStats contains all the statistics specific to HA functinoality
+message HAStats {
+  // HA peer-to-peer connection specific statistics
+  P2PCnxnStats     P2PCnxnStats     = 1;
+  // HA peer-to-peer application level statistics
+  P2PMsgStats      P2PMsgStats      = 2;
+  // flow sync stats between HA peers
+  P2PFlowSyncStats P2PFlowSyncStats = 3;
+}
+
+message DeviceStats {
+  repeated DeviceStatsEntry Ingress = 1;
+  repeated DeviceStatsEntry Egress  = 2;
+  HAStats  HAStats                  = 3;
+}
+
+// device object
+message Device {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  DeviceSpec    Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  DeviceStatus  Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  DeviceStats   Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// device create and update request
+message DeviceRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // device global configuration
+  DeviceSpec      Request   = 2;
+}
+
+// device create and update response
+message DeviceResponse {
+  // API status
+  types.ApiStatus ApiStatus = 1;
+  // operational status of the device
+  DeviceStatus    Response  = 2;
+}
+
+// device get request
+message DeviceGetRequest {
+}
+
+// device get response
+message DeviceGetResponse {
+  // status code
+  types.ApiStatus ApiStatus = 1;
+  // device information
+  Device          Response  = 2;
+}
+
+// device delete request
+message DeviceDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+}
+
+// device delete response
+message DeviceDeleteResponse {
+  // response status
+  types.ApiStatus ApiStatus = 1;
+}

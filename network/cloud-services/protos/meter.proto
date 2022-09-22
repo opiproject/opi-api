@@ -1,0 +1,251 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for metering policy
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service MeterSvc {
+  // meter policy APIs
+  rpc MeterPolicyCreate (MeterPolicyRequest) returns (MeterPolicyResponse) {}
+  rpc MeterPolicyUpdate (MeterPolicyRequest) returns (MeterPolicyResponse) {}
+  rpc MeterPolicyGet (MeterPolicyGetRequest) returns (MeterPolicyGetResponse) {}
+  rpc MeterPolicyGetStreaming (MeterPolicyGetRequest) returns (stream MeterPolicyGetResponse) {}
+  rpc MeterPolicyDelete (MeterPolicyDeleteRequest) returns (MeterPolicyDeleteResponse) {}
+
+  // meter rule APIs to incrementally add/del/upd meter policy
+  rpc MeterRuleCreate (MeterRuleRequest) returns (MeterRuleResponse) {}
+  rpc MeterRuleUpdate (MeterRuleRequest) returns (MeterRuleResponse) {}
+  rpc MeterRuleGet (MeterRuleGetRequest) returns (MeterRuleGetResponse) {}
+  rpc MeterRuleDelete (MeterRuleDeleteRequest) returns (MeterRuleDeleteResponse) {}
+
+  // meter policy pool related APIs
+  rpc MeterPolicyPoolGet(types.Empty) returns (MeterPolicyPoolGetResponse) {}
+}
+
+message MeterRuleAttrs {
+  // IP prefix to match
+  types.IPPrefix Prefix       = 1;
+  // priority of this rule
+  // NOTE:
+  // 1. lower the numerical value, higher the priority in the datapath
+  // 2. a meter policy MUST have either all the rules with priority set or no
+  //    priority set on all the rules
+  // 3. if multiple rules have same priority, prefix with longest prefix length
+  //    will take effect and its meter class is picked
+  // 4. if no priority value is set (i.e. 0) then meter prefix priority is
+  //    computed as 128 - <prefix length>, so longer prefixes will have higher
+  //    precedence over shorter ones giving regular LPM semantics
+  // 5. Priority attribute on the rule is used only when PriorityEn is set to
+  //    true on the corresponding MeterPolicySpec
+  uint32         Priority     = 2 [(gogoproto.moretags) = "meta:range:0-1023"];
+  // MeterClass is the meter class used to account packets & bytes
+  // NOTE:
+  // 1. upto 4K meter classes per vnic can be specified, so meter class value must
+  //    be between 1 to 4K - 1
+  // 2. meter class value of 0 is reserved
+  // 3. meter class is used for both outbound and inbound sessions
+  // 4. for outbound sessions, meter class from a meter rule is picked when
+  //    first packet of the session hits a route and route is configured with
+  //    EvalMeterPolicy action
+  // 5. for inbound sessions, meter class from a meter rule is picked when
+  //    the first packet of the session is received from remote workload
+  //    with VNI configured with meter policy or traffic received from a peer
+  //    VPC hits VPCPeerSpec configuration with meter policy
+  // 6. same MeterClass value is used in both the initiator and responder
+  //    flows of an outbound and an inbound session
+  uint32         MeterClass = 3 [(gogoproto.moretags) = "meta:range:1-4095"];
+}
+
+// meter rule specific configuration
+message MeterRuleInfo {
+  // optional rule id needed if incremental rule ADD/DEL/UPD functionality
+  // is needed
+  bytes          Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // rule attributes
+  MeterRuleAttrs Attrs = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// meter policy specification
+// NOTE: any time a meter policy specification changes, client is expected to
+//       send full new meter specification (i.e., no incremental add/del/upd of
+//       prefixes in the metering policy can be specified)
+message MeterPolicySpec {
+  // unique meter policy id
+  bytes                  Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IP address family
+  types.IPAF             Af         = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // enable or disable priority based meter rules
+  bool                   PriorityEn = 3 [(gogoproto.moretags) = "meta:default=false"];
+  // list of meter rules
+  // NOTE: in a given meter policy, same prefix must not appear more than once
+  repeated MeterRuleInfo Rules      = 4;
+}
+
+// operational status of the meter policy, if any
+message MeterPolicyStatus {
+  // meter policy pool
+  uint32 PoolId              = 1 [(gogoproto.jsontag) = "PoolId"];
+  // meter lpm block h/w id
+  uint32 LPMBlockId          = 2 [(gogoproto.jsontag) = "LPMBlockId"];
+  // meter policy base address
+  uint64 MeterPolicyBaseAddr = 3;
+  // no. of VPCs using the meter policy
+  uint32 NumVPC              = 4;
+  // no. of vnics using the meter policy
+  uint32 NumVnic             = 5;
+}
+
+// stats of the meter policy, if any
+message MeterPolicyStats {
+}
+
+// meter policy object
+message MeterPolicy {
+  meta.TypeMeta     TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta      ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MeterPolicySpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MeterPolicyStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MeterPolicyStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// meter policy create and update request
+message MeterPolicyRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt          BatchCtxt = 1;
+  // batched request
+  repeated MeterPolicySpec Request   = 2;
+}
+
+// meter policy create and update response
+message MeterPolicyResponse {
+  types.ApiStatus            ApiStatus = 1;
+  repeated MeterPolicyStatus Response  = 2;
+}
+
+// meter policy get request
+message MeterPolicyGetRequest {
+  // batched request
+  repeated bytes Id = 1;
+}
+
+// meter policy table get response
+message MeterPolicyGetResponse {
+  types.ApiStatus      ApiStatus = 1;
+  repeated MeterPolicy Response  = 2;
+}
+
+// meter policy delete request
+message MeterPolicyDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated bytes Id         = 2;
+}
+
+// meter policy delete response
+message MeterPolicyDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// meter rule identifier
+message MeterRuleId {
+  // globally unique meter rule id
+  bytes Id            = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // meter policy this rule belongs to
+  bytes MeterPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// meter rule specification
+message MeterRuleSpec {
+  // unique identifier of meter rule
+  bytes          Id            = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // meter policy this rule belongs to
+  bytes          MeterPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // rule information
+  MeterRuleAttrs Attrs         = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of the meter rule, if any
+message MeterRuleStatus {
+}
+
+// stats of the meter rule, if any
+message MeterRuleStats {
+}
+
+// meter policy rule object
+message MeterRule {
+  meta.TypeMeta   TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta    ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MeterRuleSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MeterRuleStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MeterRuleStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// meter policy rule create and update request
+message MeterRuleRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // meter policy rule configuration
+  MeterRuleSpec   Request   = 2;
+}
+
+// meter policy rule create and update response
+message MeterRuleResponse {
+  // success or failure status
+  types.ApiStatus ApiStatus = 1;
+  // operational status
+  MeterRuleStatus Response  = 2;
+}
+
+// meter policy rule get request
+message MeterRuleGetRequest {
+  // list of id/key of the meter policy rules of interest
+  repeated MeterRuleId Id = 1 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// meter policy rule get response
+message MeterRuleGetResponse {
+  types.ApiStatus    ApiStatus = 1;
+  // meter policy rule information
+  repeated MeterRule Response  = 2;
+}
+
+// meter policy rule delete request
+message MeterRuleDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  // id/key list of the meter policy rule(s) to be deleted
+  repeated MeterRuleId Id        = 2;
+}
+
+// meter policy rule delete response
+message MeterRuleDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// MeterPolicyPoolStatus captures the current status of each meter policy pool
+message MeterPolicyPoolStatus {
+  // meter policy pool name
+  string Name                   = 1;
+  // max. no. of meter policies in the pool
+  uint32 MaxMeterPolicies       = 2;
+  // no. of meter policies in use in the pool
+  uint32 MeterPoliciesAllocated = 3;
+}
+
+// get meter policy pool details
+message MeterPolicyPoolGetResponse {
+  // response code
+  types.ApiStatus                ApiStatus = 1;
+  // list of per pool status
+  repeated MeterPolicyPoolStatus Status    = 2;
+}

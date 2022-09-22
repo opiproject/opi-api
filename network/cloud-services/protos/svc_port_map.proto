@@ -1,0 +1,102 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for servvice port map object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service SvcPortMapSvc {
+  rpc SvcPortMapCreate (SvcPortMapRequest) returns (SvcPortMapResponse) {}
+  rpc SvcPortMapGet (SvcPortMapGetRequest) returns (SvcPortMapGetResponse) {}
+  rpc SvcPortMapDelete (SvcPortMapDeleteRequest) returns (SvcPortMapDeleteResponse) {}
+}
+
+// SvcPortMapSpec captures the configuration of service port map object,
+// it has service port to backend port mapping information so that the traffic
+// sent towards the service ports will be NAT-ed to backend ports and vice versa
+//
+// NOTE:
+// 1. the number of service port ranges specified must be same as number of
+//    backend port ranges
+// 2. the size of each port range must be a power of 2
+message SvcPortMapSpec {
+  message SvcPortMap {
+    // port range service is deployed on
+    types.PortRange SvcPortRange     = 1 [(gogoproto.moretags) = "meta:mandatory"];
+    // port range backend service is running on
+    types.PortRange BackendPortRange = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  }
+  // unique key/identifier of service port map object
+  bytes               Id          = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  repeated SvcPortMap PortMap     = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // certain ports are exempted from port translation and they shouldn't be
+  // rewritten
+  repeated uint32     ExemptPorts = 3;
+}
+
+// operational statis of a service port map object
+message SvcPortMapStatus {
+  // svc port map h/w id
+  uint32 HwId = 1;
+}
+
+// stats for service port map object, if any
+message SvcPortMapStats {
+}
+
+// Service Port Map object
+message SvcPortMap {
+  meta.TypeMeta    TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta     ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SvcPortMapSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SvcPortMapStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SvcPortMapStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// SvcPortMap create and update request
+message SvcPortMapRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt         BatchCtxt = 1;
+  // batched requests
+  repeated SvcPortMapSpec Request  = 2;
+}
+
+// SvcPortMap create and update response
+message SvcPortMapResponse {
+  types.ApiStatus           ApiStatus = 1;
+  // batched response
+  repeated SvcPortMapStatus Response  = 2;
+}
+
+// SvcPortMap get request
+message SvcPortMapGetRequest {
+  // list of keys of interest
+  repeated bytes Id = 1;
+}
+
+// SvcPortMap get response
+message SvcPortMapGetResponse {
+  // API status code
+  types.ApiStatus     ApiStatus = 1;
+  repeated SvcPortMap Response  = 2;
+}
+
+// SvcPortMap delete request
+message SvcPortMapDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// SvcPortMap delete response
+message SvcPortMapDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}
+

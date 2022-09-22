@@ -1,0 +1,211 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Quality of Service (QoS) functionality
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service QoSSvc {
+  rpc QoSClassCreate (QoSClassRequest) returns (QoSClassResponse) {}
+  rpc QoSClassUpdate (QoSClassRequest) returns (QoSClassResponse) {}
+  rpc QoSClassGet (QoSClassGetRequest) returns (QoSClassGetResponse) {}
+  rpc QoSClassDelete (QoSClassDeleteRequest) returns (QoSClassDeleteResponse) {}
+}
+
+// QoS group
+enum QoSGroup {
+  QOS_GROUP_NONE           = 0;
+  // default QoS group
+  QOS_GROUP_DEFAULT        = 1;
+  // qos group for control traffic
+  QOS_GROUP_CONTROL        = 2;
+  // qos group for span/mirrored traffic
+  QOS_GROUP_SPAN           = 3;
+  // qos group for CPU copies
+  QOS_GROUP_CPU_COPY       = 4;
+  // user defined group 0 
+  QOS_GROUP_USER_DEFINED_0 = 5;
+  // user defined group 1
+  QOS_GROUP_USER_DEFINED_1 = 6;
+  // user defined group 2
+  QOS_GROUP_USER_DEFINED_2 = 7;
+  // user defined group 3
+  QOS_GROUP_USER_DEFINED_3 = 8;
+  // user defined group 4
+  QOS_GROUP_USER_DEFINED_4 = 9;
+  // user defined group 5
+  QOS_GROUP_USER_DEFINED_5 = 10;
+  // user defined group 6
+  QOS_GROUP_USER_DEFINED_6 = 11;
+  // user defined group 7
+  QOS_GROUP_USER_DEFINED_7 = 12;
+}
+
+// QoS class type
+enum QoSClassType {
+  QOS_CLASS_TYPE_NONE    = 0;
+  QOS_CLASS_TYPE_DROP    = 1;
+  QOS_CLASS_TYPE_NO_DROP = 2;
+}
+
+// type of QoS pause
+enum QoSPauseType {
+  QOS_PAUSE_TYPE_NONE       = 0;  // pause disabled
+  QOS_PAUSE_TYPE_LINK_LEVEL = 1;  // link level pause
+  QOS_PAUSE_TYPE_PFC        = 2;  // priority pause
+}
+
+// QoSPause specifies the link-level or PFC configuration
+message QoSPauseSpec {
+  // Type indicates the type of pause
+  QoSPauseType Type   = 1 [(gogoproto.moretags) = "meta:default=QoSPauseType"];
+  // cos value to use if pause type is QOS_PAUSE_TYPE_PFC
+  uint32       PFCCoS = 2 [(gogoproto.moretags) = "meta:constraints={Type==QOS_PAUSE_TYPE_PFC},meta:range:0-7"];
+}
+
+// QoSSchedulingSpec captures the QoSClass scheduling configuration
+message QoSSchedSpec {
+  // Deficit Weighted Round Robin (DWRR) specific configuration
+  message QoSSchedDWRRSPec {
+    // percentage of bandwidth allocated
+    uint32 Bandwidth                          = 1 [(gogoproto.moretags) = "meta:range:0-100"];
+  }
+  // Strict Piority (SP) scheduling configuration
+  message QoSSchedStrictPrioSpec {
+    // rate in bytes per second (if this is 0, rate limiting is disabled)
+    uint64 BytesPerSecond                     = 1 [(gogoproto.moretags) = "meta:default=0"];
+  }
+  oneof schedtype {
+    // DWRR scheduling configuration
+    QoSSchedDWRRSPec       DWRRSpec           = 1;
+    // strict priority scheduling configuration
+    QoSSchedStrictPrioSpec StrictPrioritySpec = 2;
+  }
+}
+
+// QoS class map types
+enum QoSClassMapType {
+  QOS_CLASS_MAP_TYPE_NONE     = 0;
+  QOS_CLASS_MAP_TYPE_PCP      = 1;
+  QOS_CLASS_MAP_TYPE_DSCP     = 2;
+  QOS_CLASS_MAP_TYPE_PCP_DSCP = 3;
+}
+
+// QoSClassMap specifies the policy with which traffic from network
+// is classified
+message QoSClassMap {
+  // class map type
+  QoSClassMapType Type = 1;
+  // classify traffic based on .1q PCP value
+  uint32          PCP  = 2 [(gogoproto.moretags) = "meta:range:0-7"];
+  // classify traffic based on IPv4/IPv6 DSCP values
+  repeated uint32 DSCP = 3 [(gogoproto.moretags) = "meta:range:0-63"];
+}
+
+// QoSClassSpec captures QoS clas configuration
+message QoSClassSpec {
+  // unique key/identifier of QoS class
+  bytes        Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // QoS group of this class
+  QoSGroup     Group        = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // traffic class (TC) to be assigned for the traffic matching the qos class
+  uint32       TrafficClass = 3 [(gogoproto.moretags) = "meta:mandatory,meta:range:0-7"];
+  // Type indicates whether the QoS class is drop/no-drop class
+  QoSClassType Type         = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // QoS class map to classify the traffic
+  QoSClassMap  ClassMap     = 5;
+  // Pause related configuration
+  QoSPauseSpec PauseSpec    = 6;
+  // QoS scheuding configuration
+  QoSSchedSpec SchedSpec    = 7 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// queues for a QoSClass object
+message QoSClassQueues {
+  // input queue at uplink ports
+  uint32 UplinkIq  = 1;
+  // output queue at uplink ports
+  uint32 UplinkOq  = 2;
+  // input and output RX queues at P4 Ingress port
+  uint32 P4IngrRxQ = 3;
+  // input and output TX queues at P4 Ingress port
+  uint32 P4IngrTxQ = 4;
+  // input and output RX queues at P4 Egress port
+  uint32 P4EgrRxQ  = 5;
+  // input and output TX queues at P4 Egress port
+  uint32 P4EgrTxQ  = 6;
+  // input queue at DMA port
+  uint32 DmaIq     = 7;
+  // output queue at DMA port
+  uint32 DmaOq     = 8;
+}
+
+// operational status of a QoSClass object
+message QoSClassStatus {
+  // internal queues allocated at internal ports for a QoSClass
+  QoSClassQueues Queues = 1;
+}
+
+// stats for a QoSClass object
+message QoSClassStats {
+  uint64 PktsIn  = 1;
+  uint64 PktsOut = 2;
+}
+
+// QoSClass object
+message QoSClass {
+  meta.TypeMeta  TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta   ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  QoSClassSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  QoSClassStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  QoSClassStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// QoSClass create and update request
+message QoSClassRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt       BatchCtxt = 1;
+  // batched requests
+  repeated QoSClassSpec Request   = 2;
+}
+
+// QoSClass create and update response
+message QoSClassResponse {
+  // API status code
+  types.ApiStatus         ApiStatus = 1;
+  // batched response
+  repeated QoSClassStatus Response  = 2;
+}
+
+// QoSClass get request
+message QoSClassGetRequest {
+  // list of keys of interest
+  repeated bytes Id = 1;
+}
+
+// QoSClass get response
+message QoSClassGetResponse {
+  // API status code
+  types.ApiStatus   ApiStatus = 1;
+  repeated QoSClass Response  = 2;
+}
+
+// QoSClass delete request
+message QoSClassDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// QoSClass delete response
+message QoSClassDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}
+

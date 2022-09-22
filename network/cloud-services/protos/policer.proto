@@ -1,0 +1,113 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for policer policy
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service PolicerSvc {
+  rpc PolicerCreate (PolicerRequest) returns (PolicerResponse) {}
+  rpc PolicerUpdate (PolicerRequest) returns (PolicerResponse) {}
+  rpc PolicerGet (PolicerGetRequest) returns (PolicerGetResponse) {}
+  rpc PolicerDelete (PolicerDeleteRequest) returns (PolicerDeleteResponse) {}
+}
+
+// packet policer
+message PacketPolicerSpec {
+  // packets per second
+  uint64 PacketsPerSecond = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // number/burst of packets to absorb
+  uint64 Burst            = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// byte policer
+message BytePolicerSpec {
+  // bytes per second
+  uint64 BytesPerSecond = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // number/burst of bytes to absorb
+  uint64 Burst          = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// traffic direction in which policer is applied
+// INGRESS/EGRESS is w.r.t vnic (i.e., traffic leaving vnic is marked as
+// EGRESS and traffic going to vnic is marked as INGRESS
+enum PolicerDir {
+  POLICER_DIR_NONE    = 0;
+  POLICER_DIR_INGRESS = 1;
+  POLICER_DIR_EGRESS  = 2;
+}
+
+// policer specification
+message PolicerSpec {
+  // unique policer id
+  bytes               Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  PolicerDir          Direction  = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // policer is one byte policer or packet policer
+  oneof policer {
+    PacketPolicerSpec PPSPolicer = 3;
+    BytePolicerSpec   BPSPolicer = 4;
+  }
+}
+
+// operational status of the policer, if any
+message PolicerStatus {
+  uint32 HwId   = 1; // policer hw id
+}
+
+// stats of the policer, if any
+message PolicerStats {
+}
+
+// Policer policy object
+message Policer {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  PolicerSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  PolicerStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  PolicerStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// policer table create and update request
+message PolicerRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  // batched request
+  repeated PolicerSpec Request   = 2;
+}
+
+// policer table create and update response
+message PolicerResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated PolicerStatus Response  = 2;
+}
+
+// policer table get request
+message PolicerGetRequest {
+  // batched request
+  repeated bytes Id = 1;
+}
+
+// policer table get response
+message PolicerGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated Policer Response  = 2;
+}
+
+// policer table delete request
+message PolicerDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated        bytes Id  = 2;
+}
+
+// policer table delete response
+message PolicerDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

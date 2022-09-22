@@ -1,0 +1,396 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for port related objects
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service PortSvc {
+  rpc PortGet (PortGetRequest) returns (PortGetResponse) {}
+  rpc PortUpdate (PortUpdateRequest) returns (PortUpdateResponse) {}
+  // given a uuid of a port, clear its stats or else clear stats of all ports
+  rpc PortStatsReset (types.Id) returns (types.Empty) {}
+}
+
+//------------------------------------------------------------------------------
+// MacStats consists of MgmtMacStatsType and count
+//------------------------------------------------------------------------------
+enum MgmtMacStatsType {
+   MGMT_MAC_FRAMES_RX_OK          =  0;
+   MGMT_MAC_FRAMES_RX_ALL         =  1;
+   MGMT_MAC_FRAMES_RX_BAD_FCS     =  2;
+   MGMT_MAC_FRAMES_RX_BAD_ALL     =  3;
+   MGMT_MAC_OCTETS_RX_OK          =  4;
+   MGMT_MAC_OCTETS_RX_ALL         =  5;
+   MGMT_MAC_FRAMES_RX_UNICAST     =  6;
+   MGMT_MAC_FRAMES_RX_MULTICAST   =  7;
+   MGMT_MAC_FRAMES_RX_BROADCAST   =  8;
+   MGMT_MAC_FRAMES_RX_PAUSE       =  9;
+   MGMT_MAC_FRAMES_RX_BAD_LENGTH  = 10;
+   MGMT_MAC_FRAMES_RX_UNDERSIZED  = 11;
+   MGMT_MAC_FRAMES_RX_OVERSIZED   = 12;
+   MGMT_MAC_FRAMES_RX_FRAGMENTS   = 13;
+   MGMT_MAC_FRAMES_RX_JABBER      = 14;
+   MGMT_MAC_FRAMES_RX_64B         = 15;
+   MGMT_MAC_FRAMES_RX_65B_127B    = 16;
+   MGMT_MAC_FRAMES_RX_128B_255B   = 17;
+   MGMT_MAC_FRAMES_RX_256B_511B   = 18;
+   MGMT_MAC_FRAMES_RX_512B_1023B  = 19;
+   MGMT_MAC_FRAMES_RX_1024B_1518B = 20;
+   MGMT_MAC_FRAMES_RX_GT_1518B    = 21;
+   MGMT_MAC_FRAMES_RX_FIFO_FULL   = 22;
+   MGMT_MAC_FRAMES_TX_OK          = 23;
+   MGMT_MAC_FRAMES_TX_ALL         = 24;
+   MGMT_MAC_FRAMES_TX_BAD         = 25;
+   MGMT_MAC_OCTETS_TX_OK          = 26;
+   MGMT_MAC_OCTETS_TX_TOTAL       = 27;
+   MGMT_MAC_FRAMES_TX_UNICAST     = 28;
+   MGMT_MAC_FRAMES_TX_MULTICAST   = 29;
+   MGMT_MAC_FRAMES_TX_BROADCAST   = 30;
+   MGMT_MAC_FRAMES_TX_PAUSE       = 31;
+}
+
+//------------------------------------------------------------------------------
+// MacStats consists of MacStatsType and count
+//------------------------------------------------------------------------------
+enum MacStatsType {
+   FRAMES_RX_OK            =  0;
+   FRAMES_RX_ALL           =  1;
+   FRAMES_RX_BAD_FCS       =  2;
+   FRAMES_RX_BAD_ALL       =  3;
+   OCTETS_RX_OK            =  4;
+   OCTETS_RX_ALL           =  5;
+   FRAMES_RX_UNICAST       =  6;
+   FRAMES_RX_MULTICAST     =  7;
+   FRAMES_RX_BROADCAST     =  8;
+   FRAMES_RX_PAUSE         =  9;
+   FRAMES_RX_BAD_LENGTH    = 10;
+   FRAMES_RX_UNDERSIZED    = 11;
+   FRAMES_RX_OVERSIZED     = 12;
+   FRAMES_RX_FRAGMENTS     = 13;
+   FRAMES_RX_JABBER        = 14;
+   FRAMES_RX_PRIPAUSE      = 15;
+   FRAMES_RX_STOMPED_CRC   = 16;
+   FRAMES_RX_TOO_LONG      = 17;
+   FRAMES_RX_VLAN_GOOD     = 18;
+   FRAMES_RX_DROPPED       = 19;
+   FRAMES_RX_LESS_THAN_64B = 20;
+   FRAMES_RX_64B           = 21;
+   FRAMES_RX_65B_127B      = 22;
+   FRAMES_RX_128B_255B     = 23;
+   FRAMES_RX_256B_511B     = 24;
+   FRAMES_RX_512B_1023B    = 25;
+   FRAMES_RX_1024B_1518B   = 26;
+   FRAMES_RX_1519B_2047B   = 27;
+   FRAMES_RX_2048B_4095B   = 28;
+   FRAMES_RX_4096B_8191B   = 29;
+   FRAMES_RX_8192B_9215B   = 30;
+   FRAMES_RX_OTHER         = 31;
+   FRAMES_TX_OK            = 32;
+   FRAMES_TX_ALL           = 33;
+   FRAMES_TX_BAD           = 34;
+   OCTETS_TX_OK            = 35;
+   OCTETS_TX_TOTAL         = 36;
+   FRAMES_TX_UNICAST       = 37;
+   FRAMES_TX_MULTICAST     = 38;
+   FRAMES_TX_BROADCAST     = 39;
+   FRAMES_TX_PAUSE         = 40;
+   FRAMES_TX_PRIPAUSE      = 41;
+   FRAMES_TX_VLAN          = 42;
+   FRAMES_TX_LESS_THAN_64B = 43;
+   FRAMES_TX_64B           = 44;
+   FRAMES_TX_65B_127B      = 45;
+   FRAMES_TX_128B_255B     = 46;
+   FRAMES_TX_256B_511B     = 47;
+   FRAMES_TX_512B_1023B    = 48;
+   FRAMES_TX_1024B_1518B   = 49;
+   FRAMES_TX_1519B_2047B   = 50;
+   FRAMES_TX_2048B_4095B   = 51;
+   FRAMES_TX_4096B_8191B   = 52;
+   FRAMES_TX_8192B_9215B   = 53;
+   FRAMES_TX_OTHER         = 54;
+   FRAMES_TX_PRI_0         = 55;
+   FRAMES_TX_PRI_1         = 56;
+   FRAMES_TX_PRI_2         = 57;
+   FRAMES_TX_PRI_3         = 58;
+   FRAMES_TX_PRI_4         = 59;
+   FRAMES_TX_PRI_5         = 60;
+   FRAMES_TX_PRI_6         = 61;
+   FRAMES_TX_PRI_7         = 62;
+   FRAMES_RX_PRI_0         = 63;
+   FRAMES_RX_PRI_1         = 64;
+   FRAMES_RX_PRI_2         = 65;
+   FRAMES_RX_PRI_3         = 66;
+   FRAMES_RX_PRI_4         = 67;
+   FRAMES_RX_PRI_5         = 68;
+   FRAMES_RX_PRI_6         = 69;
+   FRAMES_RX_PRI_7         = 70;
+   TX_PRIPAUSE_0_1US_COUNT = 71;
+   TX_PRIPAUSE_1_1US_COUNT = 72;
+   TX_PRIPAUSE_2_1US_COUNT = 73;
+   TX_PRIPAUSE_3_1US_COUNT = 74;
+   TX_PRIPAUSE_4_1US_COUNT = 75;
+   TX_PRIPAUSE_5_1US_COUNT = 76;
+   TX_PRIPAUSE_6_1US_COUNT = 77;
+   TX_PRIPAUSE_7_1US_COUNT = 78;
+   RX_PRIPAUSE_0_1US_COUNT = 79;
+   RX_PRIPAUSE_1_1US_COUNT = 80;
+   RX_PRIPAUSE_2_1US_COUNT = 81;
+   RX_PRIPAUSE_3_1US_COUNT = 82;
+   RX_PRIPAUSE_4_1US_COUNT = 83;
+   RX_PRIPAUSE_5_1US_COUNT = 84;
+   RX_PRIPAUSE_6_1US_COUNT = 85;
+   RX_PRIPAUSE_7_1US_COUNT = 86;
+   RX_PAUSE_1US_COUNT      = 87;
+   FRAMES_TX_TRUNCATED     = 88;
+   RSFEC_CORRECTABLE_WORD  = 89;
+   RSFEC_CH_SYMBOL_ERR_CNT = 90;
+}
+
+message MacStats {
+  MacStatsType Type  = 1;
+  uint64       Count = 2;
+}
+
+message MgmtMacStats {
+  MgmtMacStatsType Type  = 1;
+  uint64           Count = 2;
+}
+
+message TimeDuration {
+    uint32 Seconds     = 1; // time duration in seconds
+    uint64 NanoSeconds = 2; // nano seconds after seconds
+}
+
+// Port's Link timing info
+message LinkTimingInfo {
+    string        last_down_timestamp   = 1; // Port last down time
+    TimeDuration  bringup_duration      = 2; // Port bringup time
+}
+
+message PortStats {
+  repeated MacStats     MacStats       = 1;
+  repeated MgmtMacStats MgmtMacStats   = 2;
+  uint32                NumLinkDown    = 3; // Number of link down events
+  LinkTimingInfo        LinkTimingInfo = 4; // Port's link timing info
+}
+
+// PortAdminState specifies if the port is enabled (admin up) or disabled (admin down)
+enum PortAdminState {
+  PORT_ADMIN_STATE_NONE = 0; // port admin state not configured
+  PORT_ADMIN_STATE_DOWN = 1; // port is admin disabled
+  PORT_ADMIN_STATE_UP   = 2; // port is admin enabled
+}
+
+enum PortXcvrState {
+  XCVR_STATE_REMOVED        = 0;
+  XCVR_STATE_INSERTED       = 1;
+  XCVR_STATE_PENDING        = 2;
+  XCVR_STATE_SPROM_READ     = 3;
+  XCVR_STATE_SPROM_READ_ERR = 4;
+}
+
+enum PortXcvrPid {
+  XCVR_PID_UNKNOWN          = 0;
+
+  // CU
+  XCVR_PID_QSFP_100G_CR4    = 1;
+  XCVR_PID_QSFP_40GBASE_CR4 = 2;
+  XCVR_PID_SFP_25GBASE_CR_S = 3;
+  XCVR_PID_SFP_25GBASE_CR_L = 4;
+  XCVR_PID_SFP_25GBASE_CR_N = 5;
+  XCVR_PID_QSFP_50G_CR2_FC  = 6;
+  XCVR_PID_QSFP_50G_CR2     = 7;
+  XCVR_PID_QSFP_200G_CR4    = 8;
+
+  // Fiber
+  XCVR_PID_QSFP_100G_AOC    = 50;
+  XCVR_PID_QSFP_100G_ACC    = 51;
+  XCVR_PID_QSFP_100G_SR4    = 52;
+  XCVR_PID_QSFP_100G_LR4    = 53;
+  XCVR_PID_QSFP_100G_ER4    = 54;
+  XCVR_PID_QSFP_40GBASE_ER4 = 55;
+  XCVR_PID_QSFP_40GBASE_SR4 = 56;
+  XCVR_PID_QSFP_40GBASE_LR4 = 57;
+  XCVR_PID_QSFP_40GBASE_AOC = 58;
+  XCVR_PID_SFP_25GBASE_SR   = 59;
+  XCVR_PID_SFP_25GBASE_LR   = 60;
+  XCVR_PID_SFP_25GBASE_ER   = 61;
+  XCVR_PID_SFP_25GBASE_AOC  = 62;
+  XCVR_PID_SFP_10GBASE_SR   = 63;
+  XCVR_PID_SFP_10GBASE_LR   = 64;
+  XCVR_PID_SFP_10GBASE_LRM  = 65;
+  XCVR_PID_SFP_10GBASE_ER   = 66;
+  XCVR_PID_SFP_10GBASE_AOC  = 67;
+  XCVR_PID_SFP_10GBASE_CU   = 68;
+  XCVR_PID_QSFP_100G_CWDM4  = 69;
+  XCVR_PID_QSFP_100G_PSM4   = 70;
+  XCVR_PID_SFP_25GBASE_ACC  = 71;
+  XCVR_PID_SFP_10GBASE_T    = 72;
+  XCVR_PID_SFP_1000BASE_T   = 73;
+}
+
+enum MediaType {
+  MEDIA_TYPE_NONE   = 0; // media not connected
+  MEDIA_TYPE_COPPER = 1; // copper cable
+  MEDIA_TYPE_FIBER  = 2; // fiber cable
+}
+
+// PortOperState reflects the current status of the port
+enum PortOperState {
+  PORT_OPER_STATUS_NONE = 0;
+  PORT_OPER_STATUS_UP   = 1; // port is linked up
+  PORT_OPER_STATUS_DOWN = 2; // port link status is down
+}
+
+enum PortPauseType {
+  PORT_PAUSE_TYPE_NONE = 0; // Disable Pause
+  PORT_PAUSE_TYPE_LINK = 1; // Link level pause
+  PORT_PAUSE_TYPE_PFC  = 2; // PFC
+}
+
+enum PortLinkSM {
+  PORT_LINK_FSM_DISABLED                =  0;
+  PORT_LINK_FSM_ENABLED                 =  1;
+  PORT_LINK_FSM_AN_CFG                  =  2;
+  PORT_LINK_FSM_AN_DISABLED             =  3;
+  PORT_LINK_FSM_AN_START                =  4;
+  PORT_LINK_FSM_AN_SIGNAL_DETECT        =  5;
+  PORT_LINK_FSM_AN_WAIT_HCD             =  6;
+  PORT_LINK_FSM_AN_COMPLETE             =  7;
+  PORT_LINK_FSM_SERDES_CFG              =  8;
+  PORT_LINK_FSM_WAIT_SERDES_RDY         =  9;
+  PORT_LINK_FSM_MAC_CFG                 = 10;
+  PORT_LINK_FSM_SIGNAL_DETECT           = 11;
+  PORT_LINK_FSM_AN_DFE_TUNING           = 12;
+  PORT_LINK_FSM_DFE_TUNING              = 13;
+  PORT_LINK_FSM_DFE_DISABLED            = 14;
+  PORT_LINK_FSM_DFE_START_ICAL          = 15;
+  PORT_LINK_FSM_DFE_WAIT_ICAL           = 16;
+  PORT_LINK_FSM_DFE_START_PCAL          = 17;
+  PORT_LINK_FSM_DFE_WAIT_PCAL           = 18;
+  PORT_LINK_FSM_DFE_PCAL_CONTINUOUS     = 19;
+  PORT_LINK_FSM_CLEAR_MAC_REMOTE_FAULTS = 20;
+  PORT_LINK_FSM_WAIT_MAC_SYNC           = 21;
+  PORT_LINK_FSM_WAIT_MAC_FAULTS_CLEAR   = 22;
+  PORT_LINK_FSM_WAIT_PHY_LINK_UP        = 23;
+  PORT_LINK_FSM_UP                      = 24;
+}
+
+enum PortLoopBackMode {
+  PORT_LOOPBACK_MODE_NONE = 0; // No loopback
+  PORT_LOOPBACK_MODE_MAC  = 1; // MAC loopback
+  PORT_LOOPBACK_MODE_PHY  = 2; // PHY/Serdes loopback
+}
+
+enum PortFecType {
+  PORT_FEC_TYPE_NONE = 0; // Disable FEC
+  PORT_FEC_TYPE_FC   = 1; // FireCode (FC) FEC
+  PORT_FEC_TYPE_RS   = 2; // ReedSolomon (RS) FEC
+}
+
+enum PortType {
+  PORT_TYPE_NONE     = 0;
+  PORT_TYPE_ETH      = 1;
+  PORT_TYPE_ETH_MGMT = 2;
+}
+
+message PortSpec {
+  // unique port id
+  bytes            Id              = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // NOTE: currently, port ids must be in the range of [1-2]
+  uint32           PortNumber      = 2 [(gogoproto.moretags) = "meta:mandatory,range:1-2"];
+  // port admin state
+  PortAdminState   AdminState      = 3 [(gogoproto.moretags) = "meta:mandatory"];
+  // type of port
+  PortType         Type            = 4 [(gogoproto.moretags) = "meta:mandatory"];
+  // operational speed of the port
+  types.PortSpeed  Speed           = 5;
+  // Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
+  PortFecType      FECType         = 6;
+  // set AutoNegEn to true to enable auto negotiation
+  bool             AutoNegEn       = 7;
+  // values for link debounce timeout in msec (default = 0 ms)
+  uint32           DeBounceTimeout = 8;
+  // MTU size in bytes
+  uint32           Mtu             = 9 [(gogoproto.moretags) = "meta:range:64-9216"];
+  // pause type - PFC or Link Level or Disable
+  PortPauseType    PauseType       = 10;
+  bool             TxPauseEn       = 11;  // MAC TX pause enable
+  bool             RxPauseEn       = 12;  // MAC RX pause enable
+  // port loopback mode - MAC or PHY 
+  PortLoopBackMode LoopbackMode    = 13;
+  // number of serdes lanes for port
+  uint32           NumLanes        = 14  [(gogoproto.moretags) = "meta:range:1-4"];
+}
+
+message PortLinkStatus {
+  PortOperState    OperState = 1; // operational state of port
+  types.PortSpeed  PortSpeed = 2; // operational speed of the port
+  bool             AutoNegEn = 3; // operational state of AN
+  uint32           NumLanes  = 4; // operational value of NumLanes
+  PortFecType      FECType   = 5; // operational fec type of port
+}
+
+message PortXcvrStatus {
+  int32         Port             = 1;
+  PortXcvrState State            = 2;
+  PortXcvrPid   Pid              = 3;
+  MediaType     MediaType        = 4;
+  bytes         XcvrSprom        = 5;
+  string        VendorName       = 6;
+  string        VendorOUI        = 7;
+  uint32        EncodingType     = 8;
+  string        SerialNumber     = 9;
+  string        PartNumber       = 10;
+  string        Revision         = 11;
+  uint32        Temperature      = 12;
+  uint32        WarnTemperature  = 13;
+  uint32        AlarmTemperature = 14;
+}
+
+message PortLinkSMRecord {
+  PortLinkSM FSMState  = 1; // internal port link state machine
+  string     TimeStamp = 2; // port state time stamp
+  string     Duration  = 3; // port state duration
+}
+
+message PortStatus {
+  uint32                    IfIndex    = 1; // encoded interface index
+  PortLinkStatus            LinkStatus = 2; // operational link status
+  PortXcvrStatus            XcvrStatus = 3; // transceiver status
+  PortLinkSM                FSMState   = 4; // internal port link state machine
+  uint32                    MacId      = 5; // mac associated with the port
+  uint32                    MacCh      = 6; // mac channel associated with the port
+  repeated PortLinkSMRecord FSMRecord  = 7; // port link state machine record
+}
+
+message Port {
+  PortSpec   Spec   = 1; // port configuration
+  PortStatus Status = 2; // status of port
+  PortStats  Stats  = 3; // Port statistics
+}
+
+message PortGetRequest {
+  repeated bytes Id = 1;
+}
+
+message PortGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  repeated Port   Response  = 2;
+}
+
+message PortUpdateRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  PortSpec        Spec      = 2;
+}
+
+message PortUpdateResponse {
+  types.ApiStatus ApiStatus = 1;
+}

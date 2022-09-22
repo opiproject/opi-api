@@ -1,0 +1,554 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for policies
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service SecurityPolicySvc {
+  // security policy APIs
+  rpc SecurityPolicyCreate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
+  rpc SecurityPolicyUpdate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
+  rpc SecurityPolicyGet (SecurityPolicyGetRequest) returns (SecurityPolicyGetResponse) {}
+  rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
+  rpc SecurityPolicyDelete (SecurityPolicyDeleteRequest) returns (SecurityPolicyDeleteResponse) {}
+  // given a uuid of a security policy, clear its stats
+  // or else clear stats of all security policies
+  rpc SecurityPolicyStatsReset (types.Id) returns (types.Empty) {}
+
+  // security policy rule APIs
+  rpc SecurityRuleCreate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
+  rpc SecurityRuleUpdate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
+  rpc SecurityRuleGet (SecurityRuleGetRequest) returns (SecurityRuleGetResponse) {}
+  rpc SecurityRuleDelete (SecurityRuleDeleteRequest) returns (SecurityRuleDeleteResponse) {}
+
+  // security profile APIs
+  rpc SecurityProfileCreate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
+  rpc SecurityProfileUpdate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
+  rpc SecurityProfileGet (SecurityProfileGetRequest) returns (SecurityProfileGetResponse) {}
+  rpc SecurityProfileDelete (SecurityProfileDeleteRequest) returns (SecurityProfileDeleteResponse) {}
+
+  // security policy pool related APIs
+  rpc SecurityPolicyPoolGet(types.Empty) returns (SecurityPolicyPoolGetResponse) {}
+}
+
+// APIs specifically for troubleshooting purposes
+service DebugSecurityPolicySvc {
+  rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}
+}
+
+// FTP ALG specific options
+message FTPOptions {
+  // allow FTP data sessions with IP address that is different from
+  // control sessions
+  bool AllowIPMismatch = 1;
+}
+
+// DNS ALG specific options
+// these options are applicable to DNS request messages only
+message DNSOptions {
+  //  when DropMultiQueryMessage is set, drop DNS query messages that contain
+  //  more than one DNS query in same packet
+  bool   DropMultiQueryMessages      = 1;
+  // when DropLargeDomainNameMessage is set, DNS mwessages containing domain
+  // name exceeding 255 bytes are dropped
+  bool   DropLargeDomainNameMessages = 2;
+  // when DropLongLabelMessage is set, DNS messages containing labels
+  // exceeding 63 bytes are dropped
+  bool   DropLongLabelMessages       = 3;
+  // when DropMultiZoneMessagesis set, DNS messages containing more than one
+  // zone are dropped
+  bool   DropMultiZoneMessages       = 4;
+  // DNS session will be closed if response is not seen for a DNS query within
+  // ResponseTimeout seconds
+  uint32 ResponseTimeout             = 5 [(gogoproto.moretags) = "meta:default=60"];
+  // MaxMessageLength defines the maximum length of the DNS query/response
+  // message the ALG will handle
+  uint32 MaxMessageLength            = 6 [(gogoproto.moretags) = "meta:range:512-8192,meta:default=512"];
+}
+
+// MSRPC ALG specific options
+message MSRPCOptions {
+  // RPC program uuids
+  // TBD: maximum number of program identifiers per rule
+  repeated bytes ProgramId = 1;
+}
+
+// SunRPC ALG specific options
+message SunRPCOptions {
+  // RPC program identifiers
+  // TBD: maximum number of program identifiers per rule
+  repeated uint64 ProgramId = 1;
+}
+
+// ALG specifices with Application Level Gateway (ALG) should be invoked
+// when a rule match happens. This ALG will also be reported in the flow
+// logs
+// NOTE:
+// Any platfor specific limitations may result into errors during configuration
+enum ALG {
+  ALG_NONE   = 0;
+  // TFTP ALG
+  ALG_TFTP   = 1;
+  // FTP ALG
+  ALG_FTP    = 2;
+  // DNS ALG
+  ALG_DNS    = 3;
+  // SUNRPC ALG
+  ALG_SUNRPC = 4;
+  // MSRPC ALG
+  ALG_MSRPC  = 5;
+  // RTSP ALG
+  ALG_RTSP   = 6;
+}
+
+message ALGSpec {
+  // ALG to invoke (if set to ALG_NONE, no ALG is invoked)
+  ALG             ALG           = 1;
+  // IdleTimeout indicates ALG specific session timeout in seconds
+  // if IdleTimeout is not set, timeout from SecurityProfile object
+  // is applied on both control and data sessions of the ALG
+  uint32          IdleTimeout   = 2;
+  // ALG specific options, if any
+  oneof alg_options {
+    FTPOptions    FTPOptions    = 3;
+    DNSOptions    DNSOptions    = 4;
+    MSRPCOptions  MSRPCOptions  = 5;
+    SunRPCOptions SunRPCOptions = 6;
+  }
+}
+
+// security rule attributes
+message SecurityRuleAttrs {
+  // priority of this rule (lower the numeric value, higher the priority is)
+  // if there are multiple rules with same highest priority that match the
+  // packet, the first such matching rule in the policy is picked (i.e., based
+  // on the order, first in the list of such matching rules)
+  uint32                   Priority    = 1 [(gogoproto.moretags) = "meta:range:0-65534"];
+  // rule match criteria
+  types.RuleMatch          Match       = 2;
+  // action to take when this rule is matched
+  types.SecurityRuleAction Action      = 3 [(gogoproto.moretags) = "meta:mandatory"];
+  // when a rule marked as terminating is picked (based on the priority) as the
+  // matching rule from a policy, then the action of such rule will prevail or
+  // stick over the matching rules picked from already evaluated policies and
+  // the search for other matching rules in policies yet to be evaluated for
+  // that packet will stop (i.e., packet hitting terminating rule will pick
+  // corresponding action irrespective any other matching rules across all
+  // policies)
+  bool                     Terminating = 4;
+  // ALGSpec contains optional ALG specific behavior, if ALG is enabled for
+  // this rule
+  ALGSpec                  ALGSpec     = 5;
+}
+
+// SecurityRuleInfo is a single rule in the security policy
+message SecurityRuleInfo {
+  // optional rule id needed if incremental rule ADD/DEL/UPD functionality
+  // is needed
+  bytes             Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  SecurityRuleAttrs Attrs = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// types of security policies
+enum SecurityPolicyType {
+  SECURITY_POLICY_TYPE_NONE     = 0;
+  // UNDERLAY security policy object is singleton object per DSC
+  SECURITY_POLICY_TYPE_UNDERLAY = 1;
+  /// TENANT security policy objects are attached to tenant VPCs
+  SECURITY_POLICY_TYPE_TENANT   = 2;
+}
+
+// PolicyRuleFormat captures what format is used for the rules in a given
+// SecurityPolicySpec object
+enum PolicyRuleFormat {
+  // POLICY_RULE_FORMAT_NONE indicates that user has not set format
+  // explicitly, in which case POLICY_RULE_FORMAT_FLATTENED is assumed
+  // for backward compatibility
+  POLICY_RULE_FORMAT_NONE      = 0;
+  // POLICY_RULE_FORMAT_FLATTENED is used when agent expands the
+  // user configured rules so that each rule has only single source
+  // IP address/prefix/range, destination IP address/prefix/range,
+  // source port range, destination port range as match conditions
+  // NOTE: in this format none of the rules must use SrcIPList,
+  //       DstIPList, PortList, ICMPMatchList attributes, wherever
+  //       applicable
+  POLICY_RULE_FORMAT_FLATTENED = 1;
+  // POLICY_RULE_FORMAT_COMPACT is used when rules contain list of
+  // source IP, destination IP, src port range, destination port ranges
+  // as match conditions
+  // NOTE: in this format, ALL the rules must use SrcIPList, DstIPList,
+  //       PortList, ICMPMatchList attributes only, whereever applicable
+  POLICY_RULE_FORMAT_COMPACT   = 2;
+}
+
+// security policy configuration
+message SecurityPolicySpec {
+  // unique identifier of security policy
+  bytes                     Id              = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // SecurityPolicyType is either TENANT or UNDERLAY (aka. infra) policy
+  // NOTE:
+  // 1. only one instance of UNDERLAY policy can exist on a DSC
+  // 2. if Type is not specified, policy type defaults to TENANT policy
+  SecurityPolicyType        Type            = 2 [(gogoproto.moretags) = "meta:immutable,default=SECURITY_POLICY_TYPE_TENANT"];
+  // IPv4 or IPv6 policy
+  types.IPAF                AddrFamily      = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // when Stateless attribute is set on a policy, the policy is applied for
+  // traffic in both directions before deciding the final action of the flow
+  // when Stateless is set to false, the policy behavior is same as Network
+  // Security Group (NSG) construct whereas if Stateless is set to true, the
+  // behavior is same as ACL construct
+  bool                      Stateless       = 4 [(gogoproto.moretags) = "meta:immutable"];
+  // DefaultFWAction is the action taken by the firewall when SG policies are
+  // configured on vnic but no rule is hit. Similarly, when NACLs are configured
+  // on a subnet and no rule is hit, this action is taken by the firewall.
+  // if this attribute is not set, it will inherit from security profile and if
+  // that is also not set then  default "deny" action is enforced
+  // NOTE: when no policy is configured on subnet and vnic, this knob doesn't
+  //       apply and traffic is allowed in that case
+  types.SecurityRuleAction  DefaultFWAction = 5 [(gogoproto.moretags) = "meta:default=SECURITY_RULE_ACTION_NONE"];
+  // list of security rules
+  repeated SecurityRuleInfo Rules           = 6 [(gogoproto.moretags) = "meta:mandatory"];
+  // PolicyRuleFormat indicates whether the policy is set of flattened rules
+  // or whether they are in compact form
+  PolicyRuleFormat          RuleFormat      = 7 [(gogoproto.moretags) = "meta:default=SECURITY_POLICY_FORMAT_FLATTENED"];
+}
+
+// operational status of security policy, if any
+message SecurityPolicyStatus {
+  uint32 PoolId         = 1; // security policy h/w pool
+  uint32 HwId           = 2; // security-policy h/w id
+  uint64 PolicyBaseAddr = 3; // security-policy base address
+  uint32 RuleCount      = 4; // no.of unique rules in h/w
+  uint32 NumVPC         = 5; // no. of VPCs using the policy
+  uint32 NumSubnet      = 6; // no. of subnets using the policy
+  uint32 NumVnic        = 7; // no. of vnics using the policy
+}
+
+// stats of security policy, if any
+message SecurityPolicyStats {
+  // stats corresponding to the default action of the policy
+  SecurityRuleStats          DefaultRuleStats = 1 [(gogoproto.jsontag) = "DefaultRuleStats"];
+  // per security rule statistics
+  repeated SecurityRuleStats RuleStats        = 2 [(gogoproto.jsontag) = "RuleStats"];
+}
+
+// security policy object
+message SecurityPolicy {
+  meta.TypeMeta        TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta         ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SecurityPolicySpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SecurityPolicyStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SecurityPolicyStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// security policy create and update request
+message SecurityPolicyRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt             BatchCtxt = 1;
+  repeated SecurityPolicySpec Request   = 2;
+}
+
+// security policy create and update response
+message SecurityPolicyResponse {
+  types.ApiStatus               ApiStatus = 1;
+  types.ErrorCode               ErrorCode = 2;
+  repeated SecurityPolicyStatus Response  = 3;
+}
+
+// security policy get request
+message SecurityPolicyGetRequest {
+  repeated bytes Id = 1;
+}
+
+// security policy get response
+message SecurityPolicyGetResponse {
+  types.ApiStatus         ApiStatus = 1;
+  repeated SecurityPolicy Response  = 2;
+}
+
+// security policy delete request
+message SecurityPolicyDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// security policy delete response
+message SecurityPolicyDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// unique id to identify a security policy rule
+message SecurityPolicyRuleId {
+  // unique identifier of security rule
+  bytes Id               = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // security policy this rule belongs to
+  bytes SecurityPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// security rule configuration
+message SecurityRuleSpec {
+  // unique identifier of security rule
+  bytes             Id               = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // security policy this rule belongs to
+  bytes             SecurityPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // rule information
+  SecurityRuleAttrs Attrs            = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of the security rule, if any
+message SecurityRuleStatus {
+}
+
+// stats of the security rule, if any
+message SecurityRuleStats {
+  // number of times the rule is hit
+  uint64 NumRuleHit = 1 [(gogoproto.jsontag) = "NumRuleHit"];
+}
+
+// security rule object
+message SecurityRule {
+  meta.TypeMeta      TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta       ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SecurityRuleSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SecurityRuleStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SecurityRuleStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// security policy rule create and update request
+message SecurityRuleRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt  BatchCtxt = 1;
+  // security policy rule configuration
+  SecurityRuleSpec Request   = 2;
+}
+
+// security policy rule create and update response
+message SecurityRuleResponse {
+  // success or failure status
+  types.ApiStatus    ApiStatus = 1;
+  // operational status
+  SecurityRuleStatus Response  = 2;
+}
+
+// security policy rule get request
+message SecurityRuleGetRequest {
+  // list of id/key of the security policy rules of interest
+  repeated SecurityPolicyRuleId Id = 1 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// security policy rule get response
+message SecurityRuleGetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  // security policy rule information
+  repeated SecurityRule Response  = 2;
+}
+
+// security policy rule delete request
+message SecurityRuleDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt               BatchCtxt = 1;
+  // id/key list of the security policy rule(s) to be deleted
+  repeated SecurityPolicyRuleId Id        = 2;
+}
+
+// security policy rule delete response
+message SecurityRuleDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// security profile configuration
+// NOTE:
+// 1. currently security profile object is global and only a singleton object,
+//    any attempt to create multiple objects will be treated as an error
+// 2. if no object is created, indicated default values will be used
+// 3. all timeouts specified in this object are in seconds
+message SecurityProfileSpec {
+  // unique identifier of security profile
+  bytes               Id                   = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // ConnTrackEn, if set to true, will enable full connection tracking
+  // NOTE: if ConnTrackEn is modified on the fly, it will take affect only on
+  //       sessions created thereafter and doesn't affect existing sessions
+  bool                ConnTrackEn          = 2 [(gogoproto.moretags) = "meta:default=false"];
+  // RuleStatsEn, if set to true, will enable per security policy rule
+  // statistics feature in the datapath (by default rule stats functionality is
+  // turned off and can be enabled on the fly for debugging)
+  bool                RuleStatsEn          = 3;
+  // DefaultFWAction is the action taken by the smartnic when policies are
+  // configured on the subnet or vnic, no rule matches and default action for policy is none
+  // this will have effect iff policy is attached on either vnic or subnet.
+  // if no action is specified  in security profile, default action is "deny"
+  types.SecurityRuleAction DefaultFWAction = 4 [(gogoproto.moretags) = "meta:default=SECURITY_RULE_ACTION_DENY"];
+  // timeouts for established sessions per TCP/UDP/ICMP and other protocols
+  uint32              TCPIdleTimeout       = 5 [(gogoproto.moretags) = "meta:range:1-86400, meta:default=600"];
+  uint32              UDPIdleTimeout       = 6 [(gogoproto.moretags) = "meta:range:1-86400, meta:default=120"];
+  uint32              ICMPIdleTimeout      = 7 [(gogoproto.moretags) = "meta:range:1-86400, meta:default=15"];
+  uint32              OtherIdleTimeout     = 8 [(gogoproto.moretags) = "meta:range:1-86400, meta:default=90"];
+  // TCP specific timeouts
+  // TCPCnxnSetupTimeout is the maximum allowed time since first SYN seen to
+  // 3-way handshake completion, session gets cleaned up if 3-way handshake is
+  // not completed and session moves to ESTABLISHED state by then
+  uint32              TCPCnxnSetupTimeout  = 9 [(gogoproto.moretags) = "meta:range:1-60, meta:default=10"];
+  // TCPHalfCloseTimeout is the maximum allowed time since first FIN seen to
+  // 3/4way close, session gets cleaned up if this timer elapses.
+  uint32              TCPHalfCloseTimeout  = 10 [(gogoproto.moretags) = "meta:range:1-172800, meta:default=120"];
+  // TCPCloseTimeout is wait time since FIN is seen from *both* sides (or RST)
+  // before cleaning up the session
+  uint32              TCPCloseTimeout      = 11 [(gogoproto.moretags) = "meta:range:1-300, meta:default=15"];
+
+  // timeouts applicable to sessions installed with drop action
+  uint32              TCPDropTimeout       = 12 [(gogoproto.moretags) = "meta:range:1-300, meta:default=90"];
+  uint32              UDPDropTimeout       = 13 [(gogoproto.moretags) = "meta:range:1-172800, meta:default=60"];
+  uint32              ICMPDropTimeout      = 14 [(gogoproto.moretags) = "meta:range:1-300, meta:default=30"];
+  uint32              OtherDropTimeout     = 15 [(gogoproto.moretags) = "meta:range:1-300, meta:default=60"];
+}
+
+// operational status of security profile, if any
+message SecurityProfileStatus {
+}
+
+// stats of security profile, if any
+message SecurityProfileStats {
+}
+
+// security profile object
+message SecurityProfile {
+  meta.TypeMeta         TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta          ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SecurityProfileSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SecurityProfileStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SecurityProfileStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// security profile create and update request
+message SecurityProfileRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt              BatchCtxt = 1;
+  repeated SecurityProfileSpec Request   = 2;
+}
+
+// security profile create and update response
+message SecurityProfileResponse {
+  types.ApiStatus                ApiStatus = 1;
+  repeated SecurityProfileStatus Response  = 2;
+}
+
+// security profile get request
+message SecurityProfileGetRequest {
+  repeated bytes Id = 1;
+}
+
+// security profile get response
+message SecurityProfileGetResponse {
+  types.ApiStatus          ApiStatus = 1;
+  repeated SecurityProfile Response  = 2;
+}
+
+// security profile delete request
+message SecurityProfileDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// security profile delete response
+message SecurityProfileDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// PolicyLookupMatchReq captures all the policy lookup match conditions
+message PolicyLookupMatchReq {
+  // source IP address
+  types.IPAddress SrcIP    = 1;
+  // tags corresponding to the source
+  // NOTE: only a max. of 5 tags can be specified
+  repeated uint32 SrcTag   = 2 [(gogoproto.moretags) = "meta:range:1-4294967294"];
+  // destination IP address
+  types.IPAddress DstIP    = 3;
+  // tags corresponding to the destination
+  // NOTE: only a max. of 5 tags can be specified
+  repeated uint32 DstTag   = 4 [(gogoproto.moretags) = "meta:range:1-4294967294"];
+  // IP protocol
+  uint32          Protocol = 5;
+  // source port, valid only for TCP and UDP
+  uint32          SrcPort  = 6;
+  // destination port, valid only for TCP and UDP
+  uint32          DstPort  = 7;
+  // valid only for ICMPv4 and ICMPv6
+  uint32          ICMPType = 8;
+  // valid only for ICMPv4 and ICMPv6
+  uint32          ICMPCode = 9;
+}
+
+// SecurityPolicyLookupRequest is used to pass all necessary parameters to do
+// security policy lookup
+message SecurityPolicyLookupRequest {
+  // given a vnic and policy direction (ingress/egress) and packet fields,
+  // evaluate all the policies and return the results
+  message VnicLookupInfo {
+    // vnic uuid
+    bytes              Vnic       = 1;
+    // policy evaluation direction
+    types.PolicyDir    PolicyDir  = 2;
+    // IPv4 or IPv6 policy
+    types.IPAF         AddrFamily = 3;
+  }
+  // lookup_info is mandatory
+  oneof lookup_info {
+    // security policy uuid to do the lookup in
+    bytes              Policy    = 1;
+    // vnic specific policies will be evaluated when vnic info is provided
+    VnicLookupInfo     VnicInfo  = 2;
+  }
+  // packet match fields
+  PolicyLookupMatchReq Match     = 3;
+}
+
+// PolicyLookupResult captures the results of one security policy lookup
+message PolicyLookupResult {
+  // h/w id of the rule that matched
+  uint32                   RuleHwId    = 1;
+  // priority of the rule that matched
+  uint32                   Priority    = 2;
+  // action associated with the rule
+  types.SecurityRuleAction Action      = 3;
+  // ALG associated with the rule, if any
+  ALG                      ALG         = 4;
+  // Terminating is set to true, if this rule is configured as terminating
+  bool                     Terminating = 5;
+}
+
+// SecurityPolicyLookupResponse is filled by the backend and is returned in
+// response to SecurityPolicyLookupRequest issued
+message SecurityPolicyLookupResponse {
+  // status of the lookup
+  types.ApiStatus             ApiStatus = 1;
+  // list of lookup results
+  repeated PolicyLookupResult Result    = 2;
+}
+
+// SecurityPolicyPoolStatus captures the current status of each policy pool
+message SecurityPolicyPoolStatus {
+  // security policy pool name
+  string Name              = 1;
+  // max. no. of security policies in the pool
+  uint32 MaxPolicies       = 2;
+  // no. of policies in use in the pool
+  uint32 PoliciesAllocated = 3;
+}
+
+// get security policy pool details
+message SecurityPolicyPoolGetResponse {
+  // response code
+  types.ApiStatus                   ApiStatus = 1;
+  // list of per policy pool status
+  repeated SecurityPolicyPoolStatus Status    = 2;
+}

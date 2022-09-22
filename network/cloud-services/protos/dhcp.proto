@@ -1,0 +1,147 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for DHCP features
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service DHCPSvc {
+  rpc DHCPPolicyCreate (DHCPPolicyRequest) returns (DHCPPolicyResponse) {}
+  rpc DHCPPolicyUpdate (DHCPPolicyRequest) returns (DHCPPolicyResponse) {}
+  rpc DHCPPolicyGet (DHCPPolicyGetRequest) returns (DHCPPolicyGetResponse) {}
+  rpc DHCPPolicyDelete (DHCPPolicyDeleteRequest) returns (DHCPPolicyDeleteResponse) {}
+}
+
+// DHCPRelaySpec captures DHCP relay configuration
+message DHCPRelaySpec {
+  // VPC where DHCP server is present in
+  bytes           VPCId    = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // IP address of the DHCP server, agent is relaying requests to
+  types.IPAddress ServerIP = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // IP address of the relay agent, if no IP address is specified local TEP IP
+  // (MyTEP IP from device object configuration) will be used
+  types.IPAddress AgentIP  = 3;
+}
+
+// operational status of a DHCP relay policy, if any
+message DHCPRelayStatus {
+}
+
+// stats for a DHCP relay policy, if any
+message DHCPRelayStats {
+}
+
+// DHCPProxySpec captures the DHCP proxy/suppression configuration per subnet
+message DHCPProxySpec {
+  // IP address of the (local) DHCP server, this IP address will be
+  // used to respond to the DHCP requests from the workloads and is used as
+  // the DHCP server identifier
+  types.IPAddress          ServerIP     = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // MTU to be supplied by the DHCP server to its clients, if non-zero
+  uint32                   MTU          = 2;
+  // IP address of the subnet's gateway sent in DHCP offer
+  types.IPAddress          GatewayIP    = 3;
+  // IP addresses of up to 3 DNS servers sent in DHCP offer
+  repeated types.IPAddress DNSServerIP  = 4;
+  // IP addresses of up to 3 NTP servers sent in DHCP offer
+  repeated types.IPAddress NTPServerIP  = 5;
+  // client's Fully Qualified Domain Name (FQDN)
+  string                   DomainName   = 6;
+  // bootfile name for the client to use
+  string                   BootFileName = 7;
+  // DHCP lease timoeout in seconds
+  uint32                   LeaseTimeout = 8 [(gogoproto.moretags) = "default=3600"];
+}
+
+// operational status of a DHCP proxy/suppression policy, if any
+message DHCPProxyStatus {
+}
+
+// stats for a DHCP proxy/suppression policy, if any
+message DHCPProxyStats {
+}
+
+message DHCPPolicySpec {
+  // unique key/identifier of DHCP policy
+  bytes           Id        = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // DHCP policy is one of DHCP relay or DHCP proxy
+  // NOTE: one of them is mandatory
+  oneof relay_or_proxy {
+    DHCPRelaySpec RelaySpec = 2;
+    DHCPProxySpec ProxySpec = 3;
+  }
+}
+
+// operational status of DHCP policy, if any
+message DHCPPolicyStatus {
+  oneof relay_or_proxy {
+    DHCPRelayStatus RelayStatus = 1;
+    DHCPProxyStatus ProxyStatus = 2;
+  }
+}
+
+// stats for DHCP policy, if any
+message DHCPPolicyStats {
+  oneof relay_or_proxy {
+    DHCPRelayStats RelayStats = 1;
+    DHCPProxyStats ProxyStats = 2;
+  }
+}
+
+// DHCP policy object
+message DHCPPolicy {
+  meta.TypeMeta    TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta     ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  DHCPPolicySpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  DHCPPolicyStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  DHCPPolicyStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+
+// DHCP policy create and update request
+message DHCPPolicyRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt         BatchCtxt = 1;
+  // batched requests
+  repeated DHCPPolicySpec Request   = 2;
+}
+
+// DHCP policy create and update response
+message DHCPPolicyResponse {
+  types.ApiStatus           ApiStatus = 1;
+  // batched response
+  repeated DHCPPolicyStatus Response  = 2;
+}
+
+// DHCP policy get request
+message DHCPPolicyGetRequest {
+  // id of the DHCP policy policy being queried
+  repeated bytes Id = 1;
+}
+
+// DHCP policy get response
+message DHCPPolicyGetResponse {
+  // API status code
+  types.ApiStatus     ApiStatus = 1;
+  repeated DHCPPolicy Response  = 2;
+}
+
+// DHCP policy delete request
+message DHCPPolicyDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // id of the DHCP policy policy being deleted
+  repeated bytes  Id        = 2;
+}
+
+// DHCP policy delete response
+message DHCPPolicyDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}

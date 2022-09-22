@@ -1,0 +1,203 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+// protobuf specification for Control Plane Route Table
+//------------------------------------------------------------------------------
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+// control plane route service definition
+service CPRouteSvc
+{
+  rpc CPStaticRouteCreate (CPStaticRouteRequest) returns (CPStaticRouteResponse) {}
+  rpc CPStaticRouteUpdate(CPStaticRouteRequest) returns (CPStaticRouteResponse) {}
+  rpc CPStaticRouteDelete (CPStaticRouteDeleteRequest) returns (CPStaticRouteDeleteResponse) {}
+  rpc CPStaticRouteGet (CPStaticRouteGetRequest) returns (CPStaticRouteGetResponse) {}
+  rpc CPRouteGet (CPRouteGetRequest) returns (CPRouteGetResponse) {}
+  rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
+}
+
+// control plane route table
+message CPRouteStatus {
+  // route table id this route belongs to
+  uint32              RouteTableId  = 1;
+  // destination address
+  types.IPAddress     DestAddr      = 2;
+  // destination address prefix
+  uint32              DestPrefixLen = 3;
+  // next-hop address
+  types.IPAddress     NHAddr        = 4;
+  // interface index, if the next-hop is an interface
+  uint32              IfIndex       = 5;
+  // type of route
+  types.RouteType     Type          = 6;
+  // protocol via which the route is learned
+  types.RouteProtocol Proto         = 7;
+  // The number of seconds since this route was last updated or otherwise determined to be correct.
+  int32               Age           = 8;
+  // The primary routing metric for this route
+  int32               Metric1       = 9;
+  // Is this route programmed either to a forwarding table, or to a partner that queries route information
+  bool                FibRoute      = 10;
+  // Indicates whether the route destination is directly connected
+  bool                Connected     = 11;
+  // whether DC-RTM considers that the next-hop address for this route is a loose next hop.
+  bool                LooseNextHop  = 12;
+  // Administrative distance for this route
+  int32               AdminDistance = 13;
+}
+
+message CPRouteKey {
+  // route table id this route belongs to
+  uint32              RouteTableId  = 1;
+  // destination address
+  types.IPAddress     DestAddr      = 2;
+  // destination address prefix
+  uint32              DestPrefixLen = 3;
+  // next-hop address
+  types.IPAddress     NHAddr        = 4;
+  // interface index, if the next-hop is an interface
+  uint32              IfIndex       = 5;
+  // protocol via which the route is learned
+  types.RouteProtocol Proto         = 6;
+}
+
+message CPRouteKeyHandle {
+    CPRouteKey Key = 1;
+}
+
+// control plane route table get request
+message CPRouteGetRequest {
+  repeated CPRouteKeyHandle Request = 1;
+}
+
+message CPRoute {
+  CPRouteStatus Status = 1;
+}
+
+message CPRouteGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated CPRoute Response  = 2;
+}
+
+// control plane static route configuration
+message CPStaticRouteSpec {
+  // route table id this route belongs to
+  bytes            RouteTableId = 1;
+  // destination address
+  types.IPAddress  DestAddr     = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // destination address prefix length
+  uint32           PrefixLen    = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // next-hop address
+  types.IPAddress  NextHopAddr  = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // route is enabled or not
+  types.AdminState State        = 5;
+  // override admin distance
+  bool             Override     = 6;
+  // admin distance
+  uint32           AdminDist    = 7;
+  // optional interface ID, if this route is configured on RR
+  bytes            InterfaceId  = 8;
+}
+
+// control plane static route create and update request message
+message CPStaticRouteRequest {
+  repeated CPStaticRouteSpec Request = 1;
+}
+
+// status of control plane static route, if any
+message CPStaticRouteStatus {
+}
+
+// control plane static route object
+message CPStaticRoute {
+    CPStaticRouteSpec   Spec   = 1;
+    CPStaticRouteStatus Status = 2;
+}
+
+// response messages
+message CPStaticRouteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// control plane static route key parameters
+message CPStaticRouteKey {
+  // destination address
+  types.IPAddress DestAddr    = 1;
+  // destination address prefix length
+  uint32          PrefixLen   = 2;
+  // next-hop address
+  types.IPAddress NextHopAddr = 3;
+}
+
+// control plane static route key handle
+message CPStaticRouteKeyHandle {
+  //unique identifier or key parameters
+  oneof id_or_key {
+    bytes            Id  = 1;
+    CPStaticRouteKey Key = 2;
+  }
+}
+// control plane route delete request
+message CPStaticRouteDeleteRequest {
+  repeated CPStaticRouteKeyHandle Request = 1;
+}
+
+// control plane route delete response
+message CPStaticRouteDeleteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// control plane route get request
+message CPStaticRouteGetRequest {
+    repeated CPStaticRouteKeyHandle Request = 1;
+}
+
+// control plane route get response
+message CPStaticRouteGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated CPStaticRoute Response  = 2;
+}
+
+// control plane table to resistribute routes to BGP
+message CPRouteRedistStatus {
+  // Route table index
+  uint32           FteIndex       = 1;
+  // Entry index
+  uint32           EntryId        = 2;
+
+  // type of route
+  uint32           RuleUsageCount = 3;
+  // Destination IP address filter
+  types.IPAddress  AddrFilter     = 4;
+  // Route redistribute admin status
+  types.AdminState AdminStatus    = 5;
+}
+
+message CPRouteRedistKey {
+  // The HAF entity index identifying the instance of DC-RTM
+  uint32 FteIndex = 1;
+  // The index of this DC-RTM redistribution table entry
+  uint32 EntryId  = 2;
+}
+
+message CPRouteRedistKeyHandle {
+  CPRouteRedistKey Key = 1;
+}
+
+// control plane route table get request
+message CPRouteRedistGetRequest {
+  repeated CPRouteRedistKeyHandle Request = 1;
+}
+
+message CPRouteRedist {
+  CPRouteRedistStatus Status = 1;
+}
+
+message CPRouteRedistGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated CPRouteRedist Response  = 2;
+}

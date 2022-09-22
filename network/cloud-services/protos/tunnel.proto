@@ -1,0 +1,197 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Tunnel EndPoint (TEP) object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service TunnelSvc {
+  rpc TunnelCreate (TunnelRequest) returns (TunnelResponse) {}
+  rpc TunnelUpdate (TunnelRequest) returns (TunnelResponse) {}
+  rpc TunnelGet (TunnelGetRequest) returns (TunnelGetResponse) {}
+  rpc TunnelDelete (TunnelDeleteRequest) returns (TunnelDeleteResponse) {}
+}
+
+// APIs specifically for troubleshooting or testing purposes
+service DebugTunnelSvc {
+  // API to update tunnel nexthop resolution
+  rpc TunnelNexthopUpdate(TunnelNexthopUpdateRequest) returns (TunnelNexthopUpdateResponse) {}
+}
+
+// TunnelType defines the role of the tunnel
+enum TunnelType {
+  TUNNEL_TYPE_NONE     = 0;
+  // tunnel type for Internet Gateway
+  TUNNEL_TYPE_IGW      = 1;
+  // tunnel type for east-traffic workloads with in a data center
+  TUNNEL_TYPE_WORKLOAD = 2;
+  // tunnel type for inter data center traffic
+  TUNNEL_TYPE_INTER_DC = 3;
+  // tunnel type for provider services
+  TUNNEL_TYPE_SERVICE  = 4;
+  // tunnel pointing to an intermediate Virtual Network Function (VNF)
+  // devices
+  TUNNEL_TYPE_VNF      = 5;
+  // tunnel type ipsec
+  TUNNEL_TYPE_IPSEC    = 6;
+}
+
+// tunnel configuration
+// tunnel is uniquely identified by the 3-tuple (LocalIP, RemoteIP, encap)
+// NOTE:
+// 1. if multiple tunnels with same RemoteIP address are created, they should
+//    have same Type attribute value i.e., different tunnels with same IP can't
+//    have different tunnel type
+message TunnelSpec {
+  // unique tunnel identifier
+  // NOTE: Tunnel id of 0 is reserve for local TEP/host
+  bytes           Id                    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // virtual private cloud this is tunnel belongs to
+  bytes           VPCId                 = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // local IP of the tunnel (used as outer SIP in tunneled packets)
+  types.IPAddress LocalIP               = 3;
+  // remote IP of the tunnel (used as outer DIP in tunneled packets)
+  types.IPAddress RemoteIP              = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // type of the tunnel
+  TunnelType      Type                  = 5 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // encap used while sending traffic to this tunnel
+  types.Encap     Encap                 = 6 [(gogoproto.moretags) = "immutable"];
+  // if Nat is set to true, do (static) source NAT for the traffic going to
+  // this tunnel and (static) destination NAT in the reverse direction if
+  // the local IP mapping has NAT/public IP configured
+  bool            Nat                   = 7;
+  // Tunnel points to a underlay nexthop/nexthop group (ECMP)/another Tunnel
+  oneof nh {
+    // underlay nexthop for this tunnel
+    bytes         NexthopId             = 8;
+    // underlay nexthop group for this tunnel
+    bytes         NexthopGroupId        = 9;
+    // a tunnel can point to another tunnel for double encap
+    // NOTE:
+    // 1. supported combinations of double encap is platform specific
+    // 2. unsupported combination of cascading tunnels would result in configuration failure
+    // 3. when tunnel points to another tunnel of type IPSEC, outer
+    //    encapsulation is IPSEC. This is IPSEC tunnel mode.
+    bytes         TunnelId              = 10;
+    // DropNexthop is used to explicitly drop traffic destined to this tunnel
+    // (even when there is reachability), administratively
+    types.DropNexthop DropNexthop       = 11;
+  }
+  // MAC address of the remote IP (i.e., remote side of the tunnel)
+  // NOTE: if dataplane is supposed to resolve this, set to 0
+  uint64          MACAddress            = 12;
+  // type of this tunnel
+  // RemoteService flag is true when tunnel is pointing to a service
+  // that is in a different data center and packet needs to be carried
+  // with 2 fabric encaps. IPv4 traffic in this case goes thru protocol
+  // translation (to IPv6) and then goes in a Vxlan tunnel
+  bool            RemoteService         = 13;
+  // RemoteServiceEncap must be set if the tunnel type is
+  // TUNNEL_TYPE_REMOTE_SERVICE, this is the outer most vnid seen when the
+  // packet is receievd from the remote service
+  types.Encap     RemoteServiceEncap    = 14;
+  // public IP of the remote service tunnel that is used as SIPo
+  // in the encapped VXLAN packet in the Tx direction
+  types.IPAddress RemoteServicePublicIP = 15;
+  // when ToS is configured on a tunnel object, all traffic destined to the
+  // tunnel will carry dscp value as configured.
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane
+  // NOTE:
+  // the ToS value configured on the tunnel will override ToS configuration
+  // in vpc and subnet objects
+  uint32           ToS                  = 16;
+  // currently ipsec sa can be present in the following cases
+  // 1. single tunnel (nexthop is none) : implies ipsec transport mode - inner
+  //    vxlan encapsulation followed by esp header addition on the outer
+  // 2. tunnel pointing to tunnel (nexthop is tunnel), and second tunnel has
+  //    ipsec sa attributes present : implies ipsec tunnel mode - inner vxlan
+  //    encapsulation, followed by a second ipsec tunnel encapsulation
+  //    including esp header.
+  bytes            IpsecEncryptSAId     = 17;
+  bytes            IpsecDecryptSAId     = 18;
+}
+
+// operational status of the tunnel, if any
+message TunnelStatus {
+  uint32 HwId    = 1;   // tunnel h/w idx
+  uint32 NumVnic = 2;   // no. of vnics behind the tunnel
+}
+
+// stats of the tunnel, if any
+message TunnelStats {
+}
+
+// tunnel object
+message Tunnel {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  TunnelSpec    Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  TunnelStatus  Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  TunnelStats   Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// tunnel create and update request
+message TunnelRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt     BatchCtxt = 1;
+  repeated TunnelSpec Request   = 2;
+}
+
+// tunnel create and update response
+message TunnelResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated TunnelStatus Response  = 2;
+}
+
+// tunnel get request
+message TunnelGetRequest {
+  repeated bytes Id = 1;
+}
+
+// tunnel get response
+message TunnelGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  repeated Tunnel Response  = 2;
+}
+
+// tunnel delete request
+message TunnelDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// tunnel delete response
+message TunnelDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// in single node sim environments without BGP peering, tunnel IP reachability
+// will not be resolved and hence all flow tracer tests wiil report forwarding
+// drops; to be able to test flow tracer without it reporting forwarding drops,
+// TunnelNexthopUpdateRequest can be used to "fixup" all tunnels to point to
+// default ECMP of uplink ports
+message TunnelNexthopUpdateRequest {
+  oneof set_or_reset {
+    // SetToDefaultECMP will make tunnels to point to default ECMP of
+    // uplink ports
+    bool SetToDefaultECMP    = 1;
+    // ResetToSystemDropNh will make tunnels to point to null or drop NH
+    bool ResetToSystemDropNh = 2;
+  }
+}
+
+// TunnelNexthopUpdateResponse is sent in response to TunnelNexthopUpdateRequest
+message TunnelNexthopUpdateResponse {
+  // success or failure code
+  types.ApiStatus ApiStatus = 1;
+}

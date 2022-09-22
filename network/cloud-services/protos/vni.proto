@@ -1,0 +1,121 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Virtual Network Identifier (VNI) object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service VniSvc {
+  rpc VniCreate (VniRequest) returns (VniResponse) {}
+  rpc VniUpdate (VniRequest) returns (VniResponse) {}
+  rpc VniGet (VniGetRequest) returns (VniGetResponse) {}
+  rpc VniDelete (VniDeleteRequest) returns (VniDeleteResponse) {}
+}
+
+// VNiMeterPolicy is used to specify the meter policy of the inbound sessions
+// created when packets coming with specified VNI (or GRE key) value hit the DSC
+message VniMeterPoilicy {
+  // Rx meter policy for IPv4 inbound sessions
+  bytes V4RxMeterPolicy = 1;
+  // Rx meter policy for IPv6 inbound sessions
+  bytes V6RxMeterPolicy = 2;
+}
+
+// VNI specification
+message VniSpec {
+  // unique id
+  bytes             Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // VNI (either VxLAN vnid or GRE key)
+  // NOTE:
+  // 1. VNI value must be unique across within a given region
+  // 2.  (Region, VNI) is globally unique
+  uint32            VNI          = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // RxMeterClass is the meter class used to account packets and bytes for
+  // inbound sessions (i.e. towards vnic) created when encapped packets are
+  // received by DSC with the specifcied VNI
+  // NOTE:
+  // 1. when VPCPeerSpec and VniSpec both specify RxMeterClass/MeterPolicy,
+  //    meter class/policy from VPCPeerSpec will take precedece if traffic hits
+  //    the vpc peering entry as well as the VNI entry in the datapath
+  // 2. Rx here indicates that the (inbound) session is created due to a Rx
+  //    (i.e. towards vnic) packet
+  // 3. RxMeterClass is used in both the initiator and responder flows of an
+  //    outbound session towards a vnic
+  oneof meter {
+    // Rx meter class to be used
+    uint32          RxMeterClass = 3 [(gogoproto.moretags) = "meta:range:1-4095"];
+    // meter policy to lookup based on the source IP in the packet to derive
+    // meter class
+    VniMeterPoilicy MeterPolicy  = 4;
+  }
+  // uuid of the region associated with the VNI
+  // NOTE: if Region is not set, it is considered as local region
+  bytes             Region       = 5 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// operational status of VNI, if any
+message VniStatus {
+  // h/w id for meter policy corresponding to the VNI
+  uint64 RxMeterHwId = 1;
+}
+
+// stats of VNI, if any
+message VniStats {
+}
+
+// VNI object
+message Vni {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  VniSpec       Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  VniStatus     Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  VniStats      Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// VNI create and update request
+message VniRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt  BatchCtxt = 1;
+  // batched request
+  repeated VniSpec Request   = 2;
+}
+
+// VNI create and update response
+message VniResponse {
+  types.ApiStatus    ApiStatus = 1;
+  // batched response
+  repeated VniStatus Response  = 2;
+}
+
+// VNI get request
+message VniGetRequest {
+  // batched request
+  repeated bytes Id = 1;
+}
+
+// VNI get response
+message VniGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  // batched response
+  repeated Vni    Response  = 2;
+}
+
+// VNI delete request
+message VniDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated bytes Id         = 2;
+}
+
+// VNI delete response
+message VniDeleteResponse {
+  // batched response
+  repeated types.ApiStatus ApiStatus = 1;
+}

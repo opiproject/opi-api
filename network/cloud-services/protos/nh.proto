@@ -1,0 +1,240 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for nexthop and nexthop group objects
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service NhSvc {
+  rpc NexthopCreate (NexthopRequest) returns (NexthopResponse) {}
+  rpc NexthopUpdate (NexthopRequest) returns (NexthopResponse) {}
+  rpc NexthopGet (NexthopGetRequest) returns (NexthopGetResponse) {}
+  rpc NexthopDelete (NexthopDeleteRequest) returns (NexthopDeleteResponse) {}
+  rpc NhGroupCreate (NhGroupRequest) returns (NhGroupResponse) {}
+  rpc NhGroupUpdate (NhGroupRequest) returns (NhGroupResponse) {}
+  rpc NhGroupGet (NhGroupGetRequest) returns (NhGroupGetResponse) {}
+  rpc NhGroupDelete (NhGroupDeleteRequest) returns (NhGroupDeleteResponse) {}
+}
+
+enum NexthopType {
+  NEXTHOP_TYPE_NONE     = 0;
+  NEXTHOP_TYPE_IP       = 1;
+  NEXTHOP_TYPE_UNDERLAY = 2;
+  NEXTHOP_TYPE_OVERLAY  = 3;
+}
+
+// IP nexthop information
+message IPNhSpec {
+  // egress VRF id
+  bytes           VPCId = 1;
+  // nexthop's IP address
+  types.IPAddress IP    = 2;
+  // egress vlan
+  uint32          Vlan  = 3;
+  // optional mac address
+  uint64          Mac   = 4;
+}
+
+// Underlay nexthop information
+message UnderlayNhSpec {
+  // L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
+  // are picked from this L3 interface)
+  bytes  L3Interface = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // UnderlayNexthopMAC is the outer DMAC in case of VxLAN fabric
+  uint64 UnderlayMAC = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// Overlay nexthop information
+message OverlayNhSpec {
+  bytes TunnelId = 1;
+}
+
+// nexthop specification
+message NexthopSpec {
+  // unique nexthop id
+  bytes            Id             = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // nexthop can be one of different types
+  oneof nhinfo {
+    // Tunnel/TEP member is used for overlay routing
+    OverlayNhSpec  OverlayNhInfo  = 2;
+    // Underlay nexthop info is used for a resolved underlay IP
+    UnderlayNhSpec UnderlayNhInfo = 3;
+    // IP nexthop is used when VTEP IP is to be resolved by PDS
+    // NOTE: IP nexthop is now deprecated
+    IPNhSpec       IPNhInfo       = 4;
+  }
+}
+
+message UnderlayNhStatus {
+  uint32 Port = 1;
+  uint32 Vlan = 2;
+}
+
+message OverlayNhStatus {
+  types.IPAddress TunnelIP = 1;
+}
+
+// operational status of nexthop, if any
+message NexthopStatus {
+  // nexthop hw id
+  uint32             HwId           = 1;
+  oneof nhinfo {
+    UnderlayNhStatus UnderlayNhInfo = 2;
+    OverlayNhStatus  OverlayNhInfo  = 3;
+  }
+}
+
+// stats of a nexthop, if any
+message NexthopStats {
+}
+
+// nexthop object
+message Nexthop {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NexthopSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NexthopStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NexthopStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// nexthop create and update request
+message NexthopRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  // batched create or update requests
+  repeated NexthopSpec Request   = 2;
+}
+
+// nexthop create and update response
+message NexthopResponse {
+  // API status code for create & update operations
+  types.ApiStatus        ApiStatus = 1;
+  // response containing operational status of the objects created/updated
+  repeated NexthopStatus Response  = 2;
+}
+
+// nexthop get request
+message NexthopGetRequest {
+  oneof gettype {
+    // nexthop type to be retrieved
+    NexthopType Type = 1;
+    // nexthop to be retrieved
+    bytes       Id   = 2;
+  }
+}
+
+// nexthop get response
+message NexthopGetResponse {
+  // API status code for get operation
+  types.ApiStatus  ApiStatus = 1;
+  // list of nexthops
+  repeated Nexthop Response  = 2;
+}
+
+// nexthop delete request
+message NexthopDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // list of nexthops to delete
+  repeated bytes  Id        = 2;
+}
+
+// nexthop delete response
+message NexthopDeleteResponse {
+  // API status code for delete operation
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// type of the nexthop group
+enum NhGroupType {
+  NEXTHOP_GROUP_TYPE_NONE          = 0;
+  // ECMP for overlay routes pointing to VTEPs
+  NEXTHOP_GROUP_TYPE_OVERLAY_ECMP  = 1;
+  // ECMP for underlay VTEPs pointing to nexthops
+  NEXTHOP_GROUP_TYPE_UNDERLAY_ECMP = 2;
+}
+
+// nexthop group specification - a nextgroup consists of bunch of nexthops
+message NhGroupSpec {
+  // unique nexthop group id
+  bytes                Id      = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // type of the nexthop
+  NhGroupType          Type    = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // zero or more member nexthops or nexthop groups
+  repeated NexthopSpec Members = 3;
+}
+
+// operational status of nexthop group, if any
+message NhGroupStatus {
+  // nexthop group hw id
+  uint32                 HwId    = 1;
+  // nexthop group member status
+  repeated NexthopStatus Members = 2;
+}
+
+// stats of a nexthop group, if any
+message NhGroupStats {
+}
+
+// nexthop group object
+message NhGroup {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NhGroupSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NhGroupStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NhGroupStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// nexthop group create and update request
+message NhGroupRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  // batched create or update requests
+  repeated NhGroupSpec Request   = 2;
+}
+
+// nexthop group create and update response
+message NhGroupResponse {
+  // API status code for create & update operations
+  types.ApiStatus        ApiStatus = 1;
+  // response containing operational status of the objects created/updated
+  repeated NhGroupStatus Response  = 2;
+}
+
+// nexthop group get request
+message NhGroupGetRequest {
+  oneof gettype {
+    // nexthop group type to be retrieved
+    NhGroupType Type = 1;
+    // nexthop group to be retrieved
+    bytes       Id   = 2;
+  }
+}
+
+// nexthop group get response
+message NhGroupGetResponse {
+  // API status code for get operation
+  types.ApiStatus  ApiStatus = 1;
+  // list of nexthop groups
+  repeated NhGroup Response  = 2;
+}
+
+// nexthop group delete request
+message NhGroupDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // list of nexthop groups to delete
+  repeated bytes  Id        = 2;
+}
+
+// nexthop group delete response
+message NhGroupDeleteResponse {
+  // API status code for delete operation
+  repeated types.ApiStatus ApiStatus = 1;
+}

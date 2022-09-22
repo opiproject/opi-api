@@ -1,0 +1,96 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for region object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service RegionSvc {
+  rpc RegionCreate (RegionRequest) returns (RegionResponse) {}
+  rpc RegionUpdate (RegionRequest) returns (RegionResponse) {}
+  rpc RegionGet (RegionGetRequest) returns (RegionGetResponse) {}
+  rpc RegionDelete (RegionDeleteRequest) returns (RegionDeleteResponse) {}
+}
+
+// RegionSpec capture region specific configuration
+message RegionSpec {
+  // unique region object identifier
+  bytes                   Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // RegionId is secondary key of the region and is globally unique value
+  // assigned to the region
+  // NOTE:
+  // 1. across HA peers, this number must be same along with uuid
+  // 2. region id 0 is reserved and represents local region
+  // 3. prefixes for local region must NOT be configured i.e. only prefixes of
+  //    "other" regions need to be configured
+  uint32                  RegionId     = 2 [(gogoproto.moretags) = "meta:mandatory,immutable,range:1-255"];
+  // list of IP prefixes in the underlay that defines a region
+  // NOTE:
+  // 1. list must not be empty
+  // 2. prefixes must not overlap across regions (i.e. multiple regions can't
+  //    have overlapping address space in the underlay) and the application must
+  //    ensure that is the case
+  repeated types.IPPrefix IPPrefixList = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of the region, if any
+message RegionStatus {
+  // base index in the TCAM table starting from where region specific
+  // IP prefixes are programmed
+  uint32 TcamBaseIndex = 1;
+}
+
+// stats of the region, if any
+message RegionStats {
+}
+
+// region object
+message Region {
+  meta.TypeMeta TypeMeta   = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjectMeta = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  RegionSpec    Spec       = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  RegionStatus  Status     = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  RegionStats   Stats      = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// region create and update request
+message RegionRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt     BatchCtxt = 1;
+  repeated RegionSpec Request   = 2;
+}
+
+// region create and update response
+message RegionResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated RegionStatus Response  = 2;
+}
+
+// region get request
+message RegionGetRequest {
+  repeated bytes Id = 1;
+}
+
+// region get response
+message RegionGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  repeated Region Response  = 2;
+}
+
+// region delete request
+message RegionDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// region delete response
+message RegionDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

@@ -1,0 +1,374 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Virtual Network Interface Card (VNIC) object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service VnicSvc {
+  rpc VnicCreate (VnicRequest) returns (VnicResponse) {}
+  rpc VnicUpdate (VnicRequest) returns (VnicResponse) {}
+  rpc VnicGet (VnicGetRequest) returns (VnicGetResponse) {}
+  rpc VnicDelete (VnicDeleteRequest) returns (VnicDeleteResponse) {}
+  rpc VnicStatsReset(VnicStatsResetRequest) returns (types.Empty) {}
+}
+
+// VNIC specification
+// NOTE: Vnic ids are not scoped under VPC or subnet, they are globally
+//       unique across VPCs
+message VnicSpec {
+  // unique vnic id
+  bytes               Id                    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // id of the subnet this vnic belongs to
+  bytes               SubnetId              = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // vnic encap information to be used while sending packets to this vnic
+  types.Encap         VnicEncap             = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // overlay MAC of this VNIC
+  uint64              MACAddress            = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // enable or disable reverse path checks while sending traffic to this vnic
+  // or while receiving traffic from this vnic
+  bool                SourceGuardEnable     = 5;
+  // fabric encap information to be used for traffic originated from this vnic
+  types.Encap         FabricEncap           = 6 [(gogoproto.moretags) = "meta:immutable"];
+  // Tx/egress mirror session id list, if any
+  // NOTE: when Tx mirroring is enabled, original packet sent by the vnic is
+  //       mirrored as-is (including dot1q tag, if any) towards the collector
+  repeated bytes      TxMirrorSessionId     = 7;
+  // Rx/ingress mirror session id list, if any
+  // NOTE: when Rx mirroring is enabled, the packet that is mirrored is same as
+  //       the packet that is ultimately sent to the vnic (i.e., the mirrored
+  //       packet has no VxLAN header and has all packet rewrites done)
+  repeated bytes      RxMirrorSessionId     = 8;
+  // VNF (potentially virtualized) workloads/appliances like firewalls, virtual
+  // switches/bridges, security monitoring appliances etc. are the kind of
+  // workloads that act as devices in the middle providing bump in the wire
+  // services and they can receive traffic from various IP and MAC addresses
+  // and also generate traffic with different sources and MAC addresses
+  // (potentially looping back the received traffic after performing the
+  // services and/or doing certain packet rewrites). For such workloads,
+  // VNF attribute is set to true and the source IP address in the traffic from
+  // the PF/VF will be ignored for learning purposes
+  bool                VNF                   = 9;
+  // identifier of ingress IPv4 security policy to be enforced
+  repeated bytes      IngV4SecurityPolicyId = 10;
+  // identifier of ingress IPv6 security policy to be enforced
+  repeated bytes      IngV6SecurityPolicyId = 11;
+  // identifier of egress IPv4 security policy to be enforced
+  repeated bytes      EgV4SecurityPolicyId  = 12;
+  // identifier of egress IPv6 security policy to be enforced
+  repeated bytes      EgV6SecurityPolicyId  = 13;
+  oneof ifinfo {
+    // when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
+    // present, vnic needs to be attached to a PF/VF (aka. host interface)
+    // HostIfIndex is the interface index of such VF/PF
+    bytes             HostIf                = 14;
+    // when operating in DEVICE_OPER_MODE_SMART_SWITCH, vnic can be behind a
+    // tunnel between the host and the DSC
+    bytes             TunnelId              = 15;
+  }
+  // policer to be applied on the traffic coming from vnic
+  bytes               TxPolicerId           = 16;
+  // policer to be applied on the traffic going to vnic
+  bytes               RxPolicerId           = 17;
+  // if a vnic is not marked as primary, DHCP offer sent to such vnics
+  // will not have gateway IP, hostname options filled in the DHCP offer
+  bool                Primary               = 18 [(gogoproto.moretags) = "meta:immutable"];
+  // hostname of the vnic to be returned in the DHCP offer when DHCP policy
+  // is enabled on the vnic's subnet
+  string              HostName              = 19;
+  // MaxSessions, if set, is total number of active sessions (across all
+  // protocols) allowed from/to this vnic
+  // NOTE:
+  // 1. once the limit is reached, packets that don't hit any flows will be
+  //    dropped in the datapath
+  // 2. if MaxSessions is 0, no limit is enforced
+  // 3. no active sessions will be effected if this value changes esp. from
+  //    a higher value to lower value
+  // 4. one session = forward flow + reverse flow
+  uint32              MaxSessions           = 20;
+  // controls for flow logging, if FlowLogAction is set to
+  // FLOW_LOG_ACTION_ENABLE on either vnic object or parent PF/VF
+  // object or device object
+  types.FlowLogSpec   FlowLogSpec           = 21;
+  // if MeterEn is true, when traffic from a vnic hits a route with metering
+  // enabled, such traffic is accounted (bytes & packets) against the vnic
+  // NOTE:
+  // when MeterEn is set to true, meter bucket is derived from either
+  // vnic level meter policy, if configured or else vpc level meter
+  // policy, if configured or else from the route table (route can provide
+  // the meter bucket/class directly)
+  bool                MeterEn               = 22;
+  // granular metering policy, if any, to be applied for ipv4 traffic
+  // ingressing/egressing the vnic
+  // NOTE:
+  // when V4MeterPolicy is set, MeterEn is implicitly set to true
+  // (i.e. user doesn't have to set to true explicitly) as metering is enabled
+  // by setting this attribute explicitly
+  bytes               V4MeterPolicy         = 23;
+  // granular metering policy, if any, to be applied for ipv6 traffic
+  // ingressing/egressing the vnic
+  // NOTE:
+  // when V6MeterPolicy is set, MeterEn is implicitly set to true
+  // (i.e. user doesn't have to set to true explicitly) as metering enabled by
+  // setting this attribute explicitly
+  bytes               V6MeterPolicy         = 24;
+  // PublicMAC, if set, is used to translate the vnic's MAC address;
+  // in the Tx direction, when vnic sends traffic with its private MAC
+  // (MACAddress attribute in this object) as source MAC, it gets NAT-ed to
+  // PublicMACAddress before the packet is put on the wire (or delivered locally
+  // to another vnic on same DSC) and in the Rx direction when traffic is
+  // received with destination as PublicMACAddress, it gets translated to
+  // vnic's private MAC address before the packet is delivered to the vnic
+  uint64              PublicMACAddress      = 25 [(gogoproto.moretags) = "meta:immutable"];
+  // when HAEnabled attribute is set to true, vnic state (e.g. flow information)
+  // is synced to peer DSC
+  bool                HAEnabled             = 26;
+  // when a workload that is acting as a backend of some service (identified by
+  // VIP or (VIP, port)) is running on top of a vnic, such vnic can be
+  // identified in the fabric using a globally unique label (if LBBackendId is
+  // zero, vnic is not considered as load balancing member pool)
+  uint64              LBBackendId           = 27;
+  // if AllowInternetAccess is set to false and traffic from the vnic hits a
+  // route of class ROUTE_CLASS_INTERNET, then traffic is dropped. To allow
+  // Internet connectivity for the vnic, AllowInternetAccess must be set to
+  // true
+  bool                AllowInternetAccess   = 28;
+  // MaxCPS, if non-zero, is the maximum no. of connections per second (cps)
+  // allowed for this vnic and if cps exceeds this configured limit all
+  // new connections will get dropped
+  // NOTE:
+  // 1. if this value exceeds max cps supported then the limit
+  //    will never be hit and so it is as good as unlimited cps
+  // 2. A value 0 indicates that the cps for the vnic is unlimited and not
+  //    enforced (i.e., cps limit is as much as the datapath can sustain)
+  // 3. the cumulative MaxCPS values configured across all vnics must not
+  //    exceed the supported cps, if certain number of vnics have
+  //    higher cps limits so that they take most of the supported
+  //    cps, rest of the vnics can starve w.r.t cps
+  uint32              MaxCPS                = 29;
+  // CPS burst to be absorbed when CPS exceeds MaxCPS
+  // NOTE: CPSBurst is not used if MaxCPS  is 0
+  uint32              CPSBurst              = 30 [(gogoproto.moretags) = "meta:default=1000000"];
+  // when DisablePublicGWNAT is set to true, sessions initiated by the vnic
+  // hitting a route (potentially default route) with SNAT action set to
+  // NAT_ACTION_NAPT_PUBLIC will not be NAT-ed (i.e. NAT action is ignored)
+  bool                DisablePublicGWNAT    = 31 [(gogoproto.moretags) = "meta:default=false"];
+  // multiple vnics can be created with same MAC but only of them can be primary
+  // VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and
+  // 2nd-dary vnic can have one or more local IP mappings behind them
+  bytes               PrimaryVnic           = 32;
+  // identifier of the IPv4 route table to be used
+  bytes               V4RouteTableId        = 33;
+  // identifier of the IPv6 route table to be used, if any
+  bytes               V6RouteTableId        = 34;
+  // FlowLogAction indicates the vnic level flow logging action
+  // NOTE:
+  // 1. unless explicitly disabled, FlowLogAction and/or FlowLogSpec
+  //    are inherited from either PF/VF object or device object
+  // 2. when enabled, flow logging configuration is picked from most specific
+  //    object (i.e., vnic) and then from PF/VF and then from device object
+  // 3. if flow logging is enabled on vnic object, but FlowLogSpec is not
+  //    configured on vnic, PF/VF and device objects then it defaults to flow
+  //    logging being disabled as it is a misconfig
+  types.FlowLogAction FlowLogAction         = 35;
+  // vnic is optionally assigned a VIP in the underlay that can be used as
+  // outer encap source IP, if configured, for traffic going to certain vpc
+  // private service endpoints
+  types.IPAddress     ServiceIP             = 36;
+  // in BITW_SMART_SWITCH_MODE HA deployments, vnic sends encapped traffic to
+  // one of the DSC TEP IPs which are VIPs configured in the HASpec of the
+  // Device object. Each VIP IPv4 and IPv6 pair is configured with a VIP Id
+  // and each vnic is associated with such IPv4 and IPv6 VIP pair. Due to this
+  // association during configuration time, DSC will know whether a given vnic
+  // is active on the DSC or standby at any given moment
+  // In non-HA deployments, this attribute must not be configured and error
+  // will be returned if VIPId is configured but not found in HASpec
+  // configuration
+  // NOTE:
+  // 1. in HA deployments, this must be non-zero and valid id
+  // 2. VIPId is immutable once a non-zero value is configured
+  //    (vnic needs to be deleted and added again with correct VIPId
+  //     in case of misconfiguration)
+  uint32              VIPId                 = 37;
+  // MaxTCPSessions is the maximum number of TCP sessions allowed from/to this
+  // vnic, if it is non-zero
+  // NOTE:
+  // 1. once the limit is reached, TCP packets that don't hit any flows will be
+  //    dropped in the datapath
+  // 2. if MaxTCPSessions is 0, no limit is enfoced for TCP sessions until
+  //    MaxSessions limit is hit, if MaxSessions is non-zero
+  // 3. no active TCP sessions will be effected if this value changes esp. from
+  //    a higher value to lower value
+  // 4. one session = forward flow + reverse flow
+  uint32              MaxTCPSessions        = 38;
+  // MaxUDPSessions is the maximum number of UDP sessions allowed from/to this
+  // vnic, if it is non-zero
+  // NOTE:
+  // 1. once the limit is reached, UDP packets that don't hit any flows will be
+  //    dropped in the datapath
+  // 2. if MaxUDPSessions is 0, no limit is enfoced for UDP sessions until
+  //    MaxSessions limit is hit, if MaxSessions is non-zero
+  // 3. no active UDP sessions will be effected if this value changes esp. from
+  //    a higher value to lower value
+  // 4. one session = forward flow + reverse flow
+  uint32              MaxUDPSessions        = 39;
+  // MaxICMPSessions is the maximum number of ICMP sessions allowed from/to this
+  // vnic, if it is non-zero
+  // NOTE:
+  // 1. once the limit is reached, ICMP packets that don't hit any flows will be
+  //    dropped in the datapath
+  // 2. if MaxICMPSessions is 0, no limit is enfoced for ICMP sessions until
+  //    MaxSessions limit is hit, if MaxSessions is non-zero
+  // 3. no active ICMP sessions will be effected if this value changes esp. from
+  //    a higher value to lower value
+  // 4. one session = forward flow + reverse flow
+  // 5. MaxICMPSessions is the combined limit for both ICMPv4 and ICMPv6
+  uint32              MaxICMPSessions       = 40;
+  // MaxOtherSessions is the maximum number of non-TCP/UDP/ICMP sessions allowed
+  // from/to this vnic, if it is non-zero
+  // NOTE:
+  // 1. once the limit is reached, non-TCP/UDP/ICMP packets that don't hit any
+  //    flows will be dropped in the datapath
+  // 2. if non-TCP/UDP/ICMP is 0, no limit is enfoced for such sessions until
+  //    MaxSessions limit is hit, if MaxSessions is non-zero
+  // 3. no active non-TCP/UDP/ICMP sessions will be effected if this value
+  //    changes esp. from a higher value to lower value
+  // 4. one session = forward flow + reverse flow
+  uint32              MaxOtherSessions      = 41;
+}
+
+// operational status of Vnic, if any
+message VnicStatus {
+  // h/w id of the vnic
+  uint32        HwId                    = 1;
+  // nexthop h/w id
+  uint32        NhHwId                  = 2;
+  // local config epoch of the vnic
+  uint32        LocalCfgEpoch           = 3;
+  // datapath epoch of the vnic
+  uint32        LocalDatapathEpoch      = 4;
+  // HA peer's config epoch of this vnic
+  uint32        PeerCfgEpoch            = 5;
+  // HA peer's datapath epoch cached in s/w
+  uint32        PeerCachedDatapathEpoch = 6;
+  // HA peer's datapath epoch programmed in p4
+  uint32        PeerDatapathEpoch       = 7;
+  // v4 meter policy
+  bytes         V4MeterPolicyId         = 8;
+  // v6 meter
+  bytes         V6MeterPolicyId         = 9;
+  // copp policer hw id for CPS
+  uint32        CPSCoPPHwId             = 10;
+  // secondary vnic of (primary) vnic
+  bytes         SecondaryVnic           = 11;
+  // service IP index, if service IP is configured
+  uint32        SvcIPIdx                = 12;
+  // true if vnic's configured total session limit is hit
+  bool          MaxSessionLimitHit      = 13;
+  // true if vnic's configured TCP session limit is hit
+  bool          MaxTCPSessionLimitHit   = 14;
+  // true if vnic's configured UDP session limit is hit
+  bool          MaxUDPSessionLimitHit   = 15;
+  // true if vnic's configured ICMP session limit is hit
+  bool          MaxICMPSessionLimitHit  = 16;
+  // true if vnic's configured non-TCP/UDP/ICMP session limit is hit
+  bool          MaxOtherSessionLimitHit = 17;
+}
+
+// vnic meter statistics
+message VnicMeterStats {
+  // meter class/bucket
+  uint32 MeterClass     = 1;
+  // transmitted packets
+  uint64 MeterTxPackets = 2;
+  // transmitted bytes
+  uint64 MeterTxBytes   = 3;
+  // received packets
+  uint64 MeterRxPackets = 4;
+  // received bytes
+  uint64 MeterRxBytes   = 5;
+}
+
+// stats of Vnic, if any
+message VnicStats {
+  // number of bytes transmitted by the vnic
+  uint64                  TxBytes        = 1;
+  // number of packets transmitted by the vnic
+  uint64                  TxPackets      = 2;
+  // number of bytes received by the vnic
+  uint64                  RxBytes        = 3;
+  // number of packets received by the vnic
+  uint64                  RxPackets      = 4;
+  // number of active sessions on the vnic
+  uint64                  ActiveSessions = 5;
+  // vnic meter statistics
+  repeated VnicMeterStats MeterStats     = 6;
+  // vnic drop statistics
+  repeated types.Counter  DropStats      = 7;
+}
+
+// vnic object
+message Vnic {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  VnicSpec      Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  VnicStatus    Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  VnicStats     Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// vnic create and update request
+message VnicRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt   BatchCtxt = 1;
+  // batched request
+  repeated VnicSpec Request   = 2;
+}
+
+// vnic create and update response
+message VnicResponse {
+  types.ApiStatus     ApiStatus = 1;
+  // batched response
+  repeated VnicStatus Response  = 2;
+}
+
+// vnic get request
+message VnicGetRequest {
+  // batched request
+  repeated bytes Id = 1;
+}
+
+// vnic get response
+message VnicGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  // batched response
+  repeated Vnic   Response  = 2;
+}
+
+// vnic delete request
+message VnicDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated bytes Id         = 2;
+}
+
+// vnic delete response
+message VnicDeleteResponse {
+  // batched response
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// vnic stats reset request
+message VnicStatsResetRequest {
+  // given a uuid of a vnic, clear its stats or else clear stats of all vnics
+  bytes Id              = 1;
+  // if ClearMeterStats is set to true, meter stats corresponding to vnic are
+  // also cleared
+  bool  ClearMeterStats = 2;
+}

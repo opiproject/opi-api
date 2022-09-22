@@ -1,0 +1,899 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for BGP
+//
+//    This model supports the following BGP configuration level
+//    hierarchy:
+//
+//      BGP
+//        |
+//        +-> [ global BGP configuration ]
+//        +-> neighbor
+//          +-> [ neighbor config ]
+//          +-> AFI / SAFI [ per-AFI overrides ]";
+//
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+// bgp service definition
+service BGPSvc {
+  rpc BGPCreate (BGPRequest) returns (BGPResponse) {}
+  rpc BGPUpdate (BGPRequest) returns (BGPResponse) {}
+  rpc BGPDelete (BGPDeleteRequest) returns (BGPDeleteResponse) {}
+  rpc BGPGet (BGPGetRequest) returns (BGPGetResponse) {}
+  rpc BGPPeerCreate (BGPPeerRequest) returns (BGPPeerResponse) {}
+  rpc BGPPeerUpdate (BGPPeerRequest) returns (BGPPeerResponse) {}
+  rpc BGPPeerDelete (BGPPeerDeleteRequest) returns (BGPPeerDeleteResponse) {}
+  rpc BGPPeerGet (BGPPeerGetRequest) returns (BGPPeerGetResponse) {}
+  rpc BGPPeerAfCreate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
+  rpc BGPPeerAfUpdate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
+  rpc BGPPeerAfDelete (BGPPeerAfDeleteRequest) returns (BGPPeerAfDeleteResponse) {}
+  rpc BGPPeerAfGet (BGPPeerAfGetRequest) returns (BGPPeerAfGetResponse) {}
+  rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
+  rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
+  rpc BGPPrfxCntrsGet (BGPPrfxCntrsGetRequest) returns (BGPPrfxCntrsGetResponse) {}
+  rpc BGPAdjRibOutGet (BGPAdjRibOutGetRequest) returns (BGPAdjRibOutGetResponse) {}
+}
+
+// BGP address family identifier
+enum BGPAfi {
+  BGP_AFI_NONE  = 0;
+  BGP_AFI_IPV4  = 1;
+  BGP_AFI_IPV6  = 2;
+  BGP_AFI_L2VPN = 25;
+}
+
+// BGP sub-address family identitfier
+enum BGPSafi {
+  BGP_SAFI_NONE    = 0;
+  BGP_SAFI_UNICAST = 1;
+  BGP_SAFI_EVPN    = 70;
+}
+
+// BGP peer RR client
+enum BGPPeerRRClient {
+  BGP_PEER_RR_NONE          = 0;
+  BGP_PEER_RR_CLIENT        = 1;
+  BGP_PEER_RR_MESHED_CLIENT = 2;
+}
+
+// BGP peer last_state
+enum BGPPeerState {
+  BGP_PEER_STATE_NONE        = 0;
+  BGP_PEER_STATE_IDLE        = 1;
+  BGP_PEER_STATE_CONNECT     = 2;
+  BGP_PEER_STATE_ACTIVE      = 3;
+  BGP_PEER_STATE_OPENSENT    = 4;
+  BGP_PEER_STATE_OPENCONFIRM = 5;
+  BGP_PEER_STATE_ESTABLISHED = 6;
+}
+
+enum BGPASSize {
+  BGP_AS_SIZE_NONE        = 0;
+  BGP_AS_SIZE_TWO_OCTET   = 1;
+  BGP_AS_SIZE_FOUR_OCTET  = 2;
+}
+
+enum BGPAddrType {
+  BGP_ADDR_TYPE_OTHER     = 0;
+  BGP_ADDR_TYPE_IPV4      = 1;
+  BGP_ADDR_TYPE_IPV6      = 2;
+  BGP_ADDR_TYPE_NSAP      = 3;
+  BGP_ADDR_TYPE_HDLC      = 4;
+  BGP_ADDR_TYPE_BBN1822   = 5;
+  BGP_ADDR_TYPE_IEEE802   = 6;
+  BGP_ADDR_TYPE_E163      = 7;
+  BGP_ADDR_TYPE_E164      = 8;
+  BGP_ADDR_TYPE_F69       = 9;
+  BGP_ADDR_TYPE_X121      = 10;
+  BGP_ADDR_TYPE_IPX       = 11;
+  BGP_ADDR_TYPE_APPLETALK = 12;
+  BGP_ADDR_TYPE_DECNETIV  = 13;
+  BGP_ADDR_TYPE_BANYANVIN = 14;
+  BGP_ADDR_TYPE_E164_NSAP = 15;
+  BGP_ADDR_TYPE_IPV4_TNA  = 16;
+  BGP_ADDR_TYPE_IPV6_TNA  = 17;
+  BGP_ADDR_TYPE_NSAP_TNA  = 18;
+  BGP_ADDR_TYPE_VPN_IPV4  = 19;
+  BGP_ADDR_TYPE_VPN_IPV6  = 20;
+  BGP_ADDR_TYPE_L2VPN     = 25;
+
+}
+
+enum BGPOperStatus {
+  BGP_OPER_STATUS_NONE       = 0;
+  BGP_OPER_STATUS_UP         = 1;
+  BGP_OPER_STATUS_DOWN       = 2;
+  BGP_OPER_STATUS_GOING_UP   = 3;
+  BGP_OPER_STATUS_GOING_DOWN = 4;
+  BGP_OPER_STATUS_ACT_FAILED = 5;
+}
+
+// BGP configuration
+message BGPSpec {
+  // unique key/identifier of BGP config
+  bytes   Id                        = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // the local autonomous system number
+  uint32  LocalASN                  = 2;
+  // router ID for this bgp instance
+  fixed32 RouterId                  = 3;
+  // cluster ID of the local router. router ID will be used as cluster ID
+  // if cluster ID is not configured or configured to zero
+  fixed32 ClusterId                 = 4;
+  // disable/enable BGP
+  bool    Disable                   = 5;
+  // exclude default route from being used to resolve nexthop reachability in the underlay
+  // changing this will deactivate and activate the routing stack RIB
+  bool    SuppressDefaultResolution = 6;
+}
+
+// operational status of BGP
+message BGPStatus {
+  // BGP current oper status
+  BGPOperStatus Status                 = 1;
+  // The total number of Adj-RIB-Out routes currently allocated
+  uint32        NumAdjRibOutRoutes     = 2;
+  // The peak number of Adj-RIB-Out routes that have been allocated at any one time
+  uint32        PeakNumAdjRibOutRoutes = 3;
+  // The maximum time remaining until route selection takes place following a restart, in hundredths of a second.
+  uint32        RemDelayTime           = 4;
+  // The table version number of the Loc-RIB
+  uint32        TableVer               = 5;
+}
+
+// BGP address family counters table
+message BGPAfStats {
+  // BGP address family
+  BGPAfi  Afi                 = 1;
+  // BGP sub-address family
+  BGPSafi Safi                = 2;
+  // total number of IBGP routes received for this address family
+  uint32  IBGPPrefixes        = 3;
+  // total number of EBGP routes received for this address family
+  uint32  EBGPPrefixes        = 4;
+  // number of prefixes received for this address family that are stored in Adj-RIB-In
+  uint32  InPrfxes            = 5;
+  // number of prefixes received for this address family that are installed in the Adj-RIB-In and are eligible to become active in the Loc-Rib
+  uint32  InPrfxesAccepted    = 6;
+  // number of prefixes for this address family that are installed in the Adj-RIB-In and are not eligible to become active in the Loc-Rib
+  uint32  InPrfxesRejected    = 7;
+  // The number of prefixes for this address famaily that are installed in AAdj-RIB-Out
+  uint32  OutPrfxes           = 8;
+  // number of advertised prefixes for this address family currently associated with any peer
+  uint32  OutPrfxesAdvertised = 9;
+  // number of prefixes received for this address family that are stored, but not installed in the Adj-RIB-In, because of local filter policy
+  uint32  InPrfxesDeniedByPol = 10;
+  // number of prefixes for this address family that are installed in the Adj-RIB-In and included in the Loc-RIB
+  uint32  NumLocRibRoutes     = 11;
+  // number of prefixes for this address family that are installed in the Adj-RIB-In and included in the Loc-RIB as 'best' routes
+  uint32  NumLocRibBestRoutes = 12;
+  // number of next hops for all routes installed in the Loc-RIB for this address family
+  uint32  NumLocRibNextHops   = 13;
+  // number of routes installed in the Loc-RIB for this address family for which there are multiple ECMP next hops
+  uint32  NumLocRibECMPRoutes = 14;
+}
+
+message BGPStats {
+  // BGP address family statistics
+  repeated BGPAfStats AfStats = 1;
+}
+
+// BGP object
+message BGP {
+  BGPSpec   Spec   = 1 [(gogoproto.jsontag) = "spec,omitempty"];
+  BGPStatus Status = 2 [(gogoproto.jsontag) = "status,omitempty"];
+  BGPStats  Stats  = 3 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// BGP create and update request
+message BGPRequest {
+  BGPSpec Request = 1;
+}
+
+// BGP create and update response
+message BGPResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP KeyHandle used in Get/Delete
+message BGPKeyHandle {
+  bytes Id = 1;
+}
+
+// BGP delete request
+message BGPDeleteRequest {
+  BGPKeyHandle Request = 1;
+}
+
+// BGP delete response
+message BGPDeleteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP get request
+message BGPGetRequest {
+  BGPKeyHandle Request = 1;
+}
+
+// BGP get response
+message BGPGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  BGP             Response  = 2;
+}
+
+// BGP peer configurations
+message BGPPeerSpec {
+  // unique key/identifier of peer
+  bytes            Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // peer enable/disable admin state. if peer is not enabled then local router
+  // must not initiate connections to the neighbor and must not respond to
+  // TCP connections attempts from neighbor
+  types.AdminState State        = 2;
+  // BGP local IP address. control plane chooses the local IP address of the
+  // session if an all 0 IP address is provided
+  types.IPAddress  LocalAddr    = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // BGP peer IP address
+  types.IPAddress  PeerAddr     = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // remote 4-byte AS number
+  uint32           RemoteASN    = 5;
+  // send regular community attributes to neighbor
+  bool             SendComm     = 6;
+  // send extended community attributes to neighbor
+  bool             SendExtComm  = 7;
+  // peer is a route reflector client
+  BGPPeerRRClient  RRClient     = 8;
+  // BGP session connect-retry timer in seconds
+  uint32           ConnectRetry = 9;
+  // BGP session configured holdtime timer in seconds
+  uint32           HoldTime     = 10;
+  // BGP session configured keepalive timer in seconds
+  uint32           KeepAlive    = 11;
+  // MD5 authentication
+  bytes            Password     = 12;
+  // TTL, set 1 to enable fast-external-fallover for directly connected eBGP sessions
+  uint32           Ttl          = 13 [(gogoproto.moretags) = "meta:range:1-255, meta:default=64"];
+  // IdleHoldTime in seconds
+  uint32           IdleHoldTime = 14 [(gogoproto.moretags) = "meta:range:1-32767, meta:default=15"];
+  // The number of instances of the local AS identifier that may be contained in the route's
+  // AS-Path without rejecting the route. Changing the value of this object while the peer
+  // is active triggers BGP to refresh its routes from the peer
+  uint32           AllowLocalAS = 15 [(gogoproto.moretags) = "meta:range:0-255, meta:default=0"];
+}
+
+// BGP peer status
+message BGPPeerStatus {
+  // BGP session status
+  BGPPeerState    Status               = 1;
+  // BGP session previous status
+  BGPPeerState    PrevStatus           = 2;
+  // last error received
+  bytes           LastErrorRcvd        = 3;
+  // Last error sent
+  bytes           LastErrorSent        = 4;
+  // selected local address of the peer
+  types.IPAddress LocalAddr            = 5;
+  // BGP session holdtime in seconds established with peer
+  uint32          HoldTime             = 6;
+  // BGP session keepalive in seconds established with peer
+  uint32          KeepAlive            = 7;
+  // BGP The capabilities announced to the peer on the most recent open message sent to the peer.
+  uint32          CapsSent             = 8;
+  // BGP The capabilities received on the most recent open message received from the peer.
+  uint32          CapsRcvd             = 9;
+  // BGP The capabilities negotiated for the session with the peer
+  uint32          CapsNeg              = 10;
+  // BGP The address family of the local address used by the transport connection for the peering session.
+  BGPAddrType     SelLocalAddrType     = 11;
+  // Number of BGP Notifications received for this connection.
+  uint32          InNotifications       = 12;
+  // Number of BGP Notifications sent for this connection.
+  uint32          OutNotifications      = 13;
+  // Number of BGP Updates received for this connection.
+  uint32          InUpdates             = 14;
+  // Number of BGP Updates received for this connection.
+  uint32          OutUpdates            = 15;
+  // Number of BGP Keepalives received for this connection.
+  uint32          InKeepalives          = 16;
+  // Number of BGP Opens sent for this connection.
+  uint32          OutKeepalives         = 17;
+  // Number of BGP Route Refreshes received for this connection.
+  uint32          InRefreshes           = 18;
+  // Number of BGP Route Refreshes sent for this connection.
+  uint32          OutRefreshes          = 19;
+  // Total number of BGP messages received for this connection.
+  uint32          InTotalMessages       = 20;
+  // Total number of BGP messages sent for this connection.
+  uint32          OutTotalMessages      = 21;
+  // Number of times BGP FSM transitioned to established state.
+  uint32          FsmEstTransitions     = 22;
+  // Number of retries after a flap.
+  uint32          ConnectRetryCount     = 23;
+  // Peer Group ID.
+  uint32          Peergr                = 24;
+  //Number of sec to stale the routes before deleting them.
+  uint32          StalePathTime         = 25;
+  //Number of ORF entries of all types received from the peer.
+  uint32          OrfEntryCount         = 26;
+  uint32          RcvdMsgElpsTime       = 27;
+  // Number of Route Refreshes sent to the peer.
+  uint32          RouteRefrSent         = 28;
+  // Number of Route Refreshes received from the peer.
+  uint32          RouteRefrRcvd         = 29;
+  // Number of prefixes received from the peer.
+  uint32          InPrfxes              = 30;
+  // Number of prefixes advertised to the peer including withdrawn prefixes.
+  uint32          OutPrfxes             = 31;
+  // Number of prefixes advertised to the peer.
+  uint32          OutPrfxesAdvertised   = 32;
+  // Connection retry time interval.
+  uint32          ConnectRetryInt       = 33;
+  // Time in sec since last update was sent to the peer.
+  uint32          OutUpdateElpsTime     = 34;
+  // Number of prefixes failed export policy.
+  uint32          OutPrfxesDenied       = 35;
+  // Number of prefixes for which implicit withdraw has been sent.
+  uint32          OutPrfxesImpWdr       = 36;
+  // Number of prefixes for which explicit withdraw has been sent.
+  uint32          OutPrfxesExpWdr       = 37;
+  // Number of prefixes for which implicit withdraw has been rcvd.
+  uint32          InPrfxesImpWdr        = 38;
+  // Number of prefixes for which explicit withdraw has been rcvd.
+  uint32          InPrfxesExpWdr        = 39;
+  // Hold time received in open message.
+  uint32          ReceivedHoldTime      = 40;
+  // For how long is this peer in established state in sec.
+  uint32          FsmEstablishedTime    = 41;
+  // Elapsed time in sec since the last BGP message is received.
+  uint32          InUpdatesElpsTime     = 42;
+  // Number of BGP Opens received for this connection.
+  uint32          InOpens               = 43;
+  // Number of BGP Opens sent for this connection.
+  uint32          OutOpens              = 44;
+  // Peer Index
+  uint32          PeerIndex             = 45;
+  // Current TTL value in use
+  uint32          Ttl                   = 46;
+  // Operational status of this peer
+  BGPOperStatus   OperState             = 47;
+}
+
+// BGP peer object
+message BGPPeer {
+  BGPPeerSpec   Spec   = 1 [(gogoproto.jsontag) = "spec,omitempty"];
+  BGPPeerStatus Status = 2 [(gogoproto.jsontag) = "status,omitempty"];
+}
+
+// BGP peer create and update response
+message BGPPeerResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP peer create and update request
+message BGPPeerRequest {
+  repeated BGPPeerSpec Request = 1;
+}
+
+// BGP peer get response
+message BGPPeerGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated BGPPeer Response  = 2;
+}
+
+// BGP peer key parameters
+message BGPPeerKey {
+  // BGP local IP address
+  types.IPAddress LocalAddr = 1;
+  // BGP peer IP address
+  types.IPAddress PeerAddr  = 2;
+}
+
+// BGP peer get and delete key handle
+message BGPPeerKeyHandle {
+  // unique identifier or key parameters
+  oneof id_or_key {
+    bytes      Id  = 1;
+    BGPPeerKey Key = 2;
+  }
+}
+
+// BGP peer delete request
+message BGPPeerDeleteRequest {
+  repeated BGPPeerKeyHandle Request = 1;
+}
+
+// BGP peer delete response
+message BGPPeerDeleteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP peer get request
+message BGPPeerGetRequest {
+  repeated BGPPeerKeyHandle Request = 1;
+}
+
+// BGP peer AF configurations
+message BGPPeerAfSpec {
+  // unique key/identifier of peer AF config
+  bytes           Id               = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // BGP local IP address
+  types.IPAddress LocalAddr        = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // BGP peer IP address
+  types.IPAddress PeerAddr         = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // BGP address family
+  BGPAfi          Afi              = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // BGP sub-address family
+  BGPSafi         Safi             = 5 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // enforce this router to set self as next-hop for advertised routes
+  bool            NexthopSelf      = 6;
+  // originate a default route to this peer
+  bool            DefaultOrig      = 7;
+  // The local port configured for the peering session
+  uint32          LocalPort        = 8;
+  // The remote port configured for the peering session
+  uint32          RemotePort       = 9;
+  // For a peer identified by a link-local IPv6 addresses, this is the scope ID
+  // of bgpPeerLocalAddr and bgpPeerRemoteAddr. For a peer identified only by
+  // interface (bgpPeerLocalAddr and bgpPeerRemoteAddr are both zero), this is
+  // the interface index of the local point-to-point interface through which the
+  // peer is reachable
+  uint32          LocalAddrScopeId = 10;
+}
+
+enum BgpAddPathCapNegCap {
+  BGP_ADD_PATH_SR_DISABLE = 0;
+  BGP_ADD_PATH_SR_RECEIVE = 1;
+  BGP_ADD_PATH_SR_SEND    = 2;
+  BGP_ADD_PATH_SR_BOTH    = 3;
+  BGP_ADD_PATH_SR_INHERIT = 4;
+  BGP_ADD_PATH_SR_UNKNOWN = 5;
+}
+
+// BGP peer AF status
+message BGPPeerAfStatus {
+  // BGP The index of the update group that the peer is a member of for
+  // this AFI/SAFI
+  uint32              UpdateGroup      = 1;
+  // For a peer identified by a link-local IPv6 addresses, this is the scope ID
+  // of bgpPeerLocalAddr and bgpPeerRemoteAddr. For a peer
+  uint32              LocalAddrScopeId = 2;
+  // send a Route Refresh request to the peer for this AFI/SAFI.
+  bool                RtRefresh        = 3;
+  //The BGP additional path capability negotiated with this peer for
+  //this AFI/SAFI.
+  BgpAddPathCapNegCap AddPathCapNeg    = 4;
+  // This value indicates whether the given peer is a reflector client of this
+  // router for this AFI/SAFI, or not
+  BGPPeerRRClient     ReflectorClient  = 5;
+}
+
+// BGP peer AF object
+message BGPPeerAf {
+  BGPPeerAfSpec   Spec   = 1 [(gogoproto.jsontag) = "spec,omitempty"];
+  BGPPeerAfStatus Status = 2 [(gogoproto.jsontag) = "status,omitempty"];
+}
+
+// BGP peer AF create and update response
+message BGPPeerAfResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP peer AF create and update request
+message BGPPeerAfRequest {
+  repeated BGPPeerAfSpec Request = 1;
+}
+
+// BGP peer key parameters
+message BGPPeerAfKey {
+  // BGP local IP address
+  types.IPAddress LocalAddr = 1;
+  // BGP peer IP address
+  types.IPAddress PeerAddr  = 2;
+  // BGP address family
+  BGPAfi          Afi       = 3;
+  // BGP sub-address family
+  BGPSafi         Safi      = 4;
+}
+
+// BGP peer delete spec
+message BGPPeerAfKeyHandle {
+  // unique identifier or key parameters
+  oneof id_or_key {
+    bytes        Id  = 1;
+    BGPPeerAfKey Key = 2;
+  }
+}
+
+// BGP peer af delete request
+message BGPPeerAfDeleteRequest {
+  repeated BGPPeerAfKeyHandle Request = 1;
+}
+
+// BGP peer delete response
+message BGPPeerAfDeleteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// BGP peer af get request
+message BGPPeerAfGetRequest {
+  repeated BGPPeerAfKeyHandle Request = 1;
+}
+
+// BGP peer AF get response
+message BGPPeerAfGetResponse {
+  types.ApiStatus     ApiStatus = 1;
+  repeated BGPPeerAf  Response  = 2;
+}
+
+enum BGPClearRouteOptions {
+    BGP_CLEAR_ROUTE_NONE         = 0;
+    BGP_CLEAR_ROUTE_HARD         = 1; // toggle session
+    BGP_CLEAR_ROUTE_REFRESH_IN   = 2; // request route refresh from peer
+    BGP_CLEAR_ROUTE_REFRESH_OUT  = 3; // send all routes to peer
+    BGP_CLEAR_ROUTE_REFRESH_BOTH = 4; // send all routes to peer and request
+                                      // route refresh from peer
+}
+
+message BGPClearRouteRequest {
+  // clear route options
+  BGPClearRouteOptions Option = 1;
+
+  oneof peer_or_peeraf {
+    // peer key
+    BGPPeerKeyHandle Peer     = 2;
+    // peer address-family key
+    BGPPeerAfKeyHandle PeerAf = 3;
+  }
+}
+
+// BGP clear route response
+message BGPClearRouteResponse {
+  types.ApiStatus ApiStatus = 1;
+}
+
+// NLRI source
+enum NLRISrc {
+  NLRI_NONE = 0;
+  NLRI_PEER = 1; // learned from peer
+  NLRI_AFM  = 2; // learned from AFM
+  NLRI_SELF = 3; // created by itself
+}
+
+enum BGPNLRIIsActive {
+  BGP_NLRI_ISA_NONE        = 0;
+  BGP_NLRI_ISA_NOT_TRACKED = 1;
+  BGP_NLRI_ISA_INACTIVE    = 2;
+  BGP_NLRI_ISA_ACTIVE      = 3;
+}
+
+enum BGPRsnNotBest {
+  BGP_REASON_NOT_CONSIDERED     = 0;
+  BGP_REASON_ROUTE_IS_BEST      = 1;
+  BGP_REASON_WEIGHT             = 2;
+  BGP_REASON_LOCAL_PREF         = 3;
+  BGP_REASON_LCL_ORIG_PRFRRED   = 4;
+  BGP_REASON_AS_PATH_LEN        = 5;
+  BGP_REASON_ORIGIN             = 6;
+  BGP_REASON_MED                = 7;
+  BGP_REASON_LOCAL_ORIG_TIE     = 8;
+  BGP_REASON_EBGP_V_IBGP_PEER   = 9;
+  BGP_REASON_ADMIN_DISTANCE     = 10;
+  BGP_REASON_PATH_TO_NEXT_CST   = 11;
+  BGP_REASON_PREF_EXISTING      = 12;
+  BGP_REASON_IDENTIFIER         = 13;
+  BGP_REASON_CLUSTER_LEN        = 14;
+  BGP_REASON_PEER_ADDR_TYPE     = 15;
+  BGP_REASON_PEER_ADDR          = 16;
+  BGP_REASON_PEER_PORT          = 17;
+  BGP_REASON_PATH_ID            = 18;
+}
+
+enum BGPOriginAttr {
+  BGP_ORIGIN_IGP        = 0;
+  BGP_ORIGIN_EGP        = 1;
+  BGP_ORIGIN_INCOMPLETE = 2;
+}
+
+enum BGPPeerType {
+  BGP_PEER_TYPE_UNKNOWN = 0;
+  BGP_PEER_TYPE_NONE    = 1;
+  BGP_PEER_TYPE_IBGP    = 2;
+  BGP_PEER_TYPE_EBGP    = 3;
+}
+
+// BGP NLRI prefix table
+message BGPNLRIPrefixStatus {
+  // BGP address family
+  BGPAfi          Afi              = 1;
+  // BGP sub-address family
+  BGPSafi         Safi             = 2;
+  // prefix in NLRI
+  bytes           Prefix           = 3;
+  // prefix length
+  uint32          PrefixLen        = 4;
+  // route source (learned from BGP peer or AFM)
+  NLRISrc         RouteSource      = 5;
+  // route source index
+  uint32          RouteSourceIndex = 6;
+  // path ID
+  uint32          PathID           = 7;
+  // chosen as BGP best route or not
+  bool            BestRoute        = 8;
+  // AS path string
+  bytes           ASPathStr        = 9;
+  // originator ID
+  bytes           PathOrigId       = 10;
+  // next-hop address
+  bytes           NextHopAddr      = 11;
+  // Size of each ASN in the AS path string
+  BGPASSize       ASSize           = 12;
+  // Is this route part of an ECMP set
+  bool            EcmpRoute        = 13;
+  // Peer IP
+  types.IPAddress PeerAddr         = 14;
+  // The number of times this route has flapped since statistics were last cleared.
+  uint32          FlapStatsFlapcnt = 15;
+  // Whether or not this route is suppressed.
+  bool            FlapStatsSupprsd = 16;
+  // An indication of whether or not this route is installed in the forwarding table
+  BGPNLRIIsActive IsActive         = 17;
+  // Whether or not this route was last sent by the peer before BGP detected that the peer was restarting.
+  bool            Stale            = 18;
+  // The value of sysUpTime when this route flapped
+  uint32          FlapStartTime    = 19;
+  // If bgpNlriPrefixBest is 'true', then this field is set to 'routeIsBest'.  Otherwise, it reports the stage in the decision process when the route was determined to be non-best.
+  BGPRsnNotBest   ReasonNotBest    = 20;
+  // The extended community membership associated with the route after import policy has been applied.
+  repeated bytes  ExtComm          = 21;
+  // The community list associated with the route after import policy has been applied.
+  repeated bytes  Comm             = 22;
+  // Calculated local preference
+  uint32          LocalPref        = 23;
+  // Origin attribute
+  BGPOriginAttr   Origin           = 24;
+  // Multi-Exit Discriminator
+  uint32          MED              = 25;
+  bool            MEDPresent       = 26;
+  // Peer type
+  BGPPeerType     PeerType         = 27;
+}
+
+// BGP NLRI prefix key object
+message BGPNLRIPrefixKey {
+  // BGP address family
+  BGPAfi   Afi              = 1;
+  // BGP sub-address family
+  BGPSafi  Safi             = 2;
+  // prefix in NLRI
+  bytes    Prefix           = 3;
+  // prefix length
+  uint32   PrefixLen        = 4;
+  // route source (learned from BGP peer or AFM)
+  NLRISrc  RouteSource      = 5;
+  // route source index
+  uint32   RouteSourceIndex = 6;
+  // path ID
+  uint32   PathID           = 7;
+}
+
+// BGP NLRI prefix filter object
+message BGPNLRIPrefixFilter {
+  // filter based on extended communities
+  bytes           ExtComm   = 1;
+  // filter based on l2vni/l3vni
+  uint32          Vnid      = 2;
+  // filter based on route type
+  uint32          RouteType = 3;
+  // filter based on next-hop address
+  types.IPAddress NextHop   = 4;
+  // filter based on ip address
+  types.IPAddress IPAddress = 5;
+  // filter to include only best routes
+  bool            Best      = 6;
+}
+
+// BGP NLRI prefix object
+message BGPNLRIPrefix {
+  BGPNLRIPrefixStatus Status = 1;
+}
+
+// BGP NLRI prefix get response
+message BGPNLRIPrefixGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated BGPNLRIPrefix Response  = 2;
+}
+
+// BGP NLRI key handle
+message BGPNLRIPrefixKeyHandle {
+  BGPNLRIPrefixKey Key = 1;
+}
+
+// BGPNLRIPrefix GET Requests
+message BGPNLRIPrefixGetRequests {
+  repeated BGPNLRIPrefixKeyHandle Request = 1;
+}
+
+// BGP NLRI prefix get request
+message BGPNLRIPrefixGetRequest {
+  oneof requests_or_filter {
+    BGPNLRIPrefixGetRequests Requests = 1;
+    BGPNLRIPrefixFilter      Filter   = 2;
+  }
+}
+
+// BGP PrfxCntrs table
+message BGPPrfxCntrsStatus {
+  // Identifies a RIB Manager entity
+  uint32      EntIndex                 = 1;
+  // The peer index
+  uint32      PeerIndex                = 2;
+  // BGP address family
+  BGPAfi      Afi                      = 3;
+  // BGP sub-address family
+  BGPSafi     Safi                     = 4;
+  // The number of prefixes received from a peer and are stored in the Adj-RIB-In for that peer.
+  uint32      InPrfxes                 = 5;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and are eligible to become active in the Loc-Rib
+  uint32      InPrfxesAccepted         = 6;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and are NOT eligible to become active in the Loc-Rib
+  uint32      InPrfxesRejected         = 7;
+  // The number of prefixes for a peer that are installed in that peer's Adj-RIB-Out.
+  uint32      OutPrfxes                = 8;
+  // The number of advertised prefixes currently associated with the peer
+  uint32      OutPrfxesAdvertised      = 9;
+  // User data for this BGP prefix counters entry
+  string     UserData                  = 10;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and for which RIB Manager is tracking a route flap damping penalty.
+  uint32      InPrfxesFlapped          = 11;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and that are suppressed as a result of route flapping.
+  uint32      InPrfxesFlapSuppressed   = 12;
+  // The number of prefixes for a peer that are not currently in the Adj-RIB-In, but which have an associated route flap damping penalty
+  uint32      InPrfxesFlapHistory      = 13;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and are marked as 'active' in the Loc-Rib.
+  uint32      InPrfxesActive           = 14;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, because of local filter policy
+  uint32      InPrfxesDeniedByPol      = 15;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and included in the Loc-RIB
+  uint32      NumLocRibRoutes          = 16;
+  // The number of prefixes for a peer that are installed in the Adj-RIB-In and included in the Loc-RIB as 'best' routes
+  uint32      NumLocRibBestRoutes      = 17;
+  // The number of times a received Martian prefix has been denied and therefore not installed in the Adj-RIB-In
+  uint32      InPrfxesDeniedMartian    = 18;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, due to loops as determined by the AS Path
+  uint32      InPrfxesDeniedAsLoop     = 19;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, because the next hop is invalid
+  uint32      InPrfxesDeniedNextHop    = 20;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, because the AS Path length is too long
+  uint32      InPrfxesDeniedAsLength   = 21;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, due to well-known community checks
+  uint32      InPrfxesDeniedCommunity  = 22;
+  // The number of times a received prefix has been denied, and therefore not installed in the Adj-RIB-In, because it is locally originated
+  uint32       InPrfxesDeniedLocalOrig = 23;
+  // The total number of prefixes learned from all sessions with this peer
+  uint32       InTotalPrfxes           = 24;
+  // The total number of prefixes sent on all sessions with this peer
+  uint32       OutTotalPrfxes          = 25;
+  // The BGP peer's FSM state
+  BGPPeerState PeerState               = 26;
+  // This is the number of prefixes in the Loc-RIB that have have failed export policy checks and so have not been installed in the Adj-RIB-Out
+  uint32       OutPrfxesDenied         = 27;
+  // The total number of routes for which an implicit withdraw has been sent to this peer
+  uint32       OutPrfxesImpWdr         = 28;
+  // The total number of routes for which an explicit withdraw has been sent to this peer
+  uint32       OutPrfxesExpWdr         = 29;
+  // The total number of routes that have been implicitly withdrawn by this peer
+  uint32       InPrfxesImpWdr          = 30;
+  // The total number of routes that have been explicitly withdrawn by this peer
+  uint32       InPrfxesExpWdr          = 31;
+  // The number of stored prefixes from the peer that have failed import policy checks and so have not been installed in the Adj-RIB-In
+  uint32       CurPrfxesDeniedByPol    = 32;
+}
+
+// BGP PrfxCntrs key object
+message BGPPrfxCntrsKey {
+  // Identifies a RIB Manager entity
+  uint32  EntIndex  = 1;
+  // The peer index
+  uint32  PeerIndex = 2;
+  // BGP address family
+  BGPAfi  Afi       = 3;
+  // BGP sub-address family
+  BGPSafi Safi      = 4;
+}
+
+//BGP PrfxCntrs object
+message BGPPrfxCntrs {
+  BGPPrfxCntrsStatus Status = 1;
+}
+
+// BGP PrfxCntrs get response
+message BGPPrfxCntrsGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated BGPPrfxCntrs Response  = 2;
+}
+
+// BGP PrfxCntrs key handle
+message BGPPrfxCntrsKeyHandle {
+  BGPPrfxCntrsKey Key = 1;
+}
+
+// BGP PrfxCntrs get request
+message BGPPrfxCntrsGetRequest {
+  repeated BGPPrfxCntrsKeyHandle Request = 1;
+}
+
+enum BGPAROAdvertStatus {
+  BGP_ARO_STATUS_NONE               = 0;
+  BGP_ARO_STATUS_ADVERTISED         = 1;
+  BGP_ARO_STATUS_SUPPRESSED         = 2;
+  BGP_ARO_STATUS_PENDING_WITHDRAWAL = 3;
+  BGP_ARO_STATUS_WITHDRAWN          = 4;
+}
+
+// BGP Adj-RIB-Out table contains set of routes advertised to all peers
+message BGPAdjRibOutStatus {
+  // BGP peer IP address
+  types.IPAddress    PeerAddr          = 1;
+  // BGP address family
+  BGPAfi             Afi               = 2;
+  // BGP sub-address family
+  BGPSafi            Safi              = 3;
+  // Prefix in NLRI
+  bytes              Prefix            = 4;
+  // Prefix length
+  uint32             PrefixLen         = 5;
+  // Advertisement status
+  BGPAROAdvertStatus Status            = 6;
+  // AS size
+  BGPASSize          ASSize            = 7;
+  // AS path string
+  bytes              ASPathStr         = 8;
+  // The community list associated with the route after export policy has been applied
+  repeated bytes     Comm              = 9;
+  // The extended community membership associated with the route after export policy has been applied
+  repeated bytes     ExtComm           = 10;
+  // BGP Multi-Exit Discriminator value advertised to the peer
+  uint32             MED               = 11;
+  bool               MEDPresent        = 12;
+}
+
+//BGP AdjRibOut object
+message BGPAdjRibOut {
+  BGPAdjRibOutStatus Status = 1;
+}
+
+// BGP AdjRibOut get response
+message BGPAdjRibOutGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated BGPAdjRibOut  Response  = 2;
+}
+
+// BGP AdjRibOut filter object
+message BGPAdjRibOutFilter {
+  // only get-all is supported; this could be extended
+}
+
+// BGP AdjRibOut key object
+message BGPAdjRibOutKeyHandle {
+  // only get-all is supported; this could be extended
+}
+
+// BGP AdjRibOut GET Requests
+message BGPAdjRibOutGetRequests {
+  repeated BGPAdjRibOutKeyHandle Request = 1;
+}
+
+// BGP AdjRibOut get request
+message BGPAdjRibOutGetRequest {
+  // place-holder: only get-all is supported 
+  oneof requests_or_filter {
+    BGPAdjRibOutGetRequests Requests = 1;
+    BGPAdjRibOutFilter      Filter   = 2;
+  }
+}

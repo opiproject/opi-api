@@ -1,0 +1,183 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for subnet object
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service SubnetSvc {
+  rpc SubnetCreate (SubnetRequest) returns (SubnetResponse) {}
+  rpc SubnetUpdate (SubnetRequest) returns (SubnetResponse) {}
+  rpc SubnetGet (SubnetGetRequest) returns (SubnetGetResponse) {}
+  rpc SubnetDelete (SubnetDeleteRequest) returns (SubnetDeleteResponse) {}
+}
+
+// SubnetSpec captures subnet specific configuration
+message SubnetSpec {
+  // unique identifier of the subnet
+  bytes            Id                    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // virtual private cloud this subnet is belongs to
+  bytes            VPCId                 = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
+  types.IPv4Prefix V4Prefix              = 3 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
+  types.IPv6Prefix V6Prefix              = 4 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IPv4 Virtual Router (VR) IP of this subnet, this IP is owned by the device
+  // and packets originated by this device carry this IP as source IP
+  uint32           IPv4VirtualRouterIP   = 5;
+  // Ipv6 Virtual Router (VR) IP of this subnet, this IP is owned by the device
+  // and packets originated by this device carry this IP as source IP
+  bytes            IPv6VirtualRouterIP   = 6;
+  // Virtual Router (VR) MAC address, any packets originated or routed by
+  // the device carry this MAC as source MAC
+  uint64           VirtualRouterMac      = 7 [(gogoproto.moretags) = "meta:mandatory"];
+  // identifier of the IPv4 route table to be used
+  bytes            V4RouteTableId        = 8;
+  // identifier of the IPv6 route table to be used, if any
+  bytes            V6RouteTableId        = 9;
+  // identifier of ingress IPv4 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this subnet will inherit the policies configured under subnet
+  // 2. multiple policies per vnic per direction (ingress/egress) can be specified
+  // 3. an implementation may limit the #policies per subnet in each direction
+  repeated bytes   IngV4SecurityPolicyId = 10;
+  // identifier of ingress IPv6 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this subnet will inherit the policies configured under subnet
+  // 2. multiple policies per vnic per direction (ingress/egress) can be specified
+  // 3. an implementation may limit the #policies per subnet in each direction
+  repeated bytes   IngV6SecurityPolicyId = 11;
+  // identifier of egress IPv4 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this subnet will inherit the policies configured under subnet
+  // 2. multiple policies per vnic per direction (ingress/egress) can be specified
+  // 3. an implementation may limit the #policies per subnet in each direction
+  repeated bytes   EgV4SecurityPolicyId  = 12;
+  // identifier of egress IPv6 security policy to be enforced
+  // NOTE:
+  // 1. all vnics in this subnet will inherit the policies configured under subnet
+  // 2. multiple policies per vnic per direction (ingress/egress) can be specified
+  // 3. an implementation may limit the #policies per subnet in each direction
+  repeated bytes   EgV6SecurityPolicyId  = 13;
+  // AccessEncap is either ENCAP_TYPE_NONE (untagged) or ENCAP_TYPE_DOT1Q
+  // and when AccessEncap is ENCAP_TYPE_DOT1Q, multiple vnics can send
+  // traffic with same DOT1Q tag, in which case vnics are identified with
+  // their MAC or IP based on the datapath in addition to the DOT1Q tag
+  // NOTE:
+  // 1. when subnet's AccessEncap is ENCAP_TYPE_NONE, vnics can also be
+  //    identified by the encap of their own (e.g. VLAN as VNIC or QinQ as
+  //    VNIC etc.)
+  // 2. when subnet's AccessEncap is ENCAP_TYPE_DOT1Q, it is expected that
+  //    all traffic from vnics in that subnet is transmitted with this encap
+  //    (so vnics can be configured with VnicEncap as ENCAP_TYPE_NONE, so they
+  //     inherit the subnet's encap)
+  // 3. it is also possible to have subnet encap as ENCAP_TYPE_DOT1Q with
+  //    certain tag value but some vnic's in that subnet to have different
+  //    DOT1Q encap than that of subnet
+  types.Encap      AccessEncap           = 14 [(gogoproto.moretags) = "meta:immutable"];
+  // encapped traffic coming with the specified encap from fabric side will be
+  // mapped to this subnet and traffic from workloads in this subnet will carry
+  // this encap towards the fabric side
+  types.Encap      FabricEncap           = 15 [(gogoproto.moretags) = "meta:immutable"];
+  // when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
+  // present, subnet needs to be attached to a PF/VF (aka. host interface),
+  // HostIf is list of such VF/PFs
+  repeated bytes   HostIf                = 16;
+  // DHCP policy to be applied in this subnet
+  // NOTE:
+  // 1. at any given time, a subnet can either have DHCP relay policy or
+  //    DHCP proxy policy only and for simplicty on any given subnet we
+  //    can't switch from one type of policy to another
+  // 2. Unclear about the need to do multiple DHCP proxy policies per subnet
+  repeated bytes   DHCPPolicyId          = 17;
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane
+  // NOTE:
+  // 1. subnets under this VPC don't inherit this ToS value, subnets need to
+  //    be explicitly configured with same ToS value as that of VPC or
+  //    potentially different ToS value of their own
+  // 2. tunnel objects, if configured with ToS, will override this
+  uint32           ToS                   = 18;
+  // a subnet is marked connected if vnics in this subnet can communicate with
+  // external endpoints via routes with some kind of NAT (e.g. 1:1 NAT, NAPT)
+  bool             Connected             = 19;
+  // default ingress stateful security policy for this subnet
+  // NOTE:
+  // IngDefaultSGPolicy, if configured, is the 1st policy evaluated before
+  // evaluating other NSG polices applicable to this vnic
+  bytes            IngDefaultSGPolicy    = 20 [(gogoproto.moretags) = "meta:immutable"];
+  // default egress stateful security policy for this subnet
+  // NOTE:
+  // EgrDefaultSGPolicy, if configured, is the 1st policy evaluated before
+  // evaluating other NSG polices applicable to this vnic
+  bytes            EgrDefaultSGPolicy    = 21 [(gogoproto.moretags) = "meta:immutable"];
+  // RemoteSubnet, if set, indicates that the subnet does not have any IP
+  // mappings in local pod and such subnets are used to program all remote
+  // pod IP mappings behind it
+  bool             RemoteSubnet          = 22;
+}
+
+// operational status of the subnet, if any
+message SubnetStatus {
+  // subnet hw id
+  uint32 HwId    = 1;
+  // number of vnics in the subnet
+  uint32 NumVnic = 2;
+}
+
+// stats of the subnet, if any
+message SubnetStats {
+}
+
+// subnet object
+message Subnet {
+  meta.TypeMeta TypeMeta   = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjectMeta = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  SubnetSpec    Spec       = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  SubnetStatus  Status     = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  SubnetStats   Stats      = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// subnet create and update request
+message SubnetRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt     BatchCtxt = 1;
+  repeated SubnetSpec Request   = 2;
+}
+
+// subnet create and update response
+message SubnetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated SubnetStatus Response  = 2;
+}
+
+// subnet get request
+message SubnetGetRequest {
+  repeated bytes Id = 1;
+}
+
+// subnet get response
+message SubnetGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  repeated Subnet Response  = 2;
+}
+
+// subnet delete request
+message SubnetDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// subnet delete response
+message SubnetDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

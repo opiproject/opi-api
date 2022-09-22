@@ -1,0 +1,491 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Network Address Translation (Mirror)
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service MirrorSvc {
+  rpc MirrorSessionCreate (MirrorSessionRequest) returns (MirrorSessionResponse) {}
+  rpc MirrorSessionUpdate (MirrorSessionRequest) returns (MirrorSessionResponse) {}
+  rpc MirrorSessionGet (MirrorSessionGetRequest) returns (MirrorSessionGetResponse) {}
+  rpc MirrorSessionDelete (MirrorSessionDeleteRequest) returns (MirrorSessionDeleteResponse) {}
+  // given a uuid of a mirror session, clear its stats or else clear stats of all mirror sessions
+  rpc MirrorSessionStatsReset(types.Id) returns(types.Empty) {}
+
+  // mirror policy APIs
+  rpc MirrorPolicyCreate (MirrorPolicyRequest) returns (MirrorPolicyResponse) {}
+  rpc MirrorPolicyUpdate (MirrorPolicyRequest) returns (MirrorPolicyResponse) {}
+  rpc MirrorPolicyGet (MirrorPolicyGetRequest) returns (MirrorPolicyGetResponse) {}
+  rpc MirrorPolicyDelete (MirrorPolicyDeleteRequest) returns (MirrorPolicyDeleteResponse) {}
+
+  // mirror policy rule APIs
+  rpc MirrorRuleCreate (MirrorRuleRequest) returns (MirrorRuleResponse) {}
+  rpc MirrorRuleUpdate (MirrorRuleRequest) returns (MirrorRuleResponse) {}
+  rpc MirrorRuleGet (MirrorRuleGetRequest) returns (MirrorRuleGetResponse) {}
+  rpc MirrorRuleDelete (MirrorRuleDeleteRequest) returns (MirrorRuleDeleteResponse) {}
+}
+
+// APIs for troubleshooting
+service PacketTraceSvc {
+  rpc PacketTraceRuleCreate (PacketTraceRuleRequest) returns (PacketTraceRuleResponse) {}
+  rpc PacketTraceRuleDelete (PacketTraceRuleDeleteRequest) returns (PacketTraceRuleDeleteResponse) {}
+}
+
+// LSpanSpec is the configuration specification for LSPAN
+message LSpanSpec {
+  // host PF/VF or ARM PF/VF uuid
+  bytes Interface         = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // packets per second
+  // NOTE:
+  // 1. if pps is not set or configured as 0, then pps is set to 1000
+  // 2. if pps is non-zero, then maximum acceptable pps is 8000
+  uint64 PacketsPerSecond = 2 [(gogoproto.moretags) = "meta:range:0-8000,meta:default=1000"];
+}
+
+// RspanSpec is the configuration specification for RSPAN
+message RSpanSpec {
+  // interface to send RSPAN pkts on
+  // NOTE: interface can be uplink or host interfaces 
+  bytes       Interface = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // RSPAN encap: can be VLAN
+  types.Encap Encap     = 2;
+}
+
+// types of ERSPAN sessions differ in the encap
+enum ERSpanType {
+  ERSPAN_TYPE_NONE = 0;
+  // Type 1 ERSPAN
+  ERSPAN_TYPE_1    = 1;
+  // Type 2 ERSPAN
+  ERSPAN_TYPE_2    = 2;
+  // Type 3 ERSPAN
+  ERSPAN_TYPE_3    = 3;
+}
+
+// ERSpanSpec is the configuration specification for ERSPAN
+// NOTE: source IP used in the ERSPAN packet is either
+//       1. subnet VR IP in case DstIP is in a VPC of type VPC_TYPE_TENANT
+//       2. local TEP (MyTEP) IP in case DstIP is in VPC  of type
+//          VPC_TYPE_UNDERLAY
+message ERSpanSpec {
+  // type of the ERSPAN (as per the ERSPAN spec) session
+  ERSpanType          Type        = 1;
+  // VPC id
+  bytes               VPCId       = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  oneof erspandst {
+      // Destination/Collector IP address to be used for ERSPAN
+      // 1. when vpc is underlay VPC or
+      // 2. if it the IP address of a local/remote mapping in the overlay
+      //    if this IP is in the overlay but reachable via route and not a
+      //    local/remote mapping, then an error is returned
+      types.IPAddress DstIP       = 3;
+      // tunnel (aka. TEP) as the ERSPAN collector
+      bytes           TunnelId    = 4;
+  }
+  // DSCP value to use in the packet
+  uint32              Dscp        = 5;
+  // Span ID to use in the packet
+  uint32              SpanId      = 6 [(gogoproto.moretags) = "meta:range:0,1023"];
+  // when VlanStripEn is set to true, dot1q tag of original packet is stripped
+  // before mirroring
+  // NOTE: VlanStringEn is applicable only for ERSPAN_TYPE_2 mirror session
+  bool                VlanStripEn = 7 [(gogoproto.moretags) = "meta:constraints={ERSpanSpec.Type==ERSPAN_TYPE_2"];
+}
+
+// MirrorSessionSpec captures configuration of mirror session
+message MirrorSessionSpec {
+  // unique identifier of mirror session
+  bytes        Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // maximum  bytes of packet to mirror
+  // NOTE:
+  // 1. if SnapLen is not set (i.e., configured as 0), maximum of 128 bytes are
+  //     mirrored by default
+  // 2. if SnapLen is non-zero, minimum length acceptable is 64 and maximum
+  //     acceptable length is 2048
+  // 3. SnapLen specificed includes protocol headers of the tenant packet (i.e.,
+  //    eth header, IP header, any L4 headers etc.)
+  uint32       SnapLen    = 2 [(gogoproto.moretags) = "meta:range:0,64-2048"];
+  oneof mirrordst {
+    // LSPAN configuration in case of LSPAN
+    LSpanSpec  LspanSpec   = 3;
+    // RSPAN configuration in case of RSPAN
+    RSpanSpec  RspanSpec  = 4;
+    // ERSPAN configuration in case of ERSPAN
+    ERSpanSpec ErspanSpec = 5;
+  }
+}
+
+// operational status of mirror session, if any
+message MirrorSessionStatus {
+  // hardware id allocated for the mirror session
+  uint32 HwId     = 1;
+  // hardware id allocated for CoPP enforcement, if any
+  uint32 CoppHwId = 2;
+}
+
+// stats of mirror session, if any
+message MirrorSessionStats {
+  // number of packets mirrored by this mirror session
+  uint64 PacketCount        = 1;
+  // number of bytes mirrored by this mirror session
+  uint64 ByteCount          = 2;
+  // number of packets dropped by this mirror session's copp policer
+  uint64 DroppedPacketCount = 3;
+}
+
+// mirror session object
+message MirrorSession {
+  meta.TypeMeta       TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta        ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MirrorSessionSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MirrorSessionStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MirrorSessionStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// mirror session create and update request
+message MirrorSessionRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt            BatchCtxt = 1;
+  repeated MirrorSessionSpec Request   = 2;
+}
+
+// mirror session create and update response
+message MirrorSessionResponse {
+  types.ApiStatus              ApiStatus = 1;
+  repeated MirrorSessionStatus Response  = 2;
+}
+
+// mirror session get request
+message MirrorSessionGetRequest {
+  repeated bytes Id = 1;
+}
+
+// mirror session get response
+message MirrorSessionGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated MirrorSession Response  = 2;
+}
+
+// mirror session delete request
+message MirrorSessionDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// mirror session delete response
+message MirrorSessionDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// IP protocol match condition
+message IPProtocolMatch {
+  // IP Protocol number
+  uint32 Protocol = 1;
+}
+
+// TCP/UDP mactch condition(s)
+message TCPUDPRuleMatch {
+  // TCP/UDP port match condition
+  message L4PortMatch {
+    // L4 port number
+    uint32 Port       = 1;
+  }
+  // source port match condition
+  L4PortMatch SrcPort = 1;
+  // destination port match condition
+  L4PortMatch DstPort = 2;
+  // TCP SYN flag
+  // NOTE: this is valid only if IP protocol is set to TCP
+  bool      TCPSyn    = 3;
+  // TCP FIN flag
+  // NOTE: this is valid only if IP protocol is set to TCP
+  bool      TCPFin    = 4;
+  // TCP RST flag
+  // NOTE: this is valid only if IP protocol is set to TCP
+  bool      TCPRst    = 5;
+  // TCP URG flag
+  // NOTE: this is valid only if IP protocol is set to TCP
+  bool      TCPUrg    = 6;
+  // TCP PSH flag
+  // NOTE: this is valid only if IP protocol is set to TCP
+  bool      TCPPsh    = 7;
+}
+
+// ICMP match condition(s)
+message ICMPRuleMatch {
+  // ICMP type match condition
+  message ICMPTypeMatch {
+    // ICMP type value
+    uint32 Type      = 1;
+  }
+  // ICMP code match condition
+  message ICMPCodeMatch {
+    // ICMP code value
+    uint32 Code      = 1;
+  }
+  // ICMP type
+  ICMPTypeMatch Type = 1;
+  // ICMP code
+  ICMPCodeMatch Code = 2;
+}
+
+// direction of the traffic to be mirrored
+// if MIRROR_DIRECTION_NONE is seen, default is assumed to be
+// MIRROR_DIRECTION_ALL
+enum MirrorDirection {
+  MIRROR_DIRECTION_NONE    = 0;
+  // mirror traffic ingressing into the DSC
+  MIRROR_DIRECTION_INGRESS = 1;
+  // mirror traffic egressing from the DSC
+  MIRROR_DIRECTION_EGRESS  = 2;
+  // mirror traffic ingressing to the DSC and egressing from the DSC
+  MIRROR_DIRECTION_ALL     = 3;
+}
+
+// mirror rule attributes
+// NOTE:
+// 1. match criteria can have wildcards
+// 2. when ingress mirroring is enabled, incoming packet is mirrored as received
+// 3. when egress mirroring enabled, outgoing packet after all rewrites and
+//    encaps are done is mirrored
+// 4. ingress/egress is w.r.t the DSC (not workloads)
+message MirrorRuleAttrs {
+  // optional VPC id to narrow down the matched IPs as IPs can overlap
+  // across VPCs
+  bytes             Vpc           = 1;
+  // optional vnic id as match condition
+  bytes             Vnic          = 2;
+  // source prefix
+  types.IPPrefix    SrcPrefix     = 3;
+  // destination prefix
+  types.IPPrefix    DstPrefix     = 4;
+  // IP protocol
+  IPProtocolMatch   IPProto       = 5;
+  // L4 match conditions
+  oneof l4info {
+    // TCP/UDP match criteria
+    TCPUDPRuleMatch TCPUDPMatch   = 6;
+    // ICMP match criteria
+    ICMPRuleMatch   ICMPMatch     = 7;
+  }
+  // DSCP in the outer header to match against
+  // NOTE: this is 6 bits of DSCP value without ECN bits
+  uint32            Dscp          = 8;
+  // direction of the traffic to be mirrored
+  MirrorDirection   Direction     = 9 [(gogoproto.moretags) = "meta:default=MIRROR_DIRECTION_ALL"];
+  // mirror session uuid containing details of SPAN collector
+  repeated bytes    MirrorSession = 10;
+}
+
+// MirrorRuleInfo is a single rule in the mirror policy
+message MirrorRuleInfo {
+  // optional rule id needed if incremental route ADD/DEL/UPD functionality
+  // is needed
+  bytes           Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  MirrorRuleAttrs Attrs = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// mirror policy configuration
+message MirrorPolicySpec {
+  // unique identifier of mirror policy
+  bytes                   Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // list of mirror rules
+  repeated MirrorRuleInfo Rules = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of mirror policy, if any
+message MirrorPolicyStatus {
+  // current partition of TCAM in use
+  uint32 ActivePartition = 1;
+}
+
+// stats of mirror policy, if any
+message MirrorPolicyStats {
+  // per mirror rule statistics
+  repeated MirrorRuleStats RuleStats = 1;
+}
+
+// mirror policy object
+message MirrorPolicy {
+  meta.TypeMeta      TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta       ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MirrorPolicySpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MirrorPolicyStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MirrorPolicyStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// mirror policy create and update request
+message MirrorPolicyRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt           BatchCtxt = 1;
+  repeated MirrorPolicySpec Request   = 2;
+}
+
+// mirror policy create and update response
+message MirrorPolicyResponse {
+  types.ApiStatus             ApiStatus = 1;
+  repeated MirrorPolicyStatus Response  = 2;
+}
+
+// mirror policy get request
+message MirrorPolicyGetRequest {
+  repeated bytes Id = 1;
+}
+
+// mirror policy get response
+message MirrorPolicyGetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated MirrorPolicy Response  = 2;
+}
+
+// mirror policy delete request
+message MirrorPolicyDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// mirror policy delete response
+message MirrorPolicyDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// unique id to identify a mirror policy rule
+message MirrorPolicyRuleId {
+  // unique identifier of mirror rule
+  bytes Id             = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // mirror policy this rule belongs to
+  bytes MirrorPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// mirror rule configuration
+message MirrorRuleSpec {
+  // unique identifier of mirror rule
+  bytes           Id             = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // mirror policy this rule belongs to
+  bytes           MirrorPolicyId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // rule information
+  MirrorRuleAttrs Attrs          = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of the mirror rule, if any
+message MirrorRuleStatus {
+}
+
+// stats of the mirror rule, if any
+message MirrorRuleStats {
+  // number of times the rule is hit
+  uint64 NumRuleHit = 1;
+}
+
+// mirror rule object
+message MirrorRule {
+  meta.TypeMeta    TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta     ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  MirrorRuleSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  MirrorRuleStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  MirrorRuleStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// mirror policy rule create and update request
+message MirrorRuleRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // mirror policy rule configuration
+  MirrorRuleSpec  Request   = 2;
+}
+
+// mirror policy rule create and update response
+message MirrorRuleResponse {
+  // success or failure status
+  types.ApiStatus  ApiStatus = 1;
+  // operational status
+  MirrorRuleStatus Response  = 2;
+}
+
+// mirror policy rule get request
+message MirrorRuleGetRequest {
+  // list of id/key of the mirror policy rules of interest
+  repeated MirrorPolicyRuleId Id = 1 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// mirror policy rule get response
+message MirrorRuleGetResponse {
+  types.ApiStatus     ApiStatus = 1;
+  // mirror policy rule information
+  repeated MirrorRule Response  = 2;
+}
+
+// mirror policy rule delete request
+message MirrorRuleDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt             BatchCtxt = 1;
+  // id/key list of the mirror policy rule(s) to be deleted
+  repeated MirrorPolicyRuleId Id        = 2;
+}
+
+// mirror policy rule delete response
+message MirrorRuleDeleteResponse {
+  // API status code
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// packet trace rule configuration
+message PacketTraceRuleSpec {
+  // unique rule key in the range of [0, 7]
+  uint32            Key         = 1 [(gogoproto.moretags) = "meta:range:0-7"];
+  // optional VPC id to narrow down the matched IPs as IPs can overlap
+  // across VPCs
+  bytes             Vpc         = 2;
+  // optional vnic id as match condition
+  bytes             Vnic        = 3;
+  // source prefix
+  types.IPPrefix    SrcPrefix   = 4;
+  // destination prefix
+  types.IPPrefix    DstPrefix   = 5;
+  // IP protocol
+  IPProtocolMatch   IPProto     = 6;
+  // L4 match conditions
+  oneof l4info {
+    // TCP/UDP match criteria
+    TCPUDPRuleMatch TCPUDPMatch = 7;
+    // ICMP match criteria
+    ICMPRuleMatch   ICMPMatch   = 8;
+  }
+  // DSCP in the outer header to match against
+  // NOTE: this is 6 bits of DSCP value without ECN bits
+  uint32            Dscp        = 9;
+}
+
+// packet trace rule request is used to create trace rule
+message PacketTraceRuleRequest {
+  // rule configuration
+  PacketTraceRuleSpec Spec = 1;
+}
+
+// PacketTraceRuleResponse is sent in response to PacketTraceRuleRequest
+message PacketTraceRuleResponse {
+  // response code
+  types.ApiStatus ApiStatus = 1;
+}
+
+// request message to delete packet trace rule
+message PacketTraceRuleDeleteRequest {
+  // unique rule key in the range of [0, 7]
+  uint32 Key = 1 [(gogoproto.moretags) = "meta:range:0-7"];
+}
+
+// PacketTraceRuleDeleteResponse is sent in response to
+// PacketTraceRuleDeleteRequest
+message PacketTraceRuleDeleteResponse {
+  // response code
+  types.ApiStatus ApiStatus = 1;
+}
+

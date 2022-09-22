@@ -1,0 +1,112 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Network Time Protocol (NTP) configuration
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service TimeSvc {
+  // NTP APIs
+  rpc NTPCreate (NTPRequest) returns (NTPResponse) {}
+  rpc NTPUpdate (NTPRequest) returns (NTPResponse) {}
+  rpc NTPGet (NTPGetRequest) returns (NTPGetResponse) {}
+  rpc NTPDelete (NTPDeleteRequest) returns (NTPDeleteResponse) {}
+
+  // time APIs
+  rpc TimeUpdate (TimeRequest) returns (TimeResponse) {}
+}
+
+// NOTE:
+// 1. NTP configuration object is a singleton object in the system
+// 2. A create of NTP object with no servers is treated as no-op
+// 3. A create/update of NTP object is treated the same way, in both
+//    cases, existing NTP configuration, if any, is updated to reflect
+//    the latest specification
+
+// NTPSpec captures NTP configuration
+message NTPSpec {
+  repeated string NTPServer = 1;
+}
+
+// operational status of a NTP, if any
+message NTPStatus {
+}
+
+// stats for a NTP, if any
+message NTPStats {
+}
+
+// NTP object
+message NTP {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NTPSpec       Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NTPStatus     Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NTPStats      Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// NTP create and update request
+message NTPRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // NTP configuration
+  NTPSpec         Request   = 2;
+}
+
+// NTP create and update response
+message NTPResponse {
+  // API status code
+  types.ApiStatus ApiStatus = 1;
+  NTPStatus       Response  = 2;
+}
+
+// NTP get request
+message NTPGetRequest {
+}
+
+// NTP get response
+message NTPGetResponse {
+  // API status code
+  types.ApiStatus ApiStatus = 1;
+  NTP             Response  = 2;
+}
+
+// NTP delete request
+message NTPDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+}
+
+// NTP delete response
+message NTPDeleteResponse {
+  // API status code
+  types.ApiStatus ApiStatus = 1;
+}
+
+// TimeRequest is used to set the time on the DSC
+message TimeRequest {
+  // year
+  uint32 Year   = 1;
+  // month of the year
+  uint32 Month  = 2;
+  // day of the month
+  uint32 Day    = 3;
+  // hour of the day
+  uint32 Hour   = 4;
+  // minute of the hour
+  uint32 Minute = 5;
+  // second of the minute
+  uint32 Second = 6;
+}
+
+// TimeResponse is the response to TimeRequest
+message TimeResponse {
+  // API status code
+  types.ApiStatus ApiStatus = 1;
+}

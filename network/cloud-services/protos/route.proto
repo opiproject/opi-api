@@ -1,0 +1,524 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for routing
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "gogo.proto";
+import "meta.proto";
+import "types.proto";
+
+service RouteSvc {
+  // route table APIs
+  rpc RouteTableCreate (RouteTableRequest) returns (RouteTableResponse) {}
+  rpc RouteTableUpdate (RouteTableRequest) returns (RouteTableResponse) {}
+  rpc RouteTableGet (RouteTableGetRequest) returns (RouteTableGetResponse) {}
+  rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
+  rpc RouteTableDelete (RouteTableDeleteRequest) returns (RouteTableDeleteResponse) {}
+
+  // route APIs
+  rpc RouteCreate (RouteRequest) returns (RouteResponse) {}
+  rpc RouteUpdate (RouteRequest) returns (RouteResponse) {}
+  rpc RouteGet (RouteGetRequest) returns (RouteGetResponse) {}
+  rpc RouteDelete (RouteDeleteRequest) returns (RouteDeleteResponse) {}
+
+  // route table pool related APIs
+  rpc RouteTablePoolGet(types.Empty) returns (RouteTablePoolGetResponse) {}
+}
+
+// APIs specifically for troubleshooting purposes
+service DebugRouteSvc {
+  rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
+}
+
+// RouteClass captures different types/classes of routes
+enum RouteClass {
+  ROUTE_CLASS_NONE     = 0;
+  // route pointing to Internet
+  ROUTE_CLASS_INTERNET = 1;
+  // route used for internal/shared services
+  ROUTE_CLASS_SERVICE  = 2;
+  // VPC internal routes
+  ROUTE_CLASS_VPC      = 3;
+}
+
+// for VPC peering, a route in a route table points to VPCPeerNhInfo
+// that contains peer VPC's uuid and the route table to launch a
+// lookup in the route table. Note that along with the route lookup,
+// mapping lookup is also launched in the peer VPC
+message VPCPeerNhInfo {
+  // peer VPC's id
+  bytes VPCId        = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // route table to be used in that VPC
+  bytes RouteTableId = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// if metering is enabled on a vnic, when traffic from a vnic hits a route
+// with a MeterClass that is not METER_CLASS_NONE and all such traffic is
+// accounted (bytes & packets) against the specified meter class on that
+// vnic, it is up to the application to map the meter classes defined to
+// specific use case (e.g., Internet routes can be assigned to
+// METER_CLASS_1, service routes can be assiged METER_CLASS_2 and so on.)
+// NOTE:
+// 1. for now, upto 4K meter classes per vnic, so meter class value
+//    must be between 1 to 4K - 1
+// 2. meter class value of 0 is reserved
+message MeterClasses {
+  // TxMeterClass is the meter class used to account packets & bytes for
+  // outbound sessions from vnics
+  // NOTE:
+  // 1. Tx here indicates that the (outbound) session is created due to a Tx
+  //    (i.e., from vnic) packet
+  // 2. TxMeterClass value is used in both the initiator and responder
+  //    flows of an outbound session from a vnic
+  uint32 TxMeterClass = 1 [(gogoproto.moretags) = "meta:range:1-4095"];
+}
+
+// in some cases, traffic going to certian overlay prefixes is sent to
+// intermediate overlay workloads (e.g. virtual appliances) that perform
+// some services on the packet (firewall, NAT etc.) and the traffic is then
+// forwarded to the final destination
+//
+// OverlayNextHopIPInfo captures list of overlay IP destinations for a given
+// route
+//
+// NOTE:
+// 1. unsure about the use case of more than one overlay nexthop IP
+// 2. when more than one overlay nexthop IP is configured, one of them is
+//    picked based on the flow hash
+// 3. when more than one overlay nexthop IP is configured, IPv4 is considered
+// 4. if VPCId is not set, the lookups will continue in the current VPC
+message OverlayNextHopIPInfo {
+  // overlay nexthop IP list
+  repeated types.IPAddress NhIP  = 1;
+  // overlay MAC (DMAC inner) to be used when corresponding
+  // to the overlay nexthop IP picked
+  repeated uint64          NhMac = 2;
+  // VPCId is optinally set in case the NhIP is in another VPC (e.g. peer VPC)
+  // and is a mapping entry in that VPC
+  bytes                    VPCId = 3;
+}
+
+// some routes (mostly intra-vpc) exist just to provide meter class information
+// traffic hitting such routes should get the forwaring information from
+// subsequent mapping lookup instead
+// NOTE:
+// 1. if route with MeterNhInfo configured is hit and then subsequently hits a
+//    local/remote mapping that also has meter class configured, meter class
+//    configured on the mapping entry will be ignored
+message MeterNhInfo {
+  // TxMeterClass is the meter class used to account packets & bytes for
+  // outbound sessions from vnics
+  // NOTE:
+  // 1. Tx here indicates that the (outbound) session is created due to a Tx
+  //    (i.e., from vnic) packet
+  // 2. TxMeterClass value is used in both the initiator and responder
+  //    flows of an outbound session from a vnic
+  // 3. meter class value of 0 implies no metering
+  uint32 TxMeterClass = 1 [(gogoproto.moretags) = "meta:range:1-4095"];
+}
+
+// route attributes
+//
+// routes can be classified into various classes (e.g. service routes, static
+// routes, Internet routes etc.) and within each class of routes, they can
+// have priority instead of standard longest prefix semantics
+// route class priority can be used to pick higher priority routes among all
+// route matches and it can also be used to configure some routes (or class of
+// routes) with priority higher than the IP mappings as well in case both
+// route table and mapping table get a hit for a given packet
+message RouteAttrs {
+  // IP prefix
+  types.IPPrefix         Prefix            = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // class of the route
+  RouteClass             Class             = 2 [(gogoproto.moretags) = "meta:default=ROUTE_TYPE_VPC"];
+  // priority of the route class this route belongs to
+  // NOTE: ClassPriority attribute is used only when PriorityEn is set to true
+  //       on the corresponding routing table
+  uint32                 ClassPriority     = 3 [(gogoproto.moretags) = "meta:range:0-15,default=0"];
+  // priority of the route within the class
+  // NOTE:
+  // 1. lower the numerical value, higher the priority in the datapath
+  // 2. a route table MUST have either all the routes with priority set or no
+  //    priority set on all the routes
+  // 3. if multiple routes have same priority, route with longest prefix length
+  //    will take effect
+  // 4. if no priority value is set (i.e. 0) then route priority is computed as
+  //    128 - <prefix length>, so longer prefixes will have higher precedence
+  //    over shorter ones giving regular LPM semantics
+  // 5. Priority attribute on the route is used only when PriorityEn is set to
+  //    true on the corresponding routing table
+  uint32                 Priority          = 4 [(gogoproto.moretags) = "meta:range:0-1023"];
+  // route either points to one of the following types of nexthops
+  oneof nh {
+    // overlay IP nexthop information for this route
+    OverlayNextHopIPInfo OverlayNhIPInfo   = 5;
+    // nexthop for this route
+    bytes                NexthopId         = 6;
+    // ECMP nexthop for this route
+    bytes                NexthopGroupId    = 7;
+    // peer's VPC nexthop info, in case of VPC peering
+    VPCPeerNhInfo        VPCNh             = 8;
+    // Tunnel this prefix is pointing to
+    bytes                TunnelId          = 9;
+    // when RouteTableId is set as nexthop of a route and such a route is hit,
+    // then the current route table lookup is terminated and a new route table
+    // lookup is launched in the route table specified
+    // NOTE:
+    // 1. not sure about the use case of more than one level of jump from one
+    //    route table to another route table
+    // 2. a route in a route table can't point to same route table (causing
+    //    route lookup loop)
+    // 3. if a route Ra in route table RTa points to another table RTb and
+    //    finally route Rb in RTb is picked, there could be conflicts in
+    //    other attributes like NatAction and MeterClass. For example Ra
+    //    can have NatAction but not Rb or both can have NatAction configured
+    //    but action itself is different and the same applies to MeterClass.
+    //    in this case, the resolution is done in the following way:
+    //    if route Ra is configured with some action, that will take
+    //    precedence over route Rb's actions, if configured i.e., route Rb's
+    //    actions will override route Ra's if and only route Ra doesn't have
+    //    corresponding action configured (i.e. NatAction is NAT_ACTION_NONE
+    //    or meter class is METER_CLASS_NONE)
+    bytes                RouteTableId      = 10;
+    // EvalMapping is set in cases where mapping lookup result will provided the
+    // forwarding information, this is useful to punch holes in some routes
+    // that encompass sub-prefixes that require different forwarding behavior
+    // e.g.
+    // 10.1.0.0/16 -> Tunnel-X
+    // 10.1.1.0/24 -> EvalMapping
+    bool                 EvalMapping       = 11;
+  }
+  // if NATAction is set, source and/or destination NAT will be performed on
+  // the packet and if destination NAT is performed, another route lookup
+  // will be done in the same route table with the post-NAT destination IP
+  // address being rewritten
+  types.NATAction        NatAction         = 12;
+  oneof meter_action {
+    // Tx and Rx meter classes
+    // NOTE:
+    // both MeterClasses and EvalMeterPolicy must not be set on same route
+    MeterClasses         MeterClasses      = 13;
+    // when a route with EvalMeterPolicy set to true is hit, meter policy
+    // lookup is done (if such meter policy is configured on the VPC) to
+    // derive the meter class
+    // NOTE:
+    // both MeterClass and EvalMeterPolicy must not be set on same route
+    bool                 EvalMeterPolicy   = 14;
+  }
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value , if
+  // non-zero, will be written as-is (i.e., not interpreted) during encap time
+  // by the dataplane for the flows/sessions established due to this route hit
+  // NOTE:
+  // the ToS value configured on the route will override ToS configuration
+  // in vpc, subnet and tunnel objects
+  uint32                 ToS               = 15;
+  // traffic hitting a route can be programmed to carry a different encap value
+  // (from that of the corresponding subnet or vpc overlay encap) and this
+  // custom encap can be used to identify and process differently on the remote
+  // side
+  types.Encap            Encap             = 16 [(gogoproto.moretags) = "meta:constraints={Encap.Vnid != 0}"];
+  // when a custom overlay MAC is provided in the route configuration, the MAC
+  // address is used as inner DMAC in the (VxLAN) encapped packet
+  uint64                 OverlayMac        = 17;
+  // SvcRewrite contains all the rewrite info for the shared services
+  types.SvcRewriteInfo   SvcRewrite        = 18;
+  // in case of route (Ra) pointing to another route table, it is possible that
+  // the route lookup in 2nd route table can yield nat action
+  // NAT_ACTION_NAPT_PUBLIC and DisablePublicNAPT is used to ignore such NAT
+  // action
+  // NOTE:
+  // NAT action on route Ra itself should be NAT_ACTION_NONE in this case
+  bool                   DisablePublicNAPT = 19;
+}
+
+// route configuration information
+message RouteInfo {
+  // optional route id needed if incremental route ADD/DEL/UPD functionality
+  // is needed
+  bytes      Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  RouteAttrs Attrs = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// route table specification
+// NOTE: any time a route table's route(s) changes, client is expected to send
+//       full new route table (i.e., no incremental route add/del/upd is
+//       desired)
+message RouteTableSpec {
+  // unique route table id (this id is not scoped under VPC or subnet)
+  bytes              Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IP address family
+  types.IPAF         Af         = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // enable or disable priority based routing for the route table
+  bool               PriorityEn = 3 [(gogoproto.moretags) = "meta:default=false"];
+  // routes in this route table
+  // NOTE: in a given route table, same prefix must not appear more than once.
+  //       if there are multiple paths to same route prefix, application is
+  //       expected to create a nexthop group and point the route to it instead
+  //       of adding same route with multiple different nexthops
+  repeated RouteInfo Routes     = 4;
+}
+
+// operational status of the route table, if any
+message RouteTableStatus {
+  uint32 PoolId             = 1;  // route table pool
+  uint32 HwId               = 2;  // route table h/w id
+  uint64 RouteTableBaseAddr = 3;  // route table base address
+  uint32 DNatBaseIdx        = 4;  // base index of the dnat table
+  uint32 DNatIdxCount       = 5;  // number of entries used in the dnat table
+  uint32 LPMBlockId         = 6;  // LPM memory block id
+  uint32 LPMRewriteBlockId  = 7;  // LPM info block id that contains rewrites
+  uint32 NumVPC             = 8;  // no. of VPCs using the route table
+  uint32 NumSubnet          = 9;  // no. of subnets using the route table
+  uint32 NumVnic            = 10; // no. of vnics using the route table
+}
+
+// stats of the route table, if any
+message RouteTableStats {
+}
+
+// route table object
+message RouteTable {
+  meta.TypeMeta    TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta     ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  RouteTableSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  RouteTableStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  RouteTableStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// route table create and update request
+message RouteTableRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt         BatchCtxt = 1;
+  repeated RouteTableSpec Request   = 2; // batched request
+}
+
+// route table create and update response
+message RouteTableResponse {
+  types.ApiStatus           ApiStatus = 1;
+  repeated RouteTableStatus Response  = 2;
+}
+
+// route table get request
+message RouteTableGetRequest {
+  repeated bytes Id = 1; // batched request
+}
+
+// route table get response
+message RouteTableGetResponse {
+  types.ApiStatus     ApiStatus = 1;
+  repeated RouteTable Response  = 2;
+}
+
+// route table delete request
+message RouteTableDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // batched request
+  repeated bytes  Id        = 2;
+}
+
+// route table delete response
+message RouteTableDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// route identifier
+message RouteId {
+  // unique route id (this id is not scoped under VPC or subnet)
+  bytes Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // route table this route belongs to
+  bytes RouteTableId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+}
+
+// route specification
+message RouteSpec {
+  // globally unique route table id
+  bytes      Id           = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // route table this route belongs to
+  bytes      RouteTableId = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // route configuration
+  RouteAttrs Attrs        = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of the route, if any
+message RouteStatus {
+}
+
+// stats of the route, if any
+message RouteStats {
+}
+
+// route object
+message Route {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  RouteSpec     Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  RouteStatus   Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  RouteStats    Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// route create and update request
+message RouteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // route configuration
+  RouteSpec       Request   = 2;
+}
+
+// route create and update response
+message RouteResponse {
+  // success or failure status
+  types.ApiStatus ApiStatus = 1;
+  // operational status
+  RouteStatus     Response  = 2;
+}
+
+// route get request
+message RouteGetRequest {
+  // list of keys of interest
+  repeated RouteId Id = 1 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// route get response
+message RouteGetResponse {
+  // API status code
+  types.ApiStatus    ApiStatus = 1;
+  // route information
+  repeated Route     Response  = 2;
+}
+
+// route delete request
+message RouteDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // list of routes to delete
+  RouteId         Id        = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// route delete response
+message RouteDeleteResponse {
+  // API status code
+  types.ApiStatus ApiStatus = 1;
+}
+
+// RouteLookupRequest is used to pass a route table and a prefix to see what
+// a route table lookup will yield
+message RouteLookupRequest {
+  // route table uuid
+  bytes           Id      = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // IP address to be used for lookup
+  types.IPAddress Address = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// RouteLookupResult captures the result of one lookup
+message RouteLookupResult {
+  // overlay nexthop specific data
+  message OverlayNexthopData {
+    uint32          NexthopId       = 1;
+    uint32          MeterClass      = 2;
+    bool            EvalMeterPolicy = 3;
+    uint32          ClassPriority   = 4;
+    types.NATAction NatAction       = 5;
+    uint64          OverlayMac      = 6;
+    types.Encap     Encap           = 7;
+    uint32          ToS             = 8;
+    uint32          LpmInfoIdx      = 9;
+  }
+  // overlay ECMP nexthop specific data
+  message OverlayECMPNexthopData {
+    uint32          NexthopId       = 1;
+    uint32          MeterClass      = 2;
+    bool            EvalMeterPolicy = 3;
+    types.NATAction NatAction       = 4;
+  }
+  // vpc peer nexthop
+  message VPCPeerNexthopData {
+    uint32 MeterClass                    = 1;
+    bool   EvalMeterPolicy               = 2;
+    bool   EvalMapping                   = 3;
+    uint32 PeerVPCHwId                   = 4;
+    uint32 PeerVPCRouteTableHwId         = 5;
+    uint64 PeerVPCRouteTableLPMBlockAddr = 6;
+  }
+  // overlay IP nexthop specific data
+  message OverlayIPNexthopData {
+    uint32          MeterClass      = 1;
+    bool            EvalMeterPolicy = 2;
+    types.NATAction NatAction       = 3;
+    uint32          PeerVPCHwId     = 4;
+    uint32          OverlayIPNhIdx  = 5;
+    types.IPAddress OverlayNhIP     = 6;
+  }
+  // mapping nexthop specific data
+  message MappingNexthopData {
+    uint32 MeterClass      = 1;
+    bool   EvalMeterPolicy = 2;
+  }
+  // route table nexthop (for cases where route in one route
+  // table points to another route table for further lookup)
+  message RouteTableNexthopData {
+    types.NATAction NatAction          = 1;
+    uint32          MeterClass         = 2;
+    uint32          ClassPriority      = 3;
+    uint32          LpmInfoIdx         = 4;
+    uint32          RedirIdx           = 5;
+    uint32          NextRTHwId         = 6;
+    uint64          NextRTLPMBlockAddr = 7;
+    bool            DisablePublicNAPT  = 8;
+    uint64          OverlayMAC         = 9;
+    types.Encap     Encap              = 10;
+  }
+  // DNAT nexthop specific data
+  message DNATNexthopData {
+    uint32          MeterClass = 1;
+    types.NATAction NatAction  = 2;
+    uint32          RTXlateIdx = 3;
+  }
+  // a route lookup can yield one of several different nexthop
+  // data
+  oneof nh_data {
+    OverlayNexthopData     OverlayNhData     = 1;
+    OverlayECMPNexthopData OverlayECMPNhData = 2;
+    VPCPeerNexthopData     VPCPeerNhData     = 3;
+    OverlayIPNexthopData   OverlayIPNhData   = 4;
+    MappingNexthopData     MappingNhData     = 5;
+    bool                   DropNh            = 6;
+    RouteTableNexthopData  RTNhData          = 7;
+    DNATNexthopData        DNATNhData        = 8;
+  }
+}
+
+// RouteLookupResponse is filled by the backend and is returned in response to
+// RouteLookupRequest issued
+// NOTE:
+// 1. based on the result it is possible that more route lookups are needed to
+//    find the final result of the lookup
+message RouteLookupResponse {
+  // response code
+  types.ApiStatus            ApiStatus = 1;
+  // list of lookup results
+  repeated RouteLookupResult Result    = 2;
+}
+
+// RouteTablePoolStatus captures the current status of each route table pool
+message RouteTablePoolStatus {
+  // route table pool name
+  string Name                 = 1;
+  // max. no. of route tables in the pool
+  uint32 MaxRouteTables       = 2;
+  // no. of route tables in use in the pool
+  uint32 RouteTablesAllocated = 3;
+}
+
+// get route table pool details
+message RouteTablePoolGetResponse {
+  // response code
+  types.ApiStatus               ApiStatus = 1;
+  // list of per pool status
+  repeated RouteTablePoolStatus Status    = 2;
+}

@@ -1,0 +1,366 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for Network Address Translation (NAT)
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service NatSvc {
+  // NAT port blovk APIs
+  rpc NatPortBlockCreate (NatPortBlockRequest) returns (NatPortBlockResponse) {}
+  rpc NatPortBlockDelete (NatPortBlockDeleteRequest) returns (NatPortBlockDeleteResponse) {}
+  rpc NatPortBlockGet (NatPortBlockGetRequest) returns (NatPortBlockGetResponse) {}
+
+  // NAT pool APIs
+  rpc NatPoolCreate (NatPoolRequest) returns (NatPoolResponse) {}
+  rpc NatPoolUpdate (NatPoolRequest) returns (NatPoolResponse) {}
+  rpc NatPoolGet (NatPoolGetRequest) returns (NatPoolGetResponse) {}
+  rpc NatPoolDelete (NatPoolDeleteRequest) returns (NatPoolDeleteResponse) {}
+
+  // NAT policy APIs
+  rpc NatPolicyCreate (NatPolicyRequest) returns (NatPolicyResponse) {}
+  rpc NatPolicyUpdate (NatPolicyRequest) returns (NatPolicyResponse) {}
+  rpc NatPolicyGet (NatPolicyGetRequest) returns (NatPolicyGetResponse) {}
+  rpc NatPolicyDelete (NatPolicyDeleteRequest) returns (NatPolicyDeleteResponse) {}
+  // given a uuid of a NAT policy, clear its stats
+  // if no uuid is provided, stats of all NAT policies are cleared
+  rpc NatPolicyStatsReset (types.Id) returns (types.Empty) {}
+}
+
+// NAT port block specification
+message NatPortBlockSpec {
+  // unique key identifying the port block
+  bytes             Id          = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // VPC identifier this port block is tied to
+  bytes             VpcId       = 2;
+  // IP protocol this port block is to be used for
+  uint32            Protocol    = 3;
+  // NAT address to be used with this port block
+  types.Address     NatAddress  = 4 [(gogoproto.moretags) = "meta:mandatory"];
+  // range of ports to be use for NAT
+  types.PortRange   Ports       = 5;
+  // NAT address is from Internet or Cloud Infra space
+  types.AddressType AddressType = 6;
+  // ports usage threshold (percent) to generate alerts. 0 disables alerts
+  uint32            Threshold   = 7 [(gogoproto.moretags) = "meta:range:0-99, meta:default=0"];
+}
+
+// operational status of NAT port block
+message NatPortBlockStatus {
+}
+
+// stats of NAT port block, if any
+message NatPortBlockStats {
+  // number of NAT ports in use
+  uint32 InUseCount        = 1;
+  // number of sessions using the port block
+  uint32 SessionCount      = 2;
+  // Total number of ports allocated from this port block till now.
+  uint64 TotalUseCount     = 3;
+  // Total number of sessions used/using the port block
+  uint64 TotalSessionCount = 4;
+  // Total number of failed flows that couldn't get a port in this PB.
+  // This counter is incremented only when its last PB for port lookup
+  // if failed to get new port.
+  uint64 TotalFailedCount  = 5;
+}
+
+// NAT port block object
+message NatPortBlock {
+  meta.TypeMeta      TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta       ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NatPortBlockSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NatPortBlockStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NatPortBlockStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// NAT port block create and update request
+message NatPortBlockRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt           BatchCtxt = 1;
+  repeated NatPortBlockSpec Request   = 2;
+}
+
+// NAT port block create and update response
+message NatPortBlockResponse {
+  types.ApiStatus             ApiStatus = 1;
+  repeated NatPortBlockStatus Response  = 2;
+}
+
+// NAT port block get request
+message NatPortBlockGetRequest {
+  repeated bytes Id = 1;
+}
+
+// NAT port block get response
+message NatPortBlockGetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated NatPortBlock Response  = 2;
+}
+
+// NAT port block delete request
+message NatPortBlockDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes Id         = 2;
+}
+
+// NAT port block delete response
+message NatPortBlockDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// NAT pool is a collection of NAT address ranges/prefixes and/or por ranges
+message NatPoolSpec {
+  // unique key identifying the port block
+  bytes                    Id         = 1 [(gogoproto.moretags) = "meta:mandatory"];
+  // list of address ranges and/or prefixes
+  // NOTE:
+  // 1. in a given nat pool, all address ranges/prefixes must belong to same
+  //    address family (i.e., either IPv4 or IPv6 but can't have both)
+  // 2. in STATIC_NAT cases, only one prefix or range is expected
+  //    to be configured
+  repeated types.Address   Addresses  = 2 [(gogoproto.moretags) = "meta:mandatory"];
+  // port range configuration is mandatory if NAT pool is used for NAPT
+  repeated types.PortRange Ports      = 3 [(gogoproto.moretags) = "meta:constraints={NatRuleAction.SrcNatType==NAT_TYPE_DYNAMIC_SRC_NAPT}"];
+}
+
+// operational status of NAT pool
+message NatPoolStatus {
+}
+
+// NAT pool statistics
+message NatPoolStats {
+  // number of sessions currently using the port block
+  uint32 SessionCount  = 1;
+  // number of NAT address and/or port allocation failures
+  uint32 AllocFailures = 2;
+}
+
+// NAT pool object
+message NatPool {
+  meta.TypeMeta TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta  ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NatPoolSpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NatPoolStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NatPoolStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// NAT pool create and update request
+message NatPoolRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt      BatchCtxt = 1;
+  repeated NatPoolSpec Request   = 2;
+}
+
+// NAT pool create and update response
+message NatPoolResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated NatPoolStatus Response  = 2;
+}
+
+// NAT pool get request
+message NatPoolGetRequest {
+  repeated bytes Id = 1;
+}
+
+// NAT pool get response
+message NatPoolGetResponse {
+  types.ApiStatus  ApiStatus = 1;
+  repeated NatPool Response  = 2;
+}
+
+// NAT pool delete request
+message NatPoolDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  repeated bytes  Id        = 2;
+}
+
+// NAT pool delete response
+message NatPoolDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}
+
+// L3 match criteria of NAT rule
+message NatRuleL3Match {
+  // IP Protocol
+  // NOTE:
+  // IP protocol match MUST be specified even if it is wildcard
+  oneof protomatch {
+    // match a specific IP protocol
+    uint32              ProtoNum      = 1;
+    // match ANY IP protocol
+    types.WildcardMatch ProtoWildcard = 2;
+  }
+  // source IP prefix/range list to match against
+  // NOTE:
+  // 1. for 1:1 static source NAT this is mandatory attribute
+  // 2. for 1:1 static source NAT list is expected to contain either only one
+  //    prefix or range (more than one element in the list either ignored or
+  //    errored out)
+  // 3. matching tags in the match condition can be extended, if needed
+  // 4. if SrcIPList is not populated, it matches any IP
+  types.IPList  SrcIPList             = 3;
+  // destination IP prefix/range list to match against
+  // NOTE:
+  // 1. for 1:1 static destination NAT this is mandatory attribute
+  // 2. for 1:1 static destination NAT list is expectd to contain either only
+  //    one prefix or range (more than one element in the list either ignored or
+  //    errored out)
+  // 3. matching tags in the match condition can be extended, if needed
+  // 4. if DstIPList is not populated, it matches any IP
+  types.IPList  DstIPList             = 4;
+}
+
+// L4 rule match criteria
+message NatRuleL4Match {
+  oneof l4info {
+    // list of source and/or destination ports/ranges
+    types.PortListMatch PortList      = 1;
+    // list of ICMP type/code match criteria
+    types.ICMPMatchList ICMPMatchList = 2;
+  }
+}
+
+// NAT rule match criteria
+message NatRuleMatch {
+  // Layer 3 match criteria
+  NatRuleL3Match L3Match = 1;
+  // Layer 4 match criteria
+  NatRuleL4Match L4Match = 2;
+}
+
+// NatType is used to indicate the type of NAT to be performed
+enum NatType {
+  NAT_TYPE_NONE             = 0;
+  // 1:1 static source or destination NAT
+  NAT_TYPE_STATIC_NAT       = 1;
+  // dynamic source NAT without port translation
+  NAT_TYPE_DYNAMIC_SRC_NAT  = 2;
+  // dynamic source NAT with port translation
+  NAT_TYPE_DYNAMIC_SRC_NAPT = 3;
+}
+
+// NAT rule action attributes
+message NatRuleAction {
+  // source NAT type
+  NatType SrcNatType                      = 1;
+  // destinatino NAT type
+  NatType DstNatType                      = 2;
+  // source NAT information
+  // NOTE:
+  // this is mandatory for SrcNatType other than NAT_TYPE_NONE
+  oneof src_nat_info {
+    types.IPPrefix     SrcNATPrefix       = 3;
+    types.AddressRange SrcNatAddressRange = 4;
+    bytes              SrcNatPool         = 5;
+  }
+  // destination NAT information
+  // NOTE:
+  // this is mandatory for DstNatType other than NAT_TYPE_NONE
+  oneof dst_nat_info {
+    types.IPPrefix     DstNATPrefix       = 6;
+    types.AddressRange DstNatAddressRange = 7;
+    bytes              DstNatPool         = 8;
+  }
+  // optional destination port translation
+  // NOTE:
+  // 1. if DstNatPort port is non-zero, it is used to rewrite the destination
+  //    port in the packet
+  // 2. it is possible to specify destination NAT port even with DstNatType is
+  //    not NAT_TYPE_STATIC
+  uint32               DstNatPort         = 9;
+}
+
+// NAT rule attributes
+message NatRuleAttrs {
+  // rule match criteria
+  NatRuleMatch  Match  = 1;
+  // NAT action and action related parameters
+  NatRuleAction Action = 2;
+}
+
+// NATRuleInfo is single rule in NAT policy
+message NatRuleInfo {
+  // unique rule id
+  bytes        Id    = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  NatRuleAttrs Attrs = 2 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// NAT policy configuration
+message NatPolicySpec {
+  // unique identifier of NAT policy
+  bytes                Id         = 1 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // IPv4 or IPv6 policy
+  types.IPAF           AddrFamily = 2 [(gogoproto.moretags) = "meta:mandatory,immutable"];
+  // list of NAT rules
+  repeated NatRuleInfo Rules      = 3 [(gogoproto.moretags) = "meta:mandatory"];
+}
+
+// operational status of NAT policy, if any
+message NatPolicyStatus {
+}
+
+// stats of the security rule, if any
+message NatRuleStats {
+  // number of times the rule is hit
+  uint64 NumRuleHit = 1 [(gogoproto.jsontag) = "NumRuleHit"];
+}
+
+// stats of NAT policy, if any
+message NatPolicyStats {
+  repeated NatRuleStats RuleStats = 1 [(gogoproto.jsontag) = "RuleStats"];
+}
+
+// NAT policy object
+message NatPolicy {
+  meta.TypeMeta   TypeMeta = 1 [(gogoproto.embed) = true, (gogoproto.jsontag) = ",inline"];
+  meta.ObjMeta    ObjMeta  = 2 [(gogoproto.embed) = true, (gogoproto.jsontag) = "meta,omitempty"];
+  NatPolicySpec   Spec     = 3 [(gogoproto.jsontag) = "spec,omitempty"];
+  NatPolicyStatus Status   = 4 [(gogoproto.jsontag) = "status,omitempty"];
+  NatPolicyStats  Stats    = 5 [(gogoproto.jsontag) = "stats,omitempty"];
+}
+
+// NAT policy create and update request
+message NatPolicyRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt        BatchCtxt = 1;
+  repeated NatPolicySpec Request   = 2;
+}
+
+// NAT policy create and update response
+message NatPolicyResponse {
+  types.ApiStatus          ApiStatus = 1;
+  repeated NatPolicyStatus Response  = 2;
+}
+
+// NAT policy get request
+message NatPolicyGetRequest {
+  // list of NAT policy identifiers
+  repeated bytes Id = 1;
+}
+
+// NAT policy get response
+message NatPolicyGetResponse {
+  types.ApiStatus    ApiStatus = 1;
+  repeated NatPolicy Response  = 2;
+}
+
+// NAT policy delete request
+message NatPolicyDeleteRequest {
+  // optional batch context, if this request is part of batch of API calls
+  types.BatchCtxt BatchCtxt = 1;
+  // list of NAT policy identifiers
+  repeated bytes Id         = 2;
+}
+
+// NAT policy delete response
+message NatPolicyDeleteResponse {
+  repeated types.ApiStatus ApiStatus = 1;
+}

@@ -1,0 +1,272 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// protobuf specification for endpoint learning information
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package cloudapi;
+
+import "meta.proto";
+import "types.proto";
+
+service LearnSvc {
+  rpc LearnMACGet (LearnMACRequest) returns (LearnMACGetResponse) {}
+  rpc LearnIPGet (LearnIPGetRequest) returns (LearnIPGetResponse) {}
+  rpc LearnStatsGet (types.Empty) returns (LearnStatsGetResponse) {}
+  rpc LearnMACClear (LearnMACRequest) returns (LearnClearResponse) {}
+  rpc LearnIPClear (LearnIPRequest) returns (LearnClearResponse) {}
+  rpc LearnStatsClear (types.Empty) returns (types.Empty) {}
+}
+
+// key for endpoint IP in auto learning mode
+message LearnIPKeyAuto {
+  bytes           VPCId  = 1; // id of VPC this IP address belongs to
+  types.IPAddress IPAddr = 2; // IP address
+}
+
+// key for endpoint MAC in auto learning mode
+message LearnMACKeyAuto {
+  bytes  SubnetId = 1; // id of subnet this MAC address belongs to
+  uint64 MACAddr  = 2; // MAC address
+}
+
+// key for endpoint IP in notify learning mode
+message LearnIPKeyNotify {
+  bytes           HostIf = 1; // id of host interface this IP was learnt on
+  types.IPAddress IPAddr = 2; // IP address
+}
+
+// key for endpoint MAC in notify learning mode
+message LearnMACKeyNotify {
+  bytes  HostIf  = 1; // id of Host interface this MAC was learnt on
+  uint64 MACAddr = 2; // MAC address
+}
+
+// key to uniquely identify endpoint IP in all learning modes
+message LearnIPKey {
+  oneof ipkey {
+    LearnIPKeyAuto   KeyAuto   = 1;
+    LearnIPKeyNotify KeyNotify = 2;
+  }
+}
+
+// key to uniquely identify endpoint MAC in all learn modes
+message LearnMACKey {
+  oneof mackey {
+    LearnMACKeyAuto   KeyAuto   = 1;
+    LearnMACKeyNotify KeyNotify = 2;
+  }
+}
+
+enum EpState {
+  EP_STATE_NONE     = 0;
+  EP_STATE_LEARNING = 1;
+  EP_STATE_CREATED  = 2;
+  EP_STATE_PROBING  = 3;
+  EP_STATE_UPDATING = 4;
+  EP_STATE_DELETING = 5;
+  EP_STATE_DELETED  = 6;
+}
+
+// endpoint IP information used in auto learning mode
+message LearnIPEntryAuto {
+  LearnIPKeyAuto  Key     = 1;
+  LearnMACKeyAuto MACInfo = 2;
+  EpState         State   = 3;
+  uint32          TTL     = 4;
+}
+
+// endpoint MAC information used in auto learning mode
+message LearnMACEntryAuto {
+  LearnMACKeyAuto         Key    = 1;
+  bytes                   VnicId = 2;
+  EpState                 State  = 3;
+  uint32                  TTL    = 4;
+  repeated LearnIPKeyAuto IPInfo = 5;
+}
+
+// endpoint IP information used in notify learning mode
+message LearnIPEntryNotify {
+  // unique key to identify endpoint IP
+  LearnIPKeyNotify Key     = 1;
+  // MAC address associated with this IP
+  uint64           MACAddr = 2;
+  // number of seconds this entry is valid upto
+  uint32           TTL     = 3;
+}
+
+// endpoint MAC information used in notify learning mode
+message LearnMACEntryNotify {
+  // unique key to identify endpoint MAC
+  LearnMACKeyNotify         Key    = 1;
+  // encapsulation used by this endpoint
+  types.Encap               Encap  = 2;
+  // number of seconds this entry is valid upto
+  uint32                    TTL    = 3;
+  // list of IP addresses associated with this MAC
+  repeated LearnIPKeyNotify IPInfo = 4;
+}
+
+// generic endpoint IP information used in all learning modes
+message LearnIPEntry {
+  oneof ipentry {
+    LearnIPEntryAuto   EntryAuto   = 1;
+    LearnIPEntryNotify EntryNotify = 2;
+  }
+}
+
+// generic endpoint MAC information used in all learning modes
+message LearnMACEntry {
+  oneof macentry {
+    LearnMACEntryAuto   EntryAuto   = 1;
+    LearnMACEntryNotify EntryNotify = 2;
+  }
+}
+
+enum LearnPktType {
+  LEARN_PKT_TYPE_NONE               = 0;     // unclassified packet type
+  LEARN_PKT_TYPE_GARP_ANNOUNCE      = 1;     // ARP requests with same src and tgt IP
+                                             // and tgt MAC = ZERO
+  LEARN_PKT_TYPE_ARP_PROBE          = 2;     // ARP requests with src IP = ZERO
+  LEARN_PKT_TYPE_ARP_REQUEST        = 3;     // other ARP requests
+  LEARN_PKT_TYPE_GARP_REPLY         = 4;     // ARP replies with same src and tgt IP
+  LEARN_PKT_TYPE_ARP_REPLY          = 5;     // other ARP replies
+  LEARN_PKT_TYPE_RARP_REQUEST       = 6;     // reverse ARP requests
+  LEARN_PKT_TYPE_RARP_REPLY         = 7;     // reverse ARP replies
+  LEARN_PKT_TYPE_DHCP_DISCOVER      = 8;     // DHCP with DISCOVER msg
+  LEARN_PKT_TYPE_DHCP_REQUEST       = 9;     // DHCP with REQUEST msg
+  LEARN_PKT_TYPE_DHCP_ACK           = 10;    // DHCP with ACK option
+  LEARN_PKT_TYPE_DHCP_RELEASE       = 11;    // DHCP with RELEASE msg
+  LEARN_PKT_TYPE_DHCP_DECLINE       = 12;    // DHCP with DECLINE msg
+  LEARN_PKT_TYPE_DHCP_UNCLASSIFIED  = 13;    // unclassified DHCP packet
+  LEARN_PKT_TYPE_IPV4               = 14;    // IP packets not classified as DHCP
+}
+
+message LearnPktTypeCounter {
+  LearnPktType  PktType = 1;
+  uint64        Count   = 2;
+}
+
+enum LearnPktDropReason {
+  LEARN_PKTDROP_REASON_NONE           = 0;
+  LEARN_PKTDROP_REASON_PARSE_ERR      = 1;
+  LEARN_PKTDROP_REASON_RES_ALLOC_FAIL = 2;
+  LEARN_PKTDROP_REASON_LEARNING_FAIL  = 3;
+  LEARN_PKTDROP_REASON_MBUF_ERR       = 4;
+  LEARN_PKTDROP_REASON_TX_FAIL        = 5;
+  LEARN_PKTDROP_REASON_ARP_REPLY      = 6;
+  LEARN_PKTDROP_REASON_RARP           = 7;
+}
+
+message LearnPktDropStats {
+  LearnPktDropReason Reason   = 1;
+  uint64             NumDrops = 2;
+}
+
+enum LearnEventType {
+  LEARN_EVENT_NONE       = 0;
+  LEARN_EVENT_NEW_LOCAL  = 1;
+  LEARN_EVENT_NEW_REMOTE = 2;
+  LEARN_EVENT_L2L_MOVE   = 3;
+  LEARN_EVENT_R2L_MOVE   = 4;
+  LEARN_EVENT_L2R_MOVE   = 5;
+  LEARN_EVENT_R2R_MOVE   = 6;
+  LEARN_EVENT_DELETE     = 7;
+}
+
+message LearnEvents {
+  LearnEventType EventType = 1;
+  uint64         Count     = 2;
+}
+
+enum LearnValidationType {
+  LEARN_CHECK_NONE                   = 0;
+  LEARN_CHECK_MAC_LIMIT              = 1;
+  LEARN_CHECK_IP_LIMIT               = 2;
+  LEARN_CHECK_IP_IN_SUBNET           = 3;
+  LEARN_CHECK_DATA_PKT_DETECTED_MOVE = 4;
+}
+
+message LearnValidations {
+  LearnValidationType  ValidationType = 1;
+  uint64               Count          = 2;
+}
+
+enum LearnApiOpType {
+  LEARN_API_OP_NONE   = 0;
+  LEARN_API_OP_CREATE = 1;
+  LEARN_API_OP_DELETE = 2;
+  LEARN_API_OP_UPDATE = 3;
+}
+
+message LearnApiOps {
+  LearnApiOpType  ApiOpType = 1;
+  uint64          Count     = 2;
+}
+
+message LearnStats {
+  uint64                        PktsRcvd              = 1;
+  uint64                        PktsSent              = 2;
+  uint64                        PktSendErrors         = 3;
+  uint64                        ArpProbesSent         = 4;
+  uint64                        ArpProbeSendErrors    = 5;
+  uint64                        GarpReplySent         = 6;
+  uint64                        GarpReplySendErrors   = 7;
+  uint64                        PktBufferAlloc        = 8;
+  uint64                        PktBufferAllocErrors  = 9;
+  uint64                        PktBufferAvailable    = 10;
+  repeated LearnPktDropStats    DropStats             = 11;
+  uint64                        IpAgeouts             = 12;
+  uint64                        IpAgeoutErrors        = 13;
+  uint64                        MacAgeouts            = 14;
+  uint64                        MacAgeoutErrors       = 15;
+  repeated LearnEvents          MacLearnEvents        = 16;
+  repeated LearnEvents          MacLearnErrors        = 17;
+  repeated LearnEvents          IpLearnEvents         = 18;
+  repeated LearnEvents          IpLearnErrors         = 19;
+  repeated LearnValidations     ValidationErrors      = 20;
+  repeated LearnApiOps          VnicOps               = 21;
+  repeated LearnApiOps          VnicOpErrors          = 22;
+  repeated LearnApiOps          RemoteL2Mappings      = 23;
+  repeated LearnApiOps          RemoteL2MappingErrors = 24;
+  repeated LearnApiOps          LocalL3Mappings       = 25;
+  repeated LearnApiOps          LocalL3MappingErrors  = 26;
+  repeated LearnApiOps          RemoteL3Mappings      = 27;
+  repeated LearnApiOps          RemoteL3MappingErrors = 28;
+  repeated LearnPktTypeCounter  RcvdPktTypes          = 29;
+}
+
+message LearnMACRequest {
+  repeated LearnMACKey Key = 1;
+}
+
+message LearnIPRequest {
+  repeated LearnIPKey Key = 1;
+}
+
+message LearnIPGetRequest {
+  oneof filter {
+    LearnIPKey Key      = 1;
+    bytes      SubnetId = 2;
+  }
+}
+
+message LearnMACGetResponse {
+  types.ApiStatus        ApiStatus = 1;
+  repeated LearnMACEntry Response  = 2;
+}
+
+message LearnIPGetResponse {
+  types.ApiStatus       ApiStatus = 1;
+  repeated LearnIPEntry Response  = 2;
+}
+
+message LearnStatsGetResponse {
+  types.ApiStatus ApiStatus = 1;
+  LearnStats      Stats     = 2;
+}
+
+message LearnClearResponse {
+  types.ApiStatus ApiStatus = 1;
+}
