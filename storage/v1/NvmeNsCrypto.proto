@@ -1,0 +1,79 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Crypto support for NVMe Namespace
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+service NvmeNsCryptoSvc {
+  rpc NvmeNsCryptoCreate (NvmeNsCryptoRequest) returns (NvmeNsCryptoCreateResponse) {}
+  rpc NvmeNsCryptoGet (NvmeNsCryptoGetRequest) returns (NvmeNsCryptoGetResponse) {}
+  rpc NvmeNsCryptoDelete (NvmeNsCryptoDeleteRequest) returns (NvmeNsCryptoDeleteResponse) {}
+}
+
+// Cryptographic key specification
+message NvmeNsCryptoSpec {
+  // (mandatory) encryption object key
+  types.ObjectKey NvmeNsCryptoKey = 1;
+  // (mandatory) encryption type to use
+  types.CryptType CryptType    = 2;
+}
+
+// Cryptographic key secrets
+message NvmeNsCryptoSecrets {
+  // Encryption secret, size based on type
+  bytes PrimaryKeySecret    = 1;
+  // IV secret, size based on type
+  bytes SecondaryKeySecret  = 2;
+}
+
+// Cryptographic key status
+message NvmeNsCryptoStatus {
+}
+
+// Cryptographic key stats
+message NvmeNsCryptoStats {
+}
+
+// Cryptographic key object
+message NvmeNsCrypto {
+  NvmeNsCryptoSpec       Spec   = 1; // Cryptographic key specification
+  NvmeNsCryptoStatus     Status = 2; // Cryptograpic key status
+  NvmeNsCryptoStats      Stats  = 3; // Cryptograpic key stats
+}
+
+// create request
+message NvmeNsCryptoRequest {
+  NvmeNsCryptoSpec       Spec    = 1; // Cryptographic key specification
+  NvmeNsCryptoSecrets    Secrets = 2; // Cryptographic key secrets
+}
+
+// create response
+message NvmeNsCryptoCreateResponse {
+  types.ApiStatus     ApiStatus  = 1; // Status code
+}
+
+// Get request
+message NvmeNsCryptoGetRequest {
+  types.ObjectKey NvmeNsCryptoKey = 1;
+}
+
+// get response
+message NvmeNsCryptoGetResponse {
+  types.ApiStatus     ApiStatus = 1; // Status code
+  NvmeNsCrypto  Response  = 2;
+}
+
+// delete request
+message NvmeNsCryptoDeleteRequest {
+  types.ObjectKey     NvmeNsCryptoKey        = 1; // Keys of interest
+}
+
+// delete response
+message NvmeNsCryptoDeleteResponse {
+  types.ApiStatus  ApiStatus           = 1; // Status code
+}

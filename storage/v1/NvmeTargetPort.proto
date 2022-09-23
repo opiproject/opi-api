@@ -1,0 +1,82 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Protobuf specification for NVMe target port
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+// target port service
+service NvmeTargetPortSvc {
+  rpc NvmeTargetPortCreate (NvmeTargetPortCreateRequest) returns (NvmeTargetPortCreateResponse) {}
+  rpc NvmeTargetPortGet (NvmeTargetPortGetRequest) returns (NvmeTargetPortGetResponse) {}
+  rpc NvmeTargetPortDelete (NvmeTargetPortDeleteRequest) returns (NvmeTargetPortDeleteResponse) {}
+}
+
+// Nvme port specification
+message NvmeTargetPortSpec {
+  // (mandatory) target port object key
+  types.ObjectKey               NvmeTargetPortKey        = 1;
+  // (mandatory) fabric transport type selection
+  types.NvmeTransportType           TransportType        = 2;
+  // (mandatory) Address family to use
+  types.AddressFamily           AddressFamily            = 3;
+  // (mandatory) Secure channel type
+  types.NvmeFabricSecureChannelType SecureChannelType    = 4;
+  // (mandatory) transport specific service id, Eg. TCP port, (utf-8)
+  string                        TransportServiceId       = 5;
+  // (mandatory) transport address, Eg. IPv4 address (utf-8)
+  string                        TransportAddress         = 6;
+  // (mandatory) Controller ID to use: Actual Ctlr-ID, DYNAMIC or STATIC_SET
+  uint32                        ControllerId             = 7;
+  // (optional) Transport specific address subtype
+  types.NvmeTransportAdditionalInfo AddressSubtype       = 8;
+}
+
+// target port status
+message NvmeTargetPortStatus {
+}
+
+// target port stats
+message NvmeTargetPortStats {
+}
+
+// target port object
+message NvmeTargetPort {
+  NvmeTargetPortSpec   Spec   = 1; // target port specification
+  NvmeTargetPortStatus Status = 2; // target port status
+  NvmeTargetPortStats  Stats  = 3; // target port stats
+}
+
+// create request
+message NvmeTargetPortCreateRequest {
+  NvmeTargetPortSpec Spec = 1; // Nvme port specification
+}
+
+// create response
+message NvmeTargetPortCreateResponse {
+  types.ApiStatus  ApiStatus = 1; // status code
+}
+
+// get request
+message NvmeTargetPortGetRequest {
+  types.ObjectKey NvmeTargetPortKey = 1;
+}
+
+// get request
+message NvmeTargetPortGetResponse {
+  types.ApiStatus ApiStatus = 1; // status code
+  NvmeTargetPort  Response  = 2; // response
+}
+// delete request
+message NvmeTargetPortDeleteRequest {
+  types.ObjectKey NvmeTargetPortKey = 1; // target port object key
+}
+
+// delete response
+message NvmeTargetPortDeleteResponse {
+  types.ApiStatus  ApiStatus = 1; // status code
+}

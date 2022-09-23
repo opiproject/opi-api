@@ -1,0 +1,69 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Nvme Cluster proto specification
+// identifies a NVMe backend fabric w.r.t to ANA and discovery
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+service NvmeClusterSvc {
+  rpc NvmeClusterCreate(NvmeClusterCreateRequest) returns (NvmeClusterCreateResponse) {}
+  rpc NvmeClusterDelete (NvmeClusterDeleteRequest) returns (NvmeClusterDeleteResponse) {}
+  rpc NvmeClusterGet (NvmeClusterGetRequest) returns (NvmeClusterGetResponse) {}
+}
+
+// cluster specification
+message NvmeClusterSpec {
+  // (mandatory) cluster object key
+  types.ObjectKey    NvmeClusterKey    =    1;
+}
+
+// status for cluster, if any
+message NvmeClusterStatus {
+}
+
+// stats for cluster, if any
+message NvmeClusterStats {
+}
+
+// cluster object
+message NvmeCluster {
+  NvmeClusterSpec    Spec    =    1; // cluster object specification.
+  NvmeClusterStatus  Status  =    2; // status
+  NvmeClusterStats   Stats   =    3; // stats
+}
+
+// create request
+message NvmeClusterCreateRequest {
+  NvmeClusterSpec    Spec    =    1; // cluster object specification.
+}
+
+// create response
+message NvmeClusterCreateResponse {
+  types.ApiStatus  ApiStatus   = 1; // status
+}
+
+// delete request
+message NvmeClusterDeleteRequest {
+  types.ObjectKey    NvmeClusterKey  =1; // NvmeCluster object key
+}
+
+// delete reponse
+message NvmeClusterDeleteResponse {
+  types.ApiStatus  ApiStatus   = 1; // status
+}
+
+// get request
+message NvmeClusterGetRequest {
+  types.ObjectKey    NvmeClusterKey = 1; // NvmeCluster object key
+}
+
+// get response
+message NvmeClusterGetResponse {
+  types.ApiStatus  ApiStatus   = 1; // status
+  NvmeCluster      Response    = 2; // of cluster objects
+}

@@ -1,0 +1,80 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Protobuf specification for NVMe target subsys APIs
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+// target subsys service
+service NvmeTargetSubsystemSvc {
+  rpc NvmeTargetSubsystemCreate (NvmeTargetSubsystemCreateRequest) returns (NvmeTargetSubsystemCreateResponse) {}
+  rpc NvmeTargetSubsystemGet (NvmeTargetSubsystemGetRequest) returns (NvmeTargetSubsystemGetResponse) {}
+  rpc NvmeTargetSubsystemDelete (NvmeTargetSubsystemDeleteRequest) returns (NvmeTargetSubsystemDeleteResponse) {}
+}
+
+// NvmeTarget subsystem specification
+message NvmeTargetSubsystemSpec {
+  // (mandatory) target subsystem object key
+  types.ObjectKey NvmeTargetSubsystemKey  = 1;
+  // (mandatory) NVMe NQN of the target subsystem
+  bytes           NvmeTargetSubsystemNqn  = 2;
+  // (optional) NVMe keepalive timeout in ms, used to monitor the target assoc
+  // livelenss
+  uint32          KeepaliveTimeout        = 3;
+  // (optional) if not set then default value in nvme configuration file is
+  // used. Determines the adminq size to the backend NVMe controller
+  uint32          AdminQueueSize          = 4; // admin queue size
+  // (optional) if not set then default value in nvme configuration file is
+  // used. Determines the IO size to the backend NVMe controller
+  uint32          IoQueueSize             = 5; // io queue size
+}
+
+// target subsystem status
+message NvmeTargetSubsystemStatus {
+}
+
+// target subsystem stats
+message NvmeTargetSubsystemStats {
+}
+
+// target subsystem object
+message NvmeTargetSubsystem {
+  NvmeTargetSubsystemSpec   Spec   = 1; // target subsystem specification
+  NvmeTargetSubsystemStatus Status = 2; // target subsystem status
+  NvmeTargetSubsystemStats  Stats  = 3; // target subsystem stats
+}
+
+// create request
+message NvmeTargetSubsystemCreateRequest {
+  NvmeTargetSubsystemSpec Spec = 1; // target subsys object specification
+}
+
+// create response
+message NvmeTargetSubsystemCreateResponse {
+  types.ApiStatus       ApiStatus = 1; // status code
+}
+
+// get request
+message NvmeTargetSubsystemGetRequest {
+  types.ObjectKey NvmeTargetSubsystemKey = 1;
+}
+
+// get response
+message NvmeTargetSubsystemGetResponse {
+  types.ApiStatus       ApiStatus = 1; // status code
+  NvmeTargetSubsystem Response  = 2; // response
+}
+
+// delete request
+message NvmeTargetSubsystemDeleteRequest {
+  types.ObjectKey NvmeTargetSubsystemKey = 1;  // target object key
+}
+
+// delete response
+message NvmeTargetSubsystemDeleteResponse {
+  types.ApiStatus       ApiStatus = 1; // status code
+}

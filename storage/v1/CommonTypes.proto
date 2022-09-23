@@ -1,0 +1,174 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Common types for NVMe storage
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1.types;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+
+// API Status codes
+enum ApiStatusCode {
+  API_STATUS_OK                  = 0;
+  API_STATUS_OOM                 = 1;
+  API_STATUS_INVALID_ARG         = 2;
+  API_STATUS_INVALID_OP          = 3;
+  API_STATUS_ENTRY_NOT_FOUND     = 4;
+  API_STATUS_ENTRY_EXISTS        = 5;
+  API_STATUS_NO_RESOURCE         = 6;
+  API_STATUS_TABLE_FULL          = 7;
+  API_STATUS_OOB                 = 8;
+  API_STATUS_HW_PROGRAM_ERR      = 9;
+  API_STATUS_RETRY               = 10;
+  API_STATUS_NOOP                = 11;
+  API_STATUS_DUPLICATE_FREE      = 12;
+  API_STATUS_COLLISION           = 13;
+  API_STATUS_HW_READ_ERR         = 15;
+  API_STATUS_COMM_FAIL           = 19;
+  API_STATUS_IN_PROGRESS         = 22;
+  API_STATUS_TIMEOUT             = 39;
+  API_STATUS_ENTRY_READ_PARTIAL  = 40;
+  API_STATUS_ENTRY_BUSY          = 41;
+  API_STATUS_SVC_NOT_ACTIVE      = 43;
+  API_STATUS_OP_NOT_SUPPORTED    = 44;
+  API_STATUS_AGENT_NOT_ACTIVATED = 45;
+  API_STATUS_ERR                 = 255;
+}
+
+message ApiStatus {
+  ApiStatusCode Sc        = 1; // status code
+}
+
+// Global constants
+enum GlobalConstants {
+  NSV_NVME_CONST_NONE = 0; // dummy const
+  NSV_NVME_NQN_LEN    = 256;  // maximum length for NQN field
+}
+
+// Object Keys are 128bit (16byte) opaque values. The object key uniquely
+// identifies a given configuration object. The key used must be unique within
+// the agents context for the give object type and must be non-zero. No other
+// restrictions apply on the usage of the key. API user may utilize any number
+// of bits (upto 128) as required to uniquely identify the object. The same
+// object key must be provided in subsequent operations on object
+message ObjectKey {
+  bytes Key = 1;
+}
+
+// The controller PCI-ID is used to address a given virtual controller. Virtual
+// controllers are organized into devices with Physical functions and SRIOV
+// virtual function within the physical functions. Currently, the DSC may
+// expose multiple devices with one physical function each and one or more
+// virtual functions under the physical function.
+message NvmeControllerPciId {
+  // Bus number, provided for future usage if needed. Currently set to ’0’
+  uint32 Bus              = 1;
+  // Device number, based on the NVMe device layout
+  uint32 Device           = 2;
+  // Physical function, always set to 0 in current model
+  uint32 Function         = 3;
+  // SRIOV Virtual function within the Device and Physical function.
+  // Set to 0 for Physical Function. Virtual Function numbering starts from 1
+  uint32 VirtualFunction  = 4;
+}
+
+// AES encryption type to be used
+enum CryptType {
+  CRYPT_TYPE_NONE   = 0;  // must not be used
+  CRYPT_TYPE_AES128 = 1;  // Select AES 128bit encryption
+  CRYPT_TYPE_AES192 = 2;  // Select AES 192bit encryption
+  CRYPT_TYPE_AES256 = 3;  // Select AES 256bit encryption
+}
+
+// Path Management Selection
+enum NvmePathMgmtType {
+  PATH_MGMT_NONE            = 0; // none type, must not be used
+  PATH_MGMT_USER_MULTIPATH  = 1; // User managed multipath
+  PATH_MGMT_ANA_MULTIPATH   = 2; // NVMe Asymetric Namespace Access based multipath
+}
+
+// NVMe Fabric transport type
+enum NvmeTransportType {
+  TRANSPORT_TYPE_NONE = 0; // not specified, must not be used
+  TRANSPORT_TYPE_RDMA = 1; // RDMA transport
+  TRANSPORT_TYPE_FC   = 2; // Fibre Channel
+  TRANSPORT_TYPE_TCP  = 3; // TCP transport
+}
+
+// NVMe Address family in the NVMe/TCP port information.
+enum AddressFamily {
+  ADDRESS_FAMILY_NONE = 0;
+  ADDRESS_FAMILY_IPV4 = 1; // IPv4 (AF_INET)
+  ADDRESS_FAMILY_IPV6 = 2; // IPv6 (AF_INET6)
+  ADDRESS_FAMILY_IB   = 3; // InfiniBand (AF_IB)
+}
+
+// NVMe Fabric channel security considerations.
+enum NvmeFabricSecureChannelType {
+  SECURE_CHANNEL_NONE         = 0; // Not specified, must not be used
+  SECURE_CHANNEL_REQUIRED     = 1; // Secure channel required
+  SECURE_CHANNEL_NOT_REQUIRED = 2; // Secure channel not required
+}
+
+// TCP socket security
+enum NvmeTcpSecureSockType {
+  TCP_SECURITY_NONE = 0; // No Security
+  TCP_SECURITY_TLS  = 1; // TLS (Secure Sockets)
+}
+
+// TCP Additional Address information
+message NvmeTcpAdditionalInfo {
+  NvmeTcpSecureSockType SecureSockType = 1;
+}
+
+// RDMA Addtional Addr Info 
+message NvmeRdmaAdditionalInfo {
+  uint32 unused = 1;
+}
+
+// Transport Specific additional Address information
+message NvmeTransportAdditionalInfo {
+  oneof info {
+    NvmeTcpAdditionalInfo  Tcp  = 1;
+    NvmeRdmaAdditionalInfo Rdma = 2;
+  }
+}
+
+// Used to set/update the current operational mode of a path
+enum NvmePathMode {
+  // none, must not be used
+  PATH_MODE_NONE     = 0;
+  // Path is enabled, used to creating backed queues
+  PATH_MODE_ENABLED  = 1;
+  // Path is disabled, will not be used for creating backend queue
+  PATH_MODE_DISABLED = 2;
+}
+
+// Controller Type IDs for connection to fabric target
+enum NvmeControllerID {
+    CONTROLLER_ID_INVALID    = 0;      // not specified, must not be used
+    CONTROLLER_ID_STATIC_ANY = 0xFFFE; // Target controller is static type
+    CONTROLLER_ID_DYNAMIC    = 0xFFFF; // Target controller is dynamic type
+}
+
+// Nvme Namespace  Administrative States
+enum NvmeNamespaceState {
+  NAMESPACE_STATE_DISABLED    = 0;  // namespace disabled state
+  NAMESPACE_STATE_ENABLED     = 1;  // namespace enabled state
+  NAMESPACE_STATE_DELETING    = 2;  // namespace deleting state
+}
+
+// Namespace Operational States
+enum NvmeNamespaceOperState {
+  NAMESPACE_OPER_STATE_ONLINE  = 0;  // namespace is online
+  NAMESPACE_OPER_STATE_OFFLINE = 1;  // namespace is offline
+}
+
+// Path Connection States
+enum NvmePathConnectionState {
+  PATH_STATE_CONNECTING    = 0; // path connecting state
+  PATH_STATE_CONNECTED     = 1; // path connected state
+  PATH_STATE_DISCONNECTING = 2; // path disconnecting state
+  PATH_STATE_DISCONNECTED  = 3; // path disconnected state
+}

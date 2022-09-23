@@ -1,0 +1,74 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// NVMe Fabric Path proto specification API
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+service NvmeDiscoveryPathSvc {
+  rpc NvmeDiscoveryPathCreate (NvmeDiscoveryPathCreateRequest) returns (NvmeDiscoveryPathCreateResponse) {}
+  rpc NvmeDiscoveryPathDelete (NvmeDiscoveryPathDeleteRequest) returns (NvmeDiscoveryPathDeleteResponse) {}
+  rpc NvmeDiscoveryPathGet (NvmeDiscoveryPathGetRequest) returns (NvmeDiscoveryPathGetResponse) {}
+}
+
+// discovery path status
+message NvmeDiscoveryPathStatus {
+}
+
+// discovery path statisitcs
+message NvmeDiscoveryPathStats {
+}
+
+// discovery path specification
+message NvmeDiscoveryPathSpec {
+  // (mandatory) key for the discovery object
+  types.ObjectKey NvmeDiscoveryPathKey = 1;
+  // (mandatory) cluster to which the discovery-path belongs
+  types.ObjectKey ClusterKey           = 2;
+  // (mandatory) initiator endpoint port for the path
+  types.ObjectKey InitiatorPortKey     = 3;
+  // (mandatory) target endpoint port for the path
+  types.ObjectKey TargetPortKey        = 4;
+}
+
+// discovery path object
+message NvmeDiscoveryPath {
+  NvmeDiscoveryPathSpec   Spec    = 1; // discovery path object specification
+  NvmeDiscoveryPathStatus Status  = 2; // status
+  NvmeDiscoveryPathStats  Stats   = 3; // stats
+}
+
+// create request
+message NvmeDiscoveryPathCreateRequest {
+  NvmeDiscoveryPathSpec  Spec    = 1; // discovery path object specification
+}
+
+// create request
+message NvmeDiscoveryPathCreateResponse {
+  types.ApiStatus ApiStatus   = 1; // status
+}
+
+// delete request
+message NvmeDiscoveryPathDeleteRequest {
+  types.ObjectKey NvmeDiscoveryPathKey   = 1; // discovery path key
+}
+
+// delete response
+message NvmeDiscoveryPathDeleteResponse {
+  types.ApiStatus ApiStatus   = 1; // status
+}
+
+// discovery path get request
+message NvmeDiscoveryPathGetRequest {
+  types.ObjectKey NvmeDiscoveryPathKey = 1; // discovery path key
+}
+
+// get response
+message NvmeDiscoveryPathGetResponse {
+  types.ApiStatus  ApiStatus = 1; // status
+  NvmeDiscoveryPath   Response  = 2; // discovery path object
+}

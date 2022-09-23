@@ -1,0 +1,74 @@
+//------------------------------------------------------------------------------
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+//
+// Nvme iniaiator device proto specification
+//------------------------------------------------------------------------------
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "CommonTypes.proto";
+
+// initiator device service
+service NvmeIniDevSvc {
+  rpc NvmeIniDevCreate (NvmeIniDevCreateRequest) returns (NvmeIniDevCreateResponse) {}
+  rpc NvmeIniDevGet (NvmeIniDevGetRequest) returns (NvmeIniDevGetResponse) {}
+  rpc NvmeIniDevDelete (NvmeIniDevDeleteRequest) returns (NvmeIniDevDeleteResponse) {}
+}
+
+// NvmeIni device specification
+message NvmeIniDevSpec {
+  // (mandatory) initiator device object key.
+  types.ObjectKey NvmeIniDevKey    = 1;
+  // (mandatory) unique NQN identifer for the host, used in fabric connect to
+  // the NVMe-oF target
+  bytes        HostNqn             = 2;
+  // (mandatory) unique host ID, used in fabric connect to the NVMe-oF target.
+  bytes        HostId              = 3;
+}
+
+// initiator device status
+message NvmeIniDevStatus {
+}
+
+// initiator device stats
+message NvmeIniDevStats {
+}
+
+// initiator device object
+message NvmeIniDev {
+  NvmeIniDevSpec   Spec   = 1; // specification
+  NvmeIniDevStatus Status = 2; // status
+  NvmeIniDevStats  Stats  = 3; // stats
+}
+
+// create request
+message NvmeIniDevCreateRequest {
+  NvmeIniDevSpec Spec = 1; // initiator object specification
+}
+
+// create response
+message NvmeIniDevCreateResponse {
+  types.ApiStatus    ApiStatus = 1; // status code
+}
+
+// get request
+message NvmeIniDevGetRequest {
+  types.ObjectKey NvmeIniDevKey = 1; // object to get
+}
+
+// get response
+message NvmeIniDevGetResponse {
+  types.ApiStatus ApiStatus = 1; // status code
+  NvmeIniDev      Response  = 2; // iniitiator device object
+}
+
+// delete Request
+message NvmeIniDevDeleteRequest {
+  types.ObjectKey NvmeIniDevKey = 1; // initiator device object key
+}
+
+// delete response
+message NvmeIniDevDeleteResponse {
+  types.ApiStatus    ApiStatus = 1; // status code
+}
