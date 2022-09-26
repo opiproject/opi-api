@@ -9,8 +9,8 @@ The APIs covers various aspects of a functional xPU in cloud deployment, ranging
 - Platform: xPU level Network configuration of platform and device specific APIs
 - Link: APIs to create and manage port, interface, and vnics on the DPU (facing host, or network)
 - Network: Define network constructs such as VPC, subnet, routing, next-hops, endpoints, etc.
-- Netwrok Protocols: most common protocols in cloud deployment such as bgp, evpn, and dhcp
-- Network Servcies: network firewall, NAT, IPSec, mirroring, service load balancing, etc.
+- Network Protocols: most common protocols in cloud deployment such as bgp, evpn, and dhcp
+- Network Services: network firewall, NAT, IPSec, mirroring, service load balancing, etc.
 - Operations: network events, flow monitoring, upgrade, flow management, external logging, etc.
 - QoS: rate limiter, policer, metering, and QoS marking
 - Misc: batching, commong types, etc.
