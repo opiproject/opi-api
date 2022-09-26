@@ -19,19 +19,19 @@ service InitiatorPortSvc {
 // initiator port specification
 message InitiatorPortSpec {
   // (mandatory) initiator port object key
-  types.ObjectKey               InitiatorPortKey       = 1;
+  types.ObjectKey               initiator_port_key       = 1;
   // (mandatory) fabric transport type selection
-  types.NvmeTransportType           TransportType      = 2;
+  types.NvmeTransportType           transport_type      = 2;
   // (mandatory) Address family to use
-  types.AddressFamily           AddrFamily             = 3;
+  types.AddressFamily           addr_family             = 3;
   // (mandatory) Secure channel type
-  types.NvmeFabricSecureChannelType SecureChannelType  = 4;
+  types.NvmeFabricSecureChannelType secure_channel_type  = 4;
   // (mandatory) transport specific service id, Eg. TCP port, (utf-8)
-  string                        TransportServiceId     = 5;
+  string                        transport_service_id     = 5;
   // (mandatory) transport address, Eg. IPv4 address (utf-8)
-  string                        TransportAddress       = 6;
+  string                        transport_address       = 6;
   // (optional) Network Mask for address Range: (0 to 32)
-  uint32                        NetMask                = 7;
+  uint32                        net_mask                = 7;
 }
 
 // initiator port status
@@ -44,38 +44,38 @@ message InitiatorPortStats {
 
 // initiator port object
 message InitiatorPort {
-  InitiatorPortSpec   Spec   = 1; // initiator port specification
-  InitiatorPortStatus Status = 2; // initiator port status
-  InitiatorPortStats  Stats  = 3; // initiator port stats
+  InitiatorPortSpec   spec   = 1; // initiator port specification
+  InitiatorPortStatus status = 2; // initiator port status
+  InitiatorPortStats  stats  = 3; // initiator port stats
 }
 
 // create request
 message InitiatorPortCreateRequest {
-  InitiatorPortSpec Spec = 1; // initiator port specification
+  InitiatorPortSpec spec = 1; // initiator port specification
 }
 
 // create response
 message InitiatorPortCreateResponse {
-  types.ApiStatus     ApiStatus = 1; // status code
+  types.ApiStatus     api_status = 1; // status code
 }
 
 // get request
 message InitiatorPortGetRequest {
-  types.ObjectKey InitiatorPortKey = 1; // object to get
+  types.ObjectKey initiator_port_key = 1; // object to get
 }
 
 // get response
 message InitiatorPortGetResponse {
-  types.ApiStatus  ApiStatus = 1; // status code
-  InitiatorPort       Response  = 2; // object response
+  types.ApiStatus  api_status = 1; // status code
+  InitiatorPort       response  = 2; // object response
 }
 
 // delete request
 message InitiatorPortDeleteRequest {
-  types.ObjectKey InitiatorPortKey = 1; // unique key for this port
+  types.ObjectKey initiator_port_key = 1; // unique key for this port
 }
 
 // delete response
 message InitiatorPortDeleteResponse {
-  types.ApiStatus     ApiStatus = 1; // status code
+  types.ApiStatus     api_status = 1; // status code
 }

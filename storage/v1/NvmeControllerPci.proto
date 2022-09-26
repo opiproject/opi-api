@@ -37,46 +37,46 @@ enum NvmeControllerConstants {
 message NvmeControllerIdentity {
   // (mandatory) NVMe controller ID Range: 0 to 65536.
   // Must not be reused under the same subsystem
-  uint32 NvmeControllerId  = 1;
+  uint32 nvme_controller_id  = 1;
   // (mandatory) Serial Number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-  string SerialNumber      = 2;
+  string serial_number      = 2;
   // (mandatory) Model Number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-  string ModelNumber       = 3;
+  string model_number       = 3;
   // (mandatory) Firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-  string FirmwareRevision  = 4;
+  string firmware_revision  = 4;
   // (mandatory) FRU global identfier, 16bytes opaque identity for the unit
-  bytes  FruGuid           = 5;
+  bytes  fru_guid           = 5;
 }
 
 // NvmeController create specification
 message NvmeControllerSpec {
    // NvmeController object key (mandatory)
-  types.ObjectKey       NvmeControllerKey  = 1;
+  types.ObjectKey       nvme_controller_key  = 1;
   // (mandatory) NVMe subsystem NQN to which the controller belongs
   // Refer to the NQN format in the NVMe base specifications, must not
   // exceed 'NSV_NVME_NQN_LEN' bytes
-  bytes                 SubsystemNqn      = 2;
+  bytes                 subsystem_nqn      = 2;
   // (mandatory) DSC PCI ID for the controller, device numbering starts for 0.
   // Eg. PF-0, VF1 = (bus = 0, device = 0, function = 0, Virtual Function = 1)
   // Eg. PF-3, VF4 = (bus = 0, device = 3, function = 0, Virtual Function = 4)
-  types.NvmeControllerPciId PciId         = 3;
+  types.NvmeControllerPciId pci_id         = 3;
   // (optional) Maximum Number of namespaces that will be provisioned under
   // the controller.
   // if set to 0, default provision for the device specified in
   // the DSC PCI configuration json file is used.
   // Must not exceed the maximum value configured for the device
-  uint32                NumNamespace      = 4;
+  uint32                num_namespace      = 4;
   // (optional) Maximum host IO queue pairs allowed, value will default to
   // limits in PCI device configuration if set to 0 or more than max permitted
   // by hardware configuration
-  uint32                MaxIOQueuePairs   = 5;
+  uint32                max_io_queue_pairs   = 5;
   // (mandatory) Identity of the controller
-  NvmeControllerIdentity    Identity      = 6;
+  NvmeControllerIdentity    identity      = 6;
 }
 
 // Status reported in read operation
 message NvmeControllerStatus {
-  bool   HostActive = 1; // Device is in use by host nvme driver
+  bool   host_active = 1; // Device is in use by host nvme driver
 }
 
 // Statistics reported in read operation
@@ -85,9 +85,9 @@ message NvmeControllerStats {
 
 // NvmeController object information reported in read operation
 message NvmeController {
-  NvmeControllerSpec   Spec   = 1; // specification
-  NvmeControllerStatus Status = 2; // status
-  NvmeControllerStats  Stats  = 3; // stats
+  NvmeControllerSpec   spec   = 1; // specification
+  NvmeControllerStatus status = 2; // status
+  NvmeControllerStats  stats  = 3; // stats
 }
 
 // Creating a controller configuration instantiates a virtual NVMe PCIe
@@ -98,52 +98,52 @@ message NvmeController {
 // Post controller creation, namespace objects can be instantiated under the
 // controller.
 message NvmeControllerCreateRequest {
-  NvmeControllerSpec Spec = 1; // controller object specification
+  NvmeControllerSpec spec = 1; // controller object specification
 }
 
 // controller create response
 message NvmeControllerCreateResponse {
-  types.ApiStatus  ApiStatus = 1;
+  types.ApiStatus  api_status = 1;
 }
 
 message NvmeControllerGetRequest {
   // controller key of interest
-  types.ObjectKey NvmeControllerKey = 1;
+  types.ObjectKey nvme_controller_key = 1;
 }
 
 // controller get
 message NvmeControllerGetResponse {
   // overall status of the get operation
-  types.ApiStatus  ApiStatus = 1;
+  types.ApiStatus  api_status = 1;
   // controller object information
-  NvmeController Response  = 2;
+  NvmeController response  = 2;
 }
 
 // delete controller request
 message NvmeControllerDeleteRequest {
-  types.ObjectKey NvmeControllerKey = 1; // controller object key
+  types.ObjectKey nvme_controller_key = 1; // controller object key
 }
 
 // delete controller response
 message NvmeControllerDeleteResponse {
-  types.ApiStatus  ApiStatus = 1;
+  types.ApiStatus  api_status = 1;
 }
 
 // namespace enable request
 message NvmeControllerEnableNsRequest {
-  types.ObjectKey NamespaceKey = 1; // namespace object key
+  types.ObjectKey namespace_key = 1; // namespace object key
 }
 // namespace enable response
 message NvmeControllerEnableNsResponse {
-  types.ApiStatus  ApiStatus = 1;
+  types.ApiStatus  api_status = 1;
 }
 
 // namespace disable request
 message NvmeControllerDisableNsRequest {
-  types.ObjectKey NamespaceKey = 1; // namespace object key
+  types.ObjectKey namespace_key = 1; // namespace object key
 }
 
 // namespace disable response
 message NvmeControllerDisableNsResponse {
-  types.ApiStatus  ApiStatus = 1;
+  types.ApiStatus  api_status = 1;
 }

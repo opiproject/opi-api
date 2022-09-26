@@ -19,18 +19,18 @@ service NvmeTargetSubsystemSvc {
 // NvmeTarget subsystem specification
 message NvmeTargetSubsystemSpec {
   // (mandatory) target subsystem object key
-  types.ObjectKey NvmeTargetSubsystemKey  = 1;
+  types.ObjectKey nvme_target_subsystem_key  = 1;
   // (mandatory) NVMe NQN of the target subsystem
-  bytes           NvmeTargetSubsystemNqn  = 2;
+  bytes           nvme_target_subsystem_nqn  = 2;
   // (optional) NVMe keepalive timeout in ms, used to monitor the target assoc
   // livelenss
-  uint32          KeepaliveTimeout        = 3;
+  uint32          keepalive_timeout        = 3;
   // (optional) if not set then default value in nvme configuration file is
   // used. Determines the adminq size to the backend NVMe controller
-  uint32          AdminQueueSize          = 4; // admin queue size
+  uint32          admin_queue_size          = 4; // admin queue size
   // (optional) if not set then default value in nvme configuration file is
   // used. Determines the IO size to the backend NVMe controller
-  uint32          IoQueueSize             = 5; // io queue size
+  uint32          io_queue_size             = 5; // io queue size
 }
 
 // target subsystem status
@@ -43,38 +43,38 @@ message NvmeTargetSubsystemStats {
 
 // target subsystem object
 message NvmeTargetSubsystem {
-  NvmeTargetSubsystemSpec   Spec   = 1; // target subsystem specification
-  NvmeTargetSubsystemStatus Status = 2; // target subsystem status
-  NvmeTargetSubsystemStats  Stats  = 3; // target subsystem stats
+  NvmeTargetSubsystemSpec   spec   = 1; // target subsystem specification
+  NvmeTargetSubsystemStatus status = 2; // target subsystem status
+  NvmeTargetSubsystemStats  stats  = 3; // target subsystem stats
 }
 
 // create request
 message NvmeTargetSubsystemCreateRequest {
-  NvmeTargetSubsystemSpec Spec = 1; // target subsys object specification
+  NvmeTargetSubsystemSpec spec = 1; // target subsys object specification
 }
 
 // create response
 message NvmeTargetSubsystemCreateResponse {
-  types.ApiStatus       ApiStatus = 1; // status code
+  types.ApiStatus       api_status = 1; // status code
 }
 
 // get request
 message NvmeTargetSubsystemGetRequest {
-  types.ObjectKey NvmeTargetSubsystemKey = 1;
+  types.ObjectKey nvme_target_subsystem_key = 1;
 }
 
 // get response
 message NvmeTargetSubsystemGetResponse {
-  types.ApiStatus       ApiStatus = 1; // status code
-  NvmeTargetSubsystem Response  = 2; // response
+  types.ApiStatus       api_status = 1; // status code
+  NvmeTargetSubsystem response  = 2; // response
 }
 
 // delete request
 message NvmeTargetSubsystemDeleteRequest {
-  types.ObjectKey NvmeTargetSubsystemKey = 1;  // target object key
+  types.ObjectKey nvme_target_subsystem_key = 1;  // target object key
 }
 
 // delete response
 message NvmeTargetSubsystemDeleteResponse {
-  types.ApiStatus       ApiStatus = 1; // status code
+  types.ApiStatus       api_status = 1; // status code
 }

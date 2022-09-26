@@ -18,17 +18,17 @@ service NvmeNsCryptoSvc {
 // Cryptographic key specification
 message NvmeNsCryptoSpec {
   // (mandatory) encryption object key
-  types.ObjectKey NvmeNsCryptoKey = 1;
+  types.ObjectKey nvme_ns_crypto_key = 1;
   // (mandatory) encryption type to use
-  types.CryptType CryptType    = 2;
+  types.CryptType crypt_type    = 2;
 }
 
 // Cryptographic key secrets
 message NvmeNsCryptoSecrets {
   // Encryption secret, size based on type
-  bytes PrimaryKeySecret    = 1;
+  bytes primary_key_secret    = 1;
   // IV secret, size based on type
-  bytes SecondaryKeySecret  = 2;
+  bytes secondary_key_secret  = 2;
 }
 
 // Cryptographic key status
@@ -41,39 +41,39 @@ message NvmeNsCryptoStats {
 
 // Cryptographic key object
 message NvmeNsCrypto {
-  NvmeNsCryptoSpec       Spec   = 1; // Cryptographic key specification
-  NvmeNsCryptoStatus     Status = 2; // Cryptograpic key status
-  NvmeNsCryptoStats      Stats  = 3; // Cryptograpic key stats
+  NvmeNsCryptoSpec       spec   = 1; // Cryptographic key specification
+  NvmeNsCryptoStatus     status = 2; // Cryptograpic key status
+  NvmeNsCryptoStats      stats  = 3; // Cryptograpic key stats
 }
 
 // create request
 message NvmeNsCryptoRequest {
-  NvmeNsCryptoSpec       Spec    = 1; // Cryptographic key specification
-  NvmeNsCryptoSecrets    Secrets = 2; // Cryptographic key secrets
+  NvmeNsCryptoSpec       spec    = 1; // Cryptographic key specification
+  NvmeNsCryptoSecrets    secrets = 2; // Cryptographic key secrets
 }
 
 // create response
 message NvmeNsCryptoCreateResponse {
-  types.ApiStatus     ApiStatus  = 1; // Status code
+  types.ApiStatus     api_status  = 1; // Status code
 }
 
 // Get request
 message NvmeNsCryptoGetRequest {
-  types.ObjectKey NvmeNsCryptoKey = 1;
+  types.ObjectKey nvme_ns_crypto_key = 1;
 }
 
 // get response
 message NvmeNsCryptoGetResponse {
-  types.ApiStatus     ApiStatus = 1; // Status code
-  NvmeNsCrypto  Response  = 2;
+  types.ApiStatus     api_status = 1; // Status code
+  NvmeNsCrypto  response  = 2;
 }
 
 // delete request
 message NvmeNsCryptoDeleteRequest {
-  types.ObjectKey     NvmeNsCryptoKey        = 1; // Keys of interest
+  types.ObjectKey     nvme_ns_crypto_key        = 1; // Keys of interest
 }
 
 // delete response
 message NvmeNsCryptoDeleteResponse {
-  types.ApiStatus  ApiStatus           = 1; // Status code
+  types.ApiStatus  api_status           = 1; // Status code
 }

@@ -26,49 +26,49 @@ message NvmeDiscoveryPathStats {
 // discovery path specification
 message NvmeDiscoveryPathSpec {
   // (mandatory) key for the discovery object
-  types.ObjectKey NvmeDiscoveryPathKey = 1;
+  types.ObjectKey nvme_discovery_path_key = 1;
   // (mandatory) cluster to which the discovery-path belongs
-  types.ObjectKey ClusterKey           = 2;
+  types.ObjectKey cluster_key           = 2;
   // (mandatory) initiator endpoint port for the path
-  types.ObjectKey InitiatorPortKey     = 3;
+  types.ObjectKey initiator_port_key     = 3;
   // (mandatory) target endpoint port for the path
-  types.ObjectKey TargetPortKey        = 4;
+  types.ObjectKey target_port_key        = 4;
 }
 
 // discovery path object
 message NvmeDiscoveryPath {
-  NvmeDiscoveryPathSpec   Spec    = 1; // discovery path object specification
-  NvmeDiscoveryPathStatus Status  = 2; // status
-  NvmeDiscoveryPathStats  Stats   = 3; // stats
+  NvmeDiscoveryPathSpec   spec    = 1; // discovery path object specification
+  NvmeDiscoveryPathStatus status  = 2; // status
+  NvmeDiscoveryPathStats  stats   = 3; // stats
 }
 
 // create request
 message NvmeDiscoveryPathCreateRequest {
-  NvmeDiscoveryPathSpec  Spec    = 1; // discovery path object specification
+  NvmeDiscoveryPathSpec  spec    = 1; // discovery path object specification
 }
 
 // create request
 message NvmeDiscoveryPathCreateResponse {
-  types.ApiStatus ApiStatus   = 1; // status
+  types.ApiStatus api_status   = 1; // status
 }
 
 // delete request
 message NvmeDiscoveryPathDeleteRequest {
-  types.ObjectKey NvmeDiscoveryPathKey   = 1; // discovery path key
+  types.ObjectKey nvme_discovery_path_key   = 1; // discovery path key
 }
 
 // delete response
 message NvmeDiscoveryPathDeleteResponse {
-  types.ApiStatus ApiStatus   = 1; // status
+  types.ApiStatus api_status   = 1; // status
 }
 
 // discovery path get request
 message NvmeDiscoveryPathGetRequest {
-  types.ObjectKey NvmeDiscoveryPathKey = 1; // discovery path key
+  types.ObjectKey nvme_discovery_path_key = 1; // discovery path key
 }
 
 // get response
 message NvmeDiscoveryPathGetResponse {
-  types.ApiStatus  ApiStatus = 1; // status
-  NvmeDiscoveryPath   Response  = 2; // discovery path object
+  types.ApiStatus  api_status = 1; // status
+  NvmeDiscoveryPath   response  = 2; // discovery path object
 }

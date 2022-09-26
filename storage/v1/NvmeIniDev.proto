@@ -19,12 +19,12 @@ service NvmeIniDevSvc {
 // NvmeIni device specification
 message NvmeIniDevSpec {
   // (mandatory) initiator device object key.
-  types.ObjectKey NvmeIniDevKey    = 1;
+  types.ObjectKey nvme_ini_dev_key    = 1;
   // (mandatory) unique NQN identifer for the host, used in fabric connect to
   // the NVMe-oF target
-  bytes        HostNqn             = 2;
+  bytes        host_nqn             = 2;
   // (mandatory) unique host ID, used in fabric connect to the NVMe-oF target.
-  bytes        HostId              = 3;
+  bytes        host_id              = 3;
 }
 
 // initiator device status
@@ -37,38 +37,38 @@ message NvmeIniDevStats {
 
 // initiator device object
 message NvmeIniDev {
-  NvmeIniDevSpec   Spec   = 1; // specification
-  NvmeIniDevStatus Status = 2; // status
-  NvmeIniDevStats  Stats  = 3; // stats
+  NvmeIniDevSpec   spec   = 1; // specification
+  NvmeIniDevStatus status = 2; // status
+  NvmeIniDevStats  stats  = 3; // stats
 }
 
 // create request
 message NvmeIniDevCreateRequest {
-  NvmeIniDevSpec Spec = 1; // initiator object specification
+  NvmeIniDevSpec spec = 1; // initiator object specification
 }
 
 // create response
 message NvmeIniDevCreateResponse {
-  types.ApiStatus    ApiStatus = 1; // status code
+  types.ApiStatus    api_status = 1; // status code
 }
 
 // get request
 message NvmeIniDevGetRequest {
-  types.ObjectKey NvmeIniDevKey = 1; // object to get
+  types.ObjectKey nvme_ini_dev_key = 1; // object to get
 }
 
 // get response
 message NvmeIniDevGetResponse {
-  types.ApiStatus ApiStatus = 1; // status code
-  NvmeIniDev      Response  = 2; // iniitiator device object
+  types.ApiStatus api_status = 1; // status code
+  NvmeIniDev      response  = 2; // iniitiator device object
 }
 
 // delete Request
 message NvmeIniDevDeleteRequest {
-  types.ObjectKey NvmeIniDevKey = 1; // initiator device object key
+  types.ObjectKey nvme_ini_dev_key = 1; // initiator device object key
 }
 
 // delete response
 message NvmeIniDevDeleteResponse {
-  types.ApiStatus    ApiStatus = 1; // status code
+  types.ApiStatus    api_status = 1; // status code
 }

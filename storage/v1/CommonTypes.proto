@@ -37,7 +37,7 @@ enum ApiStatusCode {
 }
 
 message ApiStatus {
-  ApiStatusCode Sc        = 1; // status code
+  ApiStatusCode sc        = 1; // status code
 }
 
 // Global constants
@@ -53,7 +53,7 @@ enum GlobalConstants {
 // of bits (upto 128) as required to uniquely identify the object. The same
 // object key must be provided in subsequent operations on object
 message ObjectKey {
-  bytes Key = 1;
+  bytes key = 1;
 }
 
 // The controller PCI-ID is used to address a given virtual controller. Virtual
@@ -63,14 +63,14 @@ message ObjectKey {
 // virtual functions under the physical function.
 message NvmeControllerPciId {
   // Bus number, provided for future usage if needed. Currently set to ’0’
-  uint32 Bus              = 1;
+  uint32 bus              = 1;
   // Device number, based on the NVMe device layout
-  uint32 Device           = 2;
+  uint32 device           = 2;
   // Physical function, always set to 0 in current model
-  uint32 Function         = 3;
+  uint32 function         = 3;
   // SRIOV Virtual function within the Device and Physical function.
   // Set to 0 for Physical Function. Virtual Function numbering starts from 1
-  uint32 VirtualFunction  = 4;
+  uint32 virtual_function  = 4;
 }
 
 // AES encryption type to be used
@@ -119,7 +119,7 @@ enum NvmeTcpSecureSockType {
 
 // TCP Additional Address information
 message NvmeTcpAdditionalInfo {
-  NvmeTcpSecureSockType SecureSockType = 1;
+  NvmeTcpSecureSockType secure_sock_type = 1;
 }
 
 // RDMA Addtional Addr Info 
@@ -130,8 +130,8 @@ message NvmeRdmaAdditionalInfo {
 // Transport Specific additional Address information
 message NvmeTransportAdditionalInfo {
   oneof info {
-    NvmeTcpAdditionalInfo  Tcp  = 1;
-    NvmeRdmaAdditionalInfo Rdma = 2;
+    NvmeTcpAdditionalInfo  tcp  = 1;
+    NvmeRdmaAdditionalInfo rdma = 2;
   }
 }
 

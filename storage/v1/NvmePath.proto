@@ -19,28 +19,28 @@ service NvmePathSvc {
 
 // NVMe fabric endpoint
 message NvmePathEndPoint {
-  types.ObjectKey InitiatorPortKey = 1; // initiator endpoint
-  types.ObjectKey TargetPortKey    = 2; // target endpoint
-  types.ObjectKey InitiatorDevKey  = 3; // initiator device
-  types.ObjectKey TgtSubsystemKey  = 4; // target subsystem
+  types.ObjectKey initiator_port_key = 1; // initiator endpoint
+  types.ObjectKey target_port_key    = 2; // target endpoint
+  types.ObjectKey initiator_dev_key  = 3; // initiator device
+  types.ObjectKey tgt_subsystem_key  = 4; // target subsystem
 }
 // path parameters
 message NvmePathParams {
   // backend queue id
-  uint32             QueueId              = 1;
+  uint32             queue_id              = 1;
   // path mode
-  types.NvmePathMode NvmePathMode         = 2;
+  types.NvmePathMode nvme_path_mode         = 2;
   // selection priority, paths are activated in the given priority order
-  uint32             Priority             = 3;
+  uint32             priority             = 3;
   /// wait time before retrying connect on failed block dev
-  uint32             ConnectRetryInterval = 4;
+  uint32             connect_retry_interval = 4;
   /// NvmePath Endpoint details
-  NvmePathEndPoint   EndPoint             = 5;
+  NvmePathEndPoint   end_point             = 5;
 }
 
 // path status
 message NvmePathStatus {
-  types.NvmePathConnectionState ConnectionState = 1; // path connection state
+  types.NvmePathConnectionState connection_state = 1; // path connection state
 }
 
 // path stats
@@ -49,58 +49,57 @@ message NvmePathStats {
 
 // path object
 message NvmePath {
-  NvmePathSpec   Spec   = 1; // path specification
-  NvmePathStatus Status = 2; // path status
-  NvmePathStats  Stats  = 3; // path stats
+  NvmePathSpec   spec   = 1; // path specification
+  NvmePathStatus status = 2; // path status
+  NvmePathStats  stats  = 3; // path stats
 }
 
 // path specification
 message NvmePathSpec {
 
-  types.ObjectKey NvmePathKey  = 1; // path object key
-  NvmePathParams  Params       = 2; // path parameters
+  types.ObjectKey nvme_path_key  = 1; // path object key
+  NvmePathParams  params       = 2; // path parameters
 }
 
 // create resuest
 message NvmePathCreateRequest {
-  NvmePathSpec Spec = 1; // path specification
+  NvmePathSpec spec = 1; // path specification
 }
 
 // create response
 message NvmePathCreateResponse {
-  types.ApiStatus ApiStatus = 1; // status code
+  types.ApiStatus api_status = 1; // status code
 }
 
 // update request
 message NvmePathUpdateRequest {
-  types.ObjectKey NvmePathKey = 1; // path object key
-  NvmePathParams  Params      = 2; // path parameters
+  types.ObjectKey nvme_path_key = 1; // path object key
+  NvmePathParams  params      = 2; // path parameters
 }
 
 // update response
 message NvmePathUpdateResponse {
-  types.ApiStatus ApiStatus = 1; // status code
+  types.ApiStatus api_status = 1; // status code
 }
 
 // get request
 message NvmePathGetRequest {
-  types.ObjectKey NvmePathKey = 1; // path object key
-  types.ObjectKey NsKey       = 2; // (optional) namespace object key
+  types.ObjectKey nvme_path_key = 1; // path object key
+  types.ObjectKey ns_key       = 2; // (optional) namespace object key
 }
 
 // get response
 message NvmePathGetResponse {
-  types.ApiStatus ApiStatus = 1; // status code
-  NvmePath        Response  = 2;
+  types.ApiStatus api_status = 1; // status code
+  NvmePath        response  = 2;
 }
 
 // delete request
 message NvmePathDeleteRequest {
-  types.ObjectKey NvmePathKey = 1;  // path object key
+  types.ObjectKey nvme_path_key = 1;  // path object key
 }
 
 // delete response
 message NvmePathDeleteResponse {
-  types.ApiStatus ApiStatus = 1; // status code
+  types.ApiStatus api_status = 1; // status code
 }
-

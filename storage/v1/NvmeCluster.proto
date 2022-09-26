@@ -19,7 +19,7 @@ service NvmeClusterSvc {
 // cluster specification
 message NvmeClusterSpec {
   // (mandatory) cluster object key
-  types.ObjectKey    NvmeClusterKey    =    1;
+  types.ObjectKey    nvme_cluster_key    =    1;
 }
 
 // status for cluster, if any
@@ -32,38 +32,38 @@ message NvmeClusterStats {
 
 // cluster object
 message NvmeCluster {
-  NvmeClusterSpec    Spec    =    1; // cluster object specification.
-  NvmeClusterStatus  Status  =    2; // status
-  NvmeClusterStats   Stats   =    3; // stats
+  NvmeClusterSpec    spec    =    1; // cluster object specification.
+  NvmeClusterStatus  status  =    2; // status
+  NvmeClusterStats   stats   =    3; // stats
 }
 
 // create request
 message NvmeClusterCreateRequest {
-  NvmeClusterSpec    Spec    =    1; // cluster object specification.
+  NvmeClusterSpec    spec    =    1; // cluster object specification.
 }
 
 // create response
 message NvmeClusterCreateResponse {
-  types.ApiStatus  ApiStatus   = 1; // status
+  types.ApiStatus  api_status   = 1; // status
 }
 
 // delete request
 message NvmeClusterDeleteRequest {
-  types.ObjectKey    NvmeClusterKey  =1; // NvmeCluster object key
+  types.ObjectKey    nvme_cluster_key  =1; // NvmeCluster object key
 }
 
 // delete reponse
 message NvmeClusterDeleteResponse {
-  types.ApiStatus  ApiStatus   = 1; // status
+  types.ApiStatus  api_status   = 1; // status
 }
 
 // get request
 message NvmeClusterGetRequest {
-  types.ObjectKey    NvmeClusterKey = 1; // NvmeCluster object key
+  types.ObjectKey    nvme_cluster_key = 1; // NvmeCluster object key
 }
 
 // get response
 message NvmeClusterGetResponse {
-  types.ApiStatus  ApiStatus   = 1; // status
-  NvmeCluster      Response    = 2; // of cluster objects
+  types.ApiStatus  api_status   = 1; // status
+  NvmeCluster      response    = 2; // of cluster objects
 }
