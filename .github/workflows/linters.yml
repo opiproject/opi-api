@@ -27,6 +27,6 @@ jobs:
       - name: Run linter
         run: |
           echo '::echo::on'
-          $HOME/go/bin/api-linter **/proto/*.proto --output-format summary
+          for f in **/proto; do $HOME/go/bin/api-linter $f/*.proto --output-format summary --proto-path $f; done
           echo '::echo::off'
 
