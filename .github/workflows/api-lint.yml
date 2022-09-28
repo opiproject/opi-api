@@ -1,0 +1,18 @@
+name: api-lint
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install api-linter tool
+        run: |
+          go install github.com/googleapis/api-linter/cmd/api-linter@latest
+      - name: Run linter
+        run: | 
+          echo '::echo::on'
+          $HOME/go/bin/api-linter **/proto/*.proto --output-format summary
+          echo '::echo::off'
+
