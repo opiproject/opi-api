@@ -27,6 +27,9 @@
   
     - [NVMfRemoteControllerService](#opi-storage-v1-NVMfRemoteControllerService)
   
+- [common.proto](#common-proto)
+    - [NvmeControllerPciId](#opi-storage-v1-NvmeControllerPciId)
+  
 - [frontend-nvme-pcie.proto](#frontend-nvme-pcie-proto)
     - [NVMeController](#opi-storage-v1-NVMeController)
     - [NVMeControllerCreateRequest](#opi-storage-v1-NVMeControllerCreateRequest)
@@ -439,6 +442,44 @@ Intentionally empty.
 
 
 
+<a name="common-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common.proto
+
+
+
+<a name="opi-storage-v1-NvmeControllerPciId"></a>
+
+### NvmeControllerPciId
+The controller PCI-ID is used to address a given virtual controller. Virtual
+controllers are organized into devices with Physical functions and SRIOV
+virtual function within the physical functions. Currently, xPUs may
+expose multiple devices with one physical function each and one or more
+virtual functions under the physical function.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bus | [uint32](#uint32) |  | Bus number, provided for future usage if needed. Currently set to ’0’ |
+| device | [uint32](#uint32) |  | Device number, based on the NVMe device layout |
+| function | [uint32](#uint32) |  | Physical function, always set to 0 in current model |
+| virtual_function | [uint32](#uint32) |  | SRIOV Virtual function within the Device and Physical function. Set to 0 for Physical Function. Virtual Function numbering starts from 1 |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="frontend-nvme-pcie-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -457,7 +498,7 @@ Intentionally empty.
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
 | subsystem_id | [string](#string) |  |  |
-| pcie_id | [string](#string) |  |  |
+| pcie_id | [NvmeControllerPciId](#opi-storage-v1-NvmeControllerPciId) |  |  |
 | max_io_qps | [int64](#int64) |  |  |
 | max_ns | [int64](#int64) |  |  |
 
@@ -1099,7 +1140,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
-| pcie_id | [string](#string) |  |  |
+| pcie_id | [NvmeControllerPciId](#opi-storage-v1-NvmeControllerPciId) |  |  |
 | bdev | [string](#string) |  |  |
 | max_io_qps | [int64](#int64) |  |  |
 | serial_number | [string](#string) |  |  |
@@ -1327,7 +1368,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
-| pcie_id | [string](#string) |  |  |
+| pcie_id | [NvmeControllerPciId](#opi-storage-v1-NvmeControllerPciId) |  |  |
 
 
 

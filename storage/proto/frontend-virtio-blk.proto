@@ -4,6 +4,7 @@
 syntax = "proto3";
 package opi.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/proto";
+import "common.proto";
 
 // Front End (host-facing) APIs.
 
@@ -21,7 +22,7 @@ service VirtioBlkService {
 message VirtioBlk {
     int64 id = 1;
     string name = 2;
-    string pcie_id = 3;
+    NvmeControllerPciId pcie_id = 3;
     string bdev = 4;
     int64 max_io_qps = 5;
     string serial_number = 6;

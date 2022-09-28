@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+
+syntax = "proto3";
+package opi.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/proto";
+
+// The controller PCI-ID is used to address a given virtual controller. Virtual
+// controllers are organized into devices with Physical functions and SRIOV
+// virtual function within the physical functions. Currently, xPUs may
+// expose multiple devices with one physical function each and one or more
+// virtual functions under the physical function.
+message NvmeControllerPciId {
+    // Bus number, provided for future usage if needed. Currently set to ’0’
+    uint32 bus              = 1;
+    // Device number, based on the NVMe device layout
+    uint32 device           = 2;
+    // Physical function, always set to 0 in current model
+    uint32 function         = 3;
+    // SRIOV Virtual function within the Device and Physical function.
+    // Set to 0 for Physical Function. Virtual Function numbering starts from 1
+    uint32 virtual_function  = 4;
+}
