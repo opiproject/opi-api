@@ -7,5 +7,70 @@ option go_package = "github.com/opiproject/opi-api/storage/proto";
 
 // Back End (network-facing) APIs.
 
-// TODO: NULL - for debug
+service NullDebugService {
+    rpc NullDebugCreate (NullDebugCreateRequest) returns (NullDebugCreateResponse) {}
+    rpc NullDebugDelete (NullDebugDeleteRequest) returns (NullDebugDeleteResponse) {}
+    rpc NullDebugUpdate (NullDebugUpdateRequest) returns (NullDebugUpdateResponse) {}
+    rpc NullDebugList   (NullDebugListRequest)   returns (NullDebugListResponse)   {}
+    rpc NullDebugGet    (NullDebugGetRequest)    returns (NullDebugGetResponse)    {}
+    rpc NullDebugStats  (NullDebugStatsRequest)  returns (NullDebugStatsResponse)  {}
+}
+
+message NullDebug {
+    int64 id = 1;
+    string name = 2;
+    int64 block_size = 3;
+    int64 num_blocks = 4;
+    string uuid = 5;
+}
+
+message NullDebugCreateRequest {
+    NullDebug device = 1;
+}
+
+message NullDebugCreateResponse {
+    // Intentionally empty.
+}
+
+message NullDebugDeleteRequest {
+    int64 id = 1;
+
+}
+
+message NullDebugDeleteResponse {
+    // Intentionally empty.
+}
+
+message NullDebugUpdateRequest {
+    NullDebug device = 1;
+}
+
+message NullDebugUpdateResponse {
+    // Intentionally empty.
+}
+
+message NullDebugListRequest {
+    // Intentionally empty.
+}
+
+message NullDebugListResponse {
+    repeated NullDebug device = 1;
+}
+
+message NullDebugGetRequest {
+    int64 id = 1;
+}
+
+message NullDebugGetResponse {
+    NullDebug device = 1;
+}
+
+message NullDebugStatsRequest {
+    int64 id = 1;
+}
+
+message NullDebugStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}
 

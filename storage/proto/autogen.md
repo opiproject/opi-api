@@ -5,6 +5,22 @@
 
 - [backend-iscsi.proto](#backend-iscsi-proto)
 - [backend-null.proto](#backend-null-proto)
+    - [NullDebug](#opi-storage-v1-NullDebug)
+    - [NullDebugCreateRequest](#opi-storage-v1-NullDebugCreateRequest)
+    - [NullDebugCreateResponse](#opi-storage-v1-NullDebugCreateResponse)
+    - [NullDebugDeleteRequest](#opi-storage-v1-NullDebugDeleteRequest)
+    - [NullDebugDeleteResponse](#opi-storage-v1-NullDebugDeleteResponse)
+    - [NullDebugGetRequest](#opi-storage-v1-NullDebugGetRequest)
+    - [NullDebugGetResponse](#opi-storage-v1-NullDebugGetResponse)
+    - [NullDebugListRequest](#opi-storage-v1-NullDebugListRequest)
+    - [NullDebugListResponse](#opi-storage-v1-NullDebugListResponse)
+    - [NullDebugStatsRequest](#opi-storage-v1-NullDebugStatsRequest)
+    - [NullDebugStatsResponse](#opi-storage-v1-NullDebugStatsResponse)
+    - [NullDebugUpdateRequest](#opi-storage-v1-NullDebugUpdateRequest)
+    - [NullDebugUpdateResponse](#opi-storage-v1-NullDebugUpdateResponse)
+  
+    - [NullDebugService](#opi-storage-v1-NullDebugService)
+  
 - [backend-nvme-pcie.proto](#backend-nvme-pcie-proto)
 - [backend-nvme-tcp.proto](#backend-nvme-tcp-proto)
     - [NVMfRemoteController](#opi-storage-v1-NVMfRemoteController)
@@ -151,11 +167,206 @@
 ## backend-null.proto
 
 
- 
+
+<a name="opi-storage-v1-NullDebug"></a>
+
+### NullDebug
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| block_size | [int64](#int64) |  |  |
+| num_blocks | [int64](#int64) |  |  |
+| uuid | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugCreateRequest"></a>
+
+### NullDebugCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [NullDebug](#opi-storage-v1-NullDebug) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugCreateResponse"></a>
+
+### NullDebugCreateResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugDeleteRequest"></a>
+
+### NullDebugDeleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugDeleteResponse"></a>
+
+### NullDebugDeleteResponse
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugGetRequest"></a>
+
+### NullDebugGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugGetResponse"></a>
+
+### NullDebugGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [NullDebug](#opi-storage-v1-NullDebug) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugListRequest"></a>
+
+### NullDebugListRequest
+Intentionally empty.
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugListResponse"></a>
+
+### NullDebugListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [NullDebug](#opi-storage-v1-NullDebug) | repeated |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugStatsRequest"></a>
+
+### NullDebugStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugStatsResponse"></a>
+
+### NullDebugStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugUpdateRequest"></a>
+
+### NullDebugUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [NullDebug](#opi-storage-v1-NullDebug) |  |  |
+
+
+
+
+
+
+<a name="opi-storage-v1-NullDebugUpdateResponse"></a>
+
+### NullDebugUpdateResponse
+Intentionally empty.
+
+
+
+
 
  
 
  
+
+ 
+
+
+<a name="opi-storage-v1-NullDebugService"></a>
+
+### NullDebugService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| NullDebugCreate | [NullDebugCreateRequest](#opi-storage-v1-NullDebugCreateRequest) | [NullDebugCreateResponse](#opi-storage-v1-NullDebugCreateResponse) |  |
+| NullDebugDelete | [NullDebugDeleteRequest](#opi-storage-v1-NullDebugDeleteRequest) | [NullDebugDeleteResponse](#opi-storage-v1-NullDebugDeleteResponse) |  |
+| NullDebugUpdate | [NullDebugUpdateRequest](#opi-storage-v1-NullDebugUpdateRequest) | [NullDebugUpdateResponse](#opi-storage-v1-NullDebugUpdateResponse) |  |
+| NullDebugList | [NullDebugListRequest](#opi-storage-v1-NullDebugListRequest) | [NullDebugListResponse](#opi-storage-v1-NullDebugListResponse) |  |
+| NullDebugGet | [NullDebugGetRequest](#opi-storage-v1-NullDebugGetRequest) | [NullDebugGetResponse](#opi-storage-v1-NullDebugGetResponse) |  |
+| NullDebugStats | [NullDebugStatsRequest](#opi-storage-v1-NullDebugStatsRequest) | [NullDebugStatsResponse](#opi-storage-v1-NullDebugStatsResponse) |  |
 
  
 
