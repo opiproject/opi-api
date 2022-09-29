@@ -2,4 +2,5 @@
 **/*.iml
 **/proto/*
 !**/proto/*.proto
+!**/proto/*.pb.go
 !**/proto/autogen.md
