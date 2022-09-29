@@ -1,0 +1,5 @@
+**/.idea
+**/*.iml
+**/proto/*
+!**/proto/*.proto
+!**/proto/autogen.md
