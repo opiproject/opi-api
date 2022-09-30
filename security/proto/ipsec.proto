@@ -4,6 +4,7 @@
  *
  * Major pieces taken from:
  * https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
+ * https://datatracker.ietf.org/doc/rfc9061/
  */
 syntax = "proto3";
 package opi.security.v1;
@@ -475,4 +476,552 @@ message IPsecUnloadConnReq {
 
 message IPsecUnloadConnResp {
 	string success = 1;
+}
+
+/* IPsec protocol */
+enum IPsecProtocol {
+	AH = 0;
+	ESP = 1;
+}
+
+enum DFBits {
+
+	/* Disable the DF (Don't Fragment) bit
+        from the outer header. This is the
+        default value */
+	clear = 0;
+
+	/* Enable the DF bit in the outer header */
+	set = 1;
+
+	/* Copy the DF bit to the outer header */
+	copy = 2;
+}
+
+message Encryption {
+
+	/* "Configuration of ESP
+        encryption. With AEAD
+        algorithms, the integrity-algorithm
+        leaf is not use*/
+	CryptoAlgorithm encryption_algorithm = 1;
+
+	/* ESP encryption key value.
+		If this leaf is not defined
+		the key is not defined
+		(e.g. encryption is NULL).
+		The key length is
+		determined by the
+		length of the key set in
+		this leaf. By default is
+		128 bit */
+	string key = 2;
+
+	/* ESP encryption IV value. If
+		this leaf is not defined the
+		IV is not defined (e.g.
+		encryption is NULL */
+	string iv = 3;
+}
+
+message Integrity {
+
+	/* "Configuration of ESP
+        encryption. With AEAD
+        algorithms, the integrity-algorithm
+        leaf is not use*/
+	CryptoAlgorithm integrityn_algorithm = 1;
+
+	/* ESP encryption key value.
+		If this leaf is not defined
+		the key is not defined
+		(e.g. encryption is NULL).
+		The key length is
+		determined by the
+		length of the key set in
+		this leaf. By default is
+		128 bit */
+	string key = 2;
+}
+
+/* Different lifetime values limited to an IPsec SA */
+message Lifetime {
+	
+	/* Time in seconds since the IPsec SA was added.
+        For example, if this value is 180 seconds it
+        means the IPsec SA expires in 180 seconds since
+        it was added. The value 0 implies infinite */
+	uint32	time = 1;
+
+	/* If the IPsec SA processes the number of bytes
+         expressed in this leaf, the IPsec SA expires and
+         should be rekeyed. The value 0 implies
+         infinit */
+	uint32	bytes = 2;
+
+	/* If the IPsec SA processes the number of packets
+         expressed in this leaf, the IPsec SA expires and
+         should be rekeyed. The value 0 implies
+         infinit */
+	uint32	packets = 3;
+
+	/* When a NSF stores an IPsec SA, it
+        consumes system resources. In an idle NSF this
+        is a waste of resources. If the IPsec SA is idle
+        during this number of seconds the IPsec SA
+        should be removed. The value 0 implies
+        infinit */
+	uint32	idle_time = 4;
+}
+
+/* The parameters required to define the IP tunnel
+      endpoints when IPsec SA requires tunnel mode. The
+      tunnel is defined by two endpoints: the local IP
+      address and the remote IP address */
+message Tunnel {
+	
+	/* Local IP address' tunnel endpoint */
+	Addrs local = 1;
+
+	/* Remote IP address' tunnel endpoint */
+	Addrs remote = 2;
+
+	/* Allow configuring the DF bit when encapsulating
+        tunnel mode IPsec traffic. RFC 4301 describes
+        three options to handle the DF bit during
+        tunnel encapsulation: clear, set and copy from
+        the inner IP header */
+	DF_Bits df_bit = 3;
+
+	/* If DSCP (Differentiated Services Code Point)
+        values in the inner header have to be used to
+        select one IPsec SA among several that match
+        the traffic selectors for an outbound packet */
+	bool bypass_dscp = 4;
+
+	/* DSCP values allowed for packets carried over
+        this IPsec SA */
+	repeated uint8 dscp_mapping = 5;
+
+	/* Explicit Congestion Notification (ECN). If true
+        copy CE bits to inner header */
+	bool ecn = 6;
+
+}
+
+/* Types of ESP encapsulation when Network Address
+      Translation (NAT) is present between two NSFs */
+enum EspEncap {
+
+	/* NOT ESP encapsulation */
+	NONE = 1;
+
+	/* ESP in TCP encapsulation */
+	ESPINTCP = 2;
+
+	/* ESP in TCP encapsulation using TLS */
+	ESPINTLS = 3;
+
+	/* ESP in UDP encapsulation */
+	ESPINUDP = 4;
+}
+
+/* This group of nodes allows to define the type of
+      encapsulation in case NAT traversal is
+      required and port information */
+message Encap {
+
+	/* ESP in TCP, ESP in UDP or ESP in TLS*/
+	EspEncap esp_encap = 1;
+
+	/* Encapsulation source port */
+	uint32 sport = 2;
+
+	/* */
+	uint32 dport = 3;
+
+	Addrs oaddr = 4;
+
+}
+/* Anti replay state state data */
+message Replay_stats {
+
+	/* Current state of replay window */
+	uint64 replay_window = 1;
+
+	/* Packets detected out of the
+		replay window and dropped
+		because they are replay
+		packets */
+	uint64 packets_dropped = 2;
+
+	/* Number of packets detected out
+		of the replay window.*/
+	uint32 failed = 3;
+
+	/* A 64-bit counter when this
+		IPsec SA is using Extended
+		Sequence Number or 32-bit
+		counter when it is not.
+		Current value of sequence
+		number */
+	uint64 seq_number_counter = 4;
+}
+
+/* IPsec state data */
+message Ipsec_sa_state {
+
+	/* SAD Lifetime current */	
+	Lifetime sa_lifetime_current = 1;
+
+	/* State data about Anti-Replay Window */
+	Replay_stats replay_stats = 2;
+
+}
+
+message PortRange{
+
+	uint16 start_port = 1;
+	uint16 end_port = 2;
+}
+
+message SaTrafficSelector {
+
+	string local_subnet = 1;
+	string remote_subnet = 2;
+	unit8 inner_protocol = 3;
+	PortRange local_ports = 4;
+	PortRange remote_ports = 5;
+}
+/* Security Association (SA) */
+message SecurityAssociations {
+	message Sa {
+		/* "SAD entry unique name to identify this
+          entry.*/
+		string name = 1; 
+		
+		/* "This value allows to link this
+			IPsec SA with an IPsec policy with
+			the same reqid.*/
+		uint64 reqid =2;
+			
+		/* security parameter index */
+		uint32 spi = 3;
+		
+		/* True if this IPsec SA is using
+            extended sequence numbers. True 64
+            bit counter, false 32 bit. */
+		bool ext_seq_num = 4;
+
+		/* "A 64-bit counter when this IPsec
+            SA is using Extended Sequence
+            Number or 32-bit counter when it
+            is not. It used to generate the
+            initial Sequence Number field
+            in ESP headers.*/
+		uint64 seq_number_counter = 5;
+
+		/* "The flag indicating whether
+            overflow of the sequence number
+            counter should prevent transmission
+            of additional packets on the IPsec
+            SA (false) and, therefore needs to
+            be rekeyed, or whether rollover is
+            permitted (true). If Authenticated
+            Encryption with Associated Data
+            (AEAD) is used (leaf
+            esp-algorithms/encryption/algorithm-type)
+            this flag MUST BE false.*/
+		bool seq_overflow = 6;
+
+		/* "A 32-bit counter and a bit-map (or
+            equivalent) used to determine
+            whether an inbound ESP packet is a
+            replay. If set to 0 no anti-replay
+            mechanism is performed." */
+		uint32 anti_replay_window = 7;
+
+		/* Security protocol of IPsec SA ESP/AH */
+		IPsecProtocol protocol = 8;
+
+		/* Tunnel or transport mode */
+		IPsecMode mode = 9;
+
+		/* Configuration of encryption or
+			AEAD algorithm for IPsec
+			Encapsulation Security Payload
+			(ESP) */
+		Encryption encryption = 10;
+
+		/* Configuration of integrity for
+			IPsec Encapsulation Security
+			Payload (ESP). This container
+			allows to configure integrity
+			algorithm when no AEAD
+			algorithms are used, and
+			integrity is required */
+		Integrity integrity = 11;
+
+		/*
+		CryptoAlgorithm crypto_alg = 4;
+		string crypto_key = 5;
+
+		IntegAlgorithm integ_alg = 6;
+		string integ_key = 7;
+		*/
+
+		/* IPsec SA hard lifetime. The action
+            associated is terminate and
+            hold */
+		Lifetime sa_lifetime_hard = 12;
+
+		/* IPsec SA soft lifetime */
+		Lifetime sa_lifetime_soft = 13;
+
+		/* Endpoints of the IPsec tunne */
+		Tunnel tunnel = 14;
+		
+		/* This container carries
+            configuration information about
+            the source and destination ports
+            which will be used for ESP
+            encapsulation that ESP packets the
+            type of encapsulation when NAT
+            traversal is in place */
+		Encap encapsulation_type = 15;
+
+		/* The IPsec SA traffic selector */
+		SaTrafficSelector traffic_selector = 16;
+
+		/* Details of the IPsec SA state */
+		Ipsec_sa_state sa_state = 17;		
+
+	}
+	repeated Sa sas = 1;
+}
+
+enum IpsecTrafficDirection {
+	
+		inbound = 1;
+		outbout = 2;
+
+}
+/* The action when traffic matches an IPsec security
+      policy. According to RFC 4301 there are three
+      possible values: BYPASS, PROTECT AND DISCARD */
+enum IPsecSpdAction {
+
+	/* PROTECT the traffic with IPsec */
+	protect = 1;
+
+	/* YPASS the traffic. The packet is forwarded
+          without IPsec protection */
+	bypass = 2;
+
+	/* DISCARD the traffic. The IP packet is
+          discarded */
+	discard = 3;
+
+}
+
+/* IPsec SA configuration included in the SPD
+          entry */
+message IPsecSAConfig {
+
+	/* Each selector has a Populate From
+		Packet (PFP) flag. If asserted for a
+		given selector X, the flag indicates
+		that the IPsec SA to be created should
+		take its value (local IP address,
+		remote IP address, Next Layer
+		Protocol, etc.) for X from the value
+		in the packet. Otherwise, the IPsec SA
+		should take its value(s) for X from
+		the value(s) in the SPD entry */
+	bool pfp_flag = 1;
+
+	/* True if this IPsec SA is using extended
+		sequence numbers. True 64 bit counter,
+		False 32 bit */
+	bool ext_seq_number = 2;
+
+	/* The flag indicating whether
+		overflow of the sequence number
+		counter should prevent transmission
+		of additional packets on the IPsec
+		SA (false) and, therefore needs to
+		be rekeyed, or whether rollover is
+		permitted (true). If Authenticated
+		Encryption with Associated Data
+		(AEAD) is used (leaf
+		esp-algorithms/encryption/algorithm-type)
+		this flag MUST be false */
+	bool seq_overflow = 3;
+
+	/* Indicates whether (true) or not (false)
+            stateful fragment checking applies to
+            the IPsec SA to be created  */
+	bool stateful_frag_check = 4;
+
+	/* IPsec SA has to be processed in
+		transport or tunnel mode */
+	IPsecMode mode = 5;
+
+	/* Security protocol of the IPsec SA ESP/AH */
+	IPsecProtocol ipsec_protocol = 6;
+
+	/* Configuration of ESP authentication
+		based on the specified integrity
+		algorithm. With AEAD algorithms,
+		the integrity node is not use */
+	message Integirty {
+		IntegAlgorithm integrity_algorithm_type = 1;
+	}
+	repeated Integirty sa_int = 7;
+
+	message Encryption {
+
+		/* The index of list with the
+			different encryption algorithms and
+			its key-length (if required) */
+		uint8 id = 1;
+
+		/* Default value 20 (ENCR_AES_GCM_16 */
+		CryptoAlgorithm algorithm_type = 2;
+
+		/* By default key length is 128
+			bit */
+		uint16 key_length = 3;
+
+	}
+	repeated Encryption sa_enc = 8;
+
+	/* If Traffic Flow Confidentiality
+		(TFC) padding for ESP encryption
+		can be used (true) or not (false) */
+	bool tfc_pad = 9;
+	
+	/* IPsec tunnel endpoints definition  */
+	Tunnel tunnel = 10;
+
+}
+
+message ProcessingInfo {
+
+	IPsecSpdAction action = 1;
+	IPsecSaConfig sa_config = 2;
+}
+
+message SpdMark {
+
+	/* Mark used to match XFRM policies and
+          states */
+	uint32 mark = 1;
+
+	/* Mask used to match XFRM policies and
+          states */
+	uint32 mask = 2;
+
+}
+
+/* Holds configuration information for an IPsec SPD
+      entry */
+message IpsecPolicyConfig {
+
+	/* A 64-bit counter used to determine whether an
+        inbound ESP packet is a replay */
+	uint64 anti_replay_window = 1;
+
+	/* Packets are selected for
+        processing actions based on the IP and inner
+        protocol header information, selectors,
+        matched against entries in the SPD */
+	SaTrafficSelector traffic_selector = 2;
+
+	/* SPD processing. If the required processing
+        action is protect, it contains the required
+        information to process the packet */	
+	ProcessingInfo processing_info = 3;
+
+	/* The Mark to set for the IPsec SA of this
+        connection. This option is only available
+        on linux NETKEY/XFRM kernels. It can be
+        used with iptables to create custom
+        iptables rules using CONNMARK. It can also
+        be used with Virtual Tunnel Interfaces
+        (VTI) to direct marked traffic to
+        specific vtiXX devices */
+	SpdMark spd_mark = 4;
+
+}
+
+/* Security Policy Database (SPD) */
+message SecurityPolicyDatabases {
+	message Spd {
+		
+		/* SPD entry unique name to identify this
+          entry */
+		string name = 1;
+
+		/* Inbound traffic or outbound
+            traffic. In the IKE-less case the
+            I2NSF Controller needs to
+            specify the policy direction to be
+            applied in the NSF. In the IKE case
+            this direction does not need to be
+            specified since IKE
+            will determine the direction that
+            IPsec policy will require */
+		IpsecTrafficDirection directon = 2;
+
+		/* This value allows to link this
+          IPsec policy with IPsec SAs with the
+          same reqid. It is only required in
+          the IKE-less model since, in the IKE
+          case this link is handled internally
+          by IKE */
+		uint64 reqid = 3;
+
+		/* This container carries the
+          configuration of a IPsec policy */
+		IpsecPolicyConfig ipsec_policy = 4;
+
+
+		/* Interface */
+		message Interface {
+			string name = 1;    /* interface name */
+		}
+		repeated Interface interfaces = 5;    /* list of interfaces belonging to this SPD */
+
+		/* Policy Entry */
+		message PolicyEntry {
+			string sa = 1;     /* security association name */
+
+			int32 priority = 2;
+			bool is_outbound = 3;
+
+			string remote_addr_start = 4;
+			string remote_addr_stop = 5;
+			string local_addr_start = 6;
+			string local_addr_stop = 7;
+
+			uint32 protocol = 8;
+
+			uint32 remote_port_start = 9;
+			uint32 remote_port_stop = 10;
+			uint32 local_port_start = 11;
+			uint32 local_port_stop = 12;
+
+			/* Policy action */
+			enum Action {
+				BYPASS = 0;
+				DISCARD = 1;
+				//RESOLVE = 2; // unused in VPP
+				PROTECT = 3;
+			}
+			Action action = 13; /* policy action */
+		}
+		repeated PolicyEntry policy_entries = 6;   /* list of policy entries belonging to this SPD */
+	}
+	repeated Spd spds = 1;  /* list of all SPDs */
 }
