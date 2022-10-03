@@ -3,8 +3,8 @@
 // {C} Copyright 2022 Pensando Systems Inc. All rights reserved
 
 syntax = "proto3";
-package opi.storage.v1;
-option go_package = "github.com/opiproject/opi-api/storage/proto";
+package opi_api.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/v1";
 
 // The controller PCI-ID is used to address a given virtual controller. Virtual
 // controllers are organized into devices with Physical functions and SRIOV

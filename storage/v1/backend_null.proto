@@ -2,8 +2,8 @@
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
 syntax = "proto3";
-package opi.storage.v1;
-option go_package = "github.com/opiproject/opi-api/storage/proto";
+package opi_api.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/v1";
 
 // Back End (network-facing) APIs.
 

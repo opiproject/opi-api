@@ -27,9 +27,9 @@ syntax = "proto3";
 // will move to v1 at release 
 // increment beta1 to beta2 , etc for changes during development
 
-package opi.security.firewall.v1;
+package opi_api.security.firewall.v1;
 
-option go_package = "github.com/opiproject/opi-api/security/proto";
+option go_package = "github.com/opiproject/opi-api/security/firewall/v1";
 
 import "google/protobuf/timestamp.proto";
 

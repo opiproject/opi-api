@@ -6,8 +6,8 @@
  * https://github.com/ligato/cn-infra/blob/master/examples/cryptodata-proto-plugin/ipsec/ipsec.proto
  */
 syntax = "proto3";
-package opi.security.v1;
-option go_package = "github.com/opiproject/opi-api/security/proto";
+package opi_api.security.v1;
+option go_package = "github.com/opiproject/opi-api/security/v1";
 
 service IPsec {
 	rpc IPsecVersion (IPsecVersionReq) returns (IPsecVersionResp) {}
