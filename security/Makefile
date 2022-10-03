@@ -4,17 +4,22 @@
 
 all:
 	# Build root security protos
-	rm -rf ./v1/{autogen.md,*.pb.go}
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l go -o ./v1/  --go-source-relative
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l cpp -o ./v1/  --go-source-relative
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l python -o ./v1/  --go-source-relative
+
+	rm -rf ./v1/{autogen.md,*.py}
+	rm -rf ./v1/gen
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l go -o ./v1/gen/go/ --go-source-relative
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l cpp -o ./v1/gen/cpp/ --go-source-relative
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d v1 -l python -o ./v1/gen/python/  --go-source-relative
 	docker run --rm -v "${PWD}"/v1/:/out -v "${PWD}"/v1:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,autogen.md
 
 	# Build firewall protos
-	rm -rf ./firewall/v1/{autogen.md,*.pb.go}
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l go -o ./firewall/v1/  --go-source-relative
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l cpp -o ./firewall/v1/  --go-source-relative
-	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l python -o ./firewall/v1/  --go-source-relative
+	rm -rf ./firewall/{autogen.md,*.py}
+	rm -rf ./firewall/v1/{autogen.md,*.py}
+	rm -rf ./firewall/v1/gen
+
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l go -o ./firewall/v1/gen/go/  --go-source-relative
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l cpp -o ./firewall/v1/gen/cpp/  --go-source-relative
+	docker run -v "${PWD}":/defs namely/protoc-all:1.47_2 --lint -d firewall/v1 -l python -o ./firewall/v1/gen/python/  --go-source-relative
 	docker run --rm -v "${PWD}"/firewall/v1/:/out -v "${PWD}"/firewall/v1:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,autogen.md
 
 	# Run linters
