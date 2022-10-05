@@ -5,6 +5,7 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1";
 import "common.proto";
+import "uuid.proto";
 
 // Front End (host-facing) APIs.
 
@@ -64,7 +65,7 @@ message NVMeNamespace {
     int64 num_blocks = 8;
     string nguid = 9;
     string eui64 = 10;
-    string uuid = 11;
+    common.v1.Uuid uuid = 11;
     string multipath = 12;
     string authentication = 13;
 }
@@ -74,7 +75,7 @@ message NVMeSubsystemCreateRequest {
 }
 
 message NVMeSubsystemCreateResponse {
-    string uuid = 1;
+    common.v1.Uuid uuid = 1;
 }
 
 message NVMeSubsystemDeleteRequest {

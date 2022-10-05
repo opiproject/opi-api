@@ -245,10 +245,6 @@ message Connection {
 	repeated Child children     = 19;
 }
 
-message Uuid {
-	string value = 1;
-}
-
 message IPsecVersionReq {
 	/* Intentionally empty */
 }

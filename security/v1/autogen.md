@@ -44,7 +44,6 @@
     - [RemoteAuth](#opi_api-security-v1-RemoteAuth)
     - [TrafficSelectors](#opi_api-security-v1-TrafficSelectors)
     - [TrafficSelectors.TrafficSelector](#opi_api-security-v1-TrafficSelectors-TrafficSelector)
-    - [Uuid](#opi_api-security-v1-Uuid)
     - [Vips](#opi_api-security-v1-Vips)
   
     - [AuthType](#opi_api-security-v1-AuthType)
@@ -828,21 +827,6 @@ list-cert
 | cidr | [string](#string) |  |  |
 | proto | [string](#string) |  |  |
 | port | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-security-v1-Uuid"></a>
-
-### Uuid
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  |  |
 
 
 

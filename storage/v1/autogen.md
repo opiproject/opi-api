@@ -141,6 +141,9 @@
     - [VirtioScsiLunService](#opi_api-storage-v1-VirtioScsiLunService)
   
 - [middleend.proto](#middleend-proto)
+- [uuid.proto](#uuid-proto)
+    - [Uuid](#opi_api-common-v1-Uuid)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -180,7 +183,7 @@
 | name | [string](#string) |  |  |
 | block_size | [int64](#int64) |  |  |
 | num_blocks | [int64](#int64) |  |  |
-| uuid | [string](#string) |  |  |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 
 
 
@@ -905,7 +908,7 @@ Intentionally empty.
 | num_blocks | [int64](#int64) |  |  |
 | nguid | [string](#string) |  |  |
 | eui64 | [string](#string) |  |  |
-| uuid | [string](#string) |  |  |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | multipath | [string](#string) |  |  |
 | authentication | [string](#string) |  |  |
 
@@ -1128,7 +1131,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| uuid | [string](#string) |  |  |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 
 
 
@@ -1976,6 +1979,37 @@ Intentionally empty.
 <p align="right"><a href="#top">Top</a></p>
 
 ## middleend.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="uuid-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## uuid.proto
+
+
+
+<a name="opi_api-common-v1-Uuid"></a>
+
+### Uuid
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
+
+
+
 
 
  

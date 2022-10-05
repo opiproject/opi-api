@@ -24,14 +24,12 @@
 
 syntax = "proto3";
 
-// will move to v1 at release 
-// increment beta1 to beta2 , etc for changes during development
-
 package opi_api.security.firewall.v1;
 
 option go_package = "github.com/opiproject/opi-api/security/firewall/v1";
 
 import "google/protobuf/timestamp.proto";
+import "uuid.proto";
 
 enum IpVersion {
 	_IPV4 = 0;
@@ -147,11 +145,6 @@ service SessionTable {
 	rpc GetAllSession(SessionRequestArgs) returns (SessionResponses) {}
 }
 
-// Uuid for Session IDs
-message Uuid {
-	string value = 1;
-}
-
 
 // should the Application assign the sessionID on AddSession and avoid conflicts
 // or have the applications have a mechanism to avoid duplicate sessionIDs across 
@@ -186,7 +179,7 @@ message ActionParameters {
 // The IPV4 definition maps to the V4 struct returned by inet_pton which is a uint32_t.
 // The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8_t s6_addr[16]
 message SessionRequest {
-	Uuid session_id         = 1;
+	common.v1.Uuid session_id         = 1;
 	int32 inlif             = 2;
 	int32 outlif            = 3;
 	IpVersion ipversion     = 4;
@@ -204,7 +197,7 @@ message SessionRequest {
 }
 
 message SessionResponseError {
-	Uuid sessionid    = 1;
+	common.v1.Uuid sessionid    = 1;
 	int32 errorstatus = 2;
 }
 
@@ -225,7 +218,7 @@ message AddSessionResponse {
 }
 
 message SessionResponse {
-	Uuid sessionid                      = 1;
+	common.v1.Uuid sessionid                      = 1;
 	uint64 inpackets                    = 2;
 	uint64 outpackets                   = 3;
 	uint64 inbytes                      = 4;
@@ -239,7 +232,7 @@ message SessionResponse {
 
 message SessionRequestArgs {
 	// If SessionId is zero, return all sessions
-	Uuid sessionid            = 1;
+	common.v1.Uuid sessionid            = 1;
 	// Filter argument to only return sessions of a given state
 	SessionState sessionstate = 2;
 }

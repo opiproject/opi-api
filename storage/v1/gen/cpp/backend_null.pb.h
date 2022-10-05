@@ -32,6 +32,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "uuid.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_backend_5fnull_2eproto
@@ -262,19 +263,23 @@ class NullDebug final :
   std::string* _internal_mutable_name();
   public:
 
-  // string uuid = 5;
-  void clear_uuid();
-  const std::string& uuid() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  // .opi_api.common.v1.Uuid uuid = 5;
+  bool has_uuid() const;
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  bool _internal_has_uuid() const;
   public:
+  void clear_uuid();
+  const ::opi_api::common::v1::Uuid& uuid() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::Uuid* release_uuid();
+  ::opi_api::common::v1::Uuid* mutable_uuid();
+  void set_allocated_uuid(::opi_api::common::v1::Uuid* uuid);
+  private:
+  const ::opi_api::common::v1::Uuid& _internal_uuid() const;
+  ::opi_api::common::v1::Uuid* _internal_mutable_uuid();
+  public:
+  void unsafe_arena_set_allocated_uuid(
+      ::opi_api::common::v1::Uuid* uuid);
+  ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
   // int64 id = 1;
   void clear_id();
@@ -311,7 +316,7 @@ class NullDebug final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+  ::opi_api::common::v1::Uuid* uuid_;
   int64_t id_;
   int64_t block_size_;
   int64_t num_blocks_;
@@ -2132,54 +2137,89 @@ inline void NullDebug::set_num_blocks(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullDebug.num_blocks)
 }
 
-// string uuid = 5;
-inline void NullDebug::clear_uuid() {
-  uuid_.ClearToEmpty();
+// .opi_api.common.v1.Uuid uuid = 5;
+inline bool NullDebug::_internal_has_uuid() const {
+  return this != internal_default_instance() && uuid_ != nullptr;
 }
-inline const std::string& NullDebug::uuid() const {
+inline bool NullDebug::has_uuid() const {
+  return _internal_has_uuid();
+}
+inline const ::opi_api::common::v1::Uuid& NullDebug::_internal_uuid() const {
+  const ::opi_api::common::v1::Uuid* p = uuid_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::Uuid&>(
+      ::opi_api::common::v1::_Uuid_default_instance_);
+}
+inline const ::opi_api::common::v1::Uuid& NullDebug::uuid() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebug.uuid)
   return _internal_uuid();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NullDebug::set_uuid(ArgT0&& arg0, ArgT... args) {
- 
- uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullDebug.uuid)
-}
-inline std::string* NullDebug::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebug.uuid)
-  return _s;
-}
-inline const std::string& NullDebug::_internal_uuid() const {
-  return uuid_.Get();
-}
-inline void NullDebug::_internal_set_uuid(const std::string& value) {
-  
-  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NullDebug::_internal_mutable_uuid() {
-  
-  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NullDebug::release_uuid() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebug.uuid)
-  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NullDebug::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void NullDebug::unsafe_arena_set_allocated_uuid(
+    ::opi_api::common::v1::Uuid* uuid) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  uuid_ = uuid;
+  if (uuid) {
     
   } else {
     
   }
-  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (uuid_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullDebug.uuid)
+}
+inline ::opi_api::common::v1::Uuid* NullDebug::release_uuid() {
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NullDebug::unsafe_arena_release_uuid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebug.uuid)
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NullDebug::_internal_mutable_uuid() {
+  
+  if (uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::Uuid>(GetArenaForAllocation());
+    uuid_ = p;
+  }
+  return uuid_;
+}
+inline ::opi_api::common::v1::Uuid* NullDebug::mutable_uuid() {
+  ::opi_api::common::v1::Uuid* _msg = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebug.uuid)
+  return _msg;
+}
+inline void NullDebug::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  if (uuid) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid));
+    if (message_arena != submessage_arena) {
+      uuid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  uuid_ = uuid;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebug.uuid)
 }
 

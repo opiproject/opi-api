@@ -48,7 +48,7 @@ struct TableStruct_ipsec_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[42]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[41]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -178,9 +178,6 @@ extern TrafficSelectorsDefaultTypeInternal _TrafficSelectors_default_instance_;
 class TrafficSelectors_TrafficSelector;
 struct TrafficSelectors_TrafficSelectorDefaultTypeInternal;
 extern TrafficSelectors_TrafficSelectorDefaultTypeInternal _TrafficSelectors_TrafficSelector_default_instance_;
-class Uuid;
-struct UuidDefaultTypeInternal;
-extern UuidDefaultTypeInternal _Uuid_default_instance_;
 class Vips;
 struct VipsDefaultTypeInternal;
 extern VipsDefaultTypeInternal _Vips_default_instance_;
@@ -228,7 +225,6 @@ template<> ::opi_api::security::v1::PubKeys* Arena::CreateMaybeMessage<::opi_api
 template<> ::opi_api::security::v1::RemoteAuth* Arena::CreateMaybeMessage<::opi_api::security::v1::RemoteAuth>(Arena*);
 template<> ::opi_api::security::v1::TrafficSelectors* Arena::CreateMaybeMessage<::opi_api::security::v1::TrafficSelectors>(Arena*);
 template<> ::opi_api::security::v1::TrafficSelectors_TrafficSelector* Arena::CreateMaybeMessage<::opi_api::security::v1::TrafficSelectors_TrafficSelector>(Arena*);
-template<> ::opi_api::security::v1::Uuid* Arena::CreateMaybeMessage<::opi_api::security::v1::Uuid>(Arena*);
 template<> ::opi_api::security::v1::Vips* Arena::CreateMaybeMessage<::opi_api::security::v1::Vips>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
@@ -3703,157 +3699,6 @@ class Connection final :
 };
 // -------------------------------------------------------------------
 
-class Uuid final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.security.v1.Uuid) */ {
- public:
-  inline Uuid() : Uuid(nullptr) {}
-  ~Uuid() override;
-  explicit constexpr Uuid(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  Uuid(const Uuid& from);
-  Uuid(Uuid&& from) noexcept
-    : Uuid() {
-    *this = ::std::move(from);
-  }
-
-  inline Uuid& operator=(const Uuid& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Uuid& operator=(Uuid&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Uuid& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Uuid* internal_default_instance() {
-    return reinterpret_cast<const Uuid*>(
-               &_Uuid_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  friend void swap(Uuid& a, Uuid& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Uuid* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Uuid* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Uuid* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Uuid>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Uuid& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const Uuid& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Uuid* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.security.v1.Uuid";
-  }
-  protected:
-  explicit Uuid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // string value = 1;
-  void clear_value();
-  const std::string& value() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_value(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_value();
-  PROTOBUF_NODISCARD std::string* release_value();
-  void set_allocated_value(std::string* value);
-  private:
-  const std::string& _internal_value() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
-  std::string* _internal_mutable_value();
-  public:
-
-  // @@protoc_insertion_point(class_scope:opi_api.security.v1.Uuid)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_ipsec_2eproto;
-};
-// -------------------------------------------------------------------
-
 class IPsecVersionReq final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.security.v1.IPsecVersionReq) */ {
  public:
@@ -3901,7 +3746,7 @@ class IPsecVersionReq final :
                &_IPsecVersionReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   friend void swap(IPsecVersionReq& a, IPsecVersionReq& b) {
     a.Swap(&b);
@@ -4020,7 +3865,7 @@ class IPsecVersionResp final :
                &_IPsecVersionResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   friend void swap(IPsecVersionResp& a, IPsecVersionResp& b) {
     a.Swap(&b);
@@ -4234,7 +4079,7 @@ class IPsecStatsReq final :
                &_IPsecStatsReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   friend void swap(IPsecStatsReq& a, IPsecStatsReq& b) {
     a.Swap(&b);
@@ -4353,7 +4198,7 @@ class IPsecStatsResp final :
                &_IPsecStatsResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   friend void swap(IPsecStatsResp& a, IPsecStatsResp& b) {
     a.Swap(&b);
@@ -4504,7 +4349,7 @@ class IPsecInitiateReq final :
                &_IPsecInitiateReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   friend void swap(IPsecInitiateReq& a, IPsecInitiateReq& b) {
     a.Swap(&b);
@@ -4702,7 +4547,7 @@ class IPsecInitiateResp final :
                &_IPsecInitiateResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   friend void swap(IPsecInitiateResp& a, IPsecInitiateResp& b) {
     a.Swap(&b);
@@ -4821,7 +4666,7 @@ class IPsecTerminateReq final :
                &_IPsecTerminateReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   friend void swap(IPsecTerminateReq& a, IPsecTerminateReq& b) {
     a.Swap(&b);
@@ -5058,7 +4903,7 @@ class IPsecTerminateResp final :
                &_IPsecTerminateResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   friend void swap(IPsecTerminateResp& a, IPsecTerminateResp& b) {
     a.Swap(&b);
@@ -5231,7 +5076,7 @@ class IPsecRekeyReq final :
                &_IPsecRekeyReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   friend void swap(IPsecRekeyReq& a, IPsecRekeyReq& b) {
     a.Swap(&b);
@@ -5436,7 +5281,7 @@ class IPsecRekeyResp final :
                &_IPsecRekeyResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   friend void swap(IPsecRekeyResp& a, IPsecRekeyResp& b) {
     a.Swap(&b);
@@ -5598,7 +5443,7 @@ class IPsecListSasReq final :
                &_IPsecListSasReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   friend void swap(IPsecListSasReq& a, IPsecListSasReq& b) {
     a.Swap(&b);
@@ -5803,7 +5648,7 @@ class ListChildSa final :
                &_ListChildSa_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    26;
 
   friend void swap(ListChildSa& a, ListChildSa& b) {
     a.Swap(&b);
@@ -6242,7 +6087,7 @@ class ListIkeSa final :
                &_ListIkeSa_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    27;
 
   friend void swap(ListIkeSa& a, ListIkeSa& b) {
     a.Swap(&b);
@@ -7018,7 +6863,7 @@ class IPsecListSasResp final :
                &_IPsecListSasResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    28;
 
   friend void swap(IPsecListSasResp& a, IPsecListSasResp& b) {
     a.Swap(&b);
@@ -7173,7 +7018,7 @@ class IPsecListConnsReq final :
                &_IPsecListConnsReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    29;
 
   friend void swap(IPsecListConnsReq& a, IPsecListConnsReq& b) {
     a.Swap(&b);
@@ -7324,7 +7169,7 @@ class ListConnAuth final :
                &_ListConnAuth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    30;
 
   friend void swap(ListConnAuth& a, ListConnAuth& b) {
     a.Swap(&b);
@@ -7699,7 +7544,7 @@ class ListChild final :
                &_ListChild_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    31;
 
   friend void swap(ListChild& a, ListChild& b) {
     a.Swap(&b);
@@ -8019,7 +7864,7 @@ class ListConnResp final :
                &_ListConnResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    32;
 
   friend void swap(ListConnResp& a, ListConnResp& b) {
     a.Swap(&b);
@@ -8378,7 +8223,7 @@ class IPsecListConnsResp final :
                &_IPsecListConnsResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    33;
 
   friend void swap(IPsecListConnsResp& a, IPsecListConnsResp& b) {
     a.Swap(&b);
@@ -8533,7 +8378,7 @@ class IPsecListCertsReq final :
                &_IPsecListCertsReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    34;
 
   friend void swap(IPsecListCertsReq& a, IPsecListCertsReq& b) {
     a.Swap(&b);
@@ -8716,7 +8561,7 @@ class ListCert final :
                &_ListCert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    35;
 
   friend void swap(ListCert& a, ListCert& b) {
     a.Swap(&b);
@@ -8953,7 +8798,7 @@ class IPsecListCertsResp final :
                &_IPsecListCertsResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    36;
 
   friend void swap(IPsecListCertsResp& a, IPsecListCertsResp& b) {
     a.Swap(&b);
@@ -9108,7 +8953,7 @@ class IPsecLoadConnReq final :
                &_IPsecLoadConnReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    37;
 
   friend void swap(IPsecLoadConnReq& a, IPsecLoadConnReq& b) {
     a.Swap(&b);
@@ -9263,7 +9108,7 @@ class IPsecLoadConnResp final :
                &_IPsecLoadConnResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    38;
 
   friend void swap(IPsecLoadConnResp& a, IPsecLoadConnResp& b) {
     a.Swap(&b);
@@ -9414,7 +9259,7 @@ class IPsecUnloadConnReq final :
                &_IPsecUnloadConnReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    39;
 
   friend void swap(IPsecUnloadConnReq& a, IPsecUnloadConnReq& b) {
     a.Swap(&b);
@@ -9565,7 +9410,7 @@ class IPsecUnloadConnResp final :
                &_IPsecUnloadConnResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    40;
 
   friend void swap(IPsecUnloadConnResp& a, IPsecUnloadConnResp& b) {
     a.Swap(&b);
@@ -13286,61 +13131,6 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::security::v1:
 Connection::children() const {
   // @@protoc_insertion_point(field_list:opi_api.security.v1.Connection.children)
   return children_;
-}
-
-// -------------------------------------------------------------------
-
-// Uuid
-
-// string value = 1;
-inline void Uuid::clear_value() {
-  value_.ClearToEmpty();
-}
-inline const std::string& Uuid::value() const {
-  // @@protoc_insertion_point(field_get:opi_api.security.v1.Uuid.value)
-  return _internal_value();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Uuid::set_value(ArgT0&& arg0, ArgT... args) {
- 
- value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.security.v1.Uuid.value)
-}
-inline std::string* Uuid::mutable_value() {
-  std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:opi_api.security.v1.Uuid.value)
-  return _s;
-}
-inline const std::string& Uuid::_internal_value() const {
-  return value_.Get();
-}
-inline void Uuid::_internal_set_value(const std::string& value) {
-  
-  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Uuid::_internal_mutable_value() {
-  
-  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Uuid::release_value() {
-  // @@protoc_insertion_point(field_release:opi_api.security.v1.Uuid.value)
-  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Uuid::set_allocated_value(std::string* value) {
-  if (value != nullptr) {
-    
-  } else {
-    
-  }
-  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (value_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.security.v1.Uuid.value)
 }
 
 // -------------------------------------------------------------------
@@ -20601,8 +20391,6 @@ inline void IPsecUnloadConnResp::set_allocated_success(std::string* success) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+
+syntax = "proto3";
+package opi_api.common.v1;
+option go_package = "github.com/opiproject/opi-api/common/v1";
+
+message Uuid {
+  string value = 1;
+}

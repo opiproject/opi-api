@@ -12,7 +12,6 @@
     - [SessionResponse](#opi_api-security-firewall-v1-SessionResponse)
     - [SessionResponseError](#opi_api-security-firewall-v1-SessionResponseError)
     - [SessionResponses](#opi_api-security-firewall-v1-SessionResponses)
-    - [Uuid](#opi_api-security-firewall-v1-Uuid)
   
     - [ActionType](#opi_api-security-firewall-v1-ActionType)
     - [AddSessionStatus](#opi_api-security-firewall-v1-AddSessionStatus)
@@ -23,6 +22,9 @@
     - [SessionState](#opi_api-security-firewall-v1-SessionState)
   
     - [SessionTable](#opi_api-security-firewall-v1-SessionTable)
+  
+- [uuid.proto](#uuid-proto)
+    - [Uuid](#opi_api-common-v1-Uuid)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -113,7 +115,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| session_id | [Uuid](#opi_api-security-firewall-v1-Uuid) |  |  |
+| session_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | inlif | [int32](#int32) |  |  |
 | outlif | [int32](#int32) |  |  |
 | ipversion | [IpVersion](#opi_api-security-firewall-v1-IpVersion) |  |  |
@@ -142,7 +144,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [Uuid](#opi_api-security-firewall-v1-Uuid) |  | If SessionId is zero, return all sessions |
+| sessionid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | If SessionId is zero, return all sessions |
 | sessionstate | [SessionState](#opi_api-security-firewall-v1-SessionState) |  | Filter argument to only return sessions of a given state |
 
 
@@ -158,7 +160,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [Uuid](#opi_api-security-firewall-v1-Uuid) |  |  |
+| sessionid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | inpackets | [uint64](#uint64) |  |  |
 | outpackets | [uint64](#uint64) |  |  |
 | inbytes | [uint64](#uint64) |  |  |
@@ -182,7 +184,7 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| sessionid | [Uuid](#opi_api-security-firewall-v1-Uuid) |  |  |
+| sessionid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | errorstatus | [int32](#int32) |  |  |
 
 
@@ -200,21 +202,6 @@ The IPV6 definition maps to the V6 struct returned by inet_ptoN which is a uint8
 | ----- | ---- | ----- | ----------- |
 | sessioninfo | [SessionResponse](#opi_api-security-firewall-v1-SessionResponse) | repeated |  |
 | nextkey | [uint64](#uint64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-security-firewall-v1-Uuid"></a>
-
-### Uuid
-Uuid for Session IDs
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  |  |
 
 
 
@@ -375,6 +362,37 @@ in v1alpha4 to simplfy the code.
 | GetSession | [SessionId](#opi_api-security-firewall-v1-SessionId) | [SessionResponse](#opi_api-security-firewall-v1-SessionResponse) | Obtains the session |
 | DeleteSession | [SessionId](#opi_api-security-firewall-v1-SessionId) | [SessionResponse](#opi_api-security-firewall-v1-SessionResponse) | Delete a session |
 | GetAllSession | [SessionRequestArgs](#opi_api-security-firewall-v1-SessionRequestArgs) | [SessionResponses](#opi_api-security-firewall-v1-SessionResponses) | Stream back a specific session or all current sessions To stream a single session, pass SessionId as zero |
+
+ 
+
+
+
+<a name="uuid-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## uuid.proto
+
+
+
+<a name="opi_api-common-v1-Uuid"></a>
+
+### Uuid
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
 
  
 

@@ -256,18 +256,6 @@ struct ConnectionDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectionDefaultTypeInternal _Connection_default_instance_;
-constexpr Uuid::Uuid(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct UuidDefaultTypeInternal {
-  constexpr UuidDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~UuidDefaultTypeInternal() {}
-  union {
-    Uuid _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UuidDefaultTypeInternal _Uuid_default_instance_;
 constexpr IPsecVersionReq::IPsecVersionReq(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct IPsecVersionReqDefaultTypeInternal {
@@ -706,7 +694,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IPsecUnloadConnRespDefaultTypeI
 }  // namespace v1
 }  // namespace security
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ipsec_2eproto[42];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_ipsec_2eproto[41];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_ipsec_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_ipsec_2eproto = nullptr;
 
@@ -867,13 +855,6 @@ const uint32_t TableStruct_ipsec_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, local_auth_),
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, remote_auth_),
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Connection, children_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Uuid, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::Uuid, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::v1::IPsecVersionReq, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1193,33 +1174,32 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 102, -1, -1, sizeof(::opi_api::security::v1::Addrs)},
   { 109, -1, -1, sizeof(::opi_api::security::v1::Child)},
   { 131, -1, -1, sizeof(::opi_api::security::v1::Connection)},
-  { 156, -1, -1, sizeof(::opi_api::security::v1::Uuid)},
-  { 163, -1, -1, sizeof(::opi_api::security::v1::IPsecVersionReq)},
-  { 169, -1, -1, sizeof(::opi_api::security::v1::IPsecVersionResp)},
-  { 180, -1, -1, sizeof(::opi_api::security::v1::IPsecStatsReq)},
-  { 186, -1, -1, sizeof(::opi_api::security::v1::IPsecStatsResp)},
-  { 193, -1, -1, sizeof(::opi_api::security::v1::IPsecInitiateReq)},
-  { 203, -1, -1, sizeof(::opi_api::security::v1::IPsecInitiateResp)},
-  { 209, -1, -1, sizeof(::opi_api::security::v1::IPsecTerminateReq)},
-  { 222, -1, -1, sizeof(::opi_api::security::v1::IPsecTerminateResp)},
-  { 231, -1, -1, sizeof(::opi_api::security::v1::IPsecRekeyReq)},
-  { 242, -1, -1, sizeof(::opi_api::security::v1::IPsecRekeyResp)},
-  { 250, -1, -1, sizeof(::opi_api::security::v1::IPsecListSasReq)},
-  { 261, -1, -1, sizeof(::opi_api::security::v1::ListChildSa)},
-  { 286, -1, -1, sizeof(::opi_api::security::v1::ListIkeSa)},
-  { 329, -1, -1, sizeof(::opi_api::security::v1::IPsecListSasResp)},
-  { 336, -1, -1, sizeof(::opi_api::security::v1::IPsecListConnsReq)},
-  { 343, -1, -1, sizeof(::opi_api::security::v1::ListConnAuth)},
-  { 363, -1, -1, sizeof(::opi_api::security::v1::ListChild)},
-  { 381, -1, -1, sizeof(::opi_api::security::v1::ListConnResp)},
-  { 401, -1, -1, sizeof(::opi_api::security::v1::IPsecListConnsResp)},
-  { 408, -1, -1, sizeof(::opi_api::security::v1::IPsecListCertsReq)},
-  { 417, -1, -1, sizeof(::opi_api::security::v1::ListCert)},
-  { 430, -1, -1, sizeof(::opi_api::security::v1::IPsecListCertsResp)},
-  { 437, -1, -1, sizeof(::opi_api::security::v1::IPsecLoadConnReq)},
-  { 444, -1, -1, sizeof(::opi_api::security::v1::IPsecLoadConnResp)},
-  { 451, -1, -1, sizeof(::opi_api::security::v1::IPsecUnloadConnReq)},
-  { 458, -1, -1, sizeof(::opi_api::security::v1::IPsecUnloadConnResp)},
+  { 156, -1, -1, sizeof(::opi_api::security::v1::IPsecVersionReq)},
+  { 162, -1, -1, sizeof(::opi_api::security::v1::IPsecVersionResp)},
+  { 173, -1, -1, sizeof(::opi_api::security::v1::IPsecStatsReq)},
+  { 179, -1, -1, sizeof(::opi_api::security::v1::IPsecStatsResp)},
+  { 186, -1, -1, sizeof(::opi_api::security::v1::IPsecInitiateReq)},
+  { 196, -1, -1, sizeof(::opi_api::security::v1::IPsecInitiateResp)},
+  { 202, -1, -1, sizeof(::opi_api::security::v1::IPsecTerminateReq)},
+  { 215, -1, -1, sizeof(::opi_api::security::v1::IPsecTerminateResp)},
+  { 224, -1, -1, sizeof(::opi_api::security::v1::IPsecRekeyReq)},
+  { 235, -1, -1, sizeof(::opi_api::security::v1::IPsecRekeyResp)},
+  { 243, -1, -1, sizeof(::opi_api::security::v1::IPsecListSasReq)},
+  { 254, -1, -1, sizeof(::opi_api::security::v1::ListChildSa)},
+  { 279, -1, -1, sizeof(::opi_api::security::v1::ListIkeSa)},
+  { 322, -1, -1, sizeof(::opi_api::security::v1::IPsecListSasResp)},
+  { 329, -1, -1, sizeof(::opi_api::security::v1::IPsecListConnsReq)},
+  { 336, -1, -1, sizeof(::opi_api::security::v1::ListConnAuth)},
+  { 356, -1, -1, sizeof(::opi_api::security::v1::ListChild)},
+  { 374, -1, -1, sizeof(::opi_api::security::v1::ListConnResp)},
+  { 394, -1, -1, sizeof(::opi_api::security::v1::IPsecListConnsResp)},
+  { 401, -1, -1, sizeof(::opi_api::security::v1::IPsecListCertsReq)},
+  { 410, -1, -1, sizeof(::opi_api::security::v1::ListCert)},
+  { 423, -1, -1, sizeof(::opi_api::security::v1::IPsecListCertsResp)},
+  { 430, -1, -1, sizeof(::opi_api::security::v1::IPsecLoadConnReq)},
+  { 437, -1, -1, sizeof(::opi_api::security::v1::IPsecLoadConnResp)},
+  { 444, -1, -1, sizeof(::opi_api::security::v1::IPsecUnloadConnReq)},
+  { 451, -1, -1, sizeof(::opi_api::security::v1::IPsecUnloadConnResp)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1238,7 +1218,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Addrs_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Child_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Connection_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_Uuid_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecVersionReq_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecVersionResp_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::v1::_IPsecStatsReq_default_instance_),
@@ -1323,165 +1302,165 @@ const char descriptor_table_protodef_ipsec_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "ocal_auth\030\021 \001(\0132\036.opi_api.security.v1.Lo"
   "calAuth\0224\n\013remote_auth\030\022 \001(\0132\037.opi_api.s"
   "ecurity.v1.RemoteAuth\022,\n\010children\030\023 \003(\0132"
-  "\032.opi_api.security.v1.Child\"\025\n\004Uuid\022\r\n\005v"
-  "alue\030\001 \001(\t\"\021\n\017IPsecVersionReq\"f\n\020IPsecVe"
-  "rsionResp\022\016\n\006daemon\030\001 \001(\t\022\017\n\007version\030\002 \001"
-  "(\t\022\017\n\007sysname\030\003 \001(\t\022\017\n\007release\030\004 \001(\t\022\017\n\007"
-  "machine\030\005 \001(\t\"\017\n\rIPsecStatsReq\" \n\016IPsecS"
-  "tatsResp\022\016\n\006status\030\001 \001(\t\"Q\n\020IPsecInitiat"
-  "eReq\022\r\n\005child\030\001 \001(\t\022\013\n\003ike\030\002 \001(\t\022\017\n\007time"
-  "out\030\003 \001(\t\022\020\n\010loglevel\030\004 \001(\t\"\023\n\021IPsecInit"
-  "iateResp\"\203\001\n\021IPsecTerminateReq\022\r\n\005child\030"
-  "\001 \001(\t\022\013\n\003ike\030\002 \001(\t\022\020\n\010child_id\030\003 \001(\004\022\016\n\006"
-  "ike_id\030\004 \001(\004\022\r\n\005force\030\005 \001(\t\022\017\n\007timeout\030\006"
-  " \001(\t\022\020\n\010loglevel\030\007 \001(\t\"J\n\022IPsecTerminate"
-  "Resp\022\017\n\007success\030\001 \001(\t\022\017\n\007matches\030\002 \001(\r\022\022"
-  "\n\nterminated\030\003 \001(\r\"]\n\rIPsecRekeyReq\022\r\n\005c"
-  "hild\030\001 \001(\t\022\013\n\003ike\030\002 \001(\t\022\020\n\010child_id\030\003 \001("
-  "\004\022\016\n\006ike_id\030\004 \001(\004\022\016\n\006reauth\030\005 \001(\t\"2\n\016IPs"
-  "ecRekeyResp\022\017\n\007success\030\001 \001(\t\022\017\n\007matches\030"
-  "\002 \001(\r\"`\n\017IPsecListSasReq\022\017\n\007noblock\030\001 \001("
-  "\t\022\013\n\003ike\030\002 \001(\t\022\016\n\006ike_id\030\003 \001(\004\022\r\n\005child\030"
-  "\004 \001(\t\022\020\n\010child_id\030\005 \001(\004\"\344\002\n\013ListChildSa\022"
-  "\014\n\004name\030\001 \001(\t\022\020\n\010protocol\030\002 \001(\t\022\r\n\005encap"
-  "\030\003 \001(\t\022\016\n\006spi_in\030\004 \001(\t\022\017\n\007spi_out\030\005 \001(\t\022"
-  "\016\n\006cpi_in\030\006 \001(\t\022\017\n\007cpi_out\030\007 \001(\t\022\017\n\007mark"
-  "_in\030\010 \001(\t\022\024\n\014mark_mask_in\030\t \001(\t\022\020\n\010mark_"
-  "out\030\n \001(\t\022\025\n\rmark_mask_out\030\013 \001(\t\022\020\n\010if_i"
-  "d_in\030\014 \001(\t\022\021\n\tif_id_out\030\r \001(\t\022\020\n\010encr_al"
-  "g\030\016 \001(\t\022\024\n\014encr_keysize\030\017 \001(\t\022\021\n\tinteg_a"
-  "lg\030\020 \001(\t\022\025\n\rinteg_keysize\030\021 \001(\t\022\020\n\010dh_gr"
-  "oup\030\022 \001(\t\022\013\n\003esn\030\023 \001(\t\"\246\006\n\tListIkeSa\022\014\n\004"
-  "name\030\001 \001(\t\022\020\n\010uniqueid\030\002 \001(\t\022\017\n\007version\030"
-  "\003 \001(\t\0221\n\010ikestate\030\004 \001(\0162\037.opi_api.securi"
-  "ty.v1.IkeSaState\022\022\n\nlocal_host\030\005 \001(\t\022\022\n\n"
-  "local_port\030\006 \001(\t\022\020\n\010local_id\030\007 \001(\t\022\023\n\013re"
-  "mote_host\030\010 \001(\t\022\023\n\013remote_port\030\t \001(\t\022\021\n\t"
-  "remote_id\030\n \001(\t\022\027\n\017remote_xauth_id\030\013 \001(\t"
-  "\022\025\n\rremote_eap_id\030\014 \001(\t\022\021\n\tinitiator\030\r \001"
-  "(\t\022\025\n\rinitiator_spi\030\016 \001(\t\022\025\n\rresponder_s"
-  "pi\030\017 \001(\t\022\021\n\tnat_local\030\020 \001(\t\022\022\n\nnat_remot"
-  "e\030\021 \001(\t\022\020\n\010nat_fake\030\022 \001(\t\022\017\n\007nat_any\030\023 \001"
-  "(\t\022\020\n\010if_id_in\030\024 \001(\t\022\021\n\tif_id_out\030\025 \001(\t\022"
-  "\020\n\010encr_alg\030\026 \001(\t\022\024\n\014encr_keysize\030\027 \001(\t\022"
-  "\021\n\tinteg_alg\030\030 \001(\t\022\025\n\rinteg_keysize\030\031 \001("
-  "\t\022\017\n\007prf_alg\030\032 \001(\t\022\020\n\010dh_group\030\033 \001(\t\022\013\n\003"
-  "ppk\030\034 \001(\t\022\023\n\013established\030\035 \001(\t\022\022\n\nrekey_"
-  "time\030\036 \001(\t\022\023\n\013reauth_time\030\037 \001(\t\022\022\n\nlocal"
-  "_vips\030  \003(\t\022\023\n\013remote_vips\030! \003(\t\022\024\n\014task"
-  "s_queued\030\" \003(\t\022\024\n\014tasks_active\030# \003(\t\022\025\n\r"
-  "tasks_passive\030$ \003(\t\0222\n\010childsas\030% \003(\0132 ."
-  "opi_api.security.v1.ListChildSa\"B\n\020IPsec"
-  "ListSasResp\022.\n\006ikesas\030\001 \003(\0132\036.opi_api.se"
-  "curity.v1.ListIkeSa\" \n\021IPsecListConnsReq"
-  "\022\013\n\003ike\030\001 \001(\t\"\355\002\n\014ListConnAuth\022\r\n\005class\030"
-  "\001 \001(\t\022\017\n\007eaptype\030\002 \001(\t\022\021\n\teapvendor\030\003 \001("
-  "\t\022\r\n\005xauth\030\004 \001(\t\022\022\n\nrevocation\030\005 \001(\t\022\n\n\002"
-  "id\030\006 \001(\t\022\r\n\005ca_id\030\007 \001(\t\022\016\n\006aaa_id\030\010 \001(\t\022"
-  "\016\n\006eap_id\030\t \001(\t\022\020\n\010xauth_id\030\n \001(\t\022*\n\005gro"
-  "up\030\013 \001(\0132\033.opi_api.security.v1.Groups\0224\n"
-  "\013cert_policy\030\014 \001(\0132\037.opi_api.security.v1"
-  ".CertPolicy\022)\n\005certs\030\r \001(\0132\032.opi_api.sec"
-  "urity.v1.Certs\022-\n\007cacerts\030\016 \001(\0132\034.opi_ap"
-  "i.security.v1.CaCerts\"\270\002\n\tListChild\022\014\n\004n"
-  "ame\030\001 \001(\t\022\014\n\004mode\030\002 \001(\t\022\r\n\005label\030\003 \001(\t\022\022"
-  "\n\nrekey_time\030\004 \001(\r\022\023\n\013rekey_bytes\030\005 \001(\r\022"
-  "\025\n\rrekey_packets\030\006 \001(\r\022\022\n\ndpd_action\030\007 \001"
-  "(\t\022\024\n\014close_action\030\010 \001(\t\0227\n\010local_ts\030\t \001"
-  "(\0132%.opi_api.security.v1.TrafficSelector"
-  "s\0228\n\tremote_ts\030\n \001(\0132%.opi_api.security."
-  "v1.TrafficSelectors\022\021\n\tinterface\030\013 \001(\t\022\020"
-  "\n\010priority\030\014 \001(\t\"\265\003\n\014ListConnResp\022\014\n\004nam"
-  "e\030\001 \001(\t\022/\n\013local_addrs\030\002 \003(\0132\032.opi_api.s"
-  "ecurity.v1.Addrs\0220\n\014remote_addrs\030\003 \003(\0132\032"
-  ".opi_api.security.v1.Addrs\022\017\n\007version\030\004 "
-  "\001(\t\022\023\n\013reauth_time\030\005 \001(\r\022\022\n\nrekey_time\030\006"
-  " \001(\r\022\016\n\006unique\030\007 \001(\t\022\021\n\tdpd_delay\030\010 \001(\r\022"
-  "\023\n\013dpd_timeout\030\t \001(\r\022\013\n\003ppk\030\n \001(\t\022\024\n\014ppk"
-  "_required\030\013 \001(\t\0225\n\nlocal_auth\030\014 \003(\0132!.op"
-  "i_api.security.v1.ListConnAuth\0226\n\013remote"
-  "_auth\030\r \003(\0132!.opi_api.security.v1.ListCo"
-  "nnAuth\0220\n\010children\030\016 \003(\0132\036.opi_api.secur"
-  "ity.v1.ListChild\"K\n\022IPsecListConnsResp\0225"
-  "\n\nconnection\030\001 \003(\0132!.opi_api.security.v1"
-  ".ListConnResp\"@\n\021IPsecListCertsReq\022\014\n\004ty"
-  "pe\030\001 \001(\t\022\014\n\004flag\030\002 \001(\t\022\017\n\007subject\030\003 \001(\t\""
-  "\316\001\n\010ListCert\0222\n\004type\030\001 \001(\0162$.opi_api.sec"
-  "urity.v1.CertificateType\0226\n\004flag\030\002 \001(\0162("
-  ".opi_api.security.v1.X509CertificateFlag"
-  "\022\022\n\nhasprivkey\030\003 \001(\t\022\014\n\004data\030\004 \001(\t\022\017\n\007su"
-  "bject\030\005 \001(\t\022\021\n\tnotbefore\030\006 \001(\t\022\020\n\010notaft"
-  "er\030\007 \001(\t\"B\n\022IPsecListCertsResp\022,\n\005certs\030"
-  "\001 \003(\0132\035.opi_api.security.v1.ListCert\"G\n\020"
-  "IPsecLoadConnReq\0223\n\nconnection\030\001 \001(\0132\037.o"
-  "pi_api.security.v1.Connection\"$\n\021IPsecLo"
-  "adConnResp\022\017\n\007success\030\001 \001(\t\"\"\n\022IPsecUnlo"
-  "adConnReq\022\014\n\004name\030\001 \001(\t\"&\n\023IPsecUnloadCo"
-  "nnResp\022\017\n\007success\030\001 \001(\t*\212\001\n\017CryptoAlgori"
-  "thm\022\017\n\013NONE_CRYPTO\020\000\022\n\n\006AES128\020\001\022\n\n\006AES1"
-  "92\020\002\022\n\n\006AES256\020\003\022\020\n\014AES128GCM128\020\004\022\020\n\014AE"
-  "S256GCM128\020\005\022\016\n\nAES128GMAC\020\006\022\016\n\nAES256GM"
-  "AC\020\007*\201\001\n\016IntegAlgorithm\022\016\n\nNONE_INTEG\020\000\022"
-  "\007\n\003MD5\020\001\022\013\n\007MD5_128\020\002\022\010\n\004SHA1\020\003\022\014\n\010SHA1_"
-  "160\020\004\022\n\n\006SHA256\020\005\022\n\n\006SHA384\020\007\022\n\n\006SHA512\020"
-  "\010\022\r\n\tSHA256_96\020\t*\335\001\n\023DiffieHellmanGroups"
-  "\022\021\n\rNONE_DH_GROUP\020\000\022\013\n\007MODP768\020\001\022\014\n\010MODP"
-  "1024\020\002\022\014\n\010MODP1536\020\003\022\014\n\010MODP2048\020\004\022\014\n\010MO"
-  "DP3072\020\005\022\014\n\010MODP4096\020\006\022\014\n\010MODP6144\020\007\022\014\n\010"
-  "MODP8192\020\010\022\020\n\014MODP1024S160\020\t\022\020\n\014MODP2048"
-  "S224\020\n\022\020\n\014MODP2048S256\020\013\022\016\n\nCURVE25519\020\014"
-  "*\212\001\n\024PseudoRandomFunction\022\014\n\010NONE_PRF\020\000\022"
-  "\n\n\006PRFMD5\020\001\022\013\n\007PRFSHA1\020\002\022\016\n\nPRFAESXCBC\020\003"
-  "\022\016\n\nPRFAESCMAC\020\004\022\r\n\tPRFSHA256\020\005\022\r\n\tPRFSH"
-  "A384\020\006\022\r\n\tPRFSHA512\020\007*0\n\tIPsecMode\022\017\n\013TU"
-  "NNEL_MODE\020\000\022\022\n\016TRANSPORT_MODE\020\001*3\n\010AuthT"
-  "ype\022\n\n\006PUBKEY\020\000\022\007\n\003PSK\020\001\022\t\n\005XAUTH\020\002\022\007\n\003E"
-  "AP\020\003*\200\001\n\nIkeSaState\022\013\n\007CREATED\020\000\022\016\n\nCONN"
-  "ECTING\020\001\022\017\n\013ESTABLISHED\020\002\022\013\n\007PASSIVE\020\003\022\014"
-  "\n\010REKEYING\020\004\022\013\n\007REKEYED\020\005\022\014\n\010DELETING\020\006\022"
-  "\016\n\nDESTROYING\020\007*\352\001\n\014ChildSaState\022\021\n\rCHIL"
-  "D_CREATED\020\000\022\020\n\014CHILD_ROUTED\020\001\022\024\n\020CHILD_I"
-  "NSTALLING\020\002\022\023\n\017CHILD_INSTALLED\020\003\022\022\n\016CHIL"
-  "D_UPDATING\020\004\022\022\n\016CHILD_REKEYING\020\005\022\021\n\rCHIL"
-  "D_REKEYED\020\006\022\022\n\016CHILD_RETRYING\020\007\022\022\n\016CHILD"
-  "_DELETING\020\010\022\021\n\rCHILD_DELETED\020\t\022\024\n\020CHILD_"
-  "DESTROYING\020\n*n\n\017CertificateType\022\r\n\tCERT_"
-  "X509\020\000\022\020\n\014CERT_X509_AC\020\001\022\021\n\rCERT_X509_CR"
-  "L\020\002\022\026\n\022CERT_OCSP_RESPONSE\020\003\022\017\n\013CERT_PUBK"
-  "EY\020\004*u\n\023X509CertificateFlag\022\027\n\023X509_CERT"
-  "_FLAG_NONE\020\000\022\025\n\021X509_CERT_FLAG_CA\020\001\022\025\n\021X"
-  "509_CERT_FLAG_AA\020\002\022\027\n\023X509_CERT_FLAG_OCS"
-  "P\020\0032\322\007\n\005IPsec\022]\n\014IPsecVersion\022$.opi_api."
-  "security.v1.IPsecVersionReq\032%.opi_api.se"
-  "curity.v1.IPsecVersionResp\"\000\022W\n\nIPsecSta"
-  "ts\022\".opi_api.security.v1.IPsecStatsReq\032#"
-  ".opi_api.security.v1.IPsecStatsResp\"\000\022`\n"
-  "\rIPsecInitiate\022%.opi_api.security.v1.IPs"
-  "ecInitiateReq\032&.opi_api.security.v1.IPse"
-  "cInitiateResp\"\000\022c\n\016IPsecTerminate\022&.opi_"
-  "api.security.v1.IPsecTerminateReq\032\'.opi_"
-  "api.security.v1.IPsecTerminateResp\"\000\022W\n\n"
-  "IPsecRekey\022\".opi_api.security.v1.IPsecRe"
-  "keyReq\032#.opi_api.security.v1.IPsecRekeyR"
-  "esp\"\000\022]\n\014IPsecListSas\022$.opi_api.security"
-  ".v1.IPsecListSasReq\032%.opi_api.security.v"
-  "1.IPsecListSasResp\"\000\022c\n\016IPsecListConns\022&"
-  ".opi_api.security.v1.IPsecListConnsReq\032\'"
-  ".opi_api.security.v1.IPsecListConnsResp\""
-  "\000\022c\n\016IPsecListCerts\022&.opi_api.security.v"
-  "1.IPsecListCertsReq\032\'.opi_api.security.v"
-  "1.IPsecListCertsResp\"\000\022`\n\rIPsecLoadConn\022"
-  "%.opi_api.security.v1.IPsecLoadConnReq\032&"
-  ".opi_api.security.v1.IPsecLoadConnResp\"\000"
-  "\022f\n\017IPsecUnloadConn\022\'.opi_api.security.v"
-  "1.IPsecUnloadConnReq\032(.opi_api.security."
-  "v1.IPsecUnloadConnResp\"\000B+Z)github.com/o"
-  "piproject/opi-api/security/v1b\006proto3"
+  "\032.opi_api.security.v1.Child\"\021\n\017IPsecVers"
+  "ionReq\"f\n\020IPsecVersionResp\022\016\n\006daemon\030\001 \001"
+  "(\t\022\017\n\007version\030\002 \001(\t\022\017\n\007sysname\030\003 \001(\t\022\017\n\007"
+  "release\030\004 \001(\t\022\017\n\007machine\030\005 \001(\t\"\017\n\rIPsecS"
+  "tatsReq\" \n\016IPsecStatsResp\022\016\n\006status\030\001 \001("
+  "\t\"Q\n\020IPsecInitiateReq\022\r\n\005child\030\001 \001(\t\022\013\n\003"
+  "ike\030\002 \001(\t\022\017\n\007timeout\030\003 \001(\t\022\020\n\010loglevel\030\004"
+  " \001(\t\"\023\n\021IPsecInitiateResp\"\203\001\n\021IPsecTermi"
+  "nateReq\022\r\n\005child\030\001 \001(\t\022\013\n\003ike\030\002 \001(\t\022\020\n\010c"
+  "hild_id\030\003 \001(\004\022\016\n\006ike_id\030\004 \001(\004\022\r\n\005force\030\005"
+  " \001(\t\022\017\n\007timeout\030\006 \001(\t\022\020\n\010loglevel\030\007 \001(\t\""
+  "J\n\022IPsecTerminateResp\022\017\n\007success\030\001 \001(\t\022\017"
+  "\n\007matches\030\002 \001(\r\022\022\n\nterminated\030\003 \001(\r\"]\n\rI"
+  "PsecRekeyReq\022\r\n\005child\030\001 \001(\t\022\013\n\003ike\030\002 \001(\t"
+  "\022\020\n\010child_id\030\003 \001(\004\022\016\n\006ike_id\030\004 \001(\004\022\016\n\006re"
+  "auth\030\005 \001(\t\"2\n\016IPsecRekeyResp\022\017\n\007success\030"
+  "\001 \001(\t\022\017\n\007matches\030\002 \001(\r\"`\n\017IPsecListSasRe"
+  "q\022\017\n\007noblock\030\001 \001(\t\022\013\n\003ike\030\002 \001(\t\022\016\n\006ike_i"
+  "d\030\003 \001(\004\022\r\n\005child\030\004 \001(\t\022\020\n\010child_id\030\005 \001(\004"
+  "\"\344\002\n\013ListChildSa\022\014\n\004name\030\001 \001(\t\022\020\n\010protoc"
+  "ol\030\002 \001(\t\022\r\n\005encap\030\003 \001(\t\022\016\n\006spi_in\030\004 \001(\t\022"
+  "\017\n\007spi_out\030\005 \001(\t\022\016\n\006cpi_in\030\006 \001(\t\022\017\n\007cpi_"
+  "out\030\007 \001(\t\022\017\n\007mark_in\030\010 \001(\t\022\024\n\014mark_mask_"
+  "in\030\t \001(\t\022\020\n\010mark_out\030\n \001(\t\022\025\n\rmark_mask_"
+  "out\030\013 \001(\t\022\020\n\010if_id_in\030\014 \001(\t\022\021\n\tif_id_out"
+  "\030\r \001(\t\022\020\n\010encr_alg\030\016 \001(\t\022\024\n\014encr_keysize"
+  "\030\017 \001(\t\022\021\n\tinteg_alg\030\020 \001(\t\022\025\n\rinteg_keysi"
+  "ze\030\021 \001(\t\022\020\n\010dh_group\030\022 \001(\t\022\013\n\003esn\030\023 \001(\t\""
+  "\246\006\n\tListIkeSa\022\014\n\004name\030\001 \001(\t\022\020\n\010uniqueid\030"
+  "\002 \001(\t\022\017\n\007version\030\003 \001(\t\0221\n\010ikestate\030\004 \001(\016"
+  "2\037.opi_api.security.v1.IkeSaState\022\022\n\nloc"
+  "al_host\030\005 \001(\t\022\022\n\nlocal_port\030\006 \001(\t\022\020\n\010loc"
+  "al_id\030\007 \001(\t\022\023\n\013remote_host\030\010 \001(\t\022\023\n\013remo"
+  "te_port\030\t \001(\t\022\021\n\tremote_id\030\n \001(\t\022\027\n\017remo"
+  "te_xauth_id\030\013 \001(\t\022\025\n\rremote_eap_id\030\014 \001(\t"
+  "\022\021\n\tinitiator\030\r \001(\t\022\025\n\rinitiator_spi\030\016 \001"
+  "(\t\022\025\n\rresponder_spi\030\017 \001(\t\022\021\n\tnat_local\030\020"
+  " \001(\t\022\022\n\nnat_remote\030\021 \001(\t\022\020\n\010nat_fake\030\022 \001"
+  "(\t\022\017\n\007nat_any\030\023 \001(\t\022\020\n\010if_id_in\030\024 \001(\t\022\021\n"
+  "\tif_id_out\030\025 \001(\t\022\020\n\010encr_alg\030\026 \001(\t\022\024\n\014en"
+  "cr_keysize\030\027 \001(\t\022\021\n\tinteg_alg\030\030 \001(\t\022\025\n\ri"
+  "nteg_keysize\030\031 \001(\t\022\017\n\007prf_alg\030\032 \001(\t\022\020\n\010d"
+  "h_group\030\033 \001(\t\022\013\n\003ppk\030\034 \001(\t\022\023\n\013establishe"
+  "d\030\035 \001(\t\022\022\n\nrekey_time\030\036 \001(\t\022\023\n\013reauth_ti"
+  "me\030\037 \001(\t\022\022\n\nlocal_vips\030  \003(\t\022\023\n\013remote_v"
+  "ips\030! \003(\t\022\024\n\014tasks_queued\030\" \003(\t\022\024\n\014tasks"
+  "_active\030# \003(\t\022\025\n\rtasks_passive\030$ \003(\t\0222\n\010"
+  "childsas\030% \003(\0132 .opi_api.security.v1.Lis"
+  "tChildSa\"B\n\020IPsecListSasResp\022.\n\006ikesas\030\001"
+  " \003(\0132\036.opi_api.security.v1.ListIkeSa\" \n\021"
+  "IPsecListConnsReq\022\013\n\003ike\030\001 \001(\t\"\355\002\n\014ListC"
+  "onnAuth\022\r\n\005class\030\001 \001(\t\022\017\n\007eaptype\030\002 \001(\t\022"
+  "\021\n\teapvendor\030\003 \001(\t\022\r\n\005xauth\030\004 \001(\t\022\022\n\nrev"
+  "ocation\030\005 \001(\t\022\n\n\002id\030\006 \001(\t\022\r\n\005ca_id\030\007 \001(\t"
+  "\022\016\n\006aaa_id\030\010 \001(\t\022\016\n\006eap_id\030\t \001(\t\022\020\n\010xaut"
+  "h_id\030\n \001(\t\022*\n\005group\030\013 \001(\0132\033.opi_api.secu"
+  "rity.v1.Groups\0224\n\013cert_policy\030\014 \001(\0132\037.op"
+  "i_api.security.v1.CertPolicy\022)\n\005certs\030\r "
+  "\001(\0132\032.opi_api.security.v1.Certs\022-\n\007cacer"
+  "ts\030\016 \001(\0132\034.opi_api.security.v1.CaCerts\"\270"
+  "\002\n\tListChild\022\014\n\004name\030\001 \001(\t\022\014\n\004mode\030\002 \001(\t"
+  "\022\r\n\005label\030\003 \001(\t\022\022\n\nrekey_time\030\004 \001(\r\022\023\n\013r"
+  "ekey_bytes\030\005 \001(\r\022\025\n\rrekey_packets\030\006 \001(\r\022"
+  "\022\n\ndpd_action\030\007 \001(\t\022\024\n\014close_action\030\010 \001("
+  "\t\0227\n\010local_ts\030\t \001(\0132%.opi_api.security.v"
+  "1.TrafficSelectors\0228\n\tremote_ts\030\n \001(\0132%."
+  "opi_api.security.v1.TrafficSelectors\022\021\n\t"
+  "interface\030\013 \001(\t\022\020\n\010priority\030\014 \001(\t\"\265\003\n\014Li"
+  "stConnResp\022\014\n\004name\030\001 \001(\t\022/\n\013local_addrs\030"
+  "\002 \003(\0132\032.opi_api.security.v1.Addrs\0220\n\014rem"
+  "ote_addrs\030\003 \003(\0132\032.opi_api.security.v1.Ad"
+  "drs\022\017\n\007version\030\004 \001(\t\022\023\n\013reauth_time\030\005 \001("
+  "\r\022\022\n\nrekey_time\030\006 \001(\r\022\016\n\006unique\030\007 \001(\t\022\021\n"
+  "\tdpd_delay\030\010 \001(\r\022\023\n\013dpd_timeout\030\t \001(\r\022\013\n"
+  "\003ppk\030\n \001(\t\022\024\n\014ppk_required\030\013 \001(\t\0225\n\nloca"
+  "l_auth\030\014 \003(\0132!.opi_api.security.v1.ListC"
+  "onnAuth\0226\n\013remote_auth\030\r \003(\0132!.opi_api.s"
+  "ecurity.v1.ListConnAuth\0220\n\010children\030\016 \003("
+  "\0132\036.opi_api.security.v1.ListChild\"K\n\022IPs"
+  "ecListConnsResp\0225\n\nconnection\030\001 \003(\0132!.op"
+  "i_api.security.v1.ListConnResp\"@\n\021IPsecL"
+  "istCertsReq\022\014\n\004type\030\001 \001(\t\022\014\n\004flag\030\002 \001(\t\022"
+  "\017\n\007subject\030\003 \001(\t\"\316\001\n\010ListCert\0222\n\004type\030\001 "
+  "\001(\0162$.opi_api.security.v1.CertificateTyp"
+  "e\0226\n\004flag\030\002 \001(\0162(.opi_api.security.v1.X5"
+  "09CertificateFlag\022\022\n\nhasprivkey\030\003 \001(\t\022\014\n"
+  "\004data\030\004 \001(\t\022\017\n\007subject\030\005 \001(\t\022\021\n\tnotbefor"
+  "e\030\006 \001(\t\022\020\n\010notafter\030\007 \001(\t\"B\n\022IPsecListCe"
+  "rtsResp\022,\n\005certs\030\001 \003(\0132\035.opi_api.securit"
+  "y.v1.ListCert\"G\n\020IPsecLoadConnReq\0223\n\ncon"
+  "nection\030\001 \001(\0132\037.opi_api.security.v1.Conn"
+  "ection\"$\n\021IPsecLoadConnResp\022\017\n\007success\030\001"
+  " \001(\t\"\"\n\022IPsecUnloadConnReq\022\014\n\004name\030\001 \001(\t"
+  "\"&\n\023IPsecUnloadConnResp\022\017\n\007success\030\001 \001(\t"
+  "*\212\001\n\017CryptoAlgorithm\022\017\n\013NONE_CRYPTO\020\000\022\n\n"
+  "\006AES128\020\001\022\n\n\006AES192\020\002\022\n\n\006AES256\020\003\022\020\n\014AES"
+  "128GCM128\020\004\022\020\n\014AES256GCM128\020\005\022\016\n\nAES128G"
+  "MAC\020\006\022\016\n\nAES256GMAC\020\007*\201\001\n\016IntegAlgorithm"
+  "\022\016\n\nNONE_INTEG\020\000\022\007\n\003MD5\020\001\022\013\n\007MD5_128\020\002\022\010"
+  "\n\004SHA1\020\003\022\014\n\010SHA1_160\020\004\022\n\n\006SHA256\020\005\022\n\n\006SH"
+  "A384\020\007\022\n\n\006SHA512\020\010\022\r\n\tSHA256_96\020\t*\335\001\n\023Di"
+  "ffieHellmanGroups\022\021\n\rNONE_DH_GROUP\020\000\022\013\n\007"
+  "MODP768\020\001\022\014\n\010MODP1024\020\002\022\014\n\010MODP1536\020\003\022\014\n"
+  "\010MODP2048\020\004\022\014\n\010MODP3072\020\005\022\014\n\010MODP4096\020\006\022"
+  "\014\n\010MODP6144\020\007\022\014\n\010MODP8192\020\010\022\020\n\014MODP1024S"
+  "160\020\t\022\020\n\014MODP2048S224\020\n\022\020\n\014MODP2048S256\020"
+  "\013\022\016\n\nCURVE25519\020\014*\212\001\n\024PseudoRandomFuncti"
+  "on\022\014\n\010NONE_PRF\020\000\022\n\n\006PRFMD5\020\001\022\013\n\007PRFSHA1\020"
+  "\002\022\016\n\nPRFAESXCBC\020\003\022\016\n\nPRFAESCMAC\020\004\022\r\n\tPRF"
+  "SHA256\020\005\022\r\n\tPRFSHA384\020\006\022\r\n\tPRFSHA512\020\007*0"
+  "\n\tIPsecMode\022\017\n\013TUNNEL_MODE\020\000\022\022\n\016TRANSPOR"
+  "T_MODE\020\001*3\n\010AuthType\022\n\n\006PUBKEY\020\000\022\007\n\003PSK\020"
+  "\001\022\t\n\005XAUTH\020\002\022\007\n\003EAP\020\003*\200\001\n\nIkeSaState\022\013\n\007"
+  "CREATED\020\000\022\016\n\nCONNECTING\020\001\022\017\n\013ESTABLISHED"
+  "\020\002\022\013\n\007PASSIVE\020\003\022\014\n\010REKEYING\020\004\022\013\n\007REKEYED"
+  "\020\005\022\014\n\010DELETING\020\006\022\016\n\nDESTROYING\020\007*\352\001\n\014Chi"
+  "ldSaState\022\021\n\rCHILD_CREATED\020\000\022\020\n\014CHILD_RO"
+  "UTED\020\001\022\024\n\020CHILD_INSTALLING\020\002\022\023\n\017CHILD_IN"
+  "STALLED\020\003\022\022\n\016CHILD_UPDATING\020\004\022\022\n\016CHILD_R"
+  "EKEYING\020\005\022\021\n\rCHILD_REKEYED\020\006\022\022\n\016CHILD_RE"
+  "TRYING\020\007\022\022\n\016CHILD_DELETING\020\010\022\021\n\rCHILD_DE"
+  "LETED\020\t\022\024\n\020CHILD_DESTROYING\020\n*n\n\017Certifi"
+  "cateType\022\r\n\tCERT_X509\020\000\022\020\n\014CERT_X509_AC\020"
+  "\001\022\021\n\rCERT_X509_CRL\020\002\022\026\n\022CERT_OCSP_RESPON"
+  "SE\020\003\022\017\n\013CERT_PUBKEY\020\004*u\n\023X509Certificate"
+  "Flag\022\027\n\023X509_CERT_FLAG_NONE\020\000\022\025\n\021X509_CE"
+  "RT_FLAG_CA\020\001\022\025\n\021X509_CERT_FLAG_AA\020\002\022\027\n\023X"
+  "509_CERT_FLAG_OCSP\020\0032\322\007\n\005IPsec\022]\n\014IPsecV"
+  "ersion\022$.opi_api.security.v1.IPsecVersio"
+  "nReq\032%.opi_api.security.v1.IPsecVersionR"
+  "esp\"\000\022W\n\nIPsecStats\022\".opi_api.security.v"
+  "1.IPsecStatsReq\032#.opi_api.security.v1.IP"
+  "secStatsResp\"\000\022`\n\rIPsecInitiate\022%.opi_ap"
+  "i.security.v1.IPsecInitiateReq\032&.opi_api"
+  ".security.v1.IPsecInitiateResp\"\000\022c\n\016IPse"
+  "cTerminate\022&.opi_api.security.v1.IPsecTe"
+  "rminateReq\032\'.opi_api.security.v1.IPsecTe"
+  "rminateResp\"\000\022W\n\nIPsecRekey\022\".opi_api.se"
+  "curity.v1.IPsecRekeyReq\032#.opi_api.securi"
+  "ty.v1.IPsecRekeyResp\"\000\022]\n\014IPsecListSas\022$"
+  ".opi_api.security.v1.IPsecListSasReq\032%.o"
+  "pi_api.security.v1.IPsecListSasResp\"\000\022c\n"
+  "\016IPsecListConns\022&.opi_api.security.v1.IP"
+  "secListConnsReq\032\'.opi_api.security.v1.IP"
+  "secListConnsResp\"\000\022c\n\016IPsecListCerts\022&.o"
+  "pi_api.security.v1.IPsecListCertsReq\032\'.o"
+  "pi_api.security.v1.IPsecListCertsResp\"\000\022"
+  "`\n\rIPsecLoadConn\022%.opi_api.security.v1.I"
+  "PsecLoadConnReq\032&.opi_api.security.v1.IP"
+  "secLoadConnResp\"\000\022f\n\017IPsecUnloadConn\022\'.o"
+  "pi_api.security.v1.IPsecUnloadConnReq\032(."
+  "opi_api.security.v1.IPsecUnloadConnResp\""
+  "\000B+Z)github.com/opiproject/opi-api/secur"
+  "ity/v1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ipsec_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ipsec_2eproto = {
-  false, false, 8357, descriptor_table_protodef_ipsec_2eproto, "ipsec.proto", 
-  &descriptor_table_ipsec_2eproto_once, nullptr, 0, 42,
+  false, false, 8334, descriptor_table_protodef_ipsec_2eproto, "ipsec.proto", 
+  &descriptor_table_ipsec_2eproto_once, nullptr, 0, 41,
   schemas, file_default_instances, TableStruct_ipsec_2eproto::offsets,
   file_level_metadata_ipsec_2eproto, file_level_enum_descriptors_ipsec_2eproto, file_level_service_descriptors_ipsec_2eproto,
 };
@@ -6529,209 +6508,6 @@ void Connection::InternalSwap(Connection* other) {
 
 // ===================================================================
 
-class Uuid::_Internal {
- public:
-};
-
-Uuid::Uuid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.security.v1.Uuid)
-}
-Uuid::Uuid(const Uuid& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_value().empty()) {
-    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.security.v1.Uuid)
-}
-
-inline void Uuid::SharedCtor() {
-value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-Uuid::~Uuid() {
-  // @@protoc_insertion_point(destructor:opi_api.security.v1.Uuid)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Uuid::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Uuid::ArenaDtor(void* object) {
-  Uuid* _this = reinterpret_cast< Uuid* >(object);
-  (void)_this;
-}
-void Uuid::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Uuid::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Uuid::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.security.v1.Uuid)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  value_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Uuid::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string value = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.v1.Uuid.value"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* Uuid::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.security.v1.Uuid)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string value = 1;
-  if (!this->_internal_value().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.security.v1.Uuid.value");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_value(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.v1.Uuid)
-  return target;
-}
-
-size_t Uuid::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.security.v1.Uuid)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string value = 1;
-  if (!this->_internal_value().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_value());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Uuid::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Uuid::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Uuid::GetClassData() const { return &_class_data_; }
-
-void Uuid::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Uuid *>(to)->MergeFrom(
-      static_cast<const Uuid &>(from));
-}
-
-
-void Uuid::MergeFrom(const Uuid& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.v1.Uuid)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_value().empty()) {
-    _internal_set_value(from._internal_value());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Uuid::CopyFrom(const Uuid& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.security.v1.Uuid)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Uuid::IsInitialized() const {
-  return true;
-}
-
-void Uuid::InternalSwap(Uuid* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &value_, lhs_arena,
-      &other->value_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Uuid::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[15]);
-}
-
-// ===================================================================
-
 class IPsecVersionReq::_Internal {
  public:
 };
@@ -6766,7 +6542,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecVersionReq::GetClassData(
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecVersionReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[16]);
+      file_level_metadata_ipsec_2eproto[15]);
 }
 
 // ===================================================================
@@ -7165,7 +6941,7 @@ void IPsecVersionResp::InternalSwap(IPsecVersionResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecVersionResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[17]);
+      file_level_metadata_ipsec_2eproto[16]);
 }
 
 // ===================================================================
@@ -7204,7 +6980,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecStatsReq::GetClassData() 
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecStatsReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[18]);
+      file_level_metadata_ipsec_2eproto[17]);
 }
 
 // ===================================================================
@@ -7407,7 +7183,7 @@ void IPsecStatsResp::InternalSwap(IPsecStatsResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecStatsResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[19]);
+      file_level_metadata_ipsec_2eproto[18]);
 }
 
 // ===================================================================
@@ -7757,7 +7533,7 @@ void IPsecInitiateReq::InternalSwap(IPsecInitiateReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecInitiateReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[20]);
+      file_level_metadata_ipsec_2eproto[19]);
 }
 
 // ===================================================================
@@ -7796,7 +7572,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IPsecInitiateResp::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecInitiateResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[21]);
+      file_level_metadata_ipsec_2eproto[20]);
 }
 
 // ===================================================================
@@ -8255,7 +8031,7 @@ void IPsecTerminateReq::InternalSwap(IPsecTerminateReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecTerminateReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[22]);
+      file_level_metadata_ipsec_2eproto[21]);
 }
 
 // ===================================================================
@@ -8518,7 +8294,7 @@ void IPsecTerminateResp::InternalSwap(IPsecTerminateResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecTerminateResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[23]);
+      file_level_metadata_ipsec_2eproto[22]);
 }
 
 // ===================================================================
@@ -8879,7 +8655,7 @@ void IPsecRekeyReq::InternalSwap(IPsecRekeyReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecRekeyReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[24]);
+      file_level_metadata_ipsec_2eproto[23]);
 }
 
 // ===================================================================
@@ -9108,7 +8884,7 @@ void IPsecRekeyResp::InternalSwap(IPsecRekeyResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecRekeyResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[25]);
+      file_level_metadata_ipsec_2eproto[24]);
 }
 
 // ===================================================================
@@ -9469,7 +9245,7 @@ void IPsecListSasReq::InternalSwap(IPsecListSasReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListSasReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[26]);
+      file_level_metadata_ipsec_2eproto[25]);
 }
 
 // ===================================================================
@@ -10554,7 +10330,7 @@ void ListChildSa::InternalSwap(ListChildSa* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListChildSa::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[27]);
+      file_level_metadata_ipsec_2eproto[26]);
 }
 
 // ===================================================================
@@ -12430,7 +12206,7 @@ void ListIkeSa::InternalSwap(ListIkeSa* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListIkeSa::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[28]);
+      file_level_metadata_ipsec_2eproto[27]);
 }
 
 // ===================================================================
@@ -12615,7 +12391,7 @@ void IPsecListSasResp::InternalSwap(IPsecListSasResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListSasResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[29]);
+      file_level_metadata_ipsec_2eproto[28]);
 }
 
 // ===================================================================
@@ -12818,7 +12594,7 @@ void IPsecListConnsReq::InternalSwap(IPsecListConnsReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListConnsReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[30]);
+      file_level_metadata_ipsec_2eproto[29]);
 }
 
 // ===================================================================
@@ -13636,7 +13412,7 @@ void ListConnAuth::InternalSwap(ListConnAuth* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListConnAuth::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[31]);
+      file_level_metadata_ipsec_2eproto[30]);
 }
 
 // ===================================================================
@@ -14297,7 +14073,7 @@ void ListChild::InternalSwap(ListChild* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListChild::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[32]);
+      file_level_metadata_ipsec_2eproto[31]);
 }
 
 // ===================================================================
@@ -14965,7 +14741,7 @@ void ListConnResp::InternalSwap(ListConnResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListConnResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[33]);
+      file_level_metadata_ipsec_2eproto[32]);
 }
 
 // ===================================================================
@@ -15150,7 +14926,7 @@ void IPsecListConnsResp::InternalSwap(IPsecListConnsResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListConnsResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[34]);
+      file_level_metadata_ipsec_2eproto[33]);
 }
 
 // ===================================================================
@@ -15451,7 +15227,7 @@ void IPsecListCertsReq::InternalSwap(IPsecListCertsReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListCertsReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[35]);
+      file_level_metadata_ipsec_2eproto[34]);
 }
 
 // ===================================================================
@@ -15916,7 +15692,7 @@ void ListCert::InternalSwap(ListCert* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListCert::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[36]);
+      file_level_metadata_ipsec_2eproto[35]);
 }
 
 // ===================================================================
@@ -16101,7 +15877,7 @@ void IPsecListCertsResp::InternalSwap(IPsecListCertsResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecListCertsResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[37]);
+      file_level_metadata_ipsec_2eproto[36]);
 }
 
 // ===================================================================
@@ -16296,7 +16072,7 @@ void IPsecLoadConnReq::InternalSwap(IPsecLoadConnReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecLoadConnReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[38]);
+      file_level_metadata_ipsec_2eproto[37]);
 }
 
 // ===================================================================
@@ -16499,7 +16275,7 @@ void IPsecLoadConnResp::InternalSwap(IPsecLoadConnResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecLoadConnResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[39]);
+      file_level_metadata_ipsec_2eproto[38]);
 }
 
 // ===================================================================
@@ -16702,7 +16478,7 @@ void IPsecUnloadConnReq::InternalSwap(IPsecUnloadConnReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecUnloadConnReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[40]);
+      file_level_metadata_ipsec_2eproto[39]);
 }
 
 // ===================================================================
@@ -16905,7 +16681,7 @@ void IPsecUnloadConnResp::InternalSwap(IPsecUnloadConnResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata IPsecUnloadConnResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_ipsec_2eproto_getter, &descriptor_table_ipsec_2eproto_once,
-      file_level_metadata_ipsec_2eproto[41]);
+      file_level_metadata_ipsec_2eproto[40]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -16957,9 +16733,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Child* Arena::CreateMaybeM
 }
 template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Connection* Arena::CreateMaybeMessage< ::opi_api::security::v1::Connection >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::Connection >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::security::v1::Uuid* Arena::CreateMaybeMessage< ::opi_api::security::v1::Uuid >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::security::v1::Uuid >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::security::v1::IPsecVersionReq* Arena::CreateMaybeMessage< ::opi_api::security::v1::IPsecVersionReq >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::v1::IPsecVersionReq >(arena);

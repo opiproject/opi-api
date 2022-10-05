@@ -12,9 +12,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\"[\n\tNullDebug\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nblock_size\x18\x03 \x01(\x03\x12\x12\n\nnum_blocks\x18\x04 \x01(\x03\x12\x0c\n\x04uuid\x18\x05 \x01(\t\"G\n\x16NullDebugCreateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugCreateResponse\"$\n\x16NullDebugDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\x19\n\x17NullDebugDeleteResponse\"G\n\x16NullDebugUpdateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugUpdateResponse\"\x16\n\x14NullDebugListRequest\"F\n\x15NullDebugListResponse\x12-\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"!\n\x13NullDebugGetRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"E\n\x14NullDebugGetResponse\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"#\n\x15NullDebugStatsRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"3\n\x16NullDebugStatsResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05stats\x18\x02 \x01(\t2\x94\x05\n\x10NullDebugService\x12l\n\x0fNullDebugCreate\x12*.opi_api.storage.v1.NullDebugCreateRequest\x1a+.opi_api.storage.v1.NullDebugCreateResponse\"\x00\x12l\n\x0fNullDebugDelete\x12*.opi_api.storage.v1.NullDebugDeleteRequest\x1a+.opi_api.storage.v1.NullDebugDeleteResponse\"\x00\x12l\n\x0fNullDebugUpdate\x12*.opi_api.storage.v1.NullDebugUpdateRequest\x1a+.opi_api.storage.v1.NullDebugUpdateResponse\"\x00\x12\x66\n\rNullDebugList\x12(.opi_api.storage.v1.NullDebugListRequest\x1a).opi_api.storage.v1.NullDebugListResponse\"\x00\x12\x63\n\x0cNullDebugGet\x12\'.opi_api.storage.v1.NullDebugGetRequest\x1a(.opi_api.storage.v1.NullDebugGetResponse\"\x00\x12i\n\x0eNullDebugStats\x12).opi_api.storage.v1.NullDebugStatsRequest\x1a*.opi_api.storage.v1.NullDebugStatsResponse\"\x00\x42*Z(github.com/opiproject/opi-api/storage/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\x1a\nuuid.proto\"t\n\tNullDebug\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nblock_size\x18\x03 \x01(\x03\x12\x12\n\nnum_blocks\x18\x04 \x01(\x03\x12%\n\x04uuid\x18\x05 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\"G\n\x16NullDebugCreateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugCreateResponse\"$\n\x16NullDebugDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\x19\n\x17NullDebugDeleteResponse\"G\n\x16NullDebugUpdateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugUpdateResponse\"\x16\n\x14NullDebugListRequest\"F\n\x15NullDebugListResponse\x12-\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"!\n\x13NullDebugGetRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"E\n\x14NullDebugGetResponse\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"#\n\x15NullDebugStatsRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"3\n\x16NullDebugStatsResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05stats\x18\x02 \x01(\t2\x94\x05\n\x10NullDebugService\x12l\n\x0fNullDebugCreate\x12*.opi_api.storage.v1.NullDebugCreateRequest\x1a+.opi_api.storage.v1.NullDebugCreateResponse\"\x00\x12l\n\x0fNullDebugDelete\x12*.opi_api.storage.v1.NullDebugDeleteRequest\x1a+.opi_api.storage.v1.NullDebugDeleteResponse\"\x00\x12l\n\x0fNullDebugUpdate\x12*.opi_api.storage.v1.NullDebugUpdateRequest\x1a+.opi_api.storage.v1.NullDebugUpdateResponse\"\x00\x12\x66\n\rNullDebugList\x12(.opi_api.storage.v1.NullDebugListRequest\x1a).opi_api.storage.v1.NullDebugListResponse\"\x00\x12\x63\n\x0cNullDebugGet\x12\'.opi_api.storage.v1.NullDebugGetRequest\x1a(.opi_api.storage.v1.NullDebugGetResponse\"\x00\x12i\n\x0eNullDebugStats\x12).opi_api.storage.v1.NullDebugStatsRequest\x1a*.opi_api.storage.v1.NullDebugStatsResponse\"\x00\x42*Z(github.com/opiproject/opi-api/storage/v1b\x06proto3')
 
 
 
@@ -127,32 +128,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z(github.com/opiproject/opi-api/storage/v1'
-  _NULLDEBUG._serialized_start=42
-  _NULLDEBUG._serialized_end=133
-  _NULLDEBUGCREATEREQUEST._serialized_start=135
-  _NULLDEBUGCREATEREQUEST._serialized_end=206
-  _NULLDEBUGCREATERESPONSE._serialized_start=208
-  _NULLDEBUGCREATERESPONSE._serialized_end=233
-  _NULLDEBUGDELETEREQUEST._serialized_start=235
-  _NULLDEBUGDELETEREQUEST._serialized_end=271
-  _NULLDEBUGDELETERESPONSE._serialized_start=273
-  _NULLDEBUGDELETERESPONSE._serialized_end=298
-  _NULLDEBUGUPDATEREQUEST._serialized_start=300
-  _NULLDEBUGUPDATEREQUEST._serialized_end=371
-  _NULLDEBUGUPDATERESPONSE._serialized_start=373
-  _NULLDEBUGUPDATERESPONSE._serialized_end=398
-  _NULLDEBUGLISTREQUEST._serialized_start=400
-  _NULLDEBUGLISTREQUEST._serialized_end=422
-  _NULLDEBUGLISTRESPONSE._serialized_start=424
-  _NULLDEBUGLISTRESPONSE._serialized_end=494
-  _NULLDEBUGGETREQUEST._serialized_start=496
-  _NULLDEBUGGETREQUEST._serialized_end=529
-  _NULLDEBUGGETRESPONSE._serialized_start=531
-  _NULLDEBUGGETRESPONSE._serialized_end=600
-  _NULLDEBUGSTATSREQUEST._serialized_start=602
-  _NULLDEBUGSTATSREQUEST._serialized_end=637
-  _NULLDEBUGSTATSRESPONSE._serialized_start=639
-  _NULLDEBUGSTATSRESPONSE._serialized_end=690
-  _NULLDEBUGSERVICE._serialized_start=693
-  _NULLDEBUGSERVICE._serialized_end=1353
+  _NULLDEBUG._serialized_start=54
+  _NULLDEBUG._serialized_end=170
+  _NULLDEBUGCREATEREQUEST._serialized_start=172
+  _NULLDEBUGCREATEREQUEST._serialized_end=243
+  _NULLDEBUGCREATERESPONSE._serialized_start=245
+  _NULLDEBUGCREATERESPONSE._serialized_end=270
+  _NULLDEBUGDELETEREQUEST._serialized_start=272
+  _NULLDEBUGDELETEREQUEST._serialized_end=308
+  _NULLDEBUGDELETERESPONSE._serialized_start=310
+  _NULLDEBUGDELETERESPONSE._serialized_end=335
+  _NULLDEBUGUPDATEREQUEST._serialized_start=337
+  _NULLDEBUGUPDATEREQUEST._serialized_end=408
+  _NULLDEBUGUPDATERESPONSE._serialized_start=410
+  _NULLDEBUGUPDATERESPONSE._serialized_end=435
+  _NULLDEBUGLISTREQUEST._serialized_start=437
+  _NULLDEBUGLISTREQUEST._serialized_end=459
+  _NULLDEBUGLISTRESPONSE._serialized_start=461
+  _NULLDEBUGLISTRESPONSE._serialized_end=531
+  _NULLDEBUGGETREQUEST._serialized_start=533
+  _NULLDEBUGGETREQUEST._serialized_end=566
+  _NULLDEBUGGETRESPONSE._serialized_start=568
+  _NULLDEBUGGETRESPONSE._serialized_end=637
+  _NULLDEBUGSTATSREQUEST._serialized_start=639
+  _NULLDEBUGSTATSREQUEST._serialized_end=674
+  _NULLDEBUGSTATSRESPONSE._serialized_start=676
+  _NULLDEBUGSTATSRESPONSE._serialized_end=727
+  _NULLDEBUGSERVICE._serialized_start=730
+  _NULLDEBUGSERVICE._serialized_end=1390
 # @@protoc_insertion_point(module_scope)

@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "common.pb.h"
+#include "uuid.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fnvme_5fpcie_2eproto
@@ -766,9 +767,9 @@ class NVMeNamespace final :
     kBdevFieldNumber = 6,
     kNguidFieldNumber = 9,
     kEui64FieldNumber = 10,
-    kUuidFieldNumber = 11,
     kMultipathFieldNumber = 12,
     kAuthenticationFieldNumber = 13,
+    kUuidFieldNumber = 11,
     kIdFieldNumber = 1,
     kControllerIdFieldNumber = 4,
     kNsidFieldNumber = 5,
@@ -845,20 +846,6 @@ class NVMeNamespace final :
   std::string* _internal_mutable_eui64();
   public:
 
-  // string uuid = 11;
-  void clear_uuid();
-  const std::string& uuid() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
-  private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
-  public:
-
   // string multipath = 12;
   void clear_multipath();
   const std::string& multipath() const;
@@ -886,6 +873,24 @@ class NVMeNamespace final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_authentication(const std::string& value);
   std::string* _internal_mutable_authentication();
   public:
+
+  // .opi_api.common.v1.Uuid uuid = 11;
+  bool has_uuid() const;
+  private:
+  bool _internal_has_uuid() const;
+  public:
+  void clear_uuid();
+  const ::opi_api::common::v1::Uuid& uuid() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::Uuid* release_uuid();
+  ::opi_api::common::v1::Uuid* mutable_uuid();
+  void set_allocated_uuid(::opi_api::common::v1::Uuid* uuid);
+  private:
+  const ::opi_api::common::v1::Uuid& _internal_uuid() const;
+  ::opi_api::common::v1::Uuid* _internal_mutable_uuid();
+  public:
+  void unsafe_arena_set_allocated_uuid(
+      ::opi_api::common::v1::Uuid* uuid);
+  ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
   // int64 id = 1;
   void clear_id();
@@ -944,9 +949,9 @@ class NVMeNamespace final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bdev_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nguid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr eui64_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr multipath_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr authentication_;
+  ::opi_api::common::v1::Uuid* uuid_;
   int64_t id_;
   int64_t controller_id_;
   int64_t nsid_;
@@ -1236,19 +1241,23 @@ class NVMeSubsystemCreateResponse final :
   enum : int {
     kUuidFieldNumber = 1,
   };
-  // string uuid = 1;
-  void clear_uuid();
-  const std::string& uuid() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  // .opi_api.common.v1.Uuid uuid = 1;
+  bool has_uuid() const;
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  bool _internal_has_uuid() const;
   public:
+  void clear_uuid();
+  const ::opi_api::common::v1::Uuid& uuid() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::Uuid* release_uuid();
+  ::opi_api::common::v1::Uuid* mutable_uuid();
+  void set_allocated_uuid(::opi_api::common::v1::Uuid* uuid);
+  private:
+  const ::opi_api::common::v1::Uuid& _internal_uuid() const;
+  ::opi_api::common::v1::Uuid* _internal_mutable_uuid();
+  public:
+  void unsafe_arena_set_allocated_uuid(
+      ::opi_api::common::v1::Uuid* uuid);
+  ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystemCreateResponse)
  private:
@@ -1257,7 +1266,7 @@ class NVMeSubsystemCreateResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+  ::opi_api::common::v1::Uuid* uuid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -7085,54 +7094,89 @@ inline void NVMeNamespace::set_allocated_eui64(std::string* eui64) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.eui64)
 }
 
-// string uuid = 11;
-inline void NVMeNamespace::clear_uuid() {
-  uuid_.ClearToEmpty();
+// .opi_api.common.v1.Uuid uuid = 11;
+inline bool NVMeNamespace::_internal_has_uuid() const {
+  return this != internal_default_instance() && uuid_ != nullptr;
 }
-inline const std::string& NVMeNamespace::uuid() const {
+inline bool NVMeNamespace::has_uuid() const {
+  return _internal_has_uuid();
+}
+inline const ::opi_api::common::v1::Uuid& NVMeNamespace::_internal_uuid() const {
+  const ::opi_api::common::v1::Uuid* p = uuid_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::Uuid&>(
+      ::opi_api::common::v1::_Uuid_default_instance_);
+}
+inline const ::opi_api::common::v1::Uuid& NVMeNamespace::uuid() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.uuid)
   return _internal_uuid();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_uuid(ArgT0&& arg0, ArgT... args) {
- 
- uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.uuid)
-}
-inline std::string* NVMeNamespace::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.uuid)
-  return _s;
-}
-inline const std::string& NVMeNamespace::_internal_uuid() const {
-  return uuid_.Get();
-}
-inline void NVMeNamespace::_internal_set_uuid(const std::string& value) {
-  
-  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::_internal_mutable_uuid() {
-  
-  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::release_uuid() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.uuid)
-  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeNamespace::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void NVMeNamespace::unsafe_arena_set_allocated_uuid(
+    ::opi_api::common::v1::Uuid* uuid) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  uuid_ = uuid;
+  if (uuid) {
     
   } else {
     
   }
-  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (uuid_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeNamespace.uuid)
+}
+inline ::opi_api::common::v1::Uuid* NVMeNamespace::release_uuid() {
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NVMeNamespace::unsafe_arena_release_uuid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.uuid)
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NVMeNamespace::_internal_mutable_uuid() {
+  
+  if (uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::Uuid>(GetArenaForAllocation());
+    uuid_ = p;
+  }
+  return uuid_;
+}
+inline ::opi_api::common::v1::Uuid* NVMeNamespace::mutable_uuid() {
+  ::opi_api::common::v1::Uuid* _msg = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.uuid)
+  return _msg;
+}
+inline void NVMeNamespace::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  if (uuid) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid));
+    if (message_arena != submessage_arena) {
+      uuid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  uuid_ = uuid;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.uuid)
 }
 
@@ -7336,54 +7380,89 @@ inline void NVMeSubsystemCreateRequest::set_allocated_subsystem(::opi_api::stora
 
 // NVMeSubsystemCreateResponse
 
-// string uuid = 1;
-inline void NVMeSubsystemCreateResponse::clear_uuid() {
-  uuid_.ClearToEmpty();
+// .opi_api.common.v1.Uuid uuid = 1;
+inline bool NVMeSubsystemCreateResponse::_internal_has_uuid() const {
+  return this != internal_default_instance() && uuid_ != nullptr;
 }
-inline const std::string& NVMeSubsystemCreateResponse::uuid() const {
+inline bool NVMeSubsystemCreateResponse::has_uuid() const {
+  return _internal_has_uuid();
+}
+inline const ::opi_api::common::v1::Uuid& NVMeSubsystemCreateResponse::_internal_uuid() const {
+  const ::opi_api::common::v1::Uuid* p = uuid_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::Uuid&>(
+      ::opi_api::common::v1::_Uuid_default_instance_);
+}
+inline const ::opi_api::common::v1::Uuid& NVMeSubsystemCreateResponse::uuid() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
   return _internal_uuid();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeSubsystemCreateResponse::set_uuid(ArgT0&& arg0, ArgT... args) {
- 
- uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
-}
-inline std::string* NVMeSubsystemCreateResponse::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
-  return _s;
-}
-inline const std::string& NVMeSubsystemCreateResponse::_internal_uuid() const {
-  return uuid_.Get();
-}
-inline void NVMeSubsystemCreateResponse::_internal_set_uuid(const std::string& value) {
-  
-  uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeSubsystemCreateResponse::_internal_mutable_uuid() {
-  
-  return uuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeSubsystemCreateResponse::release_uuid() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
-  return uuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeSubsystemCreateResponse::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void NVMeSubsystemCreateResponse::unsafe_arena_set_allocated_uuid(
+    ::opi_api::common::v1::Uuid* uuid) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  uuid_ = uuid;
+  if (uuid) {
     
   } else {
     
   }
-  uuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), uuid,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (uuid_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
+}
+inline ::opi_api::common::v1::Uuid* NVMeSubsystemCreateResponse::release_uuid() {
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NVMeSubsystemCreateResponse::unsafe_arena_release_uuid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
+  
+  ::opi_api::common::v1::Uuid* temp = uuid_;
+  uuid_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::Uuid* NVMeSubsystemCreateResponse::_internal_mutable_uuid() {
+  
+  if (uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::Uuid>(GetArenaForAllocation());
+    uuid_ = p;
+  }
+  return uuid_;
+}
+inline ::opi_api::common::v1::Uuid* NVMeSubsystemCreateResponse::mutable_uuid() {
+  ::opi_api::common::v1::Uuid* _msg = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
+  return _msg;
+}
+inline void NVMeSubsystemCreateResponse::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
+  }
+  if (uuid) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid));
+    if (message_arena != submessage_arena) {
+      uuid = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  uuid_ = uuid;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeSubsystemCreateResponse.uuid)
 }
 

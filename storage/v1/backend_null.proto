@@ -4,6 +4,7 @@
 syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1";
+import "uuid.proto";
 
 // Back End (network-facing) APIs.
 
@@ -21,7 +22,7 @@ message NullDebug {
     string name = 2;
     int64 block_size = 3;
     int64 num_blocks = 4;
-    string uuid = 5;
+    common.v1.Uuid uuid = 5;
 }
 
 message NullDebugCreateRequest {

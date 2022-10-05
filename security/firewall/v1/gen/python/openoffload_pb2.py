@@ -14,9 +14,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11openoffload.proto\x12\x1copi_api.security.firewall.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x15\n\x04Uuid\x12\r\n\x05value\x18\x01 \x01(\t\"\x1f\n\tSessionId\x12\x12\n\nsession_id\x18\x01 \x01(\x04\"\xf6\x01\n\x10\x41\x63tionParameters\x12<\n\nactiontype\x18\x01 \x01(\x0e\x32(.opi_api.security.firewall.v1.ActionType\x12\x15\n\ractionnexthop\x18\x02 \x01(\r\x12\x17\n\x0f\x61\x63tionnexthopv6\x18\x03 \x01(\x0c\x12\x12\n\nproxysrcv4\x18\x04 \x01(\r\x12\x12\n\nproxydstv4\x18\x05 \x01(\r\x12\x12\n\nproxysrcv6\x18\x06 \x01(\x0c\x12\x12\n\nproxydstv6\x18\x07 \x01(\x0c\x12\x11\n\tsrcconnid\x18\x08 \x01(\x0c\x12\x11\n\tdstconnid\x18\t \x01(\x0c\"\xe0\x03\n\x0eSessionRequest\x12\x36\n\nsession_id\x18\x01 \x01(\x0b\x32\".opi_api.security.firewall.v1.Uuid\x12\r\n\x05inlif\x18\x02 \x01(\x05\x12\x0e\n\x06outlif\x18\x03 \x01(\x05\x12:\n\tipversion\x18\x04 \x01(\x0e\x32\'.opi_api.security.firewall.v1.IpVersion\x12\x10\n\x08sourceip\x18\x05 \x01(\r\x12\x12\n\nsourceipv6\x18\x06 \x01(\x0c\x12\x12\n\nsourceport\x18\x07 \x01(\r\x12\x15\n\rdestinationip\x18\x08 \x01(\r\x12\x17\n\x0f\x64\x65stinationipv6\x18\t \x01(\x0c\x12\x17\n\x0f\x64\x65stinationport\x18\n \x01(\r\x12<\n\nprotocolid\x18\x0b \x01(\x0e\x32(.opi_api.security.firewall.v1.ProtocolId\x12>\n\x06\x61\x63tion\x18\x0c \x01(\x0b\x32..opi_api.security.firewall.v1.ActionParameters\x12\x14\n\x0c\x63\x61\x63hetimeout\x18\r \x01(\r\x12\x11\n\tsrcconnid\x18\x0e \x01(\x0c\x12\x11\n\tdstconnid\x18\x0f \x01(\x0c\"b\n\x14SessionResponseError\x12\x35\n\tsessionid\x18\x01 \x01(\x0b\x32\".opi_api.security.firewall.v1.Uuid\x12\x13\n\x0b\x65rrorstatus\x18\x02 \x01(\x05\"g\n\x10SessionResponses\x12\x42\n\x0bsessioninfo\x18\x01 \x03(\x0b\x32-.opi_api.security.firewall.v1.SessionResponse\x12\x0f\n\x07nextkey\x18\x02 \x01(\x04\"\xea\x01\n\x12\x41\x64\x64SessionResponse\x12\x45\n\rrequeststatus\x18\x01 \x01(\x0e\x32..opi_api.security.firewall.v1.AddSessionStatus\x12\x13\n\x0b\x65rrorstatus\x18\x02 \x01(\x04\x12-\n\tstarttime\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\rresponseerror\x18\x04 \x03(\x0b\x32\x32.opi_api.security.firewall.v1.SessionResponseError\"\xbe\x03\n\x0fSessionResponse\x12\x35\n\tsessionid\x18\x01 \x01(\x0b\x32\".opi_api.security.firewall.v1.Uuid\x12\x11\n\tinpackets\x18\x02 \x01(\x04\x12\x12\n\noutpackets\x18\x03 \x01(\x04\x12\x0f\n\x07inbytes\x18\x04 \x01(\x04\x12\x10\n\x08outbytes\x18\x05 \x01(\x04\x12@\n\x0csessionstate\x18\x06 \x01(\x0e\x32*.opi_api.security.firewall.v1.SessionState\x12H\n\x10sessionclosecode\x18\x07 \x01(\x0e\x32..opi_api.security.firewall.v1.SessionCloseCode\x12\x42\n\rrequeststatus\x18\x08 \x01(\x0e\x32+.opi_api.security.firewall.v1.RequestStatus\x12-\n\tstarttime\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65ndtime\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x8d\x01\n\x12SessionRequestArgs\x12\x35\n\tsessionid\x18\x01 \x01(\x0b\x32\".opi_api.security.firewall.v1.Uuid\x12@\n\x0csessionstate\x18\x02 \x01(\x0e\x32*.opi_api.security.firewall.v1.SessionState*!\n\tIpVersion\x12\t\n\x05_IPV4\x10\x00\x12\t\n\x05_IPV6\x10\x01*@\n\nProtocolId\x12\x0b\n\x07_HOPOPT\x10\x00\x12\x08\n\x04_TCP\x10\x06\x12\x08\n\x04_UDP\x10\x11\"\x04\x08\x01\x10\x05\"\x04\x08\x07\x10\x10\"\x05\x08\x12\x10\xff\x01*a\n\x0cSessionState\x12\x10\n\x0c_ESTABLISHED\x10\x00\x12\x0e\n\n_CLOSING_1\x10\x01\x12\x0e\n\n_CLOSING_2\x10\x02\x12\x0b\n\x07_CLOSED\x10\x03\x12\x12\n\x0e_UNKNOWN_STATE\x10\x04*a\n\x10SessionCloseCode\x12\x0f\n\x0b_NOT_CLOSED\x10\x00\x12\x0b\n\x07_FINACK\x10\x01\x12\x08\n\x04_RST\x10\x02\x12\x0c\n\x08_TIMEOUT\x10\x03\x12\x17\n\x13_UNKNOWN_CLOSE_CODE\x10\x04*\x96\x01\n\x10\x41\x64\x64SessionStatus\x12\x15\n\x11_SESSION_ACCEPTED\x10\x00\x12\x15\n\x11_SESSION_REJECTED\x10\x01\x12\x17\n\x13_SESSION_TABLE_FULL\x10\x02\x12\x1e\n\x1a_SESSION_TABLE_UNAVAILABLE\x10\x03\x12\x1b\n\x17_SESSION_ALREADY_EXISTS\x10\x04*\xcf\x01\n\rRequestStatus\x12\r\n\t_ACCEPTED\x10\x00\x12\r\n\t_REJECTED\x10\x01\x12!\n\x1d_REJECTED_SESSION_NONEXISTENT\x10\x02\x12 \n\x1c_REJECTED_SESSION_TABLE_FULL\x10\x03\x12$\n _REJECTED_SESSION_ALREADY_EXISTS\x10\x04\x12\x17\n\x13_NO_CLOSED_SESSIONS\x10\x05\x12\x1c\n\x18_REJECTED_INTERNAL_ERROR\x10\x06*J\n\nActionType\x12\t\n\x05_DROP\x10\x00\x12\x0c\n\x08_FORWARD\x10\x01\x12\x0b\n\x07_MIRROR\x10\x02\x12\n\n\x06_SNOOP\x10\x03\x12\n\n\x06_PROXY\x10\x04\x32\xc8\x03\n\x0cSessionTable\x12p\n\nAddSession\x12,.opi_api.security.firewall.v1.SessionRequest\x1a\x30.opi_api.security.firewall.v1.AddSessionResponse\"\x00(\x01\x12\x66\n\nGetSession\x12\'.opi_api.security.firewall.v1.SessionId\x1a-.opi_api.security.firewall.v1.SessionResponse\"\x00\x12i\n\rDeleteSession\x12\'.opi_api.security.firewall.v1.SessionId\x1a-.opi_api.security.firewall.v1.SessionResponse\"\x00\x12s\n\rGetAllSession\x12\x30.opi_api.security.firewall.v1.SessionRequestArgs\x1a..opi_api.security.firewall.v1.SessionResponses\"\x00\x42\x34Z2github.com/opiproject/opi-api/security/firewall/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11openoffload.proto\x12\x1copi_api.security.firewall.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\nuuid.proto\"\x1f\n\tSessionId\x12\x12\n\nsession_id\x18\x01 \x01(\x04\"\xf6\x01\n\x10\x41\x63tionParameters\x12<\n\nactiontype\x18\x01 \x01(\x0e\x32(.opi_api.security.firewall.v1.ActionType\x12\x15\n\ractionnexthop\x18\x02 \x01(\r\x12\x17\n\x0f\x61\x63tionnexthopv6\x18\x03 \x01(\x0c\x12\x12\n\nproxysrcv4\x18\x04 \x01(\r\x12\x12\n\nproxydstv4\x18\x05 \x01(\r\x12\x12\n\nproxysrcv6\x18\x06 \x01(\x0c\x12\x12\n\nproxydstv6\x18\x07 \x01(\x0c\x12\x11\n\tsrcconnid\x18\x08 \x01(\x0c\x12\x11\n\tdstconnid\x18\t \x01(\x0c\"\xd5\x03\n\x0eSessionRequest\x12+\n\nsession_id\x18\x01 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\r\n\x05inlif\x18\x02 \x01(\x05\x12\x0e\n\x06outlif\x18\x03 \x01(\x05\x12:\n\tipversion\x18\x04 \x01(\x0e\x32\'.opi_api.security.firewall.v1.IpVersion\x12\x10\n\x08sourceip\x18\x05 \x01(\r\x12\x12\n\nsourceipv6\x18\x06 \x01(\x0c\x12\x12\n\nsourceport\x18\x07 \x01(\r\x12\x15\n\rdestinationip\x18\x08 \x01(\r\x12\x17\n\x0f\x64\x65stinationipv6\x18\t \x01(\x0c\x12\x17\n\x0f\x64\x65stinationport\x18\n \x01(\r\x12<\n\nprotocolid\x18\x0b \x01(\x0e\x32(.opi_api.security.firewall.v1.ProtocolId\x12>\n\x06\x61\x63tion\x18\x0c \x01(\x0b\x32..opi_api.security.firewall.v1.ActionParameters\x12\x14\n\x0c\x63\x61\x63hetimeout\x18\r \x01(\r\x12\x11\n\tsrcconnid\x18\x0e \x01(\x0c\x12\x11\n\tdstconnid\x18\x0f \x01(\x0c\"W\n\x14SessionResponseError\x12*\n\tsessionid\x18\x01 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x13\n\x0b\x65rrorstatus\x18\x02 \x01(\x05\"g\n\x10SessionResponses\x12\x42\n\x0bsessioninfo\x18\x01 \x03(\x0b\x32-.opi_api.security.firewall.v1.SessionResponse\x12\x0f\n\x07nextkey\x18\x02 \x01(\x04\"\xea\x01\n\x12\x41\x64\x64SessionResponse\x12\x45\n\rrequeststatus\x18\x01 \x01(\x0e\x32..opi_api.security.firewall.v1.AddSessionStatus\x12\x13\n\x0b\x65rrorstatus\x18\x02 \x01(\x04\x12-\n\tstarttime\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\rresponseerror\x18\x04 \x03(\x0b\x32\x32.opi_api.security.firewall.v1.SessionResponseError\"\xb3\x03\n\x0fSessionResponse\x12*\n\tsessionid\x18\x01 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x11\n\tinpackets\x18\x02 \x01(\x04\x12\x12\n\noutpackets\x18\x03 \x01(\x04\x12\x0f\n\x07inbytes\x18\x04 \x01(\x04\x12\x10\n\x08outbytes\x18\x05 \x01(\x04\x12@\n\x0csessionstate\x18\x06 \x01(\x0e\x32*.opi_api.security.firewall.v1.SessionState\x12H\n\x10sessionclosecode\x18\x07 \x01(\x0e\x32..opi_api.security.firewall.v1.SessionCloseCode\x12\x42\n\rrequeststatus\x18\x08 \x01(\x0e\x32+.opi_api.security.firewall.v1.RequestStatus\x12-\n\tstarttime\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x65ndtime\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x82\x01\n\x12SessionRequestArgs\x12*\n\tsessionid\x18\x01 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12@\n\x0csessionstate\x18\x02 \x01(\x0e\x32*.opi_api.security.firewall.v1.SessionState*!\n\tIpVersion\x12\t\n\x05_IPV4\x10\x00\x12\t\n\x05_IPV6\x10\x01*@\n\nProtocolId\x12\x0b\n\x07_HOPOPT\x10\x00\x12\x08\n\x04_TCP\x10\x06\x12\x08\n\x04_UDP\x10\x11\"\x04\x08\x01\x10\x05\"\x04\x08\x07\x10\x10\"\x05\x08\x12\x10\xff\x01*a\n\x0cSessionState\x12\x10\n\x0c_ESTABLISHED\x10\x00\x12\x0e\n\n_CLOSING_1\x10\x01\x12\x0e\n\n_CLOSING_2\x10\x02\x12\x0b\n\x07_CLOSED\x10\x03\x12\x12\n\x0e_UNKNOWN_STATE\x10\x04*a\n\x10SessionCloseCode\x12\x0f\n\x0b_NOT_CLOSED\x10\x00\x12\x0b\n\x07_FINACK\x10\x01\x12\x08\n\x04_RST\x10\x02\x12\x0c\n\x08_TIMEOUT\x10\x03\x12\x17\n\x13_UNKNOWN_CLOSE_CODE\x10\x04*\x96\x01\n\x10\x41\x64\x64SessionStatus\x12\x15\n\x11_SESSION_ACCEPTED\x10\x00\x12\x15\n\x11_SESSION_REJECTED\x10\x01\x12\x17\n\x13_SESSION_TABLE_FULL\x10\x02\x12\x1e\n\x1a_SESSION_TABLE_UNAVAILABLE\x10\x03\x12\x1b\n\x17_SESSION_ALREADY_EXISTS\x10\x04*\xcf\x01\n\rRequestStatus\x12\r\n\t_ACCEPTED\x10\x00\x12\r\n\t_REJECTED\x10\x01\x12!\n\x1d_REJECTED_SESSION_NONEXISTENT\x10\x02\x12 \n\x1c_REJECTED_SESSION_TABLE_FULL\x10\x03\x12$\n _REJECTED_SESSION_ALREADY_EXISTS\x10\x04\x12\x17\n\x13_NO_CLOSED_SESSIONS\x10\x05\x12\x1c\n\x18_REJECTED_INTERNAL_ERROR\x10\x06*J\n\nActionType\x12\t\n\x05_DROP\x10\x00\x12\x0c\n\x08_FORWARD\x10\x01\x12\x0b\n\x07_MIRROR\x10\x02\x12\n\n\x06_SNOOP\x10\x03\x12\n\n\x06_PROXY\x10\x04\x32\xc8\x03\n\x0cSessionTable\x12p\n\nAddSession\x12,.opi_api.security.firewall.v1.SessionRequest\x1a\x30.opi_api.security.firewall.v1.AddSessionResponse\"\x00(\x01\x12\x66\n\nGetSession\x12\'.opi_api.security.firewall.v1.SessionId\x1a-.opi_api.security.firewall.v1.SessionResponse\"\x00\x12i\n\rDeleteSession\x12\'.opi_api.security.firewall.v1.SessionId\x1a-.opi_api.security.firewall.v1.SessionResponse\"\x00\x12s\n\rGetAllSession\x12\x30.opi_api.security.firewall.v1.SessionRequestArgs\x1a..opi_api.security.firewall.v1.SessionResponses\"\x00\x42\x34Z2github.com/opiproject/opi-api/security/firewall/v1b\x06proto3')
 
 _IPVERSION = DESCRIPTOR.enum_types_by_name['IpVersion']
 IpVersion = enum_type_wrapper.EnumTypeWrapper(_IPVERSION)
@@ -66,7 +67,6 @@ _SNOOP = 3
 _PROXY = 4
 
 
-_UUID = DESCRIPTOR.message_types_by_name['Uuid']
 _SESSIONID = DESCRIPTOR.message_types_by_name['SessionId']
 _ACTIONPARAMETERS = DESCRIPTOR.message_types_by_name['ActionParameters']
 _SESSIONREQUEST = DESCRIPTOR.message_types_by_name['SessionRequest']
@@ -75,13 +75,6 @@ _SESSIONRESPONSES = DESCRIPTOR.message_types_by_name['SessionResponses']
 _ADDSESSIONRESPONSE = DESCRIPTOR.message_types_by_name['AddSessionResponse']
 _SESSIONRESPONSE = DESCRIPTOR.message_types_by_name['SessionResponse']
 _SESSIONREQUESTARGS = DESCRIPTOR.message_types_by_name['SessionRequestArgs']
-Uuid = _reflection.GeneratedProtocolMessageType('Uuid', (_message.Message,), {
-  'DESCRIPTOR' : _UUID,
-  '__module__' : 'openoffload_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.security.firewall.v1.Uuid)
-  })
-_sym_db.RegisterMessage(Uuid)
-
 SessionId = _reflection.GeneratedProtocolMessageType('SessionId', (_message.Message,), {
   'DESCRIPTOR' : _SESSIONID,
   '__module__' : 'openoffload_pb2'
@@ -143,38 +136,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z2github.com/opiproject/opi-api/security/firewall/v1'
-  _IPVERSION._serialized_start=1907
-  _IPVERSION._serialized_end=1940
-  _PROTOCOLID._serialized_start=1942
-  _PROTOCOLID._serialized_end=2006
-  _SESSIONSTATE._serialized_start=2008
-  _SESSIONSTATE._serialized_end=2105
-  _SESSIONCLOSECODE._serialized_start=2107
-  _SESSIONCLOSECODE._serialized_end=2204
-  _ADDSESSIONSTATUS._serialized_start=2207
-  _ADDSESSIONSTATUS._serialized_end=2357
-  _REQUESTSTATUS._serialized_start=2360
-  _REQUESTSTATUS._serialized_end=2567
-  _ACTIONTYPE._serialized_start=2569
-  _ACTIONTYPE._serialized_end=2643
-  _UUID._serialized_start=84
-  _UUID._serialized_end=105
-  _SESSIONID._serialized_start=107
-  _SESSIONID._serialized_end=138
-  _ACTIONPARAMETERS._serialized_start=141
-  _ACTIONPARAMETERS._serialized_end=387
-  _SESSIONREQUEST._serialized_start=390
-  _SESSIONREQUEST._serialized_end=870
-  _SESSIONRESPONSEERROR._serialized_start=872
-  _SESSIONRESPONSEERROR._serialized_end=970
-  _SESSIONRESPONSES._serialized_start=972
-  _SESSIONRESPONSES._serialized_end=1075
-  _ADDSESSIONRESPONSE._serialized_start=1078
-  _ADDSESSIONRESPONSE._serialized_end=1312
-  _SESSIONRESPONSE._serialized_start=1315
-  _SESSIONRESPONSE._serialized_end=1761
-  _SESSIONREQUESTARGS._serialized_start=1764
-  _SESSIONREQUESTARGS._serialized_end=1905
-  _SESSIONTABLE._serialized_start=2646
-  _SESSIONTABLE._serialized_end=3102
+  _IPVERSION._serialized_start=1852
+  _IPVERSION._serialized_end=1885
+  _PROTOCOLID._serialized_start=1887
+  _PROTOCOLID._serialized_end=1951
+  _SESSIONSTATE._serialized_start=1953
+  _SESSIONSTATE._serialized_end=2050
+  _SESSIONCLOSECODE._serialized_start=2052
+  _SESSIONCLOSECODE._serialized_end=2149
+  _ADDSESSIONSTATUS._serialized_start=2152
+  _ADDSESSIONSTATUS._serialized_end=2302
+  _REQUESTSTATUS._serialized_start=2305
+  _REQUESTSTATUS._serialized_end=2512
+  _ACTIONTYPE._serialized_start=2514
+  _ACTIONTYPE._serialized_end=2588
+  _SESSIONID._serialized_start=96
+  _SESSIONID._serialized_end=127
+  _ACTIONPARAMETERS._serialized_start=130
+  _ACTIONPARAMETERS._serialized_end=376
+  _SESSIONREQUEST._serialized_start=379
+  _SESSIONREQUEST._serialized_end=848
+  _SESSIONRESPONSEERROR._serialized_start=850
+  _SESSIONRESPONSEERROR._serialized_end=937
+  _SESSIONRESPONSES._serialized_start=939
+  _SESSIONRESPONSES._serialized_end=1042
+  _ADDSESSIONRESPONSE._serialized_start=1045
+  _ADDSESSIONRESPONSE._serialized_end=1279
+  _SESSIONRESPONSE._serialized_start=1282
+  _SESSIONRESPONSE._serialized_end=1717
+  _SESSIONREQUESTARGS._serialized_start=1720
+  _SESSIONREQUESTARGS._serialized_end=1850
+  _SESSIONTABLE._serialized_start=2591
+  _SESSIONTABLE._serialized_end=3047
 # @@protoc_insertion_point(module_scope)

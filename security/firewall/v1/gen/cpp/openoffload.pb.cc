@@ -20,18 +20,6 @@ namespace opi_api {
 namespace security {
 namespace firewall {
 namespace v1 {
-constexpr Uuid::Uuid(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct UuidDefaultTypeInternal {
-  constexpr UuidDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~UuidDefaultTypeInternal() {}
-  union {
-    Uuid _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UuidDefaultTypeInternal _Uuid_default_instance_;
 constexpr SessionId::SessionId(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : session_id_(uint64_t{0u}){}
@@ -177,18 +165,11 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SessionRequestArgsDefaultTypeIn
 }  // namespace firewall
 }  // namespace security
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_openoffload_2eproto[9];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_openoffload_2eproto[8];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_openoffload_2eproto[7];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_openoffload_2eproto = nullptr;
 
 const uint32_t TableStruct_openoffload_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::firewall::v1::Uuid, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::security::firewall::v1::Uuid, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::security::firewall::v1::SessionId, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -284,19 +265,17 @@ const uint32_t TableStruct_openoffload_2eproto::offsets[] PROTOBUF_SECTION_VARIA
   PROTOBUF_FIELD_OFFSET(::opi_api::security::firewall::v1::SessionRequestArgs, sessionstate_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::opi_api::security::firewall::v1::Uuid)},
-  { 7, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionId)},
-  { 14, -1, -1, sizeof(::opi_api::security::firewall::v1::ActionParameters)},
-  { 29, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionRequest)},
-  { 50, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponseError)},
-  { 58, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponses)},
-  { 66, -1, -1, sizeof(::opi_api::security::firewall::v1::AddSessionResponse)},
-  { 76, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponse)},
-  { 92, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionRequestArgs)},
+  { 0, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionId)},
+  { 7, -1, -1, sizeof(::opi_api::security::firewall::v1::ActionParameters)},
+  { 22, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionRequest)},
+  { 43, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponseError)},
+  { 51, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponses)},
+  { 59, -1, -1, sizeof(::opi_api::security::firewall::v1::AddSessionResponse)},
+  { 69, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionResponse)},
+  { 85, -1, -1, sizeof(::opi_api::security::firewall::v1::SessionRequestArgs)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::firewall::v1::_Uuid_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::firewall::v1::_SessionId_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::firewall::v1::_ActionParameters_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::security::firewall::v1::_SessionRequest_default_instance_),
@@ -310,92 +289,91 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_openoffload_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021openoffload.proto\022\034opi_api.security.fi"
   "rewall.v1\032\037google/protobuf/timestamp.pro"
-  "to\"\025\n\004Uuid\022\r\n\005value\030\001 \001(\t\"\037\n\tSessionId\022\022"
-  "\n\nsession_id\030\001 \001(\004\"\366\001\n\020ActionParameters\022"
-  "<\n\nactiontype\030\001 \001(\0162(.opi_api.security.f"
-  "irewall.v1.ActionType\022\025\n\ractionnexthop\030\002"
-  " \001(\r\022\027\n\017actionnexthopv6\030\003 \001(\014\022\022\n\nproxysr"
-  "cv4\030\004 \001(\r\022\022\n\nproxydstv4\030\005 \001(\r\022\022\n\nproxysr"
-  "cv6\030\006 \001(\014\022\022\n\nproxydstv6\030\007 \001(\014\022\021\n\tsrcconn"
-  "id\030\010 \001(\014\022\021\n\tdstconnid\030\t \001(\014\"\340\003\n\016SessionR"
-  "equest\0226\n\nsession_id\030\001 \001(\0132\".opi_api.sec"
-  "urity.firewall.v1.Uuid\022\r\n\005inlif\030\002 \001(\005\022\016\n"
-  "\006outlif\030\003 \001(\005\022:\n\tipversion\030\004 \001(\0162\'.opi_a"
-  "pi.security.firewall.v1.IpVersion\022\020\n\010sou"
-  "rceip\030\005 \001(\r\022\022\n\nsourceipv6\030\006 \001(\014\022\022\n\nsourc"
-  "eport\030\007 \001(\r\022\025\n\rdestinationip\030\010 \001(\r\022\027\n\017de"
-  "stinationipv6\030\t \001(\014\022\027\n\017destinationport\030\n"
-  " \001(\r\022<\n\nprotocolid\030\013 \001(\0162(.opi_api.secur"
-  "ity.firewall.v1.ProtocolId\022>\n\006action\030\014 \001"
-  "(\0132..opi_api.security.firewall.v1.Action"
-  "Parameters\022\024\n\014cachetimeout\030\r \001(\r\022\021\n\tsrcc"
-  "onnid\030\016 \001(\014\022\021\n\tdstconnid\030\017 \001(\014\"b\n\024Sessio"
-  "nResponseError\0225\n\tsessionid\030\001 \001(\0132\".opi_"
-  "api.security.firewall.v1.Uuid\022\023\n\013errorst"
-  "atus\030\002 \001(\005\"g\n\020SessionResponses\022B\n\013sessio"
-  "ninfo\030\001 \003(\0132-.opi_api.security.firewall."
-  "v1.SessionResponse\022\017\n\007nextkey\030\002 \001(\004\"\352\001\n\022"
-  "AddSessionResponse\022E\n\rrequeststatus\030\001 \001("
-  "\0162..opi_api.security.firewall.v1.AddSess"
-  "ionStatus\022\023\n\013errorstatus\030\002 \001(\004\022-\n\tstartt"
-  "ime\030\003 \001(\0132\032.google.protobuf.Timestamp\022I\n"
-  "\rresponseerror\030\004 \003(\01322.opi_api.security."
-  "firewall.v1.SessionResponseError\"\276\003\n\017Ses"
-  "sionResponse\0225\n\tsessionid\030\001 \001(\0132\".opi_ap"
-  "i.security.firewall.v1.Uuid\022\021\n\tinpackets"
-  "\030\002 \001(\004\022\022\n\noutpackets\030\003 \001(\004\022\017\n\007inbytes\030\004 "
-  "\001(\004\022\020\n\010outbytes\030\005 \001(\004\022@\n\014sessionstate\030\006 "
-  "\001(\0162*.opi_api.security.firewall.v1.Sessi"
-  "onState\022H\n\020sessionclosecode\030\007 \001(\0162..opi_"
-  "api.security.firewall.v1.SessionCloseCod"
-  "e\022B\n\rrequeststatus\030\010 \001(\0162+.opi_api.secur"
-  "ity.firewall.v1.RequestStatus\022-\n\tstartti"
-  "me\030\t \001(\0132\032.google.protobuf.Timestamp\022+\n\007"
-  "endtime\030\n \001(\0132\032.google.protobuf.Timestam"
-  "p\"\215\001\n\022SessionRequestArgs\0225\n\tsessionid\030\001 "
-  "\001(\0132\".opi_api.security.firewall.v1.Uuid\022"
-  "@\n\014sessionstate\030\002 \001(\0162*.opi_api.security"
-  ".firewall.v1.SessionState*!\n\tIpVersion\022\t"
-  "\n\005_IPV4\020\000\022\t\n\005_IPV6\020\001*@\n\nProtocolId\022\013\n\007_H"
-  "OPOPT\020\000\022\010\n\004_TCP\020\006\022\010\n\004_UDP\020\021\"\004\010\001\020\005\"\004\010\007\020\020\""
-  "\005\010\022\020\377\001*a\n\014SessionState\022\020\n\014_ESTABLISHED\020\000"
-  "\022\016\n\n_CLOSING_1\020\001\022\016\n\n_CLOSING_2\020\002\022\013\n\007_CLO"
-  "SED\020\003\022\022\n\016_UNKNOWN_STATE\020\004*a\n\020SessionClos"
-  "eCode\022\017\n\013_NOT_CLOSED\020\000\022\013\n\007_FINACK\020\001\022\010\n\004_"
-  "RST\020\002\022\014\n\010_TIMEOUT\020\003\022\027\n\023_UNKNOWN_CLOSE_CO"
-  "DE\020\004*\226\001\n\020AddSessionStatus\022\025\n\021_SESSION_AC"
-  "CEPTED\020\000\022\025\n\021_SESSION_REJECTED\020\001\022\027\n\023_SESS"
-  "ION_TABLE_FULL\020\002\022\036\n\032_SESSION_TABLE_UNAVA"
-  "ILABLE\020\003\022\033\n\027_SESSION_ALREADY_EXISTS\020\004*\317\001"
-  "\n\rRequestStatus\022\r\n\t_ACCEPTED\020\000\022\r\n\t_REJEC"
-  "TED\020\001\022!\n\035_REJECTED_SESSION_NONEXISTENT\020\002"
-  "\022 \n\034_REJECTED_SESSION_TABLE_FULL\020\003\022$\n _R"
-  "EJECTED_SESSION_ALREADY_EXISTS\020\004\022\027\n\023_NO_"
-  "CLOSED_SESSIONS\020\005\022\034\n\030_REJECTED_INTERNAL_"
-  "ERROR\020\006*J\n\nActionType\022\t\n\005_DROP\020\000\022\014\n\010_FOR"
-  "WARD\020\001\022\013\n\007_MIRROR\020\002\022\n\n\006_SNOOP\020\003\022\n\n\006_PROX"
-  "Y\020\0042\310\003\n\014SessionTable\022p\n\nAddSession\022,.opi"
-  "_api.security.firewall.v1.SessionRequest"
-  "\0320.opi_api.security.firewall.v1.AddSessi"
-  "onResponse\"\000(\001\022f\n\nGetSession\022\'.opi_api.s"
-  "ecurity.firewall.v1.SessionId\032-.opi_api."
-  "security.firewall.v1.SessionResponse\"\000\022i"
-  "\n\rDeleteSession\022\'.opi_api.security.firew"
-  "all.v1.SessionId\032-.opi_api.security.fire"
-  "wall.v1.SessionResponse\"\000\022s\n\rGetAllSessi"
-  "on\0220.opi_api.security.firewall.v1.Sessio"
-  "nRequestArgs\032..opi_api.security.firewall"
-  ".v1.SessionResponses\"\000B4Z2github.com/opi"
-  "project/opi-api/security/firewall/v1b\006pr"
-  "oto3"
+  "to\032\nuuid.proto\"\037\n\tSessionId\022\022\n\nsession_i"
+  "d\030\001 \001(\004\"\366\001\n\020ActionParameters\022<\n\nactionty"
+  "pe\030\001 \001(\0162(.opi_api.security.firewall.v1."
+  "ActionType\022\025\n\ractionnexthop\030\002 \001(\r\022\027\n\017act"
+  "ionnexthopv6\030\003 \001(\014\022\022\n\nproxysrcv4\030\004 \001(\r\022\022"
+  "\n\nproxydstv4\030\005 \001(\r\022\022\n\nproxysrcv6\030\006 \001(\014\022\022"
+  "\n\nproxydstv6\030\007 \001(\014\022\021\n\tsrcconnid\030\010 \001(\014\022\021\n"
+  "\tdstconnid\030\t \001(\014\"\325\003\n\016SessionRequest\022+\n\ns"
+  "ession_id\030\001 \001(\0132\027.opi_api.common.v1.Uuid"
+  "\022\r\n\005inlif\030\002 \001(\005\022\016\n\006outlif\030\003 \001(\005\022:\n\tipver"
+  "sion\030\004 \001(\0162\'.opi_api.security.firewall.v"
+  "1.IpVersion\022\020\n\010sourceip\030\005 \001(\r\022\022\n\nsourcei"
+  "pv6\030\006 \001(\014\022\022\n\nsourceport\030\007 \001(\r\022\025\n\rdestina"
+  "tionip\030\010 \001(\r\022\027\n\017destinationipv6\030\t \001(\014\022\027\n"
+  "\017destinationport\030\n \001(\r\022<\n\nprotocolid\030\013 \001"
+  "(\0162(.opi_api.security.firewall.v1.Protoc"
+  "olId\022>\n\006action\030\014 \001(\0132..opi_api.security."
+  "firewall.v1.ActionParameters\022\024\n\014cachetim"
+  "eout\030\r \001(\r\022\021\n\tsrcconnid\030\016 \001(\014\022\021\n\tdstconn"
+  "id\030\017 \001(\014\"W\n\024SessionResponseError\022*\n\tsess"
+  "ionid\030\001 \001(\0132\027.opi_api.common.v1.Uuid\022\023\n\013"
+  "errorstatus\030\002 \001(\005\"g\n\020SessionResponses\022B\n"
+  "\013sessioninfo\030\001 \003(\0132-.opi_api.security.fi"
+  "rewall.v1.SessionResponse\022\017\n\007nextkey\030\002 \001"
+  "(\004\"\352\001\n\022AddSessionResponse\022E\n\rrequeststat"
+  "us\030\001 \001(\0162..opi_api.security.firewall.v1."
+  "AddSessionStatus\022\023\n\013errorstatus\030\002 \001(\004\022-\n"
+  "\tstarttime\030\003 \001(\0132\032.google.protobuf.Times"
+  "tamp\022I\n\rresponseerror\030\004 \003(\01322.opi_api.se"
+  "curity.firewall.v1.SessionResponseError\""
+  "\263\003\n\017SessionResponse\022*\n\tsessionid\030\001 \001(\0132\027"
+  ".opi_api.common.v1.Uuid\022\021\n\tinpackets\030\002 \001"
+  "(\004\022\022\n\noutpackets\030\003 \001(\004\022\017\n\007inbytes\030\004 \001(\004\022"
+  "\020\n\010outbytes\030\005 \001(\004\022@\n\014sessionstate\030\006 \001(\0162"
+  "*.opi_api.security.firewall.v1.SessionSt"
+  "ate\022H\n\020sessionclosecode\030\007 \001(\0162..opi_api."
+  "security.firewall.v1.SessionCloseCode\022B\n"
+  "\rrequeststatus\030\010 \001(\0162+.opi_api.security."
+  "firewall.v1.RequestStatus\022-\n\tstarttime\030\t"
+  " \001(\0132\032.google.protobuf.Timestamp\022+\n\007endt"
+  "ime\030\n \001(\0132\032.google.protobuf.Timestamp\"\202\001"
+  "\n\022SessionRequestArgs\022*\n\tsessionid\030\001 \001(\0132"
+  "\027.opi_api.common.v1.Uuid\022@\n\014sessionstate"
+  "\030\002 \001(\0162*.opi_api.security.firewall.v1.Se"
+  "ssionState*!\n\tIpVersion\022\t\n\005_IPV4\020\000\022\t\n\005_I"
+  "PV6\020\001*@\n\nProtocolId\022\013\n\007_HOPOPT\020\000\022\010\n\004_TCP"
+  "\020\006\022\010\n\004_UDP\020\021\"\004\010\001\020\005\"\004\010\007\020\020\"\005\010\022\020\377\001*a\n\014Sessi"
+  "onState\022\020\n\014_ESTABLISHED\020\000\022\016\n\n_CLOSING_1\020"
+  "\001\022\016\n\n_CLOSING_2\020\002\022\013\n\007_CLOSED\020\003\022\022\n\016_UNKNO"
+  "WN_STATE\020\004*a\n\020SessionCloseCode\022\017\n\013_NOT_C"
+  "LOSED\020\000\022\013\n\007_FINACK\020\001\022\010\n\004_RST\020\002\022\014\n\010_TIMEO"
+  "UT\020\003\022\027\n\023_UNKNOWN_CLOSE_CODE\020\004*\226\001\n\020AddSes"
+  "sionStatus\022\025\n\021_SESSION_ACCEPTED\020\000\022\025\n\021_SE"
+  "SSION_REJECTED\020\001\022\027\n\023_SESSION_TABLE_FULL\020"
+  "\002\022\036\n\032_SESSION_TABLE_UNAVAILABLE\020\003\022\033\n\027_SE"
+  "SSION_ALREADY_EXISTS\020\004*\317\001\n\rRequestStatus"
+  "\022\r\n\t_ACCEPTED\020\000\022\r\n\t_REJECTED\020\001\022!\n\035_REJEC"
+  "TED_SESSION_NONEXISTENT\020\002\022 \n\034_REJECTED_S"
+  "ESSION_TABLE_FULL\020\003\022$\n _REJECTED_SESSION"
+  "_ALREADY_EXISTS\020\004\022\027\n\023_NO_CLOSED_SESSIONS"
+  "\020\005\022\034\n\030_REJECTED_INTERNAL_ERROR\020\006*J\n\nActi"
+  "onType\022\t\n\005_DROP\020\000\022\014\n\010_FORWARD\020\001\022\013\n\007_MIRR"
+  "OR\020\002\022\n\n\006_SNOOP\020\003\022\n\n\006_PROXY\020\0042\310\003\n\014Session"
+  "Table\022p\n\nAddSession\022,.opi_api.security.f"
+  "irewall.v1.SessionRequest\0320.opi_api.secu"
+  "rity.firewall.v1.AddSessionResponse\"\000(\001\022"
+  "f\n\nGetSession\022\'.opi_api.security.firewal"
+  "l.v1.SessionId\032-.opi_api.security.firewa"
+  "ll.v1.SessionResponse\"\000\022i\n\rDeleteSession"
+  "\022\'.opi_api.security.firewall.v1.SessionI"
+  "d\032-.opi_api.security.firewall.v1.Session"
+  "Response\"\000\022s\n\rGetAllSession\0220.opi_api.se"
+  "curity.firewall.v1.SessionRequestArgs\032.."
+  "opi_api.security.firewall.v1.SessionResp"
+  "onses\"\000B4Z2github.com/opiproject/opi-api"
+  "/security/firewall/v1b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_openoffload_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_openoffload_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
+  &::descriptor_table_uuid_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_openoffload_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_openoffload_2eproto = {
-  false, false, 3164, descriptor_table_protodef_openoffload_2eproto, "openoffload.proto", 
-  &descriptor_table_openoffload_2eproto_once, descriptor_table_openoffload_2eproto_deps, 1, 9,
+  false, false, 3109, descriptor_table_protodef_openoffload_2eproto, "openoffload.proto", 
+  &descriptor_table_openoffload_2eproto_once, descriptor_table_openoffload_2eproto_deps, 2, 8,
   schemas, file_default_instances, TableStruct_openoffload_2eproto::offsets,
   file_level_metadata_openoffload_2eproto, file_level_enum_descriptors_openoffload_2eproto, file_level_service_descriptors_openoffload_2eproto,
 };
@@ -525,209 +503,6 @@ bool ActionType_IsValid(int value) {
   }
 }
 
-
-// ===================================================================
-
-class Uuid::_Internal {
- public:
-};
-
-Uuid::Uuid(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.security.firewall.v1.Uuid)
-}
-Uuid::Uuid(const Uuid& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_value().empty()) {
-    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.security.firewall.v1.Uuid)
-}
-
-inline void Uuid::SharedCtor() {
-value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-Uuid::~Uuid() {
-  // @@protoc_insertion_point(destructor:opi_api.security.firewall.v1.Uuid)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void Uuid::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void Uuid::ArenaDtor(void* object) {
-  Uuid* _this = reinterpret_cast< Uuid* >(object);
-  (void)_this;
-}
-void Uuid::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void Uuid::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void Uuid::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.security.firewall.v1.Uuid)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  value_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* Uuid::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string value = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.security.firewall.v1.Uuid.value"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* Uuid::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.security.firewall.v1.Uuid)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string value = 1;
-  if (!this->_internal_value().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.security.firewall.v1.Uuid.value");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_value(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.security.firewall.v1.Uuid)
-  return target;
-}
-
-size_t Uuid::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.security.firewall.v1.Uuid)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string value = 1;
-  if (!this->_internal_value().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_value());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Uuid::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Uuid::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Uuid::GetClassData() const { return &_class_data_; }
-
-void Uuid::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Uuid *>(to)->MergeFrom(
-      static_cast<const Uuid &>(from));
-}
-
-
-void Uuid::MergeFrom(const Uuid& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.security.firewall.v1.Uuid)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_value().empty()) {
-    _internal_set_value(from._internal_value());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Uuid::CopyFrom(const Uuid& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.security.firewall.v1.Uuid)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Uuid::IsInitialized() const {
-  return true;
-}
-
-void Uuid::InternalSwap(Uuid* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &value_, lhs_arena,
-      &other->value_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata Uuid::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[0]);
-}
 
 // ===================================================================
 
@@ -904,7 +679,7 @@ void SessionId::InternalSwap(SessionId* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionId::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[1]);
+      file_level_metadata_openoffload_2eproto[0]);
 }
 
 // ===================================================================
@@ -1385,24 +1160,30 @@ void ActionParameters::InternalSwap(ActionParameters* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ActionParameters::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[2]);
+      file_level_metadata_openoffload_2eproto[1]);
 }
 
 // ===================================================================
 
 class SessionRequest::_Internal {
  public:
-  static const ::opi_api::security::firewall::v1::Uuid& session_id(const SessionRequest* msg);
+  static const ::opi_api::common::v1::Uuid& session_id(const SessionRequest* msg);
   static const ::opi_api::security::firewall::v1::ActionParameters& action(const SessionRequest* msg);
 };
 
-const ::opi_api::security::firewall::v1::Uuid&
+const ::opi_api::common::v1::Uuid&
 SessionRequest::_Internal::session_id(const SessionRequest* msg) {
   return *msg->session_id_;
 }
 const ::opi_api::security::firewall::v1::ActionParameters&
 SessionRequest::_Internal::action(const SessionRequest* msg) {
   return *msg->action_;
+}
+void SessionRequest::clear_session_id() {
+  if (GetArenaForAllocation() == nullptr && session_id_ != nullptr) {
+    delete session_id_;
+  }
+  session_id_ = nullptr;
 }
 SessionRequest::SessionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1449,7 +1230,7 @@ SessionRequest::SessionRequest(const SessionRequest& from)
       GetArenaForAllocation());
   }
   if (from._internal_has_session_id()) {
-    session_id_ = new ::opi_api::security::firewall::v1::Uuid(*from.session_id_);
+    session_id_ = new ::opi_api::common::v1::Uuid(*from.session_id_);
   } else {
     session_id_ = nullptr;
   }
@@ -1544,7 +1325,7 @@ const char* SessionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.security.firewall.v1.Uuid session_id = 1;
+      // .opi_api.common.v1.Uuid session_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_session_id(), ptr);
@@ -1699,7 +1480,7 @@ uint8_t* SessionRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid session_id = 1;
+  // .opi_api.common.v1.Uuid session_id = 1;
   if (this->_internal_has_session_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1839,7 +1620,7 @@ size_t SessionRequest::ByteSizeLong() const {
         this->_internal_dstconnid());
   }
 
-  // .opi_api.security.firewall.v1.Uuid session_id = 1;
+  // .opi_api.common.v1.Uuid session_id = 1;
   if (this->_internal_has_session_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1935,7 +1716,7 @@ void SessionRequest::MergeFrom(const SessionRequest& from) {
     _internal_set_dstconnid(from._internal_dstconnid());
   }
   if (from._internal_has_session_id()) {
-    _internal_mutable_session_id()->::opi_api::security::firewall::v1::Uuid::MergeFrom(from._internal_session_id());
+    _internal_mutable_session_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_session_id());
   }
   if (from._internal_has_action()) {
     _internal_mutable_action()->::opi_api::security::firewall::v1::ActionParameters::MergeFrom(from._internal_action());
@@ -2017,19 +1798,25 @@ void SessionRequest::InternalSwap(SessionRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[3]);
+      file_level_metadata_openoffload_2eproto[2]);
 }
 
 // ===================================================================
 
 class SessionResponseError::_Internal {
  public:
-  static const ::opi_api::security::firewall::v1::Uuid& sessionid(const SessionResponseError* msg);
+  static const ::opi_api::common::v1::Uuid& sessionid(const SessionResponseError* msg);
 };
 
-const ::opi_api::security::firewall::v1::Uuid&
+const ::opi_api::common::v1::Uuid&
 SessionResponseError::_Internal::sessionid(const SessionResponseError* msg) {
   return *msg->sessionid_;
+}
+void SessionResponseError::clear_sessionid() {
+  if (GetArenaForAllocation() == nullptr && sessionid_ != nullptr) {
+    delete sessionid_;
+  }
+  sessionid_ = nullptr;
 }
 SessionResponseError::SessionResponseError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2044,7 +1831,7 @@ SessionResponseError::SessionResponseError(const SessionResponseError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_sessionid()) {
-    sessionid_ = new ::opi_api::security::firewall::v1::Uuid(*from.sessionid_);
+    sessionid_ = new ::opi_api::common::v1::Uuid(*from.sessionid_);
   } else {
     sessionid_ = nullptr;
   }
@@ -2101,7 +1888,7 @@ const char* SessionResponseError::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+      // .opi_api.common.v1.Uuid sessionid = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_sessionid(), ptr);
@@ -2146,7 +1933,7 @@ uint8_t* SessionResponseError::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2176,7 +1963,7 @@ size_t SessionResponseError::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2211,7 +1998,7 @@ void SessionResponseError::MergeFrom(const SessionResponseError& from) {
   (void) cached_has_bits;
 
   if (from._internal_has_sessionid()) {
-    _internal_mutable_sessionid()->::opi_api::security::firewall::v1::Uuid::MergeFrom(from._internal_sessionid());
+    _internal_mutable_sessionid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_sessionid());
   }
   if (from._internal_errorstatus() != 0) {
     _internal_set_errorstatus(from._internal_errorstatus());
@@ -2244,7 +2031,7 @@ void SessionResponseError::InternalSwap(SessionResponseError* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionResponseError::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[4]);
+      file_level_metadata_openoffload_2eproto[3]);
 }
 
 // ===================================================================
@@ -2455,7 +2242,7 @@ void SessionResponses::InternalSwap(SessionResponses* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionResponses::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[5]);
+      file_level_metadata_openoffload_2eproto[4]);
 }
 
 // ===================================================================
@@ -2750,19 +2537,19 @@ void AddSessionResponse::InternalSwap(AddSessionResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AddSessionResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[6]);
+      file_level_metadata_openoffload_2eproto[5]);
 }
 
 // ===================================================================
 
 class SessionResponse::_Internal {
  public:
-  static const ::opi_api::security::firewall::v1::Uuid& sessionid(const SessionResponse* msg);
+  static const ::opi_api::common::v1::Uuid& sessionid(const SessionResponse* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& starttime(const SessionResponse* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& endtime(const SessionResponse* msg);
 };
 
-const ::opi_api::security::firewall::v1::Uuid&
+const ::opi_api::common::v1::Uuid&
 SessionResponse::_Internal::sessionid(const SessionResponse* msg) {
   return *msg->sessionid_;
 }
@@ -2773,6 +2560,12 @@ SessionResponse::_Internal::starttime(const SessionResponse* msg) {
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 SessionResponse::_Internal::endtime(const SessionResponse* msg) {
   return *msg->endtime_;
+}
+void SessionResponse::clear_sessionid() {
+  if (GetArenaForAllocation() == nullptr && sessionid_ != nullptr) {
+    delete sessionid_;
+  }
+  sessionid_ = nullptr;
 }
 void SessionResponse::clear_starttime() {
   if (GetArenaForAllocation() == nullptr && starttime_ != nullptr) {
@@ -2799,7 +2592,7 @@ SessionResponse::SessionResponse(const SessionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_sessionid()) {
-    sessionid_ = new ::opi_api::security::firewall::v1::Uuid(*from.sessionid_);
+    sessionid_ = new ::opi_api::common::v1::Uuid(*from.sessionid_);
   } else {
     sessionid_ = nullptr;
   }
@@ -2880,7 +2673,7 @@ const char* SessionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+      // .opi_api.common.v1.Uuid sessionid = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_sessionid(), ptr);
@@ -2992,7 +2785,7 @@ uint8_t* SessionResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3077,7 +2870,7 @@ size_t SessionResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3159,7 +2952,7 @@ void SessionResponse::MergeFrom(const SessionResponse& from) {
   (void) cached_has_bits;
 
   if (from._internal_has_sessionid()) {
-    _internal_mutable_sessionid()->::opi_api::security::firewall::v1::Uuid::MergeFrom(from._internal_sessionid());
+    _internal_mutable_sessionid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_sessionid());
   }
   if (from._internal_has_starttime()) {
     _internal_mutable_starttime()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_starttime());
@@ -3216,19 +3009,25 @@ void SessionResponse::InternalSwap(SessionResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[7]);
+      file_level_metadata_openoffload_2eproto[6]);
 }
 
 // ===================================================================
 
 class SessionRequestArgs::_Internal {
  public:
-  static const ::opi_api::security::firewall::v1::Uuid& sessionid(const SessionRequestArgs* msg);
+  static const ::opi_api::common::v1::Uuid& sessionid(const SessionRequestArgs* msg);
 };
 
-const ::opi_api::security::firewall::v1::Uuid&
+const ::opi_api::common::v1::Uuid&
 SessionRequestArgs::_Internal::sessionid(const SessionRequestArgs* msg) {
   return *msg->sessionid_;
+}
+void SessionRequestArgs::clear_sessionid() {
+  if (GetArenaForAllocation() == nullptr && sessionid_ != nullptr) {
+    delete sessionid_;
+  }
+  sessionid_ = nullptr;
 }
 SessionRequestArgs::SessionRequestArgs(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3243,7 +3042,7 @@ SessionRequestArgs::SessionRequestArgs(const SessionRequestArgs& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_sessionid()) {
-    sessionid_ = new ::opi_api::security::firewall::v1::Uuid(*from.sessionid_);
+    sessionid_ = new ::opi_api::common::v1::Uuid(*from.sessionid_);
   } else {
     sessionid_ = nullptr;
   }
@@ -3300,7 +3099,7 @@ const char* SessionRequestArgs::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+      // .opi_api.common.v1.Uuid sessionid = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_sessionid(), ptr);
@@ -3346,7 +3145,7 @@ uint8_t* SessionRequestArgs::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3377,7 +3176,7 @@ size_t SessionRequestArgs::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.security.firewall.v1.Uuid sessionid = 1;
+  // .opi_api.common.v1.Uuid sessionid = 1;
   if (this->_internal_has_sessionid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3413,7 +3212,7 @@ void SessionRequestArgs::MergeFrom(const SessionRequestArgs& from) {
   (void) cached_has_bits;
 
   if (from._internal_has_sessionid()) {
-    _internal_mutable_sessionid()->::opi_api::security::firewall::v1::Uuid::MergeFrom(from._internal_sessionid());
+    _internal_mutable_sessionid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_sessionid());
   }
   if (from._internal_sessionstate() != 0) {
     _internal_set_sessionstate(from._internal_sessionstate());
@@ -3446,7 +3245,7 @@ void SessionRequestArgs::InternalSwap(SessionRequestArgs* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SessionRequestArgs::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_openoffload_2eproto_getter, &descriptor_table_openoffload_2eproto_once,
-      file_level_metadata_openoffload_2eproto[8]);
+      file_level_metadata_openoffload_2eproto[7]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -3455,9 +3254,6 @@ void SessionRequestArgs::InternalSwap(SessionRequestArgs* other) {
 }  // namespace security
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::opi_api::security::firewall::v1::Uuid* Arena::CreateMaybeMessage< ::opi_api::security::firewall::v1::Uuid >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::security::firewall::v1::Uuid >(arena);
-}
 template<> PROTOBUF_NOINLINE ::opi_api::security::firewall::v1::SessionId* Arena::CreateMaybeMessage< ::opi_api::security::firewall::v1::SessionId >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::security::firewall::v1::SessionId >(arena);
 }
