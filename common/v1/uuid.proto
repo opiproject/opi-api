@@ -4,8 +4,16 @@
 
 syntax = "proto3";
 package opi_api.common.v1;
+
+option java_package = "opi_api.common.v1";
+option java_multiple_files = true;
+option java_outer_classname = "UuidProto";
+
 option go_package = "github.com/opiproject/opi-api/common/v1";
 
+// A universally unique identifier (UUID) is a 128-bit label
+// When generated according to the standard methods, UUIDs are, for practical purposes, unique.
 message Uuid {
+  // The value of the UUID
   string value = 1;
 }

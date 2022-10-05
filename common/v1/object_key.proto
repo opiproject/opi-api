@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+
+syntax = "proto3";
+package opi_api.common.v1;
+
+option java_package = "opi_api.common.v1";
+option java_multiple_files = true;
+option java_outer_classname = "ObjectKeyProto";
+
+option go_package = "github.com/opiproject/opi-api/common/v1";
+
+// Object Keys are 128bit (16byte) opaque values. The object key uniquely
+// identifies a given configuration object. The key used must be unique within
+// the agents context for the give object type and must be non-zero. No other
+// restrictions apply on the usage of the key. API user may utilize any number
+// of bits (upto 128) as required to uniquely identify the object. The same
+// object key must be provided in subsequent operations on object
+message ObjectKey {
+  // The value of the ObjectKey
+  string value = 1;
+}

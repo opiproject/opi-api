@@ -3,10 +3,49 @@
 
 ## Table of Contents
 
+- [object_key.proto](#object_key-proto)
+    - [ObjectKey](#opi_api-common-v1-ObjectKey)
+  
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
   
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="object_key-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## object_key.proto
+
+
+
+<a name="opi_api-common-v1-ObjectKey"></a>
+
+### ObjectKey
+Object Keys are 128bit (16byte) opaque values. The object key uniquely
+identifies a given configuration object. The key used must be unique within
+the agents context for the give object type and must be non-zero. No other
+restrictions apply on the usage of the key. API user may utilize any number
+of bits (upto 128) as required to uniquely identify the object. The same
+object key must be provided in subsequent operations on object
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  | The value of the ObjectKey |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
@@ -20,12 +59,13 @@
 <a name="opi_api-common-v1-Uuid"></a>
 
 ### Uuid
-
+A universally unique identifier (UUID) is a 128-bit label
+When generated according to the standard methods, UUIDs are, for practical purposes, unique.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  |  |
+| value | [string](#string) |  | The value of the UUID |
 
 
 

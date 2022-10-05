@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuuid.proto\x12\x11opi_api.common.v1\"\x15\n\x04Uuid\x12\r\n\x05value\x18\x01 \x01(\tB)Z\'github.com/opiproject/opi-api/common/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuuid.proto\x12\x11opi_api.common.v1\"\x15\n\x04Uuid\x12\r\n\x05value\x18\x01 \x01(\tBI\n\x11opi_api.common.v1B\tUuidProtoP\x01Z\'github.com/opiproject/opi-api/common/v1b\x06proto3')
 
 
 
@@ -29,7 +29,7 @@ _sym_db.RegisterMessage(Uuid)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z\'github.com/opiproject/opi-api/common/v1'
+  DESCRIPTOR._serialized_options = b'\n\021opi_api.common.v1B\tUuidProtoP\001Z\'github.com/opiproject/opi-api/common/v1'
   _UUID._serialized_start=33
   _UUID._serialized_end=54
 # @@protoc_insertion_point(module_scope)
