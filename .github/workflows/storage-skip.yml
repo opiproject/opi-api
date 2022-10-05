@@ -5,13 +5,17 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - 'storage/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'storage/v1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
   pull_request:
     branches: [ main ]
     paths-ignore:
-      - 'storage/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'storage/v1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
 

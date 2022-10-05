@@ -2,16 +2,23 @@
 name: 'OPI Security API CI'
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'security/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'security/v1/**'
+      - 'security/firewall/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'security/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'security/v1/**'
+      - 'security/firewall/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
 
@@ -41,5 +48,5 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        path: security/proto/*.pb.go
+        path: security/v1/gen/go/*.pb.go
         retention-days: 1

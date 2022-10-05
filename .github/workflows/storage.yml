@@ -2,16 +2,21 @@
 name: 'OPI Storage API CI'
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'storage/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'storage/v1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'storage/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'storage/v1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
 
@@ -41,5 +46,5 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        path: storage/proto/*.pb.go
+        path: storage/v1/gen/go/*.pb.go
         retention-days: 1

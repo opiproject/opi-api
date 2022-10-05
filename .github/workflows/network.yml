@@ -2,16 +2,21 @@
 name: 'OPI Network API CI'
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'network/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'network/v1/**'
       - 'network/Makefile'
       - '.github/workflows/network.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'network/proto/**'
+      - 'common/v1/**'
+      - 'common/Makefile'
+      - 'network/v1/**'
       - 'network/Makefile'
       - '.github/workflows/network.yml'
 
@@ -41,5 +46,5 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        path: network/proto/*.pb.go
+        path: network/v1/gen/go/*.pb.go
         retention-days: 1
