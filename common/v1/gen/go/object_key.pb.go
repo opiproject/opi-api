@@ -24,12 +24,10 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Object Keys are 128bit (16byte) opaque values. The object key uniquely
+// Object Keys are opaque values. The object key uniquely
 // identifies a given configuration object. The key used must be unique within
-// the agents context for the give object type and must be non-zero. No other
-// restrictions apply on the usage of the key. API user may utilize any number
-// of bits (upto 128) as required to uniquely identify the object. The same
-// object key must be provided in subsequent operations on object
+// the agent's context for the give object type and must be non-zero. No other
+// restrictions apply on the usage of the key.
 type ObjectKey struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
