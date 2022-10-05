@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // {C} Copyright 2022 Pensando Systems Inc. All rights reserved
 //
-// Nvme iniaiator device proto specification
+// Nvme Initiator device proto specification
 //------------------------------------------------------------------------------
 
 syntax = "proto3";

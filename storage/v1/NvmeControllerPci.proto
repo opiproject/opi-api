@@ -56,14 +56,14 @@ message NvmeControllerSpec {
   // Refer to the NQN format in the NVMe base specifications, must not
   // exceed 'NSV_NVME_NQN_LEN' bytes
   bytes                 subsystem_nqn      = 2;
-  // (mandatory) DSC PCI ID for the controller, device numbering starts for 0.
+  // (mandatory) xPU PCI ID for the controller, device numbering starts for 0.
   // Eg. PF-0, VF1 = (bus = 0, device = 0, function = 0, Virtual Function = 1)
   // Eg. PF-3, VF4 = (bus = 0, device = 3, function = 0, Virtual Function = 4)
   types.NvmeControllerPciId pci_id         = 3;
   // (optional) Maximum Number of namespaces that will be provisioned under
   // the controller.
   // if set to 0, default provision for the device specified in
-  // the DSC PCI configuration json file is used.
+  // the xPU PCI configuration json file is used.
   // Must not exceed the maximum value configured for the device
   uint32                num_namespace      = 4;
   // (optional) Maximum host IO queue pairs allowed, value will default to

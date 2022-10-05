@@ -58,7 +58,7 @@ message ObjectKey {
 
 // The controller PCI-ID is used to address a given virtual controller. Virtual
 // controllers are organized into devices with Physical functions and SRIOV
-// virtual function within the physical functions. Currently, the DSC may
+// virtual function within the physical functions. An xPU may
 // expose multiple devices with one physical function each and one or more
 // virtual functions under the physical function.
 message NvmeControllerPciId {
