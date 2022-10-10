@@ -23,7 +23,7 @@ Metrics, etc. can be exposed for these network and network services objects usin
 
 Most of the objects are well known in any public/private cloud deployment; here is a small description of various objects defined
 
-- VPC: Virtual Private Cloud is the key concept in network virutalization, refrering to a seggregated (from other tenants) networks defining overlapping subnets, routes, interfaces, service mappings, etc. for a given tenant
+- VPC: Virtual Private Cloud is the key concept in network virutalization, referring to a segregated (from other tenants) networks defining overlapping subnets, routes, interfaces, service mappings, etc. for a given tenant
 - Subnets: An IPv4/v6 network, typically defined by the tenant, but instantiated in the VPC
 - VNIC: Virtual NIC, an interface offered to a tenant, provisioned by the cloud controller on behalf of an instance definition
 - Routing Table: these are static routes, for a given tenant within a VPC describing how traffic forwarding works within and in/out of a VPC
