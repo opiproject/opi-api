@@ -377,12 +377,13 @@ in v1alpha4 to simplfy the code.
 <a name="opi_api-common-v1-Uuid"></a>
 
 ### Uuid
-
+A universally unique identifier (UUID) is a 128-bit label
+When generated according to the standard methods, UUIDs are, for practical purposes, unique.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| value | [string](#string) |  |  |
+| value | [string](#string) |  | The value of the UUID |
 
 
 

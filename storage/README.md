@@ -31,7 +31,7 @@ _All implementations above are reference only and __not__ meant to be used as-is
 The [Specification](proto/autogen.md) is implemented in proto. Compile it as:
 
 ```bash
-   docker run -v $PWD:/defs namely/protoc-all --lint -d proto -l go -o ./proto/  --go-source-relative
+   docker run --user=$$(id -u):$$(id -g) --rm -v $PWD:/defs namely/protoc-all --lint -d proto -l go -o ./proto/  --go-source-relative
 ```
 
 ## Documentation for reference of other specs
