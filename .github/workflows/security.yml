@@ -9,7 +9,6 @@ on:
       - 'common/v1/**'
       - 'common/Makefile'
       - 'security/v1/**'
-      - 'security/firewall/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
   pull_request:
@@ -18,7 +17,6 @@ on:
       - 'common/v1/**'
       - 'common/Makefile'
       - 'security/v1/**'
-      - 'security/firewall/v1/**'
       - 'security/Makefile'
       - '.github/workflows/security.yml'
 
