@@ -385,12 +385,12 @@ const char descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto[] PROTOBUF_SEC
   "eControllerStats\0224.opi_api.storage.v1.NV"
   "MfRemoteControllerStatsRequest\0325.opi_api"
   ".storage.v1.NVMfRemoteControllerStatsRes"
-  "ponse\"\000B*Z(github.com/opiproject/opi-api"
-  "/storage/v1b\006proto3"
+  "ponse\"\000B1Z/github.com/opiproject/opi-api"
+  "/storage/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnvme_5ftcp_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnvme_5ftcp_2eproto = {
-  false, false, 2379, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto, "backend_nvme_tcp.proto", 
+  false, false, 2386, descriptor_table_protodef_backend_5fnvme_5ftcp_2eproto, "backend_nvme_tcp.proto", 
   &descriptor_table_backend_5fnvme_5ftcp_2eproto_once, nullptr, 0, 13,
   schemas, file_default_instances, TableStruct_backend_5fnvme_5ftcp_2eproto::offsets,
   file_level_metadata_backend_5fnvme_5ftcp_2eproto, file_level_enum_descriptors_backend_5fnvme_5ftcp_2eproto, file_level_service_descriptors_backend_5fnvme_5ftcp_2eproto,

@@ -14,12 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66rontend_virtio_fs.proto\x12\x12opi_api.storage.v1B*Z(github.com/opiproject/opi-api/storage/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66rontend_virtio_fs.proto\x12\x12opi_api.storage.v1B1Z/github.com/opiproject/opi-api/storage/v1/gen/gob\x06proto3')
 
 
 
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z(github.com/opiproject/opi-api/storage/v1'
+  DESCRIPTOR._serialized_options = b'Z/github.com/opiproject/opi-api/storage/v1/gen/go'
 # @@protoc_insertion_point(module_scope)

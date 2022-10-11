@@ -27,11 +27,11 @@
 // 	protoc        v3.19.4
 // source: openoffload.proto
 
-package v1
+package _go
 
 import (
 	context "context"
-	v1 "github.com/opiproject/opi-api/common/v1"
+	_go "github.com/opiproject/opi-api/common/v1/gen/go"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -644,7 +644,7 @@ type SessionRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SessionId       *v1.Uuid          `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
+	SessionId       *_go.Uuid         `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 	Inlif           int32             `protobuf:"varint,2,opt,name=inlif,proto3" json:"inlif,omitempty"`
 	Outlif          int32             `protobuf:"varint,3,opt,name=outlif,proto3" json:"outlif,omitempty"`
 	Ipversion       IpVersion         `protobuf:"varint,4,opt,name=ipversion,proto3,enum=opi_api.security.firewall.v1.IpVersion" json:"ipversion,omitempty"`
@@ -693,7 +693,7 @@ func (*SessionRequest) Descriptor() ([]byte, []int) {
 	return file_openoffload_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SessionRequest) GetSessionId() *v1.Uuid {
+func (x *SessionRequest) GetSessionId() *_go.Uuid {
 	if x != nil {
 		return x.SessionId
 	}
@@ -803,8 +803,8 @@ type SessionResponseError struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sessionid   *v1.Uuid `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
-	Errorstatus int32    `protobuf:"varint,2,opt,name=errorstatus,proto3" json:"errorstatus,omitempty"`
+	Sessionid   *_go.Uuid `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
+	Errorstatus int32     `protobuf:"varint,2,opt,name=errorstatus,proto3" json:"errorstatus,omitempty"`
 }
 
 func (x *SessionResponseError) Reset() {
@@ -839,7 +839,7 @@ func (*SessionResponseError) Descriptor() ([]byte, []int) {
 	return file_openoffload_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *SessionResponseError) GetSessionid() *v1.Uuid {
+func (x *SessionResponseError) GetSessionid() *_go.Uuid {
 	if x != nil {
 		return x.Sessionid
 	}
@@ -988,7 +988,7 @@ type SessionResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sessionid        *v1.Uuid               `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
+	Sessionid        *_go.Uuid              `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
 	Inpackets        uint64                 `protobuf:"varint,2,opt,name=inpackets,proto3" json:"inpackets,omitempty"`
 	Outpackets       uint64                 `protobuf:"varint,3,opt,name=outpackets,proto3" json:"outpackets,omitempty"`
 	Inbytes          uint64                 `protobuf:"varint,4,opt,name=inbytes,proto3" json:"inbytes,omitempty"`
@@ -1032,7 +1032,7 @@ func (*SessionResponse) Descriptor() ([]byte, []int) {
 	return file_openoffload_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *SessionResponse) GetSessionid() *v1.Uuid {
+func (x *SessionResponse) GetSessionid() *_go.Uuid {
 	if x != nil {
 		return x.Sessionid
 	}
@@ -1108,7 +1108,7 @@ type SessionRequestArgs struct {
 	unknownFields protoimpl.UnknownFields
 
 	// If SessionId is zero, return all sessions
-	Sessionid *v1.Uuid `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
+	Sessionid *_go.Uuid `protobuf:"bytes,1,opt,name=sessionid,proto3" json:"sessionid,omitempty"`
 	// Filter argument to only return sessions of a given state
 	Sessionstate SessionState `protobuf:"varint,2,opt,name=sessionstate,proto3,enum=opi_api.security.firewall.v1.SessionState" json:"sessionstate,omitempty"`
 }
@@ -1145,7 +1145,7 @@ func (*SessionRequestArgs) Descriptor() ([]byte, []int) {
 	return file_openoffload_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *SessionRequestArgs) GetSessionid() *v1.Uuid {
+func (x *SessionRequestArgs) GetSessionid() *_go.Uuid {
 	if x != nil {
 		return x.Sessionid
 	}
@@ -1386,11 +1386,11 @@ var file_openoffload_proto_rawDesc = []byte{
 	0x65, 0x73, 0x74, 0x41, 0x72, 0x67, 0x73, 0x1a, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x2e, 0x66, 0x69, 0x72, 0x65, 0x77,
 	0x61, 0x6c, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69, 0x74,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x73, 0x22, 0x00, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65,
 	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x63, 0x75, 0x72,
-	0x69, 0x74, 0x79, 0x2f, 0x66, 0x69, 0x72, 0x65, 0x77, 0x61, 0x6c, 0x6c, 0x2f, 0x76, 0x31, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x74, 0x79, 0x2f, 0x66, 0x69, 0x72, 0x65, 0x77, 0x61, 0x6c, 0x6c, 0x2f, 0x76, 0x31, 0x2f,
+	0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1423,7 +1423,7 @@ var file_openoffload_proto_goTypes = []interface{}{
 	(*AddSessionResponse)(nil),    // 12: opi_api.security.firewall.v1.AddSessionResponse
 	(*SessionResponse)(nil),       // 13: opi_api.security.firewall.v1.SessionResponse
 	(*SessionRequestArgs)(nil),    // 14: opi_api.security.firewall.v1.SessionRequestArgs
-	(*v1.Uuid)(nil),               // 15: opi_api.common.v1.Uuid
+	(*_go.Uuid)(nil),              // 15: opi_api.common.v1.Uuid
 	(*timestamppb.Timestamp)(nil), // 16: google.protobuf.Timestamp
 }
 var file_openoffload_proto_depIdxs = []int32{

@@ -57,13 +57,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_uuid_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\nuuid.proto\022\021opi_api.common.v1\"\025\n\004Uuid\022"
-  "\r\n\005value\030\001 \001(\tBI\n\021opi_api.common.v1B\tUui"
-  "dProtoP\001Z\'github.com/opiproject/opi-api/"
-  "common/v1b\006proto3"
+  "\r\n\005value\030\001 \001(\tBP\n\021opi_api.common.v1B\tUui"
+  "dProtoP\001Z.github.com/opiproject/opi-api/"
+  "common/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_uuid_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_uuid_2eproto = {
-  false, false, 137, descriptor_table_protodef_uuid_2eproto, "uuid.proto", 
+  false, false, 144, descriptor_table_protodef_uuid_2eproto, "uuid.proto", 
   &descriptor_table_uuid_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_uuid_2eproto::offsets,
   file_level_metadata_uuid_2eproto, file_level_enum_descriptors_uuid_2eproto, file_level_service_descriptors_uuid_2eproto,

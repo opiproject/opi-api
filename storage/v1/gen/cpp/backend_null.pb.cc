@@ -344,16 +344,16 @@ const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_V
   "(.opi_api.storage.v1.NullDebugGetRespons"
   "e\"\000\022i\n\016NullDebugStats\022).opi_api.storage."
   "v1.NullDebugStatsRequest\032*.opi_api.stora"
-  "ge.v1.NullDebugStatsResponse\"\000B*Z(github"
-  ".com/opiproject/opi-api/storage/v1b\006prot"
-  "o3"
+  "ge.v1.NullDebugStatsResponse\"\000B1Z/github"
+  ".com/opiproject/opi-api/storage/v1/gen/g"
+  "ob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[1] = {
   &::descriptor_table_uuid_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 1442, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  false, false, 1449, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
   &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 1, 13,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,

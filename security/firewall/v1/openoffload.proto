@@ -26,7 +26,7 @@ syntax = "proto3";
 
 package opi_api.security.firewall.v1;
 
-option go_package = "github.com/opiproject/opi-api/security/firewall/v1";
+option go_package = "github.com/opiproject/opi-api/security/firewall/v1/gen/go";
 
 import "google/protobuf/timestamp.proto";
 import "uuid.proto";

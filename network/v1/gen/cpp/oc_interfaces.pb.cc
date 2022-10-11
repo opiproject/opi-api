@@ -673,13 +673,13 @@ const char descriptor_table_protodef_oc_5finterfaces_2eproto[] PROTOBUF_SECTION_
   "network.v1.NetInterfaceListResponse\"\000\022u\n"
   "\022NetInterfaceUpdate\022-.opi_api.network.v1"
   ".NetInterfaceUpdateRequest\032..opi_api.net"
-  "work.v1.NetInterfaceUpdateResponse\"\000B*Z("
+  "work.v1.NetInterfaceUpdateResponse\"\000B1Z/"
   "github.com/opiproject/opi-api/network/v1"
-  "b\006proto3"
+  "/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_oc_5finterfaces_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_oc_5finterfaces_2eproto = {
-  false, false, 3568, descriptor_table_protodef_oc_5finterfaces_2eproto, "oc_interfaces.proto", 
+  false, false, 3575, descriptor_table_protodef_oc_5finterfaces_2eproto, "oc_interfaces.proto", 
   &descriptor_table_oc_5finterfaces_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_oc_5finterfaces_2eproto::offsets,
   file_level_metadata_oc_5finterfaces_2eproto, file_level_enum_descriptors_oc_5finterfaces_2eproto, file_level_service_descriptors_oc_5finterfaces_2eproto,

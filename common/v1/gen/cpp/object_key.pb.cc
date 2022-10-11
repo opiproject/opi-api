@@ -57,13 +57,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_object_5fkey_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\020object_key.proto\022\021opi_api.common.v1\"\032\n"
-  "\tObjectKey\022\r\n\005value\030\001 \001(\tBN\n\021opi_api.com"
-  "mon.v1B\016ObjectKeyProtoP\001Z\'github.com/opi"
-  "project/opi-api/common/v1b\006proto3"
+  "\tObjectKey\022\r\n\005value\030\001 \001(\tBU\n\021opi_api.com"
+  "mon.v1B\016ObjectKeyProtoP\001Z.github.com/opi"
+  "project/opi-api/common/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_object_5fkey_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_object_5fkey_2eproto = {
-  false, false, 153, descriptor_table_protodef_object_5fkey_2eproto, "object_key.proto", 
+  false, false, 160, descriptor_table_protodef_object_5fkey_2eproto, "object_key.proto", 
   &descriptor_table_object_5fkey_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_object_5fkey_2eproto::offsets,
   file_level_metadata_object_5fkey_2eproto, file_level_enum_descriptors_object_5fkey_2eproto, file_level_service_descriptors_object_5fkey_2eproto,

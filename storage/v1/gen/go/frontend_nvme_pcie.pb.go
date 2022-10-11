@@ -7,11 +7,11 @@
 // 	protoc        v3.19.4
 // source: frontend_nvme_pcie.proto
 
-package v1
+package _go
 
 import (
 	context "context"
-	v1 "github.com/opiproject/opi-api/common/v1"
+	_go "github.com/opiproject/opi-api/common/v1/gen/go"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -191,19 +191,19 @@ type NVMeNamespace struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id             int64    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name           string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	SubsystemId    string   `protobuf:"bytes,3,opt,name=subsystem_id,json=subsystemId,proto3" json:"subsystem_id,omitempty"`
-	ControllerId   int64    `protobuf:"varint,4,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
-	Nsid           int64    `protobuf:"varint,5,opt,name=nsid,proto3" json:"nsid,omitempty"`
-	Bdev           string   `protobuf:"bytes,6,opt,name=bdev,proto3" json:"bdev,omitempty"`
-	BlockSize      int64    `protobuf:"varint,7,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
-	NumBlocks      int64    `protobuf:"varint,8,opt,name=num_blocks,json=numBlocks,proto3" json:"num_blocks,omitempty"`
-	Nguid          string   `protobuf:"bytes,9,opt,name=nguid,proto3" json:"nguid,omitempty"`
-	Eui64          string   `protobuf:"bytes,10,opt,name=eui64,proto3" json:"eui64,omitempty"`
-	Uuid           *v1.Uuid `protobuf:"bytes,11,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	Multipath      string   `protobuf:"bytes,12,opt,name=multipath,proto3" json:"multipath,omitempty"`
-	Authentication string   `protobuf:"bytes,13,opt,name=authentication,proto3" json:"authentication,omitempty"`
+	Id             int64     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name           string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	SubsystemId    string    `protobuf:"bytes,3,opt,name=subsystem_id,json=subsystemId,proto3" json:"subsystem_id,omitempty"`
+	ControllerId   int64     `protobuf:"varint,4,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
+	Nsid           int64     `protobuf:"varint,5,opt,name=nsid,proto3" json:"nsid,omitempty"`
+	Bdev           string    `protobuf:"bytes,6,opt,name=bdev,proto3" json:"bdev,omitempty"`
+	BlockSize      int64     `protobuf:"varint,7,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
+	NumBlocks      int64     `protobuf:"varint,8,opt,name=num_blocks,json=numBlocks,proto3" json:"num_blocks,omitempty"`
+	Nguid          string    `protobuf:"bytes,9,opt,name=nguid,proto3" json:"nguid,omitempty"`
+	Eui64          string    `protobuf:"bytes,10,opt,name=eui64,proto3" json:"eui64,omitempty"`
+	Uuid           *_go.Uuid `protobuf:"bytes,11,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Multipath      string    `protobuf:"bytes,12,opt,name=multipath,proto3" json:"multipath,omitempty"`
+	Authentication string    `protobuf:"bytes,13,opt,name=authentication,proto3" json:"authentication,omitempty"`
 }
 
 func (x *NVMeNamespace) Reset() {
@@ -308,7 +308,7 @@ func (x *NVMeNamespace) GetEui64() string {
 	return ""
 }
 
-func (x *NVMeNamespace) GetUuid() *v1.Uuid {
+func (x *NVMeNamespace) GetUuid() *_go.Uuid {
 	if x != nil {
 		return x.Uuid
 	}
@@ -381,7 +381,7 @@ type NVMeSubsystemCreateResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uuid *v1.Uuid `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Uuid *_go.Uuid `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
 func (x *NVMeSubsystemCreateResponse) Reset() {
@@ -416,7 +416,7 @@ func (*NVMeSubsystemCreateResponse) Descriptor() ([]byte, []int) {
 	return file_frontend_nvme_pcie_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *NVMeSubsystemCreateResponse) GetUuid() *v1.Uuid {
+func (x *NVMeSubsystemCreateResponse) GetUuid() *_go.Uuid {
 	if x != nil {
 		return x.Uuid
 	}
@@ -2419,10 +2419,10 @@ var file_frontend_nvme_pcie_proto_rawDesc = []byte{
 	0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
 	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x56, 0x4d, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x42, 0x2a, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x00, 0x42, 0x31, 0x5a, 0x2f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
 	0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61,
-	0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65,
+	0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2479,7 +2479,7 @@ var file_frontend_nvme_pcie_proto_goTypes = []interface{}{
 	(*NVMeNamespaceStatsRequest)(nil),    // 37: opi_api.storage.v1.NVMeNamespaceStatsRequest
 	(*NVMeNamespaceStatsResponse)(nil),   // 38: opi_api.storage.v1.NVMeNamespaceStatsResponse
 	(*NvmeControllerPciId)(nil),          // 39: opi_api.storage.v1.NvmeControllerPciId
-	(*v1.Uuid)(nil),                      // 40: opi_api.common.v1.Uuid
+	(*_go.Uuid)(nil),                     // 40: opi_api.common.v1.Uuid
 }
 var file_frontend_nvme_pcie_proto_depIdxs = []int32{
 	39, // 0: opi_api.storage.v1.NVMeController.pcie_id:type_name -> opi_api.storage.v1.NvmeControllerPciId

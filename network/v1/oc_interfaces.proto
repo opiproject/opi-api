@@ -3,7 +3,7 @@
 syntax = "proto3";
 
 package opi_api.network.v1;
-option go_package = "github.com/opiproject/opi-api/network/v1";
+option go_package = "github.com/opiproject/opi-api/network/v1/gen/go";
 
 // Service functions for Network Interface exported by the server
 service NetInterface {

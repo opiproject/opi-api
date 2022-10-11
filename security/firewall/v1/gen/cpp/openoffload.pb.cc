@@ -363,8 +363,8 @@ const char descriptor_table_protodef_openoffload_2eproto[] PROTOBUF_SECTION_VARI
   "Response\"\000\022s\n\rGetAllSession\0220.opi_api.se"
   "curity.firewall.v1.SessionRequestArgs\032.."
   "opi_api.security.firewall.v1.SessionResp"
-  "onses\"\000B4Z2github.com/opiproject/opi-api"
-  "/security/firewall/v1b\006proto3"
+  "onses\"\000B;Z9github.com/opiproject/opi-api"
+  "/security/firewall/v1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_openoffload_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -372,7 +372,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_openoffload_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_openoffload_2eproto = {
-  false, false, 3109, descriptor_table_protodef_openoffload_2eproto, "openoffload.proto", 
+  false, false, 3116, descriptor_table_protodef_openoffload_2eproto, "openoffload.proto", 
   &descriptor_table_openoffload_2eproto_once, descriptor_table_openoffload_2eproto_deps, 2, 8,
   schemas, file_default_instances, TableStruct_openoffload_2eproto::offsets,
   file_level_metadata_openoffload_2eproto, file_level_enum_descriptors_openoffload_2eproto, file_level_service_descriptors_openoffload_2eproto,

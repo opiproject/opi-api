@@ -30,12 +30,12 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_backend_5fiscsi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023backend_iscsi.proto\022\022opi_api.storage.v"
-  "1B*Z(github.com/opiproject/opi-api/stora"
-  "ge/v1b\006proto3"
+  "1B1Z/github.com/opiproject/opi-api/stora"
+  "ge/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fiscsi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fiscsi_2eproto = {
-  false, false, 93, descriptor_table_protodef_backend_5fiscsi_2eproto, "backend_iscsi.proto", 
+  false, false, 100, descriptor_table_protodef_backend_5fiscsi_2eproto, "backend_iscsi.proto", 
   &descriptor_table_backend_5fiscsi_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_backend_5fiscsi_2eproto::offsets,
   nullptr, file_level_enum_descriptors_backend_5fiscsi_2eproto, file_level_service_descriptors_backend_5fiscsi_2eproto,

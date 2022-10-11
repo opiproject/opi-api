@@ -7,11 +7,11 @@
 // 	protoc        v3.19.4
 // source: backend_null.proto
 
-package v1
+package _go
 
 import (
 	context "context"
-	v1 "github.com/opiproject/opi-api/common/v1"
+	_go "github.com/opiproject/opi-api/common/v1/gen/go"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -33,11 +33,11 @@ type NullDebug struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id        int64    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name      string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	BlockSize int64    `protobuf:"varint,3,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
-	NumBlocks int64    `protobuf:"varint,4,opt,name=num_blocks,json=numBlocks,proto3" json:"num_blocks,omitempty"`
-	Uuid      *v1.Uuid `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Id        int64     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name      string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	BlockSize int64     `protobuf:"varint,3,opt,name=block_size,json=blockSize,proto3" json:"block_size,omitempty"`
+	NumBlocks int64     `protobuf:"varint,4,opt,name=num_blocks,json=numBlocks,proto3" json:"num_blocks,omitempty"`
+	Uuid      *_go.Uuid `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
 func (x *NullDebug) Reset() {
@@ -100,7 +100,7 @@ func (x *NullDebug) GetNumBlocks() int64 {
 	return 0
 }
 
-func (x *NullDebug) GetUuid() *v1.Uuid {
+func (x *NullDebug) GetUuid() *_go.Uuid {
 	if x != nil {
 		return x.Uuid
 	}
@@ -738,10 +738,11 @@ var file_backend_null_proto_rawDesc = []byte{
 	0x75, 0x67, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
 	0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x75, 0x6c, 0x6c, 0x44, 0x65, 0x62, 0x75, 0x67, 0x53, 0x74, 0x61,
-	0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2a, 0x5a, 0x28,
+	0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x31, 0x5a, 0x2f,
 	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72,
 	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -771,7 +772,7 @@ var file_backend_null_proto_goTypes = []interface{}{
 	(*NullDebugGetResponse)(nil),    // 10: opi_api.storage.v1.NullDebugGetResponse
 	(*NullDebugStatsRequest)(nil),   // 11: opi_api.storage.v1.NullDebugStatsRequest
 	(*NullDebugStatsResponse)(nil),  // 12: opi_api.storage.v1.NullDebugStatsResponse
-	(*v1.Uuid)(nil),                 // 13: opi_api.common.v1.Uuid
+	(*_go.Uuid)(nil),                // 13: opi_api.common.v1.Uuid
 }
 var file_backend_null_proto_depIdxs = []int32{
 	13, // 0: opi_api.storage.v1.NullDebug.uuid:type_name -> opi_api.common.v1.Uuid

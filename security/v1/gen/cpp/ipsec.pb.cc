@@ -1454,12 +1454,12 @@ const char descriptor_table_protodef_ipsec_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "secLoadConnResp\"\000\022f\n\017IPsecUnloadConn\022\'.o"
   "pi_api.security.v1.IPsecUnloadConnReq\032(."
   "opi_api.security.v1.IPsecUnloadConnResp\""
-  "\000B+Z)github.com/opiproject/opi-api/secur"
-  "ity/v1b\006proto3"
+  "\000B2Z0github.com/opiproject/opi-api/secur"
+  "ity/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ipsec_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ipsec_2eproto = {
-  false, false, 8334, descriptor_table_protodef_ipsec_2eproto, "ipsec.proto", 
+  false, false, 8341, descriptor_table_protodef_ipsec_2eproto, "ipsec.proto", 
   &descriptor_table_ipsec_2eproto_once, nullptr, 0, 41,
   schemas, file_default_instances, TableStruct_ipsec_2eproto::offsets,
   file_level_metadata_ipsec_2eproto, file_level_enum_descriptors_ipsec_2eproto, file_level_service_descriptors_ipsec_2eproto,

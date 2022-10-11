@@ -9,7 +9,7 @@ option java_package = "opi_api.common.v1";
 option java_multiple_files = true;
 option java_outer_classname = "ObjectKeyProto";
 
-option go_package = "github.com/opiproject/opi-api/common/v1";
+option go_package = "github.com/opiproject/opi-api/common/v1/gen/go";
 
 // Object Keys are opaque values. The object key uniquely
 // identifies a given configuration object. The key used must be unique within
