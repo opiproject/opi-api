@@ -1,0 +1,71 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+
+syntax = "proto3";
+package opi_api.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
+
+import "google/protobuf/empty.proto";
+import "object_key.proto";
+import "uuid.proto";
+
+// Back End (network-facing) APIs.
+
+service AioRemoteControllerService {
+    rpc AioRemoteControllerCreate (AioRemoteControllerCreateRequest) returns (AioRemoteController) {}
+    rpc AioRemoteControllerDelete (AioRemoteControllerDeleteRequest) returns (google.protobuf.Empty) {}
+    rpc AioRemoteControllerGet    (AioRemoteControllerGetRequest)    returns (AioRemoteController)    {}
+    rpc AioRemoteControllerGetList   (AioRemoteControllerGetListRequest)   returns (AioRemoteControllerList)   {}
+    rpc AioRemoteControllerGetStats  (AioRemoteControllerGetStatsRequest)  returns (AioRemoteControllerStats)  {}
+    rpc AioRemoteControllerUpdate (AioRemoteControllerUpdateRequest) returns (AioRemoteController) {}
+}
+
+message AioRemoteController {
+    // handle is an opaque object handle that is not user settable.
+    // handle will be returned with created object
+    common.v1.ObjectKey handle = 1;
+
+    int64 id = 2;
+    string name = 3;
+    int64 block_size = 4;
+    int64 num_blocks = 5;
+    common.v1.Uuid uuid =6;
+}
+
+message AioRemoteControllerCreateRequest {
+    AioRemoteController device = 1;
+}
+
+message AioRemoteControllerDeleteRequest {
+    common.v1.ObjectKey handle = 1;
+}
+
+message AioRemoteControllerUpdateRequest {
+    AioRemoteController device = 1;
+}
+
+message AioRemoteControllerList{
+    repeated AioRemoteController device = 1;
+}
+
+message AioRemoteControllerGetRequest {
+    common.v1.ObjectKey handle = 1;
+}
+
+message AioRemoteControllerGetListRequest {
+    // Intentionally empty
+}
+
+message AioRemoteControllerGetStatsRequest {
+    common.v1.ObjectKey handle = 1;
+}
+
+message AioRemoteControllerStatsRequest {
+    common.v1.ObjectKey handle = 1;
+}
+
+message AioRemoteControllerStats {
+    common.v1.ObjectKey handle = 1;
+    string stats = 2;
+}
+

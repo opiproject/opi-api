@@ -13,9 +13,11 @@ all:
 	# protoc-gen-doc doesn't support proto include paths parameter so we have to copy
 	# common included files to the proto directory
 	cp ../common/v1/uuid.proto "${PWD}"/v1
+	cp ../common/v1/object_key.proto "${PWD}"/v1
 
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -v "${PWD}"/v1:/protos pseudomuto/protoc-gen-doc --doc_opt=markdown,autogen.md
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}"/v1/:/out -w /out --entrypoint=sh ghcr.io/docker-multiarch/google-api-linter:1.36.0 -c "api-linter /out/*.proto --output-format summary"
 
 # remove common included files from the proto directory
 	rm "${PWD}"/v1/uuid.proto
+	rm "${PWD}"/v1/object_key.proto

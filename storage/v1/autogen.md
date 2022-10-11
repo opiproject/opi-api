@@ -3,6 +3,20 @@
 
 ## Table of Contents
 
+- [backend_aio.proto](#backend_aio-proto)
+    - [AioRemoteController](#opi_api-storage-v1-AioRemoteController)
+    - [AioRemoteControllerCreateRequest](#opi_api-storage-v1-AioRemoteControllerCreateRequest)
+    - [AioRemoteControllerDeleteRequest](#opi_api-storage-v1-AioRemoteControllerDeleteRequest)
+    - [AioRemoteControllerGetListRequest](#opi_api-storage-v1-AioRemoteControllerGetListRequest)
+    - [AioRemoteControllerGetRequest](#opi_api-storage-v1-AioRemoteControllerGetRequest)
+    - [AioRemoteControllerGetStatsRequest](#opi_api-storage-v1-AioRemoteControllerGetStatsRequest)
+    - [AioRemoteControllerList](#opi_api-storage-v1-AioRemoteControllerList)
+    - [AioRemoteControllerStats](#opi_api-storage-v1-AioRemoteControllerStats)
+    - [AioRemoteControllerStatsRequest](#opi_api-storage-v1-AioRemoteControllerStatsRequest)
+    - [AioRemoteControllerUpdateRequest](#opi_api-storage-v1-AioRemoteControllerUpdateRequest)
+  
+    - [AioRemoteControllerService](#opi_api-storage-v1-AioRemoteControllerService)
+  
 - [backend_iscsi.proto](#backend_iscsi-proto)
 - [backend_null.proto](#backend_null-proto)
     - [NullDebug](#opi_api-storage-v1-NullDebug)
@@ -141,10 +155,195 @@
     - [VirtioScsiLunService](#opi_api-storage-v1-VirtioScsiLunService)
   
 - [middleend.proto](#middleend-proto)
+- [object_key.proto](#object_key-proto)
+    - [ObjectKey](#opi_api-common-v1-ObjectKey)
+  
 - [uuid.proto](#uuid-proto)
     - [Uuid](#opi_api-common-v1-Uuid)
   
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="backend_aio-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## backend_aio.proto
+
+
+
+<a name="opi_api-storage-v1-AioRemoteController"></a>
+
+### AioRemoteController
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | handle is an opaque object handle that is not user settable. handle will be returned with created object |
+| id | [int64](#int64) |  |  |
+| name | [string](#string) |  |  |
+| block_size | [int64](#int64) |  |  |
+| num_blocks | [int64](#int64) |  |  |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerCreateRequest"></a>
+
+### AioRemoteControllerCreateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerDeleteRequest"></a>
+
+### AioRemoteControllerDeleteRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerGetListRequest"></a>
+
+### AioRemoteControllerGetListRequest
+Intentionally empty
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerGetRequest"></a>
+
+### AioRemoteControllerGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerGetStatsRequest"></a>
+
+### AioRemoteControllerGetStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerList"></a>
+
+### AioRemoteControllerList
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) | repeated |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerStats"></a>
+
+### AioRemoteControllerStats
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerStatsRequest"></a>
+
+### AioRemoteControllerStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerUpdateRequest"></a>
+
+### AioRemoteControllerUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-storage-v1-AioRemoteControllerService"></a>
+
+### AioRemoteControllerService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| AioRemoteControllerCreate | [AioRemoteControllerCreateRequest](#opi_api-storage-v1-AioRemoteControllerCreateRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
+| AioRemoteControllerDelete | [AioRemoteControllerDeleteRequest](#opi_api-storage-v1-AioRemoteControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| AioRemoteControllerGet | [AioRemoteControllerGetRequest](#opi_api-storage-v1-AioRemoteControllerGetRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
+| AioRemoteControllerGetList | [AioRemoteControllerGetListRequest](#opi_api-storage-v1-AioRemoteControllerGetListRequest) | [AioRemoteControllerList](#opi_api-storage-v1-AioRemoteControllerList) |  |
+| AioRemoteControllerGetStats | [AioRemoteControllerGetStatsRequest](#opi_api-storage-v1-AioRemoteControllerGetStatsRequest) | [AioRemoteControllerStats](#opi_api-storage-v1-AioRemoteControllerStats) |  |
+| AioRemoteControllerUpdate | [AioRemoteControllerUpdateRequest](#opi_api-storage-v1-AioRemoteControllerUpdateRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
+
+ 
 
 
 
@@ -1979,6 +2178,40 @@ Intentionally empty.
 <p align="right"><a href="#top">Top</a></p>
 
 ## middleend.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="object_key-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## object_key.proto
+
+
+
+<a name="opi_api-common-v1-ObjectKey"></a>
+
+### ObjectKey
+Object Keys are opaque values. The object key uniquely
+identifies a given configuration object. The key used must be unique within
+the agent&#39;s context for the give object type and must be non-zero. No other
+restrictions apply on the usage of the key.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  | The value of the ObjectKey |
+
+
+
 
 
  
