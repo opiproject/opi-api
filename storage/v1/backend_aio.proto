@@ -11,16 +11,16 @@ import "uuid.proto";
 
 // Back End (network-facing) APIs.
 
-service AioRemoteControllerService {
-    rpc AioRemoteControllerCreate (AioRemoteControllerCreateRequest) returns (AioRemoteController) {}
-    rpc AioRemoteControllerDelete (AioRemoteControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc AioRemoteControllerGet    (AioRemoteControllerGetRequest)    returns (AioRemoteController)    {}
-    rpc AioRemoteControllerGetList   (AioRemoteControllerGetListRequest)   returns (AioRemoteControllerList)   {}
-    rpc AioRemoteControllerGetStats  (AioRemoteControllerGetStatsRequest)  returns (AioRemoteControllerStats)  {}
-    rpc AioRemoteControllerUpdate (AioRemoteControllerUpdateRequest) returns (AioRemoteController) {}
+service AioControllerService {
+    rpc AioControllerCreate (AioControllerCreateRequest) returns (AioController) {}
+    rpc AioControllerDelete (AioControllerDeleteRequest) returns (google.protobuf.Empty) {}
+    rpc AioControllerGet    (AioControllerGetRequest)    returns (AioController)    {}
+    rpc AioControllerGetList   (AioControllerGetListRequest)   returns (AioControllerList)   {}
+    rpc AioControllerGetStats  (AioControllerGetStatsRequest)  returns (AioControllerStats)  {}
+    rpc AioControllerUpdate (AioControllerUpdateRequest) returns (AioController) {}
 }
 
-message AioRemoteController {
+message AioController {
     // handle is an opaque object handle that is not user settable.
     // handle will be returned with created object
     common.v1.ObjectKey handle = 1;
@@ -32,39 +32,39 @@ message AioRemoteController {
     common.v1.Uuid uuid =6;
 }
 
-message AioRemoteControllerCreateRequest {
-    AioRemoteController device = 1;
+message AioControllerCreateRequest {
+    AioController device = 1;
 }
 
-message AioRemoteControllerDeleteRequest {
+message AioControllerDeleteRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioRemoteControllerUpdateRequest {
-    AioRemoteController device = 1;
+message AioControllerUpdateRequest {
+    AioController device = 1;
 }
 
-message AioRemoteControllerList{
-    repeated AioRemoteController device = 1;
+message AioControllerList{
+    repeated AioController device = 1;
 }
 
-message AioRemoteControllerGetRequest {
+message AioControllerGetRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioRemoteControllerGetListRequest {
+message AioControllerGetListRequest {
     // Intentionally empty
 }
 
-message AioRemoteControllerGetStatsRequest {
+message AioControllerGetStatsRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioRemoteControllerStatsRequest {
+message AioControllerStatsRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioRemoteControllerStats {
+message AioControllerStats {
     common.v1.ObjectKey handle = 1;
     string stats = 2;
 }

@@ -29,7 +29,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type AioRemoteController struct {
+type AioController struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -44,8 +44,8 @@ type AioRemoteController struct {
 	Uuid      *_go.Uuid      `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
-func (x *AioRemoteController) Reset() {
-	*x = AioRemoteController{}
+func (x *AioController) Reset() {
+	*x = AioController{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -53,13 +53,13 @@ func (x *AioRemoteController) Reset() {
 	}
 }
 
-func (x *AioRemoteController) String() string {
+func (x *AioController) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteController) ProtoMessage() {}
+func (*AioController) ProtoMessage() {}
 
-func (x *AioRemoteController) ProtoReflect() protoreflect.Message {
+func (x *AioController) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -71,63 +71,63 @@ func (x *AioRemoteController) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteController.ProtoReflect.Descriptor instead.
-func (*AioRemoteController) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioController.ProtoReflect.Descriptor instead.
+func (*AioController) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *AioRemoteController) GetHandle() *_go.ObjectKey {
+func (x *AioController) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-func (x *AioRemoteController) GetId() int64 {
+func (x *AioController) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *AioRemoteController) GetName() string {
+func (x *AioController) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *AioRemoteController) GetBlockSize() int64 {
+func (x *AioController) GetBlockSize() int64 {
 	if x != nil {
 		return x.BlockSize
 	}
 	return 0
 }
 
-func (x *AioRemoteController) GetNumBlocks() int64 {
+func (x *AioController) GetNumBlocks() int64 {
 	if x != nil {
 		return x.NumBlocks
 	}
 	return 0
 }
 
-func (x *AioRemoteController) GetUuid() *_go.Uuid {
+func (x *AioController) GetUuid() *_go.Uuid {
 	if x != nil {
 		return x.Uuid
 	}
 	return nil
 }
 
-type AioRemoteControllerCreateRequest struct {
+type AioControllerCreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Device *AioRemoteController `protobuf:"bytes,1,opt,name=device,proto3" json:"device,omitempty"`
+	Device *AioController `protobuf:"bytes,1,opt,name=device,proto3" json:"device,omitempty"`
 }
 
-func (x *AioRemoteControllerCreateRequest) Reset() {
-	*x = AioRemoteControllerCreateRequest{}
+func (x *AioControllerCreateRequest) Reset() {
+	*x = AioControllerCreateRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -135,13 +135,13 @@ func (x *AioRemoteControllerCreateRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerCreateRequest) String() string {
+func (x *AioControllerCreateRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerCreateRequest) ProtoMessage() {}
+func (*AioControllerCreateRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerCreateRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerCreateRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -153,19 +153,19 @@ func (x *AioRemoteControllerCreateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerCreateRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerCreateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerCreateRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerCreateRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *AioRemoteControllerCreateRequest) GetDevice() *AioRemoteController {
+func (x *AioControllerCreateRequest) GetDevice() *AioController {
 	if x != nil {
 		return x.Device
 	}
 	return nil
 }
 
-type AioRemoteControllerDeleteRequest struct {
+type AioControllerDeleteRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -173,8 +173,8 @@ type AioRemoteControllerDeleteRequest struct {
 	Handle *_go.ObjectKey `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
 }
 
-func (x *AioRemoteControllerDeleteRequest) Reset() {
-	*x = AioRemoteControllerDeleteRequest{}
+func (x *AioControllerDeleteRequest) Reset() {
+	*x = AioControllerDeleteRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -182,13 +182,13 @@ func (x *AioRemoteControllerDeleteRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerDeleteRequest) String() string {
+func (x *AioControllerDeleteRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerDeleteRequest) ProtoMessage() {}
+func (*AioControllerDeleteRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerDeleteRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerDeleteRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -200,28 +200,28 @@ func (x *AioRemoteControllerDeleteRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerDeleteRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerDeleteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerDeleteRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerDeleteRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *AioRemoteControllerDeleteRequest) GetHandle() *_go.ObjectKey {
+func (x *AioControllerDeleteRequest) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-type AioRemoteControllerUpdateRequest struct {
+type AioControllerUpdateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Device *AioRemoteController `protobuf:"bytes,1,opt,name=device,proto3" json:"device,omitempty"`
+	Device *AioController `protobuf:"bytes,1,opt,name=device,proto3" json:"device,omitempty"`
 }
 
-func (x *AioRemoteControllerUpdateRequest) Reset() {
-	*x = AioRemoteControllerUpdateRequest{}
+func (x *AioControllerUpdateRequest) Reset() {
+	*x = AioControllerUpdateRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -229,13 +229,13 @@ func (x *AioRemoteControllerUpdateRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerUpdateRequest) String() string {
+func (x *AioControllerUpdateRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerUpdateRequest) ProtoMessage() {}
+func (*AioControllerUpdateRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerUpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerUpdateRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -247,28 +247,28 @@ func (x *AioRemoteControllerUpdateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerUpdateRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerUpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerUpdateRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerUpdateRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *AioRemoteControllerUpdateRequest) GetDevice() *AioRemoteController {
+func (x *AioControllerUpdateRequest) GetDevice() *AioController {
 	if x != nil {
 		return x.Device
 	}
 	return nil
 }
 
-type AioRemoteControllerList struct {
+type AioControllerList struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Device []*AioRemoteController `protobuf:"bytes,1,rep,name=device,proto3" json:"device,omitempty"`
+	Device []*AioController `protobuf:"bytes,1,rep,name=device,proto3" json:"device,omitempty"`
 }
 
-func (x *AioRemoteControllerList) Reset() {
-	*x = AioRemoteControllerList{}
+func (x *AioControllerList) Reset() {
+	*x = AioControllerList{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -276,13 +276,13 @@ func (x *AioRemoteControllerList) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerList) String() string {
+func (x *AioControllerList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerList) ProtoMessage() {}
+func (*AioControllerList) ProtoMessage() {}
 
-func (x *AioRemoteControllerList) ProtoReflect() protoreflect.Message {
+func (x *AioControllerList) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -294,19 +294,19 @@ func (x *AioRemoteControllerList) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerList.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerList) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerList.ProtoReflect.Descriptor instead.
+func (*AioControllerList) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *AioRemoteControllerList) GetDevice() []*AioRemoteController {
+func (x *AioControllerList) GetDevice() []*AioController {
 	if x != nil {
 		return x.Device
 	}
 	return nil
 }
 
-type AioRemoteControllerGetRequest struct {
+type AioControllerGetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -314,8 +314,8 @@ type AioRemoteControllerGetRequest struct {
 	Handle *_go.ObjectKey `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
 }
 
-func (x *AioRemoteControllerGetRequest) Reset() {
-	*x = AioRemoteControllerGetRequest{}
+func (x *AioControllerGetRequest) Reset() {
+	*x = AioControllerGetRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -323,13 +323,13 @@ func (x *AioRemoteControllerGetRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerGetRequest) String() string {
+func (x *AioControllerGetRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerGetRequest) ProtoMessage() {}
+func (*AioControllerGetRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerGetRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerGetRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -341,26 +341,26 @@ func (x *AioRemoteControllerGetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerGetRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerGetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerGetRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerGetRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *AioRemoteControllerGetRequest) GetHandle() *_go.ObjectKey {
+func (x *AioControllerGetRequest) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-type AioRemoteControllerGetListRequest struct {
+type AioControllerGetListRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *AioRemoteControllerGetListRequest) Reset() {
-	*x = AioRemoteControllerGetListRequest{}
+func (x *AioControllerGetListRequest) Reset() {
+	*x = AioControllerGetListRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -368,13 +368,13 @@ func (x *AioRemoteControllerGetListRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerGetListRequest) String() string {
+func (x *AioControllerGetListRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerGetListRequest) ProtoMessage() {}
+func (*AioControllerGetListRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerGetListRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerGetListRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -386,12 +386,12 @@ func (x *AioRemoteControllerGetListRequest) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerGetListRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerGetListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerGetListRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerGetListRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{6}
 }
 
-type AioRemoteControllerGetStatsRequest struct {
+type AioControllerGetStatsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -399,8 +399,8 @@ type AioRemoteControllerGetStatsRequest struct {
 	Handle *_go.ObjectKey `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
 }
 
-func (x *AioRemoteControllerGetStatsRequest) Reset() {
-	*x = AioRemoteControllerGetStatsRequest{}
+func (x *AioControllerGetStatsRequest) Reset() {
+	*x = AioControllerGetStatsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -408,13 +408,13 @@ func (x *AioRemoteControllerGetStatsRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerGetStatsRequest) String() string {
+func (x *AioControllerGetStatsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerGetStatsRequest) ProtoMessage() {}
+func (*AioControllerGetStatsRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerGetStatsRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerGetStatsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -426,19 +426,19 @@ func (x *AioRemoteControllerGetStatsRequest) ProtoReflect() protoreflect.Message
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerGetStatsRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerGetStatsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerGetStatsRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerGetStatsRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *AioRemoteControllerGetStatsRequest) GetHandle() *_go.ObjectKey {
+func (x *AioControllerGetStatsRequest) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-type AioRemoteControllerStatsRequest struct {
+type AioControllerStatsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -446,8 +446,8 @@ type AioRemoteControllerStatsRequest struct {
 	Handle *_go.ObjectKey `protobuf:"bytes,1,opt,name=handle,proto3" json:"handle,omitempty"`
 }
 
-func (x *AioRemoteControllerStatsRequest) Reset() {
-	*x = AioRemoteControllerStatsRequest{}
+func (x *AioControllerStatsRequest) Reset() {
+	*x = AioControllerStatsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -455,13 +455,13 @@ func (x *AioRemoteControllerStatsRequest) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerStatsRequest) String() string {
+func (x *AioControllerStatsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerStatsRequest) ProtoMessage() {}
+func (*AioControllerStatsRequest) ProtoMessage() {}
 
-func (x *AioRemoteControllerStatsRequest) ProtoReflect() protoreflect.Message {
+func (x *AioControllerStatsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -473,19 +473,19 @@ func (x *AioRemoteControllerStatsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerStatsRequest.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerStatsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerStatsRequest.ProtoReflect.Descriptor instead.
+func (*AioControllerStatsRequest) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *AioRemoteControllerStatsRequest) GetHandle() *_go.ObjectKey {
+func (x *AioControllerStatsRequest) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-type AioRemoteControllerStats struct {
+type AioControllerStats struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -494,8 +494,8 @@ type AioRemoteControllerStats struct {
 	Stats  string         `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
 }
 
-func (x *AioRemoteControllerStats) Reset() {
-	*x = AioRemoteControllerStats{}
+func (x *AioControllerStats) Reset() {
+	*x = AioControllerStats{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_backend_aio_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -503,13 +503,13 @@ func (x *AioRemoteControllerStats) Reset() {
 	}
 }
 
-func (x *AioRemoteControllerStats) String() string {
+func (x *AioControllerStats) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AioRemoteControllerStats) ProtoMessage() {}
+func (*AioControllerStats) ProtoMessage() {}
 
-func (x *AioRemoteControllerStats) ProtoReflect() protoreflect.Message {
+func (x *AioControllerStats) ProtoReflect() protoreflect.Message {
 	mi := &file_backend_aio_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -521,19 +521,19 @@ func (x *AioRemoteControllerStats) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AioRemoteControllerStats.ProtoReflect.Descriptor instead.
-func (*AioRemoteControllerStats) Descriptor() ([]byte, []int) {
+// Deprecated: Use AioControllerStats.ProtoReflect.Descriptor instead.
+func (*AioControllerStats) Descriptor() ([]byte, []int) {
 	return file_backend_aio_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *AioRemoteControllerStats) GetHandle() *_go.ObjectKey {
+func (x *AioControllerStats) GetHandle() *_go.ObjectKey {
 	if x != nil {
 		return x.Handle
 	}
 	return nil
 }
 
-func (x *AioRemoteControllerStats) GetStats() string {
+func (x *AioControllerStats) GetStats() string {
 	if x != nil {
 		return x.Stats
 	}
@@ -549,122 +549,111 @@ var file_backend_aio_proto_rawDesc = []byte{
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x10, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x6b, 0x65, 0x79,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0a, 0x75, 0x75, 0x69, 0x64, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x22, 0xda, 0x01, 0x0a, 0x13, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61,
-	0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69,
-	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f,
-	0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
-	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x5f, 0x73, 0x69,
-	0x7a, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x53,
-	0x69, 0x7a, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x6e, 0x75, 0x6d, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b,
-	0x73, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x6e, 0x75, 0x6d, 0x42, 0x6c, 0x6f, 0x63,
-	0x6b, 0x73, 0x12, 0x2b, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x17, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
-	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x75, 0x69, 0x64, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22,
-	0x63, 0x0a, 0x20, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
-	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65,
-	0x76, 0x69, 0x63, 0x65, 0x22, 0x58, 0x0a, 0x20, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64,
-	0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61,
-	0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a,
-	0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x63,
-	0x0a, 0x20, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x3f, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65, 0x76,
-	0x69, 0x63, 0x65, 0x22, 0x5a, 0x0a, 0x17, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x3f,
-	0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x27,
-	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x22,
-	0x55, 0x0a, 0x1d, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x74, 0x6f, 0x22, 0xd4, 0x01, 0x0a, 0x0d, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b,
+	0x65, 0x79, 0x52, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1d,
+	0x0a, 0x0a, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x09, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1d, 0x0a,
+	0x0a, 0x6e, 0x75, 0x6d, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x73, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x09, 0x6e, 0x75, 0x6d, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x73, 0x12, 0x2b, 0x0a, 0x04,
+	0x75, 0x75, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6f, 0x70, 0x69,
+	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x55,
+	0x75, 0x69, 0x64, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x57, 0x0a, 0x1a, 0x41, 0x69, 0x6f,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69,
+	0x63, 0x65, 0x22, 0x52, 0x0a, 0x1a, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
+	0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06,
-	0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x23, 0x0a, 0x21, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x5a, 0x0a, 0x22, 0x41,
-	0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
-	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52,
-	0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x57, 0x0a, 0x1f, 0x41, 0x69, 0x6f, 0x52, 0x65,
-	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74,
-	0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61,
+	0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x57, 0x0a, 0x1a, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x22,
+	0x4e, 0x0a, 0x11, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x4c, 0x69, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x22,
+	0x4f, 0x0a, 0x17, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61,
 	0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69,
 	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f,
 	0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65,
-	0x22, 0x66, 0x0a, 0x18, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x34, 0x0a, 0x06,
-	0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31,
-	0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68, 0x61, 0x6e, 0x64,
-	0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0x8a, 0x06, 0x0a, 0x1a, 0x41, 0x69, 0x6f,
-	0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x7c, 0x0a, 0x19, 0x41, 0x69, 0x6f, 0x52, 0x65,
-	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x12, 0x34, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6f, 0x70, 0x69,
+	0x22, 0x1d, 0x0a, 0x1b, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22,
+	0x54, 0x0a, 0x1c, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68,
+	0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x51, 0x0a, 0x19, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x34, 0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79,
+	0x52, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x22, 0x60, 0x0a, 0x12, 0x41, 0x69, 0x6f, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12, 0x34,
+	0x0a, 0x06, 0x68, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
+	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x06, 0x68, 0x61,
+	0x6e, 0x64, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0x9c, 0x05, 0x0a, 0x14, 0x41,
+	0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x12, 0x6a, 0x0a, 0x13, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69,
 	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x22, 0x00, 0x12, 0x6b, 0x0a, 0x19, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f,
-	0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x12, 0x34, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
-	0x22, 0x00, 0x12, 0x76, 0x0a, 0x16, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x12, 0x31, 0x2e, 0x6f,
-	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
-	0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x00, 0x12, 0x82, 0x01, 0x0a, 0x1a, 0x41,
-	0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x5f,
-	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41,
-	0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
-	0x65, 0x72, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12,
-	0x85, 0x01, 0x0a, 0x1b, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12,
-	0x36, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
-	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f,
-	0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x53, 0x74, 0x61, 0x74, 0x73, 0x22, 0x00, 0x12, 0x7c, 0x0a, 0x19, 0x41, 0x69, 0x6f, 0x52, 0x65,
-	0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x12, 0x34, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d,
-	0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6f, 0x70, 0x69,
+	0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69,
 	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x41, 0x69, 0x6f, 0x52, 0x65, 0x6d, 0x6f, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x22, 0x00, 0x42, 0x31, 0x5a, 0x2f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f,
-	0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2f, 0x76,
-	0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x00, 0x12,
+	0x5f, 0x0a, 0x13, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00,
+	0x12, 0x64, 0x0a, 0x10, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x47, 0x65, 0x74, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
+	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x22, 0x00, 0x12, 0x70, 0x0a, 0x14, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x2f,
+	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
+	0x72, 0x47, 0x65, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x25, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x73, 0x0a, 0x15, 0x41, 0x69, 0x6f, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74,
+	0x73, 0x12, 0x30, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
+	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x22, 0x00, 0x12, 0x6a, 0x0a,
+	0x13, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x00, 0x42, 0x31, 0x5a, 0x2f, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65,
+	0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -681,43 +670,43 @@ func file_backend_aio_proto_rawDescGZIP() []byte {
 
 var file_backend_aio_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_backend_aio_proto_goTypes = []interface{}{
-	(*AioRemoteController)(nil),                // 0: opi_api.storage.v1.AioRemoteController
-	(*AioRemoteControllerCreateRequest)(nil),   // 1: opi_api.storage.v1.AioRemoteControllerCreateRequest
-	(*AioRemoteControllerDeleteRequest)(nil),   // 2: opi_api.storage.v1.AioRemoteControllerDeleteRequest
-	(*AioRemoteControllerUpdateRequest)(nil),   // 3: opi_api.storage.v1.AioRemoteControllerUpdateRequest
-	(*AioRemoteControllerList)(nil),            // 4: opi_api.storage.v1.AioRemoteControllerList
-	(*AioRemoteControllerGetRequest)(nil),      // 5: opi_api.storage.v1.AioRemoteControllerGetRequest
-	(*AioRemoteControllerGetListRequest)(nil),  // 6: opi_api.storage.v1.AioRemoteControllerGetListRequest
-	(*AioRemoteControllerGetStatsRequest)(nil), // 7: opi_api.storage.v1.AioRemoteControllerGetStatsRequest
-	(*AioRemoteControllerStatsRequest)(nil),    // 8: opi_api.storage.v1.AioRemoteControllerStatsRequest
-	(*AioRemoteControllerStats)(nil),           // 9: opi_api.storage.v1.AioRemoteControllerStats
-	(*_go.ObjectKey)(nil),                      // 10: opi_api.common.v1.ObjectKey
-	(*_go.Uuid)(nil),                           // 11: opi_api.common.v1.Uuid
-	(*emptypb.Empty)(nil),                      // 12: google.protobuf.Empty
+	(*AioController)(nil),                // 0: opi_api.storage.v1.AioController
+	(*AioControllerCreateRequest)(nil),   // 1: opi_api.storage.v1.AioControllerCreateRequest
+	(*AioControllerDeleteRequest)(nil),   // 2: opi_api.storage.v1.AioControllerDeleteRequest
+	(*AioControllerUpdateRequest)(nil),   // 3: opi_api.storage.v1.AioControllerUpdateRequest
+	(*AioControllerList)(nil),            // 4: opi_api.storage.v1.AioControllerList
+	(*AioControllerGetRequest)(nil),      // 5: opi_api.storage.v1.AioControllerGetRequest
+	(*AioControllerGetListRequest)(nil),  // 6: opi_api.storage.v1.AioControllerGetListRequest
+	(*AioControllerGetStatsRequest)(nil), // 7: opi_api.storage.v1.AioControllerGetStatsRequest
+	(*AioControllerStatsRequest)(nil),    // 8: opi_api.storage.v1.AioControllerStatsRequest
+	(*AioControllerStats)(nil),           // 9: opi_api.storage.v1.AioControllerStats
+	(*_go.ObjectKey)(nil),                // 10: opi_api.common.v1.ObjectKey
+	(*_go.Uuid)(nil),                     // 11: opi_api.common.v1.Uuid
+	(*emptypb.Empty)(nil),                // 12: google.protobuf.Empty
 }
 var file_backend_aio_proto_depIdxs = []int32{
-	10, // 0: opi_api.storage.v1.AioRemoteController.handle:type_name -> opi_api.common.v1.ObjectKey
-	11, // 1: opi_api.storage.v1.AioRemoteController.uuid:type_name -> opi_api.common.v1.Uuid
-	0,  // 2: opi_api.storage.v1.AioRemoteControllerCreateRequest.device:type_name -> opi_api.storage.v1.AioRemoteController
-	10, // 3: opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle:type_name -> opi_api.common.v1.ObjectKey
-	0,  // 4: opi_api.storage.v1.AioRemoteControllerUpdateRequest.device:type_name -> opi_api.storage.v1.AioRemoteController
-	0,  // 5: opi_api.storage.v1.AioRemoteControllerList.device:type_name -> opi_api.storage.v1.AioRemoteController
-	10, // 6: opi_api.storage.v1.AioRemoteControllerGetRequest.handle:type_name -> opi_api.common.v1.ObjectKey
-	10, // 7: opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle:type_name -> opi_api.common.v1.ObjectKey
-	10, // 8: opi_api.storage.v1.AioRemoteControllerStatsRequest.handle:type_name -> opi_api.common.v1.ObjectKey
-	10, // 9: opi_api.storage.v1.AioRemoteControllerStats.handle:type_name -> opi_api.common.v1.ObjectKey
-	1,  // 10: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerCreate:input_type -> opi_api.storage.v1.AioRemoteControllerCreateRequest
-	2,  // 11: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerDelete:input_type -> opi_api.storage.v1.AioRemoteControllerDeleteRequest
-	5,  // 12: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGet:input_type -> opi_api.storage.v1.AioRemoteControllerGetRequest
-	6,  // 13: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGetList:input_type -> opi_api.storage.v1.AioRemoteControllerGetListRequest
-	7,  // 14: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGetStats:input_type -> opi_api.storage.v1.AioRemoteControllerGetStatsRequest
-	3,  // 15: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerUpdate:input_type -> opi_api.storage.v1.AioRemoteControllerUpdateRequest
-	0,  // 16: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerCreate:output_type -> opi_api.storage.v1.AioRemoteController
-	12, // 17: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerDelete:output_type -> google.protobuf.Empty
-	0,  // 18: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGet:output_type -> opi_api.storage.v1.AioRemoteController
-	4,  // 19: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGetList:output_type -> opi_api.storage.v1.AioRemoteControllerList
-	9,  // 20: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerGetStats:output_type -> opi_api.storage.v1.AioRemoteControllerStats
-	0,  // 21: opi_api.storage.v1.AioRemoteControllerService.AioRemoteControllerUpdate:output_type -> opi_api.storage.v1.AioRemoteController
+	10, // 0: opi_api.storage.v1.AioController.handle:type_name -> opi_api.common.v1.ObjectKey
+	11, // 1: opi_api.storage.v1.AioController.uuid:type_name -> opi_api.common.v1.Uuid
+	0,  // 2: opi_api.storage.v1.AioControllerCreateRequest.device:type_name -> opi_api.storage.v1.AioController
+	10, // 3: opi_api.storage.v1.AioControllerDeleteRequest.handle:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 4: opi_api.storage.v1.AioControllerUpdateRequest.device:type_name -> opi_api.storage.v1.AioController
+	0,  // 5: opi_api.storage.v1.AioControllerList.device:type_name -> opi_api.storage.v1.AioController
+	10, // 6: opi_api.storage.v1.AioControllerGetRequest.handle:type_name -> opi_api.common.v1.ObjectKey
+	10, // 7: opi_api.storage.v1.AioControllerGetStatsRequest.handle:type_name -> opi_api.common.v1.ObjectKey
+	10, // 8: opi_api.storage.v1.AioControllerStatsRequest.handle:type_name -> opi_api.common.v1.ObjectKey
+	10, // 9: opi_api.storage.v1.AioControllerStats.handle:type_name -> opi_api.common.v1.ObjectKey
+	1,  // 10: opi_api.storage.v1.AioControllerService.AioControllerCreate:input_type -> opi_api.storage.v1.AioControllerCreateRequest
+	2,  // 11: opi_api.storage.v1.AioControllerService.AioControllerDelete:input_type -> opi_api.storage.v1.AioControllerDeleteRequest
+	5,  // 12: opi_api.storage.v1.AioControllerService.AioControllerGet:input_type -> opi_api.storage.v1.AioControllerGetRequest
+	6,  // 13: opi_api.storage.v1.AioControllerService.AioControllerGetList:input_type -> opi_api.storage.v1.AioControllerGetListRequest
+	7,  // 14: opi_api.storage.v1.AioControllerService.AioControllerGetStats:input_type -> opi_api.storage.v1.AioControllerGetStatsRequest
+	3,  // 15: opi_api.storage.v1.AioControllerService.AioControllerUpdate:input_type -> opi_api.storage.v1.AioControllerUpdateRequest
+	0,  // 16: opi_api.storage.v1.AioControllerService.AioControllerCreate:output_type -> opi_api.storage.v1.AioController
+	12, // 17: opi_api.storage.v1.AioControllerService.AioControllerDelete:output_type -> google.protobuf.Empty
+	0,  // 18: opi_api.storage.v1.AioControllerService.AioControllerGet:output_type -> opi_api.storage.v1.AioController
+	4,  // 19: opi_api.storage.v1.AioControllerService.AioControllerGetList:output_type -> opi_api.storage.v1.AioControllerList
+	9,  // 20: opi_api.storage.v1.AioControllerService.AioControllerGetStats:output_type -> opi_api.storage.v1.AioControllerStats
+	0,  // 21: opi_api.storage.v1.AioControllerService.AioControllerUpdate:output_type -> opi_api.storage.v1.AioController
 	16, // [16:22] is the sub-list for method output_type
 	10, // [10:16] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
@@ -732,7 +721,7 @@ func file_backend_aio_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_backend_aio_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteController); i {
+			switch v := v.(*AioController); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -744,7 +733,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerCreateRequest); i {
+			switch v := v.(*AioControllerCreateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -756,7 +745,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerDeleteRequest); i {
+			switch v := v.(*AioControllerDeleteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -768,7 +757,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerUpdateRequest); i {
+			switch v := v.(*AioControllerUpdateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -780,7 +769,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerList); i {
+			switch v := v.(*AioControllerList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -792,7 +781,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerGetRequest); i {
+			switch v := v.(*AioControllerGetRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -804,7 +793,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerGetListRequest); i {
+			switch v := v.(*AioControllerGetListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -816,7 +805,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerGetStatsRequest); i {
+			switch v := v.(*AioControllerGetStatsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -828,7 +817,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerStatsRequest); i {
+			switch v := v.(*AioControllerStatsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -840,7 +829,7 @@ func file_backend_aio_proto_init() {
 			}
 		}
 		file_backend_aio_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AioRemoteControllerStats); i {
+			switch v := v.(*AioControllerStats); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -880,252 +869,252 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// AioRemoteControllerServiceClient is the client API for AioRemoteControllerService service.
+// AioControllerServiceClient is the client API for AioControllerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AioRemoteControllerServiceClient interface {
-	AioRemoteControllerCreate(ctx context.Context, in *AioRemoteControllerCreateRequest, opts ...grpc.CallOption) (*AioRemoteController, error)
-	AioRemoteControllerDelete(ctx context.Context, in *AioRemoteControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	AioRemoteControllerGet(ctx context.Context, in *AioRemoteControllerGetRequest, opts ...grpc.CallOption) (*AioRemoteController, error)
-	AioRemoteControllerGetList(ctx context.Context, in *AioRemoteControllerGetListRequest, opts ...grpc.CallOption) (*AioRemoteControllerList, error)
-	AioRemoteControllerGetStats(ctx context.Context, in *AioRemoteControllerGetStatsRequest, opts ...grpc.CallOption) (*AioRemoteControllerStats, error)
-	AioRemoteControllerUpdate(ctx context.Context, in *AioRemoteControllerUpdateRequest, opts ...grpc.CallOption) (*AioRemoteController, error)
+type AioControllerServiceClient interface {
+	AioControllerCreate(ctx context.Context, in *AioControllerCreateRequest, opts ...grpc.CallOption) (*AioController, error)
+	AioControllerDelete(ctx context.Context, in *AioControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	AioControllerGet(ctx context.Context, in *AioControllerGetRequest, opts ...grpc.CallOption) (*AioController, error)
+	AioControllerGetList(ctx context.Context, in *AioControllerGetListRequest, opts ...grpc.CallOption) (*AioControllerList, error)
+	AioControllerGetStats(ctx context.Context, in *AioControllerGetStatsRequest, opts ...grpc.CallOption) (*AioControllerStats, error)
+	AioControllerUpdate(ctx context.Context, in *AioControllerUpdateRequest, opts ...grpc.CallOption) (*AioController, error)
 }
 
-type aioRemoteControllerServiceClient struct {
+type aioControllerServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAioRemoteControllerServiceClient(cc grpc.ClientConnInterface) AioRemoteControllerServiceClient {
-	return &aioRemoteControllerServiceClient{cc}
+func NewAioControllerServiceClient(cc grpc.ClientConnInterface) AioControllerServiceClient {
+	return &aioControllerServiceClient{cc}
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerCreate(ctx context.Context, in *AioRemoteControllerCreateRequest, opts ...grpc.CallOption) (*AioRemoteController, error) {
-	out := new(AioRemoteController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerCreate", in, out, opts...)
+func (c *aioControllerServiceClient) AioControllerCreate(ctx context.Context, in *AioControllerCreateRequest, opts ...grpc.CallOption) (*AioController, error) {
+	out := new(AioController)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerDelete(ctx context.Context, in *AioRemoteControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *aioControllerServiceClient) AioControllerDelete(ctx context.Context, in *AioControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerGet(ctx context.Context, in *AioRemoteControllerGetRequest, opts ...grpc.CallOption) (*AioRemoteController, error) {
-	out := new(AioRemoteController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGet", in, out, opts...)
+func (c *aioControllerServiceClient) AioControllerGet(ctx context.Context, in *AioControllerGetRequest, opts ...grpc.CallOption) (*AioController, error) {
+	out := new(AioController)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerGetList(ctx context.Context, in *AioRemoteControllerGetListRequest, opts ...grpc.CallOption) (*AioRemoteControllerList, error) {
-	out := new(AioRemoteControllerList)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGetList", in, out, opts...)
+func (c *aioControllerServiceClient) AioControllerGetList(ctx context.Context, in *AioControllerGetListRequest, opts ...grpc.CallOption) (*AioControllerList, error) {
+	out := new(AioControllerList)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerGetList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerGetStats(ctx context.Context, in *AioRemoteControllerGetStatsRequest, opts ...grpc.CallOption) (*AioRemoteControllerStats, error) {
-	out := new(AioRemoteControllerStats)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGetStats", in, out, opts...)
+func (c *aioControllerServiceClient) AioControllerGetStats(ctx context.Context, in *AioControllerGetStatsRequest, opts ...grpc.CallOption) (*AioControllerStats, error) {
+	out := new(AioControllerStats)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerGetStats", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *aioRemoteControllerServiceClient) AioRemoteControllerUpdate(ctx context.Context, in *AioRemoteControllerUpdateRequest, opts ...grpc.CallOption) (*AioRemoteController, error) {
-	out := new(AioRemoteController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerUpdate", in, out, opts...)
+func (c *aioControllerServiceClient) AioControllerUpdate(ctx context.Context, in *AioControllerUpdateRequest, opts ...grpc.CallOption) (*AioController, error) {
+	out := new(AioController)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.AioControllerService/AioControllerUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AioRemoteControllerServiceServer is the server API for AioRemoteControllerService service.
-type AioRemoteControllerServiceServer interface {
-	AioRemoteControllerCreate(context.Context, *AioRemoteControllerCreateRequest) (*AioRemoteController, error)
-	AioRemoteControllerDelete(context.Context, *AioRemoteControllerDeleteRequest) (*emptypb.Empty, error)
-	AioRemoteControllerGet(context.Context, *AioRemoteControllerGetRequest) (*AioRemoteController, error)
-	AioRemoteControllerGetList(context.Context, *AioRemoteControllerGetListRequest) (*AioRemoteControllerList, error)
-	AioRemoteControllerGetStats(context.Context, *AioRemoteControllerGetStatsRequest) (*AioRemoteControllerStats, error)
-	AioRemoteControllerUpdate(context.Context, *AioRemoteControllerUpdateRequest) (*AioRemoteController, error)
+// AioControllerServiceServer is the server API for AioControllerService service.
+type AioControllerServiceServer interface {
+	AioControllerCreate(context.Context, *AioControllerCreateRequest) (*AioController, error)
+	AioControllerDelete(context.Context, *AioControllerDeleteRequest) (*emptypb.Empty, error)
+	AioControllerGet(context.Context, *AioControllerGetRequest) (*AioController, error)
+	AioControllerGetList(context.Context, *AioControllerGetListRequest) (*AioControllerList, error)
+	AioControllerGetStats(context.Context, *AioControllerGetStatsRequest) (*AioControllerStats, error)
+	AioControllerUpdate(context.Context, *AioControllerUpdateRequest) (*AioController, error)
 }
 
-// UnimplementedAioRemoteControllerServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedAioRemoteControllerServiceServer struct {
+// UnimplementedAioControllerServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedAioControllerServiceServer struct {
 }
 
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerCreate(context.Context, *AioRemoteControllerCreateRequest) (*AioRemoteController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerCreate not implemented")
+func (*UnimplementedAioControllerServiceServer) AioControllerCreate(context.Context, *AioControllerCreateRequest) (*AioController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerCreate not implemented")
 }
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerDelete(context.Context, *AioRemoteControllerDeleteRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerDelete not implemented")
+func (*UnimplementedAioControllerServiceServer) AioControllerDelete(context.Context, *AioControllerDeleteRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerDelete not implemented")
 }
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerGet(context.Context, *AioRemoteControllerGetRequest) (*AioRemoteController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerGet not implemented")
+func (*UnimplementedAioControllerServiceServer) AioControllerGet(context.Context, *AioControllerGetRequest) (*AioController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerGet not implemented")
 }
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerGetList(context.Context, *AioRemoteControllerGetListRequest) (*AioRemoteControllerList, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerGetList not implemented")
+func (*UnimplementedAioControllerServiceServer) AioControllerGetList(context.Context, *AioControllerGetListRequest) (*AioControllerList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerGetList not implemented")
 }
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerGetStats(context.Context, *AioRemoteControllerGetStatsRequest) (*AioRemoteControllerStats, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerGetStats not implemented")
+func (*UnimplementedAioControllerServiceServer) AioControllerGetStats(context.Context, *AioControllerGetStatsRequest) (*AioControllerStats, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerGetStats not implemented")
 }
-func (*UnimplementedAioRemoteControllerServiceServer) AioRemoteControllerUpdate(context.Context, *AioRemoteControllerUpdateRequest) (*AioRemoteController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AioRemoteControllerUpdate not implemented")
-}
-
-func RegisterAioRemoteControllerServiceServer(s *grpc.Server, srv AioRemoteControllerServiceServer) {
-	s.RegisterService(&_AioRemoteControllerService_serviceDesc, srv)
+func (*UnimplementedAioControllerServiceServer) AioControllerUpdate(context.Context, *AioControllerUpdateRequest) (*AioController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AioControllerUpdate not implemented")
 }
 
-func _AioRemoteControllerService_AioRemoteControllerCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerCreateRequest)
+func RegisterAioControllerServiceServer(s *grpc.Server, srv AioControllerServiceServer) {
+	s.RegisterService(&_AioControllerService_serviceDesc, srv)
+}
+
+func _AioControllerService_AioControllerCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerCreate(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerCreate",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerCreate(ctx, req.(*AioRemoteControllerCreateRequest))
+		return srv.(AioControllerServiceServer).AioControllerCreate(ctx, req.(*AioControllerCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioRemoteControllerService_AioRemoteControllerDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerDeleteRequest)
+func _AioControllerService_AioControllerDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerDelete(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerDelete",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerDelete(ctx, req.(*AioRemoteControllerDeleteRequest))
+		return srv.(AioControllerServiceServer).AioControllerDelete(ctx, req.(*AioControllerDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioRemoteControllerService_AioRemoteControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerGetRequest)
+func _AioControllerService_AioControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGet(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGet",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGet(ctx, req.(*AioRemoteControllerGetRequest))
+		return srv.(AioControllerServiceServer).AioControllerGet(ctx, req.(*AioControllerGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioRemoteControllerService_AioRemoteControllerGetList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerGetListRequest)
+func _AioControllerService_AioControllerGetList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerGetListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGetList(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerGetList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGetList",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerGetList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGetList(ctx, req.(*AioRemoteControllerGetListRequest))
+		return srv.(AioControllerServiceServer).AioControllerGetList(ctx, req.(*AioControllerGetListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioRemoteControllerService_AioRemoteControllerGetStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerGetStatsRequest)
+func _AioControllerService_AioControllerGetStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerGetStatsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGetStats(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerGetStats(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerGetStats",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerGetStats",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerGetStats(ctx, req.(*AioRemoteControllerGetStatsRequest))
+		return srv.(AioControllerServiceServer).AioControllerGetStats(ctx, req.(*AioControllerGetStatsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AioRemoteControllerService_AioRemoteControllerUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AioRemoteControllerUpdateRequest)
+func _AioControllerService_AioControllerUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AioControllerUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerUpdate(ctx, in)
+		return srv.(AioControllerServiceServer).AioControllerUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.AioRemoteControllerService/AioRemoteControllerUpdate",
+		FullMethod: "/opi_api.storage.v1.AioControllerService/AioControllerUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AioRemoteControllerServiceServer).AioRemoteControllerUpdate(ctx, req.(*AioRemoteControllerUpdateRequest))
+		return srv.(AioControllerServiceServer).AioControllerUpdate(ctx, req.(*AioControllerUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _AioRemoteControllerService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "opi_api.storage.v1.AioRemoteControllerService",
-	HandlerType: (*AioRemoteControllerServiceServer)(nil),
+var _AioControllerService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.storage.v1.AioControllerService",
+	HandlerType: (*AioControllerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "AioRemoteControllerCreate",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerCreate_Handler,
+			MethodName: "AioControllerCreate",
+			Handler:    _AioControllerService_AioControllerCreate_Handler,
 		},
 		{
-			MethodName: "AioRemoteControllerDelete",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerDelete_Handler,
+			MethodName: "AioControllerDelete",
+			Handler:    _AioControllerService_AioControllerDelete_Handler,
 		},
 		{
-			MethodName: "AioRemoteControllerGet",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerGet_Handler,
+			MethodName: "AioControllerGet",
+			Handler:    _AioControllerService_AioControllerGet_Handler,
 		},
 		{
-			MethodName: "AioRemoteControllerGetList",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerGetList_Handler,
+			MethodName: "AioControllerGetList",
+			Handler:    _AioControllerService_AioControllerGetList_Handler,
 		},
 		{
-			MethodName: "AioRemoteControllerGetStats",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerGetStats_Handler,
+			MethodName: "AioControllerGetStats",
+			Handler:    _AioControllerService_AioControllerGetStats_Handler,
 		},
 		{
-			MethodName: "AioRemoteControllerUpdate",
-			Handler:    _AioRemoteControllerService_AioRemoteControllerUpdate_Handler,
+			MethodName: "AioControllerUpdate",
+			Handler:    _AioControllerService_AioControllerUpdate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

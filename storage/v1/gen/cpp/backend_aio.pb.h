@@ -60,50 +60,50 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace opi_api {
 namespace storage {
 namespace v1 {
-class AioRemoteController;
-struct AioRemoteControllerDefaultTypeInternal;
-extern AioRemoteControllerDefaultTypeInternal _AioRemoteController_default_instance_;
-class AioRemoteControllerCreateRequest;
-struct AioRemoteControllerCreateRequestDefaultTypeInternal;
-extern AioRemoteControllerCreateRequestDefaultTypeInternal _AioRemoteControllerCreateRequest_default_instance_;
-class AioRemoteControllerDeleteRequest;
-struct AioRemoteControllerDeleteRequestDefaultTypeInternal;
-extern AioRemoteControllerDeleteRequestDefaultTypeInternal _AioRemoteControllerDeleteRequest_default_instance_;
-class AioRemoteControllerGetListRequest;
-struct AioRemoteControllerGetListRequestDefaultTypeInternal;
-extern AioRemoteControllerGetListRequestDefaultTypeInternal _AioRemoteControllerGetListRequest_default_instance_;
-class AioRemoteControllerGetRequest;
-struct AioRemoteControllerGetRequestDefaultTypeInternal;
-extern AioRemoteControllerGetRequestDefaultTypeInternal _AioRemoteControllerGetRequest_default_instance_;
-class AioRemoteControllerGetStatsRequest;
-struct AioRemoteControllerGetStatsRequestDefaultTypeInternal;
-extern AioRemoteControllerGetStatsRequestDefaultTypeInternal _AioRemoteControllerGetStatsRequest_default_instance_;
-class AioRemoteControllerList;
-struct AioRemoteControllerListDefaultTypeInternal;
-extern AioRemoteControllerListDefaultTypeInternal _AioRemoteControllerList_default_instance_;
-class AioRemoteControllerStats;
-struct AioRemoteControllerStatsDefaultTypeInternal;
-extern AioRemoteControllerStatsDefaultTypeInternal _AioRemoteControllerStats_default_instance_;
-class AioRemoteControllerStatsRequest;
-struct AioRemoteControllerStatsRequestDefaultTypeInternal;
-extern AioRemoteControllerStatsRequestDefaultTypeInternal _AioRemoteControllerStatsRequest_default_instance_;
-class AioRemoteControllerUpdateRequest;
-struct AioRemoteControllerUpdateRequestDefaultTypeInternal;
-extern AioRemoteControllerUpdateRequestDefaultTypeInternal _AioRemoteControllerUpdateRequest_default_instance_;
+class AioController;
+struct AioControllerDefaultTypeInternal;
+extern AioControllerDefaultTypeInternal _AioController_default_instance_;
+class AioControllerCreateRequest;
+struct AioControllerCreateRequestDefaultTypeInternal;
+extern AioControllerCreateRequestDefaultTypeInternal _AioControllerCreateRequest_default_instance_;
+class AioControllerDeleteRequest;
+struct AioControllerDeleteRequestDefaultTypeInternal;
+extern AioControllerDeleteRequestDefaultTypeInternal _AioControllerDeleteRequest_default_instance_;
+class AioControllerGetListRequest;
+struct AioControllerGetListRequestDefaultTypeInternal;
+extern AioControllerGetListRequestDefaultTypeInternal _AioControllerGetListRequest_default_instance_;
+class AioControllerGetRequest;
+struct AioControllerGetRequestDefaultTypeInternal;
+extern AioControllerGetRequestDefaultTypeInternal _AioControllerGetRequest_default_instance_;
+class AioControllerGetStatsRequest;
+struct AioControllerGetStatsRequestDefaultTypeInternal;
+extern AioControllerGetStatsRequestDefaultTypeInternal _AioControllerGetStatsRequest_default_instance_;
+class AioControllerList;
+struct AioControllerListDefaultTypeInternal;
+extern AioControllerListDefaultTypeInternal _AioControllerList_default_instance_;
+class AioControllerStats;
+struct AioControllerStatsDefaultTypeInternal;
+extern AioControllerStatsDefaultTypeInternal _AioControllerStats_default_instance_;
+class AioControllerStatsRequest;
+struct AioControllerStatsRequestDefaultTypeInternal;
+extern AioControllerStatsRequestDefaultTypeInternal _AioControllerStatsRequest_default_instance_;
+class AioControllerUpdateRequest;
+struct AioControllerUpdateRequestDefaultTypeInternal;
+extern AioControllerUpdateRequestDefaultTypeInternal _AioControllerUpdateRequest_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> ::opi_api::storage::v1::AioRemoteController* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteController>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerCreateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerCreateRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerDeleteRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerDeleteRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerGetListRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerGetListRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerGetRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerGetRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerGetStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerGetStatsRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerList* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerList>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerStats* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerStats>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerStatsRequest>(Arena*);
-template<> ::opi_api::storage::v1::AioRemoteControllerUpdateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioRemoteControllerUpdateRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioController* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioController>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerCreateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerCreateRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerDeleteRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerDeleteRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerGetListRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerGetListRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerGetRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerGetRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerGetStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerGetStatsRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerList* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerList>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerStats* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerStats>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerStatsRequest>(Arena*);
+template<> ::opi_api::storage::v1::AioControllerUpdateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::AioControllerUpdateRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
 namespace storage {
@@ -111,24 +111,24 @@ namespace v1 {
 
 // ===================================================================
 
-class AioRemoteController final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteController) */ {
+class AioController final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioController) */ {
  public:
-  inline AioRemoteController() : AioRemoteController(nullptr) {}
-  ~AioRemoteController() override;
-  explicit constexpr AioRemoteController(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioController() : AioController(nullptr) {}
+  ~AioController() override;
+  explicit constexpr AioController(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteController(const AioRemoteController& from);
-  AioRemoteController(AioRemoteController&& from) noexcept
-    : AioRemoteController() {
+  AioController(const AioController& from);
+  AioController(AioController&& from) noexcept
+    : AioController() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteController& operator=(const AioRemoteController& from) {
+  inline AioController& operator=(const AioController& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteController& operator=(AioRemoteController&& from) noexcept {
+  inline AioController& operator=(AioController&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -151,20 +151,20 @@ class AioRemoteController final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteController& default_instance() {
+  static const AioController& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteController* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteController*>(
-               &_AioRemoteController_default_instance_);
+  static inline const AioController* internal_default_instance() {
+    return reinterpret_cast<const AioController*>(
+               &_AioController_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(AioRemoteController& a, AioRemoteController& b) {
+  friend void swap(AioController& a, AioController& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteController* other) {
+  inline void Swap(AioController* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -177,7 +177,7 @@ class AioRemoteController final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteController* other) {
+  void UnsafeArenaSwap(AioController* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -185,13 +185,13 @@ class AioRemoteController final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteController* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteController>(arena);
+  AioController* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioController>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteController& from);
+  void CopyFrom(const AioController& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteController& from);
+  void MergeFrom(const AioController& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -208,15 +208,15 @@ class AioRemoteController final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteController* other);
+  void InternalSwap(AioController* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteController";
+    return "opi_api.storage.v1.AioController";
   }
   protected:
-  explicit AioRemoteController(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioController(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -317,7 +317,7 @@ class AioRemoteController final :
   void _internal_set_num_blocks(int64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteController)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioController)
  private:
   class _Internal;
 
@@ -335,24 +335,24 @@ class AioRemoteController final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerCreateRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerCreateRequest) */ {
+class AioControllerCreateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerCreateRequest) */ {
  public:
-  inline AioRemoteControllerCreateRequest() : AioRemoteControllerCreateRequest(nullptr) {}
-  ~AioRemoteControllerCreateRequest() override;
-  explicit constexpr AioRemoteControllerCreateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerCreateRequest() : AioControllerCreateRequest(nullptr) {}
+  ~AioControllerCreateRequest() override;
+  explicit constexpr AioControllerCreateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerCreateRequest(const AioRemoteControllerCreateRequest& from);
-  AioRemoteControllerCreateRequest(AioRemoteControllerCreateRequest&& from) noexcept
-    : AioRemoteControllerCreateRequest() {
+  AioControllerCreateRequest(const AioControllerCreateRequest& from);
+  AioControllerCreateRequest(AioControllerCreateRequest&& from) noexcept
+    : AioControllerCreateRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerCreateRequest& operator=(const AioRemoteControllerCreateRequest& from) {
+  inline AioControllerCreateRequest& operator=(const AioControllerCreateRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerCreateRequest& operator=(AioRemoteControllerCreateRequest&& from) noexcept {
+  inline AioControllerCreateRequest& operator=(AioControllerCreateRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -375,20 +375,20 @@ class AioRemoteControllerCreateRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerCreateRequest& default_instance() {
+  static const AioControllerCreateRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerCreateRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerCreateRequest*>(
-               &_AioRemoteControllerCreateRequest_default_instance_);
+  static inline const AioControllerCreateRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerCreateRequest*>(
+               &_AioControllerCreateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(AioRemoteControllerCreateRequest& a, AioRemoteControllerCreateRequest& b) {
+  friend void swap(AioControllerCreateRequest& a, AioControllerCreateRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerCreateRequest* other) {
+  inline void Swap(AioControllerCreateRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -401,7 +401,7 @@ class AioRemoteControllerCreateRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerCreateRequest* other) {
+  void UnsafeArenaSwap(AioControllerCreateRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -409,13 +409,13 @@ class AioRemoteControllerCreateRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerCreateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerCreateRequest>(arena);
+  AioControllerCreateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerCreateRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerCreateRequest& from);
+  void CopyFrom(const AioControllerCreateRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerCreateRequest& from);
+  void MergeFrom(const AioControllerCreateRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -432,15 +432,15 @@ class AioRemoteControllerCreateRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerCreateRequest* other);
+  void InternalSwap(AioControllerCreateRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerCreateRequest";
+    return "opi_api.storage.v1.AioControllerCreateRequest";
   }
   protected:
-  explicit AioRemoteControllerCreateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerCreateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -459,55 +459,55 @@ class AioRemoteControllerCreateRequest final :
   enum : int {
     kDeviceFieldNumber = 1,
   };
-  // .opi_api.storage.v1.AioRemoteController device = 1;
+  // .opi_api.storage.v1.AioController device = 1;
   bool has_device() const;
   private:
   bool _internal_has_device() const;
   public:
   void clear_device();
-  const ::opi_api::storage::v1::AioRemoteController& device() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::AioRemoteController* release_device();
-  ::opi_api::storage::v1::AioRemoteController* mutable_device();
-  void set_allocated_device(::opi_api::storage::v1::AioRemoteController* device);
+  const ::opi_api::storage::v1::AioController& device() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::AioController* release_device();
+  ::opi_api::storage::v1::AioController* mutable_device();
+  void set_allocated_device(::opi_api::storage::v1::AioController* device);
   private:
-  const ::opi_api::storage::v1::AioRemoteController& _internal_device() const;
-  ::opi_api::storage::v1::AioRemoteController* _internal_mutable_device();
+  const ::opi_api::storage::v1::AioController& _internal_device() const;
+  ::opi_api::storage::v1::AioController* _internal_mutable_device();
   public:
   void unsafe_arena_set_allocated_device(
-      ::opi_api::storage::v1::AioRemoteController* device);
-  ::opi_api::storage::v1::AioRemoteController* unsafe_arena_release_device();
+      ::opi_api::storage::v1::AioController* device);
+  ::opi_api::storage::v1::AioController* unsafe_arena_release_device();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerCreateRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerCreateRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::storage::v1::AioRemoteController* device_;
+  ::opi_api::storage::v1::AioController* device_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerDeleteRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerDeleteRequest) */ {
+class AioControllerDeleteRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerDeleteRequest) */ {
  public:
-  inline AioRemoteControllerDeleteRequest() : AioRemoteControllerDeleteRequest(nullptr) {}
-  ~AioRemoteControllerDeleteRequest() override;
-  explicit constexpr AioRemoteControllerDeleteRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerDeleteRequest() : AioControllerDeleteRequest(nullptr) {}
+  ~AioControllerDeleteRequest() override;
+  explicit constexpr AioControllerDeleteRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerDeleteRequest(const AioRemoteControllerDeleteRequest& from);
-  AioRemoteControllerDeleteRequest(AioRemoteControllerDeleteRequest&& from) noexcept
-    : AioRemoteControllerDeleteRequest() {
+  AioControllerDeleteRequest(const AioControllerDeleteRequest& from);
+  AioControllerDeleteRequest(AioControllerDeleteRequest&& from) noexcept
+    : AioControllerDeleteRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerDeleteRequest& operator=(const AioRemoteControllerDeleteRequest& from) {
+  inline AioControllerDeleteRequest& operator=(const AioControllerDeleteRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerDeleteRequest& operator=(AioRemoteControllerDeleteRequest&& from) noexcept {
+  inline AioControllerDeleteRequest& operator=(AioControllerDeleteRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -530,20 +530,20 @@ class AioRemoteControllerDeleteRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerDeleteRequest& default_instance() {
+  static const AioControllerDeleteRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerDeleteRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerDeleteRequest*>(
-               &_AioRemoteControllerDeleteRequest_default_instance_);
+  static inline const AioControllerDeleteRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerDeleteRequest*>(
+               &_AioControllerDeleteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(AioRemoteControllerDeleteRequest& a, AioRemoteControllerDeleteRequest& b) {
+  friend void swap(AioControllerDeleteRequest& a, AioControllerDeleteRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerDeleteRequest* other) {
+  inline void Swap(AioControllerDeleteRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -556,7 +556,7 @@ class AioRemoteControllerDeleteRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerDeleteRequest* other) {
+  void UnsafeArenaSwap(AioControllerDeleteRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -564,13 +564,13 @@ class AioRemoteControllerDeleteRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerDeleteRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerDeleteRequest>(arena);
+  AioControllerDeleteRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerDeleteRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerDeleteRequest& from);
+  void CopyFrom(const AioControllerDeleteRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerDeleteRequest& from);
+  void MergeFrom(const AioControllerDeleteRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -587,15 +587,15 @@ class AioRemoteControllerDeleteRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerDeleteRequest* other);
+  void InternalSwap(AioControllerDeleteRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerDeleteRequest";
+    return "opi_api.storage.v1.AioControllerDeleteRequest";
   }
   protected:
-  explicit AioRemoteControllerDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -632,7 +632,7 @@ class AioRemoteControllerDeleteRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerDeleteRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerDeleteRequest)
  private:
   class _Internal;
 
@@ -645,24 +645,24 @@ class AioRemoteControllerDeleteRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerUpdateRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerUpdateRequest) */ {
+class AioControllerUpdateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerUpdateRequest) */ {
  public:
-  inline AioRemoteControllerUpdateRequest() : AioRemoteControllerUpdateRequest(nullptr) {}
-  ~AioRemoteControllerUpdateRequest() override;
-  explicit constexpr AioRemoteControllerUpdateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerUpdateRequest() : AioControllerUpdateRequest(nullptr) {}
+  ~AioControllerUpdateRequest() override;
+  explicit constexpr AioControllerUpdateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerUpdateRequest(const AioRemoteControllerUpdateRequest& from);
-  AioRemoteControllerUpdateRequest(AioRemoteControllerUpdateRequest&& from) noexcept
-    : AioRemoteControllerUpdateRequest() {
+  AioControllerUpdateRequest(const AioControllerUpdateRequest& from);
+  AioControllerUpdateRequest(AioControllerUpdateRequest&& from) noexcept
+    : AioControllerUpdateRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerUpdateRequest& operator=(const AioRemoteControllerUpdateRequest& from) {
+  inline AioControllerUpdateRequest& operator=(const AioControllerUpdateRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerUpdateRequest& operator=(AioRemoteControllerUpdateRequest&& from) noexcept {
+  inline AioControllerUpdateRequest& operator=(AioControllerUpdateRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -685,20 +685,20 @@ class AioRemoteControllerUpdateRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerUpdateRequest& default_instance() {
+  static const AioControllerUpdateRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerUpdateRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerUpdateRequest*>(
-               &_AioRemoteControllerUpdateRequest_default_instance_);
+  static inline const AioControllerUpdateRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerUpdateRequest*>(
+               &_AioControllerUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  friend void swap(AioRemoteControllerUpdateRequest& a, AioRemoteControllerUpdateRequest& b) {
+  friend void swap(AioControllerUpdateRequest& a, AioControllerUpdateRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerUpdateRequest* other) {
+  inline void Swap(AioControllerUpdateRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -711,7 +711,7 @@ class AioRemoteControllerUpdateRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerUpdateRequest* other) {
+  void UnsafeArenaSwap(AioControllerUpdateRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -719,13 +719,13 @@ class AioRemoteControllerUpdateRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerUpdateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerUpdateRequest>(arena);
+  AioControllerUpdateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerUpdateRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerUpdateRequest& from);
+  void CopyFrom(const AioControllerUpdateRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerUpdateRequest& from);
+  void MergeFrom(const AioControllerUpdateRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -742,15 +742,15 @@ class AioRemoteControllerUpdateRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerUpdateRequest* other);
+  void InternalSwap(AioControllerUpdateRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerUpdateRequest";
+    return "opi_api.storage.v1.AioControllerUpdateRequest";
   }
   protected:
-  explicit AioRemoteControllerUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -769,55 +769,55 @@ class AioRemoteControllerUpdateRequest final :
   enum : int {
     kDeviceFieldNumber = 1,
   };
-  // .opi_api.storage.v1.AioRemoteController device = 1;
+  // .opi_api.storage.v1.AioController device = 1;
   bool has_device() const;
   private:
   bool _internal_has_device() const;
   public:
   void clear_device();
-  const ::opi_api::storage::v1::AioRemoteController& device() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::AioRemoteController* release_device();
-  ::opi_api::storage::v1::AioRemoteController* mutable_device();
-  void set_allocated_device(::opi_api::storage::v1::AioRemoteController* device);
+  const ::opi_api::storage::v1::AioController& device() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::AioController* release_device();
+  ::opi_api::storage::v1::AioController* mutable_device();
+  void set_allocated_device(::opi_api::storage::v1::AioController* device);
   private:
-  const ::opi_api::storage::v1::AioRemoteController& _internal_device() const;
-  ::opi_api::storage::v1::AioRemoteController* _internal_mutable_device();
+  const ::opi_api::storage::v1::AioController& _internal_device() const;
+  ::opi_api::storage::v1::AioController* _internal_mutable_device();
   public:
   void unsafe_arena_set_allocated_device(
-      ::opi_api::storage::v1::AioRemoteController* device);
-  ::opi_api::storage::v1::AioRemoteController* unsafe_arena_release_device();
+      ::opi_api::storage::v1::AioController* device);
+  ::opi_api::storage::v1::AioController* unsafe_arena_release_device();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerUpdateRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerUpdateRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::storage::v1::AioRemoteController* device_;
+  ::opi_api::storage::v1::AioController* device_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerList final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerList) */ {
+class AioControllerList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerList) */ {
  public:
-  inline AioRemoteControllerList() : AioRemoteControllerList(nullptr) {}
-  ~AioRemoteControllerList() override;
-  explicit constexpr AioRemoteControllerList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerList() : AioControllerList(nullptr) {}
+  ~AioControllerList() override;
+  explicit constexpr AioControllerList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerList(const AioRemoteControllerList& from);
-  AioRemoteControllerList(AioRemoteControllerList&& from) noexcept
-    : AioRemoteControllerList() {
+  AioControllerList(const AioControllerList& from);
+  AioControllerList(AioControllerList&& from) noexcept
+    : AioControllerList() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerList& operator=(const AioRemoteControllerList& from) {
+  inline AioControllerList& operator=(const AioControllerList& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerList& operator=(AioRemoteControllerList&& from) noexcept {
+  inline AioControllerList& operator=(AioControllerList&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -840,20 +840,20 @@ class AioRemoteControllerList final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerList& default_instance() {
+  static const AioControllerList& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerList* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerList*>(
-               &_AioRemoteControllerList_default_instance_);
+  static inline const AioControllerList* internal_default_instance() {
+    return reinterpret_cast<const AioControllerList*>(
+               &_AioControllerList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(AioRemoteControllerList& a, AioRemoteControllerList& b) {
+  friend void swap(AioControllerList& a, AioControllerList& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerList* other) {
+  inline void Swap(AioControllerList* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -866,7 +866,7 @@ class AioRemoteControllerList final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerList* other) {
+  void UnsafeArenaSwap(AioControllerList* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -874,13 +874,13 @@ class AioRemoteControllerList final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerList>(arena);
+  AioControllerList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerList>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerList& from);
+  void CopyFrom(const AioControllerList& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerList& from);
+  void MergeFrom(const AioControllerList& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -897,15 +897,15 @@ class AioRemoteControllerList final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerList* other);
+  void InternalSwap(AioControllerList* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerList";
+    return "opi_api.storage.v1.AioControllerList";
   }
   protected:
-  explicit AioRemoteControllerList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -924,55 +924,55 @@ class AioRemoteControllerList final :
   enum : int {
     kDeviceFieldNumber = 1,
   };
-  // repeated .opi_api.storage.v1.AioRemoteController device = 1;
+  // repeated .opi_api.storage.v1.AioController device = 1;
   int device_size() const;
   private:
   int _internal_device_size() const;
   public:
   void clear_device();
-  ::opi_api::storage::v1::AioRemoteController* mutable_device(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioRemoteController >*
+  ::opi_api::storage::v1::AioController* mutable_device(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioController >*
       mutable_device();
   private:
-  const ::opi_api::storage::v1::AioRemoteController& _internal_device(int index) const;
-  ::opi_api::storage::v1::AioRemoteController* _internal_add_device();
+  const ::opi_api::storage::v1::AioController& _internal_device(int index) const;
+  ::opi_api::storage::v1::AioController* _internal_add_device();
   public:
-  const ::opi_api::storage::v1::AioRemoteController& device(int index) const;
-  ::opi_api::storage::v1::AioRemoteController* add_device();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioRemoteController >&
+  const ::opi_api::storage::v1::AioController& device(int index) const;
+  ::opi_api::storage::v1::AioController* add_device();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioController >&
       device() const;
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerList)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerList)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioRemoteController > device_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioController > device_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerGetRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerGetRequest) */ {
+class AioControllerGetRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerGetRequest) */ {
  public:
-  inline AioRemoteControllerGetRequest() : AioRemoteControllerGetRequest(nullptr) {}
-  ~AioRemoteControllerGetRequest() override;
-  explicit constexpr AioRemoteControllerGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerGetRequest() : AioControllerGetRequest(nullptr) {}
+  ~AioControllerGetRequest() override;
+  explicit constexpr AioControllerGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerGetRequest(const AioRemoteControllerGetRequest& from);
-  AioRemoteControllerGetRequest(AioRemoteControllerGetRequest&& from) noexcept
-    : AioRemoteControllerGetRequest() {
+  AioControllerGetRequest(const AioControllerGetRequest& from);
+  AioControllerGetRequest(AioControllerGetRequest&& from) noexcept
+    : AioControllerGetRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerGetRequest& operator=(const AioRemoteControllerGetRequest& from) {
+  inline AioControllerGetRequest& operator=(const AioControllerGetRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerGetRequest& operator=(AioRemoteControllerGetRequest&& from) noexcept {
+  inline AioControllerGetRequest& operator=(AioControllerGetRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -995,20 +995,20 @@ class AioRemoteControllerGetRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerGetRequest& default_instance() {
+  static const AioControllerGetRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerGetRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerGetRequest*>(
-               &_AioRemoteControllerGetRequest_default_instance_);
+  static inline const AioControllerGetRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerGetRequest*>(
+               &_AioControllerGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     5;
 
-  friend void swap(AioRemoteControllerGetRequest& a, AioRemoteControllerGetRequest& b) {
+  friend void swap(AioControllerGetRequest& a, AioControllerGetRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerGetRequest* other) {
+  inline void Swap(AioControllerGetRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1021,7 +1021,7 @@ class AioRemoteControllerGetRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerGetRequest* other) {
+  void UnsafeArenaSwap(AioControllerGetRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1029,13 +1029,13 @@ class AioRemoteControllerGetRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerGetRequest>(arena);
+  AioControllerGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerGetRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerGetRequest& from);
+  void CopyFrom(const AioControllerGetRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerGetRequest& from);
+  void MergeFrom(const AioControllerGetRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1052,15 +1052,15 @@ class AioRemoteControllerGetRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerGetRequest* other);
+  void InternalSwap(AioControllerGetRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerGetRequest";
+    return "opi_api.storage.v1.AioControllerGetRequest";
   }
   protected:
-  explicit AioRemoteControllerGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1097,7 +1097,7 @@ class AioRemoteControllerGetRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerGetRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerGetRequest)
  private:
   class _Internal;
 
@@ -1110,23 +1110,23 @@ class AioRemoteControllerGetRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerGetListRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerGetListRequest) */ {
+class AioControllerGetListRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerGetListRequest) */ {
  public:
-  inline AioRemoteControllerGetListRequest() : AioRemoteControllerGetListRequest(nullptr) {}
-  explicit constexpr AioRemoteControllerGetListRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerGetListRequest() : AioControllerGetListRequest(nullptr) {}
+  explicit constexpr AioControllerGetListRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerGetListRequest(const AioRemoteControllerGetListRequest& from);
-  AioRemoteControllerGetListRequest(AioRemoteControllerGetListRequest&& from) noexcept
-    : AioRemoteControllerGetListRequest() {
+  AioControllerGetListRequest(const AioControllerGetListRequest& from);
+  AioControllerGetListRequest(AioControllerGetListRequest&& from) noexcept
+    : AioControllerGetListRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerGetListRequest& operator=(const AioRemoteControllerGetListRequest& from) {
+  inline AioControllerGetListRequest& operator=(const AioControllerGetListRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerGetListRequest& operator=(AioRemoteControllerGetListRequest&& from) noexcept {
+  inline AioControllerGetListRequest& operator=(AioControllerGetListRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1149,20 +1149,20 @@ class AioRemoteControllerGetListRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerGetListRequest& default_instance() {
+  static const AioControllerGetListRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerGetListRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerGetListRequest*>(
-               &_AioRemoteControllerGetListRequest_default_instance_);
+  static inline const AioControllerGetListRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerGetListRequest*>(
+               &_AioControllerGetListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(AioRemoteControllerGetListRequest& a, AioRemoteControllerGetListRequest& b) {
+  friend void swap(AioControllerGetListRequest& a, AioControllerGetListRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerGetListRequest* other) {
+  inline void Swap(AioControllerGetListRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1175,7 +1175,7 @@ class AioRemoteControllerGetListRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerGetListRequest* other) {
+  void UnsafeArenaSwap(AioControllerGetListRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1183,15 +1183,15 @@ class AioRemoteControllerGetListRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerGetListRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerGetListRequest>(arena);
+  AioControllerGetListRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerGetListRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const AioRemoteControllerGetListRequest& from) {
+  inline void CopyFrom(const AioControllerGetListRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const AioRemoteControllerGetListRequest& from) {
+  void MergeFrom(const AioControllerGetListRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
   }
   public:
@@ -1199,10 +1199,10 @@ class AioRemoteControllerGetListRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerGetListRequest";
+    return "opi_api.storage.v1.AioControllerGetListRequest";
   }
   protected:
-  explicit AioRemoteControllerGetListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerGetListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   public:
@@ -1216,7 +1216,7 @@ class AioRemoteControllerGetListRequest final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerGetListRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerGetListRequest)
  private:
   class _Internal;
 
@@ -1228,24 +1228,24 @@ class AioRemoteControllerGetListRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerGetStatsRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerGetStatsRequest) */ {
+class AioControllerGetStatsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerGetStatsRequest) */ {
  public:
-  inline AioRemoteControllerGetStatsRequest() : AioRemoteControllerGetStatsRequest(nullptr) {}
-  ~AioRemoteControllerGetStatsRequest() override;
-  explicit constexpr AioRemoteControllerGetStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerGetStatsRequest() : AioControllerGetStatsRequest(nullptr) {}
+  ~AioControllerGetStatsRequest() override;
+  explicit constexpr AioControllerGetStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerGetStatsRequest(const AioRemoteControllerGetStatsRequest& from);
-  AioRemoteControllerGetStatsRequest(AioRemoteControllerGetStatsRequest&& from) noexcept
-    : AioRemoteControllerGetStatsRequest() {
+  AioControllerGetStatsRequest(const AioControllerGetStatsRequest& from);
+  AioControllerGetStatsRequest(AioControllerGetStatsRequest&& from) noexcept
+    : AioControllerGetStatsRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerGetStatsRequest& operator=(const AioRemoteControllerGetStatsRequest& from) {
+  inline AioControllerGetStatsRequest& operator=(const AioControllerGetStatsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerGetStatsRequest& operator=(AioRemoteControllerGetStatsRequest&& from) noexcept {
+  inline AioControllerGetStatsRequest& operator=(AioControllerGetStatsRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1268,20 +1268,20 @@ class AioRemoteControllerGetStatsRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerGetStatsRequest& default_instance() {
+  static const AioControllerGetStatsRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerGetStatsRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerGetStatsRequest*>(
-               &_AioRemoteControllerGetStatsRequest_default_instance_);
+  static inline const AioControllerGetStatsRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerGetStatsRequest*>(
+               &_AioControllerGetStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  friend void swap(AioRemoteControllerGetStatsRequest& a, AioRemoteControllerGetStatsRequest& b) {
+  friend void swap(AioControllerGetStatsRequest& a, AioControllerGetStatsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerGetStatsRequest* other) {
+  inline void Swap(AioControllerGetStatsRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1294,7 +1294,7 @@ class AioRemoteControllerGetStatsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerGetStatsRequest* other) {
+  void UnsafeArenaSwap(AioControllerGetStatsRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1302,13 +1302,13 @@ class AioRemoteControllerGetStatsRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerGetStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerGetStatsRequest>(arena);
+  AioControllerGetStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerGetStatsRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerGetStatsRequest& from);
+  void CopyFrom(const AioControllerGetStatsRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerGetStatsRequest& from);
+  void MergeFrom(const AioControllerGetStatsRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1325,15 +1325,15 @@ class AioRemoteControllerGetStatsRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerGetStatsRequest* other);
+  void InternalSwap(AioControllerGetStatsRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerGetStatsRequest";
+    return "opi_api.storage.v1.AioControllerGetStatsRequest";
   }
   protected:
-  explicit AioRemoteControllerGetStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerGetStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1370,7 +1370,7 @@ class AioRemoteControllerGetStatsRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerGetStatsRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerGetStatsRequest)
  private:
   class _Internal;
 
@@ -1383,24 +1383,24 @@ class AioRemoteControllerGetStatsRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerStatsRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerStatsRequest) */ {
+class AioControllerStatsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerStatsRequest) */ {
  public:
-  inline AioRemoteControllerStatsRequest() : AioRemoteControllerStatsRequest(nullptr) {}
-  ~AioRemoteControllerStatsRequest() override;
-  explicit constexpr AioRemoteControllerStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerStatsRequest() : AioControllerStatsRequest(nullptr) {}
+  ~AioControllerStatsRequest() override;
+  explicit constexpr AioControllerStatsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerStatsRequest(const AioRemoteControllerStatsRequest& from);
-  AioRemoteControllerStatsRequest(AioRemoteControllerStatsRequest&& from) noexcept
-    : AioRemoteControllerStatsRequest() {
+  AioControllerStatsRequest(const AioControllerStatsRequest& from);
+  AioControllerStatsRequest(AioControllerStatsRequest&& from) noexcept
+    : AioControllerStatsRequest() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerStatsRequest& operator=(const AioRemoteControllerStatsRequest& from) {
+  inline AioControllerStatsRequest& operator=(const AioControllerStatsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerStatsRequest& operator=(AioRemoteControllerStatsRequest&& from) noexcept {
+  inline AioControllerStatsRequest& operator=(AioControllerStatsRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1423,20 +1423,20 @@ class AioRemoteControllerStatsRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerStatsRequest& default_instance() {
+  static const AioControllerStatsRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerStatsRequest* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerStatsRequest*>(
-               &_AioRemoteControllerStatsRequest_default_instance_);
+  static inline const AioControllerStatsRequest* internal_default_instance() {
+    return reinterpret_cast<const AioControllerStatsRequest*>(
+               &_AioControllerStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  friend void swap(AioRemoteControllerStatsRequest& a, AioRemoteControllerStatsRequest& b) {
+  friend void swap(AioControllerStatsRequest& a, AioControllerStatsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerStatsRequest* other) {
+  inline void Swap(AioControllerStatsRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1449,7 +1449,7 @@ class AioRemoteControllerStatsRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerStatsRequest* other) {
+  void UnsafeArenaSwap(AioControllerStatsRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1457,13 +1457,13 @@ class AioRemoteControllerStatsRequest final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerStatsRequest>(arena);
+  AioControllerStatsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerStatsRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerStatsRequest& from);
+  void CopyFrom(const AioControllerStatsRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerStatsRequest& from);
+  void MergeFrom(const AioControllerStatsRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1480,15 +1480,15 @@ class AioRemoteControllerStatsRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerStatsRequest* other);
+  void InternalSwap(AioControllerStatsRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerStatsRequest";
+    return "opi_api.storage.v1.AioControllerStatsRequest";
   }
   protected:
-  explicit AioRemoteControllerStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1525,7 +1525,7 @@ class AioRemoteControllerStatsRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerStatsRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerStatsRequest)
  private:
   class _Internal;
 
@@ -1538,24 +1538,24 @@ class AioRemoteControllerStatsRequest final :
 };
 // -------------------------------------------------------------------
 
-class AioRemoteControllerStats final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioRemoteControllerStats) */ {
+class AioControllerStats final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.AioControllerStats) */ {
  public:
-  inline AioRemoteControllerStats() : AioRemoteControllerStats(nullptr) {}
-  ~AioRemoteControllerStats() override;
-  explicit constexpr AioRemoteControllerStats(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AioControllerStats() : AioControllerStats(nullptr) {}
+  ~AioControllerStats() override;
+  explicit constexpr AioControllerStats(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  AioRemoteControllerStats(const AioRemoteControllerStats& from);
-  AioRemoteControllerStats(AioRemoteControllerStats&& from) noexcept
-    : AioRemoteControllerStats() {
+  AioControllerStats(const AioControllerStats& from);
+  AioControllerStats(AioControllerStats&& from) noexcept
+    : AioControllerStats() {
     *this = ::std::move(from);
   }
 
-  inline AioRemoteControllerStats& operator=(const AioRemoteControllerStats& from) {
+  inline AioControllerStats& operator=(const AioControllerStats& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AioRemoteControllerStats& operator=(AioRemoteControllerStats&& from) noexcept {
+  inline AioControllerStats& operator=(AioControllerStats&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1578,20 +1578,20 @@ class AioRemoteControllerStats final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const AioRemoteControllerStats& default_instance() {
+  static const AioControllerStats& default_instance() {
     return *internal_default_instance();
   }
-  static inline const AioRemoteControllerStats* internal_default_instance() {
-    return reinterpret_cast<const AioRemoteControllerStats*>(
-               &_AioRemoteControllerStats_default_instance_);
+  static inline const AioControllerStats* internal_default_instance() {
+    return reinterpret_cast<const AioControllerStats*>(
+               &_AioControllerStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     9;
 
-  friend void swap(AioRemoteControllerStats& a, AioRemoteControllerStats& b) {
+  friend void swap(AioControllerStats& a, AioControllerStats& b) {
     a.Swap(&b);
   }
-  inline void Swap(AioRemoteControllerStats* other) {
+  inline void Swap(AioControllerStats* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1604,7 +1604,7 @@ class AioRemoteControllerStats final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AioRemoteControllerStats* other) {
+  void UnsafeArenaSwap(AioControllerStats* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1612,13 +1612,13 @@ class AioRemoteControllerStats final :
 
   // implements Message ----------------------------------------------
 
-  AioRemoteControllerStats* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AioRemoteControllerStats>(arena);
+  AioControllerStats* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AioControllerStats>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const AioRemoteControllerStats& from);
+  void CopyFrom(const AioControllerStats& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const AioRemoteControllerStats& from);
+  void MergeFrom(const AioControllerStats& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1635,15 +1635,15 @@ class AioRemoteControllerStats final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AioRemoteControllerStats* other);
+  void InternalSwap(AioControllerStats* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.AioRemoteControllerStats";
+    return "opi_api.storage.v1.AioControllerStats";
   }
   protected:
-  explicit AioRemoteControllerStats(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AioControllerStats(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1695,7 +1695,7 @@ class AioRemoteControllerStats final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioRemoteControllerStats)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerStats)
  private:
   class _Internal;
 
@@ -1716,25 +1716,25 @@ class AioRemoteControllerStats final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// AioRemoteController
+// AioController
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteController::_internal_has_handle() const {
+inline bool AioController::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteController::has_handle() const {
+inline bool AioController::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteController::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioController::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteController::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioController::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.handle)
   return _internal_handle();
 }
-inline void AioRemoteController::unsafe_arena_set_allocated_handle(
+inline void AioController::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -1745,9 +1745,9 @@ inline void AioRemoteController::unsafe_arena_set_allocated_handle(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteController.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioController.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteController::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioController::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -1762,14 +1762,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteController::release_handle() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteController::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteController.handle)
+inline ::opi_api::common::v1::ObjectKey* AioController::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteController::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioController::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -1777,12 +1777,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteController::_internal_mutable_
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteController::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioController::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteController.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.handle)
   return _msg;
 }
-inline void AioRemoteController::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioController::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -1801,65 +1801,65 @@ inline void AioRemoteController::set_allocated_handle(::opi_api::common::v1::Obj
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteController.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.handle)
 }
 
 // int64 id = 2;
-inline void AioRemoteController::clear_id() {
+inline void AioController::clear_id() {
   id_ = int64_t{0};
 }
-inline int64_t AioRemoteController::_internal_id() const {
+inline int64_t AioController::_internal_id() const {
   return id_;
 }
-inline int64_t AioRemoteController::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.id)
+inline int64_t AioController::id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.id)
   return _internal_id();
 }
-inline void AioRemoteController::_internal_set_id(int64_t value) {
+inline void AioController::_internal_set_id(int64_t value) {
   
   id_ = value;
 }
-inline void AioRemoteController::set_id(int64_t value) {
+inline void AioController::set_id(int64_t value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioRemoteController.id)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.id)
 }
 
 // string name = 3;
-inline void AioRemoteController::clear_name() {
+inline void AioController::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& AioRemoteController::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.name)
+inline const std::string& AioController::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AioRemoteController::set_name(ArgT0&& arg0, ArgT... args) {
+void AioController::set_name(ArgT0&& arg0, ArgT... args) {
  
  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioRemoteController.name)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.name)
 }
-inline std::string* AioRemoteController::mutable_name() {
+inline std::string* AioController::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteController.name)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.name)
   return _s;
 }
-inline const std::string& AioRemoteController::_internal_name() const {
+inline const std::string& AioController::_internal_name() const {
   return name_.Get();
 }
-inline void AioRemoteController::_internal_set_name(const std::string& value) {
+inline void AioController::_internal_set_name(const std::string& value) {
   
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AioRemoteController::_internal_mutable_name() {
+inline std::string* AioController::_internal_mutable_name() {
   
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AioRemoteController::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteController.name)
+inline std::string* AioController::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AioRemoteController::set_allocated_name(std::string* name) {
+inline void AioController::set_allocated_name(std::string* name) {
   if (name != nullptr) {
     
   } else {
@@ -1872,66 +1872,66 @@ inline void AioRemoteController::set_allocated_name(std::string* name) {
     name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteController.name)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.name)
 }
 
 // int64 block_size = 4;
-inline void AioRemoteController::clear_block_size() {
+inline void AioController::clear_block_size() {
   block_size_ = int64_t{0};
 }
-inline int64_t AioRemoteController::_internal_block_size() const {
+inline int64_t AioController::_internal_block_size() const {
   return block_size_;
 }
-inline int64_t AioRemoteController::block_size() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.block_size)
+inline int64_t AioController::block_size() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.block_size)
   return _internal_block_size();
 }
-inline void AioRemoteController::_internal_set_block_size(int64_t value) {
+inline void AioController::_internal_set_block_size(int64_t value) {
   
   block_size_ = value;
 }
-inline void AioRemoteController::set_block_size(int64_t value) {
+inline void AioController::set_block_size(int64_t value) {
   _internal_set_block_size(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioRemoteController.block_size)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.block_size)
 }
 
 // int64 num_blocks = 5;
-inline void AioRemoteController::clear_num_blocks() {
+inline void AioController::clear_num_blocks() {
   num_blocks_ = int64_t{0};
 }
-inline int64_t AioRemoteController::_internal_num_blocks() const {
+inline int64_t AioController::_internal_num_blocks() const {
   return num_blocks_;
 }
-inline int64_t AioRemoteController::num_blocks() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.num_blocks)
+inline int64_t AioController::num_blocks() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.num_blocks)
   return _internal_num_blocks();
 }
-inline void AioRemoteController::_internal_set_num_blocks(int64_t value) {
+inline void AioController::_internal_set_num_blocks(int64_t value) {
   
   num_blocks_ = value;
 }
-inline void AioRemoteController::set_num_blocks(int64_t value) {
+inline void AioController::set_num_blocks(int64_t value) {
   _internal_set_num_blocks(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioRemoteController.num_blocks)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.num_blocks)
 }
 
 // .opi_api.common.v1.Uuid uuid = 6;
-inline bool AioRemoteController::_internal_has_uuid() const {
+inline bool AioController::_internal_has_uuid() const {
   return this != internal_default_instance() && uuid_ != nullptr;
 }
-inline bool AioRemoteController::has_uuid() const {
+inline bool AioController::has_uuid() const {
   return _internal_has_uuid();
 }
-inline const ::opi_api::common::v1::Uuid& AioRemoteController::_internal_uuid() const {
+inline const ::opi_api::common::v1::Uuid& AioController::_internal_uuid() const {
   const ::opi_api::common::v1::Uuid* p = uuid_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::Uuid&>(
       ::opi_api::common::v1::_Uuid_default_instance_);
 }
-inline const ::opi_api::common::v1::Uuid& AioRemoteController::uuid() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteController.uuid)
+inline const ::opi_api::common::v1::Uuid& AioController::uuid() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.uuid)
   return _internal_uuid();
 }
-inline void AioRemoteController::unsafe_arena_set_allocated_uuid(
+inline void AioController::unsafe_arena_set_allocated_uuid(
     ::opi_api::common::v1::Uuid* uuid) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
@@ -1942,9 +1942,9 @@ inline void AioRemoteController::unsafe_arena_set_allocated_uuid(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteController.uuid)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioController.uuid)
 }
-inline ::opi_api::common::v1::Uuid* AioRemoteController::release_uuid() {
+inline ::opi_api::common::v1::Uuid* AioController::release_uuid() {
   
   ::opi_api::common::v1::Uuid* temp = uuid_;
   uuid_ = nullptr;
@@ -1959,14 +1959,14 @@ inline ::opi_api::common::v1::Uuid* AioRemoteController::release_uuid() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::Uuid* AioRemoteController::unsafe_arena_release_uuid() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteController.uuid)
+inline ::opi_api::common::v1::Uuid* AioController::unsafe_arena_release_uuid() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.uuid)
   
   ::opi_api::common::v1::Uuid* temp = uuid_;
   uuid_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::Uuid* AioRemoteController::_internal_mutable_uuid() {
+inline ::opi_api::common::v1::Uuid* AioController::_internal_mutable_uuid() {
   
   if (uuid_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::Uuid>(GetArenaForAllocation());
@@ -1974,12 +1974,12 @@ inline ::opi_api::common::v1::Uuid* AioRemoteController::_internal_mutable_uuid(
   }
   return uuid_;
 }
-inline ::opi_api::common::v1::Uuid* AioRemoteController::mutable_uuid() {
+inline ::opi_api::common::v1::Uuid* AioController::mutable_uuid() {
   ::opi_api::common::v1::Uuid* _msg = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteController.uuid)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.uuid)
   return _msg;
 }
-inline void AioRemoteController::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
+inline void AioController::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(uuid_);
@@ -1998,37 +1998,37 @@ inline void AioRemoteController::set_allocated_uuid(::opi_api::common::v1::Uuid*
     
   }
   uuid_ = uuid;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteController.uuid)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.uuid)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerCreateRequest
+// AioControllerCreateRequest
 
-// .opi_api.storage.v1.AioRemoteController device = 1;
-inline bool AioRemoteControllerCreateRequest::_internal_has_device() const {
+// .opi_api.storage.v1.AioController device = 1;
+inline bool AioControllerCreateRequest::_internal_has_device() const {
   return this != internal_default_instance() && device_ != nullptr;
 }
-inline bool AioRemoteControllerCreateRequest::has_device() const {
+inline bool AioControllerCreateRequest::has_device() const {
   return _internal_has_device();
 }
-inline void AioRemoteControllerCreateRequest::clear_device() {
+inline void AioControllerCreateRequest::clear_device() {
   if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
     delete device_;
   }
   device_ = nullptr;
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerCreateRequest::_internal_device() const {
-  const ::opi_api::storage::v1::AioRemoteController* p = device_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::AioRemoteController&>(
-      ::opi_api::storage::v1::_AioRemoteController_default_instance_);
+inline const ::opi_api::storage::v1::AioController& AioControllerCreateRequest::_internal_device() const {
+  const ::opi_api::storage::v1::AioController* p = device_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::AioController&>(
+      ::opi_api::storage::v1::_AioController_default_instance_);
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerCreateRequest::device() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerCreateRequest.device)
+inline const ::opi_api::storage::v1::AioController& AioControllerCreateRequest::device() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerCreateRequest.device)
   return _internal_device();
 }
-inline void AioRemoteControllerCreateRequest::unsafe_arena_set_allocated_device(
-    ::opi_api::storage::v1::AioRemoteController* device) {
+inline void AioControllerCreateRequest::unsafe_arena_set_allocated_device(
+    ::opi_api::storage::v1::AioController* device) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device_);
   }
@@ -2038,11 +2038,11 @@ inline void AioRemoteControllerCreateRequest::unsafe_arena_set_allocated_device(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerCreateRequest.device)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerCreateRequest.device)
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerCreateRequest::release_device() {
+inline ::opi_api::storage::v1::AioController* AioControllerCreateRequest::release_device() {
   
-  ::opi_api::storage::v1::AioRemoteController* temp = device_;
+  ::opi_api::storage::v1::AioController* temp = device_;
   device_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -2055,34 +2055,34 @@ inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerCreateReq
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerCreateRequest::unsafe_arena_release_device() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerCreateRequest.device)
+inline ::opi_api::storage::v1::AioController* AioControllerCreateRequest::unsafe_arena_release_device() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerCreateRequest.device)
   
-  ::opi_api::storage::v1::AioRemoteController* temp = device_;
+  ::opi_api::storage::v1::AioController* temp = device_;
   device_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerCreateRequest::_internal_mutable_device() {
+inline ::opi_api::storage::v1::AioController* AioControllerCreateRequest::_internal_mutable_device() {
   
   if (device_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::storage::v1::AioRemoteController>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::AioController>(GetArenaForAllocation());
     device_ = p;
   }
   return device_;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerCreateRequest::mutable_device() {
-  ::opi_api::storage::v1::AioRemoteController* _msg = _internal_mutable_device();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerCreateRequest.device)
+inline ::opi_api::storage::v1::AioController* AioControllerCreateRequest::mutable_device() {
+  ::opi_api::storage::v1::AioController* _msg = _internal_mutable_device();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerCreateRequest.device)
   return _msg;
 }
-inline void AioRemoteControllerCreateRequest::set_allocated_device(::opi_api::storage::v1::AioRemoteController* device) {
+inline void AioControllerCreateRequest::set_allocated_device(::opi_api::storage::v1::AioController* device) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete device_;
   }
   if (device) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::AioRemoteController>::GetOwningArena(device);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::AioController>::GetOwningArena(device);
     if (message_arena != submessage_arena) {
       device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device, submessage_arena);
@@ -2092,30 +2092,30 @@ inline void AioRemoteControllerCreateRequest::set_allocated_device(::opi_api::st
     
   }
   device_ = device;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerCreateRequest.device)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerCreateRequest.device)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerDeleteRequest
+// AioControllerDeleteRequest
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteControllerDeleteRequest::_internal_has_handle() const {
+inline bool AioControllerDeleteRequest::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteControllerDeleteRequest::has_handle() const {
+inline bool AioControllerDeleteRequest::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerDeleteRequest::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioControllerDeleteRequest::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerDeleteRequest::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioControllerDeleteRequest::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerDeleteRequest.handle)
   return _internal_handle();
 }
-inline void AioRemoteControllerDeleteRequest::unsafe_arena_set_allocated_handle(
+inline void AioControllerDeleteRequest::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2126,9 +2126,9 @@ inline void AioRemoteControllerDeleteRequest::unsafe_arena_set_allocated_handle(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerDeleteRequest.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -2143,14 +2143,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::relea
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle)
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerDeleteRequest.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2158,12 +2158,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::_inte
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerDeleteRequest::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerDeleteRequest.handle)
   return _msg;
 }
-inline void AioRemoteControllerDeleteRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioControllerDeleteRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2182,37 +2182,37 @@ inline void AioRemoteControllerDeleteRequest::set_allocated_handle(::opi_api::co
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerDeleteRequest.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerDeleteRequest.handle)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerUpdateRequest
+// AioControllerUpdateRequest
 
-// .opi_api.storage.v1.AioRemoteController device = 1;
-inline bool AioRemoteControllerUpdateRequest::_internal_has_device() const {
+// .opi_api.storage.v1.AioController device = 1;
+inline bool AioControllerUpdateRequest::_internal_has_device() const {
   return this != internal_default_instance() && device_ != nullptr;
 }
-inline bool AioRemoteControllerUpdateRequest::has_device() const {
+inline bool AioControllerUpdateRequest::has_device() const {
   return _internal_has_device();
 }
-inline void AioRemoteControllerUpdateRequest::clear_device() {
+inline void AioControllerUpdateRequest::clear_device() {
   if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
     delete device_;
   }
   device_ = nullptr;
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerUpdateRequest::_internal_device() const {
-  const ::opi_api::storage::v1::AioRemoteController* p = device_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::AioRemoteController&>(
-      ::opi_api::storage::v1::_AioRemoteController_default_instance_);
+inline const ::opi_api::storage::v1::AioController& AioControllerUpdateRequest::_internal_device() const {
+  const ::opi_api::storage::v1::AioController* p = device_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::AioController&>(
+      ::opi_api::storage::v1::_AioController_default_instance_);
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerUpdateRequest::device() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerUpdateRequest.device)
+inline const ::opi_api::storage::v1::AioController& AioControllerUpdateRequest::device() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerUpdateRequest.device)
   return _internal_device();
 }
-inline void AioRemoteControllerUpdateRequest::unsafe_arena_set_allocated_device(
-    ::opi_api::storage::v1::AioRemoteController* device) {
+inline void AioControllerUpdateRequest::unsafe_arena_set_allocated_device(
+    ::opi_api::storage::v1::AioController* device) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device_);
   }
@@ -2222,11 +2222,11 @@ inline void AioRemoteControllerUpdateRequest::unsafe_arena_set_allocated_device(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerUpdateRequest.device)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerUpdateRequest.device)
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerUpdateRequest::release_device() {
+inline ::opi_api::storage::v1::AioController* AioControllerUpdateRequest::release_device() {
   
-  ::opi_api::storage::v1::AioRemoteController* temp = device_;
+  ::opi_api::storage::v1::AioController* temp = device_;
   device_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -2239,34 +2239,34 @@ inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerUpdateReq
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerUpdateRequest::unsafe_arena_release_device() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerUpdateRequest.device)
+inline ::opi_api::storage::v1::AioController* AioControllerUpdateRequest::unsafe_arena_release_device() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerUpdateRequest.device)
   
-  ::opi_api::storage::v1::AioRemoteController* temp = device_;
+  ::opi_api::storage::v1::AioController* temp = device_;
   device_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerUpdateRequest::_internal_mutable_device() {
+inline ::opi_api::storage::v1::AioController* AioControllerUpdateRequest::_internal_mutable_device() {
   
   if (device_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::storage::v1::AioRemoteController>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::AioController>(GetArenaForAllocation());
     device_ = p;
   }
   return device_;
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerUpdateRequest::mutable_device() {
-  ::opi_api::storage::v1::AioRemoteController* _msg = _internal_mutable_device();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerUpdateRequest.device)
+inline ::opi_api::storage::v1::AioController* AioControllerUpdateRequest::mutable_device() {
+  ::opi_api::storage::v1::AioController* _msg = _internal_mutable_device();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerUpdateRequest.device)
   return _msg;
 }
-inline void AioRemoteControllerUpdateRequest::set_allocated_device(::opi_api::storage::v1::AioRemoteController* device) {
+inline void AioControllerUpdateRequest::set_allocated_device(::opi_api::storage::v1::AioController* device) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete device_;
   }
   if (device) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::AioRemoteController>::GetOwningArena(device);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::AioController>::GetOwningArena(device);
     if (message_arena != submessage_arena) {
       device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device, submessage_arena);
@@ -2276,74 +2276,74 @@ inline void AioRemoteControllerUpdateRequest::set_allocated_device(::opi_api::st
     
   }
   device_ = device;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerUpdateRequest.device)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerUpdateRequest.device)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerList
+// AioControllerList
 
-// repeated .opi_api.storage.v1.AioRemoteController device = 1;
-inline int AioRemoteControllerList::_internal_device_size() const {
+// repeated .opi_api.storage.v1.AioController device = 1;
+inline int AioControllerList::_internal_device_size() const {
   return device_.size();
 }
-inline int AioRemoteControllerList::device_size() const {
+inline int AioControllerList::device_size() const {
   return _internal_device_size();
 }
-inline void AioRemoteControllerList::clear_device() {
+inline void AioControllerList::clear_device() {
   device_.Clear();
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerList::mutable_device(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerList.device)
+inline ::opi_api::storage::v1::AioController* AioControllerList::mutable_device(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerList.device)
   return device_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioRemoteController >*
-AioRemoteControllerList::mutable_device() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.AioRemoteControllerList.device)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioController >*
+AioControllerList::mutable_device() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.AioControllerList.device)
   return &device_;
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerList::_internal_device(int index) const {
+inline const ::opi_api::storage::v1::AioController& AioControllerList::_internal_device(int index) const {
   return device_.Get(index);
 }
-inline const ::opi_api::storage::v1::AioRemoteController& AioRemoteControllerList::device(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerList.device)
+inline const ::opi_api::storage::v1::AioController& AioControllerList::device(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerList.device)
   return _internal_device(index);
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerList::_internal_add_device() {
+inline ::opi_api::storage::v1::AioController* AioControllerList::_internal_add_device() {
   return device_.Add();
 }
-inline ::opi_api::storage::v1::AioRemoteController* AioRemoteControllerList::add_device() {
-  ::opi_api::storage::v1::AioRemoteController* _add = _internal_add_device();
-  // @@protoc_insertion_point(field_add:opi_api.storage.v1.AioRemoteControllerList.device)
+inline ::opi_api::storage::v1::AioController* AioControllerList::add_device() {
+  ::opi_api::storage::v1::AioController* _add = _internal_add_device();
+  // @@protoc_insertion_point(field_add:opi_api.storage.v1.AioControllerList.device)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioRemoteController >&
-AioRemoteControllerList::device() const {
-  // @@protoc_insertion_point(field_list:opi_api.storage.v1.AioRemoteControllerList.device)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::AioController >&
+AioControllerList::device() const {
+  // @@protoc_insertion_point(field_list:opi_api.storage.v1.AioControllerList.device)
   return device_;
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerGetRequest
+// AioControllerGetRequest
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteControllerGetRequest::_internal_has_handle() const {
+inline bool AioControllerGetRequest::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteControllerGetRequest::has_handle() const {
+inline bool AioControllerGetRequest::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerGetRequest::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioControllerGetRequest::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerGetRequest::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerGetRequest.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioControllerGetRequest::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerGetRequest.handle)
   return _internal_handle();
 }
-inline void AioRemoteControllerGetRequest::unsafe_arena_set_allocated_handle(
+inline void AioControllerGetRequest::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2354,9 +2354,9 @@ inline void AioRemoteControllerGetRequest::unsafe_arena_set_allocated_handle(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerGetRequest.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerGetRequest.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetRequest::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -2371,14 +2371,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::release_
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerGetRequest.handle)
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetRequest::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerGetRequest.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetRequest::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2386,12 +2386,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::_interna
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetRequest::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetRequest::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerGetRequest.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerGetRequest.handle)
   return _msg;
 }
-inline void AioRemoteControllerGetRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioControllerGetRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2410,34 +2410,34 @@ inline void AioRemoteControllerGetRequest::set_allocated_handle(::opi_api::commo
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerGetRequest.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerGetRequest.handle)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerGetListRequest
+// AioControllerGetListRequest
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerGetStatsRequest
+// AioControllerGetStatsRequest
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteControllerGetStatsRequest::_internal_has_handle() const {
+inline bool AioControllerGetStatsRequest::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteControllerGetStatsRequest::has_handle() const {
+inline bool AioControllerGetStatsRequest::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerGetStatsRequest::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioControllerGetStatsRequest::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerGetStatsRequest::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioControllerGetStatsRequest::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerGetStatsRequest.handle)
   return _internal_handle();
 }
-inline void AioRemoteControllerGetStatsRequest::unsafe_arena_set_allocated_handle(
+inline void AioControllerGetStatsRequest::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2448,9 +2448,9 @@ inline void AioRemoteControllerGetStatsRequest::unsafe_arena_set_allocated_handl
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerGetStatsRequest.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetStatsRequest::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -2465,14 +2465,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::rel
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle)
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetStatsRequest::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerGetStatsRequest.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetStatsRequest::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2480,12 +2480,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::_in
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerGetStatsRequest::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerGetStatsRequest::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerGetStatsRequest.handle)
   return _msg;
 }
-inline void AioRemoteControllerGetStatsRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioControllerGetStatsRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2504,30 +2504,30 @@ inline void AioRemoteControllerGetStatsRequest::set_allocated_handle(::opi_api::
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerGetStatsRequest.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerGetStatsRequest.handle)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerStatsRequest
+// AioControllerStatsRequest
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteControllerStatsRequest::_internal_has_handle() const {
+inline bool AioControllerStatsRequest::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteControllerStatsRequest::has_handle() const {
+inline bool AioControllerStatsRequest::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerStatsRequest::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioControllerStatsRequest::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerStatsRequest::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerStatsRequest.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioControllerStatsRequest::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerStatsRequest.handle)
   return _internal_handle();
 }
-inline void AioRemoteControllerStatsRequest::unsafe_arena_set_allocated_handle(
+inline void AioControllerStatsRequest::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2538,9 +2538,9 @@ inline void AioRemoteControllerStatsRequest::unsafe_arena_set_allocated_handle(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerStatsRequest.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerStatsRequest.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStatsRequest::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -2555,14 +2555,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::releas
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerStatsRequest.handle)
+inline ::opi_api::common::v1::ObjectKey* AioControllerStatsRequest::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerStatsRequest.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStatsRequest::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2570,12 +2570,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::_inter
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStatsRequest::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStatsRequest::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerStatsRequest.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerStatsRequest.handle)
   return _msg;
 }
-inline void AioRemoteControllerStatsRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioControllerStatsRequest::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2594,30 +2594,30 @@ inline void AioRemoteControllerStatsRequest::set_allocated_handle(::opi_api::com
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerStatsRequest.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerStatsRequest.handle)
 }
 
 // -------------------------------------------------------------------
 
-// AioRemoteControllerStats
+// AioControllerStats
 
 // .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioRemoteControllerStats::_internal_has_handle() const {
+inline bool AioControllerStats::_internal_has_handle() const {
   return this != internal_default_instance() && handle_ != nullptr;
 }
-inline bool AioRemoteControllerStats::has_handle() const {
+inline bool AioControllerStats::has_handle() const {
   return _internal_has_handle();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerStats::_internal_handle() const {
+inline const ::opi_api::common::v1::ObjectKey& AioControllerStats::_internal_handle() const {
   const ::opi_api::common::v1::ObjectKey* p = handle_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& AioRemoteControllerStats::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerStats.handle)
+inline const ::opi_api::common::v1::ObjectKey& AioControllerStats::handle() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerStats.handle)
   return _internal_handle();
 }
-inline void AioRemoteControllerStats::unsafe_arena_set_allocated_handle(
+inline void AioControllerStats::unsafe_arena_set_allocated_handle(
     ::opi_api::common::v1::ObjectKey* handle) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2628,9 +2628,9 @@ inline void AioRemoteControllerStats::unsafe_arena_set_allocated_handle(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioRemoteControllerStats.handle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerStats.handle)
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::release_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStats::release_handle() {
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
@@ -2645,14 +2645,14 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::release_handl
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerStats.handle)
+inline ::opi_api::common::v1::ObjectKey* AioControllerStats::unsafe_arena_release_handle() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerStats.handle)
   
   ::opi_api::common::v1::ObjectKey* temp = handle_;
   handle_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::_internal_mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStats::_internal_mutable_handle() {
   
   if (handle_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2660,12 +2660,12 @@ inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::_internal_mut
   }
   return handle_;
 }
-inline ::opi_api::common::v1::ObjectKey* AioRemoteControllerStats::mutable_handle() {
+inline ::opi_api::common::v1::ObjectKey* AioControllerStats::mutable_handle() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerStats.handle)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerStats.handle)
   return _msg;
 }
-inline void AioRemoteControllerStats::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
+inline void AioControllerStats::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
@@ -2684,45 +2684,45 @@ inline void AioRemoteControllerStats::set_allocated_handle(::opi_api::common::v1
     
   }
   handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerStats.handle)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerStats.handle)
 }
 
 // string stats = 2;
-inline void AioRemoteControllerStats::clear_stats() {
+inline void AioControllerStats::clear_stats() {
   stats_.ClearToEmpty();
 }
-inline const std::string& AioRemoteControllerStats::stats() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioRemoteControllerStats.stats)
+inline const std::string& AioControllerStats::stats() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerStats.stats)
   return _internal_stats();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void AioRemoteControllerStats::set_stats(ArgT0&& arg0, ArgT... args) {
+void AioControllerStats::set_stats(ArgT0&& arg0, ArgT... args) {
  
  stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioRemoteControllerStats.stats)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioControllerStats.stats)
 }
-inline std::string* AioRemoteControllerStats::mutable_stats() {
+inline std::string* AioControllerStats::mutable_stats() {
   std::string* _s = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioRemoteControllerStats.stats)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerStats.stats)
   return _s;
 }
-inline const std::string& AioRemoteControllerStats::_internal_stats() const {
+inline const std::string& AioControllerStats::_internal_stats() const {
   return stats_.Get();
 }
-inline void AioRemoteControllerStats::_internal_set_stats(const std::string& value) {
+inline void AioControllerStats::_internal_set_stats(const std::string& value) {
   
   stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* AioRemoteControllerStats::_internal_mutable_stats() {
+inline std::string* AioControllerStats::_internal_mutable_stats() {
   
   return stats_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* AioRemoteControllerStats::release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioRemoteControllerStats.stats)
+inline std::string* AioControllerStats::release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerStats.stats)
   return stats_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void AioRemoteControllerStats::set_allocated_stats(std::string* stats) {
+inline void AioControllerStats::set_allocated_stats(std::string* stats) {
   if (stats != nullptr) {
     
   } else {
@@ -2735,7 +2735,7 @@ inline void AioRemoteControllerStats::set_allocated_stats(std::string* stats) {
     stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioRemoteControllerStats.stats)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerStats.stats)
 }
 
 #ifdef __GNUC__

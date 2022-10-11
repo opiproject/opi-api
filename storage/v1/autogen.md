@@ -4,18 +4,18 @@
 ## Table of Contents
 
 - [backend_aio.proto](#backend_aio-proto)
-    - [AioRemoteController](#opi_api-storage-v1-AioRemoteController)
-    - [AioRemoteControllerCreateRequest](#opi_api-storage-v1-AioRemoteControllerCreateRequest)
-    - [AioRemoteControllerDeleteRequest](#opi_api-storage-v1-AioRemoteControllerDeleteRequest)
-    - [AioRemoteControllerGetListRequest](#opi_api-storage-v1-AioRemoteControllerGetListRequest)
-    - [AioRemoteControllerGetRequest](#opi_api-storage-v1-AioRemoteControllerGetRequest)
-    - [AioRemoteControllerGetStatsRequest](#opi_api-storage-v1-AioRemoteControllerGetStatsRequest)
-    - [AioRemoteControllerList](#opi_api-storage-v1-AioRemoteControllerList)
-    - [AioRemoteControllerStats](#opi_api-storage-v1-AioRemoteControllerStats)
-    - [AioRemoteControllerStatsRequest](#opi_api-storage-v1-AioRemoteControllerStatsRequest)
-    - [AioRemoteControllerUpdateRequest](#opi_api-storage-v1-AioRemoteControllerUpdateRequest)
+    - [AioController](#opi_api-storage-v1-AioController)
+    - [AioControllerCreateRequest](#opi_api-storage-v1-AioControllerCreateRequest)
+    - [AioControllerDeleteRequest](#opi_api-storage-v1-AioControllerDeleteRequest)
+    - [AioControllerGetListRequest](#opi_api-storage-v1-AioControllerGetListRequest)
+    - [AioControllerGetRequest](#opi_api-storage-v1-AioControllerGetRequest)
+    - [AioControllerGetStatsRequest](#opi_api-storage-v1-AioControllerGetStatsRequest)
+    - [AioControllerList](#opi_api-storage-v1-AioControllerList)
+    - [AioControllerStats](#opi_api-storage-v1-AioControllerStats)
+    - [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest)
+    - [AioControllerUpdateRequest](#opi_api-storage-v1-AioControllerUpdateRequest)
   
-    - [AioRemoteControllerService](#opi_api-storage-v1-AioRemoteControllerService)
+    - [AioControllerService](#opi_api-storage-v1-AioControllerService)
   
 - [backend_iscsi.proto](#backend_iscsi-proto)
 - [backend_null.proto](#backend_null-proto)
@@ -172,9 +172,9 @@
 
 
 
-<a name="opi_api-storage-v1-AioRemoteController"></a>
+<a name="opi_api-storage-v1-AioController"></a>
 
-### AioRemoteController
+### AioController
 
 
 
@@ -192,24 +192,24 @@
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerCreateRequest"></a>
+<a name="opi_api-storage-v1-AioControllerCreateRequest"></a>
 
-### AioRemoteControllerCreateRequest
+### AioControllerCreateRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |  |
+| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerDeleteRequest"></a>
+<a name="opi_api-storage-v1-AioControllerDeleteRequest"></a>
 
-### AioRemoteControllerDeleteRequest
+### AioControllerDeleteRequest
 
 
 
@@ -222,9 +222,9 @@
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerGetListRequest"></a>
+<a name="opi_api-storage-v1-AioControllerGetListRequest"></a>
 
-### AioRemoteControllerGetListRequest
+### AioControllerGetListRequest
 Intentionally empty
 
 
@@ -232,24 +232,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerGetRequest"></a>
+<a name="opi_api-storage-v1-AioControllerGetRequest"></a>
 
-### AioRemoteControllerGetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioRemoteControllerGetStatsRequest"></a>
-
-### AioRemoteControllerGetStatsRequest
+### AioControllerGetRequest
 
 
 
@@ -262,24 +247,39 @@ Intentionally empty
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerList"></a>
+<a name="opi_api-storage-v1-AioControllerGetStatsRequest"></a>
 
-### AioRemoteControllerList
+### AioControllerGetStatsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) | repeated |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerStats"></a>
+<a name="opi_api-storage-v1-AioControllerList"></a>
 
-### AioRemoteControllerStats
+### AioControllerList
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-AioControllerStats"></a>
+
+### AioControllerStats
 
 
 
@@ -293,9 +293,9 @@ Intentionally empty
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerStatsRequest"></a>
+<a name="opi_api-storage-v1-AioControllerStatsRequest"></a>
 
-### AioRemoteControllerStatsRequest
+### AioControllerStatsRequest
 
 
 
@@ -308,15 +308,15 @@ Intentionally empty
 
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerUpdateRequest"></a>
+<a name="opi_api-storage-v1-AioControllerUpdateRequest"></a>
 
-### AioRemoteControllerUpdateRequest
+### AioControllerUpdateRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |  |
+| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
 
 
 
@@ -329,19 +329,19 @@ Intentionally empty
  
 
 
-<a name="opi_api-storage-v1-AioRemoteControllerService"></a>
+<a name="opi_api-storage-v1-AioControllerService"></a>
 
-### AioRemoteControllerService
+### AioControllerService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| AioRemoteControllerCreate | [AioRemoteControllerCreateRequest](#opi_api-storage-v1-AioRemoteControllerCreateRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
-| AioRemoteControllerDelete | [AioRemoteControllerDeleteRequest](#opi_api-storage-v1-AioRemoteControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| AioRemoteControllerGet | [AioRemoteControllerGetRequest](#opi_api-storage-v1-AioRemoteControllerGetRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
-| AioRemoteControllerGetList | [AioRemoteControllerGetListRequest](#opi_api-storage-v1-AioRemoteControllerGetListRequest) | [AioRemoteControllerList](#opi_api-storage-v1-AioRemoteControllerList) |  |
-| AioRemoteControllerGetStats | [AioRemoteControllerGetStatsRequest](#opi_api-storage-v1-AioRemoteControllerGetStatsRequest) | [AioRemoteControllerStats](#opi_api-storage-v1-AioRemoteControllerStats) |  |
-| AioRemoteControllerUpdate | [AioRemoteControllerUpdateRequest](#opi_api-storage-v1-AioRemoteControllerUpdateRequest) | [AioRemoteController](#opi_api-storage-v1-AioRemoteController) |  |
+| AioControllerCreate | [AioControllerCreateRequest](#opi_api-storage-v1-AioControllerCreateRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| AioControllerDelete | [AioControllerDeleteRequest](#opi_api-storage-v1-AioControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| AioControllerGet | [AioControllerGetRequest](#opi_api-storage-v1-AioControllerGetRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| AioControllerGetList | [AioControllerGetListRequest](#opi_api-storage-v1-AioControllerGetListRequest) | [AioControllerList](#opi_api-storage-v1-AioControllerList) |  |
+| AioControllerGetStats | [AioControllerGetStatsRequest](#opi_api-storage-v1-AioControllerGetStatsRequest) | [AioControllerStats](#opi_api-storage-v1-AioControllerStats) |  |
+| AioControllerUpdate | [AioControllerUpdateRequest](#opi_api-storage-v1-AioControllerUpdateRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
 
  
 
