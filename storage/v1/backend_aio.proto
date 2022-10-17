@@ -15,7 +15,6 @@ service AioControllerService {
     rpc AioControllerCreate (AioControllerCreateRequest) returns (AioController) {}
     rpc AioControllerDelete (AioControllerDeleteRequest) returns (google.protobuf.Empty) {}
     rpc AioControllerGet    (AioControllerGetRequest)    returns (AioController)    {}
-    rpc AioControllerGetByName    (AioControllerGetByNameRequest)    returns (AioController)    {}
     rpc AioControllerGetList   (AioControllerGetListRequest)   returns (AioControllerList)   {}
     rpc AioControllerGetStats  (AioControllerGetStatsRequest)  returns (AioControllerStats)  {}
     rpc AioControllerUpdate (AioControllerUpdateRequest) returns (AioController) {}
@@ -52,10 +51,6 @@ message AioControllerList{
 
 message AioControllerGetRequest {
     common.v1.ObjectKey handle = 1;
-}
-
-message AioControllerGetByNameRequest {
-    string name = 1;
 }
 
 message AioControllerGetListRequest {
