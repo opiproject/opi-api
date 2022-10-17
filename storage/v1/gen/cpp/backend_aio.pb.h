@@ -233,14 +233,14 @@ class AioController final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 3,
+    kNameFieldNumber = 2,
+    kFilenameFieldNumber = 6,
     kHandleFieldNumber = 1,
-    kUuidFieldNumber = 6,
-    kIdFieldNumber = 2,
-    kBlockSizeFieldNumber = 4,
-    kNumBlocksFieldNumber = 5,
+    kUuidFieldNumber = 5,
+    kBlockSizeFieldNumber = 3,
+    kNumBlocksFieldNumber = 4,
   };
-  // string name = 3;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -252,6 +252,20 @@ class AioController final :
   const std::string& _internal_name() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
   std::string* _internal_mutable_name();
+  public:
+
+  // string filename = 6;
+  void clear_filename();
+  const std::string& filename() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_filename(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_filename();
+  PROTOBUF_NODISCARD std::string* release_filename();
+  void set_allocated_filename(std::string* filename);
+  private:
+  const std::string& _internal_filename() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const std::string& value);
+  std::string* _internal_mutable_filename();
   public:
 
   // .opi_api.common.v1.ObjectKey handle = 1;
@@ -272,7 +286,7 @@ class AioController final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
-  // .opi_api.common.v1.Uuid uuid = 6;
+  // .opi_api.common.v1.Uuid uuid = 5;
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -290,16 +304,7 @@ class AioController final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // int64 id = 2;
-  void clear_id();
-  int64_t id() const;
-  void set_id(int64_t value);
-  private:
-  int64_t _internal_id() const;
-  void _internal_set_id(int64_t value);
-  public:
-
-  // int64 block_size = 4;
+  // int64 block_size = 3;
   void clear_block_size();
   int64_t block_size() const;
   void set_block_size(int64_t value);
@@ -308,7 +313,7 @@ class AioController final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 num_blocks = 5;
+  // int64 num_blocks = 4;
   void clear_num_blocks();
   int64_t num_blocks() const;
   void set_num_blocks(int64_t value);
@@ -325,9 +330,9 @@ class AioController final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filename_;
   ::opi_api::common::v1::ObjectKey* handle_;
   ::opi_api::common::v1::Uuid* uuid_;
-  int64_t id_;
   int64_t block_size_;
   int64_t num_blocks_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1804,27 +1809,7 @@ inline void AioController::set_allocated_handle(::opi_api::common::v1::ObjectKey
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.handle)
 }
 
-// int64 id = 2;
-inline void AioController::clear_id() {
-  id_ = int64_t{0};
-}
-inline int64_t AioController::_internal_id() const {
-  return id_;
-}
-inline int64_t AioController::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.id)
-  return _internal_id();
-}
-inline void AioController::_internal_set_id(int64_t value) {
-  
-  id_ = value;
-}
-inline void AioController::set_id(int64_t value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.id)
-}
-
-// string name = 3;
+// string name = 2;
 inline void AioController::clear_name() {
   name_.ClearToEmpty();
 }
@@ -1875,7 +1860,7 @@ inline void AioController::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.name)
 }
 
-// int64 block_size = 4;
+// int64 block_size = 3;
 inline void AioController::clear_block_size() {
   block_size_ = int64_t{0};
 }
@@ -1895,7 +1880,7 @@ inline void AioController::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.block_size)
 }
 
-// int64 num_blocks = 5;
+// int64 num_blocks = 4;
 inline void AioController::clear_num_blocks() {
   num_blocks_ = int64_t{0};
 }
@@ -1915,7 +1900,7 @@ inline void AioController::set_num_blocks(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.num_blocks)
 }
 
-// .opi_api.common.v1.Uuid uuid = 6;
+// .opi_api.common.v1.Uuid uuid = 5;
 inline bool AioController::_internal_has_uuid() const {
   return this != internal_default_instance() && uuid_ != nullptr;
 }
@@ -1999,6 +1984,57 @@ inline void AioController::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid)
   }
   uuid_ = uuid;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.uuid)
+}
+
+// string filename = 6;
+inline void AioController::clear_filename() {
+  filename_.ClearToEmpty();
+}
+inline const std::string& AioController::filename() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.filename)
+  return _internal_filename();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AioController::set_filename(ArgT0&& arg0, ArgT... args) {
+ 
+ filename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.filename)
+}
+inline std::string* AioController::mutable_filename() {
+  std::string* _s = _internal_mutable_filename();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.filename)
+  return _s;
+}
+inline const std::string& AioController::_internal_filename() const {
+  return filename_.Get();
+}
+inline void AioController::_internal_set_filename(const std::string& value) {
+  
+  filename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AioController::_internal_mutable_filename() {
+  
+  return filename_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AioController::release_filename() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.filename)
+  return filename_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AioController::set_allocated_filename(std::string* filename) {
+  if (filename != nullptr) {
+    
+  } else {
+    
+  }
+  filename_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), filename,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (filename_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.filename)
 }
 
 // -------------------------------------------------------------------
