@@ -181,11 +181,11 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | handle is an opaque object handle that is not user settable. handle will be returned with created object |
-| id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
 | block_size | [int64](#int64) |  |  |
 | num_blocks | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
+| filename | [string](#string) |  |  |
 
 
 
