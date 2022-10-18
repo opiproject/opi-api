@@ -1303,9 +1303,10 @@ class VirtioBlkListRequest final :
 // -------------------------------------------------------------------
 
 class VirtioBlkListResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkListResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkListResponse) */ {
  public:
   inline VirtioBlkListResponse() : VirtioBlkListResponse(nullptr) {}
+  ~VirtioBlkListResponse() override;
   explicit constexpr VirtioBlkListResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   VirtioBlkListResponse(const VirtioBlkListResponse& from);
@@ -1378,15 +1379,27 @@ class VirtioBlkListResponse final :
   VirtioBlkListResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<VirtioBlkListResponse>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const VirtioBlkListResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const VirtioBlkListResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VirtioBlkListResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const VirtioBlkListResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VirtioBlkListResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -1397,6 +1410,8 @@ class VirtioBlkListResponse final :
   explicit VirtioBlkListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -1408,6 +1423,27 @@ class VirtioBlkListResponse final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kControllerFieldNumber = 1,
+  };
+  // repeated .opi_api.storage.v1.VirtioBlk controller = 1;
+  int controller_size() const;
+  private:
+  int _internal_controller_size() const;
+  public:
+  void clear_controller();
+  ::opi_api::storage::v1::VirtioBlk* mutable_controller(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >*
+      mutable_controller();
+  private:
+  const ::opi_api::storage::v1::VirtioBlk& _internal_controller(int index) const;
+  ::opi_api::storage::v1::VirtioBlk* _internal_add_controller();
+  public:
+  const ::opi_api::storage::v1::VirtioBlk& controller(int index) const;
+  ::opi_api::storage::v1::VirtioBlk* add_controller();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >&
+      controller() const;
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListResponse)
  private:
   class _Internal;
@@ -1415,6 +1451,7 @@ class VirtioBlkListResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk > controller_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
 };
@@ -2568,6 +2605,46 @@ inline void VirtioBlkListRequest::set_subsystem_id(int64_t value) {
 // -------------------------------------------------------------------
 
 // VirtioBlkListResponse
+
+// repeated .opi_api.storage.v1.VirtioBlk controller = 1;
+inline int VirtioBlkListResponse::_internal_controller_size() const {
+  return controller_.size();
+}
+inline int VirtioBlkListResponse::controller_size() const {
+  return _internal_controller_size();
+}
+inline void VirtioBlkListResponse::clear_controller() {
+  controller_.Clear();
+}
+inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::mutable_controller(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  return controller_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >*
+VirtioBlkListResponse::mutable_controller() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  return &controller_;
+}
+inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkListResponse::_internal_controller(int index) const {
+  return controller_.Get(index);
+}
+inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkListResponse::controller(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  return _internal_controller(index);
+}
+inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::_internal_add_controller() {
+  return controller_.Add();
+}
+inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::add_controller() {
+  ::opi_api::storage::v1::VirtioBlk* _add = _internal_add_controller();
+  // @@protoc_insertion_point(field_add:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >&
+VirtioBlkListResponse::controller() const {
+  // @@protoc_insertion_point(field_list:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  return controller_;
+}
 
 // -------------------------------------------------------------------
 

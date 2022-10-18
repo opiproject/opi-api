@@ -118,7 +118,8 @@ struct VirtioBlkListRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioBlkListRequestDefaultTypeInternal _VirtioBlkListRequest_default_instance_;
 constexpr VirtioBlkListResponse::VirtioBlkListResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : controller_(){}
 struct VirtioBlkListResponseDefaultTypeInternal {
   constexpr VirtioBlkListResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -249,6 +250,7 @@ const uint32_t TableStruct_frontend_5fvirtio_5fblk_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioBlkListResponse, controller_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioBlkGetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -289,10 +291,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 45, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkUpdateResponse)},
   { 51, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkListRequest)},
   { 58, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkListResponse)},
-  { 64, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkGetRequest)},
-  { 71, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkGetResponse)},
-  { 78, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkStatsRequest)},
-  { 85, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkStatsResponse)},
+  { 65, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkGetRequest)},
+  { 72, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkGetResponse)},
+  { 79, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkStatsRequest)},
+  { 86, -1, -1, sizeof(::opi_api::storage::v1::VirtioBlkStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -325,38 +327,40 @@ const char descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto[] PROTOBUF_
   "VirtioBlkUpdateRequest\0221\n\ncontroller\030\001 \001"
   "(\0132\035.opi_api.storage.v1.VirtioBlk\"\031\n\027Vir"
   "tioBlkUpdateResponse\",\n\024VirtioBlkListReq"
-  "uest\022\024\n\014subsystem_id\030\001 \001(\003\"\027\n\025VirtioBlkL"
-  "istResponse\",\n\023VirtioBlkGetRequest\022\025\n\rco"
-  "ntroller_id\030\001 \001(\003\"I\n\024VirtioBlkGetRespons"
-  "e\0221\n\ncontroller\030\001 \001(\0132\035.opi_api.storage."
-  "v1.VirtioBlk\".\n\025VirtioBlkStatsRequest\022\025\n"
-  "\rcontroller_id\030\001 \001(\003\"3\n\026VirtioBlkStatsRe"
-  "sponse\022\n\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\224\005\n\020Vi"
-  "rtioBlkService\022l\n\017VirtioBlkCreate\022*.opi_"
-  "api.storage.v1.VirtioBlkCreateRequest\032+."
-  "opi_api.storage.v1.VirtioBlkCreateRespon"
-  "se\"\000\022l\n\017VirtioBlkDelete\022*.opi_api.storag"
-  "e.v1.VirtioBlkDeleteRequest\032+.opi_api.st"
-  "orage.v1.VirtioBlkDeleteResponse\"\000\022l\n\017Vi"
-  "rtioBlkUpdate\022*.opi_api.storage.v1.Virti"
-  "oBlkUpdateRequest\032+.opi_api.storage.v1.V"
-  "irtioBlkUpdateResponse\"\000\022f\n\rVirtioBlkLis"
-  "t\022(.opi_api.storage.v1.VirtioBlkListRequ"
-  "est\032).opi_api.storage.v1.VirtioBlkListRe"
-  "sponse\"\000\022c\n\014VirtioBlkGet\022\'.opi_api.stora"
-  "ge.v1.VirtioBlkGetRequest\032(.opi_api.stor"
-  "age.v1.VirtioBlkGetResponse\"\000\022i\n\016VirtioB"
-  "lkStats\022).opi_api.storage.v1.VirtioBlkSt"
-  "atsRequest\032*.opi_api.storage.v1.VirtioBl"
-  "kStatsResponse\"\000B1Z/github.com/opiprojec"
-  "t/opi-api/storage/v1/gen/gob\006proto3"
+  "uest\022\024\n\014subsystem_id\030\001 \001(\003\"J\n\025VirtioBlkL"
+  "istResponse\0221\n\ncontroller\030\001 \003(\0132\035.opi_ap"
+  "i.storage.v1.VirtioBlk\",\n\023VirtioBlkGetRe"
+  "quest\022\025\n\rcontroller_id\030\001 \001(\003\"I\n\024VirtioBl"
+  "kGetResponse\0221\n\ncontroller\030\001 \001(\0132\035.opi_a"
+  "pi.storage.v1.VirtioBlk\".\n\025VirtioBlkStat"
+  "sRequest\022\025\n\rcontroller_id\030\001 \001(\003\"3\n\026Virti"
+  "oBlkStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005stats\030\002"
+  " \001(\t2\224\005\n\020VirtioBlkService\022l\n\017VirtioBlkCr"
+  "eate\022*.opi_api.storage.v1.VirtioBlkCreat"
+  "eRequest\032+.opi_api.storage.v1.VirtioBlkC"
+  "reateResponse\"\000\022l\n\017VirtioBlkDelete\022*.opi"
+  "_api.storage.v1.VirtioBlkDeleteRequest\032+"
+  ".opi_api.storage.v1.VirtioBlkDeleteRespo"
+  "nse\"\000\022l\n\017VirtioBlkUpdate\022*.opi_api.stora"
+  "ge.v1.VirtioBlkUpdateRequest\032+.opi_api.s"
+  "torage.v1.VirtioBlkUpdateResponse\"\000\022f\n\rV"
+  "irtioBlkList\022(.opi_api.storage.v1.Virtio"
+  "BlkListRequest\032).opi_api.storage.v1.Virt"
+  "ioBlkListResponse\"\000\022c\n\014VirtioBlkGet\022\'.op"
+  "i_api.storage.v1.VirtioBlkGetRequest\032(.o"
+  "pi_api.storage.v1.VirtioBlkGetResponse\"\000"
+  "\022i\n\016VirtioBlkStats\022).opi_api.storage.v1."
+  "VirtioBlkStatsRequest\032*.opi_api.storage."
+  "v1.VirtioBlkStatsResponse\"\000B1Z/github.co"
+  "m/opiproject/opi-api/storage/v1/gen/gob\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps[1] = {
   &::descriptor_table_common_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5fblk_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5fblk_2eproto = {
-  false, false, 1515, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
+  false, false, 1566, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
   &descriptor_table_frontend_5fvirtio_5fblk_2eproto_once, descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps, 1, 13,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5fblk_2eproto::offsets,
   file_level_metadata_frontend_5fvirtio_5fblk_2eproto, file_level_enum_descriptors_frontend_5fvirtio_5fblk_2eproto, file_level_service_descriptors_frontend_5fvirtio_5fblk_2eproto,
@@ -1650,30 +1654,176 @@ class VirtioBlkListResponse::_Internal {
 
 VirtioBlkListResponse::VirtioBlkListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  controller_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.VirtioBlkListResponse)
 }
 VirtioBlkListResponse::VirtioBlkListResponse(const VirtioBlkListResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      controller_(from.controller_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VirtioBlkListResponse)
 }
 
+inline void VirtioBlkListResponse::SharedCtor() {
+}
 
+VirtioBlkListResponse::~VirtioBlkListResponse() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.VirtioBlkListResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
+inline void VirtioBlkListResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
 
+void VirtioBlkListResponse::ArenaDtor(void* object) {
+  VirtioBlkListResponse* _this = reinterpret_cast< VirtioBlkListResponse* >(object);
+  (void)_this;
+}
+void VirtioBlkListResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void VirtioBlkListResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void VirtioBlkListResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.VirtioBlkListResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  controller_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* VirtioBlkListResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .opi_api.storage.v1.VirtioBlk controller = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_controller(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* VirtioBlkListResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.VirtioBlkListResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .opi_api.storage.v1.VirtioBlk controller = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_controller_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_controller(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.VirtioBlkListResponse)
+  return target;
+}
+
+size_t VirtioBlkListResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.VirtioBlkListResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .opi_api.storage.v1.VirtioBlk controller = 1;
+  total_size += 1UL * this->_internal_controller_size();
+  for (const auto& msg : this->controller_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VirtioBlkListResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    VirtioBlkListResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioBlkListResponse::GetClassData() const { return &_class_data_; }
 
+void VirtioBlkListResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<VirtioBlkListResponse *>(to)->MergeFrom(
+      static_cast<const VirtioBlkListResponse &>(from));
+}
 
 
+void VirtioBlkListResponse::MergeFrom(const VirtioBlkListResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.VirtioBlkListResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  controller_.MergeFrom(from.controller_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void VirtioBlkListResponse::CopyFrom(const VirtioBlkListResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.VirtioBlkListResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool VirtioBlkListResponse::IsInitialized() const {
+  return true;
+}
+
+void VirtioBlkListResponse::InternalSwap(VirtioBlkListResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  controller_.InternalSwap(&other->controller_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioBlkListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(

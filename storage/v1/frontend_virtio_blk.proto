@@ -57,6 +57,7 @@ message VirtioBlkListRequest {
 }
 
 message VirtioBlkListResponse {
+    repeated VirtioBlk controller = 1;
 }
 
 message VirtioBlkGetRequest {

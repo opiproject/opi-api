@@ -1664,6 +1664,11 @@ Intentionally empty.
 
 
 
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
+
+
 
 
 
