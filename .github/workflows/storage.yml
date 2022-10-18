@@ -43,6 +43,10 @@ jobs:
       run: make
       working-directory: storage
 
+    - name: Check uncomitted auto generated protobufs
+      run: git diff --exit-code
+      working-directory: storage
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
