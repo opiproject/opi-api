@@ -60,6 +60,8 @@
 - [common.proto](#common-proto)
     - [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId)
   
+    - [NvmePathMgmtType](#opi_api-storage-v1-NvmePathMgmtType)
+  
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
     - [NVMeController](#opi_api-storage-v1-NVMeController)
     - [NVMeControllerCreateRequest](#opi_api-storage-v1-NVMeControllerCreateRequest)
@@ -100,6 +102,8 @@
     - [NVMeSubsystemStatsResponse](#opi_api-storage-v1-NVMeSubsystemStatsResponse)
     - [NVMeSubsystemUpdateRequest](#opi_api-storage-v1-NVMeSubsystemUpdateRequest)
     - [NVMeSubsystemUpdateResponse](#opi_api-storage-v1-NVMeSubsystemUpdateResponse)
+  
+    - [NvmeFrontEndConstants](#opi_api-storage-v1-NvmeFrontEndConstants)
   
     - [NVMeControllerService](#opi_api-storage-v1-NVMeControllerService)
     - [NVMeNamespaceService](#opi_api-storage-v1-NVMeNamespaceService)
@@ -885,6 +889,19 @@ virtual functions under the physical function.
 
  
 
+
+<a name="opi_api-storage-v1-NvmePathMgmtType"></a>
+
+### NvmePathMgmtType
+Path Management Selection
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PATH_MGMT_NONE | 0 | none type, must not be used |
+| PATH_MGMT_USER_MULTIPATH | 1 | User managed multipath |
+| PATH_MGMT_ANA_MULTIPATH | 2 | NVMe Asymetric Namespace Access based multipath |
+
+
  
 
  
@@ -908,12 +925,13 @@ virtual functions under the physical function.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-| name | [string](#string) |  |  |
-| subsystem_id | [string](#string) |  |  |
-| pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
-| max_io_qps | [int64](#int64) |  |  |
-| max_ns | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | object&#39;s unique identifier ?? replaces: int64 id = 1; |
+| name | [string](#string) |  | ?? is this name needed if uuid is uniquely identifying the controller |
+| nvme_controller_id | [uint32](#uint32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
+| subsystem_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | subsystem information ?? val change |
+| pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller ?? val change |
+| max_io_qps | [uint32](#uint32) |  | maximum host IO queue pairs allowed, value will default to limits in PCI device configuration; if set to 0 or more it will default to maximum permitted per xPU&#39;s capability ?? val change |
+| max_ns | [uint32](#uint32) |  | maximum Number of namespaces that will be provisioned under the controller. ?? val change |
 
 
 
@@ -1097,19 +1115,22 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-| name | [string](#string) |  |  |
-| subsystem_id | [string](#string) |  |  |
-| controller_id | [int64](#int64) |  |  |
-| nsid | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | namespace&#39;s unique key replaces: int64 id = 1; |
+| name | [string](#string) |  | ?? do we need this if NvmeNamespace is identified using unique uuid |
+| subsystem_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | ?? can we take this out if controller is referring to a subsystem anyways ?? replaces string subsystem_id = 3; |
+| controller_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | key of the PCIe controller object that will host this namespace. ?? replaces int64 controller_id = 4; |
+| host_nsid | [uint32](#uint32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration ?? replaces: int64 nsid = 5; |
 | bdev | [string](#string) |  |  |
-| block_size | [int64](#int64) |  |  |
-| num_blocks | [int64](#int64) |  |  |
-| nguid | [string](#string) |  |  |
-| eui64 | [string](#string) |  |  |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
-| multipath | [string](#string) |  |  |
-| authentication | [string](#string) |  |  |
+| block_size | [int64](#int64) |  | Block size in bytes, must be power of 2 and must be less than the max io size supported. Typically tested values are 512, and 4k. |
+| num_blocks | [int64](#int64) |  | Size/Capacity of the namespace in blocks, size in bytes will be BlockSize x NumBlocks. |
+| nguid | [string](#string) |  | Globally unique identifier for the namespace |
+| eui64 | [fixed64](#fixed64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified, optional otherwise ?? replaces: string eui64 = 10 (fixed64 allows user to specify the byte order) |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
+| multipath | [string](#string) |  | ?? what is this for |
+| authentication | [string](#string) |  | ?? what is this for |
+| crypto_key_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | reference to encryption key for the data at rest encryption |
+| optimal_write_size | [uint32](#uint32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
+| pref_write_granularity | [uint32](#uint32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |
 
 
 
@@ -1297,10 +1318,13 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nqn | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| model_number | [string](#string) |  |  |
-| max_ns | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | object&#39;s unique identifier |
+| nqn | [string](#string) |  | NVMe subsystem NQN to which the controller belongs Refer to the NQN format in the NVMe base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes ?? val change |
+| serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes ?? val change |
+| model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes ?? val change |
+| max_ns | [int64](#int64) |  | ?? do we need this in subsystem given that controller object would have it ?? val change |
+| firmware_revision | [string](#string) |  | firmware revision, must not exceed &#39;NSV_CTRLR_FW_REV_LEN&#39; |
+| fru_guid | [bytes](#bytes) |  | FRU identfier, 16bytes opaque identity for the type of unit |
 
 
 
@@ -1482,6 +1506,21 @@ Intentionally empty.
 
 
  
+
+
+<a name="opi_api-storage-v1-NvmeFrontEndConstants"></a>
+
+### NvmeFrontEndConstants
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NSV_CTRLR_CONST_NONE | 0 |  |
+| NSV_CTRLR_SERIAL_NO_LEN | 20 | maximum allowed controller serial number string length |
+| NSV_CTRLR_MODEL_NO_LEN | 40 | maximum allowed controller model number string length |
+| NSV_CTRLR_FW_REV_LEN | 8 | maximum allowed firmware revision string length |
+| NSV_NVME_SUBSYSTEM_NQN_LEN | 256 | maximum length for NQN field |
+
 
  
 

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -38,36 +39,146 @@ service NVMeNamespaceService {
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
 }
 
+enum NvmeFrontEndConstants {
+    NSV_CTRLR_CONST_NONE    = 0;
+
+    // maximum allowed controller serial number string length
+    NSV_CTRLR_SERIAL_NO_LEN = 20;
+
+    // maximum allowed controller model number string length
+    NSV_CTRLR_MODEL_NO_LEN  = 40;
+
+    // maximum allowed firmware revision string length
+    NSV_CTRLR_FW_REV_LEN    = 8;
+
+    // maximum length for NQN field
+    NSV_NVME_SUBSYSTEM_NQN_LEN        = 256;
+}
+
 message NVMeSubsystem {
-    string nqn = 1;
-    string serial_number = 2;
-    string model_number = 3;
-    int64 max_ns = 4;
+    // object's unique identifier
+    common.v1.Uuid id = 1;
+
+    // NVMe subsystem NQN to which the controller belongs
+    // Refer to the NQN format in the NVMe base specifications, must not
+    // exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
+    //?? val change
+    string nqn = 2;
+
+    // serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
+    //?? val change
+    string serial_number = 3;
+
+    // model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
+    //?? val change
+    string model_number = 4;
+
+    //?? do we need this in subsystem given that controller object would have it
+    //?? val change
+    int64 max_ns = 5;
+
+    // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
+    string firmware_revision  = 6;
+
+    // FRU identfier, 16bytes opaque identity for the type of unit
+    bytes fru_guid = 7;
 }
 
 message NVMeController {
-    int64 id = 1;
+    // object's unique identifier
+    //?? replaces: int64 id = 1;
+    common.v1.Uuid id = 1;
+
+    //?? is this name needed if uuid is uniquely identifying the controller
     string name = 2;
-    string subsystem_id = 3;
-    NvmeControllerPciId pcie_id = 4;
-    int64 max_io_qps = 5;
-    int64 max_ns = 6;
+
+    // subsystem controller id range: 0 to 65535.
+    // must not be reused under the same subsystem
+    uint32 nvme_controller_id  = 3;
+
+    // subsystem information
+    //?? val change
+    common.v1.Uuid subsystem_id = 4;
+
+    // xPU's PCI ID for the controller
+    //?? val change
+    NvmeControllerPciId pcie_id = 5;
+
+    // maximum host IO queue pairs allowed, value will default to
+    // limits in PCI device configuration; if set to 0 or more it
+    // will default to maximum permitted per xPU's capability
+    //?? val change
+    uint32 max_io_qps = 6;
+
+    // maximum Number of namespaces that will be provisioned under
+    // the controller.
+    //?? val change
+    uint32 max_ns = 7;
 }
 
 message NVMeNamespace {
-    int64 id = 1;
+    // namespace's unique key
+    // replaces: int64 id = 1;
+    common.v1.Uuid id = 1;
+
+    //?? do we need this if NvmeNamespace is identified using unique uuid
     string name = 2;
-    string subsystem_id = 3;
-    int64 controller_id = 4;
-    int64 nsid = 5;
+
+    //?? can we take this out if controller is referring to a subsystem anyways
+    //?? replaces string subsystem_id = 3;
+    common.v1.Uuid subsystem_id = 3;
+
+    // key of the PCIe controller object that will host this namespace.
+    //?? replaces int64 controller_id = 4;
+    common.v1.Uuid controller_id = 4;
+
+    // NSID present to the host by the NVMe PCIe controller.
+    // If not provided, then the controller will assign an unused NSID
+    // within the max namespace range - auto assigned nsid may not work
+    // for live migration
+    //?? replaces: int64 nsid = 5;
+    uint32 host_nsid = 5;
+
     string bdev = 6;
+
+    // Block size in bytes, must be power of 2 and must be less than the max
+    // io size supported. Typically tested values are 512, and 4k.
     int64 block_size = 7;
+
+    // Size/Capacity of the namespace in blocks, size in bytes will
+    // be BlockSize x NumBlocks.
     int64 num_blocks = 8;
+
+    // Globally unique identifier for the namespace
     string nguid = 9;
-    string eui64 = 10;
+
+    // 64bit Extended unique identifier for the namespace
+    // mandatory if guid is not specified, optional otherwise
+    //?? replaces: string eui64 = 10 (fixed64 allows user to specify the byte order)
+    fixed64 eui64 = 10;
+
+    // Globally unique identifier for the namespace
     common.v1.Uuid uuid = 11;
+
+    //?? what is this for
     string multipath = 12;
+
+    //?? what is this for
     string authentication = 13;
+
+    // reference to encryption key for the data at rest encryption
+    common.v1.Uuid crypto_key_id = 14;
+
+    // optimal write size hint to host driver. Host IO stack may use
+    // this to regulate IO size. Must be a multiple of the preferred write
+    // granularity. Must not exceed the controller maximum IO size value
+    // configured in the nvme agent config file.
+    uint32 optimal_write_size = 15;
+
+    // preferred write granularity hint to the host driver. Host IO
+    // stack may use this to align IO sizes to the write granularity for
+    // optimum performance.
+    uint32 pref_write_granularity= 16;
 }
 
 message NVMeSubsystemCreateRequest {

@@ -14,11 +14,26 @@ option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 message NvmeControllerPciId {
     // Bus number, provided for future usage if needed. Currently set to ’0’
     uint32 bus              = 1;
+
     // Device number, based on the NVMe device layout
     uint32 device           = 2;
+
     // Physical function, always set to 0 in current model
     uint32 function         = 3;
+
     // SRIOV Virtual function within the Device and Physical function.
     // Set to 0 for Physical Function. Virtual Function numbering starts from 1
     uint32 virtual_function  = 4;
+}
+
+// Path Management Selection
+enum NvmePathMgmtType {
+  // none type, must not be used
+  PATH_MGMT_NONE            = 0;
+
+  // User managed multipath
+  PATH_MGMT_USER_MULTIPATH  = 1;
+
+  // NVMe Asymetric Namespace Access based multipath
+  PATH_MGMT_ANA_MULTIPATH   = 2;
 }

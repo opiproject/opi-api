@@ -24,6 +24,9 @@ constexpr NVMeSubsystem::NVMeSubsystem(
   : nqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , model_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , firmware_revision_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fru_guid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(nullptr)
   , max_ns_(int64_t{0}){}
 struct NVMeSubsystemDefaultTypeInternal {
   constexpr NVMeSubsystemDefaultTypeInternal()
@@ -37,11 +40,12 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemDefaultTypeInterna
 constexpr NVMeController::NVMeController(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subsystem_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(nullptr)
+  , subsystem_id_(nullptr)
   , pcie_id_(nullptr)
-  , id_(int64_t{0})
-  , max_io_qps_(int64_t{0})
-  , max_ns_(int64_t{0}){}
+  , nvme_controller_id_(0u)
+  , max_io_qps_(0u)
+  , max_ns_(0u){}
 struct NVMeControllerDefaultTypeInternal {
   constexpr NVMeControllerDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -54,18 +58,21 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeControllerDefaultTypeIntern
 constexpr NVMeNamespace::NVMeNamespace(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subsystem_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , bdev_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , nguid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , eui64_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , multipath_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , authentication_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(nullptr)
+  , subsystem_id_(nullptr)
+  , controller_id_(nullptr)
   , uuid_(nullptr)
-  , id_(int64_t{0})
-  , controller_id_(int64_t{0})
-  , nsid_(int64_t{0})
+  , crypto_key_id_(nullptr)
   , block_size_(int64_t{0})
-  , num_blocks_(int64_t{0}){}
+  , num_blocks_(int64_t{0})
+  , eui64_(uint64_t{0u})
+  , host_nsid_(0u)
+  , optimal_write_size_(0u)
+  , pref_write_granularity_(0u){}
 struct NVMeNamespaceDefaultTypeInternal {
   constexpr NVMeNamespaceDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -516,7 +523,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceStatsResponseDefau
 }  // namespace storage
 }  // namespace opi_api
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_frontend_5fnvme_5fpcie_2eproto[39];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto = nullptr;
 
 const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -526,10 +533,13 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, nqn_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, serial_number_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, model_number_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, max_ns_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, firmware_revision_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystem, fru_guid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -538,6 +548,7 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, nvme_controller_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, subsystem_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, pcie_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, max_io_qps_),
@@ -552,7 +563,7 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, subsystem_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, controller_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, nsid_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, host_nsid_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, bdev_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, block_size_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, num_blocks_),
@@ -561,6 +572,9 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, uuid_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, multipath_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, authentication_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, crypto_key_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, optimal_write_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespace, pref_write_granularity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemCreateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -821,44 +835,44 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystem)},
-  { 10, -1, -1, sizeof(::opi_api::storage::v1::NVMeController)},
-  { 22, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespace)},
-  { 41, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemCreateRequest)},
-  { 48, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemCreateResponse)},
-  { 55, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemDeleteRequest)},
-  { 62, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemDeleteResponse)},
-  { 69, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateRequest)},
-  { 76, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateResponse)},
-  { 83, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListRequest)},
-  { 89, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListResponse)},
-  { 96, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetRequest)},
-  { 103, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetResponse)},
-  { 110, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
-  { 117, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
-  { 124, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateRequest)},
-  { 131, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateResponse)},
-  { 137, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteRequest)},
-  { 145, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteResponse)},
-  { 151, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateRequest)},
-  { 158, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateResponse)},
-  { 164, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListRequest)},
-  { 171, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListResponse)},
-  { 178, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetRequest)},
-  { 186, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetResponse)},
-  { 193, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
-  { 201, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
-  { 209, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateRequest)},
-  { 216, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateResponse)},
-  { 222, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteRequest)},
-  { 231, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteResponse)},
-  { 237, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateRequest)},
-  { 244, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateResponse)},
-  { 250, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListRequest)},
-  { 258, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListResponse)},
-  { 265, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetRequest)},
-  { 274, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetResponse)},
-  { 281, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
-  { 290, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
+  { 13, -1, -1, sizeof(::opi_api::storage::v1::NVMeController)},
+  { 26, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespace)},
+  { 48, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemCreateRequest)},
+  { 55, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemCreateResponse)},
+  { 62, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemDeleteRequest)},
+  { 69, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemDeleteResponse)},
+  { 76, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateRequest)},
+  { 83, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateResponse)},
+  { 90, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListRequest)},
+  { 96, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListResponse)},
+  { 103, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetRequest)},
+  { 110, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetResponse)},
+  { 117, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
+  { 124, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
+  { 131, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateRequest)},
+  { 138, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateResponse)},
+  { 144, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteRequest)},
+  { 152, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteResponse)},
+  { 158, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateRequest)},
+  { 165, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateResponse)},
+  { 171, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListRequest)},
+  { 178, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListResponse)},
+  { 185, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetRequest)},
+  { 193, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetResponse)},
+  { 200, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
+  { 208, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
+  { 216, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateRequest)},
+  { 223, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateResponse)},
+  { 229, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteRequest)},
+  { 238, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteResponse)},
+  { 244, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateRequest)},
+  { 251, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateResponse)},
+  { 257, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListRequest)},
+  { 265, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListResponse)},
+  { 272, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetRequest)},
+  { 281, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetResponse)},
+  { 288, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
+  { 297, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -905,135 +919,148 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030frontend_nvme_pcie.proto\022\022opi_api.stor"
-  "age.v1\032\014common.proto\032\nuuid.proto\"Y\n\rNVMe"
-  "Subsystem\022\013\n\003nqn\030\001 \001(\t\022\025\n\rserial_number\030"
-  "\002 \001(\t\022\024\n\014model_number\030\003 \001(\t\022\016\n\006max_ns\030\004 "
-  "\001(\003\"\236\001\n\016NVMeController\022\n\n\002id\030\001 \001(\003\022\014\n\004na"
-  "me\030\002 \001(\t\022\024\n\014subsystem_id\030\003 \001(\t\0228\n\007pcie_i"
-  "d\030\004 \001(\0132\'.opi_api.storage.v1.NvmeControl"
-  "lerPciId\022\022\n\nmax_io_qps\030\005 \001(\003\022\016\n\006max_ns\030\006"
-  " \001(\003\"\212\002\n\rNVMeNamespace\022\n\n\002id\030\001 \001(\003\022\014\n\004na"
-  "me\030\002 \001(\t\022\024\n\014subsystem_id\030\003 \001(\t\022\025\n\rcontro"
-  "ller_id\030\004 \001(\003\022\014\n\004nsid\030\005 \001(\003\022\014\n\004bdev\030\006 \001("
-  "\t\022\022\n\nblock_size\030\007 \001(\003\022\022\n\nnum_blocks\030\010 \001("
-  "\003\022\r\n\005nguid\030\t \001(\t\022\r\n\005eui64\030\n \001(\t\022%\n\004uuid\030"
-  "\013 \001(\0132\027.opi_api.common.v1.Uuid\022\021\n\tmultip"
-  "ath\030\014 \001(\t\022\026\n\016authentication\030\r \001(\t\"R\n\032NVM"
-  "eSubsystemCreateRequest\0224\n\tsubsystem\030\001 \001"
-  "(\0132!.opi_api.storage.v1.NVMeSubsystem\"D\n"
-  "\033NVMeSubsystemCreateResponse\022%\n\004uuid\030\001 \001"
-  "(\0132\027.opi_api.common.v1.Uuid\")\n\032NVMeSubsy"
-  "stemDeleteRequest\022\013\n\003nqn\030\001 \001(\t\"-\n\033NVMeSu"
-  "bsystemDeleteResponse\022\016\n\006result\030\001 \001(\r\"R\n"
-  "\032NVMeSubsystemUpdateRequest\0224\n\tsubsystem"
-  "\030\001 \001(\0132!.opi_api.storage.v1.NVMeSubsyste"
-  "m\"-\n\033NVMeSubsystemUpdateResponse\022\016\n\006resu"
-  "lt\030\001 \001(\r\"\032\n\030NVMeSubsystemListRequest\"Q\n\031"
-  "NVMeSubsystemListResponse\0224\n\tsubsystem\030\001"
-  " \003(\0132!.opi_api.storage.v1.NVMeSubsystem\""
-  "&\n\027NVMeSubsystemGetRequest\022\013\n\003nqn\030\001 \001(\t\""
-  "P\n\030NVMeSubsystemGetResponse\0224\n\tsubsystem"
-  "\030\001 \001(\0132!.opi_api.storage.v1.NVMeSubsyste"
-  "m\"(\n\031NVMeSubsystemStatsRequest\022\013\n\003nqn\030\001 "
-  "\001(\t\"+\n\032NVMeSubsystemStatsResponse\022\r\n\005sta"
-  "ts\030\001 \001(\t\"U\n\033NVMeControllerCreateRequest\022"
-  "6\n\ncontroller\030\001 \001(\0132\".opi_api.storage.v1"
-  ".NVMeController\"\036\n\034NVMeControllerCreateR"
-  "esponse\"J\n\033NVMeControllerDeleteRequest\022\024"
-  "\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 "
-  "\001(\003\"\036\n\034NVMeControllerDeleteResponse\"U\n\033N"
-  "VMeControllerUpdateRequest\0226\n\ncontroller"
-  "\030\001 \001(\0132\".opi_api.storage.v1.NVMeControll"
-  "er\"\036\n\034NVMeControllerUpdateResponse\"1\n\031NV"
-  "MeControllerListRequest\022\024\n\014subsystem_id\030"
-  "\001 \001(\003\"T\n\032NVMeControllerListResponse\0226\n\nc"
-  "ontroller\030\001 \003(\0132\".opi_api.storage.v1.NVM"
-  "eController\"G\n\030NVMeControllerGetRequest\022"
-  "\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002"
-  " \001(\003\"S\n\031NVMeControllerGetResponse\0226\n\ncon"
-  "troller\030\001 \001(\0132\".opi_api.storage.v1.NVMeC"
-  "ontroller\"I\n\032NVMeControllerStatsRequest\022"
-  "\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002"
-  " \001(\003\"8\n\033NVMeControllerStatsResponse\022\n\n\002i"
-  "d\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t\"R\n\032NVMeNamespaceC"
-  "reateRequest\0224\n\tnamespace\030\001 \001(\0132!.opi_ap"
-  "i.storage.v1.NVMeNamespace\"\035\n\033NVMeNamesp"
-  "aceCreateResponse\"_\n\032NVMeNamespaceDelete"
-  "Request\022\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontrol"
-  "ler_id\030\002 \001(\003\022\024\n\014namespace_id\030\003 \001(\003\"\035\n\033NV"
-  "MeNamespaceDeleteResponse\"R\n\032NVMeNamespa"
-  "ceUpdateRequest\0224\n\tnamespace\030\001 \001(\0132!.opi"
-  "_api.storage.v1.NVMeNamespace\"\035\n\033NVMeNam"
-  "espaceUpdateResponse\"G\n\030NVMeNamespaceLis"
-  "tRequest\022\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontro"
-  "ller_id\030\002 \001(\003\"Q\n\031NVMeNamespaceListRespon"
-  "se\0224\n\tnamespace\030\001 \003(\0132!.opi_api.storage."
-  "v1.NVMeNamespace\"\\\n\027NVMeNamespaceGetRequ"
-  "est\022\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcontroller_"
-  "id\030\002 \001(\003\022\024\n\014namespace_id\030\003 \001(\003\"P\n\030NVMeNa"
-  "mespaceGetResponse\0224\n\tnamespace\030\001 \001(\0132!."
-  "opi_api.storage.v1.NVMeNamespace\"^\n\031NVMe"
-  "NamespaceStatsRequest\022\024\n\014subsystem_id\030\001 "
-  "\001(\003\022\025\n\rcontroller_id\030\002 \001(\003\022\024\n\014namespace_"
-  "id\030\003 \001(\003\"7\n\032NVMeNamespaceStatsResponse\022\n"
-  "\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\340\005\n\024NVMeSubsys"
-  "temService\022x\n\023NVMeSubsystemCreate\022..opi_"
-  "api.storage.v1.NVMeSubsystemCreateReques"
-  "t\032/.opi_api.storage.v1.NVMeSubsystemCrea"
-  "teResponse\"\000\022x\n\023NVMeSubsystemDelete\022..op"
-  "i_api.storage.v1.NVMeSubsystemDeleteRequ"
-  "est\032/.opi_api.storage.v1.NVMeSubsystemDe"
-  "leteResponse\"\000\022x\n\023NVMeSubsystemUpdate\022.."
-  "opi_api.storage.v1.NVMeSubsystemUpdateRe"
-  "quest\032/.opi_api.storage.v1.NVMeSubsystem"
-  "UpdateResponse\"\000\022r\n\021NVMeSubsystemList\022,."
-  "opi_api.storage.v1.NVMeSubsystemListRequ"
-  "est\032-.opi_api.storage.v1.NVMeSubsystemLi"
-  "stResponse\"\000\022o\n\020NVMeSubsystemGet\022+.opi_a"
-  "pi.storage.v1.NVMeSubsystemGetRequest\032,."
-  "opi_api.storage.v1.NVMeSubsystemGetRespo"
-  "nse\"\000\022u\n\022NVMeSubsystemStats\022-.opi_api.st"
-  "orage.v1.NVMeSubsystemStatsRequest\032..opi"
-  "_api.storage.v1.NVMeSubsystemStatsRespon"
-  "se\"\0002\363\005\n\025NVMeControllerService\022{\n\024NVMeCo"
-  "ntrollerCreate\022/.opi_api.storage.v1.NVMe"
-  "ControllerCreateRequest\0320.opi_api.storag"
-  "e.v1.NVMeControllerCreateResponse\"\000\022{\n\024N"
-  "VMeControllerDelete\022/.opi_api.storage.v1"
-  ".NVMeControllerDeleteRequest\0320.opi_api.s"
-  "torage.v1.NVMeControllerDeleteResponse\"\000"
-  "\022{\n\024NVMeControllerUpdate\022/.opi_api.stora"
-  "ge.v1.NVMeControllerUpdateRequest\0320.opi_"
-  "api.storage.v1.NVMeControllerUpdateRespo"
-  "nse\"\000\022u\n\022NVMeControllerList\022-.opi_api.st"
-  "orage.v1.NVMeControllerListRequest\032..opi"
-  "_api.storage.v1.NVMeControllerListRespon"
-  "se\"\000\022r\n\021NVMeControllerGet\022,.opi_api.stor"
-  "age.v1.NVMeControllerGetRequest\032-.opi_ap"
-  "i.storage.v1.NVMeControllerGetResponse\"\000"
-  "\022x\n\023NVMeControllerStats\022..opi_api.storag"
-  "e.v1.NVMeControllerStatsRequest\032/.opi_ap"
-  "i.storage.v1.NVMeControllerStatsResponse"
-  "\"\0002\340\005\n\024NVMeNamespaceService\022x\n\023NVMeNames"
-  "paceCreate\022..opi_api.storage.v1.NVMeName"
-  "spaceCreateRequest\032/.opi_api.storage.v1."
-  "NVMeNamespaceCreateResponse\"\000\022x\n\023NVMeNam"
-  "espaceDelete\022..opi_api.storage.v1.NVMeNa"
-  "mespaceDeleteRequest\032/.opi_api.storage.v"
-  "1.NVMeNamespaceDeleteResponse\"\000\022x\n\023NVMeN"
-  "amespaceUpdate\022..opi_api.storage.v1.NVMe"
-  "NamespaceUpdateRequest\032/.opi_api.storage"
-  ".v1.NVMeNamespaceUpdateResponse\"\000\022r\n\021NVM"
-  "eNamespaceList\022,.opi_api.storage.v1.NVMe"
-  "NamespaceListRequest\032-.opi_api.storage.v"
-  "1.NVMeNamespaceListResponse\"\000\022o\n\020NVMeNam"
-  "espaceGet\022+.opi_api.storage.v1.NVMeNames"
-  "paceGetRequest\032,.opi_api.storage.v1.NVMe"
-  "NamespaceGetResponse\"\000\022u\n\022NVMeNamespaceS"
-  "tats\022-.opi_api.storage.v1.NVMeNamespaceS"
-  "tatsRequest\032..opi_api.storage.v1.NVMeNam"
-  "espaceStatsResponse\"\000B1Z/github.com/opip"
-  "roject/opi-api/storage/v1/gen/gob\006proto3"
+  "age.v1\032\014common.proto\032\nuuid.proto\"\253\001\n\rNVM"
+  "eSubsystem\022#\n\002id\030\001 \001(\0132\027.opi_api.common."
+  "v1.Uuid\022\013\n\003nqn\030\002 \001(\t\022\025\n\rserial_number\030\003 "
+  "\001(\t\022\024\n\014model_number\030\004 \001(\t\022\016\n\006max_ns\030\005 \001("
+  "\003\022\031\n\021firmware_revision\030\006 \001(\t\022\020\n\010fru_guid"
+  "\030\007 \001(\014\"\354\001\n\016NVMeController\022#\n\002id\030\001 \001(\0132\027."
+  "opi_api.common.v1.Uuid\022\014\n\004name\030\002 \001(\t\022\032\n\022"
+  "nvme_controller_id\030\003 \001(\r\022-\n\014subsystem_id"
+  "\030\004 \001(\0132\027.opi_api.common.v1.Uuid\0228\n\007pcie_"
+  "id\030\005 \001(\0132\'.opi_api.storage.v1.NvmeContro"
+  "llerPciId\022\022\n\nmax_io_qps\030\006 \001(\r\022\016\n\006max_ns\030"
+  "\007 \001(\r\"\306\003\n\rNVMeNamespace\022#\n\002id\030\001 \001(\0132\027.op"
+  "i_api.common.v1.Uuid\022\014\n\004name\030\002 \001(\t\022-\n\014su"
+  "bsystem_id\030\003 \001(\0132\027.opi_api.common.v1.Uui"
+  "d\022.\n\rcontroller_id\030\004 \001(\0132\027.opi_api.commo"
+  "n.v1.Uuid\022\021\n\thost_nsid\030\005 \001(\r\022\014\n\004bdev\030\006 \001"
+  "(\t\022\022\n\nblock_size\030\007 \001(\003\022\022\n\nnum_blocks\030\010 \001"
+  "(\003\022\r\n\005nguid\030\t \001(\t\022\r\n\005eui64\030\n \001(\006\022%\n\004uuid"
+  "\030\013 \001(\0132\027.opi_api.common.v1.Uuid\022\021\n\tmulti"
+  "path\030\014 \001(\t\022\026\n\016authentication\030\r \001(\t\022.\n\rcr"
+  "ypto_key_id\030\016 \001(\0132\027.opi_api.common.v1.Uu"
+  "id\022\032\n\022optimal_write_size\030\017 \001(\r\022\036\n\026pref_w"
+  "rite_granularity\030\020 \001(\r\"R\n\032NVMeSubsystemC"
+  "reateRequest\0224\n\tsubsystem\030\001 \001(\0132!.opi_ap"
+  "i.storage.v1.NVMeSubsystem\"D\n\033NVMeSubsys"
+  "temCreateResponse\022%\n\004uuid\030\001 \001(\0132\027.opi_ap"
+  "i.common.v1.Uuid\")\n\032NVMeSubsystemDeleteR"
+  "equest\022\013\n\003nqn\030\001 \001(\t\"-\n\033NVMeSubsystemDele"
+  "teResponse\022\016\n\006result\030\001 \001(\r\"R\n\032NVMeSubsys"
+  "temUpdateRequest\0224\n\tsubsystem\030\001 \001(\0132!.op"
+  "i_api.storage.v1.NVMeSubsystem\"-\n\033NVMeSu"
+  "bsystemUpdateResponse\022\016\n\006result\030\001 \001(\r\"\032\n"
+  "\030NVMeSubsystemListRequest\"Q\n\031NVMeSubsyst"
+  "emListResponse\0224\n\tsubsystem\030\001 \003(\0132!.opi_"
+  "api.storage.v1.NVMeSubsystem\"&\n\027NVMeSubs"
+  "ystemGetRequest\022\013\n\003nqn\030\001 \001(\t\"P\n\030NVMeSubs"
+  "ystemGetResponse\0224\n\tsubsystem\030\001 \001(\0132!.op"
+  "i_api.storage.v1.NVMeSubsystem\"(\n\031NVMeSu"
+  "bsystemStatsRequest\022\013\n\003nqn\030\001 \001(\t\"+\n\032NVMe"
+  "SubsystemStatsResponse\022\r\n\005stats\030\001 \001(\t\"U\n"
+  "\033NVMeControllerCreateRequest\0226\n\ncontroll"
+  "er\030\001 \001(\0132\".opi_api.storage.v1.NVMeContro"
+  "ller\"\036\n\034NVMeControllerCreateResponse\"J\n\033"
+  "NVMeControllerDeleteRequest\022\024\n\014subsystem"
+  "_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001(\003\"\036\n\034NVMe"
+  "ControllerDeleteResponse\"U\n\033NVMeControll"
+  "erUpdateRequest\0226\n\ncontroller\030\001 \001(\0132\".op"
+  "i_api.storage.v1.NVMeController\"\036\n\034NVMeC"
+  "ontrollerUpdateResponse\"1\n\031NVMeControlle"
+  "rListRequest\022\024\n\014subsystem_id\030\001 \001(\003\"T\n\032NV"
+  "MeControllerListResponse\0226\n\ncontroller\030\001"
+  " \003(\0132\".opi_api.storage.v1.NVMeController"
+  "\"G\n\030NVMeControllerGetRequest\022\024\n\014subsyste"
+  "m_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001(\003\"S\n\031NVM"
+  "eControllerGetResponse\0226\n\ncontroller\030\001 \001"
+  "(\0132\".opi_api.storage.v1.NVMeController\"I"
+  "\n\032NVMeControllerStatsRequest\022\024\n\014subsyste"
+  "m_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001(\003\"8\n\033NVM"
+  "eControllerStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005"
+  "stats\030\002 \001(\t\"R\n\032NVMeNamespaceCreateReques"
+  "t\0224\n\tnamespace\030\001 \001(\0132!.opi_api.storage.v"
+  "1.NVMeNamespace\"\035\n\033NVMeNamespaceCreateRe"
+  "sponse\"_\n\032NVMeNamespaceDeleteRequest\022\024\n\014"
+  "subsystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001("
+  "\003\022\024\n\014namespace_id\030\003 \001(\003\"\035\n\033NVMeNamespace"
+  "DeleteResponse\"R\n\032NVMeNamespaceUpdateReq"
+  "uest\0224\n\tnamespace\030\001 \001(\0132!.opi_api.storag"
+  "e.v1.NVMeNamespace\"\035\n\033NVMeNamespaceUpdat"
+  "eResponse\"G\n\030NVMeNamespaceListRequest\022\024\n"
+  "\014subsystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001"
+  "(\003\"Q\n\031NVMeNamespaceListResponse\0224\n\tnames"
+  "pace\030\001 \003(\0132!.opi_api.storage.v1.NVMeName"
+  "space\"\\\n\027NVMeNamespaceGetRequest\022\024\n\014subs"
+  "ystem_id\030\001 \001(\003\022\025\n\rcontroller_id\030\002 \001(\003\022\024\n"
+  "\014namespace_id\030\003 \001(\003\"P\n\030NVMeNamespaceGetR"
+  "esponse\0224\n\tnamespace\030\001 \001(\0132!.opi_api.sto"
+  "rage.v1.NVMeNamespace\"^\n\031NVMeNamespaceSt"
+  "atsRequest\022\024\n\014subsystem_id\030\001 \001(\003\022\025\n\rcont"
+  "roller_id\030\002 \001(\003\022\024\n\014namespace_id\030\003 \001(\003\"7\n"
+  "\032NVMeNamespaceStatsResponse\022\n\n\002id\030\001 \001(\003\022"
+  "\r\n\005stats\030\002 \001(\t*\245\001\n\025NvmeFrontEndConstants"
+  "\022\030\n\024NSV_CTRLR_CONST_NONE\020\000\022\033\n\027NSV_CTRLR_"
+  "SERIAL_NO_LEN\020\024\022\032\n\026NSV_CTRLR_MODEL_NO_LE"
+  "N\020(\022\030\n\024NSV_CTRLR_FW_REV_LEN\020\010\022\037\n\032NSV_NVM"
+  "E_SUBSYSTEM_NQN_LEN\020\200\0022\340\005\n\024NVMeSubsystem"
+  "Service\022x\n\023NVMeSubsystemCreate\022..opi_api"
+  ".storage.v1.NVMeSubsystemCreateRequest\032/"
+  ".opi_api.storage.v1.NVMeSubsystemCreateR"
+  "esponse\"\000\022x\n\023NVMeSubsystemDelete\022..opi_a"
+  "pi.storage.v1.NVMeSubsystemDeleteRequest"
+  "\032/.opi_api.storage.v1.NVMeSubsystemDelet"
+  "eResponse\"\000\022x\n\023NVMeSubsystemUpdate\022..opi"
+  "_api.storage.v1.NVMeSubsystemUpdateReque"
+  "st\032/.opi_api.storage.v1.NVMeSubsystemUpd"
+  "ateResponse\"\000\022r\n\021NVMeSubsystemList\022,.opi"
+  "_api.storage.v1.NVMeSubsystemListRequest"
+  "\032-.opi_api.storage.v1.NVMeSubsystemListR"
+  "esponse\"\000\022o\n\020NVMeSubsystemGet\022+.opi_api."
+  "storage.v1.NVMeSubsystemGetRequest\032,.opi"
+  "_api.storage.v1.NVMeSubsystemGetResponse"
+  "\"\000\022u\n\022NVMeSubsystemStats\022-.opi_api.stora"
+  "ge.v1.NVMeSubsystemStatsRequest\032..opi_ap"
+  "i.storage.v1.NVMeSubsystemStatsResponse\""
+  "\0002\363\005\n\025NVMeControllerService\022{\n\024NVMeContr"
+  "ollerCreate\022/.opi_api.storage.v1.NVMeCon"
+  "trollerCreateRequest\0320.opi_api.storage.v"
+  "1.NVMeControllerCreateResponse\"\000\022{\n\024NVMe"
+  "ControllerDelete\022/.opi_api.storage.v1.NV"
+  "MeControllerDeleteRequest\0320.opi_api.stor"
+  "age.v1.NVMeControllerDeleteResponse\"\000\022{\n"
+  "\024NVMeControllerUpdate\022/.opi_api.storage."
+  "v1.NVMeControllerUpdateRequest\0320.opi_api"
+  ".storage.v1.NVMeControllerUpdateResponse"
+  "\"\000\022u\n\022NVMeControllerList\022-.opi_api.stora"
+  "ge.v1.NVMeControllerListRequest\032..opi_ap"
+  "i.storage.v1.NVMeControllerListResponse\""
+  "\000\022r\n\021NVMeControllerGet\022,.opi_api.storage"
+  ".v1.NVMeControllerGetRequest\032-.opi_api.s"
+  "torage.v1.NVMeControllerGetResponse\"\000\022x\n"
+  "\023NVMeControllerStats\022..opi_api.storage.v"
+  "1.NVMeControllerStatsRequest\032/.opi_api.s"
+  "torage.v1.NVMeControllerStatsResponse\"\0002"
+  "\340\005\n\024NVMeNamespaceService\022x\n\023NVMeNamespac"
+  "eCreate\022..opi_api.storage.v1.NVMeNamespa"
+  "ceCreateRequest\032/.opi_api.storage.v1.NVM"
+  "eNamespaceCreateResponse\"\000\022x\n\023NVMeNamesp"
+  "aceDelete\022..opi_api.storage.v1.NVMeNames"
+  "paceDeleteRequest\032/.opi_api.storage.v1.N"
+  "VMeNamespaceDeleteResponse\"\000\022x\n\023NVMeName"
+  "spaceUpdate\022..opi_api.storage.v1.NVMeNam"
+  "espaceUpdateRequest\032/.opi_api.storage.v1"
+  ".NVMeNamespaceUpdateResponse\"\000\022r\n\021NVMeNa"
+  "mespaceList\022,.opi_api.storage.v1.NVMeNam"
+  "espaceListRequest\032-.opi_api.storage.v1.N"
+  "VMeNamespaceListResponse\"\000\022o\n\020NVMeNamesp"
+  "aceGet\022+.opi_api.storage.v1.NVMeNamespac"
+  "eGetRequest\032,.opi_api.storage.v1.NVMeNam"
+  "espaceGetResponse\"\000\022u\n\022NVMeNamespaceStat"
+  "s\022-.opi_api.storage.v1.NVMeNamespaceStat"
+  "sRequest\032..opi_api.storage.v1.NVMeNamesp"
+  "aceStatsResponse\"\000B1Z/github.com/opiproj"
+  "ect/opi-api/storage/v1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps[2] = {
   &::descriptor_table_common_2eproto,
@@ -1041,7 +1068,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fnvme_5fpcie_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fnvme_5fpcie_2eproto = {
-  false, false, 5200, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
+  false, false, 5717, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
   &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once, descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps, 2, 39,
   schemas, file_default_instances, TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets,
   file_level_metadata_frontend_5fnvme_5fpcie_2eproto, file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto, file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto,
@@ -1055,13 +1082,41 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace opi_api {
 namespace storage {
 namespace v1 {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeFrontEndConstants_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_frontend_5fnvme_5fpcie_2eproto);
+  return file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto[0];
+}
+bool NvmeFrontEndConstants_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 8:
+    case 20:
+    case 40:
+    case 256:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
 class NVMeSubsystem::_Internal {
  public:
+  static const ::opi_api::common::v1::Uuid& id(const NVMeSubsystem* msg);
 };
 
+const ::opi_api::common::v1::Uuid&
+NVMeSubsystem::_Internal::id(const NVMeSubsystem* msg) {
+  return *msg->id_;
+}
+void NVMeSubsystem::clear_id() {
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+}
 NVMeSubsystem::NVMeSubsystem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1098,6 +1153,27 @@ NVMeSubsystem::NVMeSubsystem(const NVMeSubsystem& from)
     model_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_number(), 
       GetArenaForAllocation());
   }
+  firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_firmware_revision().empty()) {
+    firmware_revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_firmware_revision(), 
+      GetArenaForAllocation());
+  }
+  fru_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    fru_guid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_fru_guid().empty()) {
+    fru_guid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fru_guid(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_id()) {
+    id_ = new ::opi_api::common::v1::Uuid(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
   max_ns_ = from.max_ns_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeSubsystem)
 }
@@ -1115,7 +1191,18 @@ model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStrin
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-max_ns_ = int64_t{0};
+firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+fru_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  fru_guid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&max_ns_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(max_ns_));
 }
 
 NVMeSubsystem::~NVMeSubsystem() {
@@ -1130,6 +1217,9 @@ inline void NVMeSubsystem::SharedDtor() {
   nqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  firmware_revision_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  fru_guid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete id_;
 }
 
 void NVMeSubsystem::ArenaDtor(void* object) {
@@ -1151,6 +1241,12 @@ void NVMeSubsystem::Clear() {
   nqn_.ClearToEmpty();
   serial_number_.ClearToEmpty();
   model_number_.ClearToEmpty();
+  firmware_revision_.ClearToEmpty();
+  fru_guid_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
   max_ns_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1161,9 +1257,17 @@ const char* NVMeSubsystem::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string nqn = 1;
+      // .opi_api.common.v1.Uuid id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string nqn = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_nqn();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystem.nqn"));
@@ -1171,9 +1275,9 @@ const char* NVMeSubsystem::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // string serial_number = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // string serial_number = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystem.serial_number"));
@@ -1181,9 +1285,9 @@ const char* NVMeSubsystem::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // string model_number = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // string model_number = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_model_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystem.model_number"));
@@ -1191,10 +1295,29 @@ const char* NVMeSubsystem::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // int64 max_ns = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // int64 max_ns = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           max_ns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string firmware_revision = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_firmware_revision();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystem.firmware_revision"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bytes fru_guid = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_fru_guid();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1228,40 +1351,64 @@ uint8_t* NVMeSubsystem::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string nqn = 1;
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::id(this), target, stream);
+  }
+
+  // string nqn = 2;
   if (!this->_internal_nqn().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_nqn().data(), static_cast<int>(this->_internal_nqn().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.NVMeSubsystem.nqn");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_nqn(), target);
+        2, this->_internal_nqn(), target);
   }
 
-  // string serial_number = 2;
+  // string serial_number = 3;
   if (!this->_internal_serial_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_serial_number().data(), static_cast<int>(this->_internal_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.NVMeSubsystem.serial_number");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_serial_number(), target);
+        3, this->_internal_serial_number(), target);
   }
 
-  // string model_number = 3;
+  // string model_number = 4;
   if (!this->_internal_model_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_model_number().data(), static_cast<int>(this->_internal_model_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.NVMeSubsystem.model_number");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_model_number(), target);
+        4, this->_internal_model_number(), target);
   }
 
-  // int64 max_ns = 4;
+  // int64 max_ns = 5;
   if (this->_internal_max_ns() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_max_ns(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_max_ns(), target);
+  }
+
+  // string firmware_revision = 6;
+  if (!this->_internal_firmware_revision().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_firmware_revision().data(), static_cast<int>(this->_internal_firmware_revision().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMeSubsystem.firmware_revision");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_firmware_revision(), target);
+  }
+
+  // bytes fru_guid = 7;
+  if (!this->_internal_fru_guid().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        7, this->_internal_fru_guid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1280,28 +1427,49 @@ size_t NVMeSubsystem::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string nqn = 1;
+  // string nqn = 2;
   if (!this->_internal_nqn().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_nqn());
   }
 
-  // string serial_number = 2;
+  // string serial_number = 3;
   if (!this->_internal_serial_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_serial_number());
   }
 
-  // string model_number = 3;
+  // string model_number = 4;
   if (!this->_internal_model_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_model_number());
   }
 
-  // int64 max_ns = 4;
+  // string firmware_revision = 6;
+  if (!this->_internal_firmware_revision().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_firmware_revision());
+  }
+
+  // bytes fru_guid = 7;
+  if (!this->_internal_fru_guid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_fru_guid());
+  }
+
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *id_);
+  }
+
+  // int64 max_ns = 5;
   if (this->_internal_max_ns() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_max_ns());
   }
@@ -1336,6 +1504,15 @@ void NVMeSubsystem::MergeFrom(const NVMeSubsystem& from) {
   }
   if (!from._internal_model_number().empty()) {
     _internal_set_model_number(from._internal_model_number());
+  }
+  if (!from._internal_firmware_revision().empty()) {
+    _internal_set_firmware_revision(from._internal_firmware_revision());
+  }
+  if (!from._internal_fru_guid().empty()) {
+    _internal_set_fru_guid(from._internal_fru_guid());
+  }
+  if (from._internal_has_id()) {
+    _internal_mutable_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_id());
   }
   if (from._internal_max_ns() != 0) {
     _internal_set_max_ns(from._internal_max_ns());
@@ -1374,7 +1551,22 @@ void NVMeSubsystem::InternalSwap(NVMeSubsystem* other) {
       &model_number_, lhs_arena,
       &other->model_number_, rhs_arena
   );
-  swap(max_ns_, other->max_ns_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &firmware_revision_, lhs_arena,
+      &other->firmware_revision_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &fru_guid_, lhs_arena,
+      &other->fru_guid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NVMeSubsystem, max_ns_)
+      + sizeof(NVMeSubsystem::max_ns_)
+      - PROTOBUF_FIELD_OFFSET(NVMeSubsystem, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystem::GetMetadata() const {
@@ -1387,12 +1579,34 @@ void NVMeSubsystem::InternalSwap(NVMeSubsystem* other) {
 
 class NVMeController::_Internal {
  public:
+  static const ::opi_api::common::v1::Uuid& id(const NVMeController* msg);
+  static const ::opi_api::common::v1::Uuid& subsystem_id(const NVMeController* msg);
   static const ::opi_api::storage::v1::NvmeControllerPciId& pcie_id(const NVMeController* msg);
 };
 
+const ::opi_api::common::v1::Uuid&
+NVMeController::_Internal::id(const NVMeController* msg) {
+  return *msg->id_;
+}
+const ::opi_api::common::v1::Uuid&
+NVMeController::_Internal::subsystem_id(const NVMeController* msg) {
+  return *msg->subsystem_id_;
+}
 const ::opi_api::storage::v1::NvmeControllerPciId&
 NVMeController::_Internal::pcie_id(const NVMeController* msg) {
   return *msg->pcie_id_;
+}
+void NVMeController::clear_id() {
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+}
+void NVMeController::clear_subsystem_id() {
+  if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
+    delete subsystem_id_;
+  }
+  subsystem_id_ = nullptr;
 }
 void NVMeController::clear_pcie_id() {
   if (GetArenaForAllocation() == nullptr && pcie_id_ != nullptr) {
@@ -1420,22 +1634,24 @@ NVMeController::NVMeController(const NVMeController& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  subsystem_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_subsystem_id().empty()) {
-    subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subsystem_id(), 
-      GetArenaForAllocation());
+  if (from._internal_has_id()) {
+    id_ = new ::opi_api::common::v1::Uuid(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
+  if (from._internal_has_subsystem_id()) {
+    subsystem_id_ = new ::opi_api::common::v1::Uuid(*from.subsystem_id_);
+  } else {
+    subsystem_id_ = nullptr;
   }
   if (from._internal_has_pcie_id()) {
     pcie_id_ = new ::opi_api::storage::v1::NvmeControllerPciId(*from.pcie_id_);
   } else {
     pcie_id_ = nullptr;
   }
-  ::memcpy(&id_, &from.id_,
+  ::memcpy(&nvme_controller_id_, &from.nvme_controller_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_ns_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(max_ns_));
+    reinterpret_cast<char*>(&nvme_controller_id_)) + sizeof(max_ns_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeController)
 }
 
@@ -1444,14 +1660,10 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subsystem_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&pcie_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&max_ns_) -
-    reinterpret_cast<char*>(&pcie_id_)) + sizeof(max_ns_));
+    reinterpret_cast<char*>(&id_)) + sizeof(max_ns_));
 }
 
 NVMeController::~NVMeController() {
@@ -1464,7 +1676,8 @@ NVMeController::~NVMeController() {
 inline void NVMeController::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subsystem_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete id_;
+  if (this != internal_default_instance()) delete subsystem_id_;
   if (this != internal_default_instance()) delete pcie_id_;
 }
 
@@ -1485,14 +1698,21 @@ void NVMeController::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
-  subsystem_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
+    delete subsystem_id_;
+  }
+  subsystem_id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && pcie_id_ != nullptr) {
     delete pcie_id_;
   }
   pcie_id_ = nullptr;
-  ::memset(&id_, 0, static_cast<size_t>(
+  ::memset(&nvme_controller_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_ns_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(max_ns_));
+      reinterpret_cast<char*>(&nvme_controller_id_)) + sizeof(max_ns_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1502,10 +1722,10 @@ const char* NVMeController::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int64 id = 1;
+      // .opi_api.common.v1.Uuid id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1520,36 +1740,42 @@ const char* NVMeController::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         } else
           goto handle_unusual;
         continue;
-      // string subsystem_id = 3;
+      // uint32 nvme_controller_id = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_subsystem_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeController.subsystem_id"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          nvme_controller_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+      // .opi_api.common.v1.Uuid subsystem_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_subsystem_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_pcie_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 max_io_qps = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          max_io_qps_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+      // uint32 max_io_qps = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          max_io_qps_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 max_ns = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          max_ns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+      // uint32 max_ns = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          max_ns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1583,10 +1809,12 @@ uint8_t* NVMeController::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 id = 1;
-  if (this->_internal_id() != 0) {
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::id(this), target, stream);
   }
 
   // string name = 2;
@@ -1599,34 +1827,38 @@ uint8_t* NVMeController::_InternalSerialize(
         2, this->_internal_name(), target);
   }
 
-  // string subsystem_id = 3;
-  if (!this->_internal_subsystem_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_subsystem_id().data(), static_cast<int>(this->_internal_subsystem_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMeController.subsystem_id");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_subsystem_id(), target);
+  // uint32 nvme_controller_id = 3;
+  if (this->_internal_nvme_controller_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_nvme_controller_id(), target);
   }
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+  // .opi_api.common.v1.Uuid subsystem_id = 4;
+  if (this->_internal_has_subsystem_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::subsystem_id(this), target, stream);
+  }
+
+  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 5;
   if (this->_internal_has_pcie_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::pcie_id(this), target, stream);
+        5, _Internal::pcie_id(this), target, stream);
   }
 
-  // int64 max_io_qps = 5;
+  // uint32 max_io_qps = 6;
   if (this->_internal_max_io_qps() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_max_io_qps(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_max_io_qps(), target);
   }
 
-  // int64 max_ns = 6;
+  // uint32 max_ns = 7;
   if (this->_internal_max_ns() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_max_ns(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_max_ns(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1652,33 +1884,40 @@ size_t NVMeController::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string subsystem_id = 3;
-  if (!this->_internal_subsystem_id().empty()) {
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_subsystem_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *id_);
   }
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+  // .opi_api.common.v1.Uuid subsystem_id = 4;
+  if (this->_internal_has_subsystem_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *subsystem_id_);
+  }
+
+  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 5;
   if (this->_internal_has_pcie_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pcie_id_);
   }
 
-  // int64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_id());
+  // uint32 nvme_controller_id = 3;
+  if (this->_internal_nvme_controller_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_nvme_controller_id());
   }
 
-  // int64 max_io_qps = 5;
+  // uint32 max_io_qps = 6;
   if (this->_internal_max_io_qps() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_max_io_qps());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_max_io_qps());
   }
 
-  // int64 max_ns = 6;
+  // uint32 max_ns = 7;
   if (this->_internal_max_ns() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_max_ns());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_max_ns());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1706,14 +1945,17 @@ void NVMeController::MergeFrom(const NVMeController& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
-  if (!from._internal_subsystem_id().empty()) {
-    _internal_set_subsystem_id(from._internal_subsystem_id());
+  if (from._internal_has_id()) {
+    _internal_mutable_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_id());
+  }
+  if (from._internal_has_subsystem_id()) {
+    _internal_mutable_subsystem_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_subsystem_id());
   }
   if (from._internal_has_pcie_id()) {
     _internal_mutable_pcie_id()->::opi_api::storage::v1::NvmeControllerPciId::MergeFrom(from._internal_pcie_id());
   }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from._internal_nvme_controller_id() != 0) {
+    _internal_set_nvme_controller_id(from._internal_nvme_controller_id());
   }
   if (from._internal_max_io_qps() != 0) {
     _internal_set_max_io_qps(from._internal_max_io_qps());
@@ -1745,17 +1987,12 @@ void NVMeController::InternalSwap(NVMeController* other) {
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &subsystem_id_, lhs_arena,
-      &other->subsystem_id_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(NVMeController, max_ns_)
       + sizeof(NVMeController::max_ns_)
-      - PROTOBUF_FIELD_OFFSET(NVMeController, pcie_id_)>(
-          reinterpret_cast<char*>(&pcie_id_),
-          reinterpret_cast<char*>(&other->pcie_id_));
+      - PROTOBUF_FIELD_OFFSET(NVMeController, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeController::GetMetadata() const {
@@ -1768,18 +2005,62 @@ void NVMeController::InternalSwap(NVMeController* other) {
 
 class NVMeNamespace::_Internal {
  public:
+  static const ::opi_api::common::v1::Uuid& id(const NVMeNamespace* msg);
+  static const ::opi_api::common::v1::Uuid& subsystem_id(const NVMeNamespace* msg);
+  static const ::opi_api::common::v1::Uuid& controller_id(const NVMeNamespace* msg);
   static const ::opi_api::common::v1::Uuid& uuid(const NVMeNamespace* msg);
+  static const ::opi_api::common::v1::Uuid& crypto_key_id(const NVMeNamespace* msg);
 };
 
 const ::opi_api::common::v1::Uuid&
+NVMeNamespace::_Internal::id(const NVMeNamespace* msg) {
+  return *msg->id_;
+}
+const ::opi_api::common::v1::Uuid&
+NVMeNamespace::_Internal::subsystem_id(const NVMeNamespace* msg) {
+  return *msg->subsystem_id_;
+}
+const ::opi_api::common::v1::Uuid&
+NVMeNamespace::_Internal::controller_id(const NVMeNamespace* msg) {
+  return *msg->controller_id_;
+}
+const ::opi_api::common::v1::Uuid&
 NVMeNamespace::_Internal::uuid(const NVMeNamespace* msg) {
   return *msg->uuid_;
+}
+const ::opi_api::common::v1::Uuid&
+NVMeNamespace::_Internal::crypto_key_id(const NVMeNamespace* msg) {
+  return *msg->crypto_key_id_;
+}
+void NVMeNamespace::clear_id() {
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+}
+void NVMeNamespace::clear_subsystem_id() {
+  if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
+    delete subsystem_id_;
+  }
+  subsystem_id_ = nullptr;
+}
+void NVMeNamespace::clear_controller_id() {
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
 }
 void NVMeNamespace::clear_uuid() {
   if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
     delete uuid_;
   }
   uuid_ = nullptr;
+}
+void NVMeNamespace::clear_crypto_key_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_key_id_ != nullptr) {
+    delete crypto_key_id_;
+  }
+  crypto_key_id_ = nullptr;
 }
 NVMeNamespace::NVMeNamespace(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1801,14 +2082,6 @@ NVMeNamespace::NVMeNamespace(const NVMeNamespace& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  subsystem_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_subsystem_id().empty()) {
-    subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subsystem_id(), 
-      GetArenaForAllocation());
-  }
   bdev_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     bdev_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1823,14 +2096,6 @@ NVMeNamespace::NVMeNamespace(const NVMeNamespace& from)
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_nguid().empty()) {
     nguid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nguid(), 
-      GetArenaForAllocation());
-  }
-  eui64_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    eui64_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_eui64().empty()) {
-    eui64_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_eui64(), 
       GetArenaForAllocation());
   }
   multipath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1849,14 +2114,34 @@ NVMeNamespace::NVMeNamespace(const NVMeNamespace& from)
     authentication_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_authentication(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_id()) {
+    id_ = new ::opi_api::common::v1::Uuid(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
+  if (from._internal_has_subsystem_id()) {
+    subsystem_id_ = new ::opi_api::common::v1::Uuid(*from.subsystem_id_);
+  } else {
+    subsystem_id_ = nullptr;
+  }
+  if (from._internal_has_controller_id()) {
+    controller_id_ = new ::opi_api::common::v1::Uuid(*from.controller_id_);
+  } else {
+    controller_id_ = nullptr;
+  }
   if (from._internal_has_uuid()) {
     uuid_ = new ::opi_api::common::v1::Uuid(*from.uuid_);
   } else {
     uuid_ = nullptr;
   }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&num_blocks_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(num_blocks_));
+  if (from._internal_has_crypto_key_id()) {
+    crypto_key_id_ = new ::opi_api::common::v1::Uuid(*from.crypto_key_id_);
+  } else {
+    crypto_key_id_ = nullptr;
+  }
+  ::memcpy(&block_size_, &from.block_size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&pref_write_granularity_) -
+    reinterpret_cast<char*>(&block_size_)) + sizeof(pref_write_granularity_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeNamespace)
 }
 
@@ -1865,10 +2150,6 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subsystem_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 bdev_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   bdev_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1876,10 +2157,6 @@ bdev_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 nguid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   nguid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-eui64_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  eui64_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 multipath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1890,9 +2167,9 @@ authentication_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStr
   authentication_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&uuid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&num_blocks_) -
-    reinterpret_cast<char*>(&uuid_)) + sizeof(num_blocks_));
+    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&pref_write_granularity_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(pref_write_granularity_));
 }
 
 NVMeNamespace::~NVMeNamespace() {
@@ -1905,13 +2182,15 @@ NVMeNamespace::~NVMeNamespace() {
 inline void NVMeNamespace::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subsystem_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   bdev_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   nguid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  eui64_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   multipath_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   authentication_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete id_;
+  if (this != internal_default_instance()) delete subsystem_id_;
+  if (this != internal_default_instance()) delete controller_id_;
   if (this != internal_default_instance()) delete uuid_;
+  if (this != internal_default_instance()) delete crypto_key_id_;
 }
 
 void NVMeNamespace::ArenaDtor(void* object) {
@@ -1931,19 +2210,33 @@ void NVMeNamespace::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
-  subsystem_id_.ClearToEmpty();
   bdev_.ClearToEmpty();
   nguid_.ClearToEmpty();
-  eui64_.ClearToEmpty();
   multipath_.ClearToEmpty();
   authentication_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
+    delete subsystem_id_;
+  }
+  subsystem_id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
+    delete controller_id_;
+  }
+  controller_id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
     delete uuid_;
   }
   uuid_ = nullptr;
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&num_blocks_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(num_blocks_));
+  if (GetArenaForAllocation() == nullptr && crypto_key_id_ != nullptr) {
+    delete crypto_key_id_;
+  }
+  crypto_key_id_ = nullptr;
+  ::memset(&block_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&pref_write_granularity_) -
+      reinterpret_cast<char*>(&block_size_)) + sizeof(pref_write_granularity_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1953,10 +2246,10 @@ const char* NVMeNamespace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int64 id = 1;
+      // .opi_api.common.v1.Uuid id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1971,28 +2264,26 @@ const char* NVMeNamespace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // string subsystem_id = 3;
+      // .opi_api.common.v1.Uuid subsystem_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_subsystem_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeNamespace.subsystem_id"));
+          ptr = ctx->ParseMessage(_internal_mutable_subsystem_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 controller_id = 4;
+      // .opi_api.common.v1.Uuid controller_id = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          controller_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_controller_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 nsid = 5;
+      // uint32 host_nsid = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          nsid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          host_nsid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2033,13 +2324,11 @@ const char* NVMeNamespace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // string eui64 = 10;
+      // fixed64 eui64 = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          auto str = _internal_mutable_eui64();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeNamespace.eui64"));
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          eui64_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint64_t>(ptr);
+          ptr += sizeof(uint64_t);
         } else
           goto handle_unusual;
         continue;
@@ -2067,6 +2356,30 @@ const char* NVMeNamespace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           auto str = _internal_mutable_authentication();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeNamespace.authentication"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.Uuid crypto_key_id = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_key_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 optimal_write_size = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          optimal_write_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 pref_write_granularity = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
+          pref_write_granularity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2100,10 +2413,12 @@ uint8_t* NVMeNamespace::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 id = 1;
-  if (this->_internal_id() != 0) {
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::id(this), target, stream);
   }
 
   // string name = 2;
@@ -2116,26 +2431,26 @@ uint8_t* NVMeNamespace::_InternalSerialize(
         2, this->_internal_name(), target);
   }
 
-  // string subsystem_id = 3;
-  if (!this->_internal_subsystem_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_subsystem_id().data(), static_cast<int>(this->_internal_subsystem_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMeNamespace.subsystem_id");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_subsystem_id(), target);
+  // .opi_api.common.v1.Uuid subsystem_id = 3;
+  if (this->_internal_has_subsystem_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::subsystem_id(this), target, stream);
   }
 
-  // int64 controller_id = 4;
-  if (this->_internal_controller_id() != 0) {
+  // .opi_api.common.v1.Uuid controller_id = 4;
+  if (this->_internal_has_controller_id()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_controller_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::controller_id(this), target, stream);
   }
 
-  // int64 nsid = 5;
-  if (this->_internal_nsid() != 0) {
+  // uint32 host_nsid = 5;
+  if (this->_internal_host_nsid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_nsid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_host_nsid(), target);
   }
 
   // string bdev = 6;
@@ -2170,14 +2485,10 @@ uint8_t* NVMeNamespace::_InternalSerialize(
         9, this->_internal_nguid(), target);
   }
 
-  // string eui64 = 10;
-  if (!this->_internal_eui64().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_eui64().data(), static_cast<int>(this->_internal_eui64().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMeNamespace.eui64");
-    target = stream->WriteStringMaybeAliased(
-        10, this->_internal_eui64(), target);
+  // fixed64 eui64 = 10;
+  if (this->_internal_eui64() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed64ToArray(10, this->_internal_eui64(), target);
   }
 
   // .opi_api.common.v1.Uuid uuid = 11;
@@ -2208,6 +2519,26 @@ uint8_t* NVMeNamespace::_InternalSerialize(
         13, this->_internal_authentication(), target);
   }
 
+  // .opi_api.common.v1.Uuid crypto_key_id = 14;
+  if (this->_internal_has_crypto_key_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        14, _Internal::crypto_key_id(this), target, stream);
+  }
+
+  // uint32 optimal_write_size = 15;
+  if (this->_internal_optimal_write_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(15, this->_internal_optimal_write_size(), target);
+  }
+
+  // uint32 pref_write_granularity = 16;
+  if (this->_internal_pref_write_granularity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(16, this->_internal_pref_write_granularity(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2231,13 +2562,6 @@ size_t NVMeNamespace::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string subsystem_id = 3;
-  if (!this->_internal_subsystem_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_subsystem_id());
-  }
-
   // string bdev = 6;
   if (!this->_internal_bdev().empty()) {
     total_size += 1 +
@@ -2250,13 +2574,6 @@ size_t NVMeNamespace::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_nguid());
-  }
-
-  // string eui64 = 10;
-  if (!this->_internal_eui64().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_eui64());
   }
 
   // string multipath = 12;
@@ -2273,6 +2590,27 @@ size_t NVMeNamespace::ByteSizeLong() const {
         this->_internal_authentication());
   }
 
+  // .opi_api.common.v1.Uuid id = 1;
+  if (this->_internal_has_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *id_);
+  }
+
+  // .opi_api.common.v1.Uuid subsystem_id = 3;
+  if (this->_internal_has_subsystem_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *subsystem_id_);
+  }
+
+  // .opi_api.common.v1.Uuid controller_id = 4;
+  if (this->_internal_has_controller_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *controller_id_);
+  }
+
   // .opi_api.common.v1.Uuid uuid = 11;
   if (this->_internal_has_uuid()) {
     total_size += 1 +
@@ -2280,19 +2618,11 @@ size_t NVMeNamespace::ByteSizeLong() const {
         *uuid_);
   }
 
-  // int64 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_id());
-  }
-
-  // int64 controller_id = 4;
-  if (this->_internal_controller_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_controller_id());
-  }
-
-  // int64 nsid = 5;
-  if (this->_internal_nsid() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_nsid());
+  // .opi_api.common.v1.Uuid crypto_key_id = 14;
+  if (this->_internal_has_crypto_key_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *crypto_key_id_);
   }
 
   // int64 block_size = 7;
@@ -2303,6 +2633,28 @@ size_t NVMeNamespace::ByteSizeLong() const {
   // int64 num_blocks = 8;
   if (this->_internal_num_blocks() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_num_blocks());
+  }
+
+  // fixed64 eui64 = 10;
+  if (this->_internal_eui64() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // uint32 host_nsid = 5;
+  if (this->_internal_host_nsid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_host_nsid());
+  }
+
+  // uint32 optimal_write_size = 15;
+  if (this->_internal_optimal_write_size() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_optimal_write_size());
+  }
+
+  // uint32 pref_write_granularity = 16;
+  if (this->_internal_pref_write_granularity() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_pref_write_granularity());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2330,17 +2682,11 @@ void NVMeNamespace::MergeFrom(const NVMeNamespace& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
-  if (!from._internal_subsystem_id().empty()) {
-    _internal_set_subsystem_id(from._internal_subsystem_id());
-  }
   if (!from._internal_bdev().empty()) {
     _internal_set_bdev(from._internal_bdev());
   }
   if (!from._internal_nguid().empty()) {
     _internal_set_nguid(from._internal_nguid());
-  }
-  if (!from._internal_eui64().empty()) {
-    _internal_set_eui64(from._internal_eui64());
   }
   if (!from._internal_multipath().empty()) {
     _internal_set_multipath(from._internal_multipath());
@@ -2348,23 +2694,38 @@ void NVMeNamespace::MergeFrom(const NVMeNamespace& from) {
   if (!from._internal_authentication().empty()) {
     _internal_set_authentication(from._internal_authentication());
   }
+  if (from._internal_has_id()) {
+    _internal_mutable_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_id());
+  }
+  if (from._internal_has_subsystem_id()) {
+    _internal_mutable_subsystem_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_subsystem_id());
+  }
+  if (from._internal_has_controller_id()) {
+    _internal_mutable_controller_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_controller_id());
+  }
   if (from._internal_has_uuid()) {
     _internal_mutable_uuid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_uuid());
   }
-  if (from._internal_id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
-  if (from._internal_controller_id() != 0) {
-    _internal_set_controller_id(from._internal_controller_id());
-  }
-  if (from._internal_nsid() != 0) {
-    _internal_set_nsid(from._internal_nsid());
+  if (from._internal_has_crypto_key_id()) {
+    _internal_mutable_crypto_key_id()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_crypto_key_id());
   }
   if (from._internal_block_size() != 0) {
     _internal_set_block_size(from._internal_block_size());
   }
   if (from._internal_num_blocks() != 0) {
     _internal_set_num_blocks(from._internal_num_blocks());
+  }
+  if (from._internal_eui64() != 0) {
+    _internal_set_eui64(from._internal_eui64());
+  }
+  if (from._internal_host_nsid() != 0) {
+    _internal_set_host_nsid(from._internal_host_nsid());
+  }
+  if (from._internal_optimal_write_size() != 0) {
+    _internal_set_optimal_write_size(from._internal_optimal_write_size());
+  }
+  if (from._internal_pref_write_granularity() != 0) {
+    _internal_set_pref_write_granularity(from._internal_pref_write_granularity());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2392,11 +2753,6 @@ void NVMeNamespace::InternalSwap(NVMeNamespace* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &subsystem_id_, lhs_arena,
-      &other->subsystem_id_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &bdev_, lhs_arena,
       &other->bdev_, rhs_arena
   );
@@ -2404,11 +2760,6 @@ void NVMeNamespace::InternalSwap(NVMeNamespace* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &nguid_, lhs_arena,
       &other->nguid_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &eui64_, lhs_arena,
-      &other->eui64_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -2421,11 +2772,11 @@ void NVMeNamespace::InternalSwap(NVMeNamespace* other) {
       &other->authentication_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NVMeNamespace, num_blocks_)
-      + sizeof(NVMeNamespace::num_blocks_)
-      - PROTOBUF_FIELD_OFFSET(NVMeNamespace, uuid_)>(
-          reinterpret_cast<char*>(&uuid_),
-          reinterpret_cast<char*>(&other->uuid_));
+      PROTOBUF_FIELD_OFFSET(NVMeNamespace, pref_write_granularity_)
+      + sizeof(NVMeNamespace::pref_write_granularity_)
+      - PROTOBUF_FIELD_OFFSET(NVMeNamespace, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespace::GetMetadata() const {
