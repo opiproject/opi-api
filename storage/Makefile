@@ -8,6 +8,14 @@ COMMON_VERSION := v1
 # Make a variable named ','. Used to pass arguments to functions that contain a comma
 , := ,
 
+define protoc_compile
+	mkdir -p $(CURRENT_VERSION)/gen/$(1)
+	protoc --proto_path=../common/$(COMMON_VERSION) --proto_path=$(CURRENT_VERSION) --proto_path=googleapis \
+		--$(1)_out=$(CURRENT_VERSION)/gen/$(1) \
+		$(2) \
+		$(CURRENT_VERSION)/*.proto
+endef
+
 define docker_compile
 	rm -rf ./$(CURRENT_VERSION)/gen/$(1)
 	mkdir -p ./$(CURRENT_VERSION)/gen/$(1)
@@ -62,3 +70,21 @@ googleapis/google:
 
 clean:
 	rm -rf googleapis
+
+local: python_local cpp_local go_local java_local doc_local
+
+python_local: googleapis/google
+	$(call protoc_compile,python,)
+
+cpp_local: googleapis/google
+	$(call protoc_compile,cpp,)
+
+go_local: googleapis/google
+	$(call protoc_compile,go,)
+	mv $(CURRENT_VERSION)/gen/go/github.com/opiproject/opi-api/storage/$(CURRENT_VERSION)/gen/go/* $(CURRENT_VERSION)/gen/go/
+
+java_local: googleapis/google
+	$(call protoc_compile,java,)
+
+doc_local: googleapis/google
+	$(call protoc_compile,doc,--doc_opt=markdown$(,)autogen.md)
