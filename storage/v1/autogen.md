@@ -925,10 +925,10 @@ Path Management Selection
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | object&#39;s unique identifier ?? replaces: int64 id = 1; |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier ?? replaces: int64 id = 1; |
 | name | [string](#string) |  | ?? is this name needed if uuid is uniquely identifying the controller |
 | nvme_controller_id | [uint32](#uint32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
-| subsystem_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | subsystem information ?? val change |
+| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information ?? val change |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller ?? val change |
 | max_io_qps | [uint32](#uint32) |  | maximum host IO queue pairs allowed, value will default to limits in PCI device configuration; if set to 0 or more it will default to maximum permitted per xPU&#39;s capability ?? val change |
 | max_ns | [uint32](#uint32) |  | maximum Number of namespaces that will be provisioned under the controller. ?? val change |
@@ -1115,10 +1115,10 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | namespace&#39;s unique key replaces: int64 id = 1; |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | namespace&#39;s unique key replaces: int64 id = 1; |
 | name | [string](#string) |  | ?? do we need this if NvmeNamespace is identified using unique uuid |
-| subsystem_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | ?? can we take this out if controller is referring to a subsystem anyways ?? replaces string subsystem_id = 3; |
-| controller_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | key of the PCIe controller object that will host this namespace. ?? replaces int64 controller_id = 4; |
+| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | ?? can we take this out if controller is referring to a subsystem anyways ?? replaces string subsystem_id = 3; |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | key of the PCIe controller object that will host this namespace. ?? replaces int64 controller_id = 4; |
 | host_nsid | [uint32](#uint32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration ?? replaces: int64 nsid = 5; |
 | bdev | [string](#string) |  |  |
 | block_size | [int64](#int64) |  | Block size in bytes, must be power of 2 and must be less than the max io size supported. Typically tested values are 512, and 4k. |
@@ -1128,7 +1128,7 @@ Intentionally empty.
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
 | multipath | [string](#string) |  | ?? what is this for |
 | authentication | [string](#string) |  | ?? what is this for |
-| crypto_key_id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | reference to encryption key for the data at rest encryption |
+| crypto_key_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | reference to encryption key for the data at rest encryption |
 | optimal_write_size | [uint32](#uint32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
 | pref_write_granularity | [uint32](#uint32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |
 
@@ -1318,7 +1318,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | object&#39;s unique identifier |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 | nqn | [string](#string) |  | NVMe subsystem NQN to which the controller belongs Refer to the NQN format in the NVMe base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes ?? val change |
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes ?? val change |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes ?? val change |
@@ -1354,7 +1354,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
+| uuid | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 

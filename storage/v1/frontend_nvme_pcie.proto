@@ -7,6 +7,7 @@ package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
 import "uuid.proto";
+import "object_key.proto";
 
 // Front End (host-facing) APIs.
 
@@ -57,7 +58,7 @@ enum NvmeFrontEndConstants {
 
 message NVMeSubsystem {
     // object's unique identifier
-    common.v1.Uuid id = 1;
+    common.v1.ObjectKey id = 1;
 
     // NVMe subsystem NQN to which the controller belongs
     // Refer to the NQN format in the NVMe base specifications, must not
@@ -87,7 +88,7 @@ message NVMeSubsystem {
 message NVMeController {
     // object's unique identifier
     //?? replaces: int64 id = 1;
-    common.v1.Uuid id = 1;
+    common.v1.ObjectKey id = 1;
 
     //?? is this name needed if uuid is uniquely identifying the controller
     string name = 2;
@@ -98,7 +99,7 @@ message NVMeController {
 
     // subsystem information
     //?? val change
-    common.v1.Uuid subsystem_id = 4;
+    common.v1.ObjectKey subsystem_id = 4;
 
     // xPU's PCI ID for the controller
     //?? val change
@@ -119,18 +120,18 @@ message NVMeController {
 message NVMeNamespace {
     // namespace's unique key
     // replaces: int64 id = 1;
-    common.v1.Uuid id = 1;
+    common.v1.ObjectKey id = 1;
 
     //?? do we need this if NvmeNamespace is identified using unique uuid
     string name = 2;
 
     //?? can we take this out if controller is referring to a subsystem anyways
     //?? replaces string subsystem_id = 3;
-    common.v1.Uuid subsystem_id = 3;
+    common.v1.ObjectKey subsystem_id = 3;
 
     // key of the PCIe controller object that will host this namespace.
     //?? replaces int64 controller_id = 4;
-    common.v1.Uuid controller_id = 4;
+    common.v1.ObjectKey controller_id = 4;
 
     // NSID present to the host by the NVMe PCIe controller.
     // If not provided, then the controller will assign an unused NSID
@@ -167,7 +168,7 @@ message NVMeNamespace {
     string authentication = 13;
 
     // reference to encryption key for the data at rest encryption
-    common.v1.Uuid crypto_key_id = 14;
+    common.v1.ObjectKey crypto_key_id = 14;
 
     // optimal write size hint to host driver. Host IO stack may use
     // this to regulate IO size. Must be a multiple of the preferred write
@@ -186,7 +187,7 @@ message NVMeSubsystemCreateRequest {
 }
 
 message NVMeSubsystemCreateResponse {
-    common.v1.Uuid uuid = 1;
+    common.v1.ObjectKey uuid = 1;
 }
 
 message NVMeSubsystemDeleteRequest {
