@@ -926,7 +926,6 @@ Path Management Selection
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier ?? replaces: int64 id = 1; |
-| name | [string](#string) |  | ?? is this name needed if uuid is uniquely identifying the controller |
 | nvme_controller_id | [uint32](#uint32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information ?? val change |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller ?? val change |
@@ -1116,7 +1115,6 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | namespace&#39;s unique key replaces: int64 id = 1; |
-| name | [string](#string) |  | ?? do we need this if NvmeNamespace is identified using unique uuid |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | ?? can we take this out if controller is referring to a subsystem anyways ?? replaces string subsystem_id = 3; |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | key of the PCIe controller object that will host this namespace. ?? replaces int64 controller_id = 4; |
 | host_nsid | [uint32](#uint32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration ?? replaces: int64 nsid = 5; |
@@ -1126,8 +1124,6 @@ Intentionally empty.
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [fixed64](#fixed64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified, optional otherwise ?? replaces: string eui64 = 10 (fixed64 allows user to specify the byte order) |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
-| multipath | [string](#string) |  | ?? what is this for |
-| authentication | [string](#string) |  | ?? what is this for |
 | crypto_key_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | reference to encryption key for the data at rest encryption |
 | optimal_write_size | [uint32](#uint32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
 | pref_write_granularity | [uint32](#uint32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |

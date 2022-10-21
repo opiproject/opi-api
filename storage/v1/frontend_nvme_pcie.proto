@@ -155,25 +155,19 @@ message NVMeNamespace {
     // Globally unique identifier for the namespace
     common.v1.Uuid uuid = 10;
 
-    //?? what is this for
-    string multipath = 11;
-
-    //?? what is this for
-    string authentication = 12;
-
     // reference to encryption key for the data at rest encryption
-    common.v1.ObjectKey crypto_key_id = 13;
+    common.v1.ObjectKey crypto_key_id = 11;
 
     // optimal write size hint to host driver. Host IO stack may use
     // this to regulate IO size. Must be a multiple of the preferred write
     // granularity. Must not exceed the controller maximum IO size value
     // configured in the nvme agent config file.
-    uint32 optimal_write_size = 14;
+    uint32 optimal_write_size = 12;
 
     // preferred write granularity hint to the host driver. Host IO
     // stack may use this to align IO sizes to the write granularity for
     // optimum performance.
-    uint32 pref_write_granularity= 15;
+    uint32 pref_write_granularity= 13;
 }
 
 message NVMeSubsystemCreateRequest {

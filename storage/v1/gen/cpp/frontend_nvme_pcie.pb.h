@@ -624,28 +624,13 @@ class NVMeController final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 2,
     kIdFieldNumber = 1,
-    kSubsystemIdFieldNumber = 4,
-    kPcieIdFieldNumber = 5,
-    kNvmeControllerIdFieldNumber = 3,
-    kMaxIoQpsFieldNumber = 6,
-    kMaxNsFieldNumber = 7,
+    kSubsystemIdFieldNumber = 3,
+    kPcieIdFieldNumber = 4,
+    kNvmeControllerIdFieldNumber = 2,
+    kMaxIoQpsFieldNumber = 5,
+    kMaxNsFieldNumber = 6,
   };
-  // string name = 2;
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -664,7 +649,7 @@ class NVMeController final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.common.v1.ObjectKey subsystem_id = 4;
+  // .opi_api.common.v1.ObjectKey subsystem_id = 3;
   bool has_subsystem_id() const;
   private:
   bool _internal_has_subsystem_id() const;
@@ -682,7 +667,7 @@ class NVMeController final :
       ::opi_api::common::v1::ObjectKey* subsystem_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_subsystem_id();
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 5;
+  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
   bool has_pcie_id() const;
   private:
   bool _internal_has_pcie_id() const;
@@ -700,7 +685,7 @@ class NVMeController final :
       ::opi_api::storage::v1::NvmeControllerPciId* pcie_id);
   ::opi_api::storage::v1::NvmeControllerPciId* unsafe_arena_release_pcie_id();
 
-  // uint32 nvme_controller_id = 3;
+  // uint32 nvme_controller_id = 2;
   void clear_nvme_controller_id();
   uint32_t nvme_controller_id() const;
   void set_nvme_controller_id(uint32_t value);
@@ -709,7 +694,7 @@ class NVMeController final :
   void _internal_set_nvme_controller_id(uint32_t value);
   public:
 
-  // uint32 max_io_qps = 6;
+  // uint32 max_io_qps = 5;
   void clear_max_io_qps();
   uint32_t max_io_qps() const;
   void set_max_io_qps(uint32_t value);
@@ -718,7 +703,7 @@ class NVMeController final :
   void _internal_set_max_io_qps(uint32_t value);
   public:
 
-  // uint32 max_ns = 7;
+  // uint32 max_ns = 6;
   void clear_max_ns();
   uint32_t max_ns() const;
   void set_max_ns(uint32_t value);
@@ -734,7 +719,6 @@ class NVMeController final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
   ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
@@ -868,38 +852,21 @@ class NVMeNamespace final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 2,
-    kBdevFieldNumber = 6,
-    kNguidFieldNumber = 9,
-    kMultipathFieldNumber = 12,
-    kAuthenticationFieldNumber = 13,
+    kBdevFieldNumber = 5,
+    kNguidFieldNumber = 8,
     kIdFieldNumber = 1,
-    kSubsystemIdFieldNumber = 3,
-    kControllerIdFieldNumber = 4,
-    kUuidFieldNumber = 11,
-    kCryptoKeyIdFieldNumber = 14,
-    kBlockSizeFieldNumber = 7,
-    kNumBlocksFieldNumber = 8,
-    kEui64FieldNumber = 10,
-    kHostNsidFieldNumber = 5,
-    kOptimalWriteSizeFieldNumber = 15,
-    kPrefWriteGranularityFieldNumber = 16,
+    kSubsystemIdFieldNumber = 2,
+    kControllerIdFieldNumber = 3,
+    kUuidFieldNumber = 10,
+    kCryptoKeyIdFieldNumber = 11,
+    kBlockSizeFieldNumber = 6,
+    kNumBlocksFieldNumber = 7,
+    kHostNsidFieldNumber = 4,
+    kOptimalWriteSizeFieldNumber = 12,
+    kEui64FieldNumber = 9,
+    kPrefWriteGranularityFieldNumber = 13,
   };
-  // string name = 2;
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // string bdev = 6;
+  // string bdev = 5;
   void clear_bdev();
   const std::string& bdev() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -913,7 +880,7 @@ class NVMeNamespace final :
   std::string* _internal_mutable_bdev();
   public:
 
-  // string nguid = 9;
+  // string nguid = 8;
   void clear_nguid();
   const std::string& nguid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -925,34 +892,6 @@ class NVMeNamespace final :
   const std::string& _internal_nguid() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_nguid(const std::string& value);
   std::string* _internal_mutable_nguid();
-  public:
-
-  // string multipath = 12;
-  void clear_multipath();
-  const std::string& multipath() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_multipath(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_multipath();
-  PROTOBUF_NODISCARD std::string* release_multipath();
-  void set_allocated_multipath(std::string* multipath);
-  private:
-  const std::string& _internal_multipath() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_multipath(const std::string& value);
-  std::string* _internal_mutable_multipath();
-  public:
-
-  // string authentication = 13;
-  void clear_authentication();
-  const std::string& authentication() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_authentication(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_authentication();
-  PROTOBUF_NODISCARD std::string* release_authentication();
-  void set_allocated_authentication(std::string* authentication);
-  private:
-  const std::string& _internal_authentication() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_authentication(const std::string& value);
-  std::string* _internal_mutable_authentication();
   public:
 
   // .opi_api.common.v1.ObjectKey id = 1;
@@ -973,7 +912,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.common.v1.ObjectKey subsystem_id = 3;
+  // .opi_api.common.v1.ObjectKey subsystem_id = 2;
   bool has_subsystem_id() const;
   private:
   bool _internal_has_subsystem_id() const;
@@ -991,7 +930,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* subsystem_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_subsystem_id();
 
-  // .opi_api.common.v1.ObjectKey controller_id = 4;
+  // .opi_api.common.v1.ObjectKey controller_id = 3;
   bool has_controller_id() const;
   private:
   bool _internal_has_controller_id() const;
@@ -1009,7 +948,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
-  // .opi_api.common.v1.Uuid uuid = 11;
+  // .opi_api.common.v1.Uuid uuid = 10;
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -1027,7 +966,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // .opi_api.common.v1.ObjectKey crypto_key_id = 14;
+  // .opi_api.common.v1.ObjectKey crypto_key_id = 11;
   bool has_crypto_key_id() const;
   private:
   bool _internal_has_crypto_key_id() const;
@@ -1045,7 +984,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* crypto_key_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_key_id();
 
-  // int64 block_size = 7;
+  // int64 block_size = 6;
   void clear_block_size();
   int64_t block_size() const;
   void set_block_size(int64_t value);
@@ -1054,7 +993,7 @@ class NVMeNamespace final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 num_blocks = 8;
+  // int64 num_blocks = 7;
   void clear_num_blocks();
   int64_t num_blocks() const;
   void set_num_blocks(int64_t value);
@@ -1063,16 +1002,7 @@ class NVMeNamespace final :
   void _internal_set_num_blocks(int64_t value);
   public:
 
-  // fixed64 eui64 = 10;
-  void clear_eui64();
-  uint64_t eui64() const;
-  void set_eui64(uint64_t value);
-  private:
-  uint64_t _internal_eui64() const;
-  void _internal_set_eui64(uint64_t value);
-  public:
-
-  // uint32 host_nsid = 5;
+  // uint32 host_nsid = 4;
   void clear_host_nsid();
   uint32_t host_nsid() const;
   void set_host_nsid(uint32_t value);
@@ -1081,7 +1011,7 @@ class NVMeNamespace final :
   void _internal_set_host_nsid(uint32_t value);
   public:
 
-  // uint32 optimal_write_size = 15;
+  // uint32 optimal_write_size = 12;
   void clear_optimal_write_size();
   uint32_t optimal_write_size() const;
   void set_optimal_write_size(uint32_t value);
@@ -1090,7 +1020,16 @@ class NVMeNamespace final :
   void _internal_set_optimal_write_size(uint32_t value);
   public:
 
-  // uint32 pref_write_granularity = 16;
+  // fixed64 eui64 = 9;
+  void clear_eui64();
+  uint64_t eui64() const;
+  void set_eui64(uint64_t value);
+  private:
+  uint64_t _internal_eui64() const;
+  void _internal_set_eui64(uint64_t value);
+  public:
+
+  // uint32 pref_write_granularity = 13;
   void clear_pref_write_granularity();
   uint32_t pref_write_granularity() const;
   void set_pref_write_granularity(uint32_t value);
@@ -1106,11 +1045,8 @@ class NVMeNamespace final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bdev_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nguid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr multipath_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr authentication_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
   ::opi_api::common::v1::ObjectKey* controller_id_;
@@ -1118,9 +1054,9 @@ class NVMeNamespace final :
   ::opi_api::common::v1::ObjectKey* crypto_key_id_;
   int64_t block_size_;
   int64_t num_blocks_;
-  uint64_t eui64_;
   uint32_t host_nsid_;
   uint32_t optimal_write_size_;
+  uint64_t eui64_;
   uint32_t pref_write_granularity_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -6926,58 +6862,7 @@ inline void NVMeController::set_allocated_id(::opi_api::common::v1::ObjectKey* i
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.id)
 }
 
-// string name = 2;
-inline void NVMeController::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& NVMeController::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeController::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.name)
-}
-inline std::string* NVMeController::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeController.name)
-  return _s;
-}
-inline const std::string& NVMeController::_internal_name() const {
-  return name_.Get();
-}
-inline void NVMeController::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeController::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeController::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeController.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeController::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.name)
-}
-
-// uint32 nvme_controller_id = 3;
+// uint32 nvme_controller_id = 2;
 inline void NVMeController::clear_nvme_controller_id() {
   nvme_controller_id_ = 0u;
 }
@@ -6997,7 +6882,7 @@ inline void NVMeController::set_nvme_controller_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.nvme_controller_id)
 }
 
-// .opi_api.common.v1.ObjectKey subsystem_id = 4;
+// .opi_api.common.v1.ObjectKey subsystem_id = 3;
 inline bool NVMeController::_internal_has_subsystem_id() const {
   return this != internal_default_instance() && subsystem_id_ != nullptr;
 }
@@ -7083,7 +6968,7 @@ inline void NVMeController::set_allocated_subsystem_id(::opi_api::common::v1::Ob
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.subsystem_id)
 }
 
-// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 5;
+// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
 inline bool NVMeController::_internal_has_pcie_id() const {
   return this != internal_default_instance() && pcie_id_ != nullptr;
 }
@@ -7169,7 +7054,7 @@ inline void NVMeController::set_allocated_pcie_id(::opi_api::storage::v1::NvmeCo
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.pcie_id)
 }
 
-// uint32 max_io_qps = 6;
+// uint32 max_io_qps = 5;
 inline void NVMeController::clear_max_io_qps() {
   max_io_qps_ = 0u;
 }
@@ -7189,7 +7074,7 @@ inline void NVMeController::set_max_io_qps(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.max_io_qps)
 }
 
-// uint32 max_ns = 7;
+// uint32 max_ns = 6;
 inline void NVMeController::clear_max_ns() {
   max_ns_ = 0u;
 }
@@ -7299,58 +7184,7 @@ inline void NVMeNamespace::set_allocated_id(::opi_api::common::v1::ObjectKey* id
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.id)
 }
 
-// string name = 2;
-inline void NVMeNamespace::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& NVMeNamespace::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.name)
-}
-inline std::string* NVMeNamespace::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.name)
-  return _s;
-}
-inline const std::string& NVMeNamespace::_internal_name() const {
-  return name_.Get();
-}
-inline void NVMeNamespace::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeNamespace::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.name)
-}
-
-// .opi_api.common.v1.ObjectKey subsystem_id = 3;
+// .opi_api.common.v1.ObjectKey subsystem_id = 2;
 inline bool NVMeNamespace::_internal_has_subsystem_id() const {
   return this != internal_default_instance() && subsystem_id_ != nullptr;
 }
@@ -7436,7 +7270,7 @@ inline void NVMeNamespace::set_allocated_subsystem_id(::opi_api::common::v1::Obj
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.subsystem_id)
 }
 
-// .opi_api.common.v1.ObjectKey controller_id = 4;
+// .opi_api.common.v1.ObjectKey controller_id = 3;
 inline bool NVMeNamespace::_internal_has_controller_id() const {
   return this != internal_default_instance() && controller_id_ != nullptr;
 }
@@ -7522,7 +7356,7 @@ inline void NVMeNamespace::set_allocated_controller_id(::opi_api::common::v1::Ob
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.controller_id)
 }
 
-// uint32 host_nsid = 5;
+// uint32 host_nsid = 4;
 inline void NVMeNamespace::clear_host_nsid() {
   host_nsid_ = 0u;
 }
@@ -7542,7 +7376,7 @@ inline void NVMeNamespace::set_host_nsid(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.host_nsid)
 }
 
-// string bdev = 6;
+// string bdev = 5;
 inline void NVMeNamespace::clear_bdev() {
   bdev_.ClearToEmpty();
 }
@@ -7593,7 +7427,7 @@ inline void NVMeNamespace::set_allocated_bdev(std::string* bdev) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.bdev)
 }
 
-// int64 block_size = 7;
+// int64 block_size = 6;
 inline void NVMeNamespace::clear_block_size() {
   block_size_ = int64_t{0};
 }
@@ -7613,7 +7447,7 @@ inline void NVMeNamespace::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.block_size)
 }
 
-// int64 num_blocks = 8;
+// int64 num_blocks = 7;
 inline void NVMeNamespace::clear_num_blocks() {
   num_blocks_ = int64_t{0};
 }
@@ -7633,7 +7467,7 @@ inline void NVMeNamespace::set_num_blocks(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.num_blocks)
 }
 
-// string nguid = 9;
+// string nguid = 8;
 inline void NVMeNamespace::clear_nguid() {
   nguid_.ClearToEmpty();
 }
@@ -7684,7 +7518,7 @@ inline void NVMeNamespace::set_allocated_nguid(std::string* nguid) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.nguid)
 }
 
-// fixed64 eui64 = 10;
+// fixed64 eui64 = 9;
 inline void NVMeNamespace::clear_eui64() {
   eui64_ = uint64_t{0u};
 }
@@ -7704,7 +7538,7 @@ inline void NVMeNamespace::set_eui64(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.eui64)
 }
 
-// .opi_api.common.v1.Uuid uuid = 11;
+// .opi_api.common.v1.Uuid uuid = 10;
 inline bool NVMeNamespace::_internal_has_uuid() const {
   return this != internal_default_instance() && uuid_ != nullptr;
 }
@@ -7790,109 +7624,7 @@ inline void NVMeNamespace::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid)
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.uuid)
 }
 
-// string multipath = 12;
-inline void NVMeNamespace::clear_multipath() {
-  multipath_.ClearToEmpty();
-}
-inline const std::string& NVMeNamespace::multipath() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.multipath)
-  return _internal_multipath();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_multipath(ArgT0&& arg0, ArgT... args) {
- 
- multipath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.multipath)
-}
-inline std::string* NVMeNamespace::mutable_multipath() {
-  std::string* _s = _internal_mutable_multipath();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.multipath)
-  return _s;
-}
-inline const std::string& NVMeNamespace::_internal_multipath() const {
-  return multipath_.Get();
-}
-inline void NVMeNamespace::_internal_set_multipath(const std::string& value) {
-  
-  multipath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::_internal_mutable_multipath() {
-  
-  return multipath_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::release_multipath() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.multipath)
-  return multipath_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeNamespace::set_allocated_multipath(std::string* multipath) {
-  if (multipath != nullptr) {
-    
-  } else {
-    
-  }
-  multipath_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), multipath,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (multipath_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    multipath_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.multipath)
-}
-
-// string authentication = 13;
-inline void NVMeNamespace::clear_authentication() {
-  authentication_.ClearToEmpty();
-}
-inline const std::string& NVMeNamespace::authentication() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.authentication)
-  return _internal_authentication();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_authentication(ArgT0&& arg0, ArgT... args) {
- 
- authentication_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.authentication)
-}
-inline std::string* NVMeNamespace::mutable_authentication() {
-  std::string* _s = _internal_mutable_authentication();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.authentication)
-  return _s;
-}
-inline const std::string& NVMeNamespace::_internal_authentication() const {
-  return authentication_.Get();
-}
-inline void NVMeNamespace::_internal_set_authentication(const std::string& value) {
-  
-  authentication_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::_internal_mutable_authentication() {
-  
-  return authentication_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::release_authentication() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.authentication)
-  return authentication_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeNamespace::set_allocated_authentication(std::string* authentication) {
-  if (authentication != nullptr) {
-    
-  } else {
-    
-  }
-  authentication_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), authentication,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (authentication_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    authentication_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.authentication)
-}
-
-// .opi_api.common.v1.ObjectKey crypto_key_id = 14;
+// .opi_api.common.v1.ObjectKey crypto_key_id = 11;
 inline bool NVMeNamespace::_internal_has_crypto_key_id() const {
   return this != internal_default_instance() && crypto_key_id_ != nullptr;
 }
@@ -7978,7 +7710,7 @@ inline void NVMeNamespace::set_allocated_crypto_key_id(::opi_api::common::v1::Ob
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
 }
 
-// uint32 optimal_write_size = 15;
+// uint32 optimal_write_size = 12;
 inline void NVMeNamespace::clear_optimal_write_size() {
   optimal_write_size_ = 0u;
 }
@@ -7998,7 +7730,7 @@ inline void NVMeNamespace::set_optimal_write_size(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.optimal_write_size)
 }
 
-// uint32 pref_write_granularity = 16;
+// uint32 pref_write_granularity = 13;
 inline void NVMeNamespace::clear_pref_write_granularity() {
   pref_write_granularity_ = 0u;
 }
