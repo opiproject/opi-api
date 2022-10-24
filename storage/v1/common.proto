@@ -25,15 +25,3 @@ message NvmeControllerPciId {
     // Set to 0 for Physical Function. Virtual Function numbering starts from 1
     uint32 virtual_function  = 4;
 }
-
-// Path Management Selection
-enum NvmePathMgmtType {
-  // none type, must not be used
-  PATH_MGMT_NONE            = 0;
-
-  // User managed multipath
-  PATH_MGMT_USER_MULTIPATH  = 1;
-
-  // NVMe Asymetric Namespace Access based multipath
-  PATH_MGMT_ANA_MULTIPATH   = 2;
-}

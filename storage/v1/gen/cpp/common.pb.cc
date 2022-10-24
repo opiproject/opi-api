@@ -38,7 +38,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NvmeControllerPciIdDefaultTypeI
 }  // namespace storage
 }  // namespace opi_api
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2eproto[1];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_common_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2eproto = nullptr;
 
 const uint32_t TableStruct_common_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -65,15 +65,12 @@ const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "\n\014common.proto\022\022opi_api.storage.v1\"^\n\023Nv"
   "meControllerPciId\022\013\n\003bus\030\001 \001(\r\022\016\n\006device"
   "\030\002 \001(\r\022\020\n\010function\030\003 \001(\r\022\030\n\020virtual_func"
-  "tion\030\004 \001(\r*a\n\020NvmePathMgmtType\022\022\n\016PATH_M"
-  "GMT_NONE\020\000\022\034\n\030PATH_MGMT_USER_MULTIPATH\020\001"
-  "\022\033\n\027PATH_MGMT_ANA_MULTIPATH\020\002B1Z/github."
-  "com/opiproject/opi-api/storage/v1/gen/go"
-  "b\006proto3"
+  "tion\030\004 \001(\rB1Z/github.com/opiproject/opi-"
+  "api/storage/v1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2eproto = {
-  false, false, 288, descriptor_table_protodef_common_2eproto, "common.proto", 
+  false, false, 189, descriptor_table_protodef_common_2eproto, "common.proto", 
   &descriptor_table_common_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_common_2eproto::offsets,
   file_level_metadata_common_2eproto, file_level_enum_descriptors_common_2eproto, file_level_service_descriptors_common_2eproto,
@@ -87,21 +84,6 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace opi_api {
 namespace storage {
 namespace v1 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmePathMgmtType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_common_2eproto);
-  return file_level_enum_descriptors_common_2eproto[0];
-}
-bool NvmePathMgmtType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 

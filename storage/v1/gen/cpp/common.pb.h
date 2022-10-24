@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -70,32 +69,6 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-enum NvmePathMgmtType : int {
-  PATH_MGMT_NONE = 0,
-  PATH_MGMT_USER_MULTIPATH = 1,
-  PATH_MGMT_ANA_MULTIPATH = 2,
-  NvmePathMgmtType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  NvmePathMgmtType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool NvmePathMgmtType_IsValid(int value);
-constexpr NvmePathMgmtType NvmePathMgmtType_MIN = PATH_MGMT_NONE;
-constexpr NvmePathMgmtType NvmePathMgmtType_MAX = PATH_MGMT_ANA_MULTIPATH;
-constexpr int NvmePathMgmtType_ARRAYSIZE = NvmePathMgmtType_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmePathMgmtType_descriptor();
-template<typename T>
-inline const std::string& NvmePathMgmtType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, NvmePathMgmtType>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function NvmePathMgmtType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    NvmePathMgmtType_descriptor(), enum_t_value);
-}
-inline bool NvmePathMgmtType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NvmePathMgmtType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<NvmePathMgmtType>(
-    NvmePathMgmtType_descriptor(), name, value);
-}
 // ===================================================================
 
 class NvmeControllerPciId final :
@@ -375,16 +348,6 @@ inline void NvmeControllerPciId::set_virtual_function(uint32_t value) {
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::opi_api::storage::v1::NvmePathMgmtType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::NvmePathMgmtType>() {
-  return ::opi_api::storage::v1::NvmePathMgmtType_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

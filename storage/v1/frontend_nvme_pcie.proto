@@ -40,22 +40,6 @@ service NVMeNamespaceService {
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
 }
 
-enum NvmeFrontEndConstants {
-    NSV_CTRLR_CONST_NONE    = 0;
-
-    // maximum allowed controller serial number string length
-    NSV_CTRLR_SERIAL_NO_LEN = 20;
-
-    // maximum allowed controller model number string length
-    NSV_CTRLR_MODEL_NO_LEN  = 40;
-
-    // maximum allowed firmware revision string length
-    NSV_CTRLR_FW_REV_LEN    = 8;
-
-    // maximum length for NQN field
-    NSV_NVME_SUBSYSTEM_NQN_LEN        = 256;
-}
-
 message NVMeSubsystem {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
@@ -63,19 +47,15 @@ message NVMeSubsystem {
     // NVMe subsystem NQN to which the controller belongs
     // Refer to the NQN format in the NVMe base specifications, must not
     // exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-    //?? val change
     string nqn = 2;
 
     // serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-    //?? val change
     string serial_number = 3;
 
     // model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-    //?? val change
     string model_number = 4;
 
-    //?? do we need this in subsystem given that controller object would have it
-    //?? val change
+    // maximum namespaces within a subsystem
     int64 max_ns = 5;
 
     // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
@@ -87,7 +67,6 @@ message NVMeSubsystem {
 
 message NVMeController {
     // object's unique identifier
-    //?? replaces: int64 id = 1;
     common.v1.ObjectKey id = 1;
 
     // subsystem controller id range: 0 to 65535.
@@ -95,22 +74,18 @@ message NVMeController {
     uint32 nvme_controller_id  = 2;
 
     // subsystem information
-    //?? val change
     common.v1.ObjectKey subsystem_id = 3;
 
     // xPU's PCI ID for the controller
-    //?? val change
     NvmeControllerPciId pcie_id = 4;
 
     // maximum host IO queue pairs allowed, value will default to
     // limits in PCI device configuration; if set to 0 or more it
     // will default to maximum permitted per xPU's capability
-    //?? val change
     uint32 max_io_qps = 5;
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    //?? val change
     uint32 max_ns = 6;
 }
 
@@ -119,19 +94,16 @@ message NVMeNamespace {
     // replaces: int64 id = 1;
     common.v1.ObjectKey id = 1;
 
-    //?? can we take this out if controller is referring to a subsystem anyways
-    //?? replaces string subsystem_id = 3;
+    // subsystem for this namespace
     common.v1.ObjectKey subsystem_id = 2;
 
     // key of the PCIe controller object that will host this namespace.
-    //?? replaces int64 controller_id = 4;
     common.v1.ObjectKey controller_id = 3;
 
     // NSID present to the host by the NVMe PCIe controller.
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
-    //?? replaces: int64 nsid = 5;
     uint32 host_nsid = 4;
 
     string bdev = 5;
@@ -149,7 +121,6 @@ message NVMeNamespace {
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified, optional otherwise
-    //?? replaces: string eui64 = 10 (fixed64 allows user to specify the byte order)
     fixed64 eui64 = 9;
 
     // Globally unique identifier for the namespace
@@ -175,11 +146,11 @@ message NVMeSubsystemCreateRequest {
 }
 
 message NVMeSubsystemCreateResponse {
-    common.v1.ObjectKey uuid = 1;
+    // Intentionally empty.
 }
 
 message NVMeSubsystemDeleteRequest {
-    string nqn = 1;
+    common.v1.ObjectKey subsystem_id = 1;
 }
 
 message NVMeSubsystemDeleteResponse {
@@ -203,7 +174,7 @@ message NVMeSubsystemListResponse {
 }
 
 message NVMeSubsystemGetRequest {
-    string nqn = 1;
+    common.v1.ObjectKey subsystem_id = 1;
 }
 
 message NVMeSubsystemGetResponse {
@@ -211,7 +182,7 @@ message NVMeSubsystemGetResponse {
 }
 
 message NVMeSubsystemStatsRequest {
-    string nqn = 1;
+    common.v1.ObjectKey subsystem_id = 1;
 }
 
 message NVMeSubsystemStatsResponse {
@@ -227,8 +198,7 @@ message NVMeControllerCreateResponse {
 }
 
 message NVMeControllerDeleteRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message NVMeControllerDeleteResponse {
@@ -244,7 +214,7 @@ message NVMeControllerUpdateResponse {
 }
 
 message NVMeControllerListRequest {
-    int64 subsystem_id = 1;
+    common.v1.ObjectKey subsystem_id = 1;
 }
 
 message NVMeControllerListResponse {
@@ -252,21 +222,19 @@ message NVMeControllerListResponse {
 }
 
 message NVMeControllerGetRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message NVMeControllerGetResponse {
-    NVMeController controller = 1;
+    NVMeController controller_id = 1;
 }
 
 message NVMeControllerStatsRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    common.v1.ObjectKey id = 1;
 }
 
 message NVMeControllerStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
 
@@ -279,9 +247,7 @@ message NVMeNamespaceCreateResponse {
 }
 
 message NVMeNamespaceDeleteRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
-    int64 namespace_id = 3;
+    common.v1.ObjectKey namespace_id = 1;
 }
 
 message NVMeNamespaceDeleteResponse {
@@ -297,8 +263,8 @@ message NVMeNamespaceUpdateResponse {
 }
 
 message NVMeNamespaceListRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
+    common.v1.ObjectKey subsystem_id = 1;
+    common.v1.ObjectKey controller_id = 2;
 }
 
 message NVMeNamespaceListResponse {
@@ -306,9 +272,7 @@ message NVMeNamespaceListResponse {
 }
 
 message NVMeNamespaceGetRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
-    int64 namespace_id = 3;
+    common.v1.ObjectKey namespace_id = 1;
 }
 
 message NVMeNamespaceGetResponse {
@@ -316,13 +280,11 @@ message NVMeNamespaceGetResponse {
 }
 
 message NVMeNamespaceStatsRequest {
-    int64 subsystem_id = 1;
-    int64 controller_id = 2;
-    int64 namespace_id = 3;
+    common.v1.ObjectKey namespace_id = 1;
 }
 
 message NVMeNamespaceStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
 
