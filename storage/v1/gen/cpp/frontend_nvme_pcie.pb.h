@@ -823,35 +823,20 @@ class NVMeNamespace final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBdevFieldNumber = 5,
-    kNguidFieldNumber = 8,
+    kNguidFieldNumber = 7,
     kIdFieldNumber = 1,
     kSubsystemIdFieldNumber = 2,
     kControllerIdFieldNumber = 3,
-    kUuidFieldNumber = 10,
-    kCryptoKeyIdFieldNumber = 11,
-    kBlockSizeFieldNumber = 6,
-    kNumBlocksFieldNumber = 7,
+    kUuidFieldNumber = 9,
+    kCryptoKeyIdFieldNumber = 10,
+    kBlockSizeFieldNumber = 5,
+    kNumBlocksFieldNumber = 6,
     kHostNsidFieldNumber = 4,
-    kOptimalWriteSizeFieldNumber = 12,
-    kEui64FieldNumber = 9,
-    kPrefWriteGranularityFieldNumber = 13,
+    kOptimalWriteSizeFieldNumber = 11,
+    kEui64FieldNumber = 8,
+    kPrefWriteGranularityFieldNumber = 12,
   };
-  // string bdev = 5;
-  void clear_bdev();
-  const std::string& bdev() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_bdev(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_bdev();
-  PROTOBUF_NODISCARD std::string* release_bdev();
-  void set_allocated_bdev(std::string* bdev);
-  private:
-  const std::string& _internal_bdev() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bdev(const std::string& value);
-  std::string* _internal_mutable_bdev();
-  public:
-
-  // string nguid = 8;
+  // string nguid = 7;
   void clear_nguid();
   const std::string& nguid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -919,7 +904,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
-  // .opi_api.common.v1.Uuid uuid = 10;
+  // .opi_api.common.v1.Uuid uuid = 9;
   bool has_uuid() const;
   private:
   bool _internal_has_uuid() const;
@@ -937,7 +922,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // .opi_api.common.v1.ObjectKey crypto_key_id = 11;
+  // .opi_api.common.v1.ObjectKey crypto_key_id = 10;
   bool has_crypto_key_id() const;
   private:
   bool _internal_has_crypto_key_id() const;
@@ -955,7 +940,7 @@ class NVMeNamespace final :
       ::opi_api::common::v1::ObjectKey* crypto_key_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_key_id();
 
-  // int64 block_size = 6;
+  // int64 block_size = 5;
   void clear_block_size();
   int64_t block_size() const;
   void set_block_size(int64_t value);
@@ -964,7 +949,7 @@ class NVMeNamespace final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 num_blocks = 7;
+  // int64 num_blocks = 6;
   void clear_num_blocks();
   int64_t num_blocks() const;
   void set_num_blocks(int64_t value);
@@ -982,7 +967,7 @@ class NVMeNamespace final :
   void _internal_set_host_nsid(uint32_t value);
   public:
 
-  // uint32 optimal_write_size = 12;
+  // uint32 optimal_write_size = 11;
   void clear_optimal_write_size();
   uint32_t optimal_write_size() const;
   void set_optimal_write_size(uint32_t value);
@@ -991,7 +976,7 @@ class NVMeNamespace final :
   void _internal_set_optimal_write_size(uint32_t value);
   public:
 
-  // fixed64 eui64 = 9;
+  // fixed64 eui64 = 8;
   void clear_eui64();
   uint64_t eui64() const;
   void set_eui64(uint64_t value);
@@ -1000,7 +985,7 @@ class NVMeNamespace final :
   void _internal_set_eui64(uint64_t value);
   public:
 
-  // uint32 pref_write_granularity = 13;
+  // uint32 pref_write_granularity = 12;
   void clear_pref_write_granularity();
   uint32_t pref_write_granularity() const;
   void set_pref_write_granularity(uint32_t value);
@@ -1016,7 +1001,6 @@ class NVMeNamespace final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bdev_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nguid_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
@@ -4204,25 +4188,25 @@ class NVMeControllerGetResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kControllerIdFieldNumber = 1,
+    kControllerFieldNumber = 1,
   };
-  // .opi_api.storage.v1.NVMeController controller_id = 1;
-  bool has_controller_id() const;
+  // .opi_api.storage.v1.NVMeController controller = 1;
+  bool has_controller() const;
   private:
-  bool _internal_has_controller_id() const;
+  bool _internal_has_controller() const;
   public:
-  void clear_controller_id();
-  const ::opi_api::storage::v1::NVMeController& controller_id() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::NVMeController* release_controller_id();
-  ::opi_api::storage::v1::NVMeController* mutable_controller_id();
-  void set_allocated_controller_id(::opi_api::storage::v1::NVMeController* controller_id);
+  void clear_controller();
+  const ::opi_api::storage::v1::NVMeController& controller() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::NVMeController* release_controller();
+  ::opi_api::storage::v1::NVMeController* mutable_controller();
+  void set_allocated_controller(::opi_api::storage::v1::NVMeController* controller);
   private:
-  const ::opi_api::storage::v1::NVMeController& _internal_controller_id() const;
-  ::opi_api::storage::v1::NVMeController* _internal_mutable_controller_id();
+  const ::opi_api::storage::v1::NVMeController& _internal_controller() const;
+  ::opi_api::storage::v1::NVMeController* _internal_mutable_controller();
   public:
-  void unsafe_arena_set_allocated_controller_id(
-      ::opi_api::storage::v1::NVMeController* controller_id);
-  ::opi_api::storage::v1::NVMeController* unsafe_arena_release_controller_id();
+  void unsafe_arena_set_allocated_controller(
+      ::opi_api::storage::v1::NVMeController* controller);
+  ::opi_api::storage::v1::NVMeController* unsafe_arena_release_controller();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerGetResponse)
  private:
@@ -4231,7 +4215,7 @@ class NVMeControllerGetResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::storage::v1::NVMeController* controller_id_;
+  ::opi_api::storage::v1::NVMeController* controller_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -7322,58 +7306,7 @@ inline void NVMeNamespace::set_host_nsid(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.host_nsid)
 }
 
-// string bdev = 5;
-inline void NVMeNamespace::clear_bdev() {
-  bdev_.ClearToEmpty();
-}
-inline const std::string& NVMeNamespace::bdev() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.bdev)
-  return _internal_bdev();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_bdev(ArgT0&& arg0, ArgT... args) {
- 
- bdev_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.bdev)
-}
-inline std::string* NVMeNamespace::mutable_bdev() {
-  std::string* _s = _internal_mutable_bdev();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.bdev)
-  return _s;
-}
-inline const std::string& NVMeNamespace::_internal_bdev() const {
-  return bdev_.Get();
-}
-inline void NVMeNamespace::_internal_set_bdev(const std::string& value) {
-  
-  bdev_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::_internal_mutable_bdev() {
-  
-  return bdev_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NVMeNamespace::release_bdev() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.bdev)
-  return bdev_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NVMeNamespace::set_allocated_bdev(std::string* bdev) {
-  if (bdev != nullptr) {
-    
-  } else {
-    
-  }
-  bdev_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bdev,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (bdev_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    bdev_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.bdev)
-}
-
-// int64 block_size = 6;
+// int64 block_size = 5;
 inline void NVMeNamespace::clear_block_size() {
   block_size_ = int64_t{0};
 }
@@ -7393,7 +7326,7 @@ inline void NVMeNamespace::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.block_size)
 }
 
-// int64 num_blocks = 7;
+// int64 num_blocks = 6;
 inline void NVMeNamespace::clear_num_blocks() {
   num_blocks_ = int64_t{0};
 }
@@ -7413,7 +7346,7 @@ inline void NVMeNamespace::set_num_blocks(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.num_blocks)
 }
 
-// string nguid = 8;
+// string nguid = 7;
 inline void NVMeNamespace::clear_nguid() {
   nguid_.ClearToEmpty();
 }
@@ -7464,7 +7397,7 @@ inline void NVMeNamespace::set_allocated_nguid(std::string* nguid) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.nguid)
 }
 
-// fixed64 eui64 = 9;
+// fixed64 eui64 = 8;
 inline void NVMeNamespace::clear_eui64() {
   eui64_ = uint64_t{0u};
 }
@@ -7484,7 +7417,7 @@ inline void NVMeNamespace::set_eui64(uint64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.eui64)
 }
 
-// .opi_api.common.v1.Uuid uuid = 10;
+// .opi_api.common.v1.Uuid uuid = 9;
 inline bool NVMeNamespace::_internal_has_uuid() const {
   return this != internal_default_instance() && uuid_ != nullptr;
 }
@@ -7570,7 +7503,7 @@ inline void NVMeNamespace::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid)
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.uuid)
 }
 
-// .opi_api.common.v1.ObjectKey crypto_key_id = 11;
+// .opi_api.common.v1.ObjectKey crypto_key_id = 10;
 inline bool NVMeNamespace::_internal_has_crypto_key_id() const {
   return this != internal_default_instance() && crypto_key_id_ != nullptr;
 }
@@ -7656,7 +7589,7 @@ inline void NVMeNamespace::set_allocated_crypto_key_id(::opi_api::common::v1::Ob
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
 }
 
-// uint32 optimal_write_size = 12;
+// uint32 optimal_write_size = 11;
 inline void NVMeNamespace::clear_optimal_write_size() {
   optimal_write_size_ = 0u;
 }
@@ -7676,7 +7609,7 @@ inline void NVMeNamespace::set_optimal_write_size(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.optimal_write_size)
 }
 
-// uint32 pref_write_granularity = 13;
+// uint32 pref_write_granularity = 12;
 inline void NVMeNamespace::clear_pref_write_granularity() {
   pref_write_granularity_ = 0u;
 }
@@ -8921,45 +8854,45 @@ inline void NVMeControllerGetRequest::set_allocated_controller_id(::opi_api::com
 
 // NVMeControllerGetResponse
 
-// .opi_api.storage.v1.NVMeController controller_id = 1;
-inline bool NVMeControllerGetResponse::_internal_has_controller_id() const {
-  return this != internal_default_instance() && controller_id_ != nullptr;
+// .opi_api.storage.v1.NVMeController controller = 1;
+inline bool NVMeControllerGetResponse::_internal_has_controller() const {
+  return this != internal_default_instance() && controller_ != nullptr;
 }
-inline bool NVMeControllerGetResponse::has_controller_id() const {
-  return _internal_has_controller_id();
+inline bool NVMeControllerGetResponse::has_controller() const {
+  return _internal_has_controller();
 }
-inline void NVMeControllerGetResponse::clear_controller_id() {
-  if (GetArenaForAllocation() == nullptr && controller_id_ != nullptr) {
-    delete controller_id_;
+inline void NVMeControllerGetResponse::clear_controller() {
+  if (GetArenaForAllocation() == nullptr && controller_ != nullptr) {
+    delete controller_;
   }
-  controller_id_ = nullptr;
+  controller_ = nullptr;
 }
-inline const ::opi_api::storage::v1::NVMeController& NVMeControllerGetResponse::_internal_controller_id() const {
-  const ::opi_api::storage::v1::NVMeController* p = controller_id_;
+inline const ::opi_api::storage::v1::NVMeController& NVMeControllerGetResponse::_internal_controller() const {
+  const ::opi_api::storage::v1::NVMeController* p = controller_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::NVMeController&>(
       ::opi_api::storage::v1::_NVMeController_default_instance_);
 }
-inline const ::opi_api::storage::v1::NVMeController& NVMeControllerGetResponse::controller_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerGetResponse.controller_id)
-  return _internal_controller_id();
+inline const ::opi_api::storage::v1::NVMeController& NVMeControllerGetResponse::controller() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerGetResponse.controller)
+  return _internal_controller();
 }
-inline void NVMeControllerGetResponse::unsafe_arena_set_allocated_controller_id(
-    ::opi_api::storage::v1::NVMeController* controller_id) {
+inline void NVMeControllerGetResponse::unsafe_arena_set_allocated_controller(
+    ::opi_api::storage::v1::NVMeController* controller) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_);
   }
-  controller_id_ = controller_id;
-  if (controller_id) {
+  controller_ = controller;
+  if (controller) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeControllerGetResponse.controller_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeControllerGetResponse.controller)
 }
-inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::release_controller_id() {
+inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::release_controller() {
   
-  ::opi_api::storage::v1::NVMeController* temp = controller_id_;
-  controller_id_ = nullptr;
+  ::opi_api::storage::v1::NVMeController* temp = controller_;
+  controller_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -8971,44 +8904,44 @@ inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::releas
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::unsafe_arena_release_controller_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeControllerGetResponse.controller_id)
+inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::unsafe_arena_release_controller() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeControllerGetResponse.controller)
   
-  ::opi_api::storage::v1::NVMeController* temp = controller_id_;
-  controller_id_ = nullptr;
+  ::opi_api::storage::v1::NVMeController* temp = controller_;
+  controller_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::_internal_mutable_controller_id() {
+inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::_internal_mutable_controller() {
   
-  if (controller_id_ == nullptr) {
+  if (controller_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::NVMeController>(GetArenaForAllocation());
-    controller_id_ = p;
+    controller_ = p;
   }
-  return controller_id_;
+  return controller_;
 }
-inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::mutable_controller_id() {
-  ::opi_api::storage::v1::NVMeController* _msg = _internal_mutable_controller_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeControllerGetResponse.controller_id)
+inline ::opi_api::storage::v1::NVMeController* NVMeControllerGetResponse::mutable_controller() {
+  ::opi_api::storage::v1::NVMeController* _msg = _internal_mutable_controller();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeControllerGetResponse.controller)
   return _msg;
 }
-inline void NVMeControllerGetResponse::set_allocated_controller_id(::opi_api::storage::v1::NVMeController* controller_id) {
+inline void NVMeControllerGetResponse::set_allocated_controller(::opi_api::storage::v1::NVMeController* controller) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete controller_id_;
+    delete controller_;
   }
-  if (controller_id) {
+  if (controller) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::NVMeController>::GetOwningArena(controller_id);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::storage::v1::NVMeController>::GetOwningArena(controller);
     if (message_arena != submessage_arena) {
-      controller_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, controller_id, submessage_arena);
+      controller = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, controller, submessage_arena);
     }
     
   } else {
     
   }
-  controller_id_ = controller_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeControllerGetResponse.controller_id)
+  controller_ = controller;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeControllerGetResponse.controller)
 }
 
 // -------------------------------------------------------------------

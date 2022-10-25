@@ -106,39 +106,37 @@ message NVMeNamespace {
     // for live migration
     uint32 host_nsid = 4;
 
-    string bdev = 5;
-
     // Block size in bytes, must be power of 2 and must be less than the max
     // io size supported. Typically tested values are 512, and 4k.
-    int64 block_size = 6;
+    int64 block_size = 5;
 
     // Size/Capacity of the namespace in blocks, size in bytes will
     // be BlockSize x NumBlocks.
-    int64 num_blocks = 7;
+    int64 num_blocks = 6;
 
     // Globally unique identifier for the namespace
-    string nguid = 8;
+    string nguid = 7;
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified, optional otherwise
-    fixed64 eui64 = 9;
+    fixed64 eui64 = 8;
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 10;
+    common.v1.Uuid uuid = 9;
 
     // reference to encryption key for the data at rest encryption
-    common.v1.ObjectKey crypto_key_id = 11;
+    common.v1.ObjectKey crypto_key_id = 10;
 
     // optimal write size hint to host driver. Host IO stack may use
     // this to regulate IO size. Must be a multiple of the preferred write
     // granularity. Must not exceed the controller maximum IO size value
     // configured in the nvme agent config file.
-    uint32 optimal_write_size = 12;
+    uint32 optimal_write_size = 11;
 
     // preferred write granularity hint to the host driver. Host IO
     // stack may use this to align IO sizes to the write granularity for
     // optimum performance.
-    uint32 pref_write_granularity= 13;
+    uint32 pref_write_granularity= 12;
 }
 
 message NVMeSubsystemCreateRequest {
@@ -226,7 +224,7 @@ message NVMeControllerGetRequest {
 }
 
 message NVMeControllerGetResponse {
-    NVMeController controller_id = 1;
+    NVMeController controller = 1;
 }
 
 message NVMeControllerStatsRequest {
