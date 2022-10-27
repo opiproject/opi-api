@@ -40,25 +40,14 @@ message NVMeSubsystem {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
 
-    // NVMe subsystem NQN to which the controller belongs
-    // Refer to the NQN format in the NVMe base specifications, must not
-    // exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-    string nqn = 2;
-
     // serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-    string serial_number = 3;
+    string serial_number = 2;
 
     // model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-    string model_number = 4;
+    string model_number = 3;
 
     // maximum namespaces within a subsystem
-    int64 max_ns = 5;
-
-    // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-    string firmware_revision  = 6;
-
-    // FRU identfier, 16bytes opaque identity for the type of unit
-    bytes fru_guid = 7;
+    int32 max_ns = 4;
 }
 
 message NVMeController {
@@ -69,70 +58,35 @@ message NVMeController {
     // must not be reused under the same subsystem
     uint32 nvme_controller_id  = 2;
 
-    // subsystem information
-    common.v1.ObjectKey subsystem_id = 3;
-
     // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 4;
+    PciEndpoint pcie_id = 3;
 
     // maximum host IO queue pairs allowed, value will default to
     // limits in PCI device configuration; if set to 0 or more it
     // will default to maximum permitted per xPU's capability
-    uint32 max_io_qps = 5;
+    uint32 max_io_qps = 4;
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    uint32 max_ns = 6;
+    uint32 max_ns = 5;
 }
 
 message NVMeNamespace {
     // namespace's unique key
-    // replaces: int64 id = 1;
     common.v1.ObjectKey id = 1;
 
-    // subsystem for this namespace
-    common.v1.ObjectKey subsystem_id = 2;
-
-    // key of the PCIe controller object that will host this namespace.
-    common.v1.ObjectKey controller_id = 3;
-
-    // NSID present to the host by the NVMe PCIe controller.
-    // If not provided, then the controller will assign an unused NSID
-    // within the max namespace range - auto assigned nsid may not work
-    // for live migration
-    uint32 host_nsid = 4;
-
-    // Block size in bytes, must be power of 2 and must be less than the max
-    // io size supported. Typically tested values are 512, and 4k.
-    int64 block_size = 5;
-
-    // Size/Capacity of the namespace in blocks, size in bytes will
-    // be BlockSize x NumBlocks.
-    int64 num_blocks = 6;
-
     // Globally unique identifier for the namespace
-    string nguid = 7;
+    string nguid = 2;
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified, optional otherwise
-    fixed64 eui64 = 8;
+    fixed64 eui64 = 3;
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 9;
+    common.v1.Uuid uuid = 4;
 
-    // reference to encryption key for the data at rest encryption
-    common.v1.ObjectKey crypto_key_id = 10;
-
-    // optimal write size hint to host driver. Host IO stack may use
-    // this to regulate IO size. Must be a multiple of the preferred write
-    // granularity. Must not exceed the controller maximum IO size value
-    // configured in the nvme agent config file.
-    uint32 optimal_write_size = 11;
-
-    // preferred write granularity hint to the host driver. Host IO
-    // stack may use this to align IO sizes to the write granularity for
-    // optimum performance.
-    uint32 pref_write_granularity= 12;
+    // The back/middle-end volume to back this namespace.
+    common.v1.ObjectKey volume_id = 5;
 }
 
 message NVMeSubsystemCreateRequest {
@@ -185,6 +139,9 @@ message NVMeSubsystemStatsResponse {
 
 message NVMeControllerCreateRequest {
     NVMeController controller = 1;
+
+    // The subsystem to associate this controller with
+    common.v1.ObjectKey subsystem_id = 2;
 }
 
 message NVMeControllerCreateResponse {
@@ -234,6 +191,12 @@ message NVMeControllerStatsResponse {
 
 message NVMeNamespaceCreateRequest {
     NVMeNamespace namespace = 1;
+
+    common.v1.ObjectKey subsystem_id = 2;
+
+    // The namespace ID inside of the subsystem where this namespace
+    // can be found.
+    uint32 nsid = 3;
 }
 
 message NVMeNamespaceCreateResponse {
@@ -257,8 +220,11 @@ message NVMeNamespaceUpdateResponse {
 }
 
 message NVMeNamespaceListRequest {
-    common.v1.ObjectKey subsystem_id = 1;
-    common.v1.ObjectKey controller_id = 2;
+    oneof view {
+        common.v1.ObjectKey subsystem_id = 1;
+
+        common.v1.ObjectKey controller_id = 2;
+    }
 }
 
 message NVMeNamespaceListResponse {
