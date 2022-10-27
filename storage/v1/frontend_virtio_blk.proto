@@ -5,12 +5,13 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
+import "object_key.proto";
 
 // Front End (host-facing) APIs.
 
 // Virtio-blk emulation
 
-service VirtioBlkService {
+service FrontendVirtioBlk {
     rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlkCreateResponse) {}
     rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (VirtioBlkDeleteResponse) {}
     rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlkUpdateResponse) {}
@@ -19,17 +20,22 @@ service VirtioBlkService {
     rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
 }
 
-message VirtioBlk {
-    int64 id = 1;
-    string name = 2;
-    PciEndpoint pcie_id = 3;
-    string bdev = 4;
-    int64 max_io_qps = 5;
-    string serial_number = 6;
+message VirtioBlkController {
+    common.v1.ObjectKey id = 1;
+
+    // The PCI endpoint where this device should appear
+    PciEndpoint pcie_id = 2;
+
+    // The back/middle-end volume to back this controller.
+    common.v1.ObjectKey volume_id = 3;
+
+    int64 max_io_qps = 4;
+
+    string serial_number = 5;
 }
 
 message VirtioBlkCreateRequest {
-    VirtioBlk controller = 1;
+    VirtioBlkController controller = 1;
 }
 
 message VirtioBlkCreateResponse {
@@ -37,7 +43,7 @@ message VirtioBlkCreateResponse {
 }
 
 message VirtioBlkDeleteRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey id = 1;
 }
 
 message VirtioBlkDeleteResponse {
@@ -45,7 +51,7 @@ message VirtioBlkDeleteResponse {
 }
 
 message VirtioBlkUpdateRequest {
-    VirtioBlk controller = 1;
+    VirtioBlkController controller = 1;
 }
 
 message VirtioBlkUpdateResponse {
@@ -53,26 +59,26 @@ message VirtioBlkUpdateResponse {
 }
 
 message VirtioBlkListRequest {
-    int64 subsystem_id = 1;
+    // Intentionally empty.
 }
 
 message VirtioBlkListResponse {
-    repeated VirtioBlk controller = 1;
+    repeated VirtioBlkController controller = 1;
 }
 
 message VirtioBlkGetRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey id = 1;
 }
 
 message VirtioBlkGetResponse {
-    VirtioBlk controller = 1;
+    VirtioBlkController controller = 1;
 }
 
 message VirtioBlkStatsRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey id = 1;
 }
 
 message VirtioBlkStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
