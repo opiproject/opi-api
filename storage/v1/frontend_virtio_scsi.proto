@@ -5,21 +5,27 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
+import "object_key.proto";
 
 // Front End (host-facing) APIs.
 
 // Virtio-scsi emulation
 
-service VirtioScsiControllerService {
+service FrontendVirtioScsi {
+    rpc VirtioScsiTargetCreate (VirtioScsiTargetCreateRequest) returns (VirtioScsiTargetCreateResponse) {}
+    rpc VirtioScsiTargetDelete (VirtioScsiTargetDeleteRequest) returns (VirtioScsiTargetDeleteResponse) {}
+    rpc VirtioScsiTargetUpdate (VirtioScsiTargetUpdateRequest) returns (VirtioScsiTargetUpdateResponse) {}
+    rpc VirtioScsiTargetList   (VirtioScsiTargetListRequest)   returns (VirtioScsiTargetListResponse)   {}
+    rpc VirtioScsiTargetGet    (VirtioScsiTargetGetRequest)    returns (VirtioScsiTargetGetResponse)    {}
+    rpc VirtioScsiTargetStats  (VirtioScsiTargetStatsRequest)  returns (VirtioScsiTargetStatsResponse)  {}
+
     rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiControllerCreateResponse) {}
     rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (VirtioScsiControllerDeleteResponse) {}
     rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiControllerUpdateResponse) {}
     rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
     rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiControllerGetResponse)    {}
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
-}
 
-service VirtioScsiLunService {
     rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLunCreateResponse) {}
     rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (VirtioScsiLunDeleteResponse) {}
     rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLunUpdateResponse) {}
@@ -28,20 +34,83 @@ service VirtioScsiLunService {
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
 
+message VirtioScsiTarget {
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+
+    // maximum LUNs within a target
+    int32 max_ns = 3;
+}
+
 message VirtioScsiController {
-    int64 id = 1;
-    string name = 2;
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+
+    // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 3;
 }
 
 message VirtioScsiLun {
-    int64 id = 1;
-    int64 controller_id = 4;
-    string bdev = 6;
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+
+    // The back/middle-end volume to back this LUN.
+    common.v1.ObjectKey volume_id = 5;
+}
+
+message VirtioScsiTargetCreateRequest {
+    VirtioScsiTarget target = 1;
+}
+
+message VirtioScsiTargetCreateResponse {
+    // Intentionally empty.
+}
+
+message VirtioScsiTargetDeleteRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message VirtioScsiTargetDeleteResponse {
+    uint32 result = 1;
+}
+
+message VirtioScsiTargetUpdateRequest {
+    VirtioScsiTarget target = 1;
+}
+
+message VirtioScsiTargetUpdateResponse {
+    uint32 result = 1;
+}
+
+message VirtioScsiTargetListRequest {
+    // Intentionally empty.
+}
+
+message VirtioScsiTargetListResponse {
+    repeated VirtioScsiTarget target = 1;
+}
+
+message VirtioScsiTargetGetRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message VirtioScsiTargetGetResponse {
+    VirtioScsiTarget target = 1;
+}
+
+message VirtioScsiTargetStatsRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message VirtioScsiTargetStatsResponse {
+    string stats = 1;
 }
 
 message VirtioScsiControllerCreateRequest {
     VirtioScsiController controller = 1;
+
+    // The target to associate this controller with
+    common.v1.ObjectKey target_id = 2;
 }
 
 message VirtioScsiControllerCreateResponse {
@@ -49,7 +118,7 @@ message VirtioScsiControllerCreateResponse {
 }
 
 message VirtioScsiControllerDeleteRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiControllerDeleteResponse {
@@ -65,7 +134,7 @@ message VirtioScsiControllerUpdateResponse {
 }
 
 message VirtioScsiControllerListRequest {
-    // Intentionally empty.
+    common.v1.ObjectKey target_id = 1;
 }
 
 message VirtioScsiControllerListResponse {
@@ -73,7 +142,7 @@ message VirtioScsiControllerListResponse {
 }
 
 message VirtioScsiControllerGetRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiControllerGetResponse {
@@ -81,16 +150,22 @@ message VirtioScsiControllerGetResponse {
 }
 
 message VirtioScsiControllerStatsRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey id = 1;
 }
 
 message VirtioScsiControllerStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
 
 message VirtioScsiLunCreateRequest {
     VirtioScsiLun lun = 1;
+
+    common.v1.ObjectKey target_id = 2;
+
+    // The lun ID inside of the target where this lun
+    // can be found.
+    uint32 lun_id = 3;
 }
 
 message VirtioScsiLunCreateResponse {
@@ -98,8 +173,7 @@ message VirtioScsiLunCreateResponse {
 }
 
 message VirtioScsiLunDeleteRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey lun_id = 1;
 }
 
 message VirtioScsiLunDeleteResponse {
@@ -115,7 +189,7 @@ message VirtioScsiLunUpdateResponse {
 }
 
 message VirtioScsiLunListRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiLunListResponse {
@@ -123,8 +197,7 @@ message VirtioScsiLunListResponse {
 }
 
 message VirtioScsiLunGetRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey lun_id = 1;
 }
 
 message VirtioScsiLunGetResponse {
@@ -132,11 +205,10 @@ message VirtioScsiLunGetResponse {
 }
 
 message VirtioScsiLunStatsRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey lun_id = 1;
 }
 
 message VirtioScsiLunStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
