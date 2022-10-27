@@ -22,7 +22,7 @@ service VirtioBlkService {
 message VirtioBlk {
     int64 id = 1;
     string name = 2;
-    NvmeControllerPciId pcie_id = 3;
+    PciEndpoint pcie_id = 3;
     string bdev = 4;
     int64 max_io_qps = 5;
     string serial_number = 6;

@@ -31,7 +31,7 @@ service VirtioScsiLunService {
 message VirtioScsiController {
     int64 id = 1;
     string name = 2;
-    NvmeControllerPciId pcie_id = 4;
+    PciEndpoint pcie_id = 3;
 }
 
 message VirtioScsiLun {

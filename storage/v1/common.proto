@@ -6,22 +6,13 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 
-// The controller PCI-ID is used to address a given virtual controller. Virtual
-// controllers are organized into devices with Physical functions and SRIOV
-// virtual function within the physical functions. Currently, xPUs may
-// expose multiple devices with one physical function each and one or more
-// virtual functions under the physical function.
-message NvmeControllerPciId {
-    // Bus number, provided for future usage if needed. Currently set to ’0’
-    uint32 bus              = 1;
-
-    // Device number, based on the NVMe device layout
-    uint32 device           = 2;
-
-    // Physical function, always set to 0 in current model
-    uint32 function         = 3;
-
-    // SRIOV Virtual function within the Device and Physical function.
-    // Set to 0 for Physical Function. Virtual Function numbering starts from 1
-    uint32 virtual_function  = 4;
+// Many front-ends expose PCI devices to the host. This represents that endpoint.
+// The Bus:Device:Function numbers will be assigned by the OS PCI driver, so we
+// cannot set those directly here. What we can pick is which physical function
+// and virtual function the xPU uses.
+message PciEndpoint {
+    // Physical function index
+    uint32 physical_id = 1;
+    // Virtual function index
+    uint32 virtual_id = 2;
 }

@@ -77,7 +77,7 @@ message NVMeController {
     common.v1.ObjectKey subsystem_id = 3;
 
     // xPU's PCI ID for the controller
-    NvmeControllerPciId pcie_id = 4;
+    PciEndpoint pcie_id = 4;
 
     // maximum host IO queue pairs allowed, value will default to
     // limits in PCI device configuration; if set to 0 or more it
