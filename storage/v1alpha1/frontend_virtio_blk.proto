@@ -48,7 +48,7 @@ service FrontendVirtioBlkService {
 
 message VirtioBlk {
     common.v1.ObjectKey id = 1;
-    NvmeControllerPciId pcie_id = 2;
+    PciEndpoint pcie_id = 2;
     string bdev = 3;
     int64 max_io_qps = 4;
     string serial_number = 5;

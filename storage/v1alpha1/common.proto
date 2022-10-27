@@ -11,22 +11,28 @@ option java_outer_classname = "CommonProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
-// The controller PCI-ID is used to address a given virtual controller. Virtual
-// controllers are organized into devices with Physical functions and SRIOV
-// virtual function within the physical functions. Currently, xPUs may
-// expose multiple devices with one physical function each and one or more
-// virtual functions under the physical function.
-message NvmeControllerPciId {
-    // Bus number, provided for future usage if needed. Currently set to ’0’
-    int32 bus              = 1;
+// Many front-ends expose PCI devices to the host. This represents that endpoint.
+// This device will ultimately be surfaced by the operating system at some
+// Bus:Device:Function, but note that the values set here are not necessarily
+// the same values that the operating system will choose. Instead, these are
+// xPU-internal values.
+// While the term "device" is often used for the entity attached to a PCI slot,
+// we'll use the term "port" which also commonly used with PCI switches and avoids
+// confusion with storage "devices".
+message PciEndpoint {
+    // The "port" or "device". In other words, the connector/cable that's
+    // plugged into a particular host. This number may end up matching
+    // the host-assigned "device" value in the bus:device:function identifier,
+    // but it does not strictly have to and that should not be relied upon.
+    int32 port_id = 1;
 
-    // Device number, based on the NVMe device layout
-    int32 device           = 2;
+    // Physical function index. This may end up matching the host-assigned
+    // "function" value in the bus:device:function identifier, but it does not
+    // strictly have to and that should not be relied upon.
+    int32 physical_function = 2;
 
-    // Physical function, always set to 0 in current model
-    int32 func             = 3;
-
-    // SRIOV Virtual function within the Device and Physical function.
-    // Set to 0 for Physical Function. Virtual Function numbering starts from 1
-    int32 virtual_function  = 4;
+    // Virtual function index. This may end up matching the host-assigned
+    // "function" value in the bus:device:function identifier, but it does not
+    // strictly have to and that should not be relied upon.
+    int32 virtual_function = 3;
 }

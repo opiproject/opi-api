@@ -77,7 +77,7 @@ service FrontendVirtioScsiService {
 
 message VirtioScsiController {
     common.v1.ObjectKey id = 1;
-    NvmeControllerPciId pcie_id = 2;
+    PciEndpoint pcie_id = 2;
 }
 
 message VirtioScsiLun {
