@@ -13,25 +13,21 @@ import "object_key.proto";
 
 // NVMe/PCIe emulation
 
-service NVMeSubsystemService {
+service FrontendNvme {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystemCreateResponse) {}
     rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (NVMeSubsystemDeleteResponse) {}
     rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
     rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
     rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystemGetResponse)    {}
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
-}
 
-service NVMeControllerService {
     rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeControllerCreateResponse) {}
     rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (NVMeControllerDeleteResponse) {}
     rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
     rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
     rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeControllerGetResponse)    {}
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
-}
 
-service NVMeNamespaceService {
     rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespaceCreateResponse) {}
     rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (NVMeNamespaceDeleteResponse) {}
     rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
