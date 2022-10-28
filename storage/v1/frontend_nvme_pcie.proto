@@ -79,14 +79,25 @@ message NVMeController {
     // xPU's PCI ID for the controller
     NvmeControllerPciId pcie_id = 4;
 
-    // maximum host IO queue pairs allowed, value will default to
-    // limits in PCI device configuration; if set to 0 or more it
-    // will default to maximum permitted per xPU's capability
-    uint32 max_io_qps = 5;
+    // maximum number of host submission queues allowed.
+    // If not set, the xPU will provide a default.
+    uint32 max_nsq = 5;
+
+    // maximum number of host completion queues allowed. Optional.
+    // If not set, the xPU will provide a default.
+    uint32 max_ncq = 6;
+  
+    // maximum number of submission queue entries per submission queue, as a power of 2.
+    // default value as per spec is 6
+    uint32 sqes = 7;
+
+    // maximum number of completion queue entries per completion queue, as a power of 2.
+    // default value as per spec is 4
+    uint32 cqes = 8;
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    uint32 max_ns = 6;
+    uint32 max_ns = 9;
 }
 
 message NVMeNamespace {

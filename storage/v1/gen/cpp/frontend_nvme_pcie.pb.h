@@ -599,8 +599,11 @@ class NVMeController final :
     kSubsystemIdFieldNumber = 3,
     kPcieIdFieldNumber = 4,
     kNvmeControllerIdFieldNumber = 2,
-    kMaxIoQpsFieldNumber = 5,
-    kMaxNsFieldNumber = 6,
+    kMaxNsqFieldNumber = 5,
+    kMaxNcqFieldNumber = 6,
+    kSqesFieldNumber = 7,
+    kCqesFieldNumber = 8,
+    kMaxNsFieldNumber = 9,
   };
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
@@ -665,16 +668,43 @@ class NVMeController final :
   void _internal_set_nvme_controller_id(uint32_t value);
   public:
 
-  // uint32 max_io_qps = 5;
-  void clear_max_io_qps();
-  uint32_t max_io_qps() const;
-  void set_max_io_qps(uint32_t value);
+  // uint32 max_nsq = 5;
+  void clear_max_nsq();
+  uint32_t max_nsq() const;
+  void set_max_nsq(uint32_t value);
   private:
-  uint32_t _internal_max_io_qps() const;
-  void _internal_set_max_io_qps(uint32_t value);
+  uint32_t _internal_max_nsq() const;
+  void _internal_set_max_nsq(uint32_t value);
   public:
 
-  // uint32 max_ns = 6;
+  // uint32 max_ncq = 6;
+  void clear_max_ncq();
+  uint32_t max_ncq() const;
+  void set_max_ncq(uint32_t value);
+  private:
+  uint32_t _internal_max_ncq() const;
+  void _internal_set_max_ncq(uint32_t value);
+  public:
+
+  // uint32 sqes = 7;
+  void clear_sqes();
+  uint32_t sqes() const;
+  void set_sqes(uint32_t value);
+  private:
+  uint32_t _internal_sqes() const;
+  void _internal_set_sqes(uint32_t value);
+  public:
+
+  // uint32 cqes = 8;
+  void clear_cqes();
+  uint32_t cqes() const;
+  void set_cqes(uint32_t value);
+  private:
+  uint32_t _internal_cqes() const;
+  void _internal_set_cqes(uint32_t value);
+  public:
+
+  // uint32 max_ns = 9;
   void clear_max_ns();
   uint32_t max_ns() const;
   void set_max_ns(uint32_t value);
@@ -694,7 +724,10 @@ class NVMeController final :
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
   ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
   uint32_t nvme_controller_id_;
-  uint32_t max_io_qps_;
+  uint32_t max_nsq_;
+  uint32_t max_ncq_;
+  uint32_t sqes_;
+  uint32_t cqes_;
   uint32_t max_ns_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -6984,27 +7017,87 @@ inline void NVMeController::set_allocated_pcie_id(::opi_api::storage::v1::NvmeCo
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.pcie_id)
 }
 
-// uint32 max_io_qps = 5;
-inline void NVMeController::clear_max_io_qps() {
-  max_io_qps_ = 0u;
+// uint32 max_nsq = 5;
+inline void NVMeController::clear_max_nsq() {
+  max_nsq_ = 0u;
 }
-inline uint32_t NVMeController::_internal_max_io_qps() const {
-  return max_io_qps_;
+inline uint32_t NVMeController::_internal_max_nsq() const {
+  return max_nsq_;
 }
-inline uint32_t NVMeController::max_io_qps() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.max_io_qps)
-  return _internal_max_io_qps();
+inline uint32_t NVMeController::max_nsq() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.max_nsq)
+  return _internal_max_nsq();
 }
-inline void NVMeController::_internal_set_max_io_qps(uint32_t value) {
+inline void NVMeController::_internal_set_max_nsq(uint32_t value) {
   
-  max_io_qps_ = value;
+  max_nsq_ = value;
 }
-inline void NVMeController::set_max_io_qps(uint32_t value) {
-  _internal_set_max_io_qps(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.max_io_qps)
+inline void NVMeController::set_max_nsq(uint32_t value) {
+  _internal_set_max_nsq(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.max_nsq)
 }
 
-// uint32 max_ns = 6;
+// uint32 max_ncq = 6;
+inline void NVMeController::clear_max_ncq() {
+  max_ncq_ = 0u;
+}
+inline uint32_t NVMeController::_internal_max_ncq() const {
+  return max_ncq_;
+}
+inline uint32_t NVMeController::max_ncq() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.max_ncq)
+  return _internal_max_ncq();
+}
+inline void NVMeController::_internal_set_max_ncq(uint32_t value) {
+  
+  max_ncq_ = value;
+}
+inline void NVMeController::set_max_ncq(uint32_t value) {
+  _internal_set_max_ncq(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.max_ncq)
+}
+
+// uint32 sqes = 7;
+inline void NVMeController::clear_sqes() {
+  sqes_ = 0u;
+}
+inline uint32_t NVMeController::_internal_sqes() const {
+  return sqes_;
+}
+inline uint32_t NVMeController::sqes() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.sqes)
+  return _internal_sqes();
+}
+inline void NVMeController::_internal_set_sqes(uint32_t value) {
+  
+  sqes_ = value;
+}
+inline void NVMeController::set_sqes(uint32_t value) {
+  _internal_set_sqes(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.sqes)
+}
+
+// uint32 cqes = 8;
+inline void NVMeController::clear_cqes() {
+  cqes_ = 0u;
+}
+inline uint32_t NVMeController::_internal_cqes() const {
+  return cqes_;
+}
+inline uint32_t NVMeController::cqes() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.cqes)
+  return _internal_cqes();
+}
+inline void NVMeController::_internal_set_cqes(uint32_t value) {
+  
+  cqes_ = value;
+}
+inline void NVMeController::set_cqes(uint32_t value) {
+  _internal_set_cqes(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.cqes)
+}
+
+// uint32 max_ns = 9;
 inline void NVMeController::clear_max_ns() {
   max_ns_ = 0u;
 }

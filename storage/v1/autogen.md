@@ -912,7 +912,10 @@ virtual functions under the physical function.
 | nvme_controller_id | [uint32](#uint32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller |
-| max_io_qps | [uint32](#uint32) |  | maximum host IO queue pairs allowed, value will default to limits in PCI device configuration; if set to 0 or more it will default to maximum permitted per xPU&#39;s capability |
+| max_nsq | [uint32](#uint32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
+| max_ncq | [uint32](#uint32) |  | maximum number of host completion queues allowed. Optional. If not set, the xPU will provide a default. |
+| sqes | [uint32](#uint32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
+| cqes | [uint32](#uint32) |  | maximum number of completion queue entries per completion queue, as a power of 2. default value as per spec is 4 |
 | max_ns | [uint32](#uint32) |  | maximum Number of namespaces that will be provisioned under the controller. |
 
 
