@@ -11,7 +11,7 @@ import "common.proto";
 // Virtio-blk emulation
 
 service VirtioBlkService {
-    rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlkCreateResponse) {}
+    rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {}
     rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (VirtioBlkDeleteResponse) {}
     rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlkUpdateResponse) {}
     rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {}
@@ -30,10 +30,6 @@ message VirtioBlk {
 
 message VirtioBlkCreateRequest {
     VirtioBlk controller = 1;
-}
-
-message VirtioBlkCreateResponse {
-    // Intentionally empty.
 }
 
 message VirtioBlkDeleteRequest {

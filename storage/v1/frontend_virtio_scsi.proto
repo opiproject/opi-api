@@ -11,7 +11,7 @@ import "common.proto";
 // Virtio-scsi emulation
 
 service VirtioScsiControllerService {
-    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiControllerCreateResponse) {}
+    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {}
     rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (VirtioScsiControllerDeleteResponse) {}
     rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiControllerUpdateResponse) {}
     rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
@@ -20,7 +20,7 @@ service VirtioScsiControllerService {
 }
 
 service VirtioScsiLunService {
-    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLunCreateResponse) {}
+    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {}
     rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (VirtioScsiLunDeleteResponse) {}
     rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLunUpdateResponse) {}
     rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
@@ -42,10 +42,6 @@ message VirtioScsiLun {
 
 message VirtioScsiControllerCreateRequest {
     VirtioScsiController controller = 1;
-}
-
-message VirtioScsiControllerCreateResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiControllerDeleteRequest {
@@ -91,10 +87,6 @@ message VirtioScsiControllerStatsResponse {
 
 message VirtioScsiLunCreateRequest {
     VirtioScsiLun lun = 1;
-}
-
-message VirtioScsiLunCreateResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiLunDeleteRequest {

@@ -14,7 +14,7 @@ import "object_key.proto";
 // NVMe/PCIe emulation
 
 service NVMeSubsystemService {
-    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystemCreateResponse) {}
+    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {}
     rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (NVMeSubsystemDeleteResponse) {}
     rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
     rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
@@ -23,7 +23,7 @@ service NVMeSubsystemService {
 }
 
 service NVMeControllerService {
-    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeControllerCreateResponse) {}
+    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {}
     rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (NVMeControllerDeleteResponse) {}
     rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
     rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
@@ -32,7 +32,7 @@ service NVMeControllerService {
 }
 
 service NVMeNamespaceService {
-    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespaceCreateResponse) {}
+    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {}
     rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (NVMeNamespaceDeleteResponse) {}
     rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
     rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
@@ -154,10 +154,6 @@ message NVMeSubsystemCreateRequest {
     NVMeSubsystem subsystem = 1;
 }
 
-message NVMeSubsystemCreateResponse {
-    // Intentionally empty.
-}
-
 message NVMeSubsystemDeleteRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
@@ -200,10 +196,6 @@ message NVMeSubsystemStatsResponse {
 
 message NVMeControllerCreateRequest {
     NVMeController controller = 1;
-}
-
-message NVMeControllerCreateResponse {
-    // Intentionally empty.
 }
 
 message NVMeControllerDeleteRequest {
@@ -249,10 +241,6 @@ message NVMeControllerStatsResponse {
 
 message NVMeNamespaceCreateRequest {
     NVMeNamespace namespace = 1;
-}
-
-message NVMeNamespaceCreateResponse {
-    // Intentionally empty.
 }
 
 message NVMeNamespaceDeleteRequest {
