@@ -5,6 +5,7 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
+import "google/protobuf/empty.proto";
 
 // Front End (host-facing) APIs.
 
@@ -12,7 +13,7 @@ import "common.proto";
 
 service VirtioScsiControllerService {
     rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {}
-    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (VirtioScsiControllerDeleteResponse) {}
+    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiControllerUpdateResponse) {}
     rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
     rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiControllerGetResponse)    {}
@@ -21,7 +22,7 @@ service VirtioScsiControllerService {
 
 service VirtioScsiLunService {
     rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {}
-    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (VirtioScsiLunDeleteResponse) {}
+    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLunUpdateResponse) {}
     rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
     rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLunGetResponse)    {}
@@ -46,10 +47,6 @@ message VirtioScsiControllerCreateRequest {
 
 message VirtioScsiControllerDeleteRequest {
     int64 controller_id = 1;
-}
-
-message VirtioScsiControllerDeleteResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiControllerUpdateRequest {
@@ -92,10 +89,6 @@ message VirtioScsiLunCreateRequest {
 message VirtioScsiLunDeleteRequest {
     int64 controller_id = 1;
     int64 lun_id = 2;
-}
-
-message VirtioScsiLunDeleteResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiLunUpdateRequest {

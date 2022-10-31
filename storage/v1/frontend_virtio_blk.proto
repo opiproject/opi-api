@@ -5,6 +5,7 @@ syntax = "proto3";
 package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
+import "google/protobuf/empty.proto";
 
 // Front End (host-facing) APIs.
 
@@ -12,7 +13,7 @@ import "common.proto";
 
 service VirtioBlkService {
     rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {}
-    rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (VirtioBlkDeleteResponse) {}
+    rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlkUpdateResponse) {}
     rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {}
     rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlkGetResponse)    {}
@@ -34,10 +35,6 @@ message VirtioBlkCreateRequest {
 
 message VirtioBlkDeleteRequest {
     int64 controller_id = 1;
-}
-
-message VirtioBlkDeleteResponse {
-    // Intentionally empty.
 }
 
 message VirtioBlkUpdateRequest {

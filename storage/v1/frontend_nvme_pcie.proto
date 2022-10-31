@@ -8,6 +8,7 @@ option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
 import "uuid.proto";
 import "object_key.proto";
+import "google/protobuf/empty.proto";
 
 // Front End (host-facing) APIs.
 
@@ -15,7 +16,7 @@ import "object_key.proto";
 
 service NVMeSubsystemService {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {}
-    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (NVMeSubsystemDeleteResponse) {}
+    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
     rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
     rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystemGetResponse)    {}
@@ -24,7 +25,7 @@ service NVMeSubsystemService {
 
 service NVMeControllerService {
     rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {}
-    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (NVMeControllerDeleteResponse) {}
+    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
     rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
     rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeControllerGetResponse)    {}
@@ -33,7 +34,7 @@ service NVMeControllerService {
 
 service NVMeNamespaceService {
     rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {}
-    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (NVMeNamespaceDeleteResponse) {}
+    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
     rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
     rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespaceGetResponse)    {}
@@ -158,10 +159,6 @@ message NVMeSubsystemDeleteRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
 
-message NVMeSubsystemDeleteResponse {
-    uint32 result = 1;
-}
-
 message NVMeSubsystemUpdateRequest {
     NVMeSubsystem subsystem = 1;
 }
@@ -200,10 +197,6 @@ message NVMeControllerCreateRequest {
 
 message NVMeControllerDeleteRequest {
     common.v1.ObjectKey controller_id = 1;
-}
-
-message NVMeControllerDeleteResponse {
-    // Intentionally empty.
 }
 
 message NVMeControllerUpdateRequest {
@@ -245,10 +238,6 @@ message NVMeNamespaceCreateRequest {
 
 message NVMeNamespaceDeleteRequest {
     common.v1.ObjectKey namespace_id = 1;
-}
-
-message NVMeNamespaceDeleteResponse {
-    // Intentionally empty.
 }
 
 message NVMeNamespaceUpdateRequest {
