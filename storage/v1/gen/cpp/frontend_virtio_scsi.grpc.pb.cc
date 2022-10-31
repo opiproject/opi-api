@@ -70,23 +70,23 @@ void VirtioScsiControllerService::Stub::async::VirtioScsiControllerCreate(::grpc
   return result;
 }
 
-::grpc::Status VirtioScsiControllerService::Stub::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiControllerDelete_, context, request, response);
+::grpc::Status VirtioScsiControllerService::Stub::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiControllerDelete_, context, request, response);
 }
 
-void VirtioScsiControllerService::Stub::async::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiControllerDelete_, context, request, response, std::move(f));
+void VirtioScsiControllerService::Stub::async::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiControllerDelete_, context, request, response, std::move(f));
 }
 
-void VirtioScsiControllerService::Stub::async::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void VirtioScsiControllerService::Stub::async::VirtioScsiControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiControllerDelete_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse>* VirtioScsiControllerService::Stub::PrepareAsyncVirtioScsiControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse, ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiControllerDelete_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioScsiControllerService::Stub::PrepareAsyncVirtioScsiControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiControllerDelete_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse>* VirtioScsiControllerService::Stub::AsyncVirtioScsiControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioScsiControllerService::Stub::AsyncVirtioScsiControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncVirtioScsiControllerDeleteRaw(context, request, cq);
   result->StartCall();
@@ -199,11 +199,11 @@ VirtioScsiControllerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VirtioScsiControllerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VirtioScsiControllerService::Service, ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< VirtioScsiControllerService::Service, ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](VirtioScsiControllerService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* req,
-             ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* resp) {
+             ::google::protobuf::Empty* resp) {
                return service->VirtioScsiControllerDelete(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -258,7 +258,7 @@ VirtioScsiControllerService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VirtioScsiControllerService::Service::VirtioScsiControllerDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* response) {
+::grpc::Status VirtioScsiControllerService::Service::VirtioScsiControllerDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -341,23 +341,23 @@ void VirtioScsiLunService::Stub::async::VirtioScsiLunCreate(::grpc::ClientContex
   return result;
 }
 
-::grpc::Status VirtioScsiLunService::Stub::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiLunDelete_, context, request, response);
+::grpc::Status VirtioScsiLunService::Stub::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioScsiLunDelete_, context, request, response);
 }
 
-void VirtioScsiLunService::Stub::async::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiLunDelete_, context, request, response, std::move(f));
+void VirtioScsiLunService::Stub::async::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiLunDelete_, context, request, response, std::move(f));
 }
 
-void VirtioScsiLunService::Stub::async::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void VirtioScsiLunService::Stub::async::VirtioScsiLunDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioScsiLunDelete_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiLunDeleteResponse>* VirtioScsiLunService::Stub::PrepareAsyncVirtioScsiLunDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioScsiLunDeleteResponse, ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiLunDelete_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioScsiLunService::Stub::PrepareAsyncVirtioScsiLunDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioScsiLunDelete_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioScsiLunDeleteResponse>* VirtioScsiLunService::Stub::AsyncVirtioScsiLunDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioScsiLunService::Stub::AsyncVirtioScsiLunDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncVirtioScsiLunDeleteRaw(context, request, cq);
   result->StartCall();
@@ -470,11 +470,11 @@ VirtioScsiLunService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VirtioScsiLunService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VirtioScsiLunService::Service, ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< VirtioScsiLunService::Service, ::opi_api::storage::v1::VirtioScsiLunDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](VirtioScsiLunService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* req,
-             ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* resp) {
+             ::google::protobuf::Empty* resp) {
                return service->VirtioScsiLunDelete(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -529,7 +529,7 @@ VirtioScsiLunService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VirtioScsiLunService::Service::VirtioScsiLunDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* response) {
+::grpc::Status VirtioScsiLunService::Service::VirtioScsiLunDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

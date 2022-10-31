@@ -64,7 +64,6 @@
     - [NVMeController](#opi_api-storage-v1-NVMeController)
     - [NVMeControllerCreateRequest](#opi_api-storage-v1-NVMeControllerCreateRequest)
     - [NVMeControllerDeleteRequest](#opi_api-storage-v1-NVMeControllerDeleteRequest)
-    - [NVMeControllerDeleteResponse](#opi_api-storage-v1-NVMeControllerDeleteResponse)
     - [NVMeControllerGetRequest](#opi_api-storage-v1-NVMeControllerGetRequest)
     - [NVMeControllerGetResponse](#opi_api-storage-v1-NVMeControllerGetResponse)
     - [NVMeControllerListRequest](#opi_api-storage-v1-NVMeControllerListRequest)
@@ -76,7 +75,6 @@
     - [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace)
     - [NVMeNamespaceCreateRequest](#opi_api-storage-v1-NVMeNamespaceCreateRequest)
     - [NVMeNamespaceDeleteRequest](#opi_api-storage-v1-NVMeNamespaceDeleteRequest)
-    - [NVMeNamespaceDeleteResponse](#opi_api-storage-v1-NVMeNamespaceDeleteResponse)
     - [NVMeNamespaceGetRequest](#opi_api-storage-v1-NVMeNamespaceGetRequest)
     - [NVMeNamespaceGetResponse](#opi_api-storage-v1-NVMeNamespaceGetResponse)
     - [NVMeNamespaceListRequest](#opi_api-storage-v1-NVMeNamespaceListRequest)
@@ -88,7 +86,6 @@
     - [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem)
     - [NVMeSubsystemCreateRequest](#opi_api-storage-v1-NVMeSubsystemCreateRequest)
     - [NVMeSubsystemDeleteRequest](#opi_api-storage-v1-NVMeSubsystemDeleteRequest)
-    - [NVMeSubsystemDeleteResponse](#opi_api-storage-v1-NVMeSubsystemDeleteResponse)
     - [NVMeSubsystemGetRequest](#opi_api-storage-v1-NVMeSubsystemGetRequest)
     - [NVMeSubsystemGetResponse](#opi_api-storage-v1-NVMeSubsystemGetResponse)
     - [NVMeSubsystemListRequest](#opi_api-storage-v1-NVMeSubsystemListRequest)
@@ -106,7 +103,6 @@
     - [VirtioBlk](#opi_api-storage-v1-VirtioBlk)
     - [VirtioBlkCreateRequest](#opi_api-storage-v1-VirtioBlkCreateRequest)
     - [VirtioBlkDeleteRequest](#opi_api-storage-v1-VirtioBlkDeleteRequest)
-    - [VirtioBlkDeleteResponse](#opi_api-storage-v1-VirtioBlkDeleteResponse)
     - [VirtioBlkGetRequest](#opi_api-storage-v1-VirtioBlkGetRequest)
     - [VirtioBlkGetResponse](#opi_api-storage-v1-VirtioBlkGetResponse)
     - [VirtioBlkListRequest](#opi_api-storage-v1-VirtioBlkListRequest)
@@ -123,7 +119,6 @@
     - [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController)
     - [VirtioScsiControllerCreateRequest](#opi_api-storage-v1-VirtioScsiControllerCreateRequest)
     - [VirtioScsiControllerDeleteRequest](#opi_api-storage-v1-VirtioScsiControllerDeleteRequest)
-    - [VirtioScsiControllerDeleteResponse](#opi_api-storage-v1-VirtioScsiControllerDeleteResponse)
     - [VirtioScsiControllerGetRequest](#opi_api-storage-v1-VirtioScsiControllerGetRequest)
     - [VirtioScsiControllerGetResponse](#opi_api-storage-v1-VirtioScsiControllerGetResponse)
     - [VirtioScsiControllerListRequest](#opi_api-storage-v1-VirtioScsiControllerListRequest)
@@ -135,7 +130,6 @@
     - [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun)
     - [VirtioScsiLunCreateRequest](#opi_api-storage-v1-VirtioScsiLunCreateRequest)
     - [VirtioScsiLunDeleteRequest](#opi_api-storage-v1-VirtioScsiLunDeleteRequest)
-    - [VirtioScsiLunDeleteResponse](#opi_api-storage-v1-VirtioScsiLunDeleteResponse)
     - [VirtioScsiLunGetRequest](#opi_api-storage-v1-VirtioScsiLunGetRequest)
     - [VirtioScsiLunGetResponse](#opi_api-storage-v1-VirtioScsiLunGetResponse)
     - [VirtioScsiLunListRequest](#opi_api-storage-v1-VirtioScsiLunListRequest)
@@ -947,16 +941,6 @@ virtual functions under the physical function.
 
 
 
-<a name="opi_api-storage-v1-NVMeControllerDeleteResponse"></a>
-
-### NVMeControllerDeleteResponse
-Intentionally empty.
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NVMeControllerGetRequest"></a>
 
 ### NVMeControllerGetRequest
@@ -1123,16 +1107,6 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMeNamespaceDeleteResponse"></a>
-
-### NVMeNamespaceDeleteResponse
-Intentionally empty.
 
 
 
@@ -1307,21 +1281,6 @@ Intentionally empty.
 
 
 
-<a name="opi_api-storage-v1-NVMeSubsystemDeleteResponse"></a>
-
-### NVMeSubsystemDeleteResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| result | [uint32](#uint32) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NVMeSubsystemGetRequest"></a>
 
 ### NVMeSubsystemGetRequest
@@ -1451,7 +1410,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | NVMeControllerCreate | [NVMeControllerCreateRequest](#opi_api-storage-v1-NVMeControllerCreateRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
-| NVMeControllerDelete | [NVMeControllerDeleteRequest](#opi_api-storage-v1-NVMeControllerDeleteRequest) | [NVMeControllerDeleteResponse](#opi_api-storage-v1-NVMeControllerDeleteResponse) |  |
+| NVMeControllerDelete | [NVMeControllerDeleteRequest](#opi_api-storage-v1-NVMeControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | NVMeControllerUpdate | [NVMeControllerUpdateRequest](#opi_api-storage-v1-NVMeControllerUpdateRequest) | [NVMeControllerUpdateResponse](#opi_api-storage-v1-NVMeControllerUpdateResponse) |  |
 | NVMeControllerList | [NVMeControllerListRequest](#opi_api-storage-v1-NVMeControllerListRequest) | [NVMeControllerListResponse](#opi_api-storage-v1-NVMeControllerListResponse) |  |
 | NVMeControllerGet | [NVMeControllerGetRequest](#opi_api-storage-v1-NVMeControllerGetRequest) | [NVMeControllerGetResponse](#opi_api-storage-v1-NVMeControllerGetResponse) |  |
@@ -1466,7 +1425,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | NVMeNamespaceCreate | [NVMeNamespaceCreateRequest](#opi_api-storage-v1-NVMeNamespaceCreateRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
-| NVMeNamespaceDelete | [NVMeNamespaceDeleteRequest](#opi_api-storage-v1-NVMeNamespaceDeleteRequest) | [NVMeNamespaceDeleteResponse](#opi_api-storage-v1-NVMeNamespaceDeleteResponse) |  |
+| NVMeNamespaceDelete | [NVMeNamespaceDeleteRequest](#opi_api-storage-v1-NVMeNamespaceDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | NVMeNamespaceUpdate | [NVMeNamespaceUpdateRequest](#opi_api-storage-v1-NVMeNamespaceUpdateRequest) | [NVMeNamespaceUpdateResponse](#opi_api-storage-v1-NVMeNamespaceUpdateResponse) |  |
 | NVMeNamespaceList | [NVMeNamespaceListRequest](#opi_api-storage-v1-NVMeNamespaceListRequest) | [NVMeNamespaceListResponse](#opi_api-storage-v1-NVMeNamespaceListResponse) |  |
 | NVMeNamespaceGet | [NVMeNamespaceGetRequest](#opi_api-storage-v1-NVMeNamespaceGetRequest) | [NVMeNamespaceGetResponse](#opi_api-storage-v1-NVMeNamespaceGetResponse) |  |
@@ -1481,7 +1440,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | NVMeSubsystemCreate | [NVMeSubsystemCreateRequest](#opi_api-storage-v1-NVMeSubsystemCreateRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
-| NVMeSubsystemDelete | [NVMeSubsystemDeleteRequest](#opi_api-storage-v1-NVMeSubsystemDeleteRequest) | [NVMeSubsystemDeleteResponse](#opi_api-storage-v1-NVMeSubsystemDeleteResponse) |  |
+| NVMeSubsystemDelete | [NVMeSubsystemDeleteRequest](#opi_api-storage-v1-NVMeSubsystemDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | NVMeSubsystemUpdate | [NVMeSubsystemUpdateRequest](#opi_api-storage-v1-NVMeSubsystemUpdateRequest) | [NVMeSubsystemUpdateResponse](#opi_api-storage-v1-NVMeSubsystemUpdateResponse) |  |
 | NVMeSubsystemList | [NVMeSubsystemListRequest](#opi_api-storage-v1-NVMeSubsystemListRequest) | [NVMeSubsystemListResponse](#opi_api-storage-v1-NVMeSubsystemListResponse) |  |
 | NVMeSubsystemGet | [NVMeSubsystemGetRequest](#opi_api-storage-v1-NVMeSubsystemGetRequest) | [NVMeSubsystemGetResponse](#opi_api-storage-v1-NVMeSubsystemGetResponse) |  |
@@ -1542,16 +1501,6 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioBlkDeleteResponse"></a>
-
-### VirtioBlkDeleteResponse
-Intentionally empty.
 
 
 
@@ -1688,7 +1637,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | VirtioBlkCreate | [VirtioBlkCreateRequest](#opi_api-storage-v1-VirtioBlkCreateRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| VirtioBlkDelete | [VirtioBlkDeleteRequest](#opi_api-storage-v1-VirtioBlkDeleteRequest) | [VirtioBlkDeleteResponse](#opi_api-storage-v1-VirtioBlkDeleteResponse) |  |
+| VirtioBlkDelete | [VirtioBlkDeleteRequest](#opi_api-storage-v1-VirtioBlkDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | VirtioBlkUpdate | [VirtioBlkUpdateRequest](#opi_api-storage-v1-VirtioBlkUpdateRequest) | [VirtioBlkUpdateResponse](#opi_api-storage-v1-VirtioBlkUpdateResponse) |  |
 | VirtioBlkList | [VirtioBlkListRequest](#opi_api-storage-v1-VirtioBlkListRequest) | [VirtioBlkListResponse](#opi_api-storage-v1-VirtioBlkListResponse) |  |
 | VirtioBlkGet | [VirtioBlkGetRequest](#opi_api-storage-v1-VirtioBlkGetRequest) | [VirtioBlkGetResponse](#opi_api-storage-v1-VirtioBlkGetResponse) |  |
@@ -1762,16 +1711,6 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-VirtioScsiControllerDeleteResponse"></a>
-
-### VirtioScsiControllerDeleteResponse
-Intentionally empty.
 
 
 
@@ -1937,16 +1876,6 @@ Intentionally empty.
 
 
 
-<a name="opi_api-storage-v1-VirtioScsiLunDeleteResponse"></a>
-
-### VirtioScsiLunDeleteResponse
-Intentionally empty.
-
-
-
-
-
-
 <a name="opi_api-storage-v1-VirtioScsiLunGetRequest"></a>
 
 ### VirtioScsiLunGetRequest
@@ -2079,7 +2008,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | VirtioScsiControllerCreate | [VirtioScsiControllerCreateRequest](#opi_api-storage-v1-VirtioScsiControllerCreateRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| VirtioScsiControllerDelete | [VirtioScsiControllerDeleteRequest](#opi_api-storage-v1-VirtioScsiControllerDeleteRequest) | [VirtioScsiControllerDeleteResponse](#opi_api-storage-v1-VirtioScsiControllerDeleteResponse) |  |
+| VirtioScsiControllerDelete | [VirtioScsiControllerDeleteRequest](#opi_api-storage-v1-VirtioScsiControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | VirtioScsiControllerUpdate | [VirtioScsiControllerUpdateRequest](#opi_api-storage-v1-VirtioScsiControllerUpdateRequest) | [VirtioScsiControllerUpdateResponse](#opi_api-storage-v1-VirtioScsiControllerUpdateResponse) |  |
 | VirtioScsiControllerList | [VirtioScsiControllerListRequest](#opi_api-storage-v1-VirtioScsiControllerListRequest) | [VirtioScsiControllerListResponse](#opi_api-storage-v1-VirtioScsiControllerListResponse) |  |
 | VirtioScsiControllerGet | [VirtioScsiControllerGetRequest](#opi_api-storage-v1-VirtioScsiControllerGetRequest) | [VirtioScsiControllerGetResponse](#opi_api-storage-v1-VirtioScsiControllerGetResponse) |  |
@@ -2094,7 +2023,7 @@ Intentionally empty.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | VirtioScsiLunCreate | [VirtioScsiLunCreateRequest](#opi_api-storage-v1-VirtioScsiLunCreateRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| VirtioScsiLunDelete | [VirtioScsiLunDeleteRequest](#opi_api-storage-v1-VirtioScsiLunDeleteRequest) | [VirtioScsiLunDeleteResponse](#opi_api-storage-v1-VirtioScsiLunDeleteResponse) |  |
+| VirtioScsiLunDelete | [VirtioScsiLunDeleteRequest](#opi_api-storage-v1-VirtioScsiLunDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | VirtioScsiLunUpdate | [VirtioScsiLunUpdateRequest](#opi_api-storage-v1-VirtioScsiLunUpdateRequest) | [VirtioScsiLunUpdateResponse](#opi_api-storage-v1-VirtioScsiLunUpdateResponse) |  |
 | VirtioScsiLunList | [VirtioScsiLunListRequest](#opi_api-storage-v1-VirtioScsiLunListRequest) | [VirtioScsiLunListResponse](#opi_api-storage-v1-VirtioScsiLunListResponse) |  |
 | VirtioScsiLunGet | [VirtioScsiLunGetRequest](#opi_api-storage-v1-VirtioScsiLunGetRequest) | [VirtioScsiLunGetResponse](#opi_api-storage-v1-VirtioScsiLunGetResponse) |  |

@@ -70,23 +70,23 @@ void VirtioBlkService::Stub::async::VirtioBlkCreate(::grpc::ClientContext* conte
   return result;
 }
 
-::grpc::Status VirtioBlkService::Stub::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::opi_api::storage::v1::VirtioBlkDeleteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::opi_api::storage::v1::VirtioBlkDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkDelete_, context, request, response);
+::grpc::Status VirtioBlkService::Stub::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkDelete_, context, request, response);
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::opi_api::storage::v1::VirtioBlkDeleteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::opi_api::storage::v1::VirtioBlkDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkDelete_, context, request, response, std::move(f));
+void VirtioBlkService::Stub::async::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkDelete_, context, request, response, std::move(f));
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::opi_api::storage::v1::VirtioBlkDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void VirtioBlkService::Stub::async::VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkDelete_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkDeleteResponse>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioBlkDeleteResponse, ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkDelete_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkDelete_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkDeleteResponse>* VirtioBlkService::Stub::AsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* VirtioBlkService::Stub::AsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncVirtioBlkDeleteRaw(context, request, cq);
   result->StartCall();
@@ -199,11 +199,11 @@ VirtioBlkService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VirtioBlkService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::opi_api::storage::v1::VirtioBlkDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](VirtioBlkService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::VirtioBlkDeleteRequest* req,
-             ::opi_api::storage::v1::VirtioBlkDeleteResponse* resp) {
+             ::google::protobuf::Empty* resp) {
                return service->VirtioBlkDelete(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -258,7 +258,7 @@ VirtioBlkService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VirtioBlkService::Service::VirtioBlkDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::opi_api::storage::v1::VirtioBlkDeleteResponse* response) {
+::grpc::Status VirtioBlkService::Service::VirtioBlkDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

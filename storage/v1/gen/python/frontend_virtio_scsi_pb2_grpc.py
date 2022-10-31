@@ -3,6 +3,7 @@
 import grpc
 
 import frontend_virtio_scsi_pb2 as frontend__virtio__scsi__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class VirtioScsiControllerServiceStub(object):
@@ -26,7 +27,7 @@ class VirtioScsiControllerServiceStub(object):
         self.VirtioScsiControllerDelete = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioScsiControllerService/VirtioScsiControllerDelete',
                 request_serializer=frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteRequest.SerializeToString,
-                response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.VirtioScsiControllerUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioScsiControllerService/VirtioScsiControllerUpdate',
@@ -104,7 +105,7 @@ def add_VirtioScsiControllerServiceServicer_to_server(servicer, server):
             'VirtioScsiControllerDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioScsiControllerDelete,
                     request_deserializer=frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteRequest.FromString,
-                    response_serializer=frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'VirtioScsiControllerUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioScsiControllerUpdate,
@@ -170,7 +171,7 @@ class VirtioScsiControllerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.VirtioScsiControllerService/VirtioScsiControllerDelete',
             frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteRequest.SerializeToString,
-            frontend__virtio__scsi__pb2.VirtioScsiControllerDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -260,7 +261,7 @@ class VirtioScsiLunServiceStub(object):
         self.VirtioScsiLunDelete = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioScsiLunService/VirtioScsiLunDelete',
                 request_serializer=frontend__virtio__scsi__pb2.VirtioScsiLunDeleteRequest.SerializeToString,
-                response_deserializer=frontend__virtio__scsi__pb2.VirtioScsiLunDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.VirtioScsiLunUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioScsiLunService/VirtioScsiLunUpdate',
@@ -334,7 +335,7 @@ def add_VirtioScsiLunServiceServicer_to_server(servicer, server):
             'VirtioScsiLunDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioScsiLunDelete,
                     request_deserializer=frontend__virtio__scsi__pb2.VirtioScsiLunDeleteRequest.FromString,
-                    response_serializer=frontend__virtio__scsi__pb2.VirtioScsiLunDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'VirtioScsiLunUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioScsiLunUpdate,
@@ -396,7 +397,7 @@ class VirtioScsiLunService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.VirtioScsiLunService/VirtioScsiLunDelete',
             frontend__virtio__scsi__pb2.VirtioScsiLunDeleteRequest.SerializeToString,
-            frontend__virtio__scsi__pb2.VirtioScsiLunDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

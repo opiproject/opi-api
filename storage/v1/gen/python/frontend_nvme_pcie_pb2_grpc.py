@@ -3,6 +3,7 @@
 import grpc
 
 import frontend_nvme_pcie_pb2 as frontend__nvme__pcie__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NVMeSubsystemServiceStub(object):
@@ -26,7 +27,7 @@ class NVMeSubsystemServiceStub(object):
         self.NVMeSubsystemDelete = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemDelete',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemDeleteRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.NVMeSubsystemUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemUpdate',
@@ -104,7 +105,7 @@ def add_NVMeSubsystemServiceServicer_to_server(servicer, server):
             'NVMeSubsystemDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemDelete,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemDeleteRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'NVMeSubsystemUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemUpdate,
@@ -170,7 +171,7 @@ class NVMeSubsystemService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemDelete',
             frontend__nvme__pcie__pb2.NVMeSubsystemDeleteRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeSubsystemDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -260,7 +261,7 @@ class NVMeControllerServiceStub(object):
         self.NVMeControllerDelete = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerDelete',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeControllerDeleteRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeControllerDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.NVMeControllerUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerUpdate',
@@ -334,7 +335,7 @@ def add_NVMeControllerServiceServicer_to_server(servicer, server):
             'NVMeControllerDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerDelete,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeControllerDeleteRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeControllerDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'NVMeControllerUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerUpdate,
@@ -396,7 +397,7 @@ class NVMeControllerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeControllerService/NVMeControllerDelete',
             frontend__nvme__pcie__pb2.NVMeControllerDeleteRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeControllerDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -486,7 +487,7 @@ class NVMeNamespaceServiceStub(object):
         self.NVMeNamespaceDelete = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceDelete',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceDeleteRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.NVMeNamespaceUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceUpdate',
@@ -560,7 +561,7 @@ def add_NVMeNamespaceServiceServicer_to_server(servicer, server):
             'NVMeNamespaceDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceDelete,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceDeleteRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'NVMeNamespaceUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceUpdate,
@@ -622,7 +623,7 @@ class NVMeNamespaceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceDelete',
             frontend__nvme__pcie__pb2.NVMeNamespaceDeleteRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeNamespaceDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

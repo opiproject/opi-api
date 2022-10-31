@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "common.pb.h"
+#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fvirtio_5fscsi_2eproto
@@ -48,7 +49,7 @@ struct TableStruct_frontend_5fvirtio_5fscsi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -67,9 +68,6 @@ extern VirtioScsiControllerCreateRequestDefaultTypeInternal _VirtioScsiControlle
 class VirtioScsiControllerDeleteRequest;
 struct VirtioScsiControllerDeleteRequestDefaultTypeInternal;
 extern VirtioScsiControllerDeleteRequestDefaultTypeInternal _VirtioScsiControllerDeleteRequest_default_instance_;
-class VirtioScsiControllerDeleteResponse;
-struct VirtioScsiControllerDeleteResponseDefaultTypeInternal;
-extern VirtioScsiControllerDeleteResponseDefaultTypeInternal _VirtioScsiControllerDeleteResponse_default_instance_;
 class VirtioScsiControllerGetRequest;
 struct VirtioScsiControllerGetRequestDefaultTypeInternal;
 extern VirtioScsiControllerGetRequestDefaultTypeInternal _VirtioScsiControllerGetRequest_default_instance_;
@@ -103,9 +101,6 @@ extern VirtioScsiLunCreateRequestDefaultTypeInternal _VirtioScsiLunCreateRequest
 class VirtioScsiLunDeleteRequest;
 struct VirtioScsiLunDeleteRequestDefaultTypeInternal;
 extern VirtioScsiLunDeleteRequestDefaultTypeInternal _VirtioScsiLunDeleteRequest_default_instance_;
-class VirtioScsiLunDeleteResponse;
-struct VirtioScsiLunDeleteResponseDefaultTypeInternal;
-extern VirtioScsiLunDeleteResponseDefaultTypeInternal _VirtioScsiLunDeleteResponse_default_instance_;
 class VirtioScsiLunGetRequest;
 struct VirtioScsiLunGetRequestDefaultTypeInternal;
 extern VirtioScsiLunGetRequestDefaultTypeInternal _VirtioScsiLunGetRequest_default_instance_;
@@ -137,7 +132,6 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::opi_api::storage::v1::VirtioScsiController* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiController>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiControllerCreateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerCreateRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerDeleteRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioScsiControllerDeleteResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerDeleteResponse>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiControllerGetRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerGetRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiControllerGetResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerGetResponse>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiControllerListRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiControllerListRequest>(Arena*);
@@ -149,7 +143,6 @@ template<> ::opi_api::storage::v1::VirtioScsiControllerUpdateResponse* Arena::Cr
 template<> ::opi_api::storage::v1::VirtioScsiLun* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLun>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiLunCreateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunCreateRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunDeleteRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioScsiLunDeleteResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunDeleteResponse>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiLunGetRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunGetRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiLunGetResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunGetResponse>(Arena*);
 template<> ::opi_api::storage::v1::VirtioScsiLunListRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioScsiLunListRequest>(Arena*);
@@ -821,124 +814,6 @@ class VirtioScsiControllerDeleteRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioScsiControllerDeleteResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioScsiControllerDeleteResponse) */ {
- public:
-  inline VirtioScsiControllerDeleteResponse() : VirtioScsiControllerDeleteResponse(nullptr) {}
-  explicit constexpr VirtioScsiControllerDeleteResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  VirtioScsiControllerDeleteResponse(const VirtioScsiControllerDeleteResponse& from);
-  VirtioScsiControllerDeleteResponse(VirtioScsiControllerDeleteResponse&& from) noexcept
-    : VirtioScsiControllerDeleteResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline VirtioScsiControllerDeleteResponse& operator=(const VirtioScsiControllerDeleteResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VirtioScsiControllerDeleteResponse& operator=(VirtioScsiControllerDeleteResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const VirtioScsiControllerDeleteResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const VirtioScsiControllerDeleteResponse* internal_default_instance() {
-    return reinterpret_cast<const VirtioScsiControllerDeleteResponse*>(
-               &_VirtioScsiControllerDeleteResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  friend void swap(VirtioScsiControllerDeleteResponse& a, VirtioScsiControllerDeleteResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VirtioScsiControllerDeleteResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VirtioScsiControllerDeleteResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  VirtioScsiControllerDeleteResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioScsiControllerDeleteResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const VirtioScsiControllerDeleteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const VirtioScsiControllerDeleteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
-  public:
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioScsiControllerDeleteResponse";
-  }
-  protected:
-  explicit VirtioScsiControllerDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiControllerDeleteResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
-};
-// -------------------------------------------------------------------
-
 class VirtioScsiControllerUpdateRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioScsiControllerUpdateRequest) */ {
  public:
@@ -987,7 +862,7 @@ class VirtioScsiControllerUpdateRequest final :
                &_VirtioScsiControllerUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(VirtioScsiControllerUpdateRequest& a, VirtioScsiControllerUpdateRequest& b) {
     a.Swap(&b);
@@ -1141,7 +1016,7 @@ class VirtioScsiControllerUpdateResponse final :
                &_VirtioScsiControllerUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(VirtioScsiControllerUpdateResponse& a, VirtioScsiControllerUpdateResponse& b) {
     a.Swap(&b);
@@ -1259,7 +1134,7 @@ class VirtioScsiControllerListRequest final :
                &_VirtioScsiControllerListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(VirtioScsiControllerListRequest& a, VirtioScsiControllerListRequest& b) {
     a.Swap(&b);
@@ -1378,7 +1253,7 @@ class VirtioScsiControllerListResponse final :
                &_VirtioScsiControllerListResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(VirtioScsiControllerListResponse& a, VirtioScsiControllerListResponse& b) {
     a.Swap(&b);
@@ -1533,7 +1408,7 @@ class VirtioScsiControllerGetRequest final :
                &_VirtioScsiControllerGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(VirtioScsiControllerGetRequest& a, VirtioScsiControllerGetRequest& b) {
     a.Swap(&b);
@@ -1679,7 +1554,7 @@ class VirtioScsiControllerGetResponse final :
                &_VirtioScsiControllerGetResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   friend void swap(VirtioScsiControllerGetResponse& a, VirtioScsiControllerGetResponse& b) {
     a.Swap(&b);
@@ -1834,7 +1709,7 @@ class VirtioScsiControllerStatsRequest final :
                &_VirtioScsiControllerStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   friend void swap(VirtioScsiControllerStatsRequest& a, VirtioScsiControllerStatsRequest& b) {
     a.Swap(&b);
@@ -1980,7 +1855,7 @@ class VirtioScsiControllerStatsResponse final :
                &_VirtioScsiControllerStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   friend void swap(VirtioScsiControllerStatsResponse& a, VirtioScsiControllerStatsResponse& b) {
     a.Swap(&b);
@@ -2142,7 +2017,7 @@ class VirtioScsiLunCreateRequest final :
                &_VirtioScsiLunCreateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   friend void swap(VirtioScsiLunCreateRequest& a, VirtioScsiLunCreateRequest& b) {
     a.Swap(&b);
@@ -2297,7 +2172,7 @@ class VirtioScsiLunDeleteRequest final :
                &_VirtioScsiLunDeleteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   friend void swap(VirtioScsiLunDeleteRequest& a, VirtioScsiLunDeleteRequest& b) {
     a.Swap(&b);
@@ -2406,124 +2281,6 @@ class VirtioScsiLunDeleteRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioScsiLunDeleteResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioScsiLunDeleteResponse) */ {
- public:
-  inline VirtioScsiLunDeleteResponse() : VirtioScsiLunDeleteResponse(nullptr) {}
-  explicit constexpr VirtioScsiLunDeleteResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  VirtioScsiLunDeleteResponse(const VirtioScsiLunDeleteResponse& from);
-  VirtioScsiLunDeleteResponse(VirtioScsiLunDeleteResponse&& from) noexcept
-    : VirtioScsiLunDeleteResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline VirtioScsiLunDeleteResponse& operator=(const VirtioScsiLunDeleteResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VirtioScsiLunDeleteResponse& operator=(VirtioScsiLunDeleteResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const VirtioScsiLunDeleteResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const VirtioScsiLunDeleteResponse* internal_default_instance() {
-    return reinterpret_cast<const VirtioScsiLunDeleteResponse*>(
-               &_VirtioScsiLunDeleteResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  friend void swap(VirtioScsiLunDeleteResponse& a, VirtioScsiLunDeleteResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VirtioScsiLunDeleteResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VirtioScsiLunDeleteResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  VirtioScsiLunDeleteResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioScsiLunDeleteResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const VirtioScsiLunDeleteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const VirtioScsiLunDeleteResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
-  public:
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioScsiLunDeleteResponse";
-  }
-  protected:
-  explicit VirtioScsiLunDeleteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiLunDeleteResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
-};
-// -------------------------------------------------------------------
-
 class VirtioScsiLunUpdateRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioScsiLunUpdateRequest) */ {
  public:
@@ -2572,7 +2329,7 @@ class VirtioScsiLunUpdateRequest final :
                &_VirtioScsiLunUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    14;
 
   friend void swap(VirtioScsiLunUpdateRequest& a, VirtioScsiLunUpdateRequest& b) {
     a.Swap(&b);
@@ -2726,7 +2483,7 @@ class VirtioScsiLunUpdateResponse final :
                &_VirtioScsiLunUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    15;
 
   friend void swap(VirtioScsiLunUpdateResponse& a, VirtioScsiLunUpdateResponse& b) {
     a.Swap(&b);
@@ -2845,7 +2602,7 @@ class VirtioScsiLunListRequest final :
                &_VirtioScsiLunListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    16;
 
   friend void swap(VirtioScsiLunListRequest& a, VirtioScsiLunListRequest& b) {
     a.Swap(&b);
@@ -2991,7 +2748,7 @@ class VirtioScsiLunListResponse final :
                &_VirtioScsiLunListResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    17;
 
   friend void swap(VirtioScsiLunListResponse& a, VirtioScsiLunListResponse& b) {
     a.Swap(&b);
@@ -3146,7 +2903,7 @@ class VirtioScsiLunGetRequest final :
                &_VirtioScsiLunGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    18;
 
   friend void swap(VirtioScsiLunGetRequest& a, VirtioScsiLunGetRequest& b) {
     a.Swap(&b);
@@ -3303,7 +3060,7 @@ class VirtioScsiLunGetResponse final :
                &_VirtioScsiLunGetResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    19;
 
   friend void swap(VirtioScsiLunGetResponse& a, VirtioScsiLunGetResponse& b) {
     a.Swap(&b);
@@ -3458,7 +3215,7 @@ class VirtioScsiLunStatsRequest final :
                &_VirtioScsiLunStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    20;
 
   friend void swap(VirtioScsiLunStatsRequest& a, VirtioScsiLunStatsRequest& b) {
     a.Swap(&b);
@@ -3615,7 +3372,7 @@ class VirtioScsiLunStatsResponse final :
                &_VirtioScsiLunStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    21;
 
   friend void swap(VirtioScsiLunStatsResponse& a, VirtioScsiLunStatsResponse& b) {
     a.Swap(&b);
@@ -4107,10 +3864,6 @@ inline void VirtioScsiControllerDeleteRequest::set_controller_id(int64_t value) 
   _internal_set_controller_id(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiControllerDeleteRequest.controller_id)
 }
-
-// -------------------------------------------------------------------
-
-// VirtioScsiControllerDeleteResponse
 
 // -------------------------------------------------------------------
 
@@ -4615,10 +4368,6 @@ inline void VirtioScsiLunDeleteRequest::set_lun_id(int64_t value) {
 
 // -------------------------------------------------------------------
 
-// VirtioScsiLunDeleteResponse
-
-// -------------------------------------------------------------------
-
 // VirtioScsiLunUpdateRequest
 
 // .opi_api.storage.v1.VirtioScsiLun lun = 1;
@@ -5043,10 +4792,6 @@ inline void VirtioScsiLunStatsResponse::set_allocated_stats(std::string* stats) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
