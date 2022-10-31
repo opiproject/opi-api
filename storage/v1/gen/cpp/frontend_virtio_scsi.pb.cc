@@ -59,17 +59,6 @@ struct VirtioScsiControllerCreateRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiControllerCreateRequestDefaultTypeInternal _VirtioScsiControllerCreateRequest_default_instance_;
-constexpr VirtioScsiControllerCreateResponse::VirtioScsiControllerCreateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct VirtioScsiControllerCreateResponseDefaultTypeInternal {
-  constexpr VirtioScsiControllerCreateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~VirtioScsiControllerCreateResponseDefaultTypeInternal() {}
-  union {
-    VirtioScsiControllerCreateResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiControllerCreateResponseDefaultTypeInternal _VirtioScsiControllerCreateResponse_default_instance_;
 constexpr VirtioScsiControllerDeleteRequest::VirtioScsiControllerDeleteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : controller_id_(int64_t{0}){}
@@ -200,17 +189,6 @@ struct VirtioScsiLunCreateRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiLunCreateRequestDefaultTypeInternal _VirtioScsiLunCreateRequest_default_instance_;
-constexpr VirtioScsiLunCreateResponse::VirtioScsiLunCreateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct VirtioScsiLunCreateResponseDefaultTypeInternal {
-  constexpr VirtioScsiLunCreateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~VirtioScsiLunCreateResponseDefaultTypeInternal() {}
-  union {
-    VirtioScsiLunCreateResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiLunCreateResponseDefaultTypeInternal _VirtioScsiLunCreateResponse_default_instance_;
 constexpr VirtioScsiLunDeleteRequest::VirtioScsiLunDeleteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : controller_id_(int64_t{0})
@@ -336,7 +314,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiLunStatsResponseDefau
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[26];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[24];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_frontend_5fvirtio_5fscsi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_frontend_5fvirtio_5fscsi_2eproto = nullptr;
 
@@ -366,12 +344,6 @@ const uint32_t TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiControllerCreateRequest, controller_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiControllerCreateResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiControllerDeleteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -447,12 +419,6 @@ const uint32_t TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiLunCreateRequest, lun_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiLunCreateResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiLunDeleteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -530,36 +496,33 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiController)},
   { 9, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLun)},
   { 18, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerCreateRequest)},
-  { 25, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerCreateResponse)},
-  { 31, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerDeleteRequest)},
-  { 38, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerDeleteResponse)},
-  { 44, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerUpdateRequest)},
-  { 51, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerUpdateResponse)},
-  { 57, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerListRequest)},
-  { 63, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerListResponse)},
-  { 70, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerGetRequest)},
-  { 77, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerGetResponse)},
-  { 84, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsRequest)},
-  { 91, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsResponse)},
-  { 99, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunCreateRequest)},
-  { 106, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunCreateResponse)},
-  { 112, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunDeleteRequest)},
-  { 120, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunDeleteResponse)},
-  { 126, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunUpdateRequest)},
-  { 133, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunUpdateResponse)},
-  { 139, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunListRequest)},
-  { 146, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunListResponse)},
-  { 153, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunGetRequest)},
-  { 161, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunGetResponse)},
-  { 168, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsRequest)},
-  { 176, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsResponse)},
+  { 25, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerDeleteRequest)},
+  { 32, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerDeleteResponse)},
+  { 38, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerUpdateRequest)},
+  { 45, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerUpdateResponse)},
+  { 51, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerListRequest)},
+  { 57, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerListResponse)},
+  { 64, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerGetRequest)},
+  { 71, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerGetResponse)},
+  { 78, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsRequest)},
+  { 85, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsResponse)},
+  { 93, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunCreateRequest)},
+  { 100, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunDeleteRequest)},
+  { 108, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunDeleteResponse)},
+  { 114, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunUpdateRequest)},
+  { 121, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunUpdateResponse)},
+  { 127, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunListRequest)},
+  { 134, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunListResponse)},
+  { 141, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunGetRequest)},
+  { 149, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunGetResponse)},
+  { 156, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsRequest)},
+  { 164, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiController_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLun_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerCreateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerCreateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerDeleteRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerDeleteResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerUpdateRequest_default_instance_),
@@ -571,7 +534,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerStatsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiControllerStatsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLunCreateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLunCreateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLunDeleteRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLunDeleteResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VirtioScsiLunUpdateRequest_default_instance_),
@@ -593,92 +555,89 @@ const char descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto[] PROTOBUF
   "\025\n\rcontroller_id\030\004 \001(\003\022\014\n\004bdev\030\006 \001(\t\"a\n!"
   "VirtioScsiControllerCreateRequest\022<\n\ncon"
   "troller\030\001 \001(\0132(.opi_api.storage.v1.Virti"
-  "oScsiController\"$\n\"VirtioScsiControllerC"
-  "reateResponse\":\n!VirtioScsiControllerDel"
-  "eteRequest\022\025\n\rcontroller_id\030\001 \001(\003\"$\n\"Vir"
-  "tioScsiControllerDeleteResponse\"a\n!Virti"
-  "oScsiControllerUpdateRequest\022<\n\ncontroll"
-  "er\030\001 \001(\0132(.opi_api.storage.v1.VirtioScsi"
-  "Controller\"$\n\"VirtioScsiControllerUpdate"
-  "Response\"!\n\037VirtioScsiControllerListRequ"
-  "est\"`\n VirtioScsiControllerListResponse\022"
-  "<\n\ncontroller\030\001 \003(\0132(.opi_api.storage.v1"
-  ".VirtioScsiController\"7\n\036VirtioScsiContr"
-  "ollerGetRequest\022\025\n\rcontroller_id\030\001 \001(\003\"_"
-  "\n\037VirtioScsiControllerGetResponse\022<\n\ncon"
-  "troller\030\001 \001(\0132(.opi_api.storage.v1.Virti"
-  "oScsiController\"9\n VirtioScsiControllerS"
-  "tatsRequest\022\025\n\rcontroller_id\030\001 \001(\003\">\n!Vi"
-  "rtioScsiControllerStatsResponse\022\n\n\002id\030\001 "
-  "\001(\003\022\r\n\005stats\030\002 \001(\t\"L\n\032VirtioScsiLunCreat"
-  "eRequest\022.\n\003lun\030\001 \001(\0132!.opi_api.storage."
-  "v1.VirtioScsiLun\"\035\n\033VirtioScsiLunCreateR"
-  "esponse\"C\n\032VirtioScsiLunDeleteRequest\022\025\n"
-  "\rcontroller_id\030\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"\035\n\033"
-  "VirtioScsiLunDeleteResponse\"L\n\032VirtioScs"
-  "iLunUpdateRequest\022.\n\003lun\030\001 \001(\0132!.opi_api"
-  ".storage.v1.VirtioScsiLun\"\035\n\033VirtioScsiL"
-  "unUpdateResponse\"1\n\030VirtioScsiLunListReq"
-  "uest\022\025\n\rcontroller_id\030\001 \001(\003\"K\n\031VirtioScs"
-  "iLunListResponse\022.\n\003lun\030\001 \003(\0132!.opi_api."
-  "storage.v1.VirtioScsiLun\"@\n\027VirtioScsiLu"
-  "nGetRequest\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n\006lu"
-  "n_id\030\002 \001(\003\"J\n\030VirtioScsiLunGetResponse\022."
-  "\n\003lun\030\001 \001(\0132!.opi_api.storage.v1.VirtioS"
-  "csiLun\"B\n\031VirtioScsiLunStatsRequest\022\025\n\rc"
-  "ontroller_id\030\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"7\n\032Vi"
-  "rtioScsiLunStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005"
-  "stats\030\002 \001(\t2\353\006\n\033VirtioScsiControllerServ"
-  "ice\022\215\001\n\032VirtioScsiControllerCreate\0225.opi"
-  "_api.storage.v1.VirtioScsiControllerCrea"
-  "teRequest\0326.opi_api.storage.v1.VirtioScs"
-  "iControllerCreateResponse\"\000\022\215\001\n\032VirtioSc"
-  "siControllerDelete\0225.opi_api.storage.v1."
-  "VirtioScsiControllerDeleteRequest\0326.opi_"
-  "api.storage.v1.VirtioScsiControllerDelet"
-  "eResponse\"\000\022\215\001\n\032VirtioScsiControllerUpda"
-  "te\0225.opi_api.storage.v1.VirtioScsiContro"
-  "llerUpdateRequest\0326.opi_api.storage.v1.V"
-  "irtioScsiControllerUpdateResponse\"\000\022\207\001\n\030"
-  "VirtioScsiControllerList\0223.opi_api.stora"
-  "ge.v1.VirtioScsiControllerListRequest\0324."
-  "opi_api.storage.v1.VirtioScsiControllerL"
-  "istResponse\"\000\022\204\001\n\027VirtioScsiControllerGe"
-  "t\0222.opi_api.storage.v1.VirtioScsiControl"
-  "lerGetRequest\0323.opi_api.storage.v1.Virti"
-  "oScsiControllerGetResponse\"\000\022\212\001\n\031VirtioS"
-  "csiControllerStats\0224.opi_api.storage.v1."
-  "VirtioScsiControllerStatsRequest\0325.opi_a"
-  "pi.storage.v1.VirtioScsiControllerStatsR"
-  "esponse\"\0002\340\005\n\024VirtioScsiLunService\022x\n\023Vi"
-  "rtioScsiLunCreate\022..opi_api.storage.v1.V"
-  "irtioScsiLunCreateRequest\032/.opi_api.stor"
-  "age.v1.VirtioScsiLunCreateResponse\"\000\022x\n\023"
-  "VirtioScsiLunDelete\022..opi_api.storage.v1"
-  ".VirtioScsiLunDeleteRequest\032/.opi_api.st"
-  "orage.v1.VirtioScsiLunDeleteResponse\"\000\022x"
-  "\n\023VirtioScsiLunUpdate\022..opi_api.storage."
-  "v1.VirtioScsiLunUpdateRequest\032/.opi_api."
-  "storage.v1.VirtioScsiLunUpdateResponse\"\000"
-  "\022r\n\021VirtioScsiLunList\022,.opi_api.storage."
-  "v1.VirtioScsiLunListRequest\032-.opi_api.st"
-  "orage.v1.VirtioScsiLunListResponse\"\000\022o\n\020"
-  "VirtioScsiLunGet\022+.opi_api.storage.v1.Vi"
-  "rtioScsiLunGetRequest\032,.opi_api.storage."
-  "v1.VirtioScsiLunGetResponse\"\000\022u\n\022VirtioS"
-  "csiLunStats\022-.opi_api.storage.v1.VirtioS"
-  "csiLunStatsRequest\032..opi_api.storage.v1."
-  "VirtioScsiLunStatsResponse\"\000B1Z/github.c"
-  "om/opiproject/opi-api/storage/v1/gen/gob"
-  "\006proto3"
+  "oScsiController\":\n!VirtioScsiControllerD"
+  "eleteRequest\022\025\n\rcontroller_id\030\001 \001(\003\"$\n\"V"
+  "irtioScsiControllerDeleteResponse\"a\n!Vir"
+  "tioScsiControllerUpdateRequest\022<\n\ncontro"
+  "ller\030\001 \001(\0132(.opi_api.storage.v1.VirtioSc"
+  "siController\"$\n\"VirtioScsiControllerUpda"
+  "teResponse\"!\n\037VirtioScsiControllerListRe"
+  "quest\"`\n VirtioScsiControllerListRespons"
+  "e\022<\n\ncontroller\030\001 \003(\0132(.opi_api.storage."
+  "v1.VirtioScsiController\"7\n\036VirtioScsiCon"
+  "trollerGetRequest\022\025\n\rcontroller_id\030\001 \001(\003"
+  "\"_\n\037VirtioScsiControllerGetResponse\022<\n\nc"
+  "ontroller\030\001 \001(\0132(.opi_api.storage.v1.Vir"
+  "tioScsiController\"9\n VirtioScsiControlle"
+  "rStatsRequest\022\025\n\rcontroller_id\030\001 \001(\003\">\n!"
+  "VirtioScsiControllerStatsResponse\022\n\n\002id\030"
+  "\001 \001(\003\022\r\n\005stats\030\002 \001(\t\"L\n\032VirtioScsiLunCre"
+  "ateRequest\022.\n\003lun\030\001 \001(\0132!.opi_api.storag"
+  "e.v1.VirtioScsiLun\"C\n\032VirtioScsiLunDelet"
+  "eRequest\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n\006lun_i"
+  "d\030\002 \001(\003\"\035\n\033VirtioScsiLunDeleteResponse\"L"
+  "\n\032VirtioScsiLunUpdateRequest\022.\n\003lun\030\001 \001("
+  "\0132!.opi_api.storage.v1.VirtioScsiLun\"\035\n\033"
+  "VirtioScsiLunUpdateResponse\"1\n\030VirtioScs"
+  "iLunListRequest\022\025\n\rcontroller_id\030\001 \001(\003\"K"
+  "\n\031VirtioScsiLunListResponse\022.\n\003lun\030\001 \003(\013"
+  "2!.opi_api.storage.v1.VirtioScsiLun\"@\n\027V"
+  "irtioScsiLunGetRequest\022\025\n\rcontroller_id\030"
+  "\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"J\n\030VirtioScsiLunGe"
+  "tResponse\022.\n\003lun\030\001 \001(\0132!.opi_api.storage"
+  ".v1.VirtioScsiLun\"B\n\031VirtioScsiLunStatsR"
+  "equest\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n\006lun_id\030"
+  "\002 \001(\003\"7\n\032VirtioScsiLunStatsResponse\022\n\n\002i"
+  "d\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\334\006\n\033VirtioScsiCon"
+  "trollerService\022\177\n\032VirtioScsiControllerCr"
+  "eate\0225.opi_api.storage.v1.VirtioScsiCont"
+  "rollerCreateRequest\032(.opi_api.storage.v1"
+  ".VirtioScsiController\"\000\022\215\001\n\032VirtioScsiCo"
+  "ntrollerDelete\0225.opi_api.storage.v1.Virt"
+  "ioScsiControllerDeleteRequest\0326.opi_api."
+  "storage.v1.VirtioScsiControllerDeleteRes"
+  "ponse\"\000\022\215\001\n\032VirtioScsiControllerUpdate\0225"
+  ".opi_api.storage.v1.VirtioScsiController"
+  "UpdateRequest\0326.opi_api.storage.v1.Virti"
+  "oScsiControllerUpdateResponse\"\000\022\207\001\n\030Virt"
+  "ioScsiControllerList\0223.opi_api.storage.v"
+  "1.VirtioScsiControllerListRequest\0324.opi_"
+  "api.storage.v1.VirtioScsiControllerListR"
+  "esponse\"\000\022\204\001\n\027VirtioScsiControllerGet\0222."
+  "opi_api.storage.v1.VirtioScsiControllerG"
+  "etRequest\0323.opi_api.storage.v1.VirtioScs"
+  "iControllerGetResponse\"\000\022\212\001\n\031VirtioScsiC"
+  "ontrollerStats\0224.opi_api.storage.v1.Virt"
+  "ioScsiControllerStatsRequest\0325.opi_api.s"
+  "torage.v1.VirtioScsiControllerStatsRespo"
+  "nse\"\0002\322\005\n\024VirtioScsiLunService\022j\n\023Virtio"
+  "ScsiLunCreate\022..opi_api.storage.v1.Virti"
+  "oScsiLunCreateRequest\032!.opi_api.storage."
+  "v1.VirtioScsiLun\"\000\022x\n\023VirtioScsiLunDelet"
+  "e\022..opi_api.storage.v1.VirtioScsiLunDele"
+  "teRequest\032/.opi_api.storage.v1.VirtioScs"
+  "iLunDeleteResponse\"\000\022x\n\023VirtioScsiLunUpd"
+  "ate\022..opi_api.storage.v1.VirtioScsiLunUp"
+  "dateRequest\032/.opi_api.storage.v1.VirtioS"
+  "csiLunUpdateResponse\"\000\022r\n\021VirtioScsiLunL"
+  "ist\022,.opi_api.storage.v1.VirtioScsiLunLi"
+  "stRequest\032-.opi_api.storage.v1.VirtioScs"
+  "iLunListResponse\"\000\022o\n\020VirtioScsiLunGet\022+"
+  ".opi_api.storage.v1.VirtioScsiLunGetRequ"
+  "est\032,.opi_api.storage.v1.VirtioScsiLunGe"
+  "tResponse\"\000\022u\n\022VirtioScsiLunStats\022-.opi_"
+  "api.storage.v1.VirtioScsiLunStatsRequest"
+  "\032..opi_api.storage.v1.VirtioScsiLunStats"
+  "Response\"\000B1Z/github.com/opiproject/opi-"
+  "api/storage/v1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fvirtio_5fscsi_2eproto_deps[1] = {
   &::descriptor_table_common_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5fscsi_2eproto = {
-  false, false, 3407, descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto, "frontend_virtio_scsi.proto", 
-  &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once, descriptor_table_frontend_5fvirtio_5fscsi_2eproto_deps, 1, 26,
+  false, false, 3309, descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto, "frontend_virtio_scsi.proto", 
+  &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once, descriptor_table_frontend_5fvirtio_5fscsi_2eproto_deps, 1, 24,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets,
   file_level_metadata_frontend_5fvirtio_5fscsi_2eproto, file_level_enum_descriptors_frontend_5fvirtio_5fscsi_2eproto, file_level_service_descriptors_frontend_5fvirtio_5fscsi_2eproto,
 };
@@ -1436,45 +1395,6 @@ void VirtioScsiControllerCreateRequest::InternalSwap(VirtioScsiControllerCreateR
 
 // ===================================================================
 
-class VirtioScsiControllerCreateResponse::_Internal {
- public:
-};
-
-VirtioScsiControllerCreateResponse::VirtioScsiControllerCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.VirtioScsiControllerCreateResponse)
-}
-VirtioScsiControllerCreateResponse::VirtioScsiControllerCreateResponse(const VirtioScsiControllerCreateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VirtioScsiControllerCreateResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VirtioScsiControllerCreateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiControllerCreateResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerCreateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[3]);
-}
-
-// ===================================================================
-
 class VirtioScsiControllerDeleteRequest::_Internal {
  public:
 };
@@ -1648,7 +1568,7 @@ void VirtioScsiControllerDeleteRequest::InternalSwap(VirtioScsiControllerDeleteR
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerDeleteRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[4]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[3]);
 }
 
 // ===================================================================
@@ -1687,7 +1607,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiControllerDeleteResp
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerDeleteResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[5]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[4]);
 }
 
 // ===================================================================
@@ -1882,7 +1802,7 @@ void VirtioScsiControllerUpdateRequest::InternalSwap(VirtioScsiControllerUpdateR
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerUpdateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[6]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[5]);
 }
 
 // ===================================================================
@@ -1921,7 +1841,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiControllerUpdateResp
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerUpdateResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[7]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[6]);
 }
 
 // ===================================================================
@@ -1960,7 +1880,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiControllerListReques
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerListRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[8]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[7]);
 }
 
 // ===================================================================
@@ -2145,7 +2065,7 @@ void VirtioScsiControllerListResponse::InternalSwap(VirtioScsiControllerListResp
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[9]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[8]);
 }
 
 // ===================================================================
@@ -2323,7 +2243,7 @@ void VirtioScsiControllerGetRequest::InternalSwap(VirtioScsiControllerGetRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[10]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[9]);
 }
 
 // ===================================================================
@@ -2518,7 +2438,7 @@ void VirtioScsiControllerGetResponse::InternalSwap(VirtioScsiControllerGetRespon
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerGetResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[11]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[10]);
 }
 
 // ===================================================================
@@ -2696,7 +2616,7 @@ void VirtioScsiControllerStatsRequest::InternalSwap(VirtioScsiControllerStatsReq
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[12]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[11]);
 }
 
 // ===================================================================
@@ -2925,7 +2845,7 @@ void VirtioScsiControllerStatsResponse::InternalSwap(VirtioScsiControllerStatsRe
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiControllerStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[13]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[12]);
 }
 
 // ===================================================================
@@ -3120,46 +3040,7 @@ void VirtioScsiLunCreateRequest::InternalSwap(VirtioScsiLunCreateRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunCreateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[14]);
-}
-
-// ===================================================================
-
-class VirtioScsiLunCreateResponse::_Internal {
- public:
-};
-
-VirtioScsiLunCreateResponse::VirtioScsiLunCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.VirtioScsiLunCreateResponse)
-}
-VirtioScsiLunCreateResponse::VirtioScsiLunCreateResponse(const VirtioScsiLunCreateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VirtioScsiLunCreateResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VirtioScsiLunCreateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiLunCreateResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunCreateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[15]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[13]);
 }
 
 // ===================================================================
@@ -3371,7 +3252,7 @@ void VirtioScsiLunDeleteRequest::InternalSwap(VirtioScsiLunDeleteRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunDeleteRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[16]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[14]);
 }
 
 // ===================================================================
@@ -3410,7 +3291,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiLunDeleteResponse::G
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunDeleteResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[17]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[15]);
 }
 
 // ===================================================================
@@ -3605,7 +3486,7 @@ void VirtioScsiLunUpdateRequest::InternalSwap(VirtioScsiLunUpdateRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunUpdateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[18]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[16]);
 }
 
 // ===================================================================
@@ -3644,7 +3525,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VirtioScsiLunUpdateResponse::G
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunUpdateResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[19]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[17]);
 }
 
 // ===================================================================
@@ -3822,7 +3703,7 @@ void VirtioScsiLunListRequest::InternalSwap(VirtioScsiLunListRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunListRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[20]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[18]);
 }
 
 // ===================================================================
@@ -4007,7 +3888,7 @@ void VirtioScsiLunListResponse::InternalSwap(VirtioScsiLunListResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[21]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[19]);
 }
 
 // ===================================================================
@@ -4219,7 +4100,7 @@ void VirtioScsiLunGetRequest::InternalSwap(VirtioScsiLunGetRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[22]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[20]);
 }
 
 // ===================================================================
@@ -4414,7 +4295,7 @@ void VirtioScsiLunGetResponse::InternalSwap(VirtioScsiLunGetResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunGetResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[23]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[21]);
 }
 
 // ===================================================================
@@ -4626,7 +4507,7 @@ void VirtioScsiLunStatsRequest::InternalSwap(VirtioScsiLunStatsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[24]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[22]);
 }
 
 // ===================================================================
@@ -4855,7 +4736,7 @@ void VirtioScsiLunStatsResponse::InternalSwap(VirtioScsiLunStatsResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata VirtioScsiLunStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_getter, &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once,
-      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[25]);
+      file_level_metadata_frontend_5fvirtio_5fscsi_2eproto[23]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -4871,9 +4752,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiLun* Arena::Creat
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiControllerCreateRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiControllerCreateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiControllerCreateRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiControllerCreateResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiControllerCreateResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiControllerCreateResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiControllerDeleteRequest >(arena);
@@ -4907,9 +4785,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiControllerStatsRe
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiLunCreateRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiLunCreateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiLunCreateRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiLunCreateResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiLunCreateResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiLunCreateResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VirtioScsiLunDeleteRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::VirtioScsiLunDeleteRequest >(arena);

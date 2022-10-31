@@ -21,7 +21,7 @@ class VirtioBlkServiceStub(object):
         self.VirtioBlkCreate = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkCreate',
                 request_serializer=frontend__virtio__blk__pb2.VirtioBlkCreateRequest.SerializeToString,
-                response_deserializer=frontend__virtio__blk__pb2.VirtioBlkCreateResponse.FromString,
+                response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
         self.VirtioBlkDelete = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkDelete',
@@ -99,7 +99,7 @@ def add_VirtioBlkServiceServicer_to_server(servicer, server):
             'VirtioBlkCreate': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkCreate,
                     request_deserializer=frontend__virtio__blk__pb2.VirtioBlkCreateRequest.FromString,
-                    response_serializer=frontend__virtio__blk__pb2.VirtioBlkCreateResponse.SerializeToString,
+                    response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
             'VirtioBlkDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkDelete,
@@ -153,7 +153,7 @@ class VirtioBlkService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.VirtioBlkService/VirtioBlkCreate',
             frontend__virtio__blk__pb2.VirtioBlkCreateRequest.SerializeToString,
-            frontend__virtio__blk__pb2.VirtioBlkCreateResponse.FromString,
+            frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
