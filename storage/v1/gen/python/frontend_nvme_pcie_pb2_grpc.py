@@ -32,7 +32,7 @@ class NVMeSubsystemServiceStub(object):
         self.NVMeSubsystemUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemUpdate',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemUpdateRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemUpdateResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystem.FromString,
                 )
         self.NVMeSubsystemList = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemList',
@@ -42,7 +42,7 @@ class NVMeSubsystemServiceStub(object):
         self.NVMeSubsystemGet = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemGet',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemGetRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemGetResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystem.FromString,
                 )
         self.NVMeSubsystemStats = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemStats',
@@ -110,7 +110,7 @@ def add_NVMeSubsystemServiceServicer_to_server(servicer, server):
             'NVMeSubsystemUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemUpdate,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemUpdateRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemUpdateResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeSubsystem.SerializeToString,
             ),
             'NVMeSubsystemList': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemList,
@@ -120,7 +120,7 @@ def add_NVMeSubsystemServiceServicer_to_server(servicer, server):
             'NVMeSubsystemGet': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemGet,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeSubsystemGetRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeSubsystemGetResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeSubsystem.SerializeToString,
             ),
             'NVMeSubsystemStats': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeSubsystemStats,
@@ -188,7 +188,7 @@ class NVMeSubsystemService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemUpdate',
             frontend__nvme__pcie__pb2.NVMeSubsystemUpdateRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeSubsystemUpdateResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeSubsystem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -222,7 +222,7 @@ class NVMeSubsystemService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeSubsystemService/NVMeSubsystemGet',
             frontend__nvme__pcie__pb2.NVMeSubsystemGetRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeSubsystemGetResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeSubsystem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -266,7 +266,7 @@ class NVMeControllerServiceStub(object):
         self.NVMeControllerUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerUpdate',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeControllerUpdateRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeControllerUpdateResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeController.FromString,
                 )
         self.NVMeControllerList = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerList',
@@ -276,7 +276,7 @@ class NVMeControllerServiceStub(object):
         self.NVMeControllerGet = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerGet',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeControllerGetRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeControllerGetResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeController.FromString,
                 )
         self.NVMeControllerStats = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeControllerService/NVMeControllerStats',
@@ -340,7 +340,7 @@ def add_NVMeControllerServiceServicer_to_server(servicer, server):
             'NVMeControllerUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerUpdate,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeControllerUpdateRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeControllerUpdateResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeController.SerializeToString,
             ),
             'NVMeControllerList': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerList,
@@ -350,7 +350,7 @@ def add_NVMeControllerServiceServicer_to_server(servicer, server):
             'NVMeControllerGet': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerGet,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeControllerGetRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeControllerGetResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeController.SerializeToString,
             ),
             'NVMeControllerStats': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeControllerStats,
@@ -414,7 +414,7 @@ class NVMeControllerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeControllerService/NVMeControllerUpdate',
             frontend__nvme__pcie__pb2.NVMeControllerUpdateRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeControllerUpdateResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeController.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -448,7 +448,7 @@ class NVMeControllerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeControllerService/NVMeControllerGet',
             frontend__nvme__pcie__pb2.NVMeControllerGetRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeControllerGetResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeController.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -492,7 +492,7 @@ class NVMeNamespaceServiceStub(object):
         self.NVMeNamespaceUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceUpdate',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceUpdateRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceUpdateResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespace.FromString,
                 )
         self.NVMeNamespaceList = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceList',
@@ -502,7 +502,7 @@ class NVMeNamespaceServiceStub(object):
         self.NVMeNamespaceGet = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceGet',
                 request_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceGetRequest.SerializeToString,
-                response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceGetResponse.FromString,
+                response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespace.FromString,
                 )
         self.NVMeNamespaceStats = channel.unary_unary(
                 '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceStats',
@@ -566,7 +566,7 @@ def add_NVMeNamespaceServiceServicer_to_server(servicer, server):
             'NVMeNamespaceUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceUpdate,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceUpdateRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceUpdateResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeNamespace.SerializeToString,
             ),
             'NVMeNamespaceList': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceList,
@@ -576,7 +576,7 @@ def add_NVMeNamespaceServiceServicer_to_server(servicer, server):
             'NVMeNamespaceGet': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceGet,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceGetRequest.FromString,
-                    response_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceGetResponse.SerializeToString,
+                    response_serializer=frontend__nvme__pcie__pb2.NVMeNamespace.SerializeToString,
             ),
             'NVMeNamespaceStats': grpc.unary_unary_rpc_method_handler(
                     servicer.NVMeNamespaceStats,
@@ -640,7 +640,7 @@ class NVMeNamespaceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceUpdate',
             frontend__nvme__pcie__pb2.NVMeNamespaceUpdateRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeNamespaceUpdateResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeNamespace.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -674,7 +674,7 @@ class NVMeNamespaceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMeNamespaceService/NVMeNamespaceGet',
             frontend__nvme__pcie__pb2.NVMeNamespaceGetRequest.SerializeToString,
-            frontend__nvme__pcie__pb2.NVMeNamespaceGetResponse.FromString,
+            frontend__nvme__pcie__pb2.NVMeNamespace.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

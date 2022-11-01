@@ -32,7 +32,7 @@ class VirtioBlkServiceStub(object):
         self.VirtioBlkUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkUpdate',
                 request_serializer=frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.SerializeToString,
-                response_deserializer=frontend__virtio__blk__pb2.VirtioBlkUpdateResponse.FromString,
+                response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
         self.VirtioBlkList = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkList',
@@ -42,7 +42,7 @@ class VirtioBlkServiceStub(object):
         self.VirtioBlkGet = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkGet',
                 request_serializer=frontend__virtio__blk__pb2.VirtioBlkGetRequest.SerializeToString,
-                response_deserializer=frontend__virtio__blk__pb2.VirtioBlkGetResponse.FromString,
+                response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
         self.VirtioBlkStats = channel.unary_unary(
                 '/opi_api.storage.v1.VirtioBlkService/VirtioBlkStats',
@@ -110,7 +110,7 @@ def add_VirtioBlkServiceServicer_to_server(servicer, server):
             'VirtioBlkUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkUpdate,
                     request_deserializer=frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.FromString,
-                    response_serializer=frontend__virtio__blk__pb2.VirtioBlkUpdateResponse.SerializeToString,
+                    response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
             'VirtioBlkList': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkList,
@@ -120,7 +120,7 @@ def add_VirtioBlkServiceServicer_to_server(servicer, server):
             'VirtioBlkGet': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkGet,
                     request_deserializer=frontend__virtio__blk__pb2.VirtioBlkGetRequest.FromString,
-                    response_serializer=frontend__virtio__blk__pb2.VirtioBlkGetResponse.SerializeToString,
+                    response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
             'VirtioBlkStats': grpc.unary_unary_rpc_method_handler(
                     servicer.VirtioBlkStats,
@@ -188,7 +188,7 @@ class VirtioBlkService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.VirtioBlkService/VirtioBlkUpdate',
             frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.SerializeToString,
-            frontend__virtio__blk__pb2.VirtioBlkUpdateResponse.FromString,
+            frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -222,7 +222,7 @@ class VirtioBlkService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.VirtioBlkService/VirtioBlkGet',
             frontend__virtio__blk__pb2.VirtioBlkGetRequest.SerializeToString,
-            frontend__virtio__blk__pb2.VirtioBlkGetResponse.FromString,
+            frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

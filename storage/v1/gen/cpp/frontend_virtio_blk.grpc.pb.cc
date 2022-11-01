@@ -93,23 +93,23 @@ void VirtioBlkService::Stub::async::VirtioBlkDelete(::grpc::ClientContext* conte
   return result;
 }
 
-::grpc::Status VirtioBlkService::Stub::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkUpdate_, context, request, response);
+::grpc::Status VirtioBlkService::Stub::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlk* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkUpdate_, context, request, response);
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkUpdate_, context, request, response, std::move(f));
+void VirtioBlkService::Stub::async::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkUpdate_, context, request, response, std::move(f));
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void VirtioBlkService::Stub::async::VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkUpdate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioBlkUpdateResponse, ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkUpdate_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioBlk, ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkUpdate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* VirtioBlkService::Stub::AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* VirtioBlkService::Stub::AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncVirtioBlkUpdateRaw(context, request, cq);
   result->StartCall();
@@ -139,23 +139,23 @@ void VirtioBlkService::Stub::async::VirtioBlkList(::grpc::ClientContext* context
   return result;
 }
 
-::grpc::Status VirtioBlkService::Stub::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlkGetResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkGet_, context, request, response);
+::grpc::Status VirtioBlkService::Stub::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlk* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_VirtioBlkGet_, context, request, response);
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkGet_, context, request, response, std::move(f));
+void VirtioBlkService::Stub::async::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkGet_, context, request, response, std::move(f));
 }
 
-void VirtioBlkService::Stub::async::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void VirtioBlkService::Stub::async::VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_VirtioBlkGet_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioBlkGetResponse, ::opi_api::storage::v1::VirtioBlkGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkGet_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* VirtioBlkService::Stub::PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::VirtioBlk, ::opi_api::storage::v1::VirtioBlkGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_VirtioBlkGet_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>* VirtioBlkService::Stub::AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* VirtioBlkService::Stub::AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncVirtioBlkGetRaw(context, request, cq);
   result->StartCall();
@@ -209,11 +209,11 @@ VirtioBlkService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VirtioBlkService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](VirtioBlkService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::VirtioBlkUpdateRequest* req,
-             ::opi_api::storage::v1::VirtioBlkUpdateResponse* resp) {
+             ::opi_api::storage::v1::VirtioBlk* resp) {
                return service->VirtioBlkUpdate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -229,11 +229,11 @@ VirtioBlkService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VirtioBlkService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< VirtioBlkService::Service, ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](VirtioBlkService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::VirtioBlkGetRequest* req,
-             ::opi_api::storage::v1::VirtioBlkGetResponse* resp) {
+             ::opi_api::storage::v1::VirtioBlk* resp) {
                return service->VirtioBlkGet(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -265,7 +265,7 @@ VirtioBlkService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VirtioBlkService::Service::VirtioBlkUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response) {
+::grpc::Status VirtioBlkService::Service::VirtioBlkUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -279,7 +279,7 @@ VirtioBlkService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status VirtioBlkService::Service::VirtioBlkGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response) {
+::grpc::Status VirtioBlkService::Service::VirtioBlkGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response) {
   (void) context;
   (void) request;
   (void) response;

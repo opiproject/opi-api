@@ -59,12 +59,12 @@ class VirtioBlkService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncVirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncVirtioBlkDeleteRaw(context, request, cq));
     }
-    virtual ::grpc::Status VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>> AsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>>(AsyncVirtioBlkUpdateRaw(context, request, cq));
+    virtual ::grpc::Status VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlk* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>> AsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>>(AsyncVirtioBlkUpdateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>> PrepareAsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>>(PrepareAsyncVirtioBlkUpdateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>> PrepareAsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>>(PrepareAsyncVirtioBlkUpdateRaw(context, request, cq));
     }
     virtual ::grpc::Status VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::opi_api::storage::v1::VirtioBlkListResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkListResponse>> AsyncVirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -73,12 +73,12 @@ class VirtioBlkService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkListResponse>> PrepareAsyncVirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkListResponse>>(PrepareAsyncVirtioBlkListRaw(context, request, cq));
     }
-    virtual ::grpc::Status VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlkGetResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>> AsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>>(AsyncVirtioBlkGetRaw(context, request, cq));
+    virtual ::grpc::Status VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlk* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>> AsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>>(AsyncVirtioBlkGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>> PrepareAsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>>(PrepareAsyncVirtioBlkGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>> PrepareAsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>>(PrepareAsyncVirtioBlkGetRaw(context, request, cq));
     }
     virtual ::grpc::Status VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkStatsResponse>> AsyncVirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -94,12 +94,12 @@ class VirtioBlkService final {
       virtual void VirtioBlkCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkCreateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest* request, ::opi_api::storage::v1::VirtioBlkListResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest* request, ::opi_api::storage::v1::VirtioBlkListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest* request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest* request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -111,12 +111,12 @@ class VirtioBlkService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>* AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkListResponse>* AsyncVirtioBlkListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkListResponse>* PrepareAsyncVirtioBlkListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>* AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkGetResponse>* PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>* AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkStatsResponse>* AsyncVirtioBlkStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::VirtioBlkStatsResponse>* PrepareAsyncVirtioBlkStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -137,12 +137,12 @@ class VirtioBlkService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncVirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncVirtioBlkDeleteRaw(context, request, cq));
     }
-    ::grpc::Status VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>> AsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>>(AsyncVirtioBlkUpdateRaw(context, request, cq));
+    ::grpc::Status VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::opi_api::storage::v1::VirtioBlk* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>> AsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>>(AsyncVirtioBlkUpdateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>> PrepareAsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>>(PrepareAsyncVirtioBlkUpdateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>> PrepareAsyncVirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>>(PrepareAsyncVirtioBlkUpdateRaw(context, request, cq));
     }
     ::grpc::Status VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::opi_api::storage::v1::VirtioBlkListResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkListResponse>> AsyncVirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -151,12 +151,12 @@ class VirtioBlkService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkListResponse>> PrepareAsyncVirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkListResponse>>(PrepareAsyncVirtioBlkListRaw(context, request, cq));
     }
-    ::grpc::Status VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlkGetResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>> AsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>>(AsyncVirtioBlkGetRaw(context, request, cq));
+    ::grpc::Status VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::opi_api::storage::v1::VirtioBlk* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>> AsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>>(AsyncVirtioBlkGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>> PrepareAsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>>(PrepareAsyncVirtioBlkGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>> PrepareAsyncVirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>>(PrepareAsyncVirtioBlkGetRaw(context, request, cq));
     }
     ::grpc::Status VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkStatsResponse>> AsyncVirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -172,12 +172,12 @@ class VirtioBlkService final {
       void VirtioBlkCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkCreateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) override;
       void VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
       void VirtioBlkDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, std::function<void(::grpc::Status)>) override;
-      void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)>) override;
+      void VirtioBlkUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) override;
       void VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest* request, ::opi_api::storage::v1::VirtioBlkListResponse* response, std::function<void(::grpc::Status)>) override;
       void VirtioBlkList(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest* request, ::opi_api::storage::v1::VirtioBlkListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, std::function<void(::grpc::Status)>) override;
-      void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, std::function<void(::grpc::Status)>) override;
+      void VirtioBlkGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response, ::grpc::ClientUnaryReactor* reactor) override;
       void VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest* request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response, std::function<void(::grpc::Status)>) override;
       void VirtioBlkStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest* request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -195,12 +195,12 @@ class VirtioBlkService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkCreateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncVirtioBlkDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* AsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkListResponse>* AsyncVirtioBlkListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkListResponse>* PrepareAsyncVirtioBlkListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>* AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkGetResponse>* PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* AsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlk>* PrepareAsyncVirtioBlkGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkStatsResponse>* AsyncVirtioBlkStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::VirtioBlkStatsResponse>* PrepareAsyncVirtioBlkStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_VirtioBlkCreate_;
@@ -218,9 +218,9 @@ class VirtioBlkService final {
     virtual ~Service();
     virtual ::grpc::Status VirtioBlkCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkCreateRequest* request, ::opi_api::storage::v1::VirtioBlk* response);
     virtual ::grpc::Status VirtioBlkDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkDeleteRequest* request, ::google::protobuf::Empty* response);
-    virtual ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response);
+    virtual ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response);
     virtual ::grpc::Status VirtioBlkList(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkListRequest* request, ::opi_api::storage::v1::VirtioBlkListResponse* response);
-    virtual ::grpc::Status VirtioBlkGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response);
+    virtual ::grpc::Status VirtioBlkGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response);
     virtual ::grpc::Status VirtioBlkStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::VirtioBlkStatsRequest* request, ::opi_api::storage::v1::VirtioBlkStatsResponse* response);
   };
   template <class BaseClass>
@@ -275,11 +275,11 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestVirtioBlkUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::VirtioBlkUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestVirtioBlkUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::VirtioBlk>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -315,11 +315,11 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestVirtioBlkGet(::grpc::ServerContext* context, ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::VirtioBlkGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestVirtioBlkGet(::grpc::ServerContext* context, ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::VirtioBlk>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -405,25 +405,25 @@ class VirtioBlkService final {
    public:
     WithCallbackMethod_VirtioBlkUpdate() {
       ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlkUpdateResponse* response) { return this->VirtioBlkUpdate(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* request, ::opi_api::storage::v1::VirtioBlk* response) { return this->VirtioBlkUpdate(context, request, response); }));}
     void SetMessageAllocatorFor_VirtioBlkUpdate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_VirtioBlkUpdate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* VirtioBlkUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_VirtioBlkList : public BaseClass {
@@ -459,25 +459,25 @@ class VirtioBlkService final {
    public:
     WithCallbackMethod_VirtioBlkGet() {
       ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlkGetResponse* response) { return this->VirtioBlkGet(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::VirtioBlkGetRequest* request, ::opi_api::storage::v1::VirtioBlk* response) { return this->VirtioBlkGet(context, request, response); }));}
     void SetMessageAllocatorFor_VirtioBlkGet(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_VirtioBlkGet() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* VirtioBlkGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_VirtioBlkStats : public BaseClass {
@@ -554,7 +554,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -588,7 +588,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -662,7 +662,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -702,7 +702,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -789,7 +789,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -833,7 +833,7 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -924,10 +924,10 @@ class VirtioBlkService final {
     WithStreamedUnaryMethod_VirtioBlkUpdate() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse>(
+          ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlkUpdateResponse>* streamer) {
+                     ::opi_api::storage::v1::VirtioBlkUpdateRequest, ::opi_api::storage::v1::VirtioBlk>* streamer) {
                        return this->StreamedVirtioBlkUpdate(context,
                          streamer);
                   }));
@@ -936,12 +936,12 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkUpdateResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkUpdateRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedVirtioBlkUpdate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::VirtioBlkUpdateRequest,::opi_api::storage::v1::VirtioBlkUpdateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedVirtioBlkUpdate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::VirtioBlkUpdateRequest,::opi_api::storage::v1::VirtioBlk>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_VirtioBlkList : public BaseClass {
@@ -978,10 +978,10 @@ class VirtioBlkService final {
     WithStreamedUnaryMethod_VirtioBlkGet() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse>(
+          ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlkGetResponse>* streamer) {
+                     ::opi_api::storage::v1::VirtioBlkGetRequest, ::opi_api::storage::v1::VirtioBlk>* streamer) {
                        return this->StreamedVirtioBlkGet(context,
                          streamer);
                   }));
@@ -990,12 +990,12 @@ class VirtioBlkService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlkGetResponse* /*response*/) override {
+    ::grpc::Status VirtioBlkGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::VirtioBlkGetRequest* /*request*/, ::opi_api::storage::v1::VirtioBlk* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedVirtioBlkGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::VirtioBlkGetRequest,::opi_api::storage::v1::VirtioBlkGetResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedVirtioBlkGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::VirtioBlkGetRequest,::opi_api::storage::v1::VirtioBlk>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_VirtioBlkStats : public BaseClass {

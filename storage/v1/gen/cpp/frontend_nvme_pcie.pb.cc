@@ -116,18 +116,6 @@ struct NVMeSubsystemUpdateRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemUpdateRequestDefaultTypeInternal _NVMeSubsystemUpdateRequest_default_instance_;
-constexpr NVMeSubsystemUpdateResponse::NVMeSubsystemUpdateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : result_(0u){}
-struct NVMeSubsystemUpdateResponseDefaultTypeInternal {
-  constexpr NVMeSubsystemUpdateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeSubsystemUpdateResponseDefaultTypeInternal() {}
-  union {
-    NVMeSubsystemUpdateResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemUpdateResponseDefaultTypeInternal _NVMeSubsystemUpdateResponse_default_instance_;
 constexpr NVMeSubsystemListRequest::NVMeSubsystemListRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct NVMeSubsystemListRequestDefaultTypeInternal {
@@ -163,18 +151,6 @@ struct NVMeSubsystemGetRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemGetRequestDefaultTypeInternal _NVMeSubsystemGetRequest_default_instance_;
-constexpr NVMeSubsystemGetResponse::NVMeSubsystemGetResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subsystem_(nullptr){}
-struct NVMeSubsystemGetResponseDefaultTypeInternal {
-  constexpr NVMeSubsystemGetResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeSubsystemGetResponseDefaultTypeInternal() {}
-  union {
-    NVMeSubsystemGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemGetResponseDefaultTypeInternal _NVMeSubsystemGetResponse_default_instance_;
 constexpr NVMeSubsystemStatsRequest::NVMeSubsystemStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : subsystem_id_(nullptr){}
@@ -235,17 +211,6 @@ struct NVMeControllerUpdateRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeControllerUpdateRequestDefaultTypeInternal _NVMeControllerUpdateRequest_default_instance_;
-constexpr NVMeControllerUpdateResponse::NVMeControllerUpdateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct NVMeControllerUpdateResponseDefaultTypeInternal {
-  constexpr NVMeControllerUpdateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeControllerUpdateResponseDefaultTypeInternal() {}
-  union {
-    NVMeControllerUpdateResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeControllerUpdateResponseDefaultTypeInternal _NVMeControllerUpdateResponse_default_instance_;
 constexpr NVMeControllerListRequest::NVMeControllerListRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : subsystem_id_(nullptr){}
@@ -282,18 +247,6 @@ struct NVMeControllerGetRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeControllerGetRequestDefaultTypeInternal _NVMeControllerGetRequest_default_instance_;
-constexpr NVMeControllerGetResponse::NVMeControllerGetResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : controller_(nullptr){}
-struct NVMeControllerGetResponseDefaultTypeInternal {
-  constexpr NVMeControllerGetResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeControllerGetResponseDefaultTypeInternal() {}
-  union {
-    NVMeControllerGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeControllerGetResponseDefaultTypeInternal _NVMeControllerGetResponse_default_instance_;
 constexpr NVMeControllerStatsRequest::NVMeControllerStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(nullptr){}
@@ -355,17 +308,6 @@ struct NVMeNamespaceUpdateRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceUpdateRequestDefaultTypeInternal _NVMeNamespaceUpdateRequest_default_instance_;
-constexpr NVMeNamespaceUpdateResponse::NVMeNamespaceUpdateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct NVMeNamespaceUpdateResponseDefaultTypeInternal {
-  constexpr NVMeNamespaceUpdateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeNamespaceUpdateResponseDefaultTypeInternal() {}
-  union {
-    NVMeNamespaceUpdateResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceUpdateResponseDefaultTypeInternal _NVMeNamespaceUpdateResponse_default_instance_;
 constexpr NVMeNamespaceListRequest::NVMeNamespaceListRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : subsystem_id_(nullptr)
@@ -403,18 +345,6 @@ struct NVMeNamespaceGetRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceGetRequestDefaultTypeInternal _NVMeNamespaceGetRequest_default_instance_;
-constexpr NVMeNamespaceGetResponse::NVMeNamespaceGetResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : namespace__(nullptr){}
-struct NVMeNamespaceGetResponseDefaultTypeInternal {
-  constexpr NVMeNamespaceGetResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NVMeNamespaceGetResponseDefaultTypeInternal() {}
-  union {
-    NVMeNamespaceGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceGetResponseDefaultTypeInternal _NVMeNamespaceGetResponse_default_instance_;
 constexpr NVMeNamespaceStatsRequest::NVMeNamespaceStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : namespace_id_(nullptr){}
@@ -443,7 +373,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeNamespaceStatsResponseDefau
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_frontend_5fnvme_5fpcie_2eproto[33];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_frontend_5fnvme_5fpcie_2eproto[27];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto = nullptr;
 
@@ -516,13 +446,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemUpdateRequest, subsystem_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemUpdateResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemUpdateResponse, result_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -542,13 +465,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemGetRequest, subsystem_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemGetResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemGetResponse, subsystem_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemStatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -585,12 +501,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerUpdateRequest, controller_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerUpdateResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -611,13 +521,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerGetRequest, controller_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerGetResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerGetResponse, controller_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeControllerStatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -655,12 +558,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceUpdateRequest, namespace__),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceUpdateResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -682,13 +579,6 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceGetRequest, namespace_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceGetResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceGetResponse, namespace__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeNamespaceStatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -712,33 +602,27 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 46, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemCreateRequest)},
   { 53, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemDeleteRequest)},
   { 60, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateRequest)},
-  { 67, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemUpdateResponse)},
-  { 74, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListRequest)},
-  { 80, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListResponse)},
-  { 87, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetRequest)},
-  { 94, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetResponse)},
-  { 101, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
-  { 108, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
-  { 115, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateRequest)},
-  { 122, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteRequest)},
-  { 129, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateRequest)},
-  { 136, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateResponse)},
-  { 142, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListRequest)},
-  { 149, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListResponse)},
-  { 156, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetRequest)},
-  { 163, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetResponse)},
-  { 170, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
-  { 177, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
-  { 185, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateRequest)},
-  { 192, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteRequest)},
-  { 199, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateRequest)},
-  { 206, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateResponse)},
-  { 212, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListRequest)},
-  { 220, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListResponse)},
-  { 227, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetRequest)},
-  { 234, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetResponse)},
-  { 241, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
-  { 248, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
+  { 67, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListRequest)},
+  { 73, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemListResponse)},
+  { 80, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemGetRequest)},
+  { 87, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
+  { 94, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
+  { 101, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerCreateRequest)},
+  { 108, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerDeleteRequest)},
+  { 115, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerUpdateRequest)},
+  { 122, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListRequest)},
+  { 129, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerListResponse)},
+  { 136, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerGetRequest)},
+  { 143, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
+  { 150, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
+  { 158, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceCreateRequest)},
+  { 165, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceDeleteRequest)},
+  { 172, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceUpdateRequest)},
+  { 179, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListRequest)},
+  { 187, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceListResponse)},
+  { 194, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceGetRequest)},
+  { 201, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
+  { 208, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -748,31 +632,25 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemCreateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemDeleteRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemUpdateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemUpdateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemListRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemListResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemGetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemGetResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemStatsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeSubsystemStatsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerCreateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerDeleteRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerUpdateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerUpdateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerListRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerListResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerGetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerGetResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerStatsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeControllerStatsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceCreateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceDeleteRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceUpdateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceUpdateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceListRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceListResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceGetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceGetResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceStatsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_NVMeNamespaceStatsResponse_default_instance_),
 };
@@ -808,113 +686,102 @@ const char descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto[] PROTOBUF_S
   "emDeleteRequest\0222\n\014subsystem_id\030\001 \001(\0132\034."
   "opi_api.common.v1.ObjectKey\"R\n\032NVMeSubsy"
   "stemUpdateRequest\0224\n\tsubsystem\030\001 \001(\0132!.o"
-  "pi_api.storage.v1.NVMeSubsystem\"-\n\033NVMeS"
-  "ubsystemUpdateResponse\022\016\n\006result\030\001 \001(\r\"\032"
-  "\n\030NVMeSubsystemListRequest\"Q\n\031NVMeSubsys"
-  "temListResponse\0224\n\tsubsystem\030\001 \003(\0132!.opi"
-  "_api.storage.v1.NVMeSubsystem\"M\n\027NVMeSub"
-  "systemGetRequest\0222\n\014subsystem_id\030\001 \001(\0132\034"
-  ".opi_api.common.v1.ObjectKey\"P\n\030NVMeSubs"
-  "ystemGetResponse\0224\n\tsubsystem\030\001 \001(\0132!.op"
-  "i_api.storage.v1.NVMeSubsystem\"O\n\031NVMeSu"
-  "bsystemStatsRequest\0222\n\014subsystem_id\030\001 \001("
-  "\0132\034.opi_api.common.v1.ObjectKey\"+\n\032NVMeS"
-  "ubsystemStatsResponse\022\r\n\005stats\030\001 \001(\t\"U\n\033"
-  "NVMeControllerCreateRequest\0226\n\ncontrolle"
-  "r\030\001 \001(\0132\".opi_api.storage.v1.NVMeControl"
-  "ler\"R\n\033NVMeControllerDeleteRequest\0223\n\rco"
-  "ntroller_id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
-  "jectKey\"U\n\033NVMeControllerUpdateRequest\0226"
-  "\n\ncontroller\030\001 \001(\0132\".opi_api.storage.v1."
-  "NVMeController\"\036\n\034NVMeControllerUpdateRe"
-  "sponse\"O\n\031NVMeControllerListRequest\0222\n\014s"
-  "ubsystem_id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
-  "jectKey\"T\n\032NVMeControllerListResponse\0226\n"
-  "\ncontroller\030\001 \003(\0132\".opi_api.storage.v1.N"
-  "VMeController\"O\n\030NVMeControllerGetReques"
-  "t\0223\n\rcontroller_id\030\001 \001(\0132\034.opi_api.commo"
-  "n.v1.ObjectKey\"S\n\031NVMeControllerGetRespo"
-  "nse\0226\n\ncontroller\030\001 \001(\0132\".opi_api.storag"
-  "e.v1.NVMeController\"F\n\032NVMeControllerSta"
-  "tsRequest\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v"
-  "1.ObjectKey\"V\n\033NVMeControllerStatsRespon"
-  "se\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Objec"
-  "tKey\022\r\n\005stats\030\002 \001(\t\"R\n\032NVMeNamespaceCrea"
+  "pi_api.storage.v1.NVMeSubsystem\"\032\n\030NVMeS"
+  "ubsystemListRequest\"Q\n\031NVMeSubsystemList"
+  "Response\0224\n\tsubsystem\030\001 \003(\0132!.opi_api.st"
+  "orage.v1.NVMeSubsystem\"M\n\027NVMeSubsystemG"
+  "etRequest\0222\n\014subsystem_id\030\001 \001(\0132\034.opi_ap"
+  "i.common.v1.ObjectKey\"O\n\031NVMeSubsystemSt"
+  "atsRequest\0222\n\014subsystem_id\030\001 \001(\0132\034.opi_a"
+  "pi.common.v1.ObjectKey\"+\n\032NVMeSubsystemS"
+  "tatsResponse\022\r\n\005stats\030\001 \001(\t\"U\n\033NVMeContr"
+  "ollerCreateRequest\0226\n\ncontroller\030\001 \001(\0132\""
+  ".opi_api.storage.v1.NVMeController\"R\n\033NV"
+  "MeControllerDeleteRequest\0223\n\rcontroller_"
+  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"U"
+  "\n\033NVMeControllerUpdateRequest\0226\n\ncontrol"
+  "ler\030\001 \001(\0132\".opi_api.storage.v1.NVMeContr"
+  "oller\"O\n\031NVMeControllerListRequest\0222\n\014su"
+  "bsystem_id\030\001 \001(\0132\034.opi_api.common.v1.Obj"
+  "ectKey\"T\n\032NVMeControllerListResponse\0226\n\n"
+  "controller\030\001 \003(\0132\".opi_api.storage.v1.NV"
+  "MeController\"O\n\030NVMeControllerGetRequest"
+  "\0223\n\rcontroller_id\030\001 \001(\0132\034.opi_api.common"
+  ".v1.ObjectKey\"F\n\032NVMeControllerStatsRequ"
+  "est\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Obje"
+  "ctKey\"V\n\033NVMeControllerStatsResponse\022(\n\002"
+  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022\r"
+  "\n\005stats\030\002 \001(\t\"R\n\032NVMeNamespaceCreateRequ"
+  "est\0224\n\tnamespace\030\001 \001(\0132!.opi_api.storage"
+  ".v1.NVMeNamespace\"P\n\032NVMeNamespaceDelete"
+  "Request\0222\n\014namespace_id\030\001 \001(\0132\034.opi_api."
+  "common.v1.ObjectKey\"R\n\032NVMeNamespaceUpda"
   "teRequest\0224\n\tnamespace\030\001 \001(\0132!.opi_api.s"
-  "torage.v1.NVMeNamespace\"P\n\032NVMeNamespace"
-  "DeleteRequest\0222\n\014namespace_id\030\001 \001(\0132\034.op"
-  "i_api.common.v1.ObjectKey\"R\n\032NVMeNamespa"
-  "ceUpdateRequest\0224\n\tnamespace\030\001 \001(\0132!.opi"
-  "_api.storage.v1.NVMeNamespace\"\035\n\033NVMeNam"
-  "espaceUpdateResponse\"\203\001\n\030NVMeNamespaceLi"
-  "stRequest\0222\n\014subsystem_id\030\001 \001(\0132\034.opi_ap"
-  "i.common.v1.ObjectKey\0223\n\rcontroller_id\030\002"
-  " \001(\0132\034.opi_api.common.v1.ObjectKey\"Q\n\031NV"
-  "MeNamespaceListResponse\0224\n\tnamespace\030\001 \003"
-  "(\0132!.opi_api.storage.v1.NVMeNamespace\"M\n"
-  "\027NVMeNamespaceGetRequest\0222\n\014namespace_id"
-  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"P\n\030"
-  "NVMeNamespaceGetResponse\0224\n\tnamespace\030\001 "
-  "\001(\0132!.opi_api.storage.v1.NVMeNamespace\"O"
-  "\n\031NVMeNamespaceStatsRequest\0222\n\014namespace"
+  "torage.v1.NVMeNamespace\"\203\001\n\030NVMeNamespac"
+  "eListRequest\0222\n\014subsystem_id\030\001 \001(\0132\034.opi"
+  "_api.common.v1.ObjectKey\0223\n\rcontroller_i"
+  "d\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey\"Q\n"
+  "\031NVMeNamespaceListResponse\0224\n\tnamespace\030"
+  "\001 \003(\0132!.opi_api.storage.v1.NVMeNamespace"
+  "\"M\n\027NVMeNamespaceGetRequest\0222\n\014namespace"
   "_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\""
-  "U\n\032NVMeNamespaceStatsResponse\022(\n\002id\030\001 \001("
-  "\0132\034.opi_api.common.v1.ObjectKey\022\r\n\005stats"
-  "\030\002 \001(\t2\271\005\n\024NVMeSubsystemService\022j\n\023NVMeS"
-  "ubsystemCreate\022..opi_api.storage.v1.NVMe"
-  "SubsystemCreateRequest\032!.opi_api.storage"
-  ".v1.NVMeSubsystem\"\000\022_\n\023NVMeSubsystemDele"
-  "te\022..opi_api.storage.v1.NVMeSubsystemDel"
-  "eteRequest\032\026.google.protobuf.Empty\"\000\022x\n\023"
-  "NVMeSubsystemUpdate\022..opi_api.storage.v1"
-  ".NVMeSubsystemUpdateRequest\032/.opi_api.st"
-  "orage.v1.NVMeSubsystemUpdateResponse\"\000\022r"
-  "\n\021NVMeSubsystemList\022,.opi_api.storage.v1"
-  ".NVMeSubsystemListRequest\032-.opi_api.stor"
-  "age.v1.NVMeSubsystemListResponse\"\000\022o\n\020NV"
-  "MeSubsystemGet\022+.opi_api.storage.v1.NVMe"
-  "SubsystemGetRequest\032,.opi_api.storage.v1"
-  ".NVMeSubsystemGetResponse\"\000\022u\n\022NVMeSubsy"
-  "stemStats\022-.opi_api.storage.v1.NVMeSubsy"
-  "stemStatsRequest\032..opi_api.storage.v1.NV"
-  "MeSubsystemStatsResponse\"\0002\313\005\n\025NVMeContr"
-  "ollerService\022m\n\024NVMeControllerCreate\022/.o"
-  "pi_api.storage.v1.NVMeControllerCreateRe"
-  "quest\032\".opi_api.storage.v1.NVMeControlle"
-  "r\"\000\022a\n\024NVMeControllerDelete\022/.opi_api.st"
-  "orage.v1.NVMeControllerDeleteRequest\032\026.g"
-  "oogle.protobuf.Empty\"\000\022{\n\024NVMeController"
-  "Update\022/.opi_api.storage.v1.NVMeControll"
-  "erUpdateRequest\0320.opi_api.storage.v1.NVM"
-  "eControllerUpdateResponse\"\000\022u\n\022NVMeContr"
-  "ollerList\022-.opi_api.storage.v1.NVMeContr"
-  "ollerListRequest\032..opi_api.storage.v1.NV"
-  "MeControllerListResponse\"\000\022r\n\021NVMeContro"
-  "llerGet\022,.opi_api.storage.v1.NVMeControl"
-  "lerGetRequest\032-.opi_api.storage.v1.NVMeC"
-  "ontrollerGetResponse\"\000\022x\n\023NVMeController"
-  "Stats\022..opi_api.storage.v1.NVMeControlle"
-  "rStatsRequest\032/.opi_api.storage.v1.NVMeC"
-  "ontrollerStatsResponse\"\0002\271\005\n\024NVMeNamespa"
-  "ceService\022j\n\023NVMeNamespaceCreate\022..opi_a"
-  "pi.storage.v1.NVMeNamespaceCreateRequest"
-  "\032!.opi_api.storage.v1.NVMeNamespace\"\000\022_\n"
-  "\023NVMeNamespaceDelete\022..opi_api.storage.v"
-  "1.NVMeNamespaceDeleteRequest\032\026.google.pr"
-  "otobuf.Empty\"\000\022x\n\023NVMeNamespaceUpdate\022.."
-  "opi_api.storage.v1.NVMeNamespaceUpdateRe"
-  "quest\032/.opi_api.storage.v1.NVMeNamespace"
-  "UpdateResponse\"\000\022r\n\021NVMeNamespaceList\022,."
-  "opi_api.storage.v1.NVMeNamespaceListRequ"
-  "est\032-.opi_api.storage.v1.NVMeNamespaceLi"
-  "stResponse\"\000\022o\n\020NVMeNamespaceGet\022+.opi_a"
-  "pi.storage.v1.NVMeNamespaceGetRequest\032,."
-  "opi_api.storage.v1.NVMeNamespaceGetRespo"
-  "nse\"\000\022u\n\022NVMeNamespaceStats\022-.opi_api.st"
-  "orage.v1.NVMeNamespaceStatsRequest\032..opi"
-  "_api.storage.v1.NVMeNamespaceStatsRespon"
-  "se\"\000B1Z/github.com/opiproject/opi-api/st"
-  "orage/v1/gen/gob\006proto3"
+  "O\n\031NVMeNamespaceStatsRequest\0222\n\014namespac"
+  "e_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey"
+  "\"U\n\032NVMeNamespaceStatsResponse\022(\n\002id\030\001 \001"
+  "(\0132\034.opi_api.common.v1.ObjectKey\022\r\n\005stat"
+  "s\030\002 \001(\t2\240\005\n\024NVMeSubsystemService\022j\n\023NVMe"
+  "SubsystemCreate\022..opi_api.storage.v1.NVM"
+  "eSubsystemCreateRequest\032!.opi_api.storag"
+  "e.v1.NVMeSubsystem\"\000\022_\n\023NVMeSubsystemDel"
+  "ete\022..opi_api.storage.v1.NVMeSubsystemDe"
+  "leteRequest\032\026.google.protobuf.Empty\"\000\022j\n"
+  "\023NVMeSubsystemUpdate\022..opi_api.storage.v"
+  "1.NVMeSubsystemUpdateRequest\032!.opi_api.s"
+  "torage.v1.NVMeSubsystem\"\000\022r\n\021NVMeSubsyst"
+  "emList\022,.opi_api.storage.v1.NVMeSubsyste"
+  "mListRequest\032-.opi_api.storage.v1.NVMeSu"
+  "bsystemListResponse\"\000\022d\n\020NVMeSubsystemGe"
+  "t\022+.opi_api.storage.v1.NVMeSubsystemGetR"
+  "equest\032!.opi_api.storage.v1.NVMeSubsyste"
+  "m\"\000\022u\n\022NVMeSubsystemStats\022-.opi_api.stor"
+  "age.v1.NVMeSubsystemStatsRequest\032..opi_a"
+  "pi.storage.v1.NVMeSubsystemStatsResponse"
+  "\"\0002\262\005\n\025NVMeControllerService\022m\n\024NVMeCont"
+  "rollerCreate\022/.opi_api.storage.v1.NVMeCo"
+  "ntrollerCreateRequest\032\".opi_api.storage."
+  "v1.NVMeController\"\000\022a\n\024NVMeControllerDel"
+  "ete\022/.opi_api.storage.v1.NVMeControllerD"
+  "eleteRequest\032\026.google.protobuf.Empty\"\000\022m"
+  "\n\024NVMeControllerUpdate\022/.opi_api.storage"
+  ".v1.NVMeControllerUpdateRequest\032\".opi_ap"
+  "i.storage.v1.NVMeController\"\000\022u\n\022NVMeCon"
+  "trollerList\022-.opi_api.storage.v1.NVMeCon"
+  "trollerListRequest\032..opi_api.storage.v1."
+  "NVMeControllerListResponse\"\000\022g\n\021NVMeCont"
+  "rollerGet\022,.opi_api.storage.v1.NVMeContr"
+  "ollerGetRequest\032\".opi_api.storage.v1.NVM"
+  "eController\"\000\022x\n\023NVMeControllerStats\022..o"
+  "pi_api.storage.v1.NVMeControllerStatsReq"
+  "uest\032/.opi_api.storage.v1.NVMeController"
+  "StatsResponse\"\0002\240\005\n\024NVMeNamespaceService"
+  "\022j\n\023NVMeNamespaceCreate\022..opi_api.storag"
+  "e.v1.NVMeNamespaceCreateRequest\032!.opi_ap"
+  "i.storage.v1.NVMeNamespace\"\000\022_\n\023NVMeName"
+  "spaceDelete\022..opi_api.storage.v1.NVMeNam"
+  "espaceDeleteRequest\032\026.google.protobuf.Em"
+  "pty\"\000\022j\n\023NVMeNamespaceUpdate\022..opi_api.s"
+  "torage.v1.NVMeNamespaceUpdateRequest\032!.o"
+  "pi_api.storage.v1.NVMeNamespace\"\000\022r\n\021NVM"
+  "eNamespaceList\022,.opi_api.storage.v1.NVMe"
+  "NamespaceListRequest\032-.opi_api.storage.v"
+  "1.NVMeNamespaceListResponse\"\000\022d\n\020NVMeNam"
+  "espaceGet\022+.opi_api.storage.v1.NVMeNames"
+  "paceGetRequest\032!.opi_api.storage.v1.NVMe"
+  "Namespace\"\000\022u\n\022NVMeNamespaceStats\022-.opi_"
+  "api.storage.v1.NVMeNamespaceStatsRequest"
+  "\032..opi_api.storage.v1.NVMeNamespaceStats"
+  "Response\"\000B1Z/github.com/opiproject/opi-"
+  "api/storage/v1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps[4] = {
   &::descriptor_table_common_2eproto,
@@ -924,8 +791,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fnvme_5fpcie_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fnvme_5fpcie_2eproto = {
-  false, false, 5463, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
-  &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once, descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps, 4, 33,
+  false, false, 5029, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
+  &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once, descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps, 4, 27,
   schemas, file_default_instances, TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets,
   file_level_metadata_frontend_5fnvme_5fpcie_2eproto, file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto, file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto,
 };
@@ -3034,184 +2901,6 @@ void NVMeSubsystemUpdateRequest::InternalSwap(NVMeSubsystemUpdateRequest* other)
 
 // ===================================================================
 
-class NVMeSubsystemUpdateResponse::_Internal {
- public:
-};
-
-NVMeSubsystemUpdateResponse::NVMeSubsystemUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-}
-NVMeSubsystemUpdateResponse::NVMeSubsystemUpdateResponse(const NVMeSubsystemUpdateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  result_ = from.result_;
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-}
-
-inline void NVMeSubsystemUpdateResponse::SharedCtor() {
-result_ = 0u;
-}
-
-NVMeSubsystemUpdateResponse::~NVMeSubsystemUpdateResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void NVMeSubsystemUpdateResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void NVMeSubsystemUpdateResponse::ArenaDtor(void* object) {
-  NVMeSubsystemUpdateResponse* _this = reinterpret_cast< NVMeSubsystemUpdateResponse* >(object);
-  (void)_this;
-}
-void NVMeSubsystemUpdateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void NVMeSubsystemUpdateResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void NVMeSubsystemUpdateResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  result_ = 0u;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* NVMeSubsystemUpdateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // uint32 result = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          result_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* NVMeSubsystemUpdateResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 result = 1;
-  if (this->_internal_result() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_result(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  return target;
-}
-
-size_t NVMeSubsystemUpdateResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 result = 1;
-  if (this->_internal_result() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_result());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeSubsystemUpdateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NVMeSubsystemUpdateResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeSubsystemUpdateResponse::GetClassData() const { return &_class_data_; }
-
-void NVMeSubsystemUpdateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NVMeSubsystemUpdateResponse *>(to)->MergeFrom(
-      static_cast<const NVMeSubsystemUpdateResponse &>(from));
-}
-
-
-void NVMeSubsystemUpdateResponse::MergeFrom(const NVMeSubsystemUpdateResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_result() != 0) {
-    _internal_set_result(from._internal_result());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void NVMeSubsystemUpdateResponse::CopyFrom(const NVMeSubsystemUpdateResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMeSubsystemUpdateResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NVMeSubsystemUpdateResponse::IsInitialized() const {
-  return true;
-}
-
-void NVMeSubsystemUpdateResponse::InternalSwap(NVMeSubsystemUpdateResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(result_, other->result_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemUpdateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[6]);
-}
-
-// ===================================================================
-
 class NVMeSubsystemListRequest::_Internal {
  public:
 };
@@ -3246,7 +2935,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeSubsystemListRequest::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemListRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[7]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[6]);
 }
 
 // ===================================================================
@@ -3431,7 +3120,7 @@ void NVMeSubsystemListResponse::InternalSwap(NVMeSubsystemListResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[8]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[7]);
 }
 
 // ===================================================================
@@ -3632,202 +3321,7 @@ void NVMeSubsystemGetRequest::InternalSwap(NVMeSubsystemGetRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[9]);
-}
-
-// ===================================================================
-
-class NVMeSubsystemGetResponse::_Internal {
- public:
-  static const ::opi_api::storage::v1::NVMeSubsystem& subsystem(const NVMeSubsystemGetResponse* msg);
-};
-
-const ::opi_api::storage::v1::NVMeSubsystem&
-NVMeSubsystemGetResponse::_Internal::subsystem(const NVMeSubsystemGetResponse* msg) {
-  return *msg->subsystem_;
-}
-NVMeSubsystemGetResponse::NVMeSubsystemGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeSubsystemGetResponse)
-}
-NVMeSubsystemGetResponse::NVMeSubsystemGetResponse(const NVMeSubsystemGetResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_subsystem()) {
-    subsystem_ = new ::opi_api::storage::v1::NVMeSubsystem(*from.subsystem_);
-  } else {
-    subsystem_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeSubsystemGetResponse)
-}
-
-inline void NVMeSubsystemGetResponse::SharedCtor() {
-subsystem_ = nullptr;
-}
-
-NVMeSubsystemGetResponse::~NVMeSubsystemGetResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void NVMeSubsystemGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete subsystem_;
-}
-
-void NVMeSubsystemGetResponse::ArenaDtor(void* object) {
-  NVMeSubsystemGetResponse* _this = reinterpret_cast< NVMeSubsystemGetResponse* >(object);
-  (void)_this;
-}
-void NVMeSubsystemGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void NVMeSubsystemGetResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void NVMeSubsystemGetResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (GetArenaForAllocation() == nullptr && subsystem_ != nullptr) {
-    delete subsystem_;
-  }
-  subsystem_ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* NVMeSubsystemGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_subsystem(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* NVMeSubsystemGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
-  if (this->_internal_has_subsystem()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::subsystem(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  return target;
-}
-
-size_t NVMeSubsystemGetResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
-  if (this->_internal_has_subsystem()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *subsystem_);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeSubsystemGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NVMeSubsystemGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeSubsystemGetResponse::GetClassData() const { return &_class_data_; }
-
-void NVMeSubsystemGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NVMeSubsystemGetResponse *>(to)->MergeFrom(
-      static_cast<const NVMeSubsystemGetResponse &>(from));
-}
-
-
-void NVMeSubsystemGetResponse::MergeFrom(const NVMeSubsystemGetResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_has_subsystem()) {
-    _internal_mutable_subsystem()->::opi_api::storage::v1::NVMeSubsystem::MergeFrom(from._internal_subsystem());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void NVMeSubsystemGetResponse::CopyFrom(const NVMeSubsystemGetResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMeSubsystemGetResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NVMeSubsystemGetResponse::IsInitialized() const {
-  return true;
-}
-
-void NVMeSubsystemGetResponse::InternalSwap(NVMeSubsystemGetResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(subsystem_, other->subsystem_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemGetResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[10]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[8]);
 }
 
 // ===================================================================
@@ -4028,7 +3522,7 @@ void NVMeSubsystemStatsRequest::InternalSwap(NVMeSubsystemStatsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[11]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[9]);
 }
 
 // ===================================================================
@@ -4231,7 +3725,7 @@ void NVMeSubsystemStatsResponse::InternalSwap(NVMeSubsystemStatsResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeSubsystemStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[12]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[10]);
 }
 
 // ===================================================================
@@ -4426,7 +3920,7 @@ void NVMeControllerCreateRequest::InternalSwap(NVMeControllerCreateRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerCreateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[13]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[11]);
 }
 
 // ===================================================================
@@ -4627,7 +4121,7 @@ void NVMeControllerDeleteRequest::InternalSwap(NVMeControllerDeleteRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerDeleteRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[14]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[12]);
 }
 
 // ===================================================================
@@ -4822,46 +4316,7 @@ void NVMeControllerUpdateRequest::InternalSwap(NVMeControllerUpdateRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerUpdateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[15]);
-}
-
-// ===================================================================
-
-class NVMeControllerUpdateResponse::_Internal {
- public:
-};
-
-NVMeControllerUpdateResponse::NVMeControllerUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeControllerUpdateResponse)
-}
-NVMeControllerUpdateResponse::NVMeControllerUpdateResponse(const NVMeControllerUpdateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeControllerUpdateResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeControllerUpdateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeControllerUpdateResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerUpdateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[16]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[13]);
 }
 
 // ===================================================================
@@ -5062,7 +4517,7 @@ void NVMeControllerListRequest::InternalSwap(NVMeControllerListRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerListRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[17]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[14]);
 }
 
 // ===================================================================
@@ -5247,7 +4702,7 @@ void NVMeControllerListResponse::InternalSwap(NVMeControllerListResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[18]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[15]);
 }
 
 // ===================================================================
@@ -5448,202 +4903,7 @@ void NVMeControllerGetRequest::InternalSwap(NVMeControllerGetRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[19]);
-}
-
-// ===================================================================
-
-class NVMeControllerGetResponse::_Internal {
- public:
-  static const ::opi_api::storage::v1::NVMeController& controller(const NVMeControllerGetResponse* msg);
-};
-
-const ::opi_api::storage::v1::NVMeController&
-NVMeControllerGetResponse::_Internal::controller(const NVMeControllerGetResponse* msg) {
-  return *msg->controller_;
-}
-NVMeControllerGetResponse::NVMeControllerGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeControllerGetResponse)
-}
-NVMeControllerGetResponse::NVMeControllerGetResponse(const NVMeControllerGetResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_controller()) {
-    controller_ = new ::opi_api::storage::v1::NVMeController(*from.controller_);
-  } else {
-    controller_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeControllerGetResponse)
-}
-
-inline void NVMeControllerGetResponse::SharedCtor() {
-controller_ = nullptr;
-}
-
-NVMeControllerGetResponse::~NVMeControllerGetResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMeControllerGetResponse)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void NVMeControllerGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete controller_;
-}
-
-void NVMeControllerGetResponse::ArenaDtor(void* object) {
-  NVMeControllerGetResponse* _this = reinterpret_cast< NVMeControllerGetResponse* >(object);
-  (void)_this;
-}
-void NVMeControllerGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void NVMeControllerGetResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void NVMeControllerGetResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMeControllerGetResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (GetArenaForAllocation() == nullptr && controller_ != nullptr) {
-    delete controller_;
-  }
-  controller_ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* NVMeControllerGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .opi_api.storage.v1.NVMeController controller = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_controller(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* NVMeControllerGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMeControllerGetResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeController controller = 1;
-  if (this->_internal_has_controller()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::controller(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMeControllerGetResponse)
-  return target;
-}
-
-size_t NVMeControllerGetResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMeControllerGetResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeController controller = 1;
-  if (this->_internal_has_controller()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *controller_);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeControllerGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NVMeControllerGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeControllerGetResponse::GetClassData() const { return &_class_data_; }
-
-void NVMeControllerGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NVMeControllerGetResponse *>(to)->MergeFrom(
-      static_cast<const NVMeControllerGetResponse &>(from));
-}
-
-
-void NVMeControllerGetResponse::MergeFrom(const NVMeControllerGetResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMeControllerGetResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_has_controller()) {
-    _internal_mutable_controller()->::opi_api::storage::v1::NVMeController::MergeFrom(from._internal_controller());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void NVMeControllerGetResponse::CopyFrom(const NVMeControllerGetResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMeControllerGetResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NVMeControllerGetResponse::IsInitialized() const {
-  return true;
-}
-
-void NVMeControllerGetResponse::InternalSwap(NVMeControllerGetResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(controller_, other->controller_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerGetResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[20]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[16]);
 }
 
 // ===================================================================
@@ -5844,7 +5104,7 @@ void NVMeControllerStatsRequest::InternalSwap(NVMeControllerStatsRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[21]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[17]);
 }
 
 // ===================================================================
@@ -6096,7 +5356,7 @@ void NVMeControllerStatsResponse::InternalSwap(NVMeControllerStatsResponse* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeControllerStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[22]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[18]);
 }
 
 // ===================================================================
@@ -6291,7 +5551,7 @@ void NVMeNamespaceCreateRequest::InternalSwap(NVMeNamespaceCreateRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceCreateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[23]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[19]);
 }
 
 // ===================================================================
@@ -6492,7 +5752,7 @@ void NVMeNamespaceDeleteRequest::InternalSwap(NVMeNamespaceDeleteRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceDeleteRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[24]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[20]);
 }
 
 // ===================================================================
@@ -6687,46 +5947,7 @@ void NVMeNamespaceUpdateRequest::InternalSwap(NVMeNamespaceUpdateRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceUpdateRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[25]);
-}
-
-// ===================================================================
-
-class NVMeNamespaceUpdateResponse::_Internal {
- public:
-};
-
-NVMeNamespaceUpdateResponse::NVMeNamespaceUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeNamespaceUpdateResponse)
-}
-NVMeNamespaceUpdateResponse::NVMeNamespaceUpdateResponse(const NVMeNamespaceUpdateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeNamespaceUpdateResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeNamespaceUpdateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeNamespaceUpdateResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceUpdateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[26]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[21]);
 }
 
 // ===================================================================
@@ -6982,7 +6203,7 @@ void NVMeNamespaceListRequest::InternalSwap(NVMeNamespaceListRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceListRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[27]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[22]);
 }
 
 // ===================================================================
@@ -7167,7 +6388,7 @@ void NVMeNamespaceListResponse::InternalSwap(NVMeNamespaceListResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceListResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[28]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[23]);
 }
 
 // ===================================================================
@@ -7368,202 +6589,7 @@ void NVMeNamespaceGetRequest::InternalSwap(NVMeNamespaceGetRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceGetRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[29]);
-}
-
-// ===================================================================
-
-class NVMeNamespaceGetResponse::_Internal {
- public:
-  static const ::opi_api::storage::v1::NVMeNamespace& namespace_(const NVMeNamespaceGetResponse* msg);
-};
-
-const ::opi_api::storage::v1::NVMeNamespace&
-NVMeNamespaceGetResponse::_Internal::namespace_(const NVMeNamespaceGetResponse* msg) {
-  return *msg->namespace__;
-}
-NVMeNamespaceGetResponse::NVMeNamespaceGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.NVMeNamespaceGetResponse)
-}
-NVMeNamespaceGetResponse::NVMeNamespaceGetResponse(const NVMeNamespaceGetResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_namespace_()) {
-    namespace__ = new ::opi_api::storage::v1::NVMeNamespace(*from.namespace__);
-  } else {
-    namespace__ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NVMeNamespaceGetResponse)
-}
-
-inline void NVMeNamespaceGetResponse::SharedCtor() {
-namespace__ = nullptr;
-}
-
-NVMeNamespaceGetResponse::~NVMeNamespaceGetResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void NVMeNamespaceGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete namespace__;
-}
-
-void NVMeNamespaceGetResponse::ArenaDtor(void* object) {
-  NVMeNamespaceGetResponse* _this = reinterpret_cast< NVMeNamespaceGetResponse* >(object);
-  (void)_this;
-}
-void NVMeNamespaceGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void NVMeNamespaceGetResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void NVMeNamespaceGetResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (GetArenaForAllocation() == nullptr && namespace__ != nullptr) {
-    delete namespace__;
-  }
-  namespace__ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* NVMeNamespaceGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .opi_api.storage.v1.NVMeNamespace namespace = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_namespace_(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* NVMeNamespaceGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeNamespace namespace = 1;
-  if (this->_internal_has_namespace_()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::namespace_(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  return target;
-}
-
-size_t NVMeNamespaceGetResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .opi_api.storage.v1.NVMeNamespace namespace = 1;
-  if (this->_internal_has_namespace_()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *namespace__);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NVMeNamespaceGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NVMeNamespaceGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NVMeNamespaceGetResponse::GetClassData() const { return &_class_data_; }
-
-void NVMeNamespaceGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NVMeNamespaceGetResponse *>(to)->MergeFrom(
-      static_cast<const NVMeNamespaceGetResponse &>(from));
-}
-
-
-void NVMeNamespaceGetResponse::MergeFrom(const NVMeNamespaceGetResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_has_namespace_()) {
-    _internal_mutable_namespace_()->::opi_api::storage::v1::NVMeNamespace::MergeFrom(from._internal_namespace_());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void NVMeNamespaceGetResponse::CopyFrom(const NVMeNamespaceGetResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.NVMeNamespaceGetResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NVMeNamespaceGetResponse::IsInitialized() const {
-  return true;
-}
-
-void NVMeNamespaceGetResponse::InternalSwap(NVMeNamespaceGetResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(namespace__, other->namespace__);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceGetResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[30]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[24]);
 }
 
 // ===================================================================
@@ -7764,7 +6790,7 @@ void NVMeNamespaceStatsRequest::InternalSwap(NVMeNamespaceStatsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceStatsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[31]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[25]);
 }
 
 // ===================================================================
@@ -8016,7 +7042,7 @@ void NVMeNamespaceStatsResponse::InternalSwap(NVMeNamespaceStatsResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata NVMeNamespaceStatsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_frontend_5fnvme_5fpcie_2eproto_getter, &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once,
-      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[32]);
+      file_level_metadata_frontend_5fnvme_5fpcie_2eproto[26]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -8042,9 +7068,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemDeleteRequest*
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemUpdateRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemUpdateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemUpdateRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemUpdateResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemUpdateResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemUpdateResponse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemListRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemListRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemListRequest >(arena);
 }
@@ -8053,9 +7076,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemListResponse* 
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemGetRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemGetRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemGetResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemGetResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemGetResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeSubsystemStatsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeSubsystemStatsRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeSubsystemStatsRequest >(arena);
@@ -8072,9 +7092,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerDeleteRequest
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerUpdateRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerUpdateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerUpdateRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerUpdateResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerUpdateResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerUpdateResponse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerListRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerListRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerListRequest >(arena);
 }
@@ -8083,9 +7100,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerListResponse*
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerGetRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerGetRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerGetResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerGetResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerGetResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeControllerStatsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeControllerStatsRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeControllerStatsRequest >(arena);
@@ -8102,9 +7116,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceDeleteRequest*
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceUpdateResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceUpdateResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceUpdateResponse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceListRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceListRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceListRequest >(arena);
 }
@@ -8113,9 +7124,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceListResponse* 
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceGetRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceGetRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceGetRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceGetResponse* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceGetResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceGetResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::NVMeNamespaceStatsRequest* Arena::CreateMaybeMessage< ::opi_api::storage::v1::NVMeNamespaceStatsRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::NVMeNamespaceStatsRequest >(arena);
