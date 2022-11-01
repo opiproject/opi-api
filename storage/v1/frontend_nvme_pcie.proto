@@ -17,7 +17,7 @@ import "google/protobuf/empty.proto";
 service NVMeSubsystemService {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {}
     rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
+    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystem) {}
     rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
     rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystemGetResponse)    {}
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
@@ -26,7 +26,7 @@ service NVMeSubsystemService {
 service NVMeControllerService {
     rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {}
     rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
+    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeController) {}
     rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
     rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeControllerGetResponse)    {}
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
@@ -35,7 +35,7 @@ service NVMeControllerService {
 service NVMeNamespaceService {
     rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {}
     rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
+    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespace) {}
     rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
     rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespaceGetResponse)    {}
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
@@ -163,10 +163,6 @@ message NVMeSubsystemUpdateRequest {
     NVMeSubsystem subsystem = 1;
 }
 
-message NVMeSubsystemUpdateResponse {
-    uint32 result = 1;
-}
-
 message NVMeSubsystemListRequest {
     // Intentionally empty.
 }
@@ -201,10 +197,6 @@ message NVMeControllerDeleteRequest {
 
 message NVMeControllerUpdateRequest {
     NVMeController controller = 1;
-}
-
-message NVMeControllerUpdateResponse {
-    // Intentionally empty.
 }
 
 message NVMeControllerListRequest {
@@ -242,10 +234,6 @@ message NVMeNamespaceDeleteRequest {
 
 message NVMeNamespaceUpdateRequest {
     NVMeNamespace namespace = 1;
-}
-
-message NVMeNamespaceUpdateResponse {
-    // Intentionally empty.
 }
 
 message NVMeNamespaceListRequest {

@@ -14,7 +14,7 @@ import "google/protobuf/empty.proto";
 service VirtioScsiControllerService {
     rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {}
     rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiControllerUpdateResponse) {}
+    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiController) {}
     rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
     rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiControllerGetResponse)    {}
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
@@ -23,7 +23,7 @@ service VirtioScsiControllerService {
 service VirtioScsiLunService {
     rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {}
     rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLunUpdateResponse) {}
+    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLun) {}
     rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
     rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLunGetResponse)    {}
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
@@ -51,10 +51,6 @@ message VirtioScsiControllerDeleteRequest {
 
 message VirtioScsiControllerUpdateRequest {
     VirtioScsiController controller = 1;
-}
-
-message VirtioScsiControllerUpdateResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiControllerListRequest {
@@ -93,10 +89,6 @@ message VirtioScsiLunDeleteRequest {
 
 message VirtioScsiLunUpdateRequest {
     VirtioScsiLun lun = 1;
-}
-
-message VirtioScsiLunUpdateResponse {
-    // Intentionally empty.
 }
 
 message VirtioScsiLunListRequest {

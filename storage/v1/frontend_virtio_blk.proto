@@ -14,7 +14,7 @@ import "google/protobuf/empty.proto";
 service VirtioBlkService {
     rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {}
     rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlkUpdateResponse) {}
+    rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlk) {}
     rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {}
     rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlkGetResponse)    {}
     rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
@@ -39,10 +39,6 @@ message VirtioBlkDeleteRequest {
 
 message VirtioBlkUpdateRequest {
     VirtioBlk controller = 1;
-}
-
-message VirtioBlkUpdateResponse {
-    // Intentionally empty.
 }
 
 message VirtioBlkListRequest {
