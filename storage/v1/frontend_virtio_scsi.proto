@@ -16,7 +16,7 @@ service VirtioScsiControllerService {
     rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiController) {}
     rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
-    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiControllerGetResponse)    {}
+    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiController)    {}
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
 }
 
@@ -25,7 +25,7 @@ service VirtioScsiLunService {
     rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLun) {}
     rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
-    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLunGetResponse)    {}
+    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLun)    {}
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
 
@@ -65,10 +65,6 @@ message VirtioScsiControllerGetRequest {
     int64 controller_id = 1;
 }
 
-message VirtioScsiControllerGetResponse {
-    VirtioScsiController controller = 1;
-}
-
 message VirtioScsiControllerStatsRequest {
     int64 controller_id = 1;
 }
@@ -102,10 +98,6 @@ message VirtioScsiLunListResponse {
 message VirtioScsiLunGetRequest {
     int64 controller_id = 1;
     int64 lun_id = 2;
-}
-
-message VirtioScsiLunGetResponse {
-    VirtioScsiLun lun = 1;
 }
 
 message VirtioScsiLunStatsRequest {

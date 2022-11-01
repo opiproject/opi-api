@@ -16,7 +16,7 @@ service VirtioBlkService {
     rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (google.protobuf.Empty) {}
     rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlk) {}
     rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {}
-    rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlkGetResponse)    {}
+    rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlk)    {}
     rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
 }
 
@@ -51,10 +51,6 @@ message VirtioBlkListResponse {
 
 message VirtioBlkGetRequest {
     int64 controller_id = 1;
-}
-
-message VirtioBlkGetResponse {
-    VirtioBlk controller = 1;
 }
 
 message VirtioBlkStatsRequest {

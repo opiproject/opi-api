@@ -19,7 +19,7 @@ service NVMeSubsystemService {
     rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystem) {}
     rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
-    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystemGetResponse)    {}
+    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystem)    {}
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
 }
 
@@ -28,7 +28,7 @@ service NVMeControllerService {
     rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeController) {}
     rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
-    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeControllerGetResponse)    {}
+    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeController)    {}
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
 }
 
@@ -37,7 +37,7 @@ service NVMeNamespaceService {
     rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {}
     rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespace) {}
     rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
-    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespaceGetResponse)    {}
+    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespace)    {}
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
 }
 
@@ -175,10 +175,6 @@ message NVMeSubsystemGetRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
 
-message NVMeSubsystemGetResponse {
-    NVMeSubsystem subsystem = 1;
-}
-
 message NVMeSubsystemStatsRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
@@ -209,10 +205,6 @@ message NVMeControllerListResponse {
 
 message NVMeControllerGetRequest {
     common.v1.ObjectKey controller_id = 1;
-}
-
-message NVMeControllerGetResponse {
-    NVMeController controller = 1;
 }
 
 message NVMeControllerStatsRequest {
@@ -247,10 +239,6 @@ message NVMeNamespaceListResponse {
 
 message NVMeNamespaceGetRequest {
     common.v1.ObjectKey namespace_id = 1;
-}
-
-message NVMeNamespaceGetResponse {
-    NVMeNamespace namespace = 1;
 }
 
 message NVMeNamespaceStatsRequest {
