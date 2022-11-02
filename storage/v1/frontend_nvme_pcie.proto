@@ -136,8 +136,8 @@ message NVMeNamespace {
     // Globally unique identifier for the namespace
     common.v1.Uuid uuid = 9;
 
-    // reference to encryption key for the data at rest encryption
-    common.v1.ObjectKey crypto_key_id = 10;
+    // The back/middle-end volume to back this namespace.
+    common.v1.ObjectKey volume_id = 10;
 
     // optimal write size hint to host driver. Host IO stack may use
     // this to regulate IO size. Must be a multiple of the preferred write
