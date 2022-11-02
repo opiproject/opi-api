@@ -6,26 +6,71 @@ package opi_api.storage.v1;
 option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
 import "common.proto";
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 
 // Front End (host-facing) APIs.
 
 // Virtio-scsi emulation
 
 service VirtioScsiControllerService {
-    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {}
-    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiController) {}
-    rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {}
-    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiController)    {}
+    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {
+        option (google.api.http) = {
+            post: "/v1/virtioscsictrls"
+            body: "virtioscsictrl"
+        };
+    }
+    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/virtioscsictrls/{virtioscsictrl}"
+        };
+    }
+    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiController) {
+        option (google.api.http) = {
+            patch: "/v1/virtioscsictrls"
+            body: "virtioscsictrl"
+        };
+    }
+    rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {
+        option (google.api.http) = {
+            get: "/v1/virtioscsictrls"
+        };
+    }
+    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiController)    {
+        option (google.api.http) = {
+            get: "/v1/virtioscsictrls/{virtioscsictrl}"
+        };
+    }
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
 }
 
 service VirtioScsiLunService {
-    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {}
-    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLun) {}
-    rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {}
-    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLun)    {}
+    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {
+        option (google.api.http) = {
+            post: "/v1/virtioscsiluns"
+            body: "virtioscsilun"
+        };
+    }
+    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/virtioscsiluns/{virtioscsilun}"
+        };
+    }
+    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLun) {
+        option (google.api.http) = {
+            patch: "/v1/virtioscsiluns"
+            body: "virtioscsilun"
+        };
+    }
+    rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {
+        option (google.api.http) = {
+            get: "/v1/virtioscsiluns"
+        };
+    }
+    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLun)    {
+        option (google.api.http) = {
+            get: "/v1/virtioscsiluns/{virtioscsilun}"
+        };
+    }
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
 

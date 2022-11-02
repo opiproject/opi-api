@@ -9,35 +9,102 @@ import "common.proto";
 import "uuid.proto";
 import "object_key.proto";
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 
 // Front End (host-facing) APIs.
 
 // NVMe/PCIe emulation
 
 service NVMeSubsystemService {
-    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {}
-    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystem) {}
-    rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
-    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystem)    {}
+    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {
+        option (google.api.http) = {
+            post: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/subsystems/{subsystem}"
+        };
+    }
+    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystem) {
+        option (google.api.http) = {
+            patch: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {
+        option (google.api.http) = {
+            get: "/v1/subsystems"
+        };
+    }
+    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystem)    {
+        option (google.api.http) = {
+            get: "/v1/subsystems/{subsystem}"
+        };
+    }
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
 }
 
 service NVMeControllerService {
-    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {}
-    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeController) {}
-    rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
-    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeController)    {}
+    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {
+        option (google.api.http) = {
+            post: "/v1/controllers"
+            body: "controller"
+        };
+    }
+    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/controllers/{controller}"
+        };
+    }
+    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeController) {
+        option (google.api.http) = {
+            patch: "/v1/controllers"
+            body: "controller"
+        };
+    }
+    rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {
+        option (google.api.http) = {
+            get: "/v1/controllers"
+        };
+    }
+    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeController)    {
+        option (google.api.http) = {
+            get: "/v1/controllers/{controller}"
+        };
+    }
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
 }
 
 service NVMeNamespaceService {
-    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {}
-    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespace) {}
-    rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
-    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespace)    {}
+    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {
+        option (google.api.http) = {
+            post: "/v1/namespaces"
+            body: "namespace"
+        };
+    }
+    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/namespaces/{namespace}"
+        };
+    }
+    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespace) {
+        option (google.api.http) = {
+            patch: "/v1/namespaces"
+            body: "namespace"
+        };
+    }
+    rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {
+        option (google.api.http) = {
+            get: "/v1/namespaces"
+        };
+    }
+    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespace)    {
+        option (google.api.http) = {
+            get: "/v1/namespaces/{namespace}"
+        };
+    }
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
 }
 
