@@ -1037,7 +1037,7 @@ virtual functions under the physical function.
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [fixed64](#fixed64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified, optional otherwise |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
-| crypto_key_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | reference to encryption key for the data at rest encryption |
+| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this namespace. |
 | optimal_write_size | [uint32](#uint32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
 | pref_write_granularity | [uint32](#uint32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |
 

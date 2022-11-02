@@ -814,7 +814,7 @@ class NVMeNamespace final :
     kSubsystemIdFieldNumber = 2,
     kControllerIdFieldNumber = 3,
     kUuidFieldNumber = 9,
-    kCryptoKeyIdFieldNumber = 10,
+    kVolumeIdFieldNumber = 10,
     kBlockSizeFieldNumber = 5,
     kNumBlocksFieldNumber = 6,
     kHostNsidFieldNumber = 4,
@@ -908,23 +908,23 @@ class NVMeNamespace final :
       ::opi_api::common::v1::Uuid* uuid);
   ::opi_api::common::v1::Uuid* unsafe_arena_release_uuid();
 
-  // .opi_api.common.v1.ObjectKey crypto_key_id = 10;
-  bool has_crypto_key_id() const;
+  // .opi_api.common.v1.ObjectKey volume_id = 10;
+  bool has_volume_id() const;
   private:
-  bool _internal_has_crypto_key_id() const;
+  bool _internal_has_volume_id() const;
   public:
-  void clear_crypto_key_id();
-  const ::opi_api::common::v1::ObjectKey& crypto_key_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_key_id();
-  ::opi_api::common::v1::ObjectKey* mutable_crypto_key_id();
-  void set_allocated_crypto_key_id(::opi_api::common::v1::ObjectKey* crypto_key_id);
+  void clear_volume_id();
+  const ::opi_api::common::v1::ObjectKey& volume_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_volume_id();
+  ::opi_api::common::v1::ObjectKey* mutable_volume_id();
+  void set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_crypto_key_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_key_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_volume_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_volume_id();
   public:
-  void unsafe_arena_set_allocated_crypto_key_id(
-      ::opi_api::common::v1::ObjectKey* crypto_key_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_key_id();
+  void unsafe_arena_set_allocated_volume_id(
+      ::opi_api::common::v1::ObjectKey* volume_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
 
   // int64 block_size = 5;
   void clear_block_size();
@@ -992,7 +992,7 @@ class NVMeNamespace final :
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
   ::opi_api::common::v1::ObjectKey* controller_id_;
   ::opi_api::common::v1::Uuid* uuid_;
-  ::opi_api::common::v1::ObjectKey* crypto_key_id_;
+  ::opi_api::common::v1::ObjectKey* volume_id_;
   int64_t block_size_;
   int64_t num_blocks_;
   uint32_t host_nsid_;
@@ -5966,39 +5966,39 @@ inline void NVMeNamespace::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid)
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.uuid)
 }
 
-// .opi_api.common.v1.ObjectKey crypto_key_id = 10;
-inline bool NVMeNamespace::_internal_has_crypto_key_id() const {
-  return this != internal_default_instance() && crypto_key_id_ != nullptr;
+// .opi_api.common.v1.ObjectKey volume_id = 10;
+inline bool NVMeNamespace::_internal_has_volume_id() const {
+  return this != internal_default_instance() && volume_id_ != nullptr;
 }
-inline bool NVMeNamespace::has_crypto_key_id() const {
-  return _internal_has_crypto_key_id();
+inline bool NVMeNamespace::has_volume_id() const {
+  return _internal_has_volume_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& NVMeNamespace::_internal_crypto_key_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = crypto_key_id_;
+inline const ::opi_api::common::v1::ObjectKey& NVMeNamespace::_internal_volume_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = volume_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& NVMeNamespace::crypto_key_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
-  return _internal_crypto_key_id();
+inline const ::opi_api::common::v1::ObjectKey& NVMeNamespace::volume_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.volume_id)
+  return _internal_volume_id();
 }
-inline void NVMeNamespace::unsafe_arena_set_allocated_crypto_key_id(
-    ::opi_api::common::v1::ObjectKey* crypto_key_id) {
+inline void NVMeNamespace::unsafe_arena_set_allocated_volume_id(
+    ::opi_api::common::v1::ObjectKey* volume_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_key_id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
   }
-  crypto_key_id_ = crypto_key_id;
-  if (crypto_key_id) {
+  volume_id_ = volume_id;
+  if (volume_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeNamespace.volume_id)
 }
-inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::release_crypto_key_id() {
+inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::release_volume_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = crypto_key_id_;
-  crypto_key_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
+  volume_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -6010,46 +6010,46 @@ inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::release_crypto_key_id() 
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::unsafe_arena_release_crypto_key_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
+inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::unsafe_arena_release_volume_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.volume_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = crypto_key_id_;
-  crypto_key_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
+  volume_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::_internal_mutable_crypto_key_id() {
+inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::_internal_mutable_volume_id() {
   
-  if (crypto_key_id_ == nullptr) {
+  if (volume_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    crypto_key_id_ = p;
+    volume_id_ = p;
   }
-  return crypto_key_id_;
+  return volume_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::mutable_crypto_key_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_key_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
+inline ::opi_api::common::v1::ObjectKey* NVMeNamespace::mutable_volume_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_volume_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.volume_id)
   return _msg;
 }
-inline void NVMeNamespace::set_allocated_crypto_key_id(::opi_api::common::v1::ObjectKey* crypto_key_id) {
+inline void NVMeNamespace::set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_key_id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
   }
-  if (crypto_key_id) {
+  if (volume_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_key_id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id));
     if (message_arena != submessage_arena) {
-      crypto_key_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, crypto_key_id, submessage_arena);
+      volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, volume_id, submessage_arena);
     }
     
   } else {
     
   }
-  crypto_key_id_ = crypto_key_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.crypto_key_id)
+  volume_id_ = volume_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.volume_id)
 }
 
 // uint32 optimal_write_size = 11;
