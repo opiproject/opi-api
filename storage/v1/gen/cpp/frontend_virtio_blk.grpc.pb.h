@@ -37,10 +37,10 @@ namespace v1 {
 //
 // Virtio-blk emulation
 //
-class VirtioBlkService final {
+class FrontendVirtioBlkService final {
  public:
   static constexpr char const* service_full_name() {
-    return "opi_api.storage.v1.VirtioBlkService";
+    return "opi_api.storage.v1.FrontendVirtioBlkService";
   }
   class StubInterface {
    public:

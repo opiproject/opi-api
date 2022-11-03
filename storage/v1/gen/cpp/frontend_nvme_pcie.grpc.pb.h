@@ -38,10 +38,10 @@ namespace v1 {
 //
 // NVMe/PCIe emulation
 //
-class NVMeSubsystemService final {
+class FrontendNvmeService final {
  public:
   static constexpr char const* service_full_name() {
-    return "opi_api.storage.v1.NVMeSubsystemService";
+    return "opi_api.storage.v1.FrontendNvmeService";
   }
   class StubInterface {
    public:
@@ -88,6 +88,90 @@ class NVMeSubsystemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>> PrepareAsyncNVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>>(PrepareAsyncNVMeSubsystemStatsRaw(context, request, cq));
     }
+    virtual ::grpc::Status NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerCreateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerCreateRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMeControllerDeleteRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMeControllerDeleteRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerUpdateRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::opi_api::storage::v1::NVMeControllerListResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>> AsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>>(AsyncNVMeControllerListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>> PrepareAsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>>(PrepareAsyncNVMeControllerListRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerGetRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>> AsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(AsyncNVMeControllerStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>> PrepareAsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(PrepareAsyncNVMeControllerStatsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceCreateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceCreateRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMeNamespaceDeleteRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMeNamespaceDeleteRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceUpdateRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>> AsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(AsyncNVMeNamespaceListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>> PrepareAsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(PrepareAsyncNVMeNamespaceListRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceGetRaw(context, request, cq));
+    }
+    virtual ::grpc::Status NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> AsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(AsyncNVMeNamespaceStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -103,6 +187,30 @@ class NVMeSubsystemService final {
       virtual void NVMeSubsystemGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemGetRequest* request, ::opi_api::storage::v1::NVMeSubsystem* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* request, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* request, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -120,6 +228,30 @@ class NVMeSubsystemService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeSubsystem>* PrepareAsyncNVMeSubsystemGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>* AsyncNVMeSubsystemStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>* PrepareAsyncNVMeSubsystemStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>* AsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>* PrepareAsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>* AsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>* PrepareAsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>* AsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>* PrepareAsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -166,6 +298,90 @@ class NVMeSubsystemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>> PrepareAsyncNVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>>(PrepareAsyncNVMeSubsystemStatsRaw(context, request, cq));
     }
+    ::grpc::Status NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerCreateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerCreateRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMeControllerDeleteRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMeControllerDeleteRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerUpdateRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::opi_api::storage::v1::NVMeControllerListResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>> AsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>>(AsyncNVMeControllerListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>> PrepareAsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>>(PrepareAsyncNVMeControllerListRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerGetRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>> AsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(AsyncNVMeControllerStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>> PrepareAsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(PrepareAsyncNVMeControllerStatsRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceCreateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceCreateRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMeNamespaceDeleteRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMeNamespaceDeleteRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceUpdateRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>> AsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(AsyncNVMeNamespaceListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>> PrepareAsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(PrepareAsyncNVMeNamespaceListRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceGetRaw(context, request, cq));
+    }
+    ::grpc::Status NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> AsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(AsyncNVMeNamespaceStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -181,6 +397,30 @@ class NVMeSubsystemService final {
       void NVMeSubsystemGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemGetRequest* request, ::opi_api::storage::v1::NVMeSubsystem* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* request, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* response, std::function<void(::grpc::Status)>) override;
       void NVMeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* request, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -204,12 +444,48 @@ class NVMeSubsystemService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeSubsystem>* PrepareAsyncNVMeSubsystemGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>* AsyncNVMeSubsystemStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeSubsystemStatsResponse>* PrepareAsyncNVMeSubsystemStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>* AsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>* PrepareAsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>* AsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>* PrepareAsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>* AsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>* PrepareAsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemCreate_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemDelete_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemUpdate_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemList_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemGet_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeSubsystemStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerCreate_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerDelete_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerUpdate_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerList_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerGet_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceCreate_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceDelete_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceUpdate_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceList_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceGet_;
+    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceStats_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -223,6 +499,18 @@ class NVMeSubsystemService final {
     virtual ::grpc::Status NVMeSubsystemList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeSubsystemListRequest* request, ::opi_api::storage::v1::NVMeSubsystemListResponse* response);
     virtual ::grpc::Status NVMeSubsystemGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeSubsystemGetRequest* request, ::opi_api::storage::v1::NVMeSubsystem* response);
     virtual ::grpc::Status NVMeSubsystemStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* request, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* response);
+    virtual ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response);
+    virtual ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response);
+    virtual ::grpc::Status NVMeControllerList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response);
+    virtual ::grpc::Status NVMeControllerGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response);
+    virtual ::grpc::Status NVMeControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response);
+    virtual ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
+    virtual ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
+    virtual ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response);
+    virtual ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
+    virtual ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_NVMeSubsystemCreate : public BaseClass {
@@ -344,7 +632,247 @@ class NVMeSubsystemService final {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_NVMeSubsystemCreate<WithAsyncMethod_NVMeSubsystemDelete<WithAsyncMethod_NVMeSubsystemUpdate<WithAsyncMethod_NVMeSubsystemList<WithAsyncMethod_NVMeSubsystemGet<WithAsyncMethod_NVMeSubsystemStats<Service > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerCreate() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_NVMeControllerCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerDelete() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_NVMeControllerDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerUpdate() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_NVMeControllerUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerList() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_NVMeControllerList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerList(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerListRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeControllerListResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerGet() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_NVMeControllerGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeControllerStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeControllerStats() {
+      ::grpc::Service::MarkMethodAsync(11);
+    }
+    ~WithAsyncMethod_NVMeControllerStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeControllerStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceCreate() {
+      ::grpc::Service::MarkMethodAsync(12);
+    }
+    ~WithAsyncMethod_NVMeNamespaceCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceDelete() {
+      ::grpc::Service::MarkMethodAsync(13);
+    }
+    ~WithAsyncMethod_NVMeNamespaceDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceUpdate() {
+      ::grpc::Service::MarkMethodAsync(14);
+    }
+    ~WithAsyncMethod_NVMeNamespaceUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceList() {
+      ::grpc::Service::MarkMethodAsync(15);
+    }
+    ~WithAsyncMethod_NVMeNamespaceList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceList(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespaceListResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceGet() {
+      ::grpc::Service::MarkMethodAsync(16);
+    }
+    ~WithAsyncMethod_NVMeNamespaceGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_NVMeNamespaceStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_NVMeNamespaceStats() {
+      ::grpc::Service::MarkMethodAsync(17);
+    }
+    ~WithAsyncMethod_NVMeNamespaceStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_NVMeSubsystemCreate<WithAsyncMethod_NVMeSubsystemDelete<WithAsyncMethod_NVMeSubsystemUpdate<WithAsyncMethod_NVMeSubsystemList<WithAsyncMethod_NVMeSubsystemGet<WithAsyncMethod_NVMeSubsystemStats<WithAsyncMethod_NVMeControllerCreate<WithAsyncMethod_NVMeControllerDelete<WithAsyncMethod_NVMeControllerUpdate<WithAsyncMethod_NVMeControllerList<WithAsyncMethod_NVMeControllerGet<WithAsyncMethod_NVMeControllerStats<WithAsyncMethod_NVMeNamespaceCreate<WithAsyncMethod_NVMeNamespaceDelete<WithAsyncMethod_NVMeNamespaceUpdate<WithAsyncMethod_NVMeNamespaceList<WithAsyncMethod_NVMeNamespaceGet<WithAsyncMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_NVMeSubsystemCreate : public BaseClass {
    private:
@@ -507,7 +1035,331 @@ class NVMeSubsystemService final {
     virtual ::grpc::ServerUnaryReactor* NVMeSubsystemStats(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_NVMeSubsystemCreate<WithCallbackMethod_NVMeSubsystemDelete<WithCallbackMethod_NVMeSubsystemUpdate<WithCallbackMethod_NVMeSubsystemList<WithCallbackMethod_NVMeSubsystemGet<WithCallbackMethod_NVMeSubsystemStats<Service > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerCreate() {
+      ::grpc::Service::MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerCreate(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerCreate(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerCreate(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerDelete() {
+      ::grpc::Service::MarkMethodCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response) { return this->NVMeControllerDelete(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerDelete(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerDelete(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerUpdate() {
+      ::grpc::Service::MarkMethodCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerUpdate(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerUpdate(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerUpdate(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerList() {
+      ::grpc::Service::MarkMethodCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response) { return this->NVMeControllerList(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerList(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerList(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerGet() {
+      ::grpc::Service::MarkMethodCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerGet(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerGet(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeControllerStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeControllerStats() {
+      ::grpc::Service::MarkMethodCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) { return this->NVMeControllerStats(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeControllerStats(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeControllerStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceCreate() {
+      ::grpc::Service::MarkMethodCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceCreate(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceCreate(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceCreate(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceDelete() {
+      ::grpc::Service::MarkMethodCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response) { return this->NVMeNamespaceDelete(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceDelete(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceDelete(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceUpdate() {
+      ::grpc::Service::MarkMethodCallback(14,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceUpdate(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceUpdate(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceUpdate(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceList() {
+      ::grpc::Service::MarkMethodCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) { return this->NVMeNamespaceList(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceList(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceList(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceGet() {
+      ::grpc::Service::MarkMethodCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceGet(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceGet(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_NVMeNamespaceStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_NVMeNamespaceStats() {
+      ::grpc::Service::MarkMethodCallback(17,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) { return this->NVMeNamespaceStats(context, request, response); }));}
+    void SetMessageAllocatorFor_NVMeNamespaceStats(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_NVMeNamespaceStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_NVMeSubsystemCreate<WithCallbackMethod_NVMeSubsystemDelete<WithCallbackMethod_NVMeSubsystemUpdate<WithCallbackMethod_NVMeSubsystemList<WithCallbackMethod_NVMeSubsystemGet<WithCallbackMethod_NVMeSubsystemStats<WithCallbackMethod_NVMeControllerCreate<WithCallbackMethod_NVMeControllerDelete<WithCallbackMethod_NVMeControllerUpdate<WithCallbackMethod_NVMeControllerList<WithCallbackMethod_NVMeControllerGet<WithCallbackMethod_NVMeControllerStats<WithCallbackMethod_NVMeNamespaceCreate<WithCallbackMethod_NVMeNamespaceDelete<WithCallbackMethod_NVMeNamespaceUpdate<WithCallbackMethod_NVMeNamespaceList<WithCallbackMethod_NVMeNamespaceGet<WithCallbackMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_NVMeSubsystemCreate : public BaseClass {
@@ -607,6 +1459,210 @@ class NVMeSubsystemService final {
     }
     // disable synchronous version of this method
     ::grpc::Status NVMeSubsystemStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeSubsystemStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeSubsystemStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerCreate() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_NVMeControllerCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerDelete() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_NVMeControllerDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerUpdate() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_NVMeControllerUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerList() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_NVMeControllerList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerGet() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_NVMeControllerGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeControllerStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeControllerStats() {
+      ::grpc::Service::MarkMethodGeneric(11);
+    }
+    ~WithGenericMethod_NVMeControllerStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceCreate() {
+      ::grpc::Service::MarkMethodGeneric(12);
+    }
+    ~WithGenericMethod_NVMeNamespaceCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceDelete() {
+      ::grpc::Service::MarkMethodGeneric(13);
+    }
+    ~WithGenericMethod_NVMeNamespaceDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceUpdate() {
+      ::grpc::Service::MarkMethodGeneric(14);
+    }
+    ~WithGenericMethod_NVMeNamespaceUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceList() {
+      ::grpc::Service::MarkMethodGeneric(15);
+    }
+    ~WithGenericMethod_NVMeNamespaceList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceGet() {
+      ::grpc::Service::MarkMethodGeneric(16);
+    }
+    ~WithGenericMethod_NVMeNamespaceGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_NVMeNamespaceStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_NVMeNamespaceStats() {
+      ::grpc::Service::MarkMethodGeneric(17);
+    }
+    ~WithGenericMethod_NVMeNamespaceStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -729,6 +1785,246 @@ class NVMeSubsystemService final {
     }
     void RequestNVMeSubsystemStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerCreate() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_NVMeControllerCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerCreate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerDelete() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_NVMeControllerDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerDelete(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerUpdate() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_NVMeControllerUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerUpdate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerList() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_NVMeControllerList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerGet() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_NVMeControllerGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeControllerStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeControllerStats() {
+      ::grpc::Service::MarkMethodRaw(11);
+    }
+    ~WithRawMethod_NVMeControllerStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeControllerStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceCreate() {
+      ::grpc::Service::MarkMethodRaw(12);
+    }
+    ~WithRawMethod_NVMeNamespaceCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceCreate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceDelete() {
+      ::grpc::Service::MarkMethodRaw(13);
+    }
+    ~WithRawMethod_NVMeNamespaceDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceDelete(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceUpdate() {
+      ::grpc::Service::MarkMethodRaw(14);
+    }
+    ~WithRawMethod_NVMeNamespaceUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceUpdate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceList() {
+      ::grpc::Service::MarkMethodRaw(15);
+    }
+    ~WithRawMethod_NVMeNamespaceList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceGet() {
+      ::grpc::Service::MarkMethodRaw(16);
+    }
+    ~WithRawMethod_NVMeNamespaceGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_NVMeNamespaceStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_NVMeNamespaceStats() {
+      ::grpc::Service::MarkMethodRaw(17);
+    }
+    ~WithRawMethod_NVMeNamespaceStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestNVMeNamespaceStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -861,6 +2157,270 @@ class NVMeSubsystemService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMeSubsystemStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerCreate() {
+      ::grpc::Service::MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerCreate(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerCreate(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerDelete() {
+      ::grpc::Service::MarkMethodRawCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerDelete(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerDelete(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerUpdate() {
+      ::grpc::Service::MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerUpdate(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerUpdate(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerList() {
+      ::grpc::Service::MarkMethodRawCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerList(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerList(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerGet() {
+      ::grpc::Service::MarkMethodRawCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerGet(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeControllerStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeControllerStats() {
+      ::grpc::Service::MarkMethodRawCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerStats(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeControllerStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeControllerStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceCreate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceCreate() {
+      ::grpc::Service::MarkMethodRawCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceCreate(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceCreate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceCreate(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceDelete : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceDelete() {
+      ::grpc::Service::MarkMethodRawCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceDelete(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceDelete() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceDelete(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceUpdate() {
+      ::grpc::Service::MarkMethodRawCallback(14,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceUpdate(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceUpdate(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceList() {
+      ::grpc::Service::MarkMethodRawCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceList(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceList(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceGet() {
+      ::grpc::Service::MarkMethodRawCallback(16,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceGet(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_NVMeNamespaceStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_NVMeNamespaceStats() {
+      ::grpc::Service::MarkMethodRawCallback(17,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceStats(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_NVMeNamespaceStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1025,843 +2585,13 @@ class NVMeSubsystemService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedNVMeSubsystemStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMeSubsystemStatsRequest,::opi_api::storage::v1::NVMeSubsystemStatsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_NVMeSubsystemCreate<WithStreamedUnaryMethod_NVMeSubsystemDelete<WithStreamedUnaryMethod_NVMeSubsystemUpdate<WithStreamedUnaryMethod_NVMeSubsystemList<WithStreamedUnaryMethod_NVMeSubsystemGet<WithStreamedUnaryMethod_NVMeSubsystemStats<Service > > > > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_NVMeSubsystemCreate<WithStreamedUnaryMethod_NVMeSubsystemDelete<WithStreamedUnaryMethod_NVMeSubsystemUpdate<WithStreamedUnaryMethod_NVMeSubsystemList<WithStreamedUnaryMethod_NVMeSubsystemGet<WithStreamedUnaryMethod_NVMeSubsystemStats<Service > > > > > > StreamedService;
-};
-
-class NVMeControllerService final {
- public:
-  static constexpr char const* service_full_name() {
-    return "opi_api.storage.v1.NVMeControllerService";
-  }
-  class StubInterface {
-   public:
-    virtual ~StubInterface() {}
-    virtual ::grpc::Status NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerCreateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerCreateRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMeControllerDeleteRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMeControllerDeleteRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerUpdateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerUpdateRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::opi_api::storage::v1::NVMeControllerListResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>> AsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>>(AsyncNVMeControllerListRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>> PrepareAsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>>(PrepareAsyncNVMeControllerListRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::opi_api::storage::v1::NVMeController* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerGetRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerGetRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>> AsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(AsyncNVMeControllerStatsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>> PrepareAsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(PrepareAsyncNVMeControllerStatsRaw(context, request, cq));
-    }
-    class async_interface {
-     public:
-      virtual ~async_interface() {}
-      virtual void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-    };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>* AsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerListResponse>* PrepareAsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>* AsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeControllerStatsResponse>* PrepareAsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-  };
-  class Stub final : public StubInterface {
-   public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerCreateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerCreateRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMeControllerDeleteRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMeControllerDeleteRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerUpdateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerUpdateRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::opi_api::storage::v1::NVMeControllerListResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>> AsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>>(AsyncNVMeControllerListRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>> PrepareAsyncNVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>>(PrepareAsyncNVMeControllerListRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::opi_api::storage::v1::NVMeController* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> AsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(AsyncNVMeControllerGetRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>> PrepareAsyncNVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>>(PrepareAsyncNVMeControllerGetRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>> AsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(AsyncNVMeControllerStatsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>> PrepareAsyncNVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>>(PrepareAsyncNVMeControllerStatsRaw(context, request, cq));
-    }
-    class async final :
-      public StubInterface::async_interface {
-     public:
-      void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMeControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-     private:
-      friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
-      Stub* stub() { return stub_; }
-      Stub* stub_;
-    };
-    class async* async() override { return &async_stub_; }
-
-   private:
-    std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMeControllerDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>* AsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerListResponse>* PrepareAsyncNVMeControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* AsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeController>* PrepareAsyncNVMeControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>* AsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeControllerStatsResponse>* PrepareAsyncNVMeControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerCreate_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerDelete_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerUpdate_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerList_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerGet_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeControllerStats_;
-  };
-  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-
-  class Service : public ::grpc::Service {
-   public:
-    Service();
-    virtual ~Service();
-    virtual ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response);
-    virtual ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response);
-    virtual ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response);
-    virtual ::grpc::Status NVMeControllerList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response);
-    virtual ::grpc::Status NVMeControllerGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response);
-    virtual ::grpc::Status NVMeControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response);
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_NVMeControllerCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodAsync(1);
-    }
-    ~WithAsyncMethod_NVMeControllerDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_NVMeControllerUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodAsync(3);
-    }
-    ~WithAsyncMethod_NVMeControllerList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerList(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerListRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeControllerListResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_NVMeControllerGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeControllerStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodAsync(5);
-    }
-    ~WithAsyncMethod_NVMeControllerStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeControllerStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_NVMeControllerCreate<WithAsyncMethod_NVMeControllerDelete<WithAsyncMethod_NVMeControllerUpdate<WithAsyncMethod_NVMeControllerList<WithAsyncMethod_NVMeControllerGet<WithAsyncMethod_NVMeControllerStats<Service > > > > > > AsyncService;
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerCreateRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerCreate(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerCreate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerCreate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* request, ::google::protobuf::Empty* response) { return this->NVMeControllerDelete(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerDelete(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerDelete(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerUpdate(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerUpdate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerListRequest* request, ::opi_api::storage::v1::NVMeControllerListResponse* response) { return this->NVMeControllerList(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerList(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerList(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerGetRequest* request, ::opi_api::storage::v1::NVMeController* response) { return this->NVMeControllerGet(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerGet(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeControllerStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeControllerStatsRequest* request, ::opi_api::storage::v1::NVMeControllerStatsResponse* response) { return this->NVMeControllerStats(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeControllerStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeControllerStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/)  { return nullptr; }
-  };
-  typedef WithCallbackMethod_NVMeControllerCreate<WithCallbackMethod_NVMeControllerDelete<WithCallbackMethod_NVMeControllerUpdate<WithCallbackMethod_NVMeControllerList<WithCallbackMethod_NVMeControllerGet<WithCallbackMethod_NVMeControllerStats<Service > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_NVMeControllerCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodGeneric(1);
-    }
-    ~WithGenericMethod_NVMeControllerDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_NVMeControllerUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodGeneric(3);
-    }
-    ~WithGenericMethod_NVMeControllerList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_NVMeControllerGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeControllerStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodGeneric(5);
-    }
-    ~WithGenericMethod_NVMeControllerStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_NVMeControllerCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerCreate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodRaw(1);
-    }
-    ~WithRawMethod_NVMeControllerDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerDelete(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_NVMeControllerUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerUpdate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_NVMeControllerList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_NVMeControllerGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeControllerStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_NVMeControllerStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeControllerStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerCreate(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerCreate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodRawCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerDelete(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerDelete(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodRawCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerUpdate(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodRawCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerList(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerListRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerList(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodRawCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerGet(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMeController* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeControllerStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodRawCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeControllerStats(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeControllerStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeControllerStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeControllerStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeControllerStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeControllerStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMeControllerCreate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerCreate() {
-      ::grpc::Service::MarkMethodStreamed(0,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerCreateRequest, ::opi_api::storage::v1::NVMeController>(
             [this](::grpc::ServerContext* context,
@@ -1888,7 +2618,7 @@ class NVMeControllerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerDelete() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerDeleteRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
@@ -1915,7 +2645,7 @@ class NVMeControllerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerUpdate() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerUpdateRequest, ::opi_api::storage::v1::NVMeController>(
             [this](::grpc::ServerContext* context,
@@ -1942,7 +2672,7 @@ class NVMeControllerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerList() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerListRequest, ::opi_api::storage::v1::NVMeControllerListResponse>(
             [this](::grpc::ServerContext* context,
@@ -1969,7 +2699,7 @@ class NVMeControllerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerGet() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerGetRequest, ::opi_api::storage::v1::NVMeController>(
             [this](::grpc::ServerContext* context,
@@ -1996,7 +2726,7 @@ class NVMeControllerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeControllerStats() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeControllerStatsRequest, ::opi_api::storage::v1::NVMeControllerStatsResponse>(
             [this](::grpc::ServerContext* context,
@@ -2017,843 +2747,13 @@ class NVMeControllerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedNVMeControllerStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMeControllerStatsRequest,::opi_api::storage::v1::NVMeControllerStatsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_NVMeControllerCreate<WithStreamedUnaryMethod_NVMeControllerDelete<WithStreamedUnaryMethod_NVMeControllerUpdate<WithStreamedUnaryMethod_NVMeControllerList<WithStreamedUnaryMethod_NVMeControllerGet<WithStreamedUnaryMethod_NVMeControllerStats<Service > > > > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_NVMeControllerCreate<WithStreamedUnaryMethod_NVMeControllerDelete<WithStreamedUnaryMethod_NVMeControllerUpdate<WithStreamedUnaryMethod_NVMeControllerList<WithStreamedUnaryMethod_NVMeControllerGet<WithStreamedUnaryMethod_NVMeControllerStats<Service > > > > > > StreamedService;
-};
-
-class NVMeNamespaceService final {
- public:
-  static constexpr char const* service_full_name() {
-    return "opi_api.storage.v1.NVMeNamespaceService";
-  }
-  class StubInterface {
-   public:
-    virtual ~StubInterface() {}
-    virtual ::grpc::Status NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceCreateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceCreateRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMeNamespaceDeleteRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMeNamespaceDeleteRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceUpdateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceUpdateRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>> AsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(AsyncNVMeNamespaceListRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>> PrepareAsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(PrepareAsyncNVMeNamespaceListRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceGetRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceGetRaw(context, request, cq));
-    }
-    virtual ::grpc::Status NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> AsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(AsyncNVMeNamespaceStatsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
-    }
-    class async_interface {
-     public:
-      virtual ~async_interface() {}
-      virtual void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-    };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>* AsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceListResponse>* PrepareAsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-  };
-  class Stub final : public StubInterface {
-   public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceCreateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceCreateRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMeNamespaceDeleteRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMeNamespaceDeleteRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceUpdateRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceUpdateRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>> AsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(AsyncNVMeNamespaceListRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>> PrepareAsyncNVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>>(PrepareAsyncNVMeNamespaceListRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::opi_api::storage::v1::NVMeNamespace* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> AsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(AsyncNVMeNamespaceGetRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>> PrepareAsyncNVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>>(PrepareAsyncNVMeNamespaceGetRaw(context, request, cq));
-    }
-    ::grpc::Status NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> AsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(AsyncNVMeNamespaceStatsRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
-    }
-    class async final :
-      public StubInterface::async_interface {
-     public:
-      void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-     private:
-      friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
-      Stub* stub() { return stub_; }
-      Stub* stub_;
-    };
-    class async* async() override { return &async_stub_; }
-
-   private:
-    std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMeNamespaceDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>* AsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceListResponse>* PrepareAsyncNVMeNamespaceListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* AsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncNVMeNamespaceGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceCreate_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceDelete_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceUpdate_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceList_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceGet_;
-    const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceStats_;
-  };
-  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-
-  class Service : public ::grpc::Service {
-   public:
-    Service();
-    virtual ~Service();
-    virtual ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
-    virtual ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response);
-    virtual ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
-    virtual ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response);
-    virtual ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
-    virtual ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response);
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_NVMeNamespaceCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodAsync(1);
-    }
-    ~WithAsyncMethod_NVMeNamespaceDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_NVMeNamespaceUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodAsync(3);
-    }
-    ~WithAsyncMethod_NVMeNamespaceList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceList(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespaceListResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_NVMeNamespaceGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespace>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_NVMeNamespaceStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodAsync(5);
-    }
-    ~WithAsyncMethod_NVMeNamespaceStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceStats(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_NVMeNamespaceCreate<WithAsyncMethod_NVMeNamespaceDelete<WithAsyncMethod_NVMeNamespaceUpdate<WithAsyncMethod_NVMeNamespaceList<WithAsyncMethod_NVMeNamespaceGet<WithAsyncMethod_NVMeNamespaceStats<Service > > > > > > AsyncService;
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceCreate(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceCreate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceCreate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* request, ::google::protobuf::Empty* response) { return this->NVMeNamespaceDelete(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceDelete(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceDelete(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceUpdate(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceUpdate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceListRequest* request, ::opi_api::storage::v1::NVMeNamespaceListResponse* response) { return this->NVMeNamespaceList(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceList(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceList(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* request, ::opi_api::storage::v1::NVMeNamespace* response) { return this->NVMeNamespaceGet(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceGet(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_NVMeNamespaceStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response) { return this->NVMeNamespaceStats(context, request, response); }));}
-    void SetMessageAllocatorFor_NVMeNamespaceStats(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_NVMeNamespaceStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/)  { return nullptr; }
-  };
-  typedef WithCallbackMethod_NVMeNamespaceCreate<WithCallbackMethod_NVMeNamespaceDelete<WithCallbackMethod_NVMeNamespaceUpdate<WithCallbackMethod_NVMeNamespaceList<WithCallbackMethod_NVMeNamespaceGet<WithCallbackMethod_NVMeNamespaceStats<Service > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_NVMeNamespaceCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodGeneric(1);
-    }
-    ~WithGenericMethod_NVMeNamespaceDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_NVMeNamespaceUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodGeneric(3);
-    }
-    ~WithGenericMethod_NVMeNamespaceList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_NVMeNamespaceGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_NVMeNamespaceStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodGeneric(5);
-    }
-    ~WithGenericMethod_NVMeNamespaceStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_NVMeNamespaceCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceCreate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodRaw(1);
-    }
-    ~WithRawMethod_NVMeNamespaceDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceDelete(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_NVMeNamespaceUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceUpdate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_NVMeNamespaceList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_NVMeNamespaceGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_NVMeNamespaceStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_NVMeNamespaceStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestNVMeNamespaceStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceCreate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceCreate(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceCreate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceCreateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceCreate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceDelete : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodRawCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceDelete(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceDelete() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceDelete(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceUpdate : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodRawCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceUpdate(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceUpdate() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceUpdateRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceList : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodRawCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceList(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceList() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceList(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceListRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceListResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceList(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceGet : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodRawCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceGet(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceGet() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceGetRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespace* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_NVMeNamespaceStats : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodRawCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NVMeNamespaceStats(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_NVMeNamespaceStats() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMeNamespaceCreate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceCreate() {
-      ::grpc::Service::MarkMethodStreamed(0,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceCreateRequest, ::opi_api::storage::v1::NVMeNamespace>(
             [this](::grpc::ServerContext* context,
@@ -2880,7 +2780,7 @@ class NVMeNamespaceService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceDelete() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceDeleteRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
@@ -2907,7 +2807,7 @@ class NVMeNamespaceService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceUpdate() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceUpdateRequest, ::opi_api::storage::v1::NVMeNamespace>(
             [this](::grpc::ServerContext* context,
@@ -2934,7 +2834,7 @@ class NVMeNamespaceService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceList() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceListRequest, ::opi_api::storage::v1::NVMeNamespaceListResponse>(
             [this](::grpc::ServerContext* context,
@@ -2961,7 +2861,7 @@ class NVMeNamespaceService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceGet() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceGetRequest, ::opi_api::storage::v1::NVMeNamespace>(
             [this](::grpc::ServerContext* context,
@@ -2988,7 +2888,7 @@ class NVMeNamespaceService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NVMeNamespaceStats() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::opi_api::storage::v1::NVMeNamespaceStatsRequest, ::opi_api::storage::v1::NVMeNamespaceStatsResponse>(
             [this](::grpc::ServerContext* context,
@@ -3009,9 +2909,9 @@ class NVMeNamespaceService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedNVMeNamespaceStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMeNamespaceStatsRequest,::opi_api::storage::v1::NVMeNamespaceStatsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_NVMeNamespaceCreate<WithStreamedUnaryMethod_NVMeNamespaceDelete<WithStreamedUnaryMethod_NVMeNamespaceUpdate<WithStreamedUnaryMethod_NVMeNamespaceList<WithStreamedUnaryMethod_NVMeNamespaceGet<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_NVMeSubsystemCreate<WithStreamedUnaryMethod_NVMeSubsystemDelete<WithStreamedUnaryMethod_NVMeSubsystemUpdate<WithStreamedUnaryMethod_NVMeSubsystemList<WithStreamedUnaryMethod_NVMeSubsystemGet<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_NVMeControllerCreate<WithStreamedUnaryMethod_NVMeControllerDelete<WithStreamedUnaryMethod_NVMeControllerUpdate<WithStreamedUnaryMethod_NVMeControllerList<WithStreamedUnaryMethod_NVMeControllerGet<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_NVMeNamespaceCreate<WithStreamedUnaryMethod_NVMeNamespaceDelete<WithStreamedUnaryMethod_NVMeNamespaceUpdate<WithStreamedUnaryMethod_NVMeNamespaceList<WithStreamedUnaryMethod_NVMeNamespaceGet<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_NVMeNamespaceCreate<WithStreamedUnaryMethod_NVMeNamespaceDelete<WithStreamedUnaryMethod_NVMeNamespaceUpdate<WithStreamedUnaryMethod_NVMeNamespaceList<WithStreamedUnaryMethod_NVMeNamespaceGet<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_NVMeSubsystemCreate<WithStreamedUnaryMethod_NVMeSubsystemDelete<WithStreamedUnaryMethod_NVMeSubsystemUpdate<WithStreamedUnaryMethod_NVMeSubsystemList<WithStreamedUnaryMethod_NVMeSubsystemGet<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_NVMeControllerCreate<WithStreamedUnaryMethod_NVMeControllerDelete<WithStreamedUnaryMethod_NVMeControllerUpdate<WithStreamedUnaryMethod_NVMeControllerList<WithStreamedUnaryMethod_NVMeControllerGet<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_NVMeNamespaceCreate<WithStreamedUnaryMethod_NVMeNamespaceDelete<WithStreamedUnaryMethod_NVMeNamespaceUpdate<WithStreamedUnaryMethod_NVMeNamespaceList<WithStreamedUnaryMethod_NVMeNamespaceGet<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1
