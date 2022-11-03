@@ -34,6 +34,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "common.pb.h"
 #include <google/protobuf/empty.pb.h>
+#include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fvirtio_5fscsi_2eproto

@@ -36,6 +36,7 @@
 #include "uuid.pb.h"
 #include "object_key.pb.h"
 #include <google/protobuf/empty.pb.h>
+#include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fnvme_5fpcie_2eproto

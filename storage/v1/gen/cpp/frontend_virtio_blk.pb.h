@@ -33,6 +33,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "common.pb.h"
 #include <google/protobuf/empty.pb.h>
+#include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fvirtio_5fblk_2eproto
@@ -908,15 +909,15 @@ class VirtioBlkListRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kVirtioblkIdFieldNumber = 1,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 virtioblk_id = 1;
+  void clear_virtioblk_id();
+  int64_t virtioblk_id() const;
+  void set_virtioblk_id(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_virtioblk_id() const;
+  void _internal_set_virtioblk_id(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListRequest)
@@ -926,7 +927,7 @@ class VirtioBlkListRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t virtioblk_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
 };
@@ -2045,24 +2046,24 @@ inline void VirtioBlkUpdateRequest::set_allocated_controller(::opi_api::storage:
 
 // VirtioBlkListRequest
 
-// int64 subsystem_id = 1;
-inline void VirtioBlkListRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 virtioblk_id = 1;
+inline void VirtioBlkListRequest::clear_virtioblk_id() {
+  virtioblk_id_ = int64_t{0};
 }
-inline int64_t VirtioBlkListRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t VirtioBlkListRequest::_internal_virtioblk_id() const {
+  return virtioblk_id_;
 }
-inline int64_t VirtioBlkListRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkListRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t VirtioBlkListRequest::virtioblk_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkListRequest.virtioblk_id)
+  return _internal_virtioblk_id();
 }
-inline void VirtioBlkListRequest::_internal_set_subsystem_id(int64_t value) {
+inline void VirtioBlkListRequest::_internal_set_virtioblk_id(int64_t value) {
   
-  subsystem_id_ = value;
+  virtioblk_id_ = value;
 }
-inline void VirtioBlkListRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlkListRequest.subsystem_id)
+inline void VirtioBlkListRequest::set_virtioblk_id(int64_t value) {
+  _internal_set_virtioblk_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlkListRequest.virtioblk_id)
 }
 
 // -------------------------------------------------------------------

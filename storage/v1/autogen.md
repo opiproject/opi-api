@@ -1438,7 +1438,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| virtioblk_id | [int64](#int64) |  |  |
 
 
 
