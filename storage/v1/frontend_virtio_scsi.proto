@@ -12,7 +12,7 @@ import "google/api/annotations.proto";
 
 // Virtio-scsi emulation
 
-service VirtioScsiControllerService {
+service FrontendVirtioScsiService {
     rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
             post: "/v1/virtioscsictrls"
@@ -41,9 +41,7 @@ service VirtioScsiControllerService {
         };
     }
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
-}
 
-service VirtioScsiLunService {
     rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
             post: "/v1/virtioscsiluns"

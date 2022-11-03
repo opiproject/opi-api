@@ -15,7 +15,7 @@ import "google/api/annotations.proto";
 
 // NVMe/PCIe emulation
 
-service NVMeSubsystemService {
+service FrontendNvmeService {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
             post: "/v1/subsystems"
@@ -44,9 +44,7 @@ service NVMeSubsystemService {
         };
     }
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
-}
 
-service NVMeControllerService {
     rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {
         option (google.api.http) = {
             post: "/v1/controllers"
@@ -75,9 +73,7 @@ service NVMeControllerService {
         };
     }
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
-}
 
-service NVMeNamespaceService {
     rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {
         option (google.api.http) = {
             post: "/v1/namespaces"

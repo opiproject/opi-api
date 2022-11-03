@@ -12,7 +12,7 @@ import "google/api/annotations.proto";
 
 // Virtio-blk emulation
 
-service VirtioBlkService {
+service FrontendVirtioBlkService {
     rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {
         option (google.api.http) = {
             post: "/v1/virtioblks"
