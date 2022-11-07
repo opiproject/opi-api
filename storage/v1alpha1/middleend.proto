@@ -3,7 +3,7 @@
 
 syntax = "proto3";
 package opi_api.storage.v1;
-option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
 // Middle End (Storage Services) APIs.
 

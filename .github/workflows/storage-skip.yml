@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - 'common/v1/**'
       - 'common/Makefile'
-      - 'storage/v1/**'
+      - 'storage/v1alpha1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
   pull_request:
@@ -15,7 +15,7 @@ on:
     paths-ignore:
       - 'common/v1/**'
       - 'common/Makefile'
-      - 'storage/v1/**'
+      - 'storage/v1alpha1/**'
       - 'storage/Makefile'
       - '.github/workflows/storage.yml'
 
