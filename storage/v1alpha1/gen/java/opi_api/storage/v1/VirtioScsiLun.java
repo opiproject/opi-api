@@ -54,12 +54,12 @@ private static final long serialVersionUID = 0L;
             id_ = input.readInt64();
             break;
           }
-          case 32: {
+          case 16: {
 
             controllerId_ = input.readInt64();
             break;
           }
-          case 50: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             bdev_ = s;
@@ -108,10 +108,10 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 4;
+  public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
   private long controllerId_;
   /**
-   * <code>int64 controller_id = 4;</code>
+   * <code>int64 controller_id = 2;</code>
    * @return The controllerId.
    */
   @java.lang.Override
@@ -119,10 +119,10 @@ private static final long serialVersionUID = 0L;
     return controllerId_;
   }
 
-  public static final int BDEV_FIELD_NUMBER = 6;
+  public static final int BDEV_FIELD_NUMBER = 3;
   private volatile java.lang.Object bdev_;
   /**
-   * <code>string bdev = 6;</code>
+   * <code>string bdev = 3;</code>
    * @return The bdev.
    */
   @java.lang.Override
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string bdev = 6;</code>
+   * <code>string bdev = 3;</code>
    * @return The bytes for bdev.
    */
   @java.lang.Override
@@ -175,10 +175,10 @@ private static final long serialVersionUID = 0L;
       output.writeInt64(1, id_);
     }
     if (controllerId_ != 0L) {
-      output.writeInt64(4, controllerId_);
+      output.writeInt64(2, controllerId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, bdev_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bdev_);
     }
     unknownFields.writeTo(output);
   }
@@ -195,10 +195,10 @@ private static final long serialVersionUID = 0L;
     }
     if (controllerId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, controllerId_);
+        .computeInt64Size(2, controllerId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, bdev_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bdev_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
 
     private long controllerId_ ;
     /**
-     * <code>int64 controller_id = 4;</code>
+     * <code>int64 controller_id = 2;</code>
      * @return The controllerId.
      */
     @java.lang.Override
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
       return controllerId_;
     }
     /**
-     * <code>int64 controller_id = 4;</code>
+     * <code>int64 controller_id = 2;</code>
      * @param value The controllerId to set.
      * @return This builder for chaining.
      */
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 controller_id = 4;</code>
+     * <code>int64 controller_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearControllerId() {
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object bdev_ = "";
     /**
-     * <code>string bdev = 6;</code>
+     * <code>string bdev = 3;</code>
      * @return The bdev.
      */
     public java.lang.String getBdev() {
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bdev = 6;</code>
+     * <code>string bdev = 3;</code>
      * @return The bytes for bdev.
      */
     public com.google.protobuf.ByteString
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bdev = 6;</code>
+     * <code>string bdev = 3;</code>
      * @param value The bdev to set.
      * @return This builder for chaining.
      */
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string bdev = 6;</code>
+     * <code>string bdev = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearBdev() {
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string bdev = 6;</code>
+     * <code>string bdev = 3;</code>
      * @param value The bytes for bdev to set.
      * @return This builder for chaining.
      */

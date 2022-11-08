@@ -116,88 +116,88 @@ public final class FrontendVirtioScsiProto {
       "\n\032frontend_virtio_scsi.proto\022\022opi_api.st" +
       "orage.v1\032\014common.proto\032\033google/protobuf/" +
       "empty.proto\032\034google/api/annotations.prot" +
-      "o\"j\n\024VirtioScsiController\022\n\n\002id\030\001 \001(\003\022\014\n" +
-      "\004name\030\002 \001(\t\0228\n\007pcie_id\030\004 \001(\0132\'.opi_api.s" +
-      "torage.v1.NvmeControllerPciId\"@\n\rVirtioS" +
-      "csiLun\022\n\n\002id\030\001 \001(\003\022\025\n\rcontroller_id\030\004 \001(" +
-      "\003\022\014\n\004bdev\030\006 \001(\t\"a\n!VirtioScsiControllerC" +
-      "reateRequest\022<\n\ncontroller\030\001 \001(\0132(.opi_a" +
-      "pi.storage.v1.VirtioScsiController\":\n!Vi" +
-      "rtioScsiControllerDeleteRequest\022\025\n\rcontr" +
-      "oller_id\030\001 \001(\003\"a\n!VirtioScsiControllerUp" +
-      "dateRequest\022<\n\ncontroller\030\001 \001(\0132(.opi_ap" +
-      "i.storage.v1.VirtioScsiController\"!\n\037Vir" +
-      "tioScsiControllerListRequest\"`\n VirtioSc" +
-      "siControllerListResponse\022<\n\ncontroller\030\001" +
-      " \003(\0132(.opi_api.storage.v1.VirtioScsiCont" +
-      "roller\"7\n\036VirtioScsiControllerGetRequest" +
-      "\022\025\n\rcontroller_id\030\001 \001(\003\"9\n VirtioScsiCon" +
-      "trollerStatsRequest\022\025\n\rcontroller_id\030\001 \001" +
-      "(\003\">\n!VirtioScsiControllerStatsResponse\022" +
-      "\n\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t\"L\n\032VirtioScsi" +
-      "LunCreateRequest\022.\n\003lun\030\001 \001(\0132!.opi_api." +
-      "storage.v1.VirtioScsiLun\"C\n\032VirtioScsiLu" +
-      "nDeleteRequest\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n" +
-      "\006lun_id\030\002 \001(\003\"L\n\032VirtioScsiLunUpdateRequ" +
-      "est\022.\n\003lun\030\001 \001(\0132!.opi_api.storage.v1.Vi" +
-      "rtioScsiLun\"1\n\030VirtioScsiLunListRequest\022" +
-      "\025\n\rcontroller_id\030\001 \001(\003\"K\n\031VirtioScsiLunL" +
-      "istResponse\022.\n\003lun\030\001 \003(\0132!.opi_api.stora" +
-      "ge.v1.VirtioScsiLun\"@\n\027VirtioScsiLunGetR" +
-      "equest\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n\006lun_id\030" +
-      "\002 \001(\003\"B\n\031VirtioScsiLunStatsRequest\022\025\n\rco" +
-      "ntroller_id\030\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"7\n\032Vir" +
-      "tioScsiLunStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005s" +
-      "tats\030\002 \001(\t2\272\016\n\031FrontendVirtioScsiService" +
-      "\022\252\001\n\032VirtioScsiControllerCreate\0225.opi_ap" +
-      "i.storage.v1.VirtioScsiControllerCreateR" +
-      "equest\032(.opi_api.storage.v1.VirtioScsiCo" +
-      "ntroller\"+\202\323\344\223\002%\"\023/v1/virtioscsictrls:\016v" +
-      "irtioscsictrl\022\231\001\n\032VirtioScsiControllerDe" +
-      "lete\0225.opi_api.storage.v1.VirtioScsiCont" +
-      "rollerDeleteRequest\032\026.google.protobuf.Em" +
-      "pty\",\202\323\344\223\002&*$/v1/virtioscsictrls/{virtio" +
-      "scsictrl}\022\252\001\n\032VirtioScsiControllerUpdate" +
-      "\0225.opi_api.storage.v1.VirtioScsiControll" +
-      "erUpdateRequest\032(.opi_api.storage.v1.Vir" +
-      "tioScsiController\"+\202\323\344\223\002%2\023/v1/virtioscs" +
-      "ictrls:\016virtioscsictrl\022\242\001\n\030VirtioScsiCon" +
-      "trollerList\0223.opi_api.storage.v1.VirtioS" +
-      "csiControllerListRequest\0324.opi_api.stora" +
-      "ge.v1.VirtioScsiControllerListResponse\"\033" +
-      "\202\323\344\223\002\025\022\023/v1/virtioscsictrls\022\245\001\n\027VirtioSc" +
-      "siControllerGet\0222.opi_api.storage.v1.Vir" +
-      "tioScsiControllerGetRequest\032(.opi_api.st" +
-      "orage.v1.VirtioScsiController\",\202\323\344\223\002&\022$/" +
-      "v1/virtioscsictrls/{virtioscsictrl}\022\212\001\n\031" +
-      "VirtioScsiControllerStats\0224.opi_api.stor" +
-      "age.v1.VirtioScsiControllerStatsRequest\032" +
-      "5.opi_api.storage.v1.VirtioScsiControlle" +
-      "rStatsResponse\"\000\022\223\001\n\023VirtioScsiLunCreate" +
-      "\022..opi_api.storage.v1.VirtioScsiLunCreat" +
-      "eRequest\032!.opi_api.storage.v1.VirtioScsi" +
-      "Lun\")\202\323\344\223\002#\"\022/v1/virtioscsiluns:\rvirtios" +
-      "csilun\022\211\001\n\023VirtioScsiLunDelete\022..opi_api" +
-      ".storage.v1.VirtioScsiLunDeleteRequest\032\026" +
-      ".google.protobuf.Empty\"*\202\323\344\223\002$*\"/v1/virt" +
-      "ioscsiluns/{virtioscsilun}\022\223\001\n\023VirtioScs" +
-      "iLunUpdate\022..opi_api.storage.v1.VirtioSc" +
-      "siLunUpdateRequest\032!.opi_api.storage.v1." +
-      "VirtioScsiLun\")\202\323\344\223\002#2\022/v1/virtioscsilun" +
-      "s:\rvirtioscsilun\022\214\001\n\021VirtioScsiLunList\022," +
-      ".opi_api.storage.v1.VirtioScsiLunListReq" +
-      "uest\032-.opi_api.storage.v1.VirtioScsiLunL" +
-      "istResponse\"\032\202\323\344\223\002\024\022\022/v1/virtioscsiluns\022" +
-      "\216\001\n\020VirtioScsiLunGet\022+.opi_api.storage.v" +
-      "1.VirtioScsiLunGetRequest\032!.opi_api.stor" +
-      "age.v1.VirtioScsiLun\"*\202\323\344\223\002$\022\"/v1/virtio" +
-      "scsiluns/{virtioscsilun}\022u\n\022VirtioScsiLu" +
-      "nStats\022-.opi_api.storage.v1.VirtioScsiLu" +
-      "nStatsRequest\032..opi_api.storage.v1.Virti" +
-      "oScsiLunStatsResponse\"\000Bf\n\022opi_api.stora" +
-      "ge.v1B\027FrontendVirtioScsiProtoP\001Z5github" +
-      ".com/opiproject/opi-api/storage/v1alpha1" +
-      "/gen/gob\006proto3"
+      "o\"\\\n\024VirtioScsiController\022\n\n\002id\030\001 \001(\003\0228\n" +
+      "\007pcie_id\030\002 \001(\0132\'.opi_api.storage.v1.Nvme" +
+      "ControllerPciId\"@\n\rVirtioScsiLun\022\n\n\002id\030\001" +
+      " \001(\003\022\025\n\rcontroller_id\030\002 \001(\003\022\014\n\004bdev\030\003 \001(" +
+      "\t\"a\n!VirtioScsiControllerCreateRequest\022<" +
+      "\n\ncontroller\030\001 \001(\0132(.opi_api.storage.v1." +
+      "VirtioScsiController\":\n!VirtioScsiContro" +
+      "llerDeleteRequest\022\025\n\rcontroller_id\030\001 \001(\003" +
+      "\"a\n!VirtioScsiControllerUpdateRequest\022<\n" +
+      "\ncontroller\030\001 \001(\0132(.opi_api.storage.v1.V" +
+      "irtioScsiController\"!\n\037VirtioScsiControl" +
+      "lerListRequest\"`\n VirtioScsiControllerLi" +
+      "stResponse\022<\n\ncontroller\030\001 \003(\0132(.opi_api" +
+      ".storage.v1.VirtioScsiController\"7\n\036Virt" +
+      "ioScsiControllerGetRequest\022\025\n\rcontroller" +
+      "_id\030\001 \001(\003\"9\n VirtioScsiControllerStatsRe" +
+      "quest\022\025\n\rcontroller_id\030\001 \001(\003\">\n!VirtioSc" +
+      "siControllerStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n" +
+      "\005stats\030\002 \001(\t\"L\n\032VirtioScsiLunCreateReque" +
+      "st\022.\n\003lun\030\001 \001(\0132!.opi_api.storage.v1.Vir" +
+      "tioScsiLun\"C\n\032VirtioScsiLunDeleteRequest" +
+      "\022\025\n\rcontroller_id\030\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"" +
+      "L\n\032VirtioScsiLunUpdateRequest\022.\n\003lun\030\001 \001" +
+      "(\0132!.opi_api.storage.v1.VirtioScsiLun\"1\n" +
+      "\030VirtioScsiLunListRequest\022\025\n\rcontroller_" +
+      "id\030\001 \001(\003\"K\n\031VirtioScsiLunListResponse\022.\n" +
+      "\003lun\030\001 \003(\0132!.opi_api.storage.v1.VirtioSc" +
+      "siLun\"@\n\027VirtioScsiLunGetRequest\022\025\n\rcont" +
+      "roller_id\030\001 \001(\003\022\016\n\006lun_id\030\002 \001(\003\"B\n\031Virti" +
+      "oScsiLunStatsRequest\022\025\n\rcontroller_id\030\001 " +
+      "\001(\003\022\016\n\006lun_id\030\002 \001(\003\"7\n\032VirtioScsiLunStat" +
+      "sResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\272\016\n" +
+      "\031FrontendVirtioScsiService\022\252\001\n\032VirtioScs" +
+      "iControllerCreate\0225.opi_api.storage.v1.V" +
+      "irtioScsiControllerCreateRequest\032(.opi_a" +
+      "pi.storage.v1.VirtioScsiController\"+\202\323\344\223" +
+      "\002%\"\023/v1/virtioscsictrls:\016virtioscsictrl\022" +
+      "\231\001\n\032VirtioScsiControllerDelete\0225.opi_api" +
+      ".storage.v1.VirtioScsiControllerDeleteRe" +
+      "quest\032\026.google.protobuf.Empty\",\202\323\344\223\002&*$/" +
+      "v1/virtioscsictrls/{virtioscsictrl}\022\252\001\n\032" +
+      "VirtioScsiControllerUpdate\0225.opi_api.sto" +
+      "rage.v1.VirtioScsiControllerUpdateReques" +
+      "t\032(.opi_api.storage.v1.VirtioScsiControl" +
+      "ler\"+\202\323\344\223\002%2\023/v1/virtioscsictrls:\016virtio" +
+      "scsictrl\022\242\001\n\030VirtioScsiControllerList\0223." +
+      "opi_api.storage.v1.VirtioScsiControllerL" +
+      "istRequest\0324.opi_api.storage.v1.VirtioSc" +
+      "siControllerListResponse\"\033\202\323\344\223\002\025\022\023/v1/vi" +
+      "rtioscsictrls\022\245\001\n\027VirtioScsiControllerGe" +
+      "t\0222.opi_api.storage.v1.VirtioScsiControl" +
+      "lerGetRequest\032(.opi_api.storage.v1.Virti" +
+      "oScsiController\",\202\323\344\223\002&\022$/v1/virtioscsic" +
+      "trls/{virtioscsictrl}\022\212\001\n\031VirtioScsiCont" +
+      "rollerStats\0224.opi_api.storage.v1.VirtioS" +
+      "csiControllerStatsRequest\0325.opi_api.stor" +
+      "age.v1.VirtioScsiControllerStatsResponse" +
+      "\"\000\022\223\001\n\023VirtioScsiLunCreate\022..opi_api.sto" +
+      "rage.v1.VirtioScsiLunCreateRequest\032!.opi" +
+      "_api.storage.v1.VirtioScsiLun\")\202\323\344\223\002#\"\022/" +
+      "v1/virtioscsiluns:\rvirtioscsilun\022\211\001\n\023Vir" +
+      "tioScsiLunDelete\022..opi_api.storage.v1.Vi" +
+      "rtioScsiLunDeleteRequest\032\026.google.protob" +
+      "uf.Empty\"*\202\323\344\223\002$*\"/v1/virtioscsiluns/{vi" +
+      "rtioscsilun}\022\223\001\n\023VirtioScsiLunUpdate\022..o" +
+      "pi_api.storage.v1.VirtioScsiLunUpdateReq" +
+      "uest\032!.opi_api.storage.v1.VirtioScsiLun\"" +
+      ")\202\323\344\223\002#2\022/v1/virtioscsiluns:\rvirtioscsil" +
+      "un\022\214\001\n\021VirtioScsiLunList\022,.opi_api.stora" +
+      "ge.v1.VirtioScsiLunListRequest\032-.opi_api" +
+      ".storage.v1.VirtioScsiLunListResponse\"\032\202" +
+      "\323\344\223\002\024\022\022/v1/virtioscsiluns\022\216\001\n\020VirtioScsi" +
+      "LunGet\022+.opi_api.storage.v1.VirtioScsiLu" +
+      "nGetRequest\032!.opi_api.storage.v1.VirtioS" +
+      "csiLun\"*\202\323\344\223\002$\022\"/v1/virtioscsiluns/{virt" +
+      "ioscsilun}\022u\n\022VirtioScsiLunStats\022-.opi_a" +
+      "pi.storage.v1.VirtioScsiLunStatsRequest\032" +
+      "..opi_api.storage.v1.VirtioScsiLunStatsR" +
+      "esponse\"\000Bf\n\022opi_api.storage.v1B\027Fronten" +
+      "dVirtioScsiProtoP\001Z5github.com/opiprojec" +
+      "t/opi-api/storage/v1alpha1/gen/gob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -211,7 +211,7 @@ public final class FrontendVirtioScsiProto {
     internal_static_opi_api_storage_v1_VirtioScsiController_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VirtioScsiController_descriptor,
-        new java.lang.String[] { "Id", "Name", "PcieId", });
+        new java.lang.String[] { "Id", "PcieId", });
     internal_static_opi_api_storage_v1_VirtioScsiLun_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_storage_v1_VirtioScsiLun_fieldAccessorTable = new

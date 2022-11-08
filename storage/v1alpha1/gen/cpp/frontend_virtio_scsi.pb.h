@@ -265,25 +265,10 @@ class VirtioScsiController final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 2,
-    kPcieIdFieldNumber = 4,
+    kPcieIdFieldNumber = 2,
     kIdFieldNumber = 1,
   };
-  // string name = 2;
-  void clear_name();
-  const std::string& name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
   bool has_pcie_id() const;
   private:
   bool _internal_has_pcie_id() const;
@@ -317,7 +302,6 @@ class VirtioScsiController final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
   int64_t id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -447,11 +431,11 @@ class VirtioScsiLun final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBdevFieldNumber = 6,
+    kBdevFieldNumber = 3,
     kIdFieldNumber = 1,
-    kControllerIdFieldNumber = 4,
+    kControllerIdFieldNumber = 2,
   };
-  // string bdev = 6;
+  // string bdev = 3;
   void clear_bdev();
   const std::string& bdev() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -474,7 +458,7 @@ class VirtioScsiLun final :
   void _internal_set_id(int64_t value);
   public:
 
-  // int64 controller_id = 4;
+  // int64 controller_id = 2;
   void clear_controller_id();
   int64_t controller_id() const;
   void set_controller_id(int64_t value);
@@ -2954,58 +2938,7 @@ inline void VirtioScsiController::set_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiController.id)
 }
 
-// string name = 2;
-inline void VirtioScsiController::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& VirtioScsiController::name() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiController.name)
-  return _internal_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioScsiController::set_name(ArgT0&& arg0, ArgT... args) {
- 
- name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiController.name)
-}
-inline std::string* VirtioScsiController::mutable_name() {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiController.name)
-  return _s;
-}
-inline const std::string& VirtioScsiController::_internal_name() const {
-  return name_.Get();
-}
-inline void VirtioScsiController::_internal_set_name(const std::string& value) {
-  
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiController::_internal_mutable_name() {
-  
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiController::release_name() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiController.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioScsiController::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiController.name)
-}
-
-// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
 inline bool VirtioScsiController::_internal_has_pcie_id() const {
   return this != internal_default_instance() && pcie_id_ != nullptr;
 }
@@ -3115,7 +3048,7 @@ inline void VirtioScsiLun::set_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiLun.id)
 }
 
-// int64 controller_id = 4;
+// int64 controller_id = 2;
 inline void VirtioScsiLun::clear_controller_id() {
   controller_id_ = int64_t{0};
 }
@@ -3135,7 +3068,7 @@ inline void VirtioScsiLun::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiLun.controller_id)
 }
 
-// string bdev = 6;
+// string bdev = 3;
 inline void VirtioScsiLun::clear_bdev() {
   bdev_.ClearToEmpty();
 }

@@ -14,29 +14,17 @@ public interface VirtioScsiControllerOrBuilder extends
   long getId();
 
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.NvmeControllerPciId getPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    */
   opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder();
 }

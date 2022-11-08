@@ -14,18 +14,18 @@ public interface VirtioScsiLunOrBuilder extends
   long getId();
 
   /**
-   * <code>int64 controller_id = 4;</code>
+   * <code>int64 controller_id = 2;</code>
    * @return The controllerId.
    */
   long getControllerId();
 
   /**
-   * <code>string bdev = 6;</code>
+   * <code>string bdev = 3;</code>
    * @return The bdev.
    */
   java.lang.String getBdev();
   /**
-   * <code>string bdev = 6;</code>
+   * <code>string bdev = 3;</code>
    * @return The bytes for bdev.
    */
   com.google.protobuf.ByteString

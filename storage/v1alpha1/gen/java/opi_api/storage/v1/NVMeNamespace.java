@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            numBlocks_ = input.readInt64();
+            blocksCount_ = input.readInt64();
             break;
           }
           case 58: {
@@ -187,7 +187,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -200,7 +199,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -213,7 +211,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -333,20 +330,20 @@ private static final long serialVersionUID = 0L;
     return blockSize_;
   }
 
-  public static final int NUM_BLOCKS_FIELD_NUMBER = 6;
-  private long numBlocks_;
+  public static final int BLOCKS_COUNT_FIELD_NUMBER = 6;
+  private long blocksCount_;
   /**
    * <pre>
    * Size/Capacity of the namespace in blocks, size in bytes will
    * be BlockSize x NumBlocks.
    * </pre>
    *
-   * <code>int64 num_blocks = 6;</code>
-   * @return The numBlocks.
+   * <code>int64 blocks_count = 6;</code>
+   * @return The blocksCount.
    */
   @java.lang.Override
-  public long getNumBlocks() {
-    return numBlocks_;
+  public long getBlocksCount() {
+    return blocksCount_;
   }
 
   public static final int NGUID_FIELD_NUMBER = 7;
@@ -400,7 +397,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * 64bit Extended unique identifier for the namespace
-   * mandatory if guid is not specified, optional otherwise
+   * mandatory if guid is not specified
    * </pre>
    *
    * <code>int64 eui64 = 8;</code>
@@ -551,8 +548,8 @@ private static final long serialVersionUID = 0L;
     if (blockSize_ != 0L) {
       output.writeInt64(5, blockSize_);
     }
-    if (numBlocks_ != 0L) {
-      output.writeInt64(6, numBlocks_);
+    if (blocksCount_ != 0L) {
+      output.writeInt64(6, blocksCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nguid_);
@@ -601,9 +598,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, blockSize_);
     }
-    if (numBlocks_ != 0L) {
+    if (blocksCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, numBlocks_);
+        .computeInt64Size(6, blocksCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nguid_);
@@ -662,8 +659,8 @@ private static final long serialVersionUID = 0L;
         != other.getHostNsid()) return false;
     if (getBlockSize()
         != other.getBlockSize()) return false;
-    if (getNumBlocks()
-        != other.getNumBlocks()) return false;
+    if (getBlocksCount()
+        != other.getBlocksCount()) return false;
     if (!getNguid()
         .equals(other.getNguid())) return false;
     if (getEui64()
@@ -710,9 +707,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BLOCK_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getBlockSize());
-    hash = (37 * hash) + NUM_BLOCKS_FIELD_NUMBER;
+    hash = (37 * hash) + BLOCKS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNumBlocks());
+        getBlocksCount());
     hash = (37 * hash) + NGUID_FIELD_NUMBER;
     hash = (53 * hash) + getNguid().hashCode();
     hash = (37 * hash) + EUI64_FIELD_NUMBER;
@@ -885,7 +882,7 @@ private static final long serialVersionUID = 0L;
 
       blockSize_ = 0L;
 
-      numBlocks_ = 0L;
+      blocksCount_ = 0L;
 
       nguid_ = "";
 
@@ -950,7 +947,7 @@ private static final long serialVersionUID = 0L;
       }
       result.hostNsid_ = hostNsid_;
       result.blockSize_ = blockSize_;
-      result.numBlocks_ = numBlocks_;
+      result.blocksCount_ = blocksCount_;
       result.nguid_ = nguid_;
       result.eui64_ = eui64_;
       if (uuidBuilder_ == null) {
@@ -1028,8 +1025,8 @@ private static final long serialVersionUID = 0L;
       if (other.getBlockSize() != 0L) {
         setBlockSize(other.getBlockSize());
       }
-      if (other.getNumBlocks() != 0L) {
-        setNumBlocks(other.getNumBlocks());
+      if (other.getBlocksCount() != 0L) {
+        setBlocksCount(other.getBlocksCount());
       }
       if (!other.getNguid().isEmpty()) {
         nguid_ = other.nguid_;
@@ -1085,7 +1082,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1097,7 +1093,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1113,7 +1108,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1134,7 +1128,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1153,7 +1146,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1176,7 +1168,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1195,7 +1186,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1208,7 +1198,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1224,7 +1213,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * namespace's unique key
-     * replaces: int64 id = 1;
      * </pre>
      *
      * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -1651,19 +1639,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long numBlocks_ ;
+    private long blocksCount_ ;
     /**
      * <pre>
      * Size/Capacity of the namespace in blocks, size in bytes will
      * be BlockSize x NumBlocks.
      * </pre>
      *
-     * <code>int64 num_blocks = 6;</code>
-     * @return The numBlocks.
+     * <code>int64 blocks_count = 6;</code>
+     * @return The blocksCount.
      */
     @java.lang.Override
-    public long getNumBlocks() {
-      return numBlocks_;
+    public long getBlocksCount() {
+      return blocksCount_;
     }
     /**
      * <pre>
@@ -1671,13 +1659,13 @@ private static final long serialVersionUID = 0L;
      * be BlockSize x NumBlocks.
      * </pre>
      *
-     * <code>int64 num_blocks = 6;</code>
-     * @param value The numBlocks to set.
+     * <code>int64 blocks_count = 6;</code>
+     * @param value The blocksCount to set.
      * @return This builder for chaining.
      */
-    public Builder setNumBlocks(long value) {
+    public Builder setBlocksCount(long value) {
       
-      numBlocks_ = value;
+      blocksCount_ = value;
       onChanged();
       return this;
     }
@@ -1687,12 +1675,12 @@ private static final long serialVersionUID = 0L;
      * be BlockSize x NumBlocks.
      * </pre>
      *
-     * <code>int64 num_blocks = 6;</code>
+     * <code>int64 blocks_count = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearNumBlocks() {
+    public Builder clearBlocksCount() {
       
-      numBlocks_ = 0L;
+      blocksCount_ = 0L;
       onChanged();
       return this;
     }
@@ -1797,7 +1785,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified, optional otherwise
+     * mandatory if guid is not specified
      * </pre>
      *
      * <code>int64 eui64 = 8;</code>
@@ -1810,7 +1798,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified, optional otherwise
+     * mandatory if guid is not specified
      * </pre>
      *
      * <code>int64 eui64 = 8;</code>
@@ -1826,7 +1814,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified, optional otherwise
+     * mandatory if guid is not specified
      * </pre>
      *
      * <code>int64 eui64 = 8;</code>

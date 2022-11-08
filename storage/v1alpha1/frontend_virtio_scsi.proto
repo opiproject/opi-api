@@ -13,10 +13,7 @@ import "common.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-// Front End (host-facing) APIs.
-
-// Virtio-scsi emulation
-
+// Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
     rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
@@ -79,14 +76,13 @@ service FrontendVirtioScsiService {
 
 message VirtioScsiController {
     int64 id = 1;
-    string name = 2;
-    NvmeControllerPciId pcie_id = 4;
+    NvmeControllerPciId pcie_id = 2;
 }
 
 message VirtioScsiLun {
     int64 id = 1;
-    int64 controller_id = 4;
-    string bdev = 6;
+    int64 controller_id = 2;
+    string bdev = 3;
 }
 
 message VirtioScsiControllerCreateRequest {

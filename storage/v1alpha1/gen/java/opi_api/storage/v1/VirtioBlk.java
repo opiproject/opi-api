@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VirtioBlk() {
-    name_ = "";
     bdev_ = "";
     serialNumber_ = "";
   }
@@ -57,12 +56,6 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 26: {
             opi_api.storage.v1.NvmeControllerPciId.Builder subBuilder = null;
             if (pcieId_ != null) {
               subBuilder = pcieId_.toBuilder();
@@ -75,18 +68,18 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             bdev_ = s;
             break;
           }
-          case 40: {
+          case 32: {
 
             maxIoQps_ = input.readInt64();
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             serialNumber_ = s;
@@ -135,48 +128,10 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PCIE_ID_FIELD_NUMBER = 3;
+  public static final int PCIE_ID_FIELD_NUMBER = 2;
   private opi_api.storage.v1.NvmeControllerPciId pcieId_;
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   @java.lang.Override
@@ -184,7 +139,7 @@ private static final long serialVersionUID = 0L;
     return pcieId_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return The pcieId.
    */
   @java.lang.Override
@@ -192,17 +147,17 @@ private static final long serialVersionUID = 0L;
     return pcieId_ == null ? opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance() : pcieId_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder() {
     return getPcieId();
   }
 
-  public static final int BDEV_FIELD_NUMBER = 4;
+  public static final int BDEV_FIELD_NUMBER = 3;
   private volatile java.lang.Object bdev_;
   /**
-   * <code>string bdev = 4;</code>
+   * <code>string bdev = 3;</code>
    * @return The bdev.
    */
   @java.lang.Override
@@ -219,7 +174,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string bdev = 4;</code>
+   * <code>string bdev = 3;</code>
    * @return The bytes for bdev.
    */
   @java.lang.Override
@@ -237,10 +192,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAX_IO_QPS_FIELD_NUMBER = 5;
+  public static final int MAX_IO_QPS_FIELD_NUMBER = 4;
   private long maxIoQps_;
   /**
-   * <code>int64 max_io_qps = 5;</code>
+   * <code>int64 max_io_qps = 4;</code>
    * @return The maxIoQps.
    */
   @java.lang.Override
@@ -248,10 +203,10 @@ private static final long serialVersionUID = 0L;
     return maxIoQps_;
   }
 
-  public static final int SERIAL_NUMBER_FIELD_NUMBER = 6;
+  public static final int SERIAL_NUMBER_FIELD_NUMBER = 5;
   private volatile java.lang.Object serialNumber_;
   /**
-   * <code>string serial_number = 6;</code>
+   * <code>string serial_number = 5;</code>
    * @return The serialNumber.
    */
   @java.lang.Override
@@ -268,7 +223,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string serial_number = 6;</code>
+   * <code>string serial_number = 5;</code>
    * @return The bytes for serialNumber.
    */
   @java.lang.Override
@@ -303,20 +258,17 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
     if (pcieId_ != null) {
-      output.writeMessage(3, getPcieId());
+      output.writeMessage(2, getPcieId());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bdev_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bdev_);
     }
     if (maxIoQps_ != 0L) {
-      output.writeInt64(5, maxIoQps_);
+      output.writeInt64(4, maxIoQps_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serialNumber_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serialNumber_);
     }
     unknownFields.writeTo(output);
   }
@@ -331,22 +283,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
     if (pcieId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getPcieId());
+        .computeMessageSize(2, getPcieId());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bdev_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bdev_);
     }
     if (maxIoQps_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, maxIoQps_);
+        .computeInt64Size(4, maxIoQps_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serialNumber_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serialNumber_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -365,8 +314,6 @@ private static final long serialVersionUID = 0L;
 
     if (getId()
         != other.getId()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
     if (hasPcieId() != other.hasPcieId()) return false;
     if (hasPcieId()) {
       if (!getPcieId()
@@ -392,8 +339,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (hasPcieId()) {
       hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPcieId().hashCode();
@@ -540,8 +485,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = 0L;
 
-      name_ = "";
-
       if (pcieIdBuilder_ == null) {
         pcieId_ = null;
       } else {
@@ -581,7 +524,6 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.VirtioBlk buildPartial() {
       opi_api.storage.v1.VirtioBlk result = new opi_api.storage.v1.VirtioBlk(this);
       result.id_ = id_;
-      result.name_ = name_;
       if (pcieIdBuilder_ == null) {
         result.pcieId_ = pcieId_;
       } else {
@@ -640,10 +582,6 @@ private static final long serialVersionUID = 0L;
       if (other == opi_api.storage.v1.VirtioBlk.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
       }
       if (other.hasPcieId()) {
         mergePcieId(other.getPcieId());
@@ -719,94 +657,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private opi_api.storage.v1.NvmeControllerPciId pcieId_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeControllerPciId, opi_api.storage.v1.NvmeControllerPciId.Builder, opi_api.storage.v1.NvmeControllerPciIdOrBuilder> pcieIdBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      * @return Whether the pcieId field is set.
      */
     public boolean hasPcieId() {
       return pcieIdBuilder_ != null || pcieId_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      * @return The pcieId.
      */
     public opi_api.storage.v1.NvmeControllerPciId getPcieId() {
@@ -817,7 +679,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public Builder setPcieId(opi_api.storage.v1.NvmeControllerPciId value) {
       if (pcieIdBuilder_ == null) {
@@ -833,7 +695,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public Builder setPcieId(
         opi_api.storage.v1.NvmeControllerPciId.Builder builderForValue) {
@@ -847,7 +709,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public Builder mergePcieId(opi_api.storage.v1.NvmeControllerPciId value) {
       if (pcieIdBuilder_ == null) {
@@ -865,7 +727,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public Builder clearPcieId() {
       if (pcieIdBuilder_ == null) {
@@ -879,7 +741,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public opi_api.storage.v1.NvmeControllerPciId.Builder getPcieIdBuilder() {
       
@@ -887,7 +749,7 @@ private static final long serialVersionUID = 0L;
       return getPcieIdFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     public opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder() {
       if (pcieIdBuilder_ != null) {
@@ -898,7 +760,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeControllerPciId, opi_api.storage.v1.NvmeControllerPciId.Builder, opi_api.storage.v1.NvmeControllerPciIdOrBuilder> 
@@ -916,7 +778,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object bdev_ = "";
     /**
-     * <code>string bdev = 4;</code>
+     * <code>string bdev = 3;</code>
      * @return The bdev.
      */
     public java.lang.String getBdev() {
@@ -932,7 +794,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bdev = 4;</code>
+     * <code>string bdev = 3;</code>
      * @return The bytes for bdev.
      */
     public com.google.protobuf.ByteString
@@ -949,7 +811,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bdev = 4;</code>
+     * <code>string bdev = 3;</code>
      * @param value The bdev to set.
      * @return This builder for chaining.
      */
@@ -964,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string bdev = 4;</code>
+     * <code>string bdev = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearBdev() {
@@ -974,7 +836,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string bdev = 4;</code>
+     * <code>string bdev = 3;</code>
      * @param value The bytes for bdev to set.
      * @return This builder for chaining.
      */
@@ -992,7 +854,7 @@ private static final long serialVersionUID = 0L;
 
     private long maxIoQps_ ;
     /**
-     * <code>int64 max_io_qps = 5;</code>
+     * <code>int64 max_io_qps = 4;</code>
      * @return The maxIoQps.
      */
     @java.lang.Override
@@ -1000,7 +862,7 @@ private static final long serialVersionUID = 0L;
       return maxIoQps_;
     }
     /**
-     * <code>int64 max_io_qps = 5;</code>
+     * <code>int64 max_io_qps = 4;</code>
      * @param value The maxIoQps to set.
      * @return This builder for chaining.
      */
@@ -1011,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 max_io_qps = 5;</code>
+     * <code>int64 max_io_qps = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxIoQps() {
@@ -1023,7 +885,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serialNumber_ = "";
     /**
-     * <code>string serial_number = 6;</code>
+     * <code>string serial_number = 5;</code>
      * @return The serialNumber.
      */
     public java.lang.String getSerialNumber() {
@@ -1039,7 +901,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string serial_number = 6;</code>
+     * <code>string serial_number = 5;</code>
      * @return The bytes for serialNumber.
      */
     public com.google.protobuf.ByteString
@@ -1056,7 +918,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string serial_number = 6;</code>
+     * <code>string serial_number = 5;</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
      */
@@ -1071,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string serial_number = 6;</code>
+     * <code>string serial_number = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearSerialNumber() {
@@ -1081,7 +943,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string serial_number = 6;</code>
+     * <code>string serial_number = 5;</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
      */

@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -432,6 +435,9 @@ public final class FrontendVirtioScsiServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+   * </pre>
    */
   public static abstract class FrontendVirtioScsiServiceImplBase implements io.grpc.BindableService {
 
@@ -610,6 +616,9 @@ public final class FrontendVirtioScsiServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+   * </pre>
    */
   public static final class FrontendVirtioScsiServiceStub extends io.grpc.stub.AbstractAsyncStub<FrontendVirtioScsiServiceStub> {
     private FrontendVirtioScsiServiceStub(
@@ -721,6 +730,9 @@ public final class FrontendVirtioScsiServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+   * </pre>
    */
   public static final class FrontendVirtioScsiServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<FrontendVirtioScsiServiceBlockingStub> {
     private FrontendVirtioScsiServiceBlockingStub(
@@ -820,6 +832,9 @@ public final class FrontendVirtioScsiServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+   * </pre>
    */
   public static final class FrontendVirtioScsiServiceFutureStub extends io.grpc.stub.AbstractFutureStub<FrontendVirtioScsiServiceFutureStub> {
     private FrontendVirtioScsiServiceFutureStub(

@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
   private int maxNcq_;
   /**
    * <pre>
-   * maximum number of host completion queues allowed. Optional.
+   * maximum number of host completion queues allowed.
    * If not set, the xPU will provide a default.
    * </pre>
    *
@@ -1396,7 +1396,7 @@ private static final long serialVersionUID = 0L;
     private int maxNcq_ ;
     /**
      * <pre>
-     * maximum number of host completion queues allowed. Optional.
+     * maximum number of host completion queues allowed.
      * If not set, the xPU will provide a default.
      * </pre>
      *
@@ -1409,7 +1409,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * maximum number of host completion queues allowed. Optional.
+     * maximum number of host completion queues allowed.
      * If not set, the xPU will provide a default.
      * </pre>
      *
@@ -1425,7 +1425,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * maximum number of host completion queues allowed. Optional.
+     * maximum number of host completion queues allowed.
      * If not set, the xPU will provide a default.
      * </pre>
      *

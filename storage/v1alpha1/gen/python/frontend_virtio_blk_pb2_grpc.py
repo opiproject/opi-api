@@ -7,10 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class FrontendVirtioBlkServiceStub(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-blk emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
     """
 
     def __init__(self, channel):
@@ -52,10 +49,7 @@ class FrontendVirtioBlkServiceStub(object):
 
 
 class FrontendVirtioBlkServiceServicer(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-blk emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
     """
 
     def VirtioBlkCreate(self, request, context):
@@ -135,10 +129,7 @@ def add_FrontendVirtioBlkServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FrontendVirtioBlkService(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-blk emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
     """
 
     @staticmethod

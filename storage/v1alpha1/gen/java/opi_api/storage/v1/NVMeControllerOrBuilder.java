@@ -112,7 +112,7 @@ public interface NVMeControllerOrBuilder extends
 
   /**
    * <pre>
-   * maximum number of host completion queues allowed. Optional.
+   * maximum number of host completion queues allowed.
    * If not set, the xPU will provide a default.
    * </pre>
    *

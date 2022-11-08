@@ -7,10 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class FrontendNvmeServiceStub(object):
-    """Front End (host-facing) APIs.
-
-    NVMe/PCIe emulation
-
+    """Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
     """
 
     def __init__(self, channel):
@@ -112,10 +109,7 @@ class FrontendNvmeServiceStub(object):
 
 
 class FrontendNvmeServiceServicer(object):
-    """Front End (host-facing) APIs.
-
-    NVMe/PCIe emulation
-
+    """Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
     """
 
     def NVMeSubsystemCreate(self, request, context):
@@ -327,10 +321,7 @@ def add_FrontendNvmeServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FrontendNvmeService(object):
-    """Front End (host-facing) APIs.
-
-    NVMe/PCIe emulation
-
+    """Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
     """
 
     @staticmethod

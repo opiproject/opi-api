@@ -14,57 +14,45 @@ public interface VirtioBlkOrBuilder extends
   long getId();
 
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.NvmeControllerPciId getPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 3;</code>
+   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
    */
   opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder();
 
   /**
-   * <code>string bdev = 4;</code>
+   * <code>string bdev = 3;</code>
    * @return The bdev.
    */
   java.lang.String getBdev();
   /**
-   * <code>string bdev = 4;</code>
+   * <code>string bdev = 3;</code>
    * @return The bytes for bdev.
    */
   com.google.protobuf.ByteString
       getBdevBytes();
 
   /**
-   * <code>int64 max_io_qps = 5;</code>
+   * <code>int64 max_io_qps = 4;</code>
    * @return The maxIoQps.
    */
   long getMaxIoQps();
 
   /**
-   * <code>string serial_number = 6;</code>
+   * <code>string serial_number = 5;</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
   /**
-   * <code>string serial_number = 6;</code>
+   * <code>string serial_number = 5;</code>
    * @return The bytes for serialNumber.
    */
   com.google.protobuf.ByteString

@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -618,6 +621,9 @@ public final class FrontendNvmeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+   * </pre>
    */
   public static abstract class FrontendNvmeServiceImplBase implements io.grpc.BindableService {
 
@@ -880,6 +886,9 @@ public final class FrontendNvmeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+   * </pre>
    */
   public static final class FrontendNvmeServiceStub extends io.grpc.stub.AbstractAsyncStub<FrontendNvmeServiceStub> {
     private FrontendNvmeServiceStub(
@@ -1039,6 +1048,9 @@ public final class FrontendNvmeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+   * </pre>
    */
   public static final class FrontendNvmeServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<FrontendNvmeServiceBlockingStub> {
     private FrontendNvmeServiceBlockingStub(
@@ -1180,6 +1192,9 @@ public final class FrontendNvmeServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+   * </pre>
    */
   public static final class FrontendNvmeServiceFutureStub extends io.grpc.stub.AbstractFutureStub<FrontendNvmeServiceFutureStub> {
     private FrontendNvmeServiceFutureStub(

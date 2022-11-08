@@ -7,10 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class FrontendVirtioScsiServiceStub(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-scsi emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
     """
 
     def __init__(self, channel):
@@ -82,10 +79,7 @@ class FrontendVirtioScsiServiceStub(object):
 
 
 class FrontendVirtioScsiServiceServicer(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-scsi emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
     """
 
     def VirtioScsiControllerCreate(self, request, context):
@@ -231,10 +225,7 @@ def add_FrontendVirtioScsiServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FrontendVirtioScsiService(object):
-    """Front End (host-facing) APIs.
-
-    Virtio-scsi emulation
-
+    """Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
     """
 
     @staticmethod

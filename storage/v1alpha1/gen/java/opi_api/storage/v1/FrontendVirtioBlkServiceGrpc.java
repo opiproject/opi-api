@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -246,6 +249,9 @@ public final class FrontendVirtioBlkServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+   * </pre>
    */
   public static abstract class FrontendVirtioBlkServiceImplBase implements io.grpc.BindableService {
 
@@ -340,6 +346,9 @@ public final class FrontendVirtioBlkServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+   * </pre>
    */
   public static final class FrontendVirtioBlkServiceStub extends io.grpc.stub.AbstractAsyncStub<FrontendVirtioBlkServiceStub> {
     private FrontendVirtioBlkServiceStub(
@@ -403,6 +412,9 @@ public final class FrontendVirtioBlkServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+   * </pre>
    */
   public static final class FrontendVirtioBlkServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<FrontendVirtioBlkServiceBlockingStub> {
     private FrontendVirtioBlkServiceBlockingStub(
@@ -460,6 +472,9 @@ public final class FrontendVirtioBlkServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
+   * </pre>
    */
   public static final class FrontendVirtioBlkServiceFutureStub extends io.grpc.stub.AbstractFutureStub<FrontendVirtioBlkServiceFutureStub> {
     private FrontendVirtioBlkServiceFutureStub(

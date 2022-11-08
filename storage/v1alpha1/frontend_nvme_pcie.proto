@@ -16,10 +16,7 @@ import "uuid.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-// Front End (host-facing) APIs.
-
-// NVMe/PCIe emulation
-
+// Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
 service FrontendNvmeService {
     rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
@@ -152,7 +149,7 @@ message NVMeController {
     // If not set, the xPU will provide a default.
     int32 max_nsq = 5;
 
-    // maximum number of host completion queues allowed. Optional.
+    // maximum number of host completion queues allowed.
     // If not set, the xPU will provide a default.
     int32 max_ncq = 6;
   
@@ -171,7 +168,6 @@ message NVMeController {
 
 message NVMeNamespace {
     // namespace's unique key
-    // replaces: int64 id = 1;
     common.v1.ObjectKey id = 1;
 
     // subsystem for this namespace
@@ -192,13 +188,13 @@ message NVMeNamespace {
 
     // Size/Capacity of the namespace in blocks, size in bytes will
     // be BlockSize x NumBlocks.
-    int64 num_blocks = 6;
+    int64 blocks_count = 6;
 
     // Globally unique identifier for the namespace
     string nguid = 7;
 
     // 64bit Extended unique identifier for the namespace
-    // mandatory if guid is not specified, optional otherwise
+    // mandatory if guid is not specified
     int64 eui64 = 8;
 
     // Globally unique identifier for the namespace

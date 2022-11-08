@@ -817,7 +817,7 @@ class NVMeNamespace final :
     kUuidFieldNumber = 9,
     kVolumeIdFieldNumber = 10,
     kBlockSizeFieldNumber = 5,
-    kNumBlocksFieldNumber = 6,
+    kBlocksCountFieldNumber = 6,
     kHostNsidFieldNumber = 4,
     kOptimalWriteSizeFieldNumber = 11,
     kEui64FieldNumber = 8,
@@ -936,13 +936,13 @@ class NVMeNamespace final :
   void _internal_set_block_size(int64_t value);
   public:
 
-  // int64 num_blocks = 6;
-  void clear_num_blocks();
-  int64_t num_blocks() const;
-  void set_num_blocks(int64_t value);
+  // int64 blocks_count = 6;
+  void clear_blocks_count();
+  int64_t blocks_count() const;
+  void set_blocks_count(int64_t value);
   private:
-  int64_t _internal_num_blocks() const;
-  void _internal_set_num_blocks(int64_t value);
+  int64_t _internal_blocks_count() const;
+  void _internal_set_blocks_count(int64_t value);
   public:
 
   // int32 host_nsid = 4;
@@ -995,7 +995,7 @@ class NVMeNamespace final :
   ::opi_api::common::v1::Uuid* uuid_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
   int64_t block_size_;
-  int64_t num_blocks_;
+  int64_t blocks_count_;
   int32_t host_nsid_;
   int32_t optimal_write_size_;
   int64_t eui64_;
@@ -5790,24 +5790,24 @@ inline void NVMeNamespace::set_block_size(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.block_size)
 }
 
-// int64 num_blocks = 6;
-inline void NVMeNamespace::clear_num_blocks() {
-  num_blocks_ = int64_t{0};
+// int64 blocks_count = 6;
+inline void NVMeNamespace::clear_blocks_count() {
+  blocks_count_ = int64_t{0};
 }
-inline int64_t NVMeNamespace::_internal_num_blocks() const {
-  return num_blocks_;
+inline int64_t NVMeNamespace::_internal_blocks_count() const {
+  return blocks_count_;
 }
-inline int64_t NVMeNamespace::num_blocks() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.num_blocks)
-  return _internal_num_blocks();
+inline int64_t NVMeNamespace::blocks_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.blocks_count)
+  return _internal_blocks_count();
 }
-inline void NVMeNamespace::_internal_set_num_blocks(int64_t value) {
+inline void NVMeNamespace::_internal_set_blocks_count(int64_t value) {
   
-  num_blocks_ = value;
+  blocks_count_ = value;
 }
-inline void NVMeNamespace::set_num_blocks(int64_t value) {
-  _internal_set_num_blocks(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.num_blocks)
+inline void NVMeNamespace::set_blocks_count(int64_t value) {
+  _internal_set_blocks_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.blocks_count)
 }
 
 // string nguid = 7;

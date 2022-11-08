@@ -10,7 +10,6 @@ public interface NVMeNamespaceOrBuilder extends
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -20,7 +19,6 @@ public interface NVMeNamespaceOrBuilder extends
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -30,7 +28,6 @@ public interface NVMeNamespaceOrBuilder extends
   /**
    * <pre>
    * namespace's unique key
-   * replaces: int64 id = 1;
    * </pre>
    *
    * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
@@ -121,10 +118,10 @@ public interface NVMeNamespaceOrBuilder extends
    * be BlockSize x NumBlocks.
    * </pre>
    *
-   * <code>int64 num_blocks = 6;</code>
-   * @return The numBlocks.
+   * <code>int64 blocks_count = 6;</code>
+   * @return The blocksCount.
    */
-  long getNumBlocks();
+  long getBlocksCount();
 
   /**
    * <pre>
@@ -149,7 +146,7 @@ public interface NVMeNamespaceOrBuilder extends
   /**
    * <pre>
    * 64bit Extended unique identifier for the namespace
-   * mandatory if guid is not specified, optional otherwise
+   * mandatory if guid is not specified
    * </pre>
    *
    * <code>int64 eui64 = 8;</code>

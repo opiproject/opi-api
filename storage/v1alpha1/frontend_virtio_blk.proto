@@ -13,10 +13,7 @@ import "common.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-// Front End (host-facing) APIs.
-
-// Virtio-blk emulation
-
+// Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
     rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {
         option (google.api.http) = {
@@ -50,11 +47,10 @@ service FrontendVirtioBlkService {
 
 message VirtioBlk {
     int64 id = 1;
-    string name = 2;
-    NvmeControllerPciId pcie_id = 3;
-    string bdev = 4;
-    int64 max_io_qps = 5;
-    string serial_number = 6;
+    NvmeControllerPciId pcie_id = 2;
+    string bdev = 3;
+    int64 max_io_qps = 4;
+    string serial_number = 5;
 }
 
 message VirtioBlkCreateRequest {

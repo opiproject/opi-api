@@ -33,10 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Front End (host-facing) APIs.
-//
-// Virtio-scsi emulation
-//
+// Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
 class FrontendVirtioScsiService final {
  public:
   static constexpr char const* service_full_name() {

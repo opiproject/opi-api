@@ -33,10 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Front End (host-facing) APIs.
-//
-// Virtio-blk emulation
-//
+// Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
 class FrontendVirtioBlkService final {
  public:
   static constexpr char const* service_full_name() {

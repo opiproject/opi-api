@@ -34,10 +34,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Front End (host-facing) APIs.
-//
-// NVMe/PCIe emulation
-//
+// Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
 class FrontendNvmeService final {
  public:
   static constexpr char const* service_full_name() {
