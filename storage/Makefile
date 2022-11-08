@@ -12,14 +12,21 @@ define docker_compile
 		-i /common --lint -d "$(CURRENT_VERSION)" -l $(1) -o ./$(CURRENT_VERSION)/gen/$(1)/  --go-source-relative
 endef
 
-all: googleapis/google
-	rm -rf ./$(CURRENT_VERSION)/autogen.md
+all: python cpp go java doc lint
 
+python:
 	$(call docker_compile,python)
-	$(call docker_compile,go)
+
+cpp:
 	$(call docker_compile,cpp)
+
+go:
+	$(call docker_compile,go)
+
+java:
 	$(call docker_compile,java)
 
+lint: googleapis/google
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh \
 		-v "${PWD}/../common/$(COMMON_VERSION)":/common \
 		-v "${PWD}/$(CURRENT_VERSION)/":/out \
@@ -36,6 +43,7 @@ all: googleapis/google
 		ghcr.io/docker-multiarch/google-api-linter:1.36.0 \
 		-c "api-linter -I /common -I /googleapis /out/*.proto --output-format github --disable-rule=core::0192::has-comments --disable-rule=core::0136 --disable-rule=core::0127 --set-exit-status"
 
+doc: googleapis/google
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh \
 		-v "${PWD}/../common/$(COMMON_VERSION)":/common \
 		-v "${PWD}/$(CURRENT_VERSION)/":/out \
