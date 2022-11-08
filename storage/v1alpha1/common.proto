@@ -18,15 +18,15 @@ option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 // virtual functions under the physical function.
 message NvmeControllerPciId {
     // Bus number, provided for future usage if needed. Currently set to ’0’
-    uint32 bus              = 1;
+    int32 bus              = 1;
 
     // Device number, based on the NVMe device layout
-    uint32 device           = 2;
+    int32 device           = 2;
 
     // Physical function, always set to 0 in current model
-    uint32 function         = 3;
+    int32 function         = 3;
 
     // SRIOV Virtual function within the Device and Physical function.
     // Set to 0 for Physical Function. Virtual Function numbering starts from 1
-    uint32 virtual_function  = 4;
+    int32 virtual_function  = 4;
 }

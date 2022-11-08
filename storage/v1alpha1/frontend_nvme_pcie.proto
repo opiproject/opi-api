@@ -125,7 +125,7 @@ message NVMeSubsystem {
     string model_number = 4;
 
     // maximum namespaces within a subsystem
-    int64 max_ns = 5;
+    int64 max_namespaces = 5;
 
     // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
     string firmware_revision  = 6;
@@ -140,7 +140,7 @@ message NVMeController {
 
     // subsystem controller id range: 0 to 65535.
     // must not be reused under the same subsystem
-    uint32 nvme_controller_id  = 2;
+    int32 nvme_controller_id  = 2;
 
     // subsystem information
     common.v1.ObjectKey subsystem_id = 3;
@@ -150,23 +150,23 @@ message NVMeController {
 
     // maximum number of host submission queues allowed.
     // If not set, the xPU will provide a default.
-    uint32 max_nsq = 5;
+    int32 max_nsq = 5;
 
     // maximum number of host completion queues allowed. Optional.
     // If not set, the xPU will provide a default.
-    uint32 max_ncq = 6;
+    int32 max_ncq = 6;
   
     // maximum number of submission queue entries per submission queue, as a power of 2.
     // default value as per spec is 6
-    uint32 sqes = 7;
+    int32 sqes = 7;
 
     // maximum number of completion queue entries per completion queue, as a power of 2.
     // default value as per spec is 4
-    uint32 cqes = 8;
+    int32 cqes = 8;
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    uint32 max_ns = 9;
+    int32 max_namespaces = 9;
 }
 
 message NVMeNamespace {
@@ -184,7 +184,7 @@ message NVMeNamespace {
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
-    uint32 host_nsid = 4;
+    int32 host_nsid = 4;
 
     // Block size in bytes, must be power of 2 and must be less than the max
     // io size supported. Typically tested values are 512, and 4k.
@@ -199,7 +199,7 @@ message NVMeNamespace {
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified, optional otherwise
-    fixed64 eui64 = 8;
+    int64 eui64 = 8;
 
     // Globally unique identifier for the namespace
     common.v1.Uuid uuid = 9;
@@ -211,12 +211,12 @@ message NVMeNamespace {
     // this to regulate IO size. Must be a multiple of the preferred write
     // granularity. Must not exceed the controller maximum IO size value
     // configured in the nvme agent config file.
-    uint32 optimal_write_size = 11;
+    int32 optimal_write_size = 11;
 
     // preferred write granularity hint to the host driver. Host IO
     // stack may use this to align IO sizes to the write granularity for
     // optimum performance.
-    uint32 pref_write_granularity= 12;
+    int32 pref_write_granularity= 12;
 }
 
 message NVMeSubsystemCreateRequest {
