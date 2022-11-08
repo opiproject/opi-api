@@ -51,7 +51,7 @@ doc: googleapis/google
 		-v "${PWD}/googleapis":/googleapis \
 		-w /out \
 		pseudomuto/protoc-gen-doc \
-		-c "protoc -I /common  -I /googleapis -I /protos --doc_out=/out --doc_opt=markdown,autogen.md /protos/*.proto /common/*.proto"
+		-c "protoc -I /common  -I /googleapis -I /protos --doc_out=/out/gen/doc --doc_opt=markdown,autogen.md /protos/*.proto /common/*.proto"
 
 googleapis/google:
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
