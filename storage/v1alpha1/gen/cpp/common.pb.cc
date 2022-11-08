@@ -21,10 +21,10 @@ namespace storage {
 namespace v1 {
 constexpr NvmeControllerPciId::NvmeControllerPciId(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : bus_(0u)
-  , device_(0u)
-  , function_(0u)
-  , virtual_function_(0u){}
+  : bus_(0)
+  , device_(0)
+  , function_(0)
+  , virtual_function_(0){}
 struct NvmeControllerPciIdDefaultTypeInternal {
   constexpr NvmeControllerPciIdDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -63,9 +63,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014common.proto\022\022opi_api.storage.v1\"^\n\023Nv"
-  "meControllerPciId\022\013\n\003bus\030\001 \001(\r\022\016\n\006device"
-  "\030\002 \001(\r\022\020\n\010function\030\003 \001(\r\022\030\n\020virtual_func"
-  "tion\030\004 \001(\rBZ\n\022opi_api.storage.v1B\013Common"
+  "meControllerPciId\022\013\n\003bus\030\001 \001(\005\022\016\n\006device"
+  "\030\002 \001(\005\022\020\n\010function\030\003 \001(\005\022\030\n\020virtual_func"
+  "tion\030\004 \001(\005BZ\n\022opi_api.storage.v1B\013Common"
   "ProtoP\001Z5github.com/opiproject/opi-api/s"
   "torage/v1alpha1/gen/gob\006proto3"
   ;
@@ -156,7 +156,7 @@ const char* NvmeControllerPciId::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 bus = 1;
+      // int32 bus = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           bus_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -164,7 +164,7 @@ const char* NvmeControllerPciId::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         } else
           goto handle_unusual;
         continue;
-      // uint32 device = 2;
+      // int32 device = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           device_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -172,7 +172,7 @@ const char* NvmeControllerPciId::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         } else
           goto handle_unusual;
         continue;
-      // uint32 function = 3;
+      // int32 function = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           function_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -180,7 +180,7 @@ const char* NvmeControllerPciId::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         } else
           goto handle_unusual;
         continue;
-      // uint32 virtual_function = 4;
+      // int32 virtual_function = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           virtual_function_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
@@ -217,28 +217,28 @@ uint8_t* NvmeControllerPciId::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 bus = 1;
+  // int32 bus = 1;
   if (this->_internal_bus() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_bus(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_bus(), target);
   }
 
-  // uint32 device = 2;
+  // int32 device = 2;
   if (this->_internal_device() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_device(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_device(), target);
   }
 
-  // uint32 function = 3;
+  // int32 function = 3;
   if (this->_internal_function() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_function(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_function(), target);
   }
 
-  // uint32 virtual_function = 4;
+  // int32 virtual_function = 4;
   if (this->_internal_virtual_function() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_virtual_function(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_virtual_function(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -257,24 +257,24 @@ size_t NvmeControllerPciId::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 bus = 1;
+  // int32 bus = 1;
   if (this->_internal_bus() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_bus());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_bus());
   }
 
-  // uint32 device = 2;
+  // int32 device = 2;
   if (this->_internal_device() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_device());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_device());
   }
 
-  // uint32 function = 3;
+  // int32 function = 3;
   if (this->_internal_function() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_function());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_function());
   }
 
-  // uint32 virtual_function = 4;
+  // int32 virtual_function = 4;
   if (this->_internal_virtual_function() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_virtual_function());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_virtual_function());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);

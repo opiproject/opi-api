@@ -198,40 +198,40 @@ class NvmeControllerPciId final :
     kFunctionFieldNumber = 3,
     kVirtualFunctionFieldNumber = 4,
   };
-  // uint32 bus = 1;
+  // int32 bus = 1;
   void clear_bus();
-  uint32_t bus() const;
-  void set_bus(uint32_t value);
+  int32_t bus() const;
+  void set_bus(int32_t value);
   private:
-  uint32_t _internal_bus() const;
-  void _internal_set_bus(uint32_t value);
+  int32_t _internal_bus() const;
+  void _internal_set_bus(int32_t value);
   public:
 
-  // uint32 device = 2;
+  // int32 device = 2;
   void clear_device();
-  uint32_t device() const;
-  void set_device(uint32_t value);
+  int32_t device() const;
+  void set_device(int32_t value);
   private:
-  uint32_t _internal_device() const;
-  void _internal_set_device(uint32_t value);
+  int32_t _internal_device() const;
+  void _internal_set_device(int32_t value);
   public:
 
-  // uint32 function = 3;
+  // int32 function = 3;
   void clear_function();
-  uint32_t function() const;
-  void set_function(uint32_t value);
+  int32_t function() const;
+  void set_function(int32_t value);
   private:
-  uint32_t _internal_function() const;
-  void _internal_set_function(uint32_t value);
+  int32_t _internal_function() const;
+  void _internal_set_function(int32_t value);
   public:
 
-  // uint32 virtual_function = 4;
+  // int32 virtual_function = 4;
   void clear_virtual_function();
-  uint32_t virtual_function() const;
-  void set_virtual_function(uint32_t value);
+  int32_t virtual_function() const;
+  void set_virtual_function(int32_t value);
   private:
-  uint32_t _internal_virtual_function() const;
-  void _internal_set_virtual_function(uint32_t value);
+  int32_t _internal_virtual_function() const;
+  void _internal_set_virtual_function(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerPciId)
@@ -241,10 +241,10 @@ class NvmeControllerPciId final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t bus_;
-  uint32_t device_;
-  uint32_t function_;
-  uint32_t virtual_function_;
+  int32_t bus_;
+  int32_t device_;
+  int32_t function_;
+  int32_t virtual_function_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_common_2eproto;
 };
@@ -259,82 +259,82 @@ class NvmeControllerPciId final :
 #endif  // __GNUC__
 // NvmeControllerPciId
 
-// uint32 bus = 1;
+// int32 bus = 1;
 inline void NvmeControllerPciId::clear_bus() {
-  bus_ = 0u;
+  bus_ = 0;
 }
-inline uint32_t NvmeControllerPciId::_internal_bus() const {
+inline int32_t NvmeControllerPciId::_internal_bus() const {
   return bus_;
 }
-inline uint32_t NvmeControllerPciId::bus() const {
+inline int32_t NvmeControllerPciId::bus() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.bus)
   return _internal_bus();
 }
-inline void NvmeControllerPciId::_internal_set_bus(uint32_t value) {
+inline void NvmeControllerPciId::_internal_set_bus(int32_t value) {
   
   bus_ = value;
 }
-inline void NvmeControllerPciId::set_bus(uint32_t value) {
+inline void NvmeControllerPciId::set_bus(int32_t value) {
   _internal_set_bus(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.bus)
 }
 
-// uint32 device = 2;
+// int32 device = 2;
 inline void NvmeControllerPciId::clear_device() {
-  device_ = 0u;
+  device_ = 0;
 }
-inline uint32_t NvmeControllerPciId::_internal_device() const {
+inline int32_t NvmeControllerPciId::_internal_device() const {
   return device_;
 }
-inline uint32_t NvmeControllerPciId::device() const {
+inline int32_t NvmeControllerPciId::device() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.device)
   return _internal_device();
 }
-inline void NvmeControllerPciId::_internal_set_device(uint32_t value) {
+inline void NvmeControllerPciId::_internal_set_device(int32_t value) {
   
   device_ = value;
 }
-inline void NvmeControllerPciId::set_device(uint32_t value) {
+inline void NvmeControllerPciId::set_device(int32_t value) {
   _internal_set_device(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.device)
 }
 
-// uint32 function = 3;
+// int32 function = 3;
 inline void NvmeControllerPciId::clear_function() {
-  function_ = 0u;
+  function_ = 0;
 }
-inline uint32_t NvmeControllerPciId::_internal_function() const {
+inline int32_t NvmeControllerPciId::_internal_function() const {
   return function_;
 }
-inline uint32_t NvmeControllerPciId::function() const {
+inline int32_t NvmeControllerPciId::function() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.function)
   return _internal_function();
 }
-inline void NvmeControllerPciId::_internal_set_function(uint32_t value) {
+inline void NvmeControllerPciId::_internal_set_function(int32_t value) {
   
   function_ = value;
 }
-inline void NvmeControllerPciId::set_function(uint32_t value) {
+inline void NvmeControllerPciId::set_function(int32_t value) {
   _internal_set_function(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.function)
 }
 
-// uint32 virtual_function = 4;
+// int32 virtual_function = 4;
 inline void NvmeControllerPciId::clear_virtual_function() {
-  virtual_function_ = 0u;
+  virtual_function_ = 0;
 }
-inline uint32_t NvmeControllerPciId::_internal_virtual_function() const {
+inline int32_t NvmeControllerPciId::_internal_virtual_function() const {
   return virtual_function_;
 }
-inline uint32_t NvmeControllerPciId::virtual_function() const {
+inline int32_t NvmeControllerPciId::virtual_function() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.virtual_function)
   return _internal_virtual_function();
 }
-inline void NvmeControllerPciId::_internal_set_virtual_function(uint32_t value) {
+inline void NvmeControllerPciId::_internal_set_virtual_function(int32_t value) {
   
   virtual_function_ = value;
 }
-inline void NvmeControllerPciId::set_virtual_function(uint32_t value) {
+inline void NvmeControllerPciId::set_virtual_function(int32_t value) {
   _internal_set_virtual_function(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.virtual_function)
 }

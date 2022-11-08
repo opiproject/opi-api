@@ -847,10 +847,10 @@ virtual functions under the physical function.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bus | [uint32](#uint32) |  | Bus number, provided for future usage if needed. Currently set to ’0’ |
-| device | [uint32](#uint32) |  | Device number, based on the NVMe device layout |
-| function | [uint32](#uint32) |  | Physical function, always set to 0 in current model |
-| virtual_function | [uint32](#uint32) |  | SRIOV Virtual function within the Device and Physical function. Set to 0 for Physical Function. Virtual Function numbering starts from 1 |
+| bus | [int32](#int32) |  | Bus number, provided for future usage if needed. Currently set to ’0’ |
+| device | [int32](#int32) |  | Device number, based on the NVMe device layout |
+| function | [int32](#int32) |  | Physical function, always set to 0 in current model |
+| virtual_function | [int32](#int32) |  | SRIOV Virtual function within the Device and Physical function. Set to 0 for Physical Function. Virtual Function numbering starts from 1 |
 
 
 
@@ -882,14 +882,14 @@ virtual functions under the physical function.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
-| nvme_controller_id | [uint32](#uint32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
+| nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller |
-| max_nsq | [uint32](#uint32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
-| max_ncq | [uint32](#uint32) |  | maximum number of host completion queues allowed. Optional. If not set, the xPU will provide a default. |
-| sqes | [uint32](#uint32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
-| cqes | [uint32](#uint32) |  | maximum number of completion queue entries per completion queue, as a power of 2. default value as per spec is 4 |
-| max_ns | [uint32](#uint32) |  | maximum Number of namespaces that will be provisioned under the controller. |
+| max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
+| max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. Optional. If not set, the xPU will provide a default. |
+| sqes | [int32](#int32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
+| cqes | [int32](#int32) |  | maximum number of completion queue entries per completion queue, as a power of 2. default value as per spec is 4 |
+| max_namespaces | [int32](#int32) |  | maximum Number of namespaces that will be provisioned under the controller. |
 
 
 
@@ -1028,15 +1028,15 @@ virtual functions under the physical function.
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | namespace&#39;s unique key replaces: int64 id = 1; |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem for this namespace |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | key of the PCIe controller object that will host this namespace. |
-| host_nsid | [uint32](#uint32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
+| host_nsid | [int32](#int32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | block_size | [int64](#int64) |  | Block size in bytes, must be power of 2 and must be less than the max io size supported. Typically tested values are 512, and 4k. |
 | num_blocks | [int64](#int64) |  | Size/Capacity of the namespace in blocks, size in bytes will be BlockSize x NumBlocks. |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
-| eui64 | [fixed64](#fixed64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified, optional otherwise |
+| eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified, optional otherwise |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this namespace. |
-| optimal_write_size | [uint32](#uint32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
-| pref_write_granularity | [uint32](#uint32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |
+| optimal_write_size | [int32](#int32) |  | optimal write size hint to host driver. Host IO stack may use this to regulate IO size. Must be a multiple of the preferred write granularity. Must not exceed the controller maximum IO size value configured in the nvme agent config file. |
+| pref_write_granularity | [int32](#int32) |  | preferred write granularity hint to the host driver. Host IO stack may use this to align IO sizes to the write granularity for optimum performance. |
 
 
 
@@ -1177,7 +1177,7 @@ virtual functions under the physical function.
 | nqn | [string](#string) |  | NVMe subsystem NQN to which the controller belongs Refer to the NQN format in the NVMe base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes |
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |
-| max_ns | [int64](#int64) |  | maximum namespaces within a subsystem |
+| max_namespaces | [int64](#int64) |  | maximum namespaces within a subsystem |
 | firmware_revision | [string](#string) |  | firmware revision, must not exceed &#39;NSV_CTRLR_FW_REV_LEN&#39; |
 | fru_guid | [bytes](#bytes) |  | FRU identfier, 16bytes opaque identity for the type of unit |
 

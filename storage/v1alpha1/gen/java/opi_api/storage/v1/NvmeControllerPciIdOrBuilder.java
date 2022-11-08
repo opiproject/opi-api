@@ -12,7 +12,7 @@ public interface NvmeControllerPciIdOrBuilder extends
    * Bus number, provided for future usage if needed. Currently set to ’0’
    * </pre>
    *
-   * <code>uint32 bus = 1;</code>
+   * <code>int32 bus = 1;</code>
    * @return The bus.
    */
   int getBus();
@@ -22,7 +22,7 @@ public interface NvmeControllerPciIdOrBuilder extends
    * Device number, based on the NVMe device layout
    * </pre>
    *
-   * <code>uint32 device = 2;</code>
+   * <code>int32 device = 2;</code>
    * @return The device.
    */
   int getDevice();
@@ -32,7 +32,7 @@ public interface NvmeControllerPciIdOrBuilder extends
    * Physical function, always set to 0 in current model
    * </pre>
    *
-   * <code>uint32 function = 3;</code>
+   * <code>int32 function = 3;</code>
    * @return The function.
    */
   int getFunction();
@@ -43,7 +43,7 @@ public interface NvmeControllerPciIdOrBuilder extends
    * Set to 0 for Physical Function. Virtual Function numbering starts from 1
    * </pre>
    *
-   * <code>uint32 virtual_function = 4;</code>
+   * <code>int32 virtual_function = 4;</code>
    * @return The virtualFunction.
    */
   int getVirtualFunction();

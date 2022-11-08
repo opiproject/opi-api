@@ -103,10 +103,10 @@ public interface NVMeSubsystemOrBuilder extends
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_ns = 5;</code>
-   * @return The maxNs.
+   * <code>int64 max_namespaces = 5;</code>
+   * @return The maxNamespaces.
    */
-  long getMaxNs();
+  long getMaxNamespaces();
 
   /**
    * <pre>

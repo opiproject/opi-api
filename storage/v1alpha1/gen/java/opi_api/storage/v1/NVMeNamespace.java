@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
           }
           case 32: {
 
-            hostNsid_ = input.readUInt32();
+            hostNsid_ = input.readInt32();
             break;
           }
           case 40: {
@@ -109,9 +109,9 @@ private static final long serialVersionUID = 0L;
             nguid_ = s;
             break;
           }
-          case 65: {
+          case 64: {
 
-            eui64_ = input.readFixed64();
+            eui64_ = input.readInt64();
             break;
           }
           case 74: {
@@ -142,12 +142,12 @@ private static final long serialVersionUID = 0L;
           }
           case 88: {
 
-            optimalWriteSize_ = input.readUInt32();
+            optimalWriteSize_ = input.readInt32();
             break;
           }
           case 96: {
 
-            prefWriteGranularity_ = input.readUInt32();
+            prefWriteGranularity_ = input.readInt32();
             break;
           }
           default: {
@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * for live migration
    * </pre>
    *
-   * <code>uint32 host_nsid = 4;</code>
+   * <code>int32 host_nsid = 4;</code>
    * @return The hostNsid.
    */
   @java.lang.Override
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
    * mandatory if guid is not specified, optional otherwise
    * </pre>
    *
-   * <code>fixed64 eui64 = 8;</code>
+   * <code>int64 eui64 = 8;</code>
    * @return The eui64.
    */
   @java.lang.Override
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
    * configured in the nvme agent config file.
    * </pre>
    *
-   * <code>uint32 optimal_write_size = 11;</code>
+   * <code>int32 optimal_write_size = 11;</code>
    * @return The optimalWriteSize.
    */
   @java.lang.Override
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
    * optimum performance.
    * </pre>
    *
-   * <code>uint32 pref_write_granularity = 12;</code>
+   * <code>int32 pref_write_granularity = 12;</code>
    * @return The prefWriteGranularity.
    */
   @java.lang.Override
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(3, getControllerId());
     }
     if (hostNsid_ != 0) {
-      output.writeUInt32(4, hostNsid_);
+      output.writeInt32(4, hostNsid_);
     }
     if (blockSize_ != 0L) {
       output.writeInt64(5, blockSize_);
@@ -558,7 +558,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nguid_);
     }
     if (eui64_ != 0L) {
-      output.writeFixed64(8, eui64_);
+      output.writeInt64(8, eui64_);
     }
     if (uuid_ != null) {
       output.writeMessage(9, getUuid());
@@ -567,10 +567,10 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(10, getVolumeId());
     }
     if (optimalWriteSize_ != 0) {
-      output.writeUInt32(11, optimalWriteSize_);
+      output.writeInt32(11, optimalWriteSize_);
     }
     if (prefWriteGranularity_ != 0) {
-      output.writeUInt32(12, prefWriteGranularity_);
+      output.writeInt32(12, prefWriteGranularity_);
     }
     unknownFields.writeTo(output);
   }
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hostNsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, hostNsid_);
+        .computeInt32Size(4, hostNsid_);
     }
     if (blockSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
     }
     if (eui64_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFixed64Size(8, eui64_);
+        .computeInt64Size(8, eui64_);
     }
     if (uuid_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -622,11 +622,11 @@ private static final long serialVersionUID = 0L;
     }
     if (optimalWriteSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(11, optimalWriteSize_);
+        .computeInt32Size(11, optimalWriteSize_);
     }
     if (prefWriteGranularity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(12, prefWriteGranularity_);
+        .computeInt32Size(12, prefWriteGranularity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1562,7 +1562,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>uint32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 4;</code>
      * @return The hostNsid.
      */
     @java.lang.Override
@@ -1577,7 +1577,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>uint32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 4;</code>
      * @param value The hostNsid to set.
      * @return This builder for chaining.
      */
@@ -1595,7 +1595,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>uint32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearHostNsid() {
@@ -1800,7 +1800,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified, optional otherwise
      * </pre>
      *
-     * <code>fixed64 eui64 = 8;</code>
+     * <code>int64 eui64 = 8;</code>
      * @return The eui64.
      */
     @java.lang.Override
@@ -1813,7 +1813,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified, optional otherwise
      * </pre>
      *
-     * <code>fixed64 eui64 = 8;</code>
+     * <code>int64 eui64 = 8;</code>
      * @param value The eui64 to set.
      * @return This builder for chaining.
      */
@@ -1829,7 +1829,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified, optional otherwise
      * </pre>
      *
-     * <code>fixed64 eui64 = 8;</code>
+     * <code>int64 eui64 = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearEui64() {
@@ -2158,7 +2158,7 @@ private static final long serialVersionUID = 0L;
      * configured in the nvme agent config file.
      * </pre>
      *
-     * <code>uint32 optimal_write_size = 11;</code>
+     * <code>int32 optimal_write_size = 11;</code>
      * @return The optimalWriteSize.
      */
     @java.lang.Override
@@ -2173,7 +2173,7 @@ private static final long serialVersionUID = 0L;
      * configured in the nvme agent config file.
      * </pre>
      *
-     * <code>uint32 optimal_write_size = 11;</code>
+     * <code>int32 optimal_write_size = 11;</code>
      * @param value The optimalWriteSize to set.
      * @return This builder for chaining.
      */
@@ -2191,7 +2191,7 @@ private static final long serialVersionUID = 0L;
      * configured in the nvme agent config file.
      * </pre>
      *
-     * <code>uint32 optimal_write_size = 11;</code>
+     * <code>int32 optimal_write_size = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearOptimalWriteSize() {
@@ -2209,7 +2209,7 @@ private static final long serialVersionUID = 0L;
      * optimum performance.
      * </pre>
      *
-     * <code>uint32 pref_write_granularity = 12;</code>
+     * <code>int32 pref_write_granularity = 12;</code>
      * @return The prefWriteGranularity.
      */
     @java.lang.Override
@@ -2223,7 +2223,7 @@ private static final long serialVersionUID = 0L;
      * optimum performance.
      * </pre>
      *
-     * <code>uint32 pref_write_granularity = 12;</code>
+     * <code>int32 pref_write_granularity = 12;</code>
      * @param value The prefWriteGranularity to set.
      * @return This builder for chaining.
      */
@@ -2240,7 +2240,7 @@ private static final long serialVersionUID = 0L;
      * optimum performance.
      * </pre>
      *
-     * <code>uint32 pref_write_granularity = 12;</code>
+     * <code>int32 pref_write_granularity = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearPrefWriteGranularity() {

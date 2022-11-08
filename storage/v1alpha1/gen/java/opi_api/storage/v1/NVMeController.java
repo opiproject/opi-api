@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            nvmeControllerId_ = input.readUInt32();
+            nvmeControllerId_ = input.readInt32();
             break;
           }
           case 26: {
@@ -94,27 +94,27 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            maxNsq_ = input.readUInt32();
+            maxNsq_ = input.readInt32();
             break;
           }
           case 48: {
 
-            maxNcq_ = input.readUInt32();
+            maxNcq_ = input.readInt32();
             break;
           }
           case 56: {
 
-            sqes_ = input.readUInt32();
+            sqes_ = input.readInt32();
             break;
           }
           case 64: {
 
-            cqes_ = input.readUInt32();
+            cqes_ = input.readInt32();
             break;
           }
           case 72: {
 
-            maxNs_ = input.readUInt32();
+            maxNamespaces_ = input.readInt32();
             break;
           }
           default: {
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
    * must not be reused under the same subsystem
    * </pre>
    *
-   * <code>uint32 nvme_controller_id = 2;</code>
+   * <code>int32 nvme_controller_id = 2;</code>
    * @return The nvmeControllerId.
    */
   @java.lang.Override
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>uint32 max_nsq = 5;</code>
+   * <code>int32 max_nsq = 5;</code>
    * @return The maxNsq.
    */
   @java.lang.Override
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>uint32 max_ncq = 6;</code>
+   * <code>int32 max_ncq = 6;</code>
    * @return The maxNcq.
    */
   @java.lang.Override
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 6
    * </pre>
    *
-   * <code>uint32 sqes = 7;</code>
+   * <code>int32 sqes = 7;</code>
    * @return The sqes.
    */
   @java.lang.Override
@@ -335,7 +335,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 4
    * </pre>
    *
-   * <code>uint32 cqes = 8;</code>
+   * <code>int32 cqes = 8;</code>
    * @return The cqes.
    */
   @java.lang.Override
@@ -343,20 +343,20 @@ private static final long serialVersionUID = 0L;
     return cqes_;
   }
 
-  public static final int MAX_NS_FIELD_NUMBER = 9;
-  private int maxNs_;
+  public static final int MAX_NAMESPACES_FIELD_NUMBER = 9;
+  private int maxNamespaces_;
   /**
    * <pre>
    * maximum Number of namespaces that will be provisioned under
    * the controller.
    * </pre>
    *
-   * <code>uint32 max_ns = 9;</code>
-   * @return The maxNs.
+   * <code>int32 max_namespaces = 9;</code>
+   * @return The maxNamespaces.
    */
   @java.lang.Override
-  public int getMaxNs() {
-    return maxNs_;
+  public int getMaxNamespaces() {
+    return maxNamespaces_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getId());
     }
     if (nvmeControllerId_ != 0) {
-      output.writeUInt32(2, nvmeControllerId_);
+      output.writeInt32(2, nvmeControllerId_);
     }
     if (subsystemId_ != null) {
       output.writeMessage(3, getSubsystemId());
@@ -386,19 +386,19 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(4, getPcieId());
     }
     if (maxNsq_ != 0) {
-      output.writeUInt32(5, maxNsq_);
+      output.writeInt32(5, maxNsq_);
     }
     if (maxNcq_ != 0) {
-      output.writeUInt32(6, maxNcq_);
+      output.writeInt32(6, maxNcq_);
     }
     if (sqes_ != 0) {
-      output.writeUInt32(7, sqes_);
+      output.writeInt32(7, sqes_);
     }
     if (cqes_ != 0) {
-      output.writeUInt32(8, cqes_);
+      output.writeInt32(8, cqes_);
     }
-    if (maxNs_ != 0) {
-      output.writeUInt32(9, maxNs_);
+    if (maxNamespaces_ != 0) {
+      output.writeInt32(9, maxNamespaces_);
     }
     unknownFields.writeTo(output);
   }
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
     }
     if (nvmeControllerId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, nvmeControllerId_);
+        .computeInt32Size(2, nvmeControllerId_);
     }
     if (subsystemId_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -427,23 +427,23 @@ private static final long serialVersionUID = 0L;
     }
     if (maxNsq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(5, maxNsq_);
+        .computeInt32Size(5, maxNsq_);
     }
     if (maxNcq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(6, maxNcq_);
+        .computeInt32Size(6, maxNcq_);
     }
     if (sqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(7, sqes_);
+        .computeInt32Size(7, sqes_);
     }
     if (cqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(8, cqes_);
+        .computeInt32Size(8, cqes_);
     }
-    if (maxNs_ != 0) {
+    if (maxNamespaces_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(9, maxNs_);
+        .computeInt32Size(9, maxNamespaces_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -485,8 +485,8 @@ private static final long serialVersionUID = 0L;
         != other.getSqes()) return false;
     if (getCqes()
         != other.getCqes()) return false;
-    if (getMaxNs()
-        != other.getMaxNs()) return false;
+    if (getMaxNamespaces()
+        != other.getMaxNamespaces()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -520,8 +520,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSqes();
     hash = (37 * hash) + CQES_FIELD_NUMBER;
     hash = (53 * hash) + getCqes();
-    hash = (37 * hash) + MAX_NS_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxNs();
+    hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxNamespaces();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
 
       cqes_ = 0;
 
-      maxNs_ = 0;
+      maxNamespaces_ = 0;
 
       return this;
     }
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
       result.maxNcq_ = maxNcq_;
       result.sqes_ = sqes_;
       result.cqes_ = cqes_;
-      result.maxNs_ = maxNs_;
+      result.maxNamespaces_ = maxNamespaces_;
       onBuilt();
       return result;
     }
@@ -804,8 +804,8 @@ private static final long serialVersionUID = 0L;
       if (other.getCqes() != 0) {
         setCqes(other.getCqes());
       }
-      if (other.getMaxNs() != 0) {
-        setMaxNs(other.getMaxNs());
+      if (other.getMaxNamespaces() != 0) {
+        setMaxNamespaces(other.getMaxNamespaces());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>uint32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 2;</code>
      * @return The nvmeControllerId.
      */
     @java.lang.Override
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>uint32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 2;</code>
      * @param value The nvmeControllerId to set.
      * @return This builder for chaining.
      */
@@ -1027,7 +1027,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>uint32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeControllerId() {
@@ -1354,7 +1354,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 5;</code>
      * @return The maxNsq.
      */
     @java.lang.Override
@@ -1367,7 +1367,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 5;</code>
      * @param value The maxNsq to set.
      * @return This builder for chaining.
      */
@@ -1383,7 +1383,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNsq() {
@@ -1400,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 6;</code>
      * @return The maxNcq.
      */
     @java.lang.Override
@@ -1413,7 +1413,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 6;</code>
      * @param value The maxNcq to set.
      * @return This builder for chaining.
      */
@@ -1429,7 +1429,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>uint32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNcq() {
@@ -1446,7 +1446,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>uint32 sqes = 7;</code>
+     * <code>int32 sqes = 7;</code>
      * @return The sqes.
      */
     @java.lang.Override
@@ -1459,7 +1459,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>uint32 sqes = 7;</code>
+     * <code>int32 sqes = 7;</code>
      * @param value The sqes to set.
      * @return This builder for chaining.
      */
@@ -1475,7 +1475,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>uint32 sqes = 7;</code>
+     * <code>int32 sqes = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearSqes() {
@@ -1492,7 +1492,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>uint32 cqes = 8;</code>
+     * <code>int32 cqes = 8;</code>
      * @return The cqes.
      */
     @java.lang.Override
@@ -1505,7 +1505,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>uint32 cqes = 8;</code>
+     * <code>int32 cqes = 8;</code>
      * @param value The cqes to set.
      * @return This builder for chaining.
      */
@@ -1521,7 +1521,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>uint32 cqes = 8;</code>
+     * <code>int32 cqes = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearCqes() {
@@ -1531,19 +1531,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int maxNs_ ;
+    private int maxNamespaces_ ;
     /**
      * <pre>
      * maximum Number of namespaces that will be provisioned under
      * the controller.
      * </pre>
      *
-     * <code>uint32 max_ns = 9;</code>
-     * @return The maxNs.
+     * <code>int32 max_namespaces = 9;</code>
+     * @return The maxNamespaces.
      */
     @java.lang.Override
-    public int getMaxNs() {
-      return maxNs_;
+    public int getMaxNamespaces() {
+      return maxNamespaces_;
     }
     /**
      * <pre>
@@ -1551,13 +1551,13 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>uint32 max_ns = 9;</code>
-     * @param value The maxNs to set.
+     * <code>int32 max_namespaces = 9;</code>
+     * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
-    public Builder setMaxNs(int value) {
+    public Builder setMaxNamespaces(int value) {
       
-      maxNs_ = value;
+      maxNamespaces_ = value;
       onChanged();
       return this;
     }
@@ -1567,12 +1567,12 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>uint32 max_ns = 9;</code>
+     * <code>int32 max_namespaces = 9;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMaxNs() {
+    public Builder clearMaxNamespaces() {
       
-      maxNs_ = 0;
+      maxNamespaces_ = 0;
       onChanged();
       return this;
     }

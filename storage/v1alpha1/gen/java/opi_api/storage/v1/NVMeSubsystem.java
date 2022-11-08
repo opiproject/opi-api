@@ -86,7 +86,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            maxNs_ = input.readInt64();
+            maxNamespaces_ = input.readInt64();
             break;
           }
           case 50: {
@@ -312,19 +312,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAX_NS_FIELD_NUMBER = 5;
-  private long maxNs_;
+  public static final int MAX_NAMESPACES_FIELD_NUMBER = 5;
+  private long maxNamespaces_;
   /**
    * <pre>
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_ns = 5;</code>
-   * @return The maxNs.
+   * <code>int64 max_namespaces = 5;</code>
+   * @return The maxNamespaces.
    */
   @java.lang.Override
-  public long getMaxNs() {
-    return maxNs_;
+  public long getMaxNamespaces() {
+    return maxNamespaces_;
   }
 
   public static final int FIRMWARE_REVISION_FIELD_NUMBER = 6;
@@ -414,8 +414,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelNumber_);
     }
-    if (maxNs_ != 0L) {
-      output.writeInt64(5, maxNs_);
+    if (maxNamespaces_ != 0L) {
+      output.writeInt64(5, maxNamespaces_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, firmwareRevision_);
@@ -445,9 +445,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelNumber_);
     }
-    if (maxNs_ != 0L) {
+    if (maxNamespaces_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, maxNs_);
+        .computeInt64Size(5, maxNamespaces_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, firmwareRevision_);
@@ -482,8 +482,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSerialNumber())) return false;
     if (!getModelNumber()
         .equals(other.getModelNumber())) return false;
-    if (getMaxNs()
-        != other.getMaxNs()) return false;
+    if (getMaxNamespaces()
+        != other.getMaxNamespaces()) return false;
     if (!getFirmwareRevision()
         .equals(other.getFirmwareRevision())) return false;
     if (!getFruGuid()
@@ -509,9 +509,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSerialNumber().hashCode();
     hash = (37 * hash) + MODEL_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getModelNumber().hashCode();
-    hash = (37 * hash) + MAX_NS_FIELD_NUMBER;
+    hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getMaxNs());
+        getMaxNamespaces());
     hash = (37 * hash) + FIRMWARE_REVISION_FIELD_NUMBER;
     hash = (53 * hash) + getFirmwareRevision().hashCode();
     hash = (37 * hash) + FRU_GUID_FIELD_NUMBER;
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
 
       modelNumber_ = "";
 
-      maxNs_ = 0L;
+      maxNamespaces_ = 0L;
 
       firmwareRevision_ = "";
 
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
       result.nqn_ = nqn_;
       result.serialNumber_ = serialNumber_;
       result.modelNumber_ = modelNumber_;
-      result.maxNs_ = maxNs_;
+      result.maxNamespaces_ = maxNamespaces_;
       result.firmwareRevision_ = firmwareRevision_;
       result.fruGuid_ = fruGuid_;
       onBuilt();
@@ -767,8 +767,8 @@ private static final long serialVersionUID = 0L;
         modelNumber_ = other.modelNumber_;
         onChanged();
       }
-      if (other.getMaxNs() != 0L) {
-        setMaxNs(other.getMaxNs());
+      if (other.getMaxNamespaces() != 0L) {
+        setMaxNamespaces(other.getMaxNamespaces());
       }
       if (!other.getFirmwareRevision().isEmpty()) {
         firmwareRevision_ = other.firmwareRevision_;
@@ -1259,31 +1259,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long maxNs_ ;
+    private long maxNamespaces_ ;
     /**
      * <pre>
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_ns = 5;</code>
-     * @return The maxNs.
+     * <code>int64 max_namespaces = 5;</code>
+     * @return The maxNamespaces.
      */
     @java.lang.Override
-    public long getMaxNs() {
-      return maxNs_;
+    public long getMaxNamespaces() {
+      return maxNamespaces_;
     }
     /**
      * <pre>
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_ns = 5;</code>
-     * @param value The maxNs to set.
+     * <code>int64 max_namespaces = 5;</code>
+     * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
-    public Builder setMaxNs(long value) {
+    public Builder setMaxNamespaces(long value) {
       
-      maxNs_ = value;
+      maxNamespaces_ = value;
       onChanged();
       return this;
     }
@@ -1292,12 +1292,12 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_ns = 5;</code>
+     * <code>int64 max_namespaces = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMaxNs() {
+    public Builder clearMaxNamespaces() {
       
-      maxNs_ = 0L;
+      maxNamespaces_ = 0L;
       onChanged();
       return this;
     }

@@ -58,22 +58,22 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            bus_ = input.readUInt32();
+            bus_ = input.readInt32();
             break;
           }
           case 16: {
 
-            device_ = input.readUInt32();
+            device_ = input.readInt32();
             break;
           }
           case 24: {
 
-            function_ = input.readUInt32();
+            function_ = input.readInt32();
             break;
           }
           case 32: {
 
-            virtualFunction_ = input.readUInt32();
+            virtualFunction_ = input.readInt32();
             break;
           }
           default: {
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    * Bus number, provided for future usage if needed. Currently set to ’0’
    * </pre>
    *
-   * <code>uint32 bus = 1;</code>
+   * <code>int32 bus = 1;</code>
    * @return The bus.
    */
   @java.lang.Override
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
    * Device number, based on the NVMe device layout
    * </pre>
    *
-   * <code>uint32 device = 2;</code>
+   * <code>int32 device = 2;</code>
    * @return The device.
    */
   @java.lang.Override
@@ -145,7 +145,7 @@ private static final long serialVersionUID = 0L;
    * Physical function, always set to 0 in current model
    * </pre>
    *
-   * <code>uint32 function = 3;</code>
+   * <code>int32 function = 3;</code>
    * @return The function.
    */
   @java.lang.Override
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * Set to 0 for Physical Function. Virtual Function numbering starts from 1
    * </pre>
    *
-   * <code>uint32 virtual_function = 4;</code>
+   * <code>int32 virtual_function = 4;</code>
    * @return The virtualFunction.
    */
   @java.lang.Override
@@ -184,16 +184,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (bus_ != 0) {
-      output.writeUInt32(1, bus_);
+      output.writeInt32(1, bus_);
     }
     if (device_ != 0) {
-      output.writeUInt32(2, device_);
+      output.writeInt32(2, device_);
     }
     if (function_ != 0) {
-      output.writeUInt32(3, function_);
+      output.writeInt32(3, function_);
     }
     if (virtualFunction_ != 0) {
-      output.writeUInt32(4, virtualFunction_);
+      output.writeInt32(4, virtualFunction_);
     }
     unknownFields.writeTo(output);
   }
@@ -206,19 +206,19 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (bus_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, bus_);
+        .computeInt32Size(1, bus_);
     }
     if (device_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, device_);
+        .computeInt32Size(2, device_);
     }
     if (function_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, function_);
+        .computeInt32Size(3, function_);
     }
     if (virtualFunction_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, virtualFunction_);
+        .computeInt32Size(4, virtualFunction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
      * Bus number, provided for future usage if needed. Currently set to ’0’
      * </pre>
      *
-     * <code>uint32 bus = 1;</code>
+     * <code>int32 bus = 1;</code>
      * @return The bus.
      */
     @java.lang.Override
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
      * Bus number, provided for future usage if needed. Currently set to ’0’
      * </pre>
      *
-     * <code>uint32 bus = 1;</code>
+     * <code>int32 bus = 1;</code>
      * @param value The bus to set.
      * @return This builder for chaining.
      */
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
      * Bus number, provided for future usage if needed. Currently set to ’0’
      * </pre>
      *
-     * <code>uint32 bus = 1;</code>
+     * <code>int32 bus = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearBus() {
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
      * Device number, based on the NVMe device layout
      * </pre>
      *
-     * <code>uint32 device = 2;</code>
+     * <code>int32 device = 2;</code>
      * @return The device.
      */
     @java.lang.Override
@@ -591,7 +591,7 @@ private static final long serialVersionUID = 0L;
      * Device number, based on the NVMe device layout
      * </pre>
      *
-     * <code>uint32 device = 2;</code>
+     * <code>int32 device = 2;</code>
      * @param value The device to set.
      * @return This builder for chaining.
      */
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
      * Device number, based on the NVMe device layout
      * </pre>
      *
-     * <code>uint32 device = 2;</code>
+     * <code>int32 device = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevice() {
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>uint32 function = 3;</code>
+     * <code>int32 function = 3;</code>
      * @return The function.
      */
     @java.lang.Override
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>uint32 function = 3;</code>
+     * <code>int32 function = 3;</code>
      * @param value The function to set.
      * @return This builder for chaining.
      */
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>uint32 function = 3;</code>
+     * <code>int32 function = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
      * Set to 0 for Physical Function. Virtual Function numbering starts from 1
      * </pre>
      *
-     * <code>uint32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 4;</code>
      * @return The virtualFunction.
      */
     @java.lang.Override
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
      * Set to 0 for Physical Function. Virtual Function numbering starts from 1
      * </pre>
      *
-     * <code>uint32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 4;</code>
      * @param value The virtualFunction to set.
      * @return This builder for chaining.
      */
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * Set to 0 for Physical Function. Virtual Function numbering starts from 1
      * </pre>
      *
-     * <code>uint32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtualFunction() {

@@ -40,7 +40,7 @@ public interface NVMeControllerOrBuilder extends
    * must not be reused under the same subsystem
    * </pre>
    *
-   * <code>uint32 nvme_controller_id = 2;</code>
+   * <code>int32 nvme_controller_id = 2;</code>
    * @return The nvmeControllerId.
    */
   int getNvmeControllerId();
@@ -105,7 +105,7 @@ public interface NVMeControllerOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>uint32 max_nsq = 5;</code>
+   * <code>int32 max_nsq = 5;</code>
    * @return The maxNsq.
    */
   int getMaxNsq();
@@ -116,7 +116,7 @@ public interface NVMeControllerOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>uint32 max_ncq = 6;</code>
+   * <code>int32 max_ncq = 6;</code>
    * @return The maxNcq.
    */
   int getMaxNcq();
@@ -127,7 +127,7 @@ public interface NVMeControllerOrBuilder extends
    * default value as per spec is 6
    * </pre>
    *
-   * <code>uint32 sqes = 7;</code>
+   * <code>int32 sqes = 7;</code>
    * @return The sqes.
    */
   int getSqes();
@@ -138,7 +138,7 @@ public interface NVMeControllerOrBuilder extends
    * default value as per spec is 4
    * </pre>
    *
-   * <code>uint32 cqes = 8;</code>
+   * <code>int32 cqes = 8;</code>
    * @return The cqes.
    */
   int getCqes();
@@ -149,8 +149,8 @@ public interface NVMeControllerOrBuilder extends
    * the controller.
    * </pre>
    *
-   * <code>uint32 max_ns = 9;</code>
-   * @return The maxNs.
+   * <code>int32 max_namespaces = 9;</code>
+   * @return The maxNamespaces.
    */
-  int getMaxNs();
+  int getMaxNamespaces();
 }

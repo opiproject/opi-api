@@ -99,7 +99,7 @@ public interface NVMeNamespaceOrBuilder extends
    * for live migration
    * </pre>
    *
-   * <code>uint32 host_nsid = 4;</code>
+   * <code>int32 host_nsid = 4;</code>
    * @return The hostNsid.
    */
   int getHostNsid();
@@ -152,7 +152,7 @@ public interface NVMeNamespaceOrBuilder extends
    * mandatory if guid is not specified, optional otherwise
    * </pre>
    *
-   * <code>fixed64 eui64 = 8;</code>
+   * <code>int64 eui64 = 8;</code>
    * @return The eui64.
    */
   long getEui64();
@@ -219,7 +219,7 @@ public interface NVMeNamespaceOrBuilder extends
    * configured in the nvme agent config file.
    * </pre>
    *
-   * <code>uint32 optimal_write_size = 11;</code>
+   * <code>int32 optimal_write_size = 11;</code>
    * @return The optimalWriteSize.
    */
   int getOptimalWriteSize();
@@ -231,7 +231,7 @@ public interface NVMeNamespaceOrBuilder extends
    * optimum performance.
    * </pre>
    *
-   * <code>uint32 pref_write_granularity = 12;</code>
+   * <code>int32 pref_write_granularity = 12;</code>
    * @return The prefWriteGranularity.
    */
   int getPrefWriteGranularity();
