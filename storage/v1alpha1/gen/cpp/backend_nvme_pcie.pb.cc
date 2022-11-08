@@ -30,12 +30,13 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_backend_5fnvme_5fpcie_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027backend_nvme_pcie.proto\022\022opi_api.stora"
-  "ge.v1B7Z5github.com/opiproject/opi-api/s"
-  "torage/v1alpha1/gen/gob\006proto3"
+  "ge.v1Bc\n\022opi_api.storage.v1B\024BackendNvme"
+  "PcieProtoP\001Z5github.com/opiproject/opi-a"
+  "pi/storage/v1alpha1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnvme_5fpcie_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnvme_5fpcie_2eproto = {
-  false, false, 110, descriptor_table_protodef_backend_5fnvme_5fpcie_2eproto, "backend_nvme_pcie.proto", 
+  false, false, 154, descriptor_table_protodef_backend_5fnvme_5fpcie_2eproto, "backend_nvme_pcie.proto", 
   &descriptor_table_backend_5fnvme_5fpcie_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_backend_5fnvme_5fpcie_2eproto::offsets,
   nullptr, file_level_enum_descriptors_backend_5fnvme_5fpcie_2eproto, file_level_service_descriptors_backend_5fnvme_5fpcie_2eproto,

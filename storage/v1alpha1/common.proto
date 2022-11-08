@@ -4,6 +4,11 @@
 
 syntax = "proto3";
 package opi_api.storage.v1;
+
+option java_package = "opi_api.storage.v1";
+option java_multiple_files = true;
+option java_outer_classname = "CommonProto";
+
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
 // The controller PCI-ID is used to address a given virtual controller. Virtual

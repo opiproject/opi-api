@@ -29,13 +29,14 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = n
 static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_middleend_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017middleend.proto\022\022opi_api.storage.v1B7Z"
-  "5github.com/opiproject/opi-api/storage/v"
-  "1alpha1/gen/gob\006proto3"
+  "\n\017middleend.proto\022\022opi_api.storage.v1B]\n"
+  "\022opi_api.storage.v1B\016MiddleendProtoP\001Z5g"
+  "ithub.com/opiproject/opi-api/storage/v1a"
+  "lpha1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_2eproto = {
-  false, false, 102, descriptor_table_protodef_middleend_2eproto, "middleend.proto", 
+  false, false, 140, descriptor_table_protodef_middleend_2eproto, "middleend.proto", 
   &descriptor_table_middleend_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_middleend_2eproto::offsets,
   nullptr, file_level_enum_descriptors_middleend_2eproto, file_level_service_descriptors_middleend_2eproto,

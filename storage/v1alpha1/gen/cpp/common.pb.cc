@@ -65,12 +65,13 @@ const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "\n\014common.proto\022\022opi_api.storage.v1\"^\n\023Nv"
   "meControllerPciId\022\013\n\003bus\030\001 \001(\r\022\016\n\006device"
   "\030\002 \001(\r\022\020\n\010function\030\003 \001(\r\022\030\n\020virtual_func"
-  "tion\030\004 \001(\rB7Z5github.com/opiproject/opi-"
-  "api/storage/v1alpha1/gen/gob\006proto3"
+  "tion\030\004 \001(\rBZ\n\022opi_api.storage.v1B\013Common"
+  "ProtoP\001Z5github.com/opiproject/opi-api/s"
+  "torage/v1alpha1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2eproto = {
-  false, false, 195, descriptor_table_protodef_common_2eproto, "common.proto", 
+  false, false, 230, descriptor_table_protodef_common_2eproto, "common.proto", 
   &descriptor_table_common_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_common_2eproto::offsets,
   file_level_metadata_common_2eproto, file_level_enum_descriptors_common_2eproto, file_level_service_descriptors_common_2eproto,

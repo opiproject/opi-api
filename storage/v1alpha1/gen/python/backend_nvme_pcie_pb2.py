@@ -14,12 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x62\x61\x63kend_nvme_pcie.proto\x12\x12opi_api.storage.v1B7Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x62\x61\x63kend_nvme_pcie.proto\x12\x12opi_api.storage.v1Bc\n\x12opi_api.storage.v1B\x14\x42\x61\x63kendNvmePcieProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
+  DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\024BackendNvmePcieProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
 # @@protoc_insertion_point(module_scope)

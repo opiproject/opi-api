@@ -791,9 +791,10 @@ const char descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto[] PROTOBUF_S
   "e\"\"\202\323\344\223\002\034\022\032/v1/namespaces/{namespace}\022u\n"
   "\022NVMeNamespaceStats\022-.opi_api.storage.v1"
   ".NVMeNamespaceStatsRequest\032..opi_api.sto"
-  "rage.v1.NVMeNamespaceStatsResponse\"\000B7Z5"
-  "github.com/opiproject/opi-api/storage/v1"
-  "alpha1/gen/gob\006proto3"
+  "rage.v1.NVMeNamespaceStatsResponse\"\000Bd\n\022"
+  "opi_api.storage.v1B\025FrontendNvmePcieProt"
+  "oP\001Z5github.com/opiproject/opi-api/stora"
+  "ge/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps[5] = {
   &::descriptor_table_common_2eproto,
@@ -804,7 +805,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fnvme_5fpcie_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fnvme_5fpcie_2eproto = {
-  false, false, 5501, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
+  false, false, 5546, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
   &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once, descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps, 5, 27,
   schemas, file_default_instances, TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets,
   file_level_metadata_frontend_5fnvme_5fpcie_2eproto, file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto, file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto,

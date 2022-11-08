@@ -4,11 +4,12 @@
 
 all:
 	rm -rf ./v1alpha1/{autogen.md,gen,google}
-	mkdir -p  ./v1alpha1/gen/{go,cpp,python}
+	mkdir -p  ./v1alpha1/gen/{go,cpp,python,java}
 
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/v1":/common namely/protoc-all:1.47_2 -i /common --lint -d v1alpha1 -l go -o ./v1alpha1/gen/go/  --go-source-relative
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/v1":/common namely/protoc-all:1.47_2 -i /common --lint -d v1alpha1 -l cpp -o ./v1alpha1/gen/cpp/  --go-source-relative
 	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/v1":/common namely/protoc-all:1.47_2 -i /common --lint -d v1alpha1 -l python -o ./v1alpha1/gen/python/  --go-source-relative
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/v1":/common namely/protoc-all:1.47_2 -i /common --lint -d v1alpha1 -l java -o ./v1alpha1/gen/java/  --go-source-relative
 
 	# protoc-gen-doc doesn't support proto include paths parameter so we have to copy
 	# common included files to the proto directory

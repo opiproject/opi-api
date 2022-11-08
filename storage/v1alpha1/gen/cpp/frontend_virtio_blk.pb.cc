@@ -273,9 +273,10 @@ const char descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto[] PROTOBUF_
   "1.VirtioBlk\"\"\202\323\344\223\002\034\022\032/v1/virtioblks/{vir"
   "tioblk}\022i\n\016VirtioBlkStats\022).opi_api.stor"
   "age.v1.VirtioBlkStatsRequest\032*.opi_api.s"
-  "torage.v1.VirtioBlkStatsResponse\"\000B7Z5gi"
-  "thub.com/opiproject/opi-api/storage/v1al"
-  "pha1/gen/gob\006proto3"
+  "torage.v1.VirtioBlkStatsResponse\"\000Be\n\022op"
+  "i_api.storage.v1B\026FrontendVirtioBlkProto"
+  "P\001Z5github.com/opiproject/opi-api/storag"
+  "e/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps[3] = {
   &::descriptor_table_common_2eproto,
@@ -284,7 +285,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5fblk_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5fblk_2eproto = {
-  false, false, 1579, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
+  false, false, 1625, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
   &descriptor_table_frontend_5fvirtio_5fblk_2eproto_once, descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps, 3, 9,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5fblk_2eproto::offsets,
   file_level_metadata_frontend_5fvirtio_5fblk_2eproto, file_level_enum_descriptors_frontend_5fvirtio_5fblk_2eproto, file_level_service_descriptors_frontend_5fvirtio_5fblk_2eproto,

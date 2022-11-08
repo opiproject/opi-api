@@ -4,6 +4,11 @@
 
 syntax = "proto3";
 package opi_api.storage.v1;
+
+option java_package = "opi_api.storage.v1";
+option java_multiple_files = true;
+option java_outer_classname = "FrontendNvmePcieProto";
+
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "common.proto";
 import "object_key.proto";
