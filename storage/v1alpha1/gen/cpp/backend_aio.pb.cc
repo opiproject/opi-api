@@ -294,9 +294,9 @@ const char descriptor_table_protodef_backend_5faio_2eproto[] PROTOBUF_SECTION_VA
   "uest\032&.opi_api.storage.v1.AioControllerS"
   "tats\"\000\022j\n\023AioControllerUpdate\022..opi_api."
   "storage.v1.AioControllerUpdateRequest\032!."
-  "opi_api.storage.v1.AioController\"\000B1Z/gi"
-  "thub.com/opiproject/opi-api/storage/v1/g"
-  "en/gob\006proto3"
+  "opi_api.storage.v1.AioController\"\000B7Z5gi"
+  "thub.com/opiproject/opi-api/storage/v1al"
+  "pha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5faio_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -305,7 +305,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5faio_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5faio_2eproto = {
-  false, false, 1653, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
+  false, false, 1659, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
   &descriptor_table_backend_5faio_2eproto_once, descriptor_table_backend_5faio_2eproto_deps, 3, 10,
   schemas, file_default_instances, TableStruct_backend_5faio_2eproto::offsets,
   file_level_metadata_backend_5faio_2eproto, file_level_enum_descriptors_backend_5faio_2eproto, file_level_service_descriptors_backend_5faio_2eproto,

@@ -311,50 +311,51 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\022backend_null.proto\022\022opi_api.storage.v1"
-  "\032\nuuid.proto\"t\n\tNullDebug\022\n\n\002id\030\001 \001(\003\022\014\n"
-  "\004name\030\002 \001(\t\022\022\n\nblock_size\030\003 \001(\003\022\022\n\nnum_b"
-  "locks\030\004 \001(\003\022%\n\004uuid\030\005 \001(\0132\027.opi_api.comm"
-  "on.v1.Uuid\"G\n\026NullDebugCreateRequest\022-\n\006"
-  "device\030\001 \001(\0132\035.opi_api.storage.v1.NullDe"
-  "bug\"\031\n\027NullDebugCreateResponse\"$\n\026NullDe"
-  "bugDeleteRequest\022\n\n\002id\030\001 \001(\003\"\031\n\027NullDebu"
-  "gDeleteResponse\"G\n\026NullDebugUpdateReques"
-  "t\022-\n\006device\030\001 \001(\0132\035.opi_api.storage.v1.N"
-  "ullDebug\"\031\n\027NullDebugUpdateResponse\"\026\n\024N"
-  "ullDebugListRequest\"F\n\025NullDebugListResp"
-  "onse\022-\n\006device\030\001 \003(\0132\035.opi_api.storage.v"
-  "1.NullDebug\"!\n\023NullDebugGetRequest\022\n\n\002id"
-  "\030\001 \001(\003\"E\n\024NullDebugGetResponse\022-\n\006device"
-  "\030\001 \001(\0132\035.opi_api.storage.v1.NullDebug\"#\n"
-  "\025NullDebugStatsRequest\022\n\n\002id\030\001 \001(\003\"3\n\026Nu"
-  "llDebugStatsResponse\022\n\n\002id\030\001 \001(\003\022\r\n\005stat"
-  "s\030\002 \001(\t2\224\005\n\020NullDebugService\022l\n\017NullDebu"
-  "gCreate\022*.opi_api.storage.v1.NullDebugCr"
-  "eateRequest\032+.opi_api.storage.v1.NullDeb"
-  "ugCreateResponse\"\000\022l\n\017NullDebugDelete\022*."
-  "opi_api.storage.v1.NullDebugDeleteReques"
-  "t\032+.opi_api.storage.v1.NullDebugDeleteRe"
-  "sponse\"\000\022l\n\017NullDebugUpdate\022*.opi_api.st"
-  "orage.v1.NullDebugUpdateRequest\032+.opi_ap"
-  "i.storage.v1.NullDebugUpdateResponse\"\000\022f"
-  "\n\rNullDebugList\022(.opi_api.storage.v1.Nul"
-  "lDebugListRequest\032).opi_api.storage.v1.N"
-  "ullDebugListResponse\"\000\022c\n\014NullDebugGet\022\'"
-  ".opi_api.storage.v1.NullDebugGetRequest\032"
-  "(.opi_api.storage.v1.NullDebugGetRespons"
-  "e\"\000\022i\n\016NullDebugStats\022).opi_api.storage."
-  "v1.NullDebugStatsRequest\032*.opi_api.stora"
-  "ge.v1.NullDebugStatsResponse\"\000B1Z/github"
-  ".com/opiproject/opi-api/storage/v1/gen/g"
-  "ob\006proto3"
+  "\032\020object_key.proto\032\nuuid.proto\"t\n\tNullDe"
+  "bug\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\022\n\nblock_s"
+  "ize\030\003 \001(\003\022\022\n\nnum_blocks\030\004 \001(\003\022%\n\004uuid\030\005 "
+  "\001(\0132\027.opi_api.common.v1.Uuid\"G\n\026NullDebu"
+  "gCreateRequest\022-\n\006device\030\001 \001(\0132\035.opi_api"
+  ".storage.v1.NullDebug\"\031\n\027NullDebugCreate"
+  "Response\"$\n\026NullDebugDeleteRequest\022\n\n\002id"
+  "\030\001 \001(\003\"\031\n\027NullDebugDeleteResponse\"G\n\026Nul"
+  "lDebugUpdateRequest\022-\n\006device\030\001 \001(\0132\035.op"
+  "i_api.storage.v1.NullDebug\"\031\n\027NullDebugU"
+  "pdateResponse\"\026\n\024NullDebugListRequest\"F\n"
+  "\025NullDebugListResponse\022-\n\006device\030\001 \003(\0132\035"
+  ".opi_api.storage.v1.NullDebug\"!\n\023NullDeb"
+  "ugGetRequest\022\n\n\002id\030\001 \001(\003\"E\n\024NullDebugGet"
+  "Response\022-\n\006device\030\001 \001(\0132\035.opi_api.stora"
+  "ge.v1.NullDebug\"#\n\025NullDebugStatsRequest"
+  "\022\n\n\002id\030\001 \001(\003\"3\n\026NullDebugStatsResponse\022\n"
+  "\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\224\005\n\020NullDebugS"
+  "ervice\022l\n\017NullDebugCreate\022*.opi_api.stor"
+  "age.v1.NullDebugCreateRequest\032+.opi_api."
+  "storage.v1.NullDebugCreateResponse\"\000\022l\n\017"
+  "NullDebugDelete\022*.opi_api.storage.v1.Nul"
+  "lDebugDeleteRequest\032+.opi_api.storage.v1"
+  ".NullDebugDeleteResponse\"\000\022l\n\017NullDebugU"
+  "pdate\022*.opi_api.storage.v1.NullDebugUpda"
+  "teRequest\032+.opi_api.storage.v1.NullDebug"
+  "UpdateResponse\"\000\022f\n\rNullDebugList\022(.opi_"
+  "api.storage.v1.NullDebugListRequest\032).op"
+  "i_api.storage.v1.NullDebugListResponse\"\000"
+  "\022c\n\014NullDebugGet\022\'.opi_api.storage.v1.Nu"
+  "llDebugGetRequest\032(.opi_api.storage.v1.N"
+  "ullDebugGetResponse\"\000\022i\n\016NullDebugStats\022"
+  ").opi_api.storage.v1.NullDebugStatsReque"
+  "st\032*.opi_api.storage.v1.NullDebugStatsRe"
+  "sponse\"\000B7Z5github.com/opiproject/opi-ap"
+  "i/storage/v1alpha1/gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[2] = {
+  &::descriptor_table_object_5fkey_2eproto,
   &::descriptor_table_uuid_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 1449, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
-  &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 1, 13,
+  false, false, 1473, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 2, 13,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,
 };

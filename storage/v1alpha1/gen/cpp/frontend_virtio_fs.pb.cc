@@ -30,12 +30,12 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_frontend_5fvirtio_5ffs_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030frontend_virtio_fs.proto\022\022opi_api.stor"
-  "age.v1B1Z/github.com/opiproject/opi-api/"
-  "storage/v1/gen/gob\006proto3"
+  "age.v1B7Z5github.com/opiproject/opi-api/"
+  "storage/v1alpha1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5ffs_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5ffs_2eproto = {
-  false, false, 105, descriptor_table_protodef_frontend_5fvirtio_5ffs_2eproto, "frontend_virtio_fs.proto", 
+  false, false, 111, descriptor_table_protodef_frontend_5fvirtio_5ffs_2eproto, "frontend_virtio_fs.proto", 
   &descriptor_table_frontend_5fvirtio_5ffs_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5ffs_2eproto::offsets,
   nullptr, file_level_enum_descriptors_frontend_5fvirtio_5ffs_2eproto, file_level_service_descriptors_frontend_5fvirtio_5ffs_2eproto,
