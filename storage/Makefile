@@ -5,14 +5,20 @@
 CURRENT_VERSION := v1alpha1
 COMMON_VERSION := v1
 
-all:
-	rm -rf ./$(CURRENT_VERSION)/{autogen.md,gen,google}
-	mkdir -p  ./$(CURRENT_VERSION)/gen/{go,cpp,python,java}
+define docker_compile
+	rm -rf ./$(CURRENT_VERSION)/gen/$(1)
+	mkdir -p ./$(CURRENT_VERSION)/gen/$(1)
+	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/$(COMMON_VERSION)":/common namely/protoc-all:1.47_2 \
+		-i /common --lint -d "$(CURRENT_VERSION)" -l $(1) -o ./$(CURRENT_VERSION)/gen/$(1)/  --go-source-relative
+endef
 
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/$(COMMON_VERSION)":/common namely/protoc-all:1.47_2 -i /common --lint -d "$(CURRENT_VERSION)" -l go -o ./$(CURRENT_VERSION)/gen/go/  --go-source-relative
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/$(COMMON_VERSION)":/common namely/protoc-all:1.47_2 -i /common --lint -d "$(CURRENT_VERSION)" -l cpp -o ./$(CURRENT_VERSION)/gen/cpp/  --go-source-relative
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/$(COMMON_VERSION)":/common namely/protoc-all:1.47_2 -i /common --lint -d "$(CURRENT_VERSION)" -l python -o ./$(CURRENT_VERSION)/gen/python/  --go-source-relative
-	docker run --user=$$(id -u):$$(id -g) --rm -v "${PWD}":/defs -v "${PWD}/../common/$(COMMON_VERSION)":/common namely/protoc-all:1.47_2 -i /common --lint -d "$(CURRENT_VERSION)" -l java -o ./$(CURRENT_VERSION)/gen/java/  --go-source-relative
+all:
+	rm -rf ./$(CURRENT_VERSION)/{autogen.md,google}
+
+	$(call docker_compile,python)
+	$(call docker_compile,go)
+	$(call docker_compile,cpp)
+	$(call docker_compile,java)
 
 	# protoc doesn't include annotation and http googleapis, so we have to get them here
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
