@@ -4,6 +4,10 @@
 package opi_api.storage.v1;
 
 /**
+ * <pre>
+ * Intentionally empty.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.storage.v1.VirtioBlkListRequest}
  */
 public final class VirtioBlkListRequest extends
@@ -48,11 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            virtioblkId_ = input.readInt64();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -85,17 +84,6 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.VirtioBlkListRequest.class, opi_api.storage.v1.VirtioBlkListRequest.Builder.class);
   }
 
-  public static final int VIRTIOBLK_ID_FIELD_NUMBER = 1;
-  private long virtioblkId_;
-  /**
-   * <code>int64 virtioblk_id = 1;</code>
-   * @return The virtioblkId.
-   */
-  @java.lang.Override
-  public long getVirtioblkId() {
-    return virtioblkId_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -110,9 +98,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (virtioblkId_ != 0L) {
-      output.writeInt64(1, virtioblkId_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -122,10 +107,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (virtioblkId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, virtioblkId_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -141,8 +122,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioBlkListRequest other = (opi_api.storage.v1.VirtioBlkListRequest) obj;
 
-    if (getVirtioblkId()
-        != other.getVirtioblkId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -154,9 +133,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VIRTIOBLK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getVirtioblkId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -253,6 +229,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Intentionally empty.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.storage.v1.VirtioBlkListRequest}
    */
   public static final class Builder extends
@@ -290,8 +270,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      virtioblkId_ = 0L;
-
       return this;
     }
 
@@ -318,7 +296,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioBlkListRequest buildPartial() {
       opi_api.storage.v1.VirtioBlkListRequest result = new opi_api.storage.v1.VirtioBlkListRequest(this);
-      result.virtioblkId_ = virtioblkId_;
       onBuilt();
       return result;
     }
@@ -367,9 +344,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioBlkListRequest other) {
       if (other == opi_api.storage.v1.VirtioBlkListRequest.getDefaultInstance()) return this;
-      if (other.getVirtioblkId() != 0L) {
-        setVirtioblkId(other.getVirtioblkId());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -396,37 +370,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private long virtioblkId_ ;
-    /**
-     * <code>int64 virtioblk_id = 1;</code>
-     * @return The virtioblkId.
-     */
-    @java.lang.Override
-    public long getVirtioblkId() {
-      return virtioblkId_;
-    }
-    /**
-     * <code>int64 virtioblk_id = 1;</code>
-     * @param value The virtioblkId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVirtioblkId(long value) {
-      
-      virtioblkId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 virtioblk_id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVirtioblkId() {
-      
-      virtioblkId_ = 0L;
-      onChanged();
       return this;
     }
     @java.lang.Override

@@ -8,14 +8,32 @@ public interface VirtioScsiLunStatsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 controller_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   * @return Whether the controllerId field is set.
+   */
+  boolean hasControllerId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
    * @return The controllerId.
    */
-  long getControllerId();
+  opi_api.common.v1.ObjectKey getControllerId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
 
   /**
-   * <code>int64 lun_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+   * @return Whether the lunId field is set.
+   */
+  boolean hasLunId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
    * @return The lunId.
    */
-  long getLunId();
+  opi_api.common.v1.ObjectKey getLunId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getLunIdOrBuilder();
 }

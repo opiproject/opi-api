@@ -1353,7 +1353,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
 | bdev | [string](#string) |  |  |
 | max_io_qps | [int64](#int64) |  |  |
@@ -1387,7 +1387,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1402,7 +1402,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1412,12 +1412,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 <a name="opi_api-storage-v1-VirtioBlkListRequest"></a>
 
 ### VirtioBlkListRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| virtioblk_id | [int64](#int64) |  |  |
+Intentionally empty.
 
 
 
@@ -1447,7 +1442,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1462,7 +1457,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -1540,7 +1535,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
 
 
@@ -1571,7 +1566,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1586,7 +1581,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1626,7 +1621,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1641,7 +1636,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -1672,8 +1667,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-| controller_id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | bdev | [string](#string) |  |  |
 
 
@@ -1704,8 +1699,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
-| lun_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1720,8 +1715,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
-| lun_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1736,7 +1731,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1766,8 +1761,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [int64](#int64) |  |  |
-| lun_id | [int64](#int64) |  |  |
+| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1782,7 +1777,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 

@@ -6,10 +6,4 @@ package opi_api.storage.v1;
 public interface VirtioBlkListRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.VirtioBlkListRequest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>int64 virtioblk_id = 1;</code>
-   * @return The virtioblkId.
-   */
-  long getVirtioblkId();
 }

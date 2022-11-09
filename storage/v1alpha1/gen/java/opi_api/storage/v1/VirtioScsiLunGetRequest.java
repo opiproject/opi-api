@@ -48,14 +48,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (controllerId_ != null) {
+              subBuilder = controllerId_.toBuilder();
+            }
+            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(controllerId_);
+              controllerId_ = subBuilder.buildPartial();
+            }
 
-            controllerId_ = input.readInt64();
             break;
           }
-          case 16: {
+          case 18: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (lunId_ != null) {
+              subBuilder = lunId_.toBuilder();
+            }
+            lunId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(lunId_);
+              lunId_ = subBuilder.buildPartial();
+            }
 
-            lunId_ = input.readInt64();
             break;
           }
           default: {
@@ -91,25 +107,55 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTROLLER_ID_FIELD_NUMBER = 1;
-  private long controllerId_;
+  private opi_api.common.v1.ObjectKey controllerId_;
   /**
-   * <code>int64 controller_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   * @return Whether the controllerId field is set.
+   */
+  @java.lang.Override
+  public boolean hasControllerId() {
+    return controllerId_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
    * @return The controllerId.
    */
   @java.lang.Override
-  public long getControllerId() {
-    return controllerId_;
+  public opi_api.common.v1.ObjectKey getControllerId() {
+    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
+    return getControllerId();
   }
 
   public static final int LUN_ID_FIELD_NUMBER = 2;
-  private long lunId_;
+  private opi_api.common.v1.ObjectKey lunId_;
   /**
-   * <code>int64 lun_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+   * @return Whether the lunId field is set.
+   */
+  @java.lang.Override
+  public boolean hasLunId() {
+    return lunId_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
    * @return The lunId.
    */
   @java.lang.Override
-  public long getLunId() {
-    return lunId_;
+  public opi_api.common.v1.ObjectKey getLunId() {
+    return lunId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : lunId_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getLunIdOrBuilder() {
+    return getLunId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,11 +172,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (controllerId_ != 0L) {
-      output.writeInt64(1, controllerId_);
+    if (controllerId_ != null) {
+      output.writeMessage(1, getControllerId());
     }
-    if (lunId_ != 0L) {
-      output.writeInt64(2, lunId_);
+    if (lunId_ != null) {
+      output.writeMessage(2, getLunId());
     }
     unknownFields.writeTo(output);
   }
@@ -141,13 +187,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (controllerId_ != 0L) {
+    if (controllerId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, controllerId_);
+        .computeMessageSize(1, getControllerId());
     }
-    if (lunId_ != 0L) {
+    if (lunId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, lunId_);
+        .computeMessageSize(2, getLunId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +210,16 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioScsiLunGetRequest other = (opi_api.storage.v1.VirtioScsiLunGetRequest) obj;
 
-    if (getControllerId()
-        != other.getControllerId()) return false;
-    if (getLunId()
-        != other.getLunId()) return false;
+    if (hasControllerId() != other.hasControllerId()) return false;
+    if (hasControllerId()) {
+      if (!getControllerId()
+          .equals(other.getControllerId())) return false;
+    }
+    if (hasLunId() != other.hasLunId()) return false;
+    if (hasLunId()) {
+      if (!getLunId()
+          .equals(other.getLunId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -179,12 +231,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getControllerId());
-    hash = (37 * hash) + LUN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLunId());
+    if (hasControllerId()) {
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getControllerId().hashCode();
+    }
+    if (hasLunId()) {
+      hash = (37 * hash) + LUN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLunId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,10 +372,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      controllerId_ = 0L;
-
-      lunId_ = 0L;
-
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = null;
+      } else {
+        controllerId_ = null;
+        controllerIdBuilder_ = null;
+      }
+      if (lunIdBuilder_ == null) {
+        lunId_ = null;
+      } else {
+        lunId_ = null;
+        lunIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -348,8 +410,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioScsiLunGetRequest buildPartial() {
       opi_api.storage.v1.VirtioScsiLunGetRequest result = new opi_api.storage.v1.VirtioScsiLunGetRequest(this);
-      result.controllerId_ = controllerId_;
-      result.lunId_ = lunId_;
+      if (controllerIdBuilder_ == null) {
+        result.controllerId_ = controllerId_;
+      } else {
+        result.controllerId_ = controllerIdBuilder_.build();
+      }
+      if (lunIdBuilder_ == null) {
+        result.lunId_ = lunId_;
+      } else {
+        result.lunId_ = lunIdBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -398,11 +468,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioScsiLunGetRequest other) {
       if (other == opi_api.storage.v1.VirtioScsiLunGetRequest.getDefaultInstance()) return this;
-      if (other.getControllerId() != 0L) {
-        setControllerId(other.getControllerId());
+      if (other.hasControllerId()) {
+        mergeControllerId(other.getControllerId());
       }
-      if (other.getLunId() != 0L) {
-        setLunId(other.getLunId());
+      if (other.hasLunId()) {
+        mergeLunId(other.getLunId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -433,66 +503,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long controllerId_ ;
+    private opi_api.common.v1.ObjectKey controllerId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
     /**
-     * <code>int64 controller_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     * @return Whether the controllerId field is set.
+     */
+    public boolean hasControllerId() {
+      return controllerIdBuilder_ != null || controllerId_ != null;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      * @return The controllerId.
      */
-    @java.lang.Override
-    public long getControllerId() {
-      return controllerId_;
+    public opi_api.common.v1.ObjectKey getControllerId() {
+      if (controllerIdBuilder_ == null) {
+        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+      } else {
+        return controllerIdBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 controller_id = 1;</code>
-     * @param value The controllerId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      */
-    public Builder setControllerId(long value) {
-      
-      controllerId_ = value;
-      onChanged();
+    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
+      if (controllerIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        controllerId_ = value;
+        onChanged();
+      } else {
+        controllerIdBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 controller_id = 1;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public Builder setControllerId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = builderForValue.build();
+        onChanged();
+      } else {
+        controllerIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
+      if (controllerIdBuilder_ == null) {
+        if (controllerId_ != null) {
+          controllerId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
+        } else {
+          controllerId_ = value;
+        }
+        onChanged();
+      } else {
+        controllerIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      */
     public Builder clearControllerId() {
-      
-      controllerId_ = 0L;
-      onChanged();
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = null;
+        onChanged();
+      } else {
+        controllerId_ = null;
+        controllerIdBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
+      
+      onChanged();
+      return getControllerIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
+      if (controllerIdBuilder_ != null) {
+        return controllerIdBuilder_.getMessageOrBuilder();
+      } else {
+        return controllerId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getControllerIdFieldBuilder() {
+      if (controllerIdBuilder_ == null) {
+        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getControllerId(),
+                getParentForChildren(),
+                isClean());
+        controllerId_ = null;
+      }
+      return controllerIdBuilder_;
     }
 
-    private long lunId_ ;
+    private opi_api.common.v1.ObjectKey lunId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> lunIdBuilder_;
     /**
-     * <code>int64 lun_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     * @return Whether the lunId field is set.
+     */
+    public boolean hasLunId() {
+      return lunIdBuilder_ != null || lunId_ != null;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
      * @return The lunId.
      */
-    @java.lang.Override
-    public long getLunId() {
-      return lunId_;
+    public opi_api.common.v1.ObjectKey getLunId() {
+      if (lunIdBuilder_ == null) {
+        return lunId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : lunId_;
+      } else {
+        return lunIdBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 lun_id = 2;</code>
-     * @param value The lunId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
      */
-    public Builder setLunId(long value) {
-      
-      lunId_ = value;
-      onChanged();
+    public Builder setLunId(opi_api.common.v1.ObjectKey value) {
+      if (lunIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lunId_ = value;
+        onChanged();
+      } else {
+        lunIdBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 lun_id = 2;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     */
+    public Builder setLunId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (lunIdBuilder_ == null) {
+        lunId_ = builderForValue.build();
+        onChanged();
+      } else {
+        lunIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     */
+    public Builder mergeLunId(opi_api.common.v1.ObjectKey value) {
+      if (lunIdBuilder_ == null) {
+        if (lunId_ != null) {
+          lunId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(lunId_).mergeFrom(value).buildPartial();
+        } else {
+          lunId_ = value;
+        }
+        onChanged();
+      } else {
+        lunIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
      */
     public Builder clearLunId() {
-      
-      lunId_ = 0L;
-      onChanged();
+      if (lunIdBuilder_ == null) {
+        lunId_ = null;
+        onChanged();
+      } else {
+        lunId_ = null;
+        lunIdBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getLunIdBuilder() {
+      
+      onChanged();
+      return getLunIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getLunIdOrBuilder() {
+      if (lunIdBuilder_ != null) {
+        return lunIdBuilder_.getMessageOrBuilder();
+      } else {
+        return lunId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : lunId_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getLunIdFieldBuilder() {
+      if (lunIdBuilder_ == null) {
+        lunIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getLunId(),
+                getParentForChildren(),
+                isClean());
+        lunId_ = null;
+      }
+      return lunIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -8,10 +8,19 @@ public interface VirtioScsiControllerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
    * @return The id.
    */
-  long getId();
+  opi_api.common.v1.ObjectKey getId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
    * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>

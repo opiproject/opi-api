@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (controllerId_ != null) {
+              subBuilder = controllerId_.toBuilder();
+            }
+            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(controllerId_);
+              controllerId_ = subBuilder.buildPartial();
+            }
 
-            controllerId_ = input.readInt64();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTROLLER_ID_FIELD_NUMBER = 1;
-  private long controllerId_;
+  private opi_api.common.v1.ObjectKey controllerId_;
   /**
-   * <code>int64 controller_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   * @return Whether the controllerId field is set.
+   */
+  @java.lang.Override
+  public boolean hasControllerId() {
+    return controllerId_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
    * @return The controllerId.
    */
   @java.lang.Override
-  public long getControllerId() {
-    return controllerId_;
+  public opi_api.common.v1.ObjectKey getControllerId() {
+    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
+    return getControllerId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (controllerId_ != 0L) {
-      output.writeInt64(1, controllerId_);
+    if (controllerId_ != null) {
+      output.writeMessage(1, getControllerId());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (controllerId_ != 0L) {
+    if (controllerId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, controllerId_);
+        .computeMessageSize(1, getControllerId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,8 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioScsiControllerGetRequest other = (opi_api.storage.v1.VirtioScsiControllerGetRequest) obj;
 
-    if (getControllerId()
-        != other.getControllerId()) return false;
+    if (hasControllerId() != other.hasControllerId()) return false;
+    if (hasControllerId()) {
+      if (!getControllerId()
+          .equals(other.getControllerId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -154,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getControllerId());
+    if (hasControllerId()) {
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getControllerId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -290,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      controllerId_ = 0L;
-
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = null;
+      } else {
+        controllerId_ = null;
+        controllerIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -318,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioScsiControllerGetRequest buildPartial() {
       opi_api.storage.v1.VirtioScsiControllerGetRequest result = new opi_api.storage.v1.VirtioScsiControllerGetRequest(this);
-      result.controllerId_ = controllerId_;
+      if (controllerIdBuilder_ == null) {
+        result.controllerId_ = controllerId_;
+      } else {
+        result.controllerId_ = controllerIdBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -367,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioScsiControllerGetRequest other) {
       if (other == opi_api.storage.v1.VirtioScsiControllerGetRequest.getDefaultInstance()) return this;
-      if (other.getControllerId() != 0L) {
-        setControllerId(other.getControllerId());
+      if (other.hasControllerId()) {
+        mergeControllerId(other.getControllerId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -399,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long controllerId_ ;
+    private opi_api.common.v1.ObjectKey controllerId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
     /**
-     * <code>int64 controller_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     * @return Whether the controllerId field is set.
+     */
+    public boolean hasControllerId() {
+      return controllerIdBuilder_ != null || controllerId_ != null;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      * @return The controllerId.
      */
-    @java.lang.Override
-    public long getControllerId() {
-      return controllerId_;
+    public opi_api.common.v1.ObjectKey getControllerId() {
+      if (controllerIdBuilder_ == null) {
+        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+      } else {
+        return controllerIdBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 controller_id = 1;</code>
-     * @param value The controllerId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      */
-    public Builder setControllerId(long value) {
-      
-      controllerId_ = value;
-      onChanged();
+    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
+      if (controllerIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        controllerId_ = value;
+        onChanged();
+      } else {
+        controllerIdBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 controller_id = 1;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public Builder setControllerId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = builderForValue.build();
+        onChanged();
+      } else {
+        controllerIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
+      if (controllerIdBuilder_ == null) {
+        if (controllerId_ != null) {
+          controllerId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
+        } else {
+          controllerId_ = value;
+        }
+        onChanged();
+      } else {
+        controllerIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
      */
     public Builder clearControllerId() {
-      
-      controllerId_ = 0L;
-      onChanged();
+      if (controllerIdBuilder_ == null) {
+        controllerId_ = null;
+        onChanged();
+      } else {
+        controllerId_ = null;
+        controllerIdBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
+      
+      onChanged();
+      return getControllerIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
+      if (controllerIdBuilder_ != null) {
+        return controllerIdBuilder_.getMessageOrBuilder();
+      } else {
+        return controllerId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getControllerIdFieldBuilder() {
+      if (controllerIdBuilder_ == null) {
+        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getControllerId(),
+                getParentForChildren(),
+                isClean());
+        controllerId_ = null;
+      }
+      return controllerIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

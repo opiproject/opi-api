@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (id_ != null) {
+              subBuilder = id_.toBuilder();
+            }
+            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(id_);
+              id_ = subBuilder.buildPartial();
+            }
 
-            id_ = input.readInt64();
             break;
           }
           case 18: {
@@ -99,14 +107,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
+  private opi_api.common.v1.ObjectKey id_;
   /**
-   * <code>int64 id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return id_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public opi_api.common.v1.ObjectKey getId() {
+    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
+    return getId();
   }
 
   public static final int PCIE_ID_FIELD_NUMBER = 2;
@@ -149,8 +172,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (id_ != null) {
+      output.writeMessage(1, getId());
     }
     if (pcieId_ != null) {
       output.writeMessage(2, getPcieId());
@@ -164,9 +187,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (id_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeMessageSize(1, getId());
     }
     if (pcieId_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -187,8 +210,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioScsiController other = (opi_api.storage.v1.VirtioScsiController) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId()
+          .equals(other.getId())) return false;
+    }
     if (hasPcieId() != other.hasPcieId()) return false;
     if (hasPcieId()) {
       if (!getPcieId()
@@ -205,9 +231,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     if (hasPcieId()) {
       hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPcieId().hashCode();
@@ -345,8 +372,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
-
+      if (idBuilder_ == null) {
+        id_ = null;
+      } else {
+        id_ = null;
+        idBuilder_ = null;
+      }
       if (pcieIdBuilder_ == null) {
         pcieId_ = null;
       } else {
@@ -379,7 +410,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioScsiController buildPartial() {
       opi_api.storage.v1.VirtioScsiController result = new opi_api.storage.v1.VirtioScsiController(this);
-      result.id_ = id_;
+      if (idBuilder_ == null) {
+        result.id_ = id_;
+      } else {
+        result.id_ = idBuilder_.build();
+      }
       if (pcieIdBuilder_ == null) {
         result.pcieId_ = pcieId_;
       } else {
@@ -433,8 +468,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioScsiController other) {
       if (other == opi_api.storage.v1.VirtioScsiController.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+      if (other.hasId()) {
+        mergeId(other.getId());
       }
       if (other.hasPcieId()) {
         mergePcieId(other.getPcieId());
@@ -468,35 +503,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private opi_api.common.v1.ObjectKey id_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
     /**
-     * <code>int64 id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return idBuilder_ != null || id_ != null;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
-    public long getId() {
-      return id_;
+    public opi_api.common.v1.ObjectKey getId() {
+      if (idBuilder_ == null) {
+        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+      } else {
+        return idBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      */
-    public Builder setId(long value) {
-      
-      id_ = value;
-      onChanged();
+    public Builder setId(opi_api.common.v1.ObjectKey value) {
+      if (idBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        onChanged();
+      } else {
+        idBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public Builder setId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (idBuilder_ == null) {
+        id_ = builderForValue.build();
+        onChanged();
+      } else {
+        idBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
+      if (idBuilder_ == null) {
+        if (id_ != null) {
+          id_ =
+            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
+        } else {
+          id_ = value;
+        }
+        onChanged();
+      } else {
+        idBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      */
     public Builder clearId() {
-      
-      id_ = 0L;
-      onChanged();
+      if (idBuilder_ == null) {
+        id_ = null;
+        onChanged();
+      } else {
+        id_ = null;
+        idBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
+      
+      onChanged();
+      return getIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
+      if (idBuilder_ != null) {
+        return idBuilder_.getMessageOrBuilder();
+      } else {
+        return id_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getIdFieldBuilder() {
+      if (idBuilder_ == null) {
+        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getId(),
+                getParentForChildren(),
+                isClean());
+        id_ = null;
+      }
+      return idBuilder_;
     }
 
     private opi_api.storage.v1.NvmeControllerPciId pcieId_;

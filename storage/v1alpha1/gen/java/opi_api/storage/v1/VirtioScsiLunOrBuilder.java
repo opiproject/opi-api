@@ -8,16 +8,34 @@ public interface VirtioScsiLunOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
    * @return The id.
    */
-  long getId();
+  opi_api.common.v1.ObjectKey getId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
-   * <code>int64 controller_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * @return Whether the controllerId field is set.
+   */
+  boolean hasControllerId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
    * @return The controllerId.
    */
-  long getControllerId();
+  opi_api.common.v1.ObjectKey getControllerId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
 
   /**
    * <code>string bdev = 3;</code>
