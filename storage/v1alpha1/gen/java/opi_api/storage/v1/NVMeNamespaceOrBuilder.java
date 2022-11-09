@@ -8,228 +8,32 @@ public interface NVMeNamespaceOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+   * @return Whether the spec field is set.
    */
-  boolean hasId();
+  boolean hasSpec();
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+   * @return The spec.
    */
-  opi_api.common.v1.ObjectKey getId();
+  opi_api.storage.v1.NVMeNamespaceSpec getSpec();
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  opi_api.storage.v1.NVMeNamespaceSpecOrBuilder getSpecOrBuilder();
 
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+   * @return Whether the status field is set.
    */
-  boolean hasSubsystemId();
+  boolean hasStatus();
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return The subsystemId.
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+   * @return The status.
    */
-  opi_api.common.v1.ObjectKey getSubsystemId();
+  opi_api.storage.v1.NVMeNamespaceStatus getStatus();
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
-
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return Whether the controllerId field is set.
-   */
-  boolean hasControllerId();
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return The controllerId.
-   */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
-
-  /**
-   * <pre>
-   * NSID present to the host by the NVMe PCIe controller.
-   * If not provided, then the controller will assign an unused NSID
-   * within the max namespace range - auto assigned nsid may not work
-   * for live migration
-   * </pre>
-   *
-   * <code>int32 host_nsid = 4;</code>
-   * @return The hostNsid.
-   */
-  int getHostNsid();
-
-  /**
-   * <pre>
-   * Block size in bytes, must be power of 2 and must be less than the max
-   * io size supported. Typically tested values are 512, and 4k.
-   * </pre>
-   *
-   * <code>int64 block_size = 5;</code>
-   * @return The blockSize.
-   */
-  long getBlockSize();
-
-  /**
-   * <pre>
-   * Size/Capacity of the namespace in blocks, size in bytes will
-   * be BlockSize x NumBlocks.
-   * </pre>
-   *
-   * <code>int64 blocks_count = 6;</code>
-   * @return The blocksCount.
-   */
-  long getBlocksCount();
-
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>string nguid = 7;</code>
-   * @return The nguid.
-   */
-  java.lang.String getNguid();
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>string nguid = 7;</code>
-   * @return The bytes for nguid.
-   */
-  com.google.protobuf.ByteString
-      getNguidBytes();
-
-  /**
-   * <pre>
-   * 64bit Extended unique identifier for the namespace
-   * mandatory if guid is not specified
-   * </pre>
-   *
-   * <code>int64 eui64 = 8;</code>
-   * @return The eui64.
-   */
-  long getEui64();
-
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   * @return Whether the uuid field is set.
-   */
-  boolean hasUuid();
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   * @return The uuid.
-   */
-  opi_api.common.v1.Uuid getUuid();
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   */
-  opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
-
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   * @return Whether the volumeId field is set.
-   */
-  boolean hasVolumeId();
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   * @return The volumeId.
-   */
-  opi_api.common.v1.ObjectKey getVolumeId();
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
-
-  /**
-   * <pre>
-   * optimal write size hint to host driver. Host IO stack may use
-   * this to regulate IO size. Must be a multiple of the preferred write
-   * granularity. Must not exceed the controller maximum IO size value
-   * configured in the nvme agent config file.
-   * </pre>
-   *
-   * <code>int32 optimal_write_size = 11;</code>
-   * @return The optimalWriteSize.
-   */
-  int getOptimalWriteSize();
-
-  /**
-   * <pre>
-   * preferred write granularity hint to the host driver. Host IO
-   * stack may use this to align IO sizes to the write granularity for
-   * optimum performance.
-   * </pre>
-   *
-   * <code>int32 pref_write_granularity = 12;</code>
-   * @return The prefWriteGranularity.
-   */
-  int getPrefWriteGranularity();
+  opi_api.storage.v1.NVMeNamespaceStatusOrBuilder getStatusOrBuilder();
 }

@@ -16,11 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NVMeSubsystem() {
-    nqn_ = "";
-    serialNumber_ = "";
-    modelNumber_ = "";
-    firmwareRevision_ = "";
-    fruGuid_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -54,50 +49,29 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
+            opi_api.storage.v1.NVMeSubsystemSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
             }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            spec_ = input.readMessage(opi_api.storage.v1.NVMeSubsystemSpec.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            opi_api.storage.v1.NVMeSubsystemStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
+            }
+            status_ = input.readMessage(opi_api.storage.v1.NVMeSubsystemStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
 
-            nqn_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            serialNumber_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            modelNumber_ = s;
-            break;
-          }
-          case 40: {
-
-            maxNamespaces_ = input.readInt64();
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            firmwareRevision_ = s;
-            break;
-          }
-          case 58: {
-
-            fruGuid_ = input.readBytes();
             break;
           }
           default: {
@@ -132,260 +106,56 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NVMeSubsystem.class, opi_api.storage.v1.NVMeSubsystem.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int SPEC_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMeSubsystemSpec spec_;
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public boolean hasSpec() {
+    return spec_ != null;
   }
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+   * @return The spec.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+  public opi_api.storage.v1.NVMeSubsystemSpec getSpec() {
+    return spec_ == null ? opi_api.storage.v1.NVMeSubsystemSpec.getDefaultInstance() : spec_;
   }
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public opi_api.storage.v1.NVMeSubsystemSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int NQN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nqn_;
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NVMeSubsystemStatus status_;
   /**
-   * <pre>
-   * NVMe subsystem NQN to which the controller belongs
-   * Refer to the NQN format in the NVMe base specifications, must not
-   * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-   * </pre>
-   *
-   * <code>string nqn = 2;</code>
-   * @return The nqn.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public java.lang.String getNqn() {
-    java.lang.Object ref = nqn_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nqn_ = s;
-      return s;
-    }
+  public boolean hasStatus() {
+    return status_ != null;
   }
   /**
-   * <pre>
-   * NVMe subsystem NQN to which the controller belongs
-   * Refer to the NQN format in the NVMe base specifications, must not
-   * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-   * </pre>
-   *
-   * <code>string nqn = 2;</code>
-   * @return The bytes for nqn.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNqnBytes() {
-    java.lang.Object ref = nqn_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nqn_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SERIAL_NUMBER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serialNumber_;
-  /**
-   * <pre>
-   * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string serial_number = 3;</code>
-   * @return The serialNumber.
-   */
-  @java.lang.Override
-  public java.lang.String getSerialNumber() {
-    java.lang.Object ref = serialNumber_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      serialNumber_ = s;
-      return s;
-    }
+  public opi_api.storage.v1.NVMeSubsystemStatus getStatus() {
+    return status_ == null ? opi_api.storage.v1.NVMeSubsystemStatus.getDefaultInstance() : status_;
   }
   /**
-   * <pre>
-   * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string serial_number = 3;</code>
-   * @return The bytes for serialNumber.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSerialNumberBytes() {
-    java.lang.Object ref = serialNumber_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      serialNumber_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int MODEL_NUMBER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object modelNumber_;
-  /**
-   * <pre>
-   * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string model_number = 4;</code>
-   * @return The modelNumber.
-   */
-  @java.lang.Override
-  public java.lang.String getModelNumber() {
-    java.lang.Object ref = modelNumber_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      modelNumber_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string model_number = 4;</code>
-   * @return The bytes for modelNumber.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getModelNumberBytes() {
-    java.lang.Object ref = modelNumber_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      modelNumber_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int MAX_NAMESPACES_FIELD_NUMBER = 5;
-  private long maxNamespaces_;
-  /**
-   * <pre>
-   * maximum namespaces within a subsystem
-   * </pre>
-   *
-   * <code>int64 max_namespaces = 5;</code>
-   * @return The maxNamespaces.
-   */
-  @java.lang.Override
-  public long getMaxNamespaces() {
-    return maxNamespaces_;
-  }
-
-  public static final int FIRMWARE_REVISION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object firmwareRevision_;
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 6;</code>
-   * @return The firmwareRevision.
-   */
-  @java.lang.Override
-  public java.lang.String getFirmwareRevision() {
-    java.lang.Object ref = firmwareRevision_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      firmwareRevision_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 6;</code>
-   * @return The bytes for firmwareRevision.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFirmwareRevisionBytes() {
-    java.lang.Object ref = firmwareRevision_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      firmwareRevision_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FRU_GUID_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString fruGuid_;
-  /**
-   * <pre>
-   * FRU identfier, 16bytes opaque identity for the type of unit
-   * </pre>
-   *
-   * <code>bytes fru_guid = 7;</code>
-   * @return The fruGuid.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getFruGuid() {
-    return fruGuid_;
+  public opi_api.storage.v1.NVMeSubsystemStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,26 +172,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (spec_ != null) {
+      output.writeMessage(1, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nqn_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serialNumber_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelNumber_);
-    }
-    if (maxNamespaces_ != 0L) {
-      output.writeInt64(5, maxNamespaces_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, firmwareRevision_);
-    }
-    if (!fruGuid_.isEmpty()) {
-      output.writeBytes(7, fruGuid_);
+    if (status_ != null) {
+      output.writeMessage(2, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -432,29 +187,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+        .computeMessageSize(1, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nqn_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serialNumber_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelNumber_);
-    }
-    if (maxNamespaces_ != 0L) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, maxNamespaces_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, firmwareRevision_);
-    }
-    if (!fruGuid_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(7, fruGuid_);
+        .computeMessageSize(2, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -471,23 +210,16 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMeSubsystem other = (opi_api.storage.v1.NVMeSubsystem) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
     }
-    if (!getNqn()
-        .equals(other.getNqn())) return false;
-    if (!getSerialNumber()
-        .equals(other.getSerialNumber())) return false;
-    if (!getModelNumber()
-        .equals(other.getModelNumber())) return false;
-    if (getMaxNamespaces()
-        != other.getMaxNamespaces()) return false;
-    if (!getFirmwareRevision()
-        .equals(other.getFirmwareRevision())) return false;
-    if (!getFruGuid()
-        .equals(other.getFruGuid())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -499,23 +231,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
     }
-    hash = (37 * hash) + NQN_FIELD_NUMBER;
-    hash = (53 * hash) + getNqn().hashCode();
-    hash = (37 * hash) + SERIAL_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getSerialNumber().hashCode();
-    hash = (37 * hash) + MODEL_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getModelNumber().hashCode();
-    hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getMaxNamespaces());
-    hash = (37 * hash) + FIRMWARE_REVISION_FIELD_NUMBER;
-    hash = (53 * hash) + getFirmwareRevision().hashCode();
-    hash = (37 * hash) + FRU_GUID_FIELD_NUMBER;
-    hash = (53 * hash) + getFruGuid().hashCode();
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -649,24 +372,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
+      if (specBuilder_ == null) {
+        spec_ = null;
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
-      nqn_ = "";
-
-      serialNumber_ = "";
-
-      modelNumber_ = "";
-
-      maxNamespaces_ = 0L;
-
-      firmwareRevision_ = "";
-
-      fruGuid_ = com.google.protobuf.ByteString.EMPTY;
-
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -693,17 +410,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMeSubsystem buildPartial() {
       opi_api.storage.v1.NVMeSubsystem result = new opi_api.storage.v1.NVMeSubsystem(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
       } else {
-        result.id_ = idBuilder_.build();
+        result.spec_ = specBuilder_.build();
       }
-      result.nqn_ = nqn_;
-      result.serialNumber_ = serialNumber_;
-      result.modelNumber_ = modelNumber_;
-      result.maxNamespaces_ = maxNamespaces_;
-      result.firmwareRevision_ = firmwareRevision_;
-      result.fruGuid_ = fruGuid_;
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -752,30 +468,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMeSubsystem other) {
       if (other == opi_api.storage.v1.NVMeSubsystem.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (!other.getNqn().isEmpty()) {
-        nqn_ = other.nqn_;
-        onChanged();
-      }
-      if (!other.getSerialNumber().isEmpty()) {
-        serialNumber_ = other.serialNumber_;
-        onChanged();
-      }
-      if (!other.getModelNumber().isEmpty()) {
-        modelNumber_ = other.modelNumber_;
-        onChanged();
-      }
-      if (other.getMaxNamespaces() != 0L) {
-        setMaxNamespaces(other.getMaxNamespaces());
-      }
-      if (!other.getFirmwareRevision().isEmpty()) {
-        firmwareRevision_ = other.firmwareRevision_;
-        onChanged();
-      }
-      if (other.getFruGuid() != com.google.protobuf.ByteString.EMPTY) {
-        setFruGuid(other.getFruGuid());
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -806,642 +503,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
+    private opi_api.storage.v1.NVMeSubsystemSpec spec_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+        opi_api.storage.v1.NVMeSubsystemSpec, opi_api.storage.v1.NVMeSubsystemSpec.Builder, opi_api.storage.v1.NVMeSubsystemSpecOrBuilder> specBuilder_;
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+     * @return Whether the spec field is set.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+     * @return The spec.
      */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public opi_api.storage.v1.NVMeSubsystemSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.storage.v1.NVMeSubsystemSpec.getDefaultInstance() : spec_;
       } else {
-        return idBuilder_.getMessage();
+        return specBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
+    public Builder setSpec(opi_api.storage.v1.NVMeSubsystemSpec value) {
+      if (specBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        id_ = value;
+        spec_ = value;
         onChanged();
       } else {
-        idBuilder_.setMessage(value);
+        specBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
+    public Builder setSpec(
+        opi_api.storage.v1.NVMeSubsystemSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
         onChanged();
       } else {
-        idBuilder_.setMessage(builderForValue.build());
+        specBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
+    public Builder mergeSpec(opi_api.storage.v1.NVMeSubsystemSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.storage.v1.NVMeSubsystemSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
         } else {
-          id_ = value;
+          spec_ = value;
         }
         onChanged();
       } else {
-        idBuilder_.mergeFrom(value);
+        specBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
         onChanged();
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
+    public opi_api.storage.v1.NVMeSubsystemSpec.Builder getSpecBuilder() {
       
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return getSpecFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeSubsystemSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
       } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+        return spec_ == null ?
+            opi_api.storage.v1.NVMeSubsystemSpec.getDefaultInstance() : spec_;
       }
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
+        opi_api.storage.v1.NVMeSubsystemSpec, opi_api.storage.v1.NVMeSubsystemSpec.Builder, opi_api.storage.v1.NVMeSubsystemSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeSubsystemSpec, opi_api.storage.v1.NVMeSubsystemSpec.Builder, opi_api.storage.v1.NVMeSubsystemSpecOrBuilder>(
+                getSpec(),
                 getParentForChildren(),
                 isClean());
-        id_ = null;
+        spec_ = null;
       }
-      return idBuilder_;
+      return specBuilder_;
     }
 
-    private java.lang.Object nqn_ = "";
+    private opi_api.storage.v1.NVMeSubsystemStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.NVMeSubsystemStatus, opi_api.storage.v1.NVMeSubsystemStatus.Builder, opi_api.storage.v1.NVMeSubsystemStatusOrBuilder> statusBuilder_;
     /**
-     * <pre>
-     * NVMe subsystem NQN to which the controller belongs
-     * Refer to the NQN format in the NVMe base specifications, must not
-     * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-     * </pre>
-     *
-     * <code>string nqn = 2;</code>
-     * @return The nqn.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+     * @return Whether the status field is set.
      */
-    public java.lang.String getNqn() {
-      java.lang.Object ref = nqn_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nqn_ = s;
-        return s;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+     * @return The status.
+     */
+    public opi_api.storage.v1.NVMeSubsystemStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.storage.v1.NVMeSubsystemStatus.getDefaultInstance() : status_;
       } else {
-        return (java.lang.String) ref;
+        return statusBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * NVMe subsystem NQN to which the controller belongs
-     * Refer to the NQN format in the NVMe base specifications, must not
-     * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-     * </pre>
-     *
-     * <code>string nqn = 2;</code>
-     * @return The bytes for nqn.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNqnBytes() {
-      java.lang.Object ref = nqn_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nqn_ = b;
-        return b;
+    public Builder setStatus(opi_api.storage.v1.NVMeSubsystemStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        statusBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <pre>
-     * NVMe subsystem NQN to which the controller belongs
-     * Refer to the NQN format in the NVMe base specifications, must not
-     * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-     * </pre>
-     *
-     * <code>string nqn = 2;</code>
-     * @param value The nqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNqn(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      nqn_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * NVMe subsystem NQN to which the controller belongs
-     * Refer to the NQN format in the NVMe base specifications, must not
-     * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-     * </pre>
-     *
-     * <code>string nqn = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNqn() {
-      
-      nqn_ = getDefaultInstance().getNqn();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * NVMe subsystem NQN to which the controller belongs
-     * Refer to the NQN format in the NVMe base specifications, must not
-     * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-     * </pre>
-     *
-     * <code>string nqn = 2;</code>
-     * @param value The bytes for nqn to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNqnBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      nqn_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object serialNumber_ = "";
+      return this;
+    }
     /**
-     * <pre>
-     * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string serial_number = 3;</code>
-     * @return The serialNumber.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
      */
-    public java.lang.String getSerialNumber() {
-      java.lang.Object ref = serialNumber_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serialNumber_ = s;
-        return s;
+    public Builder setStatus(
+        opi_api.storage.v1.NVMeSubsystemStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        statusBuilder_.setMessage(builderForValue.build());
       }
-    }
-    /**
-     * <pre>
-     * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string serial_number = 3;</code>
-     * @return The bytes for serialNumber.
-     */
-    public com.google.protobuf.ByteString
-        getSerialNumberBytes() {
-      java.lang.Object ref = serialNumber_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serialNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string serial_number = 3;</code>
-     * @param value The serialNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSerialNumber(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      serialNumber_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string serial_number = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSerialNumber() {
-      
-      serialNumber_ = getDefaultInstance().getSerialNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string serial_number = 3;</code>
-     * @param value The bytes for serialNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSerialNumberBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      serialNumber_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object modelNumber_ = "";
+      return this;
+    }
     /**
-     * <pre>
-     * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string model_number = 4;</code>
-     * @return The modelNumber.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
      */
-    public java.lang.String getModelNumber() {
-      java.lang.Object ref = modelNumber_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        modelNumber_ = s;
-        return s;
+    public Builder mergeStatus(opi_api.storage.v1.NVMeSubsystemStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.storage.v1.NVMeSubsystemStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        statusBuilder_.mergeFrom(value);
       }
-    }
-    /**
-     * <pre>
-     * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string model_number = 4;</code>
-     * @return The bytes for modelNumber.
-     */
-    public com.google.protobuf.ByteString
-        getModelNumberBytes() {
-      java.lang.Object ref = modelNumber_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        modelNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string model_number = 4;</code>
-     * @param value The modelNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModelNumber(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      modelNumber_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string model_number = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearModelNumber() {
-      
-      modelNumber_ = getDefaultInstance().getModelNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-     * </pre>
-     *
-     * <code>string model_number = 4;</code>
-     * @param value The bytes for modelNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModelNumberBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      modelNumber_ = value;
-      onChanged();
-      return this;
-    }
 
-    private long maxNamespaces_ ;
-    /**
-     * <pre>
-     * maximum namespaces within a subsystem
-     * </pre>
-     *
-     * <code>int64 max_namespaces = 5;</code>
-     * @return The maxNamespaces.
-     */
-    @java.lang.Override
-    public long getMaxNamespaces() {
-      return maxNamespaces_;
-    }
-    /**
-     * <pre>
-     * maximum namespaces within a subsystem
-     * </pre>
-     *
-     * <code>int64 max_namespaces = 5;</code>
-     * @param value The maxNamespaces to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxNamespaces(long value) {
-      
-      maxNamespaces_ = value;
-      onChanged();
       return this;
     }
     /**
-     * <pre>
-     * maximum namespaces within a subsystem
-     * </pre>
-     *
-     * <code>int64 max_namespaces = 5;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
      */
-    public Builder clearMaxNamespaces() {
-      
-      maxNamespaces_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object firmwareRevision_ = "";
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 6;</code>
-     * @return The firmwareRevision.
-     */
-    public java.lang.String getFirmwareRevision() {
-      java.lang.Object ref = firmwareRevision_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        firmwareRevision_ = s;
-        return s;
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+     */
+    public opi_api.storage.v1.NVMeSubsystemStatus.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+     */
+    public opi_api.storage.v1.NVMeSubsystemStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            opi_api.storage.v1.NVMeSubsystemStatus.getDefaultInstance() : status_;
       }
     }
     /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 6;</code>
-     * @return The bytes for firmwareRevision.
+     * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getFirmwareRevisionBytes() {
-      java.lang.Object ref = firmwareRevision_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        firmwareRevision_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.NVMeSubsystemStatus, opi_api.storage.v1.NVMeSubsystemStatus.Builder, opi_api.storage.v1.NVMeSubsystemStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeSubsystemStatus, opi_api.storage.v1.NVMeSubsystemStatus.Builder, opi_api.storage.v1.NVMeSubsystemStatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
       }
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 6;</code>
-     * @param value The firmwareRevision to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirmwareRevision(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      firmwareRevision_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFirmwareRevision() {
-      
-      firmwareRevision_ = getDefaultInstance().getFirmwareRevision();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 6;</code>
-     * @param value The bytes for firmwareRevision to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirmwareRevisionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      firmwareRevision_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.ByteString fruGuid_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     * <pre>
-     * FRU identfier, 16bytes opaque identity for the type of unit
-     * </pre>
-     *
-     * <code>bytes fru_guid = 7;</code>
-     * @return The fruGuid.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getFruGuid() {
-      return fruGuid_;
-    }
-    /**
-     * <pre>
-     * FRU identfier, 16bytes opaque identity for the type of unit
-     * </pre>
-     *
-     * <code>bytes fru_guid = 7;</code>
-     * @param value The fruGuid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFruGuid(com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      fruGuid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * FRU identfier, 16bytes opaque identity for the type of unit
-     * </pre>
-     *
-     * <code>bytes fru_guid = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFruGuid() {
-      
-      fruGuid_ = getDefaultInstance().getFruGuid();
-      onChanged();
-      return this;
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

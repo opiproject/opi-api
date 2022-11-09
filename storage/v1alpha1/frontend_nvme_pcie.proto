@@ -107,6 +107,11 @@ service FrontendNvmeService {
 }
 
 message NVMeSubsystem {
+  NVMeSubsystemSpec   spec   = 1;
+  NVMeSubsystemStatus status = 2;
+}
+
+message NVMeSubsystemSpec {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
 
@@ -123,15 +128,22 @@ message NVMeSubsystem {
 
     // maximum namespaces within a subsystem
     int64 max_namespaces = 5;
+}
 
+message NVMeSubsystemStatus {
     // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-    string firmware_revision  = 6;
+    string firmware_revision  = 1;
 
     // FRU identfier, 16bytes opaque identity for the type of unit
-    bytes fru_guid = 7;
+    bytes fru_guid = 2;
 }
 
 message NVMeController {
+  NVMeControllerSpec   spec   = 1;
+  NVMeControllerStatus status = 2;
+}
+
+message NVMeControllerSpec {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
 
@@ -166,7 +178,17 @@ message NVMeController {
     int32 max_namespaces = 9;
 }
 
+message NVMeControllerStatus {
+    // Device is in use by host nvme driver
+    bool   active = 1;
+}
+
 message NVMeNamespace {
+  NVMeNamespaceSpec   spec   = 1;
+  NVMeNamespaceStatus status = 2;
+}
+
+message NVMeNamespaceSpec {
     // namespace's unique key
     common.v1.ObjectKey id = 1;
 
@@ -213,6 +235,14 @@ message NVMeNamespace {
     // stack may use this to align IO sizes to the write granularity for
     // optimum performance.
     int32 pref_write_granularity= 12;
+}
+
+message NVMeNamespaceStatus {
+    // config state of the namespace object, (enabled, disable, deleting)
+    NVMeNamespacePciState      pci_state       = 1;
+
+    // Operational state of the namespace object, (connected, disconnected)
+    NVMeNamespacePciOperState  pci_oper_state   = 2;
 }
 
 message NVMeSubsystemCreateRequest {
@@ -312,5 +342,27 @@ message NVMeNamespaceStatsRequest {
 message NVMeNamespaceStatsResponse {
     common.v1.ObjectKey id = 1;
     string stats = 2;
+}
+
+// Namespace  Administrative States
+enum NVMeNamespacePciState {
+    // unspecified
+    NV_ME_NAMESPACE_PCI_STATE_UNSPECIFIED = 0;
+    // namespace disabled state
+    NVME_NAMESPACE_PCI_STATE_DISABLED    = 1;
+    // namespace enabled state
+    NVME_NAMESPACE_PCI_STATE_ENABLED     = 2;
+    // namespace being deleted
+    NVME_NAMESPACE_PCI_STATE_DELETING    = 3;
+}
+
+// Namespace PCIe operational states
+enum NVMeNamespacePciOperState {
+    // unspecified
+    NV_ME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED = 0;
+    // namespace is online and operational
+    NVME_NAMESPACE_PCI_OPER_STATE_ONLINE = 1;
+    // namespace is offline
+    NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE= 2;
 }
 

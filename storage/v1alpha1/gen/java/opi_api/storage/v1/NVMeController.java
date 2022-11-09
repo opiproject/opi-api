@@ -49,72 +49,29 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
+            opi_api.storage.v1.NVMeControllerSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
             }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            spec_ = input.readMessage(opi_api.storage.v1.NVMeControllerSpec.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
             }
 
             break;
           }
-          case 16: {
-
-            nvmeControllerId_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subsystemId_ != null) {
-              subBuilder = subsystemId_.toBuilder();
+          case 18: {
+            opi_api.storage.v1.NVMeControllerStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
             }
-            subsystemId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            status_ = input.readMessage(opi_api.storage.v1.NVMeControllerStatus.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(subsystemId_);
-              subsystemId_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 34: {
-            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
-            if (pcieId_ != null) {
-              subBuilder = pcieId_.toBuilder();
-            }
-            pcieId_ = input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pcieId_);
-              pcieId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 40: {
-
-            maxNsq_ = input.readInt32();
-            break;
-          }
-          case 48: {
-
-            maxNcq_ = input.readInt32();
-            break;
-          }
-          case 56: {
-
-            sqes_ = input.readInt32();
-            break;
-          }
-          case 64: {
-
-            cqes_ = input.readInt32();
-            break;
-          }
-          case 72: {
-
-            maxNamespaces_ = input.readInt32();
             break;
           }
           default: {
@@ -149,214 +106,56 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NVMeController.class, opi_api.storage.v1.NVMeController.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int SPEC_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMeControllerSpec spec_;
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public boolean hasSpec() {
+    return spec_ != null;
   }
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
+   * @return The spec.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+  public opi_api.storage.v1.NVMeControllerSpec getSpec() {
+    return spec_ == null ? opi_api.storage.v1.NVMeControllerSpec.getDefaultInstance() : spec_;
   }
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public opi_api.storage.v1.NVMeControllerSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 2;
-  private int nvmeControllerId_;
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NVMeControllerStatus status_;
   /**
-   * <pre>
-   * subsystem controller id range: 0 to 65535.
-   * must not be reused under the same subsystem
-   * </pre>
-   *
-   * <code>int32 nvme_controller_id = 2;</code>
-   * @return The nvmeControllerId.
+   * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public int getNvmeControllerId() {
-    return nvmeControllerId_;
-  }
-
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey subsystemId_;
-  /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
-   * @return Whether the subsystemId field is set.
-   */
-  @java.lang.Override
-  public boolean hasSubsystemId() {
-    return subsystemId_ != null;
+  public boolean hasStatus() {
+    return status_ != null;
   }
   /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
-   * @return The subsystemId.
+   * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubsystemId() {
-    return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+  public opi_api.storage.v1.NVMeControllerStatus getStatus() {
+    return status_ == null ? opi_api.storage.v1.NVMeControllerStatus.getDefaultInstance() : status_;
   }
   /**
-   * <pre>
-   * subsystem information
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-    return getSubsystemId();
-  }
-
-  public static final int PCIE_ID_FIELD_NUMBER = 4;
-  private opi_api.storage.v1.PciEndpoint pcieId_;
-  /**
-   * <pre>
-   * xPU's PCI ID for the controller
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-   * @return Whether the pcieId field is set.
-   */
-  @java.lang.Override
-  public boolean hasPcieId() {
-    return pcieId_ != null;
-  }
-  /**
-   * <pre>
-   * xPU's PCI ID for the controller
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-   * @return The pcieId.
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.PciEndpoint getPcieId() {
-    return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-  }
-  /**
-   * <pre>
-   * xPU's PCI ID for the controller
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-    return getPcieId();
-  }
-
-  public static final int MAX_NSQ_FIELD_NUMBER = 5;
-  private int maxNsq_;
-  /**
-   * <pre>
-   * maximum number of host submission queues allowed.
-   * If not set, the xPU will provide a default.
-   * </pre>
-   *
-   * <code>int32 max_nsq = 5;</code>
-   * @return The maxNsq.
-   */
-  @java.lang.Override
-  public int getMaxNsq() {
-    return maxNsq_;
-  }
-
-  public static final int MAX_NCQ_FIELD_NUMBER = 6;
-  private int maxNcq_;
-  /**
-   * <pre>
-   * maximum number of host completion queues allowed.
-   * If not set, the xPU will provide a default.
-   * </pre>
-   *
-   * <code>int32 max_ncq = 6;</code>
-   * @return The maxNcq.
-   */
-  @java.lang.Override
-  public int getMaxNcq() {
-    return maxNcq_;
-  }
-
-  public static final int SQES_FIELD_NUMBER = 7;
-  private int sqes_;
-  /**
-   * <pre>
-   * maximum number of submission queue entries per submission queue, as a power of 2.
-   * default value as per spec is 6
-   * </pre>
-   *
-   * <code>int32 sqes = 7;</code>
-   * @return The sqes.
-   */
-  @java.lang.Override
-  public int getSqes() {
-    return sqes_;
-  }
-
-  public static final int CQES_FIELD_NUMBER = 8;
-  private int cqes_;
-  /**
-   * <pre>
-   * maximum number of completion queue entries per completion queue, as a power of 2.
-   * default value as per spec is 4
-   * </pre>
-   *
-   * <code>int32 cqes = 8;</code>
-   * @return The cqes.
-   */
-  @java.lang.Override
-  public int getCqes() {
-    return cqes_;
-  }
-
-  public static final int MAX_NAMESPACES_FIELD_NUMBER = 9;
-  private int maxNamespaces_;
-  /**
-   * <pre>
-   * maximum Number of namespaces that will be provisioned under
-   * the controller.
-   * </pre>
-   *
-   * <code>int32 max_namespaces = 9;</code>
-   * @return The maxNamespaces.
-   */
-  @java.lang.Override
-  public int getMaxNamespaces() {
-    return maxNamespaces_;
+  public opi_api.storage.v1.NVMeControllerStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -373,32 +172,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (spec_ != null) {
+      output.writeMessage(1, getSpec());
     }
-    if (nvmeControllerId_ != 0) {
-      output.writeInt32(2, nvmeControllerId_);
-    }
-    if (subsystemId_ != null) {
-      output.writeMessage(3, getSubsystemId());
-    }
-    if (pcieId_ != null) {
-      output.writeMessage(4, getPcieId());
-    }
-    if (maxNsq_ != 0) {
-      output.writeInt32(5, maxNsq_);
-    }
-    if (maxNcq_ != 0) {
-      output.writeInt32(6, maxNcq_);
-    }
-    if (sqes_ != 0) {
-      output.writeInt32(7, sqes_);
-    }
-    if (cqes_ != 0) {
-      output.writeInt32(8, cqes_);
-    }
-    if (maxNamespaces_ != 0) {
-      output.writeInt32(9, maxNamespaces_);
+    if (status_ != null) {
+      output.writeMessage(2, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -409,41 +187,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+        .computeMessageSize(1, getSpec());
     }
-    if (nvmeControllerId_ != 0) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, nvmeControllerId_);
-    }
-    if (subsystemId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getSubsystemId());
-    }
-    if (pcieId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getPcieId());
-    }
-    if (maxNsq_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, maxNsq_);
-    }
-    if (maxNcq_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, maxNcq_);
-    }
-    if (sqes_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, sqes_);
-    }
-    if (cqes_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, cqes_);
-    }
-    if (maxNamespaces_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, maxNamespaces_);
+        .computeMessageSize(2, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,33 +210,16 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMeController other = (opi_api.storage.v1.NVMeController) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
     }
-    if (getNvmeControllerId()
-        != other.getNvmeControllerId()) return false;
-    if (hasSubsystemId() != other.hasSubsystemId()) return false;
-    if (hasSubsystemId()) {
-      if (!getSubsystemId()
-          .equals(other.getSubsystemId())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
-    if (hasPcieId() != other.hasPcieId()) return false;
-    if (hasPcieId()) {
-      if (!getPcieId()
-          .equals(other.getPcieId())) return false;
-    }
-    if (getMaxNsq()
-        != other.getMaxNsq()) return false;
-    if (getMaxNcq()
-        != other.getMaxNcq()) return false;
-    if (getSqes()
-        != other.getSqes()) return false;
-    if (getCqes()
-        != other.getCqes()) return false;
-    if (getMaxNamespaces()
-        != other.getMaxNamespaces()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -498,30 +231,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
     }
-    hash = (37 * hash) + NVME_CONTROLLER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getNvmeControllerId();
-    if (hasSubsystemId()) {
-      hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystemId().hashCode();
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
-    if (hasPcieId()) {
-      hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPcieId().hashCode();
-    }
-    hash = (37 * hash) + MAX_NSQ_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxNsq();
-    hash = (37 * hash) + MAX_NCQ_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxNcq();
-    hash = (37 * hash) + SQES_FIELD_NUMBER;
-    hash = (53 * hash) + getSqes();
-    hash = (37 * hash) + CQES_FIELD_NUMBER;
-    hash = (53 * hash) + getCqes();
-    hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxNamespaces();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -655,36 +372,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
+      if (specBuilder_ == null) {
+        spec_ = null;
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
-      nvmeControllerId_ = 0;
-
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
+      if (statusBuilder_ == null) {
+        status_ = null;
       } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
+        status_ = null;
+        statusBuilder_ = null;
       }
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-      } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
-      }
-      maxNsq_ = 0;
-
-      maxNcq_ = 0;
-
-      sqes_ = 0;
-
-      cqes_ = 0;
-
-      maxNamespaces_ = 0;
-
       return this;
     }
 
@@ -711,27 +410,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMeController buildPartial() {
       opi_api.storage.v1.NVMeController result = new opi_api.storage.v1.NVMeController(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
       } else {
-        result.id_ = idBuilder_.build();
+        result.spec_ = specBuilder_.build();
       }
-      result.nvmeControllerId_ = nvmeControllerId_;
-      if (subsystemIdBuilder_ == null) {
-        result.subsystemId_ = subsystemId_;
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
       } else {
-        result.subsystemId_ = subsystemIdBuilder_.build();
+        result.status_ = statusBuilder_.build();
       }
-      if (pcieIdBuilder_ == null) {
-        result.pcieId_ = pcieId_;
-      } else {
-        result.pcieId_ = pcieIdBuilder_.build();
-      }
-      result.maxNsq_ = maxNsq_;
-      result.maxNcq_ = maxNcq_;
-      result.sqes_ = sqes_;
-      result.cqes_ = cqes_;
-      result.maxNamespaces_ = maxNamespaces_;
       onBuilt();
       return result;
     }
@@ -780,32 +468,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMeController other) {
       if (other == opi_api.storage.v1.NVMeController.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (other.getNvmeControllerId() != 0) {
-        setNvmeControllerId(other.getNvmeControllerId());
-      }
-      if (other.hasSubsystemId()) {
-        mergeSubsystemId(other.getSubsystemId());
-      }
-      if (other.hasPcieId()) {
-        mergePcieId(other.getPcieId());
-      }
-      if (other.getMaxNsq() != 0) {
-        setMaxNsq(other.getMaxNsq());
-      }
-      if (other.getMaxNcq() != 0) {
-        setMaxNcq(other.getMaxNcq());
-      }
-      if (other.getSqes() != 0) {
-        setSqes(other.getSqes());
-      }
-      if (other.getCqes() != 0) {
-        setCqes(other.getCqes());
-      }
-      if (other.getMaxNamespaces() != 0) {
-        setMaxNamespaces(other.getMaxNamespaces());
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -836,745 +503,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
+    private opi_api.storage.v1.NVMeControllerSpec spec_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+        opi_api.storage.v1.NVMeControllerSpec, opi_api.storage.v1.NVMeControllerSpec.Builder, opi_api.storage.v1.NVMeControllerSpecOrBuilder> specBuilder_;
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
+     * @return Whether the spec field is set.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
+     * @return The spec.
      */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public opi_api.storage.v1.NVMeControllerSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.storage.v1.NVMeControllerSpec.getDefaultInstance() : spec_;
       } else {
-        return idBuilder_.getMessage();
+        return specBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
+    public Builder setSpec(opi_api.storage.v1.NVMeControllerSpec value) {
+      if (specBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        id_ = value;
+        spec_ = value;
         onChanged();
       } else {
-        idBuilder_.setMessage(value);
+        specBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
+    public Builder setSpec(
+        opi_api.storage.v1.NVMeControllerSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
         onChanged();
       } else {
-        idBuilder_.setMessage(builderForValue.build());
+        specBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
+    public Builder mergeSpec(opi_api.storage.v1.NVMeControllerSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.storage.v1.NVMeControllerSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
         } else {
-          id_ = value;
+          spec_ = value;
         }
         onChanged();
       } else {
-        idBuilder_.mergeFrom(value);
+        specBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
         onChanged();
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
+    public opi_api.storage.v1.NVMeControllerSpec.Builder getSpecBuilder() {
       
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return getSpecFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeControllerSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
       } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+        return spec_ == null ?
+            opi_api.storage.v1.NVMeControllerSpec.getDefaultInstance() : spec_;
       }
     }
     /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerSpec spec = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
+        opi_api.storage.v1.NVMeControllerSpec, opi_api.storage.v1.NVMeControllerSpec.Builder, opi_api.storage.v1.NVMeControllerSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeControllerSpec, opi_api.storage.v1.NVMeControllerSpec.Builder, opi_api.storage.v1.NVMeControllerSpecOrBuilder>(
+                getSpec(),
                 getParentForChildren(),
                 isClean());
-        id_ = null;
+        spec_ = null;
       }
-      return idBuilder_;
+      return specBuilder_;
     }
 
-    private int nvmeControllerId_ ;
-    /**
-     * <pre>
-     * subsystem controller id range: 0 to 65535.
-     * must not be reused under the same subsystem
-     * </pre>
-     *
-     * <code>int32 nvme_controller_id = 2;</code>
-     * @return The nvmeControllerId.
-     */
-    @java.lang.Override
-    public int getNvmeControllerId() {
-      return nvmeControllerId_;
-    }
-    /**
-     * <pre>
-     * subsystem controller id range: 0 to 65535.
-     * must not be reused under the same subsystem
-     * </pre>
-     *
-     * <code>int32 nvme_controller_id = 2;</code>
-     * @param value The nvmeControllerId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNvmeControllerId(int value) {
-      
-      nvmeControllerId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * subsystem controller id range: 0 to 65535.
-     * must not be reused under the same subsystem
-     * </pre>
-     *
-     * <code>int32 nvme_controller_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNvmeControllerId() {
-      
-      nvmeControllerId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private opi_api.common.v1.ObjectKey subsystemId_;
+    private opi_api.storage.v1.NVMeControllerStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subsystemIdBuilder_;
+        opi_api.storage.v1.NVMeControllerStatus, opi_api.storage.v1.NVMeControllerStatus.Builder, opi_api.storage.v1.NVMeControllerStatusOrBuilder> statusBuilder_;
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
-     * @return Whether the subsystemId field is set.
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
+     * @return Whether the status field is set.
      */
-    public boolean hasSubsystemId() {
-      return subsystemIdBuilder_ != null || subsystemId_ != null;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
-     * @return The subsystemId.
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
+     * @return The status.
      */
-    public opi_api.common.v1.ObjectKey getSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+    public opi_api.storage.v1.NVMeControllerStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.storage.v1.NVMeControllerStatus.getDefaultInstance() : status_;
       } else {
-        return subsystemIdBuilder_.getMessage();
+        return statusBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
+    public Builder setStatus(opi_api.storage.v1.NVMeControllerStatus value) {
+      if (statusBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        subsystemId_ = value;
+        status_ = value;
         onChanged();
       } else {
-        subsystemIdBuilder_.setMessage(value);
+        statusBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public Builder setSubsystemId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = builderForValue.build();
+    public Builder setStatus(
+        opi_api.storage.v1.NVMeControllerStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
         onChanged();
       } else {
-        subsystemIdBuilder_.setMessage(builderForValue.build());
+        statusBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (subsystemId_ != null) {
-          subsystemId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subsystemId_).mergeFrom(value).buildPartial();
+    public Builder mergeStatus(opi_api.storage.v1.NVMeControllerStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.storage.v1.NVMeControllerStatus.newBuilder(status_).mergeFrom(value).buildPartial();
         } else {
-          subsystemId_ = value;
+          status_ = value;
         }
         onChanged();
       } else {
-        subsystemIdBuilder_.mergeFrom(value);
+        statusBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public Builder clearSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
         onChanged();
       } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
+        status_ = null;
+        statusBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
+    public opi_api.storage.v1.NVMeControllerStatus.Builder getStatusBuilder() {
       
       onChanged();
-      return getSubsystemIdFieldBuilder().getBuilder();
+      return getStatusFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-      if (subsystemIdBuilder_ != null) {
-        return subsystemIdBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeControllerStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
       } else {
-        return subsystemId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+        return status_ == null ?
+            opi_api.storage.v1.NVMeControllerStatus.getDefaultInstance() : status_;
       }
     }
     /**
-     * <pre>
-     * subsystem information
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.storage.v1.NVMeControllerStatus status = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubsystemIdFieldBuilder() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubsystemId(),
+        opi_api.storage.v1.NVMeControllerStatus, opi_api.storage.v1.NVMeControllerStatus.Builder, opi_api.storage.v1.NVMeControllerStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeControllerStatus, opi_api.storage.v1.NVMeControllerStatus.Builder, opi_api.storage.v1.NVMeControllerStatusOrBuilder>(
+                getStatus(),
                 getParentForChildren(),
                 isClean());
-        subsystemId_ = null;
+        status_ = null;
       }
-      return subsystemIdBuilder_;
-    }
-
-    private opi_api.storage.v1.PciEndpoint pcieId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieIdBuilder_;
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     * @return Whether the pcieId field is set.
-     */
-    public boolean hasPcieId() {
-      return pcieIdBuilder_ != null || pcieId_ != null;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     * @return The pcieId.
-     */
-    public opi_api.storage.v1.PciEndpoint getPcieId() {
-      if (pcieIdBuilder_ == null) {
-        return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-      } else {
-        return pcieIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
-      if (pcieIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        pcieId_ = value;
-        onChanged();
-      } else {
-        pcieIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public Builder setPcieId(
-        opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = builderForValue.build();
-        onChanged();
-      } else {
-        pcieIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
-      if (pcieIdBuilder_ == null) {
-        if (pcieId_ != null) {
-          pcieId_ =
-            opi_api.storage.v1.PciEndpoint.newBuilder(pcieId_).mergeFrom(value).buildPartial();
-        } else {
-          pcieId_ = value;
-        }
-        onChanged();
-      } else {
-        pcieIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public Builder clearPcieId() {
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-        onChanged();
-      } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
-      
-      onChanged();
-      return getPcieIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-      if (pcieIdBuilder_ != null) {
-        return pcieIdBuilder_.getMessageOrBuilder();
-      } else {
-        return pcieId_ == null ?
-            opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-      }
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
-        getPcieIdFieldBuilder() {
-      if (pcieIdBuilder_ == null) {
-        pcieIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder>(
-                getPcieId(),
-                getParentForChildren(),
-                isClean());
-        pcieId_ = null;
-      }
-      return pcieIdBuilder_;
-    }
-
-    private int maxNsq_ ;
-    /**
-     * <pre>
-     * maximum number of host submission queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_nsq = 5;</code>
-     * @return The maxNsq.
-     */
-    @java.lang.Override
-    public int getMaxNsq() {
-      return maxNsq_;
-    }
-    /**
-     * <pre>
-     * maximum number of host submission queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_nsq = 5;</code>
-     * @param value The maxNsq to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxNsq(int value) {
-      
-      maxNsq_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * maximum number of host submission queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_nsq = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMaxNsq() {
-      
-      maxNsq_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int maxNcq_ ;
-    /**
-     * <pre>
-     * maximum number of host completion queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_ncq = 6;</code>
-     * @return The maxNcq.
-     */
-    @java.lang.Override
-    public int getMaxNcq() {
-      return maxNcq_;
-    }
-    /**
-     * <pre>
-     * maximum number of host completion queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_ncq = 6;</code>
-     * @param value The maxNcq to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxNcq(int value) {
-      
-      maxNcq_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * maximum number of host completion queues allowed.
-     * If not set, the xPU will provide a default.
-     * </pre>
-     *
-     * <code>int32 max_ncq = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMaxNcq() {
-      
-      maxNcq_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int sqes_ ;
-    /**
-     * <pre>
-     * maximum number of submission queue entries per submission queue, as a power of 2.
-     * default value as per spec is 6
-     * </pre>
-     *
-     * <code>int32 sqes = 7;</code>
-     * @return The sqes.
-     */
-    @java.lang.Override
-    public int getSqes() {
-      return sqes_;
-    }
-    /**
-     * <pre>
-     * maximum number of submission queue entries per submission queue, as a power of 2.
-     * default value as per spec is 6
-     * </pre>
-     *
-     * <code>int32 sqes = 7;</code>
-     * @param value The sqes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSqes(int value) {
-      
-      sqes_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * maximum number of submission queue entries per submission queue, as a power of 2.
-     * default value as per spec is 6
-     * </pre>
-     *
-     * <code>int32 sqes = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSqes() {
-      
-      sqes_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int cqes_ ;
-    /**
-     * <pre>
-     * maximum number of completion queue entries per completion queue, as a power of 2.
-     * default value as per spec is 4
-     * </pre>
-     *
-     * <code>int32 cqes = 8;</code>
-     * @return The cqes.
-     */
-    @java.lang.Override
-    public int getCqes() {
-      return cqes_;
-    }
-    /**
-     * <pre>
-     * maximum number of completion queue entries per completion queue, as a power of 2.
-     * default value as per spec is 4
-     * </pre>
-     *
-     * <code>int32 cqes = 8;</code>
-     * @param value The cqes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCqes(int value) {
-      
-      cqes_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * maximum number of completion queue entries per completion queue, as a power of 2.
-     * default value as per spec is 4
-     * </pre>
-     *
-     * <code>int32 cqes = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCqes() {
-      
-      cqes_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int maxNamespaces_ ;
-    /**
-     * <pre>
-     * maximum Number of namespaces that will be provisioned under
-     * the controller.
-     * </pre>
-     *
-     * <code>int32 max_namespaces = 9;</code>
-     * @return The maxNamespaces.
-     */
-    @java.lang.Override
-    public int getMaxNamespaces() {
-      return maxNamespaces_;
-    }
-    /**
-     * <pre>
-     * maximum Number of namespaces that will be provisioned under
-     * the controller.
-     * </pre>
-     *
-     * <code>int32 max_namespaces = 9;</code>
-     * @param value The maxNamespaces to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxNamespaces(int value) {
-      
-      maxNamespaces_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * maximum Number of namespaces that will be provisioned under
-     * the controller.
-     * </pre>
-     *
-     * <code>int32 max_namespaces = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMaxNamespaces() {
-      
-      maxNamespaces_ = 0;
-      onChanged();
-      return this;
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

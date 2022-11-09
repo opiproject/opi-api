@@ -8,133 +8,32 @@ public interface NVMeSubsystemOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+   * @return Whether the spec field is set.
    */
-  boolean hasId();
+  boolean hasSpec();
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
+   * @return The spec.
    */
-  opi_api.common.v1.ObjectKey getId();
+  opi_api.storage.v1.NVMeSubsystemSpec getSpec();
   /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeSubsystemSpec spec = 1;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  opi_api.storage.v1.NVMeSubsystemSpecOrBuilder getSpecOrBuilder();
 
   /**
-   * <pre>
-   * NVMe subsystem NQN to which the controller belongs
-   * Refer to the NQN format in the NVMe base specifications, must not
-   * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-   * </pre>
-   *
-   * <code>string nqn = 2;</code>
-   * @return The nqn.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+   * @return Whether the status field is set.
    */
-  java.lang.String getNqn();
+  boolean hasStatus();
   /**
-   * <pre>
-   * NVMe subsystem NQN to which the controller belongs
-   * Refer to the NQN format in the NVMe base specifications, must not
-   * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-   * </pre>
-   *
-   * <code>string nqn = 2;</code>
-   * @return The bytes for nqn.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
+   * @return The status.
    */
-  com.google.protobuf.ByteString
-      getNqnBytes();
-
+  opi_api.storage.v1.NVMeSubsystemStatus getStatus();
   /**
-   * <pre>
-   * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string serial_number = 3;</code>
-   * @return The serialNumber.
+   * <code>.opi_api.storage.v1.NVMeSubsystemStatus status = 2;</code>
    */
-  java.lang.String getSerialNumber();
-  /**
-   * <pre>
-   * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string serial_number = 3;</code>
-   * @return The bytes for serialNumber.
-   */
-  com.google.protobuf.ByteString
-      getSerialNumberBytes();
-
-  /**
-   * <pre>
-   * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string model_number = 4;</code>
-   * @return The modelNumber.
-   */
-  java.lang.String getModelNumber();
-  /**
-   * <pre>
-   * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-   * </pre>
-   *
-   * <code>string model_number = 4;</code>
-   * @return The bytes for modelNumber.
-   */
-  com.google.protobuf.ByteString
-      getModelNumberBytes();
-
-  /**
-   * <pre>
-   * maximum namespaces within a subsystem
-   * </pre>
-   *
-   * <code>int64 max_namespaces = 5;</code>
-   * @return The maxNamespaces.
-   */
-  long getMaxNamespaces();
-
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 6;</code>
-   * @return The firmwareRevision.
-   */
-  java.lang.String getFirmwareRevision();
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 6;</code>
-   * @return The bytes for firmwareRevision.
-   */
-  com.google.protobuf.ByteString
-      getFirmwareRevisionBytes();
-
-  /**
-   * <pre>
-   * FRU identfier, 16bytes opaque identity for the type of unit
-   * </pre>
-   *
-   * <code>bytes fru_guid = 7;</code>
-   * @return The fruGuid.
-   */
-  com.google.protobuf.ByteString getFruGuid();
+  opi_api.storage.v1.NVMeSubsystemStatusOrBuilder getStatusOrBuilder();
 }

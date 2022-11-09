@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NVMeNamespace() {
-    nguid_ = "";
   }
 
   @java.lang.Override
@@ -50,104 +49,29 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
+            opi_api.storage.v1.NVMeNamespaceSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
             }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            spec_ = input.readMessage(opi_api.storage.v1.NVMeNamespaceSpec.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subsystemId_ != null) {
-              subBuilder = subsystemId_.toBuilder();
+            opi_api.storage.v1.NVMeNamespaceStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
             }
-            subsystemId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            status_ = input.readMessage(opi_api.storage.v1.NVMeNamespaceStatus.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(subsystemId_);
-              subsystemId_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
-            }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 32: {
-
-            hostNsid_ = input.readInt32();
-            break;
-          }
-          case 40: {
-
-            blockSize_ = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            blocksCount_ = input.readInt64();
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nguid_ = s;
-            break;
-          }
-          case 64: {
-
-            eui64_ = input.readInt64();
-            break;
-          }
-          case 74: {
-            opi_api.common.v1.Uuid.Builder subBuilder = null;
-            if (uuid_ != null) {
-              subBuilder = uuid_.toBuilder();
-            }
-            uuid_ = input.readMessage(opi_api.common.v1.Uuid.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(uuid_);
-              uuid_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 82: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (volumeId_ != null) {
-              subBuilder = volumeId_.toBuilder();
-            }
-            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(volumeId_);
-              volumeId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 88: {
-
-            optimalWriteSize_ = input.readInt32();
-            break;
-          }
-          case 96: {
-
-            prefWriteGranularity_ = input.readInt32();
             break;
           }
           default: {
@@ -182,341 +106,56 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NVMeNamespace.class, opi_api.storage.v1.NVMeNamespace.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int SPEC_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMeNamespaceSpec spec_;
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public boolean hasSpec() {
+    return spec_ != null;
   }
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+   * @return The spec.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+  public opi_api.storage.v1.NVMeNamespaceSpec getSpec() {
+    return spec_ == null ? opi_api.storage.v1.NVMeNamespaceSpec.getDefaultInstance() : spec_;
   }
   /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public opi_api.storage.v1.NVMeNamespaceSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey subsystemId_;
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NVMeNamespaceStatus status_;
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public boolean hasSubsystemId() {
-    return subsystemId_ != null;
+  public boolean hasStatus() {
+    return status_ != null;
   }
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-   * @return The subsystemId.
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubsystemId() {
-    return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+  public opi_api.storage.v1.NVMeNamespaceStatus getStatus() {
+    return status_ == null ? opi_api.storage.v1.NVMeNamespaceStatus.getDefaultInstance() : status_;
   }
   /**
-   * <pre>
-   * subsystem for this namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-    return getSubsystemId();
-  }
-
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey controllerId_;
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return Whether the controllerId field is set.
-   */
-  @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
-  }
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return The controllerId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-  }
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
-  }
-
-  public static final int HOST_NSID_FIELD_NUMBER = 4;
-  private int hostNsid_;
-  /**
-   * <pre>
-   * NSID present to the host by the NVMe PCIe controller.
-   * If not provided, then the controller will assign an unused NSID
-   * within the max namespace range - auto assigned nsid may not work
-   * for live migration
-   * </pre>
-   *
-   * <code>int32 host_nsid = 4;</code>
-   * @return The hostNsid.
-   */
-  @java.lang.Override
-  public int getHostNsid() {
-    return hostNsid_;
-  }
-
-  public static final int BLOCK_SIZE_FIELD_NUMBER = 5;
-  private long blockSize_;
-  /**
-   * <pre>
-   * Block size in bytes, must be power of 2 and must be less than the max
-   * io size supported. Typically tested values are 512, and 4k.
-   * </pre>
-   *
-   * <code>int64 block_size = 5;</code>
-   * @return The blockSize.
-   */
-  @java.lang.Override
-  public long getBlockSize() {
-    return blockSize_;
-  }
-
-  public static final int BLOCKS_COUNT_FIELD_NUMBER = 6;
-  private long blocksCount_;
-  /**
-   * <pre>
-   * Size/Capacity of the namespace in blocks, size in bytes will
-   * be BlockSize x NumBlocks.
-   * </pre>
-   *
-   * <code>int64 blocks_count = 6;</code>
-   * @return The blocksCount.
-   */
-  @java.lang.Override
-  public long getBlocksCount() {
-    return blocksCount_;
-  }
-
-  public static final int NGUID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object nguid_;
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>string nguid = 7;</code>
-   * @return The nguid.
-   */
-  @java.lang.Override
-  public java.lang.String getNguid() {
-    java.lang.Object ref = nguid_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nguid_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>string nguid = 7;</code>
-   * @return The bytes for nguid.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNguidBytes() {
-    java.lang.Object ref = nguid_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nguid_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int EUI64_FIELD_NUMBER = 8;
-  private long eui64_;
-  /**
-   * <pre>
-   * 64bit Extended unique identifier for the namespace
-   * mandatory if guid is not specified
-   * </pre>
-   *
-   * <code>int64 eui64 = 8;</code>
-   * @return The eui64.
-   */
-  @java.lang.Override
-  public long getEui64() {
-    return eui64_;
-  }
-
-  public static final int UUID_FIELD_NUMBER = 9;
-  private opi_api.common.v1.Uuid uuid_;
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   * @return Whether the uuid field is set.
-   */
-  @java.lang.Override
-  public boolean hasUuid() {
-    return uuid_ != null;
-  }
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   * @return The uuid.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.Uuid getUuid() {
-    return uuid_ == null ? opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
-  }
-  /**
-   * <pre>
-   * Globally unique identifier for the namespace
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
-    return getUuid();
-  }
-
-  public static final int VOLUME_ID_FIELD_NUMBER = 10;
-  private opi_api.common.v1.ObjectKey volumeId_;
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   * @return Whether the volumeId field is set.
-   */
-  @java.lang.Override
-  public boolean hasVolumeId() {
-    return volumeId_ != null;
-  }
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   * @return The volumeId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVolumeId() {
-    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-  }
-  /**
-   * <pre>
-   * The back/middle-end volume to back this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-    return getVolumeId();
-  }
-
-  public static final int OPTIMAL_WRITE_SIZE_FIELD_NUMBER = 11;
-  private int optimalWriteSize_;
-  /**
-   * <pre>
-   * optimal write size hint to host driver. Host IO stack may use
-   * this to regulate IO size. Must be a multiple of the preferred write
-   * granularity. Must not exceed the controller maximum IO size value
-   * configured in the nvme agent config file.
-   * </pre>
-   *
-   * <code>int32 optimal_write_size = 11;</code>
-   * @return The optimalWriteSize.
-   */
-  @java.lang.Override
-  public int getOptimalWriteSize() {
-    return optimalWriteSize_;
-  }
-
-  public static final int PREF_WRITE_GRANULARITY_FIELD_NUMBER = 12;
-  private int prefWriteGranularity_;
-  /**
-   * <pre>
-   * preferred write granularity hint to the host driver. Host IO
-   * stack may use this to align IO sizes to the write granularity for
-   * optimum performance.
-   * </pre>
-   *
-   * <code>int32 pref_write_granularity = 12;</code>
-   * @return The prefWriteGranularity.
-   */
-  @java.lang.Override
-  public int getPrefWriteGranularity() {
-    return prefWriteGranularity_;
+  public opi_api.storage.v1.NVMeNamespaceStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -533,41 +172,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (spec_ != null) {
+      output.writeMessage(1, getSpec());
     }
-    if (subsystemId_ != null) {
-      output.writeMessage(2, getSubsystemId());
-    }
-    if (controllerId_ != null) {
-      output.writeMessage(3, getControllerId());
-    }
-    if (hostNsid_ != 0) {
-      output.writeInt32(4, hostNsid_);
-    }
-    if (blockSize_ != 0L) {
-      output.writeInt64(5, blockSize_);
-    }
-    if (blocksCount_ != 0L) {
-      output.writeInt64(6, blocksCount_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nguid_);
-    }
-    if (eui64_ != 0L) {
-      output.writeInt64(8, eui64_);
-    }
-    if (uuid_ != null) {
-      output.writeMessage(9, getUuid());
-    }
-    if (volumeId_ != null) {
-      output.writeMessage(10, getVolumeId());
-    }
-    if (optimalWriteSize_ != 0) {
-      output.writeInt32(11, optimalWriteSize_);
-    }
-    if (prefWriteGranularity_ != 0) {
-      output.writeInt32(12, prefWriteGranularity_);
+    if (status_ != null) {
+      output.writeMessage(2, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -578,52 +187,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+        .computeMessageSize(1, getSpec());
     }
-    if (subsystemId_ != null) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSubsystemId());
-    }
-    if (controllerId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getControllerId());
-    }
-    if (hostNsid_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, hostNsid_);
-    }
-    if (blockSize_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, blockSize_);
-    }
-    if (blocksCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, blocksCount_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nguid_);
-    }
-    if (eui64_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, eui64_);
-    }
-    if (uuid_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getUuid());
-    }
-    if (volumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getVolumeId());
-    }
-    if (optimalWriteSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, optimalWriteSize_);
-    }
-    if (prefWriteGranularity_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(12, prefWriteGranularity_);
+        .computeMessageSize(2, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -640,45 +210,16 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMeNamespace other = (opi_api.storage.v1.NVMeNamespace) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
     }
-    if (hasSubsystemId() != other.hasSubsystemId()) return false;
-    if (hasSubsystemId()) {
-      if (!getSubsystemId()
-          .equals(other.getSubsystemId())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
-    }
-    if (getHostNsid()
-        != other.getHostNsid()) return false;
-    if (getBlockSize()
-        != other.getBlockSize()) return false;
-    if (getBlocksCount()
-        != other.getBlocksCount()) return false;
-    if (!getNguid()
-        .equals(other.getNguid())) return false;
-    if (getEui64()
-        != other.getEui64()) return false;
-    if (hasUuid() != other.hasUuid()) return false;
-    if (hasUuid()) {
-      if (!getUuid()
-          .equals(other.getUuid())) return false;
-    }
-    if (hasVolumeId() != other.hasVolumeId()) return false;
-    if (hasVolumeId()) {
-      if (!getVolumeId()
-          .equals(other.getVolumeId())) return false;
-    }
-    if (getOptimalWriteSize()
-        != other.getOptimalWriteSize()) return false;
-    if (getPrefWriteGranularity()
-        != other.getPrefWriteGranularity()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -690,43 +231,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
     }
-    if (hasSubsystemId()) {
-      hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystemId().hashCode();
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
-    }
-    hash = (37 * hash) + HOST_NSID_FIELD_NUMBER;
-    hash = (53 * hash) + getHostNsid();
-    hash = (37 * hash) + BLOCK_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBlockSize());
-    hash = (37 * hash) + BLOCKS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBlocksCount());
-    hash = (37 * hash) + NGUID_FIELD_NUMBER;
-    hash = (53 * hash) + getNguid().hashCode();
-    hash = (37 * hash) + EUI64_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getEui64());
-    if (hasUuid()) {
-      hash = (37 * hash) + UUID_FIELD_NUMBER;
-      hash = (53 * hash) + getUuid().hashCode();
-    }
-    if (hasVolumeId()) {
-      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVolumeId().hashCode();
-    }
-    hash = (37 * hash) + OPTIMAL_WRITE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getOptimalWriteSize();
-    hash = (37 * hash) + PREF_WRITE_GRANULARITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPrefWriteGranularity();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -860,50 +372,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
+      if (specBuilder_ == null) {
+        spec_ = null;
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
+      if (statusBuilder_ == null) {
+        status_ = null;
       } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
+        status_ = null;
+        statusBuilder_ = null;
       }
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-      hostNsid_ = 0;
-
-      blockSize_ = 0L;
-
-      blocksCount_ = 0L;
-
-      nguid_ = "";
-
-      eui64_ = 0L;
-
-      if (uuidBuilder_ == null) {
-        uuid_ = null;
-      } else {
-        uuid_ = null;
-        uuidBuilder_ = null;
-      }
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
-      optimalWriteSize_ = 0;
-
-      prefWriteGranularity_ = 0;
-
       return this;
     }
 
@@ -930,38 +410,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMeNamespace buildPartial() {
       opi_api.storage.v1.NVMeNamespace result = new opi_api.storage.v1.NVMeNamespace(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
       } else {
-        result.id_ = idBuilder_.build();
+        result.spec_ = specBuilder_.build();
       }
-      if (subsystemIdBuilder_ == null) {
-        result.subsystemId_ = subsystemId_;
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
       } else {
-        result.subsystemId_ = subsystemIdBuilder_.build();
+        result.status_ = statusBuilder_.build();
       }
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
-      } else {
-        result.controllerId_ = controllerIdBuilder_.build();
-      }
-      result.hostNsid_ = hostNsid_;
-      result.blockSize_ = blockSize_;
-      result.blocksCount_ = blocksCount_;
-      result.nguid_ = nguid_;
-      result.eui64_ = eui64_;
-      if (uuidBuilder_ == null) {
-        result.uuid_ = uuid_;
-      } else {
-        result.uuid_ = uuidBuilder_.build();
-      }
-      if (volumeIdBuilder_ == null) {
-        result.volumeId_ = volumeId_;
-      } else {
-        result.volumeId_ = volumeIdBuilder_.build();
-      }
-      result.optimalWriteSize_ = optimalWriteSize_;
-      result.prefWriteGranularity_ = prefWriteGranularity_;
       onBuilt();
       return result;
     }
@@ -1010,42 +468,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMeNamespace other) {
       if (other == opi_api.storage.v1.NVMeNamespace.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (other.hasSubsystemId()) {
-        mergeSubsystemId(other.getSubsystemId());
-      }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
-      }
-      if (other.getHostNsid() != 0) {
-        setHostNsid(other.getHostNsid());
-      }
-      if (other.getBlockSize() != 0L) {
-        setBlockSize(other.getBlockSize());
-      }
-      if (other.getBlocksCount() != 0L) {
-        setBlocksCount(other.getBlocksCount());
-      }
-      if (!other.getNguid().isEmpty()) {
-        nguid_ = other.nguid_;
-        onChanged();
-      }
-      if (other.getEui64() != 0L) {
-        setEui64(other.getEui64());
-      }
-      if (other.hasUuid()) {
-        mergeUuid(other.getUuid());
-      }
-      if (other.hasVolumeId()) {
-        mergeVolumeId(other.getVolumeId());
-      }
-      if (other.getOptimalWriteSize() != 0) {
-        setOptimalWriteSize(other.getOptimalWriteSize());
-      }
-      if (other.getPrefWriteGranularity() != 0) {
-        setPrefWriteGranularity(other.getPrefWriteGranularity());
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1076,1166 +503,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
+    private opi_api.storage.v1.NVMeNamespaceSpec spec_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+        opi_api.storage.v1.NVMeNamespaceSpec, opi_api.storage.v1.NVMeNamespaceSpec.Builder, opi_api.storage.v1.NVMeNamespaceSpecOrBuilder> specBuilder_;
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+     * @return Whether the spec field is set.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
+     * @return The spec.
      */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public opi_api.storage.v1.NVMeNamespaceSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.storage.v1.NVMeNamespaceSpec.getDefaultInstance() : spec_;
       } else {
-        return idBuilder_.getMessage();
+        return specBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
+    public Builder setSpec(opi_api.storage.v1.NVMeNamespaceSpec value) {
+      if (specBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        id_ = value;
+        spec_ = value;
         onChanged();
       } else {
-        idBuilder_.setMessage(value);
+        specBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
+    public Builder setSpec(
+        opi_api.storage.v1.NVMeNamespaceSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
         onChanged();
       } else {
-        idBuilder_.setMessage(builderForValue.build());
+        specBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
+    public Builder mergeSpec(opi_api.storage.v1.NVMeNamespaceSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.storage.v1.NVMeNamespaceSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
         } else {
-          id_ = value;
+          spec_ = value;
         }
         onChanged();
       } else {
-        idBuilder_.mergeFrom(value);
+        specBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
         onChanged();
       } else {
-        id_ = null;
-        idBuilder_ = null;
+        spec_ = null;
+        specBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
+    public opi_api.storage.v1.NVMeNamespaceSpec.Builder getSpecBuilder() {
       
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return getSpecFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeNamespaceSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
       } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+        return spec_ == null ?
+            opi_api.storage.v1.NVMeNamespaceSpec.getDefaultInstance() : spec_;
       }
     }
     /**
-     * <pre>
-     * namespace's unique key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceSpec spec = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
+        opi_api.storage.v1.NVMeNamespaceSpec, opi_api.storage.v1.NVMeNamespaceSpec.Builder, opi_api.storage.v1.NVMeNamespaceSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeNamespaceSpec, opi_api.storage.v1.NVMeNamespaceSpec.Builder, opi_api.storage.v1.NVMeNamespaceSpecOrBuilder>(
+                getSpec(),
                 getParentForChildren(),
                 isClean());
-        id_ = null;
+        spec_ = null;
       }
-      return idBuilder_;
+      return specBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey subsystemId_;
+    private opi_api.storage.v1.NVMeNamespaceStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subsystemIdBuilder_;
+        opi_api.storage.v1.NVMeNamespaceStatus, opi_api.storage.v1.NVMeNamespaceStatus.Builder, opi_api.storage.v1.NVMeNamespaceStatusOrBuilder> statusBuilder_;
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     * @return Whether the subsystemId field is set.
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+     * @return Whether the status field is set.
      */
-    public boolean hasSubsystemId() {
-      return subsystemIdBuilder_ != null || subsystemId_ != null;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
-     * @return The subsystemId.
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
+     * @return The status.
      */
-    public opi_api.common.v1.ObjectKey getSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        return subsystemId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+    public opi_api.storage.v1.NVMeNamespaceStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.storage.v1.NVMeNamespaceStatus.getDefaultInstance() : status_;
       } else {
-        return subsystemIdBuilder_.getMessage();
+        return statusBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
+    public Builder setStatus(opi_api.storage.v1.NVMeNamespaceStatus value) {
+      if (statusBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        subsystemId_ = value;
+        status_ = value;
         onChanged();
       } else {
-        subsystemIdBuilder_.setMessage(value);
+        statusBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public Builder setSubsystemId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = builderForValue.build();
+    public Builder setStatus(
+        opi_api.storage.v1.NVMeNamespaceStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
         onChanged();
       } else {
-        subsystemIdBuilder_.setMessage(builderForValue.build());
+        statusBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
-      if (subsystemIdBuilder_ == null) {
-        if (subsystemId_ != null) {
-          subsystemId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subsystemId_).mergeFrom(value).buildPartial();
+    public Builder mergeStatus(opi_api.storage.v1.NVMeNamespaceStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.storage.v1.NVMeNamespaceStatus.newBuilder(status_).mergeFrom(value).buildPartial();
         } else {
-          subsystemId_ = value;
+          status_ = value;
         }
         onChanged();
       } else {
-        subsystemIdBuilder_.mergeFrom(value);
+        statusBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public Builder clearSubsystemId() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemId_ = null;
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
         onChanged();
       } else {
-        subsystemId_ = null;
-        subsystemIdBuilder_ = null;
+        status_ = null;
+        statusBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
+    public opi_api.storage.v1.NVMeNamespaceStatus.Builder getStatusBuilder() {
       
       onChanged();
-      return getSubsystemIdFieldBuilder().getBuilder();
+      return getStatusFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
-      if (subsystemIdBuilder_ != null) {
-        return subsystemIdBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeNamespaceStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
       } else {
-        return subsystemId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subsystemId_;
+        return status_ == null ?
+            opi_api.storage.v1.NVMeNamespaceStatus.getDefaultInstance() : status_;
       }
     }
     /**
-     * <pre>
-     * subsystem for this namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespaceStatus status = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubsystemIdFieldBuilder() {
-      if (subsystemIdBuilder_ == null) {
-        subsystemIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubsystemId(),
+        opi_api.storage.v1.NVMeNamespaceStatus, opi_api.storage.v1.NVMeNamespaceStatus.Builder, opi_api.storage.v1.NVMeNamespaceStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.NVMeNamespaceStatus, opi_api.storage.v1.NVMeNamespaceStatus.Builder, opi_api.storage.v1.NVMeNamespaceStatusOrBuilder>(
+                getStatus(),
                 getParentForChildren(),
                 isClean());
-        subsystemId_ = null;
+        status_ = null;
       }
-      return subsystemIdBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey controllerId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     * @return Whether the controllerId field is set.
-     */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     * @return The controllerId.
-     */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      } else {
-        return controllerIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        controllerId_ = value;
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder setControllerId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
-        } else {
-          controllerId_ = value;
-        }
-        onChanged();
-      } else {
-        controllerIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-        onChanged();
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
-      
-      onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
-      } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      }
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
-                getParentForChildren(),
-                isClean());
-        controllerId_ = null;
-      }
-      return controllerIdBuilder_;
-    }
-
-    private int hostNsid_ ;
-    /**
-     * <pre>
-     * NSID present to the host by the NVMe PCIe controller.
-     * If not provided, then the controller will assign an unused NSID
-     * within the max namespace range - auto assigned nsid may not work
-     * for live migration
-     * </pre>
-     *
-     * <code>int32 host_nsid = 4;</code>
-     * @return The hostNsid.
-     */
-    @java.lang.Override
-    public int getHostNsid() {
-      return hostNsid_;
-    }
-    /**
-     * <pre>
-     * NSID present to the host by the NVMe PCIe controller.
-     * If not provided, then the controller will assign an unused NSID
-     * within the max namespace range - auto assigned nsid may not work
-     * for live migration
-     * </pre>
-     *
-     * <code>int32 host_nsid = 4;</code>
-     * @param value The hostNsid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHostNsid(int value) {
-      
-      hostNsid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * NSID present to the host by the NVMe PCIe controller.
-     * If not provided, then the controller will assign an unused NSID
-     * within the max namespace range - auto assigned nsid may not work
-     * for live migration
-     * </pre>
-     *
-     * <code>int32 host_nsid = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHostNsid() {
-      
-      hostNsid_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long blockSize_ ;
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @return The blockSize.
-     */
-    @java.lang.Override
-    public long getBlockSize() {
-      return blockSize_;
-    }
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @param value The blockSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBlockSize(long value) {
-      
-      blockSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBlockSize() {
-      
-      blockSize_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long blocksCount_ ;
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @return The blocksCount.
-     */
-    @java.lang.Override
-    public long getBlocksCount() {
-      return blocksCount_;
-    }
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @param value The blocksCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBlocksCount(long value) {
-      
-      blocksCount_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBlocksCount() {
-      
-      blocksCount_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object nguid_ = "";
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>string nguid = 7;</code>
-     * @return The nguid.
-     */
-    public java.lang.String getNguid() {
-      java.lang.Object ref = nguid_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nguid_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>string nguid = 7;</code>
-     * @return The bytes for nguid.
-     */
-    public com.google.protobuf.ByteString
-        getNguidBytes() {
-      java.lang.Object ref = nguid_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nguid_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>string nguid = 7;</code>
-     * @param value The nguid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNguid(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      nguid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>string nguid = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNguid() {
-      
-      nguid_ = getDefaultInstance().getNguid();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>string nguid = 7;</code>
-     * @param value The bytes for nguid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNguidBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      nguid_ = value;
-      onChanged();
-      return this;
-    }
-
-    private long eui64_ ;
-    /**
-     * <pre>
-     * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified
-     * </pre>
-     *
-     * <code>int64 eui64 = 8;</code>
-     * @return The eui64.
-     */
-    @java.lang.Override
-    public long getEui64() {
-      return eui64_;
-    }
-    /**
-     * <pre>
-     * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified
-     * </pre>
-     *
-     * <code>int64 eui64 = 8;</code>
-     * @param value The eui64 to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEui64(long value) {
-      
-      eui64_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 64bit Extended unique identifier for the namespace
-     * mandatory if guid is not specified
-     * </pre>
-     *
-     * <code>int64 eui64 = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEui64() {
-      
-      eui64_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private opi_api.common.v1.Uuid uuid_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> uuidBuilder_;
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     * @return Whether the uuid field is set.
-     */
-    public boolean hasUuid() {
-      return uuidBuilder_ != null || uuid_ != null;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     * @return The uuid.
-     */
-    public opi_api.common.v1.Uuid getUuid() {
-      if (uuidBuilder_ == null) {
-        return uuid_ == null ? opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
-      } else {
-        return uuidBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public Builder setUuid(opi_api.common.v1.Uuid value) {
-      if (uuidBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        uuid_ = value;
-        onChanged();
-      } else {
-        uuidBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public Builder setUuid(
-        opi_api.common.v1.Uuid.Builder builderForValue) {
-      if (uuidBuilder_ == null) {
-        uuid_ = builderForValue.build();
-        onChanged();
-      } else {
-        uuidBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public Builder mergeUuid(opi_api.common.v1.Uuid value) {
-      if (uuidBuilder_ == null) {
-        if (uuid_ != null) {
-          uuid_ =
-            opi_api.common.v1.Uuid.newBuilder(uuid_).mergeFrom(value).buildPartial();
-        } else {
-          uuid_ = value;
-        }
-        onChanged();
-      } else {
-        uuidBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public Builder clearUuid() {
-      if (uuidBuilder_ == null) {
-        uuid_ = null;
-        onChanged();
-      } else {
-        uuid_ = null;
-        uuidBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
-      
-      onChanged();
-      return getUuidFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
-      if (uuidBuilder_ != null) {
-        return uuidBuilder_.getMessageOrBuilder();
-      } else {
-        return uuid_ == null ?
-            opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
-      }
-    }
-    /**
-     * <pre>
-     * Globally unique identifier for the namespace
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 
-        getUuidFieldBuilder() {
-      if (uuidBuilder_ == null) {
-        uuidBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder>(
-                getUuid(),
-                getParentForChildren(),
-                isClean());
-        uuid_ = null;
-      }
-      return uuidBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey volumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     * @return Whether the volumeId field is set.
-     */
-    public boolean hasVolumeId() {
-      return volumeIdBuilder_ != null || volumeId_ != null;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     * @return The volumeId.
-     */
-    public opi_api.common.v1.ObjectKey getVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-      } else {
-        return volumeIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        volumeId_ = value;
-        onChanged();
-      } else {
-        volumeIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public Builder setVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        volumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (volumeIdBuilder_ == null) {
-        if (volumeId_ != null) {
-          volumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
-        } else {
-          volumeId_ = value;
-        }
-        onChanged();
-      } else {
-        volumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public Builder clearVolumeId() {
-      if (volumeIdBuilder_ == null) {
-        volumeId_ = null;
-        onChanged();
-      } else {
-        volumeId_ = null;
-        volumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
-      
-      onChanged();
-      return getVolumeIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
-      if (volumeIdBuilder_ != null) {
-        return volumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return volumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
-      }
-    }
-    /**
-     * <pre>
-     * The back/middle-end volume to back this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVolumeIdFieldBuilder() {
-      if (volumeIdBuilder_ == null) {
-        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVolumeId(),
-                getParentForChildren(),
-                isClean());
-        volumeId_ = null;
-      }
-      return volumeIdBuilder_;
-    }
-
-    private int optimalWriteSize_ ;
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @return The optimalWriteSize.
-     */
-    @java.lang.Override
-    public int getOptimalWriteSize() {
-      return optimalWriteSize_;
-    }
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @param value The optimalWriteSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOptimalWriteSize(int value) {
-      
-      optimalWriteSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOptimalWriteSize() {
-      
-      optimalWriteSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int prefWriteGranularity_ ;
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @return The prefWriteGranularity.
-     */
-    @java.lang.Override
-    public int getPrefWriteGranularity() {
-      return prefWriteGranularity_;
-    }
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @param value The prefWriteGranularity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrefWriteGranularity(int value) {
-      
-      prefWriteGranularity_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrefWriteGranularity() {
-      
-      prefWriteGranularity_ = 0;
-      onChanged();
-      return this;
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
