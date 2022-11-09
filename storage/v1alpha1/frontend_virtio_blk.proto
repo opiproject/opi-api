@@ -10,6 +10,7 @@ option java_outer_classname = "FrontendVirtioBlkProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "common.proto";
+import "object_key.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
@@ -46,7 +47,7 @@ service FrontendVirtioBlkService {
 }
 
 message VirtioBlk {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     NvmeControllerPciId pcie_id = 2;
     string bdev = 3;
     int64 max_io_qps = 4;
@@ -58,7 +59,7 @@ message VirtioBlkCreateRequest {
 }
 
 message VirtioBlkDeleteRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioBlkUpdateRequest {
@@ -66,7 +67,7 @@ message VirtioBlkUpdateRequest {
 }
 
 message VirtioBlkListRequest {
-    int64 virtioblk_id = 1;
+    // Intentionally empty.
 }
 
 message VirtioBlkListResponse {
@@ -74,14 +75,14 @@ message VirtioBlkListResponse {
 }
 
 message VirtioBlkGetRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioBlkStatsRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioBlkStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }

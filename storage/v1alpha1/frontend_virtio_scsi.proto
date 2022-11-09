@@ -10,6 +10,7 @@ option java_outer_classname = "FrontendVirtioScsiProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "common.proto";
+import "object_key.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
@@ -75,13 +76,13 @@ service FrontendVirtioScsiService {
 }
 
 message VirtioScsiController {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     NvmeControllerPciId pcie_id = 2;
 }
 
 message VirtioScsiLun {
-    int64 id = 1;
-    int64 controller_id = 2;
+    common.v1.ObjectKey id = 1;
+    common.v1.ObjectKey controller_id = 2;
     string bdev = 3;
 }
 
@@ -90,7 +91,7 @@ message VirtioScsiControllerCreateRequest {
 }
 
 message VirtioScsiControllerDeleteRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiControllerUpdateRequest {
@@ -106,15 +107,15 @@ message VirtioScsiControllerListResponse {
 }
 
 message VirtioScsiControllerGetRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiControllerStatsRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiControllerStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
 
@@ -123,8 +124,8 @@ message VirtioScsiLunCreateRequest {
 }
 
 message VirtioScsiLunDeleteRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey controller_id = 1;
+    common.v1.ObjectKey lun_id = 2;
 }
 
 message VirtioScsiLunUpdateRequest {
@@ -132,7 +133,7 @@ message VirtioScsiLunUpdateRequest {
 }
 
 message VirtioScsiLunListRequest {
-    int64 controller_id = 1;
+    common.v1.ObjectKey controller_id = 1;
 }
 
 message VirtioScsiLunListResponse {
@@ -140,16 +141,16 @@ message VirtioScsiLunListResponse {
 }
 
 message VirtioScsiLunGetRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey controller_id = 1;
+    common.v1.ObjectKey lun_id = 2;
 }
 
 message VirtioScsiLunStatsRequest {
-    int64 controller_id = 1;
-    int64 lun_id = 2;
+    common.v1.ObjectKey controller_id = 1;
+    common.v1.ObjectKey lun_id = 2;
 }
 
 message VirtioScsiLunStatsResponse {
-    int64 id = 1;
+    common.v1.ObjectKey id = 1;
     string stats = 2;
 }
