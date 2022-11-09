@@ -58,7 +58,7 @@
     - [NVMfRemoteControllerService](#opi_api-storage-v1-NVMfRemoteControllerService)
   
 - [common.proto](#common-proto)
-    - [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId)
+    - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
   
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
     - [NVMeController](#opi_api-storage-v1-NVMeController)
@@ -836,22 +836,24 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NvmeControllerPciId"></a>
+<a name="opi_api-storage-v1-PciEndpoint"></a>
 
-### NvmeControllerPciId
-The controller PCI-ID is used to address a given virtual controller. Virtual
-controllers are organized into devices with Physical functions and SRIOV
-virtual function within the physical functions. Currently, xPUs may
-expose multiple devices with one physical function each and one or more
-virtual functions under the physical function.
+### PciEndpoint
+Many front-ends expose PCI devices to the host. This represents that endpoint.
+This device will ultimately be surfaced by the operating system at some
+Bus:Device:Function, but note that the values set here are not necessarily
+the same values that the operating system will choose. Instead, these are
+xPU-internal values.
+While the term &#34;device&#34; is often used for the entity attached to a PCI slot,
+we&#39;ll use the term &#34;port&#34; which also commonly used with PCI switches and avoids
+confusion with storage &#34;devices&#34;.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bus | [int32](#int32) |  | Bus number, provided for future usage if needed. Currently set to ’0’ |
-| device | [int32](#int32) |  | Device number, based on the NVMe device layout |
-| func | [int32](#int32) |  | Physical function, always set to 0 in current model |
-| virtual_function | [int32](#int32) |  | SRIOV Virtual function within the Device and Physical function. Set to 0 for Physical Function. Virtual Function numbering starts from 1 |
+| port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 
 
 
@@ -885,7 +887,7 @@ virtual functions under the physical function.
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 | nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
-| pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  | xPU&#39;s PCI ID for the controller |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | max_nsq | [int32](#int32) |  | maximum number of host submission queues allowed. If not set, the xPU will provide a default. |
 | max_ncq | [int32](#int32) |  | maximum number of host completion queues allowed. If not set, the xPU will provide a default. |
 | sqes | [int32](#int32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
@@ -1354,7 +1356,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  |  |
 | bdev | [string](#string) |  |  |
 | max_io_qps | [int64](#int64) |  |  |
 | serial_number | [string](#string) |  |  |
@@ -1536,7 +1538,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  |  |
 
 
 

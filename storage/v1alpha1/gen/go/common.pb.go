@@ -24,29 +24,36 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// The controller PCI-ID is used to address a given virtual controller. Virtual
-// controllers are organized into devices with Physical functions and SRIOV
-// virtual function within the physical functions. Currently, xPUs may
-// expose multiple devices with one physical function each and one or more
-// virtual functions under the physical function.
-type NvmeControllerPciId struct {
+// Many front-ends expose PCI devices to the host. This represents that endpoint.
+// This device will ultimately be surfaced by the operating system at some
+// Bus:Device:Function, but note that the values set here are not necessarily
+// the same values that the operating system will choose. Instead, these are
+// xPU-internal values.
+// While the term "device" is often used for the entity attached to a PCI slot,
+// we'll use the term "port" which also commonly used with PCI switches and avoids
+// confusion with storage "devices".
+type PciEndpoint struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Bus number, provided for future usage if needed. Currently set to ’0’
-	Bus int32 `protobuf:"varint,1,opt,name=bus,proto3" json:"bus,omitempty"`
-	// Device number, based on the NVMe device layout
-	Device int32 `protobuf:"varint,2,opt,name=device,proto3" json:"device,omitempty"`
-	// Physical function, always set to 0 in current model
-	Func int32 `protobuf:"varint,3,opt,name=func,proto3" json:"func,omitempty"`
-	// SRIOV Virtual function within the Device and Physical function.
-	// Set to 0 for Physical Function. Virtual Function numbering starts from 1
-	VirtualFunction int32 `protobuf:"varint,4,opt,name=virtual_function,json=virtualFunction,proto3" json:"virtual_function,omitempty"`
+	// The "port" or "device". In other words, the connector/cable that's
+	// plugged into a particular host. This number may end up matching
+	// the host-assigned "device" value in the bus:device:function identifier,
+	// but it does not strictly have to and that should not be relied upon.
+	PortId int32 `protobuf:"varint,1,opt,name=port_id,json=portId,proto3" json:"port_id,omitempty"`
+	// Physical function index. This may end up matching the host-assigned
+	// "function" value in the bus:device:function identifier, but it does not
+	// strictly have to and that should not be relied upon.
+	PhysicalFunction int32 `protobuf:"varint,2,opt,name=physical_function,json=physicalFunction,proto3" json:"physical_function,omitempty"`
+	// Virtual function index. This may end up matching the host-assigned
+	// "function" value in the bus:device:function identifier, but it does not
+	// strictly have to and that should not be relied upon.
+	VirtualFunction int32 `protobuf:"varint,3,opt,name=virtual_function,json=virtualFunction,proto3" json:"virtual_function,omitempty"`
 }
 
-func (x *NvmeControllerPciId) Reset() {
-	*x = NvmeControllerPciId{}
+func (x *PciEndpoint) Reset() {
+	*x = PciEndpoint{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_common_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,13 +61,13 @@ func (x *NvmeControllerPciId) Reset() {
 	}
 }
 
-func (x *NvmeControllerPciId) String() string {
+func (x *PciEndpoint) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NvmeControllerPciId) ProtoMessage() {}
+func (*PciEndpoint) ProtoMessage() {}
 
-func (x *NvmeControllerPciId) ProtoReflect() protoreflect.Message {
+func (x *PciEndpoint) ProtoReflect() protoreflect.Message {
 	mi := &file_common_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -72,33 +79,26 @@ func (x *NvmeControllerPciId) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NvmeControllerPciId.ProtoReflect.Descriptor instead.
-func (*NvmeControllerPciId) Descriptor() ([]byte, []int) {
+// Deprecated: Use PciEndpoint.ProtoReflect.Descriptor instead.
+func (*PciEndpoint) Descriptor() ([]byte, []int) {
 	return file_common_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *NvmeControllerPciId) GetBus() int32 {
+func (x *PciEndpoint) GetPortId() int32 {
 	if x != nil {
-		return x.Bus
+		return x.PortId
 	}
 	return 0
 }
 
-func (x *NvmeControllerPciId) GetDevice() int32 {
+func (x *PciEndpoint) GetPhysicalFunction() int32 {
 	if x != nil {
-		return x.Device
+		return x.PhysicalFunction
 	}
 	return 0
 }
 
-func (x *NvmeControllerPciId) GetFunc() int32 {
-	if x != nil {
-		return x.Func
-	}
-	return 0
-}
-
-func (x *NvmeControllerPciId) GetVirtualFunction() int32 {
+func (x *PciEndpoint) GetVirtualFunction() int32 {
 	if x != nil {
 		return x.VirtualFunction
 	}
@@ -110,13 +110,13 @@ var File_common_proto protoreflect.FileDescriptor
 var file_common_proto_rawDesc = []byte{
 	0x0a, 0x0c, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x12,
 	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
-	0x76, 0x31, 0x22, 0x7e, 0x0a, 0x13, 0x4e, 0x76, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
-	0x6c, 0x6c, 0x65, 0x72, 0x50, 0x63, 0x69, 0x49, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x62, 0x75, 0x73,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x03, 0x62, 0x75, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x64,
-	0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x64, 0x65, 0x76,
-	0x69, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x75, 0x6e, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x04, 0x66, 0x75, 0x6e, 0x63, 0x12, 0x29, 0x0a, 0x10, 0x76, 0x69, 0x72, 0x74, 0x75,
-	0x61, 0x6c, 0x5f, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x76, 0x31, 0x22, 0x7e, 0x0a, 0x0b, 0x50, 0x63, 0x69, 0x45, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e,
+	0x74, 0x12, 0x17, 0x0a, 0x07, 0x70, 0x6f, 0x72, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x06, 0x70, 0x6f, 0x72, 0x74, 0x49, 0x64, 0x12, 0x2b, 0x0a, 0x11, 0x70, 0x68,
+	0x79, 0x73, 0x69, 0x63, 0x61, 0x6c, 0x5f, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x10, 0x70, 0x68, 0x79, 0x73, 0x69, 0x63, 0x61, 0x6c, 0x46,
+	0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x0a, 0x10, 0x76, 0x69, 0x72, 0x74, 0x75,
+	0x61, 0x6c, 0x5f, 0x66, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28,
 	0x05, 0x52, 0x0f, 0x76, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x42, 0x5a, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
 	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x0b, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
@@ -141,7 +141,7 @@ func file_common_proto_rawDescGZIP() []byte {
 
 var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_common_proto_goTypes = []interface{}{
-	(*NvmeControllerPciId)(nil), // 0: opi_api.storage.v1.NvmeControllerPciId
+	(*PciEndpoint)(nil), // 0: opi_api.storage.v1.PciEndpoint
 }
 var file_common_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -158,7 +158,7 @@ func file_common_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NvmeControllerPciId); i {
+			switch v := v.(*PciEndpoint); i {
 			case 0:
 				return &v.state
 			case 1:

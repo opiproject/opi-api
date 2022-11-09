@@ -287,23 +287,23 @@ class VirtioScsiController final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
+  // .opi_api.storage.v1.PciEndpoint pcie_id = 2;
   bool has_pcie_id() const;
   private:
   bool _internal_has_pcie_id() const;
   public:
   void clear_pcie_id();
-  const ::opi_api::storage::v1::NvmeControllerPciId& pcie_id() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::NvmeControllerPciId* release_pcie_id();
-  ::opi_api::storage::v1::NvmeControllerPciId* mutable_pcie_id();
-  void set_allocated_pcie_id(::opi_api::storage::v1::NvmeControllerPciId* pcie_id);
+  const ::opi_api::storage::v1::PciEndpoint& pcie_id() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::PciEndpoint* release_pcie_id();
+  ::opi_api::storage::v1::PciEndpoint* mutable_pcie_id();
+  void set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id);
   private:
-  const ::opi_api::storage::v1::NvmeControllerPciId& _internal_pcie_id() const;
-  ::opi_api::storage::v1::NvmeControllerPciId* _internal_mutable_pcie_id();
+  const ::opi_api::storage::v1::PciEndpoint& _internal_pcie_id() const;
+  ::opi_api::storage::v1::PciEndpoint* _internal_mutable_pcie_id();
   public:
   void unsafe_arena_set_allocated_pcie_id(
-      ::opi_api::storage::v1::NvmeControllerPciId* pcie_id);
-  ::opi_api::storage::v1::NvmeControllerPciId* unsafe_arena_release_pcie_id();
+      ::opi_api::storage::v1::PciEndpoint* pcie_id);
+  ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiController)
  private:
@@ -313,7 +313,7 @@ class VirtioScsiController final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* id_;
-  ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* pcie_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -3140,24 +3140,24 @@ inline void VirtioScsiController::set_allocated_id(::opi_api::common::v1::Object
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiController.id)
 }
 
-// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
+// .opi_api.storage.v1.PciEndpoint pcie_id = 2;
 inline bool VirtioScsiController::_internal_has_pcie_id() const {
   return this != internal_default_instance() && pcie_id_ != nullptr;
 }
 inline bool VirtioScsiController::has_pcie_id() const {
   return _internal_has_pcie_id();
 }
-inline const ::opi_api::storage::v1::NvmeControllerPciId& VirtioScsiController::_internal_pcie_id() const {
-  const ::opi_api::storage::v1::NvmeControllerPciId* p = pcie_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::NvmeControllerPciId&>(
-      ::opi_api::storage::v1::_NvmeControllerPciId_default_instance_);
+inline const ::opi_api::storage::v1::PciEndpoint& VirtioScsiController::_internal_pcie_id() const {
+  const ::opi_api::storage::v1::PciEndpoint* p = pcie_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::PciEndpoint&>(
+      ::opi_api::storage::v1::_PciEndpoint_default_instance_);
 }
-inline const ::opi_api::storage::v1::NvmeControllerPciId& VirtioScsiController::pcie_id() const {
+inline const ::opi_api::storage::v1::PciEndpoint& VirtioScsiController::pcie_id() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiController.pcie_id)
   return _internal_pcie_id();
 }
 inline void VirtioScsiController::unsafe_arena_set_allocated_pcie_id(
-    ::opi_api::storage::v1::NvmeControllerPciId* pcie_id) {
+    ::opi_api::storage::v1::PciEndpoint* pcie_id) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pcie_id_);
   }
@@ -3169,9 +3169,9 @@ inline void VirtioScsiController::unsafe_arena_set_allocated_pcie_id(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiController.pcie_id)
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* VirtioScsiController::release_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* VirtioScsiController::release_pcie_id() {
   
-  ::opi_api::storage::v1::NvmeControllerPciId* temp = pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* temp = pcie_id_;
   pcie_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -3184,27 +3184,27 @@ inline ::opi_api::storage::v1::NvmeControllerPciId* VirtioScsiController::releas
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* VirtioScsiController::unsafe_arena_release_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* VirtioScsiController::unsafe_arena_release_pcie_id() {
   // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiController.pcie_id)
   
-  ::opi_api::storage::v1::NvmeControllerPciId* temp = pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* temp = pcie_id_;
   pcie_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* VirtioScsiController::_internal_mutable_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* VirtioScsiController::_internal_mutable_pcie_id() {
   
   if (pcie_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::storage::v1::NvmeControllerPciId>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(GetArenaForAllocation());
     pcie_id_ = p;
   }
   return pcie_id_;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* VirtioScsiController::mutable_pcie_id() {
-  ::opi_api::storage::v1::NvmeControllerPciId* _msg = _internal_mutable_pcie_id();
+inline ::opi_api::storage::v1::PciEndpoint* VirtioScsiController::mutable_pcie_id() {
+  ::opi_api::storage::v1::PciEndpoint* _msg = _internal_mutable_pcie_id();
   // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiController.pcie_id)
   return _msg;
 }
-inline void VirtioScsiController::set_allocated_pcie_id(::opi_api::storage::v1::NvmeControllerPciId* pcie_id) {
+inline void VirtioScsiController::set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pcie_id_);

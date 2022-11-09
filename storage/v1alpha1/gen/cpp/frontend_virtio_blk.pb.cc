@@ -235,47 +235,47 @@ const char descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto[] PROTOBUF_
   "\n\031frontend_virtio_blk.proto\022\022opi_api.sto"
   "rage.v1\032\014common.proto\032\020object_key.proto\032"
   "\033google/protobuf/empty.proto\032\034google/api"
-  "/annotations.proto\"\250\001\n\tVirtioBlk\022(\n\002id\030\001"
-  " \001(\0132\034.opi_api.common.v1.ObjectKey\0228\n\007pc"
-  "ie_id\030\002 \001(\0132\'.opi_api.storage.v1.NvmeCon"
-  "trollerPciId\022\014\n\004bdev\030\003 \001(\t\022\022\n\nmax_io_qps"
-  "\030\004 \001(\003\022\025\n\rserial_number\030\005 \001(\t\"K\n\026VirtioB"
-  "lkCreateRequest\0221\n\ncontroller\030\001 \001(\0132\035.op"
-  "i_api.storage.v1.VirtioBlk\"M\n\026VirtioBlkD"
-  "eleteRequest\0223\n\rcontroller_id\030\001 \001(\0132\034.op"
-  "i_api.common.v1.ObjectKey\"K\n\026VirtioBlkUp"
-  "dateRequest\0221\n\ncontroller\030\001 \001(\0132\035.opi_ap"
-  "i.storage.v1.VirtioBlk\"\026\n\024VirtioBlkListR"
-  "equest\"J\n\025VirtioBlkListResponse\0221\n\ncontr"
-  "oller\030\001 \003(\0132\035.opi_api.storage.v1.VirtioB"
-  "lk\"J\n\023VirtioBlkGetRequest\0223\n\rcontroller_"
-  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"L"
-  "\n\025VirtioBlkStatsRequest\0223\n\rcontroller_id"
-  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"Q\n\026"
-  "VirtioBlkStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi"
-  "_api.common.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2"
-  "\374\005\n\030FrontendVirtioBlkService\022\177\n\017VirtioBl"
-  "kCreate\022*.opi_api.storage.v1.VirtioBlkCr"
-  "eateRequest\032\035.opi_api.storage.v1.VirtioB"
-  "lk\"!\202\323\344\223\002\033\"\016/v1/virtioblks:\tvirtioblk\022y\n"
-  "\017VirtioBlkDelete\022*.opi_api.storage.v1.Vi"
-  "rtioBlkDeleteRequest\032\026.google.protobuf.E"
-  "mpty\"\"\202\323\344\223\002\034*\032/v1/virtioblks/{virtioblk}"
-  "\022\177\n\017VirtioBlkUpdate\022*.opi_api.storage.v1"
-  ".VirtioBlkUpdateRequest\032\035.opi_api.storag"
-  "e.v1.VirtioBlk\"!\202\323\344\223\002\0332\016/v1/virtioblks:\t"
-  "virtioblk\022|\n\rVirtioBlkList\022(.opi_api.sto"
-  "rage.v1.VirtioBlkListRequest\032).opi_api.s"
-  "torage.v1.VirtioBlkListResponse\"\026\202\323\344\223\002\020\022"
-  "\016/v1/virtioblks\022z\n\014VirtioBlkGet\022\'.opi_ap"
-  "i.storage.v1.VirtioBlkGetRequest\032\035.opi_a"
-  "pi.storage.v1.VirtioBlk\"\"\202\323\344\223\002\034\022\032/v1/vir"
-  "tioblks/{virtioblk}\022i\n\016VirtioBlkStats\022)."
-  "opi_api.storage.v1.VirtioBlkStatsRequest"
-  "\032*.opi_api.storage.v1.VirtioBlkStatsResp"
-  "onse\"\000Be\n\022opi_api.storage.v1B\026FrontendVi"
-  "rtioBlkProtoP\001Z5github.com/opiproject/op"
-  "i-api/storage/v1alpha1/gen/gob\006proto3"
+  "/annotations.proto\"\240\001\n\tVirtioBlk\022(\n\002id\030\001"
+  " \001(\0132\034.opi_api.common.v1.ObjectKey\0220\n\007pc"
+  "ie_id\030\002 \001(\0132\037.opi_api.storage.v1.PciEndp"
+  "oint\022\014\n\004bdev\030\003 \001(\t\022\022\n\nmax_io_qps\030\004 \001(\003\022\025"
+  "\n\rserial_number\030\005 \001(\t\"K\n\026VirtioBlkCreate"
+  "Request\0221\n\ncontroller\030\001 \001(\0132\035.opi_api.st"
+  "orage.v1.VirtioBlk\"M\n\026VirtioBlkDeleteReq"
+  "uest\0223\n\rcontroller_id\030\001 \001(\0132\034.opi_api.co"
+  "mmon.v1.ObjectKey\"K\n\026VirtioBlkUpdateRequ"
+  "est\0221\n\ncontroller\030\001 \001(\0132\035.opi_api.storag"
+  "e.v1.VirtioBlk\"\026\n\024VirtioBlkListRequest\"J"
+  "\n\025VirtioBlkListResponse\0221\n\ncontroller\030\001 "
+  "\003(\0132\035.opi_api.storage.v1.VirtioBlk\"J\n\023Vi"
+  "rtioBlkGetRequest\0223\n\rcontroller_id\030\001 \001(\013"
+  "2\034.opi_api.common.v1.ObjectKey\"L\n\025Virtio"
+  "BlkStatsRequest\0223\n\rcontroller_id\030\001 \001(\0132\034"
+  ".opi_api.common.v1.ObjectKey\"Q\n\026VirtioBl"
+  "kStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.com"
+  "mon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\374\005\n\030Fron"
+  "tendVirtioBlkService\022\177\n\017VirtioBlkCreate\022"
+  "*.opi_api.storage.v1.VirtioBlkCreateRequ"
+  "est\032\035.opi_api.storage.v1.VirtioBlk\"!\202\323\344\223"
+  "\002\033\"\016/v1/virtioblks:\tvirtioblk\022y\n\017VirtioB"
+  "lkDelete\022*.opi_api.storage.v1.VirtioBlkD"
+  "eleteRequest\032\026.google.protobuf.Empty\"\"\202\323"
+  "\344\223\002\034*\032/v1/virtioblks/{virtioblk}\022\177\n\017Virt"
+  "ioBlkUpdate\022*.opi_api.storage.v1.VirtioB"
+  "lkUpdateRequest\032\035.opi_api.storage.v1.Vir"
+  "tioBlk\"!\202\323\344\223\002\0332\016/v1/virtioblks:\tvirtiobl"
+  "k\022|\n\rVirtioBlkList\022(.opi_api.storage.v1."
+  "VirtioBlkListRequest\032).opi_api.storage.v"
+  "1.VirtioBlkListResponse\"\026\202\323\344\223\002\020\022\016/v1/vir"
+  "tioblks\022z\n\014VirtioBlkGet\022\'.opi_api.storag"
+  "e.v1.VirtioBlkGetRequest\032\035.opi_api.stora"
+  "ge.v1.VirtioBlk\"\"\202\323\344\223\002\034\022\032/v1/virtioblks/"
+  "{virtioblk}\022i\n\016VirtioBlkStats\022).opi_api."
+  "storage.v1.VirtioBlkStatsRequest\032*.opi_a"
+  "pi.storage.v1.VirtioBlkStatsResponse\"\000Be"
+  "\n\022opi_api.storage.v1B\026FrontendVirtioBlkP"
+  "rotoP\001Z5github.com/opiproject/opi-api/st"
+  "orage/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps[4] = {
   &::descriptor_table_common_2eproto,
@@ -285,7 +285,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5fblk_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5fblk_2eproto = {
-  false, false, 1757, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
+  false, false, 1749, descriptor_table_protodef_frontend_5fvirtio_5fblk_2eproto, "frontend_virtio_blk.proto", 
   &descriptor_table_frontend_5fvirtio_5fblk_2eproto_once, descriptor_table_frontend_5fvirtio_5fblk_2eproto_deps, 4, 9,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5fblk_2eproto::offsets,
   file_level_metadata_frontend_5fvirtio_5fblk_2eproto, file_level_enum_descriptors_frontend_5fvirtio_5fblk_2eproto, file_level_service_descriptors_frontend_5fvirtio_5fblk_2eproto,
@@ -305,14 +305,14 @@ namespace v1 {
 class VirtioBlk::_Internal {
  public:
   static const ::opi_api::common::v1::ObjectKey& id(const VirtioBlk* msg);
-  static const ::opi_api::storage::v1::NvmeControllerPciId& pcie_id(const VirtioBlk* msg);
+  static const ::opi_api::storage::v1::PciEndpoint& pcie_id(const VirtioBlk* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
 VirtioBlk::_Internal::id(const VirtioBlk* msg) {
   return *msg->id_;
 }
-const ::opi_api::storage::v1::NvmeControllerPciId&
+const ::opi_api::storage::v1::PciEndpoint&
 VirtioBlk::_Internal::pcie_id(const VirtioBlk* msg) {
   return *msg->pcie_id_;
 }
@@ -362,7 +362,7 @@ VirtioBlk::VirtioBlk(const VirtioBlk& from)
     id_ = nullptr;
   }
   if (from._internal_has_pcie_id()) {
-    pcie_id_ = new ::opi_api::storage::v1::NvmeControllerPciId(*from.pcie_id_);
+    pcie_id_ = new ::opi_api::storage::v1::PciEndpoint(*from.pcie_id_);
   } else {
     pcie_id_ = nullptr;
   }
@@ -444,7 +444,7 @@ const char* VirtioBlk::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
+      // .opi_api.storage.v1.PciEndpoint pcie_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_pcie_id(), ptr);
@@ -517,7 +517,7 @@ uint8_t* VirtioBlk::_InternalSerialize(
         1, _Internal::id(this), target, stream);
   }
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
+  // .opi_api.storage.v1.PciEndpoint pcie_id = 2;
   if (this->_internal_has_pcie_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -588,7 +588,7 @@ size_t VirtioBlk::ByteSizeLong() const {
         *id_);
   }
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;
+  // .opi_api.storage.v1.PciEndpoint pcie_id = 2;
   if (this->_internal_has_pcie_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -632,7 +632,7 @@ void VirtioBlk::MergeFrom(const VirtioBlk& from) {
     _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
   }
   if (from._internal_has_pcie_id()) {
-    _internal_mutable_pcie_id()->::opi_api::storage::v1::NvmeControllerPciId::MergeFrom(from._internal_pcie_id());
+    _internal_mutable_pcie_id()->::opi_api::storage::v1::PciEndpoint::MergeFrom(from._internal_pcie_id());
   }
   if (from._internal_max_io_qps() != 0) {
     _internal_set_max_io_qps(from._internal_max_io_qps());

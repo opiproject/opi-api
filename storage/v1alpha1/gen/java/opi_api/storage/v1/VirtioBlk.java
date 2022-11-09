@@ -64,11 +64,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.storage.v1.NvmeControllerPciId.Builder subBuilder = null;
+            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
             if (pcieId_ != null) {
               subBuilder = pcieId_.toBuilder();
             }
-            pcieId_ = input.readMessage(opi_api.storage.v1.NvmeControllerPciId.parser(), extensionRegistry);
+            pcieId_ = input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(pcieId_);
               pcieId_ = subBuilder.buildPartial();
@@ -152,9 +152,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PCIE_ID_FIELD_NUMBER = 2;
-  private opi_api.storage.v1.NvmeControllerPciId pcieId_;
+  private opi_api.storage.v1.PciEndpoint pcieId_;
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   @java.lang.Override
@@ -162,18 +162,18 @@ private static final long serialVersionUID = 0L;
     return pcieId_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return The pcieId.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NvmeControllerPciId getPcieId() {
-    return pcieId_ == null ? opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance() : pcieId_;
+  public opi_api.storage.v1.PciEndpoint getPcieId() {
+    return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder() {
+  public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
     return getPcieId();
   }
 
@@ -780,31 +780,31 @@ private static final long serialVersionUID = 0L;
       return idBuilder_;
     }
 
-    private opi_api.storage.v1.NvmeControllerPciId pcieId_;
+    private opi_api.storage.v1.PciEndpoint pcieId_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NvmeControllerPciId, opi_api.storage.v1.NvmeControllerPciId.Builder, opi_api.storage.v1.NvmeControllerPciIdOrBuilder> pcieIdBuilder_;
+        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieIdBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      * @return Whether the pcieId field is set.
      */
     public boolean hasPcieId() {
       return pcieIdBuilder_ != null || pcieId_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      * @return The pcieId.
      */
-    public opi_api.storage.v1.NvmeControllerPciId getPcieId() {
+    public opi_api.storage.v1.PciEndpoint getPcieId() {
       if (pcieIdBuilder_ == null) {
-        return pcieId_ == null ? opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance() : pcieId_;
+        return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
       } else {
         return pcieIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
-    public Builder setPcieId(opi_api.storage.v1.NvmeControllerPciId value) {
+    public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -818,10 +818,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder setPcieId(
-        opi_api.storage.v1.NvmeControllerPciId.Builder builderForValue) {
+        opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
       if (pcieIdBuilder_ == null) {
         pcieId_ = builderForValue.build();
         onChanged();
@@ -832,13 +832,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
-    public Builder mergePcieId(opi_api.storage.v1.NvmeControllerPciId value) {
+    public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
         if (pcieId_ != null) {
           pcieId_ =
-            opi_api.storage.v1.NvmeControllerPciId.newBuilder(pcieId_).mergeFrom(value).buildPartial();
+            opi_api.storage.v1.PciEndpoint.newBuilder(pcieId_).mergeFrom(value).buildPartial();
         } else {
           pcieId_ = value;
         }
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder clearPcieId() {
       if (pcieIdBuilder_ == null) {
@@ -864,33 +864,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
-    public opi_api.storage.v1.NvmeControllerPciId.Builder getPcieIdBuilder() {
+    public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
       
       onChanged();
       return getPcieIdFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
-    public opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder() {
+    public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
       if (pcieIdBuilder_ != null) {
         return pcieIdBuilder_.getMessageOrBuilder();
       } else {
         return pcieId_ == null ?
-            opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance() : pcieId_;
+            opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NvmeControllerPciId, opi_api.storage.v1.NvmeControllerPciId.Builder, opi_api.storage.v1.NvmeControllerPciIdOrBuilder> 
+        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
         getPcieIdFieldBuilder() {
       if (pcieIdBuilder_ == null) {
         pcieIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.NvmeControllerPciId, opi_api.storage.v1.NvmeControllerPciId.Builder, opi_api.storage.v1.NvmeControllerPciIdOrBuilder>(
+            opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder>(
                 getPcieId(),
                 getParentForChildren(),
                 isClean());

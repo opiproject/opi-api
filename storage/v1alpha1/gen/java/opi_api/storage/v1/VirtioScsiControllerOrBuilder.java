@@ -23,17 +23,17 @@ public interface VirtioScsiControllerOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return The pcieId.
    */
-  opi_api.storage.v1.NvmeControllerPciId getPcieId();
+  opi_api.storage.v1.PciEndpoint getPcieId();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 2;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    */
-  opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder();
+  opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 }

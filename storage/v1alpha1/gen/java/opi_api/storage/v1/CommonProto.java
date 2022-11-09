@@ -15,10 +15,10 @@ public final class CommonProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor;
+    internal_static_opi_api_storage_v1_PciEndpoint_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NvmeControllerPciId_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -28,23 +28,23 @@ public final class CommonProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014common.proto\022\022opi_api.storage.v1\"Z\n\023Nv" +
-      "meControllerPciId\022\013\n\003bus\030\001 \001(\005\022\016\n\006device" +
-      "\030\002 \001(\005\022\014\n\004func\030\003 \001(\005\022\030\n\020virtual_function" +
-      "\030\004 \001(\005BZ\n\022opi_api.storage.v1B\013CommonProt" +
-      "oP\001Z5github.com/opiproject/opi-api/stora" +
-      "ge/v1alpha1/gen/gob\006proto3"
+      "\n\014common.proto\022\022opi_api.storage.v1\"S\n\013Pc" +
+      "iEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physical_f" +
+      "unction\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001(\005B" +
+      "Z\n\022opi_api.storage.v1B\013CommonProtoP\001Z5gi" +
+      "thub.com/opiproject/opi-api/storage/v1al" +
+      "pha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor =
+    internal_static_opi_api_storage_v1_PciEndpoint_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_opi_api_storage_v1_NvmeControllerPciId_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor,
-        new java.lang.String[] { "Bus", "Device", "Func", "VirtualFunction", });
+        internal_static_opi_api_storage_v1_PciEndpoint_descriptor,
+        new java.lang.String[] { "PortId", "PhysicalFunction", "VirtualFunction", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

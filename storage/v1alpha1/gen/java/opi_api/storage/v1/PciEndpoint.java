@@ -5,32 +5,35 @@ package opi_api.storage.v1;
 
 /**
  * <pre>
- * The controller PCI-ID is used to address a given virtual controller. Virtual
- * controllers are organized into devices with Physical functions and SRIOV
- * virtual function within the physical functions. Currently, xPUs may
- * expose multiple devices with one physical function each and one or more
- * virtual functions under the physical function.
+ * Many front-ends expose PCI devices to the host. This represents that endpoint.
+ * This device will ultimately be surfaced by the operating system at some
+ * Bus:Device:Function, but note that the values set here are not necessarily
+ * the same values that the operating system will choose. Instead, these are
+ * xPU-internal values.
+ * While the term "device" is often used for the entity attached to a PCI slot,
+ * we'll use the term "port" which also commonly used with PCI switches and avoids
+ * confusion with storage "devices".
  * </pre>
  *
- * Protobuf type {@code opi_api.storage.v1.NvmeControllerPciId}
+ * Protobuf type {@code opi_api.storage.v1.PciEndpoint}
  */
-public final class NvmeControllerPciId extends
+public final class PciEndpoint extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.NvmeControllerPciId)
-    NvmeControllerPciIdOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.PciEndpoint)
+    PciEndpointOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use NvmeControllerPciId.newBuilder() to construct.
-  private NvmeControllerPciId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PciEndpoint.newBuilder() to construct.
+  private PciEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private NvmeControllerPciId() {
+  private PciEndpoint() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new NvmeControllerPciId();
+    return new PciEndpoint();
   }
 
   @java.lang.Override
@@ -38,7 +41,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private NvmeControllerPciId(
+  private PciEndpoint(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -58,20 +61,15 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            bus_ = input.readInt32();
+            portId_ = input.readInt32();
             break;
           }
           case 16: {
 
-            device_ = input.readInt32();
+            physicalFunction_ = input.readInt32();
             break;
           }
           case 24: {
-
-            func_ = input.readInt32();
-            break;
-          }
-          case 32: {
 
             virtualFunction_ = input.readInt32();
             break;
@@ -97,71 +95,62 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor;
+    return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_PciEndpoint_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_NvmeControllerPciId_fieldAccessorTable
+    return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.storage.v1.NvmeControllerPciId.class, opi_api.storage.v1.NvmeControllerPciId.Builder.class);
+            opi_api.storage.v1.PciEndpoint.class, opi_api.storage.v1.PciEndpoint.Builder.class);
   }
 
-  public static final int BUS_FIELD_NUMBER = 1;
-  private int bus_;
+  public static final int PORT_ID_FIELD_NUMBER = 1;
+  private int portId_;
   /**
    * <pre>
-   * Bus number, provided for future usage if needed. Currently set to ’0’
+   * The "port" or "device". In other words, the connector/cable that's
+   * plugged into a particular host. This number may end up matching
+   * the host-assigned "device" value in the bus:device:function identifier,
+   * but it does not strictly have to and that should not be relied upon.
    * </pre>
    *
-   * <code>int32 bus = 1;</code>
-   * @return The bus.
+   * <code>int32 port_id = 1;</code>
+   * @return The portId.
    */
   @java.lang.Override
-  public int getBus() {
-    return bus_;
+  public int getPortId() {
+    return portId_;
   }
 
-  public static final int DEVICE_FIELD_NUMBER = 2;
-  private int device_;
+  public static final int PHYSICAL_FUNCTION_FIELD_NUMBER = 2;
+  private int physicalFunction_;
   /**
    * <pre>
-   * Device number, based on the NVMe device layout
+   * Physical function index. This may end up matching the host-assigned
+   * "function" value in the bus:device:function identifier, but it does not
+   * strictly have to and that should not be relied upon.
    * </pre>
    *
-   * <code>int32 device = 2;</code>
-   * @return The device.
+   * <code>int32 physical_function = 2;</code>
+   * @return The physicalFunction.
    */
   @java.lang.Override
-  public int getDevice() {
-    return device_;
+  public int getPhysicalFunction() {
+    return physicalFunction_;
   }
 
-  public static final int FUNC_FIELD_NUMBER = 3;
-  private int func_;
-  /**
-   * <pre>
-   * Physical function, always set to 0 in current model
-   * </pre>
-   *
-   * <code>int32 func = 3;</code>
-   * @return The func.
-   */
-  @java.lang.Override
-  public int getFunc() {
-    return func_;
-  }
-
-  public static final int VIRTUAL_FUNCTION_FIELD_NUMBER = 4;
+  public static final int VIRTUAL_FUNCTION_FIELD_NUMBER = 3;
   private int virtualFunction_;
   /**
    * <pre>
-   * SRIOV Virtual function within the Device and Physical function.
-   * Set to 0 for Physical Function. Virtual Function numbering starts from 1
+   * Virtual function index. This may end up matching the host-assigned
+   * "function" value in the bus:device:function identifier, but it does not
+   * strictly have to and that should not be relied upon.
    * </pre>
    *
-   * <code>int32 virtual_function = 4;</code>
+   * <code>int32 virtual_function = 3;</code>
    * @return The virtualFunction.
    */
   @java.lang.Override
@@ -183,17 +172,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (bus_ != 0) {
-      output.writeInt32(1, bus_);
+    if (portId_ != 0) {
+      output.writeInt32(1, portId_);
     }
-    if (device_ != 0) {
-      output.writeInt32(2, device_);
-    }
-    if (func_ != 0) {
-      output.writeInt32(3, func_);
+    if (physicalFunction_ != 0) {
+      output.writeInt32(2, physicalFunction_);
     }
     if (virtualFunction_ != 0) {
-      output.writeInt32(4, virtualFunction_);
+      output.writeInt32(3, virtualFunction_);
     }
     unknownFields.writeTo(output);
   }
@@ -204,21 +190,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (bus_ != 0) {
+    if (portId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, bus_);
+        .computeInt32Size(1, portId_);
     }
-    if (device_ != 0) {
+    if (physicalFunction_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, device_);
-    }
-    if (func_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, func_);
+        .computeInt32Size(2, physicalFunction_);
     }
     if (virtualFunction_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, virtualFunction_);
+        .computeInt32Size(3, virtualFunction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -230,17 +212,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.storage.v1.NvmeControllerPciId)) {
+    if (!(obj instanceof opi_api.storage.v1.PciEndpoint)) {
       return super.equals(obj);
     }
-    opi_api.storage.v1.NvmeControllerPciId other = (opi_api.storage.v1.NvmeControllerPciId) obj;
+    opi_api.storage.v1.PciEndpoint other = (opi_api.storage.v1.PciEndpoint) obj;
 
-    if (getBus()
-        != other.getBus()) return false;
-    if (getDevice()
-        != other.getDevice()) return false;
-    if (getFunc()
-        != other.getFunc()) return false;
+    if (getPortId()
+        != other.getPortId()) return false;
+    if (getPhysicalFunction()
+        != other.getPhysicalFunction()) return false;
     if (getVirtualFunction()
         != other.getVirtualFunction()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -254,12 +234,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BUS_FIELD_NUMBER;
-    hash = (53 * hash) + getBus();
-    hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getDevice();
-    hash = (37 * hash) + FUNC_FIELD_NUMBER;
-    hash = (53 * hash) + getFunc();
+    hash = (37 * hash) + PORT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPortId();
+    hash = (37 * hash) + PHYSICAL_FUNCTION_FIELD_NUMBER;
+    hash = (53 * hash) + getPhysicalFunction();
     hash = (37 * hash) + VIRTUAL_FUNCTION_FIELD_NUMBER;
     hash = (53 * hash) + getVirtualFunction();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -267,69 +245,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(byte[] data)
+  public static opi_api.storage.v1.PciEndpoint parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.PciEndpoint parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.PciEndpoint parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseDelimitedFrom(
+  public static opi_api.storage.v1.PciEndpoint parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.NvmeControllerPciId parseFrom(
+  public static opi_api.storage.v1.PciEndpoint parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -342,7 +320,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.storage.v1.NvmeControllerPciId prototype) {
+  public static Builder newBuilder(opi_api.storage.v1.PciEndpoint prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -359,33 +337,36 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The controller PCI-ID is used to address a given virtual controller. Virtual
-   * controllers are organized into devices with Physical functions and SRIOV
-   * virtual function within the physical functions. Currently, xPUs may
-   * expose multiple devices with one physical function each and one or more
-   * virtual functions under the physical function.
+   * Many front-ends expose PCI devices to the host. This represents that endpoint.
+   * This device will ultimately be surfaced by the operating system at some
+   * Bus:Device:Function, but note that the values set here are not necessarily
+   * the same values that the operating system will choose. Instead, these are
+   * xPU-internal values.
+   * While the term "device" is often used for the entity attached to a PCI slot,
+   * we'll use the term "port" which also commonly used with PCI switches and avoids
+   * confusion with storage "devices".
    * </pre>
    *
-   * Protobuf type {@code opi_api.storage.v1.NvmeControllerPciId}
+   * Protobuf type {@code opi_api.storage.v1.PciEndpoint}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.NvmeControllerPciId)
-      opi_api.storage.v1.NvmeControllerPciIdOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.PciEndpoint)
+      opi_api.storage.v1.PciEndpointOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor;
+      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_PciEndpoint_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_NvmeControllerPciId_fieldAccessorTable
+      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.storage.v1.NvmeControllerPciId.class, opi_api.storage.v1.NvmeControllerPciId.Builder.class);
+              opi_api.storage.v1.PciEndpoint.class, opi_api.storage.v1.PciEndpoint.Builder.class);
     }
 
-    // Construct using opi_api.storage.v1.NvmeControllerPciId.newBuilder()
+    // Construct using opi_api.storage.v1.PciEndpoint.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -403,11 +384,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bus_ = 0;
+      portId_ = 0;
 
-      device_ = 0;
-
-      func_ = 0;
+      physicalFunction_ = 0;
 
       virtualFunction_ = 0;
 
@@ -417,17 +396,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_NvmeControllerPciId_descriptor;
+      return opi_api.storage.v1.CommonProto.internal_static_opi_api_storage_v1_PciEndpoint_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.NvmeControllerPciId getDefaultInstanceForType() {
-      return opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance();
+    public opi_api.storage.v1.PciEndpoint getDefaultInstanceForType() {
+      return opi_api.storage.v1.PciEndpoint.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.NvmeControllerPciId build() {
-      opi_api.storage.v1.NvmeControllerPciId result = buildPartial();
+    public opi_api.storage.v1.PciEndpoint build() {
+      opi_api.storage.v1.PciEndpoint result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -435,11 +414,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.NvmeControllerPciId buildPartial() {
-      opi_api.storage.v1.NvmeControllerPciId result = new opi_api.storage.v1.NvmeControllerPciId(this);
-      result.bus_ = bus_;
-      result.device_ = device_;
-      result.func_ = func_;
+    public opi_api.storage.v1.PciEndpoint buildPartial() {
+      opi_api.storage.v1.PciEndpoint result = new opi_api.storage.v1.PciEndpoint(this);
+      result.portId_ = portId_;
+      result.physicalFunction_ = physicalFunction_;
       result.virtualFunction_ = virtualFunction_;
       onBuilt();
       return result;
@@ -479,24 +457,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.storage.v1.NvmeControllerPciId) {
-        return mergeFrom((opi_api.storage.v1.NvmeControllerPciId)other);
+      if (other instanceof opi_api.storage.v1.PciEndpoint) {
+        return mergeFrom((opi_api.storage.v1.PciEndpoint)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.storage.v1.NvmeControllerPciId other) {
-      if (other == opi_api.storage.v1.NvmeControllerPciId.getDefaultInstance()) return this;
-      if (other.getBus() != 0) {
-        setBus(other.getBus());
+    public Builder mergeFrom(opi_api.storage.v1.PciEndpoint other) {
+      if (other == opi_api.storage.v1.PciEndpoint.getDefaultInstance()) return this;
+      if (other.getPortId() != 0) {
+        setPortId(other.getPortId());
       }
-      if (other.getDevice() != 0) {
-        setDevice(other.getDevice());
-      }
-      if (other.getFunc() != 0) {
-        setFunc(other.getFunc());
+      if (other.getPhysicalFunction() != 0) {
+        setPhysicalFunction(other.getPhysicalFunction());
       }
       if (other.getVirtualFunction() != 0) {
         setVirtualFunction(other.getVirtualFunction());
@@ -516,11 +491,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.storage.v1.NvmeControllerPciId parsedMessage = null;
+      opi_api.storage.v1.PciEndpoint parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.storage.v1.NvmeControllerPciId) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.storage.v1.PciEndpoint) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -530,131 +505,103 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int bus_ ;
+    private int portId_ ;
     /**
      * <pre>
-     * Bus number, provided for future usage if needed. Currently set to ’0’
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 bus = 1;</code>
-     * @return The bus.
+     * <code>int32 port_id = 1;</code>
+     * @return The portId.
      */
     @java.lang.Override
-    public int getBus() {
-      return bus_;
+    public int getPortId() {
+      return portId_;
     }
     /**
      * <pre>
-     * Bus number, provided for future usage if needed. Currently set to ’0’
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 bus = 1;</code>
-     * @param value The bus to set.
+     * <code>int32 port_id = 1;</code>
+     * @param value The portId to set.
      * @return This builder for chaining.
      */
-    public Builder setBus(int value) {
+    public Builder setPortId(int value) {
       
-      bus_ = value;
+      portId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Bus number, provided for future usage if needed. Currently set to ’0’
+     * The "port" or "device". In other words, the connector/cable that's
+     * plugged into a particular host. This number may end up matching
+     * the host-assigned "device" value in the bus:device:function identifier,
+     * but it does not strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 bus = 1;</code>
+     * <code>int32 port_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearBus() {
+    public Builder clearPortId() {
       
-      bus_ = 0;
+      portId_ = 0;
       onChanged();
       return this;
     }
 
-    private int device_ ;
+    private int physicalFunction_ ;
     /**
      * <pre>
-     * Device number, based on the NVMe device layout
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 device = 2;</code>
-     * @return The device.
+     * <code>int32 physical_function = 2;</code>
+     * @return The physicalFunction.
      */
     @java.lang.Override
-    public int getDevice() {
-      return device_;
+    public int getPhysicalFunction() {
+      return physicalFunction_;
     }
     /**
      * <pre>
-     * Device number, based on the NVMe device layout
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 device = 2;</code>
-     * @param value The device to set.
+     * <code>int32 physical_function = 2;</code>
+     * @param value The physicalFunction to set.
      * @return This builder for chaining.
      */
-    public Builder setDevice(int value) {
+    public Builder setPhysicalFunction(int value) {
       
-      device_ = value;
+      physicalFunction_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Device number, based on the NVMe device layout
+     * Physical function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 device = 2;</code>
+     * <code>int32 physical_function = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDevice() {
+    public Builder clearPhysicalFunction() {
       
-      device_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int func_ ;
-    /**
-     * <pre>
-     * Physical function, always set to 0 in current model
-     * </pre>
-     *
-     * <code>int32 func = 3;</code>
-     * @return The func.
-     */
-    @java.lang.Override
-    public int getFunc() {
-      return func_;
-    }
-    /**
-     * <pre>
-     * Physical function, always set to 0 in current model
-     * </pre>
-     *
-     * <code>int32 func = 3;</code>
-     * @param value The func to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFunc(int value) {
-      
-      func_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Physical function, always set to 0 in current model
-     * </pre>
-     *
-     * <code>int32 func = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFunc() {
-      
-      func_ = 0;
+      physicalFunction_ = 0;
       onChanged();
       return this;
     }
@@ -662,11 +609,12 @@ private static final long serialVersionUID = 0L;
     private int virtualFunction_ ;
     /**
      * <pre>
-     * SRIOV Virtual function within the Device and Physical function.
-     * Set to 0 for Physical Function. Virtual Function numbering starts from 1
+     * Virtual function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 3;</code>
      * @return The virtualFunction.
      */
     @java.lang.Override
@@ -675,11 +623,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * SRIOV Virtual function within the Device and Physical function.
-     * Set to 0 for Physical Function. Virtual Function numbering starts from 1
+     * Virtual function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 3;</code>
      * @param value The virtualFunction to set.
      * @return This builder for chaining.
      */
@@ -691,11 +640,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * SRIOV Virtual function within the Device and Physical function.
-     * Set to 0 for Physical Function. Virtual Function numbering starts from 1
+     * Virtual function index. This may end up matching the host-assigned
+     * "function" value in the bus:device:function identifier, but it does not
+     * strictly have to and that should not be relied upon.
      * </pre>
      *
-     * <code>int32 virtual_function = 4;</code>
+     * <code>int32 virtual_function = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtualFunction() {
@@ -717,41 +667,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.NvmeControllerPciId)
+    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.PciEndpoint)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerPciId)
-  private static final opi_api.storage.v1.NvmeControllerPciId DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.PciEndpoint)
+  private static final opi_api.storage.v1.PciEndpoint DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.storage.v1.NvmeControllerPciId();
+    DEFAULT_INSTANCE = new opi_api.storage.v1.PciEndpoint();
   }
 
-  public static opi_api.storage.v1.NvmeControllerPciId getDefaultInstance() {
+  public static opi_api.storage.v1.PciEndpoint getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NvmeControllerPciId>
-      PARSER = new com.google.protobuf.AbstractParser<NvmeControllerPciId>() {
+  private static final com.google.protobuf.Parser<PciEndpoint>
+      PARSER = new com.google.protobuf.AbstractParser<PciEndpoint>() {
     @java.lang.Override
-    public NvmeControllerPciId parsePartialFrom(
+    public PciEndpoint parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NvmeControllerPciId(input, extensionRegistry);
+      return new PciEndpoint(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<NvmeControllerPciId> parser() {
+  public static com.google.protobuf.Parser<PciEndpoint> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<NvmeControllerPciId> getParserForType() {
+  public com.google.protobuf.Parser<PciEndpoint> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.storage.v1.NvmeControllerPciId getDefaultInstanceForType() {
+  public opi_api.storage.v1.PciEndpoint getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -595,23 +595,23 @@ class NVMeController final :
       ::opi_api::common::v1::ObjectKey* subsystem_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_subsystem_id();
 
-  // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+  // .opi_api.storage.v1.PciEndpoint pcie_id = 4;
   bool has_pcie_id() const;
   private:
   bool _internal_has_pcie_id() const;
   public:
   void clear_pcie_id();
-  const ::opi_api::storage::v1::NvmeControllerPciId& pcie_id() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::NvmeControllerPciId* release_pcie_id();
-  ::opi_api::storage::v1::NvmeControllerPciId* mutable_pcie_id();
-  void set_allocated_pcie_id(::opi_api::storage::v1::NvmeControllerPciId* pcie_id);
+  const ::opi_api::storage::v1::PciEndpoint& pcie_id() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::PciEndpoint* release_pcie_id();
+  ::opi_api::storage::v1::PciEndpoint* mutable_pcie_id();
+  void set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id);
   private:
-  const ::opi_api::storage::v1::NvmeControllerPciId& _internal_pcie_id() const;
-  ::opi_api::storage::v1::NvmeControllerPciId* _internal_mutable_pcie_id();
+  const ::opi_api::storage::v1::PciEndpoint& _internal_pcie_id() const;
+  ::opi_api::storage::v1::PciEndpoint* _internal_mutable_pcie_id();
   public:
   void unsafe_arena_set_allocated_pcie_id(
-      ::opi_api::storage::v1::NvmeControllerPciId* pcie_id);
-  ::opi_api::storage::v1::NvmeControllerPciId* unsafe_arena_release_pcie_id();
+      ::opi_api::storage::v1::PciEndpoint* pcie_id);
+  ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
 
   // int32 nvme_controller_id = 2;
   void clear_nvme_controller_id();
@@ -676,7 +676,7 @@ class NVMeController final :
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
-  ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* pcie_id_;
   int32_t nvme_controller_id_;
   int32_t max_nsq_;
   int32_t max_ncq_;
@@ -5302,24 +5302,24 @@ inline void NVMeController::set_allocated_subsystem_id(::opi_api::common::v1::Ob
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.subsystem_id)
 }
 
-// .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
+// .opi_api.storage.v1.PciEndpoint pcie_id = 4;
 inline bool NVMeController::_internal_has_pcie_id() const {
   return this != internal_default_instance() && pcie_id_ != nullptr;
 }
 inline bool NVMeController::has_pcie_id() const {
   return _internal_has_pcie_id();
 }
-inline const ::opi_api::storage::v1::NvmeControllerPciId& NVMeController::_internal_pcie_id() const {
-  const ::opi_api::storage::v1::NvmeControllerPciId* p = pcie_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::NvmeControllerPciId&>(
-      ::opi_api::storage::v1::_NvmeControllerPciId_default_instance_);
+inline const ::opi_api::storage::v1::PciEndpoint& NVMeController::_internal_pcie_id() const {
+  const ::opi_api::storage::v1::PciEndpoint* p = pcie_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::PciEndpoint&>(
+      ::opi_api::storage::v1::_PciEndpoint_default_instance_);
 }
-inline const ::opi_api::storage::v1::NvmeControllerPciId& NVMeController::pcie_id() const {
+inline const ::opi_api::storage::v1::PciEndpoint& NVMeController::pcie_id() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.pcie_id)
   return _internal_pcie_id();
 }
 inline void NVMeController::unsafe_arena_set_allocated_pcie_id(
-    ::opi_api::storage::v1::NvmeControllerPciId* pcie_id) {
+    ::opi_api::storage::v1::PciEndpoint* pcie_id) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pcie_id_);
   }
@@ -5331,9 +5331,9 @@ inline void NVMeController::unsafe_arena_set_allocated_pcie_id(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeController.pcie_id)
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* NVMeController::release_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* NVMeController::release_pcie_id() {
   
-  ::opi_api::storage::v1::NvmeControllerPciId* temp = pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* temp = pcie_id_;
   pcie_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -5346,27 +5346,27 @@ inline ::opi_api::storage::v1::NvmeControllerPciId* NVMeController::release_pcie
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* NVMeController::unsafe_arena_release_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* NVMeController::unsafe_arena_release_pcie_id() {
   // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeController.pcie_id)
   
-  ::opi_api::storage::v1::NvmeControllerPciId* temp = pcie_id_;
+  ::opi_api::storage::v1::PciEndpoint* temp = pcie_id_;
   pcie_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* NVMeController::_internal_mutable_pcie_id() {
+inline ::opi_api::storage::v1::PciEndpoint* NVMeController::_internal_mutable_pcie_id() {
   
   if (pcie_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::storage::v1::NvmeControllerPciId>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(GetArenaForAllocation());
     pcie_id_ = p;
   }
   return pcie_id_;
 }
-inline ::opi_api::storage::v1::NvmeControllerPciId* NVMeController::mutable_pcie_id() {
-  ::opi_api::storage::v1::NvmeControllerPciId* _msg = _internal_mutable_pcie_id();
+inline ::opi_api::storage::v1::PciEndpoint* NVMeController::mutable_pcie_id() {
+  ::opi_api::storage::v1::PciEndpoint* _msg = _internal_mutable_pcie_id();
   // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeController.pcie_id)
   return _msg;
 }
-inline void NVMeController::set_allocated_pcie_id(::opi_api::storage::v1::NvmeControllerPciId* pcie_id) {
+inline void NVMeController::set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint* pcie_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pcie_id_);

@@ -77,7 +77,7 @@ public interface NVMeControllerOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
@@ -86,18 +86,18 @@ public interface NVMeControllerOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
    * @return The pcieId.
    */
-  opi_api.storage.v1.NvmeControllerPciId getPcieId();
+  opi_api.storage.v1.PciEndpoint getPcieId();
   /**
    * <pre>
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
    */
-  opi_api.storage.v1.NvmeControllerPciIdOrBuilder getPcieIdOrBuilder();
+  opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
   /**
    * <pre>
