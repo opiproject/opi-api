@@ -6,10 +6,7 @@ import backend_nvme_tcp_pb2 as backend__nvme__tcp__pb2
 
 
 class NVMfRemoteControllerServiceStub(object):
-    """Back End (network-facing) APIs.
-
-    NVMe/TCP and NVMe/RoCEv2
-
+    """Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
     """
 
     def __init__(self, channel):
@@ -51,10 +48,7 @@ class NVMfRemoteControllerServiceStub(object):
 
 
 class NVMfRemoteControllerServiceServicer(object):
-    """Back End (network-facing) APIs.
-
-    NVMe/TCP and NVMe/RoCEv2
-
+    """Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
     """
 
     def NVMfRemoteControllerConnect(self, request, context):
@@ -134,10 +128,7 @@ def add_NVMfRemoteControllerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class NVMfRemoteControllerService(object):
-    """Back End (network-facing) APIs.
-
-    NVMe/TCP and NVMe/RoCEv2
-
+    """Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
     """
 
     @staticmethod

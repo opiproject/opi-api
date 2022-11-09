@@ -33,10 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Back End (network-facing) APIs.
-//
-// NVMe/TCP and NVMe/RoCEv2
-//
+// Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 class NVMfRemoteControllerService final {
  public:
   static constexpr char const* service_full_name() {

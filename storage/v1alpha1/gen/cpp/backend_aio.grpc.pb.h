@@ -33,8 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Back End (network-facing) APIs.
-//
+// Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 class AioControllerService final {
  public:
   static constexpr char const* service_full_name() {

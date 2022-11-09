@@ -6,8 +6,7 @@ import backend_null_pb2 as backend__null__pb2
 
 
 class NullDebugServiceStub(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
     def __init__(self, channel):
@@ -49,8 +48,7 @@ class NullDebugServiceStub(object):
 
 
 class NullDebugServiceServicer(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
     def NullDebugCreate(self, request, context):
@@ -130,8 +128,7 @@ def add_NullDebugServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class NullDebugService(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This is debug interface for null block devices.
     """
 
     @staticmethod

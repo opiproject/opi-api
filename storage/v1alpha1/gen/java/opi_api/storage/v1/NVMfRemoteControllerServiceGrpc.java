@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -246,6 +249,9 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * </pre>
    */
   public static abstract class NVMfRemoteControllerServiceImplBase implements io.grpc.BindableService {
 
@@ -340,6 +346,9 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * </pre>
    */
   public static final class NVMfRemoteControllerServiceStub extends io.grpc.stub.AbstractAsyncStub<NVMfRemoteControllerServiceStub> {
     private NVMfRemoteControllerServiceStub(
@@ -403,6 +412,9 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * </pre>
    */
   public static final class NVMfRemoteControllerServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<NVMfRemoteControllerServiceBlockingStub> {
     private NVMfRemoteControllerServiceBlockingStub(
@@ -460,6 +472,9 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
+   * </pre>
    */
   public static final class NVMfRemoteControllerServiceFutureStub extends io.grpc.stub.AbstractFutureStub<NVMfRemoteControllerServiceFutureStub> {
     private NVMfRemoteControllerServiceFutureStub(

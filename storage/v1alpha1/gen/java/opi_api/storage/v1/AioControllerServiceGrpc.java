@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Back End (network-facing) APIs. This service is for AIO generic kernel block device.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -246,6 +249,9 @@ public final class AioControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This service is for AIO generic kernel block device.
+   * </pre>
    */
   public static abstract class AioControllerServiceImplBase implements io.grpc.BindableService {
 
@@ -340,6 +346,9 @@ public final class AioControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This service is for AIO generic kernel block device.
+   * </pre>
    */
   public static final class AioControllerServiceStub extends io.grpc.stub.AbstractAsyncStub<AioControllerServiceStub> {
     private AioControllerServiceStub(
@@ -403,6 +412,9 @@ public final class AioControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This service is for AIO generic kernel block device.
+   * </pre>
    */
   public static final class AioControllerServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<AioControllerServiceBlockingStub> {
     private AioControllerServiceBlockingStub(
@@ -460,6 +472,9 @@ public final class AioControllerServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This service is for AIO generic kernel block device.
+   * </pre>
    */
   public static final class AioControllerServiceFutureStub extends io.grpc.stub.AbstractFutureStub<AioControllerServiceFutureStub> {
     private AioControllerServiceFutureStub(

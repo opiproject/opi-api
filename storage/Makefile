@@ -15,6 +15,6 @@ all:
 	curl -kL https://github.com/googleapis/googleapis/archive/master.tar.gz | tar --strip=1 -zxvf - googleapis-master/google/api
 	mv google "${PWD}"/v1alpha1/
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.36.0 -c "api-linter -I /common /out/*.proto --output-format summary"
-	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.36.0 -c "api-linter -I /common /out/frontend*.proto --output-format github --disable-rule=core::0192::has-comments --disable-rule=core::0136 --disable-rule=core::0127 --set-exit-status"
+	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out ghcr.io/docker-multiarch/google-api-linter:1.36.0 -c "api-linter -I /common /out/*.proto --output-format github --disable-rule=core::0192::has-comments --disable-rule=core::0136 --disable-rule=core::0127 --set-exit-status"
 	docker run --user=$$(id -u):$$(id -g) --rm --entrypoint=sh -v "${PWD}/../common/v1":/common -v "${PWD}"/v1alpha1/:/out -w /out -v "${PWD}"/v1alpha1:/protos pseudomuto/protoc-gen-doc -c "protoc -I /common -I /protos --doc_out=/out --doc_opt=markdown,autogen.md /protos/*.proto /common/*.proto"
 	rm -rf "${PWD}"/v1alpha1/google

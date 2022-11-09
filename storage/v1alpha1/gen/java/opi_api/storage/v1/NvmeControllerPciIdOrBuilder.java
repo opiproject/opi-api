@@ -32,10 +32,10 @@ public interface NvmeControllerPciIdOrBuilder extends
    * Physical function, always set to 0 in current model
    * </pre>
    *
-   * <code>int32 function = 3;</code>
-   * @return The function.
+   * <code>int32 func = 3;</code>
+   * @return The func.
    */
-  int getFunction();
+  int getFunc();
 
   /**
    * <pre>

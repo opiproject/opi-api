@@ -23,7 +23,7 @@ constexpr NvmeControllerPciId::NvmeControllerPciId(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : bus_(0)
   , device_(0)
-  , function_(0)
+  , func_(0)
   , virtual_function_(0){}
 struct NvmeControllerPciIdDefaultTypeInternal {
   constexpr NvmeControllerPciIdDefaultTypeInternal()
@@ -50,7 +50,7 @@ const uint32_t TableStruct_common_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NvmeControllerPciId, bus_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NvmeControllerPciId, device_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NvmeControllerPciId, function_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NvmeControllerPciId, func_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NvmeControllerPciId, virtual_function_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -62,16 +62,16 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\014common.proto\022\022opi_api.storage.v1\"^\n\023Nv"
+  "\n\014common.proto\022\022opi_api.storage.v1\"Z\n\023Nv"
   "meControllerPciId\022\013\n\003bus\030\001 \001(\005\022\016\n\006device"
-  "\030\002 \001(\005\022\020\n\010function\030\003 \001(\005\022\030\n\020virtual_func"
-  "tion\030\004 \001(\005BZ\n\022opi_api.storage.v1B\013Common"
-  "ProtoP\001Z5github.com/opiproject/opi-api/s"
-  "torage/v1alpha1/gen/gob\006proto3"
+  "\030\002 \001(\005\022\014\n\004func\030\003 \001(\005\022\030\n\020virtual_function"
+  "\030\004 \001(\005BZ\n\022opi_api.storage.v1B\013CommonProt"
+  "oP\001Z5github.com/opiproject/opi-api/stora"
+  "ge/v1alpha1/gen/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2eproto = {
-  false, false, 230, descriptor_table_protodef_common_2eproto, "common.proto", 
+  false, false, 226, descriptor_table_protodef_common_2eproto, "common.proto", 
   &descriptor_table_common_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_common_2eproto::offsets,
   file_level_metadata_common_2eproto, file_level_enum_descriptors_common_2eproto, file_level_service_descriptors_common_2eproto,
@@ -172,10 +172,10 @@ const char* NvmeControllerPciId::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         } else
           goto handle_unusual;
         continue;
-      // int32 function = 3;
+      // int32 func = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          function_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          func_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -229,10 +229,10 @@ uint8_t* NvmeControllerPciId::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_device(), target);
   }
 
-  // int32 function = 3;
-  if (this->_internal_function() != 0) {
+  // int32 func = 3;
+  if (this->_internal_func() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_function(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_func(), target);
   }
 
   // int32 virtual_function = 4;
@@ -267,9 +267,9 @@ size_t NvmeControllerPciId::ByteSizeLong() const {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_device());
   }
 
-  // int32 function = 3;
-  if (this->_internal_function() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_function());
+  // int32 func = 3;
+  if (this->_internal_func() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_func());
   }
 
   // int32 virtual_function = 4;
@@ -305,8 +305,8 @@ void NvmeControllerPciId::MergeFrom(const NvmeControllerPciId& from) {
   if (from._internal_device() != 0) {
     _internal_set_device(from._internal_device());
   }
-  if (from._internal_function() != 0) {
-    _internal_set_function(from._internal_function());
+  if (from._internal_func() != 0) {
+    _internal_set_func(from._internal_func());
   }
   if (from._internal_virtual_function() != 0) {
     _internal_set_virtual_function(from._internal_virtual_function());

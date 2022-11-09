@@ -12,8 +12,7 @@ option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "object_key.proto";
 import "uuid.proto";
 
-// Back End (network-facing) APIs.
-
+// Back End (network-facing) APIs. This is debug interface for null block devices.
 service NullDebugService {
     rpc NullDebugCreate (NullDebugCreateRequest) returns (NullDebugCreateResponse) {}
     rpc NullDebugDelete (NullDebugDeleteRequest) returns (NullDebugDeleteResponse) {}
@@ -25,10 +24,9 @@ service NullDebugService {
 
 message NullDebug {
     int64 id = 1;
-    string name = 2;
-    int64 block_size = 3;
-    int64 num_blocks = 4;
-    common.v1.Uuid uuid = 5;
+    int64 block_size = 2;
+    int64 blocks_count = 3;
+    common.v1.Uuid uuid = 4;
 }
 
 message NullDebugCreateRequest {

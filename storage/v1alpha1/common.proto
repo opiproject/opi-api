@@ -24,7 +24,7 @@ message NvmeControllerPciId {
     int32 device           = 2;
 
     // Physical function, always set to 0 in current model
-    int32 function         = 3;
+    int32 func             = 3;
 
     // SRIOV Virtual function within the Device and Physical function.
     // Set to 0 for Physical Function. Virtual Function numbering starts from 1

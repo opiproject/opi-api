@@ -10,10 +10,7 @@ option java_outer_classname = "BackendNvmeTcpProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
-// Back End (network-facing) APIs.
-
-// NVMe/TCP and NVMe/RoCEv2
-
+// Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 service NVMfRemoteControllerService {
     rpc NVMfRemoteControllerConnect (NVMfRemoteControllerConnectRequest) returns (NVMfRemoteControllerConnectResponse) {}
     rpc NVMfRemoteControllerDisconnect (NVMfRemoteControllerDisconnectRequest) returns (NVMfRemoteControllerDisconnectResponse) {}
@@ -33,31 +30,8 @@ message NVMfRemoteController {
     bool hdgst = 7;
     bool ddgst = 8;
     NvmeMultipath multipath = 9;
-    int64 num_io_queues = 10;
+    int64 io_queues_count = 10;
     int64 queue_size = 11;
-
-}
-
-enum NvmeTransportType {
-    NVME_TRANSPORT_FC     = 0;
-    NVME_TRANSPORT_PCIE   = 1;
-    NVME_TRANSPORT_RDMA   = 2;
-    NVME_TRANSPORT_TCP    = 3;
-    NVME_TRANSPORT_CUSTOM = 4;
-}
-
-enum NvmeAddressFamily {
-    NVMF_ADRFAM_IPV4       = 0;
-    NVMF_ADRFAM_IPV6       = 1;
-    NVMF_ADRFAM_IB         = 2;
-    NVMF_ADRFAM_FC         = 3;
-    NVMF_ADRFAM_INTRA_HOST = 4;
-}
-
-enum NvmeMultipath {
-    NVME_MPIO_DISABLE       = 0;
-    NVME_MPIO_FAILOVER      = 1;
-    NVME_MPIO_MULTIPATH     = 2;
 }
 
 message NVMfRemoteControllerConnectRequest {
@@ -109,3 +83,27 @@ message NVMfRemoteControllerStatsResponse {
     string stats = 2;
 }
 
+enum NvmeTransportType {
+    NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;
+    NVME_TRANSPORT_FC               = 1;
+    NVME_TRANSPORT_PCIE             = 2;
+    NVME_TRANSPORT_RDMA             = 3;
+    NVME_TRANSPORT_TCP              = 4;
+    NVME_TRANSPORT_CUSTOM           = 5;
+}
+
+enum NvmeAddressFamily {
+    NVME_ADDRESS_FAMILY_UNSPECIFIED = 0;
+    NVMF_ADRFAM_IPV4                = 1;
+    NVMF_ADRFAM_IPV6                = 2;
+    NVMF_ADRFAM_IB                  = 3;
+    NVMF_ADRFAM_FC                  = 4;
+    NVMF_ADRFAM_INTRA_HOST          = 5;
+}
+
+enum NvmeMultipath {
+    NVME_MULTIPATH_UNSPECIFIED = 0;
+    NVME_MULTIPATH_DISABLE     = 1;
+    NVME_MULTIPATH_FAILOVER    = 2;
+    NVME_MULTIPATH_MULTIPATH   = 3;
+}

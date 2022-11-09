@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
           }
           case 80: {
 
-            numIoQueues_ = input.readInt64();
+            ioQueuesCount_ = input.readInt64();
             break;
           }
           case 88: {
@@ -322,15 +322,15 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.storage.v1.NvmeMultipath.UNRECOGNIZED : result;
   }
 
-  public static final int NUM_IO_QUEUES_FIELD_NUMBER = 10;
-  private long numIoQueues_;
+  public static final int IO_QUEUES_COUNT_FIELD_NUMBER = 10;
+  private long ioQueuesCount_;
   /**
-   * <code>int64 num_io_queues = 10;</code>
-   * @return The numIoQueues.
+   * <code>int64 io_queues_count = 10;</code>
+   * @return The ioQueuesCount.
    */
   @java.lang.Override
-  public long getNumIoQueues() {
-    return numIoQueues_;
+  public long getIoQueuesCount() {
+    return ioQueuesCount_;
   }
 
   public static final int QUEUE_SIZE_FIELD_NUMBER = 11;
@@ -361,10 +361,10 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_FC.getNumber()) {
+    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, trtype_);
     }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVMF_ADRFAM_IPV4.getNumber()) {
+    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, adrfam_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traddr_)) {
@@ -382,11 +382,11 @@ private static final long serialVersionUID = 0L;
     if (ddgst_ != false) {
       output.writeBool(8, ddgst_);
     }
-    if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MPIO_DISABLE.getNumber()) {
+    if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, multipath_);
     }
-    if (numIoQueues_ != 0L) {
-      output.writeInt64(10, numIoQueues_);
+    if (ioQueuesCount_ != 0L) {
+      output.writeInt64(10, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
       output.writeInt64(11, queueSize_);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_FC.getNumber()) {
+    if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, trtype_);
     }
-    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVMF_ADRFAM_IPV4.getNumber()) {
+    if (adrfam_ != opi_api.storage.v1.NvmeAddressFamily.NVME_ADDRESS_FAMILY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, adrfam_);
     }
@@ -430,13 +430,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, ddgst_);
     }
-    if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MPIO_DISABLE.getNumber()) {
+    if (multipath_ != opi_api.storage.v1.NvmeMultipath.NVME_MULTIPATH_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, multipath_);
     }
-    if (numIoQueues_ != 0L) {
+    if (ioQueuesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(10, numIoQueues_);
+        .computeInt64Size(10, ioQueuesCount_);
     }
     if (queueSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -472,8 +472,8 @@ private static final long serialVersionUID = 0L;
     if (getDdgst()
         != other.getDdgst()) return false;
     if (multipath_ != other.multipath_) return false;
-    if (getNumIoQueues()
-        != other.getNumIoQueues()) return false;
+    if (getIoQueuesCount()
+        != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -509,9 +509,9 @@ private static final long serialVersionUID = 0L;
         getDdgst());
     hash = (37 * hash) + MULTIPATH_FIELD_NUMBER;
     hash = (53 * hash) + multipath_;
-    hash = (37 * hash) + NUM_IO_QUEUES_FIELD_NUMBER;
+    hash = (37 * hash) + IO_QUEUES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNumIoQueues());
+        getIoQueuesCount());
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
 
       multipath_ = 0;
 
-      numIoQueues_ = 0L;
+      ioQueuesCount_ = 0L;
 
       queueSize_ = 0L;
 
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
       result.hdgst_ = hdgst_;
       result.ddgst_ = ddgst_;
       result.multipath_ = multipath_;
-      result.numIoQueues_ = numIoQueues_;
+      result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
       onBuilt();
       return result;
@@ -784,8 +784,8 @@ private static final long serialVersionUID = 0L;
       if (other.multipath_ != 0) {
         setMultipathValue(other.getMultipathValue());
       }
-      if (other.getNumIoQueues() != 0L) {
-        setNumIoQueues(other.getNumIoQueues());
+      if (other.getIoQueuesCount() != 0L) {
+        setIoQueuesCount(other.getIoQueuesCount());
       }
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
@@ -1257,33 +1257,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long numIoQueues_ ;
+    private long ioQueuesCount_ ;
     /**
-     * <code>int64 num_io_queues = 10;</code>
-     * @return The numIoQueues.
+     * <code>int64 io_queues_count = 10;</code>
+     * @return The ioQueuesCount.
      */
     @java.lang.Override
-    public long getNumIoQueues() {
-      return numIoQueues_;
+    public long getIoQueuesCount() {
+      return ioQueuesCount_;
     }
     /**
-     * <code>int64 num_io_queues = 10;</code>
-     * @param value The numIoQueues to set.
+     * <code>int64 io_queues_count = 10;</code>
+     * @param value The ioQueuesCount to set.
      * @return This builder for chaining.
      */
-    public Builder setNumIoQueues(long value) {
+    public Builder setIoQueuesCount(long value) {
       
-      numIoQueues_ = value;
+      ioQueuesCount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 num_io_queues = 10;</code>
+     * <code>int64 io_queues_count = 10;</code>
      * @return This builder for chaining.
      */
-    public Builder clearNumIoQueues() {
+    public Builder clearIoQueuesCount() {
       
-      numIoQueues_ = 0L;
+      ioQueuesCount_ = 0L;
       onChanged();
       return this;
     }

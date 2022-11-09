@@ -3,6 +3,9 @@ package opi_api.storage.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * Back End (network-facing) APIs. This is debug interface for null block devices.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -246,6 +249,9 @@ public final class NullDebugServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This is debug interface for null block devices.
+   * </pre>
    */
   public static abstract class NullDebugServiceImplBase implements io.grpc.BindableService {
 
@@ -340,6 +346,9 @@ public final class NullDebugServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This is debug interface for null block devices.
+   * </pre>
    */
   public static final class NullDebugServiceStub extends io.grpc.stub.AbstractAsyncStub<NullDebugServiceStub> {
     private NullDebugServiceStub(
@@ -403,6 +412,9 @@ public final class NullDebugServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This is debug interface for null block devices.
+   * </pre>
    */
   public static final class NullDebugServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<NullDebugServiceBlockingStub> {
     private NullDebugServiceBlockingStub(
@@ -460,6 +472,9 @@ public final class NullDebugServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Back End (network-facing) APIs. This is debug interface for null block devices.
+   * </pre>
    */
   public static final class NullDebugServiceFutureStub extends io.grpc.stub.AbstractFutureStub<NullDebugServiceFutureStub> {
     private NullDebugServiceFutureStub(

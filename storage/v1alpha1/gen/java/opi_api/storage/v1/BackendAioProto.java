@@ -75,47 +75,47 @@ public final class BackendAioProto {
     java.lang.String[] descriptorData = {
       "\n\021backend_aio.proto\022\022opi_api.storage.v1\032" +
       "\033google/protobuf/empty.proto\032\020object_key" +
-      ".proto\032\nuuid.proto\"\254\001\n\rAioController\022,\n\006" +
+      ".proto\032\nuuid.proto\"\240\001\n\rAioController\022,\n\006" +
       "handle\030\001 \001(\0132\034.opi_api.common.v1.ObjectK" +
-      "ey\022\014\n\004name\030\002 \001(\t\022\022\n\nblock_size\030\003 \001(\003\022\022\n\n" +
-      "num_blocks\030\004 \001(\003\022%\n\004uuid\030\005 \001(\0132\027.opi_api" +
-      ".common.v1.Uuid\022\020\n\010filename\030\006 \001(\t\"O\n\032Aio" +
-      "ControllerCreateRequest\0221\n\006device\030\001 \001(\0132" +
-      "!.opi_api.storage.v1.AioController\"J\n\032Ai" +
-      "oControllerDeleteRequest\022,\n\006handle\030\001 \001(\013" +
-      "2\034.opi_api.common.v1.ObjectKey\"O\n\032AioCon" +
-      "trollerUpdateRequest\0221\n\006device\030\001 \001(\0132!.o" +
-      "pi_api.storage.v1.AioController\"F\n\021AioCo" +
-      "ntrollerList\0221\n\006device\030\001 \003(\0132!.opi_api.s" +
-      "torage.v1.AioController\"G\n\027AioController" +
-      "GetRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.com" +
-      "mon.v1.ObjectKey\"\035\n\033AioControllerGetList" +
-      "Request\"L\n\034AioControllerGetStatsRequest\022" +
-      ",\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obje" +
-      "ctKey\"I\n\031AioControllerStatsRequest\022,\n\006ha" +
-      "ndle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey" +
-      "\"Q\n\022AioControllerStats\022,\n\006handle\030\001 \001(\0132\034" +
-      ".opi_api.common.v1.ObjectKey\022\r\n\005stats\030\002 " +
-      "\001(\t2\234\005\n\024AioControllerService\022j\n\023AioContr" +
-      "ollerCreate\022..opi_api.storage.v1.AioCont" +
-      "rollerCreateRequest\032!.opi_api.storage.v1" +
-      ".AioController\"\000\022_\n\023AioControllerDelete\022" +
-      "..opi_api.storage.v1.AioControllerDelete" +
-      "Request\032\026.google.protobuf.Empty\"\000\022d\n\020Aio" +
-      "ControllerGet\022+.opi_api.storage.v1.AioCo" +
-      "ntrollerGetRequest\032!.opi_api.storage.v1." +
-      "AioController\"\000\022p\n\024AioControllerGetList\022" +
-      "/.opi_api.storage.v1.AioControllerGetLis" +
-      "tRequest\032%.opi_api.storage.v1.AioControl" +
-      "lerList\"\000\022s\n\025AioControllerGetStats\0220.opi" +
-      "_api.storage.v1.AioControllerGetStatsReq" +
-      "uest\032&.opi_api.storage.v1.AioControllerS" +
-      "tats\"\000\022j\n\023AioControllerUpdate\022..opi_api." +
-      "storage.v1.AioControllerUpdateRequest\032!." +
-      "opi_api.storage.v1.AioController\"\000B^\n\022op" +
-      "i_api.storage.v1B\017BackendAioProtoP\001Z5git" +
-      "hub.com/opiproject/opi-api/storage/v1alp" +
-      "ha1/gen/gob\006proto3"
+      "ey\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_count\030\003" +
+      " \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.common.v1.U" +
+      "uid\022\020\n\010filename\030\005 \001(\t\"O\n\032AioControllerCr" +
+      "eateRequest\0221\n\006device\030\001 \001(\0132!.opi_api.st" +
+      "orage.v1.AioController\"J\n\032AioControllerD" +
+      "eleteRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.c" +
+      "ommon.v1.ObjectKey\"O\n\032AioControllerUpdat" +
+      "eRequest\0221\n\006device\030\001 \001(\0132!.opi_api.stora" +
+      "ge.v1.AioController\"F\n\021AioControllerList" +
+      "\0221\n\006device\030\001 \003(\0132!.opi_api.storage.v1.Ai" +
+      "oController\"G\n\027AioControllerGetRequest\022," +
+      "\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Objec" +
+      "tKey\"\035\n\033AioControllerGetListRequest\"L\n\034A" +
+      "ioControllerGetStatsRequest\022,\n\006handle\030\001 " +
+      "\001(\0132\034.opi_api.common.v1.ObjectKey\"I\n\031Aio" +
+      "ControllerStatsRequest\022,\n\006handle\030\001 \001(\0132\034" +
+      ".opi_api.common.v1.ObjectKey\"Q\n\022AioContr" +
+      "ollerStats\022,\n\006handle\030\001 \001(\0132\034.opi_api.com" +
+      "mon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\234\005\n\024AioC" +
+      "ontrollerService\022j\n\023AioControllerCreate\022" +
+      "..opi_api.storage.v1.AioControllerCreate" +
+      "Request\032!.opi_api.storage.v1.AioControll" +
+      "er\"\000\022_\n\023AioControllerDelete\022..opi_api.st" +
+      "orage.v1.AioControllerDeleteRequest\032\026.go" +
+      "ogle.protobuf.Empty\"\000\022d\n\020AioControllerGe" +
+      "t\022+.opi_api.storage.v1.AioControllerGetR" +
+      "equest\032!.opi_api.storage.v1.AioControlle" +
+      "r\"\000\022p\n\024AioControllerGetList\022/.opi_api.st" +
+      "orage.v1.AioControllerGetListRequest\032%.o" +
+      "pi_api.storage.v1.AioControllerList\"\000\022s\n" +
+      "\025AioControllerGetStats\0220.opi_api.storage" +
+      ".v1.AioControllerGetStatsRequest\032&.opi_a" +
+      "pi.storage.v1.AioControllerStats\"\000\022j\n\023Ai" +
+      "oControllerUpdate\022..opi_api.storage.v1.A" +
+      "ioControllerUpdateRequest\032!.opi_api.stor" +
+      "age.v1.AioController\"\000B^\n\022opi_api.storag" +
+      "e.v1B\017BackendAioProtoP\001Z5github.com/opip" +
+      "roject/opi-api/storage/v1alpha1/gen/gob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -129,7 +129,7 @@ public final class BackendAioProto {
     internal_static_opi_api_storage_v1_AioController_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_AioController_descriptor,
-        new java.lang.String[] { "Handle", "Name", "BlockSize", "NumBlocks", "Uuid", "Filename", });
+        new java.lang.String[] { "Handle", "BlockSize", "BlocksCount", "Uuid", "Filename", });
     internal_static_opi_api_storage_v1_AioControllerCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_storage_v1_AioControllerCreateRequest_fieldAccessorTable = new

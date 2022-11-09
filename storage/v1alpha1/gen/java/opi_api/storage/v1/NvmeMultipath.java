@@ -9,32 +9,40 @@ package opi_api.storage.v1;
 public enum NvmeMultipath
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>NVME_MPIO_DISABLE = 0;</code>
+   * <code>NVME_MULTIPATH_UNSPECIFIED = 0;</code>
    */
-  NVME_MPIO_DISABLE(0),
+  NVME_MULTIPATH_UNSPECIFIED(0),
   /**
-   * <code>NVME_MPIO_FAILOVER = 1;</code>
+   * <code>NVME_MULTIPATH_DISABLE = 1;</code>
    */
-  NVME_MPIO_FAILOVER(1),
+  NVME_MULTIPATH_DISABLE(1),
   /**
-   * <code>NVME_MPIO_MULTIPATH = 2;</code>
+   * <code>NVME_MULTIPATH_FAILOVER = 2;</code>
    */
-  NVME_MPIO_MULTIPATH(2),
+  NVME_MULTIPATH_FAILOVER(2),
+  /**
+   * <code>NVME_MULTIPATH_MULTIPATH = 3;</code>
+   */
+  NVME_MULTIPATH_MULTIPATH(3),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>NVME_MPIO_DISABLE = 0;</code>
+   * <code>NVME_MULTIPATH_UNSPECIFIED = 0;</code>
    */
-  public static final int NVME_MPIO_DISABLE_VALUE = 0;
+  public static final int NVME_MULTIPATH_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>NVME_MPIO_FAILOVER = 1;</code>
+   * <code>NVME_MULTIPATH_DISABLE = 1;</code>
    */
-  public static final int NVME_MPIO_FAILOVER_VALUE = 1;
+  public static final int NVME_MULTIPATH_DISABLE_VALUE = 1;
   /**
-   * <code>NVME_MPIO_MULTIPATH = 2;</code>
+   * <code>NVME_MULTIPATH_FAILOVER = 2;</code>
    */
-  public static final int NVME_MPIO_MULTIPATH_VALUE = 2;
+  public static final int NVME_MULTIPATH_FAILOVER_VALUE = 2;
+  /**
+   * <code>NVME_MULTIPATH_MULTIPATH = 3;</code>
+   */
+  public static final int NVME_MULTIPATH_MULTIPATH_VALUE = 3;
 
 
   public final int getNumber() {
@@ -61,9 +69,10 @@ public enum NvmeMultipath
    */
   public static NvmeMultipath forNumber(int value) {
     switch (value) {
-      case 0: return NVME_MPIO_DISABLE;
-      case 1: return NVME_MPIO_FAILOVER;
-      case 2: return NVME_MPIO_MULTIPATH;
+      case 0: return NVME_MULTIPATH_UNSPECIFIED;
+      case 1: return NVME_MULTIPATH_DISABLE;
+      case 2: return NVME_MULTIPATH_FAILOVER;
+      case 3: return NVME_MULTIPATH_MULTIPATH;
       default: return null;
     }
   }

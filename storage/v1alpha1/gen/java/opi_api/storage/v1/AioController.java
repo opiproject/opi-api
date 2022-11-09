@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AioController() {
-    name_ = "";
     filename_ = "";
   }
 
@@ -63,23 +62,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 24: {
+          case 16: {
 
             blockSize_ = input.readInt64();
             break;
           }
-          case 32: {
+          case 24: {
 
-            numBlocks_ = input.readInt64();
+            blocksCount_ = input.readInt64();
             break;
           }
-          case 42: {
+          case 34: {
             opi_api.common.v1.Uuid.Builder subBuilder = null;
             if (uuid_ != null) {
               subBuilder = uuid_.toBuilder();
@@ -92,7 +85,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 50: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             filename_ = s;
@@ -171,48 +164,10 @@ private static final long serialVersionUID = 0L;
     return getHandle();
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int BLOCK_SIZE_FIELD_NUMBER = 3;
+  public static final int BLOCK_SIZE_FIELD_NUMBER = 2;
   private long blockSize_;
   /**
-   * <code>int64 block_size = 3;</code>
+   * <code>int64 block_size = 2;</code>
    * @return The blockSize.
    */
   @java.lang.Override
@@ -220,21 +175,21 @@ private static final long serialVersionUID = 0L;
     return blockSize_;
   }
 
-  public static final int NUM_BLOCKS_FIELD_NUMBER = 4;
-  private long numBlocks_;
+  public static final int BLOCKS_COUNT_FIELD_NUMBER = 3;
+  private long blocksCount_;
   /**
-   * <code>int64 num_blocks = 4;</code>
-   * @return The numBlocks.
+   * <code>int64 blocks_count = 3;</code>
+   * @return The blocksCount.
    */
   @java.lang.Override
-  public long getNumBlocks() {
-    return numBlocks_;
+  public long getBlocksCount() {
+    return blocksCount_;
   }
 
-  public static final int UUID_FIELD_NUMBER = 5;
+  public static final int UUID_FIELD_NUMBER = 4;
   private opi_api.common.v1.Uuid uuid_;
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -242,7 +197,7 @@ private static final long serialVersionUID = 0L;
     return uuid_ != null;
   }
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -250,17 +205,17 @@ private static final long serialVersionUID = 0L;
     return uuid_ == null ? opi_api.common.v1.Uuid.getDefaultInstance() : uuid_;
   }
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    */
   @java.lang.Override
   public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
     return getUuid();
   }
 
-  public static final int FILENAME_FIELD_NUMBER = 6;
+  public static final int FILENAME_FIELD_NUMBER = 5;
   private volatile java.lang.Object filename_;
   /**
-   * <code>string filename = 6;</code>
+   * <code>string filename = 5;</code>
    * @return The filename.
    */
   @java.lang.Override
@@ -277,7 +232,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string filename = 6;</code>
+   * <code>string filename = 5;</code>
    * @return The bytes for filename.
    */
   @java.lang.Override
@@ -312,20 +267,17 @@ private static final long serialVersionUID = 0L;
     if (handle_ != null) {
       output.writeMessage(1, getHandle());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
     if (blockSize_ != 0L) {
-      output.writeInt64(3, blockSize_);
+      output.writeInt64(2, blockSize_);
     }
-    if (numBlocks_ != 0L) {
-      output.writeInt64(4, numBlocks_);
+    if (blocksCount_ != 0L) {
+      output.writeInt64(3, blocksCount_);
     }
     if (uuid_ != null) {
-      output.writeMessage(5, getUuid());
+      output.writeMessage(4, getUuid());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, filename_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filename_);
     }
     unknownFields.writeTo(output);
   }
@@ -340,23 +292,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHandle());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
     if (blockSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, blockSize_);
+        .computeInt64Size(2, blockSize_);
     }
-    if (numBlocks_ != 0L) {
+    if (blocksCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, numBlocks_);
+        .computeInt64Size(3, blocksCount_);
     }
     if (uuid_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUuid());
+        .computeMessageSize(4, getUuid());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, filename_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filename_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -378,12 +327,10 @@ private static final long serialVersionUID = 0L;
       if (!getHandle()
           .equals(other.getHandle())) return false;
     }
-    if (!getName()
-        .equals(other.getName())) return false;
     if (getBlockSize()
         != other.getBlockSize()) return false;
-    if (getNumBlocks()
-        != other.getNumBlocks()) return false;
+    if (getBlocksCount()
+        != other.getBlocksCount()) return false;
     if (hasUuid() != other.hasUuid()) return false;
     if (hasUuid()) {
       if (!getUuid()
@@ -406,14 +353,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + HANDLE_FIELD_NUMBER;
       hash = (53 * hash) + getHandle().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + BLOCK_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getBlockSize());
-    hash = (37 * hash) + NUM_BLOCKS_FIELD_NUMBER;
+    hash = (37 * hash) + BLOCKS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNumBlocks());
+        getBlocksCount());
     if (hasUuid()) {
       hash = (37 * hash) + UUID_FIELD_NUMBER;
       hash = (53 * hash) + getUuid().hashCode();
@@ -559,11 +504,9 @@ private static final long serialVersionUID = 0L;
         handle_ = null;
         handleBuilder_ = null;
       }
-      name_ = "";
-
       blockSize_ = 0L;
 
-      numBlocks_ = 0L;
+      blocksCount_ = 0L;
 
       if (uuidBuilder_ == null) {
         uuid_ = null;
@@ -604,9 +547,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.handle_ = handleBuilder_.build();
       }
-      result.name_ = name_;
       result.blockSize_ = blockSize_;
-      result.numBlocks_ = numBlocks_;
+      result.blocksCount_ = blocksCount_;
       if (uuidBuilder_ == null) {
         result.uuid_ = uuid_;
       } else {
@@ -664,15 +606,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasHandle()) {
         mergeHandle(other.getHandle());
       }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (other.getBlockSize() != 0L) {
         setBlockSize(other.getBlockSize());
       }
-      if (other.getNumBlocks() != 0L) {
-        setNumBlocks(other.getNumBlocks());
+      if (other.getBlocksCount() != 0L) {
+        setBlocksCount(other.getBlocksCount());
       }
       if (other.hasUuid()) {
         mergeUuid(other.getUuid());
@@ -874,85 +812,9 @@ private static final long serialVersionUID = 0L;
       return handleBuilder_;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private long blockSize_ ;
     /**
-     * <code>int64 block_size = 3;</code>
+     * <code>int64 block_size = 2;</code>
      * @return The blockSize.
      */
     @java.lang.Override
@@ -960,7 +822,7 @@ private static final long serialVersionUID = 0L;
       return blockSize_;
     }
     /**
-     * <code>int64 block_size = 3;</code>
+     * <code>int64 block_size = 2;</code>
      * @param value The blockSize to set.
      * @return This builder for chaining.
      */
@@ -971,7 +833,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 block_size = 3;</code>
+     * <code>int64 block_size = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearBlockSize() {
@@ -981,33 +843,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long numBlocks_ ;
+    private long blocksCount_ ;
     /**
-     * <code>int64 num_blocks = 4;</code>
-     * @return The numBlocks.
+     * <code>int64 blocks_count = 3;</code>
+     * @return The blocksCount.
      */
     @java.lang.Override
-    public long getNumBlocks() {
-      return numBlocks_;
+    public long getBlocksCount() {
+      return blocksCount_;
     }
     /**
-     * <code>int64 num_blocks = 4;</code>
-     * @param value The numBlocks to set.
+     * <code>int64 blocks_count = 3;</code>
+     * @param value The blocksCount to set.
      * @return This builder for chaining.
      */
-    public Builder setNumBlocks(long value) {
+    public Builder setBlocksCount(long value) {
       
-      numBlocks_ = value;
+      blocksCount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 num_blocks = 4;</code>
+     * <code>int64 blocks_count = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearNumBlocks() {
+    public Builder clearBlocksCount() {
       
-      numBlocks_ = 0L;
+      blocksCount_ = 0L;
       onChanged();
       return this;
     }
@@ -1016,14 +878,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> uuidBuilder_;
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
       return uuidBuilder_ != null || uuid_ != null;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      * @return The uuid.
      */
     public opi_api.common.v1.Uuid getUuid() {
@@ -1034,7 +896,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1050,7 +912,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public Builder setUuid(
         opi_api.common.v1.Uuid.Builder builderForValue) {
@@ -1064,7 +926,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1082,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public Builder clearUuid() {
       if (uuidBuilder_ == null) {
@@ -1096,7 +958,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
       
@@ -1104,7 +966,7 @@ private static final long serialVersionUID = 0L;
       return getUuidFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
       if (uuidBuilder_ != null) {
@@ -1115,7 +977,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 
@@ -1133,7 +995,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filename_ = "";
     /**
-     * <code>string filename = 6;</code>
+     * <code>string filename = 5;</code>
      * @return The filename.
      */
     public java.lang.String getFilename() {
@@ -1149,7 +1011,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string filename = 6;</code>
+     * <code>string filename = 5;</code>
      * @return The bytes for filename.
      */
     public com.google.protobuf.ByteString
@@ -1166,7 +1028,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string filename = 6;</code>
+     * <code>string filename = 5;</code>
      * @param value The filename to set.
      * @return This builder for chaining.
      */
@@ -1181,7 +1043,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string filename = 6;</code>
+     * <code>string filename = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearFilename() {
@@ -1191,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string filename = 6;</code>
+     * <code>string filename = 5;</code>
      * @param value The bytes for filename to set.
      * @return This builder for chaining.
      */

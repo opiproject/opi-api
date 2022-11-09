@@ -9,48 +9,56 @@ package opi_api.storage.v1;
 public enum NvmeTransportType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>NVME_TRANSPORT_FC = 0;</code>
+   * <code>NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;</code>
    */
-  NVME_TRANSPORT_FC(0),
+  NVME_TRANSPORT_TYPE_UNSPECIFIED(0),
   /**
-   * <code>NVME_TRANSPORT_PCIE = 1;</code>
+   * <code>NVME_TRANSPORT_FC = 1;</code>
    */
-  NVME_TRANSPORT_PCIE(1),
+  NVME_TRANSPORT_FC(1),
   /**
-   * <code>NVME_TRANSPORT_RDMA = 2;</code>
+   * <code>NVME_TRANSPORT_PCIE = 2;</code>
    */
-  NVME_TRANSPORT_RDMA(2),
+  NVME_TRANSPORT_PCIE(2),
   /**
-   * <code>NVME_TRANSPORT_TCP = 3;</code>
+   * <code>NVME_TRANSPORT_RDMA = 3;</code>
    */
-  NVME_TRANSPORT_TCP(3),
+  NVME_TRANSPORT_RDMA(3),
   /**
-   * <code>NVME_TRANSPORT_CUSTOM = 4;</code>
+   * <code>NVME_TRANSPORT_TCP = 4;</code>
    */
-  NVME_TRANSPORT_CUSTOM(4),
+  NVME_TRANSPORT_TCP(4),
+  /**
+   * <code>NVME_TRANSPORT_CUSTOM = 5;</code>
+   */
+  NVME_TRANSPORT_CUSTOM(5),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>NVME_TRANSPORT_FC = 0;</code>
+   * <code>NVME_TRANSPORT_TYPE_UNSPECIFIED = 0;</code>
    */
-  public static final int NVME_TRANSPORT_FC_VALUE = 0;
+  public static final int NVME_TRANSPORT_TYPE_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>NVME_TRANSPORT_PCIE = 1;</code>
+   * <code>NVME_TRANSPORT_FC = 1;</code>
    */
-  public static final int NVME_TRANSPORT_PCIE_VALUE = 1;
+  public static final int NVME_TRANSPORT_FC_VALUE = 1;
   /**
-   * <code>NVME_TRANSPORT_RDMA = 2;</code>
+   * <code>NVME_TRANSPORT_PCIE = 2;</code>
    */
-  public static final int NVME_TRANSPORT_RDMA_VALUE = 2;
+  public static final int NVME_TRANSPORT_PCIE_VALUE = 2;
   /**
-   * <code>NVME_TRANSPORT_TCP = 3;</code>
+   * <code>NVME_TRANSPORT_RDMA = 3;</code>
    */
-  public static final int NVME_TRANSPORT_TCP_VALUE = 3;
+  public static final int NVME_TRANSPORT_RDMA_VALUE = 3;
   /**
-   * <code>NVME_TRANSPORT_CUSTOM = 4;</code>
+   * <code>NVME_TRANSPORT_TCP = 4;</code>
    */
-  public static final int NVME_TRANSPORT_CUSTOM_VALUE = 4;
+  public static final int NVME_TRANSPORT_TCP_VALUE = 4;
+  /**
+   * <code>NVME_TRANSPORT_CUSTOM = 5;</code>
+   */
+  public static final int NVME_TRANSPORT_CUSTOM_VALUE = 5;
 
 
   public final int getNumber() {
@@ -77,11 +85,12 @@ public enum NvmeTransportType
    */
   public static NvmeTransportType forNumber(int value) {
     switch (value) {
-      case 0: return NVME_TRANSPORT_FC;
-      case 1: return NVME_TRANSPORT_PCIE;
-      case 2: return NVME_TRANSPORT_RDMA;
-      case 3: return NVME_TRANSPORT_TCP;
-      case 4: return NVME_TRANSPORT_CUSTOM;
+      case 0: return NVME_TRANSPORT_TYPE_UNSPECIFIED;
+      case 1: return NVME_TRANSPORT_FC;
+      case 2: return NVME_TRANSPORT_PCIE;
+      case 3: return NVME_TRANSPORT_RDMA;
+      case 4: return NVME_TRANSPORT_TCP;
+      case 5: return NVME_TRANSPORT_CUSTOM;
       default: return null;
     }
   }

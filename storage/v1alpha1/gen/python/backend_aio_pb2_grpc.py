@@ -7,8 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class AioControllerServiceStub(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This service is for AIO generic kernel block device.
     """
 
     def __init__(self, channel):
@@ -50,8 +49,7 @@ class AioControllerServiceStub(object):
 
 
 class AioControllerServiceServicer(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This service is for AIO generic kernel block device.
     """
 
     def AioControllerCreate(self, request, context):
@@ -131,8 +129,7 @@ def add_AioControllerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AioControllerService(object):
-    """Back End (network-facing) APIs.
-
+    """Back End (network-facing) APIs. This service is for AIO generic kernel block device.
     """
 
     @staticmethod

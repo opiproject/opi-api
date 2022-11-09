@@ -14,41 +14,29 @@ public interface NullDebugOrBuilder extends
   long getId();
 
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>int64 block_size = 3;</code>
+   * <code>int64 block_size = 2;</code>
    * @return The blockSize.
    */
   long getBlockSize();
 
   /**
-   * <code>int64 num_blocks = 4;</code>
-   * @return The numBlocks.
+   * <code>int64 blocks_count = 3;</code>
+   * @return The blocksCount.
    */
-  long getNumBlocks();
+  long getBlocksCount();
 
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
   /**
-   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 4;</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
 }

@@ -120,16 +120,17 @@ namespace storage {
 namespace v1 {
 
 enum NvmeTransportType : int {
-  NVME_TRANSPORT_FC = 0,
-  NVME_TRANSPORT_PCIE = 1,
-  NVME_TRANSPORT_RDMA = 2,
-  NVME_TRANSPORT_TCP = 3,
-  NVME_TRANSPORT_CUSTOM = 4,
+  NVME_TRANSPORT_TYPE_UNSPECIFIED = 0,
+  NVME_TRANSPORT_FC = 1,
+  NVME_TRANSPORT_PCIE = 2,
+  NVME_TRANSPORT_RDMA = 3,
+  NVME_TRANSPORT_TCP = 4,
+  NVME_TRANSPORT_CUSTOM = 5,
   NvmeTransportType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   NvmeTransportType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool NvmeTransportType_IsValid(int value);
-constexpr NvmeTransportType NvmeTransportType_MIN = NVME_TRANSPORT_FC;
+constexpr NvmeTransportType NvmeTransportType_MIN = NVME_TRANSPORT_TYPE_UNSPECIFIED;
 constexpr NvmeTransportType NvmeTransportType_MAX = NVME_TRANSPORT_CUSTOM;
 constexpr int NvmeTransportType_ARRAYSIZE = NvmeTransportType_MAX + 1;
 
@@ -148,16 +149,17 @@ inline bool NvmeTransportType_Parse(
     NvmeTransportType_descriptor(), name, value);
 }
 enum NvmeAddressFamily : int {
-  NVMF_ADRFAM_IPV4 = 0,
-  NVMF_ADRFAM_IPV6 = 1,
-  NVMF_ADRFAM_IB = 2,
-  NVMF_ADRFAM_FC = 3,
-  NVMF_ADRFAM_INTRA_HOST = 4,
+  NVME_ADDRESS_FAMILY_UNSPECIFIED = 0,
+  NVMF_ADRFAM_IPV4 = 1,
+  NVMF_ADRFAM_IPV6 = 2,
+  NVMF_ADRFAM_IB = 3,
+  NVMF_ADRFAM_FC = 4,
+  NVMF_ADRFAM_INTRA_HOST = 5,
   NvmeAddressFamily_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   NvmeAddressFamily_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool NvmeAddressFamily_IsValid(int value);
-constexpr NvmeAddressFamily NvmeAddressFamily_MIN = NVMF_ADRFAM_IPV4;
+constexpr NvmeAddressFamily NvmeAddressFamily_MIN = NVME_ADDRESS_FAMILY_UNSPECIFIED;
 constexpr NvmeAddressFamily NvmeAddressFamily_MAX = NVMF_ADRFAM_INTRA_HOST;
 constexpr int NvmeAddressFamily_ARRAYSIZE = NvmeAddressFamily_MAX + 1;
 
@@ -176,15 +178,16 @@ inline bool NvmeAddressFamily_Parse(
     NvmeAddressFamily_descriptor(), name, value);
 }
 enum NvmeMultipath : int {
-  NVME_MPIO_DISABLE = 0,
-  NVME_MPIO_FAILOVER = 1,
-  NVME_MPIO_MULTIPATH = 2,
+  NVME_MULTIPATH_UNSPECIFIED = 0,
+  NVME_MULTIPATH_DISABLE = 1,
+  NVME_MULTIPATH_FAILOVER = 2,
+  NVME_MULTIPATH_MULTIPATH = 3,
   NvmeMultipath_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   NvmeMultipath_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool NvmeMultipath_IsValid(int value);
-constexpr NvmeMultipath NvmeMultipath_MIN = NVME_MPIO_DISABLE;
-constexpr NvmeMultipath NvmeMultipath_MAX = NVME_MPIO_MULTIPATH;
+constexpr NvmeMultipath NvmeMultipath_MIN = NVME_MULTIPATH_UNSPECIFIED;
+constexpr NvmeMultipath NvmeMultipath_MAX = NVME_MULTIPATH_MULTIPATH;
 constexpr int NvmeMultipath_ARRAYSIZE = NvmeMultipath_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NvmeMultipath_descriptor();
@@ -334,7 +337,7 @@ class NVMfRemoteController final :
     kHdgstFieldNumber = 7,
     kDdgstFieldNumber = 8,
     kMultipathFieldNumber = 9,
-    kNumIoQueuesFieldNumber = 10,
+    kIoQueuesCountFieldNumber = 10,
     kQueueSizeFieldNumber = 11,
   };
   // string traddr = 4;
@@ -428,13 +431,13 @@ class NVMfRemoteController final :
   void _internal_set_multipath(::opi_api::storage::v1::NvmeMultipath value);
   public:
 
-  // int64 num_io_queues = 10;
-  void clear_num_io_queues();
-  int64_t num_io_queues() const;
-  void set_num_io_queues(int64_t value);
+  // int64 io_queues_count = 10;
+  void clear_io_queues_count();
+  int64_t io_queues_count() const;
+  void set_io_queues_count(int64_t value);
   private:
-  int64_t _internal_num_io_queues() const;
-  void _internal_set_num_io_queues(int64_t value);
+  int64_t _internal_io_queues_count() const;
+  void _internal_set_io_queues_count(int64_t value);
   public:
 
   // int64 queue_size = 11;
@@ -462,7 +465,7 @@ class NVMfRemoteController final :
   bool hdgst_;
   bool ddgst_;
   int multipath_;
-  int64_t num_io_queues_;
+  int64_t io_queues_count_;
   int64_t queue_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnvme_5ftcp_2eproto;
@@ -2431,24 +2434,24 @@ inline void NVMfRemoteController::set_multipath(::opi_api::storage::v1::NvmeMult
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.multipath)
 }
 
-// int64 num_io_queues = 10;
-inline void NVMfRemoteController::clear_num_io_queues() {
-  num_io_queues_ = int64_t{0};
+// int64 io_queues_count = 10;
+inline void NVMfRemoteController::clear_io_queues_count() {
+  io_queues_count_ = int64_t{0};
 }
-inline int64_t NVMfRemoteController::_internal_num_io_queues() const {
-  return num_io_queues_;
+inline int64_t NVMfRemoteController::_internal_io_queues_count() const {
+  return io_queues_count_;
 }
-inline int64_t NVMfRemoteController::num_io_queues() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMfRemoteController.num_io_queues)
-  return _internal_num_io_queues();
+inline int64_t NVMfRemoteController::io_queues_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMfRemoteController.io_queues_count)
+  return _internal_io_queues_count();
 }
-inline void NVMfRemoteController::_internal_set_num_io_queues(int64_t value) {
+inline void NVMfRemoteController::_internal_set_io_queues_count(int64_t value) {
   
-  num_io_queues_ = value;
+  io_queues_count_ = value;
 }
-inline void NVMfRemoteController::set_num_io_queues(int64_t value) {
-  _internal_set_num_io_queues(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.num_io_queues)
+inline void NVMfRemoteController::set_io_queues_count(int64_t value) {
+  _internal_set_io_queues_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.io_queues_count)
 }
 
 // int64 queue_size = 11;

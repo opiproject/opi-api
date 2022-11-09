@@ -89,10 +89,10 @@ public interface NVMfRemoteControllerOrBuilder extends
   opi_api.storage.v1.NvmeMultipath getMultipath();
 
   /**
-   * <code>int64 num_io_queues = 10;</code>
-   * @return The numIoQueues.
+   * <code>int64 io_queues_count = 10;</code>
+   * @return The ioQueuesCount.
    */
-  long getNumIoQueues();
+  long getIoQueuesCount();
 
   /**
    * <code>int64 queue_size = 11;</code>

@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            function_ = input.readInt32();
+            func_ = input.readInt32();
             break;
           }
           case 32: {
@@ -138,19 +138,19 @@ private static final long serialVersionUID = 0L;
     return device_;
   }
 
-  public static final int FUNCTION_FIELD_NUMBER = 3;
-  private int function_;
+  public static final int FUNC_FIELD_NUMBER = 3;
+  private int func_;
   /**
    * <pre>
    * Physical function, always set to 0 in current model
    * </pre>
    *
-   * <code>int32 function = 3;</code>
-   * @return The function.
+   * <code>int32 func = 3;</code>
+   * @return The func.
    */
   @java.lang.Override
-  public int getFunction() {
-    return function_;
+  public int getFunc() {
+    return func_;
   }
 
   public static final int VIRTUAL_FUNCTION_FIELD_NUMBER = 4;
@@ -189,8 +189,8 @@ private static final long serialVersionUID = 0L;
     if (device_ != 0) {
       output.writeInt32(2, device_);
     }
-    if (function_ != 0) {
-      output.writeInt32(3, function_);
+    if (func_ != 0) {
+      output.writeInt32(3, func_);
     }
     if (virtualFunction_ != 0) {
       output.writeInt32(4, virtualFunction_);
@@ -212,9 +212,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, device_);
     }
-    if (function_ != 0) {
+    if (func_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, function_);
+        .computeInt32Size(3, func_);
     }
     if (virtualFunction_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -239,8 +239,8 @@ private static final long serialVersionUID = 0L;
         != other.getBus()) return false;
     if (getDevice()
         != other.getDevice()) return false;
-    if (getFunction()
-        != other.getFunction()) return false;
+    if (getFunc()
+        != other.getFunc()) return false;
     if (getVirtualFunction()
         != other.getVirtualFunction()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -258,8 +258,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBus();
     hash = (37 * hash) + DEVICE_FIELD_NUMBER;
     hash = (53 * hash) + getDevice();
-    hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
-    hash = (53 * hash) + getFunction();
+    hash = (37 * hash) + FUNC_FIELD_NUMBER;
+    hash = (53 * hash) + getFunc();
     hash = (37 * hash) + VIRTUAL_FUNCTION_FIELD_NUMBER;
     hash = (53 * hash) + getVirtualFunction();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
       device_ = 0;
 
-      function_ = 0;
+      func_ = 0;
 
       virtualFunction_ = 0;
 
@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
       opi_api.storage.v1.NvmeControllerPciId result = new opi_api.storage.v1.NvmeControllerPciId(this);
       result.bus_ = bus_;
       result.device_ = device_;
-      result.function_ = function_;
+      result.func_ = func_;
       result.virtualFunction_ = virtualFunction_;
       onBuilt();
       return result;
@@ -495,8 +495,8 @@ private static final long serialVersionUID = 0L;
       if (other.getDevice() != 0) {
         setDevice(other.getDevice());
       }
-      if (other.getFunction() != 0) {
-        setFunction(other.getFunction());
+      if (other.getFunc() != 0) {
+        setFunc(other.getFunc());
       }
       if (other.getVirtualFunction() != 0) {
         setVirtualFunction(other.getVirtualFunction());
@@ -616,31 +616,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int function_ ;
+    private int func_ ;
     /**
      * <pre>
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>int32 function = 3;</code>
-     * @return The function.
+     * <code>int32 func = 3;</code>
+     * @return The func.
      */
     @java.lang.Override
-    public int getFunction() {
-      return function_;
+    public int getFunc() {
+      return func_;
     }
     /**
      * <pre>
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>int32 function = 3;</code>
-     * @param value The function to set.
+     * <code>int32 func = 3;</code>
+     * @param value The func to set.
      * @return This builder for chaining.
      */
-    public Builder setFunction(int value) {
+    public Builder setFunc(int value) {
       
-      function_ = value;
+      func_ = value;
       onChanged();
       return this;
     }
@@ -649,12 +649,12 @@ private static final long serialVersionUID = 0L;
      * Physical function, always set to 0 in current model
      * </pre>
      *
-     * <code>int32 function = 3;</code>
+     * <code>int32 func = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFunction() {
+    public Builder clearFunc() {
       
-      function_ = 0;
+      func_ = 0;
       onChanged();
       return this;
     }

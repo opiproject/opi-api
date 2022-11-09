@@ -21,11 +21,10 @@ namespace storage {
 namespace v1 {
 constexpr NullDebug::NullDebug(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , uuid_(nullptr)
+  : uuid_(nullptr)
   , id_(int64_t{0})
   , block_size_(int64_t{0})
-  , num_blocks_(int64_t{0}){}
+  , blocks_count_(int64_t{0}){}
 struct NullDebugDefaultTypeInternal {
   constexpr NullDebugDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -191,9 +190,8 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, block_size_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, num_blocks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, blocks_count_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebug, uuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugCreateRequest, _internal_metadata_),
@@ -279,18 +277,18 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NullDebug)},
-  { 11, -1, -1, sizeof(::opi_api::storage::v1::NullDebugCreateRequest)},
-  { 18, -1, -1, sizeof(::opi_api::storage::v1::NullDebugCreateResponse)},
-  { 24, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteRequest)},
-  { 31, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteResponse)},
-  { 37, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateRequest)},
-  { 44, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateResponse)},
-  { 50, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListRequest)},
-  { 56, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListResponse)},
-  { 63, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetRequest)},
-  { 70, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetResponse)},
-  { 77, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
-  { 84, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
+  { 10, -1, -1, sizeof(::opi_api::storage::v1::NullDebugCreateRequest)},
+  { 17, -1, -1, sizeof(::opi_api::storage::v1::NullDebugCreateResponse)},
+  { 23, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteRequest)},
+  { 30, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteResponse)},
+  { 36, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateRequest)},
+  { 43, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateResponse)},
+  { 49, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListRequest)},
+  { 55, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListResponse)},
+  { 62, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetRequest)},
+  { 69, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetResponse)},
+  { 76, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
+  { 83, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -311,43 +309,43 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\022backend_null.proto\022\022opi_api.storage.v1"
-  "\032\020object_key.proto\032\nuuid.proto\"t\n\tNullDe"
-  "bug\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\022\n\nblock_s"
-  "ize\030\003 \001(\003\022\022\n\nnum_blocks\030\004 \001(\003\022%\n\004uuid\030\005 "
-  "\001(\0132\027.opi_api.common.v1.Uuid\"G\n\026NullDebu"
-  "gCreateRequest\022-\n\006device\030\001 \001(\0132\035.opi_api"
-  ".storage.v1.NullDebug\"\031\n\027NullDebugCreate"
-  "Response\"$\n\026NullDebugDeleteRequest\022\n\n\002id"
-  "\030\001 \001(\003\"\031\n\027NullDebugDeleteResponse\"G\n\026Nul"
-  "lDebugUpdateRequest\022-\n\006device\030\001 \001(\0132\035.op"
-  "i_api.storage.v1.NullDebug\"\031\n\027NullDebugU"
-  "pdateResponse\"\026\n\024NullDebugListRequest\"F\n"
-  "\025NullDebugListResponse\022-\n\006device\030\001 \003(\0132\035"
-  ".opi_api.storage.v1.NullDebug\"!\n\023NullDeb"
-  "ugGetRequest\022\n\n\002id\030\001 \001(\003\"E\n\024NullDebugGet"
-  "Response\022-\n\006device\030\001 \001(\0132\035.opi_api.stora"
-  "ge.v1.NullDebug\"#\n\025NullDebugStatsRequest"
-  "\022\n\n\002id\030\001 \001(\003\"3\n\026NullDebugStatsResponse\022\n"
-  "\n\002id\030\001 \001(\003\022\r\n\005stats\030\002 \001(\t2\224\005\n\020NullDebugS"
-  "ervice\022l\n\017NullDebugCreate\022*.opi_api.stor"
-  "age.v1.NullDebugCreateRequest\032+.opi_api."
-  "storage.v1.NullDebugCreateResponse\"\000\022l\n\017"
-  "NullDebugDelete\022*.opi_api.storage.v1.Nul"
-  "lDebugDeleteRequest\032+.opi_api.storage.v1"
-  ".NullDebugDeleteResponse\"\000\022l\n\017NullDebugU"
-  "pdate\022*.opi_api.storage.v1.NullDebugUpda"
-  "teRequest\032+.opi_api.storage.v1.NullDebug"
-  "UpdateResponse\"\000\022f\n\rNullDebugList\022(.opi_"
-  "api.storage.v1.NullDebugListRequest\032).op"
-  "i_api.storage.v1.NullDebugListResponse\"\000"
-  "\022c\n\014NullDebugGet\022\'.opi_api.storage.v1.Nu"
-  "llDebugGetRequest\032(.opi_api.storage.v1.N"
-  "ullDebugGetResponse\"\000\022i\n\016NullDebugStats\022"
-  ").opi_api.storage.v1.NullDebugStatsReque"
-  "st\032*.opi_api.storage.v1.NullDebugStatsRe"
-  "sponse\"\000B_\n\022opi_api.storage.v1B\020BackendN"
-  "ullProtoP\001Z5github.com/opiproject/opi-ap"
-  "i/storage/v1alpha1/gen/gob\006proto3"
+  "\032\020object_key.proto\032\nuuid.proto\"h\n\tNullDe"
+  "bug\022\n\n\002id\030\001 \001(\003\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014b"
+  "locks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_ap"
+  "i.common.v1.Uuid\"G\n\026NullDebugCreateReque"
+  "st\022-\n\006device\030\001 \001(\0132\035.opi_api.storage.v1."
+  "NullDebug\"\031\n\027NullDebugCreateResponse\"$\n\026"
+  "NullDebugDeleteRequest\022\n\n\002id\030\001 \001(\003\"\031\n\027Nu"
+  "llDebugDeleteResponse\"G\n\026NullDebugUpdate"
+  "Request\022-\n\006device\030\001 \001(\0132\035.opi_api.storag"
+  "e.v1.NullDebug\"\031\n\027NullDebugUpdateRespons"
+  "e\"\026\n\024NullDebugListRequest\"F\n\025NullDebugLi"
+  "stResponse\022-\n\006device\030\001 \003(\0132\035.opi_api.sto"
+  "rage.v1.NullDebug\"!\n\023NullDebugGetRequest"
+  "\022\n\n\002id\030\001 \001(\003\"E\n\024NullDebugGetResponse\022-\n\006"
+  "device\030\001 \001(\0132\035.opi_api.storage.v1.NullDe"
+  "bug\"#\n\025NullDebugStatsRequest\022\n\n\002id\030\001 \001(\003"
+  "\"3\n\026NullDebugStatsResponse\022\n\n\002id\030\001 \001(\003\022\r"
+  "\n\005stats\030\002 \001(\t2\224\005\n\020NullDebugService\022l\n\017Nu"
+  "llDebugCreate\022*.opi_api.storage.v1.NullD"
+  "ebugCreateRequest\032+.opi_api.storage.v1.N"
+  "ullDebugCreateResponse\"\000\022l\n\017NullDebugDel"
+  "ete\022*.opi_api.storage.v1.NullDebugDelete"
+  "Request\032+.opi_api.storage.v1.NullDebugDe"
+  "leteResponse\"\000\022l\n\017NullDebugUpdate\022*.opi_"
+  "api.storage.v1.NullDebugUpdateRequest\032+."
+  "opi_api.storage.v1.NullDebugUpdateRespon"
+  "se\"\000\022f\n\rNullDebugList\022(.opi_api.storage."
+  "v1.NullDebugListRequest\032).opi_api.storag"
+  "e.v1.NullDebugListResponse\"\000\022c\n\014NullDebu"
+  "gGet\022\'.opi_api.storage.v1.NullDebugGetRe"
+  "quest\032(.opi_api.storage.v1.NullDebugGetR"
+  "esponse\"\000\022i\n\016NullDebugStats\022).opi_api.st"
+  "orage.v1.NullDebugStatsRequest\032*.opi_api"
+  ".storage.v1.NullDebugStatsResponse\"\000B_\n\022"
+  "opi_api.storage.v1B\020BackendNullProtoP\001Z5"
+  "github.com/opiproject/opi-api/storage/v1"
+  "alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[2] = {
   &::descriptor_table_object_5fkey_2eproto,
@@ -355,7 +353,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 1513, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  false, false, 1501, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
   &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 2, 13,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,
@@ -399,34 +397,22 @@ NullDebug::NullDebug(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 NullDebug::NullDebug(const NullDebug& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArenaForAllocation());
-  }
   if (from._internal_has_uuid()) {
     uuid_ = new ::opi_api::common::v1::Uuid(*from.uuid_);
   } else {
     uuid_ = nullptr;
   }
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&num_blocks_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(num_blocks_));
+    static_cast<size_t>(reinterpret_cast<char*>(&blocks_count_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(blocks_count_));
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebug)
 }
 
 inline void NullDebug::SharedCtor() {
-name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&uuid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&num_blocks_) -
-    reinterpret_cast<char*>(&uuid_)) + sizeof(num_blocks_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&blocks_count_) -
+    reinterpret_cast<char*>(&uuid_)) + sizeof(blocks_count_));
 }
 
 NullDebug::~NullDebug() {
@@ -438,7 +424,6 @@ NullDebug::~NullDebug() {
 
 inline void NullDebug::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete uuid_;
 }
 
@@ -458,14 +443,13 @@ void NullDebug::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && uuid_ != nullptr) {
     delete uuid_;
   }
   uuid_ = nullptr;
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&num_blocks_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(num_blocks_));
+      reinterpret_cast<char*>(&blocks_count_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(blocks_count_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -483,35 +467,25 @@ const char* NullDebug::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         } else
           goto handle_unusual;
         continue;
-      // string name = 2;
+      // int64 block_size = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NullDebug.name"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int64 block_size = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           block_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 num_blocks = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          num_blocks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+      // int64 blocks_count = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          blocks_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.Uuid uuid = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // .opi_api.common.v1.Uuid uuid = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_uuid(), ptr);
           CHK_(ptr);
         } else
@@ -552,34 +526,24 @@ uint8_t* NullDebug::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
   }
 
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NullDebug.name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
-  }
-
-  // int64 block_size = 3;
+  // int64 block_size = 2;
   if (this->_internal_block_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_block_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_block_size(), target);
   }
 
-  // int64 num_blocks = 4;
-  if (this->_internal_num_blocks() != 0) {
+  // int64 blocks_count = 3;
+  if (this->_internal_blocks_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_num_blocks(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_blocks_count(), target);
   }
 
-  // .opi_api.common.v1.Uuid uuid = 5;
+  // .opi_api.common.v1.Uuid uuid = 4;
   if (this->_internal_has_uuid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::uuid(this), target, stream);
+        4, _Internal::uuid(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -598,14 +562,7 @@ size_t NullDebug::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // .opi_api.common.v1.Uuid uuid = 5;
+  // .opi_api.common.v1.Uuid uuid = 4;
   if (this->_internal_has_uuid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -617,14 +574,14 @@ size_t NullDebug::ByteSizeLong() const {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_id());
   }
 
-  // int64 block_size = 3;
+  // int64 block_size = 2;
   if (this->_internal_block_size() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_block_size());
   }
 
-  // int64 num_blocks = 4;
-  if (this->_internal_num_blocks() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_num_blocks());
+  // int64 blocks_count = 3;
+  if (this->_internal_blocks_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_blocks_count());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -649,9 +606,6 @@ void NullDebug::MergeFrom(const NullDebug& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_name().empty()) {
-    _internal_set_name(from._internal_name());
-  }
   if (from._internal_has_uuid()) {
     _internal_mutable_uuid()->::opi_api::common::v1::Uuid::MergeFrom(from._internal_uuid());
   }
@@ -661,8 +615,8 @@ void NullDebug::MergeFrom(const NullDebug& from) {
   if (from._internal_block_size() != 0) {
     _internal_set_block_size(from._internal_block_size());
   }
-  if (from._internal_num_blocks() != 0) {
-    _internal_set_num_blocks(from._internal_num_blocks());
+  if (from._internal_blocks_count() != 0) {
+    _internal_set_blocks_count(from._internal_blocks_count());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -680,17 +634,10 @@ bool NullDebug::IsInitialized() const {
 
 void NullDebug::InternalSwap(NullDebug* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &name_, lhs_arena,
-      &other->name_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NullDebug, num_blocks_)
-      + sizeof(NullDebug::num_blocks_)
+      PROTOBUF_FIELD_OFFSET(NullDebug, blocks_count_)
+      + sizeof(NullDebug::blocks_count_)
       - PROTOBUF_FIELD_OFFSET(NullDebug, uuid_)>(
           reinterpret_cast<char*>(&uuid_),
           reinterpret_cast<char*>(&other->uuid_));

@@ -154,9 +154,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | handle is an opaque object handle that is not user settable. handle will be returned with created object |
-| name | [string](#string) |  |  |
 | block_size | [int64](#int64) |  |  |
-| num_blocks | [int64](#int64) |  |  |
+| blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 | filename | [string](#string) |  |  |
 
@@ -305,7 +304,7 @@ Intentionally empty
 <a name="opi_api-storage-v1-AioControllerService"></a>
 
 ### AioControllerService
-
+Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -352,9 +351,8 @@ Intentionally empty
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
-| name | [string](#string) |  |  |
 | block_size | [int64](#int64) |  |  |
-| num_blocks | [int64](#int64) |  |  |
+| blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 
 
@@ -532,7 +530,7 @@ Intentionally empty.
 <a name="opi_api-storage-v1-NullDebugService"></a>
 
 ### NullDebugService
-
+Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -587,7 +585,7 @@ Intentionally empty.
 | hdgst | [bool](#bool) |  |  |
 | ddgst | [bool](#bool) |  |  |
 | multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  |  |
-| num_io_queues | [int64](#int64) |  |  |
+| io_queues_count | [int64](#int64) |  |  |
 | queue_size | [int64](#int64) |  |  |
 
 
@@ -770,11 +768,12 @@ Intentionally empty.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVMF_ADRFAM_IPV4 | 0 |  |
-| NVMF_ADRFAM_IPV6 | 1 |  |
-| NVMF_ADRFAM_IB | 2 |  |
-| NVMF_ADRFAM_FC | 3 |  |
-| NVMF_ADRFAM_INTRA_HOST | 4 |  |
+| NVME_ADDRESS_FAMILY_UNSPECIFIED | 0 |  |
+| NVMF_ADRFAM_IPV4 | 1 |  |
+| NVMF_ADRFAM_IPV6 | 2 |  |
+| NVMF_ADRFAM_IB | 3 |  |
+| NVMF_ADRFAM_FC | 4 |  |
+| NVMF_ADRFAM_INTRA_HOST | 5 |  |
 
 
 
@@ -785,9 +784,10 @@ Intentionally empty.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_MPIO_DISABLE | 0 |  |
-| NVME_MPIO_FAILOVER | 1 |  |
-| NVME_MPIO_MULTIPATH | 2 |  |
+| NVME_MULTIPATH_UNSPECIFIED | 0 |  |
+| NVME_MULTIPATH_DISABLE | 1 |  |
+| NVME_MULTIPATH_FAILOVER | 2 |  |
+| NVME_MULTIPATH_MULTIPATH | 3 |  |
 
 
 
@@ -798,11 +798,12 @@ Intentionally empty.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NVME_TRANSPORT_FC | 0 |  |
-| NVME_TRANSPORT_PCIE | 1 |  |
-| NVME_TRANSPORT_RDMA | 2 |  |
-| NVME_TRANSPORT_TCP | 3 |  |
-| NVME_TRANSPORT_CUSTOM | 4 |  |
+| NVME_TRANSPORT_TYPE_UNSPECIFIED | 0 |  |
+| NVME_TRANSPORT_FC | 1 |  |
+| NVME_TRANSPORT_PCIE | 2 |  |
+| NVME_TRANSPORT_RDMA | 3 |  |
+| NVME_TRANSPORT_TCP | 4 |  |
+| NVME_TRANSPORT_CUSTOM | 5 |  |
 
 
  
@@ -813,7 +814,7 @@ Intentionally empty.
 <a name="opi_api-storage-v1-NVMfRemoteControllerService"></a>
 
 ### NVMfRemoteControllerService
-
+Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
@@ -849,7 +850,7 @@ virtual functions under the physical function.
 | ----- | ---- | ----- | ----------- |
 | bus | [int32](#int32) |  | Bus number, provided for future usage if needed. Currently set to ’0’ |
 | device | [int32](#int32) |  | Device number, based on the NVMe device layout |
-| function | [int32](#int32) |  | Physical function, always set to 0 in current model |
+| func | [int32](#int32) |  | Physical function, always set to 0 in current model |
 | virtual_function | [int32](#int32) |  | SRIOV Virtual function within the Device and Physical function. Set to 0 for Physical Function. Virtual Function numbering starts from 1 |
 
 

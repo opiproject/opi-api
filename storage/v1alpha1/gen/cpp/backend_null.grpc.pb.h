@@ -33,8 +33,7 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-// Back End (network-facing) APIs.
-//
+// Back End (network-facing) APIs. This is debug interface for null block devices.
 class NullDebugService final {
  public:
   static constexpr char const* service_full_name() {

@@ -195,7 +195,7 @@ class NvmeControllerPciId final :
   enum : int {
     kBusFieldNumber = 1,
     kDeviceFieldNumber = 2,
-    kFunctionFieldNumber = 3,
+    kFuncFieldNumber = 3,
     kVirtualFunctionFieldNumber = 4,
   };
   // int32 bus = 1;
@@ -216,13 +216,13 @@ class NvmeControllerPciId final :
   void _internal_set_device(int32_t value);
   public:
 
-  // int32 function = 3;
-  void clear_function();
-  int32_t function() const;
-  void set_function(int32_t value);
+  // int32 func = 3;
+  void clear_func();
+  int32_t func() const;
+  void set_func(int32_t value);
   private:
-  int32_t _internal_function() const;
-  void _internal_set_function(int32_t value);
+  int32_t _internal_func() const;
+  void _internal_set_func(int32_t value);
   public:
 
   // int32 virtual_function = 4;
@@ -243,7 +243,7 @@ class NvmeControllerPciId final :
   typedef void DestructorSkippable_;
   int32_t bus_;
   int32_t device_;
-  int32_t function_;
+  int32_t func_;
   int32_t virtual_function_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_common_2eproto;
@@ -299,24 +299,24 @@ inline void NvmeControllerPciId::set_device(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.device)
 }
 
-// int32 function = 3;
-inline void NvmeControllerPciId::clear_function() {
-  function_ = 0;
+// int32 func = 3;
+inline void NvmeControllerPciId::clear_func() {
+  func_ = 0;
 }
-inline int32_t NvmeControllerPciId::_internal_function() const {
-  return function_;
+inline int32_t NvmeControllerPciId::_internal_func() const {
+  return func_;
 }
-inline int32_t NvmeControllerPciId::function() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.function)
-  return _internal_function();
+inline int32_t NvmeControllerPciId::func() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NvmeControllerPciId.func)
+  return _internal_func();
 }
-inline void NvmeControllerPciId::_internal_set_function(int32_t value) {
+inline void NvmeControllerPciId::_internal_set_func(int32_t value) {
   
-  function_ = value;
+  func_ = value;
 }
-inline void NvmeControllerPciId::set_function(int32_t value) {
-  _internal_set_function(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.function)
+inline void NvmeControllerPciId::set_func(int32_t value) {
+  _internal_set_func(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NvmeControllerPciId.func)
 }
 
 // int32 virtual_function = 4;
