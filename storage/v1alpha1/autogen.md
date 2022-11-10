@@ -21,17 +21,13 @@
 - [backend_null.proto](#backend_null-proto)
     - [NullDebug](#opi_api-storage-v1-NullDebug)
     - [NullDebugCreateRequest](#opi_api-storage-v1-NullDebugCreateRequest)
-    - [NullDebugCreateResponse](#opi_api-storage-v1-NullDebugCreateResponse)
     - [NullDebugDeleteRequest](#opi_api-storage-v1-NullDebugDeleteRequest)
-    - [NullDebugDeleteResponse](#opi_api-storage-v1-NullDebugDeleteResponse)
     - [NullDebugGetRequest](#opi_api-storage-v1-NullDebugGetRequest)
-    - [NullDebugGetResponse](#opi_api-storage-v1-NullDebugGetResponse)
     - [NullDebugListRequest](#opi_api-storage-v1-NullDebugListRequest)
     - [NullDebugListResponse](#opi_api-storage-v1-NullDebugListResponse)
     - [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest)
     - [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse)
     - [NullDebugUpdateRequest](#opi_api-storage-v1-NullDebugUpdateRequest)
-    - [NullDebugUpdateResponse](#opi_api-storage-v1-NullDebugUpdateResponse)
   
     - [NullDebugService](#opi_api-storage-v1-NullDebugService)
   
@@ -359,7 +355,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | block_size | [int64](#int64) |  |  |
 | blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
@@ -384,16 +380,6 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebugCreateResponse"></a>
-
-### NullDebugCreateResponse
-Intentionally empty.
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NullDebugDeleteRequest"></a>
 
 ### NullDebugDeleteRequest
@@ -402,17 +388,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NullDebugDeleteResponse"></a>
-
-### NullDebugDeleteResponse
-Intentionally empty.
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -427,22 +403,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NullDebugGetResponse"></a>
-
-### NullDebugGetResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| device | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -482,7 +443,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -497,7 +458,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -519,16 +480,6 @@ Intentionally empty.
 
 
 
-
-<a name="opi_api-storage-v1-NullDebugUpdateResponse"></a>
-
-### NullDebugUpdateResponse
-Intentionally empty.
-
-
-
-
-
  
 
  
@@ -543,11 +494,11 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| NullDebugCreate | [NullDebugCreateRequest](#opi_api-storage-v1-NullDebugCreateRequest) | [NullDebugCreateResponse](#opi_api-storage-v1-NullDebugCreateResponse) |  |
-| NullDebugDelete | [NullDebugDeleteRequest](#opi_api-storage-v1-NullDebugDeleteRequest) | [NullDebugDeleteResponse](#opi_api-storage-v1-NullDebugDeleteResponse) |  |
-| NullDebugUpdate | [NullDebugUpdateRequest](#opi_api-storage-v1-NullDebugUpdateRequest) | [NullDebugUpdateResponse](#opi_api-storage-v1-NullDebugUpdateResponse) |  |
+| NullDebugCreate | [NullDebugCreateRequest](#opi_api-storage-v1-NullDebugCreateRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
+| NullDebugDelete | [NullDebugDeleteRequest](#opi_api-storage-v1-NullDebugDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| NullDebugUpdate | [NullDebugUpdateRequest](#opi_api-storage-v1-NullDebugUpdateRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
 | NullDebugList | [NullDebugListRequest](#opi_api-storage-v1-NullDebugListRequest) | [NullDebugListResponse](#opi_api-storage-v1-NullDebugListResponse) |  |
-| NullDebugGet | [NullDebugGetRequest](#opi_api-storage-v1-NullDebugGetRequest) | [NullDebugGetResponse](#opi_api-storage-v1-NullDebugGetResponse) |  |
+| NullDebugGet | [NullDebugGetRequest](#opi_api-storage-v1-NullDebugGetRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
 | NullDebugStats | [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest) | [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse) |  |
 
  

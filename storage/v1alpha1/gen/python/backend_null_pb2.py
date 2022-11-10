@@ -12,25 +12,22 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import object_key_pb2 as object__key__pb2
 import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\x1a\x10object_key.proto\x1a\nuuid.proto\"h\n\tNullDebug\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\"G\n\x16NullDebugCreateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugCreateResponse\"$\n\x16NullDebugDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\x19\n\x17NullDebugDeleteResponse\"G\n\x16NullDebugUpdateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x19\n\x17NullDebugUpdateResponse\"\x16\n\x14NullDebugListRequest\"F\n\x15NullDebugListResponse\x12-\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"!\n\x13NullDebugGetRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"E\n\x14NullDebugGetResponse\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"#\n\x15NullDebugStatsRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"3\n\x16NullDebugStatsResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05stats\x18\x02 \x01(\t2\x94\x05\n\x10NullDebugService\x12l\n\x0fNullDebugCreate\x12*.opi_api.storage.v1.NullDebugCreateRequest\x1a+.opi_api.storage.v1.NullDebugCreateResponse\"\x00\x12l\n\x0fNullDebugDelete\x12*.opi_api.storage.v1.NullDebugDeleteRequest\x1a+.opi_api.storage.v1.NullDebugDeleteResponse\"\x00\x12l\n\x0fNullDebugUpdate\x12*.opi_api.storage.v1.NullDebugUpdateRequest\x1a+.opi_api.storage.v1.NullDebugUpdateResponse\"\x00\x12\x66\n\rNullDebugList\x12(.opi_api.storage.v1.NullDebugListRequest\x1a).opi_api.storage.v1.NullDebugListResponse\"\x00\x12\x63\n\x0cNullDebugGet\x12\'.opi_api.storage.v1.NullDebugGetRequest\x1a(.opi_api.storage.v1.NullDebugGetResponse\"\x00\x12i\n\x0eNullDebugStats\x12).opi_api.storage.v1.NullDebugStatsRequest\x1a*.opi_api.storage.v1.NullDebugStatsResponse\"\x00\x42_\n\x12opi_api.storage.v1B\x10\x42\x61\x63kendNullProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x62\x61\x63kend_null.proto\x12\x12opi_api.storage.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x10object_key.proto\x1a\nuuid.proto\"\x8a\x01\n\tNullDebug\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\"G\n\x16NullDebugCreateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"F\n\x16NullDebugDeleteRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"G\n\x16NullDebugUpdateRequest\x12-\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"\x16\n\x14NullDebugListRequest\"F\n\x15NullDebugListResponse\x12-\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.NullDebug\"C\n\x13NullDebugGetRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"E\n\x15NullDebugStatsRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x16NullDebugStatsResponse\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xd8\x04\n\x10NullDebugService\x12^\n\x0fNullDebugCreate\x12*.opi_api.storage.v1.NullDebugCreateRequest\x1a\x1d.opi_api.storage.v1.NullDebug\"\x00\x12W\n\x0fNullDebugDelete\x12*.opi_api.storage.v1.NullDebugDeleteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12^\n\x0fNullDebugUpdate\x12*.opi_api.storage.v1.NullDebugUpdateRequest\x1a\x1d.opi_api.storage.v1.NullDebug\"\x00\x12\x66\n\rNullDebugList\x12(.opi_api.storage.v1.NullDebugListRequest\x1a).opi_api.storage.v1.NullDebugListResponse\"\x00\x12X\n\x0cNullDebugGet\x12\'.opi_api.storage.v1.NullDebugGetRequest\x1a\x1d.opi_api.storage.v1.NullDebug\"\x00\x12i\n\x0eNullDebugStats\x12).opi_api.storage.v1.NullDebugStatsRequest\x1a*.opi_api.storage.v1.NullDebugStatsResponse\"\x00\x42_\n\x12opi_api.storage.v1B\x10\x42\x61\x63kendNullProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
 _NULLDEBUG = DESCRIPTOR.message_types_by_name['NullDebug']
 _NULLDEBUGCREATEREQUEST = DESCRIPTOR.message_types_by_name['NullDebugCreateRequest']
-_NULLDEBUGCREATERESPONSE = DESCRIPTOR.message_types_by_name['NullDebugCreateResponse']
 _NULLDEBUGDELETEREQUEST = DESCRIPTOR.message_types_by_name['NullDebugDeleteRequest']
-_NULLDEBUGDELETERESPONSE = DESCRIPTOR.message_types_by_name['NullDebugDeleteResponse']
 _NULLDEBUGUPDATEREQUEST = DESCRIPTOR.message_types_by_name['NullDebugUpdateRequest']
-_NULLDEBUGUPDATERESPONSE = DESCRIPTOR.message_types_by_name['NullDebugUpdateResponse']
 _NULLDEBUGLISTREQUEST = DESCRIPTOR.message_types_by_name['NullDebugListRequest']
 _NULLDEBUGLISTRESPONSE = DESCRIPTOR.message_types_by_name['NullDebugListResponse']
 _NULLDEBUGGETREQUEST = DESCRIPTOR.message_types_by_name['NullDebugGetRequest']
-_NULLDEBUGGETRESPONSE = DESCRIPTOR.message_types_by_name['NullDebugGetResponse']
 _NULLDEBUGSTATSREQUEST = DESCRIPTOR.message_types_by_name['NullDebugStatsRequest']
 _NULLDEBUGSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NullDebugStatsResponse']
 NullDebug = _reflection.GeneratedProtocolMessageType('NullDebug', (_message.Message,), {
@@ -47,13 +44,6 @@ NullDebugCreateRequest = _reflection.GeneratedProtocolMessageType('NullDebugCrea
   })
 _sym_db.RegisterMessage(NullDebugCreateRequest)
 
-NullDebugCreateResponse = _reflection.GeneratedProtocolMessageType('NullDebugCreateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NULLDEBUGCREATERESPONSE,
-  '__module__' : 'backend_null_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugCreateResponse)
-  })
-_sym_db.RegisterMessage(NullDebugCreateResponse)
-
 NullDebugDeleteRequest = _reflection.GeneratedProtocolMessageType('NullDebugDeleteRequest', (_message.Message,), {
   'DESCRIPTOR' : _NULLDEBUGDELETEREQUEST,
   '__module__' : 'backend_null_pb2'
@@ -61,26 +51,12 @@ NullDebugDeleteRequest = _reflection.GeneratedProtocolMessageType('NullDebugDele
   })
 _sym_db.RegisterMessage(NullDebugDeleteRequest)
 
-NullDebugDeleteResponse = _reflection.GeneratedProtocolMessageType('NullDebugDeleteResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NULLDEBUGDELETERESPONSE,
-  '__module__' : 'backend_null_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugDeleteResponse)
-  })
-_sym_db.RegisterMessage(NullDebugDeleteResponse)
-
 NullDebugUpdateRequest = _reflection.GeneratedProtocolMessageType('NullDebugUpdateRequest', (_message.Message,), {
   'DESCRIPTOR' : _NULLDEBUGUPDATEREQUEST,
   '__module__' : 'backend_null_pb2'
   # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugUpdateRequest)
   })
 _sym_db.RegisterMessage(NullDebugUpdateRequest)
-
-NullDebugUpdateResponse = _reflection.GeneratedProtocolMessageType('NullDebugUpdateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NULLDEBUGUPDATERESPONSE,
-  '__module__' : 'backend_null_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugUpdateResponse)
-  })
-_sym_db.RegisterMessage(NullDebugUpdateResponse)
 
 NullDebugListRequest = _reflection.GeneratedProtocolMessageType('NullDebugListRequest', (_message.Message,), {
   'DESCRIPTOR' : _NULLDEBUGLISTREQUEST,
@@ -103,13 +79,6 @@ NullDebugGetRequest = _reflection.GeneratedProtocolMessageType('NullDebugGetRequ
   })
 _sym_db.RegisterMessage(NullDebugGetRequest)
 
-NullDebugGetResponse = _reflection.GeneratedProtocolMessageType('NullDebugGetResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NULLDEBUGGETRESPONSE,
-  '__module__' : 'backend_null_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugGetResponse)
-  })
-_sym_db.RegisterMessage(NullDebugGetResponse)
-
 NullDebugStatsRequest = _reflection.GeneratedProtocolMessageType('NullDebugStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _NULLDEBUGSTATSREQUEST,
   '__module__' : 'backend_null_pb2'
@@ -129,32 +98,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\020BackendNullProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
-  _NULLDEBUG._serialized_start=72
-  _NULLDEBUG._serialized_end=176
-  _NULLDEBUGCREATEREQUEST._serialized_start=178
-  _NULLDEBUGCREATEREQUEST._serialized_end=249
-  _NULLDEBUGCREATERESPONSE._serialized_start=251
-  _NULLDEBUGCREATERESPONSE._serialized_end=276
-  _NULLDEBUGDELETEREQUEST._serialized_start=278
-  _NULLDEBUGDELETEREQUEST._serialized_end=314
-  _NULLDEBUGDELETERESPONSE._serialized_start=316
-  _NULLDEBUGDELETERESPONSE._serialized_end=341
-  _NULLDEBUGUPDATEREQUEST._serialized_start=343
-  _NULLDEBUGUPDATEREQUEST._serialized_end=414
-  _NULLDEBUGUPDATERESPONSE._serialized_start=416
-  _NULLDEBUGUPDATERESPONSE._serialized_end=441
-  _NULLDEBUGLISTREQUEST._serialized_start=443
-  _NULLDEBUGLISTREQUEST._serialized_end=465
-  _NULLDEBUGLISTRESPONSE._serialized_start=467
-  _NULLDEBUGLISTRESPONSE._serialized_end=537
-  _NULLDEBUGGETREQUEST._serialized_start=539
-  _NULLDEBUGGETREQUEST._serialized_end=572
-  _NULLDEBUGGETRESPONSE._serialized_start=574
-  _NULLDEBUGGETRESPONSE._serialized_end=643
-  _NULLDEBUGSTATSREQUEST._serialized_start=645
-  _NULLDEBUGSTATSREQUEST._serialized_end=680
-  _NULLDEBUGSTATSRESPONSE._serialized_start=682
-  _NULLDEBUGSTATSRESPONSE._serialized_end=733
-  _NULLDEBUGSERVICE._serialized_start=736
-  _NULLDEBUGSERVICE._serialized_end=1396
+  _NULLDEBUG._serialized_start=102
+  _NULLDEBUG._serialized_end=240
+  _NULLDEBUGCREATEREQUEST._serialized_start=242
+  _NULLDEBUGCREATEREQUEST._serialized_end=313
+  _NULLDEBUGDELETEREQUEST._serialized_start=315
+  _NULLDEBUGDELETEREQUEST._serialized_end=385
+  _NULLDEBUGUPDATEREQUEST._serialized_start=387
+  _NULLDEBUGUPDATEREQUEST._serialized_end=458
+  _NULLDEBUGLISTREQUEST._serialized_start=460
+  _NULLDEBUGLISTREQUEST._serialized_end=482
+  _NULLDEBUGLISTRESPONSE._serialized_start=484
+  _NULLDEBUGLISTRESPONSE._serialized_end=554
+  _NULLDEBUGGETREQUEST._serialized_start=556
+  _NULLDEBUGGETREQUEST._serialized_end=623
+  _NULLDEBUGSTATSREQUEST._serialized_start=625
+  _NULLDEBUGSTATSREQUEST._serialized_end=694
+  _NULLDEBUGSTATSRESPONSE._serialized_start=696
+  _NULLDEBUGSTATSRESPONSE._serialized_end=781
+  _NULLDEBUGSERVICE._serialized_start=784
+  _NULLDEBUGSERVICE._serialized_end=1384
 # @@protoc_insertion_point(module_scope)

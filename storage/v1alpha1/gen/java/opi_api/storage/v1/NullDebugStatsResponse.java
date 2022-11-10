@@ -49,9 +49,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (handle_ != null) {
+              subBuilder = handle_.toBuilder();
+            }
+            handle_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(handle_);
+              handle_ = subBuilder.buildPartial();
+            }
 
-            id_ = input.readInt64();
             break;
           }
           case 18: {
@@ -92,15 +100,30 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NullDebugStatsResponse.class, opi_api.storage.v1.NullDebugStatsResponse.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
+  public static final int HANDLE_FIELD_NUMBER = 1;
+  private opi_api.common.v1.ObjectKey handle_;
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   * @return Whether the handle field is set.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public boolean hasHandle() {
+    return handle_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   * @return The handle.
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKey getHandle() {
+    return handle_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder() {
+    return getHandle();
   }
 
   public static final int STATS_FIELD_NUMBER = 2;
@@ -155,8 +178,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (handle_ != null) {
+      output.writeMessage(1, getHandle());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stats_);
@@ -170,9 +193,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (handle_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeMessageSize(1, getHandle());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stats_);
@@ -192,8 +215,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NullDebugStatsResponse other = (opi_api.storage.v1.NullDebugStatsResponse) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (hasHandle() != other.hasHandle()) return false;
+    if (hasHandle()) {
+      if (!getHandle()
+          .equals(other.getHandle())) return false;
+    }
     if (!getStats()
         .equals(other.getStats())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -207,9 +233,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+    if (hasHandle()) {
+      hash = (37 * hash) + HANDLE_FIELD_NUMBER;
+      hash = (53 * hash) + getHandle().hashCode();
+    }
     hash = (37 * hash) + STATS_FIELD_NUMBER;
     hash = (53 * hash) + getStats().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +372,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
-
+      if (handleBuilder_ == null) {
+        handle_ = null;
+      } else {
+        handle_ = null;
+        handleBuilder_ = null;
+      }
       stats_ = "";
 
       return this;
@@ -375,7 +406,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NullDebugStatsResponse buildPartial() {
       opi_api.storage.v1.NullDebugStatsResponse result = new opi_api.storage.v1.NullDebugStatsResponse(this);
-      result.id_ = id_;
+      if (handleBuilder_ == null) {
+        result.handle_ = handle_;
+      } else {
+        result.handle_ = handleBuilder_.build();
+      }
       result.stats_ = stats_;
       onBuilt();
       return result;
@@ -425,8 +460,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NullDebugStatsResponse other) {
       if (other == opi_api.storage.v1.NullDebugStatsResponse.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+      if (other.hasHandle()) {
+        mergeHandle(other.getHandle());
       }
       if (!other.getStats().isEmpty()) {
         stats_ = other.stats_;
@@ -461,35 +496,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private opi_api.common.v1.ObjectKey handle_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> handleBuilder_;
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * @return Whether the handle field is set.
      */
-    @java.lang.Override
-    public long getId() {
-      return id_;
+    public boolean hasHandle() {
+      return handleBuilder_ != null || handle_ != null;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * @return The handle.
      */
-    public Builder setId(long value) {
-      
-      id_ = value;
-      onChanged();
+    public opi_api.common.v1.ObjectKey getHandle() {
+      if (handleBuilder_ == null) {
+        return handle_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
+      } else {
+        return handleBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    public Builder setHandle(opi_api.common.v1.ObjectKey value) {
+      if (handleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        handle_ = value;
+        onChanged();
+      } else {
+        handleBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
      */
-    public Builder clearId() {
-      
-      id_ = 0L;
-      onChanged();
+    public Builder setHandle(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (handleBuilder_ == null) {
+        handle_ = builderForValue.build();
+        onChanged();
+      } else {
+        handleBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    public Builder mergeHandle(opi_api.common.v1.ObjectKey value) {
+      if (handleBuilder_ == null) {
+        if (handle_ != null) {
+          handle_ =
+            opi_api.common.v1.ObjectKey.newBuilder(handle_).mergeFrom(value).buildPartial();
+        } else {
+          handle_ = value;
+        }
+        onChanged();
+      } else {
+        handleBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    public Builder clearHandle() {
+      if (handleBuilder_ == null) {
+        handle_ = null;
+        onChanged();
+      } else {
+        handle_ = null;
+        handleBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getHandleBuilder() {
+      
+      onChanged();
+      return getHandleFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder() {
+      if (handleBuilder_ != null) {
+        return handleBuilder_.getMessageOrBuilder();
+      } else {
+        return handle_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getHandleFieldBuilder() {
+      if (handleBuilder_ == null) {
+        handleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getHandle(),
+                getParentForChildren(),
+                isClean());
+        handle_ = null;
+      }
+      return handleBuilder_;
     }
 
     private java.lang.Object stats_ = "";

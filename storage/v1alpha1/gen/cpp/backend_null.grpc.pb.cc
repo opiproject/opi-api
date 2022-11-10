@@ -47,69 +47,69 @@ NullDebugService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
   , rpcmethod_NullDebugStats_(NullDebugService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status NullDebugService::Stub::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebugCreateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugCreate_, context, request, response);
+::grpc::Status NullDebugService::Stub::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebug* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugCreate_, context, request, response);
 }
 
-void NullDebugService::Stub::async::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugCreate_, context, request, response, std::move(f));
+void NullDebugService::Stub::async::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugCreate_, context, request, response, std::move(f));
 }
 
-void NullDebugService::Stub::async::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void NullDebugService::Stub::async::NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugCreate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>* NullDebugService::Stub::PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebugCreateResponse, ::opi_api::storage::v1::NullDebugCreateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugCreate_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebug, ::opi_api::storage::v1::NullDebugCreateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugCreate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>* NullDebugService::Stub::AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncNullDebugCreateRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status NullDebugService::Stub::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::opi_api::storage::v1::NullDebugDeleteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugDelete_, context, request, response);
+::grpc::Status NullDebugService::Stub::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugDelete_, context, request, response);
 }
 
-void NullDebugService::Stub::async::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugDelete_, context, request, response, std::move(f));
+void NullDebugService::Stub::async::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugDelete_, context, request, response, std::move(f));
 }
 
-void NullDebugService::Stub::async::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void NullDebugService::Stub::async::NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugDelete_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>* NullDebugService::Stub::PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebugDeleteResponse, ::opi_api::storage::v1::NullDebugDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugDelete_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* NullDebugService::Stub::PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::opi_api::storage::v1::NullDebugDeleteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugDelete_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>* NullDebugService::Stub::AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* NullDebugService::Stub::AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncNullDebugDeleteRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status NullDebugService::Stub::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebugUpdateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugUpdate_, context, request, response);
+::grpc::Status NullDebugService::Stub::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebug* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugUpdate_, context, request, response);
 }
 
-void NullDebugService::Stub::async::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugUpdate_, context, request, response, std::move(f));
+void NullDebugService::Stub::async::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugUpdate_, context, request, response, std::move(f));
 }
 
-void NullDebugService::Stub::async::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void NullDebugService::Stub::async::NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugUpdate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>* NullDebugService::Stub::PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebugUpdateResponse, ::opi_api::storage::v1::NullDebugUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugUpdate_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebug, ::opi_api::storage::v1::NullDebugUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugUpdate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>* NullDebugService::Stub::AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncNullDebugUpdateRaw(context, request, cq);
   result->StartCall();
@@ -139,23 +139,23 @@ void NullDebugService::Stub::async::NullDebugList(::grpc::ClientContext* context
   return result;
 }
 
-::grpc::Status NullDebugService::Stub::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebugGetResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugGet_, context, request, response);
+::grpc::Status NullDebugService::Stub::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebug* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NullDebugGet_, context, request, response);
 }
 
-void NullDebugService::Stub::async::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugGet_, context, request, response, std::move(f));
+void NullDebugService::Stub::async::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugGet_, context, request, response, std::move(f));
 }
 
-void NullDebugService::Stub::async::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void NullDebugService::Stub::async::NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NullDebugGet_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>* NullDebugService::Stub::PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebugGetResponse, ::opi_api::storage::v1::NullDebugGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugGet_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::NullDebug, ::opi_api::storage::v1::NullDebugGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NullDebugGet_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>* NullDebugService::Stub::AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* NullDebugService::Stub::AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncNullDebugGetRaw(context, request, cq);
   result->StartCall();
@@ -189,31 +189,31 @@ NullDebugService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullDebugService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::NullDebugCreateRequest* req,
-             ::opi_api::storage::v1::NullDebugCreateResponse* resp) {
+             ::opi_api::storage::v1::NullDebug* resp) {
                return service->NullDebugCreate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullDebugService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::NullDebugDeleteRequest* req,
-             ::opi_api::storage::v1::NullDebugDeleteResponse* resp) {
+             ::google::protobuf::Empty* resp) {
                return service->NullDebugDelete(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullDebugService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::NullDebugUpdateRequest* req,
-             ::opi_api::storage::v1::NullDebugUpdateResponse* resp) {
+             ::opi_api::storage::v1::NullDebug* resp) {
                return service->NullDebugUpdate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -229,11 +229,11 @@ NullDebugService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullDebugService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::opi_api::storage::v1::NullDebugGetRequest* req,
-             ::opi_api::storage::v1::NullDebugGetResponse* resp) {
+             ::opi_api::storage::v1::NullDebug* resp) {
                return service->NullDebugGet(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -251,21 +251,21 @@ NullDebugService::Service::Service() {
 NullDebugService::Service::~Service() {
 }
 
-::grpc::Status NullDebugService::Service::NullDebugCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response) {
+::grpc::Status NullDebugService::Service::NullDebugCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status NullDebugService::Service::NullDebugDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response) {
+::grpc::Status NullDebugService::Service::NullDebugDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status NullDebugService::Service::NullDebugUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response) {
+::grpc::Status NullDebugService::Service::NullDebugUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -279,7 +279,7 @@ NullDebugService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status NullDebugService::Service::NullDebugGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response) {
+::grpc::Status NullDebugService::Service::NullDebugGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response) {
   (void) context;
   (void) request;
   (void) response;

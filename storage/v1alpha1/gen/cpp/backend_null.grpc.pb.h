@@ -42,26 +42,26 @@ class NullDebugService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebugCreateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>> AsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>>(AsyncNullDebugCreateRaw(context, request, cq));
+    virtual ::grpc::Status NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebug* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugCreateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>> PrepareAsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>>(PrepareAsyncNullDebugCreateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugCreateRaw(context, request, cq));
     }
-    virtual ::grpc::Status NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::opi_api::storage::v1::NullDebugDeleteResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>> AsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>>(AsyncNullDebugDeleteRaw(context, request, cq));
+    virtual ::grpc::Status NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNullDebugDeleteRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>> PrepareAsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>>(PrepareAsyncNullDebugDeleteRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNullDebugDeleteRaw(context, request, cq));
     }
-    virtual ::grpc::Status NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebugUpdateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>> AsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>>(AsyncNullDebugUpdateRaw(context, request, cq));
+    virtual ::grpc::Status NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebug* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugUpdateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>> PrepareAsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>>(PrepareAsyncNullDebugUpdateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugUpdateRaw(context, request, cq));
     }
     virtual ::grpc::Status NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::opi_api::storage::v1::NullDebugListResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugListResponse>> AsyncNullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -70,12 +70,12 @@ class NullDebugService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugListResponse>> PrepareAsyncNullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugListResponse>>(PrepareAsyncNullDebugListRaw(context, request, cq));
     }
-    virtual ::grpc::Status NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebugGetResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>> AsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>>(AsyncNullDebugGetRaw(context, request, cq));
+    virtual ::grpc::Status NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebug* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>> PrepareAsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>>(PrepareAsyncNullDebugGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugGetRaw(context, request, cq));
     }
     virtual ::grpc::Status NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::opi_api::storage::v1::NullDebugStatsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugStatsResponse>> AsyncNullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -87,16 +87,16 @@ class NullDebugService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest* request, ::opi_api::storage::v1::NullDebugListResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest* request, ::opi_api::storage::v1::NullDebugListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest* request, ::opi_api::storage::v1::NullDebugStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest* request, ::opi_api::storage::v1::NullDebugStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -104,42 +104,42 @@ class NullDebugService final {
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>* AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugCreateResponse>* PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>* AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugDeleteResponse>* PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>* AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugUpdateResponse>* PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugListResponse>* AsyncNullDebugListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugListResponse>* PrepareAsyncNullDebugListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>* AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugGetResponse>* PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugStatsResponse>* AsyncNullDebugStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NullDebugStatsResponse>* PrepareAsyncNullDebugStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebugCreateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>> AsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>>(AsyncNullDebugCreateRaw(context, request, cq));
+    ::grpc::Status NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::opi_api::storage::v1::NullDebug* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugCreateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>> PrepareAsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>>(PrepareAsyncNullDebugCreateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugCreateRaw(context, request, cq));
     }
-    ::grpc::Status NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::opi_api::storage::v1::NullDebugDeleteResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>> AsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>>(AsyncNullDebugDeleteRaw(context, request, cq));
+    ::grpc::Status NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNullDebugDeleteRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>> PrepareAsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>>(PrepareAsyncNullDebugDeleteRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNullDebugDeleteRaw(context, request, cq));
     }
-    ::grpc::Status NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebugUpdateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>> AsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>>(AsyncNullDebugUpdateRaw(context, request, cq));
+    ::grpc::Status NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::opi_api::storage::v1::NullDebug* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugUpdateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>> PrepareAsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>>(PrepareAsyncNullDebugUpdateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugUpdateRaw(context, request, cq));
     }
     ::grpc::Status NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::opi_api::storage::v1::NullDebugListResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugListResponse>> AsyncNullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -148,12 +148,12 @@ class NullDebugService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugListResponse>> PrepareAsyncNullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugListResponse>>(PrepareAsyncNullDebugListRaw(context, request, cq));
     }
-    ::grpc::Status NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebugGetResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>> AsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>>(AsyncNullDebugGetRaw(context, request, cq));
+    ::grpc::Status NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::opi_api::storage::v1::NullDebug* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> AsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(AsyncNullDebugGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>> PrepareAsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>>(PrepareAsyncNullDebugGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>> PrepareAsyncNullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>>(PrepareAsyncNullDebugGetRaw(context, request, cq));
     }
     ::grpc::Status NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::opi_api::storage::v1::NullDebugStatsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugStatsResponse>> AsyncNullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -165,16 +165,16 @@ class NullDebugService final {
     class async final :
       public StubInterface::async_interface {
      public:
-      void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, std::function<void(::grpc::Status)>) override;
-      void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, std::function<void(::grpc::Status)>) override;
-      void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, std::function<void(::grpc::Status)>) override;
-      void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) override;
+      void NullDebugCreate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void NullDebugDelete(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) override;
+      void NullDebugUpdate(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest* request, ::opi_api::storage::v1::NullDebugListResponse* response, std::function<void(::grpc::Status)>) override;
       void NullDebugList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest* request, ::opi_api::storage::v1::NullDebugListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, std::function<void(::grpc::Status)>) override;
-      void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, std::function<void(::grpc::Status)>) override;
+      void NullDebugGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest* request, ::opi_api::storage::v1::NullDebugStatsResponse* response, std::function<void(::grpc::Status)>) override;
       void NullDebugStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest* request, ::opi_api::storage::v1::NullDebugStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -188,16 +188,16 @@ class NullDebugService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>* AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugCreateResponse>* PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>* AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugDeleteResponse>* PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>* AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugUpdateResponse>* PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugCreateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNullDebugDeleteRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugUpdateRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugListResponse>* AsyncNullDebugListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugListResponse>* PrepareAsyncNullDebugListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>* AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugGetResponse>* PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* AsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebug>* PrepareAsyncNullDebugGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugStatsResponse>* AsyncNullDebugStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NullDebugStatsResponse>* PrepareAsyncNullDebugStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_NullDebugCreate_;
@@ -213,11 +213,11 @@ class NullDebugService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status NullDebugCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response);
-    virtual ::grpc::Status NullDebugDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response);
-    virtual ::grpc::Status NullDebugUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response);
+    virtual ::grpc::Status NullDebugCreate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response);
+    virtual ::grpc::Status NullDebugDelete(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status NullDebugUpdate(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response);
     virtual ::grpc::Status NullDebugList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugListRequest* request, ::opi_api::storage::v1::NullDebugListResponse* response);
-    virtual ::grpc::Status NullDebugGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response);
+    virtual ::grpc::Status NullDebugGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response);
     virtual ::grpc::Status NullDebugStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NullDebugStatsRequest* request, ::opi_api::storage::v1::NullDebugStatsResponse* response);
   };
   template <class BaseClass>
@@ -232,11 +232,11 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullDebugCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebugCreateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNullDebugCreate(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebug>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -252,11 +252,11 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullDebugDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebugDeleteResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNullDebugDelete(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -272,11 +272,11 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullDebugUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebugUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNullDebugUpdate(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebug>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -312,11 +312,11 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNullDebugGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebugGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNullDebugGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NullDebugGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NullDebug>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -348,25 +348,25 @@ class NullDebugService final {
    public:
     WithCallbackMethod_NullDebugCreate() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebugCreateResponse* response) { return this->NullDebugCreate(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugCreateRequest* request, ::opi_api::storage::v1::NullDebug* response) { return this->NullDebugCreate(context, request, response); }));}
     void SetMessageAllocatorFor_NullDebugCreate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NullDebugCreate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NullDebugCreate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NullDebugDelete : public BaseClass {
@@ -375,25 +375,25 @@ class NullDebugService final {
    public:
     WithCallbackMethod_NullDebugDelete() {
       ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::opi_api::storage::v1::NullDebugDeleteResponse* response) { return this->NullDebugDelete(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugDeleteRequest* request, ::google::protobuf::Empty* response) { return this->NullDebugDelete(context, request, response); }));}
     void SetMessageAllocatorFor_NullDebugDelete(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NullDebugDelete() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NullDebugDelete(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NullDebugUpdate : public BaseClass {
@@ -402,25 +402,25 @@ class NullDebugService final {
    public:
     WithCallbackMethod_NullDebugUpdate() {
       ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebugUpdateResponse* response) { return this->NullDebugUpdate(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugUpdateRequest* request, ::opi_api::storage::v1::NullDebug* response) { return this->NullDebugUpdate(context, request, response); }));}
     void SetMessageAllocatorFor_NullDebugUpdate(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NullDebugUpdate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NullDebugUpdate(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NullDebugList : public BaseClass {
@@ -456,25 +456,25 @@ class NullDebugService final {
    public:
     WithCallbackMethod_NullDebugGet() {
       ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebugGetResponse* response) { return this->NullDebugGet(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NullDebugGetRequest* request, ::opi_api::storage::v1::NullDebug* response) { return this->NullDebugGet(context, request, response); }));}
     void SetMessageAllocatorFor_NullDebugGet(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NullDebugGet() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NullDebugGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NullDebugStats : public BaseClass {
@@ -517,7 +517,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -534,7 +534,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -551,7 +551,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -585,7 +585,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -619,7 +619,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -639,7 +639,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -659,7 +659,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -699,7 +699,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -742,7 +742,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -764,7 +764,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -786,7 +786,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -830,7 +830,7 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -867,10 +867,10 @@ class NullDebugService final {
     WithStreamedUnaryMethod_NullDebugCreate() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse>(
+          ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebugCreateResponse>* streamer) {
+                     ::opi_api::storage::v1::NullDebugCreateRequest, ::opi_api::storage::v1::NullDebug>* streamer) {
                        return this->StreamedNullDebugCreate(context,
                          streamer);
                   }));
@@ -879,12 +879,12 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebugCreateResponse* /*response*/) override {
+    ::grpc::Status NullDebugCreate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugCreateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNullDebugCreate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugCreateRequest,::opi_api::storage::v1::NullDebugCreateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNullDebugCreate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugCreateRequest,::opi_api::storage::v1::NullDebug>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NullDebugDelete : public BaseClass {
@@ -894,10 +894,10 @@ class NullDebugService final {
     WithStreamedUnaryMethod_NullDebugDelete() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse>(
+          ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NullDebugDeleteRequest, ::opi_api::storage::v1::NullDebugDeleteResponse>* streamer) {
+                     ::opi_api::storage::v1::NullDebugDeleteRequest, ::google::protobuf::Empty>* streamer) {
                        return this->StreamedNullDebugDelete(context,
                          streamer);
                   }));
@@ -906,12 +906,12 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::opi_api::storage::v1::NullDebugDeleteResponse* /*response*/) override {
+    ::grpc::Status NullDebugDelete(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugDeleteRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNullDebugDelete(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugDeleteRequest,::opi_api::storage::v1::NullDebugDeleteResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNullDebugDelete(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugDeleteRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NullDebugUpdate : public BaseClass {
@@ -921,10 +921,10 @@ class NullDebugService final {
     WithStreamedUnaryMethod_NullDebugUpdate() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse>(
+          ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebugUpdateResponse>* streamer) {
+                     ::opi_api::storage::v1::NullDebugUpdateRequest, ::opi_api::storage::v1::NullDebug>* streamer) {
                        return this->StreamedNullDebugUpdate(context,
                          streamer);
                   }));
@@ -933,12 +933,12 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebugUpdateResponse* /*response*/) override {
+    ::grpc::Status NullDebugUpdate(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugUpdateRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNullDebugUpdate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugUpdateRequest,::opi_api::storage::v1::NullDebugUpdateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNullDebugUpdate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugUpdateRequest,::opi_api::storage::v1::NullDebug>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NullDebugList : public BaseClass {
@@ -975,10 +975,10 @@ class NullDebugService final {
     WithStreamedUnaryMethod_NullDebugGet() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse>(
+          ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebugGetResponse>* streamer) {
+                     ::opi_api::storage::v1::NullDebugGetRequest, ::opi_api::storage::v1::NullDebug>* streamer) {
                        return this->StreamedNullDebugGet(context,
                          streamer);
                   }));
@@ -987,12 +987,12 @@ class NullDebugService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebugGetResponse* /*response*/) override {
+    ::grpc::Status NullDebugGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NullDebugGetRequest* /*request*/, ::opi_api::storage::v1::NullDebug* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNullDebugGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugGetRequest,::opi_api::storage::v1::NullDebugGetResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNullDebugGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NullDebugGetRequest,::opi_api::storage::v1::NullDebug>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NullDebugStats : public BaseClass {

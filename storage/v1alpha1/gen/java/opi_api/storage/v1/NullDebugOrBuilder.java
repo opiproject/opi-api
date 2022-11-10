@@ -8,10 +8,19 @@ public interface NullDebugOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   * @return Whether the handle field is set.
    */
-  long getId();
+  boolean hasHandle();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   * @return The handle.
+   */
+  opi_api.common.v1.ObjectKey getHandle();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder();
 
   /**
    * <code>int64 block_size = 2;</code>

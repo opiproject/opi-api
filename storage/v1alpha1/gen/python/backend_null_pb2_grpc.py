@@ -3,6 +3,7 @@
 import grpc
 
 import backend_null_pb2 as backend__null__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NullDebugServiceStub(object):
@@ -18,17 +19,17 @@ class NullDebugServiceStub(object):
         self.NullDebugCreate = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugCreate',
                 request_serializer=backend__null__pb2.NullDebugCreateRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebugCreateResponse.FromString,
+                response_deserializer=backend__null__pb2.NullDebug.FromString,
                 )
         self.NullDebugDelete = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugDelete',
                 request_serializer=backend__null__pb2.NullDebugDeleteRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebugDeleteResponse.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.NullDebugUpdate = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugUpdate',
                 request_serializer=backend__null__pb2.NullDebugUpdateRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebugUpdateResponse.FromString,
+                response_deserializer=backend__null__pb2.NullDebug.FromString,
                 )
         self.NullDebugList = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugList',
@@ -38,7 +39,7 @@ class NullDebugServiceStub(object):
         self.NullDebugGet = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugGet',
                 request_serializer=backend__null__pb2.NullDebugGetRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.NullDebugGetResponse.FromString,
+                response_deserializer=backend__null__pb2.NullDebug.FromString,
                 )
         self.NullDebugStats = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/NullDebugStats',
@@ -93,17 +94,17 @@ def add_NullDebugServiceServicer_to_server(servicer, server):
             'NullDebugCreate': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugCreate,
                     request_deserializer=backend__null__pb2.NullDebugCreateRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebugCreateResponse.SerializeToString,
+                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
             ),
             'NullDebugDelete': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugDelete,
                     request_deserializer=backend__null__pb2.NullDebugDeleteRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebugDeleteResponse.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'NullDebugUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugUpdate,
                     request_deserializer=backend__null__pb2.NullDebugUpdateRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebugUpdateResponse.SerializeToString,
+                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
             ),
             'NullDebugList': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugList,
@@ -113,7 +114,7 @@ def add_NullDebugServiceServicer_to_server(servicer, server):
             'NullDebugGet': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugGet,
                     request_deserializer=backend__null__pb2.NullDebugGetRequest.FromString,
-                    response_serializer=backend__null__pb2.NullDebugGetResponse.SerializeToString,
+                    response_serializer=backend__null__pb2.NullDebug.SerializeToString,
             ),
             'NullDebugStats': grpc.unary_unary_rpc_method_handler(
                     servicer.NullDebugStats,
@@ -144,7 +145,7 @@ class NullDebugService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/NullDebugCreate',
             backend__null__pb2.NullDebugCreateRequest.SerializeToString,
-            backend__null__pb2.NullDebugCreateResponse.FromString,
+            backend__null__pb2.NullDebug.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -161,7 +162,7 @@ class NullDebugService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/NullDebugDelete',
             backend__null__pb2.NullDebugDeleteRequest.SerializeToString,
-            backend__null__pb2.NullDebugDeleteResponse.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -178,7 +179,7 @@ class NullDebugService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/NullDebugUpdate',
             backend__null__pb2.NullDebugUpdateRequest.SerializeToString,
-            backend__null__pb2.NullDebugUpdateResponse.FromString,
+            backend__null__pb2.NullDebug.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -212,7 +213,7 @@ class NullDebugService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/NullDebugGet',
             backend__null__pb2.NullDebugGetRequest.SerializeToString,
-            backend__null__pb2.NullDebugGetResponse.FromString,
+            backend__null__pb2.NullDebug.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
