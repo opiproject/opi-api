@@ -16,58 +16,58 @@ import "google/api/annotations.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
-    rpc VirtioScsiControllerCreate (VirtioScsiControllerCreateRequest) returns (VirtioScsiController) {
+    rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
             post: "/v1/virtioscsictrls"
             body: "virtioscsictrl"
         };
     }
-    rpc VirtioScsiControllerDelete (VirtioScsiControllerDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/virtioscsictrls/{virtioscsictrl}"
         };
     }
-    rpc VirtioScsiControllerUpdate (VirtioScsiControllerUpdateRequest) returns (VirtioScsiController) {
+    rpc UpdateVirtioScsiController (UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
             patch: "/v1/virtioscsictrls"
             body: "virtioscsictrl"
         };
     }
-    rpc VirtioScsiControllerList   (VirtioScsiControllerListRequest)   returns (VirtioScsiControllerListResponse)   {
+    rpc ListVirtioScsiController   (ListVirtioScsiControllerRequest)   returns (ListVirtioScsiControllerResponse)   {
         option (google.api.http) = {
             get: "/v1/virtioscsictrls"
         };
     }
-    rpc VirtioScsiControllerGet    (VirtioScsiControllerGetRequest)    returns (VirtioScsiController)    {
+    rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
             get: "/v1/virtioscsictrls/{virtioscsictrl}"
         };
     }
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
 
-    rpc VirtioScsiLunCreate (VirtioScsiLunCreateRequest) returns (VirtioScsiLun) {
+    rpc CreateVirtioScsiLun (CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
             post: "/v1/virtioscsiluns"
             body: "virtioscsilun"
         };
     }
-    rpc VirtioScsiLunDelete (VirtioScsiLunDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/virtioscsiluns/{virtioscsilun}"
         };
     }
-    rpc VirtioScsiLunUpdate (VirtioScsiLunUpdateRequest) returns (VirtioScsiLun) {
+    rpc UpdateVirtioScsiLun (UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
             patch: "/v1/virtioscsiluns"
             body: "virtioscsilun"
         };
     }
-    rpc VirtioScsiLunList   (VirtioScsiLunListRequest)   returns (VirtioScsiLunListResponse)   {
+    rpc ListVirtioScsiLun   (ListVirtioScsiLunRequest)   returns (ListVirtioScsiLunResponse)   {
         option (google.api.http) = {
             get: "/v1/virtioscsiluns"
         };
     }
-    rpc VirtioScsiLunGet    (VirtioScsiLunGetRequest)    returns (VirtioScsiLun)    {
+    rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
             get: "/v1/virtioscsiluns/{virtioscsilun}"
         };
@@ -86,27 +86,27 @@ message VirtioScsiLun {
     string bdev = 3;
 }
 
-message VirtioScsiControllerCreateRequest {
+message CreateVirtioScsiControllerRequest {
     VirtioScsiController controller = 1;
 }
 
-message VirtioScsiControllerDeleteRequest {
+message DeleteVirtioScsiControllerRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
-message VirtioScsiControllerUpdateRequest {
+message UpdateVirtioScsiControllerRequest {
     VirtioScsiController controller = 1;
 }
 
-message VirtioScsiControllerListRequest {
+message ListVirtioScsiControllerRequest {
     // Intentionally empty.
 }
 
-message VirtioScsiControllerListResponse {
+message ListVirtioScsiControllerResponse {
     repeated VirtioScsiController controller = 1;
 }
 
-message VirtioScsiControllerGetRequest {
+message GetVirtioScsiControllerRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
@@ -119,28 +119,28 @@ message VirtioScsiControllerStatsResponse {
     string stats = 2;
 }
 
-message VirtioScsiLunCreateRequest {
+message CreateVirtioScsiLunRequest {
     VirtioScsiLun lun = 1;
 }
 
-message VirtioScsiLunDeleteRequest {
+message DeleteVirtioScsiLunRequest {
     common.v1.ObjectKey controller_id = 1;
     common.v1.ObjectKey lun_id = 2;
 }
 
-message VirtioScsiLunUpdateRequest {
+message UpdateVirtioScsiLunRequest {
     VirtioScsiLun lun = 1;
 }
 
-message VirtioScsiLunListRequest {
+message ListVirtioScsiLunRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
-message VirtioScsiLunListResponse {
+message ListVirtioScsiLunResponse {
     repeated VirtioScsiLun lun = 1;
 }
 
-message VirtioScsiLunGetRequest {
+message GetVirtioScsiLunRequest {
     common.v1.ObjectKey controller_id = 1;
     common.v1.ObjectKey lun_id = 2;
 }

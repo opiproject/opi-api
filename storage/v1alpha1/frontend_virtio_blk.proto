@@ -16,29 +16,29 @@ import "google/api/annotations.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
-    rpc VirtioBlkCreate (VirtioBlkCreateRequest) returns (VirtioBlk) {
+    rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
             post: "/v1/virtioblks"
             body: "virtioblk"
         };
     }
-    rpc VirtioBlkDelete (VirtioBlkDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/virtioblks/{virtioblk}"
         };
     }
-    rpc VirtioBlkUpdate (VirtioBlkUpdateRequest) returns (VirtioBlk) {
+    rpc UpdateVirtioBlk (UpdateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
             patch: "/v1/virtioblks"
             body: "virtioblk"
         };
     }
-    rpc VirtioBlkList   (VirtioBlkListRequest)   returns (VirtioBlkListResponse)   {
+    rpc ListVirtioBlk   (ListVirtioBlkRequest)   returns (ListVirtioBlkResponse)   {
         option (google.api.http) = {
             get: "/v1/virtioblks"
         };
     }
-    rpc VirtioBlkGet    (VirtioBlkGetRequest)    returns (VirtioBlk)    {
+    rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
             get: "/v1/virtioblks/{virtioblk}"
         };
@@ -54,27 +54,27 @@ message VirtioBlk {
     string serial_number = 5;
 }
 
-message VirtioBlkCreateRequest {
+message CreateVirtioBlkRequest {
     VirtioBlk controller = 1;
 }
 
-message VirtioBlkDeleteRequest {
+message DeleteVirtioBlkRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
-message VirtioBlkUpdateRequest {
+message UpdateVirtioBlkRequest {
     VirtioBlk controller = 1;
 }
 
-message VirtioBlkListRequest {
+message ListVirtioBlkRequest {
     // Intentionally empty.
 }
 
-message VirtioBlkListResponse {
+message ListVirtioBlkResponse {
     repeated VirtioBlk controller = 1;
 }
 
-message VirtioBlkGetRequest {
+message GetVirtioBlkRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 

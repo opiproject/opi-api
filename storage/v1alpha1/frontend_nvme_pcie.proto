@@ -18,87 +18,87 @@ import "google/api/annotations.proto";
 
 // Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
 service FrontendNvmeService {
-    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystem) {
+    rpc CreateNVMeSubsystem (CreateNVMeSubsystemRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
             post: "/v1/subsystems"
             body: "subsystem"
         };
     }
-    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteNVMeSubsystem (DeleteNVMeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/subsystems/{subsystem}"
         };
     }
-    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystem) {
+    rpc UpdateNVMeSubsystem (UpdateNVMeSubsystemRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
             patch: "/v1/subsystems"
             body: "subsystem"
         };
     }
-    rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {
+    rpc ListNVMeSubsystem   (ListNVMeSubsystemRequest)   returns (ListNVMeSubsystemResponse)   {
         option (google.api.http) = {
             get: "/v1/subsystems"
         };
     }
-    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystem)    {
+    rpc GetNVMeSubsystem    (GetNVMeSubsystemRequest)    returns (NVMeSubsystem)    {
         option (google.api.http) = {
             get: "/v1/subsystems/{subsystem}"
         };
     }
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
 
-    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeController) {
+    rpc CreateNVMeController (CreateNVMeControllerRequest) returns (NVMeController) {
         option (google.api.http) = {
             post: "/v1/controllers"
             body: "controller"
         };
     }
-    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteNVMeController (DeleteNVMeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/controllers/{controller}"
         };
     }
-    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeController) {
+    rpc UpdateNVMeController (UpdateNVMeControllerRequest) returns (NVMeController) {
         option (google.api.http) = {
             patch: "/v1/controllers"
             body: "controller"
         };
     }
-    rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {
+    rpc ListNVMeController   (ListNVMeControllerRequest)   returns (ListNVMeControllerResponse)   {
         option (google.api.http) = {
             get: "/v1/controllers"
         };
     }
-    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeController)    {
+    rpc GetNVMeController    (GetNVMeControllerRequest)    returns (NVMeController)    {
         option (google.api.http) = {
             get: "/v1/controllers/{controller}"
         };
     }
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
 
-    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespace) {
+    rpc CreateNVMeNamespace (CreateNVMeNamespaceRequest) returns (NVMeNamespace) {
         option (google.api.http) = {
             post: "/v1/namespaces"
             body: "namespace"
         };
     }
-    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (google.protobuf.Empty) {
+    rpc DeleteNVMeNamespace (DeleteNVMeNamespaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/namespaces/{namespace}"
         };
     }
-    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespace) {
+    rpc UpdateNVMeNamespace (UpdateNVMeNamespaceRequest) returns (NVMeNamespace) {
         option (google.api.http) = {
             patch: "/v1/namespaces"
             body: "namespace"
         };
     }
-    rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {
+    rpc ListNVMeNamespace   (ListNVMeNamespaceRequest)   returns (ListNVMeNamespaceResponse)   {
         option (google.api.http) = {
             get: "/v1/namespaces"
         };
     }
-    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespace)    {
+    rpc GetNVMeNamespace    (GetNVMeNamespaceRequest)    returns (NVMeNamespace)    {
         option (google.api.http) = {
             get: "/v1/namespaces/{namespace}"
         };
@@ -245,27 +245,27 @@ message NVMeNamespaceStatus {
     NVMeNamespacePciOperState  pci_oper_state   = 2;
 }
 
-message NVMeSubsystemCreateRequest {
+message CreateNVMeSubsystemRequest {
     NVMeSubsystem subsystem = 1;
 }
 
-message NVMeSubsystemDeleteRequest {
+message DeleteNVMeSubsystemRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
 
-message NVMeSubsystemUpdateRequest {
+message UpdateNVMeSubsystemRequest {
     NVMeSubsystem subsystem = 1;
 }
 
-message NVMeSubsystemListRequest {
+message ListNVMeSubsystemRequest {
     // Intentionally empty.
 }
 
-message NVMeSubsystemListResponse {
+message ListNVMeSubsystemResponse {
     repeated NVMeSubsystem subsystem = 1;
 }
 
-message NVMeSubsystemGetRequest {
+message GetNVMeSubsystemRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
 
@@ -277,27 +277,27 @@ message NVMeSubsystemStatsResponse {
     string stats = 1;
 }
 
-message NVMeControllerCreateRequest {
+message CreateNVMeControllerRequest {
     NVMeController controller = 1;
 }
 
-message NVMeControllerDeleteRequest {
+message DeleteNVMeControllerRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
-message NVMeControllerUpdateRequest {
+message UpdateNVMeControllerRequest {
     NVMeController controller = 1;
 }
 
-message NVMeControllerListRequest {
+message ListNVMeControllerRequest {
     common.v1.ObjectKey subsystem_id = 1;
 }
 
-message NVMeControllerListResponse {
+message ListNVMeControllerResponse {
     repeated NVMeController controller = 1;
 }
 
-message NVMeControllerGetRequest {
+message GetNVMeControllerRequest {
     common.v1.ObjectKey controller_id = 1;
 }
 
@@ -310,28 +310,28 @@ message NVMeControllerStatsResponse {
     string stats = 2;
 }
 
-message NVMeNamespaceCreateRequest {
+message CreateNVMeNamespaceRequest {
     NVMeNamespace namespace = 1;
 }
 
-message NVMeNamespaceDeleteRequest {
+message DeleteNVMeNamespaceRequest {
     common.v1.ObjectKey namespace_id = 1;
 }
 
-message NVMeNamespaceUpdateRequest {
+message UpdateNVMeNamespaceRequest {
     NVMeNamespace namespace = 1;
 }
 
-message NVMeNamespaceListRequest {
+message ListNVMeNamespaceRequest {
     common.v1.ObjectKey subsystem_id = 1;
     common.v1.ObjectKey controller_id = 2;
 }
 
-message NVMeNamespaceListResponse {
+message ListNVMeNamespaceResponse {
     repeated NVMeNamespace namespace = 1;
 }
 
-message NVMeNamespaceGetRequest {
+message GetNVMeNamespaceRequest {
     common.v1.ObjectKey namespace_id = 1;
 }
 
