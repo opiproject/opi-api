@@ -18,159 +18,159 @@ public final class FrontendVirtioBlkServiceGrpc {
   public static final String SERVICE_NAME = "opi_api.storage.v1.FrontendVirtioBlkService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkCreateRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getCreateVirtioBlkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioBlkCreate",
-      requestType = opi_api.storage.v1.VirtioBlkCreateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateVirtioBlk",
+      requestType = opi_api.storage.v1.CreateVirtioBlkRequest.class,
       responseType = opi_api.storage.v1.VirtioBlk.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkCreateRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkCreateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkCreateRequest, opi_api.storage.v1.VirtioBlk> getVirtioBlkCreateMethod;
-    if ((getVirtioBlkCreateMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkCreateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getCreateVirtioBlkMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioBlkRequest, opi_api.storage.v1.VirtioBlk> getCreateVirtioBlkMethod;
+    if ((getCreateVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getCreateVirtioBlkMethod) == null) {
       synchronized (FrontendVirtioBlkServiceGrpc.class) {
-        if ((getVirtioBlkCreateMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkCreateMethod) == null) {
-          FrontendVirtioBlkServiceGrpc.getVirtioBlkCreateMethod = getVirtioBlkCreateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioBlkCreateRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
+        if ((getCreateVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getCreateVirtioBlkMethod) == null) {
+          FrontendVirtioBlkServiceGrpc.getCreateVirtioBlkMethod = getCreateVirtioBlkMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateVirtioBlkRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioBlkCreate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVirtioBlk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkCreateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.CreateVirtioBlkRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioBlk.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("VirtioBlkCreate"))
+              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("CreateVirtioBlk"))
               .build();
         }
       }
     }
-    return getVirtioBlkCreateMethod;
+    return getCreateVirtioBlkMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkDeleteRequest,
-      com.google.protobuf.Empty> getVirtioBlkDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioBlkRequest,
+      com.google.protobuf.Empty> getDeleteVirtioBlkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioBlkDelete",
-      requestType = opi_api.storage.v1.VirtioBlkDeleteRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVirtioBlk",
+      requestType = opi_api.storage.v1.DeleteVirtioBlkRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkDeleteRequest,
-      com.google.protobuf.Empty> getVirtioBlkDeleteMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkDeleteRequest, com.google.protobuf.Empty> getVirtioBlkDeleteMethod;
-    if ((getVirtioBlkDeleteMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkDeleteMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioBlkRequest,
+      com.google.protobuf.Empty> getDeleteVirtioBlkMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioBlkRequest, com.google.protobuf.Empty> getDeleteVirtioBlkMethod;
+    if ((getDeleteVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getDeleteVirtioBlkMethod) == null) {
       synchronized (FrontendVirtioBlkServiceGrpc.class) {
-        if ((getVirtioBlkDeleteMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkDeleteMethod) == null) {
-          FrontendVirtioBlkServiceGrpc.getVirtioBlkDeleteMethod = getVirtioBlkDeleteMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioBlkDeleteRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getDeleteVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getDeleteVirtioBlkMethod) == null) {
+          FrontendVirtioBlkServiceGrpc.getDeleteVirtioBlkMethod = getDeleteVirtioBlkMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteVirtioBlkRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioBlkDelete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVirtioBlk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkDeleteRequest.getDefaultInstance()))
+                  opi_api.storage.v1.DeleteVirtioBlkRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("VirtioBlkDelete"))
+              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("DeleteVirtioBlk"))
               .build();
         }
       }
     }
-    return getVirtioBlkDeleteMethod;
+    return getDeleteVirtioBlkMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkUpdateRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getUpdateVirtioBlkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioBlkUpdate",
-      requestType = opi_api.storage.v1.VirtioBlkUpdateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVirtioBlk",
+      requestType = opi_api.storage.v1.UpdateVirtioBlkRequest.class,
       responseType = opi_api.storage.v1.VirtioBlk.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkUpdateRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkUpdateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkUpdateRequest, opi_api.storage.v1.VirtioBlk> getVirtioBlkUpdateMethod;
-    if ((getVirtioBlkUpdateMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkUpdateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getUpdateVirtioBlkMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioBlkRequest, opi_api.storage.v1.VirtioBlk> getUpdateVirtioBlkMethod;
+    if ((getUpdateVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getUpdateVirtioBlkMethod) == null) {
       synchronized (FrontendVirtioBlkServiceGrpc.class) {
-        if ((getVirtioBlkUpdateMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkUpdateMethod) == null) {
-          FrontendVirtioBlkServiceGrpc.getVirtioBlkUpdateMethod = getVirtioBlkUpdateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioBlkUpdateRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
+        if ((getUpdateVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getUpdateVirtioBlkMethod) == null) {
+          FrontendVirtioBlkServiceGrpc.getUpdateVirtioBlkMethod = getUpdateVirtioBlkMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateVirtioBlkRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioBlkUpdate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVirtioBlk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkUpdateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.UpdateVirtioBlkRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioBlk.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("VirtioBlkUpdate"))
+              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("UpdateVirtioBlk"))
               .build();
         }
       }
     }
-    return getVirtioBlkUpdateMethod;
+    return getUpdateVirtioBlkMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkListRequest,
-      opi_api.storage.v1.VirtioBlkListResponse> getVirtioBlkListMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioBlkRequest,
+      opi_api.storage.v1.ListVirtioBlkResponse> getListVirtioBlkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioBlkList",
-      requestType = opi_api.storage.v1.VirtioBlkListRequest.class,
-      responseType = opi_api.storage.v1.VirtioBlkListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListVirtioBlk",
+      requestType = opi_api.storage.v1.ListVirtioBlkRequest.class,
+      responseType = opi_api.storage.v1.ListVirtioBlkResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkListRequest,
-      opi_api.storage.v1.VirtioBlkListResponse> getVirtioBlkListMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkListRequest, opi_api.storage.v1.VirtioBlkListResponse> getVirtioBlkListMethod;
-    if ((getVirtioBlkListMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkListMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioBlkRequest,
+      opi_api.storage.v1.ListVirtioBlkResponse> getListVirtioBlkMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioBlkRequest, opi_api.storage.v1.ListVirtioBlkResponse> getListVirtioBlkMethod;
+    if ((getListVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getListVirtioBlkMethod) == null) {
       synchronized (FrontendVirtioBlkServiceGrpc.class) {
-        if ((getVirtioBlkListMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkListMethod) == null) {
-          FrontendVirtioBlkServiceGrpc.getVirtioBlkListMethod = getVirtioBlkListMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioBlkListRequest, opi_api.storage.v1.VirtioBlkListResponse>newBuilder()
+        if ((getListVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getListVirtioBlkMethod) == null) {
+          FrontendVirtioBlkServiceGrpc.getListVirtioBlkMethod = getListVirtioBlkMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListVirtioBlkRequest, opi_api.storage.v1.ListVirtioBlkResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioBlkList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListVirtioBlk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkListRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListVirtioBlkRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("VirtioBlkList"))
+                  opi_api.storage.v1.ListVirtioBlkResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("ListVirtioBlk"))
               .build();
         }
       }
     }
-    return getVirtioBlkListMethod;
+    return getListVirtioBlkMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkGetRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getGetVirtioBlkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioBlkGet",
-      requestType = opi_api.storage.v1.VirtioBlkGetRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetVirtioBlk",
+      requestType = opi_api.storage.v1.GetVirtioBlkRequest.class,
       responseType = opi_api.storage.v1.VirtioBlk.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkGetRequest,
-      opi_api.storage.v1.VirtioBlk> getVirtioBlkGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkGetRequest, opi_api.storage.v1.VirtioBlk> getVirtioBlkGetMethod;
-    if ((getVirtioBlkGetMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkGetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioBlkRequest,
+      opi_api.storage.v1.VirtioBlk> getGetVirtioBlkMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioBlkRequest, opi_api.storage.v1.VirtioBlk> getGetVirtioBlkMethod;
+    if ((getGetVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getGetVirtioBlkMethod) == null) {
       synchronized (FrontendVirtioBlkServiceGrpc.class) {
-        if ((getVirtioBlkGetMethod = FrontendVirtioBlkServiceGrpc.getVirtioBlkGetMethod) == null) {
-          FrontendVirtioBlkServiceGrpc.getVirtioBlkGetMethod = getVirtioBlkGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioBlkGetRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
+        if ((getGetVirtioBlkMethod = FrontendVirtioBlkServiceGrpc.getGetVirtioBlkMethod) == null) {
+          FrontendVirtioBlkServiceGrpc.getGetVirtioBlkMethod = getGetVirtioBlkMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetVirtioBlkRequest, opi_api.storage.v1.VirtioBlk>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioBlkGet"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVirtioBlk"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioBlkGetRequest.getDefaultInstance()))
+                  opi_api.storage.v1.GetVirtioBlkRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioBlk.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("VirtioBlkGet"))
+              .setSchemaDescriptor(new FrontendVirtioBlkServiceMethodDescriptorSupplier("GetVirtioBlk"))
               .build();
         }
       }
     }
-    return getVirtioBlkGetMethod;
+    return getGetVirtioBlkMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioBlkStatsRequest,
@@ -257,37 +257,37 @@ public final class FrontendVirtioBlkServiceGrpc {
 
     /**
      */
-    public void virtioBlkCreate(opi_api.storage.v1.VirtioBlkCreateRequest request,
+    public void createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioBlkCreateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVirtioBlkMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioBlkDelete(opi_api.storage.v1.VirtioBlkDeleteRequest request,
+    public void deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioBlkDeleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVirtioBlkMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioBlkUpdate(opi_api.storage.v1.VirtioBlkUpdateRequest request,
+    public void updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioBlkUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVirtioBlkMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioBlkList(opi_api.storage.v1.VirtioBlkListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlkListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioBlkListMethod(), responseObserver);
+    public void listVirtioBlk(opi_api.storage.v1.ListVirtioBlkRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioBlkResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVirtioBlkMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioBlkGet(opi_api.storage.v1.VirtioBlkGetRequest request,
+    public void getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioBlkGetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVirtioBlkMethod(), responseObserver);
     }
 
     /**
@@ -300,40 +300,40 @@ public final class FrontendVirtioBlkServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getVirtioBlkCreateMethod(),
+            getCreateVirtioBlkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioBlkCreateRequest,
+                opi_api.storage.v1.CreateVirtioBlkRequest,
                 opi_api.storage.v1.VirtioBlk>(
-                  this, METHODID_VIRTIO_BLK_CREATE)))
+                  this, METHODID_CREATE_VIRTIO_BLK)))
           .addMethod(
-            getVirtioBlkDeleteMethod(),
+            getDeleteVirtioBlkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioBlkDeleteRequest,
+                opi_api.storage.v1.DeleteVirtioBlkRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_VIRTIO_BLK_DELETE)))
+                  this, METHODID_DELETE_VIRTIO_BLK)))
           .addMethod(
-            getVirtioBlkUpdateMethod(),
+            getUpdateVirtioBlkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioBlkUpdateRequest,
+                opi_api.storage.v1.UpdateVirtioBlkRequest,
                 opi_api.storage.v1.VirtioBlk>(
-                  this, METHODID_VIRTIO_BLK_UPDATE)))
+                  this, METHODID_UPDATE_VIRTIO_BLK)))
           .addMethod(
-            getVirtioBlkListMethod(),
+            getListVirtioBlkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioBlkListRequest,
-                opi_api.storage.v1.VirtioBlkListResponse>(
-                  this, METHODID_VIRTIO_BLK_LIST)))
+                opi_api.storage.v1.ListVirtioBlkRequest,
+                opi_api.storage.v1.ListVirtioBlkResponse>(
+                  this, METHODID_LIST_VIRTIO_BLK)))
           .addMethod(
-            getVirtioBlkGetMethod(),
+            getGetVirtioBlkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioBlkGetRequest,
+                opi_api.storage.v1.GetVirtioBlkRequest,
                 opi_api.storage.v1.VirtioBlk>(
-                  this, METHODID_VIRTIO_BLK_GET)))
+                  this, METHODID_GET_VIRTIO_BLK)))
           .addMethod(
             getVirtioBlkStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -364,42 +364,42 @@ public final class FrontendVirtioBlkServiceGrpc {
 
     /**
      */
-    public void virtioBlkCreate(opi_api.storage.v1.VirtioBlkCreateRequest request,
+    public void createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioBlkCreateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateVirtioBlkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioBlkDelete(opi_api.storage.v1.VirtioBlkDeleteRequest request,
+    public void deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioBlkDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteVirtioBlkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioBlkUpdate(opi_api.storage.v1.VirtioBlkUpdateRequest request,
+    public void updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioBlkUpdateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateVirtioBlkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioBlkList(opi_api.storage.v1.VirtioBlkListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlkListResponse> responseObserver) {
+    public void listVirtioBlk(opi_api.storage.v1.ListVirtioBlkRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioBlkResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioBlkListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListVirtioBlkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioBlkGet(opi_api.storage.v1.VirtioBlkGetRequest request,
+    public void getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioBlkGetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetVirtioBlkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -430,37 +430,37 @@ public final class FrontendVirtioBlkServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.VirtioBlk virtioBlkCreate(opi_api.storage.v1.VirtioBlkCreateRequest request) {
+    public opi_api.storage.v1.VirtioBlk createVirtioBlk(opi_api.storage.v1.CreateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioBlkCreateMethod(), getCallOptions(), request);
+          getChannel(), getCreateVirtioBlkMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty virtioBlkDelete(opi_api.storage.v1.VirtioBlkDeleteRequest request) {
+    public com.google.protobuf.Empty deleteVirtioBlk(opi_api.storage.v1.DeleteVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioBlkDeleteMethod(), getCallOptions(), request);
+          getChannel(), getDeleteVirtioBlkMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioBlk virtioBlkUpdate(opi_api.storage.v1.VirtioBlkUpdateRequest request) {
+    public opi_api.storage.v1.VirtioBlk updateVirtioBlk(opi_api.storage.v1.UpdateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioBlkUpdateMethod(), getCallOptions(), request);
+          getChannel(), getUpdateVirtioBlkMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioBlkListResponse virtioBlkList(opi_api.storage.v1.VirtioBlkListRequest request) {
+    public opi_api.storage.v1.ListVirtioBlkResponse listVirtioBlk(opi_api.storage.v1.ListVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioBlkListMethod(), getCallOptions(), request);
+          getChannel(), getListVirtioBlkMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioBlk virtioBlkGet(opi_api.storage.v1.VirtioBlkGetRequest request) {
+    public opi_api.storage.v1.VirtioBlk getVirtioBlk(opi_api.storage.v1.GetVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioBlkGetMethod(), getCallOptions(), request);
+          getChannel(), getGetVirtioBlkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -490,42 +490,42 @@ public final class FrontendVirtioBlkServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> virtioBlkCreate(
-        opi_api.storage.v1.VirtioBlkCreateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> createVirtioBlk(
+        opi_api.storage.v1.CreateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioBlkCreateMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateVirtioBlkMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> virtioBlkDelete(
-        opi_api.storage.v1.VirtioBlkDeleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioBlk(
+        opi_api.storage.v1.DeleteVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioBlkDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteVirtioBlkMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> virtioBlkUpdate(
-        opi_api.storage.v1.VirtioBlkUpdateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> updateVirtioBlk(
+        opi_api.storage.v1.UpdateVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioBlkUpdateMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateVirtioBlkMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlkListResponse> virtioBlkList(
-        opi_api.storage.v1.VirtioBlkListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioBlkResponse> listVirtioBlk(
+        opi_api.storage.v1.ListVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioBlkListMethod(), getCallOptions()), request);
+          getChannel().newCall(getListVirtioBlkMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> virtioBlkGet(
-        opi_api.storage.v1.VirtioBlkGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioBlk> getVirtioBlk(
+        opi_api.storage.v1.GetVirtioBlkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioBlkGetMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetVirtioBlkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -537,11 +537,11 @@ public final class FrontendVirtioBlkServiceGrpc {
     }
   }
 
-  private static final int METHODID_VIRTIO_BLK_CREATE = 0;
-  private static final int METHODID_VIRTIO_BLK_DELETE = 1;
-  private static final int METHODID_VIRTIO_BLK_UPDATE = 2;
-  private static final int METHODID_VIRTIO_BLK_LIST = 3;
-  private static final int METHODID_VIRTIO_BLK_GET = 4;
+  private static final int METHODID_CREATE_VIRTIO_BLK = 0;
+  private static final int METHODID_DELETE_VIRTIO_BLK = 1;
+  private static final int METHODID_UPDATE_VIRTIO_BLK = 2;
+  private static final int METHODID_LIST_VIRTIO_BLK = 3;
+  private static final int METHODID_GET_VIRTIO_BLK = 4;
   private static final int METHODID_VIRTIO_BLK_STATS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -561,24 +561,24 @@ public final class FrontendVirtioBlkServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_VIRTIO_BLK_CREATE:
-          serviceImpl.virtioBlkCreate((opi_api.storage.v1.VirtioBlkCreateRequest) request,
+        case METHODID_CREATE_VIRTIO_BLK:
+          serviceImpl.createVirtioBlk((opi_api.storage.v1.CreateVirtioBlkRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk>) responseObserver);
           break;
-        case METHODID_VIRTIO_BLK_DELETE:
-          serviceImpl.virtioBlkDelete((opi_api.storage.v1.VirtioBlkDeleteRequest) request,
+        case METHODID_DELETE_VIRTIO_BLK:
+          serviceImpl.deleteVirtioBlk((opi_api.storage.v1.DeleteVirtioBlkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_VIRTIO_BLK_UPDATE:
-          serviceImpl.virtioBlkUpdate((opi_api.storage.v1.VirtioBlkUpdateRequest) request,
+        case METHODID_UPDATE_VIRTIO_BLK:
+          serviceImpl.updateVirtioBlk((opi_api.storage.v1.UpdateVirtioBlkRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk>) responseObserver);
           break;
-        case METHODID_VIRTIO_BLK_LIST:
-          serviceImpl.virtioBlkList((opi_api.storage.v1.VirtioBlkListRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlkListResponse>) responseObserver);
+        case METHODID_LIST_VIRTIO_BLK:
+          serviceImpl.listVirtioBlk((opi_api.storage.v1.ListVirtioBlkRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioBlkResponse>) responseObserver);
           break;
-        case METHODID_VIRTIO_BLK_GET:
-          serviceImpl.virtioBlkGet((opi_api.storage.v1.VirtioBlkGetRequest) request,
+        case METHODID_GET_VIRTIO_BLK:
+          serviceImpl.getVirtioBlk((opi_api.storage.v1.GetVirtioBlkRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioBlk>) responseObserver);
           break;
         case METHODID_VIRTIO_BLK_STATS:
@@ -646,11 +646,11 @@ public final class FrontendVirtioBlkServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new FrontendVirtioBlkServiceFileDescriptorSupplier())
-              .addMethod(getVirtioBlkCreateMethod())
-              .addMethod(getVirtioBlkDeleteMethod())
-              .addMethod(getVirtioBlkUpdateMethod())
-              .addMethod(getVirtioBlkListMethod())
-              .addMethod(getVirtioBlkGetMethod())
+              .addMethod(getCreateVirtioBlkMethod())
+              .addMethod(getDeleteVirtioBlkMethod())
+              .addMethod(getUpdateVirtioBlkMethod())
+              .addMethod(getListVirtioBlkMethod())
+              .addMethod(getGetVirtioBlkMethod())
               .addMethod(getVirtioBlkStatsMethod())
               .build();
         }

@@ -61,46 +61,46 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace opi_api {
 namespace storage {
 namespace v1 {
+class CreateVirtioBlkRequest;
+struct CreateVirtioBlkRequestDefaultTypeInternal;
+extern CreateVirtioBlkRequestDefaultTypeInternal _CreateVirtioBlkRequest_default_instance_;
+class DeleteVirtioBlkRequest;
+struct DeleteVirtioBlkRequestDefaultTypeInternal;
+extern DeleteVirtioBlkRequestDefaultTypeInternal _DeleteVirtioBlkRequest_default_instance_;
+class GetVirtioBlkRequest;
+struct GetVirtioBlkRequestDefaultTypeInternal;
+extern GetVirtioBlkRequestDefaultTypeInternal _GetVirtioBlkRequest_default_instance_;
+class ListVirtioBlkRequest;
+struct ListVirtioBlkRequestDefaultTypeInternal;
+extern ListVirtioBlkRequestDefaultTypeInternal _ListVirtioBlkRequest_default_instance_;
+class ListVirtioBlkResponse;
+struct ListVirtioBlkResponseDefaultTypeInternal;
+extern ListVirtioBlkResponseDefaultTypeInternal _ListVirtioBlkResponse_default_instance_;
+class UpdateVirtioBlkRequest;
+struct UpdateVirtioBlkRequestDefaultTypeInternal;
+extern UpdateVirtioBlkRequestDefaultTypeInternal _UpdateVirtioBlkRequest_default_instance_;
 class VirtioBlk;
 struct VirtioBlkDefaultTypeInternal;
 extern VirtioBlkDefaultTypeInternal _VirtioBlk_default_instance_;
-class VirtioBlkCreateRequest;
-struct VirtioBlkCreateRequestDefaultTypeInternal;
-extern VirtioBlkCreateRequestDefaultTypeInternal _VirtioBlkCreateRequest_default_instance_;
-class VirtioBlkDeleteRequest;
-struct VirtioBlkDeleteRequestDefaultTypeInternal;
-extern VirtioBlkDeleteRequestDefaultTypeInternal _VirtioBlkDeleteRequest_default_instance_;
-class VirtioBlkGetRequest;
-struct VirtioBlkGetRequestDefaultTypeInternal;
-extern VirtioBlkGetRequestDefaultTypeInternal _VirtioBlkGetRequest_default_instance_;
-class VirtioBlkListRequest;
-struct VirtioBlkListRequestDefaultTypeInternal;
-extern VirtioBlkListRequestDefaultTypeInternal _VirtioBlkListRequest_default_instance_;
-class VirtioBlkListResponse;
-struct VirtioBlkListResponseDefaultTypeInternal;
-extern VirtioBlkListResponseDefaultTypeInternal _VirtioBlkListResponse_default_instance_;
 class VirtioBlkStatsRequest;
 struct VirtioBlkStatsRequestDefaultTypeInternal;
 extern VirtioBlkStatsRequestDefaultTypeInternal _VirtioBlkStatsRequest_default_instance_;
 class VirtioBlkStatsResponse;
 struct VirtioBlkStatsResponseDefaultTypeInternal;
 extern VirtioBlkStatsResponseDefaultTypeInternal _VirtioBlkStatsResponse_default_instance_;
-class VirtioBlkUpdateRequest;
-struct VirtioBlkUpdateRequestDefaultTypeInternal;
-extern VirtioBlkUpdateRequestDefaultTypeInternal _VirtioBlkUpdateRequest_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
+template<> ::opi_api::storage::v1::CreateVirtioBlkRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::CreateVirtioBlkRequest>(Arena*);
+template<> ::opi_api::storage::v1::DeleteVirtioBlkRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::DeleteVirtioBlkRequest>(Arena*);
+template<> ::opi_api::storage::v1::GetVirtioBlkRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::GetVirtioBlkRequest>(Arena*);
+template<> ::opi_api::storage::v1::ListVirtioBlkRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListVirtioBlkRequest>(Arena*);
+template<> ::opi_api::storage::v1::ListVirtioBlkResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::ListVirtioBlkResponse>(Arena*);
+template<> ::opi_api::storage::v1::UpdateVirtioBlkRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::UpdateVirtioBlkRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioBlk* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlk>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkCreateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkCreateRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkDeleteRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkDeleteRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkGetRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkGetRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkListRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkListRequest>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkListResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkListResponse>(Arena*);
 template<> ::opi_api::storage::v1::VirtioBlkStatsRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkStatsRequest>(Arena*);
 template<> ::opi_api::storage::v1::VirtioBlkStatsResponse* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkStatsResponse>(Arena*);
-template<> ::opi_api::storage::v1::VirtioBlkUpdateRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::VirtioBlkUpdateRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
 namespace storage {
@@ -326,24 +326,24 @@ class VirtioBlk final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkCreateRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkCreateRequest) */ {
+class CreateVirtioBlkRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.CreateVirtioBlkRequest) */ {
  public:
-  inline VirtioBlkCreateRequest() : VirtioBlkCreateRequest(nullptr) {}
-  ~VirtioBlkCreateRequest() override;
-  explicit constexpr VirtioBlkCreateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline CreateVirtioBlkRequest() : CreateVirtioBlkRequest(nullptr) {}
+  ~CreateVirtioBlkRequest() override;
+  explicit constexpr CreateVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkCreateRequest(const VirtioBlkCreateRequest& from);
-  VirtioBlkCreateRequest(VirtioBlkCreateRequest&& from) noexcept
-    : VirtioBlkCreateRequest() {
+  CreateVirtioBlkRequest(const CreateVirtioBlkRequest& from);
+  CreateVirtioBlkRequest(CreateVirtioBlkRequest&& from) noexcept
+    : CreateVirtioBlkRequest() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkCreateRequest& operator=(const VirtioBlkCreateRequest& from) {
+  inline CreateVirtioBlkRequest& operator=(const CreateVirtioBlkRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkCreateRequest& operator=(VirtioBlkCreateRequest&& from) noexcept {
+  inline CreateVirtioBlkRequest& operator=(CreateVirtioBlkRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -366,20 +366,20 @@ class VirtioBlkCreateRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkCreateRequest& default_instance() {
+  static const CreateVirtioBlkRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkCreateRequest* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkCreateRequest*>(
-               &_VirtioBlkCreateRequest_default_instance_);
+  static inline const CreateVirtioBlkRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateVirtioBlkRequest*>(
+               &_CreateVirtioBlkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(VirtioBlkCreateRequest& a, VirtioBlkCreateRequest& b) {
+  friend void swap(CreateVirtioBlkRequest& a, CreateVirtioBlkRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkCreateRequest* other) {
+  inline void Swap(CreateVirtioBlkRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -392,7 +392,7 @@ class VirtioBlkCreateRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkCreateRequest* other) {
+  void UnsafeArenaSwap(CreateVirtioBlkRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -400,13 +400,13 @@ class VirtioBlkCreateRequest final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkCreateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkCreateRequest>(arena);
+  CreateVirtioBlkRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CreateVirtioBlkRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VirtioBlkCreateRequest& from);
+  void CopyFrom(const CreateVirtioBlkRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const VirtioBlkCreateRequest& from);
+  void MergeFrom(const CreateVirtioBlkRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -423,15 +423,15 @@ class VirtioBlkCreateRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VirtioBlkCreateRequest* other);
+  void InternalSwap(CreateVirtioBlkRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkCreateRequest";
+    return "opi_api.storage.v1.CreateVirtioBlkRequest";
   }
   protected:
-  explicit VirtioBlkCreateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit CreateVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -468,7 +468,7 @@ class VirtioBlkCreateRequest final :
       ::opi_api::storage::v1::VirtioBlk* controller);
   ::opi_api::storage::v1::VirtioBlk* unsafe_arena_release_controller();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkCreateRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateVirtioBlkRequest)
  private:
   class _Internal;
 
@@ -481,24 +481,24 @@ class VirtioBlkCreateRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkDeleteRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkDeleteRequest) */ {
+class DeleteVirtioBlkRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.DeleteVirtioBlkRequest) */ {
  public:
-  inline VirtioBlkDeleteRequest() : VirtioBlkDeleteRequest(nullptr) {}
-  ~VirtioBlkDeleteRequest() override;
-  explicit constexpr VirtioBlkDeleteRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline DeleteVirtioBlkRequest() : DeleteVirtioBlkRequest(nullptr) {}
+  ~DeleteVirtioBlkRequest() override;
+  explicit constexpr DeleteVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkDeleteRequest(const VirtioBlkDeleteRequest& from);
-  VirtioBlkDeleteRequest(VirtioBlkDeleteRequest&& from) noexcept
-    : VirtioBlkDeleteRequest() {
+  DeleteVirtioBlkRequest(const DeleteVirtioBlkRequest& from);
+  DeleteVirtioBlkRequest(DeleteVirtioBlkRequest&& from) noexcept
+    : DeleteVirtioBlkRequest() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkDeleteRequest& operator=(const VirtioBlkDeleteRequest& from) {
+  inline DeleteVirtioBlkRequest& operator=(const DeleteVirtioBlkRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkDeleteRequest& operator=(VirtioBlkDeleteRequest&& from) noexcept {
+  inline DeleteVirtioBlkRequest& operator=(DeleteVirtioBlkRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -521,20 +521,20 @@ class VirtioBlkDeleteRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkDeleteRequest& default_instance() {
+  static const DeleteVirtioBlkRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkDeleteRequest* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkDeleteRequest*>(
-               &_VirtioBlkDeleteRequest_default_instance_);
+  static inline const DeleteVirtioBlkRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteVirtioBlkRequest*>(
+               &_DeleteVirtioBlkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(VirtioBlkDeleteRequest& a, VirtioBlkDeleteRequest& b) {
+  friend void swap(DeleteVirtioBlkRequest& a, DeleteVirtioBlkRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkDeleteRequest* other) {
+  inline void Swap(DeleteVirtioBlkRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -547,7 +547,7 @@ class VirtioBlkDeleteRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkDeleteRequest* other) {
+  void UnsafeArenaSwap(DeleteVirtioBlkRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -555,13 +555,13 @@ class VirtioBlkDeleteRequest final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkDeleteRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkDeleteRequest>(arena);
+  DeleteVirtioBlkRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DeleteVirtioBlkRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VirtioBlkDeleteRequest& from);
+  void CopyFrom(const DeleteVirtioBlkRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const VirtioBlkDeleteRequest& from);
+  void MergeFrom(const DeleteVirtioBlkRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -578,15 +578,15 @@ class VirtioBlkDeleteRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VirtioBlkDeleteRequest* other);
+  void InternalSwap(DeleteVirtioBlkRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkDeleteRequest";
+    return "opi_api.storage.v1.DeleteVirtioBlkRequest";
   }
   protected:
-  explicit VirtioBlkDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit DeleteVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -623,7 +623,7 @@ class VirtioBlkDeleteRequest final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkDeleteRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioBlkRequest)
  private:
   class _Internal;
 
@@ -636,24 +636,24 @@ class VirtioBlkDeleteRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkUpdateRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkUpdateRequest) */ {
+class UpdateVirtioBlkRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.UpdateVirtioBlkRequest) */ {
  public:
-  inline VirtioBlkUpdateRequest() : VirtioBlkUpdateRequest(nullptr) {}
-  ~VirtioBlkUpdateRequest() override;
-  explicit constexpr VirtioBlkUpdateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline UpdateVirtioBlkRequest() : UpdateVirtioBlkRequest(nullptr) {}
+  ~UpdateVirtioBlkRequest() override;
+  explicit constexpr UpdateVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkUpdateRequest(const VirtioBlkUpdateRequest& from);
-  VirtioBlkUpdateRequest(VirtioBlkUpdateRequest&& from) noexcept
-    : VirtioBlkUpdateRequest() {
+  UpdateVirtioBlkRequest(const UpdateVirtioBlkRequest& from);
+  UpdateVirtioBlkRequest(UpdateVirtioBlkRequest&& from) noexcept
+    : UpdateVirtioBlkRequest() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkUpdateRequest& operator=(const VirtioBlkUpdateRequest& from) {
+  inline UpdateVirtioBlkRequest& operator=(const UpdateVirtioBlkRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkUpdateRequest& operator=(VirtioBlkUpdateRequest&& from) noexcept {
+  inline UpdateVirtioBlkRequest& operator=(UpdateVirtioBlkRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -676,20 +676,20 @@ class VirtioBlkUpdateRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkUpdateRequest& default_instance() {
+  static const UpdateVirtioBlkRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkUpdateRequest* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkUpdateRequest*>(
-               &_VirtioBlkUpdateRequest_default_instance_);
+  static inline const UpdateVirtioBlkRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateVirtioBlkRequest*>(
+               &_UpdateVirtioBlkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  friend void swap(VirtioBlkUpdateRequest& a, VirtioBlkUpdateRequest& b) {
+  friend void swap(UpdateVirtioBlkRequest& a, UpdateVirtioBlkRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkUpdateRequest* other) {
+  inline void Swap(UpdateVirtioBlkRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -702,7 +702,7 @@ class VirtioBlkUpdateRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkUpdateRequest* other) {
+  void UnsafeArenaSwap(UpdateVirtioBlkRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -710,13 +710,13 @@ class VirtioBlkUpdateRequest final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkUpdateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkUpdateRequest>(arena);
+  UpdateVirtioBlkRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UpdateVirtioBlkRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VirtioBlkUpdateRequest& from);
+  void CopyFrom(const UpdateVirtioBlkRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const VirtioBlkUpdateRequest& from);
+  void MergeFrom(const UpdateVirtioBlkRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -733,15 +733,15 @@ class VirtioBlkUpdateRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VirtioBlkUpdateRequest* other);
+  void InternalSwap(UpdateVirtioBlkRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkUpdateRequest";
+    return "opi_api.storage.v1.UpdateVirtioBlkRequest";
   }
   protected:
-  explicit VirtioBlkUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit UpdateVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -778,7 +778,7 @@ class VirtioBlkUpdateRequest final :
       ::opi_api::storage::v1::VirtioBlk* controller);
   ::opi_api::storage::v1::VirtioBlk* unsafe_arena_release_controller();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkUpdateRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioBlkRequest)
  private:
   class _Internal;
 
@@ -791,23 +791,23 @@ class VirtioBlkUpdateRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkListRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkListRequest) */ {
+class ListVirtioBlkRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.ListVirtioBlkRequest) */ {
  public:
-  inline VirtioBlkListRequest() : VirtioBlkListRequest(nullptr) {}
-  explicit constexpr VirtioBlkListRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline ListVirtioBlkRequest() : ListVirtioBlkRequest(nullptr) {}
+  explicit constexpr ListVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkListRequest(const VirtioBlkListRequest& from);
-  VirtioBlkListRequest(VirtioBlkListRequest&& from) noexcept
-    : VirtioBlkListRequest() {
+  ListVirtioBlkRequest(const ListVirtioBlkRequest& from);
+  ListVirtioBlkRequest(ListVirtioBlkRequest&& from) noexcept
+    : ListVirtioBlkRequest() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkListRequest& operator=(const VirtioBlkListRequest& from) {
+  inline ListVirtioBlkRequest& operator=(const ListVirtioBlkRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkListRequest& operator=(VirtioBlkListRequest&& from) noexcept {
+  inline ListVirtioBlkRequest& operator=(ListVirtioBlkRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -830,20 +830,20 @@ class VirtioBlkListRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkListRequest& default_instance() {
+  static const ListVirtioBlkRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkListRequest* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkListRequest*>(
-               &_VirtioBlkListRequest_default_instance_);
+  static inline const ListVirtioBlkRequest* internal_default_instance() {
+    return reinterpret_cast<const ListVirtioBlkRequest*>(
+               &_ListVirtioBlkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(VirtioBlkListRequest& a, VirtioBlkListRequest& b) {
+  friend void swap(ListVirtioBlkRequest& a, ListVirtioBlkRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkListRequest* other) {
+  inline void Swap(ListVirtioBlkRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -856,7 +856,7 @@ class VirtioBlkListRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkListRequest* other) {
+  void UnsafeArenaSwap(ListVirtioBlkRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -864,15 +864,15 @@ class VirtioBlkListRequest final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkListRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkListRequest>(arena);
+  ListVirtioBlkRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ListVirtioBlkRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const VirtioBlkListRequest& from) {
+  inline void CopyFrom(const ListVirtioBlkRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const VirtioBlkListRequest& from) {
+  void MergeFrom(const ListVirtioBlkRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
   }
   public:
@@ -880,10 +880,10 @@ class VirtioBlkListRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkListRequest";
+    return "opi_api.storage.v1.ListVirtioBlkRequest";
   }
   protected:
-  explicit VirtioBlkListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit ListVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   public:
@@ -897,7 +897,7 @@ class VirtioBlkListRequest final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioBlkRequest)
  private:
   class _Internal;
 
@@ -909,24 +909,24 @@ class VirtioBlkListRequest final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkListResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkListResponse) */ {
+class ListVirtioBlkResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.ListVirtioBlkResponse) */ {
  public:
-  inline VirtioBlkListResponse() : VirtioBlkListResponse(nullptr) {}
-  ~VirtioBlkListResponse() override;
-  explicit constexpr VirtioBlkListResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline ListVirtioBlkResponse() : ListVirtioBlkResponse(nullptr) {}
+  ~ListVirtioBlkResponse() override;
+  explicit constexpr ListVirtioBlkResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkListResponse(const VirtioBlkListResponse& from);
-  VirtioBlkListResponse(VirtioBlkListResponse&& from) noexcept
-    : VirtioBlkListResponse() {
+  ListVirtioBlkResponse(const ListVirtioBlkResponse& from);
+  ListVirtioBlkResponse(ListVirtioBlkResponse&& from) noexcept
+    : ListVirtioBlkResponse() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkListResponse& operator=(const VirtioBlkListResponse& from) {
+  inline ListVirtioBlkResponse& operator=(const ListVirtioBlkResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkListResponse& operator=(VirtioBlkListResponse&& from) noexcept {
+  inline ListVirtioBlkResponse& operator=(ListVirtioBlkResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -949,20 +949,20 @@ class VirtioBlkListResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkListResponse& default_instance() {
+  static const ListVirtioBlkResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkListResponse* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkListResponse*>(
-               &_VirtioBlkListResponse_default_instance_);
+  static inline const ListVirtioBlkResponse* internal_default_instance() {
+    return reinterpret_cast<const ListVirtioBlkResponse*>(
+               &_ListVirtioBlkResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     5;
 
-  friend void swap(VirtioBlkListResponse& a, VirtioBlkListResponse& b) {
+  friend void swap(ListVirtioBlkResponse& a, ListVirtioBlkResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkListResponse* other) {
+  inline void Swap(ListVirtioBlkResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -975,7 +975,7 @@ class VirtioBlkListResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkListResponse* other) {
+  void UnsafeArenaSwap(ListVirtioBlkResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -983,13 +983,13 @@ class VirtioBlkListResponse final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkListResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkListResponse>(arena);
+  ListVirtioBlkResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ListVirtioBlkResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VirtioBlkListResponse& from);
+  void CopyFrom(const ListVirtioBlkResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const VirtioBlkListResponse& from);
+  void MergeFrom(const ListVirtioBlkResponse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1006,15 +1006,15 @@ class VirtioBlkListResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VirtioBlkListResponse* other);
+  void InternalSwap(ListVirtioBlkResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkListResponse";
+    return "opi_api.storage.v1.ListVirtioBlkResponse";
   }
   protected:
-  explicit VirtioBlkListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit ListVirtioBlkResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1051,7 +1051,7 @@ class VirtioBlkListResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >&
       controller() const;
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListResponse)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioBlkResponse)
  private:
   class _Internal;
 
@@ -1064,24 +1064,24 @@ class VirtioBlkListResponse final :
 };
 // -------------------------------------------------------------------
 
-class VirtioBlkGetRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VirtioBlkGetRequest) */ {
+class GetVirtioBlkRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.GetVirtioBlkRequest) */ {
  public:
-  inline VirtioBlkGetRequest() : VirtioBlkGetRequest(nullptr) {}
-  ~VirtioBlkGetRequest() override;
-  explicit constexpr VirtioBlkGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetVirtioBlkRequest() : GetVirtioBlkRequest(nullptr) {}
+  ~GetVirtioBlkRequest() override;
+  explicit constexpr GetVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VirtioBlkGetRequest(const VirtioBlkGetRequest& from);
-  VirtioBlkGetRequest(VirtioBlkGetRequest&& from) noexcept
-    : VirtioBlkGetRequest() {
+  GetVirtioBlkRequest(const GetVirtioBlkRequest& from);
+  GetVirtioBlkRequest(GetVirtioBlkRequest&& from) noexcept
+    : GetVirtioBlkRequest() {
     *this = ::std::move(from);
   }
 
-  inline VirtioBlkGetRequest& operator=(const VirtioBlkGetRequest& from) {
+  inline GetVirtioBlkRequest& operator=(const GetVirtioBlkRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VirtioBlkGetRequest& operator=(VirtioBlkGetRequest&& from) noexcept {
+  inline GetVirtioBlkRequest& operator=(GetVirtioBlkRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1104,20 +1104,20 @@ class VirtioBlkGetRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VirtioBlkGetRequest& default_instance() {
+  static const GetVirtioBlkRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VirtioBlkGetRequest* internal_default_instance() {
-    return reinterpret_cast<const VirtioBlkGetRequest*>(
-               &_VirtioBlkGetRequest_default_instance_);
+  static inline const GetVirtioBlkRequest* internal_default_instance() {
+    return reinterpret_cast<const GetVirtioBlkRequest*>(
+               &_GetVirtioBlkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(VirtioBlkGetRequest& a, VirtioBlkGetRequest& b) {
+  friend void swap(GetVirtioBlkRequest& a, GetVirtioBlkRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(VirtioBlkGetRequest* other) {
+  inline void Swap(GetVirtioBlkRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1130,7 +1130,7 @@ class VirtioBlkGetRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VirtioBlkGetRequest* other) {
+  void UnsafeArenaSwap(GetVirtioBlkRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1138,13 +1138,13 @@ class VirtioBlkGetRequest final :
 
   // implements Message ----------------------------------------------
 
-  VirtioBlkGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VirtioBlkGetRequest>(arena);
+  GetVirtioBlkRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetVirtioBlkRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VirtioBlkGetRequest& from);
+  void CopyFrom(const GetVirtioBlkRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const VirtioBlkGetRequest& from);
+  void MergeFrom(const GetVirtioBlkRequest& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -1161,15 +1161,15 @@ class VirtioBlkGetRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VirtioBlkGetRequest* other);
+  void InternalSwap(GetVirtioBlkRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.storage.v1.VirtioBlkGetRequest";
+    return "opi_api.storage.v1.GetVirtioBlkRequest";
   }
   protected:
-  explicit VirtioBlkGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetVirtioBlkRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1206,7 +1206,7 @@ class VirtioBlkGetRequest final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkGetRequest)
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetVirtioBlkRequest)
  private:
   class _Internal;
 
@@ -1850,31 +1850,31 @@ inline void VirtioBlk::set_allocated_serial_number(std::string* serial_number) {
 
 // -------------------------------------------------------------------
 
-// VirtioBlkCreateRequest
+// CreateVirtioBlkRequest
 
 // .opi_api.storage.v1.VirtioBlk controller = 1;
-inline bool VirtioBlkCreateRequest::_internal_has_controller() const {
+inline bool CreateVirtioBlkRequest::_internal_has_controller() const {
   return this != internal_default_instance() && controller_ != nullptr;
 }
-inline bool VirtioBlkCreateRequest::has_controller() const {
+inline bool CreateVirtioBlkRequest::has_controller() const {
   return _internal_has_controller();
 }
-inline void VirtioBlkCreateRequest::clear_controller() {
+inline void CreateVirtioBlkRequest::clear_controller() {
   if (GetArenaForAllocation() == nullptr && controller_ != nullptr) {
     delete controller_;
   }
   controller_ = nullptr;
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkCreateRequest::_internal_controller() const {
+inline const ::opi_api::storage::v1::VirtioBlk& CreateVirtioBlkRequest::_internal_controller() const {
   const ::opi_api::storage::v1::VirtioBlk* p = controller_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VirtioBlk&>(
       ::opi_api::storage::v1::_VirtioBlk_default_instance_);
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkCreateRequest::controller() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkCreateRequest.controller)
+inline const ::opi_api::storage::v1::VirtioBlk& CreateVirtioBlkRequest::controller() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateVirtioBlkRequest.controller)
   return _internal_controller();
 }
-inline void VirtioBlkCreateRequest::unsafe_arena_set_allocated_controller(
+inline void CreateVirtioBlkRequest::unsafe_arena_set_allocated_controller(
     ::opi_api::storage::v1::VirtioBlk* controller) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_);
@@ -1885,9 +1885,9 @@ inline void VirtioBlkCreateRequest::unsafe_arena_set_allocated_controller(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlkCreateRequest.controller)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CreateVirtioBlkRequest.controller)
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::release_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* CreateVirtioBlkRequest::release_controller() {
   
   ::opi_api::storage::v1::VirtioBlk* temp = controller_;
   controller_ = nullptr;
@@ -1902,14 +1902,14 @@ inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::release_contro
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::unsafe_arena_release_controller() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlkCreateRequest.controller)
+inline ::opi_api::storage::v1::VirtioBlk* CreateVirtioBlkRequest::unsafe_arena_release_controller() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateVirtioBlkRequest.controller)
   
   ::opi_api::storage::v1::VirtioBlk* temp = controller_;
   controller_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::_internal_mutable_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* CreateVirtioBlkRequest::_internal_mutable_controller() {
   
   if (controller_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::VirtioBlk>(GetArenaForAllocation());
@@ -1917,12 +1917,12 @@ inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::_internal_muta
   }
   return controller_;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkCreateRequest::mutable_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* CreateVirtioBlkRequest::mutable_controller() {
   ::opi_api::storage::v1::VirtioBlk* _msg = _internal_mutable_controller();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkCreateRequest.controller)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateVirtioBlkRequest.controller)
   return _msg;
 }
-inline void VirtioBlkCreateRequest::set_allocated_controller(::opi_api::storage::v1::VirtioBlk* controller) {
+inline void CreateVirtioBlkRequest::set_allocated_controller(::opi_api::storage::v1::VirtioBlk* controller) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete controller_;
@@ -1939,30 +1939,30 @@ inline void VirtioBlkCreateRequest::set_allocated_controller(::opi_api::storage:
     
   }
   controller_ = controller;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlkCreateRequest.controller)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateVirtioBlkRequest.controller)
 }
 
 // -------------------------------------------------------------------
 
-// VirtioBlkDeleteRequest
+// DeleteVirtioBlkRequest
 
 // .opi_api.common.v1.ObjectKey controller_id = 1;
-inline bool VirtioBlkDeleteRequest::_internal_has_controller_id() const {
+inline bool DeleteVirtioBlkRequest::_internal_has_controller_id() const {
   return this != internal_default_instance() && controller_id_ != nullptr;
 }
-inline bool VirtioBlkDeleteRequest::has_controller_id() const {
+inline bool DeleteVirtioBlkRequest::has_controller_id() const {
   return _internal_has_controller_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& VirtioBlkDeleteRequest::_internal_controller_id() const {
+inline const ::opi_api::common::v1::ObjectKey& DeleteVirtioBlkRequest::_internal_controller_id() const {
   const ::opi_api::common::v1::ObjectKey* p = controller_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& VirtioBlkDeleteRequest::controller_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id)
+inline const ::opi_api::common::v1::ObjectKey& DeleteVirtioBlkRequest::controller_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id)
   return _internal_controller_id();
 }
-inline void VirtioBlkDeleteRequest::unsafe_arena_set_allocated_controller_id(
+inline void DeleteVirtioBlkRequest::unsafe_arena_set_allocated_controller_id(
     ::opi_api::common::v1::ObjectKey* controller_id) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
@@ -1973,9 +1973,9 @@ inline void VirtioBlkDeleteRequest::unsafe_arena_set_allocated_controller_id(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id)
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::release_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* DeleteVirtioBlkRequest::release_controller_id() {
   
   ::opi_api::common::v1::ObjectKey* temp = controller_id_;
   controller_id_ = nullptr;
@@ -1990,14 +1990,14 @@ inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::release_control
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::unsafe_arena_release_controller_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id)
+inline ::opi_api::common::v1::ObjectKey* DeleteVirtioBlkRequest::unsafe_arena_release_controller_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id)
   
   ::opi_api::common::v1::ObjectKey* temp = controller_id_;
   controller_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::_internal_mutable_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* DeleteVirtioBlkRequest::_internal_mutable_controller_id() {
   
   if (controller_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2005,12 +2005,12 @@ inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::_internal_mutab
   }
   return controller_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkDeleteRequest::mutable_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* DeleteVirtioBlkRequest::mutable_controller_id() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_controller_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id)
   return _msg;
 }
-inline void VirtioBlkDeleteRequest::set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id) {
+inline void DeleteVirtioBlkRequest::set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
@@ -2029,36 +2029,36 @@ inline void VirtioBlkDeleteRequest::set_allocated_controller_id(::opi_api::commo
     
   }
   controller_id_ = controller_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id)
 }
 
 // -------------------------------------------------------------------
 
-// VirtioBlkUpdateRequest
+// UpdateVirtioBlkRequest
 
 // .opi_api.storage.v1.VirtioBlk controller = 1;
-inline bool VirtioBlkUpdateRequest::_internal_has_controller() const {
+inline bool UpdateVirtioBlkRequest::_internal_has_controller() const {
   return this != internal_default_instance() && controller_ != nullptr;
 }
-inline bool VirtioBlkUpdateRequest::has_controller() const {
+inline bool UpdateVirtioBlkRequest::has_controller() const {
   return _internal_has_controller();
 }
-inline void VirtioBlkUpdateRequest::clear_controller() {
+inline void UpdateVirtioBlkRequest::clear_controller() {
   if (GetArenaForAllocation() == nullptr && controller_ != nullptr) {
     delete controller_;
   }
   controller_ = nullptr;
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkUpdateRequest::_internal_controller() const {
+inline const ::opi_api::storage::v1::VirtioBlk& UpdateVirtioBlkRequest::_internal_controller() const {
   const ::opi_api::storage::v1::VirtioBlk* p = controller_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VirtioBlk&>(
       ::opi_api::storage::v1::_VirtioBlk_default_instance_);
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkUpdateRequest::controller() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkUpdateRequest.controller)
+inline const ::opi_api::storage::v1::VirtioBlk& UpdateVirtioBlkRequest::controller() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateVirtioBlkRequest.controller)
   return _internal_controller();
 }
-inline void VirtioBlkUpdateRequest::unsafe_arena_set_allocated_controller(
+inline void UpdateVirtioBlkRequest::unsafe_arena_set_allocated_controller(
     ::opi_api::storage::v1::VirtioBlk* controller) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_);
@@ -2069,9 +2069,9 @@ inline void VirtioBlkUpdateRequest::unsafe_arena_set_allocated_controller(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlkUpdateRequest.controller)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.UpdateVirtioBlkRequest.controller)
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::release_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* UpdateVirtioBlkRequest::release_controller() {
   
   ::opi_api::storage::v1::VirtioBlk* temp = controller_;
   controller_ = nullptr;
@@ -2086,14 +2086,14 @@ inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::release_contro
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::unsafe_arena_release_controller() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlkUpdateRequest.controller)
+inline ::opi_api::storage::v1::VirtioBlk* UpdateVirtioBlkRequest::unsafe_arena_release_controller() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.UpdateVirtioBlkRequest.controller)
   
   ::opi_api::storage::v1::VirtioBlk* temp = controller_;
   controller_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::_internal_mutable_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* UpdateVirtioBlkRequest::_internal_mutable_controller() {
   
   if (controller_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::VirtioBlk>(GetArenaForAllocation());
@@ -2101,12 +2101,12 @@ inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::_internal_muta
   }
   return controller_;
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkUpdateRequest::mutable_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* UpdateVirtioBlkRequest::mutable_controller() {
   ::opi_api::storage::v1::VirtioBlk* _msg = _internal_mutable_controller();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkUpdateRequest.controller)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.UpdateVirtioBlkRequest.controller)
   return _msg;
 }
-inline void VirtioBlkUpdateRequest::set_allocated_controller(::opi_api::storage::v1::VirtioBlk* controller) {
+inline void UpdateVirtioBlkRequest::set_allocated_controller(::opi_api::storage::v1::VirtioBlk* controller) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete controller_;
@@ -2123,78 +2123,78 @@ inline void VirtioBlkUpdateRequest::set_allocated_controller(::opi_api::storage:
     
   }
   controller_ = controller;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlkUpdateRequest.controller)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateVirtioBlkRequest.controller)
 }
 
 // -------------------------------------------------------------------
 
-// VirtioBlkListRequest
+// ListVirtioBlkRequest
 
 // -------------------------------------------------------------------
 
-// VirtioBlkListResponse
+// ListVirtioBlkResponse
 
 // repeated .opi_api.storage.v1.VirtioBlk controller = 1;
-inline int VirtioBlkListResponse::_internal_controller_size() const {
+inline int ListVirtioBlkResponse::_internal_controller_size() const {
   return controller_.size();
 }
-inline int VirtioBlkListResponse::controller_size() const {
+inline int ListVirtioBlkResponse::controller_size() const {
   return _internal_controller_size();
 }
-inline void VirtioBlkListResponse::clear_controller() {
+inline void ListVirtioBlkResponse::clear_controller() {
   controller_.Clear();
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::mutable_controller(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkListResponse.controller)
+inline ::opi_api::storage::v1::VirtioBlk* ListVirtioBlkResponse::mutable_controller(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioBlkResponse.controller)
   return controller_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >*
-VirtioBlkListResponse::mutable_controller() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.VirtioBlkListResponse.controller)
+ListVirtioBlkResponse::mutable_controller() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.ListVirtioBlkResponse.controller)
   return &controller_;
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkListResponse::_internal_controller(int index) const {
+inline const ::opi_api::storage::v1::VirtioBlk& ListVirtioBlkResponse::_internal_controller(int index) const {
   return controller_.Get(index);
 }
-inline const ::opi_api::storage::v1::VirtioBlk& VirtioBlkListResponse::controller(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkListResponse.controller)
+inline const ::opi_api::storage::v1::VirtioBlk& ListVirtioBlkResponse::controller(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioBlkResponse.controller)
   return _internal_controller(index);
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::_internal_add_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* ListVirtioBlkResponse::_internal_add_controller() {
   return controller_.Add();
 }
-inline ::opi_api::storage::v1::VirtioBlk* VirtioBlkListResponse::add_controller() {
+inline ::opi_api::storage::v1::VirtioBlk* ListVirtioBlkResponse::add_controller() {
   ::opi_api::storage::v1::VirtioBlk* _add = _internal_add_controller();
-  // @@protoc_insertion_point(field_add:opi_api.storage.v1.VirtioBlkListResponse.controller)
+  // @@protoc_insertion_point(field_add:opi_api.storage.v1.ListVirtioBlkResponse.controller)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioBlk >&
-VirtioBlkListResponse::controller() const {
-  // @@protoc_insertion_point(field_list:opi_api.storage.v1.VirtioBlkListResponse.controller)
+ListVirtioBlkResponse::controller() const {
+  // @@protoc_insertion_point(field_list:opi_api.storage.v1.ListVirtioBlkResponse.controller)
   return controller_;
 }
 
 // -------------------------------------------------------------------
 
-// VirtioBlkGetRequest
+// GetVirtioBlkRequest
 
 // .opi_api.common.v1.ObjectKey controller_id = 1;
-inline bool VirtioBlkGetRequest::_internal_has_controller_id() const {
+inline bool GetVirtioBlkRequest::_internal_has_controller_id() const {
   return this != internal_default_instance() && controller_id_ != nullptr;
 }
-inline bool VirtioBlkGetRequest::has_controller_id() const {
+inline bool GetVirtioBlkRequest::has_controller_id() const {
   return _internal_has_controller_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& VirtioBlkGetRequest::_internal_controller_id() const {
+inline const ::opi_api::common::v1::ObjectKey& GetVirtioBlkRequest::_internal_controller_id() const {
   const ::opi_api::common::v1::ObjectKey* p = controller_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& VirtioBlkGetRequest::controller_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlkGetRequest.controller_id)
+inline const ::opi_api::common::v1::ObjectKey& GetVirtioBlkRequest::controller_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
   return _internal_controller_id();
 }
-inline void VirtioBlkGetRequest::unsafe_arena_set_allocated_controller_id(
+inline void GetVirtioBlkRequest::unsafe_arena_set_allocated_controller_id(
     ::opi_api::common::v1::ObjectKey* controller_id) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
@@ -2205,9 +2205,9 @@ inline void VirtioBlkGetRequest::unsafe_arena_set_allocated_controller_id(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlkGetRequest.controller_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::release_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::release_controller_id() {
   
   ::opi_api::common::v1::ObjectKey* temp = controller_id_;
   controller_id_ = nullptr;
@@ -2222,14 +2222,14 @@ inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::release_controller
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::unsafe_arena_release_controller_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlkGetRequest.controller_id)
+inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::unsafe_arena_release_controller_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
   
   ::opi_api::common::v1::ObjectKey* temp = controller_id_;
   controller_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::_internal_mutable_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::_internal_mutable_controller_id() {
   
   if (controller_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
@@ -2237,12 +2237,12 @@ inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::_internal_mutable_
   }
   return controller_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* VirtioBlkGetRequest::mutable_controller_id() {
+inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::mutable_controller_id() {
   ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_controller_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlkGetRequest.controller_id)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
   return _msg;
 }
-inline void VirtioBlkGetRequest::set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id) {
+inline void GetVirtioBlkRequest::set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
@@ -2261,7 +2261,7 @@ inline void VirtioBlkGetRequest::set_allocated_controller_id(::opi_api::common::
     
   }
   controller_id_ = controller_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlkGetRequest.controller_id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
 }
 
 // -------------------------------------------------------------------

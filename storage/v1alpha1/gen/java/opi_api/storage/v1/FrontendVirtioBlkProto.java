@@ -20,35 +20,35 @@ public final class FrontendVirtioBlkProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_VirtioBlk_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkCreateRequest_descriptor;
+    internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkCreateRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkDeleteRequest_descriptor;
+    internal_static_opi_api_storage_v1_DeleteVirtioBlkRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkDeleteRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_DeleteVirtioBlkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkUpdateRequest_descriptor;
+    internal_static_opi_api_storage_v1_UpdateVirtioBlkRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkUpdateRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_UpdateVirtioBlkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkListRequest_descriptor;
+    internal_static_opi_api_storage_v1_ListVirtioBlkRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkListRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListVirtioBlkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkListResponse_descriptor;
+    internal_static_opi_api_storage_v1_ListVirtioBlkResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkListResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListVirtioBlkResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_VirtioBlkGetRequest_descriptor;
+    internal_static_opi_api_storage_v1_GetVirtioBlkRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_VirtioBlkGetRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_GetVirtioBlkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_VirtioBlkStatsRequest_descriptor;
   static final 
@@ -75,36 +75,36 @@ public final class FrontendVirtioBlkProto {
       " \001(\0132\034.opi_api.common.v1.ObjectKey\0220\n\007pc" +
       "ie_id\030\002 \001(\0132\037.opi_api.storage.v1.PciEndp" +
       "oint\022\014\n\004bdev\030\003 \001(\t\022\022\n\nmax_io_qps\030\004 \001(\003\022\025" +
-      "\n\rserial_number\030\005 \001(\t\"K\n\026VirtioBlkCreate" +
+      "\n\rserial_number\030\005 \001(\t\"K\n\026CreateVirtioBlk" +
       "Request\0221\n\ncontroller\030\001 \001(\0132\035.opi_api.st" +
-      "orage.v1.VirtioBlk\"M\n\026VirtioBlkDeleteReq" +
+      "orage.v1.VirtioBlk\"M\n\026DeleteVirtioBlkReq" +
       "uest\0223\n\rcontroller_id\030\001 \001(\0132\034.opi_api.co" +
-      "mmon.v1.ObjectKey\"K\n\026VirtioBlkUpdateRequ" +
+      "mmon.v1.ObjectKey\"K\n\026UpdateVirtioBlkRequ" +
       "est\0221\n\ncontroller\030\001 \001(\0132\035.opi_api.storag" +
-      "e.v1.VirtioBlk\"\026\n\024VirtioBlkListRequest\"J" +
-      "\n\025VirtioBlkListResponse\0221\n\ncontroller\030\001 " +
-      "\003(\0132\035.opi_api.storage.v1.VirtioBlk\"J\n\023Vi" +
-      "rtioBlkGetRequest\0223\n\rcontroller_id\030\001 \001(\013" +
+      "e.v1.VirtioBlk\"\026\n\024ListVirtioBlkRequest\"J" +
+      "\n\025ListVirtioBlkResponse\0221\n\ncontroller\030\001 " +
+      "\003(\0132\035.opi_api.storage.v1.VirtioBlk\"J\n\023Ge" +
+      "tVirtioBlkRequest\0223\n\rcontroller_id\030\001 \001(\013" +
       "2\034.opi_api.common.v1.ObjectKey\"L\n\025Virtio" +
       "BlkStatsRequest\0223\n\rcontroller_id\030\001 \001(\0132\034" +
       ".opi_api.common.v1.ObjectKey\"Q\n\026VirtioBl" +
       "kStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.com" +
       "mon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\374\005\n\030Fron" +
-      "tendVirtioBlkService\022\177\n\017VirtioBlkCreate\022" +
-      "*.opi_api.storage.v1.VirtioBlkCreateRequ" +
+      "tendVirtioBlkService\022\177\n\017CreateVirtioBlk\022" +
+      "*.opi_api.storage.v1.CreateVirtioBlkRequ" +
       "est\032\035.opi_api.storage.v1.VirtioBlk\"!\202\323\344\223" +
-      "\002\033\"\016/v1/virtioblks:\tvirtioblk\022y\n\017VirtioB" +
-      "lkDelete\022*.opi_api.storage.v1.VirtioBlkD" +
-      "eleteRequest\032\026.google.protobuf.Empty\"\"\202\323" +
-      "\344\223\002\034*\032/v1/virtioblks/{virtioblk}\022\177\n\017Virt" +
-      "ioBlkUpdate\022*.opi_api.storage.v1.VirtioB" +
-      "lkUpdateRequest\032\035.opi_api.storage.v1.Vir" +
+      "\002\033\"\016/v1/virtioblks:\tvirtioblk\022y\n\017DeleteV" +
+      "irtioBlk\022*.opi_api.storage.v1.DeleteVirt" +
+      "ioBlkRequest\032\026.google.protobuf.Empty\"\"\202\323" +
+      "\344\223\002\034*\032/v1/virtioblks/{virtioblk}\022\177\n\017Upda" +
+      "teVirtioBlk\022*.opi_api.storage.v1.UpdateV" +
+      "irtioBlkRequest\032\035.opi_api.storage.v1.Vir" +
       "tioBlk\"!\202\323\344\223\002\0332\016/v1/virtioblks:\tvirtiobl" +
-      "k\022|\n\rVirtioBlkList\022(.opi_api.storage.v1." +
-      "VirtioBlkListRequest\032).opi_api.storage.v" +
-      "1.VirtioBlkListResponse\"\026\202\323\344\223\002\020\022\016/v1/vir" +
-      "tioblks\022z\n\014VirtioBlkGet\022\'.opi_api.storag" +
-      "e.v1.VirtioBlkGetRequest\032\035.opi_api.stora" +
+      "k\022|\n\rListVirtioBlk\022(.opi_api.storage.v1." +
+      "ListVirtioBlkRequest\032).opi_api.storage.v" +
+      "1.ListVirtioBlkResponse\"\026\202\323\344\223\002\020\022\016/v1/vir" +
+      "tioblks\022z\n\014GetVirtioBlk\022\'.opi_api.storag" +
+      "e.v1.GetVirtioBlkRequest\032\035.opi_api.stora" +
       "ge.v1.VirtioBlk\"\"\202\323\344\223\002\034\022\032/v1/virtioblks/" +
       "{virtioblk}\022i\n\016VirtioBlkStats\022).opi_api." +
       "storage.v1.VirtioBlkStatsRequest\032*.opi_a" +
@@ -127,41 +127,41 @@ public final class FrontendVirtioBlkProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VirtioBlk_descriptor,
         new java.lang.String[] { "Id", "PcieId", "Bdev", "MaxIoQps", "SerialNumber", });
-    internal_static_opi_api_storage_v1_VirtioBlkCreateRequest_descriptor =
+    internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_opi_api_storage_v1_VirtioBlkCreateRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkCreateRequest_descriptor,
+        internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_descriptor,
         new java.lang.String[] { "Controller", });
-    internal_static_opi_api_storage_v1_VirtioBlkDeleteRequest_descriptor =
+    internal_static_opi_api_storage_v1_DeleteVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_opi_api_storage_v1_VirtioBlkDeleteRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_DeleteVirtioBlkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkDeleteRequest_descriptor,
+        internal_static_opi_api_storage_v1_DeleteVirtioBlkRequest_descriptor,
         new java.lang.String[] { "ControllerId", });
-    internal_static_opi_api_storage_v1_VirtioBlkUpdateRequest_descriptor =
+    internal_static_opi_api_storage_v1_UpdateVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_opi_api_storage_v1_VirtioBlkUpdateRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_UpdateVirtioBlkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkUpdateRequest_descriptor,
+        internal_static_opi_api_storage_v1_UpdateVirtioBlkRequest_descriptor,
         new java.lang.String[] { "Controller", });
-    internal_static_opi_api_storage_v1_VirtioBlkListRequest_descriptor =
+    internal_static_opi_api_storage_v1_ListVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_opi_api_storage_v1_VirtioBlkListRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListVirtioBlkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkListRequest_descriptor,
+        internal_static_opi_api_storage_v1_ListVirtioBlkRequest_descriptor,
         new java.lang.String[] { });
-    internal_static_opi_api_storage_v1_VirtioBlkListResponse_descriptor =
+    internal_static_opi_api_storage_v1_ListVirtioBlkResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_opi_api_storage_v1_VirtioBlkListResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListVirtioBlkResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkListResponse_descriptor,
+        internal_static_opi_api_storage_v1_ListVirtioBlkResponse_descriptor,
         new java.lang.String[] { "Controller", });
-    internal_static_opi_api_storage_v1_VirtioBlkGetRequest_descriptor =
+    internal_static_opi_api_storage_v1_GetVirtioBlkRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_opi_api_storage_v1_VirtioBlkGetRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_GetVirtioBlkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_VirtioBlkGetRequest_descriptor,
+        internal_static_opi_api_storage_v1_GetVirtioBlkRequest_descriptor,
         new java.lang.String[] { "ControllerId", });
     internal_static_opi_api_storage_v1_VirtioBlkStatsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);

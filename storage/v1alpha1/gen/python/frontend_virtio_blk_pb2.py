@@ -18,17 +18,17 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x66rontend_virtio_blk.proto\x12\x12opi_api.storage.v1\x1a\x0c\x63ommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xa0\x01\n\tVirtioBlk\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\x12\x0c\n\x04\x62\x64\x65v\x18\x03 \x01(\t\x12\x12\n\nmax_io_qps\x18\x04 \x01(\x03\x12\x15\n\rserial_number\x18\x05 \x01(\t\"K\n\x16VirtioBlkCreateRequest\x12\x31\n\ncontroller\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"M\n\x16VirtioBlkDeleteRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"K\n\x16VirtioBlkUpdateRequest\x12\x31\n\ncontroller\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"\x16\n\x14VirtioBlkListRequest\"J\n\x15VirtioBlkListResponse\x12\x31\n\ncontroller\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"J\n\x13VirtioBlkGetRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x15VirtioBlkStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"Q\n\x16VirtioBlkStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xfc\x05\n\x18\x46rontendVirtioBlkService\x12\x7f\n\x0fVirtioBlkCreate\x12*.opi_api.storage.v1.VirtioBlkCreateRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/virtioblks:\tvirtioblk\x12y\n\x0fVirtioBlkDelete\x12*.opi_api.storage.v1.VirtioBlkDeleteRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/virtioblks/{virtioblk}\x12\x7f\n\x0fVirtioBlkUpdate\x12*.opi_api.storage.v1.VirtioBlkUpdateRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"!\x82\xd3\xe4\x93\x02\x1b\x32\x0e/v1/virtioblks:\tvirtioblk\x12|\n\rVirtioBlkList\x12(.opi_api.storage.v1.VirtioBlkListRequest\x1a).opi_api.storage.v1.VirtioBlkListResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/virtioblks\x12z\n\x0cVirtioBlkGet\x12\'.opi_api.storage.v1.VirtioBlkGetRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/virtioblks/{virtioblk}\x12i\n\x0eVirtioBlkStats\x12).opi_api.storage.v1.VirtioBlkStatsRequest\x1a*.opi_api.storage.v1.VirtioBlkStatsResponse\"\x00\x42\x65\n\x12opi_api.storage.v1B\x16\x46rontendVirtioBlkProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x66rontend_virtio_blk.proto\x12\x12opi_api.storage.v1\x1a\x0c\x63ommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xa0\x01\n\tVirtioBlk\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\x12\x0c\n\x04\x62\x64\x65v\x18\x03 \x01(\t\x12\x12\n\nmax_io_qps\x18\x04 \x01(\x03\x12\x15\n\rserial_number\x18\x05 \x01(\t\"K\n\x16\x43reateVirtioBlkRequest\x12\x31\n\ncontroller\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"M\n\x16\x44\x65leteVirtioBlkRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"K\n\x16UpdateVirtioBlkRequest\x12\x31\n\ncontroller\x18\x01 \x01(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"\x16\n\x14ListVirtioBlkRequest\"J\n\x15ListVirtioBlkResponse\x12\x31\n\ncontroller\x18\x01 \x03(\x0b\x32\x1d.opi_api.storage.v1.VirtioBlk\"J\n\x13GetVirtioBlkRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x15VirtioBlkStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"Q\n\x16VirtioBlkStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xfc\x05\n\x18\x46rontendVirtioBlkService\x12\x7f\n\x0f\x43reateVirtioBlk\x12*.opi_api.storage.v1.CreateVirtioBlkRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/virtioblks:\tvirtioblk\x12y\n\x0f\x44\x65leteVirtioBlk\x12*.opi_api.storage.v1.DeleteVirtioBlkRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/virtioblks/{virtioblk}\x12\x7f\n\x0fUpdateVirtioBlk\x12*.opi_api.storage.v1.UpdateVirtioBlkRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"!\x82\xd3\xe4\x93\x02\x1b\x32\x0e/v1/virtioblks:\tvirtioblk\x12|\n\rListVirtioBlk\x12(.opi_api.storage.v1.ListVirtioBlkRequest\x1a).opi_api.storage.v1.ListVirtioBlkResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/virtioblks\x12z\n\x0cGetVirtioBlk\x12\'.opi_api.storage.v1.GetVirtioBlkRequest\x1a\x1d.opi_api.storage.v1.VirtioBlk\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/virtioblks/{virtioblk}\x12i\n\x0eVirtioBlkStats\x12).opi_api.storage.v1.VirtioBlkStatsRequest\x1a*.opi_api.storage.v1.VirtioBlkStatsResponse\"\x00\x42\x65\n\x12opi_api.storage.v1B\x16\x46rontendVirtioBlkProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
 _VIRTIOBLK = DESCRIPTOR.message_types_by_name['VirtioBlk']
-_VIRTIOBLKCREATEREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkCreateRequest']
-_VIRTIOBLKDELETEREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkDeleteRequest']
-_VIRTIOBLKUPDATEREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkUpdateRequest']
-_VIRTIOBLKLISTREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkListRequest']
-_VIRTIOBLKLISTRESPONSE = DESCRIPTOR.message_types_by_name['VirtioBlkListResponse']
-_VIRTIOBLKGETREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkGetRequest']
+_CREATEVIRTIOBLKREQUEST = DESCRIPTOR.message_types_by_name['CreateVirtioBlkRequest']
+_DELETEVIRTIOBLKREQUEST = DESCRIPTOR.message_types_by_name['DeleteVirtioBlkRequest']
+_UPDATEVIRTIOBLKREQUEST = DESCRIPTOR.message_types_by_name['UpdateVirtioBlkRequest']
+_LISTVIRTIOBLKREQUEST = DESCRIPTOR.message_types_by_name['ListVirtioBlkRequest']
+_LISTVIRTIOBLKRESPONSE = DESCRIPTOR.message_types_by_name['ListVirtioBlkResponse']
+_GETVIRTIOBLKREQUEST = DESCRIPTOR.message_types_by_name['GetVirtioBlkRequest']
 _VIRTIOBLKSTATSREQUEST = DESCRIPTOR.message_types_by_name['VirtioBlkStatsRequest']
 _VIRTIOBLKSTATSRESPONSE = DESCRIPTOR.message_types_by_name['VirtioBlkStatsResponse']
 VirtioBlk = _reflection.GeneratedProtocolMessageType('VirtioBlk', (_message.Message,), {
@@ -38,47 +38,47 @@ VirtioBlk = _reflection.GeneratedProtocolMessageType('VirtioBlk', (_message.Mess
   })
 _sym_db.RegisterMessage(VirtioBlk)
 
-VirtioBlkCreateRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkCreateRequest', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKCREATEREQUEST,
+CreateVirtioBlkRequest = _reflection.GeneratedProtocolMessageType('CreateVirtioBlkRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEVIRTIOBLKREQUEST,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkCreateRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateVirtioBlkRequest)
   })
-_sym_db.RegisterMessage(VirtioBlkCreateRequest)
+_sym_db.RegisterMessage(CreateVirtioBlkRequest)
 
-VirtioBlkDeleteRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkDeleteRequest', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKDELETEREQUEST,
+DeleteVirtioBlkRequest = _reflection.GeneratedProtocolMessageType('DeleteVirtioBlkRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEVIRTIOBLKREQUEST,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkDeleteRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioBlkRequest)
   })
-_sym_db.RegisterMessage(VirtioBlkDeleteRequest)
+_sym_db.RegisterMessage(DeleteVirtioBlkRequest)
 
-VirtioBlkUpdateRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkUpdateRequest', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKUPDATEREQUEST,
+UpdateVirtioBlkRequest = _reflection.GeneratedProtocolMessageType('UpdateVirtioBlkRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEVIRTIOBLKREQUEST,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkUpdateRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioBlkRequest)
   })
-_sym_db.RegisterMessage(VirtioBlkUpdateRequest)
+_sym_db.RegisterMessage(UpdateVirtioBlkRequest)
 
-VirtioBlkListRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkListRequest', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKLISTREQUEST,
+ListVirtioBlkRequest = _reflection.GeneratedProtocolMessageType('ListVirtioBlkRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTVIRTIOBLKREQUEST,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioBlkRequest)
   })
-_sym_db.RegisterMessage(VirtioBlkListRequest)
+_sym_db.RegisterMessage(ListVirtioBlkRequest)
 
-VirtioBlkListResponse = _reflection.GeneratedProtocolMessageType('VirtioBlkListResponse', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKLISTRESPONSE,
+ListVirtioBlkResponse = _reflection.GeneratedProtocolMessageType('ListVirtioBlkResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTVIRTIOBLKRESPONSE,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkListResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioBlkResponse)
   })
-_sym_db.RegisterMessage(VirtioBlkListResponse)
+_sym_db.RegisterMessage(ListVirtioBlkResponse)
 
-VirtioBlkGetRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkGetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _VIRTIOBLKGETREQUEST,
+GetVirtioBlkRequest = _reflection.GeneratedProtocolMessageType('GetVirtioBlkRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETVIRTIOBLKREQUEST,
   '__module__' : 'frontend_virtio_blk_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioBlkGetRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetVirtioBlkRequest)
   })
-_sym_db.RegisterMessage(VirtioBlkGetRequest)
+_sym_db.RegisterMessage(GetVirtioBlkRequest)
 
 VirtioBlkStatsRequest = _reflection.GeneratedProtocolMessageType('VirtioBlkStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _VIRTIOBLKSTATSREQUEST,
@@ -99,30 +99,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\026FrontendVirtioBlkProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkCreate']._options = None
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkCreate']._serialized_options = b'\202\323\344\223\002\033\"\016/v1/virtioblks:\tvirtioblk'
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkDelete']._options = None
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkDelete']._serialized_options = b'\202\323\344\223\002\034*\032/v1/virtioblks/{virtioblk}'
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkUpdate']._options = None
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkUpdate']._serialized_options = b'\202\323\344\223\002\0332\016/v1/virtioblks:\tvirtioblk'
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkList']._options = None
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkList']._serialized_options = b'\202\323\344\223\002\020\022\016/v1/virtioblks'
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkGet']._options = None
-  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['VirtioBlkGet']._serialized_options = b'\202\323\344\223\002\034\022\032/v1/virtioblks/{virtioblk}'
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['CreateVirtioBlk']._options = None
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['CreateVirtioBlk']._serialized_options = b'\202\323\344\223\002\033\"\016/v1/virtioblks:\tvirtioblk'
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['DeleteVirtioBlk']._options = None
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['DeleteVirtioBlk']._serialized_options = b'\202\323\344\223\002\034*\032/v1/virtioblks/{virtioblk}'
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['UpdateVirtioBlk']._options = None
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['UpdateVirtioBlk']._serialized_options = b'\202\323\344\223\002\0332\016/v1/virtioblks:\tvirtioblk'
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['ListVirtioBlk']._options = None
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['ListVirtioBlk']._serialized_options = b'\202\323\344\223\002\020\022\016/v1/virtioblks'
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['GetVirtioBlk']._options = None
+  _FRONTENDVIRTIOBLKSERVICE.methods_by_name['GetVirtioBlk']._serialized_options = b'\202\323\344\223\002\034\022\032/v1/virtioblks/{virtioblk}'
   _VIRTIOBLK._serialized_start=141
   _VIRTIOBLK._serialized_end=301
-  _VIRTIOBLKCREATEREQUEST._serialized_start=303
-  _VIRTIOBLKCREATEREQUEST._serialized_end=378
-  _VIRTIOBLKDELETEREQUEST._serialized_start=380
-  _VIRTIOBLKDELETEREQUEST._serialized_end=457
-  _VIRTIOBLKUPDATEREQUEST._serialized_start=459
-  _VIRTIOBLKUPDATEREQUEST._serialized_end=534
-  _VIRTIOBLKLISTREQUEST._serialized_start=536
-  _VIRTIOBLKLISTREQUEST._serialized_end=558
-  _VIRTIOBLKLISTRESPONSE._serialized_start=560
-  _VIRTIOBLKLISTRESPONSE._serialized_end=634
-  _VIRTIOBLKGETREQUEST._serialized_start=636
-  _VIRTIOBLKGETREQUEST._serialized_end=710
+  _CREATEVIRTIOBLKREQUEST._serialized_start=303
+  _CREATEVIRTIOBLKREQUEST._serialized_end=378
+  _DELETEVIRTIOBLKREQUEST._serialized_start=380
+  _DELETEVIRTIOBLKREQUEST._serialized_end=457
+  _UPDATEVIRTIOBLKREQUEST._serialized_start=459
+  _UPDATEVIRTIOBLKREQUEST._serialized_end=534
+  _LISTVIRTIOBLKREQUEST._serialized_start=536
+  _LISTVIRTIOBLKREQUEST._serialized_end=558
+  _LISTVIRTIOBLKRESPONSE._serialized_start=560
+  _LISTVIRTIOBLKRESPONSE._serialized_end=634
+  _GETVIRTIOBLKREQUEST._serialized_start=636
+  _GETVIRTIOBLKREQUEST._serialized_end=710
   _VIRTIOBLKSTATSREQUEST._serialized_start=712
   _VIRTIOBLKSTATSREQUEST._serialized_end=788
   _VIRTIOBLKSTATSRESPONSE._serialized_start=790

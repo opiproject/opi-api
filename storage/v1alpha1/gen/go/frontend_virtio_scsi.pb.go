@@ -148,7 +148,7 @@ func (x *VirtioScsiLun) GetBdev() string {
 	return ""
 }
 
-type VirtioScsiControllerCreateRequest struct {
+type CreateVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -156,8 +156,8 @@ type VirtioScsiControllerCreateRequest struct {
 	Controller *VirtioScsiController `protobuf:"bytes,1,opt,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioScsiControllerCreateRequest) Reset() {
-	*x = VirtioScsiControllerCreateRequest{}
+func (x *CreateVirtioScsiControllerRequest) Reset() {
+	*x = CreateVirtioScsiControllerRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -165,13 +165,13 @@ func (x *VirtioScsiControllerCreateRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerCreateRequest) String() string {
+func (x *CreateVirtioScsiControllerRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerCreateRequest) ProtoMessage() {}
+func (*CreateVirtioScsiControllerRequest) ProtoMessage() {}
 
-func (x *VirtioScsiControllerCreateRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateVirtioScsiControllerRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -183,19 +183,19 @@ func (x *VirtioScsiControllerCreateRequest) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerCreateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerCreateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateVirtioScsiControllerRequest.ProtoReflect.Descriptor instead.
+func (*CreateVirtioScsiControllerRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *VirtioScsiControllerCreateRequest) GetController() *VirtioScsiController {
+func (x *CreateVirtioScsiControllerRequest) GetController() *VirtioScsiController {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioScsiControllerDeleteRequest struct {
+type DeleteVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -203,8 +203,8 @@ type VirtioScsiControllerDeleteRequest struct {
 	ControllerId *_go.ObjectKey `protobuf:"bytes,1,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
 }
 
-func (x *VirtioScsiControllerDeleteRequest) Reset() {
-	*x = VirtioScsiControllerDeleteRequest{}
+func (x *DeleteVirtioScsiControllerRequest) Reset() {
+	*x = DeleteVirtioScsiControllerRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -212,13 +212,13 @@ func (x *VirtioScsiControllerDeleteRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerDeleteRequest) String() string {
+func (x *DeleteVirtioScsiControllerRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerDeleteRequest) ProtoMessage() {}
+func (*DeleteVirtioScsiControllerRequest) ProtoMessage() {}
 
-func (x *VirtioScsiControllerDeleteRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteVirtioScsiControllerRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -230,19 +230,19 @@ func (x *VirtioScsiControllerDeleteRequest) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerDeleteRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerDeleteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteVirtioScsiControllerRequest.ProtoReflect.Descriptor instead.
+func (*DeleteVirtioScsiControllerRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *VirtioScsiControllerDeleteRequest) GetControllerId() *_go.ObjectKey {
+func (x *DeleteVirtioScsiControllerRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
 	return nil
 }
 
-type VirtioScsiControllerUpdateRequest struct {
+type UpdateVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -250,8 +250,8 @@ type VirtioScsiControllerUpdateRequest struct {
 	Controller *VirtioScsiController `protobuf:"bytes,1,opt,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioScsiControllerUpdateRequest) Reset() {
-	*x = VirtioScsiControllerUpdateRequest{}
+func (x *UpdateVirtioScsiControllerRequest) Reset() {
+	*x = UpdateVirtioScsiControllerRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -259,13 +259,13 @@ func (x *VirtioScsiControllerUpdateRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerUpdateRequest) String() string {
+func (x *UpdateVirtioScsiControllerRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerUpdateRequest) ProtoMessage() {}
+func (*UpdateVirtioScsiControllerRequest) ProtoMessage() {}
 
-func (x *VirtioScsiControllerUpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateVirtioScsiControllerRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -277,26 +277,26 @@ func (x *VirtioScsiControllerUpdateRequest) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerUpdateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerUpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateVirtioScsiControllerRequest.ProtoReflect.Descriptor instead.
+func (*UpdateVirtioScsiControllerRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *VirtioScsiControllerUpdateRequest) GetController() *VirtioScsiController {
+func (x *UpdateVirtioScsiControllerRequest) GetController() *VirtioScsiController {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioScsiControllerListRequest struct {
+type ListVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *VirtioScsiControllerListRequest) Reset() {
-	*x = VirtioScsiControllerListRequest{}
+func (x *ListVirtioScsiControllerRequest) Reset() {
+	*x = ListVirtioScsiControllerRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -304,13 +304,13 @@ func (x *VirtioScsiControllerListRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerListRequest) String() string {
+func (x *ListVirtioScsiControllerRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerListRequest) ProtoMessage() {}
+func (*ListVirtioScsiControllerRequest) ProtoMessage() {}
 
-func (x *VirtioScsiControllerListRequest) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioScsiControllerRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -322,12 +322,12 @@ func (x *VirtioScsiControllerListRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerListRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioScsiControllerRequest.ProtoReflect.Descriptor instead.
+func (*ListVirtioScsiControllerRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{5}
 }
 
-type VirtioScsiControllerListResponse struct {
+type ListVirtioScsiControllerResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -335,8 +335,8 @@ type VirtioScsiControllerListResponse struct {
 	Controller []*VirtioScsiController `protobuf:"bytes,1,rep,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioScsiControllerListResponse) Reset() {
-	*x = VirtioScsiControllerListResponse{}
+func (x *ListVirtioScsiControllerResponse) Reset() {
+	*x = ListVirtioScsiControllerResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -344,13 +344,13 @@ func (x *VirtioScsiControllerListResponse) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerListResponse) String() string {
+func (x *ListVirtioScsiControllerResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerListResponse) ProtoMessage() {}
+func (*ListVirtioScsiControllerResponse) ProtoMessage() {}
 
-func (x *VirtioScsiControllerListResponse) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioScsiControllerResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -362,19 +362,19 @@ func (x *VirtioScsiControllerListResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerListResponse.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerListResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioScsiControllerResponse.ProtoReflect.Descriptor instead.
+func (*ListVirtioScsiControllerResponse) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *VirtioScsiControllerListResponse) GetController() []*VirtioScsiController {
+func (x *ListVirtioScsiControllerResponse) GetController() []*VirtioScsiController {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioScsiControllerGetRequest struct {
+type GetVirtioScsiControllerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -382,8 +382,8 @@ type VirtioScsiControllerGetRequest struct {
 	ControllerId *_go.ObjectKey `protobuf:"bytes,1,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
 }
 
-func (x *VirtioScsiControllerGetRequest) Reset() {
-	*x = VirtioScsiControllerGetRequest{}
+func (x *GetVirtioScsiControllerRequest) Reset() {
+	*x = GetVirtioScsiControllerRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -391,13 +391,13 @@ func (x *VirtioScsiControllerGetRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiControllerGetRequest) String() string {
+func (x *GetVirtioScsiControllerRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiControllerGetRequest) ProtoMessage() {}
+func (*GetVirtioScsiControllerRequest) ProtoMessage() {}
 
-func (x *VirtioScsiControllerGetRequest) ProtoReflect() protoreflect.Message {
+func (x *GetVirtioScsiControllerRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -409,12 +409,12 @@ func (x *VirtioScsiControllerGetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiControllerGetRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiControllerGetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetVirtioScsiControllerRequest.ProtoReflect.Descriptor instead.
+func (*GetVirtioScsiControllerRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *VirtioScsiControllerGetRequest) GetControllerId() *_go.ObjectKey {
+func (x *GetVirtioScsiControllerRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
@@ -523,7 +523,7 @@ func (x *VirtioScsiControllerStatsResponse) GetStats() string {
 	return ""
 }
 
-type VirtioScsiLunCreateRequest struct {
+type CreateVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -531,8 +531,8 @@ type VirtioScsiLunCreateRequest struct {
 	Lun *VirtioScsiLun `protobuf:"bytes,1,opt,name=lun,proto3" json:"lun,omitempty"`
 }
 
-func (x *VirtioScsiLunCreateRequest) Reset() {
-	*x = VirtioScsiLunCreateRequest{}
+func (x *CreateVirtioScsiLunRequest) Reset() {
+	*x = CreateVirtioScsiLunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -540,13 +540,13 @@ func (x *VirtioScsiLunCreateRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunCreateRequest) String() string {
+func (x *CreateVirtioScsiLunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunCreateRequest) ProtoMessage() {}
+func (*CreateVirtioScsiLunRequest) ProtoMessage() {}
 
-func (x *VirtioScsiLunCreateRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateVirtioScsiLunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -558,19 +558,19 @@ func (x *VirtioScsiLunCreateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunCreateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunCreateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateVirtioScsiLunRequest.ProtoReflect.Descriptor instead.
+func (*CreateVirtioScsiLunRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *VirtioScsiLunCreateRequest) GetLun() *VirtioScsiLun {
+func (x *CreateVirtioScsiLunRequest) GetLun() *VirtioScsiLun {
 	if x != nil {
 		return x.Lun
 	}
 	return nil
 }
 
-type VirtioScsiLunDeleteRequest struct {
+type DeleteVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -579,8 +579,8 @@ type VirtioScsiLunDeleteRequest struct {
 	LunId        *_go.ObjectKey `protobuf:"bytes,2,opt,name=lun_id,json=lunId,proto3" json:"lun_id,omitempty"`
 }
 
-func (x *VirtioScsiLunDeleteRequest) Reset() {
-	*x = VirtioScsiLunDeleteRequest{}
+func (x *DeleteVirtioScsiLunRequest) Reset() {
+	*x = DeleteVirtioScsiLunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -588,13 +588,13 @@ func (x *VirtioScsiLunDeleteRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunDeleteRequest) String() string {
+func (x *DeleteVirtioScsiLunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunDeleteRequest) ProtoMessage() {}
+func (*DeleteVirtioScsiLunRequest) ProtoMessage() {}
 
-func (x *VirtioScsiLunDeleteRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteVirtioScsiLunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -606,26 +606,26 @@ func (x *VirtioScsiLunDeleteRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunDeleteRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunDeleteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteVirtioScsiLunRequest.ProtoReflect.Descriptor instead.
+func (*DeleteVirtioScsiLunRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *VirtioScsiLunDeleteRequest) GetControllerId() *_go.ObjectKey {
+func (x *DeleteVirtioScsiLunRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
 	return nil
 }
 
-func (x *VirtioScsiLunDeleteRequest) GetLunId() *_go.ObjectKey {
+func (x *DeleteVirtioScsiLunRequest) GetLunId() *_go.ObjectKey {
 	if x != nil {
 		return x.LunId
 	}
 	return nil
 }
 
-type VirtioScsiLunUpdateRequest struct {
+type UpdateVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -633,8 +633,8 @@ type VirtioScsiLunUpdateRequest struct {
 	Lun *VirtioScsiLun `protobuf:"bytes,1,opt,name=lun,proto3" json:"lun,omitempty"`
 }
 
-func (x *VirtioScsiLunUpdateRequest) Reset() {
-	*x = VirtioScsiLunUpdateRequest{}
+func (x *UpdateVirtioScsiLunRequest) Reset() {
+	*x = UpdateVirtioScsiLunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -642,13 +642,13 @@ func (x *VirtioScsiLunUpdateRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunUpdateRequest) String() string {
+func (x *UpdateVirtioScsiLunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunUpdateRequest) ProtoMessage() {}
+func (*UpdateVirtioScsiLunRequest) ProtoMessage() {}
 
-func (x *VirtioScsiLunUpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateVirtioScsiLunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -660,19 +660,19 @@ func (x *VirtioScsiLunUpdateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunUpdateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunUpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateVirtioScsiLunRequest.ProtoReflect.Descriptor instead.
+func (*UpdateVirtioScsiLunRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *VirtioScsiLunUpdateRequest) GetLun() *VirtioScsiLun {
+func (x *UpdateVirtioScsiLunRequest) GetLun() *VirtioScsiLun {
 	if x != nil {
 		return x.Lun
 	}
 	return nil
 }
 
-type VirtioScsiLunListRequest struct {
+type ListVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -680,8 +680,8 @@ type VirtioScsiLunListRequest struct {
 	ControllerId *_go.ObjectKey `protobuf:"bytes,1,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
 }
 
-func (x *VirtioScsiLunListRequest) Reset() {
-	*x = VirtioScsiLunListRequest{}
+func (x *ListVirtioScsiLunRequest) Reset() {
+	*x = ListVirtioScsiLunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -689,13 +689,13 @@ func (x *VirtioScsiLunListRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunListRequest) String() string {
+func (x *ListVirtioScsiLunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunListRequest) ProtoMessage() {}
+func (*ListVirtioScsiLunRequest) ProtoMessage() {}
 
-func (x *VirtioScsiLunListRequest) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioScsiLunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -707,19 +707,19 @@ func (x *VirtioScsiLunListRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunListRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioScsiLunRequest.ProtoReflect.Descriptor instead.
+func (*ListVirtioScsiLunRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *VirtioScsiLunListRequest) GetControllerId() *_go.ObjectKey {
+func (x *ListVirtioScsiLunRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
 	return nil
 }
 
-type VirtioScsiLunListResponse struct {
+type ListVirtioScsiLunResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -727,8 +727,8 @@ type VirtioScsiLunListResponse struct {
 	Lun []*VirtioScsiLun `protobuf:"bytes,1,rep,name=lun,proto3" json:"lun,omitempty"`
 }
 
-func (x *VirtioScsiLunListResponse) Reset() {
-	*x = VirtioScsiLunListResponse{}
+func (x *ListVirtioScsiLunResponse) Reset() {
+	*x = ListVirtioScsiLunResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -736,13 +736,13 @@ func (x *VirtioScsiLunListResponse) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunListResponse) String() string {
+func (x *ListVirtioScsiLunResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunListResponse) ProtoMessage() {}
+func (*ListVirtioScsiLunResponse) ProtoMessage() {}
 
-func (x *VirtioScsiLunListResponse) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioScsiLunResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -754,19 +754,19 @@ func (x *VirtioScsiLunListResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunListResponse.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunListResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioScsiLunResponse.ProtoReflect.Descriptor instead.
+func (*ListVirtioScsiLunResponse) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *VirtioScsiLunListResponse) GetLun() []*VirtioScsiLun {
+func (x *ListVirtioScsiLunResponse) GetLun() []*VirtioScsiLun {
 	if x != nil {
 		return x.Lun
 	}
 	return nil
 }
 
-type VirtioScsiLunGetRequest struct {
+type GetVirtioScsiLunRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -775,8 +775,8 @@ type VirtioScsiLunGetRequest struct {
 	LunId        *_go.ObjectKey `protobuf:"bytes,2,opt,name=lun_id,json=lunId,proto3" json:"lun_id,omitempty"`
 }
 
-func (x *VirtioScsiLunGetRequest) Reset() {
-	*x = VirtioScsiLunGetRequest{}
+func (x *GetVirtioScsiLunRequest) Reset() {
+	*x = GetVirtioScsiLunRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_scsi_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -784,13 +784,13 @@ func (x *VirtioScsiLunGetRequest) Reset() {
 	}
 }
 
-func (x *VirtioScsiLunGetRequest) String() string {
+func (x *GetVirtioScsiLunRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioScsiLunGetRequest) ProtoMessage() {}
+func (*GetVirtioScsiLunRequest) ProtoMessage() {}
 
-func (x *VirtioScsiLunGetRequest) ProtoReflect() protoreflect.Message {
+func (x *GetVirtioScsiLunRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_scsi_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -802,19 +802,19 @@ func (x *VirtioScsiLunGetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioScsiLunGetRequest.ProtoReflect.Descriptor instead.
-func (*VirtioScsiLunGetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetVirtioScsiLunRequest.ProtoReflect.Descriptor instead.
+func (*GetVirtioScsiLunRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_scsi_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *VirtioScsiLunGetRequest) GetControllerId() *_go.ObjectKey {
+func (x *GetVirtioScsiLunRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
 	return nil
 }
 
-func (x *VirtioScsiLunGetRequest) GetLunId() *_go.ObjectKey {
+func (x *GetVirtioScsiLunRequest) GetLunId() *_go.ObjectKey {
 	if x != nil {
 		return x.LunId
 	}
@@ -960,38 +960,38 @@ var file_frontend_virtio_scsi_proto_rawDesc = []byte{
 	0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79,
 	0x52, 0x0c, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x12, 0x12,
 	0x0a, 0x04, 0x62, 0x64, 0x65, 0x76, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x62, 0x64,
-	0x65, 0x76, 0x22, 0x6d, 0x0a, 0x21, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x65, 0x76, 0x22, 0x6d, 0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74,
+	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x48, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72,
 	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72,
 	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x22, 0x66, 0x0a, 0x21, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52,
+	0x72, 0x22, 0x66, 0x0a, 0x21, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69,
+	0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
 	0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e,
 	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76,
 	0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x0c, 0x63, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x6d, 0x0a, 0x21, 0x56, 0x69, 0x72,
-	0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x48,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x6d, 0x0a, 0x21, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x48,
 	0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
 	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
 	0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x63, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x21, 0x0a, 0x1f, 0x56, 0x69, 0x72, 0x74,
-	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x6c, 0x0a, 0x20, 0x56,
-	0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x21, 0x0a, 0x1f, 0x4c, 0x69, 0x73, 0x74,
+	0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x6c, 0x0a, 0x20, 0x4c,
+	0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x48, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
 	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53,
 	0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x0a, 0x63,
-	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x63, 0x0a, 0x1e, 0x56, 0x69, 0x72,
-	0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65,
-	0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x63, 0x0a, 0x1e, 0x47, 0x65, 0x74,
+	0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f,
+	0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63,
 	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79,
@@ -1009,13 +1009,13 @@ var file_frontend_virtio_scsi_proto_rawDesc = []byte{
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63,
 	0x74, 0x4b, 0x65, 0x79, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74,
 	0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x22, 0x51,
-	0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x03,
+	0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
+	0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x03,
 	0x6c, 0x75, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f,
 	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x03, 0x6c, 0x75,
-	0x6e, 0x22, 0x94, 0x01, 0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
-	0x4c, 0x75, 0x6e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x6e, 0x22, 0x94, 0x01, 0x0a, 0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74,
+	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
 	0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65,
@@ -1023,25 +1023,25 @@ var file_frontend_virtio_scsi_proto_rawDesc = []byte{
 	0x72, 0x49, 0x64, 0x12, 0x33, 0x0a, 0x06, 0x6c, 0x75, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65,
-	0x79, 0x52, 0x05, 0x6c, 0x75, 0x6e, 0x49, 0x64, 0x22, 0x51, 0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74,
-	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
+	0x79, 0x52, 0x05, 0x6c, 0x75, 0x6e, 0x49, 0x64, 0x22, 0x51, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x03, 0x6c, 0x75, 0x6e, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
 	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53,
-	0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x03, 0x6c, 0x75, 0x6e, 0x22, 0x5d, 0x0a, 0x18, 0x56,
-	0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x4c, 0x69, 0x73, 0x74,
+	0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x03, 0x6c, 0x75, 0x6e, 0x22, 0x5d, 0x0a, 0x18, 0x4c,
+	0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x72,
 	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x0c, 0x63, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x50, 0x0a, 0x19, 0x56, 0x69,
-	0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x50, 0x0a, 0x19, 0x4c, 0x69,
+	0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x33, 0x0a, 0x03, 0x6c, 0x75, 0x6e, 0x18, 0x01,
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
 	0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x03, 0x6c, 0x75, 0x6e, 0x22, 0x91, 0x01, 0x0a,
-	0x17, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x47, 0x65,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74,
+	0x17, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74,
 	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x0c, 0x63,
@@ -1066,53 +1066,53 @@ var file_frontend_virtio_scsi_proto_rawDesc = []byte{
 	0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xba, 0x0e, 0x0a, 0x19, 0x46, 0x72, 0x6f,
 	0x6e, 0x74, 0x65, 0x6e, 0x64, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xaa, 0x01, 0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
-	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xaa, 0x01, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72,
+	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f,
 	0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76,
 	0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74,
 	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25, 0x22, 0x13,
 	0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74,
 	0x72, 0x6c, 0x73, 0x3a, 0x0e, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63,
-	0x74, 0x72, 0x6c, 0x12, 0x99, 0x01, 0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
-	0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
-	0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x74, 0x72, 0x6c, 0x12, 0x99, 0x01, 0x0a, 0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69,
+	0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x12, 0x35, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69,
+	0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
 	0x79, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x26, 0x2a, 0x24, 0x2f, 0x76, 0x31, 0x2f, 0x76,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74, 0x72, 0x6c, 0x73, 0x2f, 0x7b,
 	0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74, 0x72, 0x6c, 0x7d, 0x12,
-	0xaa, 0x01, 0x0a, 0x1a, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x35,
+	0xaa, 0x01, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
+	0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x35,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
+	0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
 	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69,
 	0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22,
 	0x2b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x25, 0x32, 0x13, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72,
 	0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74, 0x72, 0x6c, 0x73, 0x3a, 0x0e, 0x76, 0x69,
 	0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74, 0x72, 0x6c, 0x12, 0xa2, 0x01, 0x0a,
-	0x18, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x33, 0x2e, 0x6f, 0x70, 0x69, 0x5f,
-	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56,
-	0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c,
-	0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34,
+	0x18, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43,
+	0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x33, 0x2e, 0x6f, 0x70, 0x69, 0x5f,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c,
+	0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e,
+	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x34,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f,
-	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
+	0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x12, 0x13, 0x2f, 0x76,
 	0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x63, 0x74, 0x72, 0x6c,
-	0x73, 0x12, 0xa5, 0x01, 0x0a, 0x17, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
-	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x12, 0x32, 0x2e,
+	0x73, 0x12, 0xa5, 0x01, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53,
+	0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x12, 0x32, 0x2e,
 	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
-	0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e,
-	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
 	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73,
 	0x69, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x2c, 0x82, 0xd3, 0xe4,
@@ -1127,47 +1127,47 @@ var file_frontend_virtio_scsi_proto_rawDesc = []byte{
 	0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e,
 	0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x43, 0x6f, 0x6e,
 	0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x93, 0x01, 0x0a, 0x13, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2e,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x93, 0x01, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x12, 0x2e,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
-	0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75,
-	0x6e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
+	0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21,
 	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
 	0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75,
 	0x6e, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x12, 0x2f, 0x76, 0x31, 0x2f, 0x76,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x73, 0x3a, 0x0d, 0x76,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x12, 0x89, 0x01, 0x0a,
-	0x13, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
-	0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71,
+	0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73,
+	0x69, 0x4c, 0x75, 0x6e, 0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x2a, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x24, 0x2a, 0x22, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f,
 	0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x73, 0x2f, 0x7b, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f,
-	0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x7d, 0x12, 0x93, 0x01, 0x0a, 0x13, 0x56, 0x69, 0x72,
-	0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x7d, 0x12, 0x93, 0x01, 0x0a, 0x13, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e,
 	0x12, 0x2e, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
-	0x4c, 0x75, 0x6e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74,
+	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
 	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69,
 	0x4c, 0x75, 0x6e, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x32, 0x12, 0x2f, 0x76, 0x31,
 	0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x73, 0x3a,
 	0x0d, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x12, 0x8c,
-	0x01, 0x0a, 0x11, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e,
-	0x4c, 0x69, 0x73, 0x74, 0x12, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
-	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
-	0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x01, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73,
+	0x69, 0x4c, 0x75, 0x6e, 0x12, 0x2c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69,
+	0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
-	0x73, 0x69, 0x4c, 0x75, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74,
+	0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x22, 0x1a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x12, 0x12, 0x2f, 0x76, 0x31, 0x2f, 0x76,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x73, 0x63, 0x73, 0x69, 0x6c, 0x75, 0x6e, 0x73, 0x12, 0x8e, 0x01,
-	0x0a, 0x10, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x47,
-	0x65, 0x74, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63,
-	0x73, 0x69, 0x4c, 0x75, 0x6e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x0a, 0x10, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c,
+	0x75, 0x6e, 0x12, 0x2b, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69,
+	0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c, 0x75, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x21, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
 	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x53, 0x63, 0x73, 0x69, 0x4c,
 	0x75, 0x6e, 0x22, 0x2a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x24, 0x12, 0x22, 0x2f, 0x76, 0x31, 0x2f,
@@ -1206,20 +1206,20 @@ var file_frontend_virtio_scsi_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_frontend_virtio_scsi_proto_goTypes = []interface{}{
 	(*VirtioScsiController)(nil),              // 0: opi_api.storage.v1.VirtioScsiController
 	(*VirtioScsiLun)(nil),                     // 1: opi_api.storage.v1.VirtioScsiLun
-	(*VirtioScsiControllerCreateRequest)(nil), // 2: opi_api.storage.v1.VirtioScsiControllerCreateRequest
-	(*VirtioScsiControllerDeleteRequest)(nil), // 3: opi_api.storage.v1.VirtioScsiControllerDeleteRequest
-	(*VirtioScsiControllerUpdateRequest)(nil), // 4: opi_api.storage.v1.VirtioScsiControllerUpdateRequest
-	(*VirtioScsiControllerListRequest)(nil),   // 5: opi_api.storage.v1.VirtioScsiControllerListRequest
-	(*VirtioScsiControllerListResponse)(nil),  // 6: opi_api.storage.v1.VirtioScsiControllerListResponse
-	(*VirtioScsiControllerGetRequest)(nil),    // 7: opi_api.storage.v1.VirtioScsiControllerGetRequest
+	(*CreateVirtioScsiControllerRequest)(nil), // 2: opi_api.storage.v1.CreateVirtioScsiControllerRequest
+	(*DeleteVirtioScsiControllerRequest)(nil), // 3: opi_api.storage.v1.DeleteVirtioScsiControllerRequest
+	(*UpdateVirtioScsiControllerRequest)(nil), // 4: opi_api.storage.v1.UpdateVirtioScsiControllerRequest
+	(*ListVirtioScsiControllerRequest)(nil),   // 5: opi_api.storage.v1.ListVirtioScsiControllerRequest
+	(*ListVirtioScsiControllerResponse)(nil),  // 6: opi_api.storage.v1.ListVirtioScsiControllerResponse
+	(*GetVirtioScsiControllerRequest)(nil),    // 7: opi_api.storage.v1.GetVirtioScsiControllerRequest
 	(*VirtioScsiControllerStatsRequest)(nil),  // 8: opi_api.storage.v1.VirtioScsiControllerStatsRequest
 	(*VirtioScsiControllerStatsResponse)(nil), // 9: opi_api.storage.v1.VirtioScsiControllerStatsResponse
-	(*VirtioScsiLunCreateRequest)(nil),        // 10: opi_api.storage.v1.VirtioScsiLunCreateRequest
-	(*VirtioScsiLunDeleteRequest)(nil),        // 11: opi_api.storage.v1.VirtioScsiLunDeleteRequest
-	(*VirtioScsiLunUpdateRequest)(nil),        // 12: opi_api.storage.v1.VirtioScsiLunUpdateRequest
-	(*VirtioScsiLunListRequest)(nil),          // 13: opi_api.storage.v1.VirtioScsiLunListRequest
-	(*VirtioScsiLunListResponse)(nil),         // 14: opi_api.storage.v1.VirtioScsiLunListResponse
-	(*VirtioScsiLunGetRequest)(nil),           // 15: opi_api.storage.v1.VirtioScsiLunGetRequest
+	(*CreateVirtioScsiLunRequest)(nil),        // 10: opi_api.storage.v1.CreateVirtioScsiLunRequest
+	(*DeleteVirtioScsiLunRequest)(nil),        // 11: opi_api.storage.v1.DeleteVirtioScsiLunRequest
+	(*UpdateVirtioScsiLunRequest)(nil),        // 12: opi_api.storage.v1.UpdateVirtioScsiLunRequest
+	(*ListVirtioScsiLunRequest)(nil),          // 13: opi_api.storage.v1.ListVirtioScsiLunRequest
+	(*ListVirtioScsiLunResponse)(nil),         // 14: opi_api.storage.v1.ListVirtioScsiLunResponse
+	(*GetVirtioScsiLunRequest)(nil),           // 15: opi_api.storage.v1.GetVirtioScsiLunRequest
 	(*VirtioScsiLunStatsRequest)(nil),         // 16: opi_api.storage.v1.VirtioScsiLunStatsRequest
 	(*VirtioScsiLunStatsResponse)(nil),        // 17: opi_api.storage.v1.VirtioScsiLunStatsResponse
 	(*_go.ObjectKey)(nil),                     // 18: opi_api.common.v1.ObjectKey
@@ -1231,47 +1231,47 @@ var file_frontend_virtio_scsi_proto_depIdxs = []int32{
 	19, // 1: opi_api.storage.v1.VirtioScsiController.pcie_id:type_name -> opi_api.storage.v1.PciEndpoint
 	18, // 2: opi_api.storage.v1.VirtioScsiLun.id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 3: opi_api.storage.v1.VirtioScsiLun.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	0,  // 4: opi_api.storage.v1.VirtioScsiControllerCreateRequest.controller:type_name -> opi_api.storage.v1.VirtioScsiController
-	18, // 5: opi_api.storage.v1.VirtioScsiControllerDeleteRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	0,  // 6: opi_api.storage.v1.VirtioScsiControllerUpdateRequest.controller:type_name -> opi_api.storage.v1.VirtioScsiController
-	0,  // 7: opi_api.storage.v1.VirtioScsiControllerListResponse.controller:type_name -> opi_api.storage.v1.VirtioScsiController
-	18, // 8: opi_api.storage.v1.VirtioScsiControllerGetRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 4: opi_api.storage.v1.CreateVirtioScsiControllerRequest.controller:type_name -> opi_api.storage.v1.VirtioScsiController
+	18, // 5: opi_api.storage.v1.DeleteVirtioScsiControllerRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 6: opi_api.storage.v1.UpdateVirtioScsiControllerRequest.controller:type_name -> opi_api.storage.v1.VirtioScsiController
+	0,  // 7: opi_api.storage.v1.ListVirtioScsiControllerResponse.controller:type_name -> opi_api.storage.v1.VirtioScsiController
+	18, // 8: opi_api.storage.v1.GetVirtioScsiControllerRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 9: opi_api.storage.v1.VirtioScsiControllerStatsRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 10: opi_api.storage.v1.VirtioScsiControllerStatsResponse.id:type_name -> opi_api.common.v1.ObjectKey
-	1,  // 11: opi_api.storage.v1.VirtioScsiLunCreateRequest.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
-	18, // 12: opi_api.storage.v1.VirtioScsiLunDeleteRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	18, // 13: opi_api.storage.v1.VirtioScsiLunDeleteRequest.lun_id:type_name -> opi_api.common.v1.ObjectKey
-	1,  // 14: opi_api.storage.v1.VirtioScsiLunUpdateRequest.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
-	18, // 15: opi_api.storage.v1.VirtioScsiLunListRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	1,  // 16: opi_api.storage.v1.VirtioScsiLunListResponse.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
-	18, // 17: opi_api.storage.v1.VirtioScsiLunGetRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	18, // 18: opi_api.storage.v1.VirtioScsiLunGetRequest.lun_id:type_name -> opi_api.common.v1.ObjectKey
+	1,  // 11: opi_api.storage.v1.CreateVirtioScsiLunRequest.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
+	18, // 12: opi_api.storage.v1.DeleteVirtioScsiLunRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	18, // 13: opi_api.storage.v1.DeleteVirtioScsiLunRequest.lun_id:type_name -> opi_api.common.v1.ObjectKey
+	1,  // 14: opi_api.storage.v1.UpdateVirtioScsiLunRequest.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
+	18, // 15: opi_api.storage.v1.ListVirtioScsiLunRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	1,  // 16: opi_api.storage.v1.ListVirtioScsiLunResponse.lun:type_name -> opi_api.storage.v1.VirtioScsiLun
+	18, // 17: opi_api.storage.v1.GetVirtioScsiLunRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	18, // 18: opi_api.storage.v1.GetVirtioScsiLunRequest.lun_id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 19: opi_api.storage.v1.VirtioScsiLunStatsRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 20: opi_api.storage.v1.VirtioScsiLunStatsRequest.lun_id:type_name -> opi_api.common.v1.ObjectKey
 	18, // 21: opi_api.storage.v1.VirtioScsiLunStatsResponse.id:type_name -> opi_api.common.v1.ObjectKey
-	2,  // 22: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerCreate:input_type -> opi_api.storage.v1.VirtioScsiControllerCreateRequest
-	3,  // 23: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerDelete:input_type -> opi_api.storage.v1.VirtioScsiControllerDeleteRequest
-	4,  // 24: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerUpdate:input_type -> opi_api.storage.v1.VirtioScsiControllerUpdateRequest
-	5,  // 25: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerList:input_type -> opi_api.storage.v1.VirtioScsiControllerListRequest
-	7,  // 26: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerGet:input_type -> opi_api.storage.v1.VirtioScsiControllerGetRequest
+	2,  // 22: opi_api.storage.v1.FrontendVirtioScsiService.CreateVirtioScsiController:input_type -> opi_api.storage.v1.CreateVirtioScsiControllerRequest
+	3,  // 23: opi_api.storage.v1.FrontendVirtioScsiService.DeleteVirtioScsiController:input_type -> opi_api.storage.v1.DeleteVirtioScsiControllerRequest
+	4,  // 24: opi_api.storage.v1.FrontendVirtioScsiService.UpdateVirtioScsiController:input_type -> opi_api.storage.v1.UpdateVirtioScsiControllerRequest
+	5,  // 25: opi_api.storage.v1.FrontendVirtioScsiService.ListVirtioScsiController:input_type -> opi_api.storage.v1.ListVirtioScsiControllerRequest
+	7,  // 26: opi_api.storage.v1.FrontendVirtioScsiService.GetVirtioScsiController:input_type -> opi_api.storage.v1.GetVirtioScsiControllerRequest
 	8,  // 27: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerStats:input_type -> opi_api.storage.v1.VirtioScsiControllerStatsRequest
-	10, // 28: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunCreate:input_type -> opi_api.storage.v1.VirtioScsiLunCreateRequest
-	11, // 29: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunDelete:input_type -> opi_api.storage.v1.VirtioScsiLunDeleteRequest
-	12, // 30: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunUpdate:input_type -> opi_api.storage.v1.VirtioScsiLunUpdateRequest
-	13, // 31: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunList:input_type -> opi_api.storage.v1.VirtioScsiLunListRequest
-	15, // 32: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunGet:input_type -> opi_api.storage.v1.VirtioScsiLunGetRequest
+	10, // 28: opi_api.storage.v1.FrontendVirtioScsiService.CreateVirtioScsiLun:input_type -> opi_api.storage.v1.CreateVirtioScsiLunRequest
+	11, // 29: opi_api.storage.v1.FrontendVirtioScsiService.DeleteVirtioScsiLun:input_type -> opi_api.storage.v1.DeleteVirtioScsiLunRequest
+	12, // 30: opi_api.storage.v1.FrontendVirtioScsiService.UpdateVirtioScsiLun:input_type -> opi_api.storage.v1.UpdateVirtioScsiLunRequest
+	13, // 31: opi_api.storage.v1.FrontendVirtioScsiService.ListVirtioScsiLun:input_type -> opi_api.storage.v1.ListVirtioScsiLunRequest
+	15, // 32: opi_api.storage.v1.FrontendVirtioScsiService.GetVirtioScsiLun:input_type -> opi_api.storage.v1.GetVirtioScsiLunRequest
 	16, // 33: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunStats:input_type -> opi_api.storage.v1.VirtioScsiLunStatsRequest
-	0,  // 34: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerCreate:output_type -> opi_api.storage.v1.VirtioScsiController
-	20, // 35: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerDelete:output_type -> google.protobuf.Empty
-	0,  // 36: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerUpdate:output_type -> opi_api.storage.v1.VirtioScsiController
-	6,  // 37: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerList:output_type -> opi_api.storage.v1.VirtioScsiControllerListResponse
-	0,  // 38: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerGet:output_type -> opi_api.storage.v1.VirtioScsiController
+	0,  // 34: opi_api.storage.v1.FrontendVirtioScsiService.CreateVirtioScsiController:output_type -> opi_api.storage.v1.VirtioScsiController
+	20, // 35: opi_api.storage.v1.FrontendVirtioScsiService.DeleteVirtioScsiController:output_type -> google.protobuf.Empty
+	0,  // 36: opi_api.storage.v1.FrontendVirtioScsiService.UpdateVirtioScsiController:output_type -> opi_api.storage.v1.VirtioScsiController
+	6,  // 37: opi_api.storage.v1.FrontendVirtioScsiService.ListVirtioScsiController:output_type -> opi_api.storage.v1.ListVirtioScsiControllerResponse
+	0,  // 38: opi_api.storage.v1.FrontendVirtioScsiService.GetVirtioScsiController:output_type -> opi_api.storage.v1.VirtioScsiController
 	9,  // 39: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiControllerStats:output_type -> opi_api.storage.v1.VirtioScsiControllerStatsResponse
-	1,  // 40: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunCreate:output_type -> opi_api.storage.v1.VirtioScsiLun
-	20, // 41: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunDelete:output_type -> google.protobuf.Empty
-	1,  // 42: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunUpdate:output_type -> opi_api.storage.v1.VirtioScsiLun
-	14, // 43: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunList:output_type -> opi_api.storage.v1.VirtioScsiLunListResponse
-	1,  // 44: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunGet:output_type -> opi_api.storage.v1.VirtioScsiLun
+	1,  // 40: opi_api.storage.v1.FrontendVirtioScsiService.CreateVirtioScsiLun:output_type -> opi_api.storage.v1.VirtioScsiLun
+	20, // 41: opi_api.storage.v1.FrontendVirtioScsiService.DeleteVirtioScsiLun:output_type -> google.protobuf.Empty
+	1,  // 42: opi_api.storage.v1.FrontendVirtioScsiService.UpdateVirtioScsiLun:output_type -> opi_api.storage.v1.VirtioScsiLun
+	14, // 43: opi_api.storage.v1.FrontendVirtioScsiService.ListVirtioScsiLun:output_type -> opi_api.storage.v1.ListVirtioScsiLunResponse
+	1,  // 44: opi_api.storage.v1.FrontendVirtioScsiService.GetVirtioScsiLun:output_type -> opi_api.storage.v1.VirtioScsiLun
 	17, // 45: opi_api.storage.v1.FrontendVirtioScsiService.VirtioScsiLunStats:output_type -> opi_api.storage.v1.VirtioScsiLunStatsResponse
 	34, // [34:46] is the sub-list for method output_type
 	22, // [22:34] is the sub-list for method input_type
@@ -1312,7 +1312,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerCreateRequest); i {
+			switch v := v.(*CreateVirtioScsiControllerRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1324,7 +1324,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerDeleteRequest); i {
+			switch v := v.(*DeleteVirtioScsiControllerRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1336,7 +1336,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerUpdateRequest); i {
+			switch v := v.(*UpdateVirtioScsiControllerRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1348,7 +1348,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerListRequest); i {
+			switch v := v.(*ListVirtioScsiControllerRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1360,7 +1360,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerListResponse); i {
+			switch v := v.(*ListVirtioScsiControllerResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1372,7 +1372,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiControllerGetRequest); i {
+			switch v := v.(*GetVirtioScsiControllerRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1408,7 +1408,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunCreateRequest); i {
+			switch v := v.(*CreateVirtioScsiLunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1420,7 +1420,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunDeleteRequest); i {
+			switch v := v.(*DeleteVirtioScsiLunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1432,7 +1432,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunUpdateRequest); i {
+			switch v := v.(*UpdateVirtioScsiLunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1444,7 +1444,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunListRequest); i {
+			switch v := v.(*ListVirtioScsiLunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1456,7 +1456,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunListResponse); i {
+			switch v := v.(*ListVirtioScsiLunResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1468,7 +1468,7 @@ func file_frontend_virtio_scsi_proto_init() {
 			}
 		}
 		file_frontend_virtio_scsi_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioScsiLunGetRequest); i {
+			switch v := v.(*GetVirtioScsiLunRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1536,17 +1536,17 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type FrontendVirtioScsiServiceClient interface {
-	VirtioScsiControllerCreate(ctx context.Context, in *VirtioScsiControllerCreateRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
-	VirtioScsiControllerDelete(ctx context.Context, in *VirtioScsiControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	VirtioScsiControllerUpdate(ctx context.Context, in *VirtioScsiControllerUpdateRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
-	VirtioScsiControllerList(ctx context.Context, in *VirtioScsiControllerListRequest, opts ...grpc.CallOption) (*VirtioScsiControllerListResponse, error)
-	VirtioScsiControllerGet(ctx context.Context, in *VirtioScsiControllerGetRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	CreateVirtioScsiController(ctx context.Context, in *CreateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	DeleteVirtioScsiController(ctx context.Context, in *DeleteVirtioScsiControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	UpdateVirtioScsiController(ctx context.Context, in *UpdateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
+	ListVirtioScsiController(ctx context.Context, in *ListVirtioScsiControllerRequest, opts ...grpc.CallOption) (*ListVirtioScsiControllerResponse, error)
+	GetVirtioScsiController(ctx context.Context, in *GetVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error)
 	VirtioScsiControllerStats(ctx context.Context, in *VirtioScsiControllerStatsRequest, opts ...grpc.CallOption) (*VirtioScsiControllerStatsResponse, error)
-	VirtioScsiLunCreate(ctx context.Context, in *VirtioScsiLunCreateRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
-	VirtioScsiLunDelete(ctx context.Context, in *VirtioScsiLunDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	VirtioScsiLunUpdate(ctx context.Context, in *VirtioScsiLunUpdateRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
-	VirtioScsiLunList(ctx context.Context, in *VirtioScsiLunListRequest, opts ...grpc.CallOption) (*VirtioScsiLunListResponse, error)
-	VirtioScsiLunGet(ctx context.Context, in *VirtioScsiLunGetRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	CreateVirtioScsiLun(ctx context.Context, in *CreateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	DeleteVirtioScsiLun(ctx context.Context, in *DeleteVirtioScsiLunRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	UpdateVirtioScsiLun(ctx context.Context, in *UpdateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
+	ListVirtioScsiLun(ctx context.Context, in *ListVirtioScsiLunRequest, opts ...grpc.CallOption) (*ListVirtioScsiLunResponse, error)
+	GetVirtioScsiLun(ctx context.Context, in *GetVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error)
 	VirtioScsiLunStats(ctx context.Context, in *VirtioScsiLunStatsRequest, opts ...grpc.CallOption) (*VirtioScsiLunStatsResponse, error)
 }
 
@@ -1558,45 +1558,45 @@ func NewFrontendVirtioScsiServiceClient(cc grpc.ClientConnInterface) FrontendVir
 	return &frontendVirtioScsiServiceClient{cc}
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerCreate(ctx context.Context, in *VirtioScsiControllerCreateRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
+func (c *frontendVirtioScsiServiceClient) CreateVirtioScsiController(ctx context.Context, in *CreateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
 	out := new(VirtioScsiController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerDelete(ctx context.Context, in *VirtioScsiControllerDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *frontendVirtioScsiServiceClient) DeleteVirtioScsiController(ctx context.Context, in *DeleteVirtioScsiControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerUpdate(ctx context.Context, in *VirtioScsiControllerUpdateRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
+func (c *frontendVirtioScsiServiceClient) UpdateVirtioScsiController(ctx context.Context, in *UpdateVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
 	out := new(VirtioScsiController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerList(ctx context.Context, in *VirtioScsiControllerListRequest, opts ...grpc.CallOption) (*VirtioScsiControllerListResponse, error) {
-	out := new(VirtioScsiControllerListResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerList", in, out, opts...)
+func (c *frontendVirtioScsiServiceClient) ListVirtioScsiController(ctx context.Context, in *ListVirtioScsiControllerRequest, opts ...grpc.CallOption) (*ListVirtioScsiControllerResponse, error) {
+	out := new(ListVirtioScsiControllerResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerGet(ctx context.Context, in *VirtioScsiControllerGetRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
+func (c *frontendVirtioScsiServiceClient) GetVirtioScsiController(ctx context.Context, in *GetVirtioScsiControllerRequest, opts ...grpc.CallOption) (*VirtioScsiController, error) {
 	out := new(VirtioScsiController)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1612,45 +1612,45 @@ func (c *frontendVirtioScsiServiceClient) VirtioScsiControllerStats(ctx context.
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiLunCreate(ctx context.Context, in *VirtioScsiLunCreateRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
+func (c *frontendVirtioScsiServiceClient) CreateVirtioScsiLun(ctx context.Context, in *CreateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
 	out := new(VirtioScsiLun)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiLun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiLunDelete(ctx context.Context, in *VirtioScsiLunDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *frontendVirtioScsiServiceClient) DeleteVirtioScsiLun(ctx context.Context, in *DeleteVirtioScsiLunRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiLun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiLunUpdate(ctx context.Context, in *VirtioScsiLunUpdateRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
+func (c *frontendVirtioScsiServiceClient) UpdateVirtioScsiLun(ctx context.Context, in *UpdateVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
 	out := new(VirtioScsiLun)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiLun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiLunList(ctx context.Context, in *VirtioScsiLunListRequest, opts ...grpc.CallOption) (*VirtioScsiLunListResponse, error) {
-	out := new(VirtioScsiLunListResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunList", in, out, opts...)
+func (c *frontendVirtioScsiServiceClient) ListVirtioScsiLun(ctx context.Context, in *ListVirtioScsiLunRequest, opts ...grpc.CallOption) (*ListVirtioScsiLunResponse, error) {
+	out := new(ListVirtioScsiLunResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiLun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioScsiServiceClient) VirtioScsiLunGet(ctx context.Context, in *VirtioScsiLunGetRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
+func (c *frontendVirtioScsiServiceClient) GetVirtioScsiLun(ctx context.Context, in *GetVirtioScsiLunRequest, opts ...grpc.CallOption) (*VirtioScsiLun, error) {
 	out := new(VirtioScsiLun)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiLun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1668,17 +1668,17 @@ func (c *frontendVirtioScsiServiceClient) VirtioScsiLunStats(ctx context.Context
 
 // FrontendVirtioScsiServiceServer is the server API for FrontendVirtioScsiService service.
 type FrontendVirtioScsiServiceServer interface {
-	VirtioScsiControllerCreate(context.Context, *VirtioScsiControllerCreateRequest) (*VirtioScsiController, error)
-	VirtioScsiControllerDelete(context.Context, *VirtioScsiControllerDeleteRequest) (*emptypb.Empty, error)
-	VirtioScsiControllerUpdate(context.Context, *VirtioScsiControllerUpdateRequest) (*VirtioScsiController, error)
-	VirtioScsiControllerList(context.Context, *VirtioScsiControllerListRequest) (*VirtioScsiControllerListResponse, error)
-	VirtioScsiControllerGet(context.Context, *VirtioScsiControllerGetRequest) (*VirtioScsiController, error)
+	CreateVirtioScsiController(context.Context, *CreateVirtioScsiControllerRequest) (*VirtioScsiController, error)
+	DeleteVirtioScsiController(context.Context, *DeleteVirtioScsiControllerRequest) (*emptypb.Empty, error)
+	UpdateVirtioScsiController(context.Context, *UpdateVirtioScsiControllerRequest) (*VirtioScsiController, error)
+	ListVirtioScsiController(context.Context, *ListVirtioScsiControllerRequest) (*ListVirtioScsiControllerResponse, error)
+	GetVirtioScsiController(context.Context, *GetVirtioScsiControllerRequest) (*VirtioScsiController, error)
 	VirtioScsiControllerStats(context.Context, *VirtioScsiControllerStatsRequest) (*VirtioScsiControllerStatsResponse, error)
-	VirtioScsiLunCreate(context.Context, *VirtioScsiLunCreateRequest) (*VirtioScsiLun, error)
-	VirtioScsiLunDelete(context.Context, *VirtioScsiLunDeleteRequest) (*emptypb.Empty, error)
-	VirtioScsiLunUpdate(context.Context, *VirtioScsiLunUpdateRequest) (*VirtioScsiLun, error)
-	VirtioScsiLunList(context.Context, *VirtioScsiLunListRequest) (*VirtioScsiLunListResponse, error)
-	VirtioScsiLunGet(context.Context, *VirtioScsiLunGetRequest) (*VirtioScsiLun, error)
+	CreateVirtioScsiLun(context.Context, *CreateVirtioScsiLunRequest) (*VirtioScsiLun, error)
+	DeleteVirtioScsiLun(context.Context, *DeleteVirtioScsiLunRequest) (*emptypb.Empty, error)
+	UpdateVirtioScsiLun(context.Context, *UpdateVirtioScsiLunRequest) (*VirtioScsiLun, error)
+	ListVirtioScsiLun(context.Context, *ListVirtioScsiLunRequest) (*ListVirtioScsiLunResponse, error)
+	GetVirtioScsiLun(context.Context, *GetVirtioScsiLunRequest) (*VirtioScsiLun, error)
 	VirtioScsiLunStats(context.Context, *VirtioScsiLunStatsRequest) (*VirtioScsiLunStatsResponse, error)
 }
 
@@ -1686,38 +1686,38 @@ type FrontendVirtioScsiServiceServer interface {
 type UnimplementedFrontendVirtioScsiServiceServer struct {
 }
 
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerCreate(context.Context, *VirtioScsiControllerCreateRequest) (*VirtioScsiController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerCreate not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) CreateVirtioScsiController(context.Context, *CreateVirtioScsiControllerRequest) (*VirtioScsiController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtioScsiController not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerDelete(context.Context, *VirtioScsiControllerDeleteRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerDelete not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) DeleteVirtioScsiController(context.Context, *DeleteVirtioScsiControllerRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtioScsiController not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerUpdate(context.Context, *VirtioScsiControllerUpdateRequest) (*VirtioScsiController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerUpdate not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) UpdateVirtioScsiController(context.Context, *UpdateVirtioScsiControllerRequest) (*VirtioScsiController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateVirtioScsiController not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerList(context.Context, *VirtioScsiControllerListRequest) (*VirtioScsiControllerListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerList not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) ListVirtioScsiController(context.Context, *ListVirtioScsiControllerRequest) (*ListVirtioScsiControllerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListVirtioScsiController not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerGet(context.Context, *VirtioScsiControllerGetRequest) (*VirtioScsiController, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerGet not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) GetVirtioScsiController(context.Context, *GetVirtioScsiControllerRequest) (*VirtioScsiController, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetVirtioScsiController not implemented")
 }
 func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiControllerStats(context.Context, *VirtioScsiControllerStatsRequest) (*VirtioScsiControllerStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiControllerStats not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunCreate(context.Context, *VirtioScsiLunCreateRequest) (*VirtioScsiLun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunCreate not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) CreateVirtioScsiLun(context.Context, *CreateVirtioScsiLunRequest) (*VirtioScsiLun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtioScsiLun not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunDelete(context.Context, *VirtioScsiLunDeleteRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunDelete not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) DeleteVirtioScsiLun(context.Context, *DeleteVirtioScsiLunRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtioScsiLun not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunUpdate(context.Context, *VirtioScsiLunUpdateRequest) (*VirtioScsiLun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunUpdate not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) UpdateVirtioScsiLun(context.Context, *UpdateVirtioScsiLunRequest) (*VirtioScsiLun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateVirtioScsiLun not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunList(context.Context, *VirtioScsiLunListRequest) (*VirtioScsiLunListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunList not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) ListVirtioScsiLun(context.Context, *ListVirtioScsiLunRequest) (*ListVirtioScsiLunResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListVirtioScsiLun not implemented")
 }
-func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunGet(context.Context, *VirtioScsiLunGetRequest) (*VirtioScsiLun, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunGet not implemented")
+func (*UnimplementedFrontendVirtioScsiServiceServer) GetVirtioScsiLun(context.Context, *GetVirtioScsiLunRequest) (*VirtioScsiLun, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetVirtioScsiLun not implemented")
 }
 func (*UnimplementedFrontendVirtioScsiServiceServer) VirtioScsiLunStats(context.Context, *VirtioScsiLunStatsRequest) (*VirtioScsiLunStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VirtioScsiLunStats not implemented")
@@ -1727,92 +1727,92 @@ func RegisterFrontendVirtioScsiServiceServer(s *grpc.Server, srv FrontendVirtioS
 	s.RegisterService(&_FrontendVirtioScsiService_serviceDesc, srv)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiControllerCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiControllerCreateRequest)
+func _FrontendVirtioScsiService_CreateVirtioScsiController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateVirtioScsiControllerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerCreate(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).CreateVirtioScsiController(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerCreate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiController",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerCreate(ctx, req.(*VirtioScsiControllerCreateRequest))
+		return srv.(FrontendVirtioScsiServiceServer).CreateVirtioScsiController(ctx, req.(*CreateVirtioScsiControllerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiControllerDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiControllerDeleteRequest)
+func _FrontendVirtioScsiService_DeleteVirtioScsiController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteVirtioScsiControllerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerDelete(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).DeleteVirtioScsiController(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerDelete",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiController",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerDelete(ctx, req.(*VirtioScsiControllerDeleteRequest))
+		return srv.(FrontendVirtioScsiServiceServer).DeleteVirtioScsiController(ctx, req.(*DeleteVirtioScsiControllerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiControllerUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiControllerUpdateRequest)
+func _FrontendVirtioScsiService_UpdateVirtioScsiController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateVirtioScsiControllerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerUpdate(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).UpdateVirtioScsiController(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerUpdate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiController",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerUpdate(ctx, req.(*VirtioScsiControllerUpdateRequest))
+		return srv.(FrontendVirtioScsiServiceServer).UpdateVirtioScsiController(ctx, req.(*UpdateVirtioScsiControllerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiControllerList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiControllerListRequest)
+func _FrontendVirtioScsiService_ListVirtioScsiController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListVirtioScsiControllerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerList(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).ListVirtioScsiController(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerList",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiController",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerList(ctx, req.(*VirtioScsiControllerListRequest))
+		return srv.(FrontendVirtioScsiServiceServer).ListVirtioScsiController(ctx, req.(*ListVirtioScsiControllerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiControllerGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiControllerGetRequest)
+func _FrontendVirtioScsiService_GetVirtioScsiController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVirtioScsiControllerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerGet(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).GetVirtioScsiController(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiControllerGet",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiController",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiControllerGet(ctx, req.(*VirtioScsiControllerGetRequest))
+		return srv.(FrontendVirtioScsiServiceServer).GetVirtioScsiController(ctx, req.(*GetVirtioScsiControllerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1835,92 +1835,92 @@ func _FrontendVirtioScsiService_VirtioScsiControllerStats_Handler(srv interface{
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiLunCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiLunCreateRequest)
+func _FrontendVirtioScsiService_CreateVirtioScsiLun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateVirtioScsiLunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunCreate(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).CreateVirtioScsiLun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunCreate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/CreateVirtioScsiLun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunCreate(ctx, req.(*VirtioScsiLunCreateRequest))
+		return srv.(FrontendVirtioScsiServiceServer).CreateVirtioScsiLun(ctx, req.(*CreateVirtioScsiLunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiLunDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiLunDeleteRequest)
+func _FrontendVirtioScsiService_DeleteVirtioScsiLun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteVirtioScsiLunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunDelete(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).DeleteVirtioScsiLun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunDelete",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/DeleteVirtioScsiLun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunDelete(ctx, req.(*VirtioScsiLunDeleteRequest))
+		return srv.(FrontendVirtioScsiServiceServer).DeleteVirtioScsiLun(ctx, req.(*DeleteVirtioScsiLunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiLunUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiLunUpdateRequest)
+func _FrontendVirtioScsiService_UpdateVirtioScsiLun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateVirtioScsiLunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunUpdate(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).UpdateVirtioScsiLun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunUpdate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/UpdateVirtioScsiLun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunUpdate(ctx, req.(*VirtioScsiLunUpdateRequest))
+		return srv.(FrontendVirtioScsiServiceServer).UpdateVirtioScsiLun(ctx, req.(*UpdateVirtioScsiLunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiLunList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiLunListRequest)
+func _FrontendVirtioScsiService_ListVirtioScsiLun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListVirtioScsiLunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunList(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).ListVirtioScsiLun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunList",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/ListVirtioScsiLun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunList(ctx, req.(*VirtioScsiLunListRequest))
+		return srv.(FrontendVirtioScsiServiceServer).ListVirtioScsiLun(ctx, req.(*ListVirtioScsiLunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioScsiService_VirtioScsiLunGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioScsiLunGetRequest)
+func _FrontendVirtioScsiService_GetVirtioScsiLun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVirtioScsiLunRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunGet(ctx, in)
+		return srv.(FrontendVirtioScsiServiceServer).GetVirtioScsiLun(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/VirtioScsiLunGet",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioScsiService/GetVirtioScsiLun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioScsiServiceServer).VirtioScsiLunGet(ctx, req.(*VirtioScsiLunGetRequest))
+		return srv.(FrontendVirtioScsiServiceServer).GetVirtioScsiLun(ctx, req.(*GetVirtioScsiLunRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1948,48 +1948,48 @@ var _FrontendVirtioScsiService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*FrontendVirtioScsiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "VirtioScsiControllerCreate",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerCreate_Handler,
+			MethodName: "CreateVirtioScsiController",
+			Handler:    _FrontendVirtioScsiService_CreateVirtioScsiController_Handler,
 		},
 		{
-			MethodName: "VirtioScsiControllerDelete",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerDelete_Handler,
+			MethodName: "DeleteVirtioScsiController",
+			Handler:    _FrontendVirtioScsiService_DeleteVirtioScsiController_Handler,
 		},
 		{
-			MethodName: "VirtioScsiControllerUpdate",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerUpdate_Handler,
+			MethodName: "UpdateVirtioScsiController",
+			Handler:    _FrontendVirtioScsiService_UpdateVirtioScsiController_Handler,
 		},
 		{
-			MethodName: "VirtioScsiControllerList",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerList_Handler,
+			MethodName: "ListVirtioScsiController",
+			Handler:    _FrontendVirtioScsiService_ListVirtioScsiController_Handler,
 		},
 		{
-			MethodName: "VirtioScsiControllerGet",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerGet_Handler,
+			MethodName: "GetVirtioScsiController",
+			Handler:    _FrontendVirtioScsiService_GetVirtioScsiController_Handler,
 		},
 		{
 			MethodName: "VirtioScsiControllerStats",
 			Handler:    _FrontendVirtioScsiService_VirtioScsiControllerStats_Handler,
 		},
 		{
-			MethodName: "VirtioScsiLunCreate",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiLunCreate_Handler,
+			MethodName: "CreateVirtioScsiLun",
+			Handler:    _FrontendVirtioScsiService_CreateVirtioScsiLun_Handler,
 		},
 		{
-			MethodName: "VirtioScsiLunDelete",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiLunDelete_Handler,
+			MethodName: "DeleteVirtioScsiLun",
+			Handler:    _FrontendVirtioScsiService_DeleteVirtioScsiLun_Handler,
 		},
 		{
-			MethodName: "VirtioScsiLunUpdate",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiLunUpdate_Handler,
+			MethodName: "UpdateVirtioScsiLun",
+			Handler:    _FrontendVirtioScsiService_UpdateVirtioScsiLun_Handler,
 		},
 		{
-			MethodName: "VirtioScsiLunList",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiLunList_Handler,
+			MethodName: "ListVirtioScsiLun",
+			Handler:    _FrontendVirtioScsiService_ListVirtioScsiLun_Handler,
 		},
 		{
-			MethodName: "VirtioScsiLunGet",
-			Handler:    _FrontendVirtioScsiService_VirtioScsiLunGet_Handler,
+			MethodName: "GetVirtioScsiLun",
+			Handler:    _FrontendVirtioScsiService_GetVirtioScsiLun_Handler,
 		},
 		{
 			MethodName: "VirtioScsiLunStats",

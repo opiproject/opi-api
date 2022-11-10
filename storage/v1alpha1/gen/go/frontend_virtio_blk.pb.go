@@ -109,7 +109,7 @@ func (x *VirtioBlk) GetSerialNumber() string {
 	return ""
 }
 
-type VirtioBlkCreateRequest struct {
+type CreateVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -117,8 +117,8 @@ type VirtioBlkCreateRequest struct {
 	Controller *VirtioBlk `protobuf:"bytes,1,opt,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioBlkCreateRequest) Reset() {
-	*x = VirtioBlkCreateRequest{}
+func (x *CreateVirtioBlkRequest) Reset() {
+	*x = CreateVirtioBlkRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -126,13 +126,13 @@ func (x *VirtioBlkCreateRequest) Reset() {
 	}
 }
 
-func (x *VirtioBlkCreateRequest) String() string {
+func (x *CreateVirtioBlkRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkCreateRequest) ProtoMessage() {}
+func (*CreateVirtioBlkRequest) ProtoMessage() {}
 
-func (x *VirtioBlkCreateRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateVirtioBlkRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -144,19 +144,19 @@ func (x *VirtioBlkCreateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkCreateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioBlkCreateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateVirtioBlkRequest.ProtoReflect.Descriptor instead.
+func (*CreateVirtioBlkRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *VirtioBlkCreateRequest) GetController() *VirtioBlk {
+func (x *CreateVirtioBlkRequest) GetController() *VirtioBlk {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioBlkDeleteRequest struct {
+type DeleteVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -164,8 +164,8 @@ type VirtioBlkDeleteRequest struct {
 	ControllerId *_go.ObjectKey `protobuf:"bytes,1,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
 }
 
-func (x *VirtioBlkDeleteRequest) Reset() {
-	*x = VirtioBlkDeleteRequest{}
+func (x *DeleteVirtioBlkRequest) Reset() {
+	*x = DeleteVirtioBlkRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -173,13 +173,13 @@ func (x *VirtioBlkDeleteRequest) Reset() {
 	}
 }
 
-func (x *VirtioBlkDeleteRequest) String() string {
+func (x *DeleteVirtioBlkRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkDeleteRequest) ProtoMessage() {}
+func (*DeleteVirtioBlkRequest) ProtoMessage() {}
 
-func (x *VirtioBlkDeleteRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteVirtioBlkRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -191,19 +191,19 @@ func (x *VirtioBlkDeleteRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkDeleteRequest.ProtoReflect.Descriptor instead.
-func (*VirtioBlkDeleteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteVirtioBlkRequest.ProtoReflect.Descriptor instead.
+func (*DeleteVirtioBlkRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *VirtioBlkDeleteRequest) GetControllerId() *_go.ObjectKey {
+func (x *DeleteVirtioBlkRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
 	return nil
 }
 
-type VirtioBlkUpdateRequest struct {
+type UpdateVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -211,8 +211,8 @@ type VirtioBlkUpdateRequest struct {
 	Controller *VirtioBlk `protobuf:"bytes,1,opt,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioBlkUpdateRequest) Reset() {
-	*x = VirtioBlkUpdateRequest{}
+func (x *UpdateVirtioBlkRequest) Reset() {
+	*x = UpdateVirtioBlkRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -220,13 +220,13 @@ func (x *VirtioBlkUpdateRequest) Reset() {
 	}
 }
 
-func (x *VirtioBlkUpdateRequest) String() string {
+func (x *UpdateVirtioBlkRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkUpdateRequest) ProtoMessage() {}
+func (*UpdateVirtioBlkRequest) ProtoMessage() {}
 
-func (x *VirtioBlkUpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateVirtioBlkRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -238,26 +238,26 @@ func (x *VirtioBlkUpdateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkUpdateRequest.ProtoReflect.Descriptor instead.
-func (*VirtioBlkUpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateVirtioBlkRequest.ProtoReflect.Descriptor instead.
+func (*UpdateVirtioBlkRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *VirtioBlkUpdateRequest) GetController() *VirtioBlk {
+func (x *UpdateVirtioBlkRequest) GetController() *VirtioBlk {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioBlkListRequest struct {
+type ListVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *VirtioBlkListRequest) Reset() {
-	*x = VirtioBlkListRequest{}
+func (x *ListVirtioBlkRequest) Reset() {
+	*x = ListVirtioBlkRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -265,13 +265,13 @@ func (x *VirtioBlkListRequest) Reset() {
 	}
 }
 
-func (x *VirtioBlkListRequest) String() string {
+func (x *ListVirtioBlkRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkListRequest) ProtoMessage() {}
+func (*ListVirtioBlkRequest) ProtoMessage() {}
 
-func (x *VirtioBlkListRequest) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioBlkRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -283,12 +283,12 @@ func (x *VirtioBlkListRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkListRequest.ProtoReflect.Descriptor instead.
-func (*VirtioBlkListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioBlkRequest.ProtoReflect.Descriptor instead.
+func (*ListVirtioBlkRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{4}
 }
 
-type VirtioBlkListResponse struct {
+type ListVirtioBlkResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -296,8 +296,8 @@ type VirtioBlkListResponse struct {
 	Controller []*VirtioBlk `protobuf:"bytes,1,rep,name=controller,proto3" json:"controller,omitempty"`
 }
 
-func (x *VirtioBlkListResponse) Reset() {
-	*x = VirtioBlkListResponse{}
+func (x *ListVirtioBlkResponse) Reset() {
+	*x = ListVirtioBlkResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -305,13 +305,13 @@ func (x *VirtioBlkListResponse) Reset() {
 	}
 }
 
-func (x *VirtioBlkListResponse) String() string {
+func (x *ListVirtioBlkResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkListResponse) ProtoMessage() {}
+func (*ListVirtioBlkResponse) ProtoMessage() {}
 
-func (x *VirtioBlkListResponse) ProtoReflect() protoreflect.Message {
+func (x *ListVirtioBlkResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -323,19 +323,19 @@ func (x *VirtioBlkListResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkListResponse.ProtoReflect.Descriptor instead.
-func (*VirtioBlkListResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListVirtioBlkResponse.ProtoReflect.Descriptor instead.
+func (*ListVirtioBlkResponse) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *VirtioBlkListResponse) GetController() []*VirtioBlk {
+func (x *ListVirtioBlkResponse) GetController() []*VirtioBlk {
 	if x != nil {
 		return x.Controller
 	}
 	return nil
 }
 
-type VirtioBlkGetRequest struct {
+type GetVirtioBlkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -343,8 +343,8 @@ type VirtioBlkGetRequest struct {
 	ControllerId *_go.ObjectKey `protobuf:"bytes,1,opt,name=controller_id,json=controllerId,proto3" json:"controller_id,omitempty"`
 }
 
-func (x *VirtioBlkGetRequest) Reset() {
-	*x = VirtioBlkGetRequest{}
+func (x *GetVirtioBlkRequest) Reset() {
+	*x = GetVirtioBlkRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_frontend_virtio_blk_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -352,13 +352,13 @@ func (x *VirtioBlkGetRequest) Reset() {
 	}
 }
 
-func (x *VirtioBlkGetRequest) String() string {
+func (x *GetVirtioBlkRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VirtioBlkGetRequest) ProtoMessage() {}
+func (*GetVirtioBlkRequest) ProtoMessage() {}
 
-func (x *VirtioBlkGetRequest) ProtoReflect() protoreflect.Message {
+func (x *GetVirtioBlkRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_frontend_virtio_blk_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -370,12 +370,12 @@ func (x *VirtioBlkGetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VirtioBlkGetRequest.ProtoReflect.Descriptor instead.
-func (*VirtioBlkGetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetVirtioBlkRequest.ProtoReflect.Descriptor instead.
+func (*GetVirtioBlkRequest) Descriptor() ([]byte, []int) {
 	return file_frontend_virtio_blk_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *VirtioBlkGetRequest) GetControllerId() *_go.ObjectKey {
+func (x *GetVirtioBlkRequest) GetControllerId() *_go.ObjectKey {
 	if x != nil {
 		return x.ControllerId
 	}
@@ -508,32 +508,32 @@ var file_frontend_virtio_blk_proto_rawDesc = []byte{
 	0x70, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x6d, 0x61, 0x78, 0x49, 0x6f, 0x51,
 	0x70, 0x73, 0x12, 0x23, 0x0a, 0x0d, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x5f, 0x6e, 0x75, 0x6d,
 	0x62, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x73, 0x65, 0x72, 0x69, 0x61,
-	0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x57, 0x0a, 0x16, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x42, 0x6c, 0x6b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x57, 0x0a, 0x16, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
 	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69,
 	0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72,
-	0x22, 0x5b, 0x0a, 0x16, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x44, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f,
+	0x22, 0x5b, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
+	0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0d, 0x63, 0x6f,
 	0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52,
 	0x0c, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x22, 0x57, 0x0a,
-	0x16, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x16, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72,
 	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x16, 0x0a, 0x14, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
-	0x42, 0x6c, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x56,
-	0x0a, 0x15, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x16, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69,
+	0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x56,
+	0x0a, 0x15, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x74, 0x72,
 	0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x0a, 0x63, 0x6f, 0x6e, 0x74,
-	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x58, 0x0a, 0x13, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f,
-	0x42, 0x6c, 0x6b, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a,
+	0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x22, 0x58, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72,
+	0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a,
 	0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b,
@@ -551,42 +551,42 @@ var file_frontend_virtio_blk_proto_rawDesc = []byte{
 	0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xfc, 0x05, 0x0a, 0x18, 0x46,
 	0x72, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x7f, 0x0a, 0x0f, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x42, 0x6c, 0x6b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x7f, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69,
 	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
 	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74,
 	0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x22, 0x21, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1b, 0x22, 0x0e, 0x2f,
 	0x76, 0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c, 0x6b, 0x73, 0x3a, 0x09, 0x76,
-	0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c, 0x6b, 0x12, 0x79, 0x0a, 0x0f, 0x56, 0x69, 0x72, 0x74,
-	0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70,
+	0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c, 0x6b, 0x12, 0x79, 0x0a, 0x0f, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x12, 0x2a, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22,
 	0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x2a, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72,
 	0x74, 0x69, 0x6f, 0x62, 0x6c, 0x6b, 0x73, 0x2f, 0x7b, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x62,
-	0x6c, 0x6b, 0x7d, 0x12, 0x7f, 0x0a, 0x0f, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
-	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74,
-	0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x6c, 0x6b, 0x7d, 0x12, 0x7f, 0x0a, 0x0f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x56, 0x69, 0x72,
+	0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x12, 0x2a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
 	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c,
 	0x6b, 0x22, 0x21, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1b, 0x32, 0x0e, 0x2f, 0x76, 0x31, 0x2f, 0x76,
 	0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c, 0x6b, 0x73, 0x3a, 0x09, 0x76, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x62, 0x6c, 0x6b, 0x12, 0x7c, 0x0a, 0x0d, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c,
-	0x6b, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
-	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69,
-	0x6f, 0x42, 0x6c, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x6f, 0x62, 0x6c, 0x6b, 0x12, 0x7c, 0x0a, 0x0d, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74,
+	0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x12, 0x28, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x56,
+	0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x29, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x4c, 0x69,
-	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x16, 0x82, 0xd3, 0xe4, 0x93,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42,
+	0x6c, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x16, 0x82, 0xd3, 0xe4, 0x93,
 	0x02, 0x10, 0x12, 0x0e, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c,
-	0x6b, 0x73, 0x12, 0x7a, 0x0a, 0x0c, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x47,
-	0x65, 0x74, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c,
-	0x6b, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x6f, 0x70,
+	0x6b, 0x73, 0x12, 0x7a, 0x0a, 0x0c, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42,
+	0x6c, 0x6b, 0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f,
+	0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x69, 0x72, 0x74, 0x69,
+	0x6f, 0x42, 0x6c, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x6f, 0x70,
 	0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31,
 	0x2e, 0x56, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x42, 0x6c, 0x6b, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93,
 	0x02, 0x1c, 0x12, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x69, 0x6f, 0x62, 0x6c,
@@ -622,12 +622,12 @@ func file_frontend_virtio_blk_proto_rawDescGZIP() []byte {
 var file_frontend_virtio_blk_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_frontend_virtio_blk_proto_goTypes = []interface{}{
 	(*VirtioBlk)(nil),              // 0: opi_api.storage.v1.VirtioBlk
-	(*VirtioBlkCreateRequest)(nil), // 1: opi_api.storage.v1.VirtioBlkCreateRequest
-	(*VirtioBlkDeleteRequest)(nil), // 2: opi_api.storage.v1.VirtioBlkDeleteRequest
-	(*VirtioBlkUpdateRequest)(nil), // 3: opi_api.storage.v1.VirtioBlkUpdateRequest
-	(*VirtioBlkListRequest)(nil),   // 4: opi_api.storage.v1.VirtioBlkListRequest
-	(*VirtioBlkListResponse)(nil),  // 5: opi_api.storage.v1.VirtioBlkListResponse
-	(*VirtioBlkGetRequest)(nil),    // 6: opi_api.storage.v1.VirtioBlkGetRequest
+	(*CreateVirtioBlkRequest)(nil), // 1: opi_api.storage.v1.CreateVirtioBlkRequest
+	(*DeleteVirtioBlkRequest)(nil), // 2: opi_api.storage.v1.DeleteVirtioBlkRequest
+	(*UpdateVirtioBlkRequest)(nil), // 3: opi_api.storage.v1.UpdateVirtioBlkRequest
+	(*ListVirtioBlkRequest)(nil),   // 4: opi_api.storage.v1.ListVirtioBlkRequest
+	(*ListVirtioBlkResponse)(nil),  // 5: opi_api.storage.v1.ListVirtioBlkResponse
+	(*GetVirtioBlkRequest)(nil),    // 6: opi_api.storage.v1.GetVirtioBlkRequest
 	(*VirtioBlkStatsRequest)(nil),  // 7: opi_api.storage.v1.VirtioBlkStatsRequest
 	(*VirtioBlkStatsResponse)(nil), // 8: opi_api.storage.v1.VirtioBlkStatsResponse
 	(*_go.ObjectKey)(nil),          // 9: opi_api.common.v1.ObjectKey
@@ -637,24 +637,24 @@ var file_frontend_virtio_blk_proto_goTypes = []interface{}{
 var file_frontend_virtio_blk_proto_depIdxs = []int32{
 	9,  // 0: opi_api.storage.v1.VirtioBlk.id:type_name -> opi_api.common.v1.ObjectKey
 	10, // 1: opi_api.storage.v1.VirtioBlk.pcie_id:type_name -> opi_api.storage.v1.PciEndpoint
-	0,  // 2: opi_api.storage.v1.VirtioBlkCreateRequest.controller:type_name -> opi_api.storage.v1.VirtioBlk
-	9,  // 3: opi_api.storage.v1.VirtioBlkDeleteRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
-	0,  // 4: opi_api.storage.v1.VirtioBlkUpdateRequest.controller:type_name -> opi_api.storage.v1.VirtioBlk
-	0,  // 5: opi_api.storage.v1.VirtioBlkListResponse.controller:type_name -> opi_api.storage.v1.VirtioBlk
-	9,  // 6: opi_api.storage.v1.VirtioBlkGetRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 2: opi_api.storage.v1.CreateVirtioBlkRequest.controller:type_name -> opi_api.storage.v1.VirtioBlk
+	9,  // 3: opi_api.storage.v1.DeleteVirtioBlkRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 4: opi_api.storage.v1.UpdateVirtioBlkRequest.controller:type_name -> opi_api.storage.v1.VirtioBlk
+	0,  // 5: opi_api.storage.v1.ListVirtioBlkResponse.controller:type_name -> opi_api.storage.v1.VirtioBlk
+	9,  // 6: opi_api.storage.v1.GetVirtioBlkRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
 	9,  // 7: opi_api.storage.v1.VirtioBlkStatsRequest.controller_id:type_name -> opi_api.common.v1.ObjectKey
 	9,  // 8: opi_api.storage.v1.VirtioBlkStatsResponse.id:type_name -> opi_api.common.v1.ObjectKey
-	1,  // 9: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkCreate:input_type -> opi_api.storage.v1.VirtioBlkCreateRequest
-	2,  // 10: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkDelete:input_type -> opi_api.storage.v1.VirtioBlkDeleteRequest
-	3,  // 11: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkUpdate:input_type -> opi_api.storage.v1.VirtioBlkUpdateRequest
-	4,  // 12: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkList:input_type -> opi_api.storage.v1.VirtioBlkListRequest
-	6,  // 13: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkGet:input_type -> opi_api.storage.v1.VirtioBlkGetRequest
+	1,  // 9: opi_api.storage.v1.FrontendVirtioBlkService.CreateVirtioBlk:input_type -> opi_api.storage.v1.CreateVirtioBlkRequest
+	2,  // 10: opi_api.storage.v1.FrontendVirtioBlkService.DeleteVirtioBlk:input_type -> opi_api.storage.v1.DeleteVirtioBlkRequest
+	3,  // 11: opi_api.storage.v1.FrontendVirtioBlkService.UpdateVirtioBlk:input_type -> opi_api.storage.v1.UpdateVirtioBlkRequest
+	4,  // 12: opi_api.storage.v1.FrontendVirtioBlkService.ListVirtioBlk:input_type -> opi_api.storage.v1.ListVirtioBlkRequest
+	6,  // 13: opi_api.storage.v1.FrontendVirtioBlkService.GetVirtioBlk:input_type -> opi_api.storage.v1.GetVirtioBlkRequest
 	7,  // 14: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkStats:input_type -> opi_api.storage.v1.VirtioBlkStatsRequest
-	0,  // 15: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkCreate:output_type -> opi_api.storage.v1.VirtioBlk
-	11, // 16: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkDelete:output_type -> google.protobuf.Empty
-	0,  // 17: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkUpdate:output_type -> opi_api.storage.v1.VirtioBlk
-	5,  // 18: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkList:output_type -> opi_api.storage.v1.VirtioBlkListResponse
-	0,  // 19: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkGet:output_type -> opi_api.storage.v1.VirtioBlk
+	0,  // 15: opi_api.storage.v1.FrontendVirtioBlkService.CreateVirtioBlk:output_type -> opi_api.storage.v1.VirtioBlk
+	11, // 16: opi_api.storage.v1.FrontendVirtioBlkService.DeleteVirtioBlk:output_type -> google.protobuf.Empty
+	0,  // 17: opi_api.storage.v1.FrontendVirtioBlkService.UpdateVirtioBlk:output_type -> opi_api.storage.v1.VirtioBlk
+	5,  // 18: opi_api.storage.v1.FrontendVirtioBlkService.ListVirtioBlk:output_type -> opi_api.storage.v1.ListVirtioBlkResponse
+	0,  // 19: opi_api.storage.v1.FrontendVirtioBlkService.GetVirtioBlk:output_type -> opi_api.storage.v1.VirtioBlk
 	8,  // 20: opi_api.storage.v1.FrontendVirtioBlkService.VirtioBlkStats:output_type -> opi_api.storage.v1.VirtioBlkStatsResponse
 	15, // [15:21] is the sub-list for method output_type
 	9,  // [9:15] is the sub-list for method input_type
@@ -683,7 +683,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkCreateRequest); i {
+			switch v := v.(*CreateVirtioBlkRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -695,7 +695,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkDeleteRequest); i {
+			switch v := v.(*DeleteVirtioBlkRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -707,7 +707,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkUpdateRequest); i {
+			switch v := v.(*UpdateVirtioBlkRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -719,7 +719,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkListRequest); i {
+			switch v := v.(*ListVirtioBlkRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -731,7 +731,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkListResponse); i {
+			switch v := v.(*ListVirtioBlkResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -743,7 +743,7 @@ func file_frontend_virtio_blk_proto_init() {
 			}
 		}
 		file_frontend_virtio_blk_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VirtioBlkGetRequest); i {
+			switch v := v.(*GetVirtioBlkRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -811,11 +811,11 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type FrontendVirtioBlkServiceClient interface {
-	VirtioBlkCreate(ctx context.Context, in *VirtioBlkCreateRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
-	VirtioBlkDelete(ctx context.Context, in *VirtioBlkDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	VirtioBlkUpdate(ctx context.Context, in *VirtioBlkUpdateRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
-	VirtioBlkList(ctx context.Context, in *VirtioBlkListRequest, opts ...grpc.CallOption) (*VirtioBlkListResponse, error)
-	VirtioBlkGet(ctx context.Context, in *VirtioBlkGetRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	CreateVirtioBlk(ctx context.Context, in *CreateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	DeleteVirtioBlk(ctx context.Context, in *DeleteVirtioBlkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	UpdateVirtioBlk(ctx context.Context, in *UpdateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
+	ListVirtioBlk(ctx context.Context, in *ListVirtioBlkRequest, opts ...grpc.CallOption) (*ListVirtioBlkResponse, error)
+	GetVirtioBlk(ctx context.Context, in *GetVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error)
 	VirtioBlkStats(ctx context.Context, in *VirtioBlkStatsRequest, opts ...grpc.CallOption) (*VirtioBlkStatsResponse, error)
 }
 
@@ -827,45 +827,45 @@ func NewFrontendVirtioBlkServiceClient(cc grpc.ClientConnInterface) FrontendVirt
 	return &frontendVirtioBlkServiceClient{cc}
 }
 
-func (c *frontendVirtioBlkServiceClient) VirtioBlkCreate(ctx context.Context, in *VirtioBlkCreateRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
+func (c *frontendVirtioBlkServiceClient) CreateVirtioBlk(ctx context.Context, in *CreateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
 	out := new(VirtioBlk)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/CreateVirtioBlk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioBlkServiceClient) VirtioBlkDelete(ctx context.Context, in *VirtioBlkDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *frontendVirtioBlkServiceClient) DeleteVirtioBlk(ctx context.Context, in *DeleteVirtioBlkRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/DeleteVirtioBlk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioBlkServiceClient) VirtioBlkUpdate(ctx context.Context, in *VirtioBlkUpdateRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
+func (c *frontendVirtioBlkServiceClient) UpdateVirtioBlk(ctx context.Context, in *UpdateVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
 	out := new(VirtioBlk)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/UpdateVirtioBlk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioBlkServiceClient) VirtioBlkList(ctx context.Context, in *VirtioBlkListRequest, opts ...grpc.CallOption) (*VirtioBlkListResponse, error) {
-	out := new(VirtioBlkListResponse)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkList", in, out, opts...)
+func (c *frontendVirtioBlkServiceClient) ListVirtioBlk(ctx context.Context, in *ListVirtioBlkRequest, opts ...grpc.CallOption) (*ListVirtioBlkResponse, error) {
+	out := new(ListVirtioBlkResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/ListVirtioBlk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *frontendVirtioBlkServiceClient) VirtioBlkGet(ctx context.Context, in *VirtioBlkGetRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
+func (c *frontendVirtioBlkServiceClient) GetVirtioBlk(ctx context.Context, in *GetVirtioBlkRequest, opts ...grpc.CallOption) (*VirtioBlk, error) {
 	out := new(VirtioBlk)
-	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.FrontendVirtioBlkService/GetVirtioBlk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -883,11 +883,11 @@ func (c *frontendVirtioBlkServiceClient) VirtioBlkStats(ctx context.Context, in 
 
 // FrontendVirtioBlkServiceServer is the server API for FrontendVirtioBlkService service.
 type FrontendVirtioBlkServiceServer interface {
-	VirtioBlkCreate(context.Context, *VirtioBlkCreateRequest) (*VirtioBlk, error)
-	VirtioBlkDelete(context.Context, *VirtioBlkDeleteRequest) (*emptypb.Empty, error)
-	VirtioBlkUpdate(context.Context, *VirtioBlkUpdateRequest) (*VirtioBlk, error)
-	VirtioBlkList(context.Context, *VirtioBlkListRequest) (*VirtioBlkListResponse, error)
-	VirtioBlkGet(context.Context, *VirtioBlkGetRequest) (*VirtioBlk, error)
+	CreateVirtioBlk(context.Context, *CreateVirtioBlkRequest) (*VirtioBlk, error)
+	DeleteVirtioBlk(context.Context, *DeleteVirtioBlkRequest) (*emptypb.Empty, error)
+	UpdateVirtioBlk(context.Context, *UpdateVirtioBlkRequest) (*VirtioBlk, error)
+	ListVirtioBlk(context.Context, *ListVirtioBlkRequest) (*ListVirtioBlkResponse, error)
+	GetVirtioBlk(context.Context, *GetVirtioBlkRequest) (*VirtioBlk, error)
 	VirtioBlkStats(context.Context, *VirtioBlkStatsRequest) (*VirtioBlkStatsResponse, error)
 }
 
@@ -895,20 +895,20 @@ type FrontendVirtioBlkServiceServer interface {
 type UnimplementedFrontendVirtioBlkServiceServer struct {
 }
 
-func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkCreate(context.Context, *VirtioBlkCreateRequest) (*VirtioBlk, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkCreate not implemented")
+func (*UnimplementedFrontendVirtioBlkServiceServer) CreateVirtioBlk(context.Context, *CreateVirtioBlkRequest) (*VirtioBlk, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVirtioBlk not implemented")
 }
-func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkDelete(context.Context, *VirtioBlkDeleteRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkDelete not implemented")
+func (*UnimplementedFrontendVirtioBlkServiceServer) DeleteVirtioBlk(context.Context, *DeleteVirtioBlkRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteVirtioBlk not implemented")
 }
-func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkUpdate(context.Context, *VirtioBlkUpdateRequest) (*VirtioBlk, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkUpdate not implemented")
+func (*UnimplementedFrontendVirtioBlkServiceServer) UpdateVirtioBlk(context.Context, *UpdateVirtioBlkRequest) (*VirtioBlk, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateVirtioBlk not implemented")
 }
-func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkList(context.Context, *VirtioBlkListRequest) (*VirtioBlkListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkList not implemented")
+func (*UnimplementedFrontendVirtioBlkServiceServer) ListVirtioBlk(context.Context, *ListVirtioBlkRequest) (*ListVirtioBlkResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListVirtioBlk not implemented")
 }
-func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkGet(context.Context, *VirtioBlkGetRequest) (*VirtioBlk, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkGet not implemented")
+func (*UnimplementedFrontendVirtioBlkServiceServer) GetVirtioBlk(context.Context, *GetVirtioBlkRequest) (*VirtioBlk, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetVirtioBlk not implemented")
 }
 func (*UnimplementedFrontendVirtioBlkServiceServer) VirtioBlkStats(context.Context, *VirtioBlkStatsRequest) (*VirtioBlkStatsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VirtioBlkStats not implemented")
@@ -918,92 +918,92 @@ func RegisterFrontendVirtioBlkServiceServer(s *grpc.Server, srv FrontendVirtioBl
 	s.RegisterService(&_FrontendVirtioBlkService_serviceDesc, srv)
 }
 
-func _FrontendVirtioBlkService_VirtioBlkCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioBlkCreateRequest)
+func _FrontendVirtioBlkService_CreateVirtioBlk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateVirtioBlkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkCreate(ctx, in)
+		return srv.(FrontendVirtioBlkServiceServer).CreateVirtioBlk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkCreate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/CreateVirtioBlk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkCreate(ctx, req.(*VirtioBlkCreateRequest))
+		return srv.(FrontendVirtioBlkServiceServer).CreateVirtioBlk(ctx, req.(*CreateVirtioBlkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioBlkService_VirtioBlkDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioBlkDeleteRequest)
+func _FrontendVirtioBlkService_DeleteVirtioBlk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteVirtioBlkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkDelete(ctx, in)
+		return srv.(FrontendVirtioBlkServiceServer).DeleteVirtioBlk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkDelete",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/DeleteVirtioBlk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkDelete(ctx, req.(*VirtioBlkDeleteRequest))
+		return srv.(FrontendVirtioBlkServiceServer).DeleteVirtioBlk(ctx, req.(*DeleteVirtioBlkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioBlkService_VirtioBlkUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioBlkUpdateRequest)
+func _FrontendVirtioBlkService_UpdateVirtioBlk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateVirtioBlkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkUpdate(ctx, in)
+		return srv.(FrontendVirtioBlkServiceServer).UpdateVirtioBlk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkUpdate",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/UpdateVirtioBlk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkUpdate(ctx, req.(*VirtioBlkUpdateRequest))
+		return srv.(FrontendVirtioBlkServiceServer).UpdateVirtioBlk(ctx, req.(*UpdateVirtioBlkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioBlkService_VirtioBlkList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioBlkListRequest)
+func _FrontendVirtioBlkService_ListVirtioBlk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListVirtioBlkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkList(ctx, in)
+		return srv.(FrontendVirtioBlkServiceServer).ListVirtioBlk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkList",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/ListVirtioBlk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkList(ctx, req.(*VirtioBlkListRequest))
+		return srv.(FrontendVirtioBlkServiceServer).ListVirtioBlk(ctx, req.(*ListVirtioBlkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FrontendVirtioBlkService_VirtioBlkGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(VirtioBlkGetRequest)
+func _FrontendVirtioBlkService_GetVirtioBlk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVirtioBlkRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkGet(ctx, in)
+		return srv.(FrontendVirtioBlkServiceServer).GetVirtioBlk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkGet",
+		FullMethod: "/opi_api.storage.v1.FrontendVirtioBlkService/GetVirtioBlk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FrontendVirtioBlkServiceServer).VirtioBlkGet(ctx, req.(*VirtioBlkGetRequest))
+		return srv.(FrontendVirtioBlkServiceServer).GetVirtioBlk(ctx, req.(*GetVirtioBlkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1031,24 +1031,24 @@ var _FrontendVirtioBlkService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*FrontendVirtioBlkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "VirtioBlkCreate",
-			Handler:    _FrontendVirtioBlkService_VirtioBlkCreate_Handler,
+			MethodName: "CreateVirtioBlk",
+			Handler:    _FrontendVirtioBlkService_CreateVirtioBlk_Handler,
 		},
 		{
-			MethodName: "VirtioBlkDelete",
-			Handler:    _FrontendVirtioBlkService_VirtioBlkDelete_Handler,
+			MethodName: "DeleteVirtioBlk",
+			Handler:    _FrontendVirtioBlkService_DeleteVirtioBlk_Handler,
 		},
 		{
-			MethodName: "VirtioBlkUpdate",
-			Handler:    _FrontendVirtioBlkService_VirtioBlkUpdate_Handler,
+			MethodName: "UpdateVirtioBlk",
+			Handler:    _FrontendVirtioBlkService_UpdateVirtioBlk_Handler,
 		},
 		{
-			MethodName: "VirtioBlkList",
-			Handler:    _FrontendVirtioBlkService_VirtioBlkList_Handler,
+			MethodName: "ListVirtioBlk",
+			Handler:    _FrontendVirtioBlkService_ListVirtioBlk_Handler,
 		},
 		{
-			MethodName: "VirtioBlkGet",
-			Handler:    _FrontendVirtioBlkService_VirtioBlkGet_Handler,
+			MethodName: "GetVirtioBlk",
+			Handler:    _FrontendVirtioBlkService_GetVirtioBlk_Handler,
 		},
 		{
 			MethodName: "VirtioBlkStats",

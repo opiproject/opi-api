@@ -18,159 +18,159 @@ public final class FrontendVirtioScsiServiceGrpc {
   public static final String SERVICE_NAME = "opi_api.storage.v1.FrontendVirtioScsiService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerCreateRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getCreateVirtioScsiControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiControllerCreate",
-      requestType = opi_api.storage.v1.VirtioScsiControllerCreateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateVirtioScsiController",
+      requestType = opi_api.storage.v1.CreateVirtioScsiControllerRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiController.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerCreateRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerCreateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerCreateRequest, opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerCreateMethod;
-    if ((getVirtioScsiControllerCreateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerCreateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getCreateVirtioScsiControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController> getCreateVirtioScsiControllerMethod;
+    if ((getCreateVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiControllerMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiControllerCreateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerCreateMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerCreateMethod = getVirtioScsiControllerCreateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiControllerCreateRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
+        if ((getCreateVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiControllerMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiControllerMethod = getCreateVirtioScsiControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiControllerCreate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVirtioScsiController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerCreateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.CreateVirtioScsiControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiController.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiControllerCreate"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("CreateVirtioScsiController"))
               .build();
         }
       }
     }
-    return getVirtioScsiControllerCreateMethod;
+    return getCreateVirtioScsiControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerDeleteRequest,
-      com.google.protobuf.Empty> getVirtioScsiControllerDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiControllerRequest,
+      com.google.protobuf.Empty> getDeleteVirtioScsiControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiControllerDelete",
-      requestType = opi_api.storage.v1.VirtioScsiControllerDeleteRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVirtioScsiController",
+      requestType = opi_api.storage.v1.DeleteVirtioScsiControllerRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerDeleteRequest,
-      com.google.protobuf.Empty> getVirtioScsiControllerDeleteMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerDeleteRequest, com.google.protobuf.Empty> getVirtioScsiControllerDeleteMethod;
-    if ((getVirtioScsiControllerDeleteMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerDeleteMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiControllerRequest,
+      com.google.protobuf.Empty> getDeleteVirtioScsiControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiControllerRequest, com.google.protobuf.Empty> getDeleteVirtioScsiControllerMethod;
+    if ((getDeleteVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiControllerMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiControllerDeleteMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerDeleteMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerDeleteMethod = getVirtioScsiControllerDeleteMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiControllerDeleteRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getDeleteVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiControllerMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiControllerMethod = getDeleteVirtioScsiControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteVirtioScsiControllerRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiControllerDelete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVirtioScsiController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerDeleteRequest.getDefaultInstance()))
+                  opi_api.storage.v1.DeleteVirtioScsiControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiControllerDelete"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("DeleteVirtioScsiController"))
               .build();
         }
       }
     }
-    return getVirtioScsiControllerDeleteMethod;
+    return getDeleteVirtioScsiControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerUpdateRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getUpdateVirtioScsiControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiControllerUpdate",
-      requestType = opi_api.storage.v1.VirtioScsiControllerUpdateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVirtioScsiController",
+      requestType = opi_api.storage.v1.UpdateVirtioScsiControllerRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiController.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerUpdateRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerUpdateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerUpdateRequest, opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerUpdateMethod;
-    if ((getVirtioScsiControllerUpdateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerUpdateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getUpdateVirtioScsiControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController> getUpdateVirtioScsiControllerMethod;
+    if ((getUpdateVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiControllerMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiControllerUpdateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerUpdateMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerUpdateMethod = getVirtioScsiControllerUpdateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiControllerUpdateRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
+        if ((getUpdateVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiControllerMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiControllerMethod = getUpdateVirtioScsiControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiControllerUpdate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVirtioScsiController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerUpdateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.UpdateVirtioScsiControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiController.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiControllerUpdate"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("UpdateVirtioScsiController"))
               .build();
         }
       }
     }
-    return getVirtioScsiControllerUpdateMethod;
+    return getUpdateVirtioScsiControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerListRequest,
-      opi_api.storage.v1.VirtioScsiControllerListResponse> getVirtioScsiControllerListMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiControllerRequest,
+      opi_api.storage.v1.ListVirtioScsiControllerResponse> getListVirtioScsiControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiControllerList",
-      requestType = opi_api.storage.v1.VirtioScsiControllerListRequest.class,
-      responseType = opi_api.storage.v1.VirtioScsiControllerListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListVirtioScsiController",
+      requestType = opi_api.storage.v1.ListVirtioScsiControllerRequest.class,
+      responseType = opi_api.storage.v1.ListVirtioScsiControllerResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerListRequest,
-      opi_api.storage.v1.VirtioScsiControllerListResponse> getVirtioScsiControllerListMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerListRequest, opi_api.storage.v1.VirtioScsiControllerListResponse> getVirtioScsiControllerListMethod;
-    if ((getVirtioScsiControllerListMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerListMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiControllerRequest,
+      opi_api.storage.v1.ListVirtioScsiControllerResponse> getListVirtioScsiControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiControllerRequest, opi_api.storage.v1.ListVirtioScsiControllerResponse> getListVirtioScsiControllerMethod;
+    if ((getListVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getListVirtioScsiControllerMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiControllerListMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerListMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerListMethod = getVirtioScsiControllerListMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiControllerListRequest, opi_api.storage.v1.VirtioScsiControllerListResponse>newBuilder()
+        if ((getListVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getListVirtioScsiControllerMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getListVirtioScsiControllerMethod = getListVirtioScsiControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListVirtioScsiControllerRequest, opi_api.storage.v1.ListVirtioScsiControllerResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiControllerList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListVirtioScsiController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerListRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListVirtioScsiControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiControllerList"))
+                  opi_api.storage.v1.ListVirtioScsiControllerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("ListVirtioScsiController"))
               .build();
         }
       }
     }
-    return getVirtioScsiControllerListMethod;
+    return getListVirtioScsiControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerGetRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getGetVirtioScsiControllerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiControllerGet",
-      requestType = opi_api.storage.v1.VirtioScsiControllerGetRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetVirtioScsiController",
+      requestType = opi_api.storage.v1.GetVirtioScsiControllerRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiController.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerGetRequest,
-      opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerGetRequest, opi_api.storage.v1.VirtioScsiController> getVirtioScsiControllerGetMethod;
-    if ((getVirtioScsiControllerGetMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerGetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiControllerRequest,
+      opi_api.storage.v1.VirtioScsiController> getGetVirtioScsiControllerMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController> getGetVirtioScsiControllerMethod;
+    if ((getGetVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getGetVirtioScsiControllerMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiControllerGetMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerGetMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiControllerGetMethod = getVirtioScsiControllerGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiControllerGetRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
+        if ((getGetVirtioScsiControllerMethod = FrontendVirtioScsiServiceGrpc.getGetVirtioScsiControllerMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getGetVirtioScsiControllerMethod = getGetVirtioScsiControllerMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetVirtioScsiControllerRequest, opi_api.storage.v1.VirtioScsiController>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiControllerGet"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVirtioScsiController"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiControllerGetRequest.getDefaultInstance()))
+                  opi_api.storage.v1.GetVirtioScsiControllerRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiController.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiControllerGet"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("GetVirtioScsiController"))
               .build();
         }
       }
     }
-    return getVirtioScsiControllerGetMethod;
+    return getGetVirtioScsiControllerMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiControllerStatsRequest,
@@ -204,159 +204,159 @@ public final class FrontendVirtioScsiServiceGrpc {
     return getVirtioScsiControllerStatsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunCreateRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getCreateVirtioScsiLunMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiLunCreate",
-      requestType = opi_api.storage.v1.VirtioScsiLunCreateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateVirtioScsiLun",
+      requestType = opi_api.storage.v1.CreateVirtioScsiLunRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiLun.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunCreateRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunCreateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunCreateRequest, opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunCreateMethod;
-    if ((getVirtioScsiLunCreateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunCreateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getCreateVirtioScsiLunMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun> getCreateVirtioScsiLunMethod;
+    if ((getCreateVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiLunMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiLunCreateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunCreateMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiLunCreateMethod = getVirtioScsiLunCreateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiLunCreateRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
+        if ((getCreateVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiLunMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getCreateVirtioScsiLunMethod = getCreateVirtioScsiLunMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiLunCreate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVirtioScsiLun"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunCreateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.CreateVirtioScsiLunRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiLun.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiLunCreate"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("CreateVirtioScsiLun"))
               .build();
         }
       }
     }
-    return getVirtioScsiLunCreateMethod;
+    return getCreateVirtioScsiLunMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunDeleteRequest,
-      com.google.protobuf.Empty> getVirtioScsiLunDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiLunRequest,
+      com.google.protobuf.Empty> getDeleteVirtioScsiLunMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiLunDelete",
-      requestType = opi_api.storage.v1.VirtioScsiLunDeleteRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVirtioScsiLun",
+      requestType = opi_api.storage.v1.DeleteVirtioScsiLunRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunDeleteRequest,
-      com.google.protobuf.Empty> getVirtioScsiLunDeleteMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunDeleteRequest, com.google.protobuf.Empty> getVirtioScsiLunDeleteMethod;
-    if ((getVirtioScsiLunDeleteMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunDeleteMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiLunRequest,
+      com.google.protobuf.Empty> getDeleteVirtioScsiLunMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteVirtioScsiLunRequest, com.google.protobuf.Empty> getDeleteVirtioScsiLunMethod;
+    if ((getDeleteVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiLunMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiLunDeleteMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunDeleteMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiLunDeleteMethod = getVirtioScsiLunDeleteMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiLunDeleteRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getDeleteVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiLunMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getDeleteVirtioScsiLunMethod = getDeleteVirtioScsiLunMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteVirtioScsiLunRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiLunDelete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVirtioScsiLun"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunDeleteRequest.getDefaultInstance()))
+                  opi_api.storage.v1.DeleteVirtioScsiLunRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiLunDelete"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("DeleteVirtioScsiLun"))
               .build();
         }
       }
     }
-    return getVirtioScsiLunDeleteMethod;
+    return getDeleteVirtioScsiLunMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunUpdateRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getUpdateVirtioScsiLunMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiLunUpdate",
-      requestType = opi_api.storage.v1.VirtioScsiLunUpdateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVirtioScsiLun",
+      requestType = opi_api.storage.v1.UpdateVirtioScsiLunRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiLun.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunUpdateRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunUpdateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunUpdateRequest, opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunUpdateMethod;
-    if ((getVirtioScsiLunUpdateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunUpdateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getUpdateVirtioScsiLunMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun> getUpdateVirtioScsiLunMethod;
+    if ((getUpdateVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiLunMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiLunUpdateMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunUpdateMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiLunUpdateMethod = getVirtioScsiLunUpdateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiLunUpdateRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
+        if ((getUpdateVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiLunMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getUpdateVirtioScsiLunMethod = getUpdateVirtioScsiLunMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiLunUpdate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVirtioScsiLun"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunUpdateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.UpdateVirtioScsiLunRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiLun.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiLunUpdate"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("UpdateVirtioScsiLun"))
               .build();
         }
       }
     }
-    return getVirtioScsiLunUpdateMethod;
+    return getUpdateVirtioScsiLunMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunListRequest,
-      opi_api.storage.v1.VirtioScsiLunListResponse> getVirtioScsiLunListMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiLunRequest,
+      opi_api.storage.v1.ListVirtioScsiLunResponse> getListVirtioScsiLunMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiLunList",
-      requestType = opi_api.storage.v1.VirtioScsiLunListRequest.class,
-      responseType = opi_api.storage.v1.VirtioScsiLunListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListVirtioScsiLun",
+      requestType = opi_api.storage.v1.ListVirtioScsiLunRequest.class,
+      responseType = opi_api.storage.v1.ListVirtioScsiLunResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunListRequest,
-      opi_api.storage.v1.VirtioScsiLunListResponse> getVirtioScsiLunListMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunListRequest, opi_api.storage.v1.VirtioScsiLunListResponse> getVirtioScsiLunListMethod;
-    if ((getVirtioScsiLunListMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunListMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiLunRequest,
+      opi_api.storage.v1.ListVirtioScsiLunResponse> getListVirtioScsiLunMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListVirtioScsiLunRequest, opi_api.storage.v1.ListVirtioScsiLunResponse> getListVirtioScsiLunMethod;
+    if ((getListVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getListVirtioScsiLunMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiLunListMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunListMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiLunListMethod = getVirtioScsiLunListMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiLunListRequest, opi_api.storage.v1.VirtioScsiLunListResponse>newBuilder()
+        if ((getListVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getListVirtioScsiLunMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getListVirtioScsiLunMethod = getListVirtioScsiLunMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListVirtioScsiLunRequest, opi_api.storage.v1.ListVirtioScsiLunResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiLunList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListVirtioScsiLun"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunListRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListVirtioScsiLunRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiLunList"))
+                  opi_api.storage.v1.ListVirtioScsiLunResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("ListVirtioScsiLun"))
               .build();
         }
       }
     }
-    return getVirtioScsiLunListMethod;
+    return getListVirtioScsiLunMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunGetRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getGetVirtioScsiLunMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VirtioScsiLunGet",
-      requestType = opi_api.storage.v1.VirtioScsiLunGetRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetVirtioScsiLun",
+      requestType = opi_api.storage.v1.GetVirtioScsiLunRequest.class,
       responseType = opi_api.storage.v1.VirtioScsiLun.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunGetRequest,
-      opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunGetRequest, opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLunGetMethod;
-    if ((getVirtioScsiLunGetMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunGetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiLunRequest,
+      opi_api.storage.v1.VirtioScsiLun> getGetVirtioScsiLunMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun> getGetVirtioScsiLunMethod;
+    if ((getGetVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getGetVirtioScsiLunMethod) == null) {
       synchronized (FrontendVirtioScsiServiceGrpc.class) {
-        if ((getVirtioScsiLunGetMethod = FrontendVirtioScsiServiceGrpc.getVirtioScsiLunGetMethod) == null) {
-          FrontendVirtioScsiServiceGrpc.getVirtioScsiLunGetMethod = getVirtioScsiLunGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.VirtioScsiLunGetRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
+        if ((getGetVirtioScsiLunMethod = FrontendVirtioScsiServiceGrpc.getGetVirtioScsiLunMethod) == null) {
+          FrontendVirtioScsiServiceGrpc.getGetVirtioScsiLunMethod = getGetVirtioScsiLunMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetVirtioScsiLunRequest, opi_api.storage.v1.VirtioScsiLun>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VirtioScsiLunGet"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVirtioScsiLun"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.VirtioScsiLunGetRequest.getDefaultInstance()))
+                  opi_api.storage.v1.GetVirtioScsiLunRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.VirtioScsiLun.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("VirtioScsiLunGet"))
+              .setSchemaDescriptor(new FrontendVirtioScsiServiceMethodDescriptorSupplier("GetVirtioScsiLun"))
               .build();
         }
       }
     }
-    return getVirtioScsiLunGetMethod;
+    return getGetVirtioScsiLunMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.VirtioScsiLunStatsRequest,
@@ -443,37 +443,37 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public void virtioScsiControllerCreate(opi_api.storage.v1.VirtioScsiControllerCreateRequest request,
+    public void createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiControllerCreateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVirtioScsiControllerMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerDelete(opi_api.storage.v1.VirtioScsiControllerDeleteRequest request,
+    public void deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiControllerDeleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVirtioScsiControllerMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerUpdate(opi_api.storage.v1.VirtioScsiControllerUpdateRequest request,
+    public void updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiControllerUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVirtioScsiControllerMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerList(opi_api.storage.v1.VirtioScsiControllerListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiControllerListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiControllerListMethod(), responseObserver);
+    public void listVirtioScsiController(opi_api.storage.v1.ListVirtioScsiControllerRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiControllerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVirtioScsiControllerMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerGet(opi_api.storage.v1.VirtioScsiControllerGetRequest request,
+    public void getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiControllerGetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVirtioScsiControllerMethod(), responseObserver);
     }
 
     /**
@@ -485,37 +485,37 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public void virtioScsiLunCreate(opi_api.storage.v1.VirtioScsiLunCreateRequest request,
+    public void createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiLunCreateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVirtioScsiLunMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunDelete(opi_api.storage.v1.VirtioScsiLunDeleteRequest request,
+    public void deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiLunDeleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVirtioScsiLunMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunUpdate(opi_api.storage.v1.VirtioScsiLunUpdateRequest request,
+    public void updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiLunUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVirtioScsiLunMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunList(opi_api.storage.v1.VirtioScsiLunListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLunListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiLunListMethod(), responseObserver);
+    public void listVirtioScsiLun(opi_api.storage.v1.ListVirtioScsiLunRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiLunResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVirtioScsiLunMethod(), responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunGet(opi_api.storage.v1.VirtioScsiLunGetRequest request,
+    public void getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVirtioScsiLunGetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVirtioScsiLunMethod(), responseObserver);
     }
 
     /**
@@ -528,40 +528,40 @@ public final class FrontendVirtioScsiServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getVirtioScsiControllerCreateMethod(),
+            getCreateVirtioScsiControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiControllerCreateRequest,
+                opi_api.storage.v1.CreateVirtioScsiControllerRequest,
                 opi_api.storage.v1.VirtioScsiController>(
-                  this, METHODID_VIRTIO_SCSI_CONTROLLER_CREATE)))
+                  this, METHODID_CREATE_VIRTIO_SCSI_CONTROLLER)))
           .addMethod(
-            getVirtioScsiControllerDeleteMethod(),
+            getDeleteVirtioScsiControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiControllerDeleteRequest,
+                opi_api.storage.v1.DeleteVirtioScsiControllerRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_VIRTIO_SCSI_CONTROLLER_DELETE)))
+                  this, METHODID_DELETE_VIRTIO_SCSI_CONTROLLER)))
           .addMethod(
-            getVirtioScsiControllerUpdateMethod(),
+            getUpdateVirtioScsiControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiControllerUpdateRequest,
+                opi_api.storage.v1.UpdateVirtioScsiControllerRequest,
                 opi_api.storage.v1.VirtioScsiController>(
-                  this, METHODID_VIRTIO_SCSI_CONTROLLER_UPDATE)))
+                  this, METHODID_UPDATE_VIRTIO_SCSI_CONTROLLER)))
           .addMethod(
-            getVirtioScsiControllerListMethod(),
+            getListVirtioScsiControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiControllerListRequest,
-                opi_api.storage.v1.VirtioScsiControllerListResponse>(
-                  this, METHODID_VIRTIO_SCSI_CONTROLLER_LIST)))
+                opi_api.storage.v1.ListVirtioScsiControllerRequest,
+                opi_api.storage.v1.ListVirtioScsiControllerResponse>(
+                  this, METHODID_LIST_VIRTIO_SCSI_CONTROLLER)))
           .addMethod(
-            getVirtioScsiControllerGetMethod(),
+            getGetVirtioScsiControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiControllerGetRequest,
+                opi_api.storage.v1.GetVirtioScsiControllerRequest,
                 opi_api.storage.v1.VirtioScsiController>(
-                  this, METHODID_VIRTIO_SCSI_CONTROLLER_GET)))
+                  this, METHODID_GET_VIRTIO_SCSI_CONTROLLER)))
           .addMethod(
             getVirtioScsiControllerStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -570,40 +570,40 @@ public final class FrontendVirtioScsiServiceGrpc {
                 opi_api.storage.v1.VirtioScsiControllerStatsResponse>(
                   this, METHODID_VIRTIO_SCSI_CONTROLLER_STATS)))
           .addMethod(
-            getVirtioScsiLunCreateMethod(),
+            getCreateVirtioScsiLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiLunCreateRequest,
+                opi_api.storage.v1.CreateVirtioScsiLunRequest,
                 opi_api.storage.v1.VirtioScsiLun>(
-                  this, METHODID_VIRTIO_SCSI_LUN_CREATE)))
+                  this, METHODID_CREATE_VIRTIO_SCSI_LUN)))
           .addMethod(
-            getVirtioScsiLunDeleteMethod(),
+            getDeleteVirtioScsiLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiLunDeleteRequest,
+                opi_api.storage.v1.DeleteVirtioScsiLunRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_VIRTIO_SCSI_LUN_DELETE)))
+                  this, METHODID_DELETE_VIRTIO_SCSI_LUN)))
           .addMethod(
-            getVirtioScsiLunUpdateMethod(),
+            getUpdateVirtioScsiLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiLunUpdateRequest,
+                opi_api.storage.v1.UpdateVirtioScsiLunRequest,
                 opi_api.storage.v1.VirtioScsiLun>(
-                  this, METHODID_VIRTIO_SCSI_LUN_UPDATE)))
+                  this, METHODID_UPDATE_VIRTIO_SCSI_LUN)))
           .addMethod(
-            getVirtioScsiLunListMethod(),
+            getListVirtioScsiLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiLunListRequest,
-                opi_api.storage.v1.VirtioScsiLunListResponse>(
-                  this, METHODID_VIRTIO_SCSI_LUN_LIST)))
+                opi_api.storage.v1.ListVirtioScsiLunRequest,
+                opi_api.storage.v1.ListVirtioScsiLunResponse>(
+                  this, METHODID_LIST_VIRTIO_SCSI_LUN)))
           .addMethod(
-            getVirtioScsiLunGetMethod(),
+            getGetVirtioScsiLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.VirtioScsiLunGetRequest,
+                opi_api.storage.v1.GetVirtioScsiLunRequest,
                 opi_api.storage.v1.VirtioScsiLun>(
-                  this, METHODID_VIRTIO_SCSI_LUN_GET)))
+                  this, METHODID_GET_VIRTIO_SCSI_LUN)))
           .addMethod(
             getVirtioScsiLunStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -634,42 +634,42 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public void virtioScsiControllerCreate(opi_api.storage.v1.VirtioScsiControllerCreateRequest request,
+    public void createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerCreateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateVirtioScsiControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerDelete(opi_api.storage.v1.VirtioScsiControllerDeleteRequest request,
+    public void deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteVirtioScsiControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerUpdate(opi_api.storage.v1.VirtioScsiControllerUpdateRequest request,
+    public void updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerUpdateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateVirtioScsiControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerList(opi_api.storage.v1.VirtioScsiControllerListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiControllerListResponse> responseObserver) {
+    public void listVirtioScsiController(opi_api.storage.v1.ListVirtioScsiControllerRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiControllerResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListVirtioScsiControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiControllerGet(opi_api.storage.v1.VirtioScsiControllerGetRequest request,
+    public void getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerGetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetVirtioScsiControllerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -682,42 +682,42 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public void virtioScsiLunCreate(opi_api.storage.v1.VirtioScsiLunCreateRequest request,
+    public void createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiLunCreateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateVirtioScsiLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunDelete(opi_api.storage.v1.VirtioScsiLunDeleteRequest request,
+    public void deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiLunDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteVirtioScsiLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunUpdate(opi_api.storage.v1.VirtioScsiLunUpdateRequest request,
+    public void updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiLunUpdateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateVirtioScsiLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunList(opi_api.storage.v1.VirtioScsiLunListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLunListResponse> responseObserver) {
+    public void listVirtioScsiLun(opi_api.storage.v1.ListVirtioScsiLunRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiLunResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiLunListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListVirtioScsiLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void virtioScsiLunGet(opi_api.storage.v1.VirtioScsiLunGetRequest request,
+    public void getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVirtioScsiLunGetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetVirtioScsiLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -748,37 +748,37 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiController virtioScsiControllerCreate(opi_api.storage.v1.VirtioScsiControllerCreateRequest request) {
+    public opi_api.storage.v1.VirtioScsiController createVirtioScsiController(opi_api.storage.v1.CreateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiControllerCreateMethod(), getCallOptions(), request);
+          getChannel(), getCreateVirtioScsiControllerMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty virtioScsiControllerDelete(opi_api.storage.v1.VirtioScsiControllerDeleteRequest request) {
+    public com.google.protobuf.Empty deleteVirtioScsiController(opi_api.storage.v1.DeleteVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiControllerDeleteMethod(), getCallOptions(), request);
+          getChannel(), getDeleteVirtioScsiControllerMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiController virtioScsiControllerUpdate(opi_api.storage.v1.VirtioScsiControllerUpdateRequest request) {
+    public opi_api.storage.v1.VirtioScsiController updateVirtioScsiController(opi_api.storage.v1.UpdateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiControllerUpdateMethod(), getCallOptions(), request);
+          getChannel(), getUpdateVirtioScsiControllerMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiControllerListResponse virtioScsiControllerList(opi_api.storage.v1.VirtioScsiControllerListRequest request) {
+    public opi_api.storage.v1.ListVirtioScsiControllerResponse listVirtioScsiController(opi_api.storage.v1.ListVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiControllerListMethod(), getCallOptions(), request);
+          getChannel(), getListVirtioScsiControllerMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiController virtioScsiControllerGet(opi_api.storage.v1.VirtioScsiControllerGetRequest request) {
+    public opi_api.storage.v1.VirtioScsiController getVirtioScsiController(opi_api.storage.v1.GetVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiControllerGetMethod(), getCallOptions(), request);
+          getChannel(), getGetVirtioScsiControllerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -790,37 +790,37 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiLun virtioScsiLunCreate(opi_api.storage.v1.VirtioScsiLunCreateRequest request) {
+    public opi_api.storage.v1.VirtioScsiLun createVirtioScsiLun(opi_api.storage.v1.CreateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiLunCreateMethod(), getCallOptions(), request);
+          getChannel(), getCreateVirtioScsiLunMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty virtioScsiLunDelete(opi_api.storage.v1.VirtioScsiLunDeleteRequest request) {
+    public com.google.protobuf.Empty deleteVirtioScsiLun(opi_api.storage.v1.DeleteVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiLunDeleteMethod(), getCallOptions(), request);
+          getChannel(), getDeleteVirtioScsiLunMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiLun virtioScsiLunUpdate(opi_api.storage.v1.VirtioScsiLunUpdateRequest request) {
+    public opi_api.storage.v1.VirtioScsiLun updateVirtioScsiLun(opi_api.storage.v1.UpdateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiLunUpdateMethod(), getCallOptions(), request);
+          getChannel(), getUpdateVirtioScsiLunMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiLunListResponse virtioScsiLunList(opi_api.storage.v1.VirtioScsiLunListRequest request) {
+    public opi_api.storage.v1.ListVirtioScsiLunResponse listVirtioScsiLun(opi_api.storage.v1.ListVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiLunListMethod(), getCallOptions(), request);
+          getChannel(), getListVirtioScsiLunMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.VirtioScsiLun virtioScsiLunGet(opi_api.storage.v1.VirtioScsiLunGetRequest request) {
+    public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun(opi_api.storage.v1.GetVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVirtioScsiLunGetMethod(), getCallOptions(), request);
+          getChannel(), getGetVirtioScsiLunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -850,42 +850,42 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> virtioScsiControllerCreate(
-        opi_api.storage.v1.VirtioScsiControllerCreateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> createVirtioScsiController(
+        opi_api.storage.v1.CreateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerCreateMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateVirtioScsiControllerMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> virtioScsiControllerDelete(
-        opi_api.storage.v1.VirtioScsiControllerDeleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioScsiController(
+        opi_api.storage.v1.DeleteVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteVirtioScsiControllerMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> virtioScsiControllerUpdate(
-        opi_api.storage.v1.VirtioScsiControllerUpdateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> updateVirtioScsiController(
+        opi_api.storage.v1.UpdateVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerUpdateMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateVirtioScsiControllerMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiControllerListResponse> virtioScsiControllerList(
-        opi_api.storage.v1.VirtioScsiControllerListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioScsiControllerResponse> listVirtioScsiController(
+        opi_api.storage.v1.ListVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerListMethod(), getCallOptions()), request);
+          getChannel().newCall(getListVirtioScsiControllerMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> virtioScsiControllerGet(
-        opi_api.storage.v1.VirtioScsiControllerGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiController> getVirtioScsiController(
+        opi_api.storage.v1.GetVirtioScsiControllerRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiControllerGetMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetVirtioScsiControllerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -898,42 +898,42 @@ public final class FrontendVirtioScsiServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> virtioScsiLunCreate(
-        opi_api.storage.v1.VirtioScsiLunCreateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> createVirtioScsiLun(
+        opi_api.storage.v1.CreateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiLunCreateMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateVirtioScsiLunMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> virtioScsiLunDelete(
-        opi_api.storage.v1.VirtioScsiLunDeleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteVirtioScsiLun(
+        opi_api.storage.v1.DeleteVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiLunDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteVirtioScsiLunMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> virtioScsiLunUpdate(
-        opi_api.storage.v1.VirtioScsiLunUpdateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> updateVirtioScsiLun(
+        opi_api.storage.v1.UpdateVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiLunUpdateMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateVirtioScsiLunMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLunListResponse> virtioScsiLunList(
-        opi_api.storage.v1.VirtioScsiLunListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListVirtioScsiLunResponse> listVirtioScsiLun(
+        opi_api.storage.v1.ListVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiLunListMethod(), getCallOptions()), request);
+          getChannel().newCall(getListVirtioScsiLunMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> virtioScsiLunGet(
-        opi_api.storage.v1.VirtioScsiLunGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.VirtioScsiLun> getVirtioScsiLun(
+        opi_api.storage.v1.GetVirtioScsiLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVirtioScsiLunGetMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetVirtioScsiLunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -945,17 +945,17 @@ public final class FrontendVirtioScsiServiceGrpc {
     }
   }
 
-  private static final int METHODID_VIRTIO_SCSI_CONTROLLER_CREATE = 0;
-  private static final int METHODID_VIRTIO_SCSI_CONTROLLER_DELETE = 1;
-  private static final int METHODID_VIRTIO_SCSI_CONTROLLER_UPDATE = 2;
-  private static final int METHODID_VIRTIO_SCSI_CONTROLLER_LIST = 3;
-  private static final int METHODID_VIRTIO_SCSI_CONTROLLER_GET = 4;
+  private static final int METHODID_CREATE_VIRTIO_SCSI_CONTROLLER = 0;
+  private static final int METHODID_DELETE_VIRTIO_SCSI_CONTROLLER = 1;
+  private static final int METHODID_UPDATE_VIRTIO_SCSI_CONTROLLER = 2;
+  private static final int METHODID_LIST_VIRTIO_SCSI_CONTROLLER = 3;
+  private static final int METHODID_GET_VIRTIO_SCSI_CONTROLLER = 4;
   private static final int METHODID_VIRTIO_SCSI_CONTROLLER_STATS = 5;
-  private static final int METHODID_VIRTIO_SCSI_LUN_CREATE = 6;
-  private static final int METHODID_VIRTIO_SCSI_LUN_DELETE = 7;
-  private static final int METHODID_VIRTIO_SCSI_LUN_UPDATE = 8;
-  private static final int METHODID_VIRTIO_SCSI_LUN_LIST = 9;
-  private static final int METHODID_VIRTIO_SCSI_LUN_GET = 10;
+  private static final int METHODID_CREATE_VIRTIO_SCSI_LUN = 6;
+  private static final int METHODID_DELETE_VIRTIO_SCSI_LUN = 7;
+  private static final int METHODID_UPDATE_VIRTIO_SCSI_LUN = 8;
+  private static final int METHODID_LIST_VIRTIO_SCSI_LUN = 9;
+  private static final int METHODID_GET_VIRTIO_SCSI_LUN = 10;
   private static final int METHODID_VIRTIO_SCSI_LUN_STATS = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -975,48 +975,48 @@ public final class FrontendVirtioScsiServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_VIRTIO_SCSI_CONTROLLER_CREATE:
-          serviceImpl.virtioScsiControllerCreate((opi_api.storage.v1.VirtioScsiControllerCreateRequest) request,
+        case METHODID_CREATE_VIRTIO_SCSI_CONTROLLER:
+          serviceImpl.createVirtioScsiController((opi_api.storage.v1.CreateVirtioScsiControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_CONTROLLER_DELETE:
-          serviceImpl.virtioScsiControllerDelete((opi_api.storage.v1.VirtioScsiControllerDeleteRequest) request,
+        case METHODID_DELETE_VIRTIO_SCSI_CONTROLLER:
+          serviceImpl.deleteVirtioScsiController((opi_api.storage.v1.DeleteVirtioScsiControllerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_CONTROLLER_UPDATE:
-          serviceImpl.virtioScsiControllerUpdate((opi_api.storage.v1.VirtioScsiControllerUpdateRequest) request,
+        case METHODID_UPDATE_VIRTIO_SCSI_CONTROLLER:
+          serviceImpl.updateVirtioScsiController((opi_api.storage.v1.UpdateVirtioScsiControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_CONTROLLER_LIST:
-          serviceImpl.virtioScsiControllerList((opi_api.storage.v1.VirtioScsiControllerListRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiControllerListResponse>) responseObserver);
+        case METHODID_LIST_VIRTIO_SCSI_CONTROLLER:
+          serviceImpl.listVirtioScsiController((opi_api.storage.v1.ListVirtioScsiControllerRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiControllerResponse>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_CONTROLLER_GET:
-          serviceImpl.virtioScsiControllerGet((opi_api.storage.v1.VirtioScsiControllerGetRequest) request,
+        case METHODID_GET_VIRTIO_SCSI_CONTROLLER:
+          serviceImpl.getVirtioScsiController((opi_api.storage.v1.GetVirtioScsiControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiController>) responseObserver);
           break;
         case METHODID_VIRTIO_SCSI_CONTROLLER_STATS:
           serviceImpl.virtioScsiControllerStats((opi_api.storage.v1.VirtioScsiControllerStatsRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiControllerStatsResponse>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_LUN_CREATE:
-          serviceImpl.virtioScsiLunCreate((opi_api.storage.v1.VirtioScsiLunCreateRequest) request,
+        case METHODID_CREATE_VIRTIO_SCSI_LUN:
+          serviceImpl.createVirtioScsiLun((opi_api.storage.v1.CreateVirtioScsiLunRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_LUN_DELETE:
-          serviceImpl.virtioScsiLunDelete((opi_api.storage.v1.VirtioScsiLunDeleteRequest) request,
+        case METHODID_DELETE_VIRTIO_SCSI_LUN:
+          serviceImpl.deleteVirtioScsiLun((opi_api.storage.v1.DeleteVirtioScsiLunRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_LUN_UPDATE:
-          serviceImpl.virtioScsiLunUpdate((opi_api.storage.v1.VirtioScsiLunUpdateRequest) request,
+        case METHODID_UPDATE_VIRTIO_SCSI_LUN:
+          serviceImpl.updateVirtioScsiLun((opi_api.storage.v1.UpdateVirtioScsiLunRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_LUN_LIST:
-          serviceImpl.virtioScsiLunList((opi_api.storage.v1.VirtioScsiLunListRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLunListResponse>) responseObserver);
+        case METHODID_LIST_VIRTIO_SCSI_LUN:
+          serviceImpl.listVirtioScsiLun((opi_api.storage.v1.ListVirtioScsiLunRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListVirtioScsiLunResponse>) responseObserver);
           break;
-        case METHODID_VIRTIO_SCSI_LUN_GET:
-          serviceImpl.virtioScsiLunGet((opi_api.storage.v1.VirtioScsiLunGetRequest) request,
+        case METHODID_GET_VIRTIO_SCSI_LUN:
+          serviceImpl.getVirtioScsiLun((opi_api.storage.v1.GetVirtioScsiLunRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.VirtioScsiLun>) responseObserver);
           break;
         case METHODID_VIRTIO_SCSI_LUN_STATS:
@@ -1084,17 +1084,17 @@ public final class FrontendVirtioScsiServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new FrontendVirtioScsiServiceFileDescriptorSupplier())
-              .addMethod(getVirtioScsiControllerCreateMethod())
-              .addMethod(getVirtioScsiControllerDeleteMethod())
-              .addMethod(getVirtioScsiControllerUpdateMethod())
-              .addMethod(getVirtioScsiControllerListMethod())
-              .addMethod(getVirtioScsiControllerGetMethod())
+              .addMethod(getCreateVirtioScsiControllerMethod())
+              .addMethod(getDeleteVirtioScsiControllerMethod())
+              .addMethod(getUpdateVirtioScsiControllerMethod())
+              .addMethod(getListVirtioScsiControllerMethod())
+              .addMethod(getGetVirtioScsiControllerMethod())
               .addMethod(getVirtioScsiControllerStatsMethod())
-              .addMethod(getVirtioScsiLunCreateMethod())
-              .addMethod(getVirtioScsiLunDeleteMethod())
-              .addMethod(getVirtioScsiLunUpdateMethod())
-              .addMethod(getVirtioScsiLunListMethod())
-              .addMethod(getVirtioScsiLunGetMethod())
+              .addMethod(getCreateVirtioScsiLunMethod())
+              .addMethod(getDeleteVirtioScsiLunMethod())
+              .addMethod(getUpdateVirtioScsiLunMethod())
+              .addMethod(getListVirtioScsiLunMethod())
+              .addMethod(getGetVirtioScsiLunMethod())
               .addMethod(getVirtioScsiLunStatsMethod())
               .build();
         }

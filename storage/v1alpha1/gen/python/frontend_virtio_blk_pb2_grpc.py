@@ -16,29 +16,29 @@ class FrontendVirtioBlkServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.VirtioBlkCreate = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkCreate',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkCreateRequest.SerializeToString,
+        self.CreateVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/CreateVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.CreateVirtioBlkRequest.SerializeToString,
                 response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
-        self.VirtioBlkDelete = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkDelete',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkDeleteRequest.SerializeToString,
+        self.DeleteVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/DeleteVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.DeleteVirtioBlkRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.VirtioBlkUpdate = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkUpdate',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.SerializeToString,
+        self.UpdateVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/UpdateVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.UpdateVirtioBlkRequest.SerializeToString,
                 response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
-        self.VirtioBlkList = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkList',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkListRequest.SerializeToString,
-                response_deserializer=frontend__virtio__blk__pb2.VirtioBlkListResponse.FromString,
+        self.ListVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/ListVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.ListVirtioBlkRequest.SerializeToString,
+                response_deserializer=frontend__virtio__blk__pb2.ListVirtioBlkResponse.FromString,
                 )
-        self.VirtioBlkGet = channel.unary_unary(
-                '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkGet',
-                request_serializer=frontend__virtio__blk__pb2.VirtioBlkGetRequest.SerializeToString,
+        self.GetVirtioBlk = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendVirtioBlkService/GetVirtioBlk',
+                request_serializer=frontend__virtio__blk__pb2.GetVirtioBlkRequest.SerializeToString,
                 response_deserializer=frontend__virtio__blk__pb2.VirtioBlk.FromString,
                 )
         self.VirtioBlkStats = channel.unary_unary(
@@ -52,31 +52,31 @@ class FrontendVirtioBlkServiceServicer(object):
     """Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
     """
 
-    def VirtioBlkCreate(self, request, context):
+    def CreateVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioBlkDelete(self, request, context):
+    def DeleteVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioBlkUpdate(self, request, context):
+    def UpdateVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioBlkList(self, request, context):
+    def ListVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VirtioBlkGet(self, request, context):
+    def GetVirtioBlk(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -91,29 +91,29 @@ class FrontendVirtioBlkServiceServicer(object):
 
 def add_FrontendVirtioBlkServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'VirtioBlkCreate': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkCreate,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkCreateRequest.FromString,
+            'CreateVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.CreateVirtioBlkRequest.FromString,
                     response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
-            'VirtioBlkDelete': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkDelete,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkDeleteRequest.FromString,
+            'DeleteVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.DeleteVirtioBlkRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'VirtioBlkUpdate': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkUpdate,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.FromString,
+            'UpdateVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.UpdateVirtioBlkRequest.FromString,
                     response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
-            'VirtioBlkList': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkList,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkListRequest.FromString,
-                    response_serializer=frontend__virtio__blk__pb2.VirtioBlkListResponse.SerializeToString,
+            'ListVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.ListVirtioBlkRequest.FromString,
+                    response_serializer=frontend__virtio__blk__pb2.ListVirtioBlkResponse.SerializeToString,
             ),
-            'VirtioBlkGet': grpc.unary_unary_rpc_method_handler(
-                    servicer.VirtioBlkGet,
-                    request_deserializer=frontend__virtio__blk__pb2.VirtioBlkGetRequest.FromString,
+            'GetVirtioBlk': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetVirtioBlk,
+                    request_deserializer=frontend__virtio__blk__pb2.GetVirtioBlkRequest.FromString,
                     response_serializer=frontend__virtio__blk__pb2.VirtioBlk.SerializeToString,
             ),
             'VirtioBlkStats': grpc.unary_unary_rpc_method_handler(
@@ -133,7 +133,7 @@ class FrontendVirtioBlkService(object):
     """
 
     @staticmethod
-    def VirtioBlkCreate(request,
+    def CreateVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -143,14 +143,14 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkCreate',
-            frontend__virtio__blk__pb2.VirtioBlkCreateRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/CreateVirtioBlk',
+            frontend__virtio__blk__pb2.CreateVirtioBlkRequest.SerializeToString,
             frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioBlkDelete(request,
+    def DeleteVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -160,14 +160,14 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkDelete',
-            frontend__virtio__blk__pb2.VirtioBlkDeleteRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/DeleteVirtioBlk',
+            frontend__virtio__blk__pb2.DeleteVirtioBlkRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioBlkUpdate(request,
+    def UpdateVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -177,14 +177,14 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkUpdate',
-            frontend__virtio__blk__pb2.VirtioBlkUpdateRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/UpdateVirtioBlk',
+            frontend__virtio__blk__pb2.UpdateVirtioBlkRequest.SerializeToString,
             frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioBlkList(request,
+    def ListVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -194,14 +194,14 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkList',
-            frontend__virtio__blk__pb2.VirtioBlkListRequest.SerializeToString,
-            frontend__virtio__blk__pb2.VirtioBlkListResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/ListVirtioBlk',
+            frontend__virtio__blk__pb2.ListVirtioBlkRequest.SerializeToString,
+            frontend__virtio__blk__pb2.ListVirtioBlkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VirtioBlkGet(request,
+    def GetVirtioBlk(request,
             target,
             options=(),
             channel_credentials=None,
@@ -211,8 +211,8 @@ class FrontendVirtioBlkService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/VirtioBlkGet',
-            frontend__virtio__blk__pb2.VirtioBlkGetRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendVirtioBlkService/GetVirtioBlk',
+            frontend__virtio__blk__pb2.GetVirtioBlkRequest.SerializeToString,
             frontend__virtio__blk__pb2.VirtioBlk.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
