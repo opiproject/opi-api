@@ -8,26 +8,38 @@ public interface ListVirtioBlkResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioBlk controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioBlk> 
-      getControllerList();
+      getControllersList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioBlk controllers = 1;</code>
    */
-  opi_api.storage.v1.VirtioBlk getController(int index);
+  opi_api.storage.v1.VirtioBlk getControllers(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioBlk controllers = 1;</code>
    */
-  int getControllerCount();
+  int getControllersCount();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioBlk controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioBlkOrBuilder> 
-      getControllerOrBuilderList();
+      getControllersOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioBlk controllers = 1;</code>
    */
-  opi_api.storage.v1.VirtioBlkOrBuilder getControllerOrBuilder(
+  opi_api.storage.v1.VirtioBlkOrBuilder getControllersOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }

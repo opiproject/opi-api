@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListNVMeSubsystemResponse() {
-    subsystem_ = java.util.Collections.emptyList();
+    subsystems_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -52,11 +53,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              subsystem_ = new java.util.ArrayList<opi_api.storage.v1.NVMeSubsystem>();
+              subsystems_ = new java.util.ArrayList<opi_api.storage.v1.NVMeSubsystem>();
               mutable_bitField0_ |= 0x00000001;
             }
-            subsystem_.add(
+            subsystems_.add(
                 input.readMessage(opi_api.storage.v1.NVMeSubsystem.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nextPageToken_ = s;
             break;
           }
           default: {
@@ -75,7 +82,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        subsystem_ = java.util.Collections.unmodifiableList(subsystem_);
+        subsystems_ = java.util.Collections.unmodifiableList(subsystems_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,44 +101,82 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.ListNVMeSubsystemResponse.class, opi_api.storage.v1.ListNVMeSubsystemResponse.Builder.class);
   }
 
-  public static final int SUBSYSTEM_FIELD_NUMBER = 1;
-  private java.util.List<opi_api.storage.v1.NVMeSubsystem> subsystem_;
+  public static final int SUBSYSTEMS_FIELD_NUMBER = 1;
+  private java.util.List<opi_api.storage.v1.NVMeSubsystem> subsystems_;
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<opi_api.storage.v1.NVMeSubsystem> getSubsystemList() {
-    return subsystem_;
+  public java.util.List<opi_api.storage.v1.NVMeSubsystem> getSubsystemsList() {
+    return subsystems_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.storage.v1.NVMeSubsystemOrBuilder> 
-      getSubsystemOrBuilderList() {
-    return subsystem_;
+      getSubsystemsOrBuilderList() {
+    return subsystems_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   @java.lang.Override
-  public int getSubsystemCount() {
-    return subsystem_.size();
+  public int getSubsystemsCount() {
+    return subsystems_.size();
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeSubsystem getSubsystem(int index) {
-    return subsystem_.get(index);
+  public opi_api.storage.v1.NVMeSubsystem getSubsystems(int index) {
+    return subsystems_.get(index);
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder(
+  public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemsOrBuilder(
       int index) {
-    return subsystem_.get(index);
+    return subsystems_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +193,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < subsystem_.size(); i++) {
-      output.writeMessage(1, subsystem_.get(i));
+    for (int i = 0; i < subsystems_.size(); i++) {
+      output.writeMessage(1, subsystems_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +208,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < subsystem_.size(); i++) {
+    for (int i = 0; i < subsystems_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, subsystem_.get(i));
+        .computeMessageSize(1, subsystems_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,8 +230,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.ListNVMeSubsystemResponse other = (opi_api.storage.v1.ListNVMeSubsystemResponse) obj;
 
-    if (!getSubsystemList()
-        .equals(other.getSubsystemList())) return false;
+    if (!getSubsystemsList()
+        .equals(other.getSubsystemsList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -192,10 +245,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getSubsystemCount() > 0) {
-      hash = (37 * hash) + SUBSYSTEM_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystemList().hashCode();
+    if (getSubsystemsCount() > 0) {
+      hash = (37 * hash) + SUBSYSTEMS_FIELD_NUMBER;
+      hash = (53 * hash) + getSubsystemsList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,18 +379,20 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getSubsystemFieldBuilder();
+        getSubsystemsFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (subsystemBuilder_ == null) {
-        subsystem_ = java.util.Collections.emptyList();
+      if (subsystemsBuilder_ == null) {
+        subsystems_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        subsystemBuilder_.clear();
+        subsystemsBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -363,15 +420,16 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.ListNVMeSubsystemResponse buildPartial() {
       opi_api.storage.v1.ListNVMeSubsystemResponse result = new opi_api.storage.v1.ListNVMeSubsystemResponse(this);
       int from_bitField0_ = bitField0_;
-      if (subsystemBuilder_ == null) {
+      if (subsystemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          subsystem_ = java.util.Collections.unmodifiableList(subsystem_);
+          subsystems_ = java.util.Collections.unmodifiableList(subsystems_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.subsystem_ = subsystem_;
+        result.subsystems_ = subsystems_;
       } else {
-        result.subsystem_ = subsystemBuilder_.build();
+        result.subsystems_ = subsystemsBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -420,31 +478,35 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.ListNVMeSubsystemResponse other) {
       if (other == opi_api.storage.v1.ListNVMeSubsystemResponse.getDefaultInstance()) return this;
-      if (subsystemBuilder_ == null) {
-        if (!other.subsystem_.isEmpty()) {
-          if (subsystem_.isEmpty()) {
-            subsystem_ = other.subsystem_;
+      if (subsystemsBuilder_ == null) {
+        if (!other.subsystems_.isEmpty()) {
+          if (subsystems_.isEmpty()) {
+            subsystems_ = other.subsystems_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureSubsystemIsMutable();
-            subsystem_.addAll(other.subsystem_);
+            ensureSubsystemsIsMutable();
+            subsystems_.addAll(other.subsystems_);
           }
           onChanged();
         }
       } else {
-        if (!other.subsystem_.isEmpty()) {
-          if (subsystemBuilder_.isEmpty()) {
-            subsystemBuilder_.dispose();
-            subsystemBuilder_ = null;
-            subsystem_ = other.subsystem_;
+        if (!other.subsystems_.isEmpty()) {
+          if (subsystemsBuilder_.isEmpty()) {
+            subsystemsBuilder_.dispose();
+            subsystemsBuilder_ = null;
+            subsystems_ = other.subsystems_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            subsystemBuilder_ = 
+            subsystemsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSubsystemFieldBuilder() : null;
+                 getSubsystemsFieldBuilder() : null;
           } else {
-            subsystemBuilder_.addAllMessages(other.subsystem_);
+            subsystemsBuilder_.addAllMessages(other.subsystems_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -476,244 +538,320 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<opi_api.storage.v1.NVMeSubsystem> subsystem_ =
+    private java.util.List<opi_api.storage.v1.NVMeSubsystem> subsystems_ =
       java.util.Collections.emptyList();
-    private void ensureSubsystemIsMutable() {
+    private void ensureSubsystemsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        subsystem_ = new java.util.ArrayList<opi_api.storage.v1.NVMeSubsystem>(subsystem_);
+        subsystems_ = new java.util.ArrayList<opi_api.storage.v1.NVMeSubsystem>(subsystems_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> subsystemBuilder_;
+        opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> subsystemsBuilder_;
 
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public java.util.List<opi_api.storage.v1.NVMeSubsystem> getSubsystemList() {
-      if (subsystemBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(subsystem_);
+    public java.util.List<opi_api.storage.v1.NVMeSubsystem> getSubsystemsList() {
+      if (subsystemsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(subsystems_);
       } else {
-        return subsystemBuilder_.getMessageList();
+        return subsystemsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public int getSubsystemCount() {
-      if (subsystemBuilder_ == null) {
-        return subsystem_.size();
+    public int getSubsystemsCount() {
+      if (subsystemsBuilder_ == null) {
+        return subsystems_.size();
       } else {
-        return subsystemBuilder_.getCount();
+        return subsystemsBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public opi_api.storage.v1.NVMeSubsystem getSubsystem(int index) {
-      if (subsystemBuilder_ == null) {
-        return subsystem_.get(index);
+    public opi_api.storage.v1.NVMeSubsystem getSubsystems(int index) {
+      if (subsystemsBuilder_ == null) {
+        return subsystems_.get(index);
       } else {
-        return subsystemBuilder_.getMessage(index);
+        return subsystemsBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder setSubsystem(
+    public Builder setSubsystems(
         int index, opi_api.storage.v1.NVMeSubsystem value) {
-      if (subsystemBuilder_ == null) {
+      if (subsystemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSubsystemIsMutable();
-        subsystem_.set(index, value);
+        ensureSubsystemsIsMutable();
+        subsystems_.set(index, value);
         onChanged();
       } else {
-        subsystemBuilder_.setMessage(index, value);
+        subsystemsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder setSubsystem(
+    public Builder setSubsystems(
         int index, opi_api.storage.v1.NVMeSubsystem.Builder builderForValue) {
-      if (subsystemBuilder_ == null) {
-        ensureSubsystemIsMutable();
-        subsystem_.set(index, builderForValue.build());
+      if (subsystemsBuilder_ == null) {
+        ensureSubsystemsIsMutable();
+        subsystems_.set(index, builderForValue.build());
         onChanged();
       } else {
-        subsystemBuilder_.setMessage(index, builderForValue.build());
+        subsystemsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder addSubsystem(opi_api.storage.v1.NVMeSubsystem value) {
-      if (subsystemBuilder_ == null) {
+    public Builder addSubsystems(opi_api.storage.v1.NVMeSubsystem value) {
+      if (subsystemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSubsystemIsMutable();
-        subsystem_.add(value);
+        ensureSubsystemsIsMutable();
+        subsystems_.add(value);
         onChanged();
       } else {
-        subsystemBuilder_.addMessage(value);
+        subsystemsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder addSubsystem(
+    public Builder addSubsystems(
         int index, opi_api.storage.v1.NVMeSubsystem value) {
-      if (subsystemBuilder_ == null) {
+      if (subsystemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSubsystemIsMutable();
-        subsystem_.add(index, value);
+        ensureSubsystemsIsMutable();
+        subsystems_.add(index, value);
         onChanged();
       } else {
-        subsystemBuilder_.addMessage(index, value);
+        subsystemsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder addSubsystem(
+    public Builder addSubsystems(
         opi_api.storage.v1.NVMeSubsystem.Builder builderForValue) {
-      if (subsystemBuilder_ == null) {
-        ensureSubsystemIsMutable();
-        subsystem_.add(builderForValue.build());
+      if (subsystemsBuilder_ == null) {
+        ensureSubsystemsIsMutable();
+        subsystems_.add(builderForValue.build());
         onChanged();
       } else {
-        subsystemBuilder_.addMessage(builderForValue.build());
+        subsystemsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder addSubsystem(
+    public Builder addSubsystems(
         int index, opi_api.storage.v1.NVMeSubsystem.Builder builderForValue) {
-      if (subsystemBuilder_ == null) {
-        ensureSubsystemIsMutable();
-        subsystem_.add(index, builderForValue.build());
+      if (subsystemsBuilder_ == null) {
+        ensureSubsystemsIsMutable();
+        subsystems_.add(index, builderForValue.build());
         onChanged();
       } else {
-        subsystemBuilder_.addMessage(index, builderForValue.build());
+        subsystemsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder addAllSubsystem(
+    public Builder addAllSubsystems(
         java.lang.Iterable<? extends opi_api.storage.v1.NVMeSubsystem> values) {
-      if (subsystemBuilder_ == null) {
-        ensureSubsystemIsMutable();
+      if (subsystemsBuilder_ == null) {
+        ensureSubsystemsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, subsystem_);
+            values, subsystems_);
         onChanged();
       } else {
-        subsystemBuilder_.addAllMessages(values);
+        subsystemsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder clearSubsystem() {
-      if (subsystemBuilder_ == null) {
-        subsystem_ = java.util.Collections.emptyList();
+    public Builder clearSubsystems() {
+      if (subsystemsBuilder_ == null) {
+        subsystems_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        subsystemBuilder_.clear();
+        subsystemsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public Builder removeSubsystem(int index) {
-      if (subsystemBuilder_ == null) {
-        ensureSubsystemIsMutable();
-        subsystem_.remove(index);
+    public Builder removeSubsystems(int index) {
+      if (subsystemsBuilder_ == null) {
+        ensureSubsystemsIsMutable();
+        subsystems_.remove(index);
         onChanged();
       } else {
-        subsystemBuilder_.remove(index);
+        subsystemsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public opi_api.storage.v1.NVMeSubsystem.Builder getSubsystemBuilder(
+    public opi_api.storage.v1.NVMeSubsystem.Builder getSubsystemsBuilder(
         int index) {
-      return getSubsystemFieldBuilder().getBuilder(index);
+      return getSubsystemsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder(
+    public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemsOrBuilder(
         int index) {
-      if (subsystemBuilder_ == null) {
-        return subsystem_.get(index);  } else {
-        return subsystemBuilder_.getMessageOrBuilder(index);
+      if (subsystemsBuilder_ == null) {
+        return subsystems_.get(index);  } else {
+        return subsystemsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NVMeSubsystemOrBuilder> 
-         getSubsystemOrBuilderList() {
-      if (subsystemBuilder_ != null) {
-        return subsystemBuilder_.getMessageOrBuilderList();
+         getSubsystemsOrBuilderList() {
+      if (subsystemsBuilder_ != null) {
+        return subsystemsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(subsystem_);
+        return java.util.Collections.unmodifiableList(subsystems_);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public opi_api.storage.v1.NVMeSubsystem.Builder addSubsystemBuilder() {
-      return getSubsystemFieldBuilder().addBuilder(
+    public opi_api.storage.v1.NVMeSubsystem.Builder addSubsystemsBuilder() {
+      return getSubsystemsFieldBuilder().addBuilder(
           opi_api.storage.v1.NVMeSubsystem.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
-    public opi_api.storage.v1.NVMeSubsystem.Builder addSubsystemBuilder(
+    public opi_api.storage.v1.NVMeSubsystem.Builder addSubsystemsBuilder(
         int index) {
-      return getSubsystemFieldBuilder().addBuilder(
+      return getSubsystemsFieldBuilder().addBuilder(
           index, opi_api.storage.v1.NVMeSubsystem.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NVMeSubsystem.Builder> 
-         getSubsystemBuilderList() {
-      return getSubsystemFieldBuilder().getBuilderList();
+         getSubsystemsBuilderList() {
+      return getSubsystemsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> 
-        getSubsystemFieldBuilder() {
-      if (subsystemBuilder_ == null) {
-        subsystemBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getSubsystemsFieldBuilder() {
+      if (subsystemsBuilder_ == null) {
+        subsystemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder>(
-                subsystem_,
+                subsystems_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        subsystem_ = null;
+        subsystems_ = null;
       }
-      return subsystemBuilder_;
+      return subsystemsBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

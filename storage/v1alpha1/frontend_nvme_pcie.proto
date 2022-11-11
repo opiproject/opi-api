@@ -258,11 +258,13 @@ message UpdateNVMeSubsystemRequest {
 }
 
 message ListNVMeSubsystemRequest {
-    // Intentionally empty.
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
 message ListNVMeSubsystemResponse {
-    repeated NVMeSubsystem subsystem = 1;
+    repeated NVMeSubsystem subsystems = 1;
+    string next_page_token = 2;
 }
 
 message GetNVMeSubsystemRequest {
@@ -291,10 +293,13 @@ message UpdateNVMeControllerRequest {
 
 message ListNVMeControllerRequest {
     common.v1.ObjectKey subsystem_id = 1;
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
 message ListNVMeControllerResponse {
-    repeated NVMeController controller = 1;
+    repeated NVMeController controllers = 1;
+    string next_page_token = 2;
 }
 
 message GetNVMeControllerRequest {
@@ -325,10 +330,13 @@ message UpdateNVMeNamespaceRequest {
 message ListNVMeNamespaceRequest {
     common.v1.ObjectKey subsystem_id = 1;
     common.v1.ObjectKey controller_id = 2;
+    int32 page_size = 3;
+    string page_token = 4;
 }
 
 message ListNVMeNamespaceResponse {
-    repeated NVMeNamespace namespace = 1;
+    repeated NVMeNamespace namespaces = 1;
+    string next_page_token = 2;
 }
 
 message GetNVMeNamespaceRequest {

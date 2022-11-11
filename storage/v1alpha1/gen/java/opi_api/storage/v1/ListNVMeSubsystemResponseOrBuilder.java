@@ -8,26 +8,38 @@ public interface ListNVMeSubsystemResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NVMeSubsystem> 
-      getSubsystemList();
+      getSubsystemsList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
-  opi_api.storage.v1.NVMeSubsystem getSubsystem(int index);
+  opi_api.storage.v1.NVMeSubsystem getSubsystems(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
-  int getSubsystemCount();
+  int getSubsystemsCount();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NVMeSubsystemOrBuilder> 
-      getSubsystemOrBuilderList();
+      getSubsystemsOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;</code>
    */
-  opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder(
+  opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemsOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }

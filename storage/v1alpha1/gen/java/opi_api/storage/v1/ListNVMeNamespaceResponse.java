@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListNVMeNamespaceResponse() {
-    namespace_ = java.util.Collections.emptyList();
+    namespaces_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -52,11 +53,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              namespace_ = new java.util.ArrayList<opi_api.storage.v1.NVMeNamespace>();
+              namespaces_ = new java.util.ArrayList<opi_api.storage.v1.NVMeNamespace>();
               mutable_bitField0_ |= 0x00000001;
             }
-            namespace_.add(
+            namespaces_.add(
                 input.readMessage(opi_api.storage.v1.NVMeNamespace.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nextPageToken_ = s;
             break;
           }
           default: {
@@ -75,7 +82,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        namespace_ = java.util.Collections.unmodifiableList(namespace_);
+        namespaces_ = java.util.Collections.unmodifiableList(namespaces_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,44 +101,82 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.ListNVMeNamespaceResponse.class, opi_api.storage.v1.ListNVMeNamespaceResponse.Builder.class);
   }
 
-  public static final int NAMESPACE_FIELD_NUMBER = 1;
-  private java.util.List<opi_api.storage.v1.NVMeNamespace> namespace_;
+  public static final int NAMESPACES_FIELD_NUMBER = 1;
+  private java.util.List<opi_api.storage.v1.NVMeNamespace> namespaces_;
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<opi_api.storage.v1.NVMeNamespace> getNamespaceList() {
-    return namespace_;
+  public java.util.List<opi_api.storage.v1.NVMeNamespace> getNamespacesList() {
+    return namespaces_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.storage.v1.NVMeNamespaceOrBuilder> 
-      getNamespaceOrBuilderList() {
-    return namespace_;
+      getNamespacesOrBuilderList() {
+    return namespaces_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   @java.lang.Override
-  public int getNamespaceCount() {
-    return namespace_.size();
+  public int getNamespacesCount() {
+    return namespaces_.size();
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeNamespace getNamespace(int index) {
-    return namespace_.get(index);
+  public opi_api.storage.v1.NVMeNamespace getNamespaces(int index) {
+    return namespaces_.get(index);
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder(
+  public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespacesOrBuilder(
       int index) {
-    return namespace_.get(index);
+    return namespaces_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +193,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < namespace_.size(); i++) {
-      output.writeMessage(1, namespace_.get(i));
+    for (int i = 0; i < namespaces_.size(); i++) {
+      output.writeMessage(1, namespaces_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +208,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < namespace_.size(); i++) {
+    for (int i = 0; i < namespaces_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, namespace_.get(i));
+        .computeMessageSize(1, namespaces_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,8 +230,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.ListNVMeNamespaceResponse other = (opi_api.storage.v1.ListNVMeNamespaceResponse) obj;
 
-    if (!getNamespaceList()
-        .equals(other.getNamespaceList())) return false;
+    if (!getNamespacesList()
+        .equals(other.getNamespacesList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -192,10 +245,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getNamespaceCount() > 0) {
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespaceList().hashCode();
+    if (getNamespacesCount() > 0) {
+      hash = (37 * hash) + NAMESPACES_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespacesList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,18 +379,20 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getNamespaceFieldBuilder();
+        getNamespacesFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (namespaceBuilder_ == null) {
-        namespace_ = java.util.Collections.emptyList();
+      if (namespacesBuilder_ == null) {
+        namespaces_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        namespaceBuilder_.clear();
+        namespacesBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -363,15 +420,16 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.ListNVMeNamespaceResponse buildPartial() {
       opi_api.storage.v1.ListNVMeNamespaceResponse result = new opi_api.storage.v1.ListNVMeNamespaceResponse(this);
       int from_bitField0_ = bitField0_;
-      if (namespaceBuilder_ == null) {
+      if (namespacesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          namespace_ = java.util.Collections.unmodifiableList(namespace_);
+          namespaces_ = java.util.Collections.unmodifiableList(namespaces_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.namespace_ = namespace_;
+        result.namespaces_ = namespaces_;
       } else {
-        result.namespace_ = namespaceBuilder_.build();
+        result.namespaces_ = namespacesBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -420,31 +478,35 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.ListNVMeNamespaceResponse other) {
       if (other == opi_api.storage.v1.ListNVMeNamespaceResponse.getDefaultInstance()) return this;
-      if (namespaceBuilder_ == null) {
-        if (!other.namespace_.isEmpty()) {
-          if (namespace_.isEmpty()) {
-            namespace_ = other.namespace_;
+      if (namespacesBuilder_ == null) {
+        if (!other.namespaces_.isEmpty()) {
+          if (namespaces_.isEmpty()) {
+            namespaces_ = other.namespaces_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureNamespaceIsMutable();
-            namespace_.addAll(other.namespace_);
+            ensureNamespacesIsMutable();
+            namespaces_.addAll(other.namespaces_);
           }
           onChanged();
         }
       } else {
-        if (!other.namespace_.isEmpty()) {
-          if (namespaceBuilder_.isEmpty()) {
-            namespaceBuilder_.dispose();
-            namespaceBuilder_ = null;
-            namespace_ = other.namespace_;
+        if (!other.namespaces_.isEmpty()) {
+          if (namespacesBuilder_.isEmpty()) {
+            namespacesBuilder_.dispose();
+            namespacesBuilder_ = null;
+            namespaces_ = other.namespaces_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            namespaceBuilder_ = 
+            namespacesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getNamespaceFieldBuilder() : null;
+                 getNamespacesFieldBuilder() : null;
           } else {
-            namespaceBuilder_.addAllMessages(other.namespace_);
+            namespacesBuilder_.addAllMessages(other.namespaces_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -476,244 +538,320 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<opi_api.storage.v1.NVMeNamespace> namespace_ =
+    private java.util.List<opi_api.storage.v1.NVMeNamespace> namespaces_ =
       java.util.Collections.emptyList();
-    private void ensureNamespaceIsMutable() {
+    private void ensureNamespacesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        namespace_ = new java.util.ArrayList<opi_api.storage.v1.NVMeNamespace>(namespace_);
+        namespaces_ = new java.util.ArrayList<opi_api.storage.v1.NVMeNamespace>(namespaces_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> namespaceBuilder_;
+        opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> namespacesBuilder_;
 
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public java.util.List<opi_api.storage.v1.NVMeNamespace> getNamespaceList() {
-      if (namespaceBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(namespace_);
+    public java.util.List<opi_api.storage.v1.NVMeNamespace> getNamespacesList() {
+      if (namespacesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(namespaces_);
       } else {
-        return namespaceBuilder_.getMessageList();
+        return namespacesBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public int getNamespaceCount() {
-      if (namespaceBuilder_ == null) {
-        return namespace_.size();
+    public int getNamespacesCount() {
+      if (namespacesBuilder_ == null) {
+        return namespaces_.size();
       } else {
-        return namespaceBuilder_.getCount();
+        return namespacesBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespace getNamespace(int index) {
-      if (namespaceBuilder_ == null) {
-        return namespace_.get(index);
+    public opi_api.storage.v1.NVMeNamespace getNamespaces(int index) {
+      if (namespacesBuilder_ == null) {
+        return namespaces_.get(index);
       } else {
-        return namespaceBuilder_.getMessage(index);
+        return namespacesBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder setNamespace(
+    public Builder setNamespaces(
         int index, opi_api.storage.v1.NVMeNamespace value) {
-      if (namespaceBuilder_ == null) {
+      if (namespacesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNamespaceIsMutable();
-        namespace_.set(index, value);
+        ensureNamespacesIsMutable();
+        namespaces_.set(index, value);
         onChanged();
       } else {
-        namespaceBuilder_.setMessage(index, value);
+        namespacesBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder setNamespace(
+    public Builder setNamespaces(
         int index, opi_api.storage.v1.NVMeNamespace.Builder builderForValue) {
-      if (namespaceBuilder_ == null) {
-        ensureNamespaceIsMutable();
-        namespace_.set(index, builderForValue.build());
+      if (namespacesBuilder_ == null) {
+        ensureNamespacesIsMutable();
+        namespaces_.set(index, builderForValue.build());
         onChanged();
       } else {
-        namespaceBuilder_.setMessage(index, builderForValue.build());
+        namespacesBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder addNamespace(opi_api.storage.v1.NVMeNamespace value) {
-      if (namespaceBuilder_ == null) {
+    public Builder addNamespaces(opi_api.storage.v1.NVMeNamespace value) {
+      if (namespacesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNamespaceIsMutable();
-        namespace_.add(value);
+        ensureNamespacesIsMutable();
+        namespaces_.add(value);
         onChanged();
       } else {
-        namespaceBuilder_.addMessage(value);
+        namespacesBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder addNamespace(
+    public Builder addNamespaces(
         int index, opi_api.storage.v1.NVMeNamespace value) {
-      if (namespaceBuilder_ == null) {
+      if (namespacesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNamespaceIsMutable();
-        namespace_.add(index, value);
+        ensureNamespacesIsMutable();
+        namespaces_.add(index, value);
         onChanged();
       } else {
-        namespaceBuilder_.addMessage(index, value);
+        namespacesBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder addNamespace(
+    public Builder addNamespaces(
         opi_api.storage.v1.NVMeNamespace.Builder builderForValue) {
-      if (namespaceBuilder_ == null) {
-        ensureNamespaceIsMutable();
-        namespace_.add(builderForValue.build());
+      if (namespacesBuilder_ == null) {
+        ensureNamespacesIsMutable();
+        namespaces_.add(builderForValue.build());
         onChanged();
       } else {
-        namespaceBuilder_.addMessage(builderForValue.build());
+        namespacesBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder addNamespace(
+    public Builder addNamespaces(
         int index, opi_api.storage.v1.NVMeNamespace.Builder builderForValue) {
-      if (namespaceBuilder_ == null) {
-        ensureNamespaceIsMutable();
-        namespace_.add(index, builderForValue.build());
+      if (namespacesBuilder_ == null) {
+        ensureNamespacesIsMutable();
+        namespaces_.add(index, builderForValue.build());
         onChanged();
       } else {
-        namespaceBuilder_.addMessage(index, builderForValue.build());
+        namespacesBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder addAllNamespace(
+    public Builder addAllNamespaces(
         java.lang.Iterable<? extends opi_api.storage.v1.NVMeNamespace> values) {
-      if (namespaceBuilder_ == null) {
-        ensureNamespaceIsMutable();
+      if (namespacesBuilder_ == null) {
+        ensureNamespacesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, namespace_);
+            values, namespaces_);
         onChanged();
       } else {
-        namespaceBuilder_.addAllMessages(values);
+        namespacesBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder clearNamespace() {
-      if (namespaceBuilder_ == null) {
-        namespace_ = java.util.Collections.emptyList();
+    public Builder clearNamespaces() {
+      if (namespacesBuilder_ == null) {
+        namespaces_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        namespaceBuilder_.clear();
+        namespacesBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public Builder removeNamespace(int index) {
-      if (namespaceBuilder_ == null) {
-        ensureNamespaceIsMutable();
-        namespace_.remove(index);
+    public Builder removeNamespaces(int index) {
+      if (namespacesBuilder_ == null) {
+        ensureNamespacesIsMutable();
+        namespaces_.remove(index);
         onChanged();
       } else {
-        namespaceBuilder_.remove(index);
+        namespacesBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespace.Builder getNamespaceBuilder(
+    public opi_api.storage.v1.NVMeNamespace.Builder getNamespacesBuilder(
         int index) {
-      return getNamespaceFieldBuilder().getBuilder(index);
+      return getNamespacesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder(
+    public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespacesOrBuilder(
         int index) {
-      if (namespaceBuilder_ == null) {
-        return namespace_.get(index);  } else {
-        return namespaceBuilder_.getMessageOrBuilder(index);
+      if (namespacesBuilder_ == null) {
+        return namespaces_.get(index);  } else {
+        return namespacesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NVMeNamespaceOrBuilder> 
-         getNamespaceOrBuilderList() {
-      if (namespaceBuilder_ != null) {
-        return namespaceBuilder_.getMessageOrBuilderList();
+         getNamespacesOrBuilderList() {
+      if (namespacesBuilder_ != null) {
+        return namespacesBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(namespace_);
+        return java.util.Collections.unmodifiableList(namespaces_);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespace.Builder addNamespaceBuilder() {
-      return getNamespaceFieldBuilder().addBuilder(
+    public opi_api.storage.v1.NVMeNamespace.Builder addNamespacesBuilder() {
+      return getNamespacesFieldBuilder().addBuilder(
           opi_api.storage.v1.NVMeNamespace.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespace.Builder addNamespaceBuilder(
+    public opi_api.storage.v1.NVMeNamespace.Builder addNamespacesBuilder(
         int index) {
-      return getNamespaceFieldBuilder().addBuilder(
+      return getNamespacesFieldBuilder().addBuilder(
           index, opi_api.storage.v1.NVMeNamespace.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NVMeNamespace.Builder> 
-         getNamespaceBuilderList() {
-      return getNamespaceFieldBuilder().getBuilderList();
+         getNamespacesBuilderList() {
+      return getNamespacesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> 
-        getNamespaceFieldBuilder() {
-      if (namespaceBuilder_ == null) {
-        namespaceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getNamespacesFieldBuilder() {
+      if (namespacesBuilder_ == null) {
+        namespacesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder>(
-                namespace_,
+                namespaces_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        namespace_ = null;
+        namespaces_ = null;
       }
-      return namespaceBuilder_;
+      return namespacesBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

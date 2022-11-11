@@ -8,26 +8,38 @@ public interface ListNVMeNamespaceResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NVMeNamespace> 
-      getNamespaceList();
+      getNamespacesList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
-  opi_api.storage.v1.NVMeNamespace getNamespace(int index);
+  opi_api.storage.v1.NVMeNamespace getNamespaces(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
-  int getNamespaceCount();
+  int getNamespacesCount();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NVMeNamespaceOrBuilder> 
-      getNamespaceOrBuilderList();
+      getNamespacesOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;</code>
    */
-  opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder(
+  opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespacesOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }

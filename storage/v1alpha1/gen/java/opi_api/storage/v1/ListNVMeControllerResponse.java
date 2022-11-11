@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListNVMeControllerResponse() {
-    controller_ = java.util.Collections.emptyList();
+    controllers_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -52,11 +53,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              controller_ = new java.util.ArrayList<opi_api.storage.v1.NVMeController>();
+              controllers_ = new java.util.ArrayList<opi_api.storage.v1.NVMeController>();
               mutable_bitField0_ |= 0x00000001;
             }
-            controller_.add(
+            controllers_.add(
                 input.readMessage(opi_api.storage.v1.NVMeController.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nextPageToken_ = s;
             break;
           }
           default: {
@@ -75,7 +82,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        controller_ = java.util.Collections.unmodifiableList(controller_);
+        controllers_ = java.util.Collections.unmodifiableList(controllers_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,44 +101,82 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.ListNVMeControllerResponse.class, opi_api.storage.v1.ListNVMeControllerResponse.Builder.class);
   }
 
-  public static final int CONTROLLER_FIELD_NUMBER = 1;
-  private java.util.List<opi_api.storage.v1.NVMeController> controller_;
+  public static final int CONTROLLERS_FIELD_NUMBER = 1;
+  private java.util.List<opi_api.storage.v1.NVMeController> controllers_;
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<opi_api.storage.v1.NVMeController> getControllerList() {
-    return controller_;
+  public java.util.List<opi_api.storage.v1.NVMeController> getControllersList() {
+    return controllers_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.storage.v1.NVMeControllerOrBuilder> 
-      getControllerOrBuilderList() {
-    return controller_;
+      getControllersOrBuilderList() {
+    return controllers_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   @java.lang.Override
-  public int getControllerCount() {
-    return controller_.size();
+  public int getControllersCount() {
+    return controllers_.size();
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeController getController(int index) {
-    return controller_.get(index);
+  public opi_api.storage.v1.NVMeController getControllers(int index) {
+    return controllers_.get(index);
   }
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder(
+  public opi_api.storage.v1.NVMeControllerOrBuilder getControllersOrBuilder(
       int index) {
-    return controller_.get(index);
+    return controllers_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +193,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < controller_.size(); i++) {
-      output.writeMessage(1, controller_.get(i));
+    for (int i = 0; i < controllers_.size(); i++) {
+      output.writeMessage(1, controllers_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +208,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < controller_.size(); i++) {
+    for (int i = 0; i < controllers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, controller_.get(i));
+        .computeMessageSize(1, controllers_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,8 +230,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.ListNVMeControllerResponse other = (opi_api.storage.v1.ListNVMeControllerResponse) obj;
 
-    if (!getControllerList()
-        .equals(other.getControllerList())) return false;
+    if (!getControllersList()
+        .equals(other.getControllersList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -192,10 +245,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getControllerCount() > 0) {
-      hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerList().hashCode();
+    if (getControllersCount() > 0) {
+      hash = (37 * hash) + CONTROLLERS_FIELD_NUMBER;
+      hash = (53 * hash) + getControllersList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,18 +379,20 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getControllerFieldBuilder();
+        getControllersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (controllerBuilder_ == null) {
-        controller_ = java.util.Collections.emptyList();
+      if (controllersBuilder_ == null) {
+        controllers_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        controllerBuilder_.clear();
+        controllersBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -363,15 +420,16 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.ListNVMeControllerResponse buildPartial() {
       opi_api.storage.v1.ListNVMeControllerResponse result = new opi_api.storage.v1.ListNVMeControllerResponse(this);
       int from_bitField0_ = bitField0_;
-      if (controllerBuilder_ == null) {
+      if (controllersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          controller_ = java.util.Collections.unmodifiableList(controller_);
+          controllers_ = java.util.Collections.unmodifiableList(controllers_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.controller_ = controller_;
+        result.controllers_ = controllers_;
       } else {
-        result.controller_ = controllerBuilder_.build();
+        result.controllers_ = controllersBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -420,31 +478,35 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.ListNVMeControllerResponse other) {
       if (other == opi_api.storage.v1.ListNVMeControllerResponse.getDefaultInstance()) return this;
-      if (controllerBuilder_ == null) {
-        if (!other.controller_.isEmpty()) {
-          if (controller_.isEmpty()) {
-            controller_ = other.controller_;
+      if (controllersBuilder_ == null) {
+        if (!other.controllers_.isEmpty()) {
+          if (controllers_.isEmpty()) {
+            controllers_ = other.controllers_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureControllerIsMutable();
-            controller_.addAll(other.controller_);
+            ensureControllersIsMutable();
+            controllers_.addAll(other.controllers_);
           }
           onChanged();
         }
       } else {
-        if (!other.controller_.isEmpty()) {
-          if (controllerBuilder_.isEmpty()) {
-            controllerBuilder_.dispose();
-            controllerBuilder_ = null;
-            controller_ = other.controller_;
+        if (!other.controllers_.isEmpty()) {
+          if (controllersBuilder_.isEmpty()) {
+            controllersBuilder_.dispose();
+            controllersBuilder_ = null;
+            controllers_ = other.controllers_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            controllerBuilder_ = 
+            controllersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getControllerFieldBuilder() : null;
+                 getControllersFieldBuilder() : null;
           } else {
-            controllerBuilder_.addAllMessages(other.controller_);
+            controllersBuilder_.addAllMessages(other.controllers_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -476,244 +538,320 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<opi_api.storage.v1.NVMeController> controller_ =
+    private java.util.List<opi_api.storage.v1.NVMeController> controllers_ =
       java.util.Collections.emptyList();
-    private void ensureControllerIsMutable() {
+    private void ensureControllersIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        controller_ = new java.util.ArrayList<opi_api.storage.v1.NVMeController>(controller_);
+        controllers_ = new java.util.ArrayList<opi_api.storage.v1.NVMeController>(controllers_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> controllerBuilder_;
+        opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> controllersBuilder_;
 
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public java.util.List<opi_api.storage.v1.NVMeController> getControllerList() {
-      if (controllerBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(controller_);
+    public java.util.List<opi_api.storage.v1.NVMeController> getControllersList() {
+      if (controllersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(controllers_);
       } else {
-        return controllerBuilder_.getMessageList();
+        return controllersBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public int getControllerCount() {
-      if (controllerBuilder_ == null) {
-        return controller_.size();
+    public int getControllersCount() {
+      if (controllersBuilder_ == null) {
+        return controllers_.size();
       } else {
-        return controllerBuilder_.getCount();
+        return controllersBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public opi_api.storage.v1.NVMeController getController(int index) {
-      if (controllerBuilder_ == null) {
-        return controller_.get(index);
+    public opi_api.storage.v1.NVMeController getControllers(int index) {
+      if (controllersBuilder_ == null) {
+        return controllers_.get(index);
       } else {
-        return controllerBuilder_.getMessage(index);
+        return controllersBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder setController(
+    public Builder setControllers(
         int index, opi_api.storage.v1.NVMeController value) {
-      if (controllerBuilder_ == null) {
+      if (controllersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureControllerIsMutable();
-        controller_.set(index, value);
+        ensureControllersIsMutable();
+        controllers_.set(index, value);
         onChanged();
       } else {
-        controllerBuilder_.setMessage(index, value);
+        controllersBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder setController(
+    public Builder setControllers(
         int index, opi_api.storage.v1.NVMeController.Builder builderForValue) {
-      if (controllerBuilder_ == null) {
-        ensureControllerIsMutable();
-        controller_.set(index, builderForValue.build());
+      if (controllersBuilder_ == null) {
+        ensureControllersIsMutable();
+        controllers_.set(index, builderForValue.build());
         onChanged();
       } else {
-        controllerBuilder_.setMessage(index, builderForValue.build());
+        controllersBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder addController(opi_api.storage.v1.NVMeController value) {
-      if (controllerBuilder_ == null) {
+    public Builder addControllers(opi_api.storage.v1.NVMeController value) {
+      if (controllersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureControllerIsMutable();
-        controller_.add(value);
+        ensureControllersIsMutable();
+        controllers_.add(value);
         onChanged();
       } else {
-        controllerBuilder_.addMessage(value);
+        controllersBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder addController(
+    public Builder addControllers(
         int index, opi_api.storage.v1.NVMeController value) {
-      if (controllerBuilder_ == null) {
+      if (controllersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureControllerIsMutable();
-        controller_.add(index, value);
+        ensureControllersIsMutable();
+        controllers_.add(index, value);
         onChanged();
       } else {
-        controllerBuilder_.addMessage(index, value);
+        controllersBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder addController(
+    public Builder addControllers(
         opi_api.storage.v1.NVMeController.Builder builderForValue) {
-      if (controllerBuilder_ == null) {
-        ensureControllerIsMutable();
-        controller_.add(builderForValue.build());
+      if (controllersBuilder_ == null) {
+        ensureControllersIsMutable();
+        controllers_.add(builderForValue.build());
         onChanged();
       } else {
-        controllerBuilder_.addMessage(builderForValue.build());
+        controllersBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder addController(
+    public Builder addControllers(
         int index, opi_api.storage.v1.NVMeController.Builder builderForValue) {
-      if (controllerBuilder_ == null) {
-        ensureControllerIsMutable();
-        controller_.add(index, builderForValue.build());
+      if (controllersBuilder_ == null) {
+        ensureControllersIsMutable();
+        controllers_.add(index, builderForValue.build());
         onChanged();
       } else {
-        controllerBuilder_.addMessage(index, builderForValue.build());
+        controllersBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder addAllController(
+    public Builder addAllControllers(
         java.lang.Iterable<? extends opi_api.storage.v1.NVMeController> values) {
-      if (controllerBuilder_ == null) {
-        ensureControllerIsMutable();
+      if (controllersBuilder_ == null) {
+        ensureControllersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, controller_);
+            values, controllers_);
         onChanged();
       } else {
-        controllerBuilder_.addAllMessages(values);
+        controllersBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder clearController() {
-      if (controllerBuilder_ == null) {
-        controller_ = java.util.Collections.emptyList();
+    public Builder clearControllers() {
+      if (controllersBuilder_ == null) {
+        controllers_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        controllerBuilder_.clear();
+        controllersBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public Builder removeController(int index) {
-      if (controllerBuilder_ == null) {
-        ensureControllerIsMutable();
-        controller_.remove(index);
+    public Builder removeControllers(int index) {
+      if (controllersBuilder_ == null) {
+        ensureControllersIsMutable();
+        controllers_.remove(index);
         onChanged();
       } else {
-        controllerBuilder_.remove(index);
+        controllersBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public opi_api.storage.v1.NVMeController.Builder getControllerBuilder(
+    public opi_api.storage.v1.NVMeController.Builder getControllersBuilder(
         int index) {
-      return getControllerFieldBuilder().getBuilder(index);
+      return getControllersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder(
+    public opi_api.storage.v1.NVMeControllerOrBuilder getControllersOrBuilder(
         int index) {
-      if (controllerBuilder_ == null) {
-        return controller_.get(index);  } else {
-        return controllerBuilder_.getMessageOrBuilder(index);
+      if (controllersBuilder_ == null) {
+        return controllers_.get(index);  } else {
+        return controllersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.NVMeControllerOrBuilder> 
-         getControllerOrBuilderList() {
-      if (controllerBuilder_ != null) {
-        return controllerBuilder_.getMessageOrBuilderList();
+         getControllersOrBuilderList() {
+      if (controllersBuilder_ != null) {
+        return controllersBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(controller_);
+        return java.util.Collections.unmodifiableList(controllers_);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public opi_api.storage.v1.NVMeController.Builder addControllerBuilder() {
-      return getControllerFieldBuilder().addBuilder(
+    public opi_api.storage.v1.NVMeController.Builder addControllersBuilder() {
+      return getControllersFieldBuilder().addBuilder(
           opi_api.storage.v1.NVMeController.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
-    public opi_api.storage.v1.NVMeController.Builder addControllerBuilder(
+    public opi_api.storage.v1.NVMeController.Builder addControllersBuilder(
         int index) {
-      return getControllerFieldBuilder().addBuilder(
+      return getControllersFieldBuilder().addBuilder(
           index, opi_api.storage.v1.NVMeController.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.NVMeController.Builder> 
-         getControllerBuilderList() {
-      return getControllerFieldBuilder().getBuilderList();
+         getControllersBuilderList() {
+      return getControllersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> 
-        getControllerFieldBuilder() {
-      if (controllerBuilder_ == null) {
-        controllerBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getControllersFieldBuilder() {
+      if (controllersBuilder_ == null) {
+        controllersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder>(
-                controller_,
+                controllers_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        controller_ = null;
+        controllers_ = null;
       }
-      return controllerBuilder_;
+      return controllersBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

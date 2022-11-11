@@ -21,4 +21,22 @@ public interface ListVirtioScsiLunRequestOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+
+  /**
+   * <code>int32 page_size = 2;</code>
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   * <code>string page_token = 3;</code>
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString
+      getPageTokenBytes();
 }

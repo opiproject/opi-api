@@ -8,26 +8,38 @@ public interface ListNVMeControllerResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.NVMeController> 
-      getControllerList();
+      getControllersList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
-  opi_api.storage.v1.NVMeController getController(int index);
+  opi_api.storage.v1.NVMeController getControllers(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
-  int getControllerCount();
+  int getControllersCount();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.NVMeControllerOrBuilder> 
-      getControllerOrBuilderList();
+      getControllersOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.NVMeController controllers = 1;</code>
    */
-  opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder(
+  opi_api.storage.v1.NVMeControllerOrBuilder getControllersOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }

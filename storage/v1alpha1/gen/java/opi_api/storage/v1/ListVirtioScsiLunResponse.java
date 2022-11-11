@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListVirtioScsiLunResponse() {
-    lun_ = java.util.Collections.emptyList();
+    luns_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -52,11 +53,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              lun_ = new java.util.ArrayList<opi_api.storage.v1.VirtioScsiLun>();
+              luns_ = new java.util.ArrayList<opi_api.storage.v1.VirtioScsiLun>();
               mutable_bitField0_ |= 0x00000001;
             }
-            lun_.add(
+            luns_.add(
                 input.readMessage(opi_api.storage.v1.VirtioScsiLun.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nextPageToken_ = s;
             break;
           }
           default: {
@@ -75,7 +82,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        lun_ = java.util.Collections.unmodifiableList(lun_);
+        luns_ = java.util.Collections.unmodifiableList(luns_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,44 +101,82 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.ListVirtioScsiLunResponse.class, opi_api.storage.v1.ListVirtioScsiLunResponse.Builder.class);
   }
 
-  public static final int LUN_FIELD_NUMBER = 1;
-  private java.util.List<opi_api.storage.v1.VirtioScsiLun> lun_;
+  public static final int LUNS_FIELD_NUMBER = 1;
+  private java.util.List<opi_api.storage.v1.VirtioScsiLun> luns_;
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<opi_api.storage.v1.VirtioScsiLun> getLunList() {
-    return lun_;
+  public java.util.List<opi_api.storage.v1.VirtioScsiLun> getLunsList() {
+    return luns_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-      getLunOrBuilderList() {
-    return lun_;
+      getLunsOrBuilderList() {
+    return luns_;
   }
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   @java.lang.Override
-  public int getLunCount() {
-    return lun_.size();
+  public int getLunsCount() {
+    return luns_.size();
   }
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLun getLun(int index) {
-    return lun_.get(index);
+  public opi_api.storage.v1.VirtioScsiLun getLuns(int index) {
+    return luns_.get(index);
   }
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder(
+  public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunsOrBuilder(
       int index) {
-    return lun_.get(index);
+    return luns_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +193,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < lun_.size(); i++) {
-      output.writeMessage(1, lun_.get(i));
+    for (int i = 0; i < luns_.size(); i++) {
+      output.writeMessage(1, luns_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -160,9 +208,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < lun_.size(); i++) {
+    for (int i = 0; i < luns_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, lun_.get(i));
+        .computeMessageSize(1, luns_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,8 +230,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.ListVirtioScsiLunResponse other = (opi_api.storage.v1.ListVirtioScsiLunResponse) obj;
 
-    if (!getLunList()
-        .equals(other.getLunList())) return false;
+    if (!getLunsList()
+        .equals(other.getLunsList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -192,10 +245,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getLunCount() > 0) {
-      hash = (37 * hash) + LUN_FIELD_NUMBER;
-      hash = (53 * hash) + getLunList().hashCode();
+    if (getLunsCount() > 0) {
+      hash = (37 * hash) + LUNS_FIELD_NUMBER;
+      hash = (53 * hash) + getLunsList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,18 +379,20 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getLunFieldBuilder();
+        getLunsFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lunBuilder_ == null) {
-        lun_ = java.util.Collections.emptyList();
+      if (lunsBuilder_ == null) {
+        luns_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        lunBuilder_.clear();
+        lunsBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -363,15 +420,16 @@ private static final long serialVersionUID = 0L;
     public opi_api.storage.v1.ListVirtioScsiLunResponse buildPartial() {
       opi_api.storage.v1.ListVirtioScsiLunResponse result = new opi_api.storage.v1.ListVirtioScsiLunResponse(this);
       int from_bitField0_ = bitField0_;
-      if (lunBuilder_ == null) {
+      if (lunsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          lun_ = java.util.Collections.unmodifiableList(lun_);
+          luns_ = java.util.Collections.unmodifiableList(luns_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.lun_ = lun_;
+        result.luns_ = luns_;
       } else {
-        result.lun_ = lunBuilder_.build();
+        result.luns_ = lunsBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -420,31 +478,35 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.ListVirtioScsiLunResponse other) {
       if (other == opi_api.storage.v1.ListVirtioScsiLunResponse.getDefaultInstance()) return this;
-      if (lunBuilder_ == null) {
-        if (!other.lun_.isEmpty()) {
-          if (lun_.isEmpty()) {
-            lun_ = other.lun_;
+      if (lunsBuilder_ == null) {
+        if (!other.luns_.isEmpty()) {
+          if (luns_.isEmpty()) {
+            luns_ = other.luns_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureLunIsMutable();
-            lun_.addAll(other.lun_);
+            ensureLunsIsMutable();
+            luns_.addAll(other.luns_);
           }
           onChanged();
         }
       } else {
-        if (!other.lun_.isEmpty()) {
-          if (lunBuilder_.isEmpty()) {
-            lunBuilder_.dispose();
-            lunBuilder_ = null;
-            lun_ = other.lun_;
+        if (!other.luns_.isEmpty()) {
+          if (lunsBuilder_.isEmpty()) {
+            lunsBuilder_.dispose();
+            lunsBuilder_ = null;
+            luns_ = other.luns_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            lunBuilder_ = 
+            lunsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLunFieldBuilder() : null;
+                 getLunsFieldBuilder() : null;
           } else {
-            lunBuilder_.addAllMessages(other.lun_);
+            lunsBuilder_.addAllMessages(other.luns_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -476,244 +538,320 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<opi_api.storage.v1.VirtioScsiLun> lun_ =
+    private java.util.List<opi_api.storage.v1.VirtioScsiLun> luns_ =
       java.util.Collections.emptyList();
-    private void ensureLunIsMutable() {
+    private void ensureLunsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        lun_ = new java.util.ArrayList<opi_api.storage.v1.VirtioScsiLun>(lun_);
+        luns_ = new java.util.ArrayList<opi_api.storage.v1.VirtioScsiLun>(luns_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> lunBuilder_;
+        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> lunsBuilder_;
 
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public java.util.List<opi_api.storage.v1.VirtioScsiLun> getLunList() {
-      if (lunBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(lun_);
+    public java.util.List<opi_api.storage.v1.VirtioScsiLun> getLunsList() {
+      if (lunsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(luns_);
       } else {
-        return lunBuilder_.getMessageList();
+        return lunsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public int getLunCount() {
-      if (lunBuilder_ == null) {
-        return lun_.size();
+    public int getLunsCount() {
+      if (lunsBuilder_ == null) {
+        return luns_.size();
       } else {
-        return lunBuilder_.getCount();
+        return lunsBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun getLun(int index) {
-      if (lunBuilder_ == null) {
-        return lun_.get(index);
+    public opi_api.storage.v1.VirtioScsiLun getLuns(int index) {
+      if (lunsBuilder_ == null) {
+        return luns_.get(index);
       } else {
-        return lunBuilder_.getMessage(index);
+        return lunsBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder setLun(
+    public Builder setLuns(
         int index, opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
+      if (lunsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureLunIsMutable();
-        lun_.set(index, value);
+        ensureLunsIsMutable();
+        luns_.set(index, value);
         onChanged();
       } else {
-        lunBuilder_.setMessage(index, value);
+        lunsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder setLun(
+    public Builder setLuns(
         int index, opi_api.storage.v1.VirtioScsiLun.Builder builderForValue) {
-      if (lunBuilder_ == null) {
-        ensureLunIsMutable();
-        lun_.set(index, builderForValue.build());
+      if (lunsBuilder_ == null) {
+        ensureLunsIsMutable();
+        luns_.set(index, builderForValue.build());
         onChanged();
       } else {
-        lunBuilder_.setMessage(index, builderForValue.build());
+        lunsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder addLun(opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
+    public Builder addLuns(opi_api.storage.v1.VirtioScsiLun value) {
+      if (lunsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureLunIsMutable();
-        lun_.add(value);
+        ensureLunsIsMutable();
+        luns_.add(value);
         onChanged();
       } else {
-        lunBuilder_.addMessage(value);
+        lunsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder addLun(
+    public Builder addLuns(
         int index, opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
+      if (lunsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureLunIsMutable();
-        lun_.add(index, value);
+        ensureLunsIsMutable();
+        luns_.add(index, value);
         onChanged();
       } else {
-        lunBuilder_.addMessage(index, value);
+        lunsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder addLun(
+    public Builder addLuns(
         opi_api.storage.v1.VirtioScsiLun.Builder builderForValue) {
-      if (lunBuilder_ == null) {
-        ensureLunIsMutable();
-        lun_.add(builderForValue.build());
+      if (lunsBuilder_ == null) {
+        ensureLunsIsMutable();
+        luns_.add(builderForValue.build());
         onChanged();
       } else {
-        lunBuilder_.addMessage(builderForValue.build());
+        lunsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder addLun(
+    public Builder addLuns(
         int index, opi_api.storage.v1.VirtioScsiLun.Builder builderForValue) {
-      if (lunBuilder_ == null) {
-        ensureLunIsMutable();
-        lun_.add(index, builderForValue.build());
+      if (lunsBuilder_ == null) {
+        ensureLunsIsMutable();
+        luns_.add(index, builderForValue.build());
         onChanged();
       } else {
-        lunBuilder_.addMessage(index, builderForValue.build());
+        lunsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder addAllLun(
+    public Builder addAllLuns(
         java.lang.Iterable<? extends opi_api.storage.v1.VirtioScsiLun> values) {
-      if (lunBuilder_ == null) {
-        ensureLunIsMutable();
+      if (lunsBuilder_ == null) {
+        ensureLunsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, lun_);
+            values, luns_);
         onChanged();
       } else {
-        lunBuilder_.addAllMessages(values);
+        lunsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder clearLun() {
-      if (lunBuilder_ == null) {
-        lun_ = java.util.Collections.emptyList();
+    public Builder clearLuns() {
+      if (lunsBuilder_ == null) {
+        luns_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        lunBuilder_.clear();
+        lunsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public Builder removeLun(int index) {
-      if (lunBuilder_ == null) {
-        ensureLunIsMutable();
-        lun_.remove(index);
+    public Builder removeLuns(int index) {
+      if (lunsBuilder_ == null) {
+        ensureLunsIsMutable();
+        luns_.remove(index);
         onChanged();
       } else {
-        lunBuilder_.remove(index);
+        lunsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun.Builder getLunBuilder(
+    public opi_api.storage.v1.VirtioScsiLun.Builder getLunsBuilder(
         int index) {
-      return getLunFieldBuilder().getBuilder(index);
+      return getLunsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder(
+    public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunsOrBuilder(
         int index) {
-      if (lunBuilder_ == null) {
-        return lun_.get(index);  } else {
-        return lunBuilder_.getMessageOrBuilder(index);
+      if (lunsBuilder_ == null) {
+        return luns_.get(index);  } else {
+        return lunsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
     public java.util.List<? extends opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-         getLunOrBuilderList() {
-      if (lunBuilder_ != null) {
-        return lunBuilder_.getMessageOrBuilderList();
+         getLunsOrBuilderList() {
+      if (lunsBuilder_ != null) {
+        return lunsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(lun_);
+        return java.util.Collections.unmodifiableList(luns_);
       }
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun.Builder addLunBuilder() {
-      return getLunFieldBuilder().addBuilder(
+    public opi_api.storage.v1.VirtioScsiLun.Builder addLunsBuilder() {
+      return getLunsFieldBuilder().addBuilder(
           opi_api.storage.v1.VirtioScsiLun.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun.Builder addLunBuilder(
+    public opi_api.storage.v1.VirtioScsiLun.Builder addLunsBuilder(
         int index) {
-      return getLunFieldBuilder().addBuilder(
+      return getLunsFieldBuilder().addBuilder(
           index, opi_api.storage.v1.VirtioScsiLun.getDefaultInstance());
     }
     /**
-     * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
      */
     public java.util.List<opi_api.storage.v1.VirtioScsiLun.Builder> 
-         getLunBuilderList() {
-      return getLunFieldBuilder().getBuilderList();
+         getLunsBuilderList() {
+      return getLunsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-        getLunFieldBuilder() {
-      if (lunBuilder_ == null) {
-        lunBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getLunsFieldBuilder() {
+      if (lunsBuilder_ == null) {
+        lunsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder>(
-                lun_,
+                luns_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        lun_ = null;
+        luns_ = null;
       }
-      return lunBuilder_;
+      return lunsBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

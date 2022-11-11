@@ -67,11 +67,13 @@ message UpdateVirtioBlkRequest {
 }
 
 message ListVirtioBlkRequest {
-    // Intentionally empty.
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
 message ListVirtioBlkResponse {
-    repeated VirtioBlk controller = 1;
+    repeated VirtioBlk controllers = 1;
+    string next_page_token = 2;
 }
 
 message GetVirtioBlkRequest {

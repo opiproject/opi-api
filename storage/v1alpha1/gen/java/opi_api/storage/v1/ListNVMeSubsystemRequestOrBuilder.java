@@ -6,4 +6,22 @@ package opi_api.storage.v1;
 public interface ListNVMeSubsystemRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.ListNVMeSubsystemRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>int32 page_size = 1;</code>
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   * <code>string page_token = 2;</code>
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   * <code>string page_token = 2;</code>
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString
+      getPageTokenBytes();
 }

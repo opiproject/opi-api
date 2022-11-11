@@ -99,11 +99,13 @@ message UpdateVirtioScsiControllerRequest {
 }
 
 message ListVirtioScsiControllerRequest {
-    // Intentionally empty.
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
 message ListVirtioScsiControllerResponse {
-    repeated VirtioScsiController controller = 1;
+    repeated VirtioScsiController controllers = 1;
+    string next_page_token = 2;
 }
 
 message GetVirtioScsiControllerRequest {
@@ -134,10 +136,13 @@ message UpdateVirtioScsiLunRequest {
 
 message ListVirtioScsiLunRequest {
     common.v1.ObjectKey controller_id = 1;
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
 message ListVirtioScsiLunResponse {
-    repeated VirtioScsiLun lun = 1;
+    repeated VirtioScsiLun luns = 1;
+    string next_page_token = 2;
 }
 
 message GetVirtioScsiLunRequest {

@@ -23,7 +23,6 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
-#include <google/protobuf/generated_message_bases.h>
 #include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
@@ -976,9 +975,10 @@ class UpdateVirtioScsiControllerRequest final :
 // -------------------------------------------------------------------
 
 class ListVirtioScsiControllerRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.ListVirtioScsiControllerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.ListVirtioScsiControllerRequest) */ {
  public:
   inline ListVirtioScsiControllerRequest() : ListVirtioScsiControllerRequest(nullptr) {}
+  ~ListVirtioScsiControllerRequest() override;
   explicit constexpr ListVirtioScsiControllerRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   ListVirtioScsiControllerRequest(const ListVirtioScsiControllerRequest& from);
@@ -1051,15 +1051,27 @@ class ListVirtioScsiControllerRequest final :
   ListVirtioScsiControllerRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<ListVirtioScsiControllerRequest>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const ListVirtioScsiControllerRequest& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const ListVirtioScsiControllerRequest& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListVirtioScsiControllerRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListVirtioScsiControllerRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListVirtioScsiControllerRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -1070,6 +1082,8 @@ class ListVirtioScsiControllerRequest final :
   explicit ListVirtioScsiControllerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -1081,6 +1095,33 @@ class ListVirtioScsiControllerRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kPageTokenFieldNumber = 2,
+    kPageSizeFieldNumber = 1,
+  };
+  // string page_token = 2;
+  void clear_page_token();
+  const std::string& page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_page_token();
+  PROTOBUF_NODISCARD std::string* release_page_token();
+  void set_allocated_page_token(std::string* page_token);
+  private:
+  const std::string& _internal_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_page_token(const std::string& value);
+  std::string* _internal_mutable_page_token();
+  public:
+
+  // int32 page_size = 1;
+  void clear_page_size();
+  int32_t page_size() const;
+  void set_page_size(int32_t value);
+  private:
+  int32_t _internal_page_size() const;
+  void _internal_set_page_size(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiControllerRequest)
  private:
   class _Internal;
@@ -1088,6 +1129,8 @@ class ListVirtioScsiControllerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr page_token_;
+  int32_t page_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -1215,25 +1258,40 @@ class ListVirtioScsiControllerResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kControllerFieldNumber = 1,
+    kControllersFieldNumber = 1,
+    kNextPageTokenFieldNumber = 2,
   };
-  // repeated .opi_api.storage.v1.VirtioScsiController controller = 1;
-  int controller_size() const;
+  // repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;
+  int controllers_size() const;
   private:
-  int _internal_controller_size() const;
+  int _internal_controllers_size() const;
   public:
-  void clear_controller();
-  ::opi_api::storage::v1::VirtioScsiController* mutable_controller(int index);
+  void clear_controllers();
+  ::opi_api::storage::v1::VirtioScsiController* mutable_controllers(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController >*
-      mutable_controller();
+      mutable_controllers();
   private:
-  const ::opi_api::storage::v1::VirtioScsiController& _internal_controller(int index) const;
-  ::opi_api::storage::v1::VirtioScsiController* _internal_add_controller();
+  const ::opi_api::storage::v1::VirtioScsiController& _internal_controllers(int index) const;
+  ::opi_api::storage::v1::VirtioScsiController* _internal_add_controllers();
   public:
-  const ::opi_api::storage::v1::VirtioScsiController& controller(int index) const;
-  ::opi_api::storage::v1::VirtioScsiController* add_controller();
+  const ::opi_api::storage::v1::VirtioScsiController& controllers(int index) const;
+  ::opi_api::storage::v1::VirtioScsiController* add_controllers();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController >&
-      controller() const;
+      controllers() const;
+
+  // string next_page_token = 2;
+  void clear_next_page_token();
+  const std::string& next_page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_next_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_next_page_token();
+  PROTOBUF_NODISCARD std::string* release_next_page_token();
+  void set_allocated_next_page_token(std::string* next_page_token);
+  private:
+  const std::string& _internal_next_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_next_page_token(const std::string& value);
+  std::string* _internal_mutable_next_page_token();
+  public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiControllerResponse)
  private:
@@ -1242,7 +1300,8 @@ class ListVirtioScsiControllerResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController > controller_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController > controllers_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_page_token_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -2336,8 +2395,24 @@ class ListVirtioScsiLunRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kPageTokenFieldNumber = 3,
     kControllerIdFieldNumber = 1,
+    kPageSizeFieldNumber = 2,
   };
+  // string page_token = 3;
+  void clear_page_token();
+  const std::string& page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_page_token();
+  PROTOBUF_NODISCARD std::string* release_page_token();
+  void set_allocated_page_token(std::string* page_token);
+  private:
+  const std::string& _internal_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_page_token(const std::string& value);
+  std::string* _internal_mutable_page_token();
+  public:
+
   // .opi_api.common.v1.ObjectKey controller_id = 1;
   bool has_controller_id() const;
   private:
@@ -2356,6 +2431,15 @@ class ListVirtioScsiLunRequest final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
+  // int32 page_size = 2;
+  void clear_page_size();
+  int32_t page_size() const;
+  void set_page_size(int32_t value);
+  private:
+  int32_t _internal_page_size() const;
+  void _internal_set_page_size(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiLunRequest)
  private:
   class _Internal;
@@ -2363,7 +2447,9 @@ class ListVirtioScsiLunRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr page_token_;
   ::opi_api::common::v1::ObjectKey* controller_id_;
+  int32_t page_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -2491,25 +2577,40 @@ class ListVirtioScsiLunResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLunFieldNumber = 1,
+    kLunsFieldNumber = 1,
+    kNextPageTokenFieldNumber = 2,
   };
-  // repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;
-  int lun_size() const;
+  // repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;
+  int luns_size() const;
   private:
-  int _internal_lun_size() const;
+  int _internal_luns_size() const;
   public:
-  void clear_lun();
-  ::opi_api::storage::v1::VirtioScsiLun* mutable_lun(int index);
+  void clear_luns();
+  ::opi_api::storage::v1::VirtioScsiLun* mutable_luns(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun >*
-      mutable_lun();
+      mutable_luns();
   private:
-  const ::opi_api::storage::v1::VirtioScsiLun& _internal_lun(int index) const;
-  ::opi_api::storage::v1::VirtioScsiLun* _internal_add_lun();
+  const ::opi_api::storage::v1::VirtioScsiLun& _internal_luns(int index) const;
+  ::opi_api::storage::v1::VirtioScsiLun* _internal_add_luns();
   public:
-  const ::opi_api::storage::v1::VirtioScsiLun& lun(int index) const;
-  ::opi_api::storage::v1::VirtioScsiLun* add_lun();
+  const ::opi_api::storage::v1::VirtioScsiLun& luns(int index) const;
+  ::opi_api::storage::v1::VirtioScsiLun* add_luns();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun >&
-      lun() const;
+      luns() const;
+
+  // string next_page_token = 2;
+  void clear_next_page_token();
+  const std::string& next_page_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_next_page_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_next_page_token();
+  PROTOBUF_NODISCARD std::string* release_next_page_token();
+  void set_allocated_next_page_token(std::string* next_page_token);
+  private:
+  const std::string& _internal_next_page_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_next_page_token(const std::string& value);
+  std::string* _internal_mutable_next_page_token();
+  public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiLunResponse)
  private:
@@ -2518,7 +2619,8 @@ class ListVirtioScsiLunResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun > lun_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun > luns_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_page_token_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -3735,48 +3837,170 @@ inline void UpdateVirtioScsiControllerRequest::set_allocated_controller(::opi_ap
 
 // ListVirtioScsiControllerRequest
 
+// int32 page_size = 1;
+inline void ListVirtioScsiControllerRequest::clear_page_size() {
+  page_size_ = 0;
+}
+inline int32_t ListVirtioScsiControllerRequest::_internal_page_size() const {
+  return page_size_;
+}
+inline int32_t ListVirtioScsiControllerRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_size)
+  return _internal_page_size();
+}
+inline void ListVirtioScsiControllerRequest::_internal_set_page_size(int32_t value) {
+  
+  page_size_ = value;
+}
+inline void ListVirtioScsiControllerRequest::set_page_size(int32_t value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_size)
+}
+
+// string page_token = 2;
+inline void ListVirtioScsiControllerRequest::clear_page_token() {
+  page_token_.ClearToEmpty();
+}
+inline const std::string& ListVirtioScsiControllerRequest::page_token() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_token)
+  return _internal_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListVirtioScsiControllerRequest::set_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_token)
+}
+inline std::string* ListVirtioScsiControllerRequest::mutable_page_token() {
+  std::string* _s = _internal_mutable_page_token();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_token)
+  return _s;
+}
+inline const std::string& ListVirtioScsiControllerRequest::_internal_page_token() const {
+  return page_token_.Get();
+}
+inline void ListVirtioScsiControllerRequest::_internal_set_page_token(const std::string& value) {
+  
+  page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiControllerRequest::_internal_mutable_page_token() {
+  
+  return page_token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiControllerRequest::release_page_token() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_token)
+  return page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListVirtioScsiControllerRequest::set_allocated_page_token(std::string* page_token) {
+  if (page_token != nullptr) {
+    
+  } else {
+    
+  }
+  page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), page_token,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (page_token_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListVirtioScsiControllerRequest.page_token)
+}
+
 // -------------------------------------------------------------------
 
 // ListVirtioScsiControllerResponse
 
-// repeated .opi_api.storage.v1.VirtioScsiController controller = 1;
-inline int ListVirtioScsiControllerResponse::_internal_controller_size() const {
-  return controller_.size();
+// repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;
+inline int ListVirtioScsiControllerResponse::_internal_controllers_size() const {
+  return controllers_.size();
 }
-inline int ListVirtioScsiControllerResponse::controller_size() const {
-  return _internal_controller_size();
+inline int ListVirtioScsiControllerResponse::controllers_size() const {
+  return _internal_controllers_size();
 }
-inline void ListVirtioScsiControllerResponse::clear_controller() {
-  controller_.Clear();
+inline void ListVirtioScsiControllerResponse::clear_controllers() {
+  controllers_.Clear();
 }
-inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::mutable_controller(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiControllerResponse.controller)
-  return controller_.Mutable(index);
+inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::mutable_controllers(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiControllerResponse.controllers)
+  return controllers_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController >*
-ListVirtioScsiControllerResponse::mutable_controller() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.ListVirtioScsiControllerResponse.controller)
-  return &controller_;
+ListVirtioScsiControllerResponse::mutable_controllers() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.ListVirtioScsiControllerResponse.controllers)
+  return &controllers_;
 }
-inline const ::opi_api::storage::v1::VirtioScsiController& ListVirtioScsiControllerResponse::_internal_controller(int index) const {
-  return controller_.Get(index);
+inline const ::opi_api::storage::v1::VirtioScsiController& ListVirtioScsiControllerResponse::_internal_controllers(int index) const {
+  return controllers_.Get(index);
 }
-inline const ::opi_api::storage::v1::VirtioScsiController& ListVirtioScsiControllerResponse::controller(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiControllerResponse.controller)
-  return _internal_controller(index);
+inline const ::opi_api::storage::v1::VirtioScsiController& ListVirtioScsiControllerResponse::controllers(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiControllerResponse.controllers)
+  return _internal_controllers(index);
 }
-inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::_internal_add_controller() {
-  return controller_.Add();
+inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::_internal_add_controllers() {
+  return controllers_.Add();
 }
-inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::add_controller() {
-  ::opi_api::storage::v1::VirtioScsiController* _add = _internal_add_controller();
-  // @@protoc_insertion_point(field_add:opi_api.storage.v1.ListVirtioScsiControllerResponse.controller)
+inline ::opi_api::storage::v1::VirtioScsiController* ListVirtioScsiControllerResponse::add_controllers() {
+  ::opi_api::storage::v1::VirtioScsiController* _add = _internal_add_controllers();
+  // @@protoc_insertion_point(field_add:opi_api.storage.v1.ListVirtioScsiControllerResponse.controllers)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiController >&
-ListVirtioScsiControllerResponse::controller() const {
-  // @@protoc_insertion_point(field_list:opi_api.storage.v1.ListVirtioScsiControllerResponse.controller)
-  return controller_;
+ListVirtioScsiControllerResponse::controllers() const {
+  // @@protoc_insertion_point(field_list:opi_api.storage.v1.ListVirtioScsiControllerResponse.controllers)
+  return controllers_;
+}
+
+// string next_page_token = 2;
+inline void ListVirtioScsiControllerResponse::clear_next_page_token() {
+  next_page_token_.ClearToEmpty();
+}
+inline const std::string& ListVirtioScsiControllerResponse::next_page_token() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiControllerResponse.next_page_token)
+  return _internal_next_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListVirtioScsiControllerResponse::set_next_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiControllerResponse.next_page_token)
+}
+inline std::string* ListVirtioScsiControllerResponse::mutable_next_page_token() {
+  std::string* _s = _internal_mutable_next_page_token();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiControllerResponse.next_page_token)
+  return _s;
+}
+inline const std::string& ListVirtioScsiControllerResponse::_internal_next_page_token() const {
+  return next_page_token_.Get();
+}
+inline void ListVirtioScsiControllerResponse::_internal_set_next_page_token(const std::string& value) {
+  
+  next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiControllerResponse::_internal_mutable_next_page_token() {
+  
+  return next_page_token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiControllerResponse::release_next_page_token() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ListVirtioScsiControllerResponse.next_page_token)
+  return next_page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListVirtioScsiControllerResponse::set_allocated_next_page_token(std::string* next_page_token) {
+  if (next_page_token != nullptr) {
+    
+  } else {
+    
+  }
+  next_page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_page_token,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (next_page_token_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListVirtioScsiControllerResponse.next_page_token)
 }
 
 // -------------------------------------------------------------------
@@ -4554,48 +4778,170 @@ inline void ListVirtioScsiLunRequest::set_allocated_controller_id(::opi_api::com
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListVirtioScsiLunRequest.controller_id)
 }
 
+// int32 page_size = 2;
+inline void ListVirtioScsiLunRequest::clear_page_size() {
+  page_size_ = 0;
+}
+inline int32_t ListVirtioScsiLunRequest::_internal_page_size() const {
+  return page_size_;
+}
+inline int32_t ListVirtioScsiLunRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiLunRequest.page_size)
+  return _internal_page_size();
+}
+inline void ListVirtioScsiLunRequest::_internal_set_page_size(int32_t value) {
+  
+  page_size_ = value;
+}
+inline void ListVirtioScsiLunRequest::set_page_size(int32_t value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiLunRequest.page_size)
+}
+
+// string page_token = 3;
+inline void ListVirtioScsiLunRequest::clear_page_token() {
+  page_token_.ClearToEmpty();
+}
+inline const std::string& ListVirtioScsiLunRequest::page_token() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiLunRequest.page_token)
+  return _internal_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListVirtioScsiLunRequest::set_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiLunRequest.page_token)
+}
+inline std::string* ListVirtioScsiLunRequest::mutable_page_token() {
+  std::string* _s = _internal_mutable_page_token();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiLunRequest.page_token)
+  return _s;
+}
+inline const std::string& ListVirtioScsiLunRequest::_internal_page_token() const {
+  return page_token_.Get();
+}
+inline void ListVirtioScsiLunRequest::_internal_set_page_token(const std::string& value) {
+  
+  page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiLunRequest::_internal_mutable_page_token() {
+  
+  return page_token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiLunRequest::release_page_token() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ListVirtioScsiLunRequest.page_token)
+  return page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListVirtioScsiLunRequest::set_allocated_page_token(std::string* page_token) {
+  if (page_token != nullptr) {
+    
+  } else {
+    
+  }
+  page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), page_token,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (page_token_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListVirtioScsiLunRequest.page_token)
+}
+
 // -------------------------------------------------------------------
 
 // ListVirtioScsiLunResponse
 
-// repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;
-inline int ListVirtioScsiLunResponse::_internal_lun_size() const {
-  return lun_.size();
+// repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;
+inline int ListVirtioScsiLunResponse::_internal_luns_size() const {
+  return luns_.size();
 }
-inline int ListVirtioScsiLunResponse::lun_size() const {
-  return _internal_lun_size();
+inline int ListVirtioScsiLunResponse::luns_size() const {
+  return _internal_luns_size();
 }
-inline void ListVirtioScsiLunResponse::clear_lun() {
-  lun_.Clear();
+inline void ListVirtioScsiLunResponse::clear_luns() {
+  luns_.Clear();
 }
-inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::mutable_lun(int index) {
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiLunResponse.lun)
-  return lun_.Mutable(index);
+inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::mutable_luns(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiLunResponse.luns)
+  return luns_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun >*
-ListVirtioScsiLunResponse::mutable_lun() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.ListVirtioScsiLunResponse.lun)
-  return &lun_;
+ListVirtioScsiLunResponse::mutable_luns() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.storage.v1.ListVirtioScsiLunResponse.luns)
+  return &luns_;
 }
-inline const ::opi_api::storage::v1::VirtioScsiLun& ListVirtioScsiLunResponse::_internal_lun(int index) const {
-  return lun_.Get(index);
+inline const ::opi_api::storage::v1::VirtioScsiLun& ListVirtioScsiLunResponse::_internal_luns(int index) const {
+  return luns_.Get(index);
 }
-inline const ::opi_api::storage::v1::VirtioScsiLun& ListVirtioScsiLunResponse::lun(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiLunResponse.lun)
-  return _internal_lun(index);
+inline const ::opi_api::storage::v1::VirtioScsiLun& ListVirtioScsiLunResponse::luns(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiLunResponse.luns)
+  return _internal_luns(index);
 }
-inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::_internal_add_lun() {
-  return lun_.Add();
+inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::_internal_add_luns() {
+  return luns_.Add();
 }
-inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::add_lun() {
-  ::opi_api::storage::v1::VirtioScsiLun* _add = _internal_add_lun();
-  // @@protoc_insertion_point(field_add:opi_api.storage.v1.ListVirtioScsiLunResponse.lun)
+inline ::opi_api::storage::v1::VirtioScsiLun* ListVirtioScsiLunResponse::add_luns() {
+  ::opi_api::storage::v1::VirtioScsiLun* _add = _internal_add_luns();
+  // @@protoc_insertion_point(field_add:opi_api.storage.v1.ListVirtioScsiLunResponse.luns)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::storage::v1::VirtioScsiLun >&
-ListVirtioScsiLunResponse::lun() const {
-  // @@protoc_insertion_point(field_list:opi_api.storage.v1.ListVirtioScsiLunResponse.lun)
-  return lun_;
+ListVirtioScsiLunResponse::luns() const {
+  // @@protoc_insertion_point(field_list:opi_api.storage.v1.ListVirtioScsiLunResponse.luns)
+  return luns_;
+}
+
+// string next_page_token = 2;
+inline void ListVirtioScsiLunResponse::clear_next_page_token() {
+  next_page_token_.ClearToEmpty();
+}
+inline const std::string& ListVirtioScsiLunResponse::next_page_token() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ListVirtioScsiLunResponse.next_page_token)
+  return _internal_next_page_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListVirtioScsiLunResponse::set_next_page_token(ArgT0&& arg0, ArgT... args) {
+ 
+ next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ListVirtioScsiLunResponse.next_page_token)
+}
+inline std::string* ListVirtioScsiLunResponse::mutable_next_page_token() {
+  std::string* _s = _internal_mutable_next_page_token();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ListVirtioScsiLunResponse.next_page_token)
+  return _s;
+}
+inline const std::string& ListVirtioScsiLunResponse::_internal_next_page_token() const {
+  return next_page_token_.Get();
+}
+inline void ListVirtioScsiLunResponse::_internal_set_next_page_token(const std::string& value) {
+  
+  next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiLunResponse::_internal_mutable_next_page_token() {
+  
+  return next_page_token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListVirtioScsiLunResponse::release_next_page_token() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ListVirtioScsiLunResponse.next_page_token)
+  return next_page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListVirtioScsiLunResponse::set_allocated_next_page_token(std::string* next_page_token) {
+  if (next_page_token != nullptr) {
+    
+  } else {
+    
+  }
+  next_page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_page_token,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (next_page_token_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ListVirtioScsiLunResponse.next_page_token)
 }
 
 // -------------------------------------------------------------------

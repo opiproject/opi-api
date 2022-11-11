@@ -194,7 +194,9 @@ struct UpdateNVMeSubsystemRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNVMeSubsystemRequestDefaultTypeInternal _UpdateNVMeSubsystemRequest_default_instance_;
 constexpr ListNVMeSubsystemRequest::ListNVMeSubsystemRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , page_size_(0){}
 struct ListNVMeSubsystemRequestDefaultTypeInternal {
   constexpr ListNVMeSubsystemRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -206,7 +208,8 @@ struct ListNVMeSubsystemRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNVMeSubsystemRequestDefaultTypeInternal _ListNVMeSubsystemRequest_default_instance_;
 constexpr ListNVMeSubsystemResponse::ListNVMeSubsystemResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subsystem_(){}
+  : subsystems_()
+  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListNVMeSubsystemResponseDefaultTypeInternal {
   constexpr ListNVMeSubsystemResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -290,7 +293,9 @@ struct UpdateNVMeControllerRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNVMeControllerRequestDefaultTypeInternal _UpdateNVMeControllerRequest_default_instance_;
 constexpr ListNVMeControllerRequest::ListNVMeControllerRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subsystem_id_(nullptr){}
+  : page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , subsystem_id_(nullptr)
+  , page_size_(0){}
 struct ListNVMeControllerRequestDefaultTypeInternal {
   constexpr ListNVMeControllerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -302,7 +307,8 @@ struct ListNVMeControllerRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNVMeControllerRequestDefaultTypeInternal _ListNVMeControllerRequest_default_instance_;
 constexpr ListNVMeControllerResponse::ListNVMeControllerResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : controller_(){}
+  : controllers_()
+  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListNVMeControllerResponseDefaultTypeInternal {
   constexpr ListNVMeControllerResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -387,8 +393,10 @@ struct UpdateNVMeNamespaceRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateNVMeNamespaceRequestDefaultTypeInternal _UpdateNVMeNamespaceRequest_default_instance_;
 constexpr ListNVMeNamespaceRequest::ListNVMeNamespaceRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subsystem_id_(nullptr)
-  , controller_id_(nullptr){}
+  : page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , subsystem_id_(nullptr)
+  , controller_id_(nullptr)
+  , page_size_(0){}
 struct ListNVMeNamespaceRequestDefaultTypeInternal {
   constexpr ListNVMeNamespaceRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -400,7 +408,8 @@ struct ListNVMeNamespaceRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListNVMeNamespaceRequestDefaultTypeInternal _ListNVMeNamespaceRequest_default_instance_;
 constexpr ListNVMeNamespaceResponse::ListNVMeNamespaceResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : namespace__(){}
+  : namespaces_()
+  , next_page_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ListNVMeNamespaceResponseDefaultTypeInternal {
   constexpr ListNVMeNamespaceResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -573,13 +582,16 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemRequest, page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemResponse, subsystem_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemResponse, subsystems_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeSubsystemResponse, next_page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNVMeSubsystemRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -629,13 +641,16 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerRequest, subsystem_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerRequest, page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerResponse, controller_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerResponse, controllers_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeControllerResponse, next_page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNVMeControllerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -687,13 +702,16 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceRequest, subsystem_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceRequest, controller_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceRequest, page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceResponse, namespace__),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceResponse, namespaces_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::ListNVMeNamespaceResponse, next_page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetNVMeNamespaceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -731,26 +749,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 98, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMeSubsystemRequest)},
   { 105, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMeSubsystemRequest)},
   { 112, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeSubsystemRequest)},
-  { 118, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeSubsystemResponse)},
-  { 125, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeSubsystemRequest)},
-  { 132, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
-  { 139, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
-  { 146, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMeControllerRequest)},
-  { 153, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMeControllerRequest)},
-  { 160, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMeControllerRequest)},
-  { 167, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeControllerRequest)},
-  { 174, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeControllerResponse)},
-  { 181, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeControllerRequest)},
-  { 188, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
-  { 195, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
-  { 203, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMeNamespaceRequest)},
-  { 210, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMeNamespaceRequest)},
-  { 217, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMeNamespaceRequest)},
-  { 224, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeNamespaceRequest)},
-  { 232, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeNamespaceResponse)},
-  { 239, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeNamespaceRequest)},
-  { 246, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
-  { 253, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
+  { 120, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeSubsystemResponse)},
+  { 128, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeSubsystemRequest)},
+  { 135, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsRequest)},
+  { 142, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatsResponse)},
+  { 149, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMeControllerRequest)},
+  { 156, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMeControllerRequest)},
+  { 163, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMeControllerRequest)},
+  { 170, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeControllerRequest)},
+  { 179, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeControllerResponse)},
+  { 187, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeControllerRequest)},
+  { 194, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsRequest)},
+  { 201, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatsResponse)},
+  { 209, -1, -1, sizeof(::opi_api::storage::v1::CreateNVMeNamespaceRequest)},
+  { 216, -1, -1, sizeof(::opi_api::storage::v1::DeleteNVMeNamespaceRequest)},
+  { 223, -1, -1, sizeof(::opi_api::storage::v1::UpdateNVMeNamespaceRequest)},
+  { 230, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeNamespaceRequest)},
+  { 240, -1, -1, sizeof(::opi_api::storage::v1::ListNVMeNamespaceResponse)},
+  { 248, -1, -1, sizeof(::opi_api::storage::v1::GetNVMeNamespaceRequest)},
+  { 255, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsRequest)},
+  { 262, -1, -1, sizeof(::opi_api::storage::v1::NVMeNamespaceStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -837,123 +855,127 @@ const char descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto[] PROTOBUF_S
   "m_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey"
   "\"R\n\032UpdateNVMeSubsystemRequest\0224\n\tsubsys"
   "tem\030\001 \001(\0132!.opi_api.storage.v1.NVMeSubsy"
-  "stem\"\032\n\030ListNVMeSubsystemRequest\"Q\n\031List"
-  "NVMeSubsystemResponse\0224\n\tsubsystem\030\001 \003(\013"
-  "2!.opi_api.storage.v1.NVMeSubsystem\"M\n\027G"
-  "etNVMeSubsystemRequest\0222\n\014subsystem_id\030\001"
-  " \001(\0132\034.opi_api.common.v1.ObjectKey\"O\n\031NV"
-  "MeSubsystemStatsRequest\0222\n\014subsystem_id\030"
-  "\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"+\n\032N"
-  "VMeSubsystemStatsResponse\022\r\n\005stats\030\001 \001(\t"
-  "\"U\n\033CreateNVMeControllerRequest\0226\n\ncontr"
-  "oller\030\001 \001(\0132\".opi_api.storage.v1.NVMeCon"
-  "troller\"R\n\033DeleteNVMeControllerRequest\0223"
-  "\n\rcontroller_id\030\001 \001(\0132\034.opi_api.common.v"
-  "1.ObjectKey\"U\n\033UpdateNVMeControllerReque"
-  "st\0226\n\ncontroller\030\001 \001(\0132\".opi_api.storage"
-  ".v1.NVMeController\"O\n\031ListNVMeController"
+  "stem\"A\n\030ListNVMeSubsystemRequest\022\021\n\tpage"
+  "_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"k\n\031ListN"
+  "VMeSubsystemResponse\0225\n\nsubsystems\030\001 \003(\013"
+  "2!.opi_api.storage.v1.NVMeSubsystem\022\027\n\017n"
+  "ext_page_token\030\002 \001(\t\"M\n\027GetNVMeSubsystem"
   "Request\0222\n\014subsystem_id\030\001 \001(\0132\034.opi_api."
-  "common.v1.ObjectKey\"T\n\032ListNVMeControlle"
-  "rResponse\0226\n\ncontroller\030\001 \003(\0132\".opi_api."
-  "storage.v1.NVMeController\"O\n\030GetNVMeCont"
-  "rollerRequest\0223\n\rcontroller_id\030\001 \001(\0132\034.o"
-  "pi_api.common.v1.ObjectKey\"F\n\032NVMeContro"
-  "llerStatsRequest\022(\n\002id\030\001 \001(\0132\034.opi_api.c"
-  "ommon.v1.ObjectKey\"V\n\033NVMeControllerStat"
-  "sResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v"
-  "1.ObjectKey\022\r\n\005stats\030\002 \001(\t\"R\n\032CreateNVMe"
-  "NamespaceRequest\0224\n\tnamespace\030\001 \001(\0132!.op"
-  "i_api.storage.v1.NVMeNamespace\"P\n\032Delete"
-  "NVMeNamespaceRequest\0222\n\014namespace_id\030\001 \001"
-  "(\0132\034.opi_api.common.v1.ObjectKey\"R\n\032Upda"
-  "teNVMeNamespaceRequest\0224\n\tnamespace\030\001 \001("
-  "\0132!.opi_api.storage.v1.NVMeNamespace\"\203\001\n"
-  "\030ListNVMeNamespaceRequest\0222\n\014subsystem_i"
-  "d\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\0223\n"
-  "\rcontroller_id\030\002 \001(\0132\034.opi_api.common.v1"
-  ".ObjectKey\"Q\n\031ListNVMeNamespaceResponse\022"
-  "4\n\tnamespace\030\001 \003(\0132!.opi_api.storage.v1."
-  "NVMeNamespace\"M\n\027GetNVMeNamespaceRequest"
-  "\0222\n\014namespace_id\030\001 \001(\0132\034.opi_api.common."
-  "v1.ObjectKey\"O\n\031NVMeNamespaceStatsReques"
-  "t\0222\n\014namespace_id\030\001 \001(\0132\034.opi_api.common"
-  ".v1.ObjectKey\"U\n\032NVMeNamespaceStatsRespo"
-  "nse\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Obje"
-  "ctKey\022\r\n\005stats\030\002 \001(\t*\266\001\n\025NVMeNamespacePc"
-  "iState\022)\n%NV_ME_NAMESPACE_PCI_STATE_UNSP"
-  "ECIFIED\020\000\022%\n!NVME_NAMESPACE_PCI_STATE_DI"
-  "SABLED\020\001\022$\n NVME_NAMESPACE_PCI_STATE_ENA"
-  "BLED\020\002\022%\n!NVME_NAMESPACE_PCI_STATE_DELET"
-  "ING\020\003*\240\001\n\031NVMeNamespacePciOperState\022.\n*N"
-  "V_ME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIE"
-  "D\020\000\022(\n$NVME_NAMESPACE_PCI_OPER_STATE_ONL"
-  "INE\020\001\022)\n%NVME_NAMESPACE_PCI_OPER_STATE_O"
-  "FFLINE\020\0022\260\023\n\023FrontendNvmeService\022\213\001\n\023Cre"
-  "ateNVMeSubsystem\022..opi_api.storage.v1.Cr"
-  "eateNVMeSubsystemRequest\032!.opi_api.stora"
-  "ge.v1.NVMeSubsystem\"!\202\323\344\223\002\033\"\016/v1/subsyst"
-  "ems:\tsubsystem\022\201\001\n\023DeleteNVMeSubsystem\022."
-  ".opi_api.storage.v1.DeleteNVMeSubsystemR"
-  "equest\032\026.google.protobuf.Empty\"\"\202\323\344\223\002\034*\032"
-  "/v1/subsystems/{subsystem}\022\213\001\n\023UpdateNVM"
-  "eSubsystem\022..opi_api.storage.v1.UpdateNV"
-  "MeSubsystemRequest\032!.opi_api.storage.v1."
-  "NVMeSubsystem\"!\202\323\344\223\002\0332\016/v1/subsystems:\ts"
-  "ubsystem\022\210\001\n\021ListNVMeSubsystem\022,.opi_api"
-  ".storage.v1.ListNVMeSubsystemRequest\032-.o"
-  "pi_api.storage.v1.ListNVMeSubsystemRespo"
-  "nse\"\026\202\323\344\223\002\020\022\016/v1/subsystems\022\206\001\n\020GetNVMeS"
-  "ubsystem\022+.opi_api.storage.v1.GetNVMeSub"
+  "common.v1.ObjectKey\"O\n\031NVMeSubsystemStat"
+  "sRequest\0222\n\014subsystem_id\030\001 \001(\0132\034.opi_api"
+  ".common.v1.ObjectKey\"+\n\032NVMeSubsystemSta"
+  "tsResponse\022\r\n\005stats\030\001 \001(\t\"U\n\033CreateNVMeC"
+  "ontrollerRequest\0226\n\ncontroller\030\001 \001(\0132\".o"
+  "pi_api.storage.v1.NVMeController\"R\n\033Dele"
+  "teNVMeControllerRequest\0223\n\rcontroller_id"
+  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"U\n\033"
+  "UpdateNVMeControllerRequest\0226\n\ncontrolle"
+  "r\030\001 \001(\0132\".opi_api.storage.v1.NVMeControl"
+  "ler\"v\n\031ListNVMeControllerRequest\0222\n\014subs"
+  "ystem_id\030\001 \001(\0132\034.opi_api.common.v1.Objec"
+  "tKey\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+  "\001(\t\"n\n\032ListNVMeControllerResponse\0227\n\013con"
+  "trollers\030\001 \003(\0132\".opi_api.storage.v1.NVMe"
+  "Controller\022\027\n\017next_page_token\030\002 \001(\t\"O\n\030G"
+  "etNVMeControllerRequest\0223\n\rcontroller_id"
+  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"F\n\032"
+  "NVMeControllerStatsRequest\022(\n\002id\030\001 \001(\0132\034"
+  ".opi_api.common.v1.ObjectKey\"V\n\033NVMeCont"
+  "rollerStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_ap"
+  "i.common.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t\"R\n\032"
+  "CreateNVMeNamespaceRequest\0224\n\tnamespace\030"
+  "\001 \001(\0132!.opi_api.storage.v1.NVMeNamespace"
+  "\"P\n\032DeleteNVMeNamespaceRequest\0222\n\014namesp"
+  "ace_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectK"
+  "ey\"R\n\032UpdateNVMeNamespaceRequest\0224\n\tname"
+  "space\030\001 \001(\0132!.opi_api.storage.v1.NVMeNam"
+  "espace\"\252\001\n\030ListNVMeNamespaceRequest\0222\n\014s"
+  "ubsystem_id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
+  "jectKey\0223\n\rcontroller_id\030\002 \001(\0132\034.opi_api"
+  ".common.v1.ObjectKey\022\021\n\tpage_size\030\003 \001(\005\022"
+  "\022\n\npage_token\030\004 \001(\t\"k\n\031ListNVMeNamespace"
+  "Response\0225\n\nnamespaces\030\001 \003(\0132!.opi_api.s"
+  "torage.v1.NVMeNamespace\022\027\n\017next_page_tok"
+  "en\030\002 \001(\t\"M\n\027GetNVMeNamespaceRequest\0222\n\014n"
+  "amespace_id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
+  "jectKey\"O\n\031NVMeNamespaceStatsRequest\0222\n\014"
+  "namespace_id\030\001 \001(\0132\034.opi_api.common.v1.O"
+  "bjectKey\"U\n\032NVMeNamespaceStatsResponse\022("
+  "\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey"
+  "\022\r\n\005stats\030\002 \001(\t*\266\001\n\025NVMeNamespacePciStat"
+  "e\022)\n%NV_ME_NAMESPACE_PCI_STATE_UNSPECIFI"
+  "ED\020\000\022%\n!NVME_NAMESPACE_PCI_STATE_DISABLE"
+  "D\020\001\022$\n NVME_NAMESPACE_PCI_STATE_ENABLED\020"
+  "\002\022%\n!NVME_NAMESPACE_PCI_STATE_DELETING\020\003"
+  "*\240\001\n\031NVMeNamespacePciOperState\022.\n*NV_ME_"
+  "NAMESPACE_PCI_OPER_STATE_UNSPECIFIED\020\000\022("
+  "\n$NVME_NAMESPACE_PCI_OPER_STATE_ONLINE\020\001"
+  "\022)\n%NVME_NAMESPACE_PCI_OPER_STATE_OFFLIN"
+  "E\020\0022\260\023\n\023FrontendNvmeService\022\213\001\n\023CreateNV"
+  "MeSubsystem\022..opi_api.storage.v1.CreateN"
+  "VMeSubsystemRequest\032!.opi_api.storage.v1"
+  ".NVMeSubsystem\"!\202\323\344\223\002\033\"\016/v1/subsystems:\t"
+  "subsystem\022\201\001\n\023DeleteNVMeSubsystem\022..opi_"
+  "api.storage.v1.DeleteNVMeSubsystemReques"
+  "t\032\026.google.protobuf.Empty\"\"\202\323\344\223\002\034*\032/v1/s"
+  "ubsystems/{subsystem}\022\213\001\n\023UpdateNVMeSubs"
+  "ystem\022..opi_api.storage.v1.UpdateNVMeSub"
   "systemRequest\032!.opi_api.storage.v1.NVMeS"
-  "ubsystem\"\"\202\323\344\223\002\034\022\032/v1/subsystems/{subsys"
-  "tem}\022u\n\022NVMeSubsystemStats\022-.opi_api.sto"
-  "rage.v1.NVMeSubsystemStatsRequest\032..opi_"
-  "api.storage.v1.NVMeSubsystemStatsRespons"
-  "e\"\000\022\220\001\n\024CreateNVMeController\022/.opi_api.s"
-  "torage.v1.CreateNVMeControllerRequest\032\"."
-  "opi_api.storage.v1.NVMeController\"#\202\323\344\223\002"
-  "\035\"\017/v1/controllers:\ncontroller\022\205\001\n\024Delet"
-  "eNVMeController\022/.opi_api.storage.v1.Del"
-  "eteNVMeControllerRequest\032\026.google.protob"
-  "uf.Empty\"$\202\323\344\223\002\036*\034/v1/controllers/{contr"
-  "oller}\022\220\001\n\024UpdateNVMeController\022/.opi_ap"
-  "i.storage.v1.UpdateNVMeControllerRequest"
-  "\032\".opi_api.storage.v1.NVMeController\"#\202\323"
-  "\344\223\002\0352\017/v1/controllers:\ncontroller\022\214\001\n\022Li"
-  "stNVMeController\022-.opi_api.storage.v1.Li"
-  "stNVMeControllerRequest\032..opi_api.storag"
-  "e.v1.ListNVMeControllerResponse\"\027\202\323\344\223\002\021\022"
-  "\017/v1/controllers\022\213\001\n\021GetNVMeController\022,"
-  ".opi_api.storage.v1.GetNVMeControllerReq"
-  "uest\032\".opi_api.storage.v1.NVMeController"
-  "\"$\202\323\344\223\002\036\022\034/v1/controllers/{controller}\022x"
-  "\n\023NVMeControllerStats\022..opi_api.storage."
-  "v1.NVMeControllerStatsRequest\032/.opi_api."
-  "storage.v1.NVMeControllerStatsResponse\"\000"
-  "\022\213\001\n\023CreateNVMeNamespace\022..opi_api.stora"
-  "ge.v1.CreateNVMeNamespaceRequest\032!.opi_a"
-  "pi.storage.v1.NVMeNamespace\"!\202\323\344\223\002\033\"\016/v1"
-  "/namespaces:\tnamespace\022\201\001\n\023DeleteNVMeNam"
-  "espace\022..opi_api.storage.v1.DeleteNVMeNa"
-  "mespaceRequest\032\026.google.protobuf.Empty\"\""
-  "\202\323\344\223\002\034*\032/v1/namespaces/{namespace}\022\213\001\n\023U"
-  "pdateNVMeNamespace\022..opi_api.storage.v1."
-  "UpdateNVMeNamespaceRequest\032!.opi_api.sto"
-  "rage.v1.NVMeNamespace\"!\202\323\344\223\002\0332\016/v1/names"
-  "paces:\tnamespace\022\210\001\n\021ListNVMeNamespace\022,"
-  ".opi_api.storage.v1.ListNVMeNamespaceReq"
-  "uest\032-.opi_api.storage.v1.ListNVMeNamesp"
-  "aceResponse\"\026\202\323\344\223\002\020\022\016/v1/namespaces\022\206\001\n\020"
-  "GetNVMeNamespace\022+.opi_api.storage.v1.Ge"
-  "tNVMeNamespaceRequest\032!.opi_api.storage."
-  "v1.NVMeNamespace\"\"\202\323\344\223\002\034\022\032/v1/namespaces"
-  "/{namespace}\022u\n\022NVMeNamespaceStats\022-.opi"
-  "_api.storage.v1.NVMeNamespaceStatsReques"
-  "t\032..opi_api.storage.v1.NVMeNamespaceStat"
-  "sResponse\"\000Bd\n\022opi_api.storage.v1B\025Front"
-  "endNvmePcieProtoP\001Z5github.com/opiprojec"
-  "t/opi-api/storage/v1alpha1/gen/gob\006proto"
-  "3"
+  "ubsystem\"!\202\323\344\223\002\0332\016/v1/subsystems:\tsubsys"
+  "tem\022\210\001\n\021ListNVMeSubsystem\022,.opi_api.stor"
+  "age.v1.ListNVMeSubsystemRequest\032-.opi_ap"
+  "i.storage.v1.ListNVMeSubsystemResponse\"\026"
+  "\202\323\344\223\002\020\022\016/v1/subsystems\022\206\001\n\020GetNVMeSubsys"
+  "tem\022+.opi_api.storage.v1.GetNVMeSubsyste"
+  "mRequest\032!.opi_api.storage.v1.NVMeSubsys"
+  "tem\"\"\202\323\344\223\002\034\022\032/v1/subsystems/{subsystem}\022"
+  "u\n\022NVMeSubsystemStats\022-.opi_api.storage."
+  "v1.NVMeSubsystemStatsRequest\032..opi_api.s"
+  "torage.v1.NVMeSubsystemStatsResponse\"\000\022\220"
+  "\001\n\024CreateNVMeController\022/.opi_api.storag"
+  "e.v1.CreateNVMeControllerRequest\032\".opi_a"
+  "pi.storage.v1.NVMeController\"#\202\323\344\223\002\035\"\017/v"
+  "1/controllers:\ncontroller\022\205\001\n\024DeleteNVMe"
+  "Controller\022/.opi_api.storage.v1.DeleteNV"
+  "MeControllerRequest\032\026.google.protobuf.Em"
+  "pty\"$\202\323\344\223\002\036*\034/v1/controllers/{controller"
+  "}\022\220\001\n\024UpdateNVMeController\022/.opi_api.sto"
+  "rage.v1.UpdateNVMeControllerRequest\032\".op"
+  "i_api.storage.v1.NVMeController\"#\202\323\344\223\002\0352"
+  "\017/v1/controllers:\ncontroller\022\214\001\n\022ListNVM"
+  "eController\022-.opi_api.storage.v1.ListNVM"
+  "eControllerRequest\032..opi_api.storage.v1."
+  "ListNVMeControllerResponse\"\027\202\323\344\223\002\021\022\017/v1/"
+  "controllers\022\213\001\n\021GetNVMeController\022,.opi_"
+  "api.storage.v1.GetNVMeControllerRequest\032"
+  "\".opi_api.storage.v1.NVMeController\"$\202\323\344"
+  "\223\002\036\022\034/v1/controllers/{controller}\022x\n\023NVM"
+  "eControllerStats\022..opi_api.storage.v1.NV"
+  "MeControllerStatsRequest\032/.opi_api.stora"
+  "ge.v1.NVMeControllerStatsResponse\"\000\022\213\001\n\023"
+  "CreateNVMeNamespace\022..opi_api.storage.v1"
+  ".CreateNVMeNamespaceRequest\032!.opi_api.st"
+  "orage.v1.NVMeNamespace\"!\202\323\344\223\002\033\"\016/v1/name"
+  "spaces:\tnamespace\022\201\001\n\023DeleteNVMeNamespac"
+  "e\022..opi_api.storage.v1.DeleteNVMeNamespa"
+  "ceRequest\032\026.google.protobuf.Empty\"\"\202\323\344\223\002"
+  "\034*\032/v1/namespaces/{namespace}\022\213\001\n\023Update"
+  "NVMeNamespace\022..opi_api.storage.v1.Updat"
+  "eNVMeNamespaceRequest\032!.opi_api.storage."
+  "v1.NVMeNamespace\"!\202\323\344\223\002\0332\016/v1/namespaces"
+  ":\tnamespace\022\210\001\n\021ListNVMeNamespace\022,.opi_"
+  "api.storage.v1.ListNVMeNamespaceRequest\032"
+  "-.opi_api.storage.v1.ListNVMeNamespaceRe"
+  "sponse\"\026\202\323\344\223\002\020\022\016/v1/namespaces\022\206\001\n\020GetNV"
+  "MeNamespace\022+.opi_api.storage.v1.GetNVMe"
+  "NamespaceRequest\032!.opi_api.storage.v1.NV"
+  "MeNamespace\"\"\202\323\344\223\002\034\022\032/v1/namespaces/{nam"
+  "espace}\022u\n\022NVMeNamespaceStats\022-.opi_api."
+  "storage.v1.NVMeNamespaceStatsRequest\032..o"
+  "pi_api.storage.v1.NVMeNamespaceStatsResp"
+  "onse\"\000Bd\n\022opi_api.storage.v1B\025FrontendNv"
+  "mePcieProtoP\001Z5github.com/opiproject/opi"
+  "-api/storage/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps[5] = {
   &::descriptor_table_common_2eproto,
@@ -964,7 +986,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fnvme_5fpcie_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fnvme_5fpcie_2eproto = {
-  false, false, 6521, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
+  false, false, 6716, descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto, "frontend_nvme_pcie.proto", 
   &descriptor_table_frontend_5fnvme_5fpcie_2eproto_once, descriptor_table_frontend_5fnvme_5fpcie_2eproto_deps, 5, 33,
   schemas, file_default_instances, TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets,
   file_level_metadata_frontend_5fnvme_5fpcie_2eproto, file_level_enum_descriptors_frontend_5fnvme_5fpcie_2eproto, file_level_service_descriptors_frontend_5fnvme_5fpcie_2eproto,
@@ -4393,30 +4415,220 @@ class ListNVMeSubsystemRequest::_Internal {
 
 ListNVMeSubsystemRequest::ListNVMeSubsystemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.ListNVMeSubsystemRequest)
 }
 ListNVMeSubsystemRequest::ListNVMeSubsystemRequest(const ListNVMeSubsystemRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_page_token().empty()) {
+    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
+      GetArenaForAllocation());
+  }
+  page_size_ = from.page_size_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeSubsystemRequest)
 }
 
+inline void ListNVMeSubsystemRequest::SharedCtor() {
+page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+page_size_ = 0;
+}
 
+ListNVMeSubsystemRequest::~ListNVMeSubsystemRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
 
+inline void ListNVMeSubsystemRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
 
+void ListNVMeSubsystemRequest::ArenaDtor(void* object) {
+  ListNVMeSubsystemRequest* _this = reinterpret_cast< ListNVMeSubsystemRequest* >(object);
+  (void)_this;
+}
+void ListNVMeSubsystemRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListNVMeSubsystemRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListNVMeSubsystemRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  page_token_.ClearToEmpty();
+  page_size_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListNVMeSubsystemRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 page_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string page_token = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeSubsystemRequest.page_token"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListNVMeSubsystemRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 page_size = 1;
+  if (this->_internal_page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_page_size(), target);
+  }
+
+  // string page_token = 2;
+  if (!this->_internal_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeSubsystemRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_page_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  return target;
+}
+
+size_t ListNVMeSubsystemRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string page_token = 2;
+  if (!this->_internal_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
+  // int32 page_size = 1;
+  if (this->_internal_page_size() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListNVMeSubsystemRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ListNVMeSubsystemRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNVMeSubsystemRequest::GetClassData() const { return &_class_data_; }
 
+void ListNVMeSubsystemRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ListNVMeSubsystemRequest *>(to)->MergeFrom(
+      static_cast<const ListNVMeSubsystemRequest &>(from));
+}
 
 
+void ListNVMeSubsystemRequest::MergeFrom(const ListNVMeSubsystemRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (!from._internal_page_token().empty()) {
+    _internal_set_page_token(from._internal_page_token());
+  }
+  if (from._internal_page_size() != 0) {
+    _internal_set_page_size(from._internal_page_size());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void ListNVMeSubsystemRequest::CopyFrom(const ListNVMeSubsystemRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.ListNVMeSubsystemRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool ListNVMeSubsystemRequest::IsInitialized() const {
+  return true;
+}
+
+void ListNVMeSubsystemRequest::InternalSwap(ListNVMeSubsystemRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &page_token_, lhs_arena,
+      &other->page_token_, rhs_arena
+  );
+  swap(page_size_, other->page_size_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMeSubsystemRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
@@ -4433,7 +4645,7 @@ class ListNVMeSubsystemResponse::_Internal {
 ListNVMeSubsystemResponse::ListNVMeSubsystemResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  subsystem_(arena) {
+  subsystems_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -4442,12 +4654,24 @@ ListNVMeSubsystemResponse::ListNVMeSubsystemResponse(::PROTOBUF_NAMESPACE_ID::Ar
 }
 ListNVMeSubsystemResponse::ListNVMeSubsystemResponse(const ListNVMeSubsystemResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      subsystem_(from.subsystem_) {
+      subsystems_(from.subsystems_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_next_page_token().empty()) {
+    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeSubsystemResponse)
 }
 
 inline void ListNVMeSubsystemResponse::SharedCtor() {
+next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListNVMeSubsystemResponse::~ListNVMeSubsystemResponse() {
@@ -4459,6 +4683,7 @@ ListNVMeSubsystemResponse::~ListNVMeSubsystemResponse() {
 
 inline void ListNVMeSubsystemResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListNVMeSubsystemResponse::ArenaDtor(void* object) {
@@ -4477,7 +4702,8 @@ void ListNVMeSubsystemResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  subsystem_.Clear();
+  subsystems_.Clear();
+  next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4487,16 +4713,26 @@ const char* ListNVMeSubsystemResponse::_InternalParse(const char* ptr, ::PROTOBU
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
+      // repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_subsystem(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_subsystems(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string next_page_token = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeSubsystemResponse.next_page_token"));
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -4529,12 +4765,22 @@ uint8_t* ListNVMeSubsystemResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
+  // repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_subsystem_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_subsystems_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_subsystem(i), target, stream);
+      InternalWriteMessage(1, this->_internal_subsystems(i), target, stream);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeSubsystemResponse.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_next_page_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4553,11 +4799,18 @@ size_t ListNVMeSubsystemResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
-  total_size += 1UL * this->_internal_subsystem_size();
-  for (const auto& msg : this->subsystem_) {
+  // repeated .opi_api.storage.v1.NVMeSubsystem subsystems = 1;
+  total_size += 1UL * this->_internal_subsystems_size();
+  for (const auto& msg : this->subsystems_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4582,7 +4835,10 @@ void ListNVMeSubsystemResponse::MergeFrom(const ListNVMeSubsystemResponse& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  subsystem_.MergeFrom(from.subsystem_);
+  subsystems_.MergeFrom(from.subsystems_);
+  if (!from._internal_next_page_token().empty()) {
+    _internal_set_next_page_token(from._internal_next_page_token());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4599,8 +4855,15 @@ bool ListNVMeSubsystemResponse::IsInitialized() const {
 
 void ListNVMeSubsystemResponse::InternalSwap(ListNVMeSubsystemResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  subsystem_.InternalSwap(&other->subsystem_);
+  subsystems_.InternalSwap(&other->subsystems_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &next_page_token_, lhs_arena,
+      &other->next_page_token_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMeSubsystemResponse::GetMetadata() const {
@@ -5834,16 +6097,32 @@ ListNVMeControllerRequest::ListNVMeControllerRequest(::PROTOBUF_NAMESPACE_ID::Ar
 ListNVMeControllerRequest::ListNVMeControllerRequest(const ListNVMeControllerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_page_token().empty()) {
+    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_subsystem_id()) {
     subsystem_id_ = new ::opi_api::common::v1::ObjectKey(*from.subsystem_id_);
   } else {
     subsystem_id_ = nullptr;
   }
+  page_size_ = from.page_size_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeControllerRequest)
 }
 
 inline void ListNVMeControllerRequest::SharedCtor() {
-subsystem_id_ = nullptr;
+page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&subsystem_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&page_size_) -
+    reinterpret_cast<char*>(&subsystem_id_)) + sizeof(page_size_));
 }
 
 ListNVMeControllerRequest::~ListNVMeControllerRequest() {
@@ -5855,6 +6134,7 @@ ListNVMeControllerRequest::~ListNVMeControllerRequest() {
 
 inline void ListNVMeControllerRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete subsystem_id_;
 }
 
@@ -5874,10 +6154,12 @@ void ListNVMeControllerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  page_token_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
     delete subsystem_id_;
   }
   subsystem_id_ = nullptr;
+  page_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5891,6 +6173,24 @@ const char* ListNVMeControllerRequest::_InternalParse(const char* ptr, ::PROTOBU
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_subsystem_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 page_size = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string page_token = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeControllerRequest.page_token"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5932,6 +6232,22 @@ uint8_t* ListNVMeControllerRequest::_InternalSerialize(
         1, _Internal::subsystem_id(this), target, stream);
   }
 
+  // int32 page_size = 2;
+  if (this->_internal_page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_page_size(), target);
+  }
+
+  // string page_token = 3;
+  if (!this->_internal_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeControllerRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_page_token(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5948,11 +6264,23 @@ size_t ListNVMeControllerRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string page_token = 3;
+  if (!this->_internal_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
   // .opi_api.common.v1.ObjectKey subsystem_id = 1;
   if (this->_internal_has_subsystem_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *subsystem_id_);
+  }
+
+  // int32 page_size = 2;
+  if (this->_internal_page_size() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5977,8 +6305,14 @@ void ListNVMeControllerRequest::MergeFrom(const ListNVMeControllerRequest& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_page_token().empty()) {
+    _internal_set_page_token(from._internal_page_token());
+  }
   if (from._internal_has_subsystem_id()) {
     _internal_mutable_subsystem_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_subsystem_id());
+  }
+  if (from._internal_page_size() != 0) {
+    _internal_set_page_size(from._internal_page_size());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5996,8 +6330,20 @@ bool ListNVMeControllerRequest::IsInitialized() const {
 
 void ListNVMeControllerRequest::InternalSwap(ListNVMeControllerRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(subsystem_id_, other->subsystem_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &page_token_, lhs_arena,
+      &other->page_token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListNVMeControllerRequest, page_size_)
+      + sizeof(ListNVMeControllerRequest::page_size_)
+      - PROTOBUF_FIELD_OFFSET(ListNVMeControllerRequest, subsystem_id_)>(
+          reinterpret_cast<char*>(&subsystem_id_),
+          reinterpret_cast<char*>(&other->subsystem_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMeControllerRequest::GetMetadata() const {
@@ -6015,7 +6361,7 @@ class ListNVMeControllerResponse::_Internal {
 ListNVMeControllerResponse::ListNVMeControllerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  controller_(arena) {
+  controllers_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -6024,12 +6370,24 @@ ListNVMeControllerResponse::ListNVMeControllerResponse(::PROTOBUF_NAMESPACE_ID::
 }
 ListNVMeControllerResponse::ListNVMeControllerResponse(const ListNVMeControllerResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      controller_(from.controller_) {
+      controllers_(from.controllers_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_next_page_token().empty()) {
+    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeControllerResponse)
 }
 
 inline void ListNVMeControllerResponse::SharedCtor() {
+next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListNVMeControllerResponse::~ListNVMeControllerResponse() {
@@ -6041,6 +6399,7 @@ ListNVMeControllerResponse::~ListNVMeControllerResponse() {
 
 inline void ListNVMeControllerResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListNVMeControllerResponse::ArenaDtor(void* object) {
@@ -6059,7 +6418,8 @@ void ListNVMeControllerResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  controller_.Clear();
+  controllers_.Clear();
+  next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6069,16 +6429,26 @@ const char* ListNVMeControllerResponse::_InternalParse(const char* ptr, ::PROTOB
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .opi_api.storage.v1.NVMeController controller = 1;
+      // repeated .opi_api.storage.v1.NVMeController controllers = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_controller(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_controllers(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string next_page_token = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeControllerResponse.next_page_token"));
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -6111,12 +6481,22 @@ uint8_t* ListNVMeControllerResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeController controller = 1;
+  // repeated .opi_api.storage.v1.NVMeController controllers = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_controller_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_controllers_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_controller(i), target, stream);
+      InternalWriteMessage(1, this->_internal_controllers(i), target, stream);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeControllerResponse.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_next_page_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6135,11 +6515,18 @@ size_t ListNVMeControllerResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeController controller = 1;
-  total_size += 1UL * this->_internal_controller_size();
-  for (const auto& msg : this->controller_) {
+  // repeated .opi_api.storage.v1.NVMeController controllers = 1;
+  total_size += 1UL * this->_internal_controllers_size();
+  for (const auto& msg : this->controllers_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6164,7 +6551,10 @@ void ListNVMeControllerResponse::MergeFrom(const ListNVMeControllerResponse& fro
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  controller_.MergeFrom(from.controller_);
+  controllers_.MergeFrom(from.controllers_);
+  if (!from._internal_next_page_token().empty()) {
+    _internal_set_next_page_token(from._internal_next_page_token());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6181,8 +6571,15 @@ bool ListNVMeControllerResponse::IsInitialized() const {
 
 void ListNVMeControllerResponse::InternalSwap(ListNVMeControllerResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  controller_.InternalSwap(&other->controller_);
+  controllers_.InternalSwap(&other->controllers_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &next_page_token_, lhs_arena,
+      &other->next_page_token_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMeControllerResponse::GetMetadata() const {
@@ -7476,6 +7873,14 @@ ListNVMeNamespaceRequest::ListNVMeNamespaceRequest(::PROTOBUF_NAMESPACE_ID::Aren
 ListNVMeNamespaceRequest::ListNVMeNamespaceRequest(const ListNVMeNamespaceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_page_token().empty()) {
+    page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_page_token(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_subsystem_id()) {
     subsystem_id_ = new ::opi_api::common::v1::ObjectKey(*from.subsystem_id_);
   } else {
@@ -7486,14 +7891,19 @@ ListNVMeNamespaceRequest::ListNVMeNamespaceRequest(const ListNVMeNamespaceReques
   } else {
     controller_id_ = nullptr;
   }
+  page_size_ = from.page_size_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeNamespaceRequest)
 }
 
 inline void ListNVMeNamespaceRequest::SharedCtor() {
+page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&subsystem_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&controller_id_) -
-    reinterpret_cast<char*>(&subsystem_id_)) + sizeof(controller_id_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&page_size_) -
+    reinterpret_cast<char*>(&subsystem_id_)) + sizeof(page_size_));
 }
 
 ListNVMeNamespaceRequest::~ListNVMeNamespaceRequest() {
@@ -7505,6 +7915,7 @@ ListNVMeNamespaceRequest::~ListNVMeNamespaceRequest() {
 
 inline void ListNVMeNamespaceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete subsystem_id_;
   if (this != internal_default_instance()) delete controller_id_;
 }
@@ -7525,6 +7936,7 @@ void ListNVMeNamespaceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  page_token_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && subsystem_id_ != nullptr) {
     delete subsystem_id_;
   }
@@ -7533,6 +7945,7 @@ void ListNVMeNamespaceRequest::Clear() {
     delete controller_id_;
   }
   controller_id_ = nullptr;
+  page_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7554,6 +7967,24 @@ const char* ListNVMeNamespaceRequest::_InternalParse(const char* ptr, ::PROTOBUF
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_controller_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 page_size = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string page_token = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeNamespaceRequest.page_token"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7603,6 +8034,22 @@ uint8_t* ListNVMeNamespaceRequest::_InternalSerialize(
         2, _Internal::controller_id(this), target, stream);
   }
 
+  // int32 page_size = 3;
+  if (this->_internal_page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_page_size(), target);
+  }
+
+  // string page_token = 4;
+  if (!this->_internal_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeNamespaceRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_page_token(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -7619,6 +8066,13 @@ size_t ListNVMeNamespaceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string page_token = 4;
+  if (!this->_internal_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
   // .opi_api.common.v1.ObjectKey subsystem_id = 1;
   if (this->_internal_has_subsystem_id()) {
     total_size += 1 +
@@ -7631,6 +8085,11 @@ size_t ListNVMeNamespaceRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *controller_id_);
+  }
+
+  // int32 page_size = 3;
+  if (this->_internal_page_size() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_size());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -7655,11 +8114,17 @@ void ListNVMeNamespaceRequest::MergeFrom(const ListNVMeNamespaceRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_page_token().empty()) {
+    _internal_set_page_token(from._internal_page_token());
+  }
   if (from._internal_has_subsystem_id()) {
     _internal_mutable_subsystem_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_subsystem_id());
   }
   if (from._internal_has_controller_id()) {
     _internal_mutable_controller_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_controller_id());
+  }
+  if (from._internal_page_size() != 0) {
+    _internal_set_page_size(from._internal_page_size());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7677,10 +8142,17 @@ bool ListNVMeNamespaceRequest::IsInitialized() const {
 
 void ListNVMeNamespaceRequest::InternalSwap(ListNVMeNamespaceRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &page_token_, lhs_arena,
+      &other->page_token_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListNVMeNamespaceRequest, controller_id_)
-      + sizeof(ListNVMeNamespaceRequest::controller_id_)
+      PROTOBUF_FIELD_OFFSET(ListNVMeNamespaceRequest, page_size_)
+      + sizeof(ListNVMeNamespaceRequest::page_size_)
       - PROTOBUF_FIELD_OFFSET(ListNVMeNamespaceRequest, subsystem_id_)>(
           reinterpret_cast<char*>(&subsystem_id_),
           reinterpret_cast<char*>(&other->subsystem_id_));
@@ -7701,7 +8173,7 @@ class ListNVMeNamespaceResponse::_Internal {
 ListNVMeNamespaceResponse::ListNVMeNamespaceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  namespace__(arena) {
+  namespaces_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -7710,12 +8182,24 @@ ListNVMeNamespaceResponse::ListNVMeNamespaceResponse(::PROTOBUF_NAMESPACE_ID::Ar
 }
 ListNVMeNamespaceResponse::ListNVMeNamespaceResponse(const ListNVMeNamespaceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      namespace__(from.namespace__) {
+      namespaces_(from.namespaces_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_next_page_token().empty()) {
+    next_page_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_next_page_token(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.ListNVMeNamespaceResponse)
 }
 
 inline void ListNVMeNamespaceResponse::SharedCtor() {
+next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ListNVMeNamespaceResponse::~ListNVMeNamespaceResponse() {
@@ -7727,6 +8211,7 @@ ListNVMeNamespaceResponse::~ListNVMeNamespaceResponse() {
 
 inline void ListNVMeNamespaceResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ListNVMeNamespaceResponse::ArenaDtor(void* object) {
@@ -7745,7 +8230,8 @@ void ListNVMeNamespaceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  namespace__.Clear();
+  namespaces_.Clear();
+  next_page_token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7755,16 +8241,26 @@ const char* ListNVMeNamespaceResponse::_InternalParse(const char* ptr, ::PROTOBU
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;
+      // repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_namespace_(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_namespaces(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // string next_page_token = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.ListNVMeNamespaceResponse.next_page_token"));
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -7797,12 +8293,22 @@ uint8_t* ListNVMeNamespaceResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;
+  // repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_namespace__size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_namespaces_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_namespace_(i), target, stream);
+      InternalWriteMessage(1, this->_internal_namespaces(i), target, stream);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.ListNVMeNamespaceResponse.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_next_page_token(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7821,11 +8327,18 @@ size_t ListNVMeNamespaceResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.storage.v1.NVMeNamespace namespace = 1;
-  total_size += 1UL * this->_internal_namespace__size();
-  for (const auto& msg : this->namespace__) {
+  // repeated .opi_api.storage.v1.NVMeNamespace namespaces = 1;
+  total_size += 1UL * this->_internal_namespaces_size();
+  for (const auto& msg : this->namespaces_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 2;
+  if (!this->_internal_next_page_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -7850,7 +8363,10 @@ void ListNVMeNamespaceResponse::MergeFrom(const ListNVMeNamespaceResponse& from)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  namespace__.MergeFrom(from.namespace__);
+  namespaces_.MergeFrom(from.namespaces_);
+  if (!from._internal_next_page_token().empty()) {
+    _internal_set_next_page_token(from._internal_next_page_token());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7867,8 +8383,15 @@ bool ListNVMeNamespaceResponse::IsInitialized() const {
 
 void ListNVMeNamespaceResponse::InternalSwap(ListNVMeNamespaceResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  namespace__.InternalSwap(&other->namespace__);
+  namespaces_.InternalSwap(&other->namespaces_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &next_page_token_, lhs_arena,
+      &other->next_page_token_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNVMeNamespaceResponse::GetMetadata() const {

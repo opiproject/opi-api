@@ -8,26 +8,38 @@ public interface ListVirtioScsiLunResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioScsiLun> 
-      getLunList();
+      getLunsList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiLun getLun(int index);
+  opi_api.storage.v1.VirtioScsiLun getLuns(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
-  int getLunCount();
+  int getLunsCount();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-      getLunOrBuilderList();
+      getLunsOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiLun luns = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder(
+  opi_api.storage.v1.VirtioScsiLunOrBuilder getLunsOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }

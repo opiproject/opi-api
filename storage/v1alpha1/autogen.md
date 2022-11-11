@@ -980,6 +980,8 @@ confusion with storage &#34;devices&#34;.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -994,7 +996,8 @@ confusion with storage &#34;devices&#34;.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [NVMeController](#opi_api-storage-v1-NVMeController) | repeated |  |
+| controllers | [NVMeController](#opi_api-storage-v1-NVMeController) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 
@@ -1011,6 +1014,8 @@ confusion with storage &#34;devices&#34;.
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -1025,7 +1030,8 @@ confusion with storage &#34;devices&#34;.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) | repeated |  |
+| namespaces | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 
@@ -1035,7 +1041,13 @@ confusion with storage &#34;devices&#34;.
 <a name="opi_api-storage-v1-ListNVMeSubsystemRequest"></a>
 
 ### ListNVMeSubsystemRequest
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -1050,7 +1062,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) | repeated |  |
+| subsystems | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 
@@ -1475,7 +1488,13 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 <a name="opi_api-storage-v1-ListVirtioBlkRequest"></a>
 
 ### ListVirtioBlkRequest
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -1490,7 +1509,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
+| controllers | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 
@@ -1704,7 +1724,13 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-ListVirtioScsiControllerRequest"></a>
 
 ### ListVirtioScsiControllerRequest
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -1719,7 +1745,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
+| controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 
@@ -1735,6 +1762,8 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -1749,7 +1778,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
+| luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
+| next_page_token | [string](#string) |  |  |
 
 
 

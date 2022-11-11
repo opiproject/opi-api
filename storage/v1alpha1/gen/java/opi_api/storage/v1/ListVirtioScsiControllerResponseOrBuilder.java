@@ -8,26 +8,38 @@ public interface ListVirtioScsiControllerResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;</code>
    */
   java.util.List<opi_api.storage.v1.VirtioScsiController> 
-      getControllerList();
+      getControllersList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiController getController(int index);
+  opi_api.storage.v1.VirtioScsiController getControllers(int index);
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;</code>
    */
-  int getControllerCount();
+  int getControllersCount();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;</code>
    */
   java.util.List<? extends opi_api.storage.v1.VirtioScsiControllerOrBuilder> 
-      getControllerOrBuilderList();
+      getControllersOrBuilderList();
   /**
-   * <code>repeated .opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>repeated .opi_api.storage.v1.VirtioScsiController controllers = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiControllerOrBuilder getControllerOrBuilder(
+  opi_api.storage.v1.VirtioScsiControllerOrBuilder getControllersOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
 }
