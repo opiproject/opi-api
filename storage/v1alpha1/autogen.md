@@ -894,7 +894,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -909,7 +909,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -924,7 +924,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1438,7 +1438,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1658,7 +1658,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1673,8 +1673,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 

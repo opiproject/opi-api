@@ -34,7 +34,10 @@
 #include "opicommon.pb.h"
 #include "object_key.pb.h"
 #include <google/protobuf/empty.pb.h>
+#include "google/api/client.pb.h"
+#include "google/api/resource.pb.h"
 #include "google/api/annotations.pb.h"
+#include "google/api/field_behavior.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_frontend_5fvirtio_5fblk_2eproto
@@ -1245,25 +1248,21 @@ class GetVirtioBlkRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kControllerIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey controller_id = 1;
-  bool has_controller_id() const;
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  bool _internal_has_controller_id() const;
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
-  void clear_controller_id();
-  const ::opi_api::common::v1::ObjectKey& controller_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_controller_id();
-  ::opi_api::common::v1::ObjectKey* mutable_controller_id();
-  void set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_controller_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_controller_id();
-  public:
-  void unsafe_arena_set_allocated_controller_id(
-      ::opi_api::common::v1::ObjectKey* controller_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetVirtioBlkRequest)
  private:
@@ -1272,7 +1271,7 @@ class GetVirtioBlkRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* controller_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
 };
@@ -2359,90 +2358,55 @@ inline void ListVirtioBlkResponse::set_allocated_next_page_token(std::string* ne
 
 // GetVirtioBlkRequest
 
-// .opi_api.common.v1.ObjectKey controller_id = 1;
-inline bool GetVirtioBlkRequest::_internal_has_controller_id() const {
-  return this != internal_default_instance() && controller_id_ != nullptr;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetVirtioBlkRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool GetVirtioBlkRequest::has_controller_id() const {
-  return _internal_has_controller_id();
+inline const std::string& GetVirtioBlkRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetVirtioBlkRequest.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& GetVirtioBlkRequest::_internal_controller_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = controller_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetVirtioBlkRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.GetVirtioBlkRequest.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& GetVirtioBlkRequest::controller_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
-  return _internal_controller_id();
+inline std::string* GetVirtioBlkRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetVirtioBlkRequest.name)
+  return _s;
 }
-inline void GetVirtioBlkRequest::unsafe_arena_set_allocated_controller_id(
-    ::opi_api::common::v1::ObjectKey* controller_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
-  }
-  controller_id_ = controller_id;
-  if (controller_id) {
+inline const std::string& GetVirtioBlkRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void GetVirtioBlkRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetVirtioBlkRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetVirtioBlkRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetVirtioBlkRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetVirtioBlkRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
-}
-inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::release_controller_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = controller_id_;
-  controller_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::unsafe_arena_release_controller_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = controller_id_;
-  controller_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::_internal_mutable_controller_id() {
-  
-  if (controller_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    controller_id_ = p;
-  }
-  return controller_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* GetVirtioBlkRequest::mutable_controller_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_controller_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
-  return _msg;
-}
-inline void GetVirtioBlkRequest::set_allocated_controller_id(::opi_api::common::v1::ObjectKey* controller_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id_);
-  }
-  if (controller_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_id));
-    if (message_arena != submessage_arena) {
-      controller_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, controller_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  controller_id_ = controller_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetVirtioBlkRequest.controller_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetVirtioBlkRequest.name)
 }
 
 // -------------------------------------------------------------------

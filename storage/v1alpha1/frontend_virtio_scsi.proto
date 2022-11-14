@@ -12,7 +12,10 @@ option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
 import "object_key.proto";
 import "google/protobuf/empty.proto";
+import "google/api/client.proto";
+import "google/api/resource.proto";
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
@@ -40,8 +43,9 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
-            get: "/v1/virtioscsictrls/{virtioscsictrl}"
+            get: "/v1/{name=virtioscsictrls}/{virtioscsictrl}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
 
@@ -69,8 +73,9 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
-            get: "/v1/virtioscsiluns/{virtioscsilun}"
+            get: "/v1/{name=virtioscsiluns}/{virtioscsilun}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
@@ -109,7 +114,10 @@ message ListVirtioScsiControllerResponse {
 }
 
 message GetVirtioScsiControllerRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/VirtioScsiController"
+    ];
 }
 
 message VirtioScsiControllerStatsRequest {
@@ -146,8 +154,10 @@ message ListVirtioScsiLunResponse {
 }
 
 message GetVirtioScsiLunRequest {
-    common.v1.ObjectKey controller_id = 1;
-    common.v1.ObjectKey lun_id = 2;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/VirtioScsiLun"
+    ];
 }
 
 message VirtioScsiLunStatsRequest {
