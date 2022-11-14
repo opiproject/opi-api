@@ -9,7 +9,7 @@ option java_multiple_files = true;
 option java_outer_classname = "FrontendVirtioScsiProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
-import "common.proto";
+import "opicommon.proto";
 import "object_key.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
