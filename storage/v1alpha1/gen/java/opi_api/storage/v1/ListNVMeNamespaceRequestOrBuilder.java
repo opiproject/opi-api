@@ -23,33 +23,18 @@ public interface ListNVMeNamespaceRequestOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
-   */
-  boolean hasControllerId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
-   */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
-
-  /**
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 2;</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 3;</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 3;</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

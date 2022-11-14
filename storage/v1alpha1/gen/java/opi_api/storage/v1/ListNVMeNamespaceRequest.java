@@ -62,25 +62,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
-            }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 24: {
+          case 16: {
 
             pageSize_ = input.readInt32();
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
@@ -144,36 +131,10 @@ private static final long serialVersionUID = 0L;
     return getSubsystemId();
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey controllerId_;
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
-   */
-  @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
-  }
-
-  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_;
   /**
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 2;</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -181,10 +142,10 @@ private static final long serialVersionUID = 0L;
     return pageSize_;
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object pageToken_;
   /**
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 3;</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -201,7 +162,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 3;</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -236,14 +197,11 @@ private static final long serialVersionUID = 0L;
     if (subsystemId_ != null) {
       output.writeMessage(1, getSubsystemId());
     }
-    if (controllerId_ != null) {
-      output.writeMessage(2, getControllerId());
-    }
     if (pageSize_ != 0) {
-      output.writeInt32(3, pageSize_);
+      output.writeInt32(2, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -258,16 +216,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getSubsystemId());
     }
-    if (controllerId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getControllerId());
-    }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, pageSize_);
+        .computeInt32Size(2, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -289,11 +243,6 @@ private static final long serialVersionUID = 0L;
       if (!getSubsystemId()
           .equals(other.getSubsystemId())) return false;
     }
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
-    }
     if (getPageSize()
         != other.getPageSize()) return false;
     if (!getPageToken()
@@ -312,10 +261,6 @@ private static final long serialVersionUID = 0L;
     if (hasSubsystemId()) {
       hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSubsystemId().hashCode();
-    }
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
     }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
@@ -460,12 +405,6 @@ private static final long serialVersionUID = 0L;
         subsystemId_ = null;
         subsystemIdBuilder_ = null;
       }
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
       pageSize_ = 0;
 
       pageToken_ = "";
@@ -500,11 +439,6 @@ private static final long serialVersionUID = 0L;
         result.subsystemId_ = subsystemId_;
       } else {
         result.subsystemId_ = subsystemIdBuilder_.build();
-      }
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
-      } else {
-        result.controllerId_ = controllerIdBuilder_.build();
       }
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
@@ -558,9 +492,6 @@ private static final long serialVersionUID = 0L;
       if (other == opi_api.storage.v1.ListNVMeNamespaceRequest.getDefaultInstance()) return this;
       if (other.hasSubsystemId()) {
         mergeSubsystemId(other.getSubsystemId());
-      }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
       }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
@@ -717,128 +648,9 @@ private static final long serialVersionUID = 0L;
       return subsystemIdBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey controllerId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return Whether the controllerId field is set.
-     */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return The controllerId.
-     */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      } else {
-        return controllerIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        controllerId_ = value;
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder setControllerId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
-        } else {
-          controllerId_ = value;
-        }
-        onChanged();
-      } else {
-        controllerIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-        onChanged();
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
-      
-      onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
-      } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      }
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
-                getParentForChildren(),
-                isClean());
-        controllerId_ = null;
-      }
-      return controllerIdBuilder_;
-    }
-
     private int pageSize_ ;
     /**
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 2;</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -846,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 2;</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -857,7 +669,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -869,7 +681,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 3;</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -885,7 +697,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 3;</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -902,7 +714,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 3;</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -917,7 +729,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -927,7 +739,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 3;</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */

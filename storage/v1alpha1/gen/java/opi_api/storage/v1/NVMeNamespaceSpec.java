@@ -75,32 +75,9 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
-            }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 32: {
 
             hostNsid_ = input.readInt32();
-            break;
-          }
-          case 40: {
-
-            blockSize_ = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            blocksCount_ = input.readInt64();
             break;
           }
           case 58: {
@@ -138,16 +115,6 @@ private static final long serialVersionUID = 0L;
               volumeId_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 88: {
-
-            optimalWriteSize_ = input.readInt32();
-            break;
-          }
-          case 96: {
-
-            prefWriteGranularity_ = input.readInt32();
             break;
           }
           default: {
@@ -258,44 +225,6 @@ private static final long serialVersionUID = 0L;
     return getSubsystemId();
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey controllerId_;
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return Whether the controllerId field is set.
-   */
-  @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
-  }
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return The controllerId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-  }
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
-  }
-
   public static final int HOST_NSID_FIELD_NUMBER = 4;
   private int hostNsid_;
   /**
@@ -312,38 +241,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getHostNsid() {
     return hostNsid_;
-  }
-
-  public static final int BLOCK_SIZE_FIELD_NUMBER = 5;
-  private long blockSize_;
-  /**
-   * <pre>
-   * Block size in bytes, must be power of 2 and must be less than the max
-   * io size supported. Typically tested values are 512, and 4k.
-   * </pre>
-   *
-   * <code>int64 block_size = 5;</code>
-   * @return The blockSize.
-   */
-  @java.lang.Override
-  public long getBlockSize() {
-    return blockSize_;
-  }
-
-  public static final int BLOCKS_COUNT_FIELD_NUMBER = 6;
-  private long blocksCount_;
-  /**
-   * <pre>
-   * Size/Capacity of the namespace in blocks, size in bytes will
-   * be BlockSize x NumBlocks.
-   * </pre>
-   *
-   * <code>int64 blocks_count = 6;</code>
-   * @return The blocksCount.
-   */
-  @java.lang.Override
-  public long getBlocksCount() {
-    return blocksCount_;
   }
 
   public static final int NGUID_FIELD_NUMBER = 7;
@@ -484,41 +381,6 @@ private static final long serialVersionUID = 0L;
     return getVolumeId();
   }
 
-  public static final int OPTIMAL_WRITE_SIZE_FIELD_NUMBER = 11;
-  private int optimalWriteSize_;
-  /**
-   * <pre>
-   * optimal write size hint to host driver. Host IO stack may use
-   * this to regulate IO size. Must be a multiple of the preferred write
-   * granularity. Must not exceed the controller maximum IO size value
-   * configured in the nvme agent config file.
-   * </pre>
-   *
-   * <code>int32 optimal_write_size = 11;</code>
-   * @return The optimalWriteSize.
-   */
-  @java.lang.Override
-  public int getOptimalWriteSize() {
-    return optimalWriteSize_;
-  }
-
-  public static final int PREF_WRITE_GRANULARITY_FIELD_NUMBER = 12;
-  private int prefWriteGranularity_;
-  /**
-   * <pre>
-   * preferred write granularity hint to the host driver. Host IO
-   * stack may use this to align IO sizes to the write granularity for
-   * optimum performance.
-   * </pre>
-   *
-   * <code>int32 pref_write_granularity = 12;</code>
-   * @return The prefWriteGranularity.
-   */
-  @java.lang.Override
-  public int getPrefWriteGranularity() {
-    return prefWriteGranularity_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -539,17 +401,8 @@ private static final long serialVersionUID = 0L;
     if (subsystemId_ != null) {
       output.writeMessage(2, getSubsystemId());
     }
-    if (controllerId_ != null) {
-      output.writeMessage(3, getControllerId());
-    }
     if (hostNsid_ != 0) {
       output.writeInt32(4, hostNsid_);
-    }
-    if (blockSize_ != 0L) {
-      output.writeInt64(5, blockSize_);
-    }
-    if (blocksCount_ != 0L) {
-      output.writeInt64(6, blocksCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nguid_);
@@ -562,12 +415,6 @@ private static final long serialVersionUID = 0L;
     }
     if (volumeId_ != null) {
       output.writeMessage(10, getVolumeId());
-    }
-    if (optimalWriteSize_ != 0) {
-      output.writeInt32(11, optimalWriteSize_);
-    }
-    if (prefWriteGranularity_ != 0) {
-      output.writeInt32(12, prefWriteGranularity_);
     }
     unknownFields.writeTo(output);
   }
@@ -586,21 +433,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getSubsystemId());
     }
-    if (controllerId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getControllerId());
-    }
     if (hostNsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, hostNsid_);
-    }
-    if (blockSize_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, blockSize_);
-    }
-    if (blocksCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, blocksCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nguid_);
@@ -616,14 +451,6 @@ private static final long serialVersionUID = 0L;
     if (volumeId_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getVolumeId());
-    }
-    if (optimalWriteSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, optimalWriteSize_);
-    }
-    if (prefWriteGranularity_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(12, prefWriteGranularity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -650,17 +477,8 @@ private static final long serialVersionUID = 0L;
       if (!getSubsystemId()
           .equals(other.getSubsystemId())) return false;
     }
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
-    }
     if (getHostNsid()
         != other.getHostNsid()) return false;
-    if (getBlockSize()
-        != other.getBlockSize()) return false;
-    if (getBlocksCount()
-        != other.getBlocksCount()) return false;
     if (!getNguid()
         .equals(other.getNguid())) return false;
     if (getEui64()
@@ -675,10 +493,6 @@ private static final long serialVersionUID = 0L;
       if (!getVolumeId()
           .equals(other.getVolumeId())) return false;
     }
-    if (getOptimalWriteSize()
-        != other.getOptimalWriteSize()) return false;
-    if (getPrefWriteGranularity()
-        != other.getPrefWriteGranularity()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -698,18 +512,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSubsystemId().hashCode();
     }
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
-    }
     hash = (37 * hash) + HOST_NSID_FIELD_NUMBER;
     hash = (53 * hash) + getHostNsid();
-    hash = (37 * hash) + BLOCK_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBlockSize());
-    hash = (37 * hash) + BLOCKS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBlocksCount());
     hash = (37 * hash) + NGUID_FIELD_NUMBER;
     hash = (53 * hash) + getNguid().hashCode();
     hash = (37 * hash) + EUI64_FIELD_NUMBER;
@@ -723,10 +527,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVolumeId().hashCode();
     }
-    hash = (37 * hash) + OPTIMAL_WRITE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getOptimalWriteSize();
-    hash = (37 * hash) + PREF_WRITE_GRANULARITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPrefWriteGranularity();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -872,17 +672,7 @@ private static final long serialVersionUID = 0L;
         subsystemId_ = null;
         subsystemIdBuilder_ = null;
       }
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
       hostNsid_ = 0;
-
-      blockSize_ = 0L;
-
-      blocksCount_ = 0L;
 
       nguid_ = "";
 
@@ -900,10 +690,6 @@ private static final long serialVersionUID = 0L;
         volumeId_ = null;
         volumeIdBuilder_ = null;
       }
-      optimalWriteSize_ = 0;
-
-      prefWriteGranularity_ = 0;
-
       return this;
     }
 
@@ -940,14 +726,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.subsystemId_ = subsystemIdBuilder_.build();
       }
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
-      } else {
-        result.controllerId_ = controllerIdBuilder_.build();
-      }
       result.hostNsid_ = hostNsid_;
-      result.blockSize_ = blockSize_;
-      result.blocksCount_ = blocksCount_;
       result.nguid_ = nguid_;
       result.eui64_ = eui64_;
       if (uuidBuilder_ == null) {
@@ -960,8 +739,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.volumeId_ = volumeIdBuilder_.build();
       }
-      result.optimalWriteSize_ = optimalWriteSize_;
-      result.prefWriteGranularity_ = prefWriteGranularity_;
       onBuilt();
       return result;
     }
@@ -1016,17 +793,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasSubsystemId()) {
         mergeSubsystemId(other.getSubsystemId());
       }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
-      }
       if (other.getHostNsid() != 0) {
         setHostNsid(other.getHostNsid());
-      }
-      if (other.getBlockSize() != 0L) {
-        setBlockSize(other.getBlockSize());
-      }
-      if (other.getBlocksCount() != 0L) {
-        setBlocksCount(other.getBlocksCount());
       }
       if (!other.getNguid().isEmpty()) {
         nguid_ = other.nguid_;
@@ -1040,12 +808,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVolumeId()) {
         mergeVolumeId(other.getVolumeId());
-      }
-      if (other.getOptimalWriteSize() != 0) {
-        setOptimalWriteSize(other.getOptimalWriteSize());
-      }
-      if (other.getPrefWriteGranularity() != 0) {
-        setPrefWriteGranularity(other.getPrefWriteGranularity());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1386,161 +1148,6 @@ private static final long serialVersionUID = 0L;
       return subsystemIdBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey controllerId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     * @return Whether the controllerId field is set.
-     */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     * @return The controllerId.
-     */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      } else {
-        return controllerIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        controllerId_ = value;
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder setControllerId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
-        onChanged();
-      } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
-        } else {
-          controllerId_ = value;
-        }
-        onChanged();
-      } else {
-        controllerIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
-        onChanged();
-      } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
-      
-      onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
-      } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
-      }
-    }
-    /**
-     * <pre>
-     * key of the PCIe controller object that will host this namespace.
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
-                getParentForChildren(),
-                isClean());
-        controllerId_ = null;
-      }
-      return controllerIdBuilder_;
-    }
-
     private int hostNsid_ ;
     /**
      * <pre>
@@ -1589,98 +1196,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearHostNsid() {
       
       hostNsid_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long blockSize_ ;
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @return The blockSize.
-     */
-    @java.lang.Override
-    public long getBlockSize() {
-      return blockSize_;
-    }
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @param value The blockSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBlockSize(long value) {
-      
-      blockSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Block size in bytes, must be power of 2 and must be less than the max
-     * io size supported. Typically tested values are 512, and 4k.
-     * </pre>
-     *
-     * <code>int64 block_size = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBlockSize() {
-      
-      blockSize_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long blocksCount_ ;
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @return The blocksCount.
-     */
-    @java.lang.Override
-    public long getBlocksCount() {
-      return blocksCount_;
-    }
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @param value The blocksCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBlocksCount(long value) {
-      
-      blocksCount_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Size/Capacity of the namespace in blocks, size in bytes will
-     * be BlockSize x NumBlocks.
-     * </pre>
-     *
-     * <code>int64 blocks_count = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBlocksCount() {
-      
-      blocksCount_ = 0L;
       onChanged();
       return this;
     }
@@ -2135,107 +1650,6 @@ private static final long serialVersionUID = 0L;
         volumeId_ = null;
       }
       return volumeIdBuilder_;
-    }
-
-    private int optimalWriteSize_ ;
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @return The optimalWriteSize.
-     */
-    @java.lang.Override
-    public int getOptimalWriteSize() {
-      return optimalWriteSize_;
-    }
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @param value The optimalWriteSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOptimalWriteSize(int value) {
-      
-      optimalWriteSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * optimal write size hint to host driver. Host IO stack may use
-     * this to regulate IO size. Must be a multiple of the preferred write
-     * granularity. Must not exceed the controller maximum IO size value
-     * configured in the nvme agent config file.
-     * </pre>
-     *
-     * <code>int32 optimal_write_size = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOptimalWriteSize() {
-      
-      optimalWriteSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int prefWriteGranularity_ ;
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @return The prefWriteGranularity.
-     */
-    @java.lang.Override
-    public int getPrefWriteGranularity() {
-      return prefWriteGranularity_;
-    }
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @param value The prefWriteGranularity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrefWriteGranularity(int value) {
-      
-      prefWriteGranularity_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * preferred write granularity hint to the host driver. Host IO
-     * stack may use this to align IO sizes to the write granularity for
-     * optimum performance.
-     * </pre>
-     *
-     * <code>int32 pref_write_granularity = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrefWriteGranularity() {
-      
-      prefWriteGranularity_ = 0;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

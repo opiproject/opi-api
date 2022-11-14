@@ -195,22 +195,11 @@ message NVMeNamespaceSpec {
     // subsystem for this namespace
     common.v1.ObjectKey subsystem_id = 2;
 
-    // key of the PCIe controller object that will host this namespace.
-    common.v1.ObjectKey controller_id = 3;
-
     // NSID present to the host by the NVMe PCIe controller.
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
     int32 host_nsid = 4;
-
-    // Block size in bytes, must be power of 2 and must be less than the max
-    // io size supported. Typically tested values are 512, and 4k.
-    int64 block_size = 5;
-
-    // Size/Capacity of the namespace in blocks, size in bytes will
-    // be BlockSize x NumBlocks.
-    int64 blocks_count = 6;
 
     // Globally unique identifier for the namespace
     string nguid = 7;
@@ -224,17 +213,6 @@ message NVMeNamespaceSpec {
 
     // The back/middle-end volume to back this namespace.
     common.v1.ObjectKey volume_id = 10;
-
-    // optimal write size hint to host driver. Host IO stack may use
-    // this to regulate IO size. Must be a multiple of the preferred write
-    // granularity. Must not exceed the controller maximum IO size value
-    // configured in the nvme agent config file.
-    int32 optimal_write_size = 11;
-
-    // preferred write granularity hint to the host driver. Host IO
-    // stack may use this to align IO sizes to the write granularity for
-    // optimum performance.
-    int32 pref_write_granularity= 12;
 }
 
 message NVMeNamespaceStatus {
@@ -329,9 +307,8 @@ message UpdateNVMeNamespaceRequest {
 
 message ListNVMeNamespaceRequest {
     common.v1.ObjectKey subsystem_id = 1;
-    common.v1.ObjectKey controller_id = 2;
-    int32 page_size = 3;
-    string page_token = 4;
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
 message ListNVMeNamespaceResponse {

@@ -63,33 +63,6 @@ public interface NVMeNamespaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return Whether the controllerId field is set.
-   */
-  boolean hasControllerId();
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   * @return The controllerId.
-   */
-  opi_api.common.v1.ObjectKey getControllerId();
-  /**
-   * <pre>
-   * key of the PCIe controller object that will host this namespace.
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
-
-  /**
-   * <pre>
    * NSID present to the host by the NVMe PCIe controller.
    * If not provided, then the controller will assign an unused NSID
    * within the max namespace range - auto assigned nsid may not work
@@ -100,28 +73,6 @@ public interface NVMeNamespaceSpecOrBuilder extends
    * @return The hostNsid.
    */
   int getHostNsid();
-
-  /**
-   * <pre>
-   * Block size in bytes, must be power of 2 and must be less than the max
-   * io size supported. Typically tested values are 512, and 4k.
-   * </pre>
-   *
-   * <code>int64 block_size = 5;</code>
-   * @return The blockSize.
-   */
-  long getBlockSize();
-
-  /**
-   * <pre>
-   * Size/Capacity of the namespace in blocks, size in bytes will
-   * be BlockSize x NumBlocks.
-   * </pre>
-   *
-   * <code>int64 blocks_count = 6;</code>
-   * @return The blocksCount.
-   */
-  long getBlocksCount();
 
   /**
    * <pre>
@@ -207,29 +158,4 @@ public interface NVMeNamespaceSpecOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
-
-  /**
-   * <pre>
-   * optimal write size hint to host driver. Host IO stack may use
-   * this to regulate IO size. Must be a multiple of the preferred write
-   * granularity. Must not exceed the controller maximum IO size value
-   * configured in the nvme agent config file.
-   * </pre>
-   *
-   * <code>int32 optimal_write_size = 11;</code>
-   * @return The optimalWriteSize.
-   */
-  int getOptimalWriteSize();
-
-  /**
-   * <pre>
-   * preferred write granularity hint to the host driver. Host IO
-   * stack may use this to align IO sizes to the write granularity for
-   * optimum performance.
-   * </pre>
-   *
-   * <code>int32 pref_write_granularity = 12;</code>
-   * @return The prefWriteGranularity.
-   */
-  int getPrefWriteGranularity();
 }
