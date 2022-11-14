@@ -53,9 +53,6 @@
   
     - [NVMfRemoteControllerService](#opi_api-storage-v1-NVMfRemoteControllerService)
   
-- [common.proto](#common-proto)
-    - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
-  
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
     - [CreateNVMeControllerRequest](#opi_api-storage-v1-CreateNVMeControllerRequest)
     - [CreateNVMeNamespaceRequest](#opi_api-storage-v1-CreateNVMeNamespaceRequest)
@@ -133,6 +130,9 @@
     - [FrontendVirtioScsiService](#opi_api-storage-v1-FrontendVirtioScsiService)
   
 - [middleend.proto](#middleend-proto)
+- [opicommon.proto](#opicommon-proto)
+    - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
+  
 - [object_key.proto](#object_key-proto)
     - [ObjectKey](#opi_api-common-v1-ObjectKey)
   
@@ -784,46 +784,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | NVMfRemoteControllerList | [NVMfRemoteControllerListRequest](#opi_api-storage-v1-NVMfRemoteControllerListRequest) | [NVMfRemoteControllerListResponse](#opi_api-storage-v1-NVMfRemoteControllerListResponse) |  |
 | NVMfRemoteControllerGet | [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest) | [NVMfRemoteControllerGetResponse](#opi_api-storage-v1-NVMfRemoteControllerGetResponse) |  |
 | NVMfRemoteControllerStats | [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest) | [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse) |  |
-
- 
-
-
-
-<a name="common-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common.proto
-
-
-
-<a name="opi_api-storage-v1-PciEndpoint"></a>
-
-### PciEndpoint
-Many front-ends expose PCI devices to the host. This represents that endpoint.
-This device will ultimately be surfaced by the operating system at some
-Bus:Device:Function, but note that the values set here are not necessarily
-the same values that the operating system will choose. Instead, these are
-xPU-internal values.
-While the term &#34;device&#34; is often used for the entity attached to a PCI slot,
-we&#39;ll use the term &#34;port&#34; which also commonly used with PCI switches and avoids
-confusion with storage &#34;devices&#34;.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-| virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
-
-
-
-
-
- 
-
- 
-
- 
 
  
 
@@ -1946,6 +1906,46 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation an
 <p align="right"><a href="#top">Top</a></p>
 
 ## middleend.proto
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="opicommon-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## opicommon.proto
+
+
+
+<a name="opi_api-storage-v1-PciEndpoint"></a>
+
+### PciEndpoint
+Many front-ends expose PCI devices to the host. This represents that endpoint.
+This device will ultimately be surfaced by the operating system at some
+Bus:Device:Function, but note that the values set here are not necessarily
+the same values that the operating system will choose. Instead, these are
+xPU-internal values.
+While the term &#34;device&#34; is often used for the entity attached to a PCI slot,
+we&#39;ll use the term &#34;port&#34; which also commonly used with PCI switches and avoids
+confusion with storage &#34;devices&#34;.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+| virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+
+
+
 
 
  
