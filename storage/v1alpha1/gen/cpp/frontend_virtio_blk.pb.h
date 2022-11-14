@@ -229,40 +229,11 @@ class VirtioBlk final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBdevFieldNumber = 3,
-    kSerialNumberFieldNumber = 5,
     kIdFieldNumber = 1,
     kPcieIdFieldNumber = 2,
+    kVolumeIdFieldNumber = 3,
     kMaxIoQpsFieldNumber = 4,
   };
-  // string bdev = 3;
-  void clear_bdev();
-  const std::string& bdev() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_bdev(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_bdev();
-  PROTOBUF_NODISCARD std::string* release_bdev();
-  void set_allocated_bdev(std::string* bdev);
-  private:
-  const std::string& _internal_bdev() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bdev(const std::string& value);
-  std::string* _internal_mutable_bdev();
-  public:
-
-  // string serial_number = 5;
-  void clear_serial_number();
-  const std::string& serial_number() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_serial_number(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_serial_number();
-  PROTOBUF_NODISCARD std::string* release_serial_number();
-  void set_allocated_serial_number(std::string* serial_number);
-  private:
-  const std::string& _internal_serial_number() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_serial_number(const std::string& value);
-  std::string* _internal_mutable_serial_number();
-  public:
-
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -299,6 +270,24 @@ class VirtioBlk final :
       ::opi_api::storage::v1::PciEndpoint* pcie_id);
   ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
 
+  // .opi_api.common.v1.ObjectKey volume_id = 3;
+  bool has_volume_id() const;
+  private:
+  bool _internal_has_volume_id() const;
+  public:
+  void clear_volume_id();
+  const ::opi_api::common::v1::ObjectKey& volume_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_volume_id();
+  ::opi_api::common::v1::ObjectKey* mutable_volume_id();
+  void set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_volume_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_volume_id();
+  public:
+  void unsafe_arena_set_allocated_volume_id(
+      ::opi_api::common::v1::ObjectKey* volume_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
+
   // int64 max_io_qps = 4;
   void clear_max_io_qps();
   int64_t max_io_qps() const;
@@ -315,10 +304,9 @@ class VirtioBlk final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bdev_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_number_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::storage::v1::PciEndpoint* pcie_id_;
+  ::opi_api::common::v1::ObjectKey* volume_id_;
   int64_t max_io_qps_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
@@ -1785,55 +1773,90 @@ inline void VirtioBlk::set_allocated_pcie_id(::opi_api::storage::v1::PciEndpoint
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.pcie_id)
 }
 
-// string bdev = 3;
-inline void VirtioBlk::clear_bdev() {
-  bdev_.ClearToEmpty();
+// .opi_api.common.v1.ObjectKey volume_id = 3;
+inline bool VirtioBlk::_internal_has_volume_id() const {
+  return this != internal_default_instance() && volume_id_ != nullptr;
 }
-inline const std::string& VirtioBlk::bdev() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlk.bdev)
-  return _internal_bdev();
+inline bool VirtioBlk::has_volume_id() const {
+  return _internal_has_volume_id();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioBlk::set_bdev(ArgT0&& arg0, ArgT... args) {
- 
- bdev_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlk.bdev)
+inline const ::opi_api::common::v1::ObjectKey& VirtioBlk::_internal_volume_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = volume_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline std::string* VirtioBlk::mutable_bdev() {
-  std::string* _s = _internal_mutable_bdev();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlk.bdev)
-  return _s;
+inline const ::opi_api::common::v1::ObjectKey& VirtioBlk::volume_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlk.volume_id)
+  return _internal_volume_id();
 }
-inline const std::string& VirtioBlk::_internal_bdev() const {
-  return bdev_.Get();
-}
-inline void VirtioBlk::_internal_set_bdev(const std::string& value) {
-  
-  bdev_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioBlk::_internal_mutable_bdev() {
-  
-  return bdev_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioBlk::release_bdev() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlk.bdev)
-  return bdev_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioBlk::set_allocated_bdev(std::string* bdev) {
-  if (bdev != nullptr) {
+inline void VirtioBlk::unsafe_arena_set_allocated_volume_id(
+    ::opi_api::common::v1::ObjectKey* volume_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+  }
+  volume_id_ = volume_id;
+  if (volume_id) {
     
   } else {
     
   }
-  bdev_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bdev,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (bdev_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    bdev_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlk.volume_id)
+}
+inline ::opi_api::common::v1::ObjectKey* VirtioBlk::release_volume_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
+  volume_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.bdev)
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* VirtioBlk::unsafe_arena_release_volume_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlk.volume_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
+  volume_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* VirtioBlk::_internal_mutable_volume_id() {
+  
+  if (volume_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    volume_id_ = p;
+  }
+  return volume_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* VirtioBlk::mutable_volume_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_volume_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlk.volume_id)
+  return _msg;
+}
+inline void VirtioBlk::set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+  }
+  if (volume_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id));
+    if (message_arena != submessage_arena) {
+      volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, volume_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  volume_id_ = volume_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.volume_id)
 }
 
 // int64 max_io_qps = 4;
@@ -1854,57 +1877,6 @@ inline void VirtioBlk::_internal_set_max_io_qps(int64_t value) {
 inline void VirtioBlk::set_max_io_qps(int64_t value) {
   _internal_set_max_io_qps(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlk.max_io_qps)
-}
-
-// string serial_number = 5;
-inline void VirtioBlk::clear_serial_number() {
-  serial_number_.ClearToEmpty();
-}
-inline const std::string& VirtioBlk::serial_number() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlk.serial_number)
-  return _internal_serial_number();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioBlk::set_serial_number(ArgT0&& arg0, ArgT... args) {
- 
- serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlk.serial_number)
-}
-inline std::string* VirtioBlk::mutable_serial_number() {
-  std::string* _s = _internal_mutable_serial_number();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlk.serial_number)
-  return _s;
-}
-inline const std::string& VirtioBlk::_internal_serial_number() const {
-  return serial_number_.Get();
-}
-inline void VirtioBlk::_internal_set_serial_number(const std::string& value) {
-  
-  serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioBlk::_internal_mutable_serial_number() {
-  
-  return serial_number_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioBlk::release_serial_number() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlk.serial_number)
-  return serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioBlk::set_allocated_serial_number(std::string* serial_number) {
-  if (serial_number != nullptr) {
-    
-  } else {
-    
-  }
-  serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serial_number,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (serial_number_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.serial_number)
 }
 
 // -------------------------------------------------------------------

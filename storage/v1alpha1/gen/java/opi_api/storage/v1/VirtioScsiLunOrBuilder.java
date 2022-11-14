@@ -23,29 +23,56 @@ public interface VirtioScsiLunOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * @return Whether the targetId field is set.
    */
-  boolean hasControllerId();
+  boolean hasTargetId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * @return The targetId.
    */
-  opi_api.common.v1.ObjectKey getControllerId();
+  opi_api.common.v1.ObjectKey getTargetId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+  opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder();
 
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bdev.
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return Whether the volumeId field is set.
    */
-  java.lang.String getBdev();
+  boolean hasVolumeId();
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bytes for bdev.
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return The volumeId.
    */
-  com.google.protobuf.ByteString
-      getBdevBytes();
+  opi_api.common.v1.ObjectKey getVolumeId();
+  /**
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
 }

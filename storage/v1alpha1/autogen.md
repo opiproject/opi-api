@@ -110,22 +110,31 @@
 - [frontend_virtio_scsi.proto](#frontend_virtio_scsi-proto)
     - [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest)
     - [CreateVirtioScsiLunRequest](#opi_api-storage-v1-CreateVirtioScsiLunRequest)
+    - [CreateVirtioScsiTargetRequest](#opi_api-storage-v1-CreateVirtioScsiTargetRequest)
     - [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest)
     - [DeleteVirtioScsiLunRequest](#opi_api-storage-v1-DeleteVirtioScsiLunRequest)
+    - [DeleteVirtioScsiTargetRequest](#opi_api-storage-v1-DeleteVirtioScsiTargetRequest)
     - [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest)
     - [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest)
+    - [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest)
     - [ListVirtioScsiControllerRequest](#opi_api-storage-v1-ListVirtioScsiControllerRequest)
     - [ListVirtioScsiControllerResponse](#opi_api-storage-v1-ListVirtioScsiControllerResponse)
     - [ListVirtioScsiLunRequest](#opi_api-storage-v1-ListVirtioScsiLunRequest)
     - [ListVirtioScsiLunResponse](#opi_api-storage-v1-ListVirtioScsiLunResponse)
+    - [ListVirtioScsiTargetRequest](#opi_api-storage-v1-ListVirtioScsiTargetRequest)
+    - [ListVirtioScsiTargetResponse](#opi_api-storage-v1-ListVirtioScsiTargetResponse)
     - [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest)
     - [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest)
+    - [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest)
     - [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController)
     - [VirtioScsiControllerStatsRequest](#opi_api-storage-v1-VirtioScsiControllerStatsRequest)
     - [VirtioScsiControllerStatsResponse](#opi_api-storage-v1-VirtioScsiControllerStatsResponse)
     - [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun)
     - [VirtioScsiLunStatsRequest](#opi_api-storage-v1-VirtioScsiLunStatsRequest)
     - [VirtioScsiLunStatsResponse](#opi_api-storage-v1-VirtioScsiLunStatsResponse)
+    - [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget)
+    - [VirtioScsiTargetStatsRequest](#opi_api-storage-v1-VirtioScsiTargetStatsRequest)
+    - [VirtioScsiTargetStatsResponse](#opi_api-storage-v1-VirtioScsiTargetStatsResponse)
   
     - [FrontendVirtioScsiService](#opi_api-storage-v1-FrontendVirtioScsiService)
   
@@ -1501,10 +1510,9 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  |  |
-| bdev | [string](#string) |  |  |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | The PCI endpoint where this device should appear |
+| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this controller |
 | max_io_qps | [int64](#int64) |  |  |
-| serial_number | [string](#string) |  |  |
 
 
 
@@ -1619,6 +1627,21 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+<a name="opi_api-storage-v1-CreateVirtioScsiTargetRequest"></a>
+
+### CreateVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-DeleteVirtioScsiControllerRequest"></a>
 
 ### DeleteVirtioScsiControllerRequest
@@ -1650,6 +1673,21 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+<a name="opi_api-storage-v1-DeleteVirtioScsiTargetRequest"></a>
+
+### DeleteVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-GetVirtioScsiControllerRequest"></a>
 
 ### GetVirtioScsiControllerRequest
@@ -1675,6 +1713,21 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetVirtioScsiTargetRequest"></a>
+
+### GetVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1746,6 +1799,38 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+<a name="opi_api-storage-v1-ListVirtioScsiTargetRequest"></a>
+
+### ListVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListVirtioScsiTargetResponse"></a>
+
+### ListVirtioScsiTargetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated |  |
+| next_page_token | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-UpdateVirtioScsiControllerRequest"></a>
 
 ### UpdateVirtioScsiControllerRequest
@@ -1776,6 +1861,21 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+<a name="opi_api-storage-v1-UpdateVirtioScsiTargetRequest"></a>
+
+### UpdateVirtioScsiTargetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-VirtioScsiController"></a>
 
 ### VirtioScsiController
@@ -1785,7 +1885,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  |  |
+| pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 
 
 
@@ -1832,8 +1932,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| bdev | [string](#string) |  |  |
+| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The target that this LUN is in |
+| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The middle/back-end volume for this LLUN |
 
 
 
@@ -1871,6 +1971,53 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
+
+<a name="opi_api-storage-v1-VirtioScsiTarget"></a>
+
+### VirtioScsiTarget
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| max_luns | [int32](#int32) |  | maximum LUNs within a target |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-VirtioScsiTargetStatsRequest"></a>
+
+### VirtioScsiTargetStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-VirtioScsiTargetStatsResponse"></a>
+
+### VirtioScsiTargetStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -1881,10 +2028,16 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 <a name="opi_api-storage-v1-FrontendVirtioScsiService"></a>
 
 ### FrontendVirtioScsiService
-Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host presentation as alternative to Virtio-blk.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
+| CreateVirtioScsiTarget | [CreateVirtioScsiTargetRequest](#opi_api-storage-v1-CreateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
+| DeleteVirtioScsiTarget | [DeleteVirtioScsiTargetRequest](#opi_api-storage-v1-DeleteVirtioScsiTargetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateVirtioScsiTarget | [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
+| ListVirtioScsiTarget | [ListVirtioScsiTargetRequest](#opi_api-storage-v1-ListVirtioScsiTargetRequest) | [ListVirtioScsiTargetResponse](#opi_api-storage-v1-ListVirtioScsiTargetResponse) |  |
+| GetVirtioScsiTarget | [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
+| VirtioScsiTargetStats | [VirtioScsiTargetStatsRequest](#opi_api-storage-v1-VirtioScsiTargetStatsRequest) | [VirtioScsiTargetStatsResponse](#opi_api-storage-v1-VirtioScsiTargetStatsResponse) |  |
 | CreateVirtioScsiController | [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
 | DeleteVirtioScsiController | [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiController | [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |

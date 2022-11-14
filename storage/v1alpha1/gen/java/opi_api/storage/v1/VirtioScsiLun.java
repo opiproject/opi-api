@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VirtioScsiLun() {
-    bdev_ = "";
   }
 
   @java.lang.Override
@@ -64,21 +63,28 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (controllerId_ != null) {
-              subBuilder = controllerId_.toBuilder();
+            if (targetId_ != null) {
+              subBuilder = targetId_.toBuilder();
             }
-            controllerId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            targetId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(controllerId_);
-              controllerId_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(targetId_);
+              targetId_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (volumeId_ != null) {
+              subBuilder = volumeId_.toBuilder();
+            }
+            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(volumeId_);
+              volumeId_ = subBuilder.buildPartial();
+            }
 
-            bdev_ = s;
             break;
           }
           default: {
@@ -139,68 +145,80 @@ private static final long serialVersionUID = 0L;
     return getId();
   }
 
-  public static final int CONTROLLER_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey controllerId_;
+  public static final int TARGET_ID_FIELD_NUMBER = 2;
+  private opi_api.common.v1.ObjectKey targetId_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return Whether the controllerId field is set.
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * @return Whether the targetId field is set.
    */
   @java.lang.Override
-  public boolean hasControllerId() {
-    return controllerId_ != null;
+  public boolean hasTargetId() {
+    return targetId_ != null;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-   * @return The controllerId.
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+   * @return The targetId.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getControllerId() {
-    return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+  public opi_api.common.v1.ObjectKey getTargetId() {
+    return targetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : targetId_;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+   * <pre>
+   * The target that this LUN is in
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-    return getControllerId();
+  public opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder() {
+    return getTargetId();
   }
 
-  public static final int BDEV_FIELD_NUMBER = 3;
-  private volatile java.lang.Object bdev_;
+  public static final int VOLUME_ID_FIELD_NUMBER = 3;
+  private opi_api.common.v1.ObjectKey volumeId_;
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bdev.
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return Whether the volumeId field is set.
    */
   @java.lang.Override
-  public java.lang.String getBdev() {
-    java.lang.Object ref = bdev_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bdev_ = s;
-      return s;
-    }
+  public boolean hasVolumeId() {
+    return volumeId_ != null;
   }
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bytes for bdev.
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return The volumeId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBdevBytes() {
-    java.lang.Object ref = bdev_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      bdev_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public opi_api.common.v1.ObjectKey getVolumeId() {
+    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
+  }
+  /**
+   * <pre>
+   * The middle/back-end volume for this LLUN
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
+    return getVolumeId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -220,11 +238,11 @@ private static final long serialVersionUID = 0L;
     if (id_ != null) {
       output.writeMessage(1, getId());
     }
-    if (controllerId_ != null) {
-      output.writeMessage(2, getControllerId());
+    if (targetId_ != null) {
+      output.writeMessage(2, getTargetId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bdev_);
+    if (volumeId_ != null) {
+      output.writeMessage(3, getVolumeId());
     }
     unknownFields.writeTo(output);
   }
@@ -239,12 +257,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getId());
     }
-    if (controllerId_ != null) {
+    if (targetId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getControllerId());
+        .computeMessageSize(2, getTargetId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bdev_);
+    if (volumeId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getVolumeId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -266,13 +285,16 @@ private static final long serialVersionUID = 0L;
       if (!getId()
           .equals(other.getId())) return false;
     }
-    if (hasControllerId() != other.hasControllerId()) return false;
-    if (hasControllerId()) {
-      if (!getControllerId()
-          .equals(other.getControllerId())) return false;
+    if (hasTargetId() != other.hasTargetId()) return false;
+    if (hasTargetId()) {
+      if (!getTargetId()
+          .equals(other.getTargetId())) return false;
     }
-    if (!getBdev()
-        .equals(other.getBdev())) return false;
+    if (hasVolumeId() != other.hasVolumeId()) return false;
+    if (hasVolumeId()) {
+      if (!getVolumeId()
+          .equals(other.getVolumeId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -288,12 +310,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
     }
-    if (hasControllerId()) {
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId().hashCode();
+    if (hasTargetId()) {
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetId().hashCode();
     }
-    hash = (37 * hash) + BDEV_FIELD_NUMBER;
-    hash = (53 * hash) + getBdev().hashCode();
+    if (hasVolumeId()) {
+      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVolumeId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,14 +457,18 @@ private static final long serialVersionUID = 0L;
         id_ = null;
         idBuilder_ = null;
       }
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
+      if (targetIdBuilder_ == null) {
+        targetId_ = null;
       } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
+        targetId_ = null;
+        targetIdBuilder_ = null;
       }
-      bdev_ = "";
-
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = null;
+      } else {
+        volumeId_ = null;
+        volumeIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -472,12 +500,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.id_ = idBuilder_.build();
       }
-      if (controllerIdBuilder_ == null) {
-        result.controllerId_ = controllerId_;
+      if (targetIdBuilder_ == null) {
+        result.targetId_ = targetId_;
       } else {
-        result.controllerId_ = controllerIdBuilder_.build();
+        result.targetId_ = targetIdBuilder_.build();
       }
-      result.bdev_ = bdev_;
+      if (volumeIdBuilder_ == null) {
+        result.volumeId_ = volumeId_;
+      } else {
+        result.volumeId_ = volumeIdBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -529,12 +561,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasId()) {
         mergeId(other.getId());
       }
-      if (other.hasControllerId()) {
-        mergeControllerId(other.getControllerId());
+      if (other.hasTargetId()) {
+        mergeTargetId(other.getTargetId());
       }
-      if (!other.getBdev().isEmpty()) {
-        bdev_ = other.bdev_;
-        onChanged();
+      if (other.hasVolumeId()) {
+        mergeVolumeId(other.getVolumeId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -684,199 +715,314 @@ private static final long serialVersionUID = 0L;
       return idBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey controllerId_;
+    private opi_api.common.v1.ObjectKey targetId_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> controllerIdBuilder_;
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> targetIdBuilder_;
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return Whether the controllerId field is set.
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * @return Whether the targetId field is set.
      */
-    public boolean hasControllerId() {
-      return controllerIdBuilder_ != null || controllerId_ != null;
+    public boolean hasTargetId() {
+      return targetIdBuilder_ != null || targetId_ != null;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
-     * @return The controllerId.
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
+     * @return The targetId.
      */
-    public opi_api.common.v1.ObjectKey getControllerId() {
-      if (controllerIdBuilder_ == null) {
-        return controllerId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+    public opi_api.common.v1.ObjectKey getTargetId() {
+      if (targetIdBuilder_ == null) {
+        return targetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : targetId_;
       } else {
-        return controllerIdBuilder_.getMessage();
+        return targetIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public Builder setControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
+    public Builder setTargetId(opi_api.common.v1.ObjectKey value) {
+      if (targetIdBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        controllerId_ = value;
+        targetId_ = value;
         onChanged();
       } else {
-        controllerIdBuilder_.setMessage(value);
+        targetIdBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public Builder setControllerId(
+    public Builder setTargetId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = builderForValue.build();
+      if (targetIdBuilder_ == null) {
+        targetId_ = builderForValue.build();
         onChanged();
       } else {
-        controllerIdBuilder_.setMessage(builderForValue.build());
+        targetIdBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public Builder mergeControllerId(opi_api.common.v1.ObjectKey value) {
-      if (controllerIdBuilder_ == null) {
-        if (controllerId_ != null) {
-          controllerId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(controllerId_).mergeFrom(value).buildPartial();
+    public Builder mergeTargetId(opi_api.common.v1.ObjectKey value) {
+      if (targetIdBuilder_ == null) {
+        if (targetId_ != null) {
+          targetId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(targetId_).mergeFrom(value).buildPartial();
         } else {
-          controllerId_ = value;
+          targetId_ = value;
         }
         onChanged();
       } else {
-        controllerIdBuilder_.mergeFrom(value);
+        targetIdBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public Builder clearControllerId() {
-      if (controllerIdBuilder_ == null) {
-        controllerId_ = null;
+    public Builder clearTargetId() {
+      if (targetIdBuilder_ == null) {
+        targetId_ = null;
         onChanged();
       } else {
-        controllerId_ = null;
-        controllerIdBuilder_ = null;
+        targetId_ = null;
+        targetIdBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getControllerIdBuilder() {
+    public opi_api.common.v1.ObjectKey.Builder getTargetIdBuilder() {
       
       onChanged();
-      return getControllerIdFieldBuilder().getBuilder();
+      return getTargetIdFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder() {
-      if (controllerIdBuilder_ != null) {
-        return controllerIdBuilder_.getMessageOrBuilder();
+    public opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder() {
+      if (targetIdBuilder_ != null) {
+        return targetIdBuilder_.getMessageOrBuilder();
       } else {
-        return controllerId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : controllerId_;
+        return targetId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : targetId_;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey controller_id = 2;</code>
+     * <pre>
+     * The target that this LUN is in
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey target_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getControllerIdFieldBuilder() {
-      if (controllerIdBuilder_ == null) {
-        controllerIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getTargetIdFieldBuilder() {
+      if (targetIdBuilder_ == null) {
+        targetIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getControllerId(),
+                getTargetId(),
                 getParentForChildren(),
                 isClean());
-        controllerId_ = null;
+        targetId_ = null;
       }
-      return controllerIdBuilder_;
+      return targetIdBuilder_;
     }
 
-    private java.lang.Object bdev_ = "";
+    private opi_api.common.v1.ObjectKey volumeId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
     /**
-     * <code>string bdev = 3;</code>
-     * @return The bdev.
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * @return Whether the volumeId field is set.
      */
-    public java.lang.String getBdev() {
-      java.lang.Object ref = bdev_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bdev_ = s;
-        return s;
+    public boolean hasVolumeId() {
+      return volumeIdBuilder_ != null || volumeId_ != null;
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * @return The volumeId.
+     */
+    public opi_api.common.v1.ObjectKey getVolumeId() {
+      if (volumeIdBuilder_ == null) {
+        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
       } else {
-        return (java.lang.String) ref;
+        return volumeIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>string bdev = 3;</code>
-     * @return The bytes for bdev.
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getBdevBytes() {
-      java.lang.Object ref = bdev_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bdev_ = b;
-        return b;
+    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (volumeIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeId_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        volumeIdBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder setVolumeId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = builderForValue.build();
+        onChanged();
+      } else {
+        volumeIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (volumeIdBuilder_ == null) {
+        if (volumeId_ != null) {
+          volumeId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
+        } else {
+          volumeId_ = value;
+        }
+        onChanged();
+      } else {
+        volumeIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder clearVolumeId() {
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = null;
+        onChanged();
+      } else {
+        volumeId_ = null;
+        volumeIdBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
+      
+      onChanged();
+      return getVolumeIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
+      if (volumeIdBuilder_ != null) {
+        return volumeIdBuilder_.getMessageOrBuilder();
+      } else {
+        return volumeId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
       }
     }
     /**
-     * <code>string bdev = 3;</code>
-     * @param value The bdev to set.
-     * @return This builder for chaining.
+     * <pre>
+     * The middle/back-end volume for this LLUN
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
      */
-    public Builder setBdev(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      bdev_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bdev = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBdev() {
-      
-      bdev_ = getDefaultInstance().getBdev();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bdev = 3;</code>
-     * @param value The bytes for bdev to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBdevBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      bdev_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getVolumeIdFieldBuilder() {
+      if (volumeIdBuilder_ == null) {
+        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getVolumeId(),
+                getParentForChildren(),
+                isClean());
+        volumeId_ = null;
+      }
+      return volumeIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

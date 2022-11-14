@@ -23,47 +23,62 @@ public interface VirtioBlkOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.PciEndpoint getPcieId();
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bdev.
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return Whether the volumeId field is set.
    */
-  java.lang.String getBdev();
+  boolean hasVolumeId();
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bytes for bdev.
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return The volumeId.
    */
-  com.google.protobuf.ByteString
-      getBdevBytes();
+  opi_api.common.v1.ObjectKey getVolumeId();
+  /**
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
 
   /**
    * <code>int64 max_io_qps = 4;</code>
    * @return The maxIoQps.
    */
   long getMaxIoQps();
-
-  /**
-   * <code>string serial_number = 5;</code>
-   * @return The serialNumber.
-   */
-  java.lang.String getSerialNumber();
-  /**
-   * <code>string serial_number = 5;</code>
-   * @return The bytes for serialNumber.
-   */
-  com.google.protobuf.ByteString
-      getSerialNumberBytes();
 }

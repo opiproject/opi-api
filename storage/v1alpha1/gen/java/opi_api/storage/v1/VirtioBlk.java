@@ -16,8 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VirtioBlk() {
-    bdev_ = "";
-    serialNumber_ = "";
   }
 
   @java.lang.Override
@@ -77,20 +75,21 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (volumeId_ != null) {
+              subBuilder = volumeId_.toBuilder();
+            }
+            volumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(volumeId_);
+              volumeId_ = subBuilder.buildPartial();
+            }
 
-            bdev_ = s;
             break;
           }
           case 32: {
 
             maxIoQps_ = input.readInt64();
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            serialNumber_ = s;
             break;
           }
           default: {
@@ -154,6 +153,10 @@ private static final long serialVersionUID = 0L;
   public static final int PCIE_ID_FIELD_NUMBER = 2;
   private opi_api.storage.v1.PciEndpoint pcieId_;
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return Whether the pcieId field is set.
    */
@@ -162,6 +165,10 @@ private static final long serialVersionUID = 0L;
     return pcieId_ != null;
   }
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    * @return The pcieId.
    */
@@ -170,6 +177,10 @@ private static final long serialVersionUID = 0L;
     return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
   }
   /**
+   * <pre>
+   * The PCI endpoint where this device should appear
+   * </pre>
+   *
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    */
   @java.lang.Override
@@ -177,42 +188,42 @@ private static final long serialVersionUID = 0L;
     return getPcieId();
   }
 
-  public static final int BDEV_FIELD_NUMBER = 3;
-  private volatile java.lang.Object bdev_;
+  public static final int VOLUME_ID_FIELD_NUMBER = 3;
+  private opi_api.common.v1.ObjectKey volumeId_;
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bdev.
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return Whether the volumeId field is set.
    */
   @java.lang.Override
-  public java.lang.String getBdev() {
-    java.lang.Object ref = bdev_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bdev_ = s;
-      return s;
-    }
+  public boolean hasVolumeId() {
+    return volumeId_ != null;
   }
   /**
-   * <code>string bdev = 3;</code>
-   * @return The bytes for bdev.
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   * @return The volumeId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBdevBytes() {
-    java.lang.Object ref = bdev_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      bdev_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public opi_api.common.v1.ObjectKey getVolumeId() {
+    return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
+  }
+  /**
+   * <pre>
+   * The back/middle-end volume to back this controller
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
+    return getVolumeId();
   }
 
   public static final int MAX_IO_QPS_FIELD_NUMBER = 4;
@@ -224,44 +235,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public long getMaxIoQps() {
     return maxIoQps_;
-  }
-
-  public static final int SERIAL_NUMBER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serialNumber_;
-  /**
-   * <code>string serial_number = 5;</code>
-   * @return The serialNumber.
-   */
-  @java.lang.Override
-  public java.lang.String getSerialNumber() {
-    java.lang.Object ref = serialNumber_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      serialNumber_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string serial_number = 5;</code>
-   * @return The bytes for serialNumber.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSerialNumberBytes() {
-    java.lang.Object ref = serialNumber_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      serialNumber_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -284,14 +257,11 @@ private static final long serialVersionUID = 0L;
     if (pcieId_ != null) {
       output.writeMessage(2, getPcieId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bdev_);
+    if (volumeId_ != null) {
+      output.writeMessage(3, getVolumeId());
     }
     if (maxIoQps_ != 0L) {
       output.writeInt64(4, maxIoQps_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serialNumber_);
     }
     unknownFields.writeTo(output);
   }
@@ -310,15 +280,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getPcieId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bdev_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bdev_);
+    if (volumeId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getVolumeId());
     }
     if (maxIoQps_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, maxIoQps_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serialNumber_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -345,12 +313,13 @@ private static final long serialVersionUID = 0L;
       if (!getPcieId()
           .equals(other.getPcieId())) return false;
     }
-    if (!getBdev()
-        .equals(other.getBdev())) return false;
+    if (hasVolumeId() != other.hasVolumeId()) return false;
+    if (hasVolumeId()) {
+      if (!getVolumeId()
+          .equals(other.getVolumeId())) return false;
+    }
     if (getMaxIoQps()
         != other.getMaxIoQps()) return false;
-    if (!getSerialNumber()
-        .equals(other.getSerialNumber())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -370,13 +339,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPcieId().hashCode();
     }
-    hash = (37 * hash) + BDEV_FIELD_NUMBER;
-    hash = (53 * hash) + getBdev().hashCode();
+    if (hasVolumeId()) {
+      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVolumeId().hashCode();
+    }
     hash = (37 * hash) + MAX_IO_QPS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaxIoQps());
-    hash = (37 * hash) + SERIAL_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getSerialNumber().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -522,11 +491,13 @@ private static final long serialVersionUID = 0L;
         pcieId_ = null;
         pcieIdBuilder_ = null;
       }
-      bdev_ = "";
-
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = null;
+      } else {
+        volumeId_ = null;
+        volumeIdBuilder_ = null;
+      }
       maxIoQps_ = 0L;
-
-      serialNumber_ = "";
 
       return this;
     }
@@ -564,9 +535,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.pcieId_ = pcieIdBuilder_.build();
       }
-      result.bdev_ = bdev_;
+      if (volumeIdBuilder_ == null) {
+        result.volumeId_ = volumeId_;
+      } else {
+        result.volumeId_ = volumeIdBuilder_.build();
+      }
       result.maxIoQps_ = maxIoQps_;
-      result.serialNumber_ = serialNumber_;
       onBuilt();
       return result;
     }
@@ -621,16 +595,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasPcieId()) {
         mergePcieId(other.getPcieId());
       }
-      if (!other.getBdev().isEmpty()) {
-        bdev_ = other.bdev_;
-        onChanged();
+      if (other.hasVolumeId()) {
+        mergeVolumeId(other.getVolumeId());
       }
       if (other.getMaxIoQps() != 0L) {
         setMaxIoQps(other.getMaxIoQps());
-      }
-      if (!other.getSerialNumber().isEmpty()) {
-        serialNumber_ = other.serialNumber_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -784,6 +753,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieIdBuilder_;
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      * @return Whether the pcieId field is set.
      */
@@ -791,6 +764,10 @@ private static final long serialVersionUID = 0L;
       return pcieIdBuilder_ != null || pcieId_ != null;
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      * @return The pcieId.
      */
@@ -802,6 +779,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
@@ -818,6 +799,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder setPcieId(
@@ -832,6 +817,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
@@ -850,6 +839,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public Builder clearPcieId() {
@@ -864,6 +857,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
@@ -872,6 +869,10 @@ private static final long serialVersionUID = 0L;
       return getPcieIdFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
@@ -883,6 +884,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The PCI endpoint where this device should appear
+     * </pre>
+     *
      * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -899,80 +904,159 @@ private static final long serialVersionUID = 0L;
       return pcieIdBuilder_;
     }
 
-    private java.lang.Object bdev_ = "";
+    private opi_api.common.v1.ObjectKey volumeId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> volumeIdBuilder_;
     /**
-     * <code>string bdev = 3;</code>
-     * @return The bdev.
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * @return Whether the volumeId field is set.
      */
-    public java.lang.String getBdev() {
-      java.lang.Object ref = bdev_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bdev_ = s;
-        return s;
+    public boolean hasVolumeId() {
+      return volumeIdBuilder_ != null || volumeId_ != null;
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     * @return The volumeId.
+     */
+    public opi_api.common.v1.ObjectKey getVolumeId() {
+      if (volumeIdBuilder_ == null) {
+        return volumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
       } else {
-        return (java.lang.String) ref;
+        return volumeIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>string bdev = 3;</code>
-     * @return The bytes for bdev.
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getBdevBytes() {
-      java.lang.Object ref = bdev_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bdev_ = b;
-        return b;
+    public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (volumeIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeId_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        volumeIdBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder setVolumeId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = builderForValue.build();
+        onChanged();
+      } else {
+        volumeIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (volumeIdBuilder_ == null) {
+        if (volumeId_ != null) {
+          volumeId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(volumeId_).mergeFrom(value).buildPartial();
+        } else {
+          volumeId_ = value;
+        }
+        onChanged();
+      } else {
+        volumeIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public Builder clearVolumeId() {
+      if (volumeIdBuilder_ == null) {
+        volumeId_ = null;
+        onChanged();
+      } else {
+        volumeId_ = null;
+        volumeIdBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
+      
+      onChanged();
+      return getVolumeIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
+      if (volumeIdBuilder_ != null) {
+        return volumeIdBuilder_.getMessageOrBuilder();
+      } else {
+        return volumeId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : volumeId_;
       }
     }
     /**
-     * <code>string bdev = 3;</code>
-     * @param value The bdev to set.
-     * @return This builder for chaining.
+     * <pre>
+     * The back/middle-end volume to back this controller
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 3;</code>
      */
-    public Builder setBdev(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      bdev_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bdev = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBdev() {
-      
-      bdev_ = getDefaultInstance().getBdev();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bdev = 3;</code>
-     * @param value The bytes for bdev to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBdevBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      bdev_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getVolumeIdFieldBuilder() {
+      if (volumeIdBuilder_ == null) {
+        volumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getVolumeId(),
+                getParentForChildren(),
+                isClean());
+        volumeId_ = null;
+      }
+      return volumeIdBuilder_;
     }
 
     private long maxIoQps_ ;
@@ -1002,82 +1086,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxIoQps() {
       
       maxIoQps_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object serialNumber_ = "";
-    /**
-     * <code>string serial_number = 5;</code>
-     * @return The serialNumber.
-     */
-    public java.lang.String getSerialNumber() {
-      java.lang.Object ref = serialNumber_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serialNumber_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string serial_number = 5;</code>
-     * @return The bytes for serialNumber.
-     */
-    public com.google.protobuf.ByteString
-        getSerialNumberBytes() {
-      java.lang.Object ref = serialNumber_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serialNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string serial_number = 5;</code>
-     * @param value The serialNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSerialNumber(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      serialNumber_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string serial_number = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSerialNumber() {
-      
-      serialNumber_ = getDefaultInstance().getSerialNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string serial_number = 5;</code>
-     * @param value The bytes for serialNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSerialNumberBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      serialNumber_ = value;
       onChanged();
       return this;
     }

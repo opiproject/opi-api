@@ -4,25 +4,25 @@
 package opi_api.storage.v1;
 
 /**
- * Protobuf type {@code opi_api.storage.v1.VirtioScsiController}
+ * Protobuf type {@code opi_api.storage.v1.VirtioScsiTarget}
  */
-public final class VirtioScsiController extends
+public final class VirtioScsiTarget extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.VirtioScsiController)
-    VirtioScsiControllerOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.VirtioScsiTarget)
+    VirtioScsiTargetOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use VirtioScsiController.newBuilder() to construct.
-  private VirtioScsiController(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use VirtioScsiTarget.newBuilder() to construct.
+  private VirtioScsiTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private VirtioScsiController() {
+  private VirtioScsiTarget() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new VirtioScsiController();
+    return new VirtioScsiTarget();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private VirtioScsiController(
+  private VirtioScsiTarget(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,17 +61,9 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
-            if (pcieId_ != null) {
-              subBuilder = pcieId_.toBuilder();
-            }
-            pcieId_ = input.readMessage(opi_api.storage.v1.PciEndpoint.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pcieId_);
-              pcieId_ = subBuilder.buildPartial();
-            }
+          case 16: {
 
+            maxLuns_ = input.readInt32();
             break;
           }
           default: {
@@ -95,15 +87,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiController_descriptor;
+    return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiTarget_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiController_fieldAccessorTable
+    return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiTarget_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.storage.v1.VirtioScsiController.class, opi_api.storage.v1.VirtioScsiController.Builder.class);
+            opi_api.storage.v1.VirtioScsiTarget.class, opi_api.storage.v1.VirtioScsiTarget.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -132,42 +124,19 @@ private static final long serialVersionUID = 0L;
     return getId();
   }
 
-  public static final int PCIE_ID_FIELD_NUMBER = 2;
-  private opi_api.storage.v1.PciEndpoint pcieId_;
+  public static final int MAX_LUNS_FIELD_NUMBER = 2;
+  private int maxLuns_;
   /**
    * <pre>
-   * xPU's PCI ID for the controller
+   * maximum LUNs within a target
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-   * @return Whether the pcieId field is set.
+   * <code>int32 max_luns = 2;</code>
+   * @return The maxLuns.
    */
   @java.lang.Override
-  public boolean hasPcieId() {
-    return pcieId_ != null;
-  }
-  /**
-   * <pre>
-   * xPU's PCI ID for the controller
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-   * @return The pcieId.
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.PciEndpoint getPcieId() {
-    return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-  }
-  /**
-   * <pre>
-   * xPU's PCI ID for the controller
-   * </pre>
-   *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-    return getPcieId();
+  public int getMaxLuns() {
+    return maxLuns_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -187,8 +156,8 @@ private static final long serialVersionUID = 0L;
     if (id_ != null) {
       output.writeMessage(1, getId());
     }
-    if (pcieId_ != null) {
-      output.writeMessage(2, getPcieId());
+    if (maxLuns_ != 0) {
+      output.writeInt32(2, maxLuns_);
     }
     unknownFields.writeTo(output);
   }
@@ -203,9 +172,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getId());
     }
-    if (pcieId_ != null) {
+    if (maxLuns_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPcieId());
+        .computeInt32Size(2, maxLuns_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -217,21 +186,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.storage.v1.VirtioScsiController)) {
+    if (!(obj instanceof opi_api.storage.v1.VirtioScsiTarget)) {
       return super.equals(obj);
     }
-    opi_api.storage.v1.VirtioScsiController other = (opi_api.storage.v1.VirtioScsiController) obj;
+    opi_api.storage.v1.VirtioScsiTarget other = (opi_api.storage.v1.VirtioScsiTarget) obj;
 
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
       if (!getId()
           .equals(other.getId())) return false;
     }
-    if (hasPcieId() != other.hasPcieId()) return false;
-    if (hasPcieId()) {
-      if (!getPcieId()
-          .equals(other.getPcieId())) return false;
-    }
+    if (getMaxLuns()
+        != other.getMaxLuns()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,78 +213,76 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
     }
-    if (hasPcieId()) {
-      hash = (37 * hash) + PCIE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPcieId().hashCode();
-    }
+    hash = (37 * hash) + MAX_LUNS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxLuns();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(byte[] data)
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.VirtioScsiTarget parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseDelimitedFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.VirtioScsiController parseFrom(
+  public static opi_api.storage.v1.VirtioScsiTarget parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -331,7 +295,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.storage.v1.VirtioScsiController prototype) {
+  public static Builder newBuilder(opi_api.storage.v1.VirtioScsiTarget prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -347,26 +311,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code opi_api.storage.v1.VirtioScsiController}
+   * Protobuf type {@code opi_api.storage.v1.VirtioScsiTarget}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.VirtioScsiController)
-      opi_api.storage.v1.VirtioScsiControllerOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.VirtioScsiTarget)
+      opi_api.storage.v1.VirtioScsiTargetOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiController_descriptor;
+      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiTarget_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiController_fieldAccessorTable
+      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.storage.v1.VirtioScsiController.class, opi_api.storage.v1.VirtioScsiController.Builder.class);
+              opi_api.storage.v1.VirtioScsiTarget.class, opi_api.storage.v1.VirtioScsiTarget.Builder.class);
     }
 
-    // Construct using opi_api.storage.v1.VirtioScsiController.newBuilder()
+    // Construct using opi_api.storage.v1.VirtioScsiTarget.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -390,29 +354,25 @@ private static final long serialVersionUID = 0L;
         id_ = null;
         idBuilder_ = null;
       }
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-      } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
-      }
+      maxLuns_ = 0;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiController_descriptor;
+      return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_VirtioScsiTarget_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.VirtioScsiController getDefaultInstanceForType() {
-      return opi_api.storage.v1.VirtioScsiController.getDefaultInstance();
+    public opi_api.storage.v1.VirtioScsiTarget getDefaultInstanceForType() {
+      return opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.VirtioScsiController build() {
-      opi_api.storage.v1.VirtioScsiController result = buildPartial();
+    public opi_api.storage.v1.VirtioScsiTarget build() {
+      opi_api.storage.v1.VirtioScsiTarget result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -420,18 +380,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.VirtioScsiController buildPartial() {
-      opi_api.storage.v1.VirtioScsiController result = new opi_api.storage.v1.VirtioScsiController(this);
+    public opi_api.storage.v1.VirtioScsiTarget buildPartial() {
+      opi_api.storage.v1.VirtioScsiTarget result = new opi_api.storage.v1.VirtioScsiTarget(this);
       if (idBuilder_ == null) {
         result.id_ = id_;
       } else {
         result.id_ = idBuilder_.build();
       }
-      if (pcieIdBuilder_ == null) {
-        result.pcieId_ = pcieId_;
-      } else {
-        result.pcieId_ = pcieIdBuilder_.build();
-      }
+      result.maxLuns_ = maxLuns_;
       onBuilt();
       return result;
     }
@@ -470,21 +426,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.storage.v1.VirtioScsiController) {
-        return mergeFrom((opi_api.storage.v1.VirtioScsiController)other);
+      if (other instanceof opi_api.storage.v1.VirtioScsiTarget) {
+        return mergeFrom((opi_api.storage.v1.VirtioScsiTarget)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.storage.v1.VirtioScsiController other) {
-      if (other == opi_api.storage.v1.VirtioScsiController.getDefaultInstance()) return this;
+    public Builder mergeFrom(opi_api.storage.v1.VirtioScsiTarget other) {
+      if (other == opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance()) return this;
       if (other.hasId()) {
         mergeId(other.getId());
       }
-      if (other.hasPcieId()) {
-        mergePcieId(other.getPcieId());
+      if (other.getMaxLuns() != 0) {
+        setMaxLuns(other.getMaxLuns());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -501,11 +457,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.storage.v1.VirtioScsiController parsedMessage = null;
+      opi_api.storage.v1.VirtioScsiTarget parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.storage.v1.VirtioScsiController) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.storage.v1.VirtioScsiTarget) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -634,159 +590,47 @@ private static final long serialVersionUID = 0L;
       return idBuilder_;
     }
 
-    private opi_api.storage.v1.PciEndpoint pcieId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> pcieIdBuilder_;
+    private int maxLuns_ ;
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * maximum LUNs within a target
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     * @return Whether the pcieId field is set.
+     * <code>int32 max_luns = 2;</code>
+     * @return The maxLuns.
      */
-    public boolean hasPcieId() {
-      return pcieIdBuilder_ != null || pcieId_ != null;
+    @java.lang.Override
+    public int getMaxLuns() {
+      return maxLuns_;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * maximum LUNs within a target
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     * @return The pcieId.
+     * <code>int32 max_luns = 2;</code>
+     * @param value The maxLuns to set.
+     * @return This builder for chaining.
      */
-    public opi_api.storage.v1.PciEndpoint getPcieId() {
-      if (pcieIdBuilder_ == null) {
-        return pcieId_ == null ? opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-      } else {
-        return pcieIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
-      if (pcieIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        pcieId_ = value;
-        onChanged();
-      } else {
-        pcieIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    public Builder setPcieId(
-        opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = builderForValue.build();
-        onChanged();
-      } else {
-        pcieIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
-      if (pcieIdBuilder_ == null) {
-        if (pcieId_ != null) {
-          pcieId_ =
-            opi_api.storage.v1.PciEndpoint.newBuilder(pcieId_).mergeFrom(value).buildPartial();
-        } else {
-          pcieId_ = value;
-        }
-        onChanged();
-      } else {
-        pcieIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    public Builder clearPcieId() {
-      if (pcieIdBuilder_ == null) {
-        pcieId_ = null;
-        onChanged();
-      } else {
-        pcieId_ = null;
-        pcieIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
+    public Builder setMaxLuns(int value) {
       
+      maxLuns_ = value;
       onChanged();
-      return getPcieIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * xPU's PCI ID for the controller
+     * maximum LUNs within a target
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
+     * <code>int32 max_luns = 2;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
-      if (pcieIdBuilder_ != null) {
-        return pcieIdBuilder_.getMessageOrBuilder();
-      } else {
-        return pcieId_ == null ?
-            opi_api.storage.v1.PciEndpoint.getDefaultInstance() : pcieId_;
-      }
-    }
-    /**
-     * <pre>
-     * xPU's PCI ID for the controller
-     * </pre>
-     *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
-        getPcieIdFieldBuilder() {
-      if (pcieIdBuilder_ == null) {
-        pcieIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder>(
-                getPcieId(),
-                getParentForChildren(),
-                isClean());
-        pcieId_ = null;
-      }
-      return pcieIdBuilder_;
+    public Builder clearMaxLuns() {
+      
+      maxLuns_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -801,41 +645,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.VirtioScsiController)
+    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.VirtioScsiTarget)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiController)
-  private static final opi_api.storage.v1.VirtioScsiController DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiTarget)
+  private static final opi_api.storage.v1.VirtioScsiTarget DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.storage.v1.VirtioScsiController();
+    DEFAULT_INSTANCE = new opi_api.storage.v1.VirtioScsiTarget();
   }
 
-  public static opi_api.storage.v1.VirtioScsiController getDefaultInstance() {
+  public static opi_api.storage.v1.VirtioScsiTarget getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VirtioScsiController>
-      PARSER = new com.google.protobuf.AbstractParser<VirtioScsiController>() {
+  private static final com.google.protobuf.Parser<VirtioScsiTarget>
+      PARSER = new com.google.protobuf.AbstractParser<VirtioScsiTarget>() {
     @java.lang.Override
-    public VirtioScsiController parsePartialFrom(
+    public VirtioScsiTarget parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new VirtioScsiController(input, extensionRegistry);
+      return new VirtioScsiTarget(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<VirtioScsiController> parser() {
+  public static com.google.protobuf.Parser<VirtioScsiTarget> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VirtioScsiController> getParserForType() {
+  public com.google.protobuf.Parser<VirtioScsiTarget> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiController getDefaultInstanceForType() {
+  public opi_api.storage.v1.VirtioScsiTarget getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

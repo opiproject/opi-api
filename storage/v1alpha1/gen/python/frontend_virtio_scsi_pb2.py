@@ -18,12 +18,21 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x66rontend_virtio_scsi.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"r\n\x14VirtioScsiController\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\"|\n\rVirtioScsiLun\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x33\n\rcontroller_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0c\n\x04\x62\x64\x65v\x18\x03 \x01(\t\"a\n!CreateVirtioScsiControllerRequest\x12<\n\ncontroller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\"X\n!DeleteVirtioScsiControllerRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"a\n!UpdateVirtioScsiControllerRequest\x12<\n\ncontroller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\"H\n\x1fListVirtioScsiControllerRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"z\n ListVirtioScsiControllerResponse\x12=\n\x0b\x63ontrollers\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"U\n\x1eGetVirtioScsiControllerRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"W\n VirtioScsiControllerStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\\\n!VirtioScsiControllerStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t\"L\n\x1a\x43reateVirtioScsiLunRequest\x12.\n\x03lun\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\"\x7f\n\x1a\x44\x65leteVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x1aUpdateVirtioScsiLunRequest\x12.\n\x03lun\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\"v\n\x18ListVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"e\n\x19ListVirtioScsiLunResponse\x12/\n\x04luns\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"|\n\x17GetVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"~\n\x19VirtioScsiLunStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x1aVirtioScsiLunStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xba\x0e\n\x19\x46rontendVirtioScsiService\x12\xaa\x01\n\x1a\x43reateVirtioScsiController\x12\x35.opi_api.storage.v1.CreateVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtioscsictrls:\x0evirtioscsictrl\x12\x99\x01\n\x1a\x44\x65leteVirtioScsiController\x12\x35.opi_api.storage.v1.DeleteVirtioScsiControllerRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/v1/virtioscsictrls/{virtioscsictrl}\x12\xaa\x01\n\x1aUpdateVirtioScsiController\x12\x35.opi_api.storage.v1.UpdateVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\"+\x82\xd3\xe4\x93\x02%2\x13/v1/virtioscsictrls:\x0evirtioscsictrl\x12\xa2\x01\n\x18ListVirtioScsiController\x12\x33.opi_api.storage.v1.ListVirtioScsiControllerRequest\x1a\x34.opi_api.storage.v1.ListVirtioScsiControllerResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/virtioscsictrls\x12\xa5\x01\n\x17GetVirtioScsiController\x12\x32.opi_api.storage.v1.GetVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\",\x82\xd3\xe4\x93\x02&\x12$/v1/virtioscsictrls/{virtioscsictrl}\x12\x8a\x01\n\x19VirtioScsiControllerStats\x12\x34.opi_api.storage.v1.VirtioScsiControllerStatsRequest\x1a\x35.opi_api.storage.v1.VirtioScsiControllerStatsResponse\"\x00\x12\x93\x01\n\x13\x43reateVirtioScsiLun\x12..opi_api.storage.v1.CreateVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\")\x82\xd3\xe4\x93\x02#\"\x12/v1/virtioscsiluns:\rvirtioscsilun\x12\x89\x01\n\x13\x44\x65leteVirtioScsiLun\x12..opi_api.storage.v1.DeleteVirtioScsiLunRequest\x1a\x16.google.protobuf.Empty\"*\x82\xd3\xe4\x93\x02$*\"/v1/virtioscsiluns/{virtioscsilun}\x12\x93\x01\n\x13UpdateVirtioScsiLun\x12..opi_api.storage.v1.UpdateVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\")\x82\xd3\xe4\x93\x02#2\x12/v1/virtioscsiluns:\rvirtioscsilun\x12\x8c\x01\n\x11ListVirtioScsiLun\x12,.opi_api.storage.v1.ListVirtioScsiLunRequest\x1a-.opi_api.storage.v1.ListVirtioScsiLunResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/virtioscsiluns\x12\x8e\x01\n\x10GetVirtioScsiLun\x12+.opi_api.storage.v1.GetVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/virtioscsiluns/{virtioscsilun}\x12u\n\x12VirtioScsiLunStats\x12-.opi_api.storage.v1.VirtioScsiLunStatsRequest\x1a..opi_api.storage.v1.VirtioScsiLunStatsResponse\"\x00\x42\x66\n\x12opi_api.storage.v1B\x17\x46rontendVirtioScsiProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x66rontend_virtio_scsi.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"N\n\x10VirtioScsiTarget\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x10\n\x08max_luns\x18\x02 \x01(\x05\"r\n\x14VirtioScsiController\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\"\x9b\x01\n\rVirtioScsiLun\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\ttarget_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x03 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x1d\x43reateVirtioScsiTargetRequest\x12\x34\n\x06target\x18\x01 \x01(\x0b\x32$.opi_api.storage.v1.VirtioScsiTarget\"P\n\x1d\x44\x65leteVirtioScsiTargetRequest\x12/\n\ttarget_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x1dUpdateVirtioScsiTargetRequest\x12\x34\n\x06target\x18\x01 \x01(\x0b\x32$.opi_api.storage.v1.VirtioScsiTarget\"D\n\x1bListVirtioScsiTargetRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"n\n\x1cListVirtioScsiTargetResponse\x12\x35\n\x07targets\x18\x01 \x03(\x0b\x32$.opi_api.storage.v1.VirtioScsiTarget\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"M\n\x1aGetVirtioScsiTargetRequest\x12/\n\ttarget_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"O\n\x1cVirtioScsiTargetStatsRequest\x12/\n\ttarget_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"X\n\x1dVirtioScsiTargetStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t\"a\n!CreateVirtioScsiControllerRequest\x12<\n\ncontroller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\"X\n!DeleteVirtioScsiControllerRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"a\n!UpdateVirtioScsiControllerRequest\x12<\n\ncontroller\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\"H\n\x1fListVirtioScsiControllerRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"z\n ListVirtioScsiControllerResponse\x12=\n\x0b\x63ontrollers\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.VirtioScsiController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"U\n\x1eGetVirtioScsiControllerRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"W\n VirtioScsiControllerStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\\\n!VirtioScsiControllerStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t\"L\n\x1a\x43reateVirtioScsiLunRequest\x12.\n\x03lun\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\"\x7f\n\x1a\x44\x65leteVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x1aUpdateVirtioScsiLunRequest\x12.\n\x03lun\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\"v\n\x18ListVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"e\n\x19ListVirtioScsiLunResponse\x12/\n\x04luns\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.VirtioScsiLun\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"|\n\x17GetVirtioScsiLunRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"~\n\x19VirtioScsiLunStatsRequest\x12\x33\n\rcontroller_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06lun_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x1aVirtioScsiLunStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xd7\x15\n\x19\x46rontendVirtioScsiService\x12\xa2\x01\n\x16\x43reateVirtioScsiTarget\x12\x31.opi_api.storage.v1.CreateVirtioScsiTargetRequest\x1a$.opi_api.storage.v1.VirtioScsiTarget\"/\x82\xd3\xe4\x93\x02)\"\x15/v1/virtioscsitargets:\x10virtioscsitarget\x12\x95\x01\n\x16\x44\x65leteVirtioScsiTarget\x12\x31.opi_api.storage.v1.DeleteVirtioScsiTargetRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02**(/v1/virtioscsitargets/{virtioscsitarget}\x12\xa2\x01\n\x16UpdateVirtioScsiTarget\x12\x31.opi_api.storage.v1.UpdateVirtioScsiTargetRequest\x1a$.opi_api.storage.v1.VirtioScsiTarget\"/\x82\xd3\xe4\x93\x02)2\x15/v1/virtioscsitargets:\x10virtioscsitarget\x12\x98\x01\n\x14ListVirtioScsiTarget\x12/.opi_api.storage.v1.ListVirtioScsiTargetRequest\x1a\x30.opi_api.storage.v1.ListVirtioScsiTargetResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/virtioscsitargets\x12\x9d\x01\n\x13GetVirtioScsiTarget\x12..opi_api.storage.v1.GetVirtioScsiTargetRequest\x1a$.opi_api.storage.v1.VirtioScsiTarget\"0\x82\xd3\xe4\x93\x02*\x12(/v1/virtioscsitargets/{virtioscsitarget}\x12~\n\x15VirtioScsiTargetStats\x12\x30.opi_api.storage.v1.VirtioScsiTargetStatsRequest\x1a\x31.opi_api.storage.v1.VirtioScsiTargetStatsResponse\"\x00\x12\xaa\x01\n\x1a\x43reateVirtioScsiController\x12\x35.opi_api.storage.v1.CreateVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\"+\x82\xd3\xe4\x93\x02%\"\x13/v1/virtioscsictrls:\x0evirtioscsictrl\x12\x99\x01\n\x1a\x44\x65leteVirtioScsiController\x12\x35.opi_api.storage.v1.DeleteVirtioScsiControllerRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/v1/virtioscsictrls/{virtioscsictrl}\x12\xaa\x01\n\x1aUpdateVirtioScsiController\x12\x35.opi_api.storage.v1.UpdateVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\"+\x82\xd3\xe4\x93\x02%2\x13/v1/virtioscsictrls:\x0evirtioscsictrl\x12\xa2\x01\n\x18ListVirtioScsiController\x12\x33.opi_api.storage.v1.ListVirtioScsiControllerRequest\x1a\x34.opi_api.storage.v1.ListVirtioScsiControllerResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/virtioscsictrls\x12\xa5\x01\n\x17GetVirtioScsiController\x12\x32.opi_api.storage.v1.GetVirtioScsiControllerRequest\x1a(.opi_api.storage.v1.VirtioScsiController\",\x82\xd3\xe4\x93\x02&\x12$/v1/virtioscsictrls/{virtioscsictrl}\x12\x8a\x01\n\x19VirtioScsiControllerStats\x12\x34.opi_api.storage.v1.VirtioScsiControllerStatsRequest\x1a\x35.opi_api.storage.v1.VirtioScsiControllerStatsResponse\"\x00\x12\x93\x01\n\x13\x43reateVirtioScsiLun\x12..opi_api.storage.v1.CreateVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\")\x82\xd3\xe4\x93\x02#\"\x12/v1/virtioscsiluns:\rvirtioscsilun\x12\x89\x01\n\x13\x44\x65leteVirtioScsiLun\x12..opi_api.storage.v1.DeleteVirtioScsiLunRequest\x1a\x16.google.protobuf.Empty\"*\x82\xd3\xe4\x93\x02$*\"/v1/virtioscsiluns/{virtioscsilun}\x12\x93\x01\n\x13UpdateVirtioScsiLun\x12..opi_api.storage.v1.UpdateVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\")\x82\xd3\xe4\x93\x02#2\x12/v1/virtioscsiluns:\rvirtioscsilun\x12\x8c\x01\n\x11ListVirtioScsiLun\x12,.opi_api.storage.v1.ListVirtioScsiLunRequest\x1a-.opi_api.storage.v1.ListVirtioScsiLunResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/virtioscsiluns\x12\x8e\x01\n\x10GetVirtioScsiLun\x12+.opi_api.storage.v1.GetVirtioScsiLunRequest\x1a!.opi_api.storage.v1.VirtioScsiLun\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/virtioscsiluns/{virtioscsilun}\x12u\n\x12VirtioScsiLunStats\x12-.opi_api.storage.v1.VirtioScsiLunStatsRequest\x1a..opi_api.storage.v1.VirtioScsiLunStatsResponse\"\x00\x42\x66\n\x12opi_api.storage.v1B\x17\x46rontendVirtioScsiProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
+_VIRTIOSCSITARGET = DESCRIPTOR.message_types_by_name['VirtioScsiTarget']
 _VIRTIOSCSICONTROLLER = DESCRIPTOR.message_types_by_name['VirtioScsiController']
 _VIRTIOSCSILUN = DESCRIPTOR.message_types_by_name['VirtioScsiLun']
+_CREATEVIRTIOSCSITARGETREQUEST = DESCRIPTOR.message_types_by_name['CreateVirtioScsiTargetRequest']
+_DELETEVIRTIOSCSITARGETREQUEST = DESCRIPTOR.message_types_by_name['DeleteVirtioScsiTargetRequest']
+_UPDATEVIRTIOSCSITARGETREQUEST = DESCRIPTOR.message_types_by_name['UpdateVirtioScsiTargetRequest']
+_LISTVIRTIOSCSITARGETREQUEST = DESCRIPTOR.message_types_by_name['ListVirtioScsiTargetRequest']
+_LISTVIRTIOSCSITARGETRESPONSE = DESCRIPTOR.message_types_by_name['ListVirtioScsiTargetResponse']
+_GETVIRTIOSCSITARGETREQUEST = DESCRIPTOR.message_types_by_name['GetVirtioScsiTargetRequest']
+_VIRTIOSCSITARGETSTATSREQUEST = DESCRIPTOR.message_types_by_name['VirtioScsiTargetStatsRequest']
+_VIRTIOSCSITARGETSTATSRESPONSE = DESCRIPTOR.message_types_by_name['VirtioScsiTargetStatsResponse']
 _CREATEVIRTIOSCSICONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateVirtioScsiControllerRequest']
 _DELETEVIRTIOSCSICONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteVirtioScsiControllerRequest']
 _UPDATEVIRTIOSCSICONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateVirtioScsiControllerRequest']
@@ -40,6 +49,13 @@ _LISTVIRTIOSCSILUNRESPONSE = DESCRIPTOR.message_types_by_name['ListVirtioScsiLun
 _GETVIRTIOSCSILUNREQUEST = DESCRIPTOR.message_types_by_name['GetVirtioScsiLunRequest']
 _VIRTIOSCSILUNSTATSREQUEST = DESCRIPTOR.message_types_by_name['VirtioScsiLunStatsRequest']
 _VIRTIOSCSILUNSTATSRESPONSE = DESCRIPTOR.message_types_by_name['VirtioScsiLunStatsResponse']
+VirtioScsiTarget = _reflection.GeneratedProtocolMessageType('VirtioScsiTarget', (_message.Message,), {
+  'DESCRIPTOR' : _VIRTIOSCSITARGET,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiTarget)
+  })
+_sym_db.RegisterMessage(VirtioScsiTarget)
+
 VirtioScsiController = _reflection.GeneratedProtocolMessageType('VirtioScsiController', (_message.Message,), {
   'DESCRIPTOR' : _VIRTIOSCSICONTROLLER,
   '__module__' : 'frontend_virtio_scsi_pb2'
@@ -53,6 +69,62 @@ VirtioScsiLun = _reflection.GeneratedProtocolMessageType('VirtioScsiLun', (_mess
   # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiLun)
   })
 _sym_db.RegisterMessage(VirtioScsiLun)
+
+CreateVirtioScsiTargetRequest = _reflection.GeneratedProtocolMessageType('CreateVirtioScsiTargetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEVIRTIOSCSITARGETREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateVirtioScsiTargetRequest)
+  })
+_sym_db.RegisterMessage(CreateVirtioScsiTargetRequest)
+
+DeleteVirtioScsiTargetRequest = _reflection.GeneratedProtocolMessageType('DeleteVirtioScsiTargetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEVIRTIOSCSITARGETREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioScsiTargetRequest)
+  })
+_sym_db.RegisterMessage(DeleteVirtioScsiTargetRequest)
+
+UpdateVirtioScsiTargetRequest = _reflection.GeneratedProtocolMessageType('UpdateVirtioScsiTargetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEVIRTIOSCSITARGETREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateVirtioScsiTargetRequest)
+  })
+_sym_db.RegisterMessage(UpdateVirtioScsiTargetRequest)
+
+ListVirtioScsiTargetRequest = _reflection.GeneratedProtocolMessageType('ListVirtioScsiTargetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTVIRTIOSCSITARGETREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiTargetRequest)
+  })
+_sym_db.RegisterMessage(ListVirtioScsiTargetRequest)
+
+ListVirtioScsiTargetResponse = _reflection.GeneratedProtocolMessageType('ListVirtioScsiTargetResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTVIRTIOSCSITARGETRESPONSE,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListVirtioScsiTargetResponse)
+  })
+_sym_db.RegisterMessage(ListVirtioScsiTargetResponse)
+
+GetVirtioScsiTargetRequest = _reflection.GeneratedProtocolMessageType('GetVirtioScsiTargetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETVIRTIOSCSITARGETREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetVirtioScsiTargetRequest)
+  })
+_sym_db.RegisterMessage(GetVirtioScsiTargetRequest)
+
+VirtioScsiTargetStatsRequest = _reflection.GeneratedProtocolMessageType('VirtioScsiTargetStatsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _VIRTIOSCSITARGETSTATSREQUEST,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiTargetStatsRequest)
+  })
+_sym_db.RegisterMessage(VirtioScsiTargetStatsRequest)
+
+VirtioScsiTargetStatsResponse = _reflection.GeneratedProtocolMessageType('VirtioScsiTargetStatsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _VIRTIOSCSITARGETSTATSRESPONSE,
+  '__module__' : 'frontend_virtio_scsi_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiTargetStatsResponse)
+  })
+_sym_db.RegisterMessage(VirtioScsiTargetStatsResponse)
 
 CreateVirtioScsiControllerRequest = _reflection.GeneratedProtocolMessageType('CreateVirtioScsiControllerRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEVIRTIOSCSICONTROLLERREQUEST,
@@ -171,6 +243,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\027FrontendVirtioScsiProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['CreateVirtioScsiTarget']._options = None
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['CreateVirtioScsiTarget']._serialized_options = b'\202\323\344\223\002)\"\025/v1/virtioscsitargets:\020virtioscsitarget'
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['DeleteVirtioScsiTarget']._options = None
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['DeleteVirtioScsiTarget']._serialized_options = b'\202\323\344\223\002**(/v1/virtioscsitargets/{virtioscsitarget}'
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['UpdateVirtioScsiTarget']._options = None
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['UpdateVirtioScsiTarget']._serialized_options = b'\202\323\344\223\002)2\025/v1/virtioscsitargets:\020virtioscsitarget'
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['ListVirtioScsiTarget']._options = None
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['ListVirtioScsiTarget']._serialized_options = b'\202\323\344\223\002\027\022\025/v1/virtioscsitargets'
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['GetVirtioScsiTarget']._options = None
+  _FRONTENDVIRTIOSCSISERVICE.methods_by_name['GetVirtioScsiTarget']._serialized_options = b'\202\323\344\223\002*\022(/v1/virtioscsitargets/{virtioscsitarget}'
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['CreateVirtioScsiController']._options = None
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['CreateVirtioScsiController']._serialized_options = b'\202\323\344\223\002%\"\023/v1/virtioscsictrls:\016virtioscsictrl'
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['DeleteVirtioScsiController']._options = None
@@ -191,42 +273,60 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['ListVirtioScsiLun']._serialized_options = b'\202\323\344\223\002\024\022\022/v1/virtioscsiluns'
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['GetVirtioScsiLun']._options = None
   _FRONTENDVIRTIOSCSISERVICE.methods_by_name['GetVirtioScsiLun']._serialized_options = b'\202\323\344\223\002$\022\"/v1/virtioscsiluns/{virtioscsilun}'
-  _VIRTIOSCSICONTROLLER._serialized_start=144
-  _VIRTIOSCSICONTROLLER._serialized_end=258
-  _VIRTIOSCSILUN._serialized_start=260
-  _VIRTIOSCSILUN._serialized_end=384
-  _CREATEVIRTIOSCSICONTROLLERREQUEST._serialized_start=386
-  _CREATEVIRTIOSCSICONTROLLERREQUEST._serialized_end=483
-  _DELETEVIRTIOSCSICONTROLLERREQUEST._serialized_start=485
-  _DELETEVIRTIOSCSICONTROLLERREQUEST._serialized_end=573
-  _UPDATEVIRTIOSCSICONTROLLERREQUEST._serialized_start=575
-  _UPDATEVIRTIOSCSICONTROLLERREQUEST._serialized_end=672
-  _LISTVIRTIOSCSICONTROLLERREQUEST._serialized_start=674
-  _LISTVIRTIOSCSICONTROLLERREQUEST._serialized_end=746
-  _LISTVIRTIOSCSICONTROLLERRESPONSE._serialized_start=748
-  _LISTVIRTIOSCSICONTROLLERRESPONSE._serialized_end=870
-  _GETVIRTIOSCSICONTROLLERREQUEST._serialized_start=872
-  _GETVIRTIOSCSICONTROLLERREQUEST._serialized_end=957
-  _VIRTIOSCSICONTROLLERSTATSREQUEST._serialized_start=959
-  _VIRTIOSCSICONTROLLERSTATSREQUEST._serialized_end=1046
-  _VIRTIOSCSICONTROLLERSTATSRESPONSE._serialized_start=1048
-  _VIRTIOSCSICONTROLLERSTATSRESPONSE._serialized_end=1140
-  _CREATEVIRTIOSCSILUNREQUEST._serialized_start=1142
-  _CREATEVIRTIOSCSILUNREQUEST._serialized_end=1218
-  _DELETEVIRTIOSCSILUNREQUEST._serialized_start=1220
-  _DELETEVIRTIOSCSILUNREQUEST._serialized_end=1347
-  _UPDATEVIRTIOSCSILUNREQUEST._serialized_start=1349
-  _UPDATEVIRTIOSCSILUNREQUEST._serialized_end=1425
-  _LISTVIRTIOSCSILUNREQUEST._serialized_start=1427
-  _LISTVIRTIOSCSILUNREQUEST._serialized_end=1545
-  _LISTVIRTIOSCSILUNRESPONSE._serialized_start=1547
-  _LISTVIRTIOSCSILUNRESPONSE._serialized_end=1648
-  _GETVIRTIOSCSILUNREQUEST._serialized_start=1650
-  _GETVIRTIOSCSILUNREQUEST._serialized_end=1774
-  _VIRTIOSCSILUNSTATSREQUEST._serialized_start=1776
-  _VIRTIOSCSILUNSTATSREQUEST._serialized_end=1902
-  _VIRTIOSCSILUNSTATSRESPONSE._serialized_start=1904
-  _VIRTIOSCSILUNSTATSRESPONSE._serialized_end=1989
-  _FRONTENDVIRTIOSCSISERVICE._serialized_start=1992
-  _FRONTENDVIRTIOSCSISERVICE._serialized_end=3842
+  _VIRTIOSCSITARGET._serialized_start=144
+  _VIRTIOSCSITARGET._serialized_end=222
+  _VIRTIOSCSICONTROLLER._serialized_start=224
+  _VIRTIOSCSICONTROLLER._serialized_end=338
+  _VIRTIOSCSILUN._serialized_start=341
+  _VIRTIOSCSILUN._serialized_end=496
+  _CREATEVIRTIOSCSITARGETREQUEST._serialized_start=498
+  _CREATEVIRTIOSCSITARGETREQUEST._serialized_end=583
+  _DELETEVIRTIOSCSITARGETREQUEST._serialized_start=585
+  _DELETEVIRTIOSCSITARGETREQUEST._serialized_end=665
+  _UPDATEVIRTIOSCSITARGETREQUEST._serialized_start=667
+  _UPDATEVIRTIOSCSITARGETREQUEST._serialized_end=752
+  _LISTVIRTIOSCSITARGETREQUEST._serialized_start=754
+  _LISTVIRTIOSCSITARGETREQUEST._serialized_end=822
+  _LISTVIRTIOSCSITARGETRESPONSE._serialized_start=824
+  _LISTVIRTIOSCSITARGETRESPONSE._serialized_end=934
+  _GETVIRTIOSCSITARGETREQUEST._serialized_start=936
+  _GETVIRTIOSCSITARGETREQUEST._serialized_end=1013
+  _VIRTIOSCSITARGETSTATSREQUEST._serialized_start=1015
+  _VIRTIOSCSITARGETSTATSREQUEST._serialized_end=1094
+  _VIRTIOSCSITARGETSTATSRESPONSE._serialized_start=1096
+  _VIRTIOSCSITARGETSTATSRESPONSE._serialized_end=1184
+  _CREATEVIRTIOSCSICONTROLLERREQUEST._serialized_start=1186
+  _CREATEVIRTIOSCSICONTROLLERREQUEST._serialized_end=1283
+  _DELETEVIRTIOSCSICONTROLLERREQUEST._serialized_start=1285
+  _DELETEVIRTIOSCSICONTROLLERREQUEST._serialized_end=1373
+  _UPDATEVIRTIOSCSICONTROLLERREQUEST._serialized_start=1375
+  _UPDATEVIRTIOSCSICONTROLLERREQUEST._serialized_end=1472
+  _LISTVIRTIOSCSICONTROLLERREQUEST._serialized_start=1474
+  _LISTVIRTIOSCSICONTROLLERREQUEST._serialized_end=1546
+  _LISTVIRTIOSCSICONTROLLERRESPONSE._serialized_start=1548
+  _LISTVIRTIOSCSICONTROLLERRESPONSE._serialized_end=1670
+  _GETVIRTIOSCSICONTROLLERREQUEST._serialized_start=1672
+  _GETVIRTIOSCSICONTROLLERREQUEST._serialized_end=1757
+  _VIRTIOSCSICONTROLLERSTATSREQUEST._serialized_start=1759
+  _VIRTIOSCSICONTROLLERSTATSREQUEST._serialized_end=1846
+  _VIRTIOSCSICONTROLLERSTATSRESPONSE._serialized_start=1848
+  _VIRTIOSCSICONTROLLERSTATSRESPONSE._serialized_end=1940
+  _CREATEVIRTIOSCSILUNREQUEST._serialized_start=1942
+  _CREATEVIRTIOSCSILUNREQUEST._serialized_end=2018
+  _DELETEVIRTIOSCSILUNREQUEST._serialized_start=2020
+  _DELETEVIRTIOSCSILUNREQUEST._serialized_end=2147
+  _UPDATEVIRTIOSCSILUNREQUEST._serialized_start=2149
+  _UPDATEVIRTIOSCSILUNREQUEST._serialized_end=2225
+  _LISTVIRTIOSCSILUNREQUEST._serialized_start=2227
+  _LISTVIRTIOSCSILUNREQUEST._serialized_end=2345
+  _LISTVIRTIOSCSILUNRESPONSE._serialized_start=2347
+  _LISTVIRTIOSCSILUNRESPONSE._serialized_end=2448
+  _GETVIRTIOSCSILUNREQUEST._serialized_start=2450
+  _GETVIRTIOSCSILUNREQUEST._serialized_end=2574
+  _VIRTIOSCSILUNSTATSREQUEST._serialized_start=2576
+  _VIRTIOSCSILUNSTATSREQUEST._serialized_end=2702
+  _VIRTIOSCSILUNSTATSRESPONSE._serialized_start=2704
+  _VIRTIOSCSILUNSTATSRESPONSE._serialized_end=2789
+  _FRONTENDVIRTIOSCSISERVICE._serialized_start=2792
+  _FRONTENDVIRTIOSCSISERVICE._serialized_end=5567
 # @@protoc_insertion_point(module_scope)

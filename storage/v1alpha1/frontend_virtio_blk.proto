@@ -48,10 +48,14 @@ service FrontendVirtioBlkService {
 
 message VirtioBlk {
     common.v1.ObjectKey id = 1;
+
+    // The PCI endpoint where this device should appear
     PciEndpoint pcie_id = 2;
-    string bdev = 3;
+
+    // The back/middle-end volume to back this controller
+    common.v1.ObjectKey volume_id = 3;
+
     int64 max_io_qps = 4;
-    string serial_number = 5;
 }
 
 message CreateVirtioBlkRequest {

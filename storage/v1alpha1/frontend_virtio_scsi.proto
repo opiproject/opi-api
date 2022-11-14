@@ -14,8 +14,37 @@ import "object_key.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-// Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation emulation and host presentation as alternative to Virtio-blk.
+// Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
+    rpc CreateVirtioScsiTarget (CreateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
+        option (google.api.http) = {
+            post: "/v1/virtioscsitargets"
+            body: "virtioscsitarget"
+        };
+    }
+    rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/virtioscsitargets/{virtioscsitarget}"
+        };
+    }
+    rpc UpdateVirtioScsiTarget (UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
+        option (google.api.http) = {
+            patch: "/v1/virtioscsitargets"
+            body: "virtioscsitarget"
+        };
+    }
+    rpc ListVirtioScsiTarget   (ListVirtioScsiTargetRequest)   returns (ListVirtioScsiTargetResponse)   {
+        option (google.api.http) = {
+            get: "/v1/virtioscsitargets"
+        };
+    }
+    rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
+        option (google.api.http) = {
+            get: "/v1/virtioscsitargets/{virtioscsitarget}"
+        };
+    }
+    rpc VirtioScsiTargetStats  (VirtioScsiTargetStatsRequest)  returns (VirtioScsiTargetStatsResponse)  {}
+
     rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
             post: "/v1/virtioscsictrls"
@@ -75,15 +104,63 @@ service FrontendVirtioScsiService {
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
 
+message VirtioScsiTarget {
+    common.v1.ObjectKey id = 1;
+
+    // maximum LUNs within a target
+    int32 max_luns = 2;
+}
+
 message VirtioScsiController {
     common.v1.ObjectKey id = 1;
+
+    // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 2;
 }
 
 message VirtioScsiLun {
     common.v1.ObjectKey id = 1;
-    common.v1.ObjectKey controller_id = 2;
-    string bdev = 3;
+
+    // The target that this LUN is in
+    common.v1.ObjectKey target_id = 2;
+
+    // The middle/back-end volume for this LLUN
+    common.v1.ObjectKey volume_id = 3;
+}
+
+message CreateVirtioScsiTargetRequest {
+    VirtioScsiTarget target = 1;
+}
+
+message DeleteVirtioScsiTargetRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message UpdateVirtioScsiTargetRequest {
+    VirtioScsiTarget target = 1;
+}
+
+message ListVirtioScsiTargetRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListVirtioScsiTargetResponse {
+    repeated VirtioScsiTarget targets = 1;
+    string next_page_token = 2;
+}
+
+message GetVirtioScsiTargetRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message VirtioScsiTargetStatsRequest {
+    common.v1.ObjectKey target_id = 1;
+}
+
+message VirtioScsiTargetStatsResponse {
+    common.v1.ObjectKey id = 1;
+    string stats = 2;
 }
 
 message CreateVirtioScsiControllerRequest {
