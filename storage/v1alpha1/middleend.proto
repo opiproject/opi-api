@@ -9,7 +9,88 @@ option java_multiple_files = true;
 option java_outer_classname = "MiddleendProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+import "opicommon.proto";
+import "object_key.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 
-// Middle End (Storage Services) APIs.
+// Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+service MiddleendService {
+    rpc CreateCrypto (CreateCryptoRequest) returns (Crypto) {
+        option (google.api.http) = {
+            post: "/v1/volumes"
+            body: "volume"
+        };
+    }
+    rpc DeleteCrypto (DeleteCryptoRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/volumes/{volume}"
+        };
+    }
+    rpc UpdateCrypto (UpdateCryptoRequest) returns (Crypto) {
+        option (google.api.http) = {
+            patch: "/v1/volumes"
+            body: "volume"
+        };
+    }
+    rpc ListCrypto   (ListCryptoRequest)   returns (ListCryptoResponse)   {
+        option (google.api.http) = {
+            get: "/v1/volumes"
+        };
+    }
+    rpc GetCrypto    (GetCryptoRequest)    returns (Crypto)    {
+        option (google.api.http) = {
+            get: "/v1/volumes/{volume}"
+        };
+    }
+    rpc CryptoStats  (CryptoStatsRequest)  returns (CryptoStatsResponse)  {}
+}
 
-// TODO: encryption, compression, raid, QoS, multipath, ...
+message Crypto {
+    common.v1.ObjectKey id = 1;
+
+    // The back/middle-end volume to back this volume
+    common.v1.ObjectKey volume_id = 2;
+
+    // Key to be used for encryption
+    bytes key = 3;
+
+    // Cipher to use
+    CryptoType cipher = 4;
+
+}
+
+message CreateCryptoRequest {
+    Crypto volume = 1;
+}
+
+message DeleteCryptoRequest {
+    common.v1.ObjectKey volume_id = 1;
+}
+
+message UpdateCryptoRequest {
+    Crypto volume = 1;
+}
+
+message ListCryptoRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListCryptoResponse {
+    repeated Crypto volumes = 1;
+    string next_page_token = 2;
+}
+
+message GetCryptoRequest {
+    common.v1.ObjectKey volume_id = 1;
+}
+
+message CryptoStatsRequest {
+    common.v1.ObjectKey volume_id = 1;
+}
+
+message CryptoStatsResponse {
+    common.v1.ObjectKey id = 1;
+    string stats = 2;
+}

@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -69,6 +70,36 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
+enum CryptoType : int {
+  CRYPTO_TYPE_UNSPECIFIED = 0,
+  CRYPTO_TYPE_AES_CBC_128 = 1,
+  CRYPTO_TYPE_AES_CBC_192 = 2,
+  CRYPTO_TYPE_AES_CBC_256 = 3,
+  CRYPTO_TYPE_AES_XTS_128 = 4,
+  CRYPTO_TYPE_AES_XTS_192 = 5,
+  CRYPTO_TYPE_AES_XTS_256 = 6,
+  CryptoType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  CryptoType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool CryptoType_IsValid(int value);
+constexpr CryptoType CryptoType_MIN = CRYPTO_TYPE_UNSPECIFIED;
+constexpr CryptoType CryptoType_MAX = CRYPTO_TYPE_AES_XTS_256;
+constexpr int CryptoType_ARRAYSIZE = CryptoType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CryptoType_descriptor();
+template<typename T>
+inline const std::string& CryptoType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CryptoType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CryptoType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CryptoType_descriptor(), enum_t_value);
+}
+inline bool CryptoType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CryptoType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CryptoType>(
+    CryptoType_descriptor(), name, value);
+}
 // ===================================================================
 
 class PciEndpoint final :
@@ -317,6 +348,16 @@ inline void PciEndpoint::set_virtual_function(int32_t value) {
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::opi_api::storage::v1::CryptoType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::CryptoType>() {
+  return ::opi_api::storage::v1::CryptoType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

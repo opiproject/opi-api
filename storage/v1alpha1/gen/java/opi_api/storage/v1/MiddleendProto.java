@@ -14,6 +14,51 @@ public final class MiddleendProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_Crypto_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_Crypto_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_CreateCryptoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_CreateCryptoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_DeleteCryptoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_DeleteCryptoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_UpdateCryptoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_UpdateCryptoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_ListCryptoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_ListCryptoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_ListCryptoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_ListCryptoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_GetCryptoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_GetCryptoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_CryptoStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_CryptoStatsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_CryptoStatsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -23,15 +68,120 @@ public final class MiddleendProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017middleend.proto\022\022opi_api.storage.v1B]\n" +
-      "\022opi_api.storage.v1B\016MiddleendProtoP\001Z5g" +
-      "ithub.com/opiproject/opi-api/storage/v1a" +
-      "lpha1/gen/gob\006proto3"
+      "\n\017middleend.proto\022\022opi_api.storage.v1\032\017o" +
+      "picommon.proto\032\020object_key.proto\032\033google" +
+      "/protobuf/empty.proto\032\034google/api/annota" +
+      "tions.proto\"\240\001\n\006Crypto\022(\n\002id\030\001 \001(\0132\034.opi" +
+      "_api.common.v1.ObjectKey\022/\n\tvolume_id\030\002 " +
+      "\001(\0132\034.opi_api.common.v1.ObjectKey\022\013\n\003key" +
+      "\030\003 \001(\014\022.\n\006cipher\030\004 \001(\0162\036.opi_api.storage" +
+      ".v1.CryptoType\"A\n\023CreateCryptoRequest\022*\n" +
+      "\006volume\030\001 \001(\0132\032.opi_api.storage.v1.Crypt" +
+      "o\"F\n\023DeleteCryptoRequest\022/\n\tvolume_id\030\001 " +
+      "\001(\0132\034.opi_api.common.v1.ObjectKey\"A\n\023Upd" +
+      "ateCryptoRequest\022*\n\006volume\030\001 \001(\0132\032.opi_a" +
+      "pi.storage.v1.Crypto\":\n\021ListCryptoReques" +
+      "t\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t" +
+      "\"Z\n\022ListCryptoResponse\022+\n\007volumes\030\001 \003(\0132" +
+      "\032.opi_api.storage.v1.Crypto\022\027\n\017next_page" +
+      "_token\030\002 \001(\t\"C\n\020GetCryptoRequest\022/\n\tvolu" +
+      "me_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe" +
+      "y\"E\n\022CryptoStatsRequest\022/\n\tvolume_id\030\001 \001" +
+      "(\0132\034.opi_api.common.v1.ObjectKey\"N\n\023Cryp" +
+      "toStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.co" +
+      "mmon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\246\005\n\020Mid" +
+      "dleendService\022p\n\014CreateCrypto\022\'.opi_api." +
+      "storage.v1.CreateCryptoRequest\032\032.opi_api" +
+      ".storage.v1.Crypto\"\033\202\323\344\223\002\025\"\013/v1/volumes:" +
+      "\006volume\022m\n\014DeleteCrypto\022\'.opi_api.storag" +
+      "e.v1.DeleteCryptoRequest\032\026.google.protob" +
+      "uf.Empty\"\034\202\323\344\223\002\026*\024/v1/volumes/{volume}\022p" +
+      "\n\014UpdateCrypto\022\'.opi_api.storage.v1.Upda" +
+      "teCryptoRequest\032\032.opi_api.storage.v1.Cry" +
+      "pto\"\033\202\323\344\223\002\0252\013/v1/volumes:\006volume\022p\n\nList" +
+      "Crypto\022%.opi_api.storage.v1.ListCryptoRe" +
+      "quest\032&.opi_api.storage.v1.ListCryptoRes" +
+      "ponse\"\023\202\323\344\223\002\r\022\013/v1/volumes\022k\n\tGetCrypto\022" +
+      "$.opi_api.storage.v1.GetCryptoRequest\032\032." +
+      "opi_api.storage.v1.Crypto\"\034\202\323\344\223\002\026\022\024/v1/v" +
+      "olumes/{volume}\022`\n\013CryptoStats\022&.opi_api" +
+      ".storage.v1.CryptoStatsRequest\032\'.opi_api" +
+      ".storage.v1.CryptoStatsResponse\"\000B]\n\022opi" +
+      "_api.storage.v1B\016MiddleendProtoP\001Z5githu" +
+      "b.com/opiproject/opi-api/storage/v1alpha" +
+      "1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          opi_api.storage.v1.OpiCommonProto.getDescriptor(),
+          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         });
+    internal_static_opi_api_storage_v1_Crypto_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_opi_api_storage_v1_Crypto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_Crypto_descriptor,
+        new java.lang.String[] { "Id", "VolumeId", "Key", "Cipher", });
+    internal_static_opi_api_storage_v1_CreateCryptoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_opi_api_storage_v1_CreateCryptoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_CreateCryptoRequest_descriptor,
+        new java.lang.String[] { "Volume", });
+    internal_static_opi_api_storage_v1_DeleteCryptoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_opi_api_storage_v1_DeleteCryptoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_DeleteCryptoRequest_descriptor,
+        new java.lang.String[] { "VolumeId", });
+    internal_static_opi_api_storage_v1_UpdateCryptoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_opi_api_storage_v1_UpdateCryptoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_UpdateCryptoRequest_descriptor,
+        new java.lang.String[] { "Volume", });
+    internal_static_opi_api_storage_v1_ListCryptoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_opi_api_storage_v1_ListCryptoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_ListCryptoRequest_descriptor,
+        new java.lang.String[] { "PageSize", "PageToken", });
+    internal_static_opi_api_storage_v1_ListCryptoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_opi_api_storage_v1_ListCryptoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_ListCryptoResponse_descriptor,
+        new java.lang.String[] { "Volumes", "NextPageToken", });
+    internal_static_opi_api_storage_v1_GetCryptoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_opi_api_storage_v1_GetCryptoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_GetCryptoRequest_descriptor,
+        new java.lang.String[] { "VolumeId", });
+    internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_opi_api_storage_v1_CryptoStatsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor,
+        new java.lang.String[] { "VolumeId", });
+    internal_static_opi_api_storage_v1_CryptoStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_opi_api_storage_v1_CryptoStatsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_CryptoStatsResponse_descriptor,
+        new java.lang.String[] { "Id", "Stats", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.AnnotationsProto.http);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    opi_api.storage.v1.OpiCommonProto.getDescriptor();
+    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -2,3 +2,234 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+import middleend_pb2 as middleend__pb2
+
+
+class MiddleendServiceStub(object):
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateCrypto = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/CreateCrypto',
+                request_serializer=middleend__pb2.CreateCryptoRequest.SerializeToString,
+                response_deserializer=middleend__pb2.Crypto.FromString,
+                )
+        self.DeleteCrypto = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/DeleteCrypto',
+                request_serializer=middleend__pb2.DeleteCryptoRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.UpdateCrypto = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/UpdateCrypto',
+                request_serializer=middleend__pb2.UpdateCryptoRequest.SerializeToString,
+                response_deserializer=middleend__pb2.Crypto.FromString,
+                )
+        self.ListCrypto = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/ListCrypto',
+                request_serializer=middleend__pb2.ListCryptoRequest.SerializeToString,
+                response_deserializer=middleend__pb2.ListCryptoResponse.FromString,
+                )
+        self.GetCrypto = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/GetCrypto',
+                request_serializer=middleend__pb2.GetCryptoRequest.SerializeToString,
+                response_deserializer=middleend__pb2.Crypto.FromString,
+                )
+        self.CryptoStats = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/CryptoStats',
+                request_serializer=middleend__pb2.CryptoStatsRequest.SerializeToString,
+                response_deserializer=middleend__pb2.CryptoStatsResponse.FromString,
+                )
+
+
+class MiddleendServiceServicer(object):
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
+
+    def CreateCrypto(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCrypto(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCrypto(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCrypto(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCrypto(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CryptoStats(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_MiddleendServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateCrypto': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCrypto,
+                    request_deserializer=middleend__pb2.CreateCryptoRequest.FromString,
+                    response_serializer=middleend__pb2.Crypto.SerializeToString,
+            ),
+            'DeleteCrypto': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCrypto,
+                    request_deserializer=middleend__pb2.DeleteCryptoRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateCrypto': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCrypto,
+                    request_deserializer=middleend__pb2.UpdateCryptoRequest.FromString,
+                    response_serializer=middleend__pb2.Crypto.SerializeToString,
+            ),
+            'ListCrypto': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCrypto,
+                    request_deserializer=middleend__pb2.ListCryptoRequest.FromString,
+                    response_serializer=middleend__pb2.ListCryptoResponse.SerializeToString,
+            ),
+            'GetCrypto': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCrypto,
+                    request_deserializer=middleend__pb2.GetCryptoRequest.FromString,
+                    response_serializer=middleend__pb2.Crypto.SerializeToString,
+            ),
+            'CryptoStats': grpc.unary_unary_rpc_method_handler(
+                    servicer.CryptoStats,
+                    request_deserializer=middleend__pb2.CryptoStatsRequest.FromString,
+                    response_serializer=middleend__pb2.CryptoStatsResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'opi_api.storage.v1.MiddleendService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class MiddleendService(object):
+    """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+    """
+
+    @staticmethod
+    def CreateCrypto(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/CreateCrypto',
+            middleend__pb2.CreateCryptoRequest.SerializeToString,
+            middleend__pb2.Crypto.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCrypto(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/DeleteCrypto',
+            middleend__pb2.DeleteCryptoRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCrypto(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/UpdateCrypto',
+            middleend__pb2.UpdateCryptoRequest.SerializeToString,
+            middleend__pb2.Crypto.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCrypto(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/ListCrypto',
+            middleend__pb2.ListCryptoRequest.SerializeToString,
+            middleend__pb2.ListCryptoResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCrypto(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/GetCrypto',
+            middleend__pb2.GetCryptoRequest.SerializeToString,
+            middleend__pb2.Crypto.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CryptoStats(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/CryptoStats',
+            middleend__pb2.CryptoStatsRequest.SerializeToString,
+            middleend__pb2.CryptoStatsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

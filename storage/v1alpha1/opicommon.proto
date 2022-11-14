@@ -36,3 +36,14 @@ message PciEndpoint {
     // strictly have to and that should not be relied upon.
     int32 virtual_function = 3;
 }
+
+// AES encryption type to be used
+enum CryptoType {
+    CRYPTO_TYPE_UNSPECIFIED = 0;
+    CRYPTO_TYPE_AES_CBC_128 = 1;
+    CRYPTO_TYPE_AES_CBC_192 = 2;
+    CRYPTO_TYPE_AES_CBC_256 = 3;
+    CRYPTO_TYPE_AES_XTS_128 = 4;
+    CRYPTO_TYPE_AES_XTS_192 = 5;
+    CRYPTO_TYPE_AES_XTS_256 = 6;
+}

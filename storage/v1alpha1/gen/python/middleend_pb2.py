@@ -12,14 +12,121 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+import opicommon_pb2 as opicommon__pb2
+import object_key_pb2 as object__key__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1B]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xa0\x01\n\x06\x43rypto\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0b\n\x03key\x18\x03 \x01(\x0c\x12.\n\x06\x63ipher\x18\x04 \x01(\x0e\x32\x1e.opi_api.storage.v1.CryptoType\"A\n\x13\x43reateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\"F\n\x13\x44\x65leteCryptoRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"A\n\x13UpdateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\":\n\x11ListCryptoRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"Z\n\x12ListCryptoResponse\x12+\n\x07volumes\x18\x01 \x03(\x0b\x32\x1a.opi_api.storage.v1.Crypto\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"C\n\x10GetCryptoRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"E\n\x12\x43ryptoStatsRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"N\n\x13\x43ryptoStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xa6\x05\n\x10MiddleendService\x12p\n\x0c\x43reateCrypto\x12\'.opi_api.storage.v1.CreateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/volumes:\x06volume\x12m\n\x0c\x44\x65leteCrypto\x12\'.opi_api.storage.v1.DeleteCryptoRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/volumes/{volume}\x12p\n\x0cUpdateCrypto\x12\'.opi_api.storage.v1.UpdateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\x32\x0b/v1/volumes:\x06volume\x12p\n\nListCrypto\x12%.opi_api.storage.v1.ListCryptoRequest\x1a&.opi_api.storage.v1.ListCryptoResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/volumes\x12k\n\tGetCrypto\x12$.opi_api.storage.v1.GetCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/volumes/{volume}\x12`\n\x0b\x43ryptoStats\x12&.opi_api.storage.v1.CryptoStatsRequest\x1a\'.opi_api.storage.v1.CryptoStatsResponse\"\x00\x42]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
+_CRYPTO = DESCRIPTOR.message_types_by_name['Crypto']
+_CREATECRYPTOREQUEST = DESCRIPTOR.message_types_by_name['CreateCryptoRequest']
+_DELETECRYPTOREQUEST = DESCRIPTOR.message_types_by_name['DeleteCryptoRequest']
+_UPDATECRYPTOREQUEST = DESCRIPTOR.message_types_by_name['UpdateCryptoRequest']
+_LISTCRYPTOREQUEST = DESCRIPTOR.message_types_by_name['ListCryptoRequest']
+_LISTCRYPTORESPONSE = DESCRIPTOR.message_types_by_name['ListCryptoResponse']
+_GETCRYPTOREQUEST = DESCRIPTOR.message_types_by_name['GetCryptoRequest']
+_CRYPTOSTATSREQUEST = DESCRIPTOR.message_types_by_name['CryptoStatsRequest']
+_CRYPTOSTATSRESPONSE = DESCRIPTOR.message_types_by_name['CryptoStatsResponse']
+Crypto = _reflection.GeneratedProtocolMessageType('Crypto', (_message.Message,), {
+  'DESCRIPTOR' : _CRYPTO,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.Crypto)
+  })
+_sym_db.RegisterMessage(Crypto)
+
+CreateCryptoRequest = _reflection.GeneratedProtocolMessageType('CreateCryptoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATECRYPTOREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateCryptoRequest)
+  })
+_sym_db.RegisterMessage(CreateCryptoRequest)
+
+DeleteCryptoRequest = _reflection.GeneratedProtocolMessageType('DeleteCryptoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETECRYPTOREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteCryptoRequest)
+  })
+_sym_db.RegisterMessage(DeleteCryptoRequest)
+
+UpdateCryptoRequest = _reflection.GeneratedProtocolMessageType('UpdateCryptoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATECRYPTOREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateCryptoRequest)
+  })
+_sym_db.RegisterMessage(UpdateCryptoRequest)
+
+ListCryptoRequest = _reflection.GeneratedProtocolMessageType('ListCryptoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCRYPTOREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListCryptoRequest)
+  })
+_sym_db.RegisterMessage(ListCryptoRequest)
+
+ListCryptoResponse = _reflection.GeneratedProtocolMessageType('ListCryptoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCRYPTORESPONSE,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListCryptoResponse)
+  })
+_sym_db.RegisterMessage(ListCryptoResponse)
+
+GetCryptoRequest = _reflection.GeneratedProtocolMessageType('GetCryptoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETCRYPTOREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetCryptoRequest)
+  })
+_sym_db.RegisterMessage(GetCryptoRequest)
+
+CryptoStatsRequest = _reflection.GeneratedProtocolMessageType('CryptoStatsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CRYPTOSTATSREQUEST,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CryptoStatsRequest)
+  })
+_sym_db.RegisterMessage(CryptoStatsRequest)
+
+CryptoStatsResponse = _reflection.GeneratedProtocolMessageType('CryptoStatsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CRYPTOSTATSRESPONSE,
+  '__module__' : 'middleend_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CryptoStatsResponse)
+  })
+_sym_db.RegisterMessage(CryptoStatsResponse)
+
+_MIDDLEENDSERVICE = DESCRIPTOR.services_by_name['MiddleendService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\016MiddleendProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
+  _MIDDLEENDSERVICE.methods_by_name['CreateCrypto']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['CreateCrypto']._serialized_options = b'\202\323\344\223\002\025\"\013/v1/volumes:\006volume'
+  _MIDDLEENDSERVICE.methods_by_name['DeleteCrypto']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['DeleteCrypto']._serialized_options = b'\202\323\344\223\002\026*\024/v1/volumes/{volume}'
+  _MIDDLEENDSERVICE.methods_by_name['UpdateCrypto']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['UpdateCrypto']._serialized_options = b'\202\323\344\223\002\0252\013/v1/volumes:\006volume'
+  _MIDDLEENDSERVICE.methods_by_name['ListCrypto']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['ListCrypto']._serialized_options = b'\202\323\344\223\002\r\022\013/v1/volumes'
+  _MIDDLEENDSERVICE.methods_by_name['GetCrypto']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['GetCrypto']._serialized_options = b'\202\323\344\223\002\026\022\024/v1/volumes/{volume}'
+  _CRYPTO._serialized_start=134
+  _CRYPTO._serialized_end=294
+  _CREATECRYPTOREQUEST._serialized_start=296
+  _CREATECRYPTOREQUEST._serialized_end=361
+  _DELETECRYPTOREQUEST._serialized_start=363
+  _DELETECRYPTOREQUEST._serialized_end=433
+  _UPDATECRYPTOREQUEST._serialized_start=435
+  _UPDATECRYPTOREQUEST._serialized_end=500
+  _LISTCRYPTOREQUEST._serialized_start=502
+  _LISTCRYPTOREQUEST._serialized_end=560
+  _LISTCRYPTORESPONSE._serialized_start=562
+  _LISTCRYPTORESPONSE._serialized_end=652
+  _GETCRYPTOREQUEST._serialized_start=654
+  _GETCRYPTOREQUEST._serialized_end=721
+  _CRYPTOSTATSREQUEST._serialized_start=723
+  _CRYPTOSTATSREQUEST._serialized_end=792
+  _CRYPTOSTATSRESPONSE._serialized_start=794
+  _CRYPTOSTATSRESPONSE._serialized_end=872
+  _MIDDLEENDSERVICE._serialized_start=875
+  _MIDDLEENDSERVICE._serialized_end=1553
 # @@protoc_insertion_point(module_scope)

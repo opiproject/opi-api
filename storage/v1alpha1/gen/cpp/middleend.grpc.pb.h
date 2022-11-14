@@ -33,6 +33,999 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
+// Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
+class MiddleendService final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "opi_api.storage.v1.MiddleendService";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    virtual ::grpc::Status CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> AsyncCreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(AsyncCreateCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> PrepareAsyncCreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(PrepareAsyncCreateCryptoRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDeleteCryptoRaw(context, request, cq));
+    }
+    virtual ::grpc::Status UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> AsyncUpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(AsyncUpdateCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> PrepareAsyncUpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(PrepareAsyncUpdateCryptoRaw(context, request, cq));
+    }
+    virtual ::grpc::Status ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::opi_api::storage::v1::ListCryptoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>> AsyncListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>>(AsyncListCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>> PrepareAsyncListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>>(PrepareAsyncListCryptoRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> AsyncGetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(AsyncGetCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>> PrepareAsyncGetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>>(PrepareAsyncGetCryptoRaw(context, request, cq));
+    }
+    virtual ::grpc::Status CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::opi_api::storage::v1::CryptoStatsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>> AsyncCryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>>(AsyncCryptoStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>> PrepareAsyncCryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>>(PrepareAsyncCryptoStatsRaw(context, request, cq));
+    }
+    class async_interface {
+     public:
+      virtual ~async_interface() {}
+      virtual void CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+    };
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* AsyncCreateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* PrepareAsyncCreateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDeleteCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* AsyncUpdateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* PrepareAsyncUpdateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>* AsyncListCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListCryptoResponse>* PrepareAsyncListCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* AsyncGetCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::Crypto>* PrepareAsyncGetCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>* AsyncCryptoStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::CryptoStatsResponse>* PrepareAsyncCryptoStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    ::grpc::Status CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> AsyncCreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(AsyncCreateCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> PrepareAsyncCreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(PrepareAsyncCreateCryptoRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncDeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncDeleteCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDeleteCryptoRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> AsyncUpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(AsyncUpdateCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> PrepareAsyncUpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(PrepareAsyncUpdateCryptoRaw(context, request, cq));
+    }
+    ::grpc::Status ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::opi_api::storage::v1::ListCryptoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>> AsyncListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>>(AsyncListCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>> PrepareAsyncListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>>(PrepareAsyncListCryptoRaw(context, request, cq));
+    }
+    ::grpc::Status GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::opi_api::storage::v1::Crypto* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> AsyncGetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(AsyncGetCryptoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>> PrepareAsyncGetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>>(PrepareAsyncGetCryptoRaw(context, request, cq));
+    }
+    ::grpc::Status CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::opi_api::storage::v1::CryptoStatsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>> AsyncCryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>>(AsyncCryptoStatsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>> PrepareAsyncCryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>>(PrepareAsyncCryptoStatsRaw(context, request, cq));
+    }
+    class async final :
+      public StubInterface::async_interface {
+     public:
+      void CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) override;
+      void CreateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void DeleteCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) override;
+      void UpdateCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, std::function<void(::grpc::Status)>) override;
+      void GetCrypto(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void CryptoStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+     private:
+      friend class Stub;
+      explicit async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class async* async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* AsyncCreateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* PrepareAsyncCreateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDeleteCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* AsyncUpdateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* PrepareAsyncUpdateCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>* AsyncListCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListCryptoResponse>* PrepareAsyncListCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* AsyncGetCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::Crypto>* PrepareAsyncGetCryptoRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetCryptoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>* AsyncCryptoStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::CryptoStatsResponse>* PrepareAsyncCryptoStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::CryptoStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateCrypto_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteCrypto_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateCrypto_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListCrypto_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetCrypto_;
+    const ::grpc::internal::RpcMethod rpcmethod_CryptoStats_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    virtual ::grpc::Status CreateCrypto(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response);
+    virtual ::grpc::Status DeleteCrypto(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status UpdateCrypto(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response);
+    virtual ::grpc::Status ListCrypto(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response);
+    virtual ::grpc::Status GetCrypto(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response);
+    virtual ::grpc::Status CryptoStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateCrypto(::grpc::ServerContext* context, ::opi_api::storage::v1::CreateCryptoRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::Crypto>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteCrypto(::grpc::ServerContext* context, ::opi_api::storage::v1::DeleteCryptoRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateCrypto(::grpc::ServerContext* context, ::opi_api::storage::v1::UpdateCryptoRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::Crypto>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListCrypto(::grpc::ServerContext* context, ::opi_api::storage::v1::ListCryptoRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::ListCryptoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetCrypto(::grpc::ServerContext* context, ::opi_api::storage::v1::GetCryptoRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::Crypto>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCryptoStats(::grpc::ServerContext* context, ::opi_api::storage::v1::CryptoStatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::CryptoStatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateCrypto<WithAsyncMethod_DeleteCrypto<WithAsyncMethod_UpdateCrypto<WithAsyncMethod_ListCrypto<WithAsyncMethod_GetCrypto<WithAsyncMethod_CryptoStats<Service > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithCallbackMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::CreateCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::CreateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response) { return this->CreateCrypto(context, request, response); }));}
+    void SetMessageAllocatorFor_CreateCrypto(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::CreateCryptoRequest, ::opi_api::storage::v1::Crypto>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::CreateCryptoRequest, ::opi_api::storage::v1::Crypto>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CreateCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::DeleteCryptoRequest, ::google::protobuf::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::DeleteCryptoRequest* request, ::google::protobuf::Empty* response) { return this->DeleteCrypto(context, request, response); }));}
+    void SetMessageAllocatorFor_DeleteCrypto(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::DeleteCryptoRequest, ::google::protobuf::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::DeleteCryptoRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DeleteCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::UpdateCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::UpdateCryptoRequest* request, ::opi_api::storage::v1::Crypto* response) { return this->UpdateCrypto(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateCrypto(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::UpdateCryptoRequest, ::opi_api::storage::v1::Crypto>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::UpdateCryptoRequest, ::opi_api::storage::v1::Crypto>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListCryptoRequest, ::opi_api::storage::v1::ListCryptoResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ListCryptoRequest* request, ::opi_api::storage::v1::ListCryptoResponse* response) { return this->ListCrypto(context, request, response); }));}
+    void SetMessageAllocatorFor_ListCrypto(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::ListCryptoRequest, ::opi_api::storage::v1::ListCryptoResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListCryptoRequest, ::opi_api::storage::v1::ListCryptoResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ListCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::GetCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::GetCryptoRequest* request, ::opi_api::storage::v1::Crypto* response) { return this->GetCrypto(context, request, response); }));}
+    void SetMessageAllocatorFor_GetCrypto(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::GetCryptoRequest, ::opi_api::storage::v1::Crypto>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::GetCryptoRequest, ::opi_api::storage::v1::Crypto>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::CryptoStatsRequest, ::opi_api::storage::v1::CryptoStatsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::CryptoStatsRequest* request, ::opi_api::storage::v1::CryptoStatsResponse* response) { return this->CryptoStats(context, request, response); }));}
+    void SetMessageAllocatorFor_CryptoStats(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::CryptoStatsRequest, ::opi_api::storage::v1::CryptoStatsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::CryptoStatsRequest, ::opi_api::storage::v1::CryptoStatsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CryptoStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateCrypto<WithCallbackMethod_DeleteCrypto<WithCallbackMethod_UpdateCrypto<WithCallbackMethod_ListCrypto<WithCallbackMethod_GetCrypto<WithCallbackMethod_CryptoStats<Service > > > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateCrypto(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteCrypto(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateCrypto(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListCrypto(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetCrypto(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCryptoStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateCrypto(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CreateCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteCrypto(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DeleteCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateCrypto(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListCrypto(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ListCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCrypto(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetCrypto(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CryptoStats(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CryptoStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CreateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_CreateCrypto() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::CreateCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::CreateCryptoRequest, ::opi_api::storage::v1::Crypto>* streamer) {
+                       return this->StreamedCreateCrypto(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_CreateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CreateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CreateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCreateCrypto(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::CreateCryptoRequest,::opi_api::storage::v1::Crypto>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DeleteCrypto() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::DeleteCryptoRequest, ::google::protobuf::Empty>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::DeleteCryptoRequest, ::google::protobuf::Empty>* streamer) {
+                       return this->StreamedDeleteCrypto(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DeleteCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::DeleteCryptoRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteCrypto(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::DeleteCryptoRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateCrypto() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::UpdateCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::UpdateCryptoRequest, ::opi_api::storage::v1::Crypto>* streamer) {
+                       return this->StreamedUpdateCrypto(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::UpdateCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateCrypto(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::UpdateCryptoRequest,::opi_api::storage::v1::Crypto>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ListCrypto() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::ListCryptoRequest, ::opi_api::storage::v1::ListCryptoResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::ListCryptoRequest, ::opi_api::storage::v1::ListCryptoResponse>* streamer) {
+                       return this->StreamedListCrypto(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ListCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListCryptoRequest* /*request*/, ::opi_api::storage::v1::ListCryptoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListCrypto(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ListCryptoRequest,::opi_api::storage::v1::ListCryptoResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetCrypto : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetCrypto() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::GetCryptoRequest, ::opi_api::storage::v1::Crypto>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::GetCryptoRequest, ::opi_api::storage::v1::Crypto>* streamer) {
+                       return this->StreamedGetCrypto(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetCrypto() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetCrypto(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::GetCryptoRequest* /*request*/, ::opi_api::storage::v1::Crypto* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetCrypto(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::GetCryptoRequest,::opi_api::storage::v1::Crypto>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CryptoStats : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_CryptoStats() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::CryptoStatsRequest, ::opi_api::storage::v1::CryptoStatsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::CryptoStatsRequest, ::opi_api::storage::v1::CryptoStatsResponse>* streamer) {
+                       return this->StreamedCryptoStats(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_CryptoStats() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CryptoStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::CryptoStatsRequest* /*request*/, ::opi_api::storage::v1::CryptoStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCryptoStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::CryptoStatsRequest,::opi_api::storage::v1::CryptoStatsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateCrypto<WithStreamedUnaryMethod_DeleteCrypto<WithStreamedUnaryMethod_UpdateCrypto<WithStreamedUnaryMethod_ListCrypto<WithStreamedUnaryMethod_GetCrypto<WithStreamedUnaryMethod_CryptoStats<Service > > > > > > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateCrypto<WithStreamedUnaryMethod_DeleteCrypto<WithStreamedUnaryMethod_UpdateCrypto<WithStreamedUnaryMethod_ListCrypto<WithStreamedUnaryMethod_GetCrypto<WithStreamedUnaryMethod_CryptoStats<Service > > > > > > StreamedService;
+};
+
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api

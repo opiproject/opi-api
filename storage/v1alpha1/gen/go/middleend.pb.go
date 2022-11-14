@@ -10,9 +10,17 @@
 package _go
 
 import (
+	context "context"
+	_go "github.com/opiproject/opi-api/common/v1/gen/go"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
+	sync "sync"
 )
 
 const (
@@ -22,27 +30,652 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Crypto struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id *_go.ObjectKey `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// The back/middle-end volume to back this volume
+	VolumeId *_go.ObjectKey `protobuf:"bytes,2,opt,name=volume_id,json=volumeId,proto3" json:"volume_id,omitempty"`
+	// Key to be used for encryption
+	Key []byte `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
+	// Cipher to use
+	Cipher CryptoType `protobuf:"varint,4,opt,name=cipher,proto3,enum=opi_api.storage.v1.CryptoType" json:"cipher,omitempty"`
+}
+
+func (x *Crypto) Reset() {
+	*x = Crypto{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Crypto) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Crypto) ProtoMessage() {}
+
+func (x *Crypto) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Crypto.ProtoReflect.Descriptor instead.
+func (*Crypto) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Crypto) GetId() *_go.ObjectKey {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *Crypto) GetVolumeId() *_go.ObjectKey {
+	if x != nil {
+		return x.VolumeId
+	}
+	return nil
+}
+
+func (x *Crypto) GetKey() []byte {
+	if x != nil {
+		return x.Key
+	}
+	return nil
+}
+
+func (x *Crypto) GetCipher() CryptoType {
+	if x != nil {
+		return x.Cipher
+	}
+	return CryptoType_CRYPTO_TYPE_UNSPECIFIED
+}
+
+type CreateCryptoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Volume *Crypto `protobuf:"bytes,1,opt,name=volume,proto3" json:"volume,omitempty"`
+}
+
+func (x *CreateCryptoRequest) Reset() {
+	*x = CreateCryptoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateCryptoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateCryptoRequest) ProtoMessage() {}
+
+func (x *CreateCryptoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateCryptoRequest.ProtoReflect.Descriptor instead.
+func (*CreateCryptoRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CreateCryptoRequest) GetVolume() *Crypto {
+	if x != nil {
+		return x.Volume
+	}
+	return nil
+}
+
+type DeleteCryptoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	VolumeId *_go.ObjectKey `protobuf:"bytes,1,opt,name=volume_id,json=volumeId,proto3" json:"volume_id,omitempty"`
+}
+
+func (x *DeleteCryptoRequest) Reset() {
+	*x = DeleteCryptoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteCryptoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteCryptoRequest) ProtoMessage() {}
+
+func (x *DeleteCryptoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteCryptoRequest.ProtoReflect.Descriptor instead.
+func (*DeleteCryptoRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DeleteCryptoRequest) GetVolumeId() *_go.ObjectKey {
+	if x != nil {
+		return x.VolumeId
+	}
+	return nil
+}
+
+type UpdateCryptoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Volume *Crypto `protobuf:"bytes,1,opt,name=volume,proto3" json:"volume,omitempty"`
+}
+
+func (x *UpdateCryptoRequest) Reset() {
+	*x = UpdateCryptoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateCryptoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCryptoRequest) ProtoMessage() {}
+
+func (x *UpdateCryptoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCryptoRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCryptoRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *UpdateCryptoRequest) GetVolume() *Crypto {
+	if x != nil {
+		return x.Volume
+	}
+	return nil
+}
+
+type ListCryptoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	PageSize  int32  `protobuf:"varint,1,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+}
+
+func (x *ListCryptoRequest) Reset() {
+	*x = ListCryptoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListCryptoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCryptoRequest) ProtoMessage() {}
+
+func (x *ListCryptoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCryptoRequest.ProtoReflect.Descriptor instead.
+func (*ListCryptoRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ListCryptoRequest) GetPageSize() int32 {
+	if x != nil {
+		return x.PageSize
+	}
+	return 0
+}
+
+func (x *ListCryptoRequest) GetPageToken() string {
+	if x != nil {
+		return x.PageToken
+	}
+	return ""
+}
+
+type ListCryptoResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Volumes       []*Crypto `protobuf:"bytes,1,rep,name=volumes,proto3" json:"volumes,omitempty"`
+	NextPageToken string    `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+}
+
+func (x *ListCryptoResponse) Reset() {
+	*x = ListCryptoResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListCryptoResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCryptoResponse) ProtoMessage() {}
+
+func (x *ListCryptoResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCryptoResponse.ProtoReflect.Descriptor instead.
+func (*ListCryptoResponse) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ListCryptoResponse) GetVolumes() []*Crypto {
+	if x != nil {
+		return x.Volumes
+	}
+	return nil
+}
+
+func (x *ListCryptoResponse) GetNextPageToken() string {
+	if x != nil {
+		return x.NextPageToken
+	}
+	return ""
+}
+
+type GetCryptoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	VolumeId *_go.ObjectKey `protobuf:"bytes,1,opt,name=volume_id,json=volumeId,proto3" json:"volume_id,omitempty"`
+}
+
+func (x *GetCryptoRequest) Reset() {
+	*x = GetCryptoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetCryptoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCryptoRequest) ProtoMessage() {}
+
+func (x *GetCryptoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCryptoRequest.ProtoReflect.Descriptor instead.
+func (*GetCryptoRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetCryptoRequest) GetVolumeId() *_go.ObjectKey {
+	if x != nil {
+		return x.VolumeId
+	}
+	return nil
+}
+
+type CryptoStatsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	VolumeId *_go.ObjectKey `protobuf:"bytes,1,opt,name=volume_id,json=volumeId,proto3" json:"volume_id,omitempty"`
+}
+
+func (x *CryptoStatsRequest) Reset() {
+	*x = CryptoStatsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CryptoStatsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CryptoStatsRequest) ProtoMessage() {}
+
+func (x *CryptoStatsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CryptoStatsRequest.ProtoReflect.Descriptor instead.
+func (*CryptoStatsRequest) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CryptoStatsRequest) GetVolumeId() *_go.ObjectKey {
+	if x != nil {
+		return x.VolumeId
+	}
+	return nil
+}
+
+type CryptoStatsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id    *_go.ObjectKey `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Stats string         `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
+}
+
+func (x *CryptoStatsResponse) Reset() {
+	*x = CryptoStatsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_middleend_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CryptoStatsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CryptoStatsResponse) ProtoMessage() {}
+
+func (x *CryptoStatsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_middleend_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CryptoStatsResponse.ProtoReflect.Descriptor instead.
+func (*CryptoStatsResponse) Descriptor() ([]byte, []int) {
+	return file_middleend_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *CryptoStatsResponse) GetId() *_go.ObjectKey {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *CryptoStatsResponse) GetStats() string {
+	if x != nil {
+		return x.Stats
+	}
+	return ""
+}
+
 var File_middleend_proto protoreflect.FileDescriptor
 
 var file_middleend_proto_rawDesc = []byte{
 	0x0a, 0x0f, 0x6d, 0x69, 0x64, 0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
-	0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x5d, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
-	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x0e, 0x4d, 0x69, 0x64,
-	0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f,
-	0x6a, 0x65, 0x63, 0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f,
-	0x72, 0x61, 0x67, 0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65,
-	0x6e, 0x2f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x0f, 0x6f, 0x70, 0x69, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x10, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x6b,
+	0x65, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70,
+	0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x22, 0xbb, 0x01, 0x0a, 0x06, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x12, 0x2c,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69,
+	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f,
+	0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x02, 0x69, 0x64, 0x12, 0x39, 0x0a, 0x09,
+	0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52, 0x08, 0x76,
+	0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x0c, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x36, 0x0a, 0x06, 0x63, 0x69, 0x70,
+	0x68, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1e, 0x2e, 0x6f, 0x70, 0x69, 0x5f,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43,
+	0x72, 0x79, 0x70, 0x74, 0x6f, 0x54, 0x79, 0x70, 0x65, 0x52, 0x06, 0x63, 0x69, 0x70, 0x68, 0x65,
+	0x72, 0x22, 0x49, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74,
+	0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x32, 0x0a, 0x06, 0x76, 0x6f, 0x6c, 0x75,
+	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x79, 0x70, 0x74, 0x6f, 0x52, 0x06, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x22, 0x50, 0x0a, 0x13,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x4b, 0x65, 0x79, 0x52, 0x08, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x64, 0x22, 0x49,
+	0x0a, 0x13, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x32, 0x0a, 0x06, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79, 0x70, 0x74,
+	0x6f, 0x52, 0x06, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x22, 0x4f, 0x0a, 0x11, 0x4c, 0x69, 0x73,
+	0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b,
+	0x0a, 0x09, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x08, 0x70, 0x61, 0x67, 0x65, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x70,
+	0x61, 0x67, 0x65, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x70, 0x61, 0x67, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x72, 0x0a, 0x12, 0x4c, 0x69,
+	0x73, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x34, 0x0a, 0x07, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72,
+	0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x07, 0x76,
+	0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x12, 0x26, 0x0a, 0x0f, 0x6e, 0x65, 0x78, 0x74, 0x5f, 0x70,
+	0x61, 0x67, 0x65, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x6e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x4d,
+	0x0a, 0x10, 0x47, 0x65, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x39, 0x0a, 0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e,
+	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74,
+	0x4b, 0x65, 0x79, 0x52, 0x08, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x64, 0x22, 0x4f, 0x0a,
+	0x12, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x4b, 0x65, 0x79, 0x52, 0x08, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x64, 0x22, 0x59,
+	0x0a, 0x13, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2c, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4b, 0x65, 0x79, 0x52,
+	0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x32, 0xa6, 0x05, 0x0a, 0x10, 0x4d, 0x69,
+	0x64, 0x64, 0x6c, 0x65, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x70,
+	0x0a, 0x0c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x12, 0x27,
+	0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79,
+	0x70, 0x74, 0x6f, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x22, 0x0b, 0x2f, 0x76, 0x31,
+	0x2f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x3a, 0x06, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65,
+	0x12, 0x6d, 0x0a, 0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f,
+	0x12, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70,
+	0x74, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
+	0x79, 0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x2a, 0x14, 0x2f, 0x76, 0x31, 0x2f, 0x76,
+	0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x7b, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x7d, 0x12,
+	0x70, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x12,
+	0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x72, 0x79, 0x70, 0x74,
+	0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61,
+	0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
+	0x79, 0x70, 0x74, 0x6f, 0x22, 0x1b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x15, 0x32, 0x0b, 0x2f, 0x76,
+	0x31, 0x2f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x3a, 0x06, 0x76, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x12, 0x70, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x12,
+	0x25, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
+	0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x13,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0d, 0x12, 0x0b, 0x2f, 0x76, 0x31, 0x2f, 0x76, 0x6f, 0x6c, 0x75,
+	0x6d, 0x65, 0x73, 0x12, 0x6b, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f,
+	0x12, 0x24, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61,
+	0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69,
+	0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79, 0x70,
+	0x74, 0x6f, 0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x12, 0x14, 0x2f, 0x76, 0x31, 0x2f,
+	0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73, 0x2f, 0x7b, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x7d,
+	0x12, 0x60, 0x0a, 0x0b, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x53, 0x74, 0x61, 0x74, 0x73, 0x12,
+	0x26, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79, 0x70, 0x74, 0x6f, 0x53, 0x74, 0x61, 0x74, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70,
+	0x69, 0x2e, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x79,
+	0x70, 0x74, 0x6f, 0x53, 0x74, 0x61, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x42, 0x5d, 0x0a, 0x12, 0x6f, 0x70, 0x69, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x74,
+	0x6f, 0x72, 0x61, 0x67, 0x65, 0x2e, 0x76, 0x31, 0x42, 0x0e, 0x4d, 0x69, 0x64, 0x64, 0x6c, 0x65,
+	0x65, 0x6e, 0x64, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x69, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63,
+	0x74, 0x2f, 0x6f, 0x70, 0x69, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x74, 0x6f, 0x72, 0x61, 0x67,
+	0x65, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67,
+	0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
-var file_middleend_proto_goTypes = []interface{}{}
+var (
+	file_middleend_proto_rawDescOnce sync.Once
+	file_middleend_proto_rawDescData = file_middleend_proto_rawDesc
+)
+
+func file_middleend_proto_rawDescGZIP() []byte {
+	file_middleend_proto_rawDescOnce.Do(func() {
+		file_middleend_proto_rawDescData = protoimpl.X.CompressGZIP(file_middleend_proto_rawDescData)
+	})
+	return file_middleend_proto_rawDescData
+}
+
+var file_middleend_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_middleend_proto_goTypes = []interface{}{
+	(*Crypto)(nil),              // 0: opi_api.storage.v1.Crypto
+	(*CreateCryptoRequest)(nil), // 1: opi_api.storage.v1.CreateCryptoRequest
+	(*DeleteCryptoRequest)(nil), // 2: opi_api.storage.v1.DeleteCryptoRequest
+	(*UpdateCryptoRequest)(nil), // 3: opi_api.storage.v1.UpdateCryptoRequest
+	(*ListCryptoRequest)(nil),   // 4: opi_api.storage.v1.ListCryptoRequest
+	(*ListCryptoResponse)(nil),  // 5: opi_api.storage.v1.ListCryptoResponse
+	(*GetCryptoRequest)(nil),    // 6: opi_api.storage.v1.GetCryptoRequest
+	(*CryptoStatsRequest)(nil),  // 7: opi_api.storage.v1.CryptoStatsRequest
+	(*CryptoStatsResponse)(nil), // 8: opi_api.storage.v1.CryptoStatsResponse
+	(*_go.ObjectKey)(nil),       // 9: opi_api.common.v1.ObjectKey
+	(CryptoType)(0),             // 10: opi_api.storage.v1.CryptoType
+	(*emptypb.Empty)(nil),       // 11: google.protobuf.Empty
+}
 var file_middleend_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	9,  // 0: opi_api.storage.v1.Crypto.id:type_name -> opi_api.common.v1.ObjectKey
+	9,  // 1: opi_api.storage.v1.Crypto.volume_id:type_name -> opi_api.common.v1.ObjectKey
+	10, // 2: opi_api.storage.v1.Crypto.cipher:type_name -> opi_api.storage.v1.CryptoType
+	0,  // 3: opi_api.storage.v1.CreateCryptoRequest.volume:type_name -> opi_api.storage.v1.Crypto
+	9,  // 4: opi_api.storage.v1.DeleteCryptoRequest.volume_id:type_name -> opi_api.common.v1.ObjectKey
+	0,  // 5: opi_api.storage.v1.UpdateCryptoRequest.volume:type_name -> opi_api.storage.v1.Crypto
+	0,  // 6: opi_api.storage.v1.ListCryptoResponse.volumes:type_name -> opi_api.storage.v1.Crypto
+	9,  // 7: opi_api.storage.v1.GetCryptoRequest.volume_id:type_name -> opi_api.common.v1.ObjectKey
+	9,  // 8: opi_api.storage.v1.CryptoStatsRequest.volume_id:type_name -> opi_api.common.v1.ObjectKey
+	9,  // 9: opi_api.storage.v1.CryptoStatsResponse.id:type_name -> opi_api.common.v1.ObjectKey
+	1,  // 10: opi_api.storage.v1.MiddleendService.CreateCrypto:input_type -> opi_api.storage.v1.CreateCryptoRequest
+	2,  // 11: opi_api.storage.v1.MiddleendService.DeleteCrypto:input_type -> opi_api.storage.v1.DeleteCryptoRequest
+	3,  // 12: opi_api.storage.v1.MiddleendService.UpdateCrypto:input_type -> opi_api.storage.v1.UpdateCryptoRequest
+	4,  // 13: opi_api.storage.v1.MiddleendService.ListCrypto:input_type -> opi_api.storage.v1.ListCryptoRequest
+	6,  // 14: opi_api.storage.v1.MiddleendService.GetCrypto:input_type -> opi_api.storage.v1.GetCryptoRequest
+	7,  // 15: opi_api.storage.v1.MiddleendService.CryptoStats:input_type -> opi_api.storage.v1.CryptoStatsRequest
+	0,  // 16: opi_api.storage.v1.MiddleendService.CreateCrypto:output_type -> opi_api.storage.v1.Crypto
+	11, // 17: opi_api.storage.v1.MiddleendService.DeleteCrypto:output_type -> google.protobuf.Empty
+	0,  // 18: opi_api.storage.v1.MiddleendService.UpdateCrypto:output_type -> opi_api.storage.v1.Crypto
+	5,  // 19: opi_api.storage.v1.MiddleendService.ListCrypto:output_type -> opi_api.storage.v1.ListCryptoResponse
+	0,  // 20: opi_api.storage.v1.MiddleendService.GetCrypto:output_type -> opi_api.storage.v1.Crypto
+	8,  // 21: opi_api.storage.v1.MiddleendService.CryptoStats:output_type -> opi_api.storage.v1.CryptoStatsResponse
+	16, // [16:22] is the sub-list for method output_type
+	10, // [10:16] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_middleend_proto_init() }
@@ -50,21 +683,393 @@ func file_middleend_proto_init() {
 	if File_middleend_proto != nil {
 		return
 	}
+	file_opicommon_proto_init()
+	if !protoimpl.UnsafeEnabled {
+		file_middleend_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Crypto); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateCryptoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteCryptoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateCryptoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListCryptoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListCryptoResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetCryptoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CryptoStatsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_middleend_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CryptoStatsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_middleend_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   0,
+			NumMessages:   9,
 			NumExtensions: 0,
-			NumServices:   0,
+			NumServices:   1,
 		},
 		GoTypes:           file_middleend_proto_goTypes,
 		DependencyIndexes: file_middleend_proto_depIdxs,
+		MessageInfos:      file_middleend_proto_msgTypes,
 	}.Build()
 	File_middleend_proto = out.File
 	file_middleend_proto_rawDesc = nil
 	file_middleend_proto_goTypes = nil
 	file_middleend_proto_depIdxs = nil
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConnInterface
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion6
+
+// MiddleendServiceClient is the client API for MiddleendService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type MiddleendServiceClient interface {
+	CreateCrypto(ctx context.Context, in *CreateCryptoRequest, opts ...grpc.CallOption) (*Crypto, error)
+	DeleteCrypto(ctx context.Context, in *DeleteCryptoRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	UpdateCrypto(ctx context.Context, in *UpdateCryptoRequest, opts ...grpc.CallOption) (*Crypto, error)
+	ListCrypto(ctx context.Context, in *ListCryptoRequest, opts ...grpc.CallOption) (*ListCryptoResponse, error)
+	GetCrypto(ctx context.Context, in *GetCryptoRequest, opts ...grpc.CallOption) (*Crypto, error)
+	CryptoStats(ctx context.Context, in *CryptoStatsRequest, opts ...grpc.CallOption) (*CryptoStatsResponse, error)
+}
+
+type middleendServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewMiddleendServiceClient(cc grpc.ClientConnInterface) MiddleendServiceClient {
+	return &middleendServiceClient{cc}
+}
+
+func (c *middleendServiceClient) CreateCrypto(ctx context.Context, in *CreateCryptoRequest, opts ...grpc.CallOption) (*Crypto, error) {
+	out := new(Crypto)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/CreateCrypto", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middleendServiceClient) DeleteCrypto(ctx context.Context, in *DeleteCryptoRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/DeleteCrypto", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middleendServiceClient) UpdateCrypto(ctx context.Context, in *UpdateCryptoRequest, opts ...grpc.CallOption) (*Crypto, error) {
+	out := new(Crypto)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/UpdateCrypto", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middleendServiceClient) ListCrypto(ctx context.Context, in *ListCryptoRequest, opts ...grpc.CallOption) (*ListCryptoResponse, error) {
+	out := new(ListCryptoResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/ListCrypto", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middleendServiceClient) GetCrypto(ctx context.Context, in *GetCryptoRequest, opts ...grpc.CallOption) (*Crypto, error) {
+	out := new(Crypto)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/GetCrypto", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *middleendServiceClient) CryptoStats(ctx context.Context, in *CryptoStatsRequest, opts ...grpc.CallOption) (*CryptoStatsResponse, error) {
+	out := new(CryptoStatsResponse)
+	err := c.cc.Invoke(ctx, "/opi_api.storage.v1.MiddleendService/CryptoStats", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// MiddleendServiceServer is the server API for MiddleendService service.
+type MiddleendServiceServer interface {
+	CreateCrypto(context.Context, *CreateCryptoRequest) (*Crypto, error)
+	DeleteCrypto(context.Context, *DeleteCryptoRequest) (*emptypb.Empty, error)
+	UpdateCrypto(context.Context, *UpdateCryptoRequest) (*Crypto, error)
+	ListCrypto(context.Context, *ListCryptoRequest) (*ListCryptoResponse, error)
+	GetCrypto(context.Context, *GetCryptoRequest) (*Crypto, error)
+	CryptoStats(context.Context, *CryptoStatsRequest) (*CryptoStatsResponse, error)
+}
+
+// UnimplementedMiddleendServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedMiddleendServiceServer struct {
+}
+
+func (*UnimplementedMiddleendServiceServer) CreateCrypto(context.Context, *CreateCryptoRequest) (*Crypto, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCrypto not implemented")
+}
+func (*UnimplementedMiddleendServiceServer) DeleteCrypto(context.Context, *DeleteCryptoRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCrypto not implemented")
+}
+func (*UnimplementedMiddleendServiceServer) UpdateCrypto(context.Context, *UpdateCryptoRequest) (*Crypto, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCrypto not implemented")
+}
+func (*UnimplementedMiddleendServiceServer) ListCrypto(context.Context, *ListCryptoRequest) (*ListCryptoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListCrypto not implemented")
+}
+func (*UnimplementedMiddleendServiceServer) GetCrypto(context.Context, *GetCryptoRequest) (*Crypto, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCrypto not implemented")
+}
+func (*UnimplementedMiddleendServiceServer) CryptoStats(context.Context, *CryptoStatsRequest) (*CryptoStatsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CryptoStats not implemented")
+}
+
+func RegisterMiddleendServiceServer(s *grpc.Server, srv MiddleendServiceServer) {
+	s.RegisterService(&_MiddleendService_serviceDesc, srv)
+}
+
+func _MiddleendService_CreateCrypto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCryptoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).CreateCrypto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/CreateCrypto",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).CreateCrypto(ctx, req.(*CreateCryptoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MiddleendService_DeleteCrypto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCryptoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).DeleteCrypto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/DeleteCrypto",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).DeleteCrypto(ctx, req.(*DeleteCryptoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MiddleendService_UpdateCrypto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCryptoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).UpdateCrypto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/UpdateCrypto",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).UpdateCrypto(ctx, req.(*UpdateCryptoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MiddleendService_ListCrypto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCryptoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).ListCrypto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/ListCrypto",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).ListCrypto(ctx, req.(*ListCryptoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MiddleendService_GetCrypto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCryptoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).GetCrypto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/GetCrypto",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).GetCrypto(ctx, req.(*GetCryptoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MiddleendService_CryptoStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CryptoStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MiddleendServiceServer).CryptoStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/opi_api.storage.v1.MiddleendService/CryptoStats",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MiddleendServiceServer).CryptoStats(ctx, req.(*CryptoStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _MiddleendService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "opi_api.storage.v1.MiddleendService",
+	HandlerType: (*MiddleendServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateCrypto",
+			Handler:    _MiddleendService_CreateCrypto_Handler,
+		},
+		{
+			MethodName: "DeleteCrypto",
+			Handler:    _MiddleendService_DeleteCrypto_Handler,
+		},
+		{
+			MethodName: "UpdateCrypto",
+			Handler:    _MiddleendService_UpdateCrypto_Handler,
+		},
+		{
+			MethodName: "ListCrypto",
+			Handler:    _MiddleendService_ListCrypto_Handler,
+		},
+		{
+			MethodName: "GetCrypto",
+			Handler:    _MiddleendService_GetCrypto_Handler,
+		},
+		{
+			MethodName: "CryptoStats",
+			Handler:    _MiddleendService_CryptoStats_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "middleend.proto",
 }
