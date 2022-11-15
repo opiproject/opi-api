@@ -230,7 +230,7 @@ class Crypto final :
 
   enum : int {
     kKeyFieldNumber = 3,
-    kIdFieldNumber = 1,
+    kCryptoIdFieldNumber = 1,
     kVolumeIdFieldNumber = 2,
     kCipherFieldNumber = 4,
   };
@@ -248,23 +248,23 @@ class Crypto final :
   std::string* _internal_mutable_key();
   public:
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  bool has_crypto_id() const;
   private:
-  bool _internal_has_id() const;
+  bool _internal_has_crypto_id() const;
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
+  void clear_crypto_id();
+  const ::opi_api::common::v1::ObjectKey& crypto_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_id();
+  ::opi_api::common::v1::ObjectKey* mutable_crypto_id();
+  void set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_crypto_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_id();
   public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
+  void unsafe_arena_set_allocated_crypto_id(
+      ::opi_api::common::v1::ObjectKey* crypto_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_id();
 
   // .opi_api.common.v1.ObjectKey volume_id = 2;
   bool has_volume_id() const;
@@ -301,7 +301,7 @@ class Crypto final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
-  ::opi_api::common::v1::ObjectKey* id_;
+  ::opi_api::common::v1::ObjectKey* crypto_id_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
   int cipher_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -586,25 +586,25 @@ class DeleteCryptoRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVolumeIdFieldNumber = 1,
+    kCryptoIdFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  bool has_volume_id() const;
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  bool has_crypto_id() const;
   private:
-  bool _internal_has_volume_id() const;
+  bool _internal_has_crypto_id() const;
   public:
-  void clear_volume_id();
-  const ::opi_api::common::v1::ObjectKey& volume_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_volume_id();
-  ::opi_api::common::v1::ObjectKey* mutable_volume_id();
-  void set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id);
+  void clear_crypto_id();
+  const ::opi_api::common::v1::ObjectKey& crypto_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_id();
+  ::opi_api::common::v1::ObjectKey* mutable_crypto_id();
+  void set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_volume_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_volume_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_crypto_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_id();
   public:
-  void unsafe_arena_set_allocated_volume_id(
-      ::opi_api::common::v1::ObjectKey* volume_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
+  void unsafe_arena_set_allocated_crypto_id(
+      ::opi_api::common::v1::ObjectKey* crypto_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteCryptoRequest)
  private:
@@ -613,7 +613,7 @@ class DeleteCryptoRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* volume_id_;
+  ::opi_api::common::v1::ObjectKey* crypto_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_2eproto;
 };
@@ -1229,25 +1229,25 @@ class GetCryptoRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVolumeIdFieldNumber = 1,
+    kCryptoIdFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  bool has_volume_id() const;
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  bool has_crypto_id() const;
   private:
-  bool _internal_has_volume_id() const;
+  bool _internal_has_crypto_id() const;
   public:
-  void clear_volume_id();
-  const ::opi_api::common::v1::ObjectKey& volume_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_volume_id();
-  ::opi_api::common::v1::ObjectKey* mutable_volume_id();
-  void set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id);
+  void clear_crypto_id();
+  const ::opi_api::common::v1::ObjectKey& crypto_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_id();
+  ::opi_api::common::v1::ObjectKey* mutable_crypto_id();
+  void set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_volume_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_volume_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_crypto_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_id();
   public:
-  void unsafe_arena_set_allocated_volume_id(
-      ::opi_api::common::v1::ObjectKey* volume_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
+  void unsafe_arena_set_allocated_crypto_id(
+      ::opi_api::common::v1::ObjectKey* crypto_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetCryptoRequest)
  private:
@@ -1256,7 +1256,7 @@ class GetCryptoRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* volume_id_;
+  ::opi_api::common::v1::ObjectKey* crypto_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_2eproto;
 };
@@ -1384,25 +1384,25 @@ class CryptoStatsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVolumeIdFieldNumber = 1,
+    kCryptoIdFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  bool has_volume_id() const;
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  bool has_crypto_id() const;
   private:
-  bool _internal_has_volume_id() const;
+  bool _internal_has_crypto_id() const;
   public:
-  void clear_volume_id();
-  const ::opi_api::common::v1::ObjectKey& volume_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_volume_id();
-  ::opi_api::common::v1::ObjectKey* mutable_volume_id();
-  void set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id);
+  void clear_crypto_id();
+  const ::opi_api::common::v1::ObjectKey& crypto_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_id();
+  ::opi_api::common::v1::ObjectKey* mutable_crypto_id();
+  void set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_volume_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_volume_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_crypto_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_id();
   public:
-  void unsafe_arena_set_allocated_volume_id(
-      ::opi_api::common::v1::ObjectKey* volume_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
+  void unsafe_arena_set_allocated_crypto_id(
+      ::opi_api::common::v1::ObjectKey* crypto_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CryptoStatsRequest)
  private:
@@ -1411,7 +1411,7 @@ class CryptoStatsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* volume_id_;
+  ::opi_api::common::v1::ObjectKey* crypto_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_2eproto;
 };
@@ -1540,7 +1540,7 @@ class CryptoStatsResponse final :
 
   enum : int {
     kStatsFieldNumber = 2,
-    kIdFieldNumber = 1,
+    kCryptoIdFieldNumber = 1,
   };
   // string stats = 2;
   void clear_stats();
@@ -1556,23 +1556,23 @@ class CryptoStatsResponse final :
   std::string* _internal_mutable_stats();
   public:
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  bool has_crypto_id() const;
   private:
-  bool _internal_has_id() const;
+  bool _internal_has_crypto_id() const;
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
+  void clear_crypto_id();
+  const ::opi_api::common::v1::ObjectKey& crypto_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_crypto_id();
+  ::opi_api::common::v1::ObjectKey* mutable_crypto_id();
+  void set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
+  const ::opi_api::common::v1::ObjectKey& _internal_crypto_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_crypto_id();
   public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
+  void unsafe_arena_set_allocated_crypto_id(
+      ::opi_api::common::v1::ObjectKey* crypto_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_crypto_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CryptoStatsResponse)
  private:
@@ -1582,7 +1582,7 @@ class CryptoStatsResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stats_;
-  ::opi_api::common::v1::ObjectKey* id_;
+  ::opi_api::common::v1::ObjectKey* crypto_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_2eproto;
 };
@@ -1597,39 +1597,39 @@ class CryptoStatsResponse final :
 #endif  // __GNUC__
 // Crypto
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool Crypto::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// .opi_api.common.v1.ObjectKey crypto_id = 1;
+inline bool Crypto::_internal_has_crypto_id() const {
+  return this != internal_default_instance() && crypto_id_ != nullptr;
 }
-inline bool Crypto::has_id() const {
-  return _internal_has_id();
+inline bool Crypto::has_crypto_id() const {
+  return _internal_has_crypto_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& Crypto::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
+inline const ::opi_api::common::v1::ObjectKey& Crypto::_internal_crypto_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = crypto_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& Crypto::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.Crypto.id)
-  return _internal_id();
+inline const ::opi_api::common::v1::ObjectKey& Crypto::crypto_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.Crypto.crypto_id)
+  return _internal_crypto_id();
 }
-inline void Crypto::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
+inline void Crypto::unsafe_arena_set_allocated_crypto_id(
+    ::opi_api::common::v1::ObjectKey* crypto_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  id_ = id;
-  if (id) {
+  crypto_id_ = crypto_id;
+  if (crypto_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.Crypto.id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.Crypto.crypto_id)
 }
-inline ::opi_api::common::v1::ObjectKey* Crypto::release_id() {
+inline ::opi_api::common::v1::ObjectKey* Crypto::release_crypto_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1641,46 +1641,46 @@ inline ::opi_api::common::v1::ObjectKey* Crypto::release_id() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* Crypto::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.Crypto.id)
+inline ::opi_api::common::v1::ObjectKey* Crypto::unsafe_arena_release_crypto_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.Crypto.crypto_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* Crypto::_internal_mutable_id() {
+inline ::opi_api::common::v1::ObjectKey* Crypto::_internal_mutable_crypto_id() {
   
-  if (id_ == nullptr) {
+  if (crypto_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
+    crypto_id_ = p;
   }
-  return id_;
+  return crypto_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* Crypto::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.Crypto.id)
+inline ::opi_api::common::v1::ObjectKey* Crypto::mutable_crypto_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.Crypto.crypto_id)
   return _msg;
 }
-inline void Crypto::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
+inline void Crypto::set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  if (id) {
+  if (crypto_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id));
     if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
+      crypto_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crypto_id, submessage_arena);
     }
     
   } else {
     
   }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.Crypto.id)
+  crypto_id_ = crypto_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.Crypto.crypto_id)
 }
 
 // .opi_api.common.v1.ObjectKey volume_id = 2;
@@ -1938,39 +1938,39 @@ inline void CreateCryptoRequest::set_allocated_volume(::opi_api::storage::v1::Cr
 
 // DeleteCryptoRequest
 
-// .opi_api.common.v1.ObjectKey volume_id = 1;
-inline bool DeleteCryptoRequest::_internal_has_volume_id() const {
-  return this != internal_default_instance() && volume_id_ != nullptr;
+// .opi_api.common.v1.ObjectKey crypto_id = 1;
+inline bool DeleteCryptoRequest::_internal_has_crypto_id() const {
+  return this != internal_default_instance() && crypto_id_ != nullptr;
 }
-inline bool DeleteCryptoRequest::has_volume_id() const {
-  return _internal_has_volume_id();
+inline bool DeleteCryptoRequest::has_crypto_id() const {
+  return _internal_has_crypto_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& DeleteCryptoRequest::_internal_volume_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = volume_id_;
+inline const ::opi_api::common::v1::ObjectKey& DeleteCryptoRequest::_internal_crypto_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = crypto_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& DeleteCryptoRequest::volume_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteCryptoRequest.volume_id)
-  return _internal_volume_id();
+inline const ::opi_api::common::v1::ObjectKey& DeleteCryptoRequest::crypto_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteCryptoRequest.crypto_id)
+  return _internal_crypto_id();
 }
-inline void DeleteCryptoRequest::unsafe_arena_set_allocated_volume_id(
-    ::opi_api::common::v1::ObjectKey* volume_id) {
+inline void DeleteCryptoRequest::unsafe_arena_set_allocated_crypto_id(
+    ::opi_api::common::v1::ObjectKey* crypto_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  volume_id_ = volume_id;
-  if (volume_id) {
+  crypto_id_ = crypto_id;
+  if (crypto_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteCryptoRequest.volume_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteCryptoRequest.crypto_id)
 }
-inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::release_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::release_crypto_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1982,46 +1982,46 @@ inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::release_volume_id(
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::unsafe_arena_release_volume_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteCryptoRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::unsafe_arena_release_crypto_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteCryptoRequest.crypto_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::_internal_mutable_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::_internal_mutable_crypto_id() {
   
-  if (volume_id_ == nullptr) {
+  if (crypto_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    volume_id_ = p;
+    crypto_id_ = p;
   }
-  return volume_id_;
+  return crypto_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::mutable_volume_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_volume_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteCryptoRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* DeleteCryptoRequest::mutable_crypto_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteCryptoRequest.crypto_id)
   return _msg;
 }
-inline void DeleteCryptoRequest::set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id) {
+inline void DeleteCryptoRequest::set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  if (volume_id) {
+  if (crypto_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id));
     if (message_arena != submessage_arena) {
-      volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, volume_id, submessage_arena);
+      crypto_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crypto_id, submessage_arena);
     }
     
   } else {
     
   }
-  volume_id_ = volume_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteCryptoRequest.volume_id)
+  crypto_id_ = crypto_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteCryptoRequest.crypto_id)
 }
 
 // -------------------------------------------------------------------
@@ -2292,39 +2292,39 @@ inline void ListCryptoResponse::set_allocated_next_page_token(std::string* next_
 
 // GetCryptoRequest
 
-// .opi_api.common.v1.ObjectKey volume_id = 1;
-inline bool GetCryptoRequest::_internal_has_volume_id() const {
-  return this != internal_default_instance() && volume_id_ != nullptr;
+// .opi_api.common.v1.ObjectKey crypto_id = 1;
+inline bool GetCryptoRequest::_internal_has_crypto_id() const {
+  return this != internal_default_instance() && crypto_id_ != nullptr;
 }
-inline bool GetCryptoRequest::has_volume_id() const {
-  return _internal_has_volume_id();
+inline bool GetCryptoRequest::has_crypto_id() const {
+  return _internal_has_crypto_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& GetCryptoRequest::_internal_volume_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = volume_id_;
+inline const ::opi_api::common::v1::ObjectKey& GetCryptoRequest::_internal_crypto_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = crypto_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& GetCryptoRequest::volume_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetCryptoRequest.volume_id)
-  return _internal_volume_id();
+inline const ::opi_api::common::v1::ObjectKey& GetCryptoRequest::crypto_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.GetCryptoRequest.crypto_id)
+  return _internal_crypto_id();
 }
-inline void GetCryptoRequest::unsafe_arena_set_allocated_volume_id(
-    ::opi_api::common::v1::ObjectKey* volume_id) {
+inline void GetCryptoRequest::unsafe_arena_set_allocated_crypto_id(
+    ::opi_api::common::v1::ObjectKey* crypto_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  volume_id_ = volume_id;
-  if (volume_id) {
+  crypto_id_ = crypto_id;
+  if (crypto_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.GetCryptoRequest.volume_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.GetCryptoRequest.crypto_id)
 }
-inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::release_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::release_crypto_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2336,85 +2336,85 @@ inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::release_volume_id() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::unsafe_arena_release_volume_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetCryptoRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::unsafe_arena_release_crypto_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.GetCryptoRequest.crypto_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::_internal_mutable_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::_internal_mutable_crypto_id() {
   
-  if (volume_id_ == nullptr) {
+  if (crypto_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    volume_id_ = p;
+    crypto_id_ = p;
   }
-  return volume_id_;
+  return crypto_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::mutable_volume_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_volume_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetCryptoRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* GetCryptoRequest::mutable_crypto_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.GetCryptoRequest.crypto_id)
   return _msg;
 }
-inline void GetCryptoRequest::set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id) {
+inline void GetCryptoRequest::set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  if (volume_id) {
+  if (crypto_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id));
     if (message_arena != submessage_arena) {
-      volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, volume_id, submessage_arena);
+      crypto_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crypto_id, submessage_arena);
     }
     
   } else {
     
   }
-  volume_id_ = volume_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetCryptoRequest.volume_id)
+  crypto_id_ = crypto_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.GetCryptoRequest.crypto_id)
 }
 
 // -------------------------------------------------------------------
 
 // CryptoStatsRequest
 
-// .opi_api.common.v1.ObjectKey volume_id = 1;
-inline bool CryptoStatsRequest::_internal_has_volume_id() const {
-  return this != internal_default_instance() && volume_id_ != nullptr;
+// .opi_api.common.v1.ObjectKey crypto_id = 1;
+inline bool CryptoStatsRequest::_internal_has_crypto_id() const {
+  return this != internal_default_instance() && crypto_id_ != nullptr;
 }
-inline bool CryptoStatsRequest::has_volume_id() const {
-  return _internal_has_volume_id();
+inline bool CryptoStatsRequest::has_crypto_id() const {
+  return _internal_has_crypto_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& CryptoStatsRequest::_internal_volume_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = volume_id_;
+inline const ::opi_api::common::v1::ObjectKey& CryptoStatsRequest::_internal_crypto_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = crypto_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& CryptoStatsRequest::volume_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CryptoStatsRequest.volume_id)
-  return _internal_volume_id();
+inline const ::opi_api::common::v1::ObjectKey& CryptoStatsRequest::crypto_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CryptoStatsRequest.crypto_id)
+  return _internal_crypto_id();
 }
-inline void CryptoStatsRequest::unsafe_arena_set_allocated_volume_id(
-    ::opi_api::common::v1::ObjectKey* volume_id) {
+inline void CryptoStatsRequest::unsafe_arena_set_allocated_crypto_id(
+    ::opi_api::common::v1::ObjectKey* crypto_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  volume_id_ = volume_id;
-  if (volume_id) {
+  crypto_id_ = crypto_id;
+  if (crypto_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CryptoStatsRequest.volume_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CryptoStatsRequest.crypto_id)
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::release_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::release_crypto_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2426,85 +2426,85 @@ inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::release_volume_id()
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::unsafe_arena_release_volume_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CryptoStatsRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::unsafe_arena_release_crypto_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CryptoStatsRequest.crypto_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = volume_id_;
-  volume_id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::_internal_mutable_volume_id() {
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::_internal_mutable_crypto_id() {
   
-  if (volume_id_ == nullptr) {
+  if (crypto_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    volume_id_ = p;
+    crypto_id_ = p;
   }
-  return volume_id_;
+  return crypto_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::mutable_volume_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_volume_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CryptoStatsRequest.volume_id)
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsRequest::mutable_crypto_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CryptoStatsRequest.crypto_id)
   return _msg;
 }
-inline void CryptoStatsRequest::set_allocated_volume_id(::opi_api::common::v1::ObjectKey* volume_id) {
+inline void CryptoStatsRequest::set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  if (volume_id) {
+  if (crypto_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(volume_id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id));
     if (message_arena != submessage_arena) {
-      volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, volume_id, submessage_arena);
+      crypto_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crypto_id, submessage_arena);
     }
     
   } else {
     
   }
-  volume_id_ = volume_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CryptoStatsRequest.volume_id)
+  crypto_id_ = crypto_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CryptoStatsRequest.crypto_id)
 }
 
 // -------------------------------------------------------------------
 
 // CryptoStatsResponse
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool CryptoStatsResponse::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// .opi_api.common.v1.ObjectKey crypto_id = 1;
+inline bool CryptoStatsResponse::_internal_has_crypto_id() const {
+  return this != internal_default_instance() && crypto_id_ != nullptr;
 }
-inline bool CryptoStatsResponse::has_id() const {
-  return _internal_has_id();
+inline bool CryptoStatsResponse::has_crypto_id() const {
+  return _internal_has_crypto_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& CryptoStatsResponse::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
+inline const ::opi_api::common::v1::ObjectKey& CryptoStatsResponse::_internal_crypto_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = crypto_id_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
       ::opi_api::common::v1::_ObjectKey_default_instance_);
 }
-inline const ::opi_api::common::v1::ObjectKey& CryptoStatsResponse::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CryptoStatsResponse.id)
-  return _internal_id();
+inline const ::opi_api::common::v1::ObjectKey& CryptoStatsResponse::crypto_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CryptoStatsResponse.crypto_id)
+  return _internal_crypto_id();
 }
-inline void CryptoStatsResponse::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
+inline void CryptoStatsResponse::unsafe_arena_set_allocated_crypto_id(
+    ::opi_api::common::v1::ObjectKey* crypto_id) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  id_ = id;
-  if (id) {
+  crypto_id_ = crypto_id;
+  if (crypto_id) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CryptoStatsResponse.id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CryptoStatsResponse.crypto_id)
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::release_id() {
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::release_crypto_id() {
   
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2516,46 +2516,46 @@ inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::release_id() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CryptoStatsResponse.id)
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::unsafe_arena_release_crypto_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CryptoStatsResponse.crypto_id)
   
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
+  ::opi_api::common::v1::ObjectKey* temp = crypto_id_;
+  crypto_id_ = nullptr;
   return temp;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::_internal_mutable_id() {
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::_internal_mutable_crypto_id() {
   
-  if (id_ == nullptr) {
+  if (crypto_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
+    crypto_id_ = p;
   }
-  return id_;
+  return crypto_id_;
 }
-inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CryptoStatsResponse.id)
+inline ::opi_api::common::v1::ObjectKey* CryptoStatsResponse::mutable_crypto_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_crypto_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CryptoStatsResponse.crypto_id)
   return _msg;
 }
-inline void CryptoStatsResponse::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
+inline void CryptoStatsResponse::set_allocated_crypto_id(::opi_api::common::v1::ObjectKey* crypto_id) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id_);
   }
-  if (id) {
+  if (crypto_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crypto_id));
     if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
+      crypto_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crypto_id, submessage_arena);
     }
     
   } else {
     
   }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CryptoStatsResponse.id)
+  crypto_id_ = crypto_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CryptoStatsResponse.crypto_id)
 }
 
 // string stats = 2;

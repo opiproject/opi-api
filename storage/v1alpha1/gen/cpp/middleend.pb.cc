@@ -22,7 +22,7 @@ namespace v1 {
 constexpr Crypto::Crypto(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(nullptr)
+  , crypto_id_(nullptr)
   , volume_id_(nullptr)
   , cipher_(0)
 {}
@@ -49,7 +49,7 @@ struct CreateCryptoRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateCryptoRequestDefaultTypeInternal _CreateCryptoRequest_default_instance_;
 constexpr DeleteCryptoRequest::DeleteCryptoRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : volume_id_(nullptr){}
+  : crypto_id_(nullptr){}
 struct DeleteCryptoRequestDefaultTypeInternal {
   constexpr DeleteCryptoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -99,7 +99,7 @@ struct ListCryptoResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListCryptoResponseDefaultTypeInternal _ListCryptoResponse_default_instance_;
 constexpr GetCryptoRequest::GetCryptoRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : volume_id_(nullptr){}
+  : crypto_id_(nullptr){}
 struct GetCryptoRequestDefaultTypeInternal {
   constexpr GetCryptoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -111,7 +111,7 @@ struct GetCryptoRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetCryptoRequestDefaultTypeInternal _GetCryptoRequest_default_instance_;
 constexpr CryptoStatsRequest::CryptoStatsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : volume_id_(nullptr){}
+  : crypto_id_(nullptr){}
 struct CryptoStatsRequestDefaultTypeInternal {
   constexpr CryptoStatsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -124,7 +124,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CryptoStatsRequestDefaultTypeIn
 constexpr CryptoStatsResponse::CryptoStatsResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : stats_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(nullptr){}
+  , crypto_id_(nullptr){}
 struct CryptoStatsResponseDefaultTypeInternal {
   constexpr CryptoStatsResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -148,7 +148,7 @@ const uint32_t TableStruct_middleend_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::Crypto, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::Crypto, crypto_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::Crypto, volume_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::Crypto, key_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::Crypto, cipher_),
@@ -165,7 +165,7 @@ const uint32_t TableStruct_middleend_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteCryptoRequest, volume_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteCryptoRequest, crypto_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateCryptoRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -195,21 +195,21 @@ const uint32_t TableStruct_middleend_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetCryptoRequest, volume_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::GetCryptoRequest, crypto_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsRequest, volume_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsRequest, crypto_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsResponse, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsResponse, crypto_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CryptoStatsResponse, stats_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -240,45 +240,45 @@ const char descriptor_table_protodef_middleend_2eproto[] PROTOBUF_SECTION_VARIAB
   "\n\017middleend.proto\022\022opi_api.storage.v1\032\017o"
   "picommon.proto\032\020object_key.proto\032\033google"
   "/protobuf/empty.proto\032\034google/api/annota"
-  "tions.proto\"\240\001\n\006Crypto\022(\n\002id\030\001 \001(\0132\034.opi"
-  "_api.common.v1.ObjectKey\022/\n\tvolume_id\030\002 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\022\013\n\003key"
-  "\030\003 \001(\014\022.\n\006cipher\030\004 \001(\0162\036.opi_api.storage"
-  ".v1.CryptoType\"A\n\023CreateCryptoRequest\022*\n"
-  "\006volume\030\001 \001(\0132\032.opi_api.storage.v1.Crypt"
-  "o\"F\n\023DeleteCryptoRequest\022/\n\tvolume_id\030\001 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\"A\n\023Upd"
-  "ateCryptoRequest\022*\n\006volume\030\001 \001(\0132\032.opi_a"
-  "pi.storage.v1.Crypto\":\n\021ListCryptoReques"
-  "t\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t"
-  "\"Z\n\022ListCryptoResponse\022+\n\007volumes\030\001 \003(\0132"
-  "\032.opi_api.storage.v1.Crypto\022\027\n\017next_page"
-  "_token\030\002 \001(\t\"C\n\020GetCryptoRequest\022/\n\tvolu"
-  "me_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe"
-  "y\"E\n\022CryptoStatsRequest\022/\n\tvolume_id\030\001 \001"
-  "(\0132\034.opi_api.common.v1.ObjectKey\"N\n\023Cryp"
-  "toStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.co"
-  "mmon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\246\005\n\020Mid"
-  "dleendService\022p\n\014CreateCrypto\022\'.opi_api."
-  "storage.v1.CreateCryptoRequest\032\032.opi_api"
-  ".storage.v1.Crypto\"\033\202\323\344\223\002\025\"\013/v1/volumes:"
-  "\006volume\022m\n\014DeleteCrypto\022\'.opi_api.storag"
-  "e.v1.DeleteCryptoRequest\032\026.google.protob"
-  "uf.Empty\"\034\202\323\344\223\002\026*\024/v1/volumes/{volume}\022p"
-  "\n\014UpdateCrypto\022\'.opi_api.storage.v1.Upda"
-  "teCryptoRequest\032\032.opi_api.storage.v1.Cry"
-  "pto\"\033\202\323\344\223\002\0252\013/v1/volumes:\006volume\022p\n\nList"
-  "Crypto\022%.opi_api.storage.v1.ListCryptoRe"
-  "quest\032&.opi_api.storage.v1.ListCryptoRes"
-  "ponse\"\023\202\323\344\223\002\r\022\013/v1/volumes\022k\n\tGetCrypto\022"
-  "$.opi_api.storage.v1.GetCryptoRequest\032\032."
-  "opi_api.storage.v1.Crypto\"\034\202\323\344\223\002\026\022\024/v1/v"
-  "olumes/{volume}\022`\n\013CryptoStats\022&.opi_api"
-  ".storage.v1.CryptoStatsRequest\032\'.opi_api"
-  ".storage.v1.CryptoStatsResponse\"\000B]\n\022opi"
-  "_api.storage.v1B\016MiddleendProtoP\001Z5githu"
-  "b.com/opiproject/opi-api/storage/v1alpha"
-  "1/gen/gob\006proto3"
+  "tions.proto\"\247\001\n\006Crypto\022/\n\tcrypto_id\030\001 \001("
+  "\0132\034.opi_api.common.v1.ObjectKey\022/\n\tvolum"
+  "e_id\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey"
+  "\022\013\n\003key\030\003 \001(\014\022.\n\006cipher\030\004 \001(\0162\036.opi_api."
+  "storage.v1.CryptoType\"A\n\023CreateCryptoReq"
+  "uest\022*\n\006volume\030\001 \001(\0132\032.opi_api.storage.v"
+  "1.Crypto\"F\n\023DeleteCryptoRequest\022/\n\tcrypt"
+  "o_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey"
+  "\"A\n\023UpdateCryptoRequest\022*\n\006volume\030\001 \001(\0132"
+  "\032.opi_api.storage.v1.Crypto\":\n\021ListCrypt"
+  "oRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_toke"
+  "n\030\002 \001(\t\"Z\n\022ListCryptoResponse\022+\n\007volumes"
+  "\030\001 \003(\0132\032.opi_api.storage.v1.Crypto\022\027\n\017ne"
+  "xt_page_token\030\002 \001(\t\"C\n\020GetCryptoRequest\022"
+  "/\n\tcrypto_id\030\001 \001(\0132\034.opi_api.common.v1.O"
+  "bjectKey\"E\n\022CryptoStatsRequest\022/\n\tcrypto"
+  "_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\""
+  "U\n\023CryptoStatsResponse\022/\n\tcrypto_id\030\001 \001("
+  "\0132\034.opi_api.common.v1.ObjectKey\022\r\n\005stats"
+  "\030\002 \001(\t2\246\005\n\020MiddleendService\022p\n\014CreateCry"
+  "pto\022\'.opi_api.storage.v1.CreateCryptoReq"
+  "uest\032\032.opi_api.storage.v1.Crypto\"\033\202\323\344\223\002\025"
+  "\"\013/v1/volumes:\006volume\022m\n\014DeleteCrypto\022\'."
+  "opi_api.storage.v1.DeleteCryptoRequest\032\026"
+  ".google.protobuf.Empty\"\034\202\323\344\223\002\026*\024/v1/volu"
+  "mes/{volume}\022p\n\014UpdateCrypto\022\'.opi_api.s"
+  "torage.v1.UpdateCryptoRequest\032\032.opi_api."
+  "storage.v1.Crypto\"\033\202\323\344\223\002\0252\013/v1/volumes:\006"
+  "volume\022p\n\nListCrypto\022%.opi_api.storage.v"
+  "1.ListCryptoRequest\032&.opi_api.storage.v1"
+  ".ListCryptoResponse\"\023\202\323\344\223\002\r\022\013/v1/volumes"
+  "\022k\n\tGetCrypto\022$.opi_api.storage.v1.GetCr"
+  "yptoRequest\032\032.opi_api.storage.v1.Crypto\""
+  "\034\202\323\344\223\002\026\022\024/v1/volumes/{volume}\022`\n\013CryptoS"
+  "tats\022&.opi_api.storage.v1.CryptoStatsReq"
+  "uest\032\'.opi_api.storage.v1.CryptoStatsRes"
+  "ponse\"\000B]\n\022opi_api.storage.v1B\016Middleend"
+  "ProtoP\001Z5github.com/opiproject/opi-api/s"
+  "torage/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_middleend_2eproto_deps[4] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -288,7 +288,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_middleend_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_middleend_2eproto = {
-  false, false, 1656, descriptor_table_protodef_middleend_2eproto, "middleend.proto", 
+  false, false, 1670, descriptor_table_protodef_middleend_2eproto, "middleend.proto", 
   &descriptor_table_middleend_2eproto_once, descriptor_table_middleend_2eproto_deps, 4, 9,
   schemas, file_default_instances, TableStruct_middleend_2eproto::offsets,
   file_level_metadata_middleend_2eproto, file_level_enum_descriptors_middleend_2eproto, file_level_service_descriptors_middleend_2eproto,
@@ -307,23 +307,23 @@ namespace v1 {
 
 class Crypto::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const Crypto* msg);
+  static const ::opi_api::common::v1::ObjectKey& crypto_id(const Crypto* msg);
   static const ::opi_api::common::v1::ObjectKey& volume_id(const Crypto* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-Crypto::_Internal::id(const Crypto* msg) {
-  return *msg->id_;
+Crypto::_Internal::crypto_id(const Crypto* msg) {
+  return *msg->crypto_id_;
 }
 const ::opi_api::common::v1::ObjectKey&
 Crypto::_Internal::volume_id(const Crypto* msg) {
   return *msg->volume_id_;
 }
-void Crypto::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
+void Crypto::clear_crypto_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  id_ = nullptr;
+  crypto_id_ = nullptr;
 }
 void Crypto::clear_volume_id() {
   if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
@@ -351,10 +351,10 @@ Crypto::Crypto(const Crypto& from)
     key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
+  if (from._internal_has_crypto_id()) {
+    crypto_id_ = new ::opi_api::common::v1::ObjectKey(*from.crypto_id_);
   } else {
-    id_ = nullptr;
+    crypto_id_ = nullptr;
   }
   if (from._internal_has_volume_id()) {
     volume_id_ = new ::opi_api::common::v1::ObjectKey(*from.volume_id_);
@@ -371,9 +371,9 @@ key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyI
   key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&crypto_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&cipher_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(cipher_));
+    reinterpret_cast<char*>(&crypto_id_)) + sizeof(cipher_));
 }
 
 Crypto::~Crypto() {
@@ -386,7 +386,7 @@ Crypto::~Crypto() {
 inline void Crypto::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete id_;
+  if (this != internal_default_instance()) delete crypto_id_;
   if (this != internal_default_instance()) delete volume_id_;
 }
 
@@ -407,10 +407,10 @@ void Crypto::Clear() {
   (void) cached_has_bits;
 
   key_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  id_ = nullptr;
+  crypto_id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
     delete volume_id_;
   }
@@ -425,10 +425,10 @@ const char* Crypto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.common.v1.ObjectKey crypto_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -488,12 +488,12 @@ uint8_t* Crypto::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+        1, _Internal::crypto_id(this), target, stream);
   }
 
   // .opi_api.common.v1.ObjectKey volume_id = 2;
@@ -540,11 +540,11 @@ size_t Crypto::ByteSizeLong() const {
         this->_internal_key());
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+        *crypto_id_);
   }
 
   // .opi_api.common.v1.ObjectKey volume_id = 2;
@@ -585,8 +585,8 @@ void Crypto::MergeFrom(const Crypto& from) {
   if (!from._internal_key().empty()) {
     _internal_set_key(from._internal_key());
   }
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (from._internal_has_crypto_id()) {
+    _internal_mutable_crypto_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_crypto_id());
   }
   if (from._internal_has_volume_id()) {
     _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
@@ -621,9 +621,9 @@ void Crypto::InternalSwap(Crypto* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Crypto, cipher_)
       + sizeof(Crypto::cipher_)
-      - PROTOBUF_FIELD_OFFSET(Crypto, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(Crypto, crypto_id_)>(
+          reinterpret_cast<char*>(&crypto_id_),
+          reinterpret_cast<char*>(&other->crypto_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Crypto::GetMetadata() const {
@@ -831,18 +831,18 @@ void CreateCryptoRequest::InternalSwap(CreateCryptoRequest* other) {
 
 class DeleteCryptoRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& volume_id(const DeleteCryptoRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& crypto_id(const DeleteCryptoRequest* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-DeleteCryptoRequest::_Internal::volume_id(const DeleteCryptoRequest* msg) {
-  return *msg->volume_id_;
+DeleteCryptoRequest::_Internal::crypto_id(const DeleteCryptoRequest* msg) {
+  return *msg->crypto_id_;
 }
-void DeleteCryptoRequest::clear_volume_id() {
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+void DeleteCryptoRequest::clear_crypto_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
 }
 DeleteCryptoRequest::DeleteCryptoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -856,16 +856,16 @@ DeleteCryptoRequest::DeleteCryptoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DeleteCryptoRequest::DeleteCryptoRequest(const DeleteCryptoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_volume_id()) {
-    volume_id_ = new ::opi_api::common::v1::ObjectKey(*from.volume_id_);
+  if (from._internal_has_crypto_id()) {
+    crypto_id_ = new ::opi_api::common::v1::ObjectKey(*from.crypto_id_);
   } else {
-    volume_id_ = nullptr;
+    crypto_id_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteCryptoRequest)
 }
 
 inline void DeleteCryptoRequest::SharedCtor() {
-volume_id_ = nullptr;
+crypto_id_ = nullptr;
 }
 
 DeleteCryptoRequest::~DeleteCryptoRequest() {
@@ -877,7 +877,7 @@ DeleteCryptoRequest::~DeleteCryptoRequest() {
 
 inline void DeleteCryptoRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete volume_id_;
+  if (this != internal_default_instance()) delete crypto_id_;
 }
 
 void DeleteCryptoRequest::ArenaDtor(void* object) {
@@ -896,10 +896,10 @@ void DeleteCryptoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -909,10 +909,10 @@ const char* DeleteCryptoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey volume_id = 1;
+      // .opi_api.common.v1.ObjectKey crypto_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_volume_id(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -946,12 +946,12 @@ uint8_t* DeleteCryptoRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::volume_id(this), target, stream);
+        1, _Internal::crypto_id(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -970,11 +970,11 @@ size_t DeleteCryptoRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *volume_id_);
+        *crypto_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -999,8 +999,8 @@ void DeleteCryptoRequest::MergeFrom(const DeleteCryptoRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_volume_id()) {
-    _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
+  if (from._internal_has_crypto_id()) {
+    _internal_mutable_crypto_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_crypto_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1019,7 +1019,7 @@ bool DeleteCryptoRequest::IsInitialized() const {
 void DeleteCryptoRequest::InternalSwap(DeleteCryptoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(volume_id_, other->volume_id_);
+  swap(crypto_id_, other->crypto_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteCryptoRequest::GetMetadata() const {
@@ -1692,18 +1692,18 @@ void ListCryptoResponse::InternalSwap(ListCryptoResponse* other) {
 
 class GetCryptoRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& volume_id(const GetCryptoRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& crypto_id(const GetCryptoRequest* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-GetCryptoRequest::_Internal::volume_id(const GetCryptoRequest* msg) {
-  return *msg->volume_id_;
+GetCryptoRequest::_Internal::crypto_id(const GetCryptoRequest* msg) {
+  return *msg->crypto_id_;
 }
-void GetCryptoRequest::clear_volume_id() {
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+void GetCryptoRequest::clear_crypto_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
 }
 GetCryptoRequest::GetCryptoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1717,16 +1717,16 @@ GetCryptoRequest::GetCryptoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GetCryptoRequest::GetCryptoRequest(const GetCryptoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_volume_id()) {
-    volume_id_ = new ::opi_api::common::v1::ObjectKey(*from.volume_id_);
+  if (from._internal_has_crypto_id()) {
+    crypto_id_ = new ::opi_api::common::v1::ObjectKey(*from.crypto_id_);
   } else {
-    volume_id_ = nullptr;
+    crypto_id_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.GetCryptoRequest)
 }
 
 inline void GetCryptoRequest::SharedCtor() {
-volume_id_ = nullptr;
+crypto_id_ = nullptr;
 }
 
 GetCryptoRequest::~GetCryptoRequest() {
@@ -1738,7 +1738,7 @@ GetCryptoRequest::~GetCryptoRequest() {
 
 inline void GetCryptoRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete volume_id_;
+  if (this != internal_default_instance()) delete crypto_id_;
 }
 
 void GetCryptoRequest::ArenaDtor(void* object) {
@@ -1757,10 +1757,10 @@ void GetCryptoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1770,10 +1770,10 @@ const char* GetCryptoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey volume_id = 1;
+      // .opi_api.common.v1.ObjectKey crypto_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_volume_id(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1807,12 +1807,12 @@ uint8_t* GetCryptoRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::volume_id(this), target, stream);
+        1, _Internal::crypto_id(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1831,11 +1831,11 @@ size_t GetCryptoRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *volume_id_);
+        *crypto_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1860,8 +1860,8 @@ void GetCryptoRequest::MergeFrom(const GetCryptoRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_volume_id()) {
-    _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
+  if (from._internal_has_crypto_id()) {
+    _internal_mutable_crypto_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_crypto_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1880,7 +1880,7 @@ bool GetCryptoRequest::IsInitialized() const {
 void GetCryptoRequest::InternalSwap(GetCryptoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(volume_id_, other->volume_id_);
+  swap(crypto_id_, other->crypto_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetCryptoRequest::GetMetadata() const {
@@ -1893,18 +1893,18 @@ void GetCryptoRequest::InternalSwap(GetCryptoRequest* other) {
 
 class CryptoStatsRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& volume_id(const CryptoStatsRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& crypto_id(const CryptoStatsRequest* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-CryptoStatsRequest::_Internal::volume_id(const CryptoStatsRequest* msg) {
-  return *msg->volume_id_;
+CryptoStatsRequest::_Internal::crypto_id(const CryptoStatsRequest* msg) {
+  return *msg->crypto_id_;
 }
-void CryptoStatsRequest::clear_volume_id() {
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+void CryptoStatsRequest::clear_crypto_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
 }
 CryptoStatsRequest::CryptoStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1918,16 +1918,16 @@ CryptoStatsRequest::CryptoStatsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CryptoStatsRequest::CryptoStatsRequest(const CryptoStatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_volume_id()) {
-    volume_id_ = new ::opi_api::common::v1::ObjectKey(*from.volume_id_);
+  if (from._internal_has_crypto_id()) {
+    crypto_id_ = new ::opi_api::common::v1::ObjectKey(*from.crypto_id_);
   } else {
-    volume_id_ = nullptr;
+    crypto_id_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CryptoStatsRequest)
 }
 
 inline void CryptoStatsRequest::SharedCtor() {
-volume_id_ = nullptr;
+crypto_id_ = nullptr;
 }
 
 CryptoStatsRequest::~CryptoStatsRequest() {
@@ -1939,7 +1939,7 @@ CryptoStatsRequest::~CryptoStatsRequest() {
 
 inline void CryptoStatsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete volume_id_;
+  if (this != internal_default_instance()) delete crypto_id_;
 }
 
 void CryptoStatsRequest::ArenaDtor(void* object) {
@@ -1958,10 +1958,10 @@ void CryptoStatsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
-    delete volume_id_;
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  volume_id_ = nullptr;
+  crypto_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1971,10 +1971,10 @@ const char* CryptoStatsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey volume_id = 1;
+      // .opi_api.common.v1.ObjectKey crypto_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_volume_id(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2008,12 +2008,12 @@ uint8_t* CryptoStatsRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::volume_id(this), target, stream);
+        1, _Internal::crypto_id(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2032,11 +2032,11 @@ size_t CryptoStatsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey volume_id = 1;
-  if (this->_internal_has_volume_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *volume_id_);
+        *crypto_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2061,8 +2061,8 @@ void CryptoStatsRequest::MergeFrom(const CryptoStatsRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_volume_id()) {
-    _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
+  if (from._internal_has_crypto_id()) {
+    _internal_mutable_crypto_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_crypto_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2081,7 +2081,7 @@ bool CryptoStatsRequest::IsInitialized() const {
 void CryptoStatsRequest::InternalSwap(CryptoStatsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(volume_id_, other->volume_id_);
+  swap(crypto_id_, other->crypto_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CryptoStatsRequest::GetMetadata() const {
@@ -2094,18 +2094,18 @@ void CryptoStatsRequest::InternalSwap(CryptoStatsRequest* other) {
 
 class CryptoStatsResponse::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const CryptoStatsResponse* msg);
+  static const ::opi_api::common::v1::ObjectKey& crypto_id(const CryptoStatsResponse* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
-CryptoStatsResponse::_Internal::id(const CryptoStatsResponse* msg) {
-  return *msg->id_;
+CryptoStatsResponse::_Internal::crypto_id(const CryptoStatsResponse* msg) {
+  return *msg->crypto_id_;
 }
-void CryptoStatsResponse::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
+void CryptoStatsResponse::clear_crypto_id() {
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  id_ = nullptr;
+  crypto_id_ = nullptr;
 }
 CryptoStatsResponse::CryptoStatsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2127,10 +2127,10 @@ CryptoStatsResponse::CryptoStatsResponse(const CryptoStatsResponse& from)
     stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_stats(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
+  if (from._internal_has_crypto_id()) {
+    crypto_id_ = new ::opi_api::common::v1::ObjectKey(*from.crypto_id_);
   } else {
-    id_ = nullptr;
+    crypto_id_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.CryptoStatsResponse)
 }
@@ -2140,7 +2140,7 @@ stats_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-id_ = nullptr;
+crypto_id_ = nullptr;
 }
 
 CryptoStatsResponse::~CryptoStatsResponse() {
@@ -2153,7 +2153,7 @@ CryptoStatsResponse::~CryptoStatsResponse() {
 inline void CryptoStatsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   stats_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete id_;
+  if (this != internal_default_instance()) delete crypto_id_;
 }
 
 void CryptoStatsResponse::ArenaDtor(void* object) {
@@ -2173,10 +2173,10 @@ void CryptoStatsResponse::Clear() {
   (void) cached_has_bits;
 
   stats_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
+  if (GetArenaForAllocation() == nullptr && crypto_id_ != nullptr) {
+    delete crypto_id_;
   }
-  id_ = nullptr;
+  crypto_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2186,10 +2186,10 @@ const char* CryptoStatsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.common.v1.ObjectKey crypto_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_crypto_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2233,12 +2233,12 @@ uint8_t* CryptoStatsResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+        1, _Internal::crypto_id(this), target, stream);
   }
 
   // string stats = 2;
@@ -2274,11 +2274,11 @@ size_t CryptoStatsResponse::ByteSizeLong() const {
         this->_internal_stats());
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // .opi_api.common.v1.ObjectKey crypto_id = 1;
+  if (this->_internal_has_crypto_id()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+        *crypto_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2306,8 +2306,8 @@ void CryptoStatsResponse::MergeFrom(const CryptoStatsResponse& from) {
   if (!from._internal_stats().empty()) {
     _internal_set_stats(from._internal_stats());
   }
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (from._internal_has_crypto_id()) {
+    _internal_mutable_crypto_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_crypto_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2333,7 +2333,7 @@ void CryptoStatsResponse::InternalSwap(CryptoStatsResponse* other) {
       &stats_, lhs_arena,
       &other->stats_, rhs_arena
   );
-  swap(id_, other->id_);
+  swap(crypto_id_, other->crypto_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CryptoStatsResponse::GetMetadata() const {

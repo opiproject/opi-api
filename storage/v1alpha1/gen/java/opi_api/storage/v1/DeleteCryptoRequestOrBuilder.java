@@ -8,17 +8,17 @@ public interface DeleteCryptoRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return Whether the volumeId field is set.
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * @return Whether the cryptoId field is set.
    */
-  boolean hasVolumeId();
+  boolean hasCryptoId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
-   * @return The volumeId.
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * @return The cryptoId.
    */
-  opi_api.common.v1.ObjectKey getVolumeId();
+  opi_api.common.v1.ObjectKey getCryptoId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
+  opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder();
 }

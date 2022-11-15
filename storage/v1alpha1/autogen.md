@@ -2099,7 +2099,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this volume |
 | key | [bytes](#bytes) |  | Key to be used for encryption |
 | cipher | [CryptoType](#opi_api-storage-v1-CryptoType) |  | Cipher to use |
@@ -2117,7 +2117,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2132,7 +2132,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -2148,7 +2148,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2163,7 +2163,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 

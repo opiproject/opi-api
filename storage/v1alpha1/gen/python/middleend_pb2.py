@@ -18,7 +18,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xa0\x01\n\x06\x43rypto\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0b\n\x03key\x18\x03 \x01(\x0c\x12.\n\x06\x63ipher\x18\x04 \x01(\x0e\x32\x1e.opi_api.storage.v1.CryptoType\"A\n\x13\x43reateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\"F\n\x13\x44\x65leteCryptoRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"A\n\x13UpdateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\":\n\x11ListCryptoRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"Z\n\x12ListCryptoResponse\x12+\n\x07volumes\x18\x01 \x03(\x0b\x32\x1a.opi_api.storage.v1.Crypto\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"C\n\x10GetCryptoRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"E\n\x12\x43ryptoStatsRequest\x12/\n\tvolume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"N\n\x13\x43ryptoStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xa6\x05\n\x10MiddleendService\x12p\n\x0c\x43reateCrypto\x12\'.opi_api.storage.v1.CreateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/volumes:\x06volume\x12m\n\x0c\x44\x65leteCrypto\x12\'.opi_api.storage.v1.DeleteCryptoRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/volumes/{volume}\x12p\n\x0cUpdateCrypto\x12\'.opi_api.storage.v1.UpdateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\x32\x0b/v1/volumes:\x06volume\x12p\n\nListCrypto\x12%.opi_api.storage.v1.ListCryptoRequest\x1a&.opi_api.storage.v1.ListCryptoResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/volumes\x12k\n\tGetCrypto\x12$.opi_api.storage.v1.GetCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/volumes/{volume}\x12`\n\x0b\x43ryptoStats\x12&.opi_api.storage.v1.CryptoStatsRequest\x1a\'.opi_api.storage.v1.CryptoStatsResponse\"\x00\x42]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xa7\x01\n\x06\x43rypto\x12/\n\tcrypto_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0b\n\x03key\x18\x03 \x01(\x0c\x12.\n\x06\x63ipher\x18\x04 \x01(\x0e\x32\x1e.opi_api.storage.v1.CryptoType\"A\n\x13\x43reateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\"F\n\x13\x44\x65leteCryptoRequest\x12/\n\tcrypto_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"A\n\x13UpdateCryptoRequest\x12*\n\x06volume\x18\x01 \x01(\x0b\x32\x1a.opi_api.storage.v1.Crypto\":\n\x11ListCryptoRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"Z\n\x12ListCryptoResponse\x12+\n\x07volumes\x18\x01 \x03(\x0b\x32\x1a.opi_api.storage.v1.Crypto\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"C\n\x10GetCryptoRequest\x12/\n\tcrypto_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"E\n\x12\x43ryptoStatsRequest\x12/\n\tcrypto_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"U\n\x13\x43ryptoStatsResponse\x12/\n\tcrypto_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xa6\x05\n\x10MiddleendService\x12p\n\x0c\x43reateCrypto\x12\'.opi_api.storage.v1.CreateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/volumes:\x06volume\x12m\n\x0c\x44\x65leteCrypto\x12\'.opi_api.storage.v1.DeleteCryptoRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/volumes/{volume}\x12p\n\x0cUpdateCrypto\x12\'.opi_api.storage.v1.UpdateCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1b\x82\xd3\xe4\x93\x02\x15\x32\x0b/v1/volumes:\x06volume\x12p\n\nListCrypto\x12%.opi_api.storage.v1.ListCryptoRequest\x1a&.opi_api.storage.v1.ListCryptoResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/volumes\x12k\n\tGetCrypto\x12$.opi_api.storage.v1.GetCryptoRequest\x1a\x1a.opi_api.storage.v1.Crypto\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/volumes/{volume}\x12`\n\x0b\x43ryptoStats\x12&.opi_api.storage.v1.CryptoStatsRequest\x1a\'.opi_api.storage.v1.CryptoStatsResponse\"\x00\x42]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -110,23 +110,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _MIDDLEENDSERVICE.methods_by_name['GetCrypto']._options = None
   _MIDDLEENDSERVICE.methods_by_name['GetCrypto']._serialized_options = b'\202\323\344\223\002\026\022\024/v1/volumes/{volume}'
   _CRYPTO._serialized_start=134
-  _CRYPTO._serialized_end=294
-  _CREATECRYPTOREQUEST._serialized_start=296
-  _CREATECRYPTOREQUEST._serialized_end=361
-  _DELETECRYPTOREQUEST._serialized_start=363
-  _DELETECRYPTOREQUEST._serialized_end=433
-  _UPDATECRYPTOREQUEST._serialized_start=435
-  _UPDATECRYPTOREQUEST._serialized_end=500
-  _LISTCRYPTOREQUEST._serialized_start=502
-  _LISTCRYPTOREQUEST._serialized_end=560
-  _LISTCRYPTORESPONSE._serialized_start=562
-  _LISTCRYPTORESPONSE._serialized_end=652
-  _GETCRYPTOREQUEST._serialized_start=654
-  _GETCRYPTOREQUEST._serialized_end=721
-  _CRYPTOSTATSREQUEST._serialized_start=723
-  _CRYPTOSTATSREQUEST._serialized_end=792
-  _CRYPTOSTATSRESPONSE._serialized_start=794
-  _CRYPTOSTATSRESPONSE._serialized_end=872
-  _MIDDLEENDSERVICE._serialized_start=875
-  _MIDDLEENDSERVICE._serialized_end=1553
+  _CRYPTO._serialized_end=301
+  _CREATECRYPTOREQUEST._serialized_start=303
+  _CREATECRYPTOREQUEST._serialized_end=368
+  _DELETECRYPTOREQUEST._serialized_start=370
+  _DELETECRYPTOREQUEST._serialized_end=440
+  _UPDATECRYPTOREQUEST._serialized_start=442
+  _UPDATECRYPTOREQUEST._serialized_end=507
+  _LISTCRYPTOREQUEST._serialized_start=509
+  _LISTCRYPTOREQUEST._serialized_end=567
+  _LISTCRYPTORESPONSE._serialized_start=569
+  _LISTCRYPTORESPONSE._serialized_end=659
+  _GETCRYPTOREQUEST._serialized_start=661
+  _GETCRYPTOREQUEST._serialized_end=728
+  _CRYPTOSTATSREQUEST._serialized_start=730
+  _CRYPTOSTATSREQUEST._serialized_end=799
+  _CRYPTOSTATSRESPONSE._serialized_start=801
+  _CRYPTOSTATSRESPONSE._serialized_end=886
+  _MIDDLEENDSERVICE._serialized_start=889
+  _MIDDLEENDSERVICE._serialized_end=1567
 # @@protoc_insertion_point(module_scope)

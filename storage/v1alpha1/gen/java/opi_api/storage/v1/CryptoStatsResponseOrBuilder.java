@@ -8,19 +8,19 @@ public interface CryptoStatsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * @return Whether the cryptoId field is set.
    */
-  boolean hasId();
+  boolean hasCryptoId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * @return The cryptoId.
    */
-  opi_api.common.v1.ObjectKey getId();
+  opi_api.common.v1.ObjectKey getCryptoId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder();
 
   /**
    * <code>string stats = 2;</code>

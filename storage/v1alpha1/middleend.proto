@@ -47,7 +47,7 @@ service MiddleendService {
 }
 
 message Crypto {
-    common.v1.ObjectKey id = 1;
+    common.v1.ObjectKey crypto_id = 1;
 
     // The back/middle-end volume to back this volume
     common.v1.ObjectKey volume_id = 2;
@@ -65,7 +65,7 @@ message CreateCryptoRequest {
 }
 
 message DeleteCryptoRequest {
-    common.v1.ObjectKey volume_id = 1;
+    common.v1.ObjectKey crypto_id = 1;
 }
 
 message UpdateCryptoRequest {
@@ -83,14 +83,14 @@ message ListCryptoResponse {
 }
 
 message GetCryptoRequest {
-    common.v1.ObjectKey volume_id = 1;
+    common.v1.ObjectKey crypto_id = 1;
 }
 
 message CryptoStatsRequest {
-    common.v1.ObjectKey volume_id = 1;
+    common.v1.ObjectKey crypto_id = 1;
 }
 
 message CryptoStatsResponse {
-    common.v1.ObjectKey id = 1;
+    common.v1.ObjectKey crypto_id = 1;
     string stats = 2;
 }
