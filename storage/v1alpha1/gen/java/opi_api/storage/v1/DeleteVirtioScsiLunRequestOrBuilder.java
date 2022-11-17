@@ -36,4 +36,19 @@ public interface DeleteVirtioScsiLunRequestOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey lun_id = 2;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getLunIdOrBuilder();
+
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   * @return Whether the txnId field is set.
+   */
+  boolean hasTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   * @return The txnId.
+   */
+  opi_api.common.v1.ObjectKey getTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder();
 }

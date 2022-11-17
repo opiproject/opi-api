@@ -36,7 +36,8 @@ struct NullDebugDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugDefaultTypeInternal _NullDebug_default_instance_;
 constexpr NullDebugCreateRequest::NullDebugCreateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : device_(nullptr){}
+  : device_(nullptr)
+  , txn_id_(nullptr){}
 struct NullDebugCreateRequestDefaultTypeInternal {
   constexpr NullDebugCreateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -48,7 +49,8 @@ struct NullDebugCreateRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugCreateRequestDefaultTypeInternal _NullDebugCreateRequest_default_instance_;
 constexpr NullDebugDeleteRequest::NullDebugDeleteRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : handle_(nullptr){}
+  : handle_(nullptr)
+  , txn_id_(nullptr){}
 struct NullDebugDeleteRequestDefaultTypeInternal {
   constexpr NullDebugDeleteRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -60,7 +62,8 @@ struct NullDebugDeleteRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NullDebugDeleteRequestDefaultTypeInternal _NullDebugDeleteRequest_default_instance_;
 constexpr NullDebugUpdateRequest::NullDebugUpdateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : device_(nullptr){}
+  : device_(nullptr)
+  , txn_id_(nullptr){}
 struct NullDebugUpdateRequestDefaultTypeInternal {
   constexpr NullDebugUpdateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -155,6 +158,7 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugCreateRequest, device_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugCreateRequest, txn_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugDeleteRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -162,6 +166,7 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugDeleteRequest, handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugDeleteRequest, txn_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugUpdateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -169,6 +174,7 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugUpdateRequest, device_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugUpdateRequest, txn_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NullDebugListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -208,13 +214,13 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NullDebug)},
   { 10, -1, -1, sizeof(::opi_api::storage::v1::NullDebugCreateRequest)},
-  { 17, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteRequest)},
-  { 24, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateRequest)},
-  { 31, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListRequest)},
-  { 37, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListResponse)},
-  { 44, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetRequest)},
-  { 51, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
-  { 58, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
+  { 18, -1, -1, sizeof(::opi_api::storage::v1::NullDebugDeleteRequest)},
+  { 26, -1, -1, sizeof(::opi_api::storage::v1::NullDebugUpdateRequest)},
+  { 34, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListRequest)},
+  { 40, -1, -1, sizeof(::opi_api::storage::v1::NullDebugListResponse)},
+  { 47, -1, -1, sizeof(::opi_api::storage::v1::NullDebugGetRequest)},
+  { 54, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
+  { 61, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -236,38 +242,41 @@ const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_V
   "dle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022"
   "\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001("
   "\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.common.v1.Uuid"
-  "\"G\n\026NullDebugCreateRequest\022-\n\006device\030\001 \001"
-  "(\0132\035.opi_api.storage.v1.NullDebug\"F\n\026Nul"
-  "lDebugDeleteRequest\022,\n\006handle\030\001 \001(\0132\034.op"
-  "i_api.common.v1.ObjectKey\"G\n\026NullDebugUp"
-  "dateRequest\022-\n\006device\030\001 \001(\0132\035.opi_api.st"
-  "orage.v1.NullDebug\"\026\n\024NullDebugListReque"
-  "st\"F\n\025NullDebugListResponse\022-\n\006device\030\001 "
-  "\003(\0132\035.opi_api.storage.v1.NullDebug\"C\n\023Nu"
-  "llDebugGetRequest\022,\n\006handle\030\001 \001(\0132\034.opi_"
-  "api.common.v1.ObjectKey\"E\n\025NullDebugStat"
-  "sRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.commo"
-  "n.v1.ObjectKey\"U\n\026NullDebugStatsResponse"
-  "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj"
-  "ectKey\022\r\n\005stats\030\002 \001(\t2\330\004\n\020NullDebugServi"
-  "ce\022^\n\017NullDebugCreate\022*.opi_api.storage."
-  "v1.NullDebugCreateRequest\032\035.opi_api.stor"
-  "age.v1.NullDebug\"\000\022W\n\017NullDebugDelete\022*."
-  "opi_api.storage.v1.NullDebugDeleteReques"
-  "t\032\026.google.protobuf.Empty\"\000\022^\n\017NullDebug"
-  "Update\022*.opi_api.storage.v1.NullDebugUpd"
-  "ateRequest\032\035.opi_api.storage.v1.NullDebu"
-  "g\"\000\022f\n\rNullDebugList\022(.opi_api.storage.v"
-  "1.NullDebugListRequest\032).opi_api.storage"
-  ".v1.NullDebugListResponse\"\000\022X\n\014NullDebug"
-  "Get\022\'.opi_api.storage.v1.NullDebugGetReq"
-  "uest\032\035.opi_api.storage.v1.NullDebug\"\000\022i\n"
-  "\016NullDebugStats\022).opi_api.storage.v1.Nul"
-  "lDebugStatsRequest\032*.opi_api.storage.v1."
-  "NullDebugStatsResponse\"\000B_\n\022opi_api.stor"
-  "age.v1B\020BackendNullProtoP\001Z5github.com/o"
-  "piproject/opi-api/storage/v1alpha1/gen/g"
-  "ob\006proto3"
+  "\"u\n\026NullDebugCreateRequest\022-\n\006device\030\001 \001"
+  "(\0132\035.opi_api.storage.v1.NullDebug\022,\n\006txn"
+  "_id\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey\""
+  "t\n\026NullDebugDeleteRequest\022,\n\006handle\030\001 \001("
+  "\0132\034.opi_api.common.v1.ObjectKey\022,\n\006txn_i"
+  "d\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey\"u\n"
+  "\026NullDebugUpdateRequest\022-\n\006device\030\001 \001(\0132"
+  "\035.opi_api.storage.v1.NullDebug\022,\n\006txn_id"
+  "\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey\"\026\n\024"
+  "NullDebugListRequest\"F\n\025NullDebugListRes"
+  "ponse\022-\n\006device\030\001 \003(\0132\035.opi_api.storage."
+  "v1.NullDebug\"C\n\023NullDebugGetRequest\022,\n\006h"
+  "andle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe"
+  "y\"E\n\025NullDebugStatsRequest\022,\n\006handle\030\001 \001"
+  "(\0132\034.opi_api.common.v1.ObjectKey\"U\n\026Null"
+  "DebugStatsResponse\022,\n\006handle\030\001 \001(\0132\034.opi"
+  "_api.common.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2"
+  "\330\004\n\020NullDebugService\022^\n\017NullDebugCreate\022"
+  "*.opi_api.storage.v1.NullDebugCreateRequ"
+  "est\032\035.opi_api.storage.v1.NullDebug\"\000\022W\n\017"
+  "NullDebugDelete\022*.opi_api.storage.v1.Nul"
+  "lDebugDeleteRequest\032\026.google.protobuf.Em"
+  "pty\"\000\022^\n\017NullDebugUpdate\022*.opi_api.stora"
+  "ge.v1.NullDebugUpdateRequest\032\035.opi_api.s"
+  "torage.v1.NullDebug\"\000\022f\n\rNullDebugList\022("
+  ".opi_api.storage.v1.NullDebugListRequest"
+  "\032).opi_api.storage.v1.NullDebugListRespo"
+  "nse\"\000\022X\n\014NullDebugGet\022\'.opi_api.storage."
+  "v1.NullDebugGetRequest\032\035.opi_api.storage"
+  ".v1.NullDebug\"\000\022i\n\016NullDebugStats\022).opi_"
+  "api.storage.v1.NullDebugStatsRequest\032*.o"
+  "pi_api.storage.v1.NullDebugStatsResponse"
+  "\"\000B_\n\022opi_api.storage.v1B\020BackendNullPro"
+  "toP\001Z5github.com/opiproject/opi-api/stor"
+  "age/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -276,7 +285,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 1489, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  false, false, 1627, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
   &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 3, 9,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,
@@ -602,11 +611,22 @@ void NullDebug::InternalSwap(NullDebug* other) {
 class NullDebugCreateRequest::_Internal {
  public:
   static const ::opi_api::storage::v1::NullDebug& device(const NullDebugCreateRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& txn_id(const NullDebugCreateRequest* msg);
 };
 
 const ::opi_api::storage::v1::NullDebug&
 NullDebugCreateRequest::_Internal::device(const NullDebugCreateRequest* msg) {
   return *msg->device_;
+}
+const ::opi_api::common::v1::ObjectKey&
+NullDebugCreateRequest::_Internal::txn_id(const NullDebugCreateRequest* msg) {
+  return *msg->txn_id_;
+}
+void NullDebugCreateRequest::clear_txn_id() {
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
 }
 NullDebugCreateRequest::NullDebugCreateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -625,11 +645,19 @@ NullDebugCreateRequest::NullDebugCreateRequest(const NullDebugCreateRequest& fro
   } else {
     device_ = nullptr;
   }
+  if (from._internal_has_txn_id()) {
+    txn_id_ = new ::opi_api::common::v1::ObjectKey(*from.txn_id_);
+  } else {
+    txn_id_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebugCreateRequest)
 }
 
 inline void NullDebugCreateRequest::SharedCtor() {
-device_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&device_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&txn_id_) -
+    reinterpret_cast<char*>(&device_)) + sizeof(txn_id_));
 }
 
 NullDebugCreateRequest::~NullDebugCreateRequest() {
@@ -642,6 +670,7 @@ NullDebugCreateRequest::~NullDebugCreateRequest() {
 inline void NullDebugCreateRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete device_;
+  if (this != internal_default_instance()) delete txn_id_;
 }
 
 void NullDebugCreateRequest::ArenaDtor(void* object) {
@@ -664,6 +693,10 @@ void NullDebugCreateRequest::Clear() {
     delete device_;
   }
   device_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -677,6 +710,14 @@ const char* NullDebugCreateRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.ObjectKey txn_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_txn_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -718,6 +759,14 @@ uint8_t* NullDebugCreateRequest::_InternalSerialize(
         1, _Internal::device(this), target, stream);
   }
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::txn_id(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -739,6 +788,13 @@ size_t NullDebugCreateRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *device_);
+  }
+
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *txn_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -766,6 +822,9 @@ void NullDebugCreateRequest::MergeFrom(const NullDebugCreateRequest& from) {
   if (from._internal_has_device()) {
     _internal_mutable_device()->::opi_api::storage::v1::NullDebug::MergeFrom(from._internal_device());
   }
+  if (from._internal_has_txn_id()) {
+    _internal_mutable_txn_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_txn_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -783,7 +842,12 @@ bool NullDebugCreateRequest::IsInitialized() const {
 void NullDebugCreateRequest::InternalSwap(NullDebugCreateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(device_, other->device_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NullDebugCreateRequest, txn_id_)
+      + sizeof(NullDebugCreateRequest::txn_id_)
+      - PROTOBUF_FIELD_OFFSET(NullDebugCreateRequest, device_)>(
+          reinterpret_cast<char*>(&device_),
+          reinterpret_cast<char*>(&other->device_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NullDebugCreateRequest::GetMetadata() const {
@@ -797,17 +861,28 @@ void NullDebugCreateRequest::InternalSwap(NullDebugCreateRequest* other) {
 class NullDebugDeleteRequest::_Internal {
  public:
   static const ::opi_api::common::v1::ObjectKey& handle(const NullDebugDeleteRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& txn_id(const NullDebugDeleteRequest* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
 NullDebugDeleteRequest::_Internal::handle(const NullDebugDeleteRequest* msg) {
   return *msg->handle_;
 }
+const ::opi_api::common::v1::ObjectKey&
+NullDebugDeleteRequest::_Internal::txn_id(const NullDebugDeleteRequest* msg) {
+  return *msg->txn_id_;
+}
 void NullDebugDeleteRequest::clear_handle() {
   if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
     delete handle_;
   }
   handle_ = nullptr;
+}
+void NullDebugDeleteRequest::clear_txn_id() {
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
 }
 NullDebugDeleteRequest::NullDebugDeleteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -826,11 +901,19 @@ NullDebugDeleteRequest::NullDebugDeleteRequest(const NullDebugDeleteRequest& fro
   } else {
     handle_ = nullptr;
   }
+  if (from._internal_has_txn_id()) {
+    txn_id_ = new ::opi_api::common::v1::ObjectKey(*from.txn_id_);
+  } else {
+    txn_id_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebugDeleteRequest)
 }
 
 inline void NullDebugDeleteRequest::SharedCtor() {
-handle_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&handle_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&txn_id_) -
+    reinterpret_cast<char*>(&handle_)) + sizeof(txn_id_));
 }
 
 NullDebugDeleteRequest::~NullDebugDeleteRequest() {
@@ -843,6 +926,7 @@ NullDebugDeleteRequest::~NullDebugDeleteRequest() {
 inline void NullDebugDeleteRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete handle_;
+  if (this != internal_default_instance()) delete txn_id_;
 }
 
 void NullDebugDeleteRequest::ArenaDtor(void* object) {
@@ -865,6 +949,10 @@ void NullDebugDeleteRequest::Clear() {
     delete handle_;
   }
   handle_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -878,6 +966,14 @@ const char* NullDebugDeleteRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_handle(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.ObjectKey txn_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_txn_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -919,6 +1015,14 @@ uint8_t* NullDebugDeleteRequest::_InternalSerialize(
         1, _Internal::handle(this), target, stream);
   }
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::txn_id(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -940,6 +1044,13 @@ size_t NullDebugDeleteRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *handle_);
+  }
+
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *txn_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -967,6 +1078,9 @@ void NullDebugDeleteRequest::MergeFrom(const NullDebugDeleteRequest& from) {
   if (from._internal_has_handle()) {
     _internal_mutable_handle()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_handle());
   }
+  if (from._internal_has_txn_id()) {
+    _internal_mutable_txn_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_txn_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -984,7 +1098,12 @@ bool NullDebugDeleteRequest::IsInitialized() const {
 void NullDebugDeleteRequest::InternalSwap(NullDebugDeleteRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(handle_, other->handle_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NullDebugDeleteRequest, txn_id_)
+      + sizeof(NullDebugDeleteRequest::txn_id_)
+      - PROTOBUF_FIELD_OFFSET(NullDebugDeleteRequest, handle_)>(
+          reinterpret_cast<char*>(&handle_),
+          reinterpret_cast<char*>(&other->handle_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NullDebugDeleteRequest::GetMetadata() const {
@@ -998,11 +1117,22 @@ void NullDebugDeleteRequest::InternalSwap(NullDebugDeleteRequest* other) {
 class NullDebugUpdateRequest::_Internal {
  public:
   static const ::opi_api::storage::v1::NullDebug& device(const NullDebugUpdateRequest* msg);
+  static const ::opi_api::common::v1::ObjectKey& txn_id(const NullDebugUpdateRequest* msg);
 };
 
 const ::opi_api::storage::v1::NullDebug&
 NullDebugUpdateRequest::_Internal::device(const NullDebugUpdateRequest* msg) {
   return *msg->device_;
+}
+const ::opi_api::common::v1::ObjectKey&
+NullDebugUpdateRequest::_Internal::txn_id(const NullDebugUpdateRequest* msg) {
+  return *msg->txn_id_;
+}
+void NullDebugUpdateRequest::clear_txn_id() {
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
 }
 NullDebugUpdateRequest::NullDebugUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1021,11 +1151,19 @@ NullDebugUpdateRequest::NullDebugUpdateRequest(const NullDebugUpdateRequest& fro
   } else {
     device_ = nullptr;
   }
+  if (from._internal_has_txn_id()) {
+    txn_id_ = new ::opi_api::common::v1::ObjectKey(*from.txn_id_);
+  } else {
+    txn_id_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.NullDebugUpdateRequest)
 }
 
 inline void NullDebugUpdateRequest::SharedCtor() {
-device_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&device_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&txn_id_) -
+    reinterpret_cast<char*>(&device_)) + sizeof(txn_id_));
 }
 
 NullDebugUpdateRequest::~NullDebugUpdateRequest() {
@@ -1038,6 +1176,7 @@ NullDebugUpdateRequest::~NullDebugUpdateRequest() {
 inline void NullDebugUpdateRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete device_;
+  if (this != internal_default_instance()) delete txn_id_;
 }
 
 void NullDebugUpdateRequest::ArenaDtor(void* object) {
@@ -1060,6 +1199,10 @@ void NullDebugUpdateRequest::Clear() {
     delete device_;
   }
   device_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && txn_id_ != nullptr) {
+    delete txn_id_;
+  }
+  txn_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1073,6 +1216,14 @@ const char* NullDebugUpdateRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.common.v1.ObjectKey txn_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_txn_id(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1114,6 +1265,14 @@ uint8_t* NullDebugUpdateRequest::_InternalSerialize(
         1, _Internal::device(this), target, stream);
   }
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::txn_id(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1135,6 +1294,13 @@ size_t NullDebugUpdateRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *device_);
+  }
+
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  if (this->_internal_has_txn_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *txn_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1162,6 +1328,9 @@ void NullDebugUpdateRequest::MergeFrom(const NullDebugUpdateRequest& from) {
   if (from._internal_has_device()) {
     _internal_mutable_device()->::opi_api::storage::v1::NullDebug::MergeFrom(from._internal_device());
   }
+  if (from._internal_has_txn_id()) {
+    _internal_mutable_txn_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_txn_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1179,7 +1348,12 @@ bool NullDebugUpdateRequest::IsInitialized() const {
 void NullDebugUpdateRequest::InternalSwap(NullDebugUpdateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(device_, other->device_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NullDebugUpdateRequest, txn_id_)
+      + sizeof(NullDebugUpdateRequest::txn_id_)
+      - PROTOBUF_FIELD_OFFSET(NullDebugUpdateRequest, device_)>(
+          reinterpret_cast<char*>(&device_),
+          reinterpret_cast<char*>(&other->device_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NullDebugUpdateRequest::GetMetadata() const {

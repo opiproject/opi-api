@@ -2104,6 +2104,7 @@ class CreateNVMeSubsystemRequest final :
 
   enum : int {
     kSubsystemFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
   bool has_subsystem() const;
@@ -2123,6 +2124,24 @@ class CreateNVMeSubsystemRequest final :
       ::opi_api::storage::v1::NVMeSubsystem* subsystem);
   ::opi_api::storage::v1::NVMeSubsystem* unsafe_arena_release_subsystem();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeSubsystemRequest)
  private:
   class _Internal;
@@ -2131,6 +2150,7 @@ class CreateNVMeSubsystemRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeSubsystem* subsystem_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -2259,6 +2279,7 @@ class DeleteNVMeSubsystemRequest final :
 
   enum : int {
     kSubsystemIdFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.common.v1.ObjectKey subsystem_id = 1;
   bool has_subsystem_id() const;
@@ -2278,6 +2299,24 @@ class DeleteNVMeSubsystemRequest final :
       ::opi_api::common::v1::ObjectKey* subsystem_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_subsystem_id();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeSubsystemRequest)
  private:
   class _Internal;
@@ -2286,6 +2325,7 @@ class DeleteNVMeSubsystemRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -2414,6 +2454,7 @@ class UpdateNVMeSubsystemRequest final :
 
   enum : int {
     kSubsystemFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeSubsystem subsystem = 1;
   bool has_subsystem() const;
@@ -2433,6 +2474,24 @@ class UpdateNVMeSubsystemRequest final :
       ::opi_api::storage::v1::NVMeSubsystem* subsystem);
   ::opi_api::storage::v1::NVMeSubsystem* unsafe_arena_release_subsystem();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeSubsystemRequest)
  private:
   class _Internal;
@@ -2441,6 +2500,7 @@ class UpdateNVMeSubsystemRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeSubsystem* subsystem_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -3363,6 +3423,7 @@ class CreateNVMeControllerRequest final :
 
   enum : int {
     kControllerFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeController controller = 1;
   bool has_controller() const;
@@ -3382,6 +3443,24 @@ class CreateNVMeControllerRequest final :
       ::opi_api::storage::v1::NVMeController* controller);
   ::opi_api::storage::v1::NVMeController* unsafe_arena_release_controller();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeControllerRequest)
  private:
   class _Internal;
@@ -3390,6 +3469,7 @@ class CreateNVMeControllerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeController* controller_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -3518,6 +3598,7 @@ class DeleteNVMeControllerRequest final :
 
   enum : int {
     kControllerIdFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.common.v1.ObjectKey controller_id = 1;
   bool has_controller_id() const;
@@ -3537,6 +3618,24 @@ class DeleteNVMeControllerRequest final :
       ::opi_api::common::v1::ObjectKey* controller_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller_id();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeControllerRequest)
  private:
   class _Internal;
@@ -3545,6 +3644,7 @@ class DeleteNVMeControllerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* controller_id_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -3673,6 +3773,7 @@ class UpdateNVMeControllerRequest final :
 
   enum : int {
     kControllerFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeController controller = 1;
   bool has_controller() const;
@@ -3692,6 +3793,24 @@ class UpdateNVMeControllerRequest final :
       ::opi_api::storage::v1::NVMeController* controller);
   ::opi_api::storage::v1::NVMeController* unsafe_arena_release_controller();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeControllerRequest)
  private:
   class _Internal;
@@ -3700,6 +3819,7 @@ class UpdateNVMeControllerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeController* controller_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4662,6 +4782,7 @@ class CreateNVMeNamespaceRequest final :
 
   enum : int {
     kNamespaceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeNamespace namespace = 1;
   bool has_namespace_() const;
@@ -4681,6 +4802,24 @@ class CreateNVMeNamespaceRequest final :
       ::opi_api::storage::v1::NVMeNamespace* namespace_);
   ::opi_api::storage::v1::NVMeNamespace* unsafe_arena_release_namespace_();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeNamespaceRequest)
  private:
   class _Internal;
@@ -4689,6 +4828,7 @@ class CreateNVMeNamespaceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeNamespace* namespace__;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4817,6 +4957,7 @@ class DeleteNVMeNamespaceRequest final :
 
   enum : int {
     kNamespaceIdFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.common.v1.ObjectKey namespace_id = 1;
   bool has_namespace_id() const;
@@ -4836,6 +4977,24 @@ class DeleteNVMeNamespaceRequest final :
       ::opi_api::common::v1::ObjectKey* namespace_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_namespace_id();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeNamespaceRequest)
  private:
   class _Internal;
@@ -4844,6 +5003,7 @@ class DeleteNVMeNamespaceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* namespace_id_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4972,6 +5132,7 @@ class UpdateNVMeNamespaceRequest final :
 
   enum : int {
     kNamespaceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NVMeNamespace namespace = 1;
   bool has_namespace_() const;
@@ -4991,6 +5152,24 @@ class UpdateNVMeNamespaceRequest final :
       ::opi_api::storage::v1::NVMeNamespace* namespace_);
   ::opi_api::storage::v1::NVMeNamespace* unsafe_arena_release_namespace_();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeNamespaceRequest)
  private:
   class _Internal;
@@ -4999,6 +5178,7 @@ class UpdateNVMeNamespaceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NVMeNamespace* namespace__;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -7747,6 +7927,92 @@ inline void CreateNVMeSubsystemRequest::set_allocated_subsystem(::opi_api::stora
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeSubsystemRequest.subsystem)
 }
 
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool CreateNVMeSubsystemRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool CreateNVMeSubsystemRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeSubsystemRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeSubsystemRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateNVMeSubsystemRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void CreateNVMeSubsystemRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CreateNVMeSubsystemRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeSubsystemRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeSubsystemRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateNVMeSubsystemRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeSubsystemRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeSubsystemRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateNVMeSubsystemRequest.txn_id)
+  return _msg;
+}
+inline void CreateNVMeSubsystemRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeSubsystemRequest.txn_id)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteNVMeSubsystemRequest
@@ -7835,6 +8101,92 @@ inline void DeleteNVMeSubsystemRequest::set_allocated_subsystem_id(::opi_api::co
   }
   subsystem_id_ = subsystem_id;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeSubsystemRequest.subsystem_id)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool DeleteNVMeSubsystemRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool DeleteNVMeSubsystemRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeSubsystemRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeSubsystemRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteNVMeSubsystemRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void DeleteNVMeSubsystemRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteNVMeSubsystemRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeSubsystemRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeSubsystemRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteNVMeSubsystemRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeSubsystemRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeSubsystemRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteNVMeSubsystemRequest.txn_id)
+  return _msg;
+}
+inline void DeleteNVMeSubsystemRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeSubsystemRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -7929,6 +8281,92 @@ inline void UpdateNVMeSubsystemRequest::set_allocated_subsystem(::opi_api::stora
   }
   subsystem_ = subsystem;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeSubsystemRequest.subsystem)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool UpdateNVMeSubsystemRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool UpdateNVMeSubsystemRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeSubsystemRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeSubsystemRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNVMeSubsystemRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void UpdateNVMeSubsystemRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.UpdateNVMeSubsystemRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeSubsystemRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeSubsystemRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.UpdateNVMeSubsystemRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeSubsystemRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeSubsystemRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.UpdateNVMeSubsystemRequest.txn_id)
+  return _msg;
+}
+inline void UpdateNVMeSubsystemRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeSubsystemRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -8430,6 +8868,92 @@ inline void CreateNVMeControllerRequest::set_allocated_controller(::opi_api::sto
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeControllerRequest.controller)
 }
 
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool CreateNVMeControllerRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool CreateNVMeControllerRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeControllerRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeControllerRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateNVMeControllerRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void CreateNVMeControllerRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CreateNVMeControllerRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeControllerRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeControllerRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateNVMeControllerRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeControllerRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeControllerRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateNVMeControllerRequest.txn_id)
+  return _msg;
+}
+inline void CreateNVMeControllerRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeControllerRequest.txn_id)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteNVMeControllerRequest
@@ -8518,6 +9042,92 @@ inline void DeleteNVMeControllerRequest::set_allocated_controller_id(::opi_api::
   }
   controller_id_ = controller_id;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeControllerRequest.controller_id)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool DeleteNVMeControllerRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool DeleteNVMeControllerRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeControllerRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeControllerRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteNVMeControllerRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void DeleteNVMeControllerRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteNVMeControllerRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeControllerRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeControllerRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteNVMeControllerRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeControllerRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeControllerRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteNVMeControllerRequest.txn_id)
+  return _msg;
+}
+inline void DeleteNVMeControllerRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeControllerRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -8612,6 +9222,92 @@ inline void UpdateNVMeControllerRequest::set_allocated_controller(::opi_api::sto
   }
   controller_ = controller;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeControllerRequest.controller)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool UpdateNVMeControllerRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool UpdateNVMeControllerRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeControllerRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeControllerRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNVMeControllerRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void UpdateNVMeControllerRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.UpdateNVMeControllerRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeControllerRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeControllerRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.UpdateNVMeControllerRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeControllerRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeControllerRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.UpdateNVMeControllerRequest.txn_id)
+  return _msg;
+}
+inline void UpdateNVMeControllerRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeControllerRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -9285,6 +9981,92 @@ inline void CreateNVMeNamespaceRequest::set_allocated_namespace_(::opi_api::stor
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeNamespaceRequest.namespace)
 }
 
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool CreateNVMeNamespaceRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool CreateNVMeNamespaceRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeNamespaceRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& CreateNVMeNamespaceRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateNVMeNamespaceRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void CreateNVMeNamespaceRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.CreateNVMeNamespaceRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeNamespaceRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeNamespaceRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateNVMeNamespaceRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeNamespaceRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* CreateNVMeNamespaceRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateNVMeNamespaceRequest.txn_id)
+  return _msg;
+}
+inline void CreateNVMeNamespaceRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNVMeNamespaceRequest.txn_id)
+}
+
 // -------------------------------------------------------------------
 
 // DeleteNVMeNamespaceRequest
@@ -9373,6 +10155,92 @@ inline void DeleteNVMeNamespaceRequest::set_allocated_namespace_id(::opi_api::co
   }
   namespace_id_ = namespace_id;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeNamespaceRequest.namespace_id)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool DeleteNVMeNamespaceRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool DeleteNVMeNamespaceRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeNamespaceRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& DeleteNVMeNamespaceRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteNVMeNamespaceRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void DeleteNVMeNamespaceRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.DeleteNVMeNamespaceRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeNamespaceRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeNamespaceRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.DeleteNVMeNamespaceRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeNamespaceRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* DeleteNVMeNamespaceRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.DeleteNVMeNamespaceRequest.txn_id)
+  return _msg;
+}
+inline void DeleteNVMeNamespaceRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteNVMeNamespaceRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -9467,6 +10335,92 @@ inline void UpdateNVMeNamespaceRequest::set_allocated_namespace_(::opi_api::stor
   }
   namespace__ = namespace_;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeNamespaceRequest.namespace)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool UpdateNVMeNamespaceRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool UpdateNVMeNamespaceRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeNamespaceRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& UpdateNVMeNamespaceRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.UpdateNVMeNamespaceRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void UpdateNVMeNamespaceRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.UpdateNVMeNamespaceRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeNamespaceRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeNamespaceRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.UpdateNVMeNamespaceRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeNamespaceRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* UpdateNVMeNamespaceRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.UpdateNVMeNamespaceRequest.txn_id)
+  return _msg;
+}
+inline void UpdateNVMeNamespaceRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.UpdateNVMeNamespaceRequest.txn_id)
 }
 
 // -------------------------------------------------------------------

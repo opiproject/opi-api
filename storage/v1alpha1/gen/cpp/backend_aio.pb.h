@@ -447,6 +447,7 @@ class AioControllerCreateRequest final :
 
   enum : int {
     kDeviceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.AioController device = 1;
   bool has_device() const;
@@ -466,6 +467,24 @@ class AioControllerCreateRequest final :
       ::opi_api::storage::v1::AioController* device);
   ::opi_api::storage::v1::AioController* unsafe_arena_release_device();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerCreateRequest)
  private:
   class _Internal;
@@ -474,6 +493,7 @@ class AioControllerCreateRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::AioController* device_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
@@ -602,6 +622,7 @@ class AioControllerDeleteRequest final :
 
   enum : int {
     kHandleFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.common.v1.ObjectKey handle = 1;
   bool has_handle() const;
@@ -621,6 +642,24 @@ class AioControllerDeleteRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerDeleteRequest)
  private:
   class _Internal;
@@ -629,6 +668,7 @@ class AioControllerDeleteRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* handle_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
@@ -757,6 +797,7 @@ class AioControllerUpdateRequest final :
 
   enum : int {
     kDeviceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.AioController device = 1;
   bool has_device() const;
@@ -776,6 +817,24 @@ class AioControllerUpdateRequest final :
       ::opi_api::storage::v1::AioController* device);
   ::opi_api::storage::v1::AioController* unsafe_arena_release_device();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.AioControllerUpdateRequest)
  private:
   class _Internal;
@@ -784,6 +843,7 @@ class AioControllerUpdateRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::AioController* device_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5faio_2eproto;
 };
@@ -2064,6 +2124,92 @@ inline void AioControllerCreateRequest::set_allocated_device(::opi_api::storage:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerCreateRequest.device)
 }
 
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool AioControllerCreateRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool AioControllerCreateRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerCreateRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerCreateRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerCreateRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void AioControllerCreateRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerCreateRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerCreateRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerCreateRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerCreateRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerCreateRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerCreateRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerCreateRequest.txn_id)
+  return _msg;
+}
+inline void AioControllerCreateRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerCreateRequest.txn_id)
+}
+
 // -------------------------------------------------------------------
 
 // AioControllerDeleteRequest
@@ -2152,6 +2298,92 @@ inline void AioControllerDeleteRequest::set_allocated_handle(::opi_api::common::
   }
   handle_ = handle;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerDeleteRequest.handle)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool AioControllerDeleteRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool AioControllerDeleteRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerDeleteRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerDeleteRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerDeleteRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void AioControllerDeleteRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerDeleteRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerDeleteRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerDeleteRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerDeleteRequest.txn_id)
+  return _msg;
+}
+inline void AioControllerDeleteRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerDeleteRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -2246,6 +2478,92 @@ inline void AioControllerUpdateRequest::set_allocated_device(::opi_api::storage:
   }
   device_ = device;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerUpdateRequest.device)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool AioControllerUpdateRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool AioControllerUpdateRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerUpdateRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& AioControllerUpdateRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioControllerUpdateRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void AioControllerUpdateRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioControllerUpdateRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerUpdateRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerUpdateRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioControllerUpdateRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerUpdateRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* AioControllerUpdateRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioControllerUpdateRequest.txn_id)
+  return _msg;
+}
+inline void AioControllerUpdateRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioControllerUpdateRequest.txn_id)
 }
 
 // -------------------------------------------------------------------

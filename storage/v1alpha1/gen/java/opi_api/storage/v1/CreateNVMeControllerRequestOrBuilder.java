@@ -21,4 +21,19 @@ public interface CreateNVMeControllerRequestOrBuilder extends
    * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
    */
   opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder();
+
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return Whether the txnId field is set.
+   */
+  boolean hasTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return The txnId.
+   */
+  opi_api.common.v1.ObjectKey getTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder();
 }

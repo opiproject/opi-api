@@ -74,6 +74,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (txnId_ != null) {
+              subBuilder = txnId_.toBuilder();
+            }
+            txnId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(txnId_);
+              txnId_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +171,32 @@ private static final long serialVersionUID = 0L;
     return getLunId();
   }
 
+  public static final int TXN_ID_FIELD_NUMBER = 3;
+  private opi_api.common.v1.ObjectKey txnId_;
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   * @return Whether the txnId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTxnId() {
+    return txnId_ != null;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   * @return The txnId.
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKey getTxnId() {
+    return txnId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : txnId_;
+  }
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder() {
+    return getTxnId();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +217,9 @@ private static final long serialVersionUID = 0L;
     if (lunId_ != null) {
       output.writeMessage(2, getLunId());
     }
+    if (txnId_ != null) {
+      output.writeMessage(3, getTxnId());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (lunId_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getLunId());
+    }
+    if (txnId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getTxnId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +266,11 @@ private static final long serialVersionUID = 0L;
       if (!getLunId()
           .equals(other.getLunId())) return false;
     }
+    if (hasTxnId() != other.hasTxnId()) return false;
+    if (hasTxnId()) {
+      if (!getTxnId()
+          .equals(other.getTxnId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -238,6 +289,10 @@ private static final long serialVersionUID = 0L;
     if (hasLunId()) {
       hash = (37 * hash) + LUN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLunId().hashCode();
+    }
+    if (hasTxnId()) {
+      hash = (37 * hash) + TXN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTxnId().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -384,6 +439,12 @@ private static final long serialVersionUID = 0L;
         lunId_ = null;
         lunIdBuilder_ = null;
       }
+      if (txnIdBuilder_ == null) {
+        txnId_ = null;
+      } else {
+        txnId_ = null;
+        txnIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -419,6 +480,11 @@ private static final long serialVersionUID = 0L;
         result.lunId_ = lunId_;
       } else {
         result.lunId_ = lunIdBuilder_.build();
+      }
+      if (txnIdBuilder_ == null) {
+        result.txnId_ = txnId_;
+      } else {
+        result.txnId_ = txnIdBuilder_.build();
       }
       onBuilt();
       return result;
@@ -473,6 +539,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasLunId()) {
         mergeLunId(other.getLunId());
+      }
+      if (other.hasTxnId()) {
+        mergeTxnId(other.getTxnId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +808,125 @@ private static final long serialVersionUID = 0L;
         lunId_ = null;
       }
       return lunIdBuilder_;
+    }
+
+    private opi_api.common.v1.ObjectKey txnId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> txnIdBuilder_;
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     * @return Whether the txnId field is set.
+     */
+    public boolean hasTxnId() {
+      return txnIdBuilder_ != null || txnId_ != null;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     * @return The txnId.
+     */
+    public opi_api.common.v1.ObjectKey getTxnId() {
+      if (txnIdBuilder_ == null) {
+        return txnId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : txnId_;
+      } else {
+        return txnIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public Builder setTxnId(opi_api.common.v1.ObjectKey value) {
+      if (txnIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        txnId_ = value;
+        onChanged();
+      } else {
+        txnIdBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public Builder setTxnId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (txnIdBuilder_ == null) {
+        txnId_ = builderForValue.build();
+        onChanged();
+      } else {
+        txnIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public Builder mergeTxnId(opi_api.common.v1.ObjectKey value) {
+      if (txnIdBuilder_ == null) {
+        if (txnId_ != null) {
+          txnId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(txnId_).mergeFrom(value).buildPartial();
+        } else {
+          txnId_ = value;
+        }
+        onChanged();
+      } else {
+        txnIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public Builder clearTxnId() {
+      if (txnIdBuilder_ == null) {
+        txnId_ = null;
+        onChanged();
+      } else {
+        txnId_ = null;
+        txnIdBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getTxnIdBuilder() {
+      
+      onChanged();
+      return getTxnIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder() {
+      if (txnIdBuilder_ != null) {
+        return txnIdBuilder_.getMessageOrBuilder();
+      } else {
+        return txnId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : txnId_;
+      }
+    }
+    /**
+     * <code>.opi_api.common.v1.ObjectKey txn_id = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getTxnIdFieldBuilder() {
+      if (txnIdBuilder_ == null) {
+        txnIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getTxnId(),
+                getParentForChildren(),
+                isClean());
+        txnId_ = null;
+      }
+      return txnIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
