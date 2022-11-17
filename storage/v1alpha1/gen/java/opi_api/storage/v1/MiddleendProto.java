@@ -75,41 +75,45 @@ public final class MiddleendProto {
       "\0132\034.opi_api.common.v1.ObjectKey\022/\n\tvolum" +
       "e_id\030\002 \001(\0132\034.opi_api.common.v1.ObjectKey" +
       "\022\013\n\003key\030\003 \001(\014\022.\n\006cipher\030\004 \001(\0162\036.opi_api." +
-      "storage.v1.CryptoType\"A\n\023CreateCryptoReq" +
+      "storage.v1.CryptoType\"o\n\023CreateCryptoReq" +
       "uest\022*\n\006volume\030\001 \001(\0132\032.opi_api.storage.v" +
-      "1.Crypto\"F\n\023DeleteCryptoRequest\022/\n\tcrypt" +
-      "o_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey" +
-      "\"A\n\023UpdateCryptoRequest\022*\n\006volume\030\001 \001(\0132" +
-      "\032.opi_api.storage.v1.Crypto\":\n\021ListCrypt" +
-      "oRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_toke" +
-      "n\030\002 \001(\t\"Z\n\022ListCryptoResponse\022+\n\007volumes" +
-      "\030\001 \003(\0132\032.opi_api.storage.v1.Crypto\022\027\n\017ne" +
-      "xt_page_token\030\002 \001(\t\"C\n\020GetCryptoRequest\022" +
-      "/\n\tcrypto_id\030\001 \001(\0132\034.opi_api.common.v1.O" +
-      "bjectKey\"E\n\022CryptoStatsRequest\022/\n\tcrypto" +
-      "_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"" +
-      "U\n\023CryptoStatsResponse\022/\n\tcrypto_id\030\001 \001(" +
-      "\0132\034.opi_api.common.v1.ObjectKey\022\r\n\005stats" +
-      "\030\002 \001(\t2\246\005\n\020MiddleendService\022p\n\014CreateCry" +
-      "pto\022\'.opi_api.storage.v1.CreateCryptoReq" +
-      "uest\032\032.opi_api.storage.v1.Crypto\"\033\202\323\344\223\002\025" +
-      "\"\013/v1/volumes:\006volume\022m\n\014DeleteCrypto\022\'." +
-      "opi_api.storage.v1.DeleteCryptoRequest\032\026" +
-      ".google.protobuf.Empty\"\034\202\323\344\223\002\026*\024/v1/volu" +
-      "mes/{volume}\022p\n\014UpdateCrypto\022\'.opi_api.s" +
-      "torage.v1.UpdateCryptoRequest\032\032.opi_api." +
-      "storage.v1.Crypto\"\033\202\323\344\223\002\0252\013/v1/volumes:\006" +
-      "volume\022p\n\nListCrypto\022%.opi_api.storage.v" +
-      "1.ListCryptoRequest\032&.opi_api.storage.v1" +
-      ".ListCryptoResponse\"\023\202\323\344\223\002\r\022\013/v1/volumes" +
-      "\022k\n\tGetCrypto\022$.opi_api.storage.v1.GetCr" +
-      "yptoRequest\032\032.opi_api.storage.v1.Crypto\"" +
-      "\034\202\323\344\223\002\026\022\024/v1/volumes/{volume}\022`\n\013CryptoS" +
-      "tats\022&.opi_api.storage.v1.CryptoStatsReq" +
-      "uest\032\'.opi_api.storage.v1.CryptoStatsRes" +
-      "ponse\"\000B]\n\022opi_api.storage.v1B\016Middleend" +
-      "ProtoP\001Z5github.com/opiproject/opi-api/s" +
-      "torage/v1alpha1/gen/gob\006proto3"
+      "1.Crypto\022,\n\006txn_id\030\002 \001(\0132\034.opi_api.commo" +
+      "n.v1.ObjectKey\"t\n\023DeleteCryptoRequest\022/\n" +
+      "\tcrypto_id\030\001 \001(\0132\034.opi_api.common.v1.Obj" +
+      "ectKey\022,\n\006txn_id\030\002 \001(\0132\034.opi_api.common." +
+      "v1.ObjectKey\"o\n\023UpdateCryptoRequest\022*\n\006v" +
+      "olume\030\001 \001(\0132\032.opi_api.storage.v1.Crypto\022" +
+      ",\n\006txn_id\030\002 \001(\0132\034.opi_api.common.v1.Obje" +
+      "ctKey\":\n\021ListCryptoRequest\022\021\n\tpage_size\030" +
+      "\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"Z\n\022ListCryptoR" +
+      "esponse\022+\n\007volumes\030\001 \003(\0132\032.opi_api.stora" +
+      "ge.v1.Crypto\022\027\n\017next_page_token\030\002 \001(\t\"C\n" +
+      "\020GetCryptoRequest\022/\n\tcrypto_id\030\001 \001(\0132\034.o" +
+      "pi_api.common.v1.ObjectKey\"E\n\022CryptoStat" +
+      "sRequest\022/\n\tcrypto_id\030\001 \001(\0132\034.opi_api.co" +
+      "mmon.v1.ObjectKey\"U\n\023CryptoStatsResponse" +
+      "\022/\n\tcrypto_id\030\001 \001(\0132\034.opi_api.common.v1." +
+      "ObjectKey\022\r\n\005stats\030\002 \001(\t2\246\005\n\020MiddleendSe" +
+      "rvice\022p\n\014CreateCrypto\022\'.opi_api.storage." +
+      "v1.CreateCryptoRequest\032\032.opi_api.storage" +
+      ".v1.Crypto\"\033\202\323\344\223\002\025\"\013/v1/volumes:\006volume\022" +
+      "m\n\014DeleteCrypto\022\'.opi_api.storage.v1.Del" +
+      "eteCryptoRequest\032\026.google.protobuf.Empty" +
+      "\"\034\202\323\344\223\002\026*\024/v1/volumes/{volume}\022p\n\014Update" +
+      "Crypto\022\'.opi_api.storage.v1.UpdateCrypto" +
+      "Request\032\032.opi_api.storage.v1.Crypto\"\033\202\323\344" +
+      "\223\002\0252\013/v1/volumes:\006volume\022p\n\nListCrypto\022%" +
+      ".opi_api.storage.v1.ListCryptoRequest\032&." +
+      "opi_api.storage.v1.ListCryptoResponse\"\023\202" +
+      "\323\344\223\002\r\022\013/v1/volumes\022k\n\tGetCrypto\022$.opi_ap" +
+      "i.storage.v1.GetCryptoRequest\032\032.opi_api." +
+      "storage.v1.Crypto\"\034\202\323\344\223\002\026\022\024/v1/volumes/{" +
+      "volume}\022`\n\013CryptoStats\022&.opi_api.storage" +
+      ".v1.CryptoStatsRequest\032\'.opi_api.storage" +
+      ".v1.CryptoStatsResponse\"\000B]\n\022opi_api.sto" +
+      "rage.v1B\016MiddleendProtoP\001Z5github.com/op" +
+      "iproject/opi-api/storage/v1alpha1/gen/go" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -130,19 +134,19 @@ public final class MiddleendProto {
     internal_static_opi_api_storage_v1_CreateCryptoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_CreateCryptoRequest_descriptor,
-        new java.lang.String[] { "Volume", });
+        new java.lang.String[] { "Volume", "TxnId", });
     internal_static_opi_api_storage_v1_DeleteCryptoRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_DeleteCryptoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_DeleteCryptoRequest_descriptor,
-        new java.lang.String[] { "CryptoId", });
+        new java.lang.String[] { "CryptoId", "TxnId", });
     internal_static_opi_api_storage_v1_UpdateCryptoRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_UpdateCryptoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_UpdateCryptoRequest_descriptor,
-        new java.lang.String[] { "Volume", });
+        new java.lang.String[] { "Volume", "TxnId", });
     internal_static_opi_api_storage_v1_ListCryptoRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_opi_api_storage_v1_ListCryptoRequest_fieldAccessorTable = new

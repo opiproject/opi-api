@@ -17,7 +17,7 @@ import object_key_pb2 as object__key__pb2
 import uuid_pb2 as uuid__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x62\x61\x63kend_aio.proto\x12\x12opi_api.storage.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x10object_key.proto\x1a\nuuid.proto\"\xa0\x01\n\rAioController\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t\"O\n\x1a\x41ioControllerCreateRequest\x12\x31\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.AioController\"J\n\x1a\x41ioControllerDeleteRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"O\n\x1a\x41ioControllerUpdateRequest\x12\x31\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.AioController\"F\n\x11\x41ioControllerList\x12\x31\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.AioController\"G\n\x17\x41ioControllerGetRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\x1d\n\x1b\x41ioControllerGetListRequest\"L\n\x1c\x41ioControllerGetStatsRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"I\n\x19\x41ioControllerStatsRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"Q\n\x12\x41ioControllerStats\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\x9c\x05\n\x14\x41ioControllerService\x12j\n\x13\x41ioControllerCreate\x12..opi_api.storage.v1.AioControllerCreateRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x12_\n\x13\x41ioControllerDelete\x12..opi_api.storage.v1.AioControllerDeleteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x64\n\x10\x41ioControllerGet\x12+.opi_api.storage.v1.AioControllerGetRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x12p\n\x14\x41ioControllerGetList\x12/.opi_api.storage.v1.AioControllerGetListRequest\x1a%.opi_api.storage.v1.AioControllerList\"\x00\x12s\n\x15\x41ioControllerGetStats\x12\x30.opi_api.storage.v1.AioControllerGetStatsRequest\x1a&.opi_api.storage.v1.AioControllerStats\"\x00\x12j\n\x13\x41ioControllerUpdate\x12..opi_api.storage.v1.AioControllerUpdateRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x42^\n\x12opi_api.storage.v1B\x0f\x42\x61\x63kendAioProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x62\x61\x63kend_aio.proto\x12\x12opi_api.storage.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x10object_key.proto\x1a\nuuid.proto\"\xa0\x01\n\rAioController\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x12\n\nblock_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x62locks_count\x18\x03 \x01(\x03\x12%\n\x04uuid\x18\x04 \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t\"}\n\x1a\x41ioControllerCreateRequest\x12\x31\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.AioController\x12,\n\x06txn_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"x\n\x1a\x41ioControllerDeleteRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06txn_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"}\n\x1a\x41ioControllerUpdateRequest\x12\x31\n\x06\x64\x65vice\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.AioController\x12,\n\x06txn_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"F\n\x11\x41ioControllerList\x12\x31\n\x06\x64\x65vice\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.AioController\"G\n\x17\x41ioControllerGetRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\x1d\n\x1b\x41ioControllerGetListRequest\"L\n\x1c\x41ioControllerGetStatsRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"I\n\x19\x41ioControllerStatsRequest\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"Q\n\x12\x41ioControllerStats\x12,\n\x06handle\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\x9c\x05\n\x14\x41ioControllerService\x12j\n\x13\x41ioControllerCreate\x12..opi_api.storage.v1.AioControllerCreateRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x12_\n\x13\x41ioControllerDelete\x12..opi_api.storage.v1.AioControllerDeleteRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x64\n\x10\x41ioControllerGet\x12+.opi_api.storage.v1.AioControllerGetRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x12p\n\x14\x41ioControllerGetList\x12/.opi_api.storage.v1.AioControllerGetListRequest\x1a%.opi_api.storage.v1.AioControllerList\"\x00\x12s\n\x15\x41ioControllerGetStats\x12\x30.opi_api.storage.v1.AioControllerGetStatsRequest\x1a&.opi_api.storage.v1.AioControllerStats\"\x00\x12j\n\x13\x41ioControllerUpdate\x12..opi_api.storage.v1.AioControllerUpdateRequest\x1a!.opi_api.storage.v1.AioController\"\x00\x42^\n\x12opi_api.storage.v1B\x0f\x42\x61\x63kendAioProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -109,23 +109,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AIOCONTROLLER._serialized_start=101
   _AIOCONTROLLER._serialized_end=261
   _AIOCONTROLLERCREATEREQUEST._serialized_start=263
-  _AIOCONTROLLERCREATEREQUEST._serialized_end=342
-  _AIOCONTROLLERDELETEREQUEST._serialized_start=344
-  _AIOCONTROLLERDELETEREQUEST._serialized_end=418
-  _AIOCONTROLLERUPDATEREQUEST._serialized_start=420
-  _AIOCONTROLLERUPDATEREQUEST._serialized_end=499
-  _AIOCONTROLLERLIST._serialized_start=501
-  _AIOCONTROLLERLIST._serialized_end=571
-  _AIOCONTROLLERGETREQUEST._serialized_start=573
-  _AIOCONTROLLERGETREQUEST._serialized_end=644
-  _AIOCONTROLLERGETLISTREQUEST._serialized_start=646
-  _AIOCONTROLLERGETLISTREQUEST._serialized_end=675
-  _AIOCONTROLLERGETSTATSREQUEST._serialized_start=677
-  _AIOCONTROLLERGETSTATSREQUEST._serialized_end=753
-  _AIOCONTROLLERSTATSREQUEST._serialized_start=755
-  _AIOCONTROLLERSTATSREQUEST._serialized_end=828
-  _AIOCONTROLLERSTATS._serialized_start=830
-  _AIOCONTROLLERSTATS._serialized_end=911
-  _AIOCONTROLLERSERVICE._serialized_start=914
-  _AIOCONTROLLERSERVICE._serialized_end=1582
+  _AIOCONTROLLERCREATEREQUEST._serialized_end=388
+  _AIOCONTROLLERDELETEREQUEST._serialized_start=390
+  _AIOCONTROLLERDELETEREQUEST._serialized_end=510
+  _AIOCONTROLLERUPDATEREQUEST._serialized_start=512
+  _AIOCONTROLLERUPDATEREQUEST._serialized_end=637
+  _AIOCONTROLLERLIST._serialized_start=639
+  _AIOCONTROLLERLIST._serialized_end=709
+  _AIOCONTROLLERGETREQUEST._serialized_start=711
+  _AIOCONTROLLERGETREQUEST._serialized_end=782
+  _AIOCONTROLLERGETLISTREQUEST._serialized_start=784
+  _AIOCONTROLLERGETLISTREQUEST._serialized_end=813
+  _AIOCONTROLLERGETSTATSREQUEST._serialized_start=815
+  _AIOCONTROLLERGETSTATSREQUEST._serialized_end=891
+  _AIOCONTROLLERSTATSREQUEST._serialized_start=893
+  _AIOCONTROLLERSTATSREQUEST._serialized_end=966
+  _AIOCONTROLLERSTATS._serialized_start=968
+  _AIOCONTROLLERSTATS._serialized_end=1049
+  _AIOCONTROLLERSERVICE._serialized_start=1052
+  _AIOCONTROLLERSERVICE._serialized_end=1720
 # @@protoc_insertion_point(module_scope)

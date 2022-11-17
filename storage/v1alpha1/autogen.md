@@ -156,6 +156,14 @@
   
     - [CryptoType](#opi_api-storage-v1-CryptoType)
   
+- [transactions.proto](#transactions-proto)
+    - [CreateTransactionRequest](#opi_api-storage-v1-CreateTransactionRequest)
+    - [DeleteTransactionRequest](#opi_api-storage-v1-DeleteTransactionRequest)
+    - [ExecuteTransactionRequest](#opi_api-storage-v1-ExecuteTransactionRequest)
+    - [Transaction](#opi_api-storage-v1-Transaction)
+  
+    - [TransactionService](#opi_api-storage-v1-TransactionService)
+  
 - [object_key.proto](#object_key-proto)
     - [ObjectKey](#opi_api-common-v1-ObjectKey)
   
@@ -201,6 +209,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -216,6 +225,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -317,6 +327,7 @@ Intentionally empty
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -397,6 +408,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -412,6 +424,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -498,6 +511,7 @@ Intentionally empty.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -828,6 +842,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -843,6 +858,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -858,6 +874,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -873,6 +890,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -888,6 +906,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -903,6 +922,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1311,6 +1331,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1326,6 +1347,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1341,6 +1363,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1426,6 +1449,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1441,6 +1465,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1503,6 +1528,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1614,6 +1640,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1629,6 +1656,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1644,6 +1672,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1659,6 +1688,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1675,6 +1705,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | ----- | ---- | ----- | ----------- |
 | controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1690,6 +1721,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1848,6 +1880,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1863,6 +1896,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -1878,6 +1912,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2079,6 +2114,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | volume | [Crypto](#opi_api-storage-v1-Crypto) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2143,6 +2179,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2205,6 +2242,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | volume | [Crypto](#opi_api-storage-v1-Crypto) |  |  |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
@@ -2287,6 +2325,89 @@ AES encryption type to be used
  
 
  
+
+ 
+
+
+
+<a name="transactions-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## transactions.proto
+
+
+
+<a name="opi_api-storage-v1-CreateTransactionRequest"></a>
+
+### CreateTransactionRequest
+Empty
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteTransactionRequest"></a>
+
+### DeleteTransactionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ExecuteTransactionRequest"></a>
+
+### ExecuteTransactionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-Transaction"></a>
+
+### Transaction
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| txn_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-storage-v1-TransactionService"></a>
+
+### TransactionService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateTransaction | [CreateTransactionRequest](#opi_api-storage-v1-CreateTransactionRequest) | [Transaction](#opi_api-storage-v1-Transaction) |  |
+| DeleteTransaction | [DeleteTransactionRequest](#opi_api-storage-v1-DeleteTransactionRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| ExecuteTransaction | [ExecuteTransactionRequest](#opi_api-storage-v1-ExecuteTransactionRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 
  
 

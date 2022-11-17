@@ -130,14 +130,20 @@ message VirtioScsiLun {
 
 message CreateVirtioScsiTargetRequest {
     VirtioScsiTarget target = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteVirtioScsiTargetRequest {
     common.v1.ObjectKey target_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateVirtioScsiTargetRequest {
     VirtioScsiTarget target = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListVirtioScsiTargetRequest {
@@ -165,14 +171,20 @@ message VirtioScsiTargetStatsResponse {
 
 message CreateVirtioScsiControllerRequest {
     VirtioScsiController controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteVirtioScsiControllerRequest {
     common.v1.ObjectKey controller_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateVirtioScsiControllerRequest {
     VirtioScsiController controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListVirtioScsiControllerRequest {
@@ -200,15 +212,21 @@ message VirtioScsiControllerStatsResponse {
 
 message CreateVirtioScsiLunRequest {
     VirtioScsiLun lun = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteVirtioScsiLunRequest {
     common.v1.ObjectKey controller_id = 1;
     common.v1.ObjectKey lun_id = 2;
+
+    common.v1.ObjectKey txn_id = 3;
 }
 
 message UpdateVirtioScsiLunRequest {
     VirtioScsiLun lun = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListVirtioScsiLunRequest {

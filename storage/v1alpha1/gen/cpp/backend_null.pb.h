@@ -427,6 +427,7 @@ class NullDebugCreateRequest final :
 
   enum : int {
     kDeviceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NullDebug device = 1;
   bool has_device() const;
@@ -446,6 +447,24 @@ class NullDebugCreateRequest final :
       ::opi_api::storage::v1::NullDebug* device);
   ::opi_api::storage::v1::NullDebug* unsafe_arena_release_device();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugCreateRequest)
  private:
   class _Internal;
@@ -454,6 +473,7 @@ class NullDebugCreateRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NullDebug* device_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnull_2eproto;
 };
@@ -582,6 +602,7 @@ class NullDebugDeleteRequest final :
 
   enum : int {
     kHandleFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.common.v1.ObjectKey handle = 1;
   bool has_handle() const;
@@ -601,6 +622,24 @@ class NullDebugDeleteRequest final :
       ::opi_api::common::v1::ObjectKey* handle);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugDeleteRequest)
  private:
   class _Internal;
@@ -609,6 +648,7 @@ class NullDebugDeleteRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* handle_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnull_2eproto;
 };
@@ -737,6 +777,7 @@ class NullDebugUpdateRequest final :
 
   enum : int {
     kDeviceFieldNumber = 1,
+    kTxnIdFieldNumber = 2,
   };
   // .opi_api.storage.v1.NullDebug device = 1;
   bool has_device() const;
@@ -756,6 +797,24 @@ class NullDebugUpdateRequest final :
       ::opi_api::storage::v1::NullDebug* device);
   ::opi_api::storage::v1::NullDebug* unsafe_arena_release_device();
 
+  // .opi_api.common.v1.ObjectKey txn_id = 2;
+  bool has_txn_id() const;
+  private:
+  bool _internal_has_txn_id() const;
+  public:
+  void clear_txn_id();
+  const ::opi_api::common::v1::ObjectKey& txn_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_txn_id();
+  ::opi_api::common::v1::ObjectKey* mutable_txn_id();
+  void set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_txn_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_txn_id();
+  public:
+  void unsafe_arena_set_allocated_txn_id(
+      ::opi_api::common::v1::ObjectKey* txn_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_txn_id();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NullDebugUpdateRequest)
  private:
   class _Internal;
@@ -764,6 +823,7 @@ class NullDebugUpdateRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::opi_api::storage::v1::NullDebug* device_;
+  ::opi_api::common::v1::ObjectKey* txn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_backend_5fnull_2eproto;
 };
@@ -1838,6 +1898,92 @@ inline void NullDebugCreateRequest::set_allocated_device(::opi_api::storage::v1:
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugCreateRequest.device)
 }
 
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool NullDebugCreateRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool NullDebugCreateRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugCreateRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugCreateRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebugCreateRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void NullDebugCreateRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullDebugCreateRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugCreateRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugCreateRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebugCreateRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugCreateRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugCreateRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebugCreateRequest.txn_id)
+  return _msg;
+}
+inline void NullDebugCreateRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugCreateRequest.txn_id)
+}
+
 // -------------------------------------------------------------------
 
 // NullDebugDeleteRequest
@@ -1926,6 +2072,92 @@ inline void NullDebugDeleteRequest::set_allocated_handle(::opi_api::common::v1::
   }
   handle_ = handle;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugDeleteRequest.handle)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool NullDebugDeleteRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool NullDebugDeleteRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugDeleteRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugDeleteRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebugDeleteRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void NullDebugDeleteRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullDebugDeleteRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugDeleteRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugDeleteRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebugDeleteRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugDeleteRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugDeleteRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebugDeleteRequest.txn_id)
+  return _msg;
+}
+inline void NullDebugDeleteRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugDeleteRequest.txn_id)
 }
 
 // -------------------------------------------------------------------
@@ -2020,6 +2252,92 @@ inline void NullDebugUpdateRequest::set_allocated_device(::opi_api::storage::v1:
   }
   device_ = device;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugUpdateRequest.device)
+}
+
+// .opi_api.common.v1.ObjectKey txn_id = 2;
+inline bool NullDebugUpdateRequest::_internal_has_txn_id() const {
+  return this != internal_default_instance() && txn_id_ != nullptr;
+}
+inline bool NullDebugUpdateRequest::has_txn_id() const {
+  return _internal_has_txn_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugUpdateRequest::_internal_txn_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = txn_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& NullDebugUpdateRequest::txn_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebugUpdateRequest.txn_id)
+  return _internal_txn_id();
+}
+inline void NullDebugUpdateRequest::unsafe_arena_set_allocated_txn_id(
+    ::opi_api::common::v1::ObjectKey* txn_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  txn_id_ = txn_id;
+  if (txn_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullDebugUpdateRequest.txn_id)
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugUpdateRequest::release_txn_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugUpdateRequest::unsafe_arena_release_txn_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebugUpdateRequest.txn_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = txn_id_;
+  txn_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugUpdateRequest::_internal_mutable_txn_id() {
+  
+  if (txn_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    txn_id_ = p;
+  }
+  return txn_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* NullDebugUpdateRequest::mutable_txn_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_txn_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebugUpdateRequest.txn_id)
+  return _msg;
+}
+inline void NullDebugUpdateRequest::set_allocated_txn_id(::opi_api::common::v1::ObjectKey* txn_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id_);
+  }
+  if (txn_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(txn_id));
+    if (message_arena != submessage_arena) {
+      txn_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, txn_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  txn_id_ = txn_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebugUpdateRequest.txn_id)
 }
 
 // -------------------------------------------------------------------

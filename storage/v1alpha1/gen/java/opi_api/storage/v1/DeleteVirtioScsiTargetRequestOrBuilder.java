@@ -21,4 +21,19 @@ public interface DeleteVirtioScsiTargetRequestOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey target_id = 1;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder();
+
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return Whether the txnId field is set.
+   */
+  boolean hasTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return The txnId.
+   */
+  opi_api.common.v1.ObjectKey getTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder();
 }

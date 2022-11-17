@@ -62,14 +62,20 @@ message Crypto {
 
 message CreateCryptoRequest {
     Crypto volume = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteCryptoRequest {
     common.v1.ObjectKey crypto_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateCryptoRequest {
     Crypto volume = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListCryptoRequest {

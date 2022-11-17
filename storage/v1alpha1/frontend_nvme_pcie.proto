@@ -225,14 +225,20 @@ message NVMeNamespaceStatus {
 
 message CreateNVMeSubsystemRequest {
     NVMeSubsystem subsystem = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteNVMeSubsystemRequest {
     common.v1.ObjectKey subsystem_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateNVMeSubsystemRequest {
     NVMeSubsystem subsystem = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListNVMeSubsystemRequest {
@@ -259,14 +265,20 @@ message NVMeSubsystemStatsResponse {
 
 message CreateNVMeControllerRequest {
     NVMeController controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteNVMeControllerRequest {
     common.v1.ObjectKey controller_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateNVMeControllerRequest {
     NVMeController controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListNVMeControllerRequest {
@@ -295,14 +307,20 @@ message NVMeControllerStatsResponse {
 
 message CreateNVMeNamespaceRequest {
     NVMeNamespace namespace = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteNVMeNamespaceRequest {
     common.v1.ObjectKey namespace_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateNVMeNamespaceRequest {
     NVMeNamespace namespace = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListNVMeNamespaceRequest {

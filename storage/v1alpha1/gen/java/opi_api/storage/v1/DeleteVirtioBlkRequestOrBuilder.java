@@ -21,4 +21,19 @@ public interface DeleteVirtioBlkRequestOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey controller_id = 1;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getControllerIdOrBuilder();
+
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return Whether the txnId field is set.
+   */
+  boolean hasTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return The txnId.
+   */
+  opi_api.common.v1.ObjectKey getTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder();
 }

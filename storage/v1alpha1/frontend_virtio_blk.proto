@@ -60,14 +60,20 @@ message VirtioBlk {
 
 message CreateVirtioBlkRequest {
     VirtioBlk controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message DeleteVirtioBlkRequest {
     common.v1.ObjectKey controller_id = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message UpdateVirtioBlkRequest {
     VirtioBlk controller = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message ListVirtioBlkRequest {

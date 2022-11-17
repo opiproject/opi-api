@@ -21,4 +21,19 @@ public interface DeleteCryptoRequestOrBuilder extends
    * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder();
+
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return Whether the txnId field is set.
+   */
+  boolean hasTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   * @return The txnId.
+   */
+  opi_api.common.v1.ObjectKey getTxnId();
+  /**
+   * <code>.opi_api.common.v1.ObjectKey txn_id = 2;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getTxnIdOrBuilder();
 }
