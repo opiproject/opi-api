@@ -33,15 +33,20 @@ message NullDebug {
 
 message NullDebugCreateRequest {
     NullDebug device = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message NullDebugDeleteRequest {
     common.v1.ObjectKey handle = 1;
 
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message NullDebugUpdateRequest {
     NullDebug device = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message NullDebugListRequest {

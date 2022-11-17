@@ -37,14 +37,20 @@ message AioController {
 
 message AioControllerCreateRequest {
     AioController device = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message AioControllerDeleteRequest {
     common.v1.ObjectKey handle = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message AioControllerUpdateRequest {
     AioController device = 1;
+
+    common.v1.ObjectKey txn_id = 2;
 }
 
 message AioControllerList{

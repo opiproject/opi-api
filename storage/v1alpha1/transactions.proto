@@ -1,0 +1,53 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Intel Corporation
+
+syntax = "proto3";
+package opi_api.storage.v1;
+
+option java_package = "opi_api.storage.v1";
+option java_multiple_files = true;
+option java_outer_classname = "TransactionsProto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+import "object_key.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+service TransactionService {
+        rpc CreateTransaction (CreateTransactionRequest) returns (Transaction) {
+            option (google.api.http) = {
+                post: "/v1/transactions"
+                body: "transaction"
+            };
+        }
+
+        rpc DeleteTransaction (DeleteTransactionRequest) returns (google.protobuf.Empty) {
+            option (google.api.http) = {
+                post: "/v1/transactions"
+                body: "transaction"
+            };
+        }
+
+        rpc ExecuteTransaction (ExecuteTransactionRequest) returns (google.protobuf.Empty) {
+            option (google.api.http) = {
+                post: "/v1/transactions"
+                body: "transaction"
+            };
+        }
+}
+
+message Transaction {
+    common.v1.ObjectKey txn_id = 1;
+}
+
+message CreateTransactionRequest {
+    // Empty
+}
+
+message DeleteTransactionRequest {
+    common.v1.ObjectKey txn_id = 1;
+}
+
+message ExecuteTransactionRequest {
+    common.v1.ObjectKey txn_id = 1;
+}
