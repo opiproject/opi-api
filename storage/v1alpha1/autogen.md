@@ -139,22 +139,22 @@
     - [FrontendVirtioScsiService](#opi_api-storage-v1-FrontendVirtioScsiService)
   
 - [middleend.proto](#middleend-proto)
-    - [CreateCryptoRequest](#opi_api-storage-v1-CreateCryptoRequest)
-    - [Crypto](#opi_api-storage-v1-Crypto)
-    - [CryptoStatsRequest](#opi_api-storage-v1-CryptoStatsRequest)
-    - [CryptoStatsResponse](#opi_api-storage-v1-CryptoStatsResponse)
-    - [DeleteCryptoRequest](#opi_api-storage-v1-DeleteCryptoRequest)
-    - [GetCryptoRequest](#opi_api-storage-v1-GetCryptoRequest)
-    - [ListCryptoRequest](#opi_api-storage-v1-ListCryptoRequest)
-    - [ListCryptoResponse](#opi_api-storage-v1-ListCryptoResponse)
-    - [UpdateCryptoRequest](#opi_api-storage-v1-UpdateCryptoRequest)
+    - [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest)
+    - [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest)
+    - [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume)
+    - [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest)
+    - [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse)
+    - [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest)
+    - [ListEncryptedVolumeRequest](#opi_api-storage-v1-ListEncryptedVolumeRequest)
+    - [ListEncryptedVolumeResponse](#opi_api-storage-v1-ListEncryptedVolumeResponse)
+    - [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest)
   
     - [MiddleendService](#opi_api-storage-v1-MiddleendService)
   
 - [opicommon.proto](#opicommon-proto)
     - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
   
-    - [CryptoType](#opi_api-storage-v1-CryptoType)
+    - [EncryptionType](#opi_api-storage-v1-EncryptionType)
   
 - [object_key.proto](#object_key-proto)
     - [ObjectKey](#opi_api-common-v1-ObjectKey)
@@ -2070,63 +2070,78 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-CreateCryptoRequest"></a>
+<a name="opi_api-storage-v1-CreateEncryptedVolumeRequest"></a>
 
-### CreateCryptoRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| volume | [Crypto](#opi_api-storage-v1-Crypto) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-Crypto"></a>
-
-### Crypto
+### CreateEncryptedVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteEncryptedVolumeRequest"></a>
+
+### DeleteEncryptedVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-EncryptedVolume"></a>
+
+### EncryptedVolume
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this volume |
 | key | [bytes](#bytes) |  | Key to be used for encryption |
-| cipher | [CryptoType](#opi_api-storage-v1-CryptoType) |  | Cipher to use |
+| cipher | [EncryptionType](#opi_api-storage-v1-EncryptionType) |  | Cipher to use |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-CryptoStatsRequest"></a>
+<a name="opi_api-storage-v1-EncryptedVolumeStatsRequest"></a>
 
-### CryptoStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-CryptoStatsResponse"></a>
-
-### CryptoStatsResponse
+### EncryptedVolumeStatsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-EncryptedVolumeStatsResponse"></a>
+
+### EncryptedVolumeStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -2134,39 +2149,24 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-DeleteCryptoRequest"></a>
+<a name="opi_api-storage-v1-GetEncryptedVolumeRequest"></a>
 
-### DeleteCryptoRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-GetCryptoRequest"></a>
-
-### GetCryptoRequest
+### GetEncryptedVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| crypto_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListCryptoRequest"></a>
+<a name="opi_api-storage-v1-ListEncryptedVolumeRequest"></a>
 
-### ListCryptoRequest
+### ListEncryptedVolumeRequest
 
 
 
@@ -2180,15 +2180,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-ListCryptoResponse"></a>
+<a name="opi_api-storage-v1-ListEncryptedVolumeResponse"></a>
 
-### ListCryptoResponse
+### ListEncryptedVolumeResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volumes | [Crypto](#opi_api-storage-v1-Crypto) | repeated |  |
+| volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -2196,15 +2196,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-UpdateCryptoRequest"></a>
+<a name="opi_api-storage-v1-UpdateEncryptedVolumeRequest"></a>
 
-### UpdateCryptoRequest
+### UpdateEncryptedVolumeRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume | [Crypto](#opi_api-storage-v1-Crypto) |  |  |
+| volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
 
 
 
@@ -2224,12 +2224,12 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateCrypto | [CreateCryptoRequest](#opi_api-storage-v1-CreateCryptoRequest) | [Crypto](#opi_api-storage-v1-Crypto) |  |
-| DeleteCrypto | [DeleteCryptoRequest](#opi_api-storage-v1-DeleteCryptoRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateCrypto | [UpdateCryptoRequest](#opi_api-storage-v1-UpdateCryptoRequest) | [Crypto](#opi_api-storage-v1-Crypto) |  |
-| ListCrypto | [ListCryptoRequest](#opi_api-storage-v1-ListCryptoRequest) | [ListCryptoResponse](#opi_api-storage-v1-ListCryptoResponse) |  |
-| GetCrypto | [GetCryptoRequest](#opi_api-storage-v1-GetCryptoRequest) | [Crypto](#opi_api-storage-v1-Crypto) |  |
-| CryptoStats | [CryptoStatsRequest](#opi_api-storage-v1-CryptoStatsRequest) | [CryptoStatsResponse](#opi_api-storage-v1-CryptoStatsResponse) |  |
+| CreateEncryptedVolume | [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
+| DeleteEncryptedVolume | [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateEncryptedVolume | [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
+| ListEncryptedVolume | [ListEncryptedVolumeRequest](#opi_api-storage-v1-ListEncryptedVolumeRequest) | [ListEncryptedVolumeResponse](#opi_api-storage-v1-ListEncryptedVolumeResponse) |  |
+| GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
+| EncryptedVolumeStats | [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest) | [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse) |  |
 
  
 
@@ -2268,20 +2268,20 @@ confusion with storage &#34;devices&#34;.
  
 
 
-<a name="opi_api-storage-v1-CryptoType"></a>
+<a name="opi_api-storage-v1-EncryptionType"></a>
 
-### CryptoType
-AES encryption type to be used
+### EncryptionType
+AES encryption types
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| CRYPTO_TYPE_UNSPECIFIED | 0 |  |
-| CRYPTO_TYPE_AES_CBC_128 | 1 |  |
-| CRYPTO_TYPE_AES_CBC_192 | 2 |  |
-| CRYPTO_TYPE_AES_CBC_256 | 3 |  |
-| CRYPTO_TYPE_AES_XTS_128 | 4 |  |
-| CRYPTO_TYPE_AES_XTS_192 | 5 |  |
-| CRYPTO_TYPE_AES_XTS_256 | 6 |  |
+| ENCRYPTION_TYPE_UNSPECIFIED | 0 |  |
+| ENCRYPTION_TYPE_AES_CBC_128 | 1 |  |
+| ENCRYPTION_TYPE_AES_CBC_192 | 2 |  |
+| ENCRYPTION_TYPE_AES_CBC_256 | 3 |  |
+| ENCRYPTION_TYPE_AES_XTS_128 | 4 |  |
+| ENCRYPTION_TYPE_AES_XTS_192 | 5 |  |
+| ENCRYPTION_TYPE_AES_XTS_256 | 6 |  |
 
 
  

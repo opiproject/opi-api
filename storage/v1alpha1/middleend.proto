@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// {C} Copyright 2022 Pensando Systems Inc. All rights reserved
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -16,38 +17,38 @@ import "google/api/annotations.proto";
 
 // Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 service MiddleendService {
-    rpc CreateCrypto (CreateCryptoRequest) returns (Crypto) {
+    rpc CreateEncryptedVolume (CreateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
             post: "/v1/volumes"
             body: "volume"
         };
     }
-    rpc DeleteCrypto (DeleteCryptoRequest) returns (google.protobuf.Empty) {
+    rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/volumes/{volume}"
         };
     }
-    rpc UpdateCrypto (UpdateCryptoRequest) returns (Crypto) {
+    rpc UpdateEncryptedVolume (UpdateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
             patch: "/v1/volumes"
             body: "volume"
         };
     }
-    rpc ListCrypto   (ListCryptoRequest)   returns (ListCryptoResponse)   {
+    rpc ListEncryptedVolume   (ListEncryptedVolumeRequest)   returns (ListEncryptedVolumeResponse)   {
         option (google.api.http) = {
             get: "/v1/volumes"
         };
     }
-    rpc GetCrypto    (GetCryptoRequest)    returns (Crypto)    {
+    rpc GetEncryptedVolume    (GetEncryptedVolumeRequest)    returns (EncryptedVolume)    {
         option (google.api.http) = {
             get: "/v1/volumes/{volume}"
         };
     }
-    rpc CryptoStats  (CryptoStatsRequest)  returns (CryptoStatsResponse)  {}
+    rpc EncryptedVolumeStats  (EncryptedVolumeStatsRequest)  returns (EncryptedVolumeStatsResponse)  {}
 }
 
-message Crypto {
-    common.v1.ObjectKey crypto_id = 1;
+message EncryptedVolume {
+    common.v1.ObjectKey encrypted_volume_id = 1;
 
     // The back/middle-end volume to back this volume
     common.v1.ObjectKey volume_id = 2;
@@ -56,41 +57,41 @@ message Crypto {
     bytes key = 3;
 
     // Cipher to use
-    CryptoType cipher = 4;
+    EncryptionType cipher = 4;
 
 }
 
-message CreateCryptoRequest {
-    Crypto volume = 1;
+message CreateEncryptedVolumeRequest {
+    EncryptedVolume volume = 1;
 }
 
-message DeleteCryptoRequest {
-    common.v1.ObjectKey crypto_id = 1;
+message DeleteEncryptedVolumeRequest {
+    common.v1.ObjectKey encrypted_volume_id = 1;
 }
 
-message UpdateCryptoRequest {
-    Crypto volume = 1;
+message UpdateEncryptedVolumeRequest {
+    EncryptedVolume volume = 1;
 }
 
-message ListCryptoRequest {
+message ListEncryptedVolumeRequest {
     int32 page_size = 1;
     string page_token = 2;
 }
 
-message ListCryptoResponse {
-    repeated Crypto volumes = 1;
+message ListEncryptedVolumeResponse {
+    repeated EncryptedVolume volumes = 1;
     string next_page_token = 2;
 }
 
-message GetCryptoRequest {
-    common.v1.ObjectKey crypto_id = 1;
+message GetEncryptedVolumeRequest {
+    common.v1.ObjectKey encrypted_volume_id = 1;
 }
 
-message CryptoStatsRequest {
-    common.v1.ObjectKey crypto_id = 1;
+message EncryptedVolumeStatsRequest {
+    common.v1.ObjectKey encrypted_volume_id = 1;
 }
 
-message CryptoStatsResponse {
-    common.v1.ObjectKey crypto_id = 1;
+message EncryptedVolumeStatsResponse {
+    common.v1.ObjectKey encrypted_volume_id = 1;
     string stats = 2;
 }

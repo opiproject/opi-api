@@ -31,15 +31,15 @@ public final class OpiCommonProto {
       "\n\017opicommon.proto\022\022opi_api.storage.v1\"S\n" +
       "\013PciEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physica" +
       "l_function\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001" +
-      "(\005*\327\001\n\nCryptoType\022\033\n\027CRYPTO_TYPE_UNSPECI" +
-      "FIED\020\000\022\033\n\027CRYPTO_TYPE_AES_CBC_128\020\001\022\033\n\027C" +
-      "RYPTO_TYPE_AES_CBC_192\020\002\022\033\n\027CRYPTO_TYPE_" +
-      "AES_CBC_256\020\003\022\033\n\027CRYPTO_TYPE_AES_XTS_128" +
-      "\020\004\022\033\n\027CRYPTO_TYPE_AES_XTS_192\020\005\022\033\n\027CRYPT" +
-      "O_TYPE_AES_XTS_256\020\006B]\n\022opi_api.storage." +
-      "v1B\016OpiCommonProtoP\001Z5github.com/opiproj" +
-      "ect/opi-api/storage/v1alpha1/gen/gob\006pro" +
-      "to3"
+      "(\005*\367\001\n\016EncryptionType\022\037\n\033ENCRYPTION_TYPE" +
+      "_UNSPECIFIED\020\000\022\037\n\033ENCRYPTION_TYPE_AES_CB" +
+      "C_128\020\001\022\037\n\033ENCRYPTION_TYPE_AES_CBC_192\020\002" +
+      "\022\037\n\033ENCRYPTION_TYPE_AES_CBC_256\020\003\022\037\n\033ENC" +
+      "RYPTION_TYPE_AES_XTS_128\020\004\022\037\n\033ENCRYPTION" +
+      "_TYPE_AES_XTS_192\020\005\022\037\n\033ENCRYPTION_TYPE_A" +
+      "ES_XTS_256\020\006B]\n\022opi_api.storage.v1B\016OpiC" +
+      "ommonProtoP\001Z5github.com/opiproject/opi-" +
+      "api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

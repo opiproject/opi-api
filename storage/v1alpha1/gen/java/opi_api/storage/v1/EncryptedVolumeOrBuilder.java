@@ -3,24 +3,24 @@
 
 package opi_api.storage.v1;
 
-public interface CryptoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.Crypto)
+public interface EncryptedVolumeOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.EncryptedVolume)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-   * @return Whether the cryptoId field is set.
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+   * @return Whether the encryptedVolumeId field is set.
    */
-  boolean hasCryptoId();
+  boolean hasEncryptedVolumeId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-   * @return The cryptoId.
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+   * @return The encryptedVolumeId.
    */
-  opi_api.common.v1.ObjectKey getCryptoId();
+  opi_api.common.v1.ObjectKey getEncryptedVolumeId();
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder();
+  opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder();
 
   /**
    * <pre>
@@ -64,7 +64,7 @@ public interface CryptoOrBuilder extends
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.CryptoType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
    * @return The enum numeric value on the wire for cipher.
    */
   int getCipherValue();
@@ -73,8 +73,8 @@ public interface CryptoOrBuilder extends
    * Cipher to use
    * </pre>
    *
-   * <code>.opi_api.storage.v1.CryptoType cipher = 4;</code>
+   * <code>.opi_api.storage.v1.EncryptionType cipher = 4;</code>
    * @return The cipher.
    */
-  opi_api.storage.v1.CryptoType getCipher();
+  opi_api.storage.v1.EncryptionType getCipher();
 }

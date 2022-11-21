@@ -4,25 +4,25 @@
 package opi_api.storage.v1;
 
 /**
- * Protobuf type {@code opi_api.storage.v1.CryptoStatsRequest}
+ * Protobuf type {@code opi_api.storage.v1.DeleteEncryptedVolumeRequest}
  */
-public final class CryptoStatsRequest extends
+public final class DeleteEncryptedVolumeRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.CryptoStatsRequest)
-    CryptoStatsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
+    DeleteEncryptedVolumeRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CryptoStatsRequest.newBuilder() to construct.
-  private CryptoStatsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteEncryptedVolumeRequest.newBuilder() to construct.
+  private DeleteEncryptedVolumeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CryptoStatsRequest() {
+  private DeleteEncryptedVolumeRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CryptoStatsRequest();
+    return new DeleteEncryptedVolumeRequest();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CryptoStatsRequest(
+  private DeleteEncryptedVolumeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -50,13 +50,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (cryptoId_ != null) {
-              subBuilder = cryptoId_.toBuilder();
+            if (encryptedVolumeId_ != null) {
+              subBuilder = encryptedVolumeId_.toBuilder();
             }
-            cryptoId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            encryptedVolumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(cryptoId_);
-              cryptoId_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(encryptedVolumeId_);
+              encryptedVolumeId_ = subBuilder.buildPartial();
             }
 
             break;
@@ -82,41 +82,41 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor;
+    return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_DeleteEncryptedVolumeRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_CryptoStatsRequest_fieldAccessorTable
+    return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_DeleteEncryptedVolumeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.storage.v1.CryptoStatsRequest.class, opi_api.storage.v1.CryptoStatsRequest.Builder.class);
+            opi_api.storage.v1.DeleteEncryptedVolumeRequest.class, opi_api.storage.v1.DeleteEncryptedVolumeRequest.Builder.class);
   }
 
-  public static final int CRYPTO_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey cryptoId_;
+  public static final int ENCRYPTED_VOLUME_ID_FIELD_NUMBER = 1;
+  private opi_api.common.v1.ObjectKey encryptedVolumeId_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-   * @return Whether the cryptoId field is set.
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+   * @return Whether the encryptedVolumeId field is set.
    */
   @java.lang.Override
-  public boolean hasCryptoId() {
-    return cryptoId_ != null;
+  public boolean hasEncryptedVolumeId() {
+    return encryptedVolumeId_ != null;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-   * @return The cryptoId.
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+   * @return The encryptedVolumeId.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getCryptoId() {
-    return cryptoId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : cryptoId_;
+  public opi_api.common.v1.ObjectKey getEncryptedVolumeId() {
+    return encryptedVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder() {
-    return getCryptoId();
+  public opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder() {
+    return getEncryptedVolumeId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (cryptoId_ != null) {
-      output.writeMessage(1, getCryptoId());
+    if (encryptedVolumeId_ != null) {
+      output.writeMessage(1, getEncryptedVolumeId());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (cryptoId_ != null) {
+    if (encryptedVolumeId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCryptoId());
+        .computeMessageSize(1, getEncryptedVolumeId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -159,15 +159,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.storage.v1.CryptoStatsRequest)) {
+    if (!(obj instanceof opi_api.storage.v1.DeleteEncryptedVolumeRequest)) {
       return super.equals(obj);
     }
-    opi_api.storage.v1.CryptoStatsRequest other = (opi_api.storage.v1.CryptoStatsRequest) obj;
+    opi_api.storage.v1.DeleteEncryptedVolumeRequest other = (opi_api.storage.v1.DeleteEncryptedVolumeRequest) obj;
 
-    if (hasCryptoId() != other.hasCryptoId()) return false;
-    if (hasCryptoId()) {
-      if (!getCryptoId()
-          .equals(other.getCryptoId())) return false;
+    if (hasEncryptedVolumeId() != other.hasEncryptedVolumeId()) return false;
+    if (hasEncryptedVolumeId()) {
+      if (!getEncryptedVolumeId()
+          .equals(other.getEncryptedVolumeId())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,78 +180,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCryptoId()) {
-      hash = (37 * hash) + CRYPTO_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCryptoId().hashCode();
+    if (hasEncryptedVolumeId()) {
+      hash = (37 * hash) + ENCRYPTED_VOLUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptedVolumeId().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(byte[] data)
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseDelimitedFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.storage.v1.CryptoStatsRequest parseFrom(
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.storage.v1.CryptoStatsRequest prototype) {
+  public static Builder newBuilder(opi_api.storage.v1.DeleteEncryptedVolumeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code opi_api.storage.v1.CryptoStatsRequest}
+   * Protobuf type {@code opi_api.storage.v1.DeleteEncryptedVolumeRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.CryptoStatsRequest)
-      opi_api.storage.v1.CryptoStatsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
+      opi_api.storage.v1.DeleteEncryptedVolumeRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor;
+      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_DeleteEncryptedVolumeRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_CryptoStatsRequest_fieldAccessorTable
+      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_DeleteEncryptedVolumeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.storage.v1.CryptoStatsRequest.class, opi_api.storage.v1.CryptoStatsRequest.Builder.class);
+              opi_api.storage.v1.DeleteEncryptedVolumeRequest.class, opi_api.storage.v1.DeleteEncryptedVolumeRequest.Builder.class);
     }
 
-    // Construct using opi_api.storage.v1.CryptoStatsRequest.newBuilder()
+    // Construct using opi_api.storage.v1.DeleteEncryptedVolumeRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,11 +317,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cryptoIdBuilder_ == null) {
-        cryptoId_ = null;
+      if (encryptedVolumeIdBuilder_ == null) {
+        encryptedVolumeId_ = null;
       } else {
-        cryptoId_ = null;
-        cryptoIdBuilder_ = null;
+        encryptedVolumeId_ = null;
+        encryptedVolumeIdBuilder_ = null;
       }
       return this;
     }
@@ -329,17 +329,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_CryptoStatsRequest_descriptor;
+      return opi_api.storage.v1.MiddleendProto.internal_static_opi_api_storage_v1_DeleteEncryptedVolumeRequest_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.CryptoStatsRequest getDefaultInstanceForType() {
-      return opi_api.storage.v1.CryptoStatsRequest.getDefaultInstance();
+    public opi_api.storage.v1.DeleteEncryptedVolumeRequest getDefaultInstanceForType() {
+      return opi_api.storage.v1.DeleteEncryptedVolumeRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.CryptoStatsRequest build() {
-      opi_api.storage.v1.CryptoStatsRequest result = buildPartial();
+    public opi_api.storage.v1.DeleteEncryptedVolumeRequest build() {
+      opi_api.storage.v1.DeleteEncryptedVolumeRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,12 +347,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.storage.v1.CryptoStatsRequest buildPartial() {
-      opi_api.storage.v1.CryptoStatsRequest result = new opi_api.storage.v1.CryptoStatsRequest(this);
-      if (cryptoIdBuilder_ == null) {
-        result.cryptoId_ = cryptoId_;
+    public opi_api.storage.v1.DeleteEncryptedVolumeRequest buildPartial() {
+      opi_api.storage.v1.DeleteEncryptedVolumeRequest result = new opi_api.storage.v1.DeleteEncryptedVolumeRequest(this);
+      if (encryptedVolumeIdBuilder_ == null) {
+        result.encryptedVolumeId_ = encryptedVolumeId_;
       } else {
-        result.cryptoId_ = cryptoIdBuilder_.build();
+        result.encryptedVolumeId_ = encryptedVolumeIdBuilder_.build();
       }
       onBuilt();
       return result;
@@ -392,18 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.storage.v1.CryptoStatsRequest) {
-        return mergeFrom((opi_api.storage.v1.CryptoStatsRequest)other);
+      if (other instanceof opi_api.storage.v1.DeleteEncryptedVolumeRequest) {
+        return mergeFrom((opi_api.storage.v1.DeleteEncryptedVolumeRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.storage.v1.CryptoStatsRequest other) {
-      if (other == opi_api.storage.v1.CryptoStatsRequest.getDefaultInstance()) return this;
-      if (other.hasCryptoId()) {
-        mergeCryptoId(other.getCryptoId());
+    public Builder mergeFrom(opi_api.storage.v1.DeleteEncryptedVolumeRequest other) {
+      if (other == opi_api.storage.v1.DeleteEncryptedVolumeRequest.getDefaultInstance()) return this;
+      if (other.hasEncryptedVolumeId()) {
+        mergeEncryptedVolumeId(other.getEncryptedVolumeId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.storage.v1.CryptoStatsRequest parsedMessage = null;
+      opi_api.storage.v1.DeleteEncryptedVolumeRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.storage.v1.CryptoStatsRequest) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.storage.v1.DeleteEncryptedVolumeRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -434,123 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey cryptoId_;
+    private opi_api.common.v1.ObjectKey encryptedVolumeId_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> cryptoIdBuilder_;
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> encryptedVolumeIdBuilder_;
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-     * @return Whether the cryptoId field is set.
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * @return Whether the encryptedVolumeId field is set.
      */
-    public boolean hasCryptoId() {
-      return cryptoIdBuilder_ != null || cryptoId_ != null;
+    public boolean hasEncryptedVolumeId() {
+      return encryptedVolumeIdBuilder_ != null || encryptedVolumeId_ != null;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
-     * @return The cryptoId.
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
+     * @return The encryptedVolumeId.
      */
-    public opi_api.common.v1.ObjectKey getCryptoId() {
-      if (cryptoIdBuilder_ == null) {
-        return cryptoId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : cryptoId_;
+    public opi_api.common.v1.ObjectKey getEncryptedVolumeId() {
+      if (encryptedVolumeIdBuilder_ == null) {
+        return encryptedVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
       } else {
-        return cryptoIdBuilder_.getMessage();
+        return encryptedVolumeIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public Builder setCryptoId(opi_api.common.v1.ObjectKey value) {
-      if (cryptoIdBuilder_ == null) {
+    public Builder setEncryptedVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (encryptedVolumeIdBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        cryptoId_ = value;
+        encryptedVolumeId_ = value;
         onChanged();
       } else {
-        cryptoIdBuilder_.setMessage(value);
+        encryptedVolumeIdBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public Builder setCryptoId(
+    public Builder setEncryptedVolumeId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (cryptoIdBuilder_ == null) {
-        cryptoId_ = builderForValue.build();
+      if (encryptedVolumeIdBuilder_ == null) {
+        encryptedVolumeId_ = builderForValue.build();
         onChanged();
       } else {
-        cryptoIdBuilder_.setMessage(builderForValue.build());
+        encryptedVolumeIdBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public Builder mergeCryptoId(opi_api.common.v1.ObjectKey value) {
-      if (cryptoIdBuilder_ == null) {
-        if (cryptoId_ != null) {
-          cryptoId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(cryptoId_).mergeFrom(value).buildPartial();
+    public Builder mergeEncryptedVolumeId(opi_api.common.v1.ObjectKey value) {
+      if (encryptedVolumeIdBuilder_ == null) {
+        if (encryptedVolumeId_ != null) {
+          encryptedVolumeId_ =
+            opi_api.common.v1.ObjectKey.newBuilder(encryptedVolumeId_).mergeFrom(value).buildPartial();
         } else {
-          cryptoId_ = value;
+          encryptedVolumeId_ = value;
         }
         onChanged();
       } else {
-        cryptoIdBuilder_.mergeFrom(value);
+        encryptedVolumeIdBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public Builder clearCryptoId() {
-      if (cryptoIdBuilder_ == null) {
-        cryptoId_ = null;
+    public Builder clearEncryptedVolumeId() {
+      if (encryptedVolumeIdBuilder_ == null) {
+        encryptedVolumeId_ = null;
         onChanged();
       } else {
-        cryptoId_ = null;
-        cryptoIdBuilder_ = null;
+        encryptedVolumeId_ = null;
+        encryptedVolumeIdBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public opi_api.common.v1.ObjectKey.Builder getCryptoIdBuilder() {
+    public opi_api.common.v1.ObjectKey.Builder getEncryptedVolumeIdBuilder() {
       
       onChanged();
-      return getCryptoIdFieldBuilder().getBuilder();
+      return getEncryptedVolumeIdFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getCryptoIdOrBuilder() {
-      if (cryptoIdBuilder_ != null) {
-        return cryptoIdBuilder_.getMessageOrBuilder();
+    public opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder() {
+      if (encryptedVolumeIdBuilder_ != null) {
+        return encryptedVolumeIdBuilder_.getMessageOrBuilder();
       } else {
-        return cryptoId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : cryptoId_;
+        return encryptedVolumeId_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : encryptedVolumeId_;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey crypto_id = 1;</code>
+     * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getCryptoIdFieldBuilder() {
-      if (cryptoIdBuilder_ == null) {
-        cryptoIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getEncryptedVolumeIdFieldBuilder() {
+      if (encryptedVolumeIdBuilder_ == null) {
+        encryptedVolumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getCryptoId(),
+                getEncryptedVolumeId(),
                 getParentForChildren(),
                 isClean());
-        cryptoId_ = null;
+        encryptedVolumeId_ = null;
       }
-      return cryptoIdBuilder_;
+      return encryptedVolumeIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -565,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.CryptoStatsRequest)
+    // @@protoc_insertion_point(builder_scope:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.CryptoStatsRequest)
-  private static final opi_api.storage.v1.CryptoStatsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteEncryptedVolumeRequest)
+  private static final opi_api.storage.v1.DeleteEncryptedVolumeRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.storage.v1.CryptoStatsRequest();
+    DEFAULT_INSTANCE = new opi_api.storage.v1.DeleteEncryptedVolumeRequest();
   }
 
-  public static opi_api.storage.v1.CryptoStatsRequest getDefaultInstance() {
+  public static opi_api.storage.v1.DeleteEncryptedVolumeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CryptoStatsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CryptoStatsRequest>() {
+  private static final com.google.protobuf.Parser<DeleteEncryptedVolumeRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteEncryptedVolumeRequest>() {
     @java.lang.Override
-    public CryptoStatsRequest parsePartialFrom(
+    public DeleteEncryptedVolumeRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CryptoStatsRequest(input, extensionRegistry);
+      return new DeleteEncryptedVolumeRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CryptoStatsRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteEncryptedVolumeRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CryptoStatsRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteEncryptedVolumeRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.storage.v1.CryptoStatsRequest getDefaultInstanceForType() {
+  public opi_api.storage.v1.DeleteEncryptedVolumeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

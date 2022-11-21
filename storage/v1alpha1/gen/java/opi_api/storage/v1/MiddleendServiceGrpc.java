@@ -18,190 +18,190 @@ public final class MiddleendServiceGrpc {
   public static final String SERVICE_NAME = "opi_api.storage.v1.MiddleendService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateCryptoRequest,
-      opi_api.storage.v1.Crypto> getCreateCryptoMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getCreateEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateCrypto",
-      requestType = opi_api.storage.v1.CreateCryptoRequest.class,
-      responseType = opi_api.storage.v1.Crypto.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateEncryptedVolume",
+      requestType = opi_api.storage.v1.CreateEncryptedVolumeRequest.class,
+      responseType = opi_api.storage.v1.EncryptedVolume.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateCryptoRequest,
-      opi_api.storage.v1.Crypto> getCreateCryptoMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateCryptoRequest, opi_api.storage.v1.Crypto> getCreateCryptoMethod;
-    if ((getCreateCryptoMethod = MiddleendServiceGrpc.getCreateCryptoMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getCreateEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getCreateEncryptedVolumeMethod;
+    if ((getCreateEncryptedVolumeMethod = MiddleendServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getCreateCryptoMethod = MiddleendServiceGrpc.getCreateCryptoMethod) == null) {
-          MiddleendServiceGrpc.getCreateCryptoMethod = getCreateCryptoMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateCryptoRequest, opi_api.storage.v1.Crypto>newBuilder()
+        if ((getCreateEncryptedVolumeMethod = MiddleendServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
+          MiddleendServiceGrpc.getCreateEncryptedVolumeMethod = getCreateEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCrypto"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.CreateCryptoRequest.getDefaultInstance()))
+                  opi_api.storage.v1.CreateEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.Crypto.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("CreateCrypto"))
+                  opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("CreateEncryptedVolume"))
               .build();
         }
       }
     }
-    return getCreateCryptoMethod;
+    return getCreateEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteCryptoRequest,
-      com.google.protobuf.Empty> getDeleteCryptoMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteEncryptedVolumeRequest,
+      com.google.protobuf.Empty> getDeleteEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteCrypto",
-      requestType = opi_api.storage.v1.DeleteCryptoRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEncryptedVolume",
+      requestType = opi_api.storage.v1.DeleteEncryptedVolumeRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteCryptoRequest,
-      com.google.protobuf.Empty> getDeleteCryptoMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteCryptoRequest, com.google.protobuf.Empty> getDeleteCryptoMethod;
-    if ((getDeleteCryptoMethod = MiddleendServiceGrpc.getDeleteCryptoMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteEncryptedVolumeRequest,
+      com.google.protobuf.Empty> getDeleteEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteEncryptedVolumeRequest, com.google.protobuf.Empty> getDeleteEncryptedVolumeMethod;
+    if ((getDeleteEncryptedVolumeMethod = MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getDeleteCryptoMethod = MiddleendServiceGrpc.getDeleteCryptoMethod) == null) {
-          MiddleendServiceGrpc.getDeleteCryptoMethod = getDeleteCryptoMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteCryptoRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getDeleteEncryptedVolumeMethod = MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
+          MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod = getDeleteEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteEncryptedVolumeRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCrypto"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.DeleteCryptoRequest.getDefaultInstance()))
+                  opi_api.storage.v1.DeleteEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("DeleteCrypto"))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("DeleteEncryptedVolume"))
               .build();
         }
       }
     }
-    return getDeleteCryptoMethod;
+    return getDeleteEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateCryptoRequest,
-      opi_api.storage.v1.Crypto> getUpdateCryptoMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getUpdateEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateCrypto",
-      requestType = opi_api.storage.v1.UpdateCryptoRequest.class,
-      responseType = opi_api.storage.v1.Crypto.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEncryptedVolume",
+      requestType = opi_api.storage.v1.UpdateEncryptedVolumeRequest.class,
+      responseType = opi_api.storage.v1.EncryptedVolume.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateCryptoRequest,
-      opi_api.storage.v1.Crypto> getUpdateCryptoMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateCryptoRequest, opi_api.storage.v1.Crypto> getUpdateCryptoMethod;
-    if ((getUpdateCryptoMethod = MiddleendServiceGrpc.getUpdateCryptoMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getUpdateEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getUpdateEncryptedVolumeMethod;
+    if ((getUpdateEncryptedVolumeMethod = MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getUpdateCryptoMethod = MiddleendServiceGrpc.getUpdateCryptoMethod) == null) {
-          MiddleendServiceGrpc.getUpdateCryptoMethod = getUpdateCryptoMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateCryptoRequest, opi_api.storage.v1.Crypto>newBuilder()
+        if ((getUpdateEncryptedVolumeMethod = MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
+          MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod = getUpdateEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCrypto"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.UpdateCryptoRequest.getDefaultInstance()))
+                  opi_api.storage.v1.UpdateEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.Crypto.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("UpdateCrypto"))
+                  opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("UpdateEncryptedVolume"))
               .build();
         }
       }
     }
-    return getUpdateCryptoMethod;
+    return getUpdateEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListCryptoRequest,
-      opi_api.storage.v1.ListCryptoResponse> getListCryptoMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest,
+      opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListCrypto",
-      requestType = opi_api.storage.v1.ListCryptoRequest.class,
-      responseType = opi_api.storage.v1.ListCryptoResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListEncryptedVolume",
+      requestType = opi_api.storage.v1.ListEncryptedVolumeRequest.class,
+      responseType = opi_api.storage.v1.ListEncryptedVolumeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListCryptoRequest,
-      opi_api.storage.v1.ListCryptoResponse> getListCryptoMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListCryptoRequest, opi_api.storage.v1.ListCryptoResponse> getListCryptoMethod;
-    if ((getListCryptoMethod = MiddleendServiceGrpc.getListCryptoMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest,
+      opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest, opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod;
+    if ((getListEncryptedVolumeMethod = MiddleendServiceGrpc.getListEncryptedVolumeMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getListCryptoMethod = MiddleendServiceGrpc.getListCryptoMethod) == null) {
-          MiddleendServiceGrpc.getListCryptoMethod = getListCryptoMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListCryptoRequest, opi_api.storage.v1.ListCryptoResponse>newBuilder()
+        if ((getListEncryptedVolumeMethod = MiddleendServiceGrpc.getListEncryptedVolumeMethod) == null) {
+          MiddleendServiceGrpc.getListEncryptedVolumeMethod = getListEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListEncryptedVolumeRequest, opi_api.storage.v1.ListEncryptedVolumeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCrypto"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListCryptoRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListCryptoResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("ListCrypto"))
+                  opi_api.storage.v1.ListEncryptedVolumeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("ListEncryptedVolume"))
               .build();
         }
       }
     }
-    return getListCryptoMethod;
+    return getListEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetCryptoRequest,
-      opi_api.storage.v1.Crypto> getGetCryptoMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getGetEncryptedVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetCrypto",
-      requestType = opi_api.storage.v1.GetCryptoRequest.class,
-      responseType = opi_api.storage.v1.Crypto.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetEncryptedVolume",
+      requestType = opi_api.storage.v1.GetEncryptedVolumeRequest.class,
+      responseType = opi_api.storage.v1.EncryptedVolume.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetCryptoRequest,
-      opi_api.storage.v1.Crypto> getGetCryptoMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.GetCryptoRequest, opi_api.storage.v1.Crypto> getGetCryptoMethod;
-    if ((getGetCryptoMethod = MiddleendServiceGrpc.getGetCryptoMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest,
+      opi_api.storage.v1.EncryptedVolume> getGetEncryptedVolumeMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getGetEncryptedVolumeMethod;
+    if ((getGetEncryptedVolumeMethod = MiddleendServiceGrpc.getGetEncryptedVolumeMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getGetCryptoMethod = MiddleendServiceGrpc.getGetCryptoMethod) == null) {
-          MiddleendServiceGrpc.getGetCryptoMethod = getGetCryptoMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetCryptoRequest, opi_api.storage.v1.Crypto>newBuilder()
+        if ((getGetEncryptedVolumeMethod = MiddleendServiceGrpc.getGetEncryptedVolumeMethod) == null) {
+          MiddleendServiceGrpc.getGetEncryptedVolumeMethod = getGetEncryptedVolumeMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCrypto"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEncryptedVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.GetCryptoRequest.getDefaultInstance()))
+                  opi_api.storage.v1.GetEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.Crypto.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("GetCrypto"))
+                  opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("GetEncryptedVolume"))
               .build();
         }
       }
     }
-    return getGetCryptoMethod;
+    return getGetEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CryptoStatsRequest,
-      opi_api.storage.v1.CryptoStatsResponse> getCryptoStatsMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest,
+      opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CryptoStats",
-      requestType = opi_api.storage.v1.CryptoStatsRequest.class,
-      responseType = opi_api.storage.v1.CryptoStatsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "EncryptedVolumeStats",
+      requestType = opi_api.storage.v1.EncryptedVolumeStatsRequest.class,
+      responseType = opi_api.storage.v1.EncryptedVolumeStatsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CryptoStatsRequest,
-      opi_api.storage.v1.CryptoStatsResponse> getCryptoStatsMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.CryptoStatsRequest, opi_api.storage.v1.CryptoStatsResponse> getCryptoStatsMethod;
-    if ((getCryptoStatsMethod = MiddleendServiceGrpc.getCryptoStatsMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest,
+      opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod;
+    if ((getEncryptedVolumeStatsMethod = MiddleendServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getCryptoStatsMethod = MiddleendServiceGrpc.getCryptoStatsMethod) == null) {
-          MiddleendServiceGrpc.getCryptoStatsMethod = getCryptoStatsMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.CryptoStatsRequest, opi_api.storage.v1.CryptoStatsResponse>newBuilder()
+        if ((getEncryptedVolumeStatsMethod = MiddleendServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
+          MiddleendServiceGrpc.getEncryptedVolumeStatsMethod = getEncryptedVolumeStatsMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CryptoStats"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EncryptedVolumeStats"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.CryptoStatsRequest.getDefaultInstance()))
+                  opi_api.storage.v1.EncryptedVolumeStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.CryptoStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("CryptoStats"))
+                  opi_api.storage.v1.EncryptedVolumeStatsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("EncryptedVolumeStats"))
               .build();
         }
       }
     }
-    return getCryptoStatsMethod;
+    return getEncryptedVolumeStatsMethod;
   }
 
   /**
@@ -257,90 +257,90 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public void createCrypto(opi_api.storage.v1.CreateCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCryptoMethod(), responseObserver);
+    public void createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEncryptedVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteCrypto(opi_api.storage.v1.DeleteCryptoRequest request,
+    public void deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCryptoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEncryptedVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateCrypto(opi_api.storage.v1.UpdateCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCryptoMethod(), responseObserver);
+    public void updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEncryptedVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void listCrypto(opi_api.storage.v1.ListCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListCryptoResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCryptoMethod(), responseObserver);
+    public void listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEncryptedVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void getCrypto(opi_api.storage.v1.GetCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCryptoMethod(), responseObserver);
+    public void getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEncryptedVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void cryptoStats(opi_api.storage.v1.CryptoStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.CryptoStatsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCryptoStatsMethod(), responseObserver);
+    public void encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEncryptedVolumeStatsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getCreateCryptoMethod(),
+            getCreateEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.CreateCryptoRequest,
-                opi_api.storage.v1.Crypto>(
-                  this, METHODID_CREATE_CRYPTO)))
+                opi_api.storage.v1.CreateEncryptedVolumeRequest,
+                opi_api.storage.v1.EncryptedVolume>(
+                  this, METHODID_CREATE_ENCRYPTED_VOLUME)))
           .addMethod(
-            getDeleteCryptoMethod(),
+            getDeleteEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.DeleteCryptoRequest,
+                opi_api.storage.v1.DeleteEncryptedVolumeRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_DELETE_CRYPTO)))
+                  this, METHODID_DELETE_ENCRYPTED_VOLUME)))
           .addMethod(
-            getUpdateCryptoMethod(),
+            getUpdateEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.UpdateCryptoRequest,
-                opi_api.storage.v1.Crypto>(
-                  this, METHODID_UPDATE_CRYPTO)))
+                opi_api.storage.v1.UpdateEncryptedVolumeRequest,
+                opi_api.storage.v1.EncryptedVolume>(
+                  this, METHODID_UPDATE_ENCRYPTED_VOLUME)))
           .addMethod(
-            getListCryptoMethod(),
+            getListEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListCryptoRequest,
-                opi_api.storage.v1.ListCryptoResponse>(
-                  this, METHODID_LIST_CRYPTO)))
+                opi_api.storage.v1.ListEncryptedVolumeRequest,
+                opi_api.storage.v1.ListEncryptedVolumeResponse>(
+                  this, METHODID_LIST_ENCRYPTED_VOLUME)))
           .addMethod(
-            getGetCryptoMethod(),
+            getGetEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.GetCryptoRequest,
-                opi_api.storage.v1.Crypto>(
-                  this, METHODID_GET_CRYPTO)))
+                opi_api.storage.v1.GetEncryptedVolumeRequest,
+                opi_api.storage.v1.EncryptedVolume>(
+                  this, METHODID_GET_ENCRYPTED_VOLUME)))
           .addMethod(
-            getCryptoStatsMethod(),
+            getEncryptedVolumeStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.CryptoStatsRequest,
-                opi_api.storage.v1.CryptoStatsResponse>(
-                  this, METHODID_CRYPTO_STATS)))
+                opi_api.storage.v1.EncryptedVolumeStatsRequest,
+                opi_api.storage.v1.EncryptedVolumeStatsResponse>(
+                  this, METHODID_ENCRYPTED_VOLUME_STATS)))
           .build();
     }
   }
@@ -364,50 +364,50 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public void createCrypto(opi_api.storage.v1.CreateCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
+    public void createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateCryptoMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteCrypto(opi_api.storage.v1.DeleteCryptoRequest request,
+    public void deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteCryptoMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateCrypto(opi_api.storage.v1.UpdateCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
+    public void updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateCryptoMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void listCrypto(opi_api.storage.v1.ListCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListCryptoResponse> responseObserver) {
+    public void listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListCryptoMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getCrypto(opi_api.storage.v1.GetCryptoRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto> responseObserver) {
+    public void getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCryptoMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void cryptoStats(opi_api.storage.v1.CryptoStatsRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.CryptoStatsResponse> responseObserver) {
+    public void encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCryptoStatsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getEncryptedVolumeStatsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -430,44 +430,44 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.Crypto createCrypto(opi_api.storage.v1.CreateCryptoRequest request) {
+    public opi_api.storage.v1.EncryptedVolume createEncryptedVolume(opi_api.storage.v1.CreateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateCryptoMethod(), getCallOptions(), request);
+          getChannel(), getCreateEncryptedVolumeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty deleteCrypto(opi_api.storage.v1.DeleteCryptoRequest request) {
+    public com.google.protobuf.Empty deleteEncryptedVolume(opi_api.storage.v1.DeleteEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteCryptoMethod(), getCallOptions(), request);
+          getChannel(), getDeleteEncryptedVolumeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.Crypto updateCrypto(opi_api.storage.v1.UpdateCryptoRequest request) {
+    public opi_api.storage.v1.EncryptedVolume updateEncryptedVolume(opi_api.storage.v1.UpdateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateCryptoMethod(), getCallOptions(), request);
+          getChannel(), getUpdateEncryptedVolumeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.ListCryptoResponse listCrypto(opi_api.storage.v1.ListCryptoRequest request) {
+    public opi_api.storage.v1.ListEncryptedVolumeResponse listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListCryptoMethod(), getCallOptions(), request);
+          getChannel(), getListEncryptedVolumeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.Crypto getCrypto(opi_api.storage.v1.GetCryptoRequest request) {
+    public opi_api.storage.v1.EncryptedVolume getEncryptedVolume(opi_api.storage.v1.GetEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCryptoMethod(), getCallOptions(), request);
+          getChannel(), getGetEncryptedVolumeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.CryptoStatsResponse cryptoStats(opi_api.storage.v1.CryptoStatsRequest request) {
+    public opi_api.storage.v1.EncryptedVolumeStatsResponse encryptedVolumeStats(opi_api.storage.v1.EncryptedVolumeStatsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCryptoStatsMethod(), getCallOptions(), request);
+          getChannel(), getEncryptedVolumeStatsMethod(), getCallOptions(), request);
     }
   }
 
@@ -490,59 +490,59 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.Crypto> createCrypto(
-        opi_api.storage.v1.CreateCryptoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> createEncryptedVolume(
+        opi_api.storage.v1.CreateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateCryptoMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateEncryptedVolumeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteCrypto(
-        opi_api.storage.v1.DeleteCryptoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEncryptedVolume(
+        opi_api.storage.v1.DeleteEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteCryptoMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteEncryptedVolumeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.Crypto> updateCrypto(
-        opi_api.storage.v1.UpdateCryptoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> updateEncryptedVolume(
+        opi_api.storage.v1.UpdateEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateCryptoMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateEncryptedVolumeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListCryptoResponse> listCrypto(
-        opi_api.storage.v1.ListCryptoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListEncryptedVolumeResponse> listEncryptedVolume(
+        opi_api.storage.v1.ListEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListCryptoMethod(), getCallOptions()), request);
+          getChannel().newCall(getListEncryptedVolumeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.Crypto> getCrypto(
-        opi_api.storage.v1.GetCryptoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolume> getEncryptedVolume(
+        opi_api.storage.v1.GetEncryptedVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCryptoMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetEncryptedVolumeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.CryptoStatsResponse> cryptoStats(
-        opi_api.storage.v1.CryptoStatsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.EncryptedVolumeStatsResponse> encryptedVolumeStats(
+        opi_api.storage.v1.EncryptedVolumeStatsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCryptoStatsMethod(), getCallOptions()), request);
+          getChannel().newCall(getEncryptedVolumeStatsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_CREATE_CRYPTO = 0;
-  private static final int METHODID_DELETE_CRYPTO = 1;
-  private static final int METHODID_UPDATE_CRYPTO = 2;
-  private static final int METHODID_LIST_CRYPTO = 3;
-  private static final int METHODID_GET_CRYPTO = 4;
-  private static final int METHODID_CRYPTO_STATS = 5;
+  private static final int METHODID_CREATE_ENCRYPTED_VOLUME = 0;
+  private static final int METHODID_DELETE_ENCRYPTED_VOLUME = 1;
+  private static final int METHODID_UPDATE_ENCRYPTED_VOLUME = 2;
+  private static final int METHODID_LIST_ENCRYPTED_VOLUME = 3;
+  private static final int METHODID_GET_ENCRYPTED_VOLUME = 4;
+  private static final int METHODID_ENCRYPTED_VOLUME_STATS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -561,29 +561,29 @@ public final class MiddleendServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_CREATE_CRYPTO:
-          serviceImpl.createCrypto((opi_api.storage.v1.CreateCryptoRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto>) responseObserver);
+        case METHODID_CREATE_ENCRYPTED_VOLUME:
+          serviceImpl.createEncryptedVolume((opi_api.storage.v1.CreateEncryptedVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume>) responseObserver);
           break;
-        case METHODID_DELETE_CRYPTO:
-          serviceImpl.deleteCrypto((opi_api.storage.v1.DeleteCryptoRequest) request,
+        case METHODID_DELETE_ENCRYPTED_VOLUME:
+          serviceImpl.deleteEncryptedVolume((opi_api.storage.v1.DeleteEncryptedVolumeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_UPDATE_CRYPTO:
-          serviceImpl.updateCrypto((opi_api.storage.v1.UpdateCryptoRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto>) responseObserver);
+        case METHODID_UPDATE_ENCRYPTED_VOLUME:
+          serviceImpl.updateEncryptedVolume((opi_api.storage.v1.UpdateEncryptedVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume>) responseObserver);
           break;
-        case METHODID_LIST_CRYPTO:
-          serviceImpl.listCrypto((opi_api.storage.v1.ListCryptoRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListCryptoResponse>) responseObserver);
+        case METHODID_LIST_ENCRYPTED_VOLUME:
+          serviceImpl.listEncryptedVolume((opi_api.storage.v1.ListEncryptedVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse>) responseObserver);
           break;
-        case METHODID_GET_CRYPTO:
-          serviceImpl.getCrypto((opi_api.storage.v1.GetCryptoRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.Crypto>) responseObserver);
+        case METHODID_GET_ENCRYPTED_VOLUME:
+          serviceImpl.getEncryptedVolume((opi_api.storage.v1.GetEncryptedVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume>) responseObserver);
           break;
-        case METHODID_CRYPTO_STATS:
-          serviceImpl.cryptoStats((opi_api.storage.v1.CryptoStatsRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.CryptoStatsResponse>) responseObserver);
+        case METHODID_ENCRYPTED_VOLUME_STATS:
+          serviceImpl.encryptedVolumeStats((opi_api.storage.v1.EncryptedVolumeStatsRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolumeStatsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -646,12 +646,12 @@ public final class MiddleendServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MiddleendServiceFileDescriptorSupplier())
-              .addMethod(getCreateCryptoMethod())
-              .addMethod(getDeleteCryptoMethod())
-              .addMethod(getUpdateCryptoMethod())
-              .addMethod(getListCryptoMethod())
-              .addMethod(getGetCryptoMethod())
-              .addMethod(getCryptoStatsMethod())
+              .addMethod(getCreateEncryptedVolumeMethod())
+              .addMethod(getDeleteEncryptedVolumeMethod())
+              .addMethod(getUpdateEncryptedVolumeMethod())
+              .addMethod(getListEncryptedVolumeMethod())
+              .addMethod(getGetEncryptedVolumeMethod())
+              .addMethod(getEncryptedVolumeStatsMethod())
               .build();
         }
       }

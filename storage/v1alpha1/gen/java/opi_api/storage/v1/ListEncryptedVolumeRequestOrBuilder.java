@@ -3,8 +3,8 @@
 
 package opi_api.storage.v1;
 
-public interface ListCryptoRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.ListCryptoRequest)
+public interface ListEncryptedVolumeRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:opi_api.storage.v1.ListEncryptedVolumeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

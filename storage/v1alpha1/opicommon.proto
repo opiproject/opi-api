@@ -37,13 +37,13 @@ message PciEndpoint {
     int32 virtual_function = 3;
 }
 
-// AES encryption type to be used
-enum CryptoType {
-    CRYPTO_TYPE_UNSPECIFIED = 0;
-    CRYPTO_TYPE_AES_CBC_128 = 1;
-    CRYPTO_TYPE_AES_CBC_192 = 2;
-    CRYPTO_TYPE_AES_CBC_256 = 3;
-    CRYPTO_TYPE_AES_XTS_128 = 4;
-    CRYPTO_TYPE_AES_XTS_192 = 5;
-    CRYPTO_TYPE_AES_XTS_256 = 6;
+// AES encryption types
+enum EncryptionType {
+    ENCRYPTION_TYPE_UNSPECIFIED = 0;
+    ENCRYPTION_TYPE_AES_CBC_128 = 1;
+    ENCRYPTION_TYPE_AES_CBC_192 = 2;
+    ENCRYPTION_TYPE_AES_CBC_256 = 3;
+    ENCRYPTION_TYPE_AES_XTS_128 = 4;
+    ENCRYPTION_TYPE_AES_XTS_192 = 5;
+    ENCRYPTION_TYPE_AES_XTS_256 = 6;
 }

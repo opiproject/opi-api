@@ -70,35 +70,35 @@ namespace opi_api {
 namespace storage {
 namespace v1 {
 
-enum CryptoType : int {
-  CRYPTO_TYPE_UNSPECIFIED = 0,
-  CRYPTO_TYPE_AES_CBC_128 = 1,
-  CRYPTO_TYPE_AES_CBC_192 = 2,
-  CRYPTO_TYPE_AES_CBC_256 = 3,
-  CRYPTO_TYPE_AES_XTS_128 = 4,
-  CRYPTO_TYPE_AES_XTS_192 = 5,
-  CRYPTO_TYPE_AES_XTS_256 = 6,
-  CryptoType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  CryptoType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum EncryptionType : int {
+  ENCRYPTION_TYPE_UNSPECIFIED = 0,
+  ENCRYPTION_TYPE_AES_CBC_128 = 1,
+  ENCRYPTION_TYPE_AES_CBC_192 = 2,
+  ENCRYPTION_TYPE_AES_CBC_256 = 3,
+  ENCRYPTION_TYPE_AES_XTS_128 = 4,
+  ENCRYPTION_TYPE_AES_XTS_192 = 5,
+  ENCRYPTION_TYPE_AES_XTS_256 = 6,
+  EncryptionType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  EncryptionType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool CryptoType_IsValid(int value);
-constexpr CryptoType CryptoType_MIN = CRYPTO_TYPE_UNSPECIFIED;
-constexpr CryptoType CryptoType_MAX = CRYPTO_TYPE_AES_XTS_256;
-constexpr int CryptoType_ARRAYSIZE = CryptoType_MAX + 1;
+bool EncryptionType_IsValid(int value);
+constexpr EncryptionType EncryptionType_MIN = ENCRYPTION_TYPE_UNSPECIFIED;
+constexpr EncryptionType EncryptionType_MAX = ENCRYPTION_TYPE_AES_XTS_256;
+constexpr int EncryptionType_ARRAYSIZE = EncryptionType_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CryptoType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EncryptionType_descriptor();
 template<typename T>
-inline const std::string& CryptoType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, CryptoType>::value ||
+inline const std::string& EncryptionType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, EncryptionType>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function CryptoType_Name.");
+    "Incorrect type passed to function EncryptionType_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    CryptoType_descriptor(), enum_t_value);
+    EncryptionType_descriptor(), enum_t_value);
 }
-inline bool CryptoType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CryptoType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CryptoType>(
-    CryptoType_descriptor(), name, value);
+inline bool EncryptionType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EncryptionType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EncryptionType>(
+    EncryptionType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -351,10 +351,10 @@ inline void PciEndpoint::set_virtual_function(int32_t value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::opi_api::storage::v1::CryptoType> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::storage::v1::EncryptionType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::CryptoType>() {
-  return ::opi_api::storage::v1::CryptoType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::storage::v1::EncryptionType>() {
+  return ::opi_api::storage::v1::EncryptionType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE
