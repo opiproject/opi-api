@@ -558,6 +558,7 @@ class NVMeSubsystemSpec final :
     kNqnFieldNumber = 2,
     kSerialNumberFieldNumber = 3,
     kModelNumberFieldNumber = 4,
+    kFirmwareRevisionFieldNumber = 6,
     kIdFieldNumber = 1,
     kMaxNamespacesFieldNumber = 5,
   };
@@ -603,6 +604,20 @@ class NVMeSubsystemSpec final :
   std::string* _internal_mutable_model_number();
   public:
 
+  // string firmware_revision = 6;
+  void clear_firmware_revision();
+  const std::string& firmware_revision() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_firmware_revision(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_firmware_revision();
+  PROTOBUF_NODISCARD std::string* release_firmware_revision();
+  void set_allocated_firmware_revision(std::string* firmware_revision);
+  private:
+  const std::string& _internal_firmware_revision() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_firmware_revision(const std::string& value);
+  std::string* _internal_mutable_firmware_revision();
+  public:
+
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -640,6 +655,7 @@ class NVMeSubsystemSpec final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nqn_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_number_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_number_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr firmware_revision_;
   ::opi_api::common::v1::ObjectKey* id_;
   int64_t max_namespaces_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -769,24 +785,9 @@ class NVMeSubsystemStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFirmwareRevisionFieldNumber = 1,
-    kFruGuidFieldNumber = 2,
+    kFruGuidFieldNumber = 1,
   };
-  // string firmware_revision = 1;
-  void clear_firmware_revision();
-  const std::string& firmware_revision() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_firmware_revision(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_firmware_revision();
-  PROTOBUF_NODISCARD std::string* release_firmware_revision();
-  void set_allocated_firmware_revision(std::string* firmware_revision);
-  private:
-  const std::string& _internal_firmware_revision() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_firmware_revision(const std::string& value);
-  std::string* _internal_mutable_firmware_revision();
-  public:
-
-  // bytes fru_guid = 2;
+  // bytes fru_guid = 1;
   void clear_fru_guid();
   const std::string& fru_guid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -807,7 +808,6 @@ class NVMeSubsystemStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr firmware_revision_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fru_guid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -6290,46 +6290,42 @@ inline void NVMeSubsystemSpec::set_max_namespaces(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeSubsystemSpec.max_namespaces)
 }
 
-// -------------------------------------------------------------------
-
-// NVMeSubsystemStatus
-
-// string firmware_revision = 1;
-inline void NVMeSubsystemStatus::clear_firmware_revision() {
+// string firmware_revision = 6;
+inline void NVMeSubsystemSpec::clear_firmware_revision() {
   firmware_revision_.ClearToEmpty();
 }
-inline const std::string& NVMeSubsystemStatus::firmware_revision() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision)
+inline const std::string& NVMeSubsystemSpec::firmware_revision() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision)
   return _internal_firmware_revision();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void NVMeSubsystemStatus::set_firmware_revision(ArgT0&& arg0, ArgT... args) {
+void NVMeSubsystemSpec::set_firmware_revision(ArgT0&& arg0, ArgT... args) {
  
  firmware_revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision)
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision)
 }
-inline std::string* NVMeSubsystemStatus::mutable_firmware_revision() {
+inline std::string* NVMeSubsystemSpec::mutable_firmware_revision() {
   std::string* _s = _internal_mutable_firmware_revision();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision)
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision)
   return _s;
 }
-inline const std::string& NVMeSubsystemStatus::_internal_firmware_revision() const {
+inline const std::string& NVMeSubsystemSpec::_internal_firmware_revision() const {
   return firmware_revision_.Get();
 }
-inline void NVMeSubsystemStatus::_internal_set_firmware_revision(const std::string& value) {
+inline void NVMeSubsystemSpec::_internal_set_firmware_revision(const std::string& value) {
   
   firmware_revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* NVMeSubsystemStatus::_internal_mutable_firmware_revision() {
+inline std::string* NVMeSubsystemSpec::_internal_mutable_firmware_revision() {
   
   return firmware_revision_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* NVMeSubsystemStatus::release_firmware_revision() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision)
+inline std::string* NVMeSubsystemSpec::release_firmware_revision() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision)
   return firmware_revision_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void NVMeSubsystemStatus::set_allocated_firmware_revision(std::string* firmware_revision) {
+inline void NVMeSubsystemSpec::set_allocated_firmware_revision(std::string* firmware_revision) {
   if (firmware_revision != nullptr) {
     
   } else {
@@ -6342,10 +6338,14 @@ inline void NVMeSubsystemStatus::set_allocated_firmware_revision(std::string* fi
     firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision)
 }
 
-// bytes fru_guid = 2;
+// -------------------------------------------------------------------
+
+// NVMeSubsystemStatus
+
+// bytes fru_guid = 1;
 inline void NVMeSubsystemStatus::clear_fru_guid() {
   fru_guid_.ClearToEmpty();
 }

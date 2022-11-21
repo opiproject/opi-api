@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     nqn_ = "";
     serialNumber_ = "";
     modelNumber_ = "";
+    firmwareRevision_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             maxNamespaces_ = input.readInt64();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            firmwareRevision_ = s;
             break;
           }
           default: {
@@ -314,6 +321,56 @@ private static final long serialVersionUID = 0L;
     return maxNamespaces_;
   }
 
+  public static final int FIRMWARE_REVISION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object firmwareRevision_;
+  /**
+   * <pre>
+   * if the devcie allows changing firmware revision (datapath code) this
+   * value could specify the revision the subsystem would like to expose
+   * to the host's device
+   * </pre>
+   *
+   * <code>string firmware_revision = 6;</code>
+   * @return The firmwareRevision.
+   */
+  @java.lang.Override
+  public java.lang.String getFirmwareRevision() {
+    java.lang.Object ref = firmwareRevision_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      firmwareRevision_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * if the devcie allows changing firmware revision (datapath code) this
+   * value could specify the revision the subsystem would like to expose
+   * to the host's device
+   * </pre>
+   *
+   * <code>string firmware_revision = 6;</code>
+   * @return The bytes for firmwareRevision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFirmwareRevisionBytes() {
+    java.lang.Object ref = firmwareRevision_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      firmwareRevision_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -343,6 +400,9 @@ private static final long serialVersionUID = 0L;
     if (maxNamespaces_ != 0L) {
       output.writeInt64(5, maxNamespaces_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, firmwareRevision_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -368,6 +428,9 @@ private static final long serialVersionUID = 0L;
     if (maxNamespaces_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, maxNamespaces_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, firmwareRevision_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -397,6 +460,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelNumber())) return false;
     if (getMaxNamespaces()
         != other.getMaxNamespaces()) return false;
+    if (!getFirmwareRevision()
+        .equals(other.getFirmwareRevision())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -421,6 +486,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAX_NAMESPACES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaxNamespaces());
+    hash = (37 * hash) + FIRMWARE_REVISION_FIELD_NUMBER;
+    hash = (53 * hash) + getFirmwareRevision().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -568,6 +635,8 @@ private static final long serialVersionUID = 0L;
 
       maxNamespaces_ = 0L;
 
+      firmwareRevision_ = "";
+
       return this;
     }
 
@@ -603,6 +672,7 @@ private static final long serialVersionUID = 0L;
       result.serialNumber_ = serialNumber_;
       result.modelNumber_ = modelNumber_;
       result.maxNamespaces_ = maxNamespaces_;
+      result.firmwareRevision_ = firmwareRevision_;
       onBuilt();
       return result;
     }
@@ -668,6 +738,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaxNamespaces() != 0L) {
         setMaxNamespaces(other.getMaxNamespaces());
+      }
+      if (!other.getFirmwareRevision().isEmpty()) {
+        firmwareRevision_ = other.firmwareRevision_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1190,6 +1264,112 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxNamespaces() {
       
       maxNamespaces_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object firmwareRevision_ = "";
+    /**
+     * <pre>
+     * if the devcie allows changing firmware revision (datapath code) this
+     * value could specify the revision the subsystem would like to expose
+     * to the host's device
+     * </pre>
+     *
+     * <code>string firmware_revision = 6;</code>
+     * @return The firmwareRevision.
+     */
+    public java.lang.String getFirmwareRevision() {
+      java.lang.Object ref = firmwareRevision_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        firmwareRevision_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * if the devcie allows changing firmware revision (datapath code) this
+     * value could specify the revision the subsystem would like to expose
+     * to the host's device
+     * </pre>
+     *
+     * <code>string firmware_revision = 6;</code>
+     * @return The bytes for firmwareRevision.
+     */
+    public com.google.protobuf.ByteString
+        getFirmwareRevisionBytes() {
+      java.lang.Object ref = firmwareRevision_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        firmwareRevision_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * if the devcie allows changing firmware revision (datapath code) this
+     * value could specify the revision the subsystem would like to expose
+     * to the host's device
+     * </pre>
+     *
+     * <code>string firmware_revision = 6;</code>
+     * @param value The firmwareRevision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFirmwareRevision(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      firmwareRevision_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * if the devcie allows changing firmware revision (datapath code) this
+     * value could specify the revision the subsystem would like to expose
+     * to the host's device
+     * </pre>
+     *
+     * <code>string firmware_revision = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFirmwareRevision() {
+      
+      firmwareRevision_ = getDefaultInstance().getFirmwareRevision();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * if the devcie allows changing firmware revision (datapath code) this
+     * value could specify the revision the subsystem would like to expose
+     * to the host's device
+     * </pre>
+     *
+     * <code>string firmware_revision = 6;</code>
+     * @param value The bytes for firmwareRevision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFirmwareRevisionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      firmwareRevision_ = value;
       onChanged();
       return this;
     }

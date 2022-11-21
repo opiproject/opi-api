@@ -1250,6 +1250,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |
 | max_namespaces | [int64](#int64) |  | maximum namespaces within a subsystem |
+| firmware_revision | [string](#string) |  | if the devcie allows changing firmware revision (datapath code) this value could specify the revision the subsystem would like to expose to the host&#39;s device |
 
 
 
@@ -1294,7 +1295,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firmware_revision | [string](#string) |  | firmware revision, must not exceed &#39;NSV_CTRLR_FW_REV_LEN&#39; |
 | fru_guid | [bytes](#bytes) |  | FRU identfier, 16bytes opaque identity for the type of unit |
 
 

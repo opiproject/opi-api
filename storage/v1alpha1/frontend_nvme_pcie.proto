@@ -128,14 +128,16 @@ message NVMeSubsystemSpec {
 
     // maximum namespaces within a subsystem
     int64 max_namespaces = 5;
+
+    // if the devcie allows changing firmware revision (datapath code) this
+    // value could specify the revision the subsystem would like to expose
+    // to the host's device
+    string firmware_revision  = 6;
 }
 
 message NVMeSubsystemStatus {
-    // firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-    string firmware_revision  = 1;
-
     // FRU identfier, 16bytes opaque identity for the type of unit
-    bytes fru_guid = 2;
+    bytes fru_guid = 1;
 }
 
 message NVMeController {

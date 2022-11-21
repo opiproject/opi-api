@@ -195,12 +195,12 @@ public final class FrontendNvmePcieProto {
       "Subsystem\0223\n\004spec\030\001 \001(\0132%.opi_api.storag" +
       "e.v1.NVMeSubsystemSpec\0227\n\006status\030\002 \001(\0132\'" +
       ".opi_api.storage.v1.NVMeSubsystemStatus\"" +
-      "\217\001\n\021NVMeSubsystemSpec\022(\n\002id\030\001 \001(\0132\034.opi_" +
+      "\252\001\n\021NVMeSubsystemSpec\022(\n\002id\030\001 \001(\0132\034.opi_" +
       "api.common.v1.ObjectKey\022\013\n\003nqn\030\002 \001(\t\022\025\n\r" +
       "serial_number\030\003 \001(\t\022\024\n\014model_number\030\004 \001(" +
-      "\t\022\026\n\016max_namespaces\030\005 \001(\003\"B\n\023NVMeSubsyst" +
-      "emStatus\022\031\n\021firmware_revision\030\001 \001(\t\022\020\n\010f" +
-      "ru_guid\030\002 \001(\014\"\200\001\n\016NVMeController\0224\n\004spec" +
+      "\t\022\026\n\016max_namespaces\030\005 \001(\003\022\031\n\021firmware_re" +
+      "vision\030\006 \001(\t\"\'\n\023NVMeSubsystemStatus\022\020\n\010f" +
+      "ru_guid\030\001 \001(\014\"\200\001\n\016NVMeController\0224\n\004spec" +
       "\030\001 \001(\0132&.opi_api.storage.v1.NVMeControll" +
       "erSpec\0228\n\006status\030\002 \001(\0132(.opi_api.storage" +
       ".v1.NVMeControllerStatus\"\226\002\n\022NVMeControl" +
@@ -372,13 +372,13 @@ public final class FrontendNvmePcieProto {
     internal_static_opi_api_storage_v1_NVMeSubsystemSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMeSubsystemSpec_descriptor,
-        new java.lang.String[] { "Id", "Nqn", "SerialNumber", "ModelNumber", "MaxNamespaces", });
+        new java.lang.String[] { "Id", "Nqn", "SerialNumber", "ModelNumber", "MaxNamespaces", "FirmwareRevision", });
     internal_static_opi_api_storage_v1_NVMeSubsystemStatus_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_NVMeSubsystemStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NVMeSubsystemStatus_descriptor,
-        new java.lang.String[] { "FirmwareRevision", "FruGuid", });
+        new java.lang.String[] { "FruGuid", });
     internal_static_opi_api_storage_v1_NVMeController_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_NVMeController_fieldAccessorTable = new

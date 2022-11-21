@@ -107,4 +107,28 @@ public interface NVMeSubsystemSpecOrBuilder extends
    * @return The maxNamespaces.
    */
   long getMaxNamespaces();
+
+  /**
+   * <pre>
+   * if the devcie allows changing firmware revision (datapath code) this
+   * value could specify the revision the subsystem would like to expose
+   * to the host's device
+   * </pre>
+   *
+   * <code>string firmware_revision = 6;</code>
+   * @return The firmwareRevision.
+   */
+  java.lang.String getFirmwareRevision();
+  /**
+   * <pre>
+   * if the devcie allows changing firmware revision (datapath code) this
+   * value could specify the revision the subsystem would like to expose
+   * to the host's device
+   * </pre>
+   *
+   * <code>string firmware_revision = 6;</code>
+   * @return The bytes for firmwareRevision.
+   */
+  com.google.protobuf.ByteString
+      getFirmwareRevisionBytes();
 }

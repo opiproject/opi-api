@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NVMeSubsystemStatus() {
-    firmwareRevision_ = "";
     fruGuid_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -51,12 +50,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            firmwareRevision_ = s;
-            break;
-          }
-          case 18: {
 
             fruGuid_ = input.readBytes();
             break;
@@ -93,60 +86,14 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NVMeSubsystemStatus.class, opi_api.storage.v1.NVMeSubsystemStatus.Builder.class);
   }
 
-  public static final int FIRMWARE_REVISION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object firmwareRevision_;
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 1;</code>
-   * @return The firmwareRevision.
-   */
-  @java.lang.Override
-  public java.lang.String getFirmwareRevision() {
-    java.lang.Object ref = firmwareRevision_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      firmwareRevision_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-   * </pre>
-   *
-   * <code>string firmware_revision = 1;</code>
-   * @return The bytes for firmwareRevision.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFirmwareRevisionBytes() {
-    java.lang.Object ref = firmwareRevision_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      firmwareRevision_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FRU_GUID_FIELD_NUMBER = 2;
+  public static final int FRU_GUID_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString fruGuid_;
   /**
    * <pre>
    * FRU identfier, 16bytes opaque identity for the type of unit
    * </pre>
    *
-   * <code>bytes fru_guid = 2;</code>
+   * <code>bytes fru_guid = 1;</code>
    * @return The fruGuid.
    */
   @java.lang.Override
@@ -168,11 +115,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firmwareRevision_);
-    }
     if (!fruGuid_.isEmpty()) {
-      output.writeBytes(2, fruGuid_);
+      output.writeBytes(1, fruGuid_);
     }
     unknownFields.writeTo(output);
   }
@@ -183,12 +127,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firmwareRevision_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firmwareRevision_);
-    }
     if (!fruGuid_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, fruGuid_);
+        .computeBytesSize(1, fruGuid_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,8 +146,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMeSubsystemStatus other = (opi_api.storage.v1.NVMeSubsystemStatus) obj;
 
-    if (!getFirmwareRevision()
-        .equals(other.getFirmwareRevision())) return false;
     if (!getFruGuid()
         .equals(other.getFruGuid())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -220,8 +159,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FIRMWARE_REVISION_FIELD_NUMBER;
-    hash = (53 * hash) + getFirmwareRevision().hashCode();
     hash = (37 * hash) + FRU_GUID_FIELD_NUMBER;
     hash = (53 * hash) + getFruGuid().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -357,8 +294,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      firmwareRevision_ = "";
-
       fruGuid_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -387,7 +322,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMeSubsystemStatus buildPartial() {
       opi_api.storage.v1.NVMeSubsystemStatus result = new opi_api.storage.v1.NVMeSubsystemStatus(this);
-      result.firmwareRevision_ = firmwareRevision_;
       result.fruGuid_ = fruGuid_;
       onBuilt();
       return result;
@@ -437,10 +371,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMeSubsystemStatus other) {
       if (other == opi_api.storage.v1.NVMeSubsystemStatus.getDefaultInstance()) return this;
-      if (!other.getFirmwareRevision().isEmpty()) {
-        firmwareRevision_ = other.firmwareRevision_;
-        onChanged();
-      }
       if (other.getFruGuid() != com.google.protobuf.ByteString.EMPTY) {
         setFruGuid(other.getFruGuid());
       }
@@ -473,109 +403,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object firmwareRevision_ = "";
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 1;</code>
-     * @return The firmwareRevision.
-     */
-    public java.lang.String getFirmwareRevision() {
-      java.lang.Object ref = firmwareRevision_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        firmwareRevision_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 1;</code>
-     * @return The bytes for firmwareRevision.
-     */
-    public com.google.protobuf.ByteString
-        getFirmwareRevisionBytes() {
-      java.lang.Object ref = firmwareRevision_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        firmwareRevision_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 1;</code>
-     * @param value The firmwareRevision to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirmwareRevision(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      firmwareRevision_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFirmwareRevision() {
-      
-      firmwareRevision_ = getDefaultInstance().getFirmwareRevision();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * firmware revision, must not exceed 'NSV_CTRLR_FW_REV_LEN'
-     * </pre>
-     *
-     * <code>string firmware_revision = 1;</code>
-     * @param value The bytes for firmwareRevision to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirmwareRevisionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      firmwareRevision_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.ByteString fruGuid_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 1;</code>
      * @return The fruGuid.
      */
     @java.lang.Override
@@ -587,7 +421,7 @@ private static final long serialVersionUID = 0L;
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 1;</code>
      * @param value The fruGuid to set.
      * @return This builder for chaining.
      */
@@ -605,7 +439,7 @@ private static final long serialVersionUID = 0L;
      * FRU identfier, 16bytes opaque identity for the type of unit
      * </pre>
      *
-     * <code>bytes fru_guid = 2;</code>
+     * <code>bytes fru_guid = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearFruGuid() {

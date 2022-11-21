@@ -37,6 +37,7 @@ constexpr NVMeSubsystemSpec::NVMeSubsystemSpec(
   : nqn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , model_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , firmware_revision_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(nullptr)
   , max_namespaces_(int64_t{0}){}
 struct NVMeSubsystemSpecDefaultTypeInternal {
@@ -50,8 +51,7 @@ struct NVMeSubsystemSpecDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NVMeSubsystemSpecDefaultTypeInternal _NVMeSubsystemSpec_default_instance_;
 constexpr NVMeSubsystemStatus::NVMeSubsystemStatus(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : firmware_revision_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , fru_guid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : fru_guid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct NVMeSubsystemStatusDefaultTypeInternal {
   constexpr NVMeSubsystemStatusDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -477,13 +477,13 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemSpec, serial_number_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemSpec, model_number_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemSpec, max_namespaces_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemSpec, firmware_revision_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemStatus, firmware_revision_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeSubsystemStatus, fru_guid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::NVMeController, _internal_metadata_),
@@ -726,7 +726,7 @@ const uint32_t TableStruct_frontend_5fnvme_5fpcie_2eproto::offsets[] PROTOBUF_SE
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystem)},
   { 8, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemSpec)},
-  { 19, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatus)},
+  { 20, -1, -1, sizeof(::opi_api::storage::v1::NVMeSubsystemStatus)},
   { 27, -1, -1, sizeof(::opi_api::storage::v1::NVMeController)},
   { 35, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerSpec)},
   { 50, -1, -1, sizeof(::opi_api::storage::v1::NVMeControllerStatus)},
@@ -803,12 +803,12 @@ const char descriptor_table_protodef_frontend_5fnvme_5fpcie_2eproto[] PROTOBUF_S
   "Subsystem\0223\n\004spec\030\001 \001(\0132%.opi_api.storag"
   "e.v1.NVMeSubsystemSpec\0227\n\006status\030\002 \001(\0132\'"
   ".opi_api.storage.v1.NVMeSubsystemStatus\""
-  "\217\001\n\021NVMeSubsystemSpec\022(\n\002id\030\001 \001(\0132\034.opi_"
+  "\252\001\n\021NVMeSubsystemSpec\022(\n\002id\030\001 \001(\0132\034.opi_"
   "api.common.v1.ObjectKey\022\013\n\003nqn\030\002 \001(\t\022\025\n\r"
   "serial_number\030\003 \001(\t\022\024\n\014model_number\030\004 \001("
-  "\t\022\026\n\016max_namespaces\030\005 \001(\003\"B\n\023NVMeSubsyst"
-  "emStatus\022\031\n\021firmware_revision\030\001 \001(\t\022\020\n\010f"
-  "ru_guid\030\002 \001(\014\"\200\001\n\016NVMeController\0224\n\004spec"
+  "\t\022\026\n\016max_namespaces\030\005 \001(\003\022\031\n\021firmware_re"
+  "vision\030\006 \001(\t\"\'\n\023NVMeSubsystemStatus\022\020\n\010f"
+  "ru_guid\030\001 \001(\014\"\200\001\n\016NVMeController\0224\n\004spec"
   "\030\001 \001(\0132&.opi_api.storage.v1.NVMeControll"
   "erSpec\0228\n\006status\030\002 \001(\0132(.opi_api.storage"
   ".v1.NVMeControllerStatus\"\226\002\n\022NVMeControl"
@@ -1312,6 +1312,14 @@ NVMeSubsystemSpec::NVMeSubsystemSpec(const NVMeSubsystemSpec& from)
     model_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_number(), 
       GetArenaForAllocation());
   }
+  firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_firmware_revision().empty()) {
+    firmware_revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_firmware_revision(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_id()) {
     id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
   } else {
@@ -1334,6 +1342,10 @@ model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStrin
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&max_namespaces_) -
@@ -1352,6 +1364,7 @@ inline void NVMeSubsystemSpec::SharedDtor() {
   nqn_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  firmware_revision_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete id_;
 }
 
@@ -1374,6 +1387,7 @@ void NVMeSubsystemSpec::Clear() {
   nqn_.ClearToEmpty();
   serial_number_.ClearToEmpty();
   model_number_.ClearToEmpty();
+  firmware_revision_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
     delete id_;
   }
@@ -1430,6 +1444,16 @@ const char* NVMeSubsystemSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           max_namespaces_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string firmware_revision = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_firmware_revision();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1507,6 +1531,16 @@ uint8_t* NVMeSubsystemSpec::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_max_namespaces(), target);
   }
 
+  // string firmware_revision = 6;
+  if (!this->_internal_firmware_revision().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_firmware_revision().data(), static_cast<int>(this->_internal_firmware_revision().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.NVMeSubsystemSpec.firmware_revision");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_firmware_revision(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1542,6 +1576,13 @@ size_t NVMeSubsystemSpec::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_model_number());
+  }
+
+  // string firmware_revision = 6;
+  if (!this->_internal_firmware_revision().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_firmware_revision());
   }
 
   // .opi_api.common.v1.ObjectKey id = 1;
@@ -1587,6 +1628,9 @@ void NVMeSubsystemSpec::MergeFrom(const NVMeSubsystemSpec& from) {
   if (!from._internal_model_number().empty()) {
     _internal_set_model_number(from._internal_model_number());
   }
+  if (!from._internal_firmware_revision().empty()) {
+    _internal_set_firmware_revision(from._internal_firmware_revision());
+  }
   if (from._internal_has_id()) {
     _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
   }
@@ -1627,6 +1671,11 @@ void NVMeSubsystemSpec::InternalSwap(NVMeSubsystemSpec* other) {
       &model_number_, lhs_arena,
       &other->model_number_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &firmware_revision_, lhs_arena,
+      &other->firmware_revision_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(NVMeSubsystemSpec, max_namespaces_)
       + sizeof(NVMeSubsystemSpec::max_namespaces_)
@@ -1659,14 +1708,6 @@ NVMeSubsystemStatus::NVMeSubsystemStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 NVMeSubsystemStatus::NVMeSubsystemStatus(const NVMeSubsystemStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_firmware_revision().empty()) {
-    firmware_revision_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_firmware_revision(), 
-      GetArenaForAllocation());
-  }
   fru_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     fru_guid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1679,10 +1720,6 @@ NVMeSubsystemStatus::NVMeSubsystemStatus(const NVMeSubsystemStatus& from)
 }
 
 inline void NVMeSubsystemStatus::SharedCtor() {
-firmware_revision_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firmware_revision_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 fru_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   fru_guid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -1698,7 +1735,6 @@ NVMeSubsystemStatus::~NVMeSubsystemStatus() {
 
 inline void NVMeSubsystemStatus::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  firmware_revision_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fru_guid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1718,7 +1754,6 @@ void NVMeSubsystemStatus::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  firmware_revision_.ClearToEmpty();
   fru_guid_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1729,19 +1764,9 @@ const char* NVMeSubsystemStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string firmware_revision = 1;
+      // bytes fru_guid = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_firmware_revision();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bytes fru_guid = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_fru_guid();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1777,20 +1802,10 @@ uint8_t* NVMeSubsystemStatus::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string firmware_revision = 1;
-  if (!this->_internal_firmware_revision().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_firmware_revision().data(), static_cast<int>(this->_internal_firmware_revision().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.storage.v1.NVMeSubsystemStatus.firmware_revision");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_firmware_revision(), target);
-  }
-
-  // bytes fru_guid = 2;
+  // bytes fru_guid = 1;
   if (!this->_internal_fru_guid().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_fru_guid(), target);
+        1, this->_internal_fru_guid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1809,14 +1824,7 @@ size_t NVMeSubsystemStatus::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string firmware_revision = 1;
-  if (!this->_internal_firmware_revision().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_firmware_revision());
-  }
-
-  // bytes fru_guid = 2;
+  // bytes fru_guid = 1;
   if (!this->_internal_fru_guid().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -1845,9 +1853,6 @@ void NVMeSubsystemStatus::MergeFrom(const NVMeSubsystemStatus& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_firmware_revision().empty()) {
-    _internal_set_firmware_revision(from._internal_firmware_revision());
-  }
   if (!from._internal_fru_guid().empty()) {
     _internal_set_fru_guid(from._internal_fru_guid());
   }
@@ -1870,11 +1875,6 @@ void NVMeSubsystemStatus::InternalSwap(NVMeSubsystemStatus* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &firmware_revision_, lhs_arena,
-      &other->firmware_revision_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &fru_guid_, lhs_arena,
