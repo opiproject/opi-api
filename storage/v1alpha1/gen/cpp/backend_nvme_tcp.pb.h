@@ -330,6 +330,7 @@ class NVMfRemoteController final :
   enum : int {
     kTraddrFieldNumber = 4,
     kSubnqnFieldNumber = 6,
+    kHostnqnFieldNumber = 12,
     kIdFieldNumber = 1,
     kTrtypeFieldNumber = 2,
     kAdrfamFieldNumber = 3,
@@ -366,6 +367,20 @@ class NVMfRemoteController final :
   const std::string& _internal_subnqn() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_subnqn(const std::string& value);
   std::string* _internal_mutable_subnqn();
+  public:
+
+  // string hostnqn = 12;
+  void clear_hostnqn();
+  const std::string& hostnqn() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hostnqn(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hostnqn();
+  PROTOBUF_NODISCARD std::string* release_hostnqn();
+  void set_allocated_hostnqn(std::string* hostnqn);
+  private:
+  const std::string& _internal_hostnqn() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hostnqn(const std::string& value);
+  std::string* _internal_mutable_hostnqn();
   public:
 
   // int64 id = 1;
@@ -458,6 +473,7 @@ class NVMfRemoteController final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traddr_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subnqn_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hostnqn_;
   int64_t id_;
   int trtype_;
   int adrfam_;
@@ -2472,6 +2488,57 @@ inline void NVMfRemoteController::_internal_set_queue_size(int64_t value) {
 inline void NVMfRemoteController::set_queue_size(int64_t value) {
   _internal_set_queue_size(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.queue_size)
+}
+
+// string hostnqn = 12;
+inline void NVMfRemoteController::clear_hostnqn() {
+  hostnqn_.ClearToEmpty();
+}
+inline const std::string& NVMfRemoteController::hostnqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMfRemoteController.hostnqn)
+  return _internal_hostnqn();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NVMfRemoteController::set_hostnqn(ArgT0&& arg0, ArgT... args) {
+ 
+ hostnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.hostnqn)
+}
+inline std::string* NVMfRemoteController::mutable_hostnqn() {
+  std::string* _s = _internal_mutable_hostnqn();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMfRemoteController.hostnqn)
+  return _s;
+}
+inline const std::string& NVMfRemoteController::_internal_hostnqn() const {
+  return hostnqn_.Get();
+}
+inline void NVMfRemoteController::_internal_set_hostnqn(const std::string& value) {
+  
+  hostnqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NVMfRemoteController::_internal_mutable_hostnqn() {
+  
+  return hostnqn_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NVMfRemoteController::release_hostnqn() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMfRemoteController.hostnqn)
+  return hostnqn_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NVMfRemoteController::set_allocated_hostnqn(std::string* hostnqn) {
+  if (hostnqn != nullptr) {
+    
+  } else {
+    
+  }
+  hostnqn_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hostnqn,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (hostnqn_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    hostnqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMfRemoteController.hostnqn)
 }
 
 // -------------------------------------------------------------------

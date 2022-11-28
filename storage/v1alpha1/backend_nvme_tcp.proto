@@ -32,6 +32,7 @@ message NVMfRemoteController {
     NvmeMultipath multipath = 9;
     int64 io_queues_count = 10;
     int64 queue_size = 11;
+    string hostnqn = 12;
 }
 
 message NVMfRemoteControllerConnectRequest {

@@ -99,4 +99,16 @@ public interface NVMfRemoteControllerOrBuilder extends
    * @return The queueSize.
    */
   long getQueueSize();
+
+  /**
+   * <code>string hostnqn = 12;</code>
+   * @return The hostnqn.
+   */
+  java.lang.String getHostnqn();
+  /**
+   * <code>string hostnqn = 12;</code>
+   * @return The bytes for hostnqn.
+   */
+  com.google.protobuf.ByteString
+      getHostnqnBytes();
 }

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     traddr_ = "";
     subnqn_ = "";
     multipath_ = 0;
+    hostnqn_ = "";
   }
 
   @java.lang.Override
@@ -111,6 +112,12 @@ private static final long serialVersionUID = 0L;
           case 88: {
 
             queueSize_ = input.readInt64();
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            hostnqn_ = s;
             break;
           }
           default: {
@@ -344,6 +351,44 @@ private static final long serialVersionUID = 0L;
     return queueSize_;
   }
 
+  public static final int HOSTNQN_FIELD_NUMBER = 12;
+  private volatile java.lang.Object hostnqn_;
+  /**
+   * <code>string hostnqn = 12;</code>
+   * @return The hostnqn.
+   */
+  @java.lang.Override
+  public java.lang.String getHostnqn() {
+    java.lang.Object ref = hostnqn_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hostnqn_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string hostnqn = 12;</code>
+   * @return The bytes for hostnqn.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getHostnqnBytes() {
+    java.lang.Object ref = hostnqn_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      hostnqn_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -390,6 +435,9 @@ private static final long serialVersionUID = 0L;
     }
     if (queueSize_ != 0L) {
       output.writeInt64(11, queueSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, hostnqn_);
     }
     unknownFields.writeTo(output);
   }
@@ -442,6 +490,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(11, queueSize_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostnqn_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, hostnqn_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -476,6 +527,8 @@ private static final long serialVersionUID = 0L;
         != other.getIoQueuesCount()) return false;
     if (getQueueSize()
         != other.getQueueSize()) return false;
+    if (!getHostnqn()
+        .equals(other.getHostnqn())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -515,6 +568,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUEUE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getQueueSize());
+    hash = (37 * hash) + HOSTNQN_FIELD_NUMBER;
+    hash = (53 * hash) + getHostnqn().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -670,6 +725,8 @@ private static final long serialVersionUID = 0L;
 
       queueSize_ = 0L;
 
+      hostnqn_ = "";
+
       return this;
     }
 
@@ -707,6 +764,7 @@ private static final long serialVersionUID = 0L;
       result.multipath_ = multipath_;
       result.ioQueuesCount_ = ioQueuesCount_;
       result.queueSize_ = queueSize_;
+      result.hostnqn_ = hostnqn_;
       onBuilt();
       return result;
     }
@@ -789,6 +847,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getQueueSize() != 0L) {
         setQueueSize(other.getQueueSize());
+      }
+      if (!other.getHostnqn().isEmpty()) {
+        hostnqn_ = other.hostnqn_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1315,6 +1377,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearQueueSize() {
       
       queueSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object hostnqn_ = "";
+    /**
+     * <code>string hostnqn = 12;</code>
+     * @return The hostnqn.
+     */
+    public java.lang.String getHostnqn() {
+      java.lang.Object ref = hostnqn_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hostnqn_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string hostnqn = 12;</code>
+     * @return The bytes for hostnqn.
+     */
+    public com.google.protobuf.ByteString
+        getHostnqnBytes() {
+      java.lang.Object ref = hostnqn_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hostnqn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string hostnqn = 12;</code>
+     * @param value The hostnqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnqn(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      hostnqn_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string hostnqn = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHostnqn() {
+      
+      hostnqn_ = getDefaultInstance().getHostnqn();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string hostnqn = 12;</code>
+     * @param value The bytes for hostnqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnqnBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      hostnqn_ = value;
       onChanged();
       return this;
     }

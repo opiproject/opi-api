@@ -570,6 +570,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | multipath | [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath) |  |  |
 | io_queues_count | [int64](#int64) |  |  |
 | queue_size | [int64](#int64) |  |  |
+| hostnqn | [string](#string) |  |  |
 
 
 
