@@ -42,26 +42,26 @@ class NVMfRemoteControllerService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>> AsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>>(AsyncNVMfRemoteControllerConnectRaw(context, request, cq));
+    virtual ::grpc::Status NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::opi_api::storage::v1::NVMfRemoteController* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>> AsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>>(AsyncNVMfRemoteControllerConnectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>> PrepareAsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>>(PrepareAsyncNVMfRemoteControllerConnectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>> PrepareAsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>>(PrepareAsyncNVMfRemoteControllerConnectRaw(context, request, cq));
     }
-    virtual ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>> AsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>>(AsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
+    virtual ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>> PrepareAsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>>(PrepareAsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
     }
-    virtual ::grpc::Status NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>> AsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>>(AsyncNVMfRemoteControllerResetRaw(context, request, cq));
+    virtual ::grpc::Status NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncNVMfRemoteControllerResetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>> PrepareAsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>>(PrepareAsyncNVMfRemoteControllerResetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncNVMfRemoteControllerResetRaw(context, request, cq));
     }
     virtual ::grpc::Status NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>> AsyncNVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -70,12 +70,12 @@ class NVMfRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>> PrepareAsyncNVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>>(PrepareAsyncNVMfRemoteControllerListRaw(context, request, cq));
     }
-    virtual ::grpc::Status NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>> AsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>>(AsyncNVMfRemoteControllerGetRaw(context, request, cq));
+    virtual ::grpc::Status NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::opi_api::storage::v1::NVMfRemoteController* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>> AsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>>(AsyncNVMfRemoteControllerGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>> PrepareAsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>>(PrepareAsyncNVMfRemoteControllerGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>> PrepareAsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>>(PrepareAsyncNVMfRemoteControllerGetRaw(context, request, cq));
     }
     virtual ::grpc::Status NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>> AsyncNVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -87,16 +87,16 @@ class NVMfRemoteControllerService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -104,42 +104,42 @@ class NVMfRemoteControllerService final {
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* AsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* PrepareAsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* AsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* PrepareAsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* AsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* PrepareAsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>* AsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>* PrepareAsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>* AsyncNVMfRemoteControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>* PrepareAsyncNVMfRemoteControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* AsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* PrepareAsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>* AsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteController>* PrepareAsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>* AsyncNVMfRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>* PrepareAsyncNVMfRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>> AsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>>(AsyncNVMfRemoteControllerConnectRaw(context, request, cq));
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::opi_api::storage::v1::NVMfRemoteController* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>> AsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>>(AsyncNVMfRemoteControllerConnectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>> PrepareAsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>>(PrepareAsyncNVMfRemoteControllerConnectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>> PrepareAsyncNVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>>(PrepareAsyncNVMfRemoteControllerConnectRaw(context, request, cq));
     }
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>> AsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>>(AsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>> PrepareAsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>>(PrepareAsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMfRemoteControllerDisconnectRaw(context, request, cq));
     }
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>> AsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>>(AsyncNVMfRemoteControllerResetRaw(context, request, cq));
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncNVMfRemoteControllerResetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>> PrepareAsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>>(PrepareAsyncNVMfRemoteControllerResetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncNVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncNVMfRemoteControllerResetRaw(context, request, cq));
     }
     ::grpc::Status NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>> AsyncNVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -148,12 +148,12 @@ class NVMfRemoteControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>> PrepareAsyncNVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>>(PrepareAsyncNVMfRemoteControllerListRaw(context, request, cq));
     }
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>> AsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>>(AsyncNVMfRemoteControllerGetRaw(context, request, cq));
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::opi_api::storage::v1::NVMfRemoteController* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>> AsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>>(AsyncNVMfRemoteControllerGetRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>> PrepareAsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>>(PrepareAsyncNVMfRemoteControllerGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>> PrepareAsyncNVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>>(PrepareAsyncNVMfRemoteControllerGetRaw(context, request, cq));
     }
     ::grpc::Status NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>> AsyncNVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -165,16 +165,16 @@ class NVMfRemoteControllerService final {
     class async final :
       public StubInterface::async_interface {
      public:
-      void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, std::function<void(::grpc::Status)>) override;
+      void NVMfRemoteControllerConnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void NVMfRemoteControllerDisconnect(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void NVMfRemoteControllerReset(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response, std::function<void(::grpc::Status)>) override;
       void NVMfRemoteControllerList(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response, std::function<void(::grpc::Status)>) override;
-      void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, std::function<void(::grpc::Status)>) override;
+      void NVMfRemoteControllerGet(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response, std::function<void(::grpc::Status)>) override;
       void NVMfRemoteControllerStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -188,16 +188,16 @@ class NVMfRemoteControllerService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* AsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* PrepareAsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* AsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* PrepareAsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* AsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* PrepareAsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>* AsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>* PrepareAsyncNVMfRemoteControllerConnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMfRemoteControllerDisconnectRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncNVMfRemoteControllerResetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>* AsyncNVMfRemoteControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerListResponse>* PrepareAsyncNVMfRemoteControllerListRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* AsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* PrepareAsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>* AsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteController>* PrepareAsyncNVMfRemoteControllerGetRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>* AsyncNVMfRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse>* PrepareAsyncNVMfRemoteControllerStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_NVMfRemoteControllerConnect_;
@@ -213,11 +213,11 @@ class NVMfRemoteControllerService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response);
-    virtual ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response);
-    virtual ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response);
+    virtual ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response);
+    virtual ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status NVMfRemoteControllerList(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerListRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerListResponse* response);
-    virtual ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response);
+    virtual ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response);
     virtual ::grpc::Status NVMfRemoteControllerStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerStatsRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerStatsResponse* response);
   };
   template <class BaseClass>
@@ -232,11 +232,11 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNVMfRemoteControllerConnect(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNVMfRemoteControllerConnect(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -252,11 +252,11 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNVMfRemoteControllerDisconnect(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNVMfRemoteControllerDisconnect(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -272,11 +272,11 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNVMfRemoteControllerReset(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNVMfRemoteControllerReset(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -312,11 +312,11 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestNVMfRemoteControllerGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestNVMfRemoteControllerGet(::grpc::ServerContext* context, ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::NVMfRemoteController>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -348,25 +348,25 @@ class NVMfRemoteControllerService final {
    public:
     WithCallbackMethod_NVMfRemoteControllerConnect() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteController>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* response) { return this->NVMfRemoteControllerConnect(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response) { return this->NVMfRemoteControllerConnect(context, request, response); }));}
     void SetMessageAllocatorFor_NVMfRemoteControllerConnect(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteController>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteController>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NVMfRemoteControllerConnect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMfRemoteControllerConnect(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NVMfRemoteControllerDisconnect : public BaseClass {
@@ -375,25 +375,25 @@ class NVMfRemoteControllerService final {
    public:
     WithCallbackMethod_NVMfRemoteControllerDisconnect() {
       ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* response) { return this->NVMfRemoteControllerDisconnect(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* request, ::google::protobuf::Empty* response) { return this->NVMfRemoteControllerDisconnect(context, request, response); }));}
     void SetMessageAllocatorFor_NVMfRemoteControllerDisconnect(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NVMfRemoteControllerDisconnect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMfRemoteControllerDisconnect(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NVMfRemoteControllerReset : public BaseClass {
@@ -402,25 +402,25 @@ class NVMfRemoteControllerService final {
    public:
     WithCallbackMethod_NVMfRemoteControllerReset() {
       ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* response) { return this->NVMfRemoteControllerReset(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* request, ::google::protobuf::Empty* response) { return this->NVMfRemoteControllerReset(context, request, response); }));}
     void SetMessageAllocatorFor_NVMfRemoteControllerReset(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NVMfRemoteControllerReset() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMfRemoteControllerReset(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NVMfRemoteControllerList : public BaseClass {
@@ -456,25 +456,25 @@ class NVMfRemoteControllerService final {
    public:
     WithCallbackMethod_NVMfRemoteControllerGet() {
       ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteController>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* response) { return this->NVMfRemoteControllerGet(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* request, ::opi_api::storage::v1::NVMfRemoteController* response) { return this->NVMfRemoteControllerGet(context, request, response); }));}
     void SetMessageAllocatorFor_NVMfRemoteControllerGet(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* allocator) {
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteController>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteController>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_NVMfRemoteControllerGet() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMfRemoteControllerGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_NVMfRemoteControllerStats : public BaseClass {
@@ -517,7 +517,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -534,7 +534,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -551,7 +551,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -585,7 +585,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -619,7 +619,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -639,7 +639,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -659,7 +659,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -699,7 +699,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -742,7 +742,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -764,7 +764,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -786,7 +786,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -830,7 +830,7 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -867,10 +867,10 @@ class NVMfRemoteControllerService final {
     WithStreamedUnaryMethod_NVMfRemoteControllerConnect() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>(
+          ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteController>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* streamer) {
+                     ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest, ::opi_api::storage::v1::NVMfRemoteController>* streamer) {
                        return this->StreamedNVMfRemoteControllerConnect(context,
                          streamer);
                   }));
@@ -879,12 +879,12 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerConnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerConnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNVMfRemoteControllerConnect(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest,::opi_api::storage::v1::NVMfRemoteControllerConnectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNVMfRemoteControllerConnect(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerConnectRequest,::opi_api::storage::v1::NVMfRemoteController>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMfRemoteControllerDisconnect : public BaseClass {
@@ -894,10 +894,10 @@ class NVMfRemoteControllerService final {
     WithStreamedUnaryMethod_NVMfRemoteControllerDisconnect() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>(
+          ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* streamer) {
+                     ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest, ::google::protobuf::Empty>* streamer) {
                        return this->StreamedNVMfRemoteControllerDisconnect(context,
                          streamer);
                   }));
@@ -906,12 +906,12 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerDisconnect(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNVMfRemoteControllerDisconnect(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest,::opi_api::storage::v1::NVMfRemoteControllerDisconnectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNVMfRemoteControllerDisconnect(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerDisconnectRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMfRemoteControllerReset : public BaseClass {
@@ -921,10 +921,10 @@ class NVMfRemoteControllerService final {
     WithStreamedUnaryMethod_NVMfRemoteControllerReset() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>(
+          ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::google::protobuf::Empty>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* streamer) {
+                     ::opi_api::storage::v1::NVMfRemoteControllerResetRequest, ::google::protobuf::Empty>* streamer) {
                        return this->StreamedNVMfRemoteControllerReset(context,
                          streamer);
                   }));
@@ -933,12 +933,12 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerResetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerReset(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerResetRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNVMfRemoteControllerReset(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest,::opi_api::storage::v1::NVMfRemoteControllerResetResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNVMfRemoteControllerReset(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerResetRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMfRemoteControllerList : public BaseClass {
@@ -975,10 +975,10 @@ class NVMfRemoteControllerService final {
     WithStreamedUnaryMethod_NVMfRemoteControllerGet() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>(
+          ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteController>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* streamer) {
+                     ::opi_api::storage::v1::NVMfRemoteControllerGetRequest, ::opi_api::storage::v1::NVMfRemoteController>* streamer) {
                        return this->StreamedNVMfRemoteControllerGet(context,
                          streamer);
                   }));
@@ -987,12 +987,12 @@ class NVMfRemoteControllerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteControllerGetResponse* /*response*/) override {
+    ::grpc::Status NVMfRemoteControllerGet(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMfRemoteControllerGetRequest* /*request*/, ::opi_api::storage::v1::NVMfRemoteController* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedNVMfRemoteControllerGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest,::opi_api::storage::v1::NVMfRemoteControllerGetResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedNVMfRemoteControllerGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMfRemoteControllerGetRequest,::opi_api::storage::v1::NVMfRemoteController>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_NVMfRemoteControllerStats : public BaseClass {

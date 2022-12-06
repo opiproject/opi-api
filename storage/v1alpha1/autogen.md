@@ -35,15 +35,11 @@
 - [backend_nvme_tcp.proto](#backend_nvme_tcp-proto)
     - [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController)
     - [NVMfRemoteControllerConnectRequest](#opi_api-storage-v1-NVMfRemoteControllerConnectRequest)
-    - [NVMfRemoteControllerConnectResponse](#opi_api-storage-v1-NVMfRemoteControllerConnectResponse)
     - [NVMfRemoteControllerDisconnectRequest](#opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest)
-    - [NVMfRemoteControllerDisconnectResponse](#opi_api-storage-v1-NVMfRemoteControllerDisconnectResponse)
     - [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest)
-    - [NVMfRemoteControllerGetResponse](#opi_api-storage-v1-NVMfRemoteControllerGetResponse)
     - [NVMfRemoteControllerListRequest](#opi_api-storage-v1-NVMfRemoteControllerListRequest)
     - [NVMfRemoteControllerListResponse](#opi_api-storage-v1-NVMfRemoteControllerListResponse)
     - [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest)
-    - [NVMfRemoteControllerResetResponse](#opi_api-storage-v1-NVMfRemoteControllerResetResponse)
     - [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest)
     - [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse)
   
@@ -559,7 +555,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
 | adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
 | traddr | [string](#string) |  |  |
@@ -592,16 +588,6 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-NVMfRemoteControllerConnectResponse"></a>
-
-### NVMfRemoteControllerConnectResponse
-Intentionally empty.
-
-
-
-
-
-
 <a name="opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest"></a>
 
 ### NVMfRemoteControllerDisconnectRequest
@@ -610,17 +596,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerDisconnectResponse"></a>
-
-### NVMfRemoteControllerDisconnectResponse
-Intentionally empty.
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 
 
 
@@ -635,22 +611,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerGetResponse"></a>
-
-### NVMfRemoteControllerGetResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 
 
 
@@ -665,7 +626,8 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
 
 
 
@@ -695,17 +657,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerResetResponse"></a>
-
-### NVMfRemoteControllerResetResponse
-Intentionally empty.
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 
 
 
@@ -720,7 +672,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 
 
 
@@ -735,7 +687,6 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  |  |
 | stats | [string](#string) |  |  |
 
 
@@ -802,11 +753,11 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| NVMfRemoteControllerConnect | [NVMfRemoteControllerConnectRequest](#opi_api-storage-v1-NVMfRemoteControllerConnectRequest) | [NVMfRemoteControllerConnectResponse](#opi_api-storage-v1-NVMfRemoteControllerConnectResponse) |  |
-| NVMfRemoteControllerDisconnect | [NVMfRemoteControllerDisconnectRequest](#opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest) | [NVMfRemoteControllerDisconnectResponse](#opi_api-storage-v1-NVMfRemoteControllerDisconnectResponse) |  |
-| NVMfRemoteControllerReset | [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest) | [NVMfRemoteControllerResetResponse](#opi_api-storage-v1-NVMfRemoteControllerResetResponse) |  |
+| NVMfRemoteControllerConnect | [NVMfRemoteControllerConnectRequest](#opi_api-storage-v1-NVMfRemoteControllerConnectRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
+| NVMfRemoteControllerDisconnect | [NVMfRemoteControllerDisconnectRequest](#opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| NVMfRemoteControllerReset | [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | NVMfRemoteControllerList | [NVMfRemoteControllerListRequest](#opi_api-storage-v1-NVMfRemoteControllerListRequest) | [NVMfRemoteControllerListResponse](#opi_api-storage-v1-NVMfRemoteControllerListResponse) |  |
-| NVMfRemoteControllerGet | [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest) | [NVMfRemoteControllerGetResponse](#opi_api-storage-v1-NVMfRemoteControllerGetResponse) |  |
+| NVMfRemoteControllerGet | [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
 | NVMfRemoteControllerStats | [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest) | [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse) |  |
 
  

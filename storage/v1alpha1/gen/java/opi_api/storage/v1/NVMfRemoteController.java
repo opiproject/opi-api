@@ -54,9 +54,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
+            if (id_ != null) {
+              subBuilder = id_.toBuilder();
+            }
+            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(id_);
+              id_ = subBuilder.buildPartial();
+            }
 
-            id_ = input.readInt64();
             break;
           }
           case 16: {
@@ -153,14 +161,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
+  private opi_api.common.v1.ObjectKey id_;
   /**
-   * <code>int64 id = 1;</code>
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return id_ != null;
+  }
+  /**
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
-  public long getId() {
-    return id_;
+  public opi_api.common.v1.ObjectKey getId() {
+    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+  }
+  /**
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   */
+  @java.lang.Override
+  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
+    return getId();
   }
 
   public static final int TRTYPE_FIELD_NUMBER = 2;
@@ -403,8 +438,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
+    if (id_ != null) {
+      output.writeMessage(1, getId());
     }
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, trtype_);
@@ -448,9 +483,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
+    if (id_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
+        .computeMessageSize(1, getId());
     }
     if (trtype_ != opi_api.storage.v1.NvmeTransportType.NVME_TRANSPORT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -508,8 +543,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMfRemoteController other = (opi_api.storage.v1.NVMfRemoteController) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId()
+          .equals(other.getId())) return false;
+    }
     if (trtype_ != other.trtype_) return false;
     if (adrfam_ != other.adrfam_) return false;
     if (!getTraddr()
@@ -540,9 +578,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     hash = (37 * hash) + TRTYPE_FIELD_NUMBER;
     hash = (53 * hash) + trtype_;
     hash = (37 * hash) + ADRFAM_FIELD_NUMBER;
@@ -703,8 +742,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
-
+      if (idBuilder_ == null) {
+        id_ = null;
+      } else {
+        id_ = null;
+        idBuilder_ = null;
+      }
       trtype_ = 0;
 
       adrfam_ = 0;
@@ -753,7 +796,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMfRemoteController buildPartial() {
       opi_api.storage.v1.NVMfRemoteController result = new opi_api.storage.v1.NVMfRemoteController(this);
-      result.id_ = id_;
+      if (idBuilder_ == null) {
+        result.id_ = id_;
+      } else {
+        result.id_ = idBuilder_.build();
+      }
       result.trtype_ = trtype_;
       result.adrfam_ = adrfam_;
       result.traddr_ = traddr_;
@@ -813,8 +860,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMfRemoteController other) {
       if (other == opi_api.storage.v1.NVMfRemoteController.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+      if (other.hasId()) {
+        mergeId(other.getId());
       }
       if (other.trtype_ != 0) {
         setTrtypeValue(other.getTrtypeValue());
@@ -881,35 +928,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
+    private opi_api.common.v1.ObjectKey id_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
     /**
-     * <code>int64 id = 1;</code>
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return idBuilder_ != null || id_ != null;
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
-    public long getId() {
-      return id_;
+    public opi_api.common.v1.ObjectKey getId() {
+      if (idBuilder_ == null) {
+        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+      } else {
+        return idBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      */
-    public Builder setId(long value) {
-      
-      id_ = value;
-      onChanged();
+    public Builder setId(opi_api.common.v1.ObjectKey value) {
+      if (idBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        onChanged();
+      } else {
+        idBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @return This builder for chaining.
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public Builder setId(
+        opi_api.common.v1.ObjectKey.Builder builderForValue) {
+      if (idBuilder_ == null) {
+        id_ = builderForValue.build();
+        onChanged();
+      } else {
+        idBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
+      if (idBuilder_ == null) {
+        if (id_ != null) {
+          id_ =
+            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
+        } else {
+          id_ = value;
+        }
+        onChanged();
+      } else {
+        idBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
      */
     public Builder clearId() {
-      
-      id_ = 0L;
-      onChanged();
+      if (idBuilder_ == null) {
+        id_ = null;
+        onChanged();
+      } else {
+        id_ = null;
+        idBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
+      
+      onChanged();
+      return getIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
+      if (idBuilder_ != null) {
+        return idBuilder_.getMessageOrBuilder();
+      } else {
+        return id_ == null ?
+            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+      }
+    }
+    /**
+     * <pre>
+     * object's unique identifier
+     * </pre>
+     *
+     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
+        getIdFieldBuilder() {
+      if (idBuilder_ == null) {
+        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
+                getId(),
+                getParentForChildren(),
+                isClean());
+        id_ = null;
+      }
+      return idBuilder_;
     }
 
     private int trtype_ = 0;

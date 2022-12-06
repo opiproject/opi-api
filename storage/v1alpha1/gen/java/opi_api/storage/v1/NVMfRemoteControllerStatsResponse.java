@@ -49,12 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            id_ = input.readInt64();
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             stats_ = s;
@@ -92,21 +87,10 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NVMfRemoteControllerStatsResponse.class, opi_api.storage.v1.NVMfRemoteControllerStatsResponse.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id_;
-  /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public long getId() {
-    return id_;
-  }
-
-  public static final int STATS_FIELD_NUMBER = 2;
+  public static final int STATS_FIELD_NUMBER = 1;
   private volatile java.lang.Object stats_;
   /**
-   * <code>string stats = 2;</code>
+   * <code>string stats = 1;</code>
    * @return The stats.
    */
   @java.lang.Override
@@ -123,7 +107,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string stats = 2;</code>
+   * <code>string stats = 1;</code>
    * @return The bytes for stats.
    */
   @java.lang.Override
@@ -155,11 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0L) {
-      output.writeInt64(1, id_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stats_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stats_);
     }
     unknownFields.writeTo(output);
   }
@@ -170,12 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stats_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stats_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +169,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMfRemoteControllerStatsResponse other = (opi_api.storage.v1.NVMfRemoteControllerStatsResponse) obj;
 
-    if (getId()
-        != other.getId()) return false;
     if (!getStats()
         .equals(other.getStats())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -207,9 +182,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
     hash = (37 * hash) + STATS_FIELD_NUMBER;
     hash = (53 * hash) + getStats().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +317,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0L;
-
       stats_ = "";
 
       return this;
@@ -375,7 +345,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMfRemoteControllerStatsResponse buildPartial() {
       opi_api.storage.v1.NVMfRemoteControllerStatsResponse result = new opi_api.storage.v1.NVMfRemoteControllerStatsResponse(this);
-      result.id_ = id_;
       result.stats_ = stats_;
       onBuilt();
       return result;
@@ -425,9 +394,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMfRemoteControllerStatsResponse other) {
       if (other == opi_api.storage.v1.NVMfRemoteControllerStatsResponse.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
-      }
       if (!other.getStats().isEmpty()) {
         stats_ = other.stats_;
         onChanged();
@@ -461,40 +427,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id_ ;
-    /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public long getId() {
-      return id_;
-    }
-    /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(long value) {
-      
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = 0L;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object stats_ = "";
     /**
-     * <code>string stats = 2;</code>
+     * <code>string stats = 1;</code>
      * @return The stats.
      */
     public java.lang.String getStats() {
@@ -510,7 +445,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string stats = 2;</code>
+     * <code>string stats = 1;</code>
      * @return The bytes for stats.
      */
     public com.google.protobuf.ByteString
@@ -527,7 +462,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string stats = 2;</code>
+     * <code>string stats = 1;</code>
      * @param value The stats to set.
      * @return This builder for chaining.
      */
@@ -542,7 +477,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string stats = 2;</code>
+     * <code>string stats = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearStats() {
@@ -552,7 +487,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string stats = 2;</code>
+     * <code>string stats = 1;</code>
      * @param value The bytes for stats to set.
      * @return This builder for chaining.
      */

@@ -8,10 +8,31 @@ public interface NVMfRemoteControllerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
    * @return The id.
    */
-  long getId();
+  opi_api.common.v1.ObjectKey getId();
+  /**
+   * <pre>
+   * object's unique identifier
+   * </pre>
+   *
+   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+   */
+  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
 
   /**
    * <code>.opi_api.storage.v1.NvmeTransportType trtype = 2;</code>

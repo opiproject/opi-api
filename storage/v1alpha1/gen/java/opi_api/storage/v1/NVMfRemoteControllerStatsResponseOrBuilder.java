@@ -8,18 +8,12 @@ public interface NVMfRemoteControllerStatsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
-   */
-  long getId();
-
-  /**
-   * <code>string stats = 2;</code>
+   * <code>string stats = 1;</code>
    * @return The stats.
    */
   java.lang.String getStats();
   /**
-   * <code>string stats = 2;</code>
+   * <code>string stats = 1;</code>
    * @return The bytes for stats.
    */
   com.google.protobuf.ByteString

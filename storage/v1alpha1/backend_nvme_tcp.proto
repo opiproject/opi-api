@@ -10,18 +10,23 @@ option java_outer_classname = "BackendNvmeTcpProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
+import "google/protobuf/empty.proto";
+import "object_key.proto";
+
 // Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 service NVMfRemoteControllerService {
-    rpc NVMfRemoteControllerConnect (NVMfRemoteControllerConnectRequest) returns (NVMfRemoteControllerConnectResponse) {}
-    rpc NVMfRemoteControllerDisconnect (NVMfRemoteControllerDisconnectRequest) returns (NVMfRemoteControllerDisconnectResponse) {}
-    rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (NVMfRemoteControllerResetResponse) {}
+    rpc NVMfRemoteControllerConnect (NVMfRemoteControllerConnectRequest) returns (NVMfRemoteController) {}
+    rpc NVMfRemoteControllerDisconnect (NVMfRemoteControllerDisconnectRequest) returns (google.protobuf.Empty) {}
+    rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (google.protobuf.Empty) {}
     rpc NVMfRemoteControllerList   (NVMfRemoteControllerListRequest)   returns (NVMfRemoteControllerListResponse)   {}
-    rpc NVMfRemoteControllerGet    (NVMfRemoteControllerGetRequest)    returns (NVMfRemoteControllerGetResponse)    {}
+    rpc NVMfRemoteControllerGet    (NVMfRemoteControllerGetRequest)    returns (NVMfRemoteController)    {}
     rpc NVMfRemoteControllerStats  (NVMfRemoteControllerStatsRequest)  returns (NVMfRemoteControllerStatsResponse)  {}
 }
 
 message NVMfRemoteController {
-    int64 id = 1;
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+
     NvmeTransportType trtype = 2;
     NvmeAddressFamily adrfam = 3;
     string traddr = 4;
@@ -39,28 +44,19 @@ message NVMfRemoteControllerConnectRequest {
     NVMfRemoteController ctrl = 1;
 }
 
-message NVMfRemoteControllerConnectResponse {
-    // Intentionally empty.
-}
-
 message NVMfRemoteControllerDisconnectRequest {
-    int64 id = 1;
-}
-
-message NVMfRemoteControllerDisconnectResponse {
-    // Intentionally empty.
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
 }
 
 message NVMfRemoteControllerResetRequest {
-    int64 id = 1;
-}
-
-message NVMfRemoteControllerResetResponse {
-    // Intentionally empty.
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
 }
 
 message NVMfRemoteControllerListRequest {
-    int64 id = 1;
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
 message NVMfRemoteControllerListResponse {
@@ -68,20 +64,17 @@ message NVMfRemoteControllerListResponse {
 }
 
 message NVMfRemoteControllerGetRequest {
-    int64 id = 1;
-}
-
-message NVMfRemoteControllerGetResponse {
-    NVMfRemoteController ctrl = 1;
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
 }
 
 message NVMfRemoteControllerStatsRequest {
-    int64 id = 1;
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
 }
 
 message NVMfRemoteControllerStatsResponse {
-    int64 id = 1;
-    string stats = 2;
+    string stats = 1;
 }
 
 enum NvmeTransportType {

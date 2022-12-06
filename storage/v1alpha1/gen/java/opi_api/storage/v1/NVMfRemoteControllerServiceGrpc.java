@@ -19,28 +19,28 @@ public final class NVMfRemoteControllerServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerConnectRequest,
-      opi_api.storage.v1.NVMfRemoteControllerConnectResponse> getNVMfRemoteControllerConnectMethod;
+      opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerConnectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NVMfRemoteControllerConnect",
       requestType = opi_api.storage.v1.NVMfRemoteControllerConnectRequest.class,
-      responseType = opi_api.storage.v1.NVMfRemoteControllerConnectResponse.class,
+      responseType = opi_api.storage.v1.NVMfRemoteController.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerConnectRequest,
-      opi_api.storage.v1.NVMfRemoteControllerConnectResponse> getNVMfRemoteControllerConnectMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerConnectRequest, opi_api.storage.v1.NVMfRemoteControllerConnectResponse> getNVMfRemoteControllerConnectMethod;
+      opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerConnectMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerConnectRequest, opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerConnectMethod;
     if ((getNVMfRemoteControllerConnectMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerConnectMethod) == null) {
       synchronized (NVMfRemoteControllerServiceGrpc.class) {
         if ((getNVMfRemoteControllerConnectMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerConnectMethod) == null) {
           NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerConnectMethod = getNVMfRemoteControllerConnectMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerConnectRequest, opi_api.storage.v1.NVMfRemoteControllerConnectResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerConnectRequest, opi_api.storage.v1.NVMfRemoteController>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NVMfRemoteControllerConnect"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NVMfRemoteControllerConnectRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NVMfRemoteControllerConnectResponse.getDefaultInstance()))
+                  opi_api.storage.v1.NVMfRemoteController.getDefaultInstance()))
               .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("NVMfRemoteControllerConnect"))
               .build();
         }
@@ -50,28 +50,28 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest,
-      opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> getNVMfRemoteControllerDisconnectMethod;
+      com.google.protobuf.Empty> getNVMfRemoteControllerDisconnectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NVMfRemoteControllerDisconnect",
       requestType = opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest.class,
-      responseType = opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse.class,
+      responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest,
-      opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> getNVMfRemoteControllerDisconnectMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest, opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> getNVMfRemoteControllerDisconnectMethod;
+      com.google.protobuf.Empty> getNVMfRemoteControllerDisconnectMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest, com.google.protobuf.Empty> getNVMfRemoteControllerDisconnectMethod;
     if ((getNVMfRemoteControllerDisconnectMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerDisconnectMethod) == null) {
       synchronized (NVMfRemoteControllerServiceGrpc.class) {
         if ((getNVMfRemoteControllerDisconnectMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerDisconnectMethod) == null) {
           NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerDisconnectMethod = getNVMfRemoteControllerDisconnectMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest, opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NVMfRemoteControllerDisconnect"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("NVMfRemoteControllerDisconnect"))
               .build();
         }
@@ -81,28 +81,28 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerResetRequest,
-      opi_api.storage.v1.NVMfRemoteControllerResetResponse> getNVMfRemoteControllerResetMethod;
+      com.google.protobuf.Empty> getNVMfRemoteControllerResetMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NVMfRemoteControllerReset",
       requestType = opi_api.storage.v1.NVMfRemoteControllerResetRequest.class,
-      responseType = opi_api.storage.v1.NVMfRemoteControllerResetResponse.class,
+      responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerResetRequest,
-      opi_api.storage.v1.NVMfRemoteControllerResetResponse> getNVMfRemoteControllerResetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerResetRequest, opi_api.storage.v1.NVMfRemoteControllerResetResponse> getNVMfRemoteControllerResetMethod;
+      com.google.protobuf.Empty> getNVMfRemoteControllerResetMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerResetRequest, com.google.protobuf.Empty> getNVMfRemoteControllerResetMethod;
     if ((getNVMfRemoteControllerResetMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerResetMethod) == null) {
       synchronized (NVMfRemoteControllerServiceGrpc.class) {
         if ((getNVMfRemoteControllerResetMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerResetMethod) == null) {
           NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerResetMethod = getNVMfRemoteControllerResetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerResetRequest, opi_api.storage.v1.NVMfRemoteControllerResetResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerResetRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NVMfRemoteControllerReset"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NVMfRemoteControllerResetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NVMfRemoteControllerResetResponse.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("NVMfRemoteControllerReset"))
               .build();
         }
@@ -143,28 +143,28 @@ public final class NVMfRemoteControllerServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerGetRequest,
-      opi_api.storage.v1.NVMfRemoteControllerGetResponse> getNVMfRemoteControllerGetMethod;
+      opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerGetMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NVMfRemoteControllerGet",
       requestType = opi_api.storage.v1.NVMfRemoteControllerGetRequest.class,
-      responseType = opi_api.storage.v1.NVMfRemoteControllerGetResponse.class,
+      responseType = opi_api.storage.v1.NVMfRemoteController.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerGetRequest,
-      opi_api.storage.v1.NVMfRemoteControllerGetResponse> getNVMfRemoteControllerGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerGetRequest, opi_api.storage.v1.NVMfRemoteControllerGetResponse> getNVMfRemoteControllerGetMethod;
+      opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerGetMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.NVMfRemoteControllerGetRequest, opi_api.storage.v1.NVMfRemoteController> getNVMfRemoteControllerGetMethod;
     if ((getNVMfRemoteControllerGetMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerGetMethod) == null) {
       synchronized (NVMfRemoteControllerServiceGrpc.class) {
         if ((getNVMfRemoteControllerGetMethod = NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerGetMethod) == null) {
           NVMfRemoteControllerServiceGrpc.getNVMfRemoteControllerGetMethod = getNVMfRemoteControllerGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerGetRequest, opi_api.storage.v1.NVMfRemoteControllerGetResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.NVMfRemoteControllerGetRequest, opi_api.storage.v1.NVMfRemoteController>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NVMfRemoteControllerGet"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NVMfRemoteControllerGetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NVMfRemoteControllerGetResponse.getDefaultInstance()))
+                  opi_api.storage.v1.NVMfRemoteController.getDefaultInstance()))
               .setSchemaDescriptor(new NVMfRemoteControllerServiceMethodDescriptorSupplier("NVMfRemoteControllerGet"))
               .build();
         }
@@ -258,21 +258,21 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerConnect(opi_api.storage.v1.NVMfRemoteControllerConnectRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerConnectResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMfRemoteControllerConnectMethod(), responseObserver);
     }
 
     /**
      */
     public void nVMfRemoteControllerDisconnect(opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMfRemoteControllerDisconnectMethod(), responseObserver);
     }
 
     /**
      */
     public void nVMfRemoteControllerReset(opi_api.storage.v1.NVMfRemoteControllerResetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerResetResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMfRemoteControllerResetMethod(), responseObserver);
     }
 
@@ -286,7 +286,7 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerGet(opi_api.storage.v1.NVMfRemoteControllerGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerGetResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMfRemoteControllerGetMethod(), responseObserver);
     }
 
@@ -304,21 +304,21 @@ public final class NVMfRemoteControllerServiceGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 opi_api.storage.v1.NVMfRemoteControllerConnectRequest,
-                opi_api.storage.v1.NVMfRemoteControllerConnectResponse>(
+                opi_api.storage.v1.NVMfRemoteController>(
                   this, METHODID_NVMF_REMOTE_CONTROLLER_CONNECT)))
           .addMethod(
             getNVMfRemoteControllerDisconnectMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest,
-                opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse>(
+                com.google.protobuf.Empty>(
                   this, METHODID_NVMF_REMOTE_CONTROLLER_DISCONNECT)))
           .addMethod(
             getNVMfRemoteControllerResetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 opi_api.storage.v1.NVMfRemoteControllerResetRequest,
-                opi_api.storage.v1.NVMfRemoteControllerResetResponse>(
+                com.google.protobuf.Empty>(
                   this, METHODID_NVMF_REMOTE_CONTROLLER_RESET)))
           .addMethod(
             getNVMfRemoteControllerListMethod(),
@@ -332,7 +332,7 @@ public final class NVMfRemoteControllerServiceGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 opi_api.storage.v1.NVMfRemoteControllerGetRequest,
-                opi_api.storage.v1.NVMfRemoteControllerGetResponse>(
+                opi_api.storage.v1.NVMfRemoteController>(
                   this, METHODID_NVMF_REMOTE_CONTROLLER_GET)))
           .addMethod(
             getNVMfRemoteControllerStatsMethod(),
@@ -365,7 +365,7 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerConnect(opi_api.storage.v1.NVMfRemoteControllerConnectRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerConnectResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerConnectMethod(), getCallOptions()), request, responseObserver);
     }
@@ -373,7 +373,7 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerDisconnect(opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerDisconnectMethod(), getCallOptions()), request, responseObserver);
     }
@@ -381,7 +381,7 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerReset(opi_api.storage.v1.NVMfRemoteControllerResetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerResetResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerResetMethod(), getCallOptions()), request, responseObserver);
     }
@@ -397,7 +397,7 @@ public final class NVMfRemoteControllerServiceGrpc {
     /**
      */
     public void nVMfRemoteControllerGet(opi_api.storage.v1.NVMfRemoteControllerGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerGetResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerGetMethod(), getCallOptions()), request, responseObserver);
     }
@@ -430,21 +430,21 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.NVMfRemoteControllerConnectResponse nVMfRemoteControllerConnect(opi_api.storage.v1.NVMfRemoteControllerConnectRequest request) {
+    public opi_api.storage.v1.NVMfRemoteController nVMfRemoteControllerConnect(opi_api.storage.v1.NVMfRemoteControllerConnectRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMfRemoteControllerConnectMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse nVMfRemoteControllerDisconnect(opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest request) {
+    public com.google.protobuf.Empty nVMfRemoteControllerDisconnect(opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMfRemoteControllerDisconnectMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NVMfRemoteControllerResetResponse nVMfRemoteControllerReset(opi_api.storage.v1.NVMfRemoteControllerResetRequest request) {
+    public com.google.protobuf.Empty nVMfRemoteControllerReset(opi_api.storage.v1.NVMfRemoteControllerResetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMfRemoteControllerResetMethod(), getCallOptions(), request);
     }
@@ -458,7 +458,7 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.NVMfRemoteControllerGetResponse nVMfRemoteControllerGet(opi_api.storage.v1.NVMfRemoteControllerGetRequest request) {
+    public opi_api.storage.v1.NVMfRemoteController nVMfRemoteControllerGet(opi_api.storage.v1.NVMfRemoteControllerGetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMfRemoteControllerGetMethod(), getCallOptions(), request);
     }
@@ -490,7 +490,7 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteControllerConnectResponse> nVMfRemoteControllerConnect(
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteController> nVMfRemoteControllerConnect(
         opi_api.storage.v1.NVMfRemoteControllerConnectRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerConnectMethod(), getCallOptions()), request);
@@ -498,7 +498,7 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse> nVMfRemoteControllerDisconnect(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> nVMfRemoteControllerDisconnect(
         opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerDisconnectMethod(), getCallOptions()), request);
@@ -506,7 +506,7 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteControllerResetResponse> nVMfRemoteControllerReset(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> nVMfRemoteControllerReset(
         opi_api.storage.v1.NVMfRemoteControllerResetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerResetMethod(), getCallOptions()), request);
@@ -522,7 +522,7 @@ public final class NVMfRemoteControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteControllerGetResponse> nVMfRemoteControllerGet(
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NVMfRemoteController> nVMfRemoteControllerGet(
         opi_api.storage.v1.NVMfRemoteControllerGetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMfRemoteControllerGetMethod(), getCallOptions()), request);
@@ -563,15 +563,15 @@ public final class NVMfRemoteControllerServiceGrpc {
       switch (methodId) {
         case METHODID_NVMF_REMOTE_CONTROLLER_CONNECT:
           serviceImpl.nVMfRemoteControllerConnect((opi_api.storage.v1.NVMfRemoteControllerConnectRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerConnectResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController>) responseObserver);
           break;
         case METHODID_NVMF_REMOTE_CONTROLLER_DISCONNECT:
           serviceImpl.nVMfRemoteControllerDisconnect((opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerDisconnectResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_NVMF_REMOTE_CONTROLLER_RESET:
           serviceImpl.nVMfRemoteControllerReset((opi_api.storage.v1.NVMfRemoteControllerResetRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerResetResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_NVMF_REMOTE_CONTROLLER_LIST:
           serviceImpl.nVMfRemoteControllerList((opi_api.storage.v1.NVMfRemoteControllerListRequest) request,
@@ -579,7 +579,7 @@ public final class NVMfRemoteControllerServiceGrpc {
           break;
         case METHODID_NVMF_REMOTE_CONTROLLER_GET:
           serviceImpl.nVMfRemoteControllerGet((opi_api.storage.v1.NVMfRemoteControllerGetRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteControllerGetResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMfRemoteController>) responseObserver);
           break;
         case METHODID_NVMF_REMOTE_CONTROLLER_STATS:
           serviceImpl.nVMfRemoteControllerStats((opi_api.storage.v1.NVMfRemoteControllerStatsRequest) request,
