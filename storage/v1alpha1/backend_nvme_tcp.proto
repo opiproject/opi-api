@@ -11,15 +11,39 @@ option java_outer_classname = "BackendNvmeTcpProto";
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 import "object_key.proto";
 
 // Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 service NVMfRemoteControllerService {
-    rpc NVMfRemoteControllerConnect (NVMfRemoteControllerConnectRequest) returns (NVMfRemoteController) {}
-    rpc NVMfRemoteControllerDisconnect (NVMfRemoteControllerDisconnectRequest) returns (google.protobuf.Empty) {}
+    rpc CreateNVMfRemoteController (CreateNVMfRemoteControllerRequest) returns (NVMfRemoteController) {
+        option (google.api.http) = {
+            post: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc DeleteNVMfRemoteController (DeleteNVMfRemoteControllerRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/subsystems/{subsystem}"
+        };
+    }
+    rpc UpdateNVMfRemoteController (UpdateNVMfRemoteControllerRequest) returns (NVMfRemoteController) {
+        option (google.api.http) = {
+            patch: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc ListNVMfRemoteController   (ListNVMfRemoteControllerRequest)   returns (ListNVMfRemoteControllerResponse)   {
+        option (google.api.http) = {
+            get: "/v1/subsystems"
+        };
+    }
+    rpc GetNVMfRemoteController    (GetNVMfRemoteControllerRequest)    returns (NVMfRemoteController)    {
+        option (google.api.http) = {
+            get: "/v1/subsystems/{subsystem}"
+        };
+    }
     rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (google.protobuf.Empty) {}
-    rpc NVMfRemoteControllerList   (NVMfRemoteControllerListRequest)   returns (NVMfRemoteControllerListResponse)   {}
-    rpc NVMfRemoteControllerGet    (NVMfRemoteControllerGetRequest)    returns (NVMfRemoteController)    {}
     rpc NVMfRemoteControllerStats  (NVMfRemoteControllerStatsRequest)  returns (NVMfRemoteControllerStatsResponse)  {}
 }
 
@@ -40,30 +64,35 @@ message NVMfRemoteController {
     string hostnqn = 12;
 }
 
-message NVMfRemoteControllerConnectRequest {
+message CreateNVMfRemoteControllerRequest {
     NVMfRemoteController ctrl = 1;
 }
 
-message NVMfRemoteControllerDisconnectRequest {
+message DeleteNVMfRemoteControllerRequest {
+    // object's unique identifier
+    common.v1.ObjectKey id = 1;
+}
+
+message UpdateNVMfRemoteControllerRequest {
+    NVMfRemoteController ctrl = 1;
+}
+
+message ListNVMfRemoteControllerRequest {
+    int32 page_size = 1;
+    string page_token = 2;
+}
+
+message ListNVMfRemoteControllerResponse {
+    repeated NVMfRemoteController ctrls = 1;
+    string next_page_token = 2;
+}
+
+message GetNVMfRemoteControllerRequest {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
 }
 
 message NVMfRemoteControllerResetRequest {
-    // object's unique identifier
-    common.v1.ObjectKey id = 1;
-}
-
-message NVMfRemoteControllerListRequest {
-    int32 page_size = 1;
-    string page_token = 2;
-}
-
-message NVMfRemoteControllerListResponse {
-    repeated NVMfRemoteController ctrl = 1;
-}
-
-message NVMfRemoteControllerGetRequest {
     // object's unique identifier
     common.v1.ObjectKey id = 1;
 }

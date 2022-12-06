@@ -11,16 +11,39 @@ option java_outer_classname = "BackendNullProto";
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 import "object_key.proto";
 import "uuid.proto";
 
 // Back End (network-facing) APIs. This is debug interface for null block devices.
 service NullDebugService {
-    rpc NullDebugCreate (NullDebugCreateRequest) returns (NullDebug) {}
-    rpc NullDebugDelete (NullDebugDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc NullDebugUpdate (NullDebugUpdateRequest) returns (NullDebug) {}
-    rpc NullDebugList   (NullDebugListRequest)   returns (NullDebugListResponse)   {}
-    rpc NullDebugGet    (NullDebugGetRequest)    returns (NullDebug)    {}
+    rpc CreateNullDebug (CreateNullDebugRequest) returns (NullDebug) {
+        option (google.api.http) = {
+            post: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc DeleteNullDebug (DeleteNullDebugRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/subsystems/{subsystem}"
+        };
+    }
+    rpc UpdateNullDebug (UpdateNullDebugRequest) returns (NullDebug) {
+        option (google.api.http) = {
+            patch: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc ListNullDebug   (ListNullDebugRequest)   returns (ListNullDebugResponse)   {
+        option (google.api.http) = {
+            get: "/v1/subsystems"
+        };
+    }
+    rpc GetNullDebug    (GetNullDebugRequest)    returns (NullDebug)    {
+        option (google.api.http) = {
+            get: "/v1/subsystems/{subsystem}"
+        };
+    }
     rpc NullDebugStats  (NullDebugStatsRequest)  returns (NullDebugStatsResponse)  {}
 }
 
@@ -31,28 +54,30 @@ message NullDebug {
     common.v1.Uuid uuid = 4;
 }
 
-message NullDebugCreateRequest {
+message CreateNullDebugRequest {
     NullDebug device = 1;
 }
 
-message NullDebugDeleteRequest {
+message DeleteNullDebugRequest {
     common.v1.ObjectKey handle = 1;
 
 }
 
-message NullDebugUpdateRequest {
+message UpdateNullDebugRequest {
     NullDebug device = 1;
 }
 
-message NullDebugListRequest {
-    // Intentionally empty.
+message ListNullDebugRequest {
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
-message NullDebugListResponse {
-    repeated NullDebug device = 1;
+message ListNullDebugResponse {
+    repeated NullDebug devices = 1;
+    string next_page_token = 2;
 }
 
-message NullDebugGetRequest {
+message GetNullDebugRequest {
     common.v1.ObjectKey handle = 1;
 }
 

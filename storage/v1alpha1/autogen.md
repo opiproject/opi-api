@@ -5,43 +5,43 @@
 
 - [backend_aio.proto](#backend_aio-proto)
     - [AioController](#opi_api-storage-v1-AioController)
-    - [AioControllerCreateRequest](#opi_api-storage-v1-AioControllerCreateRequest)
-    - [AioControllerDeleteRequest](#opi_api-storage-v1-AioControllerDeleteRequest)
-    - [AioControllerGetListRequest](#opi_api-storage-v1-AioControllerGetListRequest)
-    - [AioControllerGetRequest](#opi_api-storage-v1-AioControllerGetRequest)
-    - [AioControllerGetStatsRequest](#opi_api-storage-v1-AioControllerGetStatsRequest)
-    - [AioControllerList](#opi_api-storage-v1-AioControllerList)
-    - [AioControllerStats](#opi_api-storage-v1-AioControllerStats)
     - [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest)
-    - [AioControllerUpdateRequest](#opi_api-storage-v1-AioControllerUpdateRequest)
+    - [AioControllerStatsResponse](#opi_api-storage-v1-AioControllerStatsResponse)
+    - [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest)
+    - [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest)
+    - [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest)
+    - [ListAioControllerRequest](#opi_api-storage-v1-ListAioControllerRequest)
+    - [ListAioControllerResponse](#opi_api-storage-v1-ListAioControllerResponse)
+    - [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest)
   
     - [AioControllerService](#opi_api-storage-v1-AioControllerService)
   
 - [backend_iscsi.proto](#backend_iscsi-proto)
 - [backend_null.proto](#backend_null-proto)
+    - [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest)
+    - [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest)
+    - [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest)
+    - [ListNullDebugRequest](#opi_api-storage-v1-ListNullDebugRequest)
+    - [ListNullDebugResponse](#opi_api-storage-v1-ListNullDebugResponse)
     - [NullDebug](#opi_api-storage-v1-NullDebug)
-    - [NullDebugCreateRequest](#opi_api-storage-v1-NullDebugCreateRequest)
-    - [NullDebugDeleteRequest](#opi_api-storage-v1-NullDebugDeleteRequest)
-    - [NullDebugGetRequest](#opi_api-storage-v1-NullDebugGetRequest)
-    - [NullDebugListRequest](#opi_api-storage-v1-NullDebugListRequest)
-    - [NullDebugListResponse](#opi_api-storage-v1-NullDebugListResponse)
     - [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest)
     - [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse)
-    - [NullDebugUpdateRequest](#opi_api-storage-v1-NullDebugUpdateRequest)
+    - [UpdateNullDebugRequest](#opi_api-storage-v1-UpdateNullDebugRequest)
   
     - [NullDebugService](#opi_api-storage-v1-NullDebugService)
   
 - [backend_nvme_pcie.proto](#backend_nvme_pcie-proto)
 - [backend_nvme_tcp.proto](#backend_nvme_tcp-proto)
+    - [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest)
+    - [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest)
+    - [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest)
+    - [ListNVMfRemoteControllerRequest](#opi_api-storage-v1-ListNVMfRemoteControllerRequest)
+    - [ListNVMfRemoteControllerResponse](#opi_api-storage-v1-ListNVMfRemoteControllerResponse)
     - [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController)
-    - [NVMfRemoteControllerConnectRequest](#opi_api-storage-v1-NVMfRemoteControllerConnectRequest)
-    - [NVMfRemoteControllerDisconnectRequest](#opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest)
-    - [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest)
-    - [NVMfRemoteControllerListRequest](#opi_api-storage-v1-NVMfRemoteControllerListRequest)
-    - [NVMfRemoteControllerListResponse](#opi_api-storage-v1-NVMfRemoteControllerListResponse)
     - [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest)
     - [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest)
     - [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse)
+    - [UpdateNVMfRemoteControllerRequest](#opi_api-storage-v1-UpdateNVMfRemoteControllerRequest)
   
     - [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily)
     - [NvmeMultipath](#opi_api-storage-v1-NvmeMultipath)
@@ -188,107 +188,6 @@
 
 
 
-<a name="opi_api-storage-v1-AioControllerCreateRequest"></a>
-
-### AioControllerCreateRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerDeleteRequest"></a>
-
-### AioControllerDeleteRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerGetListRequest"></a>
-
-### AioControllerGetListRequest
-Intentionally empty
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerGetRequest"></a>
-
-### AioControllerGetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerGetStatsRequest"></a>
-
-### AioControllerGetStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerList"></a>
-
-### AioControllerList
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| device | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-AioControllerStats"></a>
-
-### AioControllerStats
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="opi_api-storage-v1-AioControllerStatsRequest"></a>
 
 ### AioControllerStatsRequest
@@ -304,9 +203,102 @@ Intentionally empty
 
 
 
-<a name="opi_api-storage-v1-AioControllerUpdateRequest"></a>
+<a name="opi_api-storage-v1-AioControllerStatsResponse"></a>
 
-### AioControllerUpdateRequest
+### AioControllerStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-CreateAioControllerRequest"></a>
+
+### CreateAioControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteAioControllerRequest"></a>
+
+### DeleteAioControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetAioControllerRequest"></a>
+
+### GetAioControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListAioControllerRequest"></a>
+
+### ListAioControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListAioControllerResponse"></a>
+
+### ListAioControllerResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devices | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
+| next_page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-UpdateAioControllerRequest"></a>
+
+### UpdateAioControllerRequest
 
 
 
@@ -332,12 +324,12 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| AioControllerCreate | [AioControllerCreateRequest](#opi_api-storage-v1-AioControllerCreateRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| AioControllerDelete | [AioControllerDeleteRequest](#opi_api-storage-v1-AioControllerDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| AioControllerGet | [AioControllerGetRequest](#opi_api-storage-v1-AioControllerGetRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| AioControllerGetList | [AioControllerGetListRequest](#opi_api-storage-v1-AioControllerGetListRequest) | [AioControllerList](#opi_api-storage-v1-AioControllerList) |  |
-| AioControllerGetStats | [AioControllerGetStatsRequest](#opi_api-storage-v1-AioControllerGetStatsRequest) | [AioControllerStats](#opi_api-storage-v1-AioControllerStats) |  |
-| AioControllerUpdate | [AioControllerUpdateRequest](#opi_api-storage-v1-AioControllerUpdateRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| CreateAioController | [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| DeleteAioController | [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateAioController | [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| ListAioController | [ListAioControllerRequest](#opi_api-storage-v1-ListAioControllerRequest) | [ListAioControllerResponse](#opi_api-storage-v1-ListAioControllerResponse) |  |
+| GetAioController | [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
+| AioControllerStats | [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest) | [AioControllerStatsResponse](#opi_api-storage-v1-AioControllerStatsResponse) |  |
 
  
 
@@ -366,27 +358,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebug"></a>
+<a name="opi_api-storage-v1-CreateNullDebugRequest"></a>
 
-### NullDebug
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| block_size | [int64](#int64) |  |  |
-| blocks_count | [int64](#int64) |  |  |
-| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NullDebugCreateRequest"></a>
-
-### NullDebugCreateRequest
+### CreateNullDebugRequest
 
 
 
@@ -399,24 +373,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebugDeleteRequest"></a>
+<a name="opi_api-storage-v1-DeleteNullDebugRequest"></a>
 
-### NullDebugDeleteRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NullDebugGetRequest"></a>
-
-### NullDebugGetRequest
+### DeleteNullDebugRequest
 
 
 
@@ -429,25 +388,65 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-NullDebugListRequest"></a>
+<a name="opi_api-storage-v1-GetNullDebugRequest"></a>
 
-### NullDebugListRequest
-Intentionally empty.
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NullDebugListResponse"></a>
-
-### NullDebugListResponse
+### GetNullDebugRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [NullDebug](#opi_api-storage-v1-NullDebug) | repeated |  |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListNullDebugRequest"></a>
+
+### ListNullDebugRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListNullDebugResponse"></a>
+
+### ListNullDebugResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devices | [NullDebug](#opi_api-storage-v1-NullDebug) | repeated |  |
+| next_page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-NullDebug"></a>
+
+### NullDebug
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| block_size | [int64](#int64) |  |  |
+| blocks_count | [int64](#int64) |  |  |
+| uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
 
 
 
@@ -485,9 +484,9 @@ Intentionally empty.
 
 
 
-<a name="opi_api-storage-v1-NullDebugUpdateRequest"></a>
+<a name="opi_api-storage-v1-UpdateNullDebugRequest"></a>
 
-### NullDebugUpdateRequest
+### UpdateNullDebugRequest
 
 
 
@@ -513,11 +512,11 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| NullDebugCreate | [NullDebugCreateRequest](#opi_api-storage-v1-NullDebugCreateRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| NullDebugDelete | [NullDebugDeleteRequest](#opi_api-storage-v1-NullDebugDeleteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| NullDebugUpdate | [NullDebugUpdateRequest](#opi_api-storage-v1-NullDebugUpdateRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| NullDebugList | [NullDebugListRequest](#opi_api-storage-v1-NullDebugListRequest) | [NullDebugListResponse](#opi_api-storage-v1-NullDebugListResponse) |  |
-| NullDebugGet | [NullDebugGetRequest](#opi_api-storage-v1-NullDebugGetRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
+| CreateNullDebug | [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
+| DeleteNullDebug | [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNullDebug | [UpdateNullDebugRequest](#opi_api-storage-v1-UpdateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
+| ListNullDebug | [ListNullDebugRequest](#opi_api-storage-v1-ListNullDebugRequest) | [ListNullDebugResponse](#opi_api-storage-v1-ListNullDebugResponse) |  |
+| GetNullDebug | [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
 | NullDebugStats | [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest) | [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse) |  |
 
  
@@ -547,6 +546,83 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
+<a name="opi_api-storage-v1-CreateNVMfRemoteControllerRequest"></a>
+
+### CreateNVMfRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteNVMfRemoteControllerRequest"></a>
+
+### DeleteNVMfRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetNVMfRemoteControllerRequest"></a>
+
+### GetNVMfRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListNVMfRemoteControllerRequest"></a>
+
+### ListNVMfRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListNVMfRemoteControllerResponse"></a>
+
+### ListNVMfRemoteControllerResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ctrls | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) | repeated |  |
+| next_page_token | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-NVMfRemoteController"></a>
 
 ### NVMfRemoteController
@@ -567,82 +643,6 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | io_queues_count | [int64](#int64) |  |  |
 | queue_size | [int64](#int64) |  |  |
 | hostnqn | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerConnectRequest"></a>
-
-### NVMfRemoteControllerConnectRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest"></a>
-
-### NVMfRemoteControllerDisconnectRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerGetRequest"></a>
-
-### NVMfRemoteControllerGetRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerListRequest"></a>
-
-### NVMfRemoteControllerListRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| page_size | [int32](#int32) |  |  |
-| page_token | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMfRemoteControllerListResponse"></a>
-
-### NVMfRemoteControllerListResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) | repeated |  |
 
 
 
@@ -688,6 +688,21 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | stats | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-UpdateNVMfRemoteControllerRequest"></a>
+
+### UpdateNVMfRemoteControllerRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
 
 
 
@@ -753,11 +768,12 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| NVMfRemoteControllerConnect | [NVMfRemoteControllerConnectRequest](#opi_api-storage-v1-NVMfRemoteControllerConnectRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
-| NVMfRemoteControllerDisconnect | [NVMfRemoteControllerDisconnectRequest](#opi_api-storage-v1-NVMfRemoteControllerDisconnectRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| CreateNVMfRemoteController | [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
+| DeleteNVMfRemoteController | [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNVMfRemoteController | [UpdateNVMfRemoteControllerRequest](#opi_api-storage-v1-UpdateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
+| ListNVMfRemoteController | [ListNVMfRemoteControllerRequest](#opi_api-storage-v1-ListNVMfRemoteControllerRequest) | [ListNVMfRemoteControllerResponse](#opi_api-storage-v1-ListNVMfRemoteControllerResponse) |  |
+| GetNVMfRemoteController | [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
 | NVMfRemoteControllerReset | [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| NVMfRemoteControllerList | [NVMfRemoteControllerListRequest](#opi_api-storage-v1-NVMfRemoteControllerListRequest) | [NVMfRemoteControllerListResponse](#opi_api-storage-v1-NVMfRemoteControllerListResponse) |  |
-| NVMfRemoteControllerGet | [NVMfRemoteControllerGetRequest](#opi_api-storage-v1-NVMfRemoteControllerGetRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
 | NVMfRemoteControllerStats | [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest) | [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse) |  |
 
  

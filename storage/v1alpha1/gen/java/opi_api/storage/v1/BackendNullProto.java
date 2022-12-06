@@ -20,35 +20,35 @@ public final class BackendNullProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_NullDebug_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugCreateRequest_descriptor;
+    internal_static_opi_api_storage_v1_CreateNullDebugRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugCreateRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_CreateNullDebugRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugDeleteRequest_descriptor;
+    internal_static_opi_api_storage_v1_DeleteNullDebugRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugDeleteRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_DeleteNullDebugRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugUpdateRequest_descriptor;
+    internal_static_opi_api_storage_v1_UpdateNullDebugRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugUpdateRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_UpdateNullDebugRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugListRequest_descriptor;
+    internal_static_opi_api_storage_v1_ListNullDebugRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugListRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListNullDebugRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugListResponse_descriptor;
+    internal_static_opi_api_storage_v1_ListNullDebugResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugListResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListNullDebugResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_NullDebugGetRequest_descriptor;
+    internal_static_opi_api_storage_v1_GetNullDebugRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_NullDebugGetRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_GetNullDebugRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_NullDebugStatsRequest_descriptor;
   static final 
@@ -69,48 +69,55 @@ public final class BackendNullProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022backend_null.proto\022\022opi_api.storage.v1" +
-      "\032\033google/protobuf/empty.proto\032\020object_ke" +
-      "y.proto\032\nuuid.proto\"\212\001\n\tNullDebug\022,\n\006han" +
-      "dle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022" +
-      "\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(" +
-      "\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.common.v1.Uuid" +
-      "\"G\n\026NullDebugCreateRequest\022-\n\006device\030\001 \001" +
-      "(\0132\035.opi_api.storage.v1.NullDebug\"F\n\026Nul" +
-      "lDebugDeleteRequest\022,\n\006handle\030\001 \001(\0132\034.op" +
-      "i_api.common.v1.ObjectKey\"G\n\026NullDebugUp" +
-      "dateRequest\022-\n\006device\030\001 \001(\0132\035.opi_api.st" +
-      "orage.v1.NullDebug\"\026\n\024NullDebugListReque" +
-      "st\"F\n\025NullDebugListResponse\022-\n\006device\030\001 " +
-      "\003(\0132\035.opi_api.storage.v1.NullDebug\"C\n\023Nu" +
-      "llDebugGetRequest\022,\n\006handle\030\001 \001(\0132\034.opi_" +
-      "api.common.v1.ObjectKey\"E\n\025NullDebugStat" +
-      "sRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.commo" +
-      "n.v1.ObjectKey\"U\n\026NullDebugStatsResponse" +
-      "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj" +
-      "ectKey\022\r\n\005stats\030\002 \001(\t2\330\004\n\020NullDebugServi" +
-      "ce\022^\n\017NullDebugCreate\022*.opi_api.storage." +
-      "v1.NullDebugCreateRequest\032\035.opi_api.stor" +
-      "age.v1.NullDebug\"\000\022W\n\017NullDebugDelete\022*." +
-      "opi_api.storage.v1.NullDebugDeleteReques" +
-      "t\032\026.google.protobuf.Empty\"\000\022^\n\017NullDebug" +
-      "Update\022*.opi_api.storage.v1.NullDebugUpd" +
-      "ateRequest\032\035.opi_api.storage.v1.NullDebu" +
-      "g\"\000\022f\n\rNullDebugList\022(.opi_api.storage.v" +
-      "1.NullDebugListRequest\032).opi_api.storage" +
-      ".v1.NullDebugListResponse\"\000\022X\n\014NullDebug" +
-      "Get\022\'.opi_api.storage.v1.NullDebugGetReq" +
-      "uest\032\035.opi_api.storage.v1.NullDebug\"\000\022i\n" +
-      "\016NullDebugStats\022).opi_api.storage.v1.Nul" +
-      "lDebugStatsRequest\032*.opi_api.storage.v1." +
-      "NullDebugStatsResponse\"\000B_\n\022opi_api.stor" +
-      "age.v1B\020BackendNullProtoP\001Z5github.com/o" +
-      "piproject/opi-api/storage/v1alpha1/gen/g" +
-      "ob\006proto3"
+      "\032\033google/protobuf/empty.proto\032\034google/ap" +
+      "i/annotations.proto\032\020object_key.proto\032\nu" +
+      "uid.proto\"\212\001\n\tNullDebug\022,\n\006handle\030\001 \001(\0132" +
+      "\034.opi_api.common.v1.ObjectKey\022\022\n\nblock_s" +
+      "ize\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(\003\022%\n\004uuid\030" +
+      "\004 \001(\0132\027.opi_api.common.v1.Uuid\"G\n\026Create" +
+      "NullDebugRequest\022-\n\006device\030\001 \001(\0132\035.opi_a" +
+      "pi.storage.v1.NullDebug\"F\n\026DeleteNullDeb" +
+      "ugRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.comm" +
+      "on.v1.ObjectKey\"G\n\026UpdateNullDebugReques" +
+      "t\022-\n\006device\030\001 \001(\0132\035.opi_api.storage.v1.N" +
+      "ullDebug\"=\n\024ListNullDebugRequest\022\021\n\tpage" +
+      "_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"`\n\025ListN" +
+      "ullDebugResponse\022.\n\007devices\030\001 \003(\0132\035.opi_" +
+      "api.storage.v1.NullDebug\022\027\n\017next_page_to" +
+      "ken\030\002 \001(\t\"C\n\023GetNullDebugRequest\022,\n\006hand" +
+      "le\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\"E" +
+      "\n\025NullDebugStatsRequest\022,\n\006handle\030\001 \001(\0132" +
+      "\034.opi_api.common.v1.ObjectKey\"U\n\026NullDeb" +
+      "ugStatsResponse\022,\n\006handle\030\001 \001(\0132\034.opi_ap" +
+      "i.common.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\364\005\n" +
+      "\020NullDebugService\022\177\n\017CreateNullDebug\022*.o" +
+      "pi_api.storage.v1.CreateNullDebugRequest" +
+      "\032\035.opi_api.storage.v1.NullDebug\"!\202\323\344\223\002\033\"" +
+      "\016/v1/subsystems:\tsubsystem\022y\n\017DeleteNull" +
+      "Debug\022*.opi_api.storage.v1.DeleteNullDeb" +
+      "ugRequest\032\026.google.protobuf.Empty\"\"\202\323\344\223\002" +
+      "\034*\032/v1/subsystems/{subsystem}\022\177\n\017UpdateN" +
+      "ullDebug\022*.opi_api.storage.v1.UpdateNull" +
+      "DebugRequest\032\035.opi_api.storage.v1.NullDe" +
+      "bug\"!\202\323\344\223\002\0332\016/v1/subsystems:\tsubsystem\022|" +
+      "\n\rListNullDebug\022(.opi_api.storage.v1.Lis" +
+      "tNullDebugRequest\032).opi_api.storage.v1.L" +
+      "istNullDebugResponse\"\026\202\323\344\223\002\020\022\016/v1/subsys" +
+      "tems\022z\n\014GetNullDebug\022\'.opi_api.storage.v" +
+      "1.GetNullDebugRequest\032\035.opi_api.storage." +
+      "v1.NullDebug\"\"\202\323\344\223\002\034\022\032/v1/subsystems/{su" +
+      "bsystem}\022i\n\016NullDebugStats\022).opi_api.sto" +
+      "rage.v1.NullDebugStatsRequest\032*.opi_api." +
+      "storage.v1.NullDebugStatsResponse\"\000B_\n\022o" +
+      "pi_api.storage.v1B\020BackendNullProtoP\001Z5g" +
+      "ithub.com/opiproject/opi-api/storage/v1a" +
+      "lpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
           opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.common.v1.UuidProto.getDescriptor(),
         });
@@ -120,41 +127,41 @@ public final class BackendNullProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NullDebug_descriptor,
         new java.lang.String[] { "Handle", "BlockSize", "BlocksCount", "Uuid", });
-    internal_static_opi_api_storage_v1_NullDebugCreateRequest_descriptor =
+    internal_static_opi_api_storage_v1_CreateNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_opi_api_storage_v1_NullDebugCreateRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_CreateNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugCreateRequest_descriptor,
+        internal_static_opi_api_storage_v1_CreateNullDebugRequest_descriptor,
         new java.lang.String[] { "Device", });
-    internal_static_opi_api_storage_v1_NullDebugDeleteRequest_descriptor =
+    internal_static_opi_api_storage_v1_DeleteNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_opi_api_storage_v1_NullDebugDeleteRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_DeleteNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugDeleteRequest_descriptor,
+        internal_static_opi_api_storage_v1_DeleteNullDebugRequest_descriptor,
         new java.lang.String[] { "Handle", });
-    internal_static_opi_api_storage_v1_NullDebugUpdateRequest_descriptor =
+    internal_static_opi_api_storage_v1_UpdateNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_opi_api_storage_v1_NullDebugUpdateRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_UpdateNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugUpdateRequest_descriptor,
+        internal_static_opi_api_storage_v1_UpdateNullDebugRequest_descriptor,
         new java.lang.String[] { "Device", });
-    internal_static_opi_api_storage_v1_NullDebugListRequest_descriptor =
+    internal_static_opi_api_storage_v1_ListNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_opi_api_storage_v1_NullDebugListRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugListRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_opi_api_storage_v1_NullDebugListResponse_descriptor =
+        internal_static_opi_api_storage_v1_ListNullDebugRequest_descriptor,
+        new java.lang.String[] { "PageSize", "PageToken", });
+    internal_static_opi_api_storage_v1_ListNullDebugResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_opi_api_storage_v1_NullDebugListResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListNullDebugResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugListResponse_descriptor,
-        new java.lang.String[] { "Device", });
-    internal_static_opi_api_storage_v1_NullDebugGetRequest_descriptor =
+        internal_static_opi_api_storage_v1_ListNullDebugResponse_descriptor,
+        new java.lang.String[] { "Devices", "NextPageToken", });
+    internal_static_opi_api_storage_v1_GetNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_opi_api_storage_v1_NullDebugGetRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_GetNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_NullDebugGetRequest_descriptor,
+        internal_static_opi_api_storage_v1_GetNullDebugRequest_descriptor,
         new java.lang.String[] { "Handle", });
     internal_static_opi_api_storage_v1_NullDebugStatsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
@@ -168,7 +175,13 @@ public final class BackendNullProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NullDebugStatsResponse_descriptor,
         new java.lang.String[] { "Handle", "Stats", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.AnnotationsProto.http);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     opi_api.common.v1.ObjectKeyProto.getDescriptor();
     opi_api.common.v1.UuidProto.getDescriptor();
   }

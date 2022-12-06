@@ -18,159 +18,159 @@ public final class NullDebugServiceGrpc {
   public static final String SERVICE_NAME = "opi_api.storage.v1.NullDebugService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugCreateRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getCreateNullDebugMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullDebugCreate",
-      requestType = opi_api.storage.v1.NullDebugCreateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateNullDebug",
+      requestType = opi_api.storage.v1.CreateNullDebugRequest.class,
       responseType = opi_api.storage.v1.NullDebug.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugCreateRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugCreateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugCreateRequest, opi_api.storage.v1.NullDebug> getNullDebugCreateMethod;
-    if ((getNullDebugCreateMethod = NullDebugServiceGrpc.getNullDebugCreateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getCreateNullDebugMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.CreateNullDebugRequest, opi_api.storage.v1.NullDebug> getCreateNullDebugMethod;
+    if ((getCreateNullDebugMethod = NullDebugServiceGrpc.getCreateNullDebugMethod) == null) {
       synchronized (NullDebugServiceGrpc.class) {
-        if ((getNullDebugCreateMethod = NullDebugServiceGrpc.getNullDebugCreateMethod) == null) {
-          NullDebugServiceGrpc.getNullDebugCreateMethod = getNullDebugCreateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullDebugCreateRequest, opi_api.storage.v1.NullDebug>newBuilder()
+        if ((getCreateNullDebugMethod = NullDebugServiceGrpc.getCreateNullDebugMethod) == null) {
+          NullDebugServiceGrpc.getCreateNullDebugMethod = getCreateNullDebugMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateNullDebugRequest, opi_api.storage.v1.NullDebug>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullDebugCreate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNullDebug"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugCreateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.CreateNullDebugRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NullDebug.getDefaultInstance()))
-              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("NullDebugCreate"))
+              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("CreateNullDebug"))
               .build();
         }
       }
     }
-    return getNullDebugCreateMethod;
+    return getCreateNullDebugMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugDeleteRequest,
-      com.google.protobuf.Empty> getNullDebugDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNullDebugRequest,
+      com.google.protobuf.Empty> getDeleteNullDebugMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullDebugDelete",
-      requestType = opi_api.storage.v1.NullDebugDeleteRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNullDebug",
+      requestType = opi_api.storage.v1.DeleteNullDebugRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugDeleteRequest,
-      com.google.protobuf.Empty> getNullDebugDeleteMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugDeleteRequest, com.google.protobuf.Empty> getNullDebugDeleteMethod;
-    if ((getNullDebugDeleteMethod = NullDebugServiceGrpc.getNullDebugDeleteMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNullDebugRequest,
+      com.google.protobuf.Empty> getDeleteNullDebugMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteNullDebugRequest, com.google.protobuf.Empty> getDeleteNullDebugMethod;
+    if ((getDeleteNullDebugMethod = NullDebugServiceGrpc.getDeleteNullDebugMethod) == null) {
       synchronized (NullDebugServiceGrpc.class) {
-        if ((getNullDebugDeleteMethod = NullDebugServiceGrpc.getNullDebugDeleteMethod) == null) {
-          NullDebugServiceGrpc.getNullDebugDeleteMethod = getNullDebugDeleteMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullDebugDeleteRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getDeleteNullDebugMethod = NullDebugServiceGrpc.getDeleteNullDebugMethod) == null) {
+          NullDebugServiceGrpc.getDeleteNullDebugMethod = getDeleteNullDebugMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteNullDebugRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullDebugDelete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNullDebug"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugDeleteRequest.getDefaultInstance()))
+                  opi_api.storage.v1.DeleteNullDebugRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("NullDebugDelete"))
+              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("DeleteNullDebug"))
               .build();
         }
       }
     }
-    return getNullDebugDeleteMethod;
+    return getDeleteNullDebugMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugUpdateRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getUpdateNullDebugMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullDebugUpdate",
-      requestType = opi_api.storage.v1.NullDebugUpdateRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNullDebug",
+      requestType = opi_api.storage.v1.UpdateNullDebugRequest.class,
       responseType = opi_api.storage.v1.NullDebug.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugUpdateRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugUpdateMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugUpdateRequest, opi_api.storage.v1.NullDebug> getNullDebugUpdateMethod;
-    if ((getNullDebugUpdateMethod = NullDebugServiceGrpc.getNullDebugUpdateMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getUpdateNullDebugMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateNullDebugRequest, opi_api.storage.v1.NullDebug> getUpdateNullDebugMethod;
+    if ((getUpdateNullDebugMethod = NullDebugServiceGrpc.getUpdateNullDebugMethod) == null) {
       synchronized (NullDebugServiceGrpc.class) {
-        if ((getNullDebugUpdateMethod = NullDebugServiceGrpc.getNullDebugUpdateMethod) == null) {
-          NullDebugServiceGrpc.getNullDebugUpdateMethod = getNullDebugUpdateMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullDebugUpdateRequest, opi_api.storage.v1.NullDebug>newBuilder()
+        if ((getUpdateNullDebugMethod = NullDebugServiceGrpc.getUpdateNullDebugMethod) == null) {
+          NullDebugServiceGrpc.getUpdateNullDebugMethod = getUpdateNullDebugMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateNullDebugRequest, opi_api.storage.v1.NullDebug>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullDebugUpdate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateNullDebug"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugUpdateRequest.getDefaultInstance()))
+                  opi_api.storage.v1.UpdateNullDebugRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NullDebug.getDefaultInstance()))
-              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("NullDebugUpdate"))
+              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("UpdateNullDebug"))
               .build();
         }
       }
     }
-    return getNullDebugUpdateMethod;
+    return getUpdateNullDebugMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugListRequest,
-      opi_api.storage.v1.NullDebugListResponse> getNullDebugListMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNullDebugRequest,
+      opi_api.storage.v1.ListNullDebugResponse> getListNullDebugMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullDebugList",
-      requestType = opi_api.storage.v1.NullDebugListRequest.class,
-      responseType = opi_api.storage.v1.NullDebugListResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListNullDebug",
+      requestType = opi_api.storage.v1.ListNullDebugRequest.class,
+      responseType = opi_api.storage.v1.ListNullDebugResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugListRequest,
-      opi_api.storage.v1.NullDebugListResponse> getNullDebugListMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugListRequest, opi_api.storage.v1.NullDebugListResponse> getNullDebugListMethod;
-    if ((getNullDebugListMethod = NullDebugServiceGrpc.getNullDebugListMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNullDebugRequest,
+      opi_api.storage.v1.ListNullDebugResponse> getListNullDebugMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNullDebugRequest, opi_api.storage.v1.ListNullDebugResponse> getListNullDebugMethod;
+    if ((getListNullDebugMethod = NullDebugServiceGrpc.getListNullDebugMethod) == null) {
       synchronized (NullDebugServiceGrpc.class) {
-        if ((getNullDebugListMethod = NullDebugServiceGrpc.getNullDebugListMethod) == null) {
-          NullDebugServiceGrpc.getNullDebugListMethod = getNullDebugListMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullDebugListRequest, opi_api.storage.v1.NullDebugListResponse>newBuilder()
+        if ((getListNullDebugMethod = NullDebugServiceGrpc.getListNullDebugMethod) == null) {
+          NullDebugServiceGrpc.getListNullDebugMethod = getListNullDebugMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNullDebugRequest, opi_api.storage.v1.ListNullDebugResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullDebugList"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNullDebug"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugListRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListNullDebugRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("NullDebugList"))
+                  opi_api.storage.v1.ListNullDebugResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("ListNullDebug"))
               .build();
         }
       }
     }
-    return getNullDebugListMethod;
+    return getListNullDebugMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugGetRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getGetNullDebugMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "NullDebugGet",
-      requestType = opi_api.storage.v1.NullDebugGetRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetNullDebug",
+      requestType = opi_api.storage.v1.GetNullDebugRequest.class,
       responseType = opi_api.storage.v1.NullDebug.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugGetRequest,
-      opi_api.storage.v1.NullDebug> getNullDebugGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugGetRequest, opi_api.storage.v1.NullDebug> getNullDebugGetMethod;
-    if ((getNullDebugGetMethod = NullDebugServiceGrpc.getNullDebugGetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetNullDebugRequest,
+      opi_api.storage.v1.NullDebug> getGetNullDebugMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.GetNullDebugRequest, opi_api.storage.v1.NullDebug> getGetNullDebugMethod;
+    if ((getGetNullDebugMethod = NullDebugServiceGrpc.getGetNullDebugMethod) == null) {
       synchronized (NullDebugServiceGrpc.class) {
-        if ((getNullDebugGetMethod = NullDebugServiceGrpc.getNullDebugGetMethod) == null) {
-          NullDebugServiceGrpc.getNullDebugGetMethod = getNullDebugGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.NullDebugGetRequest, opi_api.storage.v1.NullDebug>newBuilder()
+        if ((getGetNullDebugMethod = NullDebugServiceGrpc.getGetNullDebugMethod) == null) {
+          NullDebugServiceGrpc.getGetNullDebugMethod = getGetNullDebugMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.GetNullDebugRequest, opi_api.storage.v1.NullDebug>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NullDebugGet"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNullDebug"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.NullDebugGetRequest.getDefaultInstance()))
+                  opi_api.storage.v1.GetNullDebugRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.NullDebug.getDefaultInstance()))
-              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("NullDebugGet"))
+              .setSchemaDescriptor(new NullDebugServiceMethodDescriptorSupplier("GetNullDebug"))
               .build();
         }
       }
     }
-    return getNullDebugGetMethod;
+    return getGetNullDebugMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.NullDebugStatsRequest,
@@ -257,37 +257,37 @@ public final class NullDebugServiceGrpc {
 
     /**
      */
-    public void nullDebugCreate(opi_api.storage.v1.NullDebugCreateRequest request,
+    public void createNullDebug(opi_api.storage.v1.CreateNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullDebugCreateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNullDebugMethod(), responseObserver);
     }
 
     /**
      */
-    public void nullDebugDelete(opi_api.storage.v1.NullDebugDeleteRequest request,
+    public void deleteNullDebug(opi_api.storage.v1.DeleteNullDebugRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullDebugDeleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNullDebugMethod(), responseObserver);
     }
 
     /**
      */
-    public void nullDebugUpdate(opi_api.storage.v1.NullDebugUpdateRequest request,
+    public void updateNullDebug(opi_api.storage.v1.UpdateNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullDebugUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateNullDebugMethod(), responseObserver);
     }
 
     /**
      */
-    public void nullDebugList(opi_api.storage.v1.NullDebugListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebugListResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullDebugListMethod(), responseObserver);
+    public void listNullDebug(opi_api.storage.v1.ListNullDebugRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNullDebugResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNullDebugMethod(), responseObserver);
     }
 
     /**
      */
-    public void nullDebugGet(opi_api.storage.v1.NullDebugGetRequest request,
+    public void getNullDebug(opi_api.storage.v1.GetNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNullDebugGetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNullDebugMethod(), responseObserver);
     }
 
     /**
@@ -300,40 +300,40 @@ public final class NullDebugServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getNullDebugCreateMethod(),
+            getCreateNullDebugMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullDebugCreateRequest,
+                opi_api.storage.v1.CreateNullDebugRequest,
                 opi_api.storage.v1.NullDebug>(
-                  this, METHODID_NULL_DEBUG_CREATE)))
+                  this, METHODID_CREATE_NULL_DEBUG)))
           .addMethod(
-            getNullDebugDeleteMethod(),
+            getDeleteNullDebugMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullDebugDeleteRequest,
+                opi_api.storage.v1.DeleteNullDebugRequest,
                 com.google.protobuf.Empty>(
-                  this, METHODID_NULL_DEBUG_DELETE)))
+                  this, METHODID_DELETE_NULL_DEBUG)))
           .addMethod(
-            getNullDebugUpdateMethod(),
+            getUpdateNullDebugMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullDebugUpdateRequest,
+                opi_api.storage.v1.UpdateNullDebugRequest,
                 opi_api.storage.v1.NullDebug>(
-                  this, METHODID_NULL_DEBUG_UPDATE)))
+                  this, METHODID_UPDATE_NULL_DEBUG)))
           .addMethod(
-            getNullDebugListMethod(),
+            getListNullDebugMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullDebugListRequest,
-                opi_api.storage.v1.NullDebugListResponse>(
-                  this, METHODID_NULL_DEBUG_LIST)))
+                opi_api.storage.v1.ListNullDebugRequest,
+                opi_api.storage.v1.ListNullDebugResponse>(
+                  this, METHODID_LIST_NULL_DEBUG)))
           .addMethod(
-            getNullDebugGetMethod(),
+            getGetNullDebugMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.NullDebugGetRequest,
+                opi_api.storage.v1.GetNullDebugRequest,
                 opi_api.storage.v1.NullDebug>(
-                  this, METHODID_NULL_DEBUG_GET)))
+                  this, METHODID_GET_NULL_DEBUG)))
           .addMethod(
             getNullDebugStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -364,42 +364,42 @@ public final class NullDebugServiceGrpc {
 
     /**
      */
-    public void nullDebugCreate(opi_api.storage.v1.NullDebugCreateRequest request,
+    public void createNullDebug(opi_api.storage.v1.CreateNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullDebugCreateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateNullDebugMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void nullDebugDelete(opi_api.storage.v1.NullDebugDeleteRequest request,
+    public void deleteNullDebug(opi_api.storage.v1.DeleteNullDebugRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullDebugDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteNullDebugMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void nullDebugUpdate(opi_api.storage.v1.NullDebugUpdateRequest request,
+    public void updateNullDebug(opi_api.storage.v1.UpdateNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullDebugUpdateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateNullDebugMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void nullDebugList(opi_api.storage.v1.NullDebugListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebugListResponse> responseObserver) {
+    public void listNullDebug(opi_api.storage.v1.ListNullDebugRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNullDebugResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullDebugListMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListNullDebugMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void nullDebugGet(opi_api.storage.v1.NullDebugGetRequest request,
+    public void getNullDebug(opi_api.storage.v1.GetNullDebugRequest request,
         io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getNullDebugGetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetNullDebugMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -430,37 +430,37 @@ public final class NullDebugServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.NullDebug nullDebugCreate(opi_api.storage.v1.NullDebugCreateRequest request) {
+    public opi_api.storage.v1.NullDebug createNullDebug(opi_api.storage.v1.CreateNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullDebugCreateMethod(), getCallOptions(), request);
+          getChannel(), getCreateNullDebugMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty nullDebugDelete(opi_api.storage.v1.NullDebugDeleteRequest request) {
+    public com.google.protobuf.Empty deleteNullDebug(opi_api.storage.v1.DeleteNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullDebugDeleteMethod(), getCallOptions(), request);
+          getChannel(), getDeleteNullDebugMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NullDebug nullDebugUpdate(opi_api.storage.v1.NullDebugUpdateRequest request) {
+    public opi_api.storage.v1.NullDebug updateNullDebug(opi_api.storage.v1.UpdateNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullDebugUpdateMethod(), getCallOptions(), request);
+          getChannel(), getUpdateNullDebugMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NullDebugListResponse nullDebugList(opi_api.storage.v1.NullDebugListRequest request) {
+    public opi_api.storage.v1.ListNullDebugResponse listNullDebug(opi_api.storage.v1.ListNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullDebugListMethod(), getCallOptions(), request);
+          getChannel(), getListNullDebugMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public opi_api.storage.v1.NullDebug nullDebugGet(opi_api.storage.v1.NullDebugGetRequest request) {
+    public opi_api.storage.v1.NullDebug getNullDebug(opi_api.storage.v1.GetNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getNullDebugGetMethod(), getCallOptions(), request);
+          getChannel(), getGetNullDebugMethod(), getCallOptions(), request);
     }
 
     /**
@@ -490,42 +490,42 @@ public final class NullDebugServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> nullDebugCreate(
-        opi_api.storage.v1.NullDebugCreateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> createNullDebug(
+        opi_api.storage.v1.CreateNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullDebugCreateMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateNullDebugMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> nullDebugDelete(
-        opi_api.storage.v1.NullDebugDeleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNullDebug(
+        opi_api.storage.v1.DeleteNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullDebugDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteNullDebugMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> nullDebugUpdate(
-        opi_api.storage.v1.NullDebugUpdateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> updateNullDebug(
+        opi_api.storage.v1.UpdateNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullDebugUpdateMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateNullDebugMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebugListResponse> nullDebugList(
-        opi_api.storage.v1.NullDebugListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNullDebugResponse> listNullDebug(
+        opi_api.storage.v1.ListNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullDebugListMethod(), getCallOptions()), request);
+          getChannel().newCall(getListNullDebugMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> nullDebugGet(
-        opi_api.storage.v1.NullDebugGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.NullDebug> getNullDebug(
+        opi_api.storage.v1.GetNullDebugRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getNullDebugGetMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetNullDebugMethod(), getCallOptions()), request);
     }
 
     /**
@@ -537,11 +537,11 @@ public final class NullDebugServiceGrpc {
     }
   }
 
-  private static final int METHODID_NULL_DEBUG_CREATE = 0;
-  private static final int METHODID_NULL_DEBUG_DELETE = 1;
-  private static final int METHODID_NULL_DEBUG_UPDATE = 2;
-  private static final int METHODID_NULL_DEBUG_LIST = 3;
-  private static final int METHODID_NULL_DEBUG_GET = 4;
+  private static final int METHODID_CREATE_NULL_DEBUG = 0;
+  private static final int METHODID_DELETE_NULL_DEBUG = 1;
+  private static final int METHODID_UPDATE_NULL_DEBUG = 2;
+  private static final int METHODID_LIST_NULL_DEBUG = 3;
+  private static final int METHODID_GET_NULL_DEBUG = 4;
   private static final int METHODID_NULL_DEBUG_STATS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -561,24 +561,24 @@ public final class NullDebugServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_NULL_DEBUG_CREATE:
-          serviceImpl.nullDebugCreate((opi_api.storage.v1.NullDebugCreateRequest) request,
+        case METHODID_CREATE_NULL_DEBUG:
+          serviceImpl.createNullDebug((opi_api.storage.v1.CreateNullDebugRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug>) responseObserver);
           break;
-        case METHODID_NULL_DEBUG_DELETE:
-          serviceImpl.nullDebugDelete((opi_api.storage.v1.NullDebugDeleteRequest) request,
+        case METHODID_DELETE_NULL_DEBUG:
+          serviceImpl.deleteNullDebug((opi_api.storage.v1.DeleteNullDebugRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_NULL_DEBUG_UPDATE:
-          serviceImpl.nullDebugUpdate((opi_api.storage.v1.NullDebugUpdateRequest) request,
+        case METHODID_UPDATE_NULL_DEBUG:
+          serviceImpl.updateNullDebug((opi_api.storage.v1.UpdateNullDebugRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug>) responseObserver);
           break;
-        case METHODID_NULL_DEBUG_LIST:
-          serviceImpl.nullDebugList((opi_api.storage.v1.NullDebugListRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebugListResponse>) responseObserver);
+        case METHODID_LIST_NULL_DEBUG:
+          serviceImpl.listNullDebug((opi_api.storage.v1.ListNullDebugRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNullDebugResponse>) responseObserver);
           break;
-        case METHODID_NULL_DEBUG_GET:
-          serviceImpl.nullDebugGet((opi_api.storage.v1.NullDebugGetRequest) request,
+        case METHODID_GET_NULL_DEBUG:
+          serviceImpl.getNullDebug((opi_api.storage.v1.GetNullDebugRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NullDebug>) responseObserver);
           break;
         case METHODID_NULL_DEBUG_STATS:
@@ -646,11 +646,11 @@ public final class NullDebugServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new NullDebugServiceFileDescriptorSupplier())
-              .addMethod(getNullDebugCreateMethod())
-              .addMethod(getNullDebugDeleteMethod())
-              .addMethod(getNullDebugUpdateMethod())
-              .addMethod(getNullDebugListMethod())
-              .addMethod(getNullDebugGetMethod())
+              .addMethod(getCreateNullDebugMethod())
+              .addMethod(getDeleteNullDebugMethod())
+              .addMethod(getUpdateNullDebugMethod())
+              .addMethod(getListNullDebugMethod())
+              .addMethod(getGetNullDebugMethod())
               .addMethod(getNullDebugStatsMethod())
               .build();
         }

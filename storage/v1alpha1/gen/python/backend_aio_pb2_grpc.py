@@ -16,35 +16,35 @@ class AioControllerServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.AioControllerCreate = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerCreate',
-                request_serializer=backend__aio__pb2.AioControllerCreateRequest.SerializeToString,
+        self.CreateAioController = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/CreateAioController',
+                request_serializer=backend__aio__pb2.CreateAioControllerRequest.SerializeToString,
                 response_deserializer=backend__aio__pb2.AioController.FromString,
                 )
-        self.AioControllerDelete = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerDelete',
-                request_serializer=backend__aio__pb2.AioControllerDeleteRequest.SerializeToString,
+        self.DeleteAioController = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/DeleteAioController',
+                request_serializer=backend__aio__pb2.DeleteAioControllerRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.AioControllerGet = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerGet',
-                request_serializer=backend__aio__pb2.AioControllerGetRequest.SerializeToString,
+        self.UpdateAioController = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/UpdateAioController',
+                request_serializer=backend__aio__pb2.UpdateAioControllerRequest.SerializeToString,
                 response_deserializer=backend__aio__pb2.AioController.FromString,
                 )
-        self.AioControllerGetList = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerGetList',
-                request_serializer=backend__aio__pb2.AioControllerGetListRequest.SerializeToString,
-                response_deserializer=backend__aio__pb2.AioControllerList.FromString,
+        self.ListAioController = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/ListAioController',
+                request_serializer=backend__aio__pb2.ListAioControllerRequest.SerializeToString,
+                response_deserializer=backend__aio__pb2.ListAioControllerResponse.FromString,
                 )
-        self.AioControllerGetStats = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerGetStats',
-                request_serializer=backend__aio__pb2.AioControllerGetStatsRequest.SerializeToString,
-                response_deserializer=backend__aio__pb2.AioControllerStats.FromString,
-                )
-        self.AioControllerUpdate = channel.unary_unary(
-                '/opi_api.storage.v1.AioControllerService/AioControllerUpdate',
-                request_serializer=backend__aio__pb2.AioControllerUpdateRequest.SerializeToString,
+        self.GetAioController = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/GetAioController',
+                request_serializer=backend__aio__pb2.GetAioControllerRequest.SerializeToString,
                 response_deserializer=backend__aio__pb2.AioController.FromString,
+                )
+        self.AioControllerStats = channel.unary_unary(
+                '/opi_api.storage.v1.AioControllerService/AioControllerStats',
+                request_serializer=backend__aio__pb2.AioControllerStatsRequest.SerializeToString,
+                response_deserializer=backend__aio__pb2.AioControllerStatsResponse.FromString,
                 )
 
 
@@ -52,37 +52,37 @@ class AioControllerServiceServicer(object):
     """Back End (network-facing) APIs. This service is for AIO generic kernel block device.
     """
 
-    def AioControllerCreate(self, request, context):
+    def CreateAioController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioControllerDelete(self, request, context):
+    def DeleteAioController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioControllerGet(self, request, context):
+    def UpdateAioController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioControllerGetList(self, request, context):
+    def ListAioController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioControllerGetStats(self, request, context):
+    def GetAioController(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AioControllerUpdate(self, request, context):
+    def AioControllerStats(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -91,35 +91,35 @@ class AioControllerServiceServicer(object):
 
 def add_AioControllerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'AioControllerCreate': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerCreate,
-                    request_deserializer=backend__aio__pb2.AioControllerCreateRequest.FromString,
+            'CreateAioController': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAioController,
+                    request_deserializer=backend__aio__pb2.CreateAioControllerRequest.FromString,
                     response_serializer=backend__aio__pb2.AioController.SerializeToString,
             ),
-            'AioControllerDelete': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerDelete,
-                    request_deserializer=backend__aio__pb2.AioControllerDeleteRequest.FromString,
+            'DeleteAioController': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAioController,
+                    request_deserializer=backend__aio__pb2.DeleteAioControllerRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'AioControllerGet': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerGet,
-                    request_deserializer=backend__aio__pb2.AioControllerGetRequest.FromString,
+            'UpdateAioController': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAioController,
+                    request_deserializer=backend__aio__pb2.UpdateAioControllerRequest.FromString,
                     response_serializer=backend__aio__pb2.AioController.SerializeToString,
             ),
-            'AioControllerGetList': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerGetList,
-                    request_deserializer=backend__aio__pb2.AioControllerGetListRequest.FromString,
-                    response_serializer=backend__aio__pb2.AioControllerList.SerializeToString,
+            'ListAioController': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAioController,
+                    request_deserializer=backend__aio__pb2.ListAioControllerRequest.FromString,
+                    response_serializer=backend__aio__pb2.ListAioControllerResponse.SerializeToString,
             ),
-            'AioControllerGetStats': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerGetStats,
-                    request_deserializer=backend__aio__pb2.AioControllerGetStatsRequest.FromString,
-                    response_serializer=backend__aio__pb2.AioControllerStats.SerializeToString,
-            ),
-            'AioControllerUpdate': grpc.unary_unary_rpc_method_handler(
-                    servicer.AioControllerUpdate,
-                    request_deserializer=backend__aio__pb2.AioControllerUpdateRequest.FromString,
+            'GetAioController': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAioController,
+                    request_deserializer=backend__aio__pb2.GetAioControllerRequest.FromString,
                     response_serializer=backend__aio__pb2.AioController.SerializeToString,
+            ),
+            'AioControllerStats': grpc.unary_unary_rpc_method_handler(
+                    servicer.AioControllerStats,
+                    request_deserializer=backend__aio__pb2.AioControllerStatsRequest.FromString,
+                    response_serializer=backend__aio__pb2.AioControllerStatsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -133,7 +133,7 @@ class AioControllerService(object):
     """
 
     @staticmethod
-    def AioControllerCreate(request,
+    def CreateAioController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -143,14 +143,14 @@ class AioControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerCreate',
-            backend__aio__pb2.AioControllerCreateRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/CreateAioController',
+            backend__aio__pb2.CreateAioControllerRequest.SerializeToString,
             backend__aio__pb2.AioController.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AioControllerDelete(request,
+    def DeleteAioController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -160,14 +160,14 @@ class AioControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerDelete',
-            backend__aio__pb2.AioControllerDeleteRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/DeleteAioController',
+            backend__aio__pb2.DeleteAioControllerRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AioControllerGet(request,
+    def UpdateAioController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -177,14 +177,14 @@ class AioControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerGet',
-            backend__aio__pb2.AioControllerGetRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/UpdateAioController',
+            backend__aio__pb2.UpdateAioControllerRequest.SerializeToString,
             backend__aio__pb2.AioController.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AioControllerGetList(request,
+    def ListAioController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -194,14 +194,14 @@ class AioControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerGetList',
-            backend__aio__pb2.AioControllerGetListRequest.SerializeToString,
-            backend__aio__pb2.AioControllerList.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/ListAioController',
+            backend__aio__pb2.ListAioControllerRequest.SerializeToString,
+            backend__aio__pb2.ListAioControllerResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AioControllerGetStats(request,
+    def GetAioController(request,
             target,
             options=(),
             channel_credentials=None,
@@ -211,25 +211,25 @@ class AioControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerGetStats',
-            backend__aio__pb2.AioControllerGetStatsRequest.SerializeToString,
-            backend__aio__pb2.AioControllerStats.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def AioControllerUpdate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerUpdate',
-            backend__aio__pb2.AioControllerUpdateRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/GetAioController',
+            backend__aio__pb2.GetAioControllerRequest.SerializeToString,
             backend__aio__pb2.AioController.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AioControllerStats(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.AioControllerService/AioControllerStats',
+            backend__aio__pb2.AioControllerStatsRequest.SerializeToString,
+            backend__aio__pb2.AioControllerStatsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

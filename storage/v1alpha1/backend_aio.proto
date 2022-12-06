@@ -11,17 +11,40 @@ option java_outer_classname = "BackendAioProto";
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 import "object_key.proto";
 import "uuid.proto";
 
 // Back End (network-facing) APIs. This service is for AIO generic kernel block device.
 service AioControllerService {
-    rpc AioControllerCreate (AioControllerCreateRequest) returns (AioController) {}
-    rpc AioControllerDelete (AioControllerDeleteRequest) returns (google.protobuf.Empty) {}
-    rpc AioControllerGet    (AioControllerGetRequest)    returns (AioController)    {}
-    rpc AioControllerGetList   (AioControllerGetListRequest)   returns (AioControllerList)   {}
-    rpc AioControllerGetStats  (AioControllerGetStatsRequest)  returns (AioControllerStats)  {}
-    rpc AioControllerUpdate (AioControllerUpdateRequest) returns (AioController) {}
+    rpc CreateAioController (CreateAioControllerRequest) returns (AioController) {
+        option (google.api.http) = {
+            post: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc DeleteAioController (DeleteAioControllerRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/subsystems/{subsystem}"
+        };
+    }
+    rpc UpdateAioController (UpdateAioControllerRequest) returns (AioController) {
+        option (google.api.http) = {
+            patch: "/v1/subsystems"
+            body: "subsystem"
+        };
+    }
+    rpc ListAioController   (ListAioControllerRequest)   returns (ListAioControllerResponse)   {
+        option (google.api.http) = {
+            get: "/v1/subsystems"
+        };
+    }
+    rpc GetAioController    (GetAioControllerRequest)    returns (AioController)    {
+        option (google.api.http) = {
+            get: "/v1/subsystems/{subsystem}"
+        };
+    }
+    rpc AioControllerStats  (AioControllerStatsRequest)  returns (AioControllerStatsResponse)  {}
 }
 
 message AioController {
@@ -35,31 +58,29 @@ message AioController {
     string filename = 5;
 }
 
-message AioControllerCreateRequest {
+message CreateAioControllerRequest {
     AioController device = 1;
 }
 
-message AioControllerDeleteRequest {
+message DeleteAioControllerRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioControllerUpdateRequest {
+message UpdateAioControllerRequest {
     AioController device = 1;
 }
 
-message AioControllerList{
-    repeated AioController device = 1;
+message ListAioControllerRequest {
+    int32 page_size = 1;
+    string page_token = 2;
 }
 
-message AioControllerGetRequest {
-    common.v1.ObjectKey handle = 1;
+message ListAioControllerResponse{
+    repeated AioController devices = 1;
+    string next_page_token = 2;
 }
 
-message AioControllerGetListRequest {
-    // Intentionally empty
-}
-
-message AioControllerGetStatsRequest {
+message GetAioControllerRequest {
     common.v1.ObjectKey handle = 1;
 }
 
@@ -67,7 +88,7 @@ message AioControllerStatsRequest {
     common.v1.ObjectKey handle = 1;
 }
 
-message AioControllerStats {
+message AioControllerStatsResponse {
     common.v1.ObjectKey handle = 1;
     string stats = 2;
 }

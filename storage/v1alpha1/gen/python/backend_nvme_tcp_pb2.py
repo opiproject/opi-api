@@ -14,10 +14,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 import object_key_pb2 as object__key__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x62\x61\x63kend_nvme_tcp.proto\x12\x12opi_api.storage.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x10object_key.proto\"\xf1\x02\n\x14NVMfRemoteController\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x35\n\x06trtype\x18\x02 \x01(\x0e\x32%.opi_api.storage.v1.NvmeTransportType\x12\x35\n\x06\x61\x64rfam\x18\x03 \x01(\x0e\x32%.opi_api.storage.v1.NvmeAddressFamily\x12\x0e\n\x06traddr\x18\x04 \x01(\t\x12\x0f\n\x07trsvcid\x18\x05 \x01(\x03\x12\x0e\n\x06subnqn\x18\x06 \x01(\t\x12\r\n\x05hdgst\x18\x07 \x01(\x08\x12\r\n\x05\x64\x64gst\x18\x08 \x01(\x08\x12\x34\n\tmultipath\x18\t \x01(\x0e\x32!.opi_api.storage.v1.NvmeMultipath\x12\x17\n\x0fio_queues_count\x18\n \x01(\x03\x12\x12\n\nqueue_size\x18\x0b \x01(\x03\x12\x0f\n\x07hostnqn\x18\x0c \x01(\t\"\\\n\"NVMfRemoteControllerConnectRequest\x12\x36\n\x04\x63trl\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\"Q\n%NVMfRemoteControllerDisconnectRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NVMfRemoteControllerResetRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"H\n\x1fNVMfRemoteControllerListRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"Z\n NVMfRemoteControllerListResponse\x12\x36\n\x04\x63trl\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\"J\n\x1eNVMfRemoteControllerGetRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NVMfRemoteControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"2\n!NVMfRemoteControllerStatsResponse\x12\r\n\x05stats\x18\x01 \x01(\t*\xb4\x01\n\x11NvmeTransportType\x12#\n\x1fNVME_TRANSPORT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11NVME_TRANSPORT_FC\x10\x01\x12\x17\n\x13NVME_TRANSPORT_PCIE\x10\x02\x12\x17\n\x13NVME_TRANSPORT_RDMA\x10\x03\x12\x16\n\x12NVME_TRANSPORT_TCP\x10\x04\x12\x19\n\x15NVME_TRANSPORT_CUSTOM\x10\x05*\xa8\x01\n\x11NvmeAddressFamily\x12#\n\x1fNVME_ADDRESS_FAMILY_UNSPECIFIED\x10\x00\x12\x14\n\x10NVMF_ADRFAM_IPV4\x10\x01\x12\x14\n\x10NVMF_ADRFAM_IPV6\x10\x02\x12\x12\n\x0eNVMF_ADRFAM_IB\x10\x03\x12\x12\n\x0eNVMF_ADRFAM_FC\x10\x04\x12\x1a\n\x16NVMF_ADRFAM_INTRA_HOST\x10\x05*\x86\x01\n\rNvmeMultipath\x12\x1e\n\x1aNVME_MULTIPATH_UNSPECIFIED\x10\x00\x12\x1a\n\x16NVME_MULTIPATH_DISABLE\x10\x01\x12\x1b\n\x17NVME_MULTIPATH_FAILOVER\x10\x02\x12\x1c\n\x18NVME_MULTIPATH_MULTIPATH\x10\x03\x32\x97\x06\n\x1bNVMfRemoteControllerService\x12\x81\x01\n\x1bNVMfRemoteControllerConnect\x12\x36.opi_api.storage.v1.NVMfRemoteControllerConnectRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"\x00\x12u\n\x1eNVMfRemoteControllerDisconnect\x12\x39.opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest\x1a\x16.google.protobuf.Empty\"\x00\x12k\n\x19NVMfRemoteControllerReset\x12\x34.opi_api.storage.v1.NVMfRemoteControllerResetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x87\x01\n\x18NVMfRemoteControllerList\x12\x33.opi_api.storage.v1.NVMfRemoteControllerListRequest\x1a\x34.opi_api.storage.v1.NVMfRemoteControllerListResponse\"\x00\x12y\n\x17NVMfRemoteControllerGet\x12\x32.opi_api.storage.v1.NVMfRemoteControllerGetRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"\x00\x12\x8a\x01\n\x19NVMfRemoteControllerStats\x12\x34.opi_api.storage.v1.NVMfRemoteControllerStatsRequest\x1a\x35.opi_api.storage.v1.NVMfRemoteControllerStatsResponse\"\x00\x42\x62\n\x12opi_api.storage.v1B\x13\x42\x61\x63kendNvmeTcpProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x62\x61\x63kend_nvme_tcp.proto\x12\x12opi_api.storage.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x10object_key.proto\"\xf1\x02\n\x14NVMfRemoteController\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x35\n\x06trtype\x18\x02 \x01(\x0e\x32%.opi_api.storage.v1.NvmeTransportType\x12\x35\n\x06\x61\x64rfam\x18\x03 \x01(\x0e\x32%.opi_api.storage.v1.NvmeAddressFamily\x12\x0e\n\x06traddr\x18\x04 \x01(\t\x12\x0f\n\x07trsvcid\x18\x05 \x01(\x03\x12\x0e\n\x06subnqn\x18\x06 \x01(\t\x12\r\n\x05hdgst\x18\x07 \x01(\x08\x12\r\n\x05\x64\x64gst\x18\x08 \x01(\x08\x12\x34\n\tmultipath\x18\t \x01(\x0e\x32!.opi_api.storage.v1.NvmeMultipath\x12\x17\n\x0fio_queues_count\x18\n \x01(\x03\x12\x12\n\nqueue_size\x18\x0b \x01(\x03\x12\x0f\n\x07hostnqn\x18\x0c \x01(\t\"[\n!CreateNVMfRemoteControllerRequest\x12\x36\n\x04\x63trl\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\"M\n!DeleteNVMfRemoteControllerRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"[\n!UpdateNVMfRemoteControllerRequest\x12\x36\n\x04\x63trl\x18\x01 \x01(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\"H\n\x1fListNVMfRemoteControllerRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"t\n ListNVMfRemoteControllerResponse\x12\x37\n\x05\x63trls\x18\x01 \x03(\x0b\x32(.opi_api.storage.v1.NVMfRemoteController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"J\n\x1eGetNVMfRemoteControllerRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NVMfRemoteControllerResetRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n NVMfRemoteControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"2\n!NVMfRemoteControllerStatsResponse\x12\r\n\x05stats\x18\x01 \x01(\t*\xb4\x01\n\x11NvmeTransportType\x12#\n\x1fNVME_TRANSPORT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11NVME_TRANSPORT_FC\x10\x01\x12\x17\n\x13NVME_TRANSPORT_PCIE\x10\x02\x12\x17\n\x13NVME_TRANSPORT_RDMA\x10\x03\x12\x16\n\x12NVME_TRANSPORT_TCP\x10\x04\x12\x19\n\x15NVME_TRANSPORT_CUSTOM\x10\x05*\xa8\x01\n\x11NvmeAddressFamily\x12#\n\x1fNVME_ADDRESS_FAMILY_UNSPECIFIED\x10\x00\x12\x14\n\x10NVMF_ADRFAM_IPV4\x10\x01\x12\x14\n\x10NVMF_ADRFAM_IPV6\x10\x02\x12\x12\n\x0eNVMF_ADRFAM_IB\x10\x03\x12\x12\n\x0eNVMF_ADRFAM_FC\x10\x04\x12\x1a\n\x16NVMF_ADRFAM_INTRA_HOST\x10\x05*\x86\x01\n\rNvmeMultipath\x12\x1e\n\x1aNVME_MULTIPATH_UNSPECIFIED\x10\x00\x12\x1a\n\x16NVME_MULTIPATH_DISABLE\x10\x01\x12\x1b\n\x17NVME_MULTIPATH_FAILOVER\x10\x02\x12\x1c\n\x18NVME_MULTIPATH_MULTIPATH\x10\x03\x32\xad\x08\n\x1bNVMfRemoteControllerService\x12\xa0\x01\n\x1a\x43reateNVMfRemoteController\x12\x35.opi_api.storage.v1.CreateNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"!\x82\xd3\xe4\x93\x02\x1b\"\x0e/v1/subsystems:\tsubsystem\x12\x8f\x01\n\x1a\x44\x65leteNVMfRemoteController\x12\x35.opi_api.storage.v1.DeleteNVMfRemoteControllerRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/subsystems/{subsystem}\x12\xa0\x01\n\x1aUpdateNVMfRemoteController\x12\x35.opi_api.storage.v1.UpdateNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"!\x82\xd3\xe4\x93\x02\x1b\x32\x0e/v1/subsystems:\tsubsystem\x12\x9d\x01\n\x18ListNVMfRemoteController\x12\x33.opi_api.storage.v1.ListNVMfRemoteControllerRequest\x1a\x34.opi_api.storage.v1.ListNVMfRemoteControllerResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/subsystems\x12\x9b\x01\n\x17GetNVMfRemoteController\x12\x32.opi_api.storage.v1.GetNVMfRemoteControllerRequest\x1a(.opi_api.storage.v1.NVMfRemoteController\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/subsystems/{subsystem}\x12k\n\x19NVMfRemoteControllerReset\x12\x34.opi_api.storage.v1.NVMfRemoteControllerResetRequest\x1a\x16.google.protobuf.Empty\"\x00\x12\x8a\x01\n\x19NVMfRemoteControllerStats\x12\x34.opi_api.storage.v1.NVMfRemoteControllerStatsRequest\x1a\x35.opi_api.storage.v1.NVMfRemoteControllerStatsResponse\"\x00\x42\x62\n\x12opi_api.storage.v1B\x13\x42\x61\x63kendNvmeTcpProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _NVMETRANSPORTTYPE = DESCRIPTOR.enum_types_by_name['NvmeTransportType']
 NvmeTransportType = enum_type_wrapper.EnumTypeWrapper(_NVMETRANSPORTTYPE)
@@ -44,12 +45,13 @@ NVME_MULTIPATH_MULTIPATH = 3
 
 
 _NVMFREMOTECONTROLLER = DESCRIPTOR.message_types_by_name['NVMfRemoteController']
-_NVMFREMOTECONTROLLERCONNECTREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerConnectRequest']
-_NVMFREMOTECONTROLLERDISCONNECTREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerDisconnectRequest']
+_CREATENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMfRemoteControllerRequest']
+_DELETENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMfRemoteControllerRequest']
+_UPDATENVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMfRemoteControllerRequest']
+_LISTNVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['ListNVMfRemoteControllerRequest']
+_LISTNVMFREMOTECONTROLLERRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMfRemoteControllerResponse']
+_GETNVMFREMOTECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['GetNVMfRemoteControllerRequest']
 _NVMFREMOTECONTROLLERRESETREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerResetRequest']
-_NVMFREMOTECONTROLLERLISTREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerListRequest']
-_NVMFREMOTECONTROLLERLISTRESPONSE = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerListResponse']
-_NVMFREMOTECONTROLLERGETREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerGetRequest']
 _NVMFREMOTECONTROLLERSTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerStatsRequest']
 _NVMFREMOTECONTROLLERSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMfRemoteControllerStatsResponse']
 NVMfRemoteController = _reflection.GeneratedProtocolMessageType('NVMfRemoteController', (_message.Message,), {
@@ -59,19 +61,47 @@ NVMfRemoteController = _reflection.GeneratedProtocolMessageType('NVMfRemoteContr
   })
 _sym_db.RegisterMessage(NVMfRemoteController)
 
-NVMfRemoteControllerConnectRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerConnectRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERCONNECTREQUEST,
+CreateNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('CreateNVMfRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATENVMFREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerConnectRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMfRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(NVMfRemoteControllerConnectRequest)
+_sym_db.RegisterMessage(CreateNVMfRemoteControllerRequest)
 
-NVMfRemoteControllerDisconnectRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerDisconnectRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERDISCONNECTREQUEST,
+DeleteNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMfRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENVMFREMOTECONTROLLERREQUEST,
   '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerDisconnectRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMfRemoteControllerRequest)
   })
-_sym_db.RegisterMessage(NVMfRemoteControllerDisconnectRequest)
+_sym_db.RegisterMessage(DeleteNVMfRemoteControllerRequest)
+
+UpdateNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMfRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATENVMFREMOTECONTROLLERREQUEST,
+  '__module__' : 'backend_nvme_tcp_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMfRemoteControllerRequest)
+  })
+_sym_db.RegisterMessage(UpdateNVMfRemoteControllerRequest)
+
+ListNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMFREMOTECONTROLLERREQUEST,
+  '__module__' : 'backend_nvme_tcp_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteControllerRequest)
+  })
+_sym_db.RegisterMessage(ListNVMfRemoteControllerRequest)
+
+ListNVMfRemoteControllerResponse = _reflection.GeneratedProtocolMessageType('ListNVMfRemoteControllerResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNVMFREMOTECONTROLLERRESPONSE,
+  '__module__' : 'backend_nvme_tcp_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMfRemoteControllerResponse)
+  })
+_sym_db.RegisterMessage(ListNVMfRemoteControllerResponse)
+
+GetNVMfRemoteControllerRequest = _reflection.GeneratedProtocolMessageType('GetNVMfRemoteControllerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETNVMFREMOTECONTROLLERREQUEST,
+  '__module__' : 'backend_nvme_tcp_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMfRemoteControllerRequest)
+  })
+_sym_db.RegisterMessage(GetNVMfRemoteControllerRequest)
 
 NVMfRemoteControllerResetRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerResetRequest', (_message.Message,), {
   'DESCRIPTOR' : _NVMFREMOTECONTROLLERRESETREQUEST,
@@ -79,27 +109,6 @@ NVMfRemoteControllerResetRequest = _reflection.GeneratedProtocolMessageType('NVM
   # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerResetRequest)
   })
 _sym_db.RegisterMessage(NVMfRemoteControllerResetRequest)
-
-NVMfRemoteControllerListRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerListRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERLISTREQUEST,
-  '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerListRequest)
-  })
-_sym_db.RegisterMessage(NVMfRemoteControllerListRequest)
-
-NVMfRemoteControllerListResponse = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerListResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERLISTRESPONSE,
-  '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerListResponse)
-  })
-_sym_db.RegisterMessage(NVMfRemoteControllerListResponse)
-
-NVMfRemoteControllerGetRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerGetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NVMFREMOTECONTROLLERGETREQUEST,
-  '__module__' : 'backend_nvme_tcp_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMfRemoteControllerGetRequest)
-  })
-_sym_db.RegisterMessage(NVMfRemoteControllerGetRequest)
 
 NVMfRemoteControllerStatsRequest = _reflection.GeneratedProtocolMessageType('NVMfRemoteControllerStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _NVMFREMOTECONTROLLERSTATSREQUEST,
@@ -120,30 +129,42 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\023BackendNvmeTcpProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
-  _NVMETRANSPORTTYPE._serialized_start=1093
-  _NVMETRANSPORTTYPE._serialized_end=1273
-  _NVMEADDRESSFAMILY._serialized_start=1276
-  _NVMEADDRESSFAMILY._serialized_end=1444
-  _NVMEMULTIPATH._serialized_start=1447
-  _NVMEMULTIPATH._serialized_end=1581
-  _NVMFREMOTECONTROLLER._serialized_start=94
-  _NVMFREMOTECONTROLLER._serialized_end=463
-  _NVMFREMOTECONTROLLERCONNECTREQUEST._serialized_start=465
-  _NVMFREMOTECONTROLLERCONNECTREQUEST._serialized_end=557
-  _NVMFREMOTECONTROLLERDISCONNECTREQUEST._serialized_start=559
-  _NVMFREMOTECONTROLLERDISCONNECTREQUEST._serialized_end=640
-  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_start=642
-  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_end=718
-  _NVMFREMOTECONTROLLERLISTREQUEST._serialized_start=720
-  _NVMFREMOTECONTROLLERLISTREQUEST._serialized_end=792
-  _NVMFREMOTECONTROLLERLISTRESPONSE._serialized_start=794
-  _NVMFREMOTECONTROLLERLISTRESPONSE._serialized_end=884
-  _NVMFREMOTECONTROLLERGETREQUEST._serialized_start=886
-  _NVMFREMOTECONTROLLERGETREQUEST._serialized_end=960
-  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_start=962
-  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_end=1038
-  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_start=1040
-  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_end=1090
-  _NVMFREMOTECONTROLLERSERVICE._serialized_start=1584
-  _NVMFREMOTECONTROLLERSERVICE._serialized_end=2375
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfRemoteController']._options = None
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['CreateNVMfRemoteController']._serialized_options = b'\202\323\344\223\002\033\"\016/v1/subsystems:\tsubsystem'
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfRemoteController']._options = None
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['DeleteNVMfRemoteController']._serialized_options = b'\202\323\344\223\002\034*\032/v1/subsystems/{subsystem}'
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfRemoteController']._options = None
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['UpdateNVMfRemoteController']._serialized_options = b'\202\323\344\223\002\0332\016/v1/subsystems:\tsubsystem'
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteController']._options = None
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['ListNVMfRemoteController']._serialized_options = b'\202\323\344\223\002\020\022\016/v1/subsystems'
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfRemoteController']._options = None
+  _NVMFREMOTECONTROLLERSERVICE.methods_by_name['GetNVMfRemoteController']._serialized_options = b'\202\323\344\223\002\034\022\032/v1/subsystems/{subsystem}'
+  _NVMETRANSPORTTYPE._serialized_start=1237
+  _NVMETRANSPORTTYPE._serialized_end=1417
+  _NVMEADDRESSFAMILY._serialized_start=1420
+  _NVMEADDRESSFAMILY._serialized_end=1588
+  _NVMEMULTIPATH._serialized_start=1591
+  _NVMEMULTIPATH._serialized_end=1725
+  _NVMFREMOTECONTROLLER._serialized_start=124
+  _NVMFREMOTECONTROLLER._serialized_end=493
+  _CREATENVMFREMOTECONTROLLERREQUEST._serialized_start=495
+  _CREATENVMFREMOTECONTROLLERREQUEST._serialized_end=586
+  _DELETENVMFREMOTECONTROLLERREQUEST._serialized_start=588
+  _DELETENVMFREMOTECONTROLLERREQUEST._serialized_end=665
+  _UPDATENVMFREMOTECONTROLLERREQUEST._serialized_start=667
+  _UPDATENVMFREMOTECONTROLLERREQUEST._serialized_end=758
+  _LISTNVMFREMOTECONTROLLERREQUEST._serialized_start=760
+  _LISTNVMFREMOTECONTROLLERREQUEST._serialized_end=832
+  _LISTNVMFREMOTECONTROLLERRESPONSE._serialized_start=834
+  _LISTNVMFREMOTECONTROLLERRESPONSE._serialized_end=950
+  _GETNVMFREMOTECONTROLLERREQUEST._serialized_start=952
+  _GETNVMFREMOTECONTROLLERREQUEST._serialized_end=1026
+  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_start=1028
+  _NVMFREMOTECONTROLLERRESETREQUEST._serialized_end=1104
+  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_start=1106
+  _NVMFREMOTECONTROLLERSTATSREQUEST._serialized_end=1182
+  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_start=1184
+  _NVMFREMOTECONTROLLERSTATSRESPONSE._serialized_end=1234
+  _NVMFREMOTECONTROLLERSERVICE._serialized_start=1728
+  _NVMFREMOTECONTROLLERSERVICE._serialized_end=2797
 # @@protoc_insertion_point(module_scope)
