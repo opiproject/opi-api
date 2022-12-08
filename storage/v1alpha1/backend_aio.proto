@@ -24,9 +24,10 @@ import "uuid.proto";
 service AioControllerService {
     rpc CreateAioController (CreateAioControllerRequest) returns (AioController) {
         option (google.api.http) = {
-            post: "/v1/subsystems"
-            body: "subsystem"
+            post: "/v1/{parent=subsystems}"
+            body: "aio_controller"
         };
+        option (google.api.method_signature) = "parent,aio_controller,aio_controller_id";
     }
     rpc DeleteAioController (DeleteAioControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -68,7 +69,12 @@ message AioController {
 }
 
 message CreateAioControllerRequest {
-    AioController device = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    AioController aio_controller = 2 [(google.api.field_behavior) = REQUIRED];
+    string aio_controller_id = 3;
 }
 
 message DeleteAioControllerRequest {

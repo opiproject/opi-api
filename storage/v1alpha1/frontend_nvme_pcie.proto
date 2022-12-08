@@ -25,9 +25,10 @@ import "google/protobuf/field_mask.proto";
 service FrontendNvmeService {
     rpc CreateNVMeSubsystem (CreateNVMeSubsystemRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
-            post: "/v1/subsystems"
-            body: "subsystem"
+            post: "/v1/{parent=subsystems}"
+            body: "nv_me_subsystem"
         };
+        option (google.api.method_signature) = "parent,nv_me_subsystem,nv_me_subsystem_id";
     }
     rpc DeleteNVMeSubsystem (DeleteNVMeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -58,9 +59,10 @@ service FrontendNvmeService {
 
     rpc CreateNVMeController (CreateNVMeControllerRequest) returns (NVMeController) {
         option (google.api.http) = {
-            post: "/v1/controllers"
-            body: "controller"
+            post: "/v1/{parent=subsystems}"
+            body: "nv_me_controller"
         };
+        option (google.api.method_signature) = "parent,nv_me_controller,nv_me_controller_id";
     }
     rpc DeleteNVMeController (DeleteNVMeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -91,9 +93,10 @@ service FrontendNvmeService {
 
     rpc CreateNVMeNamespace (CreateNVMeNamespaceRequest) returns (NVMeNamespace) {
         option (google.api.http) = {
-            post: "/v1/namespaces"
-            body: "namespace"
+            post: "/v1/{parent=subsystems}"
+            body: "nv_me_namespace"
         };
+        option (google.api.method_signature) = "parent,nv_me_namespace,nv_me_namespace_id";
     }
     rpc DeleteNVMeNamespace (DeleteNVMeNamespaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -241,7 +244,12 @@ message NVMeNamespaceStatus {
 }
 
 message CreateNVMeSubsystemRequest {
-    NVMeSubsystem subsystem = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    NVMeSubsystem nv_me_subsystem = 2 [(google.api.field_behavior) = REQUIRED];
+    string nv_me_subsystem_id = 3;
 }
 
 message DeleteNVMeSubsystemRequest {
@@ -287,7 +295,12 @@ message NVMeSubsystemStatsResponse {
 }
 
 message CreateNVMeControllerRequest {
-    NVMeController controller = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    NVMeController nv_me_controller = 2 [(google.api.field_behavior) = REQUIRED];
+    string nv_me_controller_id = 3;
 }
 
 message DeleteNVMeControllerRequest {
@@ -334,7 +347,12 @@ message NVMeControllerStatsResponse {
 }
 
 message CreateNVMeNamespaceRequest {
-    NVMeNamespace namespace = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    NVMeNamespace nv_me_namespace = 2 [(google.api.field_behavior) = REQUIRED];
+    string nv_me_namespace_id = 3;
 }
 
 message DeleteNVMeNamespaceRequest {

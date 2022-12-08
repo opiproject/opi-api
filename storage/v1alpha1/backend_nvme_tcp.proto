@@ -23,9 +23,10 @@ import "object_key.proto";
 service NVMfRemoteControllerService {
     rpc CreateNVMfRemoteController (CreateNVMfRemoteControllerRequest) returns (NVMfRemoteController) {
         option (google.api.http) = {
-            post: "/v1/subsystems"
-            body: "subsystem"
+            post: "/v1/{parent=subsystems}"
+            body: "nv_mf_remote_controller"
         };
+        option (google.api.method_signature) = "parent,nv_mf_remote_controller,nv_mf_remote_controller_id";
     }
     rpc DeleteNVMfRemoteController (DeleteNVMfRemoteControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -74,7 +75,12 @@ message NVMfRemoteController {
 }
 
 message CreateNVMfRemoteControllerRequest {
-    NVMfRemoteController ctrl = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    NVMfRemoteController nv_mf_remote_controller = 2 [(google.api.field_behavior) = REQUIRED];
+    string nv_mf_remote_controller_id = 3;
 }
 
 message DeleteNVMfRemoteControllerRequest {

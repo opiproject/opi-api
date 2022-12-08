@@ -24,9 +24,10 @@ import "uuid.proto";
 service NullDebugService {
     rpc CreateNullDebug (CreateNullDebugRequest) returns (NullDebug) {
         option (google.api.http) = {
-            post: "/v1/subsystems"
-            body: "subsystem"
+            post: "/v1/{parent=subsystems}"
+            body: "null_debug"
         };
+        option (google.api.method_signature) = "parent,null_debug,null_debug_id";
     }
     rpc DeleteNullDebug (DeleteNullDebugRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -64,7 +65,12 @@ message NullDebug {
 }
 
 message CreateNullDebugRequest {
-    NullDebug device = 1;
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    NullDebug null_debug = 2 [(google.api.field_behavior) = REQUIRED];
+    string null_debug_id = 3;
 }
 
 message DeleteNullDebugRequest {
