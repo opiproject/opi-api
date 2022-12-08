@@ -11,8 +11,12 @@ option java_outer_classname = "FrontendVirtioScsiProto";
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
 import "object_key.proto";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
@@ -24,8 +28,9 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/virtioscsitargets/{virtioscsitarget}"
+            delete: "/v1/{name=subsystems}/{virtioscsitarget}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVirtioScsiTarget (UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
         option (google.api.http) = {
@@ -53,8 +58,9 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/virtioscsictrls/{virtioscsictrl}"
+            delete: "/v1/{name=virtioscsictrls}/{virtioscsictrl}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVirtioScsiController (UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
@@ -82,8 +88,9 @@ service FrontendVirtioScsiService {
     }
     rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/virtioscsiluns/{virtioscsilun}"
+            delete: "/v1/{name=virtioscsiluns}/{virtioscsilun}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVirtioScsiLun (UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
@@ -133,7 +140,10 @@ message CreateVirtioScsiTargetRequest {
 }
 
 message DeleteVirtioScsiTargetRequest {
-    common.v1.ObjectKey target_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateVirtioScsiTargetRequest {
@@ -168,7 +178,10 @@ message CreateVirtioScsiControllerRequest {
 }
 
 message DeleteVirtioScsiControllerRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateVirtioScsiControllerRequest {
@@ -203,8 +216,10 @@ message CreateVirtioScsiLunRequest {
 }
 
 message DeleteVirtioScsiLunRequest {
-    common.v1.ObjectKey controller_id = 1;
-    common.v1.ObjectKey lun_id = 2;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateVirtioScsiLunRequest {

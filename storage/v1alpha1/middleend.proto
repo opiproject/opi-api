@@ -12,8 +12,12 @@ option java_outer_classname = "MiddleendProto";
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
 import "object_key.proto";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
 
 // Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 service MiddleendService {
@@ -25,8 +29,9 @@ service MiddleendService {
     }
     rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/volumes/{volume}"
+            delete: "/v1/{name=volumes}/{volume}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateEncryptedVolume (UpdateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
@@ -66,7 +71,10 @@ message CreateEncryptedVolumeRequest {
 }
 
 message DeleteEncryptedVolumeRequest {
-    common.v1.ObjectKey encrypted_volume_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateEncryptedVolumeRequest {

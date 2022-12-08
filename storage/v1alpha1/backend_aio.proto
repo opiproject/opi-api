@@ -10,8 +10,12 @@ option java_outer_classname = "BackendAioProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
+import "google/api/client.proto";
+import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+
 import "object_key.proto";
 import "uuid.proto";
 
@@ -25,8 +29,9 @@ service AioControllerService {
     }
     rpc DeleteAioController (DeleteAioControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/subsystems/{subsystem}"
+            delete: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateAioController (UpdateAioControllerRequest) returns (AioController) {
         option (google.api.http) = {
@@ -63,7 +68,10 @@ message CreateAioControllerRequest {
 }
 
 message DeleteAioControllerRequest {
-    common.v1.ObjectKey handle = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateAioControllerRequest {

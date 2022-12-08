@@ -10,8 +10,12 @@ option java_outer_classname = "BackendNvmeTcpProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 
+import "google/api/client.proto";
+import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+
 import "object_key.proto";
 
 // Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
@@ -24,8 +28,9 @@ service NVMfRemoteControllerService {
     }
     rpc DeleteNVMfRemoteController (DeleteNVMfRemoteControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/subsystems/{subsystem}"
+            delete: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateNVMfRemoteController (UpdateNVMfRemoteControllerRequest) returns (NVMfRemoteController) {
         option (google.api.http) = {
@@ -70,7 +75,10 @@ message CreateNVMfRemoteControllerRequest {
 
 message DeleteNVMfRemoteControllerRequest {
     // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message UpdateNVMfRemoteControllerRequest {
