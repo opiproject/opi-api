@@ -19,6 +19,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 // Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
 service FrontendNvmeService {
@@ -36,9 +37,10 @@ service FrontendNvmeService {
     }
     rpc UpdateNVMeSubsystem (UpdateNVMeSubsystemRequest) returns (NVMeSubsystem) {
         option (google.api.http) = {
-            patch: "/v1/subsystems"
-            body: "subsystem"
+            patch: "/v1/{nv_me_subsystem.name=subsystems}"
+            body: "nv_me_subsystem"
         };
+        option (google.api.method_signature) = "nv_me_subsystem,update_mask";
     }
     rpc ListNVMeSubsystems   (ListNVMeSubsystemsRequest)   returns (ListNVMeSubsystemsResponse)   {
         option (google.api.http) = {
@@ -68,9 +70,10 @@ service FrontendNvmeService {
     }
     rpc UpdateNVMeController (UpdateNVMeControllerRequest) returns (NVMeController) {
         option (google.api.http) = {
-            patch: "/v1/controllers"
-            body: "controller"
+            patch: "/v1/{nv_me_controller.name=subsystems}"
+            body: "nv_me_controller"
         };
+        option (google.api.method_signature) = "nv_me_controller,update_mask";
     }
     rpc ListNVMeControllers   (ListNVMeControllersRequest)   returns (ListNVMeControllersResponse)   {
         option (google.api.http) = {
@@ -100,9 +103,10 @@ service FrontendNvmeService {
     }
     rpc UpdateNVMeNamespace (UpdateNVMeNamespaceRequest) returns (NVMeNamespace) {
         option (google.api.http) = {
-            patch: "/v1/namespaces"
-            body: "namespace"
+            patch: "/v1/{nv_me_namespace.name=subsystems}"
+            body: "nv_me_namespace"
         };
+        option (google.api.method_signature) = "nv_me_namespace,update_mask";
     }
     rpc ListNVMeNamespaces   (ListNVMeNamespacesRequest)   returns (ListNVMeNamespacesResponse)   {
         option (google.api.http) = {
@@ -248,7 +252,9 @@ message DeleteNVMeSubsystemRequest {
 }
 
 message UpdateNVMeSubsystemRequest {
-    NVMeSubsystem subsystem = 1;
+    NVMeSubsystem nv_me_subsystem = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListNVMeSubsystemsRequest {
@@ -292,7 +298,9 @@ message DeleteNVMeControllerRequest {
 }
 
 message UpdateNVMeControllerRequest {
-    NVMeController controller = 1;
+    NVMeController nv_me_controller = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListNVMeControllersRequest {
@@ -337,7 +345,9 @@ message DeleteNVMeNamespaceRequest {
 }
 
 message UpdateNVMeNamespaceRequest {
-    NVMeNamespace namespace = 1;
+    NVMeNamespace nv_me_namespace = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListNVMeNamespacesRequest {

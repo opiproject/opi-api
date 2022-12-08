@@ -15,6 +15,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 import "object_key.proto";
 import "uuid.proto";
@@ -35,9 +36,10 @@ service AioControllerService {
     }
     rpc UpdateAioController (UpdateAioControllerRequest) returns (AioController) {
         option (google.api.http) = {
-            patch: "/v1/subsystems"
-            body: "subsystem"
+            patch: "/v1/{aio_controller.name=subsystems}"
+            body: "aio_controller"
         };
+        option (google.api.method_signature) = "aio_controller,update_mask";
     }
     rpc ListAioControllers   (ListAioControllersRequest)   returns (ListAioControllersResponse)   {
         option (google.api.http) = {
@@ -77,7 +79,9 @@ message DeleteAioControllerRequest {
 }
 
 message UpdateAioControllerRequest {
-    AioController device = 1;
+    AioController aio_controller = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListAioControllersRequest {

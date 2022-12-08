@@ -17,6 +17,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host presentation as alternative to Virtio-blk.
 service FrontendVirtioScsiService {
@@ -34,9 +35,10 @@ service FrontendVirtioScsiService {
     }
     rpc UpdateVirtioScsiTarget (UpdateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
         option (google.api.http) = {
-            patch: "/v1/virtioscsitargets"
-            body: "virtioscsitarget"
+            patch: "/v1/{virtio_scsi_target.name=subsystems}"
+            body: "virtio_scsi_target"
         };
+        option (google.api.method_signature) = "virtio_scsi_target,update_mask";
     }
     rpc ListVirtioScsiTargets   (ListVirtioScsiTargetsRequest)   returns (ListVirtioScsiTargetsResponse)   {
         option (google.api.http) = {
@@ -66,9 +68,10 @@ service FrontendVirtioScsiService {
     }
     rpc UpdateVirtioScsiController (UpdateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
-            patch: "/v1/virtioscsictrls"
-            body: "virtioscsictrl"
+            patch: "/v1/{virtio_scsi_controller.name=subsystems}"
+            body: "virtio_scsi_controller"
         };
+        option (google.api.method_signature) = "virtio_scsi_controller,update_mask";
     }
     rpc ListVirtioScsiControllers   (ListVirtioScsiControllersRequest)   returns (ListVirtioScsiControllersResponse)   {
         option (google.api.http) = {
@@ -98,9 +101,10 @@ service FrontendVirtioScsiService {
     }
     rpc UpdateVirtioScsiLun (UpdateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
-            patch: "/v1/virtioscsiluns"
-            body: "virtioscsilun"
+            patch: "/v1/{virtio_scsi_lun.name=subsystems}"
+            body: "virtio_scsi_lun"
         };
+        option (google.api.method_signature) = "virtio_scsi_lun,update_mask";
     }
     rpc ListVirtioScsiLuns   (ListVirtioScsiLunsRequest)   returns (ListVirtioScsiLunsResponse)   {
         option (google.api.http) = {
@@ -153,7 +157,9 @@ message DeleteVirtioScsiTargetRequest {
 }
 
 message UpdateVirtioScsiTargetRequest {
-    VirtioScsiTarget target = 1;
+    VirtioScsiTarget virtio_scsi_target = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListVirtioScsiTargetsRequest {
@@ -198,7 +204,9 @@ message DeleteVirtioScsiControllerRequest {
 }
 
 message UpdateVirtioScsiControllerRequest {
-    VirtioScsiController controller = 1;
+    VirtioScsiController virtio_scsi_controller = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListVirtioScsiControllersRequest {
@@ -243,7 +251,9 @@ message DeleteVirtioScsiLunRequest {
 }
 
 message UpdateVirtioScsiLunRequest {
-    VirtioScsiLun lun = 1;
+    VirtioScsiLun virtio_scsi_lun = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListVirtioScsiLunsRequest {

@@ -17,6 +17,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 // Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and host presentation as alternative to Nvme.
 service FrontendVirtioBlkService {
@@ -34,9 +35,10 @@ service FrontendVirtioBlkService {
     }
     rpc UpdateVirtioBlk (UpdateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
-            patch: "/v1/virtioblks"
-            body: "virtioblk"
+            patch: "/v1/{virtio_blk.name=subsystems}"
+            body: "virtio_blk"
         };
+        option (google.api.method_signature) = "virtio_blk,update_mask";
     }
     rpc ListVirtioBlks   (ListVirtioBlksRequest)   returns (ListVirtioBlksResponse)   {
         option (google.api.http) = {
@@ -77,7 +79,9 @@ message DeleteVirtioBlkRequest {
 }
 
 message UpdateVirtioBlkRequest {
-    VirtioBlk controller = 1;
+    VirtioBlk virtio_blk = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListVirtioBlksRequest {

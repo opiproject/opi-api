@@ -15,6 +15,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 import "object_key.proto";
 import "uuid.proto";
@@ -35,9 +36,10 @@ service NullDebugService {
     }
     rpc UpdateNullDebug (UpdateNullDebugRequest) returns (NullDebug) {
         option (google.api.http) = {
-            patch: "/v1/subsystems"
-            body: "subsystem"
+            patch: "/v1/{null_debug.name=subsystems}"
+            body: "null_debug"
         };
+        option (google.api.method_signature) = "null_debug,update_mask";
     }
     rpc ListNullDebugs   (ListNullDebugsRequest)   returns (ListNullDebugsResponse)   {
         option (google.api.http) = {
@@ -73,7 +75,9 @@ message DeleteNullDebugRequest {
 }
 
 message UpdateNullDebugRequest {
-    NullDebug device = 1;
+    NullDebug null_debug = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListNullDebugsRequest {

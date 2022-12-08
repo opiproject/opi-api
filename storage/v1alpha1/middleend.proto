@@ -18,6 +18,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
 
 // Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 service MiddleendService {
@@ -35,9 +36,10 @@ service MiddleendService {
     }
     rpc UpdateEncryptedVolume (UpdateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
-            patch: "/v1/volumes"
-            body: "volume"
+            patch: "/v1/{encrypted_volume.name=subsystems}"
+            body: "encrypted_volume"
         };
+        option (google.api.method_signature) = "encrypted_volume,update_mask";
     }
     rpc ListEncryptedVolumes   (ListEncryptedVolumesRequest)   returns (ListEncryptedVolumesResponse)   {
         option (google.api.http) = {
@@ -80,7 +82,9 @@ message DeleteEncryptedVolumeRequest {
 }
 
 message UpdateEncryptedVolumeRequest {
-    EncryptedVolume volume = 1;
+    EncryptedVolume encrypted_volume = 1;
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
 }
 
 message ListEncryptedVolumesRequest {
