@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteNVMeNamespaceRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (namespaceId_ != null) {
-              subBuilder = namespaceId_.toBuilder();
-            }
-            namespaceId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(namespaceId_);
-              namespaceId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           default: {
@@ -93,30 +87,42 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.DeleteNVMeNamespaceRequest.class, opi_api.storage.v1.DeleteNVMeNamespaceRequest.Builder.class);
   }
 
-  public static final int NAMESPACE_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey namespaceId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   * @return Whether the namespaceId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasNamespaceId() {
-    return namespaceId_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   * @return The namespaceId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNamespaceId() {
-    return namespaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : namespaceId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNamespaceIdOrBuilder() {
-    return getNamespaceId();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (namespaceId_ != null) {
-      output.writeMessage(1, getNamespaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (namespaceId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getNamespaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.DeleteNVMeNamespaceRequest other = (opi_api.storage.v1.DeleteNVMeNamespaceRequest) obj;
 
-    if (hasNamespaceId() != other.hasNamespaceId()) return false;
-    if (hasNamespaceId()) {
-      if (!getNamespaceId()
-          .equals(other.getNamespaceId())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasNamespaceId()) {
-      hash = (37 * hash) + NAMESPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespaceId().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +317,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (namespaceIdBuilder_ == null) {
-        namespaceId_ = null;
-      } else {
-        namespaceId_ = null;
-        namespaceIdBuilder_ = null;
-      }
+      name_ = "";
+
       return this;
     }
 
@@ -349,11 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.DeleteNVMeNamespaceRequest buildPartial() {
       opi_api.storage.v1.DeleteNVMeNamespaceRequest result = new opi_api.storage.v1.DeleteNVMeNamespaceRequest(this);
-      if (namespaceIdBuilder_ == null) {
-        result.namespaceId_ = namespaceId_;
-      } else {
-        result.namespaceId_ = namespaceIdBuilder_.build();
-      }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -402,8 +394,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.DeleteNVMeNamespaceRequest other) {
       if (other == opi_api.storage.v1.DeleteNVMeNamespaceRequest.getDefaultInstance()) return this;
-      if (other.hasNamespaceId()) {
-        mergeNamespaceId(other.getNamespaceId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +427,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey namespaceId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> namespaceIdBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-     * @return Whether the namespaceId field is set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public boolean hasNamespaceId() {
-      return namespaceIdBuilder_ != null || namespaceId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-     * @return The namespaceId.
-     */
-    public opi_api.common.v1.ObjectKey getNamespaceId() {
-      if (namespaceIdBuilder_ == null) {
-        return namespaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : namespaceId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return namespaceIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
-    public Builder setNamespaceId(opi_api.common.v1.ObjectKey value) {
-      if (namespaceIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        namespaceId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        namespaceIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setNamespaceId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (namespaceIdBuilder_ == null) {
-        namespaceId_ = builderForValue.build();
-        onChanged();
-      } else {
-        namespaceIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-     */
-    public Builder mergeNamespaceId(opi_api.common.v1.ObjectKey value) {
-      if (namespaceIdBuilder_ == null) {
-        if (namespaceId_ != null) {
-          namespaceId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(namespaceId_).mergeFrom(value).buildPartial();
-        } else {
-          namespaceId_ = value;
-        }
-        onChanged();
-      } else {
-        namespaceIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-     */
-    public Builder clearNamespaceId() {
-      if (namespaceIdBuilder_ == null) {
-        namespaceId_ = null;
-        onChanged();
-      } else {
-        namespaceId_ = null;
-        namespaceIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNamespaceIdBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getNamespaceIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getNamespaceIdOrBuilder() {
-      if (namespaceIdBuilder_ != null) {
-        return namespaceIdBuilder_.getMessageOrBuilder();
-      } else {
-        return namespaceId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : namespaceId_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey namespace_id = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNamespaceIdFieldBuilder() {
-      if (namespaceIdBuilder_ == null) {
-        namespaceIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getNamespaceId(),
-                getParentForChildren(),
-                isClean());
-        namespaceId_ = null;
-      }
-      return namespaceIdBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

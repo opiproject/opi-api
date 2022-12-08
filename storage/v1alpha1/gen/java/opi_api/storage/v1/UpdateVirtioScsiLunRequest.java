@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.VirtioScsiLun.Builder subBuilder = null;
-            if (lun_ != null) {
-              subBuilder = lun_.toBuilder();
+            if (virtioScsiLun_ != null) {
+              subBuilder = virtioScsiLun_.toBuilder();
             }
-            lun_ = input.readMessage(opi_api.storage.v1.VirtioScsiLun.parser(), extensionRegistry);
+            virtioScsiLun_ = input.readMessage(opi_api.storage.v1.VirtioScsiLun.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(lun_);
-              lun_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(virtioScsiLun_);
+              virtioScsiLun_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateVirtioScsiLunRequest.class, opi_api.storage.v1.UpdateVirtioScsiLunRequest.Builder.class);
   }
 
-  public static final int LUN_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.VirtioScsiLun lun_;
+  public static final int VIRTIO_SCSI_LUN_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.VirtioScsiLun virtioScsiLun_;
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return Whether the lun field is set.
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+   * @return Whether the virtioScsiLun field is set.
    */
   @java.lang.Override
-  public boolean hasLun() {
-    return lun_ != null;
+  public boolean hasVirtioScsiLun() {
+    return virtioScsiLun_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return The lun.
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+   * @return The virtioScsiLun.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLun getLun() {
-    return lun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+  public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun() {
+    return virtioScsiLun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder() {
-    return getLun();
+  public opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder() {
+    return getVirtioScsiLun();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (lun_ != null) {
-      output.writeMessage(1, getLun());
+    if (virtioScsiLun_ != null) {
+      output.writeMessage(1, getVirtioScsiLun());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (lun_ != null) {
+    if (virtioScsiLun_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getLun());
+        .computeMessageSize(1, getVirtioScsiLun());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateVirtioScsiLunRequest other = (opi_api.storage.v1.UpdateVirtioScsiLunRequest) obj;
 
-    if (hasLun() != other.hasLun()) return false;
-    if (hasLun()) {
-      if (!getLun()
-          .equals(other.getLun())) return false;
+    if (hasVirtioScsiLun() != other.hasVirtioScsiLun()) return false;
+    if (hasVirtioScsiLun()) {
+      if (!getVirtioScsiLun()
+          .equals(other.getVirtioScsiLun())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasLun()) {
-      hash = (37 * hash) + LUN_FIELD_NUMBER;
-      hash = (53 * hash) + getLun().hashCode();
+    if (hasVirtioScsiLun()) {
+      hash = (37 * hash) + VIRTIO_SCSI_LUN_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtioScsiLun().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lunBuilder_ == null) {
-        lun_ = null;
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = null;
       } else {
-        lun_ = null;
-        lunBuilder_ = null;
+        virtioScsiLun_ = null;
+        virtioScsiLunBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateVirtioScsiLunRequest buildPartial() {
       opi_api.storage.v1.UpdateVirtioScsiLunRequest result = new opi_api.storage.v1.UpdateVirtioScsiLunRequest(this);
-      if (lunBuilder_ == null) {
-        result.lun_ = lun_;
+      if (virtioScsiLunBuilder_ == null) {
+        result.virtioScsiLun_ = virtioScsiLun_;
       } else {
-        result.lun_ = lunBuilder_.build();
+        result.virtioScsiLun_ = virtioScsiLunBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateVirtioScsiLunRequest other) {
       if (other == opi_api.storage.v1.UpdateVirtioScsiLunRequest.getDefaultInstance()) return this;
-      if (other.hasLun()) {
-        mergeLun(other.getLun());
+      if (other.hasVirtioScsiLun()) {
+        mergeVirtioScsiLun(other.getVirtioScsiLun());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.VirtioScsiLun lun_;
+    private opi_api.storage.v1.VirtioScsiLun virtioScsiLun_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> lunBuilder_;
+        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> virtioScsiLunBuilder_;
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-     * @return Whether the lun field is set.
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+     * @return Whether the virtioScsiLun field is set.
      */
-    public boolean hasLun() {
-      return lunBuilder_ != null || lun_ != null;
+    public boolean hasVirtioScsiLun() {
+      return virtioScsiLunBuilder_ != null || virtioScsiLun_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-     * @return The lun.
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+     * @return The virtioScsiLun.
      */
-    public opi_api.storage.v1.VirtioScsiLun getLun() {
-      if (lunBuilder_ == null) {
-        return lun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+    public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun() {
+      if (virtioScsiLunBuilder_ == null) {
+        return virtioScsiLun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
       } else {
-        return lunBuilder_.getMessage();
+        return virtioScsiLunBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public Builder setLun(opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
+    public Builder setVirtioScsiLun(opi_api.storage.v1.VirtioScsiLun value) {
+      if (virtioScsiLunBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        lun_ = value;
+        virtioScsiLun_ = value;
         onChanged();
       } else {
-        lunBuilder_.setMessage(value);
+        virtioScsiLunBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public Builder setLun(
+    public Builder setVirtioScsiLun(
         opi_api.storage.v1.VirtioScsiLun.Builder builderForValue) {
-      if (lunBuilder_ == null) {
-        lun_ = builderForValue.build();
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = builderForValue.build();
         onChanged();
       } else {
-        lunBuilder_.setMessage(builderForValue.build());
+        virtioScsiLunBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public Builder mergeLun(opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
-        if (lun_ != null) {
-          lun_ =
-            opi_api.storage.v1.VirtioScsiLun.newBuilder(lun_).mergeFrom(value).buildPartial();
+    public Builder mergeVirtioScsiLun(opi_api.storage.v1.VirtioScsiLun value) {
+      if (virtioScsiLunBuilder_ == null) {
+        if (virtioScsiLun_ != null) {
+          virtioScsiLun_ =
+            opi_api.storage.v1.VirtioScsiLun.newBuilder(virtioScsiLun_).mergeFrom(value).buildPartial();
         } else {
-          lun_ = value;
+          virtioScsiLun_ = value;
         }
         onChanged();
       } else {
-        lunBuilder_.mergeFrom(value);
+        virtioScsiLunBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public Builder clearLun() {
-      if (lunBuilder_ == null) {
-        lun_ = null;
+    public Builder clearVirtioScsiLun() {
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = null;
         onChanged();
       } else {
-        lun_ = null;
-        lunBuilder_ = null;
+        virtioScsiLun_ = null;
+        virtioScsiLunBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun.Builder getLunBuilder() {
+    public opi_api.storage.v1.VirtioScsiLun.Builder getVirtioScsiLunBuilder() {
       
       onChanged();
-      return getLunFieldBuilder().getBuilder();
+      return getVirtioScsiLunFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder() {
-      if (lunBuilder_ != null) {
-        return lunBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder() {
+      if (virtioScsiLunBuilder_ != null) {
+        return virtioScsiLunBuilder_.getMessageOrBuilder();
       } else {
-        return lun_ == null ?
-            opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+        return virtioScsiLun_ == null ?
+            opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-        getLunFieldBuilder() {
-      if (lunBuilder_ == null) {
-        lunBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getVirtioScsiLunFieldBuilder() {
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLunBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder>(
-                getLun(),
+                getVirtioScsiLun(),
                 getParentForChildren(),
                 isClean());
-        lun_ = null;
+        virtioScsiLun_ = null;
       }
-      return lunBuilder_;
+      return virtioScsiLunBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

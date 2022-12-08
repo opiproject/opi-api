@@ -31,10 +31,10 @@ class MiddleendServiceStub(object):
                 request_serializer=middleend__pb2.UpdateEncryptedVolumeRequest.SerializeToString,
                 response_deserializer=middleend__pb2.EncryptedVolume.FromString,
                 )
-        self.ListEncryptedVolume = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/ListEncryptedVolume',
-                request_serializer=middleend__pb2.ListEncryptedVolumeRequest.SerializeToString,
-                response_deserializer=middleend__pb2.ListEncryptedVolumeResponse.FromString,
+        self.ListEncryptedVolumes = channel.unary_unary(
+                '/opi_api.storage.v1.MiddleendService/ListEncryptedVolumes',
+                request_serializer=middleend__pb2.ListEncryptedVolumesRequest.SerializeToString,
+                response_deserializer=middleend__pb2.ListEncryptedVolumesResponse.FromString,
                 )
         self.GetEncryptedVolume = channel.unary_unary(
                 '/opi_api.storage.v1.MiddleendService/GetEncryptedVolume',
@@ -70,7 +70,7 @@ class MiddleendServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListEncryptedVolume(self, request, context):
+    def ListEncryptedVolumes(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -106,10 +106,10 @@ def add_MiddleendServiceServicer_to_server(servicer, server):
                     request_deserializer=middleend__pb2.UpdateEncryptedVolumeRequest.FromString,
                     response_serializer=middleend__pb2.EncryptedVolume.SerializeToString,
             ),
-            'ListEncryptedVolume': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListEncryptedVolume,
-                    request_deserializer=middleend__pb2.ListEncryptedVolumeRequest.FromString,
-                    response_serializer=middleend__pb2.ListEncryptedVolumeResponse.SerializeToString,
+            'ListEncryptedVolumes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListEncryptedVolumes,
+                    request_deserializer=middleend__pb2.ListEncryptedVolumesRequest.FromString,
+                    response_serializer=middleend__pb2.ListEncryptedVolumesResponse.SerializeToString,
             ),
             'GetEncryptedVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEncryptedVolume,
@@ -184,7 +184,7 @@ class MiddleendService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListEncryptedVolume(request,
+    def ListEncryptedVolumes(request,
             target,
             options=(),
             channel_credentials=None,
@@ -194,9 +194,9 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/ListEncryptedVolume',
-            middleend__pb2.ListEncryptedVolumeRequest.SerializeToString,
-            middleend__pb2.ListEncryptedVolumeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/ListEncryptedVolumes',
+            middleend__pb2.ListEncryptedVolumesRequest.SerializeToString,
+            middleend__pb2.ListEncryptedVolumesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

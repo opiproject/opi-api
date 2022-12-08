@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.NVMfRemoteController.Builder subBuilder = null;
-            if (ctrl_ != null) {
-              subBuilder = ctrl_.toBuilder();
+            if (nvMfRemoteController_ != null) {
+              subBuilder = nvMfRemoteController_.toBuilder();
             }
-            ctrl_ = input.readMessage(opi_api.storage.v1.NVMfRemoteController.parser(), extensionRegistry);
+            nvMfRemoteController_ = input.readMessage(opi_api.storage.v1.NVMfRemoteController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(ctrl_);
-              ctrl_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nvMfRemoteController_);
+              nvMfRemoteController_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.class, opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.Builder.class);
   }
 
-  public static final int CTRL_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NVMfRemoteController ctrl_;
+  public static final int NV_MF_REMOTE_CONTROLLER_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMfRemoteController nvMfRemoteController_;
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return Whether the ctrl field is set.
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+   * @return Whether the nvMfRemoteController field is set.
    */
   @java.lang.Override
-  public boolean hasCtrl() {
-    return ctrl_ != null;
+  public boolean hasNvMfRemoteController() {
+    return nvMfRemoteController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return The ctrl.
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+   * @return The nvMfRemoteController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMfRemoteController getCtrl() {
-    return ctrl_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+  public opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController() {
+    return nvMfRemoteController_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder() {
-    return getCtrl();
+  public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder() {
+    return getNvMfRemoteController();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (ctrl_ != null) {
-      output.writeMessage(1, getCtrl());
+    if (nvMfRemoteController_ != null) {
+      output.writeMessage(1, getNvMfRemoteController());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (ctrl_ != null) {
+    if (nvMfRemoteController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCtrl());
+        .computeMessageSize(1, getNvMfRemoteController());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateNVMfRemoteControllerRequest other = (opi_api.storage.v1.UpdateNVMfRemoteControllerRequest) obj;
 
-    if (hasCtrl() != other.hasCtrl()) return false;
-    if (hasCtrl()) {
-      if (!getCtrl()
-          .equals(other.getCtrl())) return false;
+    if (hasNvMfRemoteController() != other.hasNvMfRemoteController()) return false;
+    if (hasNvMfRemoteController()) {
+      if (!getNvMfRemoteController()
+          .equals(other.getNvMfRemoteController())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCtrl()) {
-      hash = (37 * hash) + CTRL_FIELD_NUMBER;
-      hash = (53 * hash) + getCtrl().hashCode();
+    if (hasNvMfRemoteController()) {
+      hash = (37 * hash) + NV_MF_REMOTE_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getNvMfRemoteController().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ctrlBuilder_ == null) {
-        ctrl_ = null;
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = null;
       } else {
-        ctrl_ = null;
-        ctrlBuilder_ = null;
+        nvMfRemoteController_ = null;
+        nvMfRemoteControllerBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateNVMfRemoteControllerRequest buildPartial() {
       opi_api.storage.v1.UpdateNVMfRemoteControllerRequest result = new opi_api.storage.v1.UpdateNVMfRemoteControllerRequest(this);
-      if (ctrlBuilder_ == null) {
-        result.ctrl_ = ctrl_;
+      if (nvMfRemoteControllerBuilder_ == null) {
+        result.nvMfRemoteController_ = nvMfRemoteController_;
       } else {
-        result.ctrl_ = ctrlBuilder_.build();
+        result.nvMfRemoteController_ = nvMfRemoteControllerBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateNVMfRemoteControllerRequest other) {
       if (other == opi_api.storage.v1.UpdateNVMfRemoteControllerRequest.getDefaultInstance()) return this;
-      if (other.hasCtrl()) {
-        mergeCtrl(other.getCtrl());
+      if (other.hasNvMfRemoteController()) {
+        mergeNvMfRemoteController(other.getNvMfRemoteController());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NVMfRemoteController ctrl_;
+    private opi_api.storage.v1.NVMfRemoteController nvMfRemoteController_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> ctrlBuilder_;
+        opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> nvMfRemoteControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-     * @return Whether the ctrl field is set.
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+     * @return Whether the nvMfRemoteController field is set.
      */
-    public boolean hasCtrl() {
-      return ctrlBuilder_ != null || ctrl_ != null;
+    public boolean hasNvMfRemoteController() {
+      return nvMfRemoteControllerBuilder_ != null || nvMfRemoteController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-     * @return The ctrl.
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+     * @return The nvMfRemoteController.
      */
-    public opi_api.storage.v1.NVMfRemoteController getCtrl() {
-      if (ctrlBuilder_ == null) {
-        return ctrl_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+    public opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        return nvMfRemoteController_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
       } else {
-        return ctrlBuilder_.getMessage();
+        return nvMfRemoteControllerBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public Builder setCtrl(opi_api.storage.v1.NVMfRemoteController value) {
-      if (ctrlBuilder_ == null) {
+    public Builder setNvMfRemoteController(opi_api.storage.v1.NVMfRemoteController value) {
+      if (nvMfRemoteControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ctrl_ = value;
+        nvMfRemoteController_ = value;
         onChanged();
       } else {
-        ctrlBuilder_.setMessage(value);
+        nvMfRemoteControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public Builder setCtrl(
+    public Builder setNvMfRemoteController(
         opi_api.storage.v1.NVMfRemoteController.Builder builderForValue) {
-      if (ctrlBuilder_ == null) {
-        ctrl_ = builderForValue.build();
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = builderForValue.build();
         onChanged();
       } else {
-        ctrlBuilder_.setMessage(builderForValue.build());
+        nvMfRemoteControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public Builder mergeCtrl(opi_api.storage.v1.NVMfRemoteController value) {
-      if (ctrlBuilder_ == null) {
-        if (ctrl_ != null) {
-          ctrl_ =
-            opi_api.storage.v1.NVMfRemoteController.newBuilder(ctrl_).mergeFrom(value).buildPartial();
+    public Builder mergeNvMfRemoteController(opi_api.storage.v1.NVMfRemoteController value) {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        if (nvMfRemoteController_ != null) {
+          nvMfRemoteController_ =
+            opi_api.storage.v1.NVMfRemoteController.newBuilder(nvMfRemoteController_).mergeFrom(value).buildPartial();
         } else {
-          ctrl_ = value;
+          nvMfRemoteController_ = value;
         }
         onChanged();
       } else {
-        ctrlBuilder_.mergeFrom(value);
+        nvMfRemoteControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public Builder clearCtrl() {
-      if (ctrlBuilder_ == null) {
-        ctrl_ = null;
+    public Builder clearNvMfRemoteController() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = null;
         onChanged();
       } else {
-        ctrl_ = null;
-        ctrlBuilder_ = null;
+        nvMfRemoteController_ = null;
+        nvMfRemoteControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public opi_api.storage.v1.NVMfRemoteController.Builder getCtrlBuilder() {
+    public opi_api.storage.v1.NVMfRemoteController.Builder getNvMfRemoteControllerBuilder() {
       
       onChanged();
-      return getCtrlFieldBuilder().getBuilder();
+      return getNvMfRemoteControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
-    public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder() {
-      if (ctrlBuilder_ != null) {
-        return ctrlBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder() {
+      if (nvMfRemoteControllerBuilder_ != null) {
+        return nvMfRemoteControllerBuilder_.getMessageOrBuilder();
       } else {
-        return ctrl_ == null ?
-            opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+        return nvMfRemoteController_ == null ?
+            opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> 
-        getCtrlFieldBuilder() {
-      if (ctrlBuilder_ == null) {
-        ctrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNvMfRemoteControllerFieldBuilder() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder>(
-                getCtrl(),
+                getNvMfRemoteController(),
                 getParentForChildren(),
                 isClean());
-        ctrl_ = null;
+        nvMfRemoteController_ = null;
       }
-      return ctrlBuilder_;
+      return nvMfRemoteControllerBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

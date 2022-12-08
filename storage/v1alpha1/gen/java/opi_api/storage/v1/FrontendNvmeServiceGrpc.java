@@ -111,35 +111,35 @@ public final class FrontendNvmeServiceGrpc {
     return getUpdateNVMeSubsystemMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemRequest,
-      opi_api.storage.v1.ListNVMeSubsystemResponse> getListNVMeSubsystemMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemsRequest,
+      opi_api.storage.v1.ListNVMeSubsystemsResponse> getListNVMeSubsystemsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListNVMeSubsystem",
-      requestType = opi_api.storage.v1.ListNVMeSubsystemRequest.class,
-      responseType = opi_api.storage.v1.ListNVMeSubsystemResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListNVMeSubsystems",
+      requestType = opi_api.storage.v1.ListNVMeSubsystemsRequest.class,
+      responseType = opi_api.storage.v1.ListNVMeSubsystemsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemRequest,
-      opi_api.storage.v1.ListNVMeSubsystemResponse> getListNVMeSubsystemMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemRequest, opi_api.storage.v1.ListNVMeSubsystemResponse> getListNVMeSubsystemMethod;
-    if ((getListNVMeSubsystemMethod = FrontendNvmeServiceGrpc.getListNVMeSubsystemMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemsRequest,
+      opi_api.storage.v1.ListNVMeSubsystemsResponse> getListNVMeSubsystemsMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeSubsystemsRequest, opi_api.storage.v1.ListNVMeSubsystemsResponse> getListNVMeSubsystemsMethod;
+    if ((getListNVMeSubsystemsMethod = FrontendNvmeServiceGrpc.getListNVMeSubsystemsMethod) == null) {
       synchronized (FrontendNvmeServiceGrpc.class) {
-        if ((getListNVMeSubsystemMethod = FrontendNvmeServiceGrpc.getListNVMeSubsystemMethod) == null) {
-          FrontendNvmeServiceGrpc.getListNVMeSubsystemMethod = getListNVMeSubsystemMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeSubsystemRequest, opi_api.storage.v1.ListNVMeSubsystemResponse>newBuilder()
+        if ((getListNVMeSubsystemsMethod = FrontendNvmeServiceGrpc.getListNVMeSubsystemsMethod) == null) {
+          FrontendNvmeServiceGrpc.getListNVMeSubsystemsMethod = getListNVMeSubsystemsMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeSubsystemsRequest, opi_api.storage.v1.ListNVMeSubsystemsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeSubsystem"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeSubsystems"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeSubsystemRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListNVMeSubsystemsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeSubsystemResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeSubsystem"))
+                  opi_api.storage.v1.ListNVMeSubsystemsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeSubsystems"))
               .build();
         }
       }
     }
-    return getListNVMeSubsystemMethod;
+    return getListNVMeSubsystemsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetNVMeSubsystemRequest,
@@ -297,35 +297,35 @@ public final class FrontendNvmeServiceGrpc {
     return getUpdateNVMeControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllerRequest,
-      opi_api.storage.v1.ListNVMeControllerResponse> getListNVMeControllerMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllersRequest,
+      opi_api.storage.v1.ListNVMeControllersResponse> getListNVMeControllersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListNVMeController",
-      requestType = opi_api.storage.v1.ListNVMeControllerRequest.class,
-      responseType = opi_api.storage.v1.ListNVMeControllerResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListNVMeControllers",
+      requestType = opi_api.storage.v1.ListNVMeControllersRequest.class,
+      responseType = opi_api.storage.v1.ListNVMeControllersResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllerRequest,
-      opi_api.storage.v1.ListNVMeControllerResponse> getListNVMeControllerMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllerRequest, opi_api.storage.v1.ListNVMeControllerResponse> getListNVMeControllerMethod;
-    if ((getListNVMeControllerMethod = FrontendNvmeServiceGrpc.getListNVMeControllerMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllersRequest,
+      opi_api.storage.v1.ListNVMeControllersResponse> getListNVMeControllersMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeControllersRequest, opi_api.storage.v1.ListNVMeControllersResponse> getListNVMeControllersMethod;
+    if ((getListNVMeControllersMethod = FrontendNvmeServiceGrpc.getListNVMeControllersMethod) == null) {
       synchronized (FrontendNvmeServiceGrpc.class) {
-        if ((getListNVMeControllerMethod = FrontendNvmeServiceGrpc.getListNVMeControllerMethod) == null) {
-          FrontendNvmeServiceGrpc.getListNVMeControllerMethod = getListNVMeControllerMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeControllerRequest, opi_api.storage.v1.ListNVMeControllerResponse>newBuilder()
+        if ((getListNVMeControllersMethod = FrontendNvmeServiceGrpc.getListNVMeControllersMethod) == null) {
+          FrontendNvmeServiceGrpc.getListNVMeControllersMethod = getListNVMeControllersMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeControllersRequest, opi_api.storage.v1.ListNVMeControllersResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeController"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeControllers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeControllerRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListNVMeControllersRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeControllerResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeController"))
+                  opi_api.storage.v1.ListNVMeControllersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeControllers"))
               .build();
         }
       }
     }
-    return getListNVMeControllerMethod;
+    return getListNVMeControllersMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetNVMeControllerRequest,
@@ -483,35 +483,35 @@ public final class FrontendNvmeServiceGrpc {
     return getUpdateNVMeNamespaceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespaceRequest,
-      opi_api.storage.v1.ListNVMeNamespaceResponse> getListNVMeNamespaceMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespacesRequest,
+      opi_api.storage.v1.ListNVMeNamespacesResponse> getListNVMeNamespacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListNVMeNamespace",
-      requestType = opi_api.storage.v1.ListNVMeNamespaceRequest.class,
-      responseType = opi_api.storage.v1.ListNVMeNamespaceResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListNVMeNamespaces",
+      requestType = opi_api.storage.v1.ListNVMeNamespacesRequest.class,
+      responseType = opi_api.storage.v1.ListNVMeNamespacesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespaceRequest,
-      opi_api.storage.v1.ListNVMeNamespaceResponse> getListNVMeNamespaceMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespaceRequest, opi_api.storage.v1.ListNVMeNamespaceResponse> getListNVMeNamespaceMethod;
-    if ((getListNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getListNVMeNamespaceMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespacesRequest,
+      opi_api.storage.v1.ListNVMeNamespacesResponse> getListNVMeNamespacesMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListNVMeNamespacesRequest, opi_api.storage.v1.ListNVMeNamespacesResponse> getListNVMeNamespacesMethod;
+    if ((getListNVMeNamespacesMethod = FrontendNvmeServiceGrpc.getListNVMeNamespacesMethod) == null) {
       synchronized (FrontendNvmeServiceGrpc.class) {
-        if ((getListNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getListNVMeNamespaceMethod) == null) {
-          FrontendNvmeServiceGrpc.getListNVMeNamespaceMethod = getListNVMeNamespaceMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeNamespaceRequest, opi_api.storage.v1.ListNVMeNamespaceResponse>newBuilder()
+        if ((getListNVMeNamespacesMethod = FrontendNvmeServiceGrpc.getListNVMeNamespacesMethod) == null) {
+          FrontendNvmeServiceGrpc.getListNVMeNamespacesMethod = getListNVMeNamespacesMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListNVMeNamespacesRequest, opi_api.storage.v1.ListNVMeNamespacesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeNamespace"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNVMeNamespaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeNamespaceRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListNVMeNamespacesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListNVMeNamespaceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeNamespace"))
+                  opi_api.storage.v1.ListNVMeNamespacesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("ListNVMeNamespaces"))
               .build();
         }
       }
     }
-    return getListNVMeNamespaceMethod;
+    return getListNVMeNamespacesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetNVMeNamespaceRequest,
@@ -650,9 +650,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeSubsystem(opi_api.storage.v1.ListNVMeSubsystemRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeSubsystemMethod(), responseObserver);
+    public void listNVMeSubsystems(opi_api.storage.v1.ListNVMeSubsystemsRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeSubsystemsMethod(), responseObserver);
     }
 
     /**
@@ -692,9 +692,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeController(opi_api.storage.v1.ListNVMeControllerRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllerResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeControllerMethod(), responseObserver);
+    public void listNVMeControllers(opi_api.storage.v1.ListNVMeControllersRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeControllersMethod(), responseObserver);
     }
 
     /**
@@ -734,9 +734,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeNamespace(opi_api.storage.v1.ListNVMeNamespaceRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespaceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeNamespaceMethod(), responseObserver);
+    public void listNVMeNamespaces(opi_api.storage.v1.ListNVMeNamespacesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespacesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNVMeNamespacesMethod(), responseObserver);
     }
 
     /**
@@ -777,12 +777,12 @@ public final class FrontendNvmeServiceGrpc {
                 opi_api.storage.v1.NVMeSubsystem>(
                   this, METHODID_UPDATE_NVME_SUBSYSTEM)))
           .addMethod(
-            getListNVMeSubsystemMethod(),
+            getListNVMeSubsystemsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListNVMeSubsystemRequest,
-                opi_api.storage.v1.ListNVMeSubsystemResponse>(
-                  this, METHODID_LIST_NVME_SUBSYSTEM)))
+                opi_api.storage.v1.ListNVMeSubsystemsRequest,
+                opi_api.storage.v1.ListNVMeSubsystemsResponse>(
+                  this, METHODID_LIST_NVME_SUBSYSTEMS)))
           .addMethod(
             getGetNVMeSubsystemMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -819,12 +819,12 @@ public final class FrontendNvmeServiceGrpc {
                 opi_api.storage.v1.NVMeController>(
                   this, METHODID_UPDATE_NVME_CONTROLLER)))
           .addMethod(
-            getListNVMeControllerMethod(),
+            getListNVMeControllersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListNVMeControllerRequest,
-                opi_api.storage.v1.ListNVMeControllerResponse>(
-                  this, METHODID_LIST_NVME_CONTROLLER)))
+                opi_api.storage.v1.ListNVMeControllersRequest,
+                opi_api.storage.v1.ListNVMeControllersResponse>(
+                  this, METHODID_LIST_NVME_CONTROLLERS)))
           .addMethod(
             getGetNVMeControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -861,12 +861,12 @@ public final class FrontendNvmeServiceGrpc {
                 opi_api.storage.v1.NVMeNamespace>(
                   this, METHODID_UPDATE_NVME_NAMESPACE)))
           .addMethod(
-            getListNVMeNamespaceMethod(),
+            getListNVMeNamespacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListNVMeNamespaceRequest,
-                opi_api.storage.v1.ListNVMeNamespaceResponse>(
-                  this, METHODID_LIST_NVME_NAMESPACE)))
+                opi_api.storage.v1.ListNVMeNamespacesRequest,
+                opi_api.storage.v1.ListNVMeNamespacesResponse>(
+                  this, METHODID_LIST_NVME_NAMESPACES)))
           .addMethod(
             getGetNVMeNamespaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -928,10 +928,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeSubsystem(opi_api.storage.v1.ListNVMeSubsystemRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemResponse> responseObserver) {
+    public void listNVMeSubsystems(opi_api.storage.v1.ListNVMeSubsystemsRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListNVMeSubsystemMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListNVMeSubsystemsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -976,10 +976,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeController(opi_api.storage.v1.ListNVMeControllerRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllerResponse> responseObserver) {
+    public void listNVMeControllers(opi_api.storage.v1.ListNVMeControllersRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllersResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListNVMeControllerMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListNVMeControllersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1024,10 +1024,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public void listNVMeNamespace(opi_api.storage.v1.ListNVMeNamespaceRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespaceResponse> responseObserver) {
+    public void listNVMeNamespaces(opi_api.storage.v1.ListNVMeNamespacesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespacesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListNVMeNamespaceMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListNVMeNamespacesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1087,9 +1087,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.ListNVMeSubsystemResponse listNVMeSubsystem(opi_api.storage.v1.ListNVMeSubsystemRequest request) {
+    public opi_api.storage.v1.ListNVMeSubsystemsResponse listNVMeSubsystems(opi_api.storage.v1.ListNVMeSubsystemsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListNVMeSubsystemMethod(), getCallOptions(), request);
+          getChannel(), getListNVMeSubsystemsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1129,9 +1129,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.ListNVMeControllerResponse listNVMeController(opi_api.storage.v1.ListNVMeControllerRequest request) {
+    public opi_api.storage.v1.ListNVMeControllersResponse listNVMeControllers(opi_api.storage.v1.ListNVMeControllersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListNVMeControllerMethod(), getCallOptions(), request);
+          getChannel(), getListNVMeControllersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1171,9 +1171,9 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.ListNVMeNamespaceResponse listNVMeNamespace(opi_api.storage.v1.ListNVMeNamespaceRequest request) {
+    public opi_api.storage.v1.ListNVMeNamespacesResponse listNVMeNamespaces(opi_api.storage.v1.ListNVMeNamespacesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListNVMeNamespaceMethod(), getCallOptions(), request);
+          getChannel(), getListNVMeNamespacesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1234,10 +1234,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeSubsystemResponse> listNVMeSubsystem(
-        opi_api.storage.v1.ListNVMeSubsystemRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeSubsystemsResponse> listNVMeSubsystems(
+        opi_api.storage.v1.ListNVMeSubsystemsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListNVMeSubsystemMethod(), getCallOptions()), request);
+          getChannel().newCall(getListNVMeSubsystemsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1282,10 +1282,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeControllerResponse> listNVMeController(
-        opi_api.storage.v1.ListNVMeControllerRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeControllersResponse> listNVMeControllers(
+        opi_api.storage.v1.ListNVMeControllersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListNVMeControllerMethod(), getCallOptions()), request);
+          getChannel().newCall(getListNVMeControllersMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1330,10 +1330,10 @@ public final class FrontendNvmeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeNamespaceResponse> listNVMeNamespace(
-        opi_api.storage.v1.ListNVMeNamespaceRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListNVMeNamespacesResponse> listNVMeNamespaces(
+        opi_api.storage.v1.ListNVMeNamespacesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListNVMeNamespaceMethod(), getCallOptions()), request);
+          getChannel().newCall(getListNVMeNamespacesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1356,19 +1356,19 @@ public final class FrontendNvmeServiceGrpc {
   private static final int METHODID_CREATE_NVME_SUBSYSTEM = 0;
   private static final int METHODID_DELETE_NVME_SUBSYSTEM = 1;
   private static final int METHODID_UPDATE_NVME_SUBSYSTEM = 2;
-  private static final int METHODID_LIST_NVME_SUBSYSTEM = 3;
+  private static final int METHODID_LIST_NVME_SUBSYSTEMS = 3;
   private static final int METHODID_GET_NVME_SUBSYSTEM = 4;
   private static final int METHODID_NVME_SUBSYSTEM_STATS = 5;
   private static final int METHODID_CREATE_NVME_CONTROLLER = 6;
   private static final int METHODID_DELETE_NVME_CONTROLLER = 7;
   private static final int METHODID_UPDATE_NVME_CONTROLLER = 8;
-  private static final int METHODID_LIST_NVME_CONTROLLER = 9;
+  private static final int METHODID_LIST_NVME_CONTROLLERS = 9;
   private static final int METHODID_GET_NVME_CONTROLLER = 10;
   private static final int METHODID_NVME_CONTROLLER_STATS = 11;
   private static final int METHODID_CREATE_NVME_NAMESPACE = 12;
   private static final int METHODID_DELETE_NVME_NAMESPACE = 13;
   private static final int METHODID_UPDATE_NVME_NAMESPACE = 14;
-  private static final int METHODID_LIST_NVME_NAMESPACE = 15;
+  private static final int METHODID_LIST_NVME_NAMESPACES = 15;
   private static final int METHODID_GET_NVME_NAMESPACE = 16;
   private static final int METHODID_NVME_NAMESPACE_STATS = 17;
 
@@ -1401,9 +1401,9 @@ public final class FrontendNvmeServiceGrpc {
           serviceImpl.updateNVMeSubsystem((opi_api.storage.v1.UpdateNVMeSubsystemRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMeSubsystem>) responseObserver);
           break;
-        case METHODID_LIST_NVME_SUBSYSTEM:
-          serviceImpl.listNVMeSubsystem((opi_api.storage.v1.ListNVMeSubsystemRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemResponse>) responseObserver);
+        case METHODID_LIST_NVME_SUBSYSTEMS:
+          serviceImpl.listNVMeSubsystems((opi_api.storage.v1.ListNVMeSubsystemsRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeSubsystemsResponse>) responseObserver);
           break;
         case METHODID_GET_NVME_SUBSYSTEM:
           serviceImpl.getNVMeSubsystem((opi_api.storage.v1.GetNVMeSubsystemRequest) request,
@@ -1425,9 +1425,9 @@ public final class FrontendNvmeServiceGrpc {
           serviceImpl.updateNVMeController((opi_api.storage.v1.UpdateNVMeControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMeController>) responseObserver);
           break;
-        case METHODID_LIST_NVME_CONTROLLER:
-          serviceImpl.listNVMeController((opi_api.storage.v1.ListNVMeControllerRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllerResponse>) responseObserver);
+        case METHODID_LIST_NVME_CONTROLLERS:
+          serviceImpl.listNVMeControllers((opi_api.storage.v1.ListNVMeControllersRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeControllersResponse>) responseObserver);
           break;
         case METHODID_GET_NVME_CONTROLLER:
           serviceImpl.getNVMeController((opi_api.storage.v1.GetNVMeControllerRequest) request,
@@ -1449,9 +1449,9 @@ public final class FrontendNvmeServiceGrpc {
           serviceImpl.updateNVMeNamespace((opi_api.storage.v1.UpdateNVMeNamespaceRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMeNamespace>) responseObserver);
           break;
-        case METHODID_LIST_NVME_NAMESPACE:
-          serviceImpl.listNVMeNamespace((opi_api.storage.v1.ListNVMeNamespaceRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespaceResponse>) responseObserver);
+        case METHODID_LIST_NVME_NAMESPACES:
+          serviceImpl.listNVMeNamespaces((opi_api.storage.v1.ListNVMeNamespacesRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListNVMeNamespacesResponse>) responseObserver);
           break;
         case METHODID_GET_NVME_NAMESPACE:
           serviceImpl.getNVMeNamespace((opi_api.storage.v1.GetNVMeNamespaceRequest) request,
@@ -1525,19 +1525,19 @@ public final class FrontendNvmeServiceGrpc {
               .addMethod(getCreateNVMeSubsystemMethod())
               .addMethod(getDeleteNVMeSubsystemMethod())
               .addMethod(getUpdateNVMeSubsystemMethod())
-              .addMethod(getListNVMeSubsystemMethod())
+              .addMethod(getListNVMeSubsystemsMethod())
               .addMethod(getGetNVMeSubsystemMethod())
               .addMethod(getNVMeSubsystemStatsMethod())
               .addMethod(getCreateNVMeControllerMethod())
               .addMethod(getDeleteNVMeControllerMethod())
               .addMethod(getUpdateNVMeControllerMethod())
-              .addMethod(getListNVMeControllerMethod())
+              .addMethod(getListNVMeControllersMethod())
               .addMethod(getGetNVMeControllerMethod())
               .addMethod(getNVMeControllerStatsMethod())
               .addMethod(getCreateNVMeNamespaceMethod())
               .addMethod(getDeleteNVMeNamespaceMethod())
               .addMethod(getUpdateNVMeNamespaceMethod())
-              .addMethod(getListNVMeNamespaceMethod())
+              .addMethod(getListNVMeNamespacesMethod())
               .addMethod(getGetNVMeNamespaceMethod())
               .addMethod(getNVMeNamespaceStatsMethod())
               .build();

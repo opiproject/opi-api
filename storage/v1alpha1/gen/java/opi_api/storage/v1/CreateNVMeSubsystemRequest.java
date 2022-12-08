@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateNVMeSubsystemRequest() {
+    parent_ = "";
+    nvMeSubsystemId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.NVMeSubsystem.Builder subBuilder = null;
-            if (subsystem_ != null) {
-              subBuilder = subsystem_.toBuilder();
+            if (nvMeSubsystem_ != null) {
+              subBuilder = nvMeSubsystem_.toBuilder();
             }
-            subsystem_ = input.readMessage(opi_api.storage.v1.NVMeSubsystem.parser(), extensionRegistry);
+            nvMeSubsystem_ = input.readMessage(opi_api.storage.v1.NVMeSubsystem.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(subsystem_);
-              subsystem_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nvMeSubsystem_);
+              nvMeSubsystem_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nvMeSubsystemId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNVMeSubsystemRequest.class, opi_api.storage.v1.CreateNVMeSubsystemRequest.Builder.class);
   }
 
-  public static final int SUBSYSTEM_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NVMeSubsystem subsystem_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return Whether the subsystem field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasSubsystem() {
-    return subsystem_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return The subsystem.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeSubsystem getSubsystem() {
-    return subsystem_ == null ? opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : subsystem_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NV_ME_SUBSYSTEM_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NVMeSubsystem nvMeSubsystem_;
+  /**
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nvMeSubsystem field is set.
+   */
+  @java.lang.Override
+  public boolean hasNvMeSubsystem() {
+    return nvMeSubsystem_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nvMeSubsystem.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder() {
-    return getSubsystem();
+  public opi_api.storage.v1.NVMeSubsystem getNvMeSubsystem() {
+    return nvMeSubsystem_ == null ? opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : nvMeSubsystem_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.NVMeSubsystemOrBuilder getNvMeSubsystemOrBuilder() {
+    return getNvMeSubsystem();
+  }
+
+  public static final int NV_ME_SUBSYSTEM_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object nvMeSubsystemId_;
+  /**
+   * <code>string nv_me_subsystem_id = 3;</code>
+   * @return The nvMeSubsystemId.
+   */
+  @java.lang.Override
+  public java.lang.String getNvMeSubsystemId() {
+    java.lang.Object ref = nvMeSubsystemId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nvMeSubsystemId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string nv_me_subsystem_id = 3;</code>
+   * @return The bytes for nvMeSubsystemId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNvMeSubsystemIdBytes() {
+    java.lang.Object ref = nvMeSubsystemId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nvMeSubsystemId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (subsystem_ != null) {
-      output.writeMessage(1, getSubsystem());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (nvMeSubsystem_ != null) {
+      output.writeMessage(2, getNvMeSubsystem());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvMeSubsystemId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvMeSubsystemId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (subsystem_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (nvMeSubsystem_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSubsystem());
+        .computeMessageSize(2, getNvMeSubsystem());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvMeSubsystemId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvMeSubsystemId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateNVMeSubsystemRequest other = (opi_api.storage.v1.CreateNVMeSubsystemRequest) obj;
 
-    if (hasSubsystem() != other.hasSubsystem()) return false;
-    if (hasSubsystem()) {
-      if (!getSubsystem()
-          .equals(other.getSubsystem())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasNvMeSubsystem() != other.hasNvMeSubsystem()) return false;
+    if (hasNvMeSubsystem()) {
+      if (!getNvMeSubsystem()
+          .equals(other.getNvMeSubsystem())) return false;
     }
+    if (!getNvMeSubsystemId()
+        .equals(other.getNvMeSubsystemId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasSubsystem()) {
-      hash = (37 * hash) + SUBSYSTEM_FIELD_NUMBER;
-      hash = (53 * hash) + getSubsystem().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasNvMeSubsystem()) {
+      hash = (37 * hash) + NV_ME_SUBSYSTEM_FIELD_NUMBER;
+      hash = (53 * hash) + getNvMeSubsystem().hashCode();
     }
+    hash = (37 * hash) + NV_ME_SUBSYSTEM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNvMeSubsystemId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (subsystemBuilder_ == null) {
-        subsystem_ = null;
+      parent_ = "";
+
+      if (nvMeSubsystemBuilder_ == null) {
+        nvMeSubsystem_ = null;
       } else {
-        subsystem_ = null;
-        subsystemBuilder_ = null;
+        nvMeSubsystem_ = null;
+        nvMeSubsystemBuilder_ = null;
       }
+      nvMeSubsystemId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateNVMeSubsystemRequest buildPartial() {
       opi_api.storage.v1.CreateNVMeSubsystemRequest result = new opi_api.storage.v1.CreateNVMeSubsystemRequest(this);
-      if (subsystemBuilder_ == null) {
-        result.subsystem_ = subsystem_;
+      result.parent_ = parent_;
+      if (nvMeSubsystemBuilder_ == null) {
+        result.nvMeSubsystem_ = nvMeSubsystem_;
       } else {
-        result.subsystem_ = subsystemBuilder_.build();
+        result.nvMeSubsystem_ = nvMeSubsystemBuilder_.build();
       }
+      result.nvMeSubsystemId_ = nvMeSubsystemId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateNVMeSubsystemRequest other) {
       if (other == opi_api.storage.v1.CreateNVMeSubsystemRequest.getDefaultInstance()) return this;
-      if (other.hasSubsystem()) {
-        mergeSubsystem(other.getSubsystem());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasNvMeSubsystem()) {
+        mergeNvMeSubsystem(other.getNvMeSubsystem());
+      }
+      if (!other.getNvMeSubsystemId().isEmpty()) {
+        nvMeSubsystemId_ = other.nvMeSubsystemId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NVMeSubsystem subsystem_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> subsystemBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-     * @return Whether the subsystem field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasSubsystem() {
-      return subsystemBuilder_ != null || subsystem_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-     * @return The subsystem.
-     */
-    public opi_api.storage.v1.NVMeSubsystem getSubsystem() {
-      if (subsystemBuilder_ == null) {
-        return subsystem_ == null ? opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : subsystem_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return subsystemBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setSubsystem(opi_api.storage.v1.NVMeSubsystem value) {
-      if (subsystemBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.NVMeSubsystem nvMeSubsystem_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> nvMeSubsystemBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the nvMeSubsystem field is set.
+     */
+    public boolean hasNvMeSubsystem() {
+      return nvMeSubsystemBuilder_ != null || nvMeSubsystem_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The nvMeSubsystem.
+     */
+    public opi_api.storage.v1.NVMeSubsystem getNvMeSubsystem() {
+      if (nvMeSubsystemBuilder_ == null) {
+        return nvMeSubsystem_ == null ? opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : nvMeSubsystem_;
+      } else {
+        return nvMeSubsystemBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setNvMeSubsystem(opi_api.storage.v1.NVMeSubsystem value) {
+      if (nvMeSubsystemBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        subsystem_ = value;
+        nvMeSubsystem_ = value;
         onChanged();
       } else {
-        subsystemBuilder_.setMessage(value);
+        nvMeSubsystemBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setSubsystem(
+    public Builder setNvMeSubsystem(
         opi_api.storage.v1.NVMeSubsystem.Builder builderForValue) {
-      if (subsystemBuilder_ == null) {
-        subsystem_ = builderForValue.build();
+      if (nvMeSubsystemBuilder_ == null) {
+        nvMeSubsystem_ = builderForValue.build();
         onChanged();
       } else {
-        subsystemBuilder_.setMessage(builderForValue.build());
+        nvMeSubsystemBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeSubsystem(opi_api.storage.v1.NVMeSubsystem value) {
-      if (subsystemBuilder_ == null) {
-        if (subsystem_ != null) {
-          subsystem_ =
-            opi_api.storage.v1.NVMeSubsystem.newBuilder(subsystem_).mergeFrom(value).buildPartial();
+    public Builder mergeNvMeSubsystem(opi_api.storage.v1.NVMeSubsystem value) {
+      if (nvMeSubsystemBuilder_ == null) {
+        if (nvMeSubsystem_ != null) {
+          nvMeSubsystem_ =
+            opi_api.storage.v1.NVMeSubsystem.newBuilder(nvMeSubsystem_).mergeFrom(value).buildPartial();
         } else {
-          subsystem_ = value;
+          nvMeSubsystem_ = value;
         }
         onChanged();
       } else {
-        subsystemBuilder_.mergeFrom(value);
+        nvMeSubsystemBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearSubsystem() {
-      if (subsystemBuilder_ == null) {
-        subsystem_ = null;
+    public Builder clearNvMeSubsystem() {
+      if (nvMeSubsystemBuilder_ == null) {
+        nvMeSubsystem_ = null;
         onChanged();
       } else {
-        subsystem_ = null;
-        subsystemBuilder_ = null;
+        nvMeSubsystem_ = null;
+        nvMeSubsystemBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NVMeSubsystem.Builder getSubsystemBuilder() {
+    public opi_api.storage.v1.NVMeSubsystem.Builder getNvMeSubsystemBuilder() {
       
       onChanged();
-      return getSubsystemFieldBuilder().getBuilder();
+      return getNvMeSubsystemFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder() {
-      if (subsystemBuilder_ != null) {
-        return subsystemBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeSubsystemOrBuilder getNvMeSubsystemOrBuilder() {
+      if (nvMeSubsystemBuilder_ != null) {
+        return nvMeSubsystemBuilder_.getMessageOrBuilder();
       } else {
-        return subsystem_ == null ?
-            opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : subsystem_;
+        return nvMeSubsystem_ == null ?
+            opi_api.storage.v1.NVMeSubsystem.getDefaultInstance() : nvMeSubsystem_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder> 
-        getSubsystemFieldBuilder() {
-      if (subsystemBuilder_ == null) {
-        subsystemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNvMeSubsystemFieldBuilder() {
+      if (nvMeSubsystemBuilder_ == null) {
+        nvMeSubsystemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NVMeSubsystem, opi_api.storage.v1.NVMeSubsystem.Builder, opi_api.storage.v1.NVMeSubsystemOrBuilder>(
-                getSubsystem(),
+                getNvMeSubsystem(),
                 getParentForChildren(),
                 isClean());
-        subsystem_ = null;
+        nvMeSubsystem_ = null;
       }
-      return subsystemBuilder_;
+      return nvMeSubsystemBuilder_;
+    }
+
+    private java.lang.Object nvMeSubsystemId_ = "";
+    /**
+     * <code>string nv_me_subsystem_id = 3;</code>
+     * @return The nvMeSubsystemId.
+     */
+    public java.lang.String getNvMeSubsystemId() {
+      java.lang.Object ref = nvMeSubsystemId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nvMeSubsystemId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string nv_me_subsystem_id = 3;</code>
+     * @return The bytes for nvMeSubsystemId.
+     */
+    public com.google.protobuf.ByteString
+        getNvMeSubsystemIdBytes() {
+      java.lang.Object ref = nvMeSubsystemId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nvMeSubsystemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string nv_me_subsystem_id = 3;</code>
+     * @param value The nvMeSubsystemId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNvMeSubsystemId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nvMeSubsystemId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nv_me_subsystem_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNvMeSubsystemId() {
+      
+      nvMeSubsystemId_ = getDefaultInstance().getNvMeSubsystemId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nv_me_subsystem_id = 3;</code>
+     * @param value The bytes for nvMeSubsystemId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNvMeSubsystemIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nvMeSubsystemId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

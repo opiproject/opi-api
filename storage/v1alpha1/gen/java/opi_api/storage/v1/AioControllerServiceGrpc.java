@@ -111,35 +111,35 @@ public final class AioControllerServiceGrpc {
     return getUpdateAioControllerMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllerRequest,
-      opi_api.storage.v1.ListAioControllerResponse> getListAioControllerMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllersRequest,
+      opi_api.storage.v1.ListAioControllersResponse> getListAioControllersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListAioController",
-      requestType = opi_api.storage.v1.ListAioControllerRequest.class,
-      responseType = opi_api.storage.v1.ListAioControllerResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListAioControllers",
+      requestType = opi_api.storage.v1.ListAioControllersRequest.class,
+      responseType = opi_api.storage.v1.ListAioControllersResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllerRequest,
-      opi_api.storage.v1.ListAioControllerResponse> getListAioControllerMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllerRequest, opi_api.storage.v1.ListAioControllerResponse> getListAioControllerMethod;
-    if ((getListAioControllerMethod = AioControllerServiceGrpc.getListAioControllerMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllersRequest,
+      opi_api.storage.v1.ListAioControllersResponse> getListAioControllersMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListAioControllersRequest, opi_api.storage.v1.ListAioControllersResponse> getListAioControllersMethod;
+    if ((getListAioControllersMethod = AioControllerServiceGrpc.getListAioControllersMethod) == null) {
       synchronized (AioControllerServiceGrpc.class) {
-        if ((getListAioControllerMethod = AioControllerServiceGrpc.getListAioControllerMethod) == null) {
-          AioControllerServiceGrpc.getListAioControllerMethod = getListAioControllerMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListAioControllerRequest, opi_api.storage.v1.ListAioControllerResponse>newBuilder()
+        if ((getListAioControllersMethod = AioControllerServiceGrpc.getListAioControllersMethod) == null) {
+          AioControllerServiceGrpc.getListAioControllersMethod = getListAioControllersMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListAioControllersRequest, opi_api.storage.v1.ListAioControllersResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAioController"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAioControllers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListAioControllerRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListAioControllersRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListAioControllerResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AioControllerServiceMethodDescriptorSupplier("ListAioController"))
+                  opi_api.storage.v1.ListAioControllersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AioControllerServiceMethodDescriptorSupplier("ListAioControllers"))
               .build();
         }
       }
     }
-    return getListAioControllerMethod;
+    return getListAioControllersMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetAioControllerRequest,
@@ -278,9 +278,9 @@ public final class AioControllerServiceGrpc {
 
     /**
      */
-    public void listAioController(opi_api.storage.v1.ListAioControllerRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllerResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAioControllerMethod(), responseObserver);
+    public void listAioControllers(opi_api.storage.v1.ListAioControllersRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAioControllersMethod(), responseObserver);
     }
 
     /**
@@ -321,12 +321,12 @@ public final class AioControllerServiceGrpc {
                 opi_api.storage.v1.AioController>(
                   this, METHODID_UPDATE_AIO_CONTROLLER)))
           .addMethod(
-            getListAioControllerMethod(),
+            getListAioControllersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListAioControllerRequest,
-                opi_api.storage.v1.ListAioControllerResponse>(
-                  this, METHODID_LIST_AIO_CONTROLLER)))
+                opi_api.storage.v1.ListAioControllersRequest,
+                opi_api.storage.v1.ListAioControllersResponse>(
+                  this, METHODID_LIST_AIO_CONTROLLERS)))
           .addMethod(
             getGetAioControllerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -388,10 +388,10 @@ public final class AioControllerServiceGrpc {
 
     /**
      */
-    public void listAioController(opi_api.storage.v1.ListAioControllerRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllerResponse> responseObserver) {
+    public void listAioControllers(opi_api.storage.v1.ListAioControllersRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllersResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListAioControllerMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListAioControllersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -451,9 +451,9 @@ public final class AioControllerServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.ListAioControllerResponse listAioController(opi_api.storage.v1.ListAioControllerRequest request) {
+    public opi_api.storage.v1.ListAioControllersResponse listAioControllers(opi_api.storage.v1.ListAioControllersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAioControllerMethod(), getCallOptions(), request);
+          getChannel(), getListAioControllersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -514,10 +514,10 @@ public final class AioControllerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListAioControllerResponse> listAioController(
-        opi_api.storage.v1.ListAioControllerRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListAioControllersResponse> listAioControllers(
+        opi_api.storage.v1.ListAioControllersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListAioControllerMethod(), getCallOptions()), request);
+          getChannel().newCall(getListAioControllersMethod(), getCallOptions()), request);
     }
 
     /**
@@ -540,7 +540,7 @@ public final class AioControllerServiceGrpc {
   private static final int METHODID_CREATE_AIO_CONTROLLER = 0;
   private static final int METHODID_DELETE_AIO_CONTROLLER = 1;
   private static final int METHODID_UPDATE_AIO_CONTROLLER = 2;
-  private static final int METHODID_LIST_AIO_CONTROLLER = 3;
+  private static final int METHODID_LIST_AIO_CONTROLLERS = 3;
   private static final int METHODID_GET_AIO_CONTROLLER = 4;
   private static final int METHODID_AIO_CONTROLLER_STATS = 5;
 
@@ -573,9 +573,9 @@ public final class AioControllerServiceGrpc {
           serviceImpl.updateAioController((opi_api.storage.v1.UpdateAioControllerRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.AioController>) responseObserver);
           break;
-        case METHODID_LIST_AIO_CONTROLLER:
-          serviceImpl.listAioController((opi_api.storage.v1.ListAioControllerRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllerResponse>) responseObserver);
+        case METHODID_LIST_AIO_CONTROLLERS:
+          serviceImpl.listAioControllers((opi_api.storage.v1.ListAioControllersRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListAioControllersResponse>) responseObserver);
           break;
         case METHODID_GET_AIO_CONTROLLER:
           serviceImpl.getAioController((opi_api.storage.v1.GetAioControllerRequest) request,
@@ -649,7 +649,7 @@ public final class AioControllerServiceGrpc {
               .addMethod(getCreateAioControllerMethod())
               .addMethod(getDeleteAioControllerMethod())
               .addMethod(getUpdateAioControllerMethod())
-              .addMethod(getListAioControllerMethod())
+              .addMethod(getListAioControllersMethod())
               .addMethod(getGetAioControllerMethod())
               .addMethod(getAioControllerStatsMethod())
               .build();

@@ -8,17 +8,44 @@ public interface UpdateNVMeNamespaceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return Whether the namespace field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+   * @return Whether the nvMeNamespace field is set.
    */
-  boolean hasNamespace();
+  boolean hasNvMeNamespace();
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return The namespace.
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+   * @return The nvMeNamespace.
    */
-  opi_api.storage.v1.NVMeNamespace getNamespace();
+  opi_api.storage.v1.NVMeNamespace getNvMeNamespace();
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
    */
-  opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder();
+  opi_api.storage.v1.NVMeNamespaceOrBuilder getNvMeNamespaceOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

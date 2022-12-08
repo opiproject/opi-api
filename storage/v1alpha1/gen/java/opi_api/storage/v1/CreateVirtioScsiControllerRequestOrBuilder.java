@@ -8,17 +8,41 @@ public interface CreateVirtioScsiControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasController();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-   * @return The controller.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.VirtioScsiController getController();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtioScsiController field is set.
    */
-  opi_api.storage.v1.VirtioScsiControllerOrBuilder getControllerOrBuilder();
+  boolean hasVirtioScsiController();
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The virtioScsiController.
+   */
+  opi_api.storage.v1.VirtioScsiController getVirtioScsiController();
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder();
+
+  /**
+   * <code>string virtio_scsi_controller_id = 3;</code>
+   * @return The virtioScsiControllerId.
+   */
+  java.lang.String getVirtioScsiControllerId();
+  /**
+   * <code>string virtio_scsi_controller_id = 3;</code>
+   * @return The bytes for virtioScsiControllerId.
+   */
+  com.google.protobuf.ByteString
+      getVirtioScsiControllerIdBytes();
 }

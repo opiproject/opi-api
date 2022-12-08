@@ -14,11 +14,15 @@ _sym_db = _symbol_database.Default()
 
 import opicommon_pb2 as opicommon__pb2
 import object_key_pb2 as object__key__pb2
+from google.api import client_pb2 as google_dot_api_dot_client__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"\xbe\x01\n\x0f\x45ncryptedVolume\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0b\n\x03key\x18\x03 \x01(\x0c\x12\x32\n\x06\x63ipher\x18\x04 \x01(\x0e\x32\".opi_api.storage.v1.EncryptionType\"S\n\x1c\x43reateEncryptedVolumeRequest\x12\x33\n\x06volume\x18\x01 \x01(\x0b\x32#.opi_api.storage.v1.EncryptedVolume\"Y\n\x1c\x44\x65leteEncryptedVolumeRequest\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"S\n\x1cUpdateEncryptedVolumeRequest\x12\x33\n\x06volume\x18\x01 \x01(\x0b\x32#.opi_api.storage.v1.EncryptedVolume\"C\n\x1aListEncryptedVolumeRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\"l\n\x1bListEncryptedVolumeResponse\x12\x34\n\x07volumes\x18\x01 \x03(\x0b\x32#.opi_api.storage.v1.EncryptedVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"V\n\x19GetEncryptedVolumeRequest\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"X\n\x1b\x45ncryptedVolumeStatsRequest\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"h\n\x1c\x45ncryptedVolumeStatsResponse\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\xc3\x06\n\x10MiddleendService\x12\x8b\x01\n\x15\x43reateEncryptedVolume\x12\x30.opi_api.storage.v1.CreateEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/volumes:\x06volume\x12\x7f\n\x15\x44\x65leteEncryptedVolume\x12\x30.opi_api.storage.v1.DeleteEncryptedVolumeRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/volumes/{volume}\x12\x8b\x01\n\x15UpdateEncryptedVolume\x12\x30.opi_api.storage.v1.UpdateEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"\x1b\x82\xd3\xe4\x93\x02\x15\x32\x0b/v1/volumes:\x06volume\x12\x8b\x01\n\x13ListEncryptedVolume\x12..opi_api.storage.v1.ListEncryptedVolumeRequest\x1a/.opi_api.storage.v1.ListEncryptedVolumeResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/volumes\x12\x86\x01\n\x12GetEncryptedVolume\x12-.opi_api.storage.v1.GetEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/volumes/{volume}\x12{\n\x14\x45ncryptedVolumeStats\x12/.opi_api.storage.v1.EncryptedVolumeStatsRequest\x1a\x30.opi_api.storage.v1.EncryptedVolumeStatsResponse\"\x00\x42]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fmiddleend.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\"\xbe\x01\n\x0f\x45ncryptedVolume\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tvolume_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x0b\n\x03key\x18\x03 \x01(\x0c\x12\x32\n\x06\x63ipher\x18\x04 \x01(\x0e\x32\".opi_api.storage.v1.EncryptionType\"\xb9\x01\n\x1c\x43reateEncryptedVolumeRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n library.googleapis.com/Publisher\x12\x42\n\x10\x65ncrypted_volume\x18\x02 \x01(\x0b\x32#.opi_api.storage.v1.EncryptedVolumeB\x03\xe0\x41\x02\x12\x1b\n\x13\x65ncrypted_volume_id\x18\x03 \x01(\t\"R\n\x1c\x44\x65leteEncryptedVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi.storage.v1/NVMeSubsystem\"\x8e\x01\n\x1cUpdateEncryptedVolumeRequest\x12=\n\x10\x65ncrypted_volume\x18\x01 \x01(\x0b\x32#.opi_api.storage.v1.EncryptedVolume\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"~\n\x1bListEncryptedVolumesRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n library.googleapis.com/Publisher\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n\x1cListEncryptedVolumesResponse\x12>\n\x11\x65ncrypted_volumes\x18\x01 \x03(\x0b\x32#.opi_api.storage.v1.EncryptedVolume\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"O\n\x19GetEncryptedVolumeRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe0\x41\x02\xfa\x41\x1e\n\x1copi.storage.v1/NVMeSubsystem\"X\n\x1b\x45ncryptedVolumeStatsRequest\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"h\n\x1c\x45ncryptedVolumeStatsResponse\x12\x39\n\x13\x65ncrypted_volume_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\r\n\x05stats\x18\x02 \x01(\t2\x80\x08\n\x10MiddleendService\x12\xcf\x01\n\x15\x43reateEncryptedVolume\x12\x30.opi_api.storage.v1.CreateEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"_\x82\xd3\xe4\x93\x02+\"\x17/v1/{parent=subsystems}:\x10\x65ncrypted_volume\xda\x41+parent,encrypted_volume,encrypted_volume_id\x12\x8d\x01\n\x15\x44\x65leteEncryptedVolume\x12\x30.opi_api.storage.v1.DeleteEncryptedVolumeRequest\x1a\x16.google.protobuf.Empty\"*\x82\xd3\xe4\x93\x02\x1d*\x1b/v1/{name=volumes}/{volume}\xda\x41\x04name\x12\xcf\x01\n\x15UpdateEncryptedVolume\x12\x30.opi_api.storage.v1.UpdateEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"_\x82\xd3\xe4\x93\x02:2&/v1/{encrypted_volume.name=subsystems}:\x10\x65ncrypted_volume\xda\x41\x1c\x65ncrypted_volume,update_mask\x12\xa0\x01\n\x14ListEncryptedVolumes\x12/.opi_api.storage.v1.ListEncryptedVolumesRequest\x1a\x30.opi_api.storage.v1.ListEncryptedVolumesResponse\"%\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/{parent=volumes}\xda\x41\x06parent\x12\x97\x01\n\x12GetEncryptedVolume\x12-.opi_api.storage.v1.GetEncryptedVolumeRequest\x1a#.opi_api.storage.v1.EncryptedVolume\"-\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{name=subsystems}/{volume}\xda\x41\x04name\x12{\n\x14\x45ncryptedVolumeStats\x12/.opi_api.storage.v1.EncryptedVolumeStatsRequest\x1a\x30.opi_api.storage.v1.EncryptedVolumeStatsResponse\"\x00\x42]\n\x12opi_api.storage.v1B\x0eMiddleendProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -26,8 +30,8 @@ _ENCRYPTEDVOLUME = DESCRIPTOR.message_types_by_name['EncryptedVolume']
 _CREATEENCRYPTEDVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['CreateEncryptedVolumeRequest']
 _DELETEENCRYPTEDVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['DeleteEncryptedVolumeRequest']
 _UPDATEENCRYPTEDVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['UpdateEncryptedVolumeRequest']
-_LISTENCRYPTEDVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['ListEncryptedVolumeRequest']
-_LISTENCRYPTEDVOLUMERESPONSE = DESCRIPTOR.message_types_by_name['ListEncryptedVolumeResponse']
+_LISTENCRYPTEDVOLUMESREQUEST = DESCRIPTOR.message_types_by_name['ListEncryptedVolumesRequest']
+_LISTENCRYPTEDVOLUMESRESPONSE = DESCRIPTOR.message_types_by_name['ListEncryptedVolumesResponse']
 _GETENCRYPTEDVOLUMEREQUEST = DESCRIPTOR.message_types_by_name['GetEncryptedVolumeRequest']
 _ENCRYPTEDVOLUMESTATSREQUEST = DESCRIPTOR.message_types_by_name['EncryptedVolumeStatsRequest']
 _ENCRYPTEDVOLUMESTATSRESPONSE = DESCRIPTOR.message_types_by_name['EncryptedVolumeStatsResponse']
@@ -59,19 +63,19 @@ UpdateEncryptedVolumeRequest = _reflection.GeneratedProtocolMessageType('UpdateE
   })
 _sym_db.RegisterMessage(UpdateEncryptedVolumeRequest)
 
-ListEncryptedVolumeRequest = _reflection.GeneratedProtocolMessageType('ListEncryptedVolumeRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTENCRYPTEDVOLUMEREQUEST,
+ListEncryptedVolumesRequest = _reflection.GeneratedProtocolMessageType('ListEncryptedVolumesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTENCRYPTEDVOLUMESREQUEST,
   '__module__' : 'middleend_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListEncryptedVolumeRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListEncryptedVolumesRequest)
   })
-_sym_db.RegisterMessage(ListEncryptedVolumeRequest)
+_sym_db.RegisterMessage(ListEncryptedVolumesRequest)
 
-ListEncryptedVolumeResponse = _reflection.GeneratedProtocolMessageType('ListEncryptedVolumeResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTENCRYPTEDVOLUMERESPONSE,
+ListEncryptedVolumesResponse = _reflection.GeneratedProtocolMessageType('ListEncryptedVolumesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTENCRYPTEDVOLUMESRESPONSE,
   '__module__' : 'middleend_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListEncryptedVolumeResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListEncryptedVolumesResponse)
   })
-_sym_db.RegisterMessage(ListEncryptedVolumeResponse)
+_sym_db.RegisterMessage(ListEncryptedVolumesResponse)
 
 GetEncryptedVolumeRequest = _reflection.GeneratedProtocolMessageType('GetEncryptedVolumeRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETENCRYPTEDVOLUMEREQUEST,
@@ -99,34 +103,44 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\016MiddleendProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
+  _CREATEENCRYPTEDVOLUMEREQUEST.fields_by_name['parent']._options = None
+  _CREATEENCRYPTEDVOLUMEREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n library.googleapis.com/Publisher'
+  _CREATEENCRYPTEDVOLUMEREQUEST.fields_by_name['encrypted_volume']._options = None
+  _CREATEENCRYPTEDVOLUMEREQUEST.fields_by_name['encrypted_volume']._serialized_options = b'\340A\002'
+  _DELETEENCRYPTEDVOLUMEREQUEST.fields_by_name['name']._options = None
+  _DELETEENCRYPTEDVOLUMEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\036\n\034opi.storage.v1/NVMeSubsystem'
+  _LISTENCRYPTEDVOLUMESREQUEST.fields_by_name['parent']._options = None
+  _LISTENCRYPTEDVOLUMESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n library.googleapis.com/Publisher'
+  _GETENCRYPTEDVOLUMEREQUEST.fields_by_name['name']._options = None
+  _GETENCRYPTEDVOLUMEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\036\n\034opi.storage.v1/NVMeSubsystem'
   _MIDDLEENDSERVICE.methods_by_name['CreateEncryptedVolume']._options = None
-  _MIDDLEENDSERVICE.methods_by_name['CreateEncryptedVolume']._serialized_options = b'\202\323\344\223\002\025\"\013/v1/volumes:\006volume'
+  _MIDDLEENDSERVICE.methods_by_name['CreateEncryptedVolume']._serialized_options = b'\202\323\344\223\002+\"\027/v1/{parent=subsystems}:\020encrypted_volume\332A+parent,encrypted_volume,encrypted_volume_id'
   _MIDDLEENDSERVICE.methods_by_name['DeleteEncryptedVolume']._options = None
-  _MIDDLEENDSERVICE.methods_by_name['DeleteEncryptedVolume']._serialized_options = b'\202\323\344\223\002\026*\024/v1/volumes/{volume}'
+  _MIDDLEENDSERVICE.methods_by_name['DeleteEncryptedVolume']._serialized_options = b'\202\323\344\223\002\035*\033/v1/{name=volumes}/{volume}\332A\004name'
   _MIDDLEENDSERVICE.methods_by_name['UpdateEncryptedVolume']._options = None
-  _MIDDLEENDSERVICE.methods_by_name['UpdateEncryptedVolume']._serialized_options = b'\202\323\344\223\002\0252\013/v1/volumes:\006volume'
-  _MIDDLEENDSERVICE.methods_by_name['ListEncryptedVolume']._options = None
-  _MIDDLEENDSERVICE.methods_by_name['ListEncryptedVolume']._serialized_options = b'\202\323\344\223\002\r\022\013/v1/volumes'
+  _MIDDLEENDSERVICE.methods_by_name['UpdateEncryptedVolume']._serialized_options = b'\202\323\344\223\002:2&/v1/{encrypted_volume.name=subsystems}:\020encrypted_volume\332A\034encrypted_volume,update_mask'
+  _MIDDLEENDSERVICE.methods_by_name['ListEncryptedVolumes']._options = None
+  _MIDDLEENDSERVICE.methods_by_name['ListEncryptedVolumes']._serialized_options = b'\202\323\344\223\002\026\022\024/v1/{parent=volumes}\332A\006parent'
   _MIDDLEENDSERVICE.methods_by_name['GetEncryptedVolume']._options = None
-  _MIDDLEENDSERVICE.methods_by_name['GetEncryptedVolume']._serialized_options = b'\202\323\344\223\002\026\022\024/v1/volumes/{volume}'
-  _ENCRYPTEDVOLUME._serialized_start=134
-  _ENCRYPTEDVOLUME._serialized_end=324
-  _CREATEENCRYPTEDVOLUMEREQUEST._serialized_start=326
-  _CREATEENCRYPTEDVOLUMEREQUEST._serialized_end=409
-  _DELETEENCRYPTEDVOLUMEREQUEST._serialized_start=411
-  _DELETEENCRYPTEDVOLUMEREQUEST._serialized_end=500
-  _UPDATEENCRYPTEDVOLUMEREQUEST._serialized_start=502
-  _UPDATEENCRYPTEDVOLUMEREQUEST._serialized_end=585
-  _LISTENCRYPTEDVOLUMEREQUEST._serialized_start=587
-  _LISTENCRYPTEDVOLUMEREQUEST._serialized_end=654
-  _LISTENCRYPTEDVOLUMERESPONSE._serialized_start=656
-  _LISTENCRYPTEDVOLUMERESPONSE._serialized_end=764
-  _GETENCRYPTEDVOLUMEREQUEST._serialized_start=766
-  _GETENCRYPTEDVOLUMEREQUEST._serialized_end=852
-  _ENCRYPTEDVOLUMESTATSREQUEST._serialized_start=854
-  _ENCRYPTEDVOLUMESTATSREQUEST._serialized_end=942
-  _ENCRYPTEDVOLUMESTATSRESPONSE._serialized_start=944
-  _ENCRYPTEDVOLUMESTATSRESPONSE._serialized_end=1048
-  _MIDDLEENDSERVICE._serialized_start=1051
-  _MIDDLEENDSERVICE._serialized_end=1886
+  _MIDDLEENDSERVICE.methods_by_name['GetEncryptedVolume']._serialized_options = b'\202\323\344\223\002 \022\036/v1/{name=subsystems}/{volume}\332A\004name'
+  _ENCRYPTEDVOLUME._serialized_start=253
+  _ENCRYPTEDVOLUME._serialized_end=443
+  _CREATEENCRYPTEDVOLUMEREQUEST._serialized_start=446
+  _CREATEENCRYPTEDVOLUMEREQUEST._serialized_end=631
+  _DELETEENCRYPTEDVOLUMEREQUEST._serialized_start=633
+  _DELETEENCRYPTEDVOLUMEREQUEST._serialized_end=715
+  _UPDATEENCRYPTEDVOLUMEREQUEST._serialized_start=718
+  _UPDATEENCRYPTEDVOLUMEREQUEST._serialized_end=860
+  _LISTENCRYPTEDVOLUMESREQUEST._serialized_start=862
+  _LISTENCRYPTEDVOLUMESREQUEST._serialized_end=988
+  _LISTENCRYPTEDVOLUMESRESPONSE._serialized_start=990
+  _LISTENCRYPTEDVOLUMESRESPONSE._serialized_end=1109
+  _GETENCRYPTEDVOLUMEREQUEST._serialized_start=1111
+  _GETENCRYPTEDVOLUMEREQUEST._serialized_end=1190
+  _ENCRYPTEDVOLUMESTATSREQUEST._serialized_start=1192
+  _ENCRYPTEDVOLUMESTATSREQUEST._serialized_end=1280
+  _ENCRYPTEDVOLUMESTATSRESPONSE._serialized_start=1282
+  _ENCRYPTEDVOLUMESTATSRESPONSE._serialized_end=1386
+  _MIDDLEENDSERVICE._serialized_start=1389
+  _MIDDLEENDSERVICE._serialized_end=2413
 # @@protoc_insertion_point(module_scope)

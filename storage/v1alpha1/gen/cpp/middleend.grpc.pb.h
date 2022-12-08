@@ -64,12 +64,12 @@ class MiddleendService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>> PrepareAsyncUpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>>(PrepareAsyncUpdateEncryptedVolumeRaw(context, request, cq));
     }
-    virtual ::grpc::Status ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>> AsyncListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>>(AsyncListEncryptedVolumeRaw(context, request, cq));
+    virtual ::grpc::Status ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>> AsyncListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>>(AsyncListEncryptedVolumesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>> PrepareAsyncListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>>(PrepareAsyncListEncryptedVolumeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>> PrepareAsyncListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>>(PrepareAsyncListEncryptedVolumesRaw(context, request, cq));
     }
     virtual ::grpc::Status GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::opi_api::storage::v1::EncryptedVolume* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>> AsyncGetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
@@ -94,8 +94,8 @@ class MiddleendService final {
       virtual void DeleteEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteEncryptedVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void EncryptedVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -111,8 +111,8 @@ class MiddleendService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDeleteEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>* AsyncUpdateEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>* PrepareAsyncUpdateEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>* AsyncListEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumeResponse>* PrepareAsyncListEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>* AsyncListEncryptedVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::ListEncryptedVolumesResponse>* PrepareAsyncListEncryptedVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>* AsyncGetEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolume>* PrepareAsyncGetEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::EncryptedVolumeStatsResponse>* AsyncEncryptedVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -142,12 +142,12 @@ class MiddleendService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>> PrepareAsyncUpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>>(PrepareAsyncUpdateEncryptedVolumeRaw(context, request, cq));
     }
-    ::grpc::Status ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>> AsyncListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>>(AsyncListEncryptedVolumeRaw(context, request, cq));
+    ::grpc::Status ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>> AsyncListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>>(AsyncListEncryptedVolumesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>> PrepareAsyncListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>>(PrepareAsyncListEncryptedVolumeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>> PrepareAsyncListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>>(PrepareAsyncListEncryptedVolumesRaw(context, request, cq));
     }
     ::grpc::Status GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::opi_api::storage::v1::EncryptedVolume* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>> AsyncGetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) {
@@ -172,8 +172,8 @@ class MiddleendService final {
       void DeleteEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteEncryptedVolumeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
       void UpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, std::function<void(::grpc::Status)>) override;
       void UpdateEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response, std::function<void(::grpc::Status)>) override;
-      void ListEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListEncryptedVolumes(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, std::function<void(::grpc::Status)>) override;
       void GetEncryptedVolume(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response, ::grpc::ClientUnaryReactor* reactor) override;
       void EncryptedVolumeStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response, std::function<void(::grpc::Status)>) override;
@@ -195,8 +195,8 @@ class MiddleendService final {
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDeleteEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>* AsyncUpdateEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>* PrepareAsyncUpdateEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>* AsyncListEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumeResponse>* PrepareAsyncListEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>* AsyncListEncryptedVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListEncryptedVolumesResponse>* PrepareAsyncListEncryptedVolumesRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>* AsyncGetEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolume>* PrepareAsyncGetEncryptedVolumeRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::EncryptedVolumeStatsResponse>* AsyncEncryptedVolumeStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -204,7 +204,7 @@ class MiddleendService final {
     const ::grpc::internal::RpcMethod rpcmethod_CreateEncryptedVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteEncryptedVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateEncryptedVolume_;
-    const ::grpc::internal::RpcMethod rpcmethod_ListEncryptedVolume_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListEncryptedVolumes_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEncryptedVolume_;
     const ::grpc::internal::RpcMethod rpcmethod_EncryptedVolumeStats_;
   };
@@ -217,7 +217,7 @@ class MiddleendService final {
     virtual ::grpc::Status CreateEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response);
     virtual ::grpc::Status DeleteEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteEncryptedVolumeRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status UpdateEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response);
-    virtual ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response);
+    virtual ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response);
     virtual ::grpc::Status GetEncryptedVolume(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetEncryptedVolumeRequest* request, ::opi_api::storage::v1::EncryptedVolume* response);
     virtual ::grpc::Status EncryptedVolumeStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* request, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* response);
   };
@@ -282,22 +282,22 @@ class MiddleendService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_ListEncryptedVolume : public BaseClass {
+  class WithAsyncMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_ListEncryptedVolume() {
+    WithAsyncMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodAsync(3);
     }
-    ~WithAsyncMethod_ListEncryptedVolume() override {
+    ~WithAsyncMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListEncryptedVolume(::grpc::ServerContext* context, ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::ListEncryptedVolumeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestListEncryptedVolumes(::grpc::ServerContext* context, ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::storage::v1::ListEncryptedVolumesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -341,7 +341,7 @@ class MiddleendService final {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateEncryptedVolume<WithAsyncMethod_DeleteEncryptedVolume<WithAsyncMethod_UpdateEncryptedVolume<WithAsyncMethod_ListEncryptedVolume<WithAsyncMethod_GetEncryptedVolume<WithAsyncMethod_EncryptedVolumeStats<Service > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateEncryptedVolume<WithAsyncMethod_DeleteEncryptedVolume<WithAsyncMethod_UpdateEncryptedVolume<WithAsyncMethod_ListEncryptedVolumes<WithAsyncMethod_GetEncryptedVolume<WithAsyncMethod_EncryptedVolumeStats<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateEncryptedVolume : public BaseClass {
    private:
@@ -424,31 +424,31 @@ class MiddleendService final {
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::UpdateEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::EncryptedVolume* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_ListEncryptedVolume : public BaseClass {
+  class WithCallbackMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_ListEncryptedVolume() {
+    WithCallbackMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListEncryptedVolumeRequest, ::opi_api::storage::v1::ListEncryptedVolumeResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListEncryptedVolumesRequest, ::opi_api::storage::v1::ListEncryptedVolumesResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* request, ::opi_api::storage::v1::ListEncryptedVolumeResponse* response) { return this->ListEncryptedVolume(context, request, response); }));}
-    void SetMessageAllocatorFor_ListEncryptedVolume(
-        ::grpc::MessageAllocator< ::opi_api::storage::v1::ListEncryptedVolumeRequest, ::opi_api::storage::v1::ListEncryptedVolumeResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* request, ::opi_api::storage::v1::ListEncryptedVolumesResponse* response) { return this->ListEncryptedVolumes(context, request, response); }));}
+    void SetMessageAllocatorFor_ListEncryptedVolumes(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::ListEncryptedVolumesRequest, ::opi_api::storage::v1::ListEncryptedVolumesResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListEncryptedVolumeRequest, ::opi_api::storage::v1::ListEncryptedVolumeResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ListEncryptedVolumesRequest, ::opi_api::storage::v1::ListEncryptedVolumesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_ListEncryptedVolume() override {
+    ~WithCallbackMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* ListEncryptedVolume(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* ListEncryptedVolumes(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_GetEncryptedVolume : public BaseClass {
@@ -504,7 +504,7 @@ class MiddleendService final {
     virtual ::grpc::ServerUnaryReactor* EncryptedVolumeStats(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::EncryptedVolumeStatsRequest* /*request*/, ::opi_api::storage::v1::EncryptedVolumeStatsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateEncryptedVolume<WithCallbackMethod_DeleteEncryptedVolume<WithCallbackMethod_UpdateEncryptedVolume<WithCallbackMethod_ListEncryptedVolume<WithCallbackMethod_GetEncryptedVolume<WithCallbackMethod_EncryptedVolumeStats<Service > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateEncryptedVolume<WithCallbackMethod_DeleteEncryptedVolume<WithCallbackMethod_UpdateEncryptedVolume<WithCallbackMethod_ListEncryptedVolumes<WithCallbackMethod_GetEncryptedVolume<WithCallbackMethod_EncryptedVolumeStats<Service > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateEncryptedVolume : public BaseClass {
@@ -558,18 +558,18 @@ class MiddleendService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_ListEncryptedVolume : public BaseClass {
+  class WithGenericMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_ListEncryptedVolume() {
+    WithGenericMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodGeneric(3);
     }
-    ~WithGenericMethod_ListEncryptedVolume() override {
+    ~WithGenericMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -669,22 +669,22 @@ class MiddleendService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_ListEncryptedVolume : public BaseClass {
+  class WithRawMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_ListEncryptedVolume() {
+    WithRawMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodRaw(3);
     }
-    ~WithRawMethod_ListEncryptedVolume() override {
+    ~WithRawMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListEncryptedVolume(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestListEncryptedVolumes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -795,25 +795,25 @@ class MiddleendService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_ListEncryptedVolume : public BaseClass {
+  class WithRawCallbackMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_ListEncryptedVolume() {
+    WithRawCallbackMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListEncryptedVolume(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListEncryptedVolumes(context, request, response); }));
     }
-    ~WithRawCallbackMethod_ListEncryptedVolume() override {
+    ~WithRawCallbackMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* ListEncryptedVolume(
+    virtual ::grpc::ServerUnaryReactor* ListEncryptedVolumes(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -942,31 +942,31 @@ class MiddleendService final {
     virtual ::grpc::Status StreamedUpdateEncryptedVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::UpdateEncryptedVolumeRequest,::opi_api::storage::v1::EncryptedVolume>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_ListEncryptedVolume : public BaseClass {
+  class WithStreamedUnaryMethod_ListEncryptedVolumes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_ListEncryptedVolume() {
+    WithStreamedUnaryMethod_ListEncryptedVolumes() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::storage::v1::ListEncryptedVolumeRequest, ::opi_api::storage::v1::ListEncryptedVolumeResponse>(
+          ::opi_api::storage::v1::ListEncryptedVolumesRequest, ::opi_api::storage::v1::ListEncryptedVolumesResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::storage::v1::ListEncryptedVolumeRequest, ::opi_api::storage::v1::ListEncryptedVolumeResponse>* streamer) {
-                       return this->StreamedListEncryptedVolume(context,
+                     ::opi_api::storage::v1::ListEncryptedVolumesRequest, ::opi_api::storage::v1::ListEncryptedVolumesResponse>* streamer) {
+                       return this->StreamedListEncryptedVolumes(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_ListEncryptedVolume() override {
+    ~WithStreamedUnaryMethod_ListEncryptedVolumes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ListEncryptedVolume(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumeRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumeResponse* /*response*/) override {
+    ::grpc::Status ListEncryptedVolumes(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ListEncryptedVolumesRequest* /*request*/, ::opi_api::storage::v1::ListEncryptedVolumesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedListEncryptedVolume(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ListEncryptedVolumeRequest,::opi_api::storage::v1::ListEncryptedVolumeResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedListEncryptedVolumes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ListEncryptedVolumesRequest,::opi_api::storage::v1::ListEncryptedVolumesResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetEncryptedVolume : public BaseClass {
@@ -1022,9 +1022,9 @@ class MiddleendService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedEncryptedVolumeStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::EncryptedVolumeStatsRequest,::opi_api::storage::v1::EncryptedVolumeStatsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateEncryptedVolume<WithStreamedUnaryMethod_DeleteEncryptedVolume<WithStreamedUnaryMethod_UpdateEncryptedVolume<WithStreamedUnaryMethod_ListEncryptedVolume<WithStreamedUnaryMethod_GetEncryptedVolume<WithStreamedUnaryMethod_EncryptedVolumeStats<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateEncryptedVolume<WithStreamedUnaryMethod_DeleteEncryptedVolume<WithStreamedUnaryMethod_UpdateEncryptedVolume<WithStreamedUnaryMethod_ListEncryptedVolumes<WithStreamedUnaryMethod_GetEncryptedVolume<WithStreamedUnaryMethod_EncryptedVolumeStats<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateEncryptedVolume<WithStreamedUnaryMethod_DeleteEncryptedVolume<WithStreamedUnaryMethod_UpdateEncryptedVolume<WithStreamedUnaryMethod_ListEncryptedVolume<WithStreamedUnaryMethod_GetEncryptedVolume<WithStreamedUnaryMethod_EncryptedVolumeStats<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateEncryptedVolume<WithStreamedUnaryMethod_DeleteEncryptedVolume<WithStreamedUnaryMethod_UpdateEncryptedVolume<WithStreamedUnaryMethod_ListEncryptedVolumes<WithStreamedUnaryMethod_GetEncryptedVolume<WithStreamedUnaryMethod_EncryptedVolumeStats<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1

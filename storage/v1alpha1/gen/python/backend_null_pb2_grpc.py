@@ -31,10 +31,10 @@ class NullDebugServiceStub(object):
                 request_serializer=backend__null__pb2.UpdateNullDebugRequest.SerializeToString,
                 response_deserializer=backend__null__pb2.NullDebug.FromString,
                 )
-        self.ListNullDebug = channel.unary_unary(
-                '/opi_api.storage.v1.NullDebugService/ListNullDebug',
-                request_serializer=backend__null__pb2.ListNullDebugRequest.SerializeToString,
-                response_deserializer=backend__null__pb2.ListNullDebugResponse.FromString,
+        self.ListNullDebugs = channel.unary_unary(
+                '/opi_api.storage.v1.NullDebugService/ListNullDebugs',
+                request_serializer=backend__null__pb2.ListNullDebugsRequest.SerializeToString,
+                response_deserializer=backend__null__pb2.ListNullDebugsResponse.FromString,
                 )
         self.GetNullDebug = channel.unary_unary(
                 '/opi_api.storage.v1.NullDebugService/GetNullDebug',
@@ -70,7 +70,7 @@ class NullDebugServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListNullDebug(self, request, context):
+    def ListNullDebugs(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -106,10 +106,10 @@ def add_NullDebugServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__null__pb2.UpdateNullDebugRequest.FromString,
                     response_serializer=backend__null__pb2.NullDebug.SerializeToString,
             ),
-            'ListNullDebug': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListNullDebug,
-                    request_deserializer=backend__null__pb2.ListNullDebugRequest.FromString,
-                    response_serializer=backend__null__pb2.ListNullDebugResponse.SerializeToString,
+            'ListNullDebugs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNullDebugs,
+                    request_deserializer=backend__null__pb2.ListNullDebugsRequest.FromString,
+                    response_serializer=backend__null__pb2.ListNullDebugsResponse.SerializeToString,
             ),
             'GetNullDebug': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNullDebug,
@@ -184,7 +184,7 @@ class NullDebugService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListNullDebug(request,
+    def ListNullDebugs(request,
             target,
             options=(),
             channel_credentials=None,
@@ -194,9 +194,9 @@ class NullDebugService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/ListNullDebug',
-            backend__null__pb2.ListNullDebugRequest.SerializeToString,
-            backend__null__pb2.ListNullDebugResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NullDebugService/ListNullDebugs',
+            backend__null__pb2.ListNullDebugsRequest.SerializeToString,
+            backend__null__pb2.ListNullDebugsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

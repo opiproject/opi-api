@@ -8,17 +8,41 @@ public interface CreateNVMeNamespaceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return Whether the namespace field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasNamespace();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return The namespace.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.NVMeNamespace getNamespace();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nvMeNamespace field is set.
    */
-  opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder();
+  boolean hasNvMeNamespace();
+  /**
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nvMeNamespace.
+   */
+  opi_api.storage.v1.NVMeNamespace getNvMeNamespace();
+  /**
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.NVMeNamespaceOrBuilder getNvMeNamespaceOrBuilder();
+
+  /**
+   * <code>string nv_me_namespace_id = 3;</code>
+   * @return The nvMeNamespaceId.
+   */
+  java.lang.String getNvMeNamespaceId();
+  /**
+   * <code>string nv_me_namespace_id = 3;</code>
+   * @return The bytes for nvMeNamespaceId.
+   */
+  com.google.protobuf.ByteString
+      getNvMeNamespaceIdBytes();
 }

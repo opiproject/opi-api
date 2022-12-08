@@ -8,17 +8,44 @@ public interface UpdateNVMeControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+   * @return Whether the nvMeController field is set.
    */
-  boolean hasController();
+  boolean hasNvMeController();
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-   * @return The controller.
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+   * @return The nvMeController.
    */
-  opi_api.storage.v1.NVMeController getController();
+  opi_api.storage.v1.NVMeController getNvMeController();
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
    */
-  opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder();
+  opi_api.storage.v1.NVMeControllerOrBuilder getNvMeControllerOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

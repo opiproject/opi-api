@@ -8,17 +8,14 @@ public interface DeleteVirtioScsiTargetRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey target_id = 1;</code>
-   * @return Whether the targetId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  boolean hasTargetId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey target_id = 1;</code>
-   * @return The targetId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getTargetId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey target_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getTargetIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

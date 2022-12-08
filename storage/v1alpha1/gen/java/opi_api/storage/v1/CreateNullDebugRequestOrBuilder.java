@@ -8,17 +8,41 @@ public interface CreateNullDebugRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasDevice();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return The device.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.NullDebug getDevice();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nullDebug field is set.
    */
-  opi_api.storage.v1.NullDebugOrBuilder getDeviceOrBuilder();
+  boolean hasNullDebug();
+  /**
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nullDebug.
+   */
+  opi_api.storage.v1.NullDebug getNullDebug();
+  /**
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.NullDebugOrBuilder getNullDebugOrBuilder();
+
+  /**
+   * <code>string null_debug_id = 3;</code>
+   * @return The nullDebugId.
+   */
+  java.lang.String getNullDebugId();
+  /**
+   * <code>string null_debug_id = 3;</code>
+   * @return The bytes for nullDebugId.
+   */
+  com.google.protobuf.ByteString
+      getNullDebugIdBytes();
 }

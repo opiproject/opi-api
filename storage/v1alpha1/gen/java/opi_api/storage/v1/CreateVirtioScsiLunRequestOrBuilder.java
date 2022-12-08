@@ -8,17 +8,41 @@ public interface CreateVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return Whether the lun field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasLun();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return The lun.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.VirtioScsiLun getLun();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtioScsiLun field is set.
    */
-  opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder();
+  boolean hasVirtioScsiLun();
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The virtioScsiLun.
+   */
+  opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun();
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder();
+
+  /**
+   * <code>string virtio_scsi_lun_id = 3;</code>
+   * @return The virtioScsiLunId.
+   */
+  java.lang.String getVirtioScsiLunId();
+  /**
+   * <code>string virtio_scsi_lun_id = 3;</code>
+   * @return The bytes for virtioScsiLunId.
+   */
+  com.google.protobuf.ByteString
+      getVirtioScsiLunIdBytes();
 }

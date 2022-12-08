@@ -31,10 +31,10 @@ class NVMfRemoteControllerServiceStub(object):
                 request_serializer=backend__nvme__tcp__pb2.UpdateNVMfRemoteControllerRequest.SerializeToString,
                 response_deserializer=backend__nvme__tcp__pb2.NVMfRemoteController.FromString,
                 )
-        self.ListNVMfRemoteController = channel.unary_unary(
-                '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteController',
-                request_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllerRequest.SerializeToString,
-                response_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllerResponse.FromString,
+        self.ListNVMfRemoteControllers = channel.unary_unary(
+                '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteControllers',
+                request_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllersRequest.SerializeToString,
+                response_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllersResponse.FromString,
                 )
         self.GetNVMfRemoteController = channel.unary_unary(
                 '/opi_api.storage.v1.NVMfRemoteControllerService/GetNVMfRemoteController',
@@ -75,7 +75,7 @@ class NVMfRemoteControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListNVMfRemoteController(self, request, context):
+    def ListNVMfRemoteControllers(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -117,10 +117,10 @@ def add_NVMfRemoteControllerServiceServicer_to_server(servicer, server):
                     request_deserializer=backend__nvme__tcp__pb2.UpdateNVMfRemoteControllerRequest.FromString,
                     response_serializer=backend__nvme__tcp__pb2.NVMfRemoteController.SerializeToString,
             ),
-            'ListNVMfRemoteController': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListNVMfRemoteController,
-                    request_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllerRequest.FromString,
-                    response_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllerResponse.SerializeToString,
+            'ListNVMfRemoteControllers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNVMfRemoteControllers,
+                    request_deserializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllersRequest.FromString,
+                    response_serializer=backend__nvme__tcp__pb2.ListNVMfRemoteControllersResponse.SerializeToString,
             ),
             'GetNVMfRemoteController': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNVMfRemoteController,
@@ -200,7 +200,7 @@ class NVMfRemoteControllerService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListNVMfRemoteController(request,
+    def ListNVMfRemoteControllers(request,
             target,
             options=(),
             channel_credentials=None,
@@ -210,9 +210,9 @@ class NVMfRemoteControllerService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteController',
-            backend__nvme__tcp__pb2.ListNVMfRemoteControllerRequest.SerializeToString,
-            backend__nvme__tcp__pb2.ListNVMfRemoteControllerResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.NVMfRemoteControllerService/ListNVMfRemoteControllers',
+            backend__nvme__tcp__pb2.ListNVMfRemoteControllersRequest.SerializeToString,
+            backend__nvme__tcp__pb2.ListNVMfRemoteControllersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

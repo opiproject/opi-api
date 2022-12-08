@@ -8,17 +8,14 @@ public interface DeleteNVMeSubsystemRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return Whether the subsystemId field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  boolean hasSubsystemId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   * @return The subsystemId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getSubsystemId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

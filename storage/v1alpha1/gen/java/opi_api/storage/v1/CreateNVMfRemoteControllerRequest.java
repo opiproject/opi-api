@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateNVMfRemoteControllerRequest() {
+    parent_ = "";
+    nvMfRemoteControllerId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.NVMfRemoteController.Builder subBuilder = null;
-            if (ctrl_ != null) {
-              subBuilder = ctrl_.toBuilder();
+            if (nvMfRemoteController_ != null) {
+              subBuilder = nvMfRemoteController_.toBuilder();
             }
-            ctrl_ = input.readMessage(opi_api.storage.v1.NVMfRemoteController.parser(), extensionRegistry);
+            nvMfRemoteController_ = input.readMessage(opi_api.storage.v1.NVMfRemoteController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(ctrl_);
-              ctrl_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nvMfRemoteController_);
+              nvMfRemoteController_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nvMfRemoteControllerId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNVMfRemoteControllerRequest.class, opi_api.storage.v1.CreateNVMfRemoteControllerRequest.Builder.class);
   }
 
-  public static final int CTRL_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NVMfRemoteController ctrl_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return Whether the ctrl field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasCtrl() {
-    return ctrl_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return The ctrl.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMfRemoteController getCtrl() {
-    return ctrl_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NV_MF_REMOTE_CONTROLLER_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NVMfRemoteController nvMfRemoteController_;
+  /**
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nvMfRemoteController field is set.
+   */
+  @java.lang.Override
+  public boolean hasNvMfRemoteController() {
+    return nvMfRemoteController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nvMfRemoteController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder() {
-    return getCtrl();
+  public opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController() {
+    return nvMfRemoteController_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder() {
+    return getNvMfRemoteController();
+  }
+
+  public static final int NV_MF_REMOTE_CONTROLLER_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object nvMfRemoteControllerId_;
+  /**
+   * <code>string nv_mf_remote_controller_id = 3;</code>
+   * @return The nvMfRemoteControllerId.
+   */
+  @java.lang.Override
+  public java.lang.String getNvMfRemoteControllerId() {
+    java.lang.Object ref = nvMfRemoteControllerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nvMfRemoteControllerId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string nv_mf_remote_controller_id = 3;</code>
+   * @return The bytes for nvMfRemoteControllerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNvMfRemoteControllerIdBytes() {
+    java.lang.Object ref = nvMfRemoteControllerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nvMfRemoteControllerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (ctrl_ != null) {
-      output.writeMessage(1, getCtrl());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (nvMfRemoteController_ != null) {
+      output.writeMessage(2, getNvMfRemoteController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvMfRemoteControllerId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nvMfRemoteControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (ctrl_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (nvMfRemoteController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCtrl());
+        .computeMessageSize(2, getNvMfRemoteController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nvMfRemoteControllerId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nvMfRemoteControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateNVMfRemoteControllerRequest other = (opi_api.storage.v1.CreateNVMfRemoteControllerRequest) obj;
 
-    if (hasCtrl() != other.hasCtrl()) return false;
-    if (hasCtrl()) {
-      if (!getCtrl()
-          .equals(other.getCtrl())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasNvMfRemoteController() != other.hasNvMfRemoteController()) return false;
+    if (hasNvMfRemoteController()) {
+      if (!getNvMfRemoteController()
+          .equals(other.getNvMfRemoteController())) return false;
     }
+    if (!getNvMfRemoteControllerId()
+        .equals(other.getNvMfRemoteControllerId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCtrl()) {
-      hash = (37 * hash) + CTRL_FIELD_NUMBER;
-      hash = (53 * hash) + getCtrl().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasNvMfRemoteController()) {
+      hash = (37 * hash) + NV_MF_REMOTE_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getNvMfRemoteController().hashCode();
     }
+    hash = (37 * hash) + NV_MF_REMOTE_CONTROLLER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNvMfRemoteControllerId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ctrlBuilder_ == null) {
-        ctrl_ = null;
+      parent_ = "";
+
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = null;
       } else {
-        ctrl_ = null;
-        ctrlBuilder_ = null;
+        nvMfRemoteController_ = null;
+        nvMfRemoteControllerBuilder_ = null;
       }
+      nvMfRemoteControllerId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateNVMfRemoteControllerRequest buildPartial() {
       opi_api.storage.v1.CreateNVMfRemoteControllerRequest result = new opi_api.storage.v1.CreateNVMfRemoteControllerRequest(this);
-      if (ctrlBuilder_ == null) {
-        result.ctrl_ = ctrl_;
+      result.parent_ = parent_;
+      if (nvMfRemoteControllerBuilder_ == null) {
+        result.nvMfRemoteController_ = nvMfRemoteController_;
       } else {
-        result.ctrl_ = ctrlBuilder_.build();
+        result.nvMfRemoteController_ = nvMfRemoteControllerBuilder_.build();
       }
+      result.nvMfRemoteControllerId_ = nvMfRemoteControllerId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateNVMfRemoteControllerRequest other) {
       if (other == opi_api.storage.v1.CreateNVMfRemoteControllerRequest.getDefaultInstance()) return this;
-      if (other.hasCtrl()) {
-        mergeCtrl(other.getCtrl());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasNvMfRemoteController()) {
+        mergeNvMfRemoteController(other.getNvMfRemoteController());
+      }
+      if (!other.getNvMfRemoteControllerId().isEmpty()) {
+        nvMfRemoteControllerId_ = other.nvMfRemoteControllerId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NVMfRemoteController ctrl_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> ctrlBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-     * @return Whether the ctrl field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasCtrl() {
-      return ctrlBuilder_ != null || ctrl_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-     * @return The ctrl.
-     */
-    public opi_api.storage.v1.NVMfRemoteController getCtrl() {
-      if (ctrlBuilder_ == null) {
-        return ctrl_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return ctrlBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setCtrl(opi_api.storage.v1.NVMfRemoteController value) {
-      if (ctrlBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.NVMfRemoteController nvMfRemoteController_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> nvMfRemoteControllerBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the nvMfRemoteController field is set.
+     */
+    public boolean hasNvMfRemoteController() {
+      return nvMfRemoteControllerBuilder_ != null || nvMfRemoteController_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The nvMfRemoteController.
+     */
+    public opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        return nvMfRemoteController_ == null ? opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
+      } else {
+        return nvMfRemoteControllerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setNvMfRemoteController(opi_api.storage.v1.NVMfRemoteController value) {
+      if (nvMfRemoteControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ctrl_ = value;
+        nvMfRemoteController_ = value;
         onChanged();
       } else {
-        ctrlBuilder_.setMessage(value);
+        nvMfRemoteControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setCtrl(
+    public Builder setNvMfRemoteController(
         opi_api.storage.v1.NVMfRemoteController.Builder builderForValue) {
-      if (ctrlBuilder_ == null) {
-        ctrl_ = builderForValue.build();
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = builderForValue.build();
         onChanged();
       } else {
-        ctrlBuilder_.setMessage(builderForValue.build());
+        nvMfRemoteControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeCtrl(opi_api.storage.v1.NVMfRemoteController value) {
-      if (ctrlBuilder_ == null) {
-        if (ctrl_ != null) {
-          ctrl_ =
-            opi_api.storage.v1.NVMfRemoteController.newBuilder(ctrl_).mergeFrom(value).buildPartial();
+    public Builder mergeNvMfRemoteController(opi_api.storage.v1.NVMfRemoteController value) {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        if (nvMfRemoteController_ != null) {
+          nvMfRemoteController_ =
+            opi_api.storage.v1.NVMfRemoteController.newBuilder(nvMfRemoteController_).mergeFrom(value).buildPartial();
         } else {
-          ctrl_ = value;
+          nvMfRemoteController_ = value;
         }
         onChanged();
       } else {
-        ctrlBuilder_.mergeFrom(value);
+        nvMfRemoteControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearCtrl() {
-      if (ctrlBuilder_ == null) {
-        ctrl_ = null;
+    public Builder clearNvMfRemoteController() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteController_ = null;
         onChanged();
       } else {
-        ctrl_ = null;
-        ctrlBuilder_ = null;
+        nvMfRemoteController_ = null;
+        nvMfRemoteControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NVMfRemoteController.Builder getCtrlBuilder() {
+    public opi_api.storage.v1.NVMfRemoteController.Builder getNvMfRemoteControllerBuilder() {
       
       onChanged();
-      return getCtrlFieldBuilder().getBuilder();
+      return getNvMfRemoteControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder() {
-      if (ctrlBuilder_ != null) {
-        return ctrlBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder() {
+      if (nvMfRemoteControllerBuilder_ != null) {
+        return nvMfRemoteControllerBuilder_.getMessageOrBuilder();
       } else {
-        return ctrl_ == null ?
-            opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : ctrl_;
+        return nvMfRemoteController_ == null ?
+            opi_api.storage.v1.NVMfRemoteController.getDefaultInstance() : nvMfRemoteController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+     * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder> 
-        getCtrlFieldBuilder() {
-      if (ctrlBuilder_ == null) {
-        ctrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNvMfRemoteControllerFieldBuilder() {
+      if (nvMfRemoteControllerBuilder_ == null) {
+        nvMfRemoteControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NVMfRemoteController, opi_api.storage.v1.NVMfRemoteController.Builder, opi_api.storage.v1.NVMfRemoteControllerOrBuilder>(
-                getCtrl(),
+                getNvMfRemoteController(),
                 getParentForChildren(),
                 isClean());
-        ctrl_ = null;
+        nvMfRemoteController_ = null;
       }
-      return ctrlBuilder_;
+      return nvMfRemoteControllerBuilder_;
+    }
+
+    private java.lang.Object nvMfRemoteControllerId_ = "";
+    /**
+     * <code>string nv_mf_remote_controller_id = 3;</code>
+     * @return The nvMfRemoteControllerId.
+     */
+    public java.lang.String getNvMfRemoteControllerId() {
+      java.lang.Object ref = nvMfRemoteControllerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nvMfRemoteControllerId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string nv_mf_remote_controller_id = 3;</code>
+     * @return The bytes for nvMfRemoteControllerId.
+     */
+    public com.google.protobuf.ByteString
+        getNvMfRemoteControllerIdBytes() {
+      java.lang.Object ref = nvMfRemoteControllerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nvMfRemoteControllerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string nv_mf_remote_controller_id = 3;</code>
+     * @param value The nvMfRemoteControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNvMfRemoteControllerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nvMfRemoteControllerId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nv_mf_remote_controller_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNvMfRemoteControllerId() {
+      
+      nvMfRemoteControllerId_ = getDefaultInstance().getNvMfRemoteControllerId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nv_mf_remote_controller_id = 3;</code>
+     * @param value The bytes for nvMfRemoteControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNvMfRemoteControllerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nvMfRemoteControllerId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -27,7 +27,7 @@ static const char* NullDebugService_method_names[] = {
   "/opi_api.storage.v1.NullDebugService/CreateNullDebug",
   "/opi_api.storage.v1.NullDebugService/DeleteNullDebug",
   "/opi_api.storage.v1.NullDebugService/UpdateNullDebug",
-  "/opi_api.storage.v1.NullDebugService/ListNullDebug",
+  "/opi_api.storage.v1.NullDebugService/ListNullDebugs",
   "/opi_api.storage.v1.NullDebugService/GetNullDebug",
   "/opi_api.storage.v1.NullDebugService/NullDebugStats",
 };
@@ -42,7 +42,7 @@ NullDebugService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
   : channel_(channel), rpcmethod_CreateNullDebug_(NullDebugService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteNullDebug_(NullDebugService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateNullDebug_(NullDebugService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListNullDebug_(NullDebugService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListNullDebugs_(NullDebugService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetNullDebug_(NullDebugService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_NullDebugStats_(NullDebugService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
@@ -116,25 +116,25 @@ void NullDebugService::Stub::async::UpdateNullDebug(::grpc::ClientContext* conte
   return result;
 }
 
-::grpc::Status NullDebugService::Stub::ListNullDebug(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugRequest& request, ::opi_api::storage::v1::ListNullDebugResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::ListNullDebugRequest, ::opi_api::storage::v1::ListNullDebugResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListNullDebug_, context, request, response);
+::grpc::Status NullDebugService::Stub::ListNullDebugs(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest& request, ::opi_api::storage::v1::ListNullDebugsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::storage::v1::ListNullDebugsRequest, ::opi_api::storage::v1::ListNullDebugsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListNullDebugs_, context, request, response);
 }
 
-void NullDebugService::Stub::async::ListNullDebug(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugRequest* request, ::opi_api::storage::v1::ListNullDebugResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::ListNullDebugRequest, ::opi_api::storage::v1::ListNullDebugResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNullDebug_, context, request, response, std::move(f));
+void NullDebugService::Stub::async::ListNullDebugs(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest* request, ::opi_api::storage::v1::ListNullDebugsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::storage::v1::ListNullDebugsRequest, ::opi_api::storage::v1::ListNullDebugsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNullDebugs_, context, request, response, std::move(f));
 }
 
-void NullDebugService::Stub::async::ListNullDebug(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugRequest* request, ::opi_api::storage::v1::ListNullDebugResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNullDebug_, context, request, response, reactor);
+void NullDebugService::Stub::async::ListNullDebugs(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest* request, ::opi_api::storage::v1::ListNullDebugsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListNullDebugs_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNullDebugResponse>* NullDebugService::Stub::PrepareAsyncListNullDebugRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::ListNullDebugResponse, ::opi_api::storage::v1::ListNullDebugRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListNullDebug_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNullDebugsResponse>* NullDebugService::Stub::PrepareAsyncListNullDebugsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::storage::v1::ListNullDebugsResponse, ::opi_api::storage::v1::ListNullDebugsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListNullDebugs_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNullDebugResponse>* NullDebugService::Stub::AsyncListNullDebugRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::ListNullDebugsResponse>* NullDebugService::Stub::AsyncListNullDebugsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncListNullDebugRaw(context, request, cq);
+    this->PrepareAsyncListNullDebugsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -219,12 +219,12 @@ NullDebugService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::ListNullDebugRequest, ::opi_api::storage::v1::ListNullDebugResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< NullDebugService::Service, ::opi_api::storage::v1::ListNullDebugsRequest, ::opi_api::storage::v1::ListNullDebugsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](NullDebugService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::storage::v1::ListNullDebugRequest* req,
-             ::opi_api::storage::v1::ListNullDebugResponse* resp) {
-               return service->ListNullDebug(ctx, req, resp);
+             const ::opi_api::storage::v1::ListNullDebugsRequest* req,
+             ::opi_api::storage::v1::ListNullDebugsResponse* resp) {
+               return service->ListNullDebugs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NullDebugService_method_names[4],
@@ -272,7 +272,7 @@ NullDebugService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status NullDebugService::Service::ListNullDebug(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNullDebugRequest* request, ::opi_api::storage::v1::ListNullDebugResponse* response) {
+::grpc::Status NullDebugService::Service::ListNullDebugs(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNullDebugsRequest* request, ::opi_api::storage::v1::ListNullDebugsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.VirtioScsiTarget.Builder subBuilder = null;
-            if (target_ != null) {
-              subBuilder = target_.toBuilder();
+            if (virtioScsiTarget_ != null) {
+              subBuilder = virtioScsiTarget_.toBuilder();
             }
-            target_ = input.readMessage(opi_api.storage.v1.VirtioScsiTarget.parser(), extensionRegistry);
+            virtioScsiTarget_ = input.readMessage(opi_api.storage.v1.VirtioScsiTarget.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(target_);
-              target_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(virtioScsiTarget_);
+              virtioScsiTarget_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateVirtioScsiTargetRequest.class, opi_api.storage.v1.UpdateVirtioScsiTargetRequest.Builder.class);
   }
 
-  public static final int TARGET_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.VirtioScsiTarget target_;
+  public static final int VIRTIO_SCSI_TARGET_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.VirtioScsiTarget virtioScsiTarget_;
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-   * @return Whether the target field is set.
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+   * @return Whether the virtioScsiTarget field is set.
    */
   @java.lang.Override
-  public boolean hasTarget() {
-    return target_ != null;
+  public boolean hasVirtioScsiTarget() {
+    return virtioScsiTarget_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-   * @return The target.
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+   * @return The virtioScsiTarget.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiTarget getTarget() {
-    return target_ == null ? opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : target_;
+  public opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget() {
+    return virtioScsiTarget_ == null ? opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : virtioScsiTarget_;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiTargetOrBuilder getTargetOrBuilder() {
-    return getTarget();
+  public opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder() {
+    return getVirtioScsiTarget();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (target_ != null) {
-      output.writeMessage(1, getTarget());
+    if (virtioScsiTarget_ != null) {
+      output.writeMessage(1, getVirtioScsiTarget());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (target_ != null) {
+    if (virtioScsiTarget_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTarget());
+        .computeMessageSize(1, getVirtioScsiTarget());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateVirtioScsiTargetRequest other = (opi_api.storage.v1.UpdateVirtioScsiTargetRequest) obj;
 
-    if (hasTarget() != other.hasTarget()) return false;
-    if (hasTarget()) {
-      if (!getTarget()
-          .equals(other.getTarget())) return false;
+    if (hasVirtioScsiTarget() != other.hasVirtioScsiTarget()) return false;
+    if (hasVirtioScsiTarget()) {
+      if (!getVirtioScsiTarget()
+          .equals(other.getVirtioScsiTarget())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasTarget()) {
-      hash = (37 * hash) + TARGET_FIELD_NUMBER;
-      hash = (53 * hash) + getTarget().hashCode();
+    if (hasVirtioScsiTarget()) {
+      hash = (37 * hash) + VIRTIO_SCSI_TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtioScsiTarget().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (targetBuilder_ == null) {
-        target_ = null;
+      if (virtioScsiTargetBuilder_ == null) {
+        virtioScsiTarget_ = null;
       } else {
-        target_ = null;
-        targetBuilder_ = null;
+        virtioScsiTarget_ = null;
+        virtioScsiTargetBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateVirtioScsiTargetRequest buildPartial() {
       opi_api.storage.v1.UpdateVirtioScsiTargetRequest result = new opi_api.storage.v1.UpdateVirtioScsiTargetRequest(this);
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
+      if (virtioScsiTargetBuilder_ == null) {
+        result.virtioScsiTarget_ = virtioScsiTarget_;
       } else {
-        result.target_ = targetBuilder_.build();
+        result.virtioScsiTarget_ = virtioScsiTargetBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateVirtioScsiTargetRequest other) {
       if (other == opi_api.storage.v1.UpdateVirtioScsiTargetRequest.getDefaultInstance()) return this;
-      if (other.hasTarget()) {
-        mergeTarget(other.getTarget());
+      if (other.hasVirtioScsiTarget()) {
+        mergeVirtioScsiTarget(other.getVirtioScsiTarget());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.VirtioScsiTarget target_;
+    private opi_api.storage.v1.VirtioScsiTarget virtioScsiTarget_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.VirtioScsiTarget, opi_api.storage.v1.VirtioScsiTarget.Builder, opi_api.storage.v1.VirtioScsiTargetOrBuilder> targetBuilder_;
+        opi_api.storage.v1.VirtioScsiTarget, opi_api.storage.v1.VirtioScsiTarget.Builder, opi_api.storage.v1.VirtioScsiTargetOrBuilder> virtioScsiTargetBuilder_;
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-     * @return Whether the target field is set.
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+     * @return Whether the virtioScsiTarget field is set.
      */
-    public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+    public boolean hasVirtioScsiTarget() {
+      return virtioScsiTargetBuilder_ != null || virtioScsiTarget_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-     * @return The target.
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+     * @return The virtioScsiTarget.
      */
-    public opi_api.storage.v1.VirtioScsiTarget getTarget() {
-      if (targetBuilder_ == null) {
-        return target_ == null ? opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : target_;
+    public opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget() {
+      if (virtioScsiTargetBuilder_ == null) {
+        return virtioScsiTarget_ == null ? opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : virtioScsiTarget_;
       } else {
-        return targetBuilder_.getMessage();
+        return virtioScsiTargetBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public Builder setTarget(opi_api.storage.v1.VirtioScsiTarget value) {
-      if (targetBuilder_ == null) {
+    public Builder setVirtioScsiTarget(opi_api.storage.v1.VirtioScsiTarget value) {
+      if (virtioScsiTargetBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        target_ = value;
+        virtioScsiTarget_ = value;
         onChanged();
       } else {
-        targetBuilder_.setMessage(value);
+        virtioScsiTargetBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public Builder setTarget(
+    public Builder setVirtioScsiTarget(
         opi_api.storage.v1.VirtioScsiTarget.Builder builderForValue) {
-      if (targetBuilder_ == null) {
-        target_ = builderForValue.build();
+      if (virtioScsiTargetBuilder_ == null) {
+        virtioScsiTarget_ = builderForValue.build();
         onChanged();
       } else {
-        targetBuilder_.setMessage(builderForValue.build());
+        virtioScsiTargetBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public Builder mergeTarget(opi_api.storage.v1.VirtioScsiTarget value) {
-      if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-            opi_api.storage.v1.VirtioScsiTarget.newBuilder(target_).mergeFrom(value).buildPartial();
+    public Builder mergeVirtioScsiTarget(opi_api.storage.v1.VirtioScsiTarget value) {
+      if (virtioScsiTargetBuilder_ == null) {
+        if (virtioScsiTarget_ != null) {
+          virtioScsiTarget_ =
+            opi_api.storage.v1.VirtioScsiTarget.newBuilder(virtioScsiTarget_).mergeFrom(value).buildPartial();
         } else {
-          target_ = value;
+          virtioScsiTarget_ = value;
         }
         onChanged();
       } else {
-        targetBuilder_.mergeFrom(value);
+        virtioScsiTargetBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
+    public Builder clearVirtioScsiTarget() {
+      if (virtioScsiTargetBuilder_ == null) {
+        virtioScsiTarget_ = null;
         onChanged();
       } else {
-        target_ = null;
-        targetBuilder_ = null;
+        virtioScsiTarget_ = null;
+        virtioScsiTargetBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiTarget.Builder getTargetBuilder() {
+    public opi_api.storage.v1.VirtioScsiTarget.Builder getVirtioScsiTargetBuilder() {
       
       onChanged();
-      return getTargetFieldBuilder().getBuilder();
+      return getVirtioScsiTargetFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
-    public opi_api.storage.v1.VirtioScsiTargetOrBuilder getTargetOrBuilder() {
-      if (targetBuilder_ != null) {
-        return targetBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder() {
+      if (virtioScsiTargetBuilder_ != null) {
+        return virtioScsiTargetBuilder_.getMessageOrBuilder();
       } else {
-        return target_ == null ?
-            opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : target_;
+        return virtioScsiTarget_ == null ?
+            opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance() : virtioScsiTarget_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiTarget, opi_api.storage.v1.VirtioScsiTarget.Builder, opi_api.storage.v1.VirtioScsiTargetOrBuilder> 
-        getTargetFieldBuilder() {
-      if (targetBuilder_ == null) {
-        targetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getVirtioScsiTargetFieldBuilder() {
+      if (virtioScsiTargetBuilder_ == null) {
+        virtioScsiTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.VirtioScsiTarget, opi_api.storage.v1.VirtioScsiTarget.Builder, opi_api.storage.v1.VirtioScsiTargetOrBuilder>(
-                getTarget(),
+                getVirtioScsiTarget(),
                 getParentForChildren(),
                 isClean());
-        target_ = null;
+        virtioScsiTarget_ = null;
       }
-      return targetBuilder_;
+      return virtioScsiTargetBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

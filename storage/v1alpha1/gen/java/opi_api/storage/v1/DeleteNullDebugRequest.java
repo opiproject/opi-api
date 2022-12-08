@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteNullDebugRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (handle_ != null) {
-              subBuilder = handle_.toBuilder();
-            }
-            handle_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(handle_);
-              handle_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           default: {
@@ -93,30 +87,42 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.DeleteNullDebugRequest.class, opi_api.storage.v1.DeleteNullDebugRequest.Builder.class);
   }
 
-  public static final int HANDLE_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey handle_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return Whether the handle field is set.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasHandle() {
-    return handle_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return The handle.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getHandle() {
-    return handle_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder() {
-    return getHandle();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (handle_ != null) {
-      output.writeMessage(1, getHandle());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (handle_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHandle());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +169,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.DeleteNullDebugRequest other = (opi_api.storage.v1.DeleteNullDebugRequest) obj;
 
-    if (hasHandle() != other.hasHandle()) return false;
-    if (hasHandle()) {
-      if (!getHandle()
-          .equals(other.getHandle())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +182,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasHandle()) {
-      hash = (37 * hash) + HANDLE_FIELD_NUMBER;
-      hash = (53 * hash) + getHandle().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +317,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (handleBuilder_ == null) {
-        handle_ = null;
-      } else {
-        handle_ = null;
-        handleBuilder_ = null;
-      }
+      name_ = "";
+
       return this;
     }
 
@@ -349,11 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.DeleteNullDebugRequest buildPartial() {
       opi_api.storage.v1.DeleteNullDebugRequest result = new opi_api.storage.v1.DeleteNullDebugRequest(this);
-      if (handleBuilder_ == null) {
-        result.handle_ = handle_;
-      } else {
-        result.handle_ = handleBuilder_.build();
-      }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -402,8 +394,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.DeleteNullDebugRequest other) {
       if (other == opi_api.storage.v1.DeleteNullDebugRequest.getDefaultInstance()) return this;
-      if (other.hasHandle()) {
-        mergeHandle(other.getHandle());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +427,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey handle_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> handleBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-     * @return Whether the handle field is set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public boolean hasHandle() {
-      return handleBuilder_ != null || handle_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-     * @return The handle.
-     */
-    public opi_api.common.v1.ObjectKey getHandle() {
-      if (handleBuilder_ == null) {
-        return handle_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return handleBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
-    public Builder setHandle(opi_api.common.v1.ObjectKey value) {
-      if (handleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        handle_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        handleBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setHandle(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (handleBuilder_ == null) {
-        handle_ = builderForValue.build();
-        onChanged();
-      } else {
-        handleBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-     */
-    public Builder mergeHandle(opi_api.common.v1.ObjectKey value) {
-      if (handleBuilder_ == null) {
-        if (handle_ != null) {
-          handle_ =
-            opi_api.common.v1.ObjectKey.newBuilder(handle_).mergeFrom(value).buildPartial();
-        } else {
-          handle_ = value;
-        }
-        onChanged();
-      } else {
-        handleBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-     */
-    public Builder clearHandle() {
-      if (handleBuilder_ == null) {
-        handle_ = null;
-        onChanged();
-      } else {
-        handle_ = null;
-        handleBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getHandleBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getHandleFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder() {
-      if (handleBuilder_ != null) {
-        return handleBuilder_.getMessageOrBuilder();
-      } else {
-        return handle_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : handle_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getHandleFieldBuilder() {
-      if (handleBuilder_ == null) {
-        handleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getHandle(),
-                getParentForChildren(),
-                isClean());
-        handle_ = null;
-      }
-      return handleBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

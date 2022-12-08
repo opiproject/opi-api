@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.EncryptedVolume.Builder subBuilder = null;
-            if (volume_ != null) {
-              subBuilder = volume_.toBuilder();
+            if (encryptedVolume_ != null) {
+              subBuilder = encryptedVolume_.toBuilder();
             }
-            volume_ = input.readMessage(opi_api.storage.v1.EncryptedVolume.parser(), extensionRegistry);
+            encryptedVolume_ = input.readMessage(opi_api.storage.v1.EncryptedVolume.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(volume_);
-              volume_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(encryptedVolume_);
+              encryptedVolume_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateEncryptedVolumeRequest.class, opi_api.storage.v1.UpdateEncryptedVolumeRequest.Builder.class);
   }
 
-  public static final int VOLUME_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.EncryptedVolume volume_;
+  public static final int ENCRYPTED_VOLUME_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.EncryptedVolume encryptedVolume_;
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-   * @return Whether the volume field is set.
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+   * @return Whether the encryptedVolume field is set.
    */
   @java.lang.Override
-  public boolean hasVolume() {
-    return volume_ != null;
+  public boolean hasEncryptedVolume() {
+    return encryptedVolume_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-   * @return The volume.
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+   * @return The encryptedVolume.
    */
   @java.lang.Override
-  public opi_api.storage.v1.EncryptedVolume getVolume() {
-    return volume_ == null ? opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : volume_;
+  public opi_api.storage.v1.EncryptedVolume getEncryptedVolume() {
+    return encryptedVolume_ == null ? opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : encryptedVolume_;
   }
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.EncryptedVolumeOrBuilder getVolumeOrBuilder() {
-    return getVolume();
+  public opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder() {
+    return getEncryptedVolume();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (volume_ != null) {
-      output.writeMessage(1, getVolume());
+    if (encryptedVolume_ != null) {
+      output.writeMessage(1, getEncryptedVolume());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (volume_ != null) {
+    if (encryptedVolume_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getVolume());
+        .computeMessageSize(1, getEncryptedVolume());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateEncryptedVolumeRequest other = (opi_api.storage.v1.UpdateEncryptedVolumeRequest) obj;
 
-    if (hasVolume() != other.hasVolume()) return false;
-    if (hasVolume()) {
-      if (!getVolume()
-          .equals(other.getVolume())) return false;
+    if (hasEncryptedVolume() != other.hasEncryptedVolume()) return false;
+    if (hasEncryptedVolume()) {
+      if (!getEncryptedVolume()
+          .equals(other.getEncryptedVolume())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasVolume()) {
-      hash = (37 * hash) + VOLUME_FIELD_NUMBER;
-      hash = (53 * hash) + getVolume().hashCode();
+    if (hasEncryptedVolume()) {
+      hash = (37 * hash) + ENCRYPTED_VOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptedVolume().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (volumeBuilder_ == null) {
-        volume_ = null;
+      if (encryptedVolumeBuilder_ == null) {
+        encryptedVolume_ = null;
       } else {
-        volume_ = null;
-        volumeBuilder_ = null;
+        encryptedVolume_ = null;
+        encryptedVolumeBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateEncryptedVolumeRequest buildPartial() {
       opi_api.storage.v1.UpdateEncryptedVolumeRequest result = new opi_api.storage.v1.UpdateEncryptedVolumeRequest(this);
-      if (volumeBuilder_ == null) {
-        result.volume_ = volume_;
+      if (encryptedVolumeBuilder_ == null) {
+        result.encryptedVolume_ = encryptedVolume_;
       } else {
-        result.volume_ = volumeBuilder_.build();
+        result.encryptedVolume_ = encryptedVolumeBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateEncryptedVolumeRequest other) {
       if (other == opi_api.storage.v1.UpdateEncryptedVolumeRequest.getDefaultInstance()) return this;
-      if (other.hasVolume()) {
-        mergeVolume(other.getVolume());
+      if (other.hasEncryptedVolume()) {
+        mergeEncryptedVolume(other.getEncryptedVolume());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.EncryptedVolume volume_;
+    private opi_api.storage.v1.EncryptedVolume encryptedVolume_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder> volumeBuilder_;
+        opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder> encryptedVolumeBuilder_;
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-     * @return Whether the volume field is set.
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+     * @return Whether the encryptedVolume field is set.
      */
-    public boolean hasVolume() {
-      return volumeBuilder_ != null || volume_ != null;
+    public boolean hasEncryptedVolume() {
+      return encryptedVolumeBuilder_ != null || encryptedVolume_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-     * @return The volume.
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+     * @return The encryptedVolume.
      */
-    public opi_api.storage.v1.EncryptedVolume getVolume() {
-      if (volumeBuilder_ == null) {
-        return volume_ == null ? opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : volume_;
+    public opi_api.storage.v1.EncryptedVolume getEncryptedVolume() {
+      if (encryptedVolumeBuilder_ == null) {
+        return encryptedVolume_ == null ? opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : encryptedVolume_;
       } else {
-        return volumeBuilder_.getMessage();
+        return encryptedVolumeBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public Builder setVolume(opi_api.storage.v1.EncryptedVolume value) {
-      if (volumeBuilder_ == null) {
+    public Builder setEncryptedVolume(opi_api.storage.v1.EncryptedVolume value) {
+      if (encryptedVolumeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        volume_ = value;
+        encryptedVolume_ = value;
         onChanged();
       } else {
-        volumeBuilder_.setMessage(value);
+        encryptedVolumeBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public Builder setVolume(
+    public Builder setEncryptedVolume(
         opi_api.storage.v1.EncryptedVolume.Builder builderForValue) {
-      if (volumeBuilder_ == null) {
-        volume_ = builderForValue.build();
+      if (encryptedVolumeBuilder_ == null) {
+        encryptedVolume_ = builderForValue.build();
         onChanged();
       } else {
-        volumeBuilder_.setMessage(builderForValue.build());
+        encryptedVolumeBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public Builder mergeVolume(opi_api.storage.v1.EncryptedVolume value) {
-      if (volumeBuilder_ == null) {
-        if (volume_ != null) {
-          volume_ =
-            opi_api.storage.v1.EncryptedVolume.newBuilder(volume_).mergeFrom(value).buildPartial();
+    public Builder mergeEncryptedVolume(opi_api.storage.v1.EncryptedVolume value) {
+      if (encryptedVolumeBuilder_ == null) {
+        if (encryptedVolume_ != null) {
+          encryptedVolume_ =
+            opi_api.storage.v1.EncryptedVolume.newBuilder(encryptedVolume_).mergeFrom(value).buildPartial();
         } else {
-          volume_ = value;
+          encryptedVolume_ = value;
         }
         onChanged();
       } else {
-        volumeBuilder_.mergeFrom(value);
+        encryptedVolumeBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public Builder clearVolume() {
-      if (volumeBuilder_ == null) {
-        volume_ = null;
+    public Builder clearEncryptedVolume() {
+      if (encryptedVolumeBuilder_ == null) {
+        encryptedVolume_ = null;
         onChanged();
       } else {
-        volume_ = null;
-        volumeBuilder_ = null;
+        encryptedVolume_ = null;
+        encryptedVolumeBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public opi_api.storage.v1.EncryptedVolume.Builder getVolumeBuilder() {
+    public opi_api.storage.v1.EncryptedVolume.Builder getEncryptedVolumeBuilder() {
       
       onChanged();
-      return getVolumeFieldBuilder().getBuilder();
+      return getEncryptedVolumeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
-    public opi_api.storage.v1.EncryptedVolumeOrBuilder getVolumeOrBuilder() {
-      if (volumeBuilder_ != null) {
-        return volumeBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder() {
+      if (encryptedVolumeBuilder_ != null) {
+        return encryptedVolumeBuilder_.getMessageOrBuilder();
       } else {
-        return volume_ == null ?
-            opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : volume_;
+        return encryptedVolume_ == null ?
+            opi_api.storage.v1.EncryptedVolume.getDefaultInstance() : encryptedVolume_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+     * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder> 
-        getVolumeFieldBuilder() {
-      if (volumeBuilder_ == null) {
-        volumeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getEncryptedVolumeFieldBuilder() {
+      if (encryptedVolumeBuilder_ == null) {
+        encryptedVolumeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.EncryptedVolume, opi_api.storage.v1.EncryptedVolume.Builder, opi_api.storage.v1.EncryptedVolumeOrBuilder>(
-                getVolume(),
+                getEncryptedVolume(),
                 getParentForChildren(),
                 isClean());
-        volume_ = null;
+        encryptedVolume_ = null;
       }
-      return volumeBuilder_;
+      return encryptedVolumeBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

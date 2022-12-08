@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.AioController.Builder subBuilder = null;
-            if (device_ != null) {
-              subBuilder = device_.toBuilder();
+            if (aioController_ != null) {
+              subBuilder = aioController_.toBuilder();
             }
-            device_ = input.readMessage(opi_api.storage.v1.AioController.parser(), extensionRegistry);
+            aioController_ = input.readMessage(opi_api.storage.v1.AioController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(device_);
-              device_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(aioController_);
+              aioController_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateAioControllerRequest.class, opi_api.storage.v1.UpdateAioControllerRequest.Builder.class);
   }
 
-  public static final int DEVICE_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.AioController device_;
+  public static final int AIO_CONTROLLER_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.AioController aioController_;
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
+   * @return Whether the aioController field is set.
    */
   @java.lang.Override
-  public boolean hasDevice() {
-    return device_ != null;
+  public boolean hasAioController() {
+    return aioController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return The device.
+   * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
+   * @return The aioController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.AioController getDevice() {
-    return device_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+  public opi_api.storage.v1.AioController getAioController() {
+    return aioController_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
   }
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
+   * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.AioControllerOrBuilder getDeviceOrBuilder() {
-    return getDevice();
+  public opi_api.storage.v1.AioControllerOrBuilder getAioControllerOrBuilder() {
+    return getAioController();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (device_ != null) {
-      output.writeMessage(1, getDevice());
+    if (aioController_ != null) {
+      output.writeMessage(1, getAioController());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (device_ != null) {
+    if (aioController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDevice());
+        .computeMessageSize(1, getAioController());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateAioControllerRequest other = (opi_api.storage.v1.UpdateAioControllerRequest) obj;
 
-    if (hasDevice() != other.hasDevice()) return false;
-    if (hasDevice()) {
-      if (!getDevice()
-          .equals(other.getDevice())) return false;
+    if (hasAioController() != other.hasAioController()) return false;
+    if (hasAioController()) {
+      if (!getAioController()
+          .equals(other.getAioController())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasDevice()) {
-      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getDevice().hashCode();
+    if (hasAioController()) {
+      hash = (37 * hash) + AIO_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getAioController().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deviceBuilder_ == null) {
-        device_ = null;
+      if (aioControllerBuilder_ == null) {
+        aioController_ = null;
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        aioController_ = null;
+        aioControllerBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateAioControllerRequest buildPartial() {
       opi_api.storage.v1.UpdateAioControllerRequest result = new opi_api.storage.v1.UpdateAioControllerRequest(this);
-      if (deviceBuilder_ == null) {
-        result.device_ = device_;
+      if (aioControllerBuilder_ == null) {
+        result.aioController_ = aioController_;
       } else {
-        result.device_ = deviceBuilder_.build();
+        result.aioController_ = aioControllerBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateAioControllerRequest other) {
       if (other == opi_api.storage.v1.UpdateAioControllerRequest.getDefaultInstance()) return this;
-      if (other.hasDevice()) {
-        mergeDevice(other.getDevice());
+      if (other.hasAioController()) {
+        mergeAioController(other.getAioController());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.AioController device_;
+    private opi_api.storage.v1.AioController aioController_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> deviceBuilder_;
+        opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> aioControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
-     * @return Whether the device field is set.
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
+     * @return Whether the aioController field is set.
      */
-    public boolean hasDevice() {
-      return deviceBuilder_ != null || device_ != null;
+    public boolean hasAioController() {
+      return aioControllerBuilder_ != null || aioController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
-     * @return The device.
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
+     * @return The aioController.
      */
-    public opi_api.storage.v1.AioController getDevice() {
-      if (deviceBuilder_ == null) {
-        return device_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+    public opi_api.storage.v1.AioController getAioController() {
+      if (aioControllerBuilder_ == null) {
+        return aioController_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
       } else {
-        return deviceBuilder_.getMessage();
+        return aioControllerBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public Builder setDevice(opi_api.storage.v1.AioController value) {
-      if (deviceBuilder_ == null) {
+    public Builder setAioController(opi_api.storage.v1.AioController value) {
+      if (aioControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        device_ = value;
+        aioController_ = value;
         onChanged();
       } else {
-        deviceBuilder_.setMessage(value);
+        aioControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public Builder setDevice(
+    public Builder setAioController(
         opi_api.storage.v1.AioController.Builder builderForValue) {
-      if (deviceBuilder_ == null) {
-        device_ = builderForValue.build();
+      if (aioControllerBuilder_ == null) {
+        aioController_ = builderForValue.build();
         onChanged();
       } else {
-        deviceBuilder_.setMessage(builderForValue.build());
+        aioControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public Builder mergeDevice(opi_api.storage.v1.AioController value) {
-      if (deviceBuilder_ == null) {
-        if (device_ != null) {
-          device_ =
-            opi_api.storage.v1.AioController.newBuilder(device_).mergeFrom(value).buildPartial();
+    public Builder mergeAioController(opi_api.storage.v1.AioController value) {
+      if (aioControllerBuilder_ == null) {
+        if (aioController_ != null) {
+          aioController_ =
+            opi_api.storage.v1.AioController.newBuilder(aioController_).mergeFrom(value).buildPartial();
         } else {
-          device_ = value;
+          aioController_ = value;
         }
         onChanged();
       } else {
-        deviceBuilder_.mergeFrom(value);
+        aioControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public Builder clearDevice() {
-      if (deviceBuilder_ == null) {
-        device_ = null;
+    public Builder clearAioController() {
+      if (aioControllerBuilder_ == null) {
+        aioController_ = null;
         onChanged();
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        aioController_ = null;
+        aioControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public opi_api.storage.v1.AioController.Builder getDeviceBuilder() {
+    public opi_api.storage.v1.AioController.Builder getAioControllerBuilder() {
       
       onChanged();
-      return getDeviceFieldBuilder().getBuilder();
+      return getAioControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
-    public opi_api.storage.v1.AioControllerOrBuilder getDeviceOrBuilder() {
-      if (deviceBuilder_ != null) {
-        return deviceBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.AioControllerOrBuilder getAioControllerOrBuilder() {
+      if (aioControllerBuilder_ != null) {
+        return aioControllerBuilder_.getMessageOrBuilder();
       } else {
-        return device_ == null ?
-            opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+        return aioController_ == null ?
+            opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> 
-        getDeviceFieldBuilder() {
-      if (deviceBuilder_ == null) {
-        deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getAioControllerFieldBuilder() {
+      if (aioControllerBuilder_ == null) {
+        aioControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder>(
-                getDevice(),
+                getAioController(),
                 getParentForChildren(),
                 isClean());
-        device_ = null;
+        aioController_ = null;
       }
-      return deviceBuilder_;
+      return aioControllerBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

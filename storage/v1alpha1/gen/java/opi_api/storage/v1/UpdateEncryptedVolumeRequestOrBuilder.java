@@ -8,17 +8,44 @@ public interface UpdateEncryptedVolumeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-   * @return Whether the volume field is set.
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+   * @return Whether the encryptedVolume field is set.
    */
-  boolean hasVolume();
+  boolean hasEncryptedVolume();
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
-   * @return The volume.
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
+   * @return The encryptedVolume.
    */
-  opi_api.storage.v1.EncryptedVolume getVolume();
+  opi_api.storage.v1.EncryptedVolume getEncryptedVolume();
   /**
-   * <code>.opi_api.storage.v1.EncryptedVolume volume = 1;</code>
+   * <code>.opi_api.storage.v1.EncryptedVolume encrypted_volume = 1;</code>
    */
-  opi_api.storage.v1.EncryptedVolumeOrBuilder getVolumeOrBuilder();
+  opi_api.storage.v1.EncryptedVolumeOrBuilder getEncryptedVolumeOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

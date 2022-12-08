@@ -8,17 +8,44 @@ public interface UpdateVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return Whether the lun field is set.
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+   * @return Whether the virtioScsiLun field is set.
    */
-  boolean hasLun();
+  boolean hasVirtioScsiLun();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return The lun.
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
+   * @return The virtioScsiLun.
    */
-  opi_api.storage.v1.VirtioScsiLun getLun();
+  opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder();
+  opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

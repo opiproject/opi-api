@@ -111,35 +111,35 @@ public final class MiddleendServiceGrpc {
     return getUpdateEncryptedVolumeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest,
-      opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumesRequest,
+      opi_api.storage.v1.ListEncryptedVolumesResponse> getListEncryptedVolumesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListEncryptedVolume",
-      requestType = opi_api.storage.v1.ListEncryptedVolumeRequest.class,
-      responseType = opi_api.storage.v1.ListEncryptedVolumeResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListEncryptedVolumes",
+      requestType = opi_api.storage.v1.ListEncryptedVolumesRequest.class,
+      responseType = opi_api.storage.v1.ListEncryptedVolumesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest,
-      opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod() {
-    io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumeRequest, opi_api.storage.v1.ListEncryptedVolumeResponse> getListEncryptedVolumeMethod;
-    if ((getListEncryptedVolumeMethod = MiddleendServiceGrpc.getListEncryptedVolumeMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumesRequest,
+      opi_api.storage.v1.ListEncryptedVolumesResponse> getListEncryptedVolumesMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumesRequest, opi_api.storage.v1.ListEncryptedVolumesResponse> getListEncryptedVolumesMethod;
+    if ((getListEncryptedVolumesMethod = MiddleendServiceGrpc.getListEncryptedVolumesMethod) == null) {
       synchronized (MiddleendServiceGrpc.class) {
-        if ((getListEncryptedVolumeMethod = MiddleendServiceGrpc.getListEncryptedVolumeMethod) == null) {
-          MiddleendServiceGrpc.getListEncryptedVolumeMethod = getListEncryptedVolumeMethod =
-              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListEncryptedVolumeRequest, opi_api.storage.v1.ListEncryptedVolumeResponse>newBuilder()
+        if ((getListEncryptedVolumesMethod = MiddleendServiceGrpc.getListEncryptedVolumesMethod) == null) {
+          MiddleendServiceGrpc.getListEncryptedVolumesMethod = getListEncryptedVolumesMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ListEncryptedVolumesRequest, opi_api.storage.v1.ListEncryptedVolumesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEncryptedVolume"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEncryptedVolumes"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListEncryptedVolumeRequest.getDefaultInstance()))
+                  opi_api.storage.v1.ListEncryptedVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.storage.v1.ListEncryptedVolumeResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("ListEncryptedVolume"))
+                  opi_api.storage.v1.ListEncryptedVolumesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("ListEncryptedVolumes"))
               .build();
         }
       }
     }
-    return getListEncryptedVolumeMethod;
+    return getListEncryptedVolumesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest,
@@ -278,9 +278,9 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public void listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEncryptedVolumeMethod(), responseObserver);
+    public void listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEncryptedVolumesMethod(), responseObserver);
     }
 
     /**
@@ -321,12 +321,12 @@ public final class MiddleendServiceGrpc {
                 opi_api.storage.v1.EncryptedVolume>(
                   this, METHODID_UPDATE_ENCRYPTED_VOLUME)))
           .addMethod(
-            getListEncryptedVolumeMethod(),
+            getListEncryptedVolumesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.storage.v1.ListEncryptedVolumeRequest,
-                opi_api.storage.v1.ListEncryptedVolumeResponse>(
-                  this, METHODID_LIST_ENCRYPTED_VOLUME)))
+                opi_api.storage.v1.ListEncryptedVolumesRequest,
+                opi_api.storage.v1.ListEncryptedVolumesResponse>(
+                  this, METHODID_LIST_ENCRYPTED_VOLUMES)))
           .addMethod(
             getGetEncryptedVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -388,10 +388,10 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public void listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request,
-        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse> responseObserver) {
+    public void listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request,
+        io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListEncryptedVolumeMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListEncryptedVolumesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -451,9 +451,9 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public opi_api.storage.v1.ListEncryptedVolumeResponse listEncryptedVolume(opi_api.storage.v1.ListEncryptedVolumeRequest request) {
+    public opi_api.storage.v1.ListEncryptedVolumesResponse listEncryptedVolumes(opi_api.storage.v1.ListEncryptedVolumesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEncryptedVolumeMethod(), getCallOptions(), request);
+          getChannel(), getListEncryptedVolumesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -514,10 +514,10 @@ public final class MiddleendServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListEncryptedVolumeResponse> listEncryptedVolume(
-        opi_api.storage.v1.ListEncryptedVolumeRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.storage.v1.ListEncryptedVolumesResponse> listEncryptedVolumes(
+        opi_api.storage.v1.ListEncryptedVolumesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListEncryptedVolumeMethod(), getCallOptions()), request);
+          getChannel().newCall(getListEncryptedVolumesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -540,7 +540,7 @@ public final class MiddleendServiceGrpc {
   private static final int METHODID_CREATE_ENCRYPTED_VOLUME = 0;
   private static final int METHODID_DELETE_ENCRYPTED_VOLUME = 1;
   private static final int METHODID_UPDATE_ENCRYPTED_VOLUME = 2;
-  private static final int METHODID_LIST_ENCRYPTED_VOLUME = 3;
+  private static final int METHODID_LIST_ENCRYPTED_VOLUMES = 3;
   private static final int METHODID_GET_ENCRYPTED_VOLUME = 4;
   private static final int METHODID_ENCRYPTED_VOLUME_STATS = 5;
 
@@ -573,9 +573,9 @@ public final class MiddleendServiceGrpc {
           serviceImpl.updateEncryptedVolume((opi_api.storage.v1.UpdateEncryptedVolumeRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.EncryptedVolume>) responseObserver);
           break;
-        case METHODID_LIST_ENCRYPTED_VOLUME:
-          serviceImpl.listEncryptedVolume((opi_api.storage.v1.ListEncryptedVolumeRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumeResponse>) responseObserver);
+        case METHODID_LIST_ENCRYPTED_VOLUMES:
+          serviceImpl.listEncryptedVolumes((opi_api.storage.v1.ListEncryptedVolumesRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.storage.v1.ListEncryptedVolumesResponse>) responseObserver);
           break;
         case METHODID_GET_ENCRYPTED_VOLUME:
           serviceImpl.getEncryptedVolume((opi_api.storage.v1.GetEncryptedVolumeRequest) request,
@@ -649,7 +649,7 @@ public final class MiddleendServiceGrpc {
               .addMethod(getCreateEncryptedVolumeMethod())
               .addMethod(getDeleteEncryptedVolumeMethod())
               .addMethod(getUpdateEncryptedVolumeMethod())
-              .addMethod(getListEncryptedVolumeMethod())
+              .addMethod(getListEncryptedVolumesMethod())
               .addMethod(getGetEncryptedVolumeMethod())
               .addMethod(getEncryptedVolumeStatsMethod())
               .build();

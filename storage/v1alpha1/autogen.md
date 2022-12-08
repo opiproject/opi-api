@@ -10,8 +10,8 @@
     - [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest)
     - [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest)
     - [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest)
-    - [ListAioControllerRequest](#opi_api-storage-v1-ListAioControllerRequest)
-    - [ListAioControllerResponse](#opi_api-storage-v1-ListAioControllerResponse)
+    - [ListAioControllersRequest](#opi_api-storage-v1-ListAioControllersRequest)
+    - [ListAioControllersResponse](#opi_api-storage-v1-ListAioControllersResponse)
     - [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest)
   
     - [AioControllerService](#opi_api-storage-v1-AioControllerService)
@@ -21,8 +21,8 @@
     - [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest)
     - [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest)
     - [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest)
-    - [ListNullDebugRequest](#opi_api-storage-v1-ListNullDebugRequest)
-    - [ListNullDebugResponse](#opi_api-storage-v1-ListNullDebugResponse)
+    - [ListNullDebugsRequest](#opi_api-storage-v1-ListNullDebugsRequest)
+    - [ListNullDebugsResponse](#opi_api-storage-v1-ListNullDebugsResponse)
     - [NullDebug](#opi_api-storage-v1-NullDebug)
     - [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest)
     - [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse)
@@ -35,8 +35,8 @@
     - [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest)
     - [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest)
     - [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest)
-    - [ListNVMfRemoteControllerRequest](#opi_api-storage-v1-ListNVMfRemoteControllerRequest)
-    - [ListNVMfRemoteControllerResponse](#opi_api-storage-v1-ListNVMfRemoteControllerResponse)
+    - [ListNVMfRemoteControllersRequest](#opi_api-storage-v1-ListNVMfRemoteControllersRequest)
+    - [ListNVMfRemoteControllersResponse](#opi_api-storage-v1-ListNVMfRemoteControllersResponse)
     - [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController)
     - [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest)
     - [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest)
@@ -59,12 +59,12 @@
     - [GetNVMeControllerRequest](#opi_api-storage-v1-GetNVMeControllerRequest)
     - [GetNVMeNamespaceRequest](#opi_api-storage-v1-GetNVMeNamespaceRequest)
     - [GetNVMeSubsystemRequest](#opi_api-storage-v1-GetNVMeSubsystemRequest)
-    - [ListNVMeControllerRequest](#opi_api-storage-v1-ListNVMeControllerRequest)
-    - [ListNVMeControllerResponse](#opi_api-storage-v1-ListNVMeControllerResponse)
-    - [ListNVMeNamespaceRequest](#opi_api-storage-v1-ListNVMeNamespaceRequest)
-    - [ListNVMeNamespaceResponse](#opi_api-storage-v1-ListNVMeNamespaceResponse)
-    - [ListNVMeSubsystemRequest](#opi_api-storage-v1-ListNVMeSubsystemRequest)
-    - [ListNVMeSubsystemResponse](#opi_api-storage-v1-ListNVMeSubsystemResponse)
+    - [ListNVMeControllersRequest](#opi_api-storage-v1-ListNVMeControllersRequest)
+    - [ListNVMeControllersResponse](#opi_api-storage-v1-ListNVMeControllersResponse)
+    - [ListNVMeNamespacesRequest](#opi_api-storage-v1-ListNVMeNamespacesRequest)
+    - [ListNVMeNamespacesResponse](#opi_api-storage-v1-ListNVMeNamespacesResponse)
+    - [ListNVMeSubsystemsRequest](#opi_api-storage-v1-ListNVMeSubsystemsRequest)
+    - [ListNVMeSubsystemsResponse](#opi_api-storage-v1-ListNVMeSubsystemsResponse)
     - [NVMeController](#opi_api-storage-v1-NVMeController)
     - [NVMeControllerSpec](#opi_api-storage-v1-NVMeControllerSpec)
     - [NVMeControllerStatsRequest](#opi_api-storage-v1-NVMeControllerStatsRequest)
@@ -93,8 +93,8 @@
     - [CreateVirtioBlkRequest](#opi_api-storage-v1-CreateVirtioBlkRequest)
     - [DeleteVirtioBlkRequest](#opi_api-storage-v1-DeleteVirtioBlkRequest)
     - [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest)
-    - [ListVirtioBlkRequest](#opi_api-storage-v1-ListVirtioBlkRequest)
-    - [ListVirtioBlkResponse](#opi_api-storage-v1-ListVirtioBlkResponse)
+    - [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest)
+    - [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse)
     - [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest)
     - [VirtioBlk](#opi_api-storage-v1-VirtioBlk)
     - [VirtioBlkStatsRequest](#opi_api-storage-v1-VirtioBlkStatsRequest)
@@ -113,12 +113,12 @@
     - [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest)
     - [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest)
     - [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest)
-    - [ListVirtioScsiControllerRequest](#opi_api-storage-v1-ListVirtioScsiControllerRequest)
-    - [ListVirtioScsiControllerResponse](#opi_api-storage-v1-ListVirtioScsiControllerResponse)
-    - [ListVirtioScsiLunRequest](#opi_api-storage-v1-ListVirtioScsiLunRequest)
-    - [ListVirtioScsiLunResponse](#opi_api-storage-v1-ListVirtioScsiLunResponse)
-    - [ListVirtioScsiTargetRequest](#opi_api-storage-v1-ListVirtioScsiTargetRequest)
-    - [ListVirtioScsiTargetResponse](#opi_api-storage-v1-ListVirtioScsiTargetResponse)
+    - [ListVirtioScsiControllersRequest](#opi_api-storage-v1-ListVirtioScsiControllersRequest)
+    - [ListVirtioScsiControllersResponse](#opi_api-storage-v1-ListVirtioScsiControllersResponse)
+    - [ListVirtioScsiLunsRequest](#opi_api-storage-v1-ListVirtioScsiLunsRequest)
+    - [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse)
+    - [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest)
+    - [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse)
     - [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest)
     - [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest)
     - [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest)
@@ -141,8 +141,8 @@
     - [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest)
     - [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse)
     - [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest)
-    - [ListEncryptedVolumeRequest](#opi_api-storage-v1-ListEncryptedVolumeRequest)
-    - [ListEncryptedVolumeResponse](#opi_api-storage-v1-ListEncryptedVolumeResponse)
+    - [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest)
+    - [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse)
     - [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest)
   
     - [MiddleendService](#opi_api-storage-v1-MiddleendService)
@@ -227,7 +227,9 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| parent | [string](#string) |  |  |
+| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| aio_controller_id | [string](#string) |  |  |
 
 
 
@@ -242,7 +244,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -257,21 +259,22 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListAioControllerRequest"></a>
+<a name="opi_api-storage-v1-ListAioControllersRequest"></a>
 
-### ListAioControllerRequest
+### ListAioControllersRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -280,15 +283,15 @@
 
 
 
-<a name="opi_api-storage-v1-ListAioControllerResponse"></a>
+<a name="opi_api-storage-v1-ListAioControllersResponse"></a>
 
-### ListAioControllerResponse
+### ListAioControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| devices | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
+| aio_controllers | [AioController](#opi_api-storage-v1-AioController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -304,7 +307,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| aio_controller | [AioController](#opi_api-storage-v1-AioController) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -327,7 +331,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | CreateAioController | [CreateAioControllerRequest](#opi_api-storage-v1-CreateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
 | DeleteAioController | [DeleteAioControllerRequest](#opi_api-storage-v1-DeleteAioControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateAioController | [UpdateAioControllerRequest](#opi_api-storage-v1-UpdateAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
-| ListAioController | [ListAioControllerRequest](#opi_api-storage-v1-ListAioControllerRequest) | [ListAioControllerResponse](#opi_api-storage-v1-ListAioControllerResponse) |  |
+| ListAioControllers | [ListAioControllersRequest](#opi_api-storage-v1-ListAioControllersRequest) | [ListAioControllersResponse](#opi_api-storage-v1-ListAioControllersResponse) |  |
 | GetAioController | [GetAioControllerRequest](#opi_api-storage-v1-GetAioControllerRequest) | [AioController](#opi_api-storage-v1-AioController) |  |
 | AioControllerStats | [AioControllerStatsRequest](#opi_api-storage-v1-AioControllerStatsRequest) | [AioControllerStatsResponse](#opi_api-storage-v1-AioControllerStatsResponse) |  |
 
@@ -366,7 +370,9 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| parent | [string](#string) |  |  |
+| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| null_debug_id | [string](#string) |  |  |
 
 
 
@@ -381,7 +387,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -396,21 +402,22 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListNullDebugRequest"></a>
+<a name="opi_api-storage-v1-ListNullDebugsRequest"></a>
 
-### ListNullDebugRequest
+### ListNullDebugsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -419,15 +426,15 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 
 
-<a name="opi_api-storage-v1-ListNullDebugResponse"></a>
+<a name="opi_api-storage-v1-ListNullDebugsResponse"></a>
 
-### ListNullDebugResponse
+### ListNullDebugsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| devices | [NullDebug](#opi_api-storage-v1-NullDebug) | repeated |  |
+| null_debugs | [NullDebug](#opi_api-storage-v1-NullDebug) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -492,7 +499,8 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| device | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -515,7 +523,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 | CreateNullDebug | [CreateNullDebugRequest](#opi_api-storage-v1-CreateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
 | DeleteNullDebug | [DeleteNullDebugRequest](#opi_api-storage-v1-DeleteNullDebugRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNullDebug | [UpdateNullDebugRequest](#opi_api-storage-v1-UpdateNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
-| ListNullDebug | [ListNullDebugRequest](#opi_api-storage-v1-ListNullDebugRequest) | [ListNullDebugResponse](#opi_api-storage-v1-ListNullDebugResponse) |  |
+| ListNullDebugs | [ListNullDebugsRequest](#opi_api-storage-v1-ListNullDebugsRequest) | [ListNullDebugsResponse](#opi_api-storage-v1-ListNullDebugsResponse) |  |
 | GetNullDebug | [GetNullDebugRequest](#opi_api-storage-v1-GetNullDebugRequest) | [NullDebug](#opi_api-storage-v1-NullDebug) |  |
 | NullDebugStats | [NullDebugStatsRequest](#opi_api-storage-v1-NullDebugStatsRequest) | [NullDebugStatsResponse](#opi_api-storage-v1-NullDebugStatsResponse) |  |
 
@@ -554,7 +562,9 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| parent | [string](#string) |  |  |
+| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| nv_mf_remote_controller_id | [string](#string) |  |  |
 
 
 
@@ -569,7 +579,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | object&#39;s unique identifier |
 
 
 
@@ -584,21 +594,22 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | object&#39;s unique identifier |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteControllerRequest"></a>
+<a name="opi_api-storage-v1-ListNVMfRemoteControllersRequest"></a>
 
-### ListNVMfRemoteControllerRequest
+### ListNVMfRemoteControllersRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -607,15 +618,15 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 
 
-<a name="opi_api-storage-v1-ListNVMfRemoteControllerResponse"></a>
+<a name="opi_api-storage-v1-ListNVMfRemoteControllersResponse"></a>
 
-### ListNVMfRemoteControllerResponse
+### ListNVMfRemoteControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ctrls | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) | repeated |  |
+| nv_mf_remote_controllers | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -702,7 +713,8 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| ctrl | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -771,7 +783,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | CreateNVMfRemoteController | [CreateNVMfRemoteControllerRequest](#opi_api-storage-v1-CreateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
 | DeleteNVMfRemoteController | [DeleteNVMfRemoteControllerRequest](#opi_api-storage-v1-DeleteNVMfRemoteControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNVMfRemoteController | [UpdateNVMfRemoteControllerRequest](#opi_api-storage-v1-UpdateNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
-| ListNVMfRemoteController | [ListNVMfRemoteControllerRequest](#opi_api-storage-v1-ListNVMfRemoteControllerRequest) | [ListNVMfRemoteControllerResponse](#opi_api-storage-v1-ListNVMfRemoteControllerResponse) |  |
+| ListNVMfRemoteControllers | [ListNVMfRemoteControllersRequest](#opi_api-storage-v1-ListNVMfRemoteControllersRequest) | [ListNVMfRemoteControllersResponse](#opi_api-storage-v1-ListNVMfRemoteControllersResponse) |  |
 | GetNVMfRemoteController | [GetNVMfRemoteControllerRequest](#opi_api-storage-v1-GetNVMfRemoteControllerRequest) | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |
 | NVMfRemoteControllerReset | [NVMfRemoteControllerResetRequest](#opi_api-storage-v1-NVMfRemoteControllerResetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | NVMfRemoteControllerStats | [NVMfRemoteControllerStatsRequest](#opi_api-storage-v1-NVMfRemoteControllerStatsRequest) | [NVMfRemoteControllerStatsResponse](#opi_api-storage-v1-NVMfRemoteControllerStatsResponse) |  |
@@ -795,7 +807,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| parent | [string](#string) |  |  |
+| nv_me_controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| nv_me_controller_id | [string](#string) |  |  |
 
 
 
@@ -810,7 +824,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| parent | [string](#string) |  |  |
+| nv_me_namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| nv_me_namespace_id | [string](#string) |  |  |
 
 
 
@@ -825,7 +841,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| parent | [string](#string) |  |  |
+| nv_me_subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| nv_me_subsystem_id | [string](#string) |  |  |
 
 
 
@@ -840,7 +858,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -855,7 +873,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -870,7 +888,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -885,7 +903,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -900,7 +918,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -915,22 +933,22 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListNVMeControllerRequest"></a>
+<a name="opi_api-storage-v1-ListNVMeControllersRequest"></a>
 
-### ListNVMeControllerRequest
+### ListNVMeControllersRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -939,15 +957,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeControllerResponse"></a>
+<a name="opi_api-storage-v1-ListNVMeControllersResponse"></a>
 
-### ListNVMeControllerResponse
+### ListNVMeControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controllers | [NVMeController](#opi_api-storage-v1-NVMeController) | repeated |  |
+| nv_me_controllers | [NVMeController](#opi_api-storage-v1-NVMeController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -955,15 +973,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeNamespaceRequest"></a>
+<a name="opi_api-storage-v1-ListNVMeNamespacesRequest"></a>
 
-### ListNVMeNamespaceRequest
+### ListNVMeNamespacesRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -972,15 +990,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeNamespaceResponse"></a>
+<a name="opi_api-storage-v1-ListNVMeNamespacesResponse"></a>
 
-### ListNVMeNamespaceResponse
+### ListNVMeNamespacesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespaces | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) | repeated |  |
+| nv_me_namespaces | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -988,14 +1006,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeSubsystemRequest"></a>
+<a name="opi_api-storage-v1-ListNVMeSubsystemsRequest"></a>
 
-### ListNVMeSubsystemRequest
+### ListNVMeSubsystemsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -1004,15 +1023,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeSubsystemResponse"></a>
+<a name="opi_api-storage-v1-ListNVMeSubsystemsResponse"></a>
 
-### ListNVMeSubsystemResponse
+### ListNVMeSubsystemsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystems | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) | repeated |  |
+| nv_me_subsystems | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1278,7 +1297,8 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| nv_me_controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1293,7 +1313,8 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| nv_me_namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1308,7 +1329,8 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| nv_me_subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1358,19 +1380,19 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | CreateNVMeSubsystem | [CreateNVMeSubsystemRequest](#opi_api-storage-v1-CreateNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
 | DeleteNVMeSubsystem | [DeleteNVMeSubsystemRequest](#opi_api-storage-v1-DeleteNVMeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNVMeSubsystem | [UpdateNVMeSubsystemRequest](#opi_api-storage-v1-UpdateNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
-| ListNVMeSubsystem | [ListNVMeSubsystemRequest](#opi_api-storage-v1-ListNVMeSubsystemRequest) | [ListNVMeSubsystemResponse](#opi_api-storage-v1-ListNVMeSubsystemResponse) |  |
+| ListNVMeSubsystems | [ListNVMeSubsystemsRequest](#opi_api-storage-v1-ListNVMeSubsystemsRequest) | [ListNVMeSubsystemsResponse](#opi_api-storage-v1-ListNVMeSubsystemsResponse) |  |
 | GetNVMeSubsystem | [GetNVMeSubsystemRequest](#opi_api-storage-v1-GetNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
 | NVMeSubsystemStats | [NVMeSubsystemStatsRequest](#opi_api-storage-v1-NVMeSubsystemStatsRequest) | [NVMeSubsystemStatsResponse](#opi_api-storage-v1-NVMeSubsystemStatsResponse) |  |
 | CreateNVMeController | [CreateNVMeControllerRequest](#opi_api-storage-v1-CreateNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
 | DeleteNVMeController | [DeleteNVMeControllerRequest](#opi_api-storage-v1-DeleteNVMeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNVMeController | [UpdateNVMeControllerRequest](#opi_api-storage-v1-UpdateNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
-| ListNVMeController | [ListNVMeControllerRequest](#opi_api-storage-v1-ListNVMeControllerRequest) | [ListNVMeControllerResponse](#opi_api-storage-v1-ListNVMeControllerResponse) |  |
+| ListNVMeControllers | [ListNVMeControllersRequest](#opi_api-storage-v1-ListNVMeControllersRequest) | [ListNVMeControllersResponse](#opi_api-storage-v1-ListNVMeControllersResponse) |  |
 | GetNVMeController | [GetNVMeControllerRequest](#opi_api-storage-v1-GetNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
 | NVMeControllerStats | [NVMeControllerStatsRequest](#opi_api-storage-v1-NVMeControllerStatsRequest) | [NVMeControllerStatsResponse](#opi_api-storage-v1-NVMeControllerStatsResponse) |  |
 | CreateNVMeNamespace | [CreateNVMeNamespaceRequest](#opi_api-storage-v1-CreateNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
 | DeleteNVMeNamespace | [DeleteNVMeNamespaceRequest](#opi_api-storage-v1-DeleteNVMeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateNVMeNamespace | [UpdateNVMeNamespaceRequest](#opi_api-storage-v1-UpdateNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
-| ListNVMeNamespace | [ListNVMeNamespaceRequest](#opi_api-storage-v1-ListNVMeNamespaceRequest) | [ListNVMeNamespaceResponse](#opi_api-storage-v1-ListNVMeNamespaceResponse) |  |
+| ListNVMeNamespaces | [ListNVMeNamespacesRequest](#opi_api-storage-v1-ListNVMeNamespacesRequest) | [ListNVMeNamespacesResponse](#opi_api-storage-v1-ListNVMeNamespacesResponse) |  |
 | GetNVMeNamespace | [GetNVMeNamespaceRequest](#opi_api-storage-v1-GetNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
 | NVMeNamespaceStats | [NVMeNamespaceStatsRequest](#opi_api-storage-v1-NVMeNamespaceStatsRequest) | [NVMeNamespaceStatsResponse](#opi_api-storage-v1-NVMeNamespaceStatsResponse) |  |
 
@@ -1393,7 +1415,9 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| parent | [string](#string) |  |  |
+| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| virtio_blk_id | [string](#string) |  |  |
 
 
 
@@ -1408,7 +1432,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1423,21 +1447,22 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListVirtioBlkRequest"></a>
+<a name="opi_api-storage-v1-ListVirtioBlksRequest"></a>
 
-### ListVirtioBlkRequest
+### ListVirtioBlksRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -1446,15 +1471,15 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 
 
-<a name="opi_api-storage-v1-ListVirtioBlkResponse"></a>
+<a name="opi_api-storage-v1-ListVirtioBlksResponse"></a>
 
-### ListVirtioBlkResponse
+### ListVirtioBlksResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controllers | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
+| virtio_blks | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1470,7 +1495,8 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1542,7 +1568,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | CreateVirtioBlk | [CreateVirtioBlkRequest](#opi_api-storage-v1-CreateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
 | DeleteVirtioBlk | [DeleteVirtioBlkRequest](#opi_api-storage-v1-DeleteVirtioBlkRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioBlk | [UpdateVirtioBlkRequest](#opi_api-storage-v1-UpdateVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
-| ListVirtioBlk | [ListVirtioBlkRequest](#opi_api-storage-v1-ListVirtioBlkRequest) | [ListVirtioBlkResponse](#opi_api-storage-v1-ListVirtioBlkResponse) |  |
+| ListVirtioBlks | [ListVirtioBlksRequest](#opi_api-storage-v1-ListVirtioBlksRequest) | [ListVirtioBlksResponse](#opi_api-storage-v1-ListVirtioBlksResponse) |  |
 | GetVirtioBlk | [GetVirtioBlkRequest](#opi_api-storage-v1-GetVirtioBlkRequest) | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |
 | VirtioBlkStats | [VirtioBlkStatsRequest](#opi_api-storage-v1-VirtioBlkStatsRequest) | [VirtioBlkStatsResponse](#opi_api-storage-v1-VirtioBlkStatsResponse) |  |
 
@@ -1581,7 +1607,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| parent | [string](#string) |  |  |
+| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| virtio_scsi_controller_id | [string](#string) |  |  |
 
 
 
@@ -1596,7 +1624,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| parent | [string](#string) |  |  |
+| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| virtio_scsi_lun_id | [string](#string) |  |  |
 
 
 
@@ -1611,7 +1641,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| parent | [string](#string) |  |  |
+| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| virtio_scsi_target_id | [string](#string) |  |  |
 
 
 
@@ -1626,7 +1658,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1641,8 +1673,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1657,7 +1688,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1672,7 +1703,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1687,8 +1718,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| lun_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -1703,21 +1733,22 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiControllerRequest"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiControllersRequest"></a>
 
-### ListVirtioScsiControllerRequest
+### ListVirtioScsiControllersRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -1726,15 +1757,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiControllerResponse"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiControllersResponse"></a>
 
-### ListVirtioScsiControllerResponse
+### ListVirtioScsiControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
+| virtio_scsi_controllers | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1742,15 +1773,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiLunRequest"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiLunsRequest"></a>
 
-### ListVirtioScsiLunRequest
+### ListVirtioScsiLunsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -1759,15 +1790,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiLunResponse"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiLunsResponse"></a>
 
-### ListVirtioScsiLunResponse
+### ListVirtioScsiLunsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
+| virtio_scsi_luns | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1775,14 +1806,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiTargetRequest"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiTargetsRequest"></a>
 
-### ListVirtioScsiTargetRequest
+### ListVirtioScsiTargetsRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -1791,15 +1823,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 
 
-<a name="opi_api-storage-v1-ListVirtioScsiTargetResponse"></a>
+<a name="opi_api-storage-v1-ListVirtioScsiTargetsResponse"></a>
 
-### ListVirtioScsiTargetResponse
+### ListVirtioScsiTargetsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated |  |
+| virtio_scsi_targets | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1815,7 +1847,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1830,7 +1863,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -1845,7 +1879,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -2011,19 +2046,19 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | CreateVirtioScsiTarget | [CreateVirtioScsiTargetRequest](#opi_api-storage-v1-CreateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
 | DeleteVirtioScsiTarget | [DeleteVirtioScsiTargetRequest](#opi_api-storage-v1-DeleteVirtioScsiTargetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiTarget | [UpdateVirtioScsiTargetRequest](#opi_api-storage-v1-UpdateVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
-| ListVirtioScsiTarget | [ListVirtioScsiTargetRequest](#opi_api-storage-v1-ListVirtioScsiTargetRequest) | [ListVirtioScsiTargetResponse](#opi_api-storage-v1-ListVirtioScsiTargetResponse) |  |
+| ListVirtioScsiTargets | [ListVirtioScsiTargetsRequest](#opi_api-storage-v1-ListVirtioScsiTargetsRequest) | [ListVirtioScsiTargetsResponse](#opi_api-storage-v1-ListVirtioScsiTargetsResponse) |  |
 | GetVirtioScsiTarget | [GetVirtioScsiTargetRequest](#opi_api-storage-v1-GetVirtioScsiTargetRequest) | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |
 | VirtioScsiTargetStats | [VirtioScsiTargetStatsRequest](#opi_api-storage-v1-VirtioScsiTargetStatsRequest) | [VirtioScsiTargetStatsResponse](#opi_api-storage-v1-VirtioScsiTargetStatsResponse) |  |
 | CreateVirtioScsiController | [CreateVirtioScsiControllerRequest](#opi_api-storage-v1-CreateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
 | DeleteVirtioScsiController | [DeleteVirtioScsiControllerRequest](#opi_api-storage-v1-DeleteVirtioScsiControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiController | [UpdateVirtioScsiControllerRequest](#opi_api-storage-v1-UpdateVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
-| ListVirtioScsiController | [ListVirtioScsiControllerRequest](#opi_api-storage-v1-ListVirtioScsiControllerRequest) | [ListVirtioScsiControllerResponse](#opi_api-storage-v1-ListVirtioScsiControllerResponse) |  |
+| ListVirtioScsiControllers | [ListVirtioScsiControllersRequest](#opi_api-storage-v1-ListVirtioScsiControllersRequest) | [ListVirtioScsiControllersResponse](#opi_api-storage-v1-ListVirtioScsiControllersResponse) |  |
 | GetVirtioScsiController | [GetVirtioScsiControllerRequest](#opi_api-storage-v1-GetVirtioScsiControllerRequest) | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |
 | VirtioScsiControllerStats | [VirtioScsiControllerStatsRequest](#opi_api-storage-v1-VirtioScsiControllerStatsRequest) | [VirtioScsiControllerStatsResponse](#opi_api-storage-v1-VirtioScsiControllerStatsResponse) |  |
 | CreateVirtioScsiLun | [CreateVirtioScsiLunRequest](#opi_api-storage-v1-CreateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
 | DeleteVirtioScsiLun | [DeleteVirtioScsiLunRequest](#opi_api-storage-v1-DeleteVirtioScsiLunRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateVirtioScsiLun | [UpdateVirtioScsiLunRequest](#opi_api-storage-v1-UpdateVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
-| ListVirtioScsiLun | [ListVirtioScsiLunRequest](#opi_api-storage-v1-ListVirtioScsiLunRequest) | [ListVirtioScsiLunResponse](#opi_api-storage-v1-ListVirtioScsiLunResponse) |  |
+| ListVirtioScsiLuns | [ListVirtioScsiLunsRequest](#opi_api-storage-v1-ListVirtioScsiLunsRequest) | [ListVirtioScsiLunsResponse](#opi_api-storage-v1-ListVirtioScsiLunsResponse) |  |
 | GetVirtioScsiLun | [GetVirtioScsiLunRequest](#opi_api-storage-v1-GetVirtioScsiLunRequest) | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |
 | VirtioScsiLunStats | [VirtioScsiLunStatsRequest](#opi_api-storage-v1-VirtioScsiLunStatsRequest) | [VirtioScsiLunStatsResponse](#opi_api-storage-v1-VirtioScsiLunStatsResponse) |  |
 
@@ -2046,7 +2081,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+| parent | [string](#string) |  |  |
+| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+| encrypted_volume_id | [string](#string) |  |  |
 
 
 
@@ -2061,7 +2098,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
@@ -2125,21 +2162,22 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-ListEncryptedVolumeRequest"></a>
+<a name="opi_api-storage-v1-ListEncryptedVolumesRequest"></a>
 
-### ListEncryptedVolumeRequest
+### ListEncryptedVolumesRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
 | page_size | [int32](#int32) |  |  |
 | page_token | [string](#string) |  |  |
 
@@ -2148,15 +2186,15 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="opi_api-storage-v1-ListEncryptedVolumeResponse"></a>
+<a name="opi_api-storage-v1-ListEncryptedVolumesResponse"></a>
 
-### ListEncryptedVolumeResponse
+### ListEncryptedVolumesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated |  |
+| encrypted_volumes | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -2172,7 +2210,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+| encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
 
@@ -2195,7 +2234,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | CreateEncryptedVolume | [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
 | DeleteEncryptedVolume | [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | UpdateEncryptedVolume | [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
-| ListEncryptedVolume | [ListEncryptedVolumeRequest](#opi_api-storage-v1-ListEncryptedVolumeRequest) | [ListEncryptedVolumeResponse](#opi_api-storage-v1-ListEncryptedVolumeResponse) |  |
+| ListEncryptedVolumes | [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest) | [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse) |  |
 | GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
 | EncryptedVolumeStats | [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest) | [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse) |  |
 

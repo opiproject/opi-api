@@ -8,17 +8,41 @@ public interface CreateNVMeSubsystemRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return Whether the subsystem field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasSubsystem();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return The subsystem.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.NVMeSubsystem getSubsystem();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nvMeSubsystem field is set.
    */
-  opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder();
+  boolean hasNvMeSubsystem();
+  /**
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nvMeSubsystem.
+   */
+  opi_api.storage.v1.NVMeSubsystem getNvMeSubsystem();
+  /**
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.NVMeSubsystemOrBuilder getNvMeSubsystemOrBuilder();
+
+  /**
+   * <code>string nv_me_subsystem_id = 3;</code>
+   * @return The nvMeSubsystemId.
+   */
+  java.lang.String getNvMeSubsystemId();
+  /**
+   * <code>string nv_me_subsystem_id = 3;</code>
+   * @return The bytes for nvMeSubsystemId.
+   */
+  com.google.protobuf.ByteString
+      getNvMeSubsystemIdBytes();
 }

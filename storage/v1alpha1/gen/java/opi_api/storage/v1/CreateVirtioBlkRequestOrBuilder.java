@@ -8,17 +8,41 @@ public interface CreateVirtioBlkRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasController();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
-   * @return The controller.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.VirtioBlk getController();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtioBlk field is set.
    */
-  opi_api.storage.v1.VirtioBlkOrBuilder getControllerOrBuilder();
+  boolean hasVirtioBlk();
+  /**
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The virtioBlk.
+   */
+  opi_api.storage.v1.VirtioBlk getVirtioBlk();
+  /**
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder();
+
+  /**
+   * <code>string virtio_blk_id = 3;</code>
+   * @return The virtioBlkId.
+   */
+  java.lang.String getVirtioBlkId();
+  /**
+   * <code>string virtio_blk_id = 3;</code>
+   * @return The bytes for virtioBlkId.
+   */
+  com.google.protobuf.ByteString
+      getVirtioBlkIdBytes();
 }

@@ -8,17 +8,44 @@ public interface UpdateNVMeSubsystemRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return Whether the subsystem field is set.
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 1;</code>
+   * @return Whether the nvMeSubsystem field is set.
    */
-  boolean hasSubsystem();
+  boolean hasNvMeSubsystem();
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
-   * @return The subsystem.
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 1;</code>
+   * @return The nvMeSubsystem.
    */
-  opi_api.storage.v1.NVMeSubsystem getSubsystem();
+  opi_api.storage.v1.NVMeSubsystem getNvMeSubsystem();
   /**
-   * <code>.opi_api.storage.v1.NVMeSubsystem subsystem = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeSubsystem nv_me_subsystem = 1;</code>
    */
-  opi_api.storage.v1.NVMeSubsystemOrBuilder getSubsystemOrBuilder();
+  opi_api.storage.v1.NVMeSubsystemOrBuilder getNvMeSubsystemOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -8,17 +8,44 @@ public interface UpdateVirtioBlkRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+   * @return Whether the virtioBlk field is set.
    */
-  boolean hasController();
+  boolean hasVirtioBlk();
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
-   * @return The controller.
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
+   * @return The virtioBlk.
    */
-  opi_api.storage.v1.VirtioBlk getController();
+  opi_api.storage.v1.VirtioBlk getVirtioBlk();
   /**
-   * <code>.opi_api.storage.v1.VirtioBlk controller = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioBlk virtio_blk = 1;</code>
    */
-  opi_api.storage.v1.VirtioBlkOrBuilder getControllerOrBuilder();
+  opi_api.storage.v1.VirtioBlkOrBuilder getVirtioBlkOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

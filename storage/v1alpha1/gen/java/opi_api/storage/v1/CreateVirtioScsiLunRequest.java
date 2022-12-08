@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateVirtioScsiLunRequest() {
+    parent_ = "";
+    virtioScsiLunId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.VirtioScsiLun.Builder subBuilder = null;
-            if (lun_ != null) {
-              subBuilder = lun_.toBuilder();
+            if (virtioScsiLun_ != null) {
+              subBuilder = virtioScsiLun_.toBuilder();
             }
-            lun_ = input.readMessage(opi_api.storage.v1.VirtioScsiLun.parser(), extensionRegistry);
+            virtioScsiLun_ = input.readMessage(opi_api.storage.v1.VirtioScsiLun.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(lun_);
-              lun_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(virtioScsiLun_);
+              virtioScsiLun_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            virtioScsiLunId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateVirtioScsiLunRequest.class, opi_api.storage.v1.CreateVirtioScsiLunRequest.Builder.class);
   }
 
-  public static final int LUN_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.VirtioScsiLun lun_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return Whether the lun field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasLun() {
-    return lun_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-   * @return The lun.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLun getLun() {
-    return lun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VIRTIO_SCSI_LUN_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.VirtioScsiLun virtioScsiLun_;
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtioScsiLun field is set.
+   */
+  @java.lang.Override
+  public boolean hasVirtioScsiLun() {
+    return virtioScsiLun_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The virtioScsiLun.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder() {
-    return getLun();
+  public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun() {
+    return virtioScsiLun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder() {
+    return getVirtioScsiLun();
+  }
+
+  public static final int VIRTIO_SCSI_LUN_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object virtioScsiLunId_;
+  /**
+   * <code>string virtio_scsi_lun_id = 3;</code>
+   * @return The virtioScsiLunId.
+   */
+  @java.lang.Override
+  public java.lang.String getVirtioScsiLunId() {
+    java.lang.Object ref = virtioScsiLunId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      virtioScsiLunId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string virtio_scsi_lun_id = 3;</code>
+   * @return The bytes for virtioScsiLunId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVirtioScsiLunIdBytes() {
+    java.lang.Object ref = virtioScsiLunId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      virtioScsiLunId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (lun_ != null) {
-      output.writeMessage(1, getLun());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (virtioScsiLun_ != null) {
+      output.writeMessage(2, getVirtioScsiLun());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiLunId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, virtioScsiLunId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (lun_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (virtioScsiLun_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getLun());
+        .computeMessageSize(2, getVirtioScsiLun());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiLunId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, virtioScsiLunId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateVirtioScsiLunRequest other = (opi_api.storage.v1.CreateVirtioScsiLunRequest) obj;
 
-    if (hasLun() != other.hasLun()) return false;
-    if (hasLun()) {
-      if (!getLun()
-          .equals(other.getLun())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasVirtioScsiLun() != other.hasVirtioScsiLun()) return false;
+    if (hasVirtioScsiLun()) {
+      if (!getVirtioScsiLun()
+          .equals(other.getVirtioScsiLun())) return false;
     }
+    if (!getVirtioScsiLunId()
+        .equals(other.getVirtioScsiLunId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasLun()) {
-      hash = (37 * hash) + LUN_FIELD_NUMBER;
-      hash = (53 * hash) + getLun().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasVirtioScsiLun()) {
+      hash = (37 * hash) + VIRTIO_SCSI_LUN_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtioScsiLun().hashCode();
     }
+    hash = (37 * hash) + VIRTIO_SCSI_LUN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVirtioScsiLunId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lunBuilder_ == null) {
-        lun_ = null;
+      parent_ = "";
+
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = null;
       } else {
-        lun_ = null;
-        lunBuilder_ = null;
+        virtioScsiLun_ = null;
+        virtioScsiLunBuilder_ = null;
       }
+      virtioScsiLunId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateVirtioScsiLunRequest buildPartial() {
       opi_api.storage.v1.CreateVirtioScsiLunRequest result = new opi_api.storage.v1.CreateVirtioScsiLunRequest(this);
-      if (lunBuilder_ == null) {
-        result.lun_ = lun_;
+      result.parent_ = parent_;
+      if (virtioScsiLunBuilder_ == null) {
+        result.virtioScsiLun_ = virtioScsiLun_;
       } else {
-        result.lun_ = lunBuilder_.build();
+        result.virtioScsiLun_ = virtioScsiLunBuilder_.build();
       }
+      result.virtioScsiLunId_ = virtioScsiLunId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateVirtioScsiLunRequest other) {
       if (other == opi_api.storage.v1.CreateVirtioScsiLunRequest.getDefaultInstance()) return this;
-      if (other.hasLun()) {
-        mergeLun(other.getLun());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasVirtioScsiLun()) {
+        mergeVirtioScsiLun(other.getVirtioScsiLun());
+      }
+      if (!other.getVirtioScsiLunId().isEmpty()) {
+        virtioScsiLunId_ = other.virtioScsiLunId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.VirtioScsiLun lun_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> lunBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-     * @return Whether the lun field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasLun() {
-      return lunBuilder_ != null || lun_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
-     * @return The lun.
-     */
-    public opi_api.storage.v1.VirtioScsiLun getLun() {
-      if (lunBuilder_ == null) {
-        return lun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return lunBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setLun(opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.VirtioScsiLun virtioScsiLun_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> virtioScsiLunBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the virtioScsiLun field is set.
+     */
+    public boolean hasVirtioScsiLun() {
+      return virtioScsiLunBuilder_ != null || virtioScsiLun_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The virtioScsiLun.
+     */
+    public opi_api.storage.v1.VirtioScsiLun getVirtioScsiLun() {
+      if (virtioScsiLunBuilder_ == null) {
+        return virtioScsiLun_ == null ? opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
+      } else {
+        return virtioScsiLunBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setVirtioScsiLun(opi_api.storage.v1.VirtioScsiLun value) {
+      if (virtioScsiLunBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        lun_ = value;
+        virtioScsiLun_ = value;
         onChanged();
       } else {
-        lunBuilder_.setMessage(value);
+        virtioScsiLunBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setLun(
+    public Builder setVirtioScsiLun(
         opi_api.storage.v1.VirtioScsiLun.Builder builderForValue) {
-      if (lunBuilder_ == null) {
-        lun_ = builderForValue.build();
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = builderForValue.build();
         onChanged();
       } else {
-        lunBuilder_.setMessage(builderForValue.build());
+        virtioScsiLunBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeLun(opi_api.storage.v1.VirtioScsiLun value) {
-      if (lunBuilder_ == null) {
-        if (lun_ != null) {
-          lun_ =
-            opi_api.storage.v1.VirtioScsiLun.newBuilder(lun_).mergeFrom(value).buildPartial();
+    public Builder mergeVirtioScsiLun(opi_api.storage.v1.VirtioScsiLun value) {
+      if (virtioScsiLunBuilder_ == null) {
+        if (virtioScsiLun_ != null) {
+          virtioScsiLun_ =
+            opi_api.storage.v1.VirtioScsiLun.newBuilder(virtioScsiLun_).mergeFrom(value).buildPartial();
         } else {
-          lun_ = value;
+          virtioScsiLun_ = value;
         }
         onChanged();
       } else {
-        lunBuilder_.mergeFrom(value);
+        virtioScsiLunBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearLun() {
-      if (lunBuilder_ == null) {
-        lun_ = null;
+    public Builder clearVirtioScsiLun() {
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLun_ = null;
         onChanged();
       } else {
-        lun_ = null;
-        lunBuilder_ = null;
+        virtioScsiLun_ = null;
+        virtioScsiLunBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.VirtioScsiLun.Builder getLunBuilder() {
+    public opi_api.storage.v1.VirtioScsiLun.Builder getVirtioScsiLunBuilder() {
       
       onChanged();
-      return getLunFieldBuilder().getBuilder();
+      return getVirtioScsiLunFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.VirtioScsiLunOrBuilder getLunOrBuilder() {
-      if (lunBuilder_ != null) {
-        return lunBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.VirtioScsiLunOrBuilder getVirtioScsiLunOrBuilder() {
+      if (virtioScsiLunBuilder_ != null) {
+        return virtioScsiLunBuilder_.getMessageOrBuilder();
       } else {
-        return lun_ == null ?
-            opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : lun_;
+        return virtioScsiLun_ == null ?
+            opi_api.storage.v1.VirtioScsiLun.getDefaultInstance() : virtioScsiLun_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiLun lun = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder> 
-        getLunFieldBuilder() {
-      if (lunBuilder_ == null) {
-        lunBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getVirtioScsiLunFieldBuilder() {
+      if (virtioScsiLunBuilder_ == null) {
+        virtioScsiLunBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.VirtioScsiLun, opi_api.storage.v1.VirtioScsiLun.Builder, opi_api.storage.v1.VirtioScsiLunOrBuilder>(
-                getLun(),
+                getVirtioScsiLun(),
                 getParentForChildren(),
                 isClean());
-        lun_ = null;
+        virtioScsiLun_ = null;
       }
-      return lunBuilder_;
+      return virtioScsiLunBuilder_;
+    }
+
+    private java.lang.Object virtioScsiLunId_ = "";
+    /**
+     * <code>string virtio_scsi_lun_id = 3;</code>
+     * @return The virtioScsiLunId.
+     */
+    public java.lang.String getVirtioScsiLunId() {
+      java.lang.Object ref = virtioScsiLunId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        virtioScsiLunId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string virtio_scsi_lun_id = 3;</code>
+     * @return The bytes for virtioScsiLunId.
+     */
+    public com.google.protobuf.ByteString
+        getVirtioScsiLunIdBytes() {
+      java.lang.Object ref = virtioScsiLunId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        virtioScsiLunId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string virtio_scsi_lun_id = 3;</code>
+     * @param value The virtioScsiLunId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVirtioScsiLunId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      virtioScsiLunId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string virtio_scsi_lun_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVirtioScsiLunId() {
+      
+      virtioScsiLunId_ = getDefaultInstance().getVirtioScsiLunId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string virtio_scsi_lun_id = 3;</code>
+     * @param value The bytes for virtioScsiLunId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVirtioScsiLunIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      virtioScsiLunId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

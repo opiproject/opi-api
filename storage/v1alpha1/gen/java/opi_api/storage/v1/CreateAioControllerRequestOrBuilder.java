@@ -8,17 +8,41 @@ public interface CreateAioControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasDevice();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return The device.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.AioController getDevice();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the aioController field is set.
    */
-  opi_api.storage.v1.AioControllerOrBuilder getDeviceOrBuilder();
+  boolean hasAioController();
+  /**
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The aioController.
+   */
+  opi_api.storage.v1.AioController getAioController();
+  /**
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.AioControllerOrBuilder getAioControllerOrBuilder();
+
+  /**
+   * <code>string aio_controller_id = 3;</code>
+   * @return The aioControllerId.
+   */
+  java.lang.String getAioControllerId();
+  /**
+   * <code>string aio_controller_id = 3;</code>
+   * @return The bytes for aioControllerId.
+   */
+  com.google.protobuf.ByteString
+      getAioControllerIdBytes();
 }

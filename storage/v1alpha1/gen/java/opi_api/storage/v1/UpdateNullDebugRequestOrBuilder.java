@@ -8,17 +8,44 @@ public interface UpdateNullDebugRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 1;</code>
+   * @return Whether the nullDebug field is set.
    */
-  boolean hasDevice();
+  boolean hasNullDebug();
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return The device.
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 1;</code>
+   * @return The nullDebug.
    */
-  opi_api.storage.v1.NullDebug getDevice();
+  opi_api.storage.v1.NullDebug getNullDebug();
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 1;</code>
    */
-  opi_api.storage.v1.NullDebugOrBuilder getDeviceOrBuilder();
+  opi_api.storage.v1.NullDebugOrBuilder getNullDebugOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

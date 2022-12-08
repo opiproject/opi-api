@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateAioControllerRequest() {
+    parent_ = "";
+    aioControllerId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.AioController.Builder subBuilder = null;
-            if (device_ != null) {
-              subBuilder = device_.toBuilder();
+            if (aioController_ != null) {
+              subBuilder = aioController_.toBuilder();
             }
-            device_ = input.readMessage(opi_api.storage.v1.AioController.parser(), extensionRegistry);
+            aioController_ = input.readMessage(opi_api.storage.v1.AioController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(device_);
-              device_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(aioController_);
+              aioController_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            aioControllerId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateAioControllerRequest.class, opi_api.storage.v1.CreateAioControllerRequest.Builder.class);
   }
 
-  public static final int DEVICE_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.AioController device_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasDevice() {
-    return device_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
-   * @return The device.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.AioController getDevice() {
-    return device_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AIO_CONTROLLER_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.AioController aioController_;
+  /**
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the aioController field is set.
+   */
+  @java.lang.Override
+  public boolean hasAioController() {
+    return aioController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.AioController device = 1;</code>
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The aioController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.AioControllerOrBuilder getDeviceOrBuilder() {
-    return getDevice();
+  public opi_api.storage.v1.AioController getAioController() {
+    return aioController_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.AioControllerOrBuilder getAioControllerOrBuilder() {
+    return getAioController();
+  }
+
+  public static final int AIO_CONTROLLER_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object aioControllerId_;
+  /**
+   * <code>string aio_controller_id = 3;</code>
+   * @return The aioControllerId.
+   */
+  @java.lang.Override
+  public java.lang.String getAioControllerId() {
+    java.lang.Object ref = aioControllerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aioControllerId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string aio_controller_id = 3;</code>
+   * @return The bytes for aioControllerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAioControllerIdBytes() {
+    java.lang.Object ref = aioControllerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      aioControllerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (device_ != null) {
-      output.writeMessage(1, getDevice());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (aioController_ != null) {
+      output.writeMessage(2, getAioController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aioControllerId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aioControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (device_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (aioController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDevice());
+        .computeMessageSize(2, getAioController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aioControllerId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, aioControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateAioControllerRequest other = (opi_api.storage.v1.CreateAioControllerRequest) obj;
 
-    if (hasDevice() != other.hasDevice()) return false;
-    if (hasDevice()) {
-      if (!getDevice()
-          .equals(other.getDevice())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasAioController() != other.hasAioController()) return false;
+    if (hasAioController()) {
+      if (!getAioController()
+          .equals(other.getAioController())) return false;
     }
+    if (!getAioControllerId()
+        .equals(other.getAioControllerId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasDevice()) {
-      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getDevice().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasAioController()) {
+      hash = (37 * hash) + AIO_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getAioController().hashCode();
     }
+    hash = (37 * hash) + AIO_CONTROLLER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAioControllerId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deviceBuilder_ == null) {
-        device_ = null;
+      parent_ = "";
+
+      if (aioControllerBuilder_ == null) {
+        aioController_ = null;
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        aioController_ = null;
+        aioControllerBuilder_ = null;
       }
+      aioControllerId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateAioControllerRequest buildPartial() {
       opi_api.storage.v1.CreateAioControllerRequest result = new opi_api.storage.v1.CreateAioControllerRequest(this);
-      if (deviceBuilder_ == null) {
-        result.device_ = device_;
+      result.parent_ = parent_;
+      if (aioControllerBuilder_ == null) {
+        result.aioController_ = aioController_;
       } else {
-        result.device_ = deviceBuilder_.build();
+        result.aioController_ = aioControllerBuilder_.build();
       }
+      result.aioControllerId_ = aioControllerId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateAioControllerRequest other) {
       if (other == opi_api.storage.v1.CreateAioControllerRequest.getDefaultInstance()) return this;
-      if (other.hasDevice()) {
-        mergeDevice(other.getDevice());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasAioController()) {
+        mergeAioController(other.getAioController());
+      }
+      if (!other.getAioControllerId().isEmpty()) {
+        aioControllerId_ = other.aioControllerId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.AioController device_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> deviceBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
-     * @return Whether the device field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasDevice() {
-      return deviceBuilder_ != null || device_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
-     * @return The device.
-     */
-    public opi_api.storage.v1.AioController getDevice() {
-      if (deviceBuilder_ == null) {
-        return device_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return deviceBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setDevice(opi_api.storage.v1.AioController value) {
-      if (deviceBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.AioController aioController_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> aioControllerBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the aioController field is set.
+     */
+    public boolean hasAioController() {
+      return aioControllerBuilder_ != null || aioController_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The aioController.
+     */
+    public opi_api.storage.v1.AioController getAioController() {
+      if (aioControllerBuilder_ == null) {
+        return aioController_ == null ? opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
+      } else {
+        return aioControllerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setAioController(opi_api.storage.v1.AioController value) {
+      if (aioControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        device_ = value;
+        aioController_ = value;
         onChanged();
       } else {
-        deviceBuilder_.setMessage(value);
+        aioControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setDevice(
+    public Builder setAioController(
         opi_api.storage.v1.AioController.Builder builderForValue) {
-      if (deviceBuilder_ == null) {
-        device_ = builderForValue.build();
+      if (aioControllerBuilder_ == null) {
+        aioController_ = builderForValue.build();
         onChanged();
       } else {
-        deviceBuilder_.setMessage(builderForValue.build());
+        aioControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeDevice(opi_api.storage.v1.AioController value) {
-      if (deviceBuilder_ == null) {
-        if (device_ != null) {
-          device_ =
-            opi_api.storage.v1.AioController.newBuilder(device_).mergeFrom(value).buildPartial();
+    public Builder mergeAioController(opi_api.storage.v1.AioController value) {
+      if (aioControllerBuilder_ == null) {
+        if (aioController_ != null) {
+          aioController_ =
+            opi_api.storage.v1.AioController.newBuilder(aioController_).mergeFrom(value).buildPartial();
         } else {
-          device_ = value;
+          aioController_ = value;
         }
         onChanged();
       } else {
-        deviceBuilder_.mergeFrom(value);
+        aioControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearDevice() {
-      if (deviceBuilder_ == null) {
-        device_ = null;
+    public Builder clearAioController() {
+      if (aioControllerBuilder_ == null) {
+        aioController_ = null;
         onChanged();
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        aioController_ = null;
+        aioControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.AioController.Builder getDeviceBuilder() {
+    public opi_api.storage.v1.AioController.Builder getAioControllerBuilder() {
       
       onChanged();
-      return getDeviceFieldBuilder().getBuilder();
+      return getAioControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.AioControllerOrBuilder getDeviceOrBuilder() {
-      if (deviceBuilder_ != null) {
-        return deviceBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.AioControllerOrBuilder getAioControllerOrBuilder() {
+      if (aioControllerBuilder_ != null) {
+        return aioControllerBuilder_.getMessageOrBuilder();
       } else {
-        return device_ == null ?
-            opi_api.storage.v1.AioController.getDefaultInstance() : device_;
+        return aioController_ == null ?
+            opi_api.storage.v1.AioController.getDefaultInstance() : aioController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.AioController device = 1;</code>
+     * <code>.opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder> 
-        getDeviceFieldBuilder() {
-      if (deviceBuilder_ == null) {
-        deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getAioControllerFieldBuilder() {
+      if (aioControllerBuilder_ == null) {
+        aioControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.AioController, opi_api.storage.v1.AioController.Builder, opi_api.storage.v1.AioControllerOrBuilder>(
-                getDevice(),
+                getAioController(),
                 getParentForChildren(),
                 isClean());
-        device_ = null;
+        aioController_ = null;
       }
-      return deviceBuilder_;
+      return aioControllerBuilder_;
+    }
+
+    private java.lang.Object aioControllerId_ = "";
+    /**
+     * <code>string aio_controller_id = 3;</code>
+     * @return The aioControllerId.
+     */
+    public java.lang.String getAioControllerId() {
+      java.lang.Object ref = aioControllerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aioControllerId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string aio_controller_id = 3;</code>
+     * @return The bytes for aioControllerId.
+     */
+    public com.google.protobuf.ByteString
+        getAioControllerIdBytes() {
+      java.lang.Object ref = aioControllerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aioControllerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string aio_controller_id = 3;</code>
+     * @param value The aioControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAioControllerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      aioControllerId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string aio_controller_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAioControllerId() {
+      
+      aioControllerId_ = getDefaultInstance().getAioControllerId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string aio_controller_id = 3;</code>
+     * @param value The bytes for aioControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAioControllerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      aioControllerId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

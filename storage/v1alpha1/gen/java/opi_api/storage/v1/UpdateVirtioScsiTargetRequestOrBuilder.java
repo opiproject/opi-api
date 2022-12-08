@@ -8,17 +8,44 @@ public interface UpdateVirtioScsiTargetRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-   * @return Whether the target field is set.
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+   * @return Whether the virtioScsiTarget field is set.
    */
-  boolean hasTarget();
+  boolean hasVirtioScsiTarget();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
-   * @return The target.
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
+   * @return The virtioScsiTarget.
    */
-  opi_api.storage.v1.VirtioScsiTarget getTarget();
+  opi_api.storage.v1.VirtioScsiTarget getVirtioScsiTarget();
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiTarget target = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiTarget virtio_scsi_target = 1;</code>
    */
-  opi_api.storage.v1.VirtioScsiTargetOrBuilder getTargetOrBuilder();
+  opi_api.storage.v1.VirtioScsiTargetOrBuilder getVirtioScsiTargetOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

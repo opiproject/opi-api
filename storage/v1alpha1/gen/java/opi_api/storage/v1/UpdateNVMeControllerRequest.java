@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.NVMeController.Builder subBuilder = null;
-            if (controller_ != null) {
-              subBuilder = controller_.toBuilder();
+            if (nvMeController_ != null) {
+              subBuilder = nvMeController_.toBuilder();
             }
-            controller_ = input.readMessage(opi_api.storage.v1.NVMeController.parser(), extensionRegistry);
+            nvMeController_ = input.readMessage(opi_api.storage.v1.NVMeController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(controller_);
-              controller_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nvMeController_);
+              nvMeController_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateNVMeControllerRequest.class, opi_api.storage.v1.UpdateNVMeControllerRequest.Builder.class);
   }
 
-  public static final int CONTROLLER_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NVMeController controller_;
+  public static final int NV_ME_CONTROLLER_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMeController nvMeController_;
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+   * @return Whether the nvMeController field is set.
    */
   @java.lang.Override
-  public boolean hasController() {
-    return controller_ != null;
+  public boolean hasNvMeController() {
+    return nvMeController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-   * @return The controller.
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+   * @return The nvMeController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeController getController() {
-    return controller_ == null ? opi_api.storage.v1.NVMeController.getDefaultInstance() : controller_;
+  public opi_api.storage.v1.NVMeController getNvMeController() {
+    return nvMeController_ == null ? opi_api.storage.v1.NVMeController.getDefaultInstance() : nvMeController_;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder() {
-    return getController();
+  public opi_api.storage.v1.NVMeControllerOrBuilder getNvMeControllerOrBuilder() {
+    return getNvMeController();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (controller_ != null) {
-      output.writeMessage(1, getController());
+    if (nvMeController_ != null) {
+      output.writeMessage(1, getNvMeController());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (controller_ != null) {
+    if (nvMeController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getController());
+        .computeMessageSize(1, getNvMeController());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateNVMeControllerRequest other = (opi_api.storage.v1.UpdateNVMeControllerRequest) obj;
 
-    if (hasController() != other.hasController()) return false;
-    if (hasController()) {
-      if (!getController()
-          .equals(other.getController())) return false;
+    if (hasNvMeController() != other.hasNvMeController()) return false;
+    if (hasNvMeController()) {
+      if (!getNvMeController()
+          .equals(other.getNvMeController())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasController()) {
-      hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
-      hash = (53 * hash) + getController().hashCode();
+    if (hasNvMeController()) {
+      hash = (37 * hash) + NV_ME_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getNvMeController().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (controllerBuilder_ == null) {
-        controller_ = null;
+      if (nvMeControllerBuilder_ == null) {
+        nvMeController_ = null;
       } else {
-        controller_ = null;
-        controllerBuilder_ = null;
+        nvMeController_ = null;
+        nvMeControllerBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateNVMeControllerRequest buildPartial() {
       opi_api.storage.v1.UpdateNVMeControllerRequest result = new opi_api.storage.v1.UpdateNVMeControllerRequest(this);
-      if (controllerBuilder_ == null) {
-        result.controller_ = controller_;
+      if (nvMeControllerBuilder_ == null) {
+        result.nvMeController_ = nvMeController_;
       } else {
-        result.controller_ = controllerBuilder_.build();
+        result.nvMeController_ = nvMeControllerBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateNVMeControllerRequest other) {
       if (other == opi_api.storage.v1.UpdateNVMeControllerRequest.getDefaultInstance()) return this;
-      if (other.hasController()) {
-        mergeController(other.getController());
+      if (other.hasNvMeController()) {
+        mergeNvMeController(other.getNvMeController());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NVMeController controller_;
+    private opi_api.storage.v1.NVMeController nvMeController_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> controllerBuilder_;
+        opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> nvMeControllerBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-     * @return Whether the controller field is set.
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+     * @return Whether the nvMeController field is set.
      */
-    public boolean hasController() {
-      return controllerBuilder_ != null || controller_ != null;
+    public boolean hasNvMeController() {
+      return nvMeControllerBuilder_ != null || nvMeController_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
-     * @return The controller.
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
+     * @return The nvMeController.
      */
-    public opi_api.storage.v1.NVMeController getController() {
-      if (controllerBuilder_ == null) {
-        return controller_ == null ? opi_api.storage.v1.NVMeController.getDefaultInstance() : controller_;
+    public opi_api.storage.v1.NVMeController getNvMeController() {
+      if (nvMeControllerBuilder_ == null) {
+        return nvMeController_ == null ? opi_api.storage.v1.NVMeController.getDefaultInstance() : nvMeController_;
       } else {
-        return controllerBuilder_.getMessage();
+        return nvMeControllerBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public Builder setController(opi_api.storage.v1.NVMeController value) {
-      if (controllerBuilder_ == null) {
+    public Builder setNvMeController(opi_api.storage.v1.NVMeController value) {
+      if (nvMeControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        controller_ = value;
+        nvMeController_ = value;
         onChanged();
       } else {
-        controllerBuilder_.setMessage(value);
+        nvMeControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public Builder setController(
+    public Builder setNvMeController(
         opi_api.storage.v1.NVMeController.Builder builderForValue) {
-      if (controllerBuilder_ == null) {
-        controller_ = builderForValue.build();
+      if (nvMeControllerBuilder_ == null) {
+        nvMeController_ = builderForValue.build();
         onChanged();
       } else {
-        controllerBuilder_.setMessage(builderForValue.build());
+        nvMeControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public Builder mergeController(opi_api.storage.v1.NVMeController value) {
-      if (controllerBuilder_ == null) {
-        if (controller_ != null) {
-          controller_ =
-            opi_api.storage.v1.NVMeController.newBuilder(controller_).mergeFrom(value).buildPartial();
+    public Builder mergeNvMeController(opi_api.storage.v1.NVMeController value) {
+      if (nvMeControllerBuilder_ == null) {
+        if (nvMeController_ != null) {
+          nvMeController_ =
+            opi_api.storage.v1.NVMeController.newBuilder(nvMeController_).mergeFrom(value).buildPartial();
         } else {
-          controller_ = value;
+          nvMeController_ = value;
         }
         onChanged();
       } else {
-        controllerBuilder_.mergeFrom(value);
+        nvMeControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public Builder clearController() {
-      if (controllerBuilder_ == null) {
-        controller_ = null;
+    public Builder clearNvMeController() {
+      if (nvMeControllerBuilder_ == null) {
+        nvMeController_ = null;
         onChanged();
       } else {
-        controller_ = null;
-        controllerBuilder_ = null;
+        nvMeController_ = null;
+        nvMeControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public opi_api.storage.v1.NVMeController.Builder getControllerBuilder() {
+    public opi_api.storage.v1.NVMeController.Builder getNvMeControllerBuilder() {
       
       onChanged();
-      return getControllerFieldBuilder().getBuilder();
+      return getNvMeControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
-    public opi_api.storage.v1.NVMeControllerOrBuilder getControllerOrBuilder() {
-      if (controllerBuilder_ != null) {
-        return controllerBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeControllerOrBuilder getNvMeControllerOrBuilder() {
+      if (nvMeControllerBuilder_ != null) {
+        return nvMeControllerBuilder_.getMessageOrBuilder();
       } else {
-        return controller_ == null ?
-            opi_api.storage.v1.NVMeController.getDefaultInstance() : controller_;
+        return nvMeController_ == null ?
+            opi_api.storage.v1.NVMeController.getDefaultInstance() : nvMeController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeController controller = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeController nv_me_controller = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder> 
-        getControllerFieldBuilder() {
-      if (controllerBuilder_ == null) {
-        controllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNvMeControllerFieldBuilder() {
+      if (nvMeControllerBuilder_ == null) {
+        nvMeControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NVMeController, opi_api.storage.v1.NVMeController.Builder, opi_api.storage.v1.NVMeControllerOrBuilder>(
-                getController(),
+                getNvMeController(),
                 getParentForChildren(),
                 isClean());
-        controller_ = null;
+        nvMeController_ = null;
       }
-      return controllerBuilder_;
+      return nvMeControllerBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

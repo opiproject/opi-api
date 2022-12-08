@@ -35,15 +35,15 @@ public final class BackendAioProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_UpdateAioControllerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_ListAioControllerRequest_descriptor;
+    internal_static_opi_api_storage_v1_ListAioControllersRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_ListAioControllerRequest_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListAioControllersRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_storage_v1_ListAioControllerResponse_descriptor;
+    internal_static_opi_api_storage_v1_ListAioControllersResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_storage_v1_ListAioControllerResponse_fieldAccessorTable;
+      internal_static_opi_api_storage_v1_ListAioControllersResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_storage_v1_GetAioControllerRequest_descriptor;
   static final 
@@ -69,59 +69,75 @@ public final class BackendAioProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\021backend_aio.proto\022\022opi_api.storage.v1\032" +
-      "\033google/protobuf/empty.proto\032\034google/api" +
-      "/annotations.proto\032\020object_key.proto\032\nuu" +
-      "id.proto\"\240\001\n\rAioController\022,\n\006handle\030\001 \001" +
-      "(\0132\034.opi_api.common.v1.ObjectKey\022\022\n\nbloc" +
-      "k_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(\003\022%\n\004uu" +
-      "id\030\004 \001(\0132\027.opi_api.common.v1.Uuid\022\020\n\010fil" +
-      "ename\030\005 \001(\t\"O\n\032CreateAioControllerReques" +
-      "t\0221\n\006device\030\001 \001(\0132!.opi_api.storage.v1.A" +
-      "ioController\"J\n\032DeleteAioControllerReque" +
-      "st\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.O" +
-      "bjectKey\"O\n\032UpdateAioControllerRequest\0221" +
-      "\n\006device\030\001 \001(\0132!.opi_api.storage.v1.AioC" +
-      "ontroller\"A\n\030ListAioControllerRequest\022\021\n" +
-      "\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"h\n\031" +
-      "ListAioControllerResponse\0222\n\007devices\030\001 \003" +
-      "(\0132!.opi_api.storage.v1.AioController\022\027\n" +
-      "\017next_page_token\030\002 \001(\t\"G\n\027GetAioControll" +
-      "erRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.comm" +
-      "on.v1.ObjectKey\"I\n\031AioControllerStatsReq" +
-      "uest\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1" +
-      ".ObjectKey\"Y\n\032AioControllerStatsResponse" +
+      "\027google/api/client.proto\032\031google/api/res" +
+      "ource.proto\032\033google/protobuf/empty.proto" +
+      "\032\034google/api/annotations.proto\032\037google/a" +
+      "pi/field_behavior.proto\032 google/protobuf" +
+      "/field_mask.proto\032\020object_key.proto\032\nuui" +
+      "d.proto\"\240\001\n\rAioController\022,\n\006handle\030\001 \001(" +
+      "\0132\034.opi_api.common.v1.ObjectKey\022\022\n\nblock" +
+      "_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(\003\022%\n\004uui" +
+      "d\030\004 \001(\0132\027.opi_api.common.v1.Uuid\022\020\n\010file" +
+      "name\030\005 \001(\t\"\261\001\n\032CreateAioControllerReques" +
+      "t\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n library.googl" +
+      "eapis.com/Publisher\022>\n\016aio_controller\030\002 " +
+      "\001(\0132!.opi_api.storage.v1.AioControllerB\003" +
+      "\340A\002\022\031\n\021aio_controller_id\030\003 \001(\t\"P\n\032Delete" +
+      "AioControllerRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372" +
+      "A\036\n\034opi.storage.v1/NVMeSubsystem\"\210\001\n\032Upd" +
+      "ateAioControllerRequest\0229\n\016aio_controlle" +
+      "r\030\001 \001(\0132!.opi_api.storage.v1.AioControll" +
+      "er\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
+      "f.FieldMask\"|\n\031ListAioControllersRequest" +
+      "\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n library.google" +
+      "apis.com/Publisher\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
+      "\npage_token\030\003 \001(\t\"q\n\032ListAioControllersR" +
+      "esponse\022:\n\017aio_controllers\030\001 \003(\0132!.opi_a" +
+      "pi.storage.v1.AioController\022\027\n\017next_page" +
+      "_token\030\002 \001(\t\"M\n\027GetAioControllerRequest\022" +
+      "2\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi.storage.v1/NV" +
+      "MeSubsystem\"I\n\031AioControllerStatsRequest" +
       "\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obj" +
-      "ectKey\022\r\n\005stats\030\002 \001(\t2\301\006\n\024AioControllerS" +
-      "ervice\022\213\001\n\023CreateAioController\022..opi_api" +
-      ".storage.v1.CreateAioControllerRequest\032!" +
-      ".opi_api.storage.v1.AioController\"!\202\323\344\223\002" +
-      "\033\"\016/v1/subsystems:\tsubsystem\022\201\001\n\023DeleteA" +
-      "ioController\022..opi_api.storage.v1.Delete" +
-      "AioControllerRequest\032\026.google.protobuf.E" +
-      "mpty\"\"\202\323\344\223\002\034*\032/v1/subsystems/{subsystem}" +
-      "\022\213\001\n\023UpdateAioController\022..opi_api.stora" +
-      "ge.v1.UpdateAioControllerRequest\032!.opi_a" +
-      "pi.storage.v1.AioController\"!\202\323\344\223\002\0332\016/v1" +
-      "/subsystems:\tsubsystem\022\210\001\n\021ListAioContro" +
-      "ller\022,.opi_api.storage.v1.ListAioControl" +
-      "lerRequest\032-.opi_api.storage.v1.ListAioC" +
-      "ontrollerResponse\"\026\202\323\344\223\002\020\022\016/v1/subsystem" +
-      "s\022\206\001\n\020GetAioController\022+.opi_api.storage" +
-      ".v1.GetAioControllerRequest\032!.opi_api.st" +
-      "orage.v1.AioController\"\"\202\323\344\223\002\034\022\032/v1/subs" +
-      "ystems/{subsystem}\022u\n\022AioControllerStats" +
-      "\022-.opi_api.storage.v1.AioControllerStats" +
-      "Request\032..opi_api.storage.v1.AioControll" +
-      "erStatsResponse\"\000B^\n\022opi_api.storage.v1B" +
-      "\017BackendAioProtoP\001Z5github.com/opiprojec" +
-      "t/opi-api/storage/v1alpha1/gen/gob\006proto" +
-      "3"
+      "ectKey\"Y\n\032AioControllerStatsResponse\022,\n\006" +
+      "handle\030\001 \001(\0132\034.opi_api.common.v1.ObjectK" +
+      "ey\022\r\n\005stats\030\002 \001(\t2\342\007\n\024AioControllerServi" +
+      "ce\022\303\001\n\023CreateAioController\022..opi_api.sto" +
+      "rage.v1.CreateAioControllerRequest\032!.opi" +
+      "_api.storage.v1.AioController\"Y\202\323\344\223\002)\"\027/" +
+      "v1/{parent=subsystems}:\016aio_controller\332A" +
+      "\'parent,aio_controller,aio_controller_id" +
+      "\022\217\001\n\023DeleteAioController\022..opi_api.stora" +
+      "ge.v1.DeleteAioControllerRequest\032\026.googl" +
+      "e.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name=subs" +
+      "ystems}/{subsystem}\332A\004name\022\303\001\n\023UpdateAio" +
+      "Controller\022..opi_api.storage.v1.UpdateAi" +
+      "oControllerRequest\032!.opi_api.storage.v1." +
+      "AioController\"Y\202\323\344\223\00262$/v1/{aio_controll" +
+      "er.name=subsystems}:\016aio_controller\332A\032ai" +
+      "o_controller,update_mask\022\235\001\n\022ListAioCont" +
+      "rollers\022-.opi_api.storage.v1.ListAioCont" +
+      "rollersRequest\032..opi_api.storage.v1.List" +
+      "AioControllersResponse\"(\202\323\344\223\002\031\022\027/v1/{par" +
+      "ent=subsystems}\332A\006parent\022\224\001\n\020GetAioContr" +
+      "oller\022+.opi_api.storage.v1.GetAioControl" +
+      "lerRequest\032!.opi_api.storage.v1.AioContr" +
+      "oller\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/{su" +
+      "bsystem}\332A\004name\022u\n\022AioControllerStats\022-." +
+      "opi_api.storage.v1.AioControllerStatsReq" +
+      "uest\032..opi_api.storage.v1.AioControllerS" +
+      "tatsResponse\"\000B^\n\022opi_api.storage.v1B\017Ba" +
+      "ckendAioProtoP\001Z5github.com/opiproject/o" +
+      "pi-api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
           opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.common.v1.UuidProto.getDescriptor(),
         });
@@ -136,37 +152,37 @@ public final class BackendAioProto {
     internal_static_opi_api_storage_v1_CreateAioControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_CreateAioControllerRequest_descriptor,
-        new java.lang.String[] { "Device", });
+        new java.lang.String[] { "Parent", "AioController", "AioControllerId", });
     internal_static_opi_api_storage_v1_DeleteAioControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_DeleteAioControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_DeleteAioControllerRequest_descriptor,
-        new java.lang.String[] { "Handle", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_UpdateAioControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_storage_v1_UpdateAioControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_UpdateAioControllerRequest_descriptor,
-        new java.lang.String[] { "Device", });
-    internal_static_opi_api_storage_v1_ListAioControllerRequest_descriptor =
+        new java.lang.String[] { "AioController", "UpdateMask", });
+    internal_static_opi_api_storage_v1_ListAioControllersRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_opi_api_storage_v1_ListAioControllerRequest_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListAioControllersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_ListAioControllerRequest_descriptor,
-        new java.lang.String[] { "PageSize", "PageToken", });
-    internal_static_opi_api_storage_v1_ListAioControllerResponse_descriptor =
+        internal_static_opi_api_storage_v1_ListAioControllersRequest_descriptor,
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", });
+    internal_static_opi_api_storage_v1_ListAioControllersResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_opi_api_storage_v1_ListAioControllerResponse_fieldAccessorTable = new
+    internal_static_opi_api_storage_v1_ListAioControllersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_storage_v1_ListAioControllerResponse_descriptor,
-        new java.lang.String[] { "Devices", "NextPageToken", });
+        internal_static_opi_api_storage_v1_ListAioControllersResponse_descriptor,
+        new java.lang.String[] { "AioControllers", "NextPageToken", });
     internal_static_opi_api_storage_v1_GetAioControllerRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_opi_api_storage_v1_GetAioControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_GetAioControllerRequest_descriptor,
-        new java.lang.String[] { "Handle", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_storage_v1_AioControllerStatsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_opi_api_storage_v1_AioControllerStatsRequest_fieldAccessorTable = new
@@ -181,11 +197,18 @@ public final class BackendAioProto {
         new java.lang.String[] { "Handle", "Stats", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     opi_api.common.v1.ObjectKeyProto.getDescriptor();
     opi_api.common.v1.UuidProto.getDescriptor();
   }

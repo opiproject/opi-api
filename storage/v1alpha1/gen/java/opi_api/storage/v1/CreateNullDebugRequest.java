@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateNullDebugRequest() {
+    parent_ = "";
+    nullDebugId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.NullDebug.Builder subBuilder = null;
-            if (device_ != null) {
-              subBuilder = device_.toBuilder();
+            if (nullDebug_ != null) {
+              subBuilder = nullDebug_.toBuilder();
             }
-            device_ = input.readMessage(opi_api.storage.v1.NullDebug.parser(), extensionRegistry);
+            nullDebug_ = input.readMessage(opi_api.storage.v1.NullDebug.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(device_);
-              device_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nullDebug_);
+              nullDebug_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nullDebugId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateNullDebugRequest.class, opi_api.storage.v1.CreateNullDebugRequest.Builder.class);
   }
 
-  public static final int DEVICE_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NullDebug device_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return Whether the device field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasDevice() {
-    return device_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-   * @return The device.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NullDebug getDevice() {
-    return device_ == null ? opi_api.storage.v1.NullDebug.getDefaultInstance() : device_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NULL_DEBUG_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.NullDebug nullDebug_;
+  /**
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nullDebug field is set.
+   */
+  @java.lang.Override
+  public boolean hasNullDebug() {
+    return nullDebug_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nullDebug.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NullDebugOrBuilder getDeviceOrBuilder() {
-    return getDevice();
+  public opi_api.storage.v1.NullDebug getNullDebug() {
+    return nullDebug_ == null ? opi_api.storage.v1.NullDebug.getDefaultInstance() : nullDebug_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.NullDebugOrBuilder getNullDebugOrBuilder() {
+    return getNullDebug();
+  }
+
+  public static final int NULL_DEBUG_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object nullDebugId_;
+  /**
+   * <code>string null_debug_id = 3;</code>
+   * @return The nullDebugId.
+   */
+  @java.lang.Override
+  public java.lang.String getNullDebugId() {
+    java.lang.Object ref = nullDebugId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nullDebugId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string null_debug_id = 3;</code>
+   * @return The bytes for nullDebugId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNullDebugIdBytes() {
+    java.lang.Object ref = nullDebugId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nullDebugId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (device_ != null) {
-      output.writeMessage(1, getDevice());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (nullDebug_ != null) {
+      output.writeMessage(2, getNullDebug());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullDebugId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nullDebugId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (device_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (nullDebug_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDevice());
+        .computeMessageSize(2, getNullDebug());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullDebugId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nullDebugId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateNullDebugRequest other = (opi_api.storage.v1.CreateNullDebugRequest) obj;
 
-    if (hasDevice() != other.hasDevice()) return false;
-    if (hasDevice()) {
-      if (!getDevice()
-          .equals(other.getDevice())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasNullDebug() != other.hasNullDebug()) return false;
+    if (hasNullDebug()) {
+      if (!getNullDebug()
+          .equals(other.getNullDebug())) return false;
     }
+    if (!getNullDebugId()
+        .equals(other.getNullDebugId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasDevice()) {
-      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getDevice().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasNullDebug()) {
+      hash = (37 * hash) + NULL_DEBUG_FIELD_NUMBER;
+      hash = (53 * hash) + getNullDebug().hashCode();
     }
+    hash = (37 * hash) + NULL_DEBUG_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNullDebugId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deviceBuilder_ == null) {
-        device_ = null;
+      parent_ = "";
+
+      if (nullDebugBuilder_ == null) {
+        nullDebug_ = null;
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        nullDebug_ = null;
+        nullDebugBuilder_ = null;
       }
+      nullDebugId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateNullDebugRequest buildPartial() {
       opi_api.storage.v1.CreateNullDebugRequest result = new opi_api.storage.v1.CreateNullDebugRequest(this);
-      if (deviceBuilder_ == null) {
-        result.device_ = device_;
+      result.parent_ = parent_;
+      if (nullDebugBuilder_ == null) {
+        result.nullDebug_ = nullDebug_;
       } else {
-        result.device_ = deviceBuilder_.build();
+        result.nullDebug_ = nullDebugBuilder_.build();
       }
+      result.nullDebugId_ = nullDebugId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateNullDebugRequest other) {
       if (other == opi_api.storage.v1.CreateNullDebugRequest.getDefaultInstance()) return this;
-      if (other.hasDevice()) {
-        mergeDevice(other.getDevice());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasNullDebug()) {
+        mergeNullDebug(other.getNullDebug());
+      }
+      if (!other.getNullDebugId().isEmpty()) {
+        nullDebugId_ = other.nullDebugId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NullDebug device_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NullDebug, opi_api.storage.v1.NullDebug.Builder, opi_api.storage.v1.NullDebugOrBuilder> deviceBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-     * @return Whether the device field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasDevice() {
-      return deviceBuilder_ != null || device_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
-     * @return The device.
-     */
-    public opi_api.storage.v1.NullDebug getDevice() {
-      if (deviceBuilder_ == null) {
-        return device_ == null ? opi_api.storage.v1.NullDebug.getDefaultInstance() : device_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return deviceBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setDevice(opi_api.storage.v1.NullDebug value) {
-      if (deviceBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.NullDebug nullDebug_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.NullDebug, opi_api.storage.v1.NullDebug.Builder, opi_api.storage.v1.NullDebugOrBuilder> nullDebugBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the nullDebug field is set.
+     */
+    public boolean hasNullDebug() {
+      return nullDebugBuilder_ != null || nullDebug_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The nullDebug.
+     */
+    public opi_api.storage.v1.NullDebug getNullDebug() {
+      if (nullDebugBuilder_ == null) {
+        return nullDebug_ == null ? opi_api.storage.v1.NullDebug.getDefaultInstance() : nullDebug_;
+      } else {
+        return nullDebugBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setNullDebug(opi_api.storage.v1.NullDebug value) {
+      if (nullDebugBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        device_ = value;
+        nullDebug_ = value;
         onChanged();
       } else {
-        deviceBuilder_.setMessage(value);
+        nullDebugBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setDevice(
+    public Builder setNullDebug(
         opi_api.storage.v1.NullDebug.Builder builderForValue) {
-      if (deviceBuilder_ == null) {
-        device_ = builderForValue.build();
+      if (nullDebugBuilder_ == null) {
+        nullDebug_ = builderForValue.build();
         onChanged();
       } else {
-        deviceBuilder_.setMessage(builderForValue.build());
+        nullDebugBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeDevice(opi_api.storage.v1.NullDebug value) {
-      if (deviceBuilder_ == null) {
-        if (device_ != null) {
-          device_ =
-            opi_api.storage.v1.NullDebug.newBuilder(device_).mergeFrom(value).buildPartial();
+    public Builder mergeNullDebug(opi_api.storage.v1.NullDebug value) {
+      if (nullDebugBuilder_ == null) {
+        if (nullDebug_ != null) {
+          nullDebug_ =
+            opi_api.storage.v1.NullDebug.newBuilder(nullDebug_).mergeFrom(value).buildPartial();
         } else {
-          device_ = value;
+          nullDebug_ = value;
         }
         onChanged();
       } else {
-        deviceBuilder_.mergeFrom(value);
+        nullDebugBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearDevice() {
-      if (deviceBuilder_ == null) {
-        device_ = null;
+    public Builder clearNullDebug() {
+      if (nullDebugBuilder_ == null) {
+        nullDebug_ = null;
         onChanged();
       } else {
-        device_ = null;
-        deviceBuilder_ = null;
+        nullDebug_ = null;
+        nullDebugBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NullDebug.Builder getDeviceBuilder() {
+    public opi_api.storage.v1.NullDebug.Builder getNullDebugBuilder() {
       
       onChanged();
-      return getDeviceFieldBuilder().getBuilder();
+      return getNullDebugFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.NullDebugOrBuilder getDeviceOrBuilder() {
-      if (deviceBuilder_ != null) {
-        return deviceBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NullDebugOrBuilder getNullDebugOrBuilder() {
+      if (nullDebugBuilder_ != null) {
+        return nullDebugBuilder_.getMessageOrBuilder();
       } else {
-        return device_ == null ?
-            opi_api.storage.v1.NullDebug.getDefaultInstance() : device_;
+        return nullDebug_ == null ?
+            opi_api.storage.v1.NullDebug.getDefaultInstance() : nullDebug_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NullDebug device = 1;</code>
+     * <code>.opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NullDebug, opi_api.storage.v1.NullDebug.Builder, opi_api.storage.v1.NullDebugOrBuilder> 
-        getDeviceFieldBuilder() {
-      if (deviceBuilder_ == null) {
-        deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNullDebugFieldBuilder() {
+      if (nullDebugBuilder_ == null) {
+        nullDebugBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NullDebug, opi_api.storage.v1.NullDebug.Builder, opi_api.storage.v1.NullDebugOrBuilder>(
-                getDevice(),
+                getNullDebug(),
                 getParentForChildren(),
                 isClean());
-        device_ = null;
+        nullDebug_ = null;
       }
-      return deviceBuilder_;
+      return nullDebugBuilder_;
+    }
+
+    private java.lang.Object nullDebugId_ = "";
+    /**
+     * <code>string null_debug_id = 3;</code>
+     * @return The nullDebugId.
+     */
+    public java.lang.String getNullDebugId() {
+      java.lang.Object ref = nullDebugId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nullDebugId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string null_debug_id = 3;</code>
+     * @return The bytes for nullDebugId.
+     */
+    public com.google.protobuf.ByteString
+        getNullDebugIdBytes() {
+      java.lang.Object ref = nullDebugId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nullDebugId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string null_debug_id = 3;</code>
+     * @param value The nullDebugId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNullDebugId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nullDebugId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string null_debug_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNullDebugId() {
+      
+      nullDebugId_ = getDefaultInstance().getNullDebugId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string null_debug_id = 3;</code>
+     * @param value The bytes for nullDebugId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNullDebugIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nullDebugId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -8,17 +8,44 @@ public interface UpdateNVMfRemoteControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return Whether the ctrl field is set.
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+   * @return Whether the nvMfRemoteController field is set.
    */
-  boolean hasCtrl();
+  boolean hasNvMfRemoteController();
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return The ctrl.
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
+   * @return The nvMfRemoteController.
    */
-  opi_api.storage.v1.NVMfRemoteController getCtrl();
+  opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController();
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 1;</code>
    */
-  opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder();
+  opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder();
+
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

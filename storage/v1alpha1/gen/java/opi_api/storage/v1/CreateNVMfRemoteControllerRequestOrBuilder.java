@@ -8,17 +8,41 @@ public interface CreateNVMfRemoteControllerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return Whether the ctrl field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  boolean hasCtrl();
+  java.lang.String getParent();
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
-   * @return The ctrl.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
-  opi_api.storage.v1.NVMfRemoteController getCtrl();
+  com.google.protobuf.ByteString
+      getParentBytes();
+
   /**
-   * <code>.opi_api.storage.v1.NVMfRemoteController ctrl = 1;</code>
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the nvMfRemoteController field is set.
    */
-  opi_api.storage.v1.NVMfRemoteControllerOrBuilder getCtrlOrBuilder();
+  boolean hasNvMfRemoteController();
+  /**
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The nvMfRemoteController.
+   */
+  opi_api.storage.v1.NVMfRemoteController getNvMfRemoteController();
+  /**
+   * <code>.opi_api.storage.v1.NVMfRemoteController nv_mf_remote_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.storage.v1.NVMfRemoteControllerOrBuilder getNvMfRemoteControllerOrBuilder();
+
+  /**
+   * <code>string nv_mf_remote_controller_id = 3;</code>
+   * @return The nvMfRemoteControllerId.
+   */
+  java.lang.String getNvMfRemoteControllerId();
+  /**
+   * <code>string nv_mf_remote_controller_id = 3;</code>
+   * @return The bytes for nvMfRemoteControllerId.
+   */
+  com.google.protobuf.ByteString
+      getNvMfRemoteControllerIdBytes();
 }

@@ -50,13 +50,26 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             opi_api.storage.v1.NVMeNamespace.Builder subBuilder = null;
-            if (namespace_ != null) {
-              subBuilder = namespace_.toBuilder();
+            if (nvMeNamespace_ != null) {
+              subBuilder = nvMeNamespace_.toBuilder();
             }
-            namespace_ = input.readMessage(opi_api.storage.v1.NVMeNamespace.parser(), extensionRegistry);
+            nvMeNamespace_ = input.readMessage(opi_api.storage.v1.NVMeNamespace.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(namespace_);
-              namespace_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(nvMeNamespace_);
+              nvMeNamespace_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,30 +106,68 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.UpdateNVMeNamespaceRequest.class, opi_api.storage.v1.UpdateNVMeNamespaceRequest.Builder.class);
   }
 
-  public static final int NAMESPACE_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.NVMeNamespace namespace_;
+  public static final int NV_ME_NAMESPACE_FIELD_NUMBER = 1;
+  private opi_api.storage.v1.NVMeNamespace nvMeNamespace_;
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return Whether the namespace field is set.
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+   * @return Whether the nvMeNamespace field is set.
    */
   @java.lang.Override
-  public boolean hasNamespace() {
-    return namespace_ != null;
+  public boolean hasNvMeNamespace() {
+    return nvMeNamespace_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-   * @return The namespace.
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+   * @return The nvMeNamespace.
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeNamespace getNamespace() {
-    return namespace_ == null ? opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : namespace_;
+  public opi_api.storage.v1.NVMeNamespace getNvMeNamespace() {
+    return nvMeNamespace_ == null ? opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : nvMeNamespace_;
   }
   /**
-   * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+   * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder() {
-    return getNamespace();
+  public opi_api.storage.v1.NVMeNamespaceOrBuilder getNvMeNamespaceOrBuilder() {
+    return getNvMeNamespace();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (namespace_ != null) {
-      output.writeMessage(1, getNamespace());
+    if (nvMeNamespace_ != null) {
+      output.writeMessage(1, getNvMeNamespace());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +199,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (namespace_ != null) {
+    if (nvMeNamespace_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getNamespace());
+        .computeMessageSize(1, getNvMeNamespace());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,10 +222,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.UpdateNVMeNamespaceRequest other = (opi_api.storage.v1.UpdateNVMeNamespaceRequest) obj;
 
-    if (hasNamespace() != other.hasNamespace()) return false;
-    if (hasNamespace()) {
-      if (!getNamespace()
-          .equals(other.getNamespace())) return false;
+    if (hasNvMeNamespace() != other.hasNvMeNamespace()) return false;
+    if (hasNvMeNamespace()) {
+      if (!getNvMeNamespace()
+          .equals(other.getNvMeNamespace())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasNamespace()) {
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
+    if (hasNvMeNamespace()) {
+      hash = (37 * hash) + NV_ME_NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNvMeNamespace().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -317,11 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
+      if (nvMeNamespaceBuilder_ == null) {
+        nvMeNamespace_ = null;
       } else {
-        namespace_ = null;
-        namespaceBuilder_ = null;
+        nvMeNamespace_ = null;
+        nvMeNamespaceBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -349,10 +422,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.UpdateNVMeNamespaceRequest buildPartial() {
       opi_api.storage.v1.UpdateNVMeNamespaceRequest result = new opi_api.storage.v1.UpdateNVMeNamespaceRequest(this);
-      if (namespaceBuilder_ == null) {
-        result.namespace_ = namespace_;
+      if (nvMeNamespaceBuilder_ == null) {
+        result.nvMeNamespace_ = nvMeNamespace_;
       } else {
-        result.namespace_ = namespaceBuilder_.build();
+        result.nvMeNamespace_ = nvMeNamespaceBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +480,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.UpdateNVMeNamespaceRequest other) {
       if (other == opi_api.storage.v1.UpdateNVMeNamespaceRequest.getDefaultInstance()) return this;
-      if (other.hasNamespace()) {
-        mergeNamespace(other.getNamespace());
+      if (other.hasNvMeNamespace()) {
+        mergeNvMeNamespace(other.getNvMeNamespace());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +515,278 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.NVMeNamespace namespace_;
+    private opi_api.storage.v1.NVMeNamespace nvMeNamespace_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> namespaceBuilder_;
+        opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> nvMeNamespaceBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-     * @return Whether the namespace field is set.
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+     * @return Whether the nvMeNamespace field is set.
      */
-    public boolean hasNamespace() {
-      return namespaceBuilder_ != null || namespace_ != null;
+    public boolean hasNvMeNamespace() {
+      return nvMeNamespaceBuilder_ != null || nvMeNamespace_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
-     * @return The namespace.
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
+     * @return The nvMeNamespace.
      */
-    public opi_api.storage.v1.NVMeNamespace getNamespace() {
-      if (namespaceBuilder_ == null) {
-        return namespace_ == null ? opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : namespace_;
+    public opi_api.storage.v1.NVMeNamespace getNvMeNamespace() {
+      if (nvMeNamespaceBuilder_ == null) {
+        return nvMeNamespace_ == null ? opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : nvMeNamespace_;
       } else {
-        return namespaceBuilder_.getMessage();
+        return nvMeNamespaceBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public Builder setNamespace(opi_api.storage.v1.NVMeNamespace value) {
-      if (namespaceBuilder_ == null) {
+    public Builder setNvMeNamespace(opi_api.storage.v1.NVMeNamespace value) {
+      if (nvMeNamespaceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        namespace_ = value;
+        nvMeNamespace_ = value;
         onChanged();
       } else {
-        namespaceBuilder_.setMessage(value);
+        nvMeNamespaceBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public Builder setNamespace(
+    public Builder setNvMeNamespace(
         opi_api.storage.v1.NVMeNamespace.Builder builderForValue) {
-      if (namespaceBuilder_ == null) {
-        namespace_ = builderForValue.build();
+      if (nvMeNamespaceBuilder_ == null) {
+        nvMeNamespace_ = builderForValue.build();
         onChanged();
       } else {
-        namespaceBuilder_.setMessage(builderForValue.build());
+        nvMeNamespaceBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public Builder mergeNamespace(opi_api.storage.v1.NVMeNamespace value) {
-      if (namespaceBuilder_ == null) {
-        if (namespace_ != null) {
-          namespace_ =
-            opi_api.storage.v1.NVMeNamespace.newBuilder(namespace_).mergeFrom(value).buildPartial();
+    public Builder mergeNvMeNamespace(opi_api.storage.v1.NVMeNamespace value) {
+      if (nvMeNamespaceBuilder_ == null) {
+        if (nvMeNamespace_ != null) {
+          nvMeNamespace_ =
+            opi_api.storage.v1.NVMeNamespace.newBuilder(nvMeNamespace_).mergeFrom(value).buildPartial();
         } else {
-          namespace_ = value;
+          nvMeNamespace_ = value;
         }
         onChanged();
       } else {
-        namespaceBuilder_.mergeFrom(value);
+        nvMeNamespaceBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public Builder clearNamespace() {
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
+    public Builder clearNvMeNamespace() {
+      if (nvMeNamespaceBuilder_ == null) {
+        nvMeNamespace_ = null;
         onChanged();
       } else {
-        namespace_ = null;
-        namespaceBuilder_ = null;
+        nvMeNamespace_ = null;
+        nvMeNamespaceBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespace.Builder getNamespaceBuilder() {
+    public opi_api.storage.v1.NVMeNamespace.Builder getNvMeNamespaceBuilder() {
       
       onChanged();
-      return getNamespaceFieldBuilder().getBuilder();
+      return getNvMeNamespaceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
-    public opi_api.storage.v1.NVMeNamespaceOrBuilder getNamespaceOrBuilder() {
-      if (namespaceBuilder_ != null) {
-        return namespaceBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.NVMeNamespaceOrBuilder getNvMeNamespaceOrBuilder() {
+      if (nvMeNamespaceBuilder_ != null) {
+        return nvMeNamespaceBuilder_.getMessageOrBuilder();
       } else {
-        return namespace_ == null ?
-            opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : namespace_;
+        return nvMeNamespace_ == null ?
+            opi_api.storage.v1.NVMeNamespace.getDefaultInstance() : nvMeNamespace_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NVMeNamespace namespace = 1;</code>
+     * <code>.opi_api.storage.v1.NVMeNamespace nv_me_namespace = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder> 
-        getNamespaceFieldBuilder() {
-      if (namespaceBuilder_ == null) {
-        namespaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getNvMeNamespaceFieldBuilder() {
+      if (nvMeNamespaceBuilder_ == null) {
+        nvMeNamespaceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.NVMeNamespace, opi_api.storage.v1.NVMeNamespace.Builder, opi_api.storage.v1.NVMeNamespaceOrBuilder>(
-                getNamespace(),
+                getNvMeNamespace(),
                 getParentForChildren(),
                 isClean());
-        namespace_ = null;
+        nvMeNamespace_ = null;
       }
-      return namespaceBuilder_;
+      return nvMeNamespaceBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

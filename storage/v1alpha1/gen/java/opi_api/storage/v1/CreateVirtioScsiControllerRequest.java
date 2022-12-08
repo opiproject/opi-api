@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateVirtioScsiControllerRequest() {
+    parent_ = "";
+    virtioScsiControllerId_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.VirtioScsiController.Builder subBuilder = null;
-            if (controller_ != null) {
-              subBuilder = controller_.toBuilder();
+            if (virtioScsiController_ != null) {
+              subBuilder = virtioScsiController_.toBuilder();
             }
-            controller_ = input.readMessage(opi_api.storage.v1.VirtioScsiController.parser(), extensionRegistry);
+            virtioScsiController_ = input.readMessage(opi_api.storage.v1.VirtioScsiController.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(controller_);
-              controller_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(virtioScsiController_);
+              virtioScsiController_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            virtioScsiControllerId_ = s;
             break;
           }
           default: {
@@ -93,30 +107,106 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.CreateVirtioScsiControllerRequest.class, opi_api.storage.v1.CreateVirtioScsiControllerRequest.Builder.class);
   }
 
-  public static final int CONTROLLER_FIELD_NUMBER = 1;
-  private opi_api.storage.v1.VirtioScsiController controller_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-   * @return Whether the controller field is set.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public boolean hasController() {
-    return controller_ != null;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-   * @return The controller.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiController getController() {
-    return controller_ == null ? opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : controller_;
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VIRTIO_SCSI_CONTROLLER_FIELD_NUMBER = 2;
+  private opi_api.storage.v1.VirtioScsiController virtioScsiController_;
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the virtioScsiController field is set.
+   */
+  @java.lang.Override
+  public boolean hasVirtioScsiController() {
+    return virtioScsiController_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The virtioScsiController.
    */
   @java.lang.Override
-  public opi_api.storage.v1.VirtioScsiControllerOrBuilder getControllerOrBuilder() {
-    return getController();
+  public opi_api.storage.v1.VirtioScsiController getVirtioScsiController() {
+    return virtioScsiController_ == null ? opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : virtioScsiController_;
+  }
+  /**
+   * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder() {
+    return getVirtioScsiController();
+  }
+
+  public static final int VIRTIO_SCSI_CONTROLLER_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object virtioScsiControllerId_;
+  /**
+   * <code>string virtio_scsi_controller_id = 3;</code>
+   * @return The virtioScsiControllerId.
+   */
+  @java.lang.Override
+  public java.lang.String getVirtioScsiControllerId() {
+    java.lang.Object ref = virtioScsiControllerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      virtioScsiControllerId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string virtio_scsi_controller_id = 3;</code>
+   * @return The bytes for virtioScsiControllerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVirtioScsiControllerIdBytes() {
+    java.lang.Object ref = virtioScsiControllerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      virtioScsiControllerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +223,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (controller_ != null) {
-      output.writeMessage(1, getController());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    }
+    if (virtioScsiController_ != null) {
+      output.writeMessage(2, getVirtioScsiController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiControllerId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, virtioScsiControllerId_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (controller_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (virtioScsiController_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getController());
+        .computeMessageSize(2, getVirtioScsiController());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(virtioScsiControllerId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, virtioScsiControllerId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +266,15 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateVirtioScsiControllerRequest other = (opi_api.storage.v1.CreateVirtioScsiControllerRequest) obj;
 
-    if (hasController() != other.hasController()) return false;
-    if (hasController()) {
-      if (!getController()
-          .equals(other.getController())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
+    if (hasVirtioScsiController() != other.hasVirtioScsiController()) return false;
+    if (hasVirtioScsiController()) {
+      if (!getVirtioScsiController()
+          .equals(other.getVirtioScsiController())) return false;
     }
+    if (!getVirtioScsiControllerId()
+        .equals(other.getVirtioScsiControllerId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,10 +286,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasController()) {
-      hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
-      hash = (53 * hash) + getController().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
+    if (hasVirtioScsiController()) {
+      hash = (37 * hash) + VIRTIO_SCSI_CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getVirtioScsiController().hashCode();
     }
+    hash = (37 * hash) + VIRTIO_SCSI_CONTROLLER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVirtioScsiControllerId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,12 +427,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (controllerBuilder_ == null) {
-        controller_ = null;
+      parent_ = "";
+
+      if (virtioScsiControllerBuilder_ == null) {
+        virtioScsiController_ = null;
       } else {
-        controller_ = null;
-        controllerBuilder_ = null;
+        virtioScsiController_ = null;
+        virtioScsiControllerBuilder_ = null;
       }
+      virtioScsiControllerId_ = "";
+
       return this;
     }
 
@@ -349,11 +463,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateVirtioScsiControllerRequest buildPartial() {
       opi_api.storage.v1.CreateVirtioScsiControllerRequest result = new opi_api.storage.v1.CreateVirtioScsiControllerRequest(this);
-      if (controllerBuilder_ == null) {
-        result.controller_ = controller_;
+      result.parent_ = parent_;
+      if (virtioScsiControllerBuilder_ == null) {
+        result.virtioScsiController_ = virtioScsiController_;
       } else {
-        result.controller_ = controllerBuilder_.build();
+        result.virtioScsiController_ = virtioScsiControllerBuilder_.build();
       }
+      result.virtioScsiControllerId_ = virtioScsiControllerId_;
       onBuilt();
       return result;
     }
@@ -402,8 +518,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateVirtioScsiControllerRequest other) {
       if (other == opi_api.storage.v1.CreateVirtioScsiControllerRequest.getDefaultInstance()) return this;
-      if (other.hasController()) {
-        mergeController(other.getController());
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
+      if (other.hasVirtioScsiController()) {
+        mergeVirtioScsiController(other.getVirtioScsiController());
+      }
+      if (!other.getVirtioScsiControllerId().isEmpty()) {
+        virtioScsiControllerId_ = other.virtioScsiControllerId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -434,123 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.storage.v1.VirtioScsiController controller_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> controllerBuilder_;
+    private java.lang.Object parent_ = "";
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-     * @return Whether the controller field is set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public boolean hasController() {
-      return controllerBuilder_ != null || controller_ != null;
-    }
-    /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
-     * @return The controller.
-     */
-    public opi_api.storage.v1.VirtioScsiController getController() {
-      if (controllerBuilder_ == null) {
-        return controller_ == null ? opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : controller_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
       } else {
-        return controllerBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
-    public Builder setController(opi_api.storage.v1.VirtioScsiController value) {
-      if (controllerBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private opi_api.storage.v1.VirtioScsiController virtioScsiController_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> virtioScsiControllerBuilder_;
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the virtioScsiController field is set.
+     */
+    public boolean hasVirtioScsiController() {
+      return virtioScsiControllerBuilder_ != null || virtioScsiController_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The virtioScsiController.
+     */
+    public opi_api.storage.v1.VirtioScsiController getVirtioScsiController() {
+      if (virtioScsiControllerBuilder_ == null) {
+        return virtioScsiController_ == null ? opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : virtioScsiController_;
+      } else {
+        return virtioScsiControllerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setVirtioScsiController(opi_api.storage.v1.VirtioScsiController value) {
+      if (virtioScsiControllerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        controller_ = value;
+        virtioScsiController_ = value;
         onChanged();
       } else {
-        controllerBuilder_.setMessage(value);
+        virtioScsiControllerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setController(
+    public Builder setVirtioScsiController(
         opi_api.storage.v1.VirtioScsiController.Builder builderForValue) {
-      if (controllerBuilder_ == null) {
-        controller_ = builderForValue.build();
+      if (virtioScsiControllerBuilder_ == null) {
+        virtioScsiController_ = builderForValue.build();
         onChanged();
       } else {
-        controllerBuilder_.setMessage(builderForValue.build());
+        virtioScsiControllerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeController(opi_api.storage.v1.VirtioScsiController value) {
-      if (controllerBuilder_ == null) {
-        if (controller_ != null) {
-          controller_ =
-            opi_api.storage.v1.VirtioScsiController.newBuilder(controller_).mergeFrom(value).buildPartial();
+    public Builder mergeVirtioScsiController(opi_api.storage.v1.VirtioScsiController value) {
+      if (virtioScsiControllerBuilder_ == null) {
+        if (virtioScsiController_ != null) {
+          virtioScsiController_ =
+            opi_api.storage.v1.VirtioScsiController.newBuilder(virtioScsiController_).mergeFrom(value).buildPartial();
         } else {
-          controller_ = value;
+          virtioScsiController_ = value;
         }
         onChanged();
       } else {
-        controllerBuilder_.mergeFrom(value);
+        virtioScsiControllerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearController() {
-      if (controllerBuilder_ == null) {
-        controller_ = null;
+    public Builder clearVirtioScsiController() {
+      if (virtioScsiControllerBuilder_ == null) {
+        virtioScsiController_ = null;
         onChanged();
       } else {
-        controller_ = null;
-        controllerBuilder_ = null;
+        virtioScsiController_ = null;
+        virtioScsiControllerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.VirtioScsiController.Builder getControllerBuilder() {
+    public opi_api.storage.v1.VirtioScsiController.Builder getVirtioScsiControllerBuilder() {
       
       onChanged();
-      return getControllerFieldBuilder().getBuilder();
+      return getVirtioScsiControllerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public opi_api.storage.v1.VirtioScsiControllerOrBuilder getControllerOrBuilder() {
-      if (controllerBuilder_ != null) {
-        return controllerBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.VirtioScsiControllerOrBuilder getVirtioScsiControllerOrBuilder() {
+      if (virtioScsiControllerBuilder_ != null) {
+        return virtioScsiControllerBuilder_.getMessageOrBuilder();
       } else {
-        return controller_ == null ?
-            opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : controller_;
+        return virtioScsiController_ == null ?
+            opi_api.storage.v1.VirtioScsiController.getDefaultInstance() : virtioScsiController_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.VirtioScsiController controller = 1;</code>
+     * <code>.opi_api.storage.v1.VirtioScsiController virtio_scsi_controller = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder> 
-        getControllerFieldBuilder() {
-      if (controllerBuilder_ == null) {
-        controllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getVirtioScsiControllerFieldBuilder() {
+      if (virtioScsiControllerBuilder_ == null) {
+        virtioScsiControllerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.VirtioScsiController, opi_api.storage.v1.VirtioScsiController.Builder, opi_api.storage.v1.VirtioScsiControllerOrBuilder>(
-                getController(),
+                getVirtioScsiController(),
                 getParentForChildren(),
                 isClean());
-        controller_ = null;
+        virtioScsiController_ = null;
       }
-      return controllerBuilder_;
+      return virtioScsiControllerBuilder_;
+    }
+
+    private java.lang.Object virtioScsiControllerId_ = "";
+    /**
+     * <code>string virtio_scsi_controller_id = 3;</code>
+     * @return The virtioScsiControllerId.
+     */
+    public java.lang.String getVirtioScsiControllerId() {
+      java.lang.Object ref = virtioScsiControllerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        virtioScsiControllerId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string virtio_scsi_controller_id = 3;</code>
+     * @return The bytes for virtioScsiControllerId.
+     */
+    public com.google.protobuf.ByteString
+        getVirtioScsiControllerIdBytes() {
+      java.lang.Object ref = virtioScsiControllerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        virtioScsiControllerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string virtio_scsi_controller_id = 3;</code>
+     * @param value The virtioScsiControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVirtioScsiControllerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      virtioScsiControllerId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string virtio_scsi_controller_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVirtioScsiControllerId() {
+      
+      virtioScsiControllerId_ = getDefaultInstance().getVirtioScsiControllerId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string virtio_scsi_controller_id = 3;</code>
+     * @param value The bytes for virtioScsiControllerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVirtioScsiControllerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      virtioScsiControllerId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
