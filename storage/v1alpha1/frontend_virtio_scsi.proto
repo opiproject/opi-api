@@ -151,7 +151,7 @@ message VirtioScsiLun {
 message CreateVirtioScsiTargetRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
     VirtioScsiTarget virtio_scsi_target = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_target_id = 3;
@@ -160,7 +160,7 @@ message CreateVirtioScsiTargetRequest {
 message DeleteVirtioScsiTargetRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
 }
 
@@ -173,7 +173,7 @@ message UpdateVirtioScsiTargetRequest {
 message ListVirtioScsiTargetsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -187,7 +187,7 @@ message ListVirtioScsiTargetsResponse {
 message GetVirtioScsiTargetRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
 }
 
@@ -203,7 +203,7 @@ message VirtioScsiTargetStatsResponse {
 message CreateVirtioScsiControllerRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
     VirtioScsiController virtio_scsi_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_controller_id = 3;
@@ -212,7 +212,7 @@ message CreateVirtioScsiControllerRequest {
 message DeleteVirtioScsiControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
 }
 
@@ -225,7 +225,7 @@ message UpdateVirtioScsiControllerRequest {
 message ListVirtioScsiControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -239,7 +239,7 @@ message ListVirtioScsiControllersResponse {
 message GetVirtioScsiControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
 }
 
@@ -255,7 +255,7 @@ message VirtioScsiControllerStatsResponse {
 message CreateVirtioScsiLunRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
     VirtioScsiLun virtio_scsi_lun = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_lun_id = 3;
@@ -264,7 +264,7 @@ message CreateVirtioScsiLunRequest {
 message DeleteVirtioScsiLunRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
 }
 
@@ -277,7 +277,7 @@ message UpdateVirtioScsiLunRequest {
 message ListVirtioScsiLunsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -291,7 +291,7 @@ message ListVirtioScsiLunsResponse {
 message GetVirtioScsiLunRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
 }
 

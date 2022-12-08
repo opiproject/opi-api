@@ -77,7 +77,7 @@ message NVMfRemoteController {
 message CreateNVMfRemoteControllerRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteController"
     ];
     NVMfRemoteController nv_mf_remote_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string nv_mf_remote_controller_id = 3;
@@ -87,7 +87,7 @@ message DeleteNVMfRemoteControllerRequest {
     // object's unique identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteController"
     ];
 }
 
@@ -100,7 +100,7 @@ message UpdateNVMfRemoteControllerRequest {
 message ListNVMfRemoteControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteController"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -115,7 +115,7 @@ message GetNVMfRemoteControllerRequest {
     // object's unique identifier
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteController"
     ];
 }
 

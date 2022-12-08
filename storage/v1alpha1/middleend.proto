@@ -74,7 +74,7 @@ message EncryptedVolume {
 message CreateEncryptedVolumeRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
     EncryptedVolume encrypted_volume = 2 [(google.api.field_behavior) = REQUIRED];
     string encrypted_volume_id = 3;
@@ -83,7 +83,7 @@ message CreateEncryptedVolumeRequest {
 message DeleteEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
 }
 
@@ -96,7 +96,7 @@ message UpdateEncryptedVolumeRequest {
 message ListEncryptedVolumesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -110,7 +110,7 @@ message ListEncryptedVolumesResponse {
 message GetEncryptedVolumeRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
     ];
 }
 

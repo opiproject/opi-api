@@ -71,7 +71,7 @@ message VirtioBlk {
 message CreateVirtioBlkRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
     VirtioBlk virtio_blk = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_blk_id = 3;
@@ -80,7 +80,7 @@ message CreateVirtioBlkRequest {
 message DeleteVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
 }
 
@@ -93,7 +93,7 @@ message UpdateVirtioBlkRequest {
 message ListVirtioBlksRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -107,7 +107,7 @@ message ListVirtioBlksResponse {
 message GetVirtioBlkRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
     ];
 }
 

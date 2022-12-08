@@ -246,7 +246,7 @@ message NVMeNamespaceStatus {
 message CreateNVMeSubsystemRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeSubsystem"
     ];
     NVMeSubsystem nv_me_subsystem = 2 [(google.api.field_behavior) = REQUIRED];
     string nv_me_subsystem_id = 3;
@@ -255,7 +255,7 @@ message CreateNVMeSubsystemRequest {
 message DeleteNVMeSubsystemRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeSubsystem"
     ];
 }
 
@@ -268,7 +268,7 @@ message UpdateNVMeSubsystemRequest {
 message ListNVMeSubsystemsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeSubsystem"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -282,7 +282,7 @@ message ListNVMeSubsystemsResponse {
 message GetNVMeSubsystemRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeSubsystem"
     ];
 }
 
@@ -297,7 +297,7 @@ message NVMeSubsystemStatsResponse {
 message CreateNVMeControllerRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeController"
     ];
     NVMeController nv_me_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string nv_me_controller_id = 3;
@@ -306,7 +306,7 @@ message CreateNVMeControllerRequest {
 message DeleteNVMeControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeController"
     ];
 }
 
@@ -319,7 +319,7 @@ message UpdateNVMeControllerRequest {
 message ListNVMeControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeController"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -333,7 +333,7 @@ message ListNVMeControllersResponse {
 message GetNVMeControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeController"
     ];
 }
 
@@ -349,7 +349,7 @@ message NVMeControllerStatsResponse {
 message CreateNVMeNamespaceRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeNamespace"
     ];
     NVMeNamespace nv_me_namespace = 2 [(google.api.field_behavior) = REQUIRED];
     string nv_me_namespace_id = 3;
@@ -358,7 +358,7 @@ message CreateNVMeNamespaceRequest {
 message DeleteNVMeNamespaceRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeNamespace"
     ];
 }
 
@@ -371,7 +371,7 @@ message UpdateNVMeNamespaceRequest {
 message ListNVMeNamespacesRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeNamespace"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -385,7 +385,7 @@ message ListNVMeNamespacesResponse {
 message GetNVMeNamespaceRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMeNamespace"
     ];
 }
 

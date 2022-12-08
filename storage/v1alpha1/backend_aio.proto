@@ -71,7 +71,7 @@ message AioController {
 message CreateAioControllerRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
     ];
     AioController aio_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string aio_controller_id = 3;
@@ -80,7 +80,7 @@ message CreateAioControllerRequest {
 message DeleteAioControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
     ];
 }
 
@@ -93,7 +93,7 @@ message UpdateAioControllerRequest {
 message ListAioControllersRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -107,7 +107,7 @@ message ListAioControllersResponse{
 message GetAioControllerRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
     ];
 }
 

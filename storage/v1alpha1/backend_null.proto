@@ -67,7 +67,7 @@ message NullDebug {
 message CreateNullDebugRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NullDebug"
     ];
     NullDebug null_debug = 2 [(google.api.field_behavior) = REQUIRED];
     string null_debug_id = 3;
@@ -76,7 +76,7 @@ message CreateNullDebugRequest {
 message DeleteNullDebugRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NullDebug"
     ];
 }
 
@@ -89,7 +89,7 @@ message UpdateNullDebugRequest {
 message ListNullDebugsRequest {
     string parent = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NullDebug"
     ];
     int32 page_size = 2;
     string page_token = 3;
@@ -103,7 +103,7 @@ message ListNullDebugsResponse {
 message GetNullDebugRequest {
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+        (google.api.resource_reference).type = "opi_api.storage.v1/NullDebug"
     ];
 }
 
