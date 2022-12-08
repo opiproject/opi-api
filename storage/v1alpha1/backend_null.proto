@@ -39,10 +39,11 @@ service NullDebugService {
             body: "subsystem"
         };
     }
-    rpc ListNullDebug   (ListNullDebugRequest)   returns (ListNullDebugResponse)   {
+    rpc ListNullDebugs   (ListNullDebugsRequest)   returns (ListNullDebugsResponse)   {
         option (google.api.http) = {
-            get: "/v1/subsystems"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetNullDebug    (GetNullDebugRequest)    returns (NullDebug)    {
         option (google.api.http) = {
@@ -75,13 +76,17 @@ message UpdateNullDebugRequest {
     NullDebug device = 1;
 }
 
-message ListNullDebugRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListNullDebugsRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListNullDebugResponse {
-    repeated NullDebug devices = 1;
+message ListNullDebugsResponse {
+    repeated NullDebug null_debugs = 1;
     string next_page_token = 2;
 }
 

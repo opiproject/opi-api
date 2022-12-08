@@ -39,10 +39,11 @@ service AioControllerService {
             body: "subsystem"
         };
     }
-    rpc ListAioController   (ListAioControllerRequest)   returns (ListAioControllerResponse)   {
+    rpc ListAioControllers   (ListAioControllersRequest)   returns (ListAioControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/subsystems"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetAioController    (GetAioControllerRequest)    returns (AioController)    {
         option (google.api.http) = {
@@ -79,13 +80,17 @@ message UpdateAioControllerRequest {
     AioController device = 1;
 }
 
-message ListAioControllerRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListAioControllersRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListAioControllerResponse{
-    repeated AioController devices = 1;
+message ListAioControllersResponse{
+    repeated AioController aio_controllers = 1;
     string next_page_token = 2;
 }
 

@@ -38,10 +38,11 @@ service NVMfRemoteControllerService {
             body: "subsystem"
         };
     }
-    rpc ListNVMfRemoteController   (ListNVMfRemoteControllerRequest)   returns (ListNVMfRemoteControllerResponse)   {
+    rpc ListNVMfRemoteControllers   (ListNVMfRemoteControllersRequest)   returns (ListNVMfRemoteControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/subsystems"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetNVMfRemoteController    (GetNVMfRemoteControllerRequest)    returns (NVMfRemoteController)    {
         option (google.api.http) = {
@@ -86,13 +87,17 @@ message UpdateNVMfRemoteControllerRequest {
     NVMfRemoteController ctrl = 1;
 }
 
-message ListNVMfRemoteControllerRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListNVMfRemoteControllersRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListNVMfRemoteControllerResponse {
-    repeated NVMfRemoteController ctrls = 1;
+message ListNVMfRemoteControllersResponse {
+    repeated NVMfRemoteController nv_mf_remote_controllers = 1;
     string next_page_token = 2;
 }
 

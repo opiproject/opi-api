@@ -40,10 +40,11 @@ service FrontendNvmeService {
             body: "subsystem"
         };
     }
-    rpc ListNVMeSubsystem   (ListNVMeSubsystemRequest)   returns (ListNVMeSubsystemResponse)   {
+    rpc ListNVMeSubsystems   (ListNVMeSubsystemsRequest)   returns (ListNVMeSubsystemsResponse)   {
         option (google.api.http) = {
-            get: "/v1/subsystems"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetNVMeSubsystem    (GetNVMeSubsystemRequest)    returns (NVMeSubsystem)    {
         option (google.api.http) = {
@@ -71,10 +72,11 @@ service FrontendNvmeService {
             body: "controller"
         };
     }
-    rpc ListNVMeController   (ListNVMeControllerRequest)   returns (ListNVMeControllerResponse)   {
+    rpc ListNVMeControllers   (ListNVMeControllersRequest)   returns (ListNVMeControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/controllers"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetNVMeController    (GetNVMeControllerRequest)    returns (NVMeController)    {
         option (google.api.http) = {
@@ -102,10 +104,11 @@ service FrontendNvmeService {
             body: "namespace"
         };
     }
-    rpc ListNVMeNamespace   (ListNVMeNamespaceRequest)   returns (ListNVMeNamespaceResponse)   {
+    rpc ListNVMeNamespaces   (ListNVMeNamespacesRequest)   returns (ListNVMeNamespacesResponse)   {
         option (google.api.http) = {
-            get: "/v1/namespaces"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetNVMeNamespace    (GetNVMeNamespaceRequest)    returns (NVMeNamespace)    {
         option (google.api.http) = {
@@ -248,13 +251,17 @@ message UpdateNVMeSubsystemRequest {
     NVMeSubsystem subsystem = 1;
 }
 
-message ListNVMeSubsystemRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListNVMeSubsystemsRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListNVMeSubsystemResponse {
-    repeated NVMeSubsystem subsystems = 1;
+message ListNVMeSubsystemsResponse {
+    repeated NVMeSubsystem nv_me_subsystems = 1;
     string next_page_token = 2;
 }
 
@@ -288,14 +295,17 @@ message UpdateNVMeControllerRequest {
     NVMeController controller = 1;
 }
 
-message ListNVMeControllerRequest {
-    common.v1.ObjectKey subsystem_id = 1;
+message ListNVMeControllersRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
     int32 page_size = 2;
     string page_token = 3;
 }
 
-message ListNVMeControllerResponse {
-    repeated NVMeController controllers = 1;
+message ListNVMeControllersResponse {
+    repeated NVMeController nv_me_controllers = 1;
     string next_page_token = 2;
 }
 
@@ -330,14 +340,17 @@ message UpdateNVMeNamespaceRequest {
     NVMeNamespace namespace = 1;
 }
 
-message ListNVMeNamespaceRequest {
-    common.v1.ObjectKey subsystem_id = 1;
+message ListNVMeNamespacesRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
     int32 page_size = 2;
     string page_token = 3;
 }
 
-message ListNVMeNamespaceResponse {
-    repeated NVMeNamespace namespaces = 1;
+message ListNVMeNamespacesResponse {
+    repeated NVMeNamespace nv_me_namespaces = 1;
     string next_page_token = 2;
 }
 

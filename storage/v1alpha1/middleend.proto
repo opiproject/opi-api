@@ -39,10 +39,11 @@ service MiddleendService {
             body: "volume"
         };
     }
-    rpc ListEncryptedVolume   (ListEncryptedVolumeRequest)   returns (ListEncryptedVolumeResponse)   {
+    rpc ListEncryptedVolumes   (ListEncryptedVolumesRequest)   returns (ListEncryptedVolumesResponse)   {
         option (google.api.http) = {
-            get: "/v1/volumes"
+            get: "/v1/{parent=volumes}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetEncryptedVolume    (GetEncryptedVolumeRequest)    returns (EncryptedVolume)    {
         option (google.api.http) = {
@@ -82,13 +83,17 @@ message UpdateEncryptedVolumeRequest {
     EncryptedVolume volume = 1;
 }
 
-message ListEncryptedVolumeRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListEncryptedVolumesRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListEncryptedVolumeResponse {
-    repeated EncryptedVolume volumes = 1;
+message ListEncryptedVolumesResponse {
+    repeated EncryptedVolume encrypted_volumes = 1;
     string next_page_token = 2;
 }
 

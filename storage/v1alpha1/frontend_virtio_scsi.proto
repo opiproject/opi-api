@@ -38,10 +38,11 @@ service FrontendVirtioScsiService {
             body: "virtioscsitarget"
         };
     }
-    rpc ListVirtioScsiTarget   (ListVirtioScsiTargetRequest)   returns (ListVirtioScsiTargetResponse)   {
+    rpc ListVirtioScsiTargets   (ListVirtioScsiTargetsRequest)   returns (ListVirtioScsiTargetsResponse)   {
         option (google.api.http) = {
-            get: "/v1/virtioscsitargets"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
         option (google.api.http) = {
@@ -69,10 +70,11 @@ service FrontendVirtioScsiService {
             body: "virtioscsictrl"
         };
     }
-    rpc ListVirtioScsiController   (ListVirtioScsiControllerRequest)   returns (ListVirtioScsiControllerResponse)   {
+    rpc ListVirtioScsiControllers   (ListVirtioScsiControllersRequest)   returns (ListVirtioScsiControllersResponse)   {
         option (google.api.http) = {
-            get: "/v1/virtioscsictrls"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
@@ -100,10 +102,11 @@ service FrontendVirtioScsiService {
             body: "virtioscsilun"
         };
     }
-    rpc ListVirtioScsiLun   (ListVirtioScsiLunRequest)   returns (ListVirtioScsiLunResponse)   {
+    rpc ListVirtioScsiLuns   (ListVirtioScsiLunsRequest)   returns (ListVirtioScsiLunsResponse)   {
         option (google.api.http) = {
-            get: "/v1/virtioscsiluns"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
@@ -153,13 +156,17 @@ message UpdateVirtioScsiTargetRequest {
     VirtioScsiTarget target = 1;
 }
 
-message ListVirtioScsiTargetRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListVirtioScsiTargetsRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListVirtioScsiTargetResponse {
-    repeated VirtioScsiTarget targets = 1;
+message ListVirtioScsiTargetsResponse {
+    repeated VirtioScsiTarget virtio_scsi_targets = 1;
     string next_page_token = 2;
 }
 
@@ -194,13 +201,17 @@ message UpdateVirtioScsiControllerRequest {
     VirtioScsiController controller = 1;
 }
 
-message ListVirtioScsiControllerRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListVirtioScsiControllersRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListVirtioScsiControllerResponse {
-    repeated VirtioScsiController controllers = 1;
+message ListVirtioScsiControllersResponse {
+    repeated VirtioScsiController virtio_scsi_controllers = 1;
     string next_page_token = 2;
 }
 
@@ -235,14 +246,17 @@ message UpdateVirtioScsiLunRequest {
     VirtioScsiLun lun = 1;
 }
 
-message ListVirtioScsiLunRequest {
-    common.v1.ObjectKey controller_id = 1;
+message ListVirtioScsiLunsRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
     int32 page_size = 2;
     string page_token = 3;
 }
 
-message ListVirtioScsiLunResponse {
-    repeated VirtioScsiLun luns = 1;
+message ListVirtioScsiLunsResponse {
+    repeated VirtioScsiLun virtio_scsi_luns = 1;
     string next_page_token = 2;
 }
 

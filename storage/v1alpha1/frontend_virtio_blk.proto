@@ -38,10 +38,11 @@ service FrontendVirtioBlkService {
             body: "virtioblk"
         };
     }
-    rpc ListVirtioBlk   (ListVirtioBlkRequest)   returns (ListVirtioBlkResponse)   {
+    rpc ListVirtioBlks   (ListVirtioBlksRequest)   returns (ListVirtioBlksResponse)   {
         option (google.api.http) = {
-            get: "/v1/virtioblks"
+            get: "/v1/{parent=subsystems}"
         };
+        option (google.api.method_signature) = "parent";
     }
     rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
@@ -79,13 +80,17 @@ message UpdateVirtioBlkRequest {
     VirtioBlk controller = 1;
 }
 
-message ListVirtioBlkRequest {
-    int32 page_size = 1;
-    string page_token = 2;
+message ListVirtioBlksRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "library.googleapis.com/Publisher"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
 }
 
-message ListVirtioBlkResponse {
-    repeated VirtioBlk controllers = 1;
+message ListVirtioBlksResponse {
+    repeated VirtioBlk virtio_blks = 1;
     string next_page_token = 2;
 }
 
