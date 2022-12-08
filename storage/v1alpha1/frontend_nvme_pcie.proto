@@ -47,8 +47,9 @@ service FrontendNvmeService {
     }
     rpc GetNVMeSubsystem    (GetNVMeSubsystemRequest)    returns (NVMeSubsystem)    {
         option (google.api.http) = {
-            get: "/v1/subsystems/{subsystem}"
+            get: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
 
@@ -77,8 +78,9 @@ service FrontendNvmeService {
     }
     rpc GetNVMeController    (GetNVMeControllerRequest)    returns (NVMeController)    {
         option (google.api.http) = {
-            get: "/v1/controllers/{controller}"
+            get: "/v1/{name=subsystems}/{controller}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
 
@@ -107,8 +109,9 @@ service FrontendNvmeService {
     }
     rpc GetNVMeNamespace    (GetNVMeNamespaceRequest)    returns (NVMeNamespace)    {
         option (google.api.http) = {
-            get: "/v1/namespaces/{namespace}"
+            get: "/v1/{name=subsystems}/{namespace}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
 }
@@ -256,7 +259,10 @@ message ListNVMeSubsystemResponse {
 }
 
 message GetNVMeSubsystemRequest {
-    common.v1.ObjectKey subsystem_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message NVMeSubsystemStatsRequest {
@@ -294,7 +300,10 @@ message ListNVMeControllerResponse {
 }
 
 message GetNVMeControllerRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message NVMeControllerStatsRequest {
@@ -333,7 +342,10 @@ message ListNVMeNamespaceResponse {
 }
 
 message GetNVMeNamespaceRequest {
-    common.v1.ObjectKey namespace_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message NVMeNamespaceStatsRequest {

@@ -46,8 +46,9 @@ service NullDebugService {
     }
     rpc GetNullDebug    (GetNullDebugRequest)    returns (NullDebug)    {
         option (google.api.http) = {
-            get: "/v1/subsystems/{subsystem}"
+            get: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc NullDebugStats  (NullDebugStatsRequest)  returns (NullDebugStatsResponse)  {}
 }
@@ -85,7 +86,10 @@ message ListNullDebugResponse {
 }
 
 message GetNullDebugRequest {
-    common.v1.ObjectKey handle = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message NullDebugStatsRequest {

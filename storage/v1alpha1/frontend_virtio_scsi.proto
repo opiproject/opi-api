@@ -45,8 +45,9 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiTarget    (GetVirtioScsiTargetRequest)    returns (VirtioScsiTarget)    {
         option (google.api.http) = {
-            get: "/v1/virtioscsitargets/{virtioscsitarget}"
+            get: "/v1/{name=subsystems}/{virtioscsitarget}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioScsiTargetStats  (VirtioScsiTargetStatsRequest)  returns (VirtioScsiTargetStatsResponse)  {}
 
@@ -75,8 +76,9 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiController    (GetVirtioScsiControllerRequest)    returns (VirtioScsiController)    {
         option (google.api.http) = {
-            get: "/v1/virtioscsictrls/{virtioscsictrl}"
+            get: "/v1/{name=subsystems}/{virtioscsictrl}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioScsiControllerStats  (VirtioScsiControllerStatsRequest)  returns (VirtioScsiControllerStatsResponse)  {}
 
@@ -105,8 +107,9 @@ service FrontendVirtioScsiService {
     }
     rpc GetVirtioScsiLun    (GetVirtioScsiLunRequest)    returns (VirtioScsiLun)    {
         option (google.api.http) = {
-            get: "/v1/virtioscsiluns/{virtioscsilun}"
+            get: "/v1/{name=subsystems}/{virtioscsilun}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioScsiLunStats  (VirtioScsiLunStatsRequest)  returns (VirtioScsiLunStatsResponse)  {}
 }
@@ -161,7 +164,10 @@ message ListVirtioScsiTargetResponse {
 }
 
 message GetVirtioScsiTargetRequest {
-    common.v1.ObjectKey target_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message VirtioScsiTargetStatsRequest {
@@ -199,7 +205,10 @@ message ListVirtioScsiControllerResponse {
 }
 
 message GetVirtioScsiControllerRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message VirtioScsiControllerStatsRequest {
@@ -238,8 +247,10 @@ message ListVirtioScsiLunResponse {
 }
 
 message GetVirtioScsiLunRequest {
-    common.v1.ObjectKey controller_id = 1;
-    common.v1.ObjectKey lun_id = 2;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message VirtioScsiLunStatsRequest {

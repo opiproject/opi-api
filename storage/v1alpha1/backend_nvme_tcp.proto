@@ -45,8 +45,9 @@ service NVMfRemoteControllerService {
     }
     rpc GetNVMfRemoteController    (GetNVMfRemoteControllerRequest)    returns (NVMfRemoteController)    {
         option (google.api.http) = {
-            get: "/v1/subsystems/{subsystem}"
+            get: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (google.protobuf.Empty) {}
     rpc NVMfRemoteControllerStats  (NVMfRemoteControllerStatsRequest)  returns (NVMfRemoteControllerStatsResponse)  {}
@@ -97,7 +98,10 @@ message ListNVMfRemoteControllerResponse {
 
 message GetNVMfRemoteControllerRequest {
     // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message NVMfRemoteControllerResetRequest {

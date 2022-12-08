@@ -45,8 +45,9 @@ service FrontendVirtioBlkService {
     }
     rpc GetVirtioBlk    (GetVirtioBlkRequest)    returns (VirtioBlk)    {
         option (google.api.http) = {
-            get: "/v1/virtioblks/{virtioblk}"
+            get: "/v1/{name=subsystems}/{virtioblk}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc VirtioBlkStats  (VirtioBlkStatsRequest)  returns (VirtioBlkStatsResponse)  {}
 }
@@ -89,7 +90,10 @@ message ListVirtioBlkResponse {
 }
 
 message GetVirtioBlkRequest {
-    common.v1.ObjectKey controller_id = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message VirtioBlkStatsRequest {

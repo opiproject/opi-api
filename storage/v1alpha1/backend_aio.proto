@@ -46,8 +46,9 @@ service AioControllerService {
     }
     rpc GetAioController    (GetAioControllerRequest)    returns (AioController)    {
         option (google.api.http) = {
-            get: "/v1/subsystems/{subsystem}"
+            get: "/v1/{name=subsystems}/{subsystem}"
         };
+        option (google.api.method_signature) = "name";
     }
     rpc AioControllerStats  (AioControllerStatsRequest)  returns (AioControllerStatsResponse)  {}
 }
@@ -89,7 +90,10 @@ message ListAioControllerResponse{
 }
 
 message GetAioControllerRequest {
-    common.v1.ObjectKey handle = 1;
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi.storage.v1/NVMeSubsystem"
+    ];
 }
 
 message AioControllerStatsRequest {
