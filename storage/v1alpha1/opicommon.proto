@@ -37,6 +37,18 @@ message PciEndpoint {
     int32 virtual_function = 3;
 }
 
+message VolumeStats {
+    int32    read_bytes_count       = 1;
+    int32    read_ops_count         = 2;
+    int32    write_bytes_count      = 3;
+    int32    write_ops_count        = 4;
+    int32    unmap_bytes_count      = 5;
+    int32    unmap_ops_count        = 6;
+    int32    read_latency_ticks     = 7;
+    int32    write_latency_ticks    = 8;
+    int32    unmap_latency_ticks    = 9;
+}
+
 // AES encryption types
 enum EncryptionType {
     ENCRYPTION_TYPE_UNSPECIFIED = 0;

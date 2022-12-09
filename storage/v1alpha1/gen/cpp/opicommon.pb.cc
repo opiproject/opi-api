@@ -33,10 +33,30 @@ struct PciEndpointDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
+constexpr VolumeStats::VolumeStats(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : read_bytes_count_(0)
+  , read_ops_count_(0)
+  , write_bytes_count_(0)
+  , write_ops_count_(0)
+  , unmap_bytes_count_(0)
+  , unmap_ops_count_(0)
+  , read_latency_ticks_(0)
+  , write_latency_ticks_(0)
+  , unmap_latency_ticks_(0){}
+struct VolumeStatsDefaultTypeInternal {
+  constexpr VolumeStatsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~VolumeStatsDefaultTypeInternal() {}
+  union {
+    VolumeStats _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_opicommon_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_opicommon_2eproto[2];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_opicommon_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_opicommon_2eproto = nullptr;
 
@@ -50,33 +70,57 @@ const uint32_t TableStruct_opicommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, port_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, physical_function_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::PciEndpoint, virtual_function_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_bytes_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_ops_count_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, read_latency_ticks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, write_latency_ticks_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VolumeStats, unmap_latency_ticks_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::PciEndpoint)},
+  { 9, -1, -1, sizeof(::opi_api::storage::v1::VolumeStats)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_PciEndpoint_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::storage::v1::_VolumeStats_default_instance_),
 };
 
 const char descriptor_table_protodef_opicommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017opicommon.proto\022\022opi_api.storage.v1\"S\n"
   "\013PciEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physica"
   "l_function\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001"
-  "(\005*\367\001\n\016EncryptionType\022\037\n\033ENCRYPTION_TYPE"
-  "_UNSPECIFIED\020\000\022\037\n\033ENCRYPTION_TYPE_AES_CB"
-  "C_128\020\001\022\037\n\033ENCRYPTION_TYPE_AES_CBC_192\020\002"
-  "\022\037\n\033ENCRYPTION_TYPE_AES_CBC_256\020\003\022\037\n\033ENC"
-  "RYPTION_TYPE_AES_XTS_128\020\004\022\037\n\033ENCRYPTION"
-  "_TYPE_AES_XTS_192\020\005\022\037\n\033ENCRYPTION_TYPE_A"
-  "ES_XTS_256\020\006B]\n\022opi_api.storage.v1B\016OpiC"
-  "ommonProtoP\001Z5github.com/opiproject/opi-"
-  "api/storage/v1alpha1/gen/gob\006proto3"
+  "(\005\"\375\001\n\013VolumeStats\022\030\n\020read_bytes_count\030\001"
+  " \001(\005\022\026\n\016read_ops_count\030\002 \001(\005\022\031\n\021write_by"
+  "tes_count\030\003 \001(\005\022\027\n\017write_ops_count\030\004 \001(\005"
+  "\022\031\n\021unmap_bytes_count\030\005 \001(\005\022\027\n\017unmap_ops"
+  "_count\030\006 \001(\005\022\032\n\022read_latency_ticks\030\007 \001(\005"
+  "\022\033\n\023write_latency_ticks\030\010 \001(\005\022\033\n\023unmap_l"
+  "atency_ticks\030\t \001(\005*\367\001\n\016EncryptionType\022\037\n"
+  "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENCRYP"
+  "TION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION_TY"
+  "PE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_AES_"
+  "CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_128"
+  "\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037\n\033E"
+  "NCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_api."
+  "storage.v1B\016OpiCommonProtoP\001Z5github.com"
+  "/opiproject/opi-api/storage/v1alpha1/gen"
+  "/gob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_opicommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_opicommon_2eproto = {
-  false, false, 475, descriptor_table_protodef_opicommon_2eproto, "opicommon.proto", 
-  &descriptor_table_opicommon_2eproto_once, nullptr, 0, 1,
+  false, false, 731, descriptor_table_protodef_opicommon_2eproto, "opicommon.proto", 
+  &descriptor_table_opicommon_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_opicommon_2eproto::offsets,
   file_level_metadata_opicommon_2eproto, file_level_enum_descriptors_opicommon_2eproto, file_level_service_descriptors_opicommon_2eproto,
 };
@@ -343,6 +387,372 @@ void PciEndpoint::InternalSwap(PciEndpoint* other) {
       file_level_metadata_opicommon_2eproto[0]);
 }
 
+// ===================================================================
+
+class VolumeStats::_Internal {
+ public:
+};
+
+VolumeStats::VolumeStats(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.storage.v1.VolumeStats)
+}
+VolumeStats::VolumeStats(const VolumeStats& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&read_bytes_count_, &from.read_bytes_count_,
+    static_cast<size_t>(reinterpret_cast<char*>(&unmap_latency_ticks_) -
+    reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+  // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VolumeStats)
+}
+
+inline void VolumeStats::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&read_bytes_count_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&unmap_latency_ticks_) -
+    reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+}
+
+VolumeStats::~VolumeStats() {
+  // @@protoc_insertion_point(destructor:opi_api.storage.v1.VolumeStats)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void VolumeStats::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void VolumeStats::ArenaDtor(void* object) {
+  VolumeStats* _this = reinterpret_cast< VolumeStats* >(object);
+  (void)_this;
+}
+void VolumeStats::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void VolumeStats::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void VolumeStats::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.storage.v1.VolumeStats)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&read_bytes_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&unmap_latency_ticks_) -
+      reinterpret_cast<char*>(&read_bytes_count_)) + sizeof(unmap_latency_ticks_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* VolumeStats::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 read_bytes_count = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          read_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 read_ops_count = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          read_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 write_bytes_count = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          write_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 write_ops_count = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          write_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unmap_bytes_count = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          unmap_bytes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unmap_ops_count = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          unmap_ops_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 read_latency_ticks = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          read_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 write_latency_ticks = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          write_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unmap_latency_ticks = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          unmap_latency_ticks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* VolumeStats::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.storage.v1.VolumeStats)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 read_bytes_count = 1;
+  if (this->_internal_read_bytes_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_read_bytes_count(), target);
+  }
+
+  // int32 read_ops_count = 2;
+  if (this->_internal_read_ops_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_read_ops_count(), target);
+  }
+
+  // int32 write_bytes_count = 3;
+  if (this->_internal_write_bytes_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_write_bytes_count(), target);
+  }
+
+  // int32 write_ops_count = 4;
+  if (this->_internal_write_ops_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_write_ops_count(), target);
+  }
+
+  // int32 unmap_bytes_count = 5;
+  if (this->_internal_unmap_bytes_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_unmap_bytes_count(), target);
+  }
+
+  // int32 unmap_ops_count = 6;
+  if (this->_internal_unmap_ops_count() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_unmap_ops_count(), target);
+  }
+
+  // int32 read_latency_ticks = 7;
+  if (this->_internal_read_latency_ticks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_read_latency_ticks(), target);
+  }
+
+  // int32 write_latency_ticks = 8;
+  if (this->_internal_write_latency_ticks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_write_latency_ticks(), target);
+  }
+
+  // int32 unmap_latency_ticks = 9;
+  if (this->_internal_unmap_latency_ticks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_unmap_latency_ticks(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.storage.v1.VolumeStats)
+  return target;
+}
+
+size_t VolumeStats::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.storage.v1.VolumeStats)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 read_bytes_count = 1;
+  if (this->_internal_read_bytes_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_bytes_count());
+  }
+
+  // int32 read_ops_count = 2;
+  if (this->_internal_read_ops_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_ops_count());
+  }
+
+  // int32 write_bytes_count = 3;
+  if (this->_internal_write_bytes_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_bytes_count());
+  }
+
+  // int32 write_ops_count = 4;
+  if (this->_internal_write_ops_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_ops_count());
+  }
+
+  // int32 unmap_bytes_count = 5;
+  if (this->_internal_unmap_bytes_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_bytes_count());
+  }
+
+  // int32 unmap_ops_count = 6;
+  if (this->_internal_unmap_ops_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_ops_count());
+  }
+
+  // int32 read_latency_ticks = 7;
+  if (this->_internal_read_latency_ticks() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_read_latency_ticks());
+  }
+
+  // int32 write_latency_ticks = 8;
+  if (this->_internal_write_latency_ticks() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_write_latency_ticks());
+  }
+
+  // int32 unmap_latency_ticks = 9;
+  if (this->_internal_unmap_latency_ticks() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unmap_latency_ticks());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VolumeStats::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    VolumeStats::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VolumeStats::GetClassData() const { return &_class_data_; }
+
+void VolumeStats::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<VolumeStats *>(to)->MergeFrom(
+      static_cast<const VolumeStats &>(from));
+}
+
+
+void VolumeStats::MergeFrom(const VolumeStats& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.storage.v1.VolumeStats)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_read_bytes_count() != 0) {
+    _internal_set_read_bytes_count(from._internal_read_bytes_count());
+  }
+  if (from._internal_read_ops_count() != 0) {
+    _internal_set_read_ops_count(from._internal_read_ops_count());
+  }
+  if (from._internal_write_bytes_count() != 0) {
+    _internal_set_write_bytes_count(from._internal_write_bytes_count());
+  }
+  if (from._internal_write_ops_count() != 0) {
+    _internal_set_write_ops_count(from._internal_write_ops_count());
+  }
+  if (from._internal_unmap_bytes_count() != 0) {
+    _internal_set_unmap_bytes_count(from._internal_unmap_bytes_count());
+  }
+  if (from._internal_unmap_ops_count() != 0) {
+    _internal_set_unmap_ops_count(from._internal_unmap_ops_count());
+  }
+  if (from._internal_read_latency_ticks() != 0) {
+    _internal_set_read_latency_ticks(from._internal_read_latency_ticks());
+  }
+  if (from._internal_write_latency_ticks() != 0) {
+    _internal_set_write_latency_ticks(from._internal_write_latency_ticks());
+  }
+  if (from._internal_unmap_latency_ticks() != 0) {
+    _internal_set_unmap_latency_ticks(from._internal_unmap_latency_ticks());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VolumeStats::CopyFrom(const VolumeStats& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.storage.v1.VolumeStats)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VolumeStats::IsInitialized() const {
+  return true;
+}
+
+void VolumeStats::InternalSwap(VolumeStats* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VolumeStats, unmap_latency_ticks_)
+      + sizeof(VolumeStats::unmap_latency_ticks_)
+      - PROTOBUF_FIELD_OFFSET(VolumeStats, read_bytes_count_)>(
+          reinterpret_cast<char*>(&read_bytes_count_),
+          reinterpret_cast<char*>(&other->read_bytes_count_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata VolumeStats::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_opicommon_2eproto_getter, &descriptor_table_opicommon_2eproto_once,
+      file_level_metadata_opicommon_2eproto[1]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace storage
@@ -350,6 +760,9 @@ void PciEndpoint::InternalSwap(PciEndpoint* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::PciEndpoint* Arena::CreateMaybeMessage< ::opi_api::storage::v1::PciEndpoint >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::storage::v1::PciEndpoint >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::storage::v1::VolumeStats* Arena::CreateMaybeMessage< ::opi_api::storage::v1::VolumeStats >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::storage::v1::VolumeStats >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

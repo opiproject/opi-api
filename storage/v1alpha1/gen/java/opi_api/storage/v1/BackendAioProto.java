@@ -73,62 +73,63 @@ public final class BackendAioProto {
       "ource.proto\032\033google/protobuf/empty.proto" +
       "\032\034google/api/annotations.proto\032\037google/a" +
       "pi/field_behavior.proto\032 google/protobuf" +
-      "/field_mask.proto\032\020object_key.proto\032\nuui" +
-      "d.proto\"\240\001\n\rAioController\022,\n\006handle\030\001 \001(" +
-      "\0132\034.opi_api.common.v1.ObjectKey\022\022\n\nblock" +
-      "_size\030\002 \001(\003\022\024\n\014blocks_count\030\003 \001(\003\022%\n\004uui" +
-      "d\030\004 \001(\0132\027.opi_api.common.v1.Uuid\022\020\n\010file" +
-      "name\030\005 \001(\t\"\261\001\n\032CreateAioControllerReques" +
-      "t\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.stora" +
-      "ge.v1/AioController\022>\n\016aio_controller\030\002 " +
-      "\001(\0132!.opi_api.storage.v1.AioControllerB\003" +
-      "\340A\002\022\031\n\021aio_controller_id\030\003 \001(\t\"T\n\032Delete" +
+      "/field_mask.proto\032\020object_key.proto\032\017opi" +
+      "common.proto\032\nuuid.proto\"\240\001\n\rAioControll" +
+      "er\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.O" +
+      "bjectKey\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_c" +
+      "ount\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.commo" +
+      "n.v1.Uuid\022\020\n\010filename\030\005 \001(\t\"\261\001\n\032CreateAi" +
+      "oControllerRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372" +
+      "A\"\n opi_api.storage.v1/AioController\022>\n\016" +
+      "aio_controller\030\002 \001(\0132!.opi_api.storage.v" +
+      "1.AioControllerB\003\340A\002\022\031\n\021aio_controller_i" +
+      "d\030\003 \001(\t\"T\n\032DeleteAioControllerRequest\0226\n" +
+      "\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/" +
+      "AioController\"\210\001\n\032UpdateAioControllerReq" +
+      "uest\0229\n\016aio_controller\030\001 \001(\0132!.opi_api.s" +
+      "torage.v1.AioController\022/\n\013update_mask\030\002" +
+      " \001(\0132\032.google.protobuf.FieldMask\"|\n\031List" +
+      "AioControllersRequest\0228\n\006parent\030\001 \001(\tB(\340" +
+      "A\002\372A\"\n opi_api.storage.v1/AioController\022" +
+      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q" +
+      "\n\032ListAioControllersResponse\022:\n\017aio_cont" +
+      "rollers\030\001 \003(\0132!.opi_api.storage.v1.AioCo" +
+      "ntroller\022\027\n\017next_page_token\030\002 \001(\t\"Q\n\027Get" +
       "AioControllerRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372" +
-      "A\"\n opi_api.storage.v1/AioController\"\210\001\n" +
-      "\032UpdateAioControllerRequest\0229\n\016aio_contr" +
-      "oller\030\001 \001(\0132!.opi_api.storage.v1.AioCont" +
-      "roller\022/\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\"|\n\031ListAioControllersReq" +
-      "uest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.st" +
-      "orage.v1/AioController\022\021\n\tpage_size\030\002 \001(" +
-      "\005\022\022\n\npage_token\030\003 \001(\t\"q\n\032ListAioControll" +
-      "ersResponse\022:\n\017aio_controllers\030\001 \003(\0132!.o" +
-      "pi_api.storage.v1.AioController\022\027\n\017next_" +
-      "page_token\030\002 \001(\t\"Q\n\027GetAioControllerRequ" +
-      "est\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.stora" +
-      "ge.v1/AioController\"I\n\031AioControllerStat" +
-      "sRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.commo" +
-      "n.v1.ObjectKey\"Y\n\032AioControllerStatsResp" +
-      "onse\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1" +
-      ".ObjectKey\022\r\n\005stats\030\002 \001(\t2\342\007\n\024AioControl" +
-      "lerService\022\303\001\n\023CreateAioController\022..opi" +
-      "_api.storage.v1.CreateAioControllerReque" +
-      "st\032!.opi_api.storage.v1.AioController\"Y\202" +
-      "\323\344\223\002)\"\027/v1/{parent=subsystems}:\016aio_cont" +
-      "roller\332A\'parent,aio_controller,aio_contr" +
-      "oller_id\022\217\001\n\023DeleteAioController\022..opi_a" +
-      "pi.storage.v1.DeleteAioControllerRequest" +
-      "\032\026.google.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{n" +
-      "ame=subsystems}/{subsystem}\332A\004name\022\303\001\n\023U" +
-      "pdateAioController\022..opi_api.storage.v1." +
-      "UpdateAioControllerRequest\032!.opi_api.sto" +
-      "rage.v1.AioController\"Y\202\323\344\223\00262$/v1/{aio_" +
-      "controller.name=subsystems}:\016aio_control" +
-      "ler\332A\032aio_controller,update_mask\022\235\001\n\022Lis" +
-      "tAioControllers\022-.opi_api.storage.v1.Lis" +
-      "tAioControllersRequest\032..opi_api.storage" +
-      ".v1.ListAioControllersResponse\"(\202\323\344\223\002\031\022\027" +
-      "/v1/{parent=subsystems}\332A\006parent\022\224\001\n\020Get" +
-      "AioController\022+.opi_api.storage.v1.GetAi" +
-      "oControllerRequest\032!.opi_api.storage.v1." +
-      "AioController\"0\202\323\344\223\002#\022!/v1/{name=subsyst" +
-      "ems}/{subsystem}\332A\004name\022u\n\022AioController" +
-      "Stats\022-.opi_api.storage.v1.AioController" +
-      "StatsRequest\032..opi_api.storage.v1.AioCon" +
-      "trollerStatsResponse\"\000B^\n\022opi_api.storag" +
-      "e.v1B\017BackendAioProtoP\001Z5github.com/opip" +
-      "roject/opi-api/storage/v1alpha1/gen/gob\006" +
-      "proto3"
+      "A\"\n opi_api.storage.v1/AioController\"I\n\031" +
+      "AioControllerStatsRequest\022,\n\006handle\030\001 \001(" +
+      "\0132\034.opi_api.common.v1.ObjectKey\"z\n\032AioCo" +
+      "ntrollerStatsResponse\022,\n\006handle\030\001 \001(\0132\034." +
+      "opi_api.common.v1.ObjectKey\022.\n\005stats\030\002 \001" +
+      "(\0132\037.opi_api.storage.v1.VolumeStats2\342\007\n\024" +
+      "AioControllerService\022\303\001\n\023CreateAioContro" +
+      "ller\022..opi_api.storage.v1.CreateAioContr" +
+      "ollerRequest\032!.opi_api.storage.v1.AioCon" +
+      "troller\"Y\202\323\344\223\002)\"\027/v1/{parent=subsystems}" +
+      ":\016aio_controller\332A\'parent,aio_controller" +
+      ",aio_controller_id\022\217\001\n\023DeleteAioControll" +
+      "er\022..opi_api.storage.v1.DeleteAioControl" +
+      "lerRequest\032\026.google.protobuf.Empty\"0\202\323\344\223" +
+      "\002#*!/v1/{name=subsystems}/{subsystem}\332A\004" +
+      "name\022\303\001\n\023UpdateAioController\022..opi_api.s" +
+      "torage.v1.UpdateAioControllerRequest\032!.o" +
+      "pi_api.storage.v1.AioController\"Y\202\323\344\223\00262" +
+      "$/v1/{aio_controller.name=subsystems}:\016a" +
+      "io_controller\332A\032aio_controller,update_ma" +
+      "sk\022\235\001\n\022ListAioControllers\022-.opi_api.stor" +
+      "age.v1.ListAioControllersRequest\032..opi_a" +
+      "pi.storage.v1.ListAioControllersResponse" +
+      "\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006pare" +
+      "nt\022\224\001\n\020GetAioController\022+.opi_api.storag" +
+      "e.v1.GetAioControllerRequest\032!.opi_api.s" +
+      "torage.v1.AioController\"0\202\323\344\223\002#\022!/v1/{na" +
+      "me=subsystems}/{subsystem}\332A\004name\022u\n\022Aio" +
+      "ControllerStats\022-.opi_api.storage.v1.Aio" +
+      "ControllerStatsRequest\032..opi_api.storage" +
+      ".v1.AioControllerStatsResponse\"\000B^\n\022opi_" +
+      "api.storage.v1B\017BackendAioProtoP\001Z5githu" +
+      "b.com/opiproject/opi-api/storage/v1alpha" +
+      "1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -140,6 +141,7 @@ public final class BackendAioProto {
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           opi_api.common.v1.ObjectKeyProto.getDescriptor(),
+          opi_api.storage.v1.OpiCommonProto.getDescriptor(),
           opi_api.common.v1.UuidProto.getDescriptor(),
         });
     internal_static_opi_api_storage_v1_AioController_descriptor =
@@ -211,6 +213,7 @@ public final class BackendAioProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    opi_api.storage.v1.OpiCommonProto.getDescriptor();
     opi_api.common.v1.UuidProto.getDescriptor();
   }
 

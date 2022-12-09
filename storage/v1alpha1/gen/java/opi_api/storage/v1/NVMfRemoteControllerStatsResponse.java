@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NVMfRemoteControllerStatsResponse() {
-    stats_ = "";
   }
 
   @java.lang.Override
@@ -50,9 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            opi_api.storage.v1.VolumeStats.Builder subBuilder = null;
+            if (stats_ != null) {
+              subBuilder = stats_.toBuilder();
+            }
+            stats_ = input.readMessage(opi_api.storage.v1.VolumeStats.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(stats_);
+              stats_ = subBuilder.buildPartial();
+            }
 
-            stats_ = s;
             break;
           }
           default: {
@@ -88,41 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object stats_;
+  private opi_api.storage.v1.VolumeStats stats_;
   /**
-   * <code>string stats = 1;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
+   * @return Whether the stats field is set.
+   */
+  @java.lang.Override
+  public boolean hasStats() {
+    return stats_ != null;
+  }
+  /**
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    * @return The stats.
    */
   @java.lang.Override
-  public java.lang.String getStats() {
-    java.lang.Object ref = stats_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      stats_ = s;
-      return s;
-    }
+  public opi_api.storage.v1.VolumeStats getStats() {
+    return stats_ == null ? opi_api.storage.v1.VolumeStats.getDefaultInstance() : stats_;
   }
   /**
-   * <code>string stats = 1;</code>
-   * @return The bytes for stats.
+   * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatsBytes() {
-    java.lang.Object ref = stats_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      stats_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder() {
+    return getStats();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stats_);
+    if (stats_ != null) {
+      output.writeMessage(1, getStats());
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stats_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stats_);
+    if (stats_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NVMfRemoteControllerStatsResponse other = (opi_api.storage.v1.NVMfRemoteControllerStatsResponse) obj;
 
-    if (!getStats()
-        .equals(other.getStats())) return false;
+    if (hasStats() != other.hasStats()) return false;
+    if (hasStats()) {
+      if (!getStats()
+          .equals(other.getStats())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATS_FIELD_NUMBER;
-    hash = (53 * hash) + getStats().hashCode();
+    if (hasStats()) {
+      hash = (37 * hash) + STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getStats().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      stats_ = "";
-
+      if (statsBuilder_ == null) {
+        stats_ = null;
+      } else {
+        stats_ = null;
+        statsBuilder_ = null;
+      }
       return this;
     }
 
@@ -345,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NVMfRemoteControllerStatsResponse buildPartial() {
       opi_api.storage.v1.NVMfRemoteControllerStatsResponse result = new opi_api.storage.v1.NVMfRemoteControllerStatsResponse(this);
-      result.stats_ = stats_;
+      if (statsBuilder_ == null) {
+        result.stats_ = stats_;
+      } else {
+        result.stats_ = statsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -394,9 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NVMfRemoteControllerStatsResponse other) {
       if (other == opi_api.storage.v1.NVMfRemoteControllerStatsResponse.getDefaultInstance()) return this;
-      if (!other.getStats().isEmpty()) {
-        stats_ = other.stats_;
-        onChanged();
+      if (other.hasStats()) {
+        mergeStats(other.getStats());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -427,80 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object stats_ = "";
+    private opi_api.storage.v1.VolumeStats stats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder> statsBuilder_;
     /**
-     * <code>string stats = 1;</code>
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
+     * @return Whether the stats field is set.
+     */
+    public boolean hasStats() {
+      return statsBuilder_ != null || stats_ != null;
+    }
+    /**
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      * @return The stats.
      */
-    public java.lang.String getStats() {
-      java.lang.Object ref = stats_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        stats_ = s;
-        return s;
+    public opi_api.storage.v1.VolumeStats getStats() {
+      if (statsBuilder_ == null) {
+        return stats_ == null ? opi_api.storage.v1.VolumeStats.getDefaultInstance() : stats_;
       } else {
-        return (java.lang.String) ref;
+        return statsBuilder_.getMessage();
       }
     }
     /**
-     * <code>string stats = 1;</code>
-     * @return The bytes for stats.
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatsBytes() {
-      java.lang.Object ref = stats_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        stats_ = b;
-        return b;
+    public Builder setStats(opi_api.storage.v1.VolumeStats value) {
+      if (statsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stats_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        statsBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>string stats = 1;</code>
-     * @param value The stats to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder setStats(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      stats_ = value;
-      onChanged();
+        opi_api.storage.v1.VolumeStats.Builder builderForValue) {
+      if (statsBuilder_ == null) {
+        stats_ = builderForValue.build();
+        onChanged();
+      } else {
+        statsBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>string stats = 1;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
+     */
+    public Builder mergeStats(opi_api.storage.v1.VolumeStats value) {
+      if (statsBuilder_ == null) {
+        if (stats_ != null) {
+          stats_ =
+            opi_api.storage.v1.VolumeStats.newBuilder(stats_).mergeFrom(value).buildPartial();
+        } else {
+          stats_ = value;
+        }
+        onChanged();
+      } else {
+        statsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
     public Builder clearStats() {
-      
-      stats_ = getDefaultInstance().getStats();
-      onChanged();
+      if (statsBuilder_ == null) {
+        stats_ = null;
+        onChanged();
+      } else {
+        stats_ = null;
+        statsBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>string stats = 1;</code>
-     * @param value The bytes for stats to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
      */
-    public Builder setStatsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public opi_api.storage.v1.VolumeStats.Builder getStatsBuilder() {
       
-      stats_ = value;
       onChanged();
-      return this;
+      return getStatsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
+     */
+    public opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder() {
+      if (statsBuilder_ != null) {
+        return statsBuilder_.getMessageOrBuilder();
+      } else {
+        return stats_ == null ?
+            opi_api.storage.v1.VolumeStats.getDefaultInstance() : stats_;
+      }
+    }
+    /**
+     * <code>.opi_api.storage.v1.VolumeStats stats = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder> 
+        getStatsFieldBuilder() {
+      if (statsBuilder_ == null) {
+        statsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.storage.v1.VolumeStats, opi_api.storage.v1.VolumeStats.Builder, opi_api.storage.v1.VolumeStatsOrBuilder>(
+                getStats(),
+                getParentForChildren(),
+                isClean());
+        stats_ = null;
+      }
+      return statsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

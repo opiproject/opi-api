@@ -291,7 +291,7 @@ message NVMeSubsystemStatsRequest {
 }
 
 message NVMeSubsystemStatsResponse {
-    string stats = 1;
+    VolumeStats stats = 1;
 }
 
 message CreateNVMeControllerRequest {
@@ -343,7 +343,7 @@ message NVMeControllerStatsRequest {
 
 message NVMeControllerStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }
 
 message CreateNVMeNamespaceRequest {
@@ -395,7 +395,7 @@ message NVMeNamespaceStatsRequest {
 
 message NVMeNamespaceStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }
 
 // Namespace  Administrative States

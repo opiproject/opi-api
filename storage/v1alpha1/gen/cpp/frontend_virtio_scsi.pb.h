@@ -2009,23 +2009,9 @@ class VirtioScsiTargetStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatsFieldNumber = 2,
     kIdFieldNumber = 1,
+    kStatsFieldNumber = 2,
   };
-  // string stats = 2;
-  void clear_stats();
-  const std::string& stats() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_stats(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_stats();
-  PROTOBUF_NODISCARD std::string* release_stats();
-  void set_allocated_stats(std::string* stats);
-  private:
-  const std::string& _internal_stats() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_stats(const std::string& value);
-  std::string* _internal_mutable_stats();
-  public:
-
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -2044,6 +2030,24 @@ class VirtioScsiTargetStatsResponse final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
+  // .opi_api.storage.v1.VolumeStats stats = 2;
+  bool has_stats() const;
+  private:
+  bool _internal_has_stats() const;
+  public:
+  void clear_stats();
+  const ::opi_api::storage::v1::VolumeStats& stats() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::VolumeStats* release_stats();
+  ::opi_api::storage::v1::VolumeStats* mutable_stats();
+  void set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats);
+  private:
+  const ::opi_api::storage::v1::VolumeStats& _internal_stats() const;
+  ::opi_api::storage::v1::VolumeStats* _internal_mutable_stats();
+  public:
+  void unsafe_arena_set_allocated_stats(
+      ::opi_api::storage::v1::VolumeStats* stats);
+  ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiTargetStatsResponse)
  private:
   class _Internal;
@@ -2051,8 +2055,8 @@ class VirtioScsiTargetStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stats_;
   ::opi_api::common::v1::ObjectKey* id_;
+  ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -3348,23 +3352,9 @@ class VirtioScsiControllerStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatsFieldNumber = 2,
     kIdFieldNumber = 1,
+    kStatsFieldNumber = 2,
   };
-  // string stats = 2;
-  void clear_stats();
-  const std::string& stats() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_stats(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_stats();
-  PROTOBUF_NODISCARD std::string* release_stats();
-  void set_allocated_stats(std::string* stats);
-  private:
-  const std::string& _internal_stats() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_stats(const std::string& value);
-  std::string* _internal_mutable_stats();
-  public:
-
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -3383,6 +3373,24 @@ class VirtioScsiControllerStatsResponse final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
+  // .opi_api.storage.v1.VolumeStats stats = 2;
+  bool has_stats() const;
+  private:
+  bool _internal_has_stats() const;
+  public:
+  void clear_stats();
+  const ::opi_api::storage::v1::VolumeStats& stats() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::VolumeStats* release_stats();
+  ::opi_api::storage::v1::VolumeStats* mutable_stats();
+  void set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats);
+  private:
+  const ::opi_api::storage::v1::VolumeStats& _internal_stats() const;
+  ::opi_api::storage::v1::VolumeStats* _internal_mutable_stats();
+  public:
+  void unsafe_arena_set_allocated_stats(
+      ::opi_api::storage::v1::VolumeStats* stats);
+  ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiControllerStatsResponse)
  private:
   class _Internal;
@@ -3390,8 +3398,8 @@ class VirtioScsiControllerStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stats_;
   ::opi_api::common::v1::ObjectKey* id_;
+  ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -4707,23 +4715,9 @@ class VirtioScsiLunStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatsFieldNumber = 2,
     kIdFieldNumber = 1,
+    kStatsFieldNumber = 2,
   };
-  // string stats = 2;
-  void clear_stats();
-  const std::string& stats() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_stats(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_stats();
-  PROTOBUF_NODISCARD std::string* release_stats();
-  void set_allocated_stats(std::string* stats);
-  private:
-  const std::string& _internal_stats() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_stats(const std::string& value);
-  std::string* _internal_mutable_stats();
-  public:
-
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
   private:
@@ -4742,6 +4736,24 @@ class VirtioScsiLunStatsResponse final :
       ::opi_api::common::v1::ObjectKey* id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
+  // .opi_api.storage.v1.VolumeStats stats = 2;
+  bool has_stats() const;
+  private:
+  bool _internal_has_stats() const;
+  public:
+  void clear_stats();
+  const ::opi_api::storage::v1::VolumeStats& stats() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::VolumeStats* release_stats();
+  ::opi_api::storage::v1::VolumeStats* mutable_stats();
+  void set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats);
+  private:
+  const ::opi_api::storage::v1::VolumeStats& _internal_stats() const;
+  ::opi_api::storage::v1::VolumeStats* _internal_mutable_stats();
+  public:
+  void unsafe_arena_set_allocated_stats(
+      ::opi_api::storage::v1::VolumeStats* stats);
+  ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiLunStatsResponse)
  private:
   class _Internal;
@@ -4749,8 +4761,8 @@ class VirtioScsiLunStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stats_;
   ::opi_api::common::v1::ObjectKey* id_;
+  ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -6196,54 +6208,89 @@ inline void VirtioScsiTargetStatsResponse::set_allocated_id(::opi_api::common::v
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiTargetStatsResponse.id)
 }
 
-// string stats = 2;
-inline void VirtioScsiTargetStatsResponse::clear_stats() {
-  stats_.ClearToEmpty();
+// .opi_api.storage.v1.VolumeStats stats = 2;
+inline bool VirtioScsiTargetStatsResponse::_internal_has_stats() const {
+  return this != internal_default_instance() && stats_ != nullptr;
 }
-inline const std::string& VirtioScsiTargetStatsResponse::stats() const {
+inline bool VirtioScsiTargetStatsResponse::has_stats() const {
+  return _internal_has_stats();
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiTargetStatsResponse::_internal_stats() const {
+  const ::opi_api::storage::v1::VolumeStats* p = stats_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
+      ::opi_api::storage::v1::_VolumeStats_default_instance_);
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiTargetStatsResponse::stats() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
   return _internal_stats();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioScsiTargetStatsResponse::set_stats(ArgT0&& arg0, ArgT... args) {
- 
- stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
-}
-inline std::string* VirtioScsiTargetStatsResponse::mutable_stats() {
-  std::string* _s = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
-  return _s;
-}
-inline const std::string& VirtioScsiTargetStatsResponse::_internal_stats() const {
-  return stats_.Get();
-}
-inline void VirtioScsiTargetStatsResponse::_internal_set_stats(const std::string& value) {
-  
-  stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiTargetStatsResponse::_internal_mutable_stats() {
-  
-  return stats_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiTargetStatsResponse::release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
-  return stats_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioScsiTargetStatsResponse::set_allocated_stats(std::string* stats) {
-  if (stats != nullptr) {
+inline void VirtioScsiTargetStatsResponse::unsafe_arena_set_allocated_stats(
+    ::opi_api::storage::v1::VolumeStats* stats) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  stats_ = stats;
+  if (stats) {
     
   } else {
     
   }
-  stats_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stats,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (stats_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiTargetStatsResponse::release_stats() {
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiTargetStatsResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiTargetStatsResponse::_internal_mutable_stats() {
+  
+  if (stats_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
+    stats_ = p;
+  }
+  return stats_;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiTargetStatsResponse::mutable_stats() {
+  ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
+  return _msg;
+}
+inline void VirtioScsiTargetStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  if (stats) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats));
+    if (message_arena != submessage_arena) {
+      stats = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stats, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  stats_ = stats;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiTargetStatsResponse.stats)
 }
 
@@ -7134,54 +7181,89 @@ inline void VirtioScsiControllerStatsResponse::set_allocated_id(::opi_api::commo
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiControllerStatsResponse.id)
 }
 
-// string stats = 2;
-inline void VirtioScsiControllerStatsResponse::clear_stats() {
-  stats_.ClearToEmpty();
+// .opi_api.storage.v1.VolumeStats stats = 2;
+inline bool VirtioScsiControllerStatsResponse::_internal_has_stats() const {
+  return this != internal_default_instance() && stats_ != nullptr;
 }
-inline const std::string& VirtioScsiControllerStatsResponse::stats() const {
+inline bool VirtioScsiControllerStatsResponse::has_stats() const {
+  return _internal_has_stats();
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiControllerStatsResponse::_internal_stats() const {
+  const ::opi_api::storage::v1::VolumeStats* p = stats_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
+      ::opi_api::storage::v1::_VolumeStats_default_instance_);
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiControllerStatsResponse::stats() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
   return _internal_stats();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioScsiControllerStatsResponse::set_stats(ArgT0&& arg0, ArgT... args) {
- 
- stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
-}
-inline std::string* VirtioScsiControllerStatsResponse::mutable_stats() {
-  std::string* _s = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
-  return _s;
-}
-inline const std::string& VirtioScsiControllerStatsResponse::_internal_stats() const {
-  return stats_.Get();
-}
-inline void VirtioScsiControllerStatsResponse::_internal_set_stats(const std::string& value) {
-  
-  stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiControllerStatsResponse::_internal_mutable_stats() {
-  
-  return stats_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiControllerStatsResponse::release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
-  return stats_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioScsiControllerStatsResponse::set_allocated_stats(std::string* stats) {
-  if (stats != nullptr) {
+inline void VirtioScsiControllerStatsResponse::unsafe_arena_set_allocated_stats(
+    ::opi_api::storage::v1::VolumeStats* stats) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  stats_ = stats;
+  if (stats) {
     
   } else {
     
   }
-  stats_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stats,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (stats_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiControllerStatsResponse::release_stats() {
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiControllerStatsResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiControllerStatsResponse::_internal_mutable_stats() {
+  
+  if (stats_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
+    stats_ = p;
+  }
+  return stats_;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiControllerStatsResponse::mutable_stats() {
+  ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
+  return _msg;
+}
+inline void VirtioScsiControllerStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  if (stats) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats));
+    if (message_arena != submessage_arena) {
+      stats = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stats, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  stats_ = stats;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiControllerStatsResponse.stats)
 }
 
@@ -8158,54 +8240,89 @@ inline void VirtioScsiLunStatsResponse::set_allocated_id(::opi_api::common::v1::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiLunStatsResponse.id)
 }
 
-// string stats = 2;
-inline void VirtioScsiLunStatsResponse::clear_stats() {
-  stats_.ClearToEmpty();
+// .opi_api.storage.v1.VolumeStats stats = 2;
+inline bool VirtioScsiLunStatsResponse::_internal_has_stats() const {
+  return this != internal_default_instance() && stats_ != nullptr;
 }
-inline const std::string& VirtioScsiLunStatsResponse::stats() const {
+inline bool VirtioScsiLunStatsResponse::has_stats() const {
+  return _internal_has_stats();
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiLunStatsResponse::_internal_stats() const {
+  const ::opi_api::storage::v1::VolumeStats* p = stats_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
+      ::opi_api::storage::v1::_VolumeStats_default_instance_);
+}
+inline const ::opi_api::storage::v1::VolumeStats& VirtioScsiLunStatsResponse::stats() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
   return _internal_stats();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void VirtioScsiLunStatsResponse::set_stats(ArgT0&& arg0, ArgT... args) {
- 
- stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
-}
-inline std::string* VirtioScsiLunStatsResponse::mutable_stats() {
-  std::string* _s = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
-  return _s;
-}
-inline const std::string& VirtioScsiLunStatsResponse::_internal_stats() const {
-  return stats_.Get();
-}
-inline void VirtioScsiLunStatsResponse::_internal_set_stats(const std::string& value) {
-  
-  stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiLunStatsResponse::_internal_mutable_stats() {
-  
-  return stats_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* VirtioScsiLunStatsResponse::release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
-  return stats_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void VirtioScsiLunStatsResponse::set_allocated_stats(std::string* stats) {
-  if (stats != nullptr) {
+inline void VirtioScsiLunStatsResponse::unsafe_arena_set_allocated_stats(
+    ::opi_api::storage::v1::VolumeStats* stats) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  stats_ = stats;
+  if (stats) {
     
   } else {
     
   }
-  stats_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stats,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (stats_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiLunStatsResponse::release_stats() {
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiLunStatsResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiLunStatsResponse::_internal_mutable_stats() {
+  
+  if (stats_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
+    stats_ = p;
+  }
+  return stats_;
+}
+inline ::opi_api::storage::v1::VolumeStats* VirtioScsiLunStatsResponse::mutable_stats() {
+  ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
+  return _msg;
+}
+inline void VirtioScsiLunStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  if (stats) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats));
+    if (message_arena != submessage_arena) {
+      stats = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stats, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  stats_ = stats;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiLunStatsResponse.stats)
 }
 

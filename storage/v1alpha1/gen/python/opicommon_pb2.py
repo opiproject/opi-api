@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopicommon.proto\x12\x12opi_api.storage.v1\"S\n\x0bPciEndpoint\x12\x0f\n\x07port_id\x18\x01 \x01(\x05\x12\x19\n\x11physical_function\x18\x02 \x01(\x05\x12\x18\n\x10virtual_function\x18\x03 \x01(\x05*\xf7\x01\n\x0e\x45ncryptionType\x12\x1f\n\x1b\x45NCRYPTION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_128\x10\x01\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_192\x10\x02\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_256\x10\x03\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_128\x10\x04\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_192\x10\x05\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_256\x10\x06\x42]\n\x12opi_api.storage.v1B\x0eOpiCommonProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fopicommon.proto\x12\x12opi_api.storage.v1\"S\n\x0bPciEndpoint\x12\x0f\n\x07port_id\x18\x01 \x01(\x05\x12\x19\n\x11physical_function\x18\x02 \x01(\x05\x12\x18\n\x10virtual_function\x18\x03 \x01(\x05\"\xfd\x01\n\x0bVolumeStats\x12\x18\n\x10read_bytes_count\x18\x01 \x01(\x05\x12\x16\n\x0eread_ops_count\x18\x02 \x01(\x05\x12\x19\n\x11write_bytes_count\x18\x03 \x01(\x05\x12\x17\n\x0fwrite_ops_count\x18\x04 \x01(\x05\x12\x19\n\x11unmap_bytes_count\x18\x05 \x01(\x05\x12\x17\n\x0funmap_ops_count\x18\x06 \x01(\x05\x12\x1a\n\x12read_latency_ticks\x18\x07 \x01(\x05\x12\x1b\n\x13write_latency_ticks\x18\x08 \x01(\x05\x12\x1b\n\x13unmap_latency_ticks\x18\t \x01(\x05*\xf7\x01\n\x0e\x45ncryptionType\x12\x1f\n\x1b\x45NCRYPTION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_128\x10\x01\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_192\x10\x02\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_CBC_256\x10\x03\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_128\x10\x04\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_192\x10\x05\x12\x1f\n\x1b\x45NCRYPTION_TYPE_AES_XTS_256\x10\x06\x42]\n\x12opi_api.storage.v1B\x0eOpiCommonProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
 _ENCRYPTIONTYPE = DESCRIPTOR.enum_types_by_name['EncryptionType']
 EncryptionType = enum_type_wrapper.EnumTypeWrapper(_ENCRYPTIONTYPE)
@@ -29,6 +29,7 @@ ENCRYPTION_TYPE_AES_XTS_256 = 6
 
 
 _PCIENDPOINT = DESCRIPTOR.message_types_by_name['PciEndpoint']
+_VOLUMESTATS = DESCRIPTOR.message_types_by_name['VolumeStats']
 PciEndpoint = _reflection.GeneratedProtocolMessageType('PciEndpoint', (_message.Message,), {
   'DESCRIPTOR' : _PCIENDPOINT,
   '__module__' : 'opicommon_pb2'
@@ -36,12 +37,21 @@ PciEndpoint = _reflection.GeneratedProtocolMessageType('PciEndpoint', (_message.
   })
 _sym_db.RegisterMessage(PciEndpoint)
 
+VolumeStats = _reflection.GeneratedProtocolMessageType('VolumeStats', (_message.Message,), {
+  'DESCRIPTOR' : _VOLUMESTATS,
+  '__module__' : 'opicommon_pb2'
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.VolumeStats)
+  })
+_sym_db.RegisterMessage(VolumeStats)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\016OpiCommonProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
-  _ENCRYPTIONTYPE._serialized_start=125
-  _ENCRYPTIONTYPE._serialized_end=372
+  _ENCRYPTIONTYPE._serialized_start=381
+  _ENCRYPTIONTYPE._serialized_end=628
   _PCIENDPOINT._serialized_start=39
   _PCIENDPOINT._serialized_end=122
+  _VOLUMESTATS._serialized_start=125
+  _VOLUMESTATS._serialized_end=378
 # @@protoc_insertion_point(module_scope)

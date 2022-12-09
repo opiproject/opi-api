@@ -197,7 +197,7 @@ message VirtioScsiTargetStatsRequest {
 
 message VirtioScsiTargetStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }
 
 message CreateVirtioScsiControllerRequest {
@@ -249,7 +249,7 @@ message VirtioScsiControllerStatsRequest {
 
 message VirtioScsiControllerStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }
 
 message CreateVirtioScsiLunRequest {
@@ -302,5 +302,5 @@ message VirtioScsiLunStatsRequest {
 
 message VirtioScsiLunStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }

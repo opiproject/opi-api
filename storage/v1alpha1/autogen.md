@@ -149,6 +149,7 @@
   
 - [opicommon.proto](#opicommon-proto)
     - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
+    - [VolumeStats](#opi_api-storage-v1-VolumeStats)
   
     - [EncryptionType](#opi_api-storage-v1-EncryptionType)
   
@@ -212,7 +213,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -484,7 +485,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -698,7 +699,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1102,7 +1103,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1185,7 +1186,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1266,7 +1267,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1545,7 +1546,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1927,7 +1928,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -1976,7 +1977,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -2023,7 +2024,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -2147,7 +2148,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
-| stats | [string](#string) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
 
 
 
@@ -2267,6 +2268,29 @@ confusion with storage &#34;devices&#34;.
 | port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 | physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 | virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-VolumeStats"></a>
+
+### VolumeStats
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| read_bytes_count | [int32](#int32) |  |  |
+| read_ops_count | [int32](#int32) |  |  |
+| write_bytes_count | [int32](#int32) |  |  |
+| write_ops_count | [int32](#int32) |  |  |
+| unmap_bytes_count | [int32](#int32) |  |  |
+| unmap_ops_count | [int32](#int32) |  |  |
+| read_latency_ticks | [int32](#int32) |  |  |
+| write_latency_ticks | [int32](#int32) |  |  |
+| unmap_latency_ticks | [int32](#int32) |  |  |
 
 
 

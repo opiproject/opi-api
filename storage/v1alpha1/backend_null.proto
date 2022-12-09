@@ -18,6 +18,7 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 import "object_key.proto";
+import "opicommon.proto";
 import "uuid.proto";
 
 // Back End (network-facing) APIs. This is debug interface for null block devices.
@@ -113,6 +114,6 @@ message NullDebugStatsRequest {
 
 message NullDebugStatsResponse {
     common.v1.ObjectKey handle = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }
 

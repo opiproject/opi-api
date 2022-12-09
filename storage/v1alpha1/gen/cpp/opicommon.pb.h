@@ -47,7 +47,7 @@ struct TableStruct_opicommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -60,11 +60,15 @@ namespace v1 {
 class PciEndpoint;
 struct PciEndpointDefaultTypeInternal;
 extern PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
+class VolumeStats;
+struct VolumeStatsDefaultTypeInternal;
+extern VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
 }  // namespace v1
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
 template<> ::opi_api::storage::v1::PciEndpoint* Arena::CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(Arena*);
+template<> ::opi_api::storage::v1::VolumeStats* Arena::CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
 namespace storage {
@@ -268,6 +272,240 @@ class PciEndpoint final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_opicommon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class VolumeStats final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.VolumeStats) */ {
+ public:
+  inline VolumeStats() : VolumeStats(nullptr) {}
+  ~VolumeStats() override;
+  explicit constexpr VolumeStats(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VolumeStats(const VolumeStats& from);
+  VolumeStats(VolumeStats&& from) noexcept
+    : VolumeStats() {
+    *this = ::std::move(from);
+  }
+
+  inline VolumeStats& operator=(const VolumeStats& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VolumeStats& operator=(VolumeStats&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VolumeStats& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VolumeStats* internal_default_instance() {
+    return reinterpret_cast<const VolumeStats*>(
+               &_VolumeStats_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(VolumeStats& a, VolumeStats& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VolumeStats* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VolumeStats* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VolumeStats* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VolumeStats>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VolumeStats& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const VolumeStats& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VolumeStats* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.storage.v1.VolumeStats";
+  }
+  protected:
+  explicit VolumeStats(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReadBytesCountFieldNumber = 1,
+    kReadOpsCountFieldNumber = 2,
+    kWriteBytesCountFieldNumber = 3,
+    kWriteOpsCountFieldNumber = 4,
+    kUnmapBytesCountFieldNumber = 5,
+    kUnmapOpsCountFieldNumber = 6,
+    kReadLatencyTicksFieldNumber = 7,
+    kWriteLatencyTicksFieldNumber = 8,
+    kUnmapLatencyTicksFieldNumber = 9,
+  };
+  // int32 read_bytes_count = 1;
+  void clear_read_bytes_count();
+  int32_t read_bytes_count() const;
+  void set_read_bytes_count(int32_t value);
+  private:
+  int32_t _internal_read_bytes_count() const;
+  void _internal_set_read_bytes_count(int32_t value);
+  public:
+
+  // int32 read_ops_count = 2;
+  void clear_read_ops_count();
+  int32_t read_ops_count() const;
+  void set_read_ops_count(int32_t value);
+  private:
+  int32_t _internal_read_ops_count() const;
+  void _internal_set_read_ops_count(int32_t value);
+  public:
+
+  // int32 write_bytes_count = 3;
+  void clear_write_bytes_count();
+  int32_t write_bytes_count() const;
+  void set_write_bytes_count(int32_t value);
+  private:
+  int32_t _internal_write_bytes_count() const;
+  void _internal_set_write_bytes_count(int32_t value);
+  public:
+
+  // int32 write_ops_count = 4;
+  void clear_write_ops_count();
+  int32_t write_ops_count() const;
+  void set_write_ops_count(int32_t value);
+  private:
+  int32_t _internal_write_ops_count() const;
+  void _internal_set_write_ops_count(int32_t value);
+  public:
+
+  // int32 unmap_bytes_count = 5;
+  void clear_unmap_bytes_count();
+  int32_t unmap_bytes_count() const;
+  void set_unmap_bytes_count(int32_t value);
+  private:
+  int32_t _internal_unmap_bytes_count() const;
+  void _internal_set_unmap_bytes_count(int32_t value);
+  public:
+
+  // int32 unmap_ops_count = 6;
+  void clear_unmap_ops_count();
+  int32_t unmap_ops_count() const;
+  void set_unmap_ops_count(int32_t value);
+  private:
+  int32_t _internal_unmap_ops_count() const;
+  void _internal_set_unmap_ops_count(int32_t value);
+  public:
+
+  // int32 read_latency_ticks = 7;
+  void clear_read_latency_ticks();
+  int32_t read_latency_ticks() const;
+  void set_read_latency_ticks(int32_t value);
+  private:
+  int32_t _internal_read_latency_ticks() const;
+  void _internal_set_read_latency_ticks(int32_t value);
+  public:
+
+  // int32 write_latency_ticks = 8;
+  void clear_write_latency_ticks();
+  int32_t write_latency_ticks() const;
+  void set_write_latency_ticks(int32_t value);
+  private:
+  int32_t _internal_write_latency_ticks() const;
+  void _internal_set_write_latency_ticks(int32_t value);
+  public:
+
+  // int32 unmap_latency_ticks = 9;
+  void clear_unmap_latency_ticks();
+  int32_t unmap_latency_ticks() const;
+  void set_unmap_latency_ticks(int32_t value);
+  private:
+  int32_t _internal_unmap_latency_ticks() const;
+  void _internal_set_unmap_latency_ticks(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VolumeStats)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  int32_t read_bytes_count_;
+  int32_t read_ops_count_;
+  int32_t write_bytes_count_;
+  int32_t write_ops_count_;
+  int32_t unmap_bytes_count_;
+  int32_t unmap_ops_count_;
+  int32_t read_latency_ticks_;
+  int32_t write_latency_ticks_;
+  int32_t unmap_latency_ticks_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_opicommon_2eproto;
+};
 // ===================================================================
 
 
@@ -339,9 +577,195 @@ inline void PciEndpoint::set_virtual_function(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.PciEndpoint.virtual_function)
 }
 
+// -------------------------------------------------------------------
+
+// VolumeStats
+
+// int32 read_bytes_count = 1;
+inline void VolumeStats::clear_read_bytes_count() {
+  read_bytes_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_read_bytes_count() const {
+  return read_bytes_count_;
+}
+inline int32_t VolumeStats::read_bytes_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.read_bytes_count)
+  return _internal_read_bytes_count();
+}
+inline void VolumeStats::_internal_set_read_bytes_count(int32_t value) {
+  
+  read_bytes_count_ = value;
+}
+inline void VolumeStats::set_read_bytes_count(int32_t value) {
+  _internal_set_read_bytes_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.read_bytes_count)
+}
+
+// int32 read_ops_count = 2;
+inline void VolumeStats::clear_read_ops_count() {
+  read_ops_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_read_ops_count() const {
+  return read_ops_count_;
+}
+inline int32_t VolumeStats::read_ops_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.read_ops_count)
+  return _internal_read_ops_count();
+}
+inline void VolumeStats::_internal_set_read_ops_count(int32_t value) {
+  
+  read_ops_count_ = value;
+}
+inline void VolumeStats::set_read_ops_count(int32_t value) {
+  _internal_set_read_ops_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.read_ops_count)
+}
+
+// int32 write_bytes_count = 3;
+inline void VolumeStats::clear_write_bytes_count() {
+  write_bytes_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_write_bytes_count() const {
+  return write_bytes_count_;
+}
+inline int32_t VolumeStats::write_bytes_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.write_bytes_count)
+  return _internal_write_bytes_count();
+}
+inline void VolumeStats::_internal_set_write_bytes_count(int32_t value) {
+  
+  write_bytes_count_ = value;
+}
+inline void VolumeStats::set_write_bytes_count(int32_t value) {
+  _internal_set_write_bytes_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.write_bytes_count)
+}
+
+// int32 write_ops_count = 4;
+inline void VolumeStats::clear_write_ops_count() {
+  write_ops_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_write_ops_count() const {
+  return write_ops_count_;
+}
+inline int32_t VolumeStats::write_ops_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.write_ops_count)
+  return _internal_write_ops_count();
+}
+inline void VolumeStats::_internal_set_write_ops_count(int32_t value) {
+  
+  write_ops_count_ = value;
+}
+inline void VolumeStats::set_write_ops_count(int32_t value) {
+  _internal_set_write_ops_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.write_ops_count)
+}
+
+// int32 unmap_bytes_count = 5;
+inline void VolumeStats::clear_unmap_bytes_count() {
+  unmap_bytes_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_unmap_bytes_count() const {
+  return unmap_bytes_count_;
+}
+inline int32_t VolumeStats::unmap_bytes_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.unmap_bytes_count)
+  return _internal_unmap_bytes_count();
+}
+inline void VolumeStats::_internal_set_unmap_bytes_count(int32_t value) {
+  
+  unmap_bytes_count_ = value;
+}
+inline void VolumeStats::set_unmap_bytes_count(int32_t value) {
+  _internal_set_unmap_bytes_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.unmap_bytes_count)
+}
+
+// int32 unmap_ops_count = 6;
+inline void VolumeStats::clear_unmap_ops_count() {
+  unmap_ops_count_ = 0;
+}
+inline int32_t VolumeStats::_internal_unmap_ops_count() const {
+  return unmap_ops_count_;
+}
+inline int32_t VolumeStats::unmap_ops_count() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.unmap_ops_count)
+  return _internal_unmap_ops_count();
+}
+inline void VolumeStats::_internal_set_unmap_ops_count(int32_t value) {
+  
+  unmap_ops_count_ = value;
+}
+inline void VolumeStats::set_unmap_ops_count(int32_t value) {
+  _internal_set_unmap_ops_count(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.unmap_ops_count)
+}
+
+// int32 read_latency_ticks = 7;
+inline void VolumeStats::clear_read_latency_ticks() {
+  read_latency_ticks_ = 0;
+}
+inline int32_t VolumeStats::_internal_read_latency_ticks() const {
+  return read_latency_ticks_;
+}
+inline int32_t VolumeStats::read_latency_ticks() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.read_latency_ticks)
+  return _internal_read_latency_ticks();
+}
+inline void VolumeStats::_internal_set_read_latency_ticks(int32_t value) {
+  
+  read_latency_ticks_ = value;
+}
+inline void VolumeStats::set_read_latency_ticks(int32_t value) {
+  _internal_set_read_latency_ticks(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.read_latency_ticks)
+}
+
+// int32 write_latency_ticks = 8;
+inline void VolumeStats::clear_write_latency_ticks() {
+  write_latency_ticks_ = 0;
+}
+inline int32_t VolumeStats::_internal_write_latency_ticks() const {
+  return write_latency_ticks_;
+}
+inline int32_t VolumeStats::write_latency_ticks() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.write_latency_ticks)
+  return _internal_write_latency_ticks();
+}
+inline void VolumeStats::_internal_set_write_latency_ticks(int32_t value) {
+  
+  write_latency_ticks_ = value;
+}
+inline void VolumeStats::set_write_latency_ticks(int32_t value) {
+  _internal_set_write_latency_ticks(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.write_latency_ticks)
+}
+
+// int32 unmap_latency_ticks = 9;
+inline void VolumeStats::clear_unmap_latency_ticks() {
+  unmap_latency_ticks_ = 0;
+}
+inline int32_t VolumeStats::_internal_unmap_latency_ticks() const {
+  return unmap_latency_ticks_;
+}
+inline int32_t VolumeStats::unmap_latency_ticks() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VolumeStats.unmap_latency_ticks)
+  return _internal_unmap_latency_ticks();
+}
+inline void VolumeStats::_internal_set_unmap_latency_ticks(int32_t value) {
+  
+  unmap_latency_ticks_ = value;
+}
+inline void VolumeStats::set_unmap_latency_ticks(int32_t value) {
+  _internal_set_unmap_latency_ticks(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.unmap_latency_ticks)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

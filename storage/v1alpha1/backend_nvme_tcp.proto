@@ -18,6 +18,7 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 import "object_key.proto";
+import "opicommon.proto";
 
 // Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 service NVMfRemoteControllerService {
@@ -130,7 +131,7 @@ message NVMfRemoteControllerStatsRequest {
 }
 
 message NVMfRemoteControllerStatsResponse {
-    string stats = 1;
+    VolumeStats stats = 1;
 }
 
 enum NvmeTransportType {

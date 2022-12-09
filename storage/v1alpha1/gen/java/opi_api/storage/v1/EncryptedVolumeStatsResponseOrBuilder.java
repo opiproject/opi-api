@@ -23,14 +23,17 @@ public interface EncryptedVolumeStatsResponseOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder();
 
   /**
-   * <code>string stats = 2;</code>
+   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
+   * @return Whether the stats field is set.
+   */
+  boolean hasStats();
+  /**
+   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
    * @return The stats.
    */
-  java.lang.String getStats();
+  opi_api.storage.v1.VolumeStats getStats();
   /**
-   * <code>string stats = 2;</code>
-   * @return The bytes for stats.
+   * <code>.opi_api.storage.v1.VolumeStats stats = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getStatsBytes();
+  opi_api.storage.v1.VolumeStatsOrBuilder getStatsOrBuilder();
 }

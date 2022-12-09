@@ -1603,23 +1603,9 @@ class EncryptedVolumeStatsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatsFieldNumber = 2,
     kEncryptedVolumeIdFieldNumber = 1,
+    kStatsFieldNumber = 2,
   };
-  // string stats = 2;
-  void clear_stats();
-  const std::string& stats() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_stats(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_stats();
-  PROTOBUF_NODISCARD std::string* release_stats();
-  void set_allocated_stats(std::string* stats);
-  private:
-  const std::string& _internal_stats() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_stats(const std::string& value);
-  std::string* _internal_mutable_stats();
-  public:
-
   // .opi_api.common.v1.ObjectKey encrypted_volume_id = 1;
   bool has_encrypted_volume_id() const;
   private:
@@ -1638,6 +1624,24 @@ class EncryptedVolumeStatsResponse final :
       ::opi_api::common::v1::ObjectKey* encrypted_volume_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_encrypted_volume_id();
 
+  // .opi_api.storage.v1.VolumeStats stats = 2;
+  bool has_stats() const;
+  private:
+  bool _internal_has_stats() const;
+  public:
+  void clear_stats();
+  const ::opi_api::storage::v1::VolumeStats& stats() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::VolumeStats* release_stats();
+  ::opi_api::storage::v1::VolumeStats* mutable_stats();
+  void set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats);
+  private:
+  const ::opi_api::storage::v1::VolumeStats& _internal_stats() const;
+  ::opi_api::storage::v1::VolumeStats* _internal_mutable_stats();
+  public:
+  void unsafe_arena_set_allocated_stats(
+      ::opi_api::storage::v1::VolumeStats* stats);
+  ::opi_api::storage::v1::VolumeStats* unsafe_arena_release_stats();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.EncryptedVolumeStatsResponse)
  private:
   class _Internal;
@@ -1645,8 +1649,8 @@ class EncryptedVolumeStatsResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stats_;
   ::opi_api::common::v1::ObjectKey* encrypted_volume_id_;
+  ::opi_api::storage::v1::VolumeStats* stats_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_2eproto;
 };
@@ -2791,54 +2795,89 @@ inline void EncryptedVolumeStatsResponse::set_allocated_encrypted_volume_id(::op
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolumeStatsResponse.encrypted_volume_id)
 }
 
-// string stats = 2;
-inline void EncryptedVolumeStatsResponse::clear_stats() {
-  stats_.ClearToEmpty();
+// .opi_api.storage.v1.VolumeStats stats = 2;
+inline bool EncryptedVolumeStatsResponse::_internal_has_stats() const {
+  return this != internal_default_instance() && stats_ != nullptr;
 }
-inline const std::string& EncryptedVolumeStatsResponse::stats() const {
+inline bool EncryptedVolumeStatsResponse::has_stats() const {
+  return _internal_has_stats();
+}
+inline const ::opi_api::storage::v1::VolumeStats& EncryptedVolumeStatsResponse::_internal_stats() const {
+  const ::opi_api::storage::v1::VolumeStats* p = stats_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::VolumeStats&>(
+      ::opi_api::storage::v1::_VolumeStats_default_instance_);
+}
+inline const ::opi_api::storage::v1::VolumeStats& EncryptedVolumeStatsResponse::stats() const {
   // @@protoc_insertion_point(field_get:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
   return _internal_stats();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void EncryptedVolumeStatsResponse::set_stats(ArgT0&& arg0, ArgT... args) {
- 
- stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
-}
-inline std::string* EncryptedVolumeStatsResponse::mutable_stats() {
-  std::string* _s = _internal_mutable_stats();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
-  return _s;
-}
-inline const std::string& EncryptedVolumeStatsResponse::_internal_stats() const {
-  return stats_.Get();
-}
-inline void EncryptedVolumeStatsResponse::_internal_set_stats(const std::string& value) {
-  
-  stats_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* EncryptedVolumeStatsResponse::_internal_mutable_stats() {
-  
-  return stats_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* EncryptedVolumeStatsResponse::release_stats() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
-  return stats_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void EncryptedVolumeStatsResponse::set_allocated_stats(std::string* stats) {
-  if (stats != nullptr) {
+inline void EncryptedVolumeStatsResponse::unsafe_arena_set_allocated_stats(
+    ::opi_api::storage::v1::VolumeStats* stats) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  stats_ = stats;
+  if (stats) {
     
   } else {
     
   }
-  stats_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stats,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (stats_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    stats_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
+}
+inline ::opi_api::storage::v1::VolumeStats* EncryptedVolumeStatsResponse::release_stats() {
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* EncryptedVolumeStatsResponse::unsafe_arena_release_stats() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
+  
+  ::opi_api::storage::v1::VolumeStats* temp = stats_;
+  stats_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::VolumeStats* EncryptedVolumeStatsResponse::_internal_mutable_stats() {
+  
+  if (stats_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(GetArenaForAllocation());
+    stats_ = p;
+  }
+  return stats_;
+}
+inline ::opi_api::storage::v1::VolumeStats* EncryptedVolumeStatsResponse::mutable_stats() {
+  ::opi_api::storage::v1::VolumeStats* _msg = _internal_mutable_stats();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
+  return _msg;
+}
+inline void EncryptedVolumeStatsResponse::set_allocated_stats(::opi_api::storage::v1::VolumeStats* stats) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats_);
+  }
+  if (stats) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(stats));
+    if (message_arena != submessage_arena) {
+      stats = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, stats, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  stats_ = stats;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolumeStatsResponse.stats)
 }
 

@@ -117,5 +117,5 @@ message VirtioBlkStatsRequest {
 
 message VirtioBlkStatsResponse {
     common.v1.ObjectKey id = 1;
-    string stats = 2;
+    VolumeStats stats = 2;
 }

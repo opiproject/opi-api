@@ -19,6 +19,11 @@ public final class OpiCommonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_PciEndpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_VolumeStats_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_VolumeStats_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -31,15 +36,22 @@ public final class OpiCommonProto {
       "\n\017opicommon.proto\022\022opi_api.storage.v1\"S\n" +
       "\013PciEndpoint\022\017\n\007port_id\030\001 \001(\005\022\031\n\021physica" +
       "l_function\030\002 \001(\005\022\030\n\020virtual_function\030\003 \001" +
-      "(\005*\367\001\n\016EncryptionType\022\037\n\033ENCRYPTION_TYPE" +
-      "_UNSPECIFIED\020\000\022\037\n\033ENCRYPTION_TYPE_AES_CB" +
-      "C_128\020\001\022\037\n\033ENCRYPTION_TYPE_AES_CBC_192\020\002" +
-      "\022\037\n\033ENCRYPTION_TYPE_AES_CBC_256\020\003\022\037\n\033ENC" +
-      "RYPTION_TYPE_AES_XTS_128\020\004\022\037\n\033ENCRYPTION" +
-      "_TYPE_AES_XTS_192\020\005\022\037\n\033ENCRYPTION_TYPE_A" +
-      "ES_XTS_256\020\006B]\n\022opi_api.storage.v1B\016OpiC" +
-      "ommonProtoP\001Z5github.com/opiproject/opi-" +
-      "api/storage/v1alpha1/gen/gob\006proto3"
+      "(\005\"\375\001\n\013VolumeStats\022\030\n\020read_bytes_count\030\001" +
+      " \001(\005\022\026\n\016read_ops_count\030\002 \001(\005\022\031\n\021write_by" +
+      "tes_count\030\003 \001(\005\022\027\n\017write_ops_count\030\004 \001(\005" +
+      "\022\031\n\021unmap_bytes_count\030\005 \001(\005\022\027\n\017unmap_ops" +
+      "_count\030\006 \001(\005\022\032\n\022read_latency_ticks\030\007 \001(\005" +
+      "\022\033\n\023write_latency_ticks\030\010 \001(\005\022\033\n\023unmap_l" +
+      "atency_ticks\030\t \001(\005*\367\001\n\016EncryptionType\022\037\n" +
+      "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENCRYP" +
+      "TION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION_TY" +
+      "PE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_AES_" +
+      "CBC_256\020\003\022\037\n\033ENCRYPTION_TYPE_AES_XTS_128" +
+      "\020\004\022\037\n\033ENCRYPTION_TYPE_AES_XTS_192\020\005\022\037\n\033E" +
+      "NCRYPTION_TYPE_AES_XTS_256\020\006B]\n\022opi_api." +
+      "storage.v1B\016OpiCommonProtoP\001Z5github.com" +
+      "/opiproject/opi-api/storage/v1alpha1/gen" +
+      "/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51,6 +63,12 @@ public final class OpiCommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_PciEndpoint_descriptor,
         new java.lang.String[] { "PortId", "PhysicalFunction", "VirtualFunction", });
+    internal_static_opi_api_storage_v1_VolumeStats_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_opi_api_storage_v1_VolumeStats_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_VolumeStats_descriptor,
+        new java.lang.String[] { "ReadBytesCount", "ReadOpsCount", "WriteBytesCount", "WriteOpsCount", "UnmapBytesCount", "UnmapOpsCount", "ReadLatencyTicks", "WriteLatencyTicks", "UnmapLatencyTicks", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
