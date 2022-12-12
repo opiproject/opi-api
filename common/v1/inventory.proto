@@ -1,0 +1,36 @@
+//-----------------------------------------------------
+// Copyright (c)
+// protobuf specification for inventory object
+// inventory.proto file
+
+syntax = "proto3";
+
+package opi_api.inventory.v1;
+option go_package = "github.com/opiproject/opi-api/common/v1/gen/go";
+
+// Service functions for the device inventory data
+service InventorySvc {
+    // retrieves the inventory data for the device
+    rpc InventoryGet (InventoryGetRequest) returns (InventoryGetResponse) {}
+}
+
+message DeviceInfo {
+    string name = 1;
+    string description = 2;
+    string id = 3;
+    string mfg_name = 4;
+    string mfg_date = 5;
+    string hw_version = 6;
+    string fw_version = 7;
+    string sw_version = 8;
+    string serial_no = 9;
+    string part_no = 10;
+}
+
+message InventoryGetRequest {
+    // Empty
+}
+
+message InventoryGetResponse {
+    DeviceInfo devinfo = 1;
+}
