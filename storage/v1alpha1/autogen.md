@@ -153,6 +153,13 @@
   
     - [EncryptionType](#opi_api-storage-v1-EncryptionType)
   
+- [inventory.proto](#inventory-proto)
+    - [DeviceInfo](#opi_api-inventory-v1-DeviceInfo)
+    - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
+    - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
+  
+    - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
+  
 - [object_key.proto](#object_key-proto)
     - [ObjectKey](#opi_api-common-v1-ObjectKey)
   
@@ -2318,6 +2325,81 @@ AES encryption types
  
 
  
+
+ 
+
+
+
+<a name="inventory-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## inventory.proto
+
+
+
+<a name="opi_api-inventory-v1-DeviceInfo"></a>
+
+### DeviceInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| id | [string](#string) |  |  |
+| mfg_name | [string](#string) |  |  |
+| mfg_date | [string](#string) |  |  |
+| hw_version | [string](#string) |  |  |
+| fw_version | [string](#string) |  |  |
+| sw_version | [string](#string) |  |  |
+| serial_no | [string](#string) |  |  |
+| part_no | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-InventoryGetRequest"></a>
+
+### InventoryGetRequest
+Empty
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-InventoryGetResponse"></a>
+
+### InventoryGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| devinfo | [DeviceInfo](#opi_api-inventory-v1-DeviceInfo) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-inventory-v1-InventorySvc"></a>
+
+### InventorySvc
+Service functions for the device inventory data
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| InventoryGet | [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest) | [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse) | retrieves the inventory data for the device |
 
  
 
