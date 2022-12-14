@@ -5,21 +5,33 @@ may vary, following guidelines can help determine if a new field/message should 
 native OPI field/message.
 
 - Vendor specific feature: If the proposed extension implements a vendor specific feature, then it should be added as an extension.
-A generic feature should be considered as part of the native OPI API in the respective areas (network, storage, storage, etc.).
+A generic feature should be considered as part of the native OPI API in the respective areas (network, storage, security, etc.).
 Note that all OPI API fields/messages may not be mandatory, allowing vendors to implement them as their product and/or software
 release process occurs
 - Vendor specific limitation: If the proposed extension exposes a limitation of a product, then it should be added as an extension.
 Having limits on many features and scale limits may be generic, however a vendor specific limitation is specific to a product from
-a vendor or generically with a vendor
-- Experimental feature: If the proposed extension is an experimental feature that a vendor wants to expose but it lacks general consensus
-that this is a generic feature
+a vendor or generically with a vendor. For example, exposing a limitation on the number of VFs a device should expose, is a limitation
+of a device. But all xPUs  limit the maximum number of VFs supported. So this limit may qualify as a generic limitation and doesn't
+belong in vendor specific extensions. On the other hand, if a vendor's product (say, an older generation of xPU) has a limitation on
+supporting VirtIO device emulation onf PF/VFs, then that would be a vendor (specifically vendor's product) specific limitation.
+- Experimental feature: If the proposed extension is an experimental feature that a vendor wants to expose but it lacks general
+consensus that this is a generic feature. For example, providing deeper IO telemetry (e.g. IO completion time, read/write failure
+codes) seems generic enough, but can start as a vendor extension (in Status part of an object), and can make into OPI API as it
+gains more adoption/support. On the other hand, supporting a custom programmable compression algorithm is likely goin to be
+vendor specific feature.
+- The boundaries on generic vs vendor specific extensions may look blur - there are some easy ones to fall on either side i.e.
+generic vs. vendor specific. The ones in the middle ground can start as vendor specific extensions making their way into
+OPI APIs over time.
 
-All vendor extensions are transparent i.e. not an opaque binary blob of data that is carried in OPI APIs. Making all extensions public
-allows the discussion on the use cases and if they prove to be generic, and include them natively in the OPI APIs.
+All vendor extensions are encouraged to be transparent i.e. not an opaque binary blob of data that is carried in OPI APIs.
+Making all extensions public allows the discussion on the use cases and if they prove to be generic, and include them
+natively in the OPI APIs. However if for any reason to hide the extension in the OPI repo, one can use an opaque `bytes[]`
+protobuf field or use [any](https://developers.google.com/protocol-buffers/docs/proto3#any) construct to achieve that in
+a vendor specific message or a field.
 
 ## Extending OPI Defined Messages
 
-OPI API objects can be extended by adding `oneof` clause to an existing OPI [grpc proto3 message](https://developers.google.com/protocol-buffers/docs/proto3#any). The example below illustrate the extension of a message
+OPI API objects can be extended by adding `oneof` clause to an existing OPI [grpc proto3 message](https://developers.google.com/protocol-buffers/docs/proto3#oneof). The example below illustrate the extension of a message
 and use of the extension in go client library.
 
 ### Defining the extension
@@ -47,22 +59,22 @@ index 1e842e6..d5aab77 100755
 +
 +// NVMeSubsystemSpec AMD Extensions
 +message NVMeSubsystemSpecAMD {
-+    string new_feature  = 1;
++    string new_amd_feature  = 1;
 +}
 +
 +// NVMeSubsystemSpec Intel Extensions
 +message NVMeSubsystemSpecIntel {
-+    string new_feature  = 1;
++    string new_intel_feature  = 1;
 +}
 +
 +// NVMeSubsystemSpec Marvell Extensions
 +message NVMeSubsystemSpecMarvell {
-+    string new_feature  = 1;
++    string new_marvell_feature  = 1;
 +}
 +
 +// NVMeSubsystemSpec Nvidia Extensions
 +message NVMeSubsystemSpecNvidia {
-+    string new_feature  = 1;
++    string new_nvidia_feature  = 1;
  }
 ```
 
@@ -92,7 +104,7 @@ index e9a0c2a..04f6888 100644
                 Subsystem: &pb.NVMeSubsystem{
                         Spec: &pb.NVMeSubsystemSpec{
                                 Id:  &pbc.ObjectKey{Value: "subsystem-test"},
-+                               VendorExtensions: &pb.NVMeSubsystemSpec_Amd{&pb.NVMeSubsystemSpecAMD{NewFeature: "foo"}},
++                               VendorExtensions: &pb.NVMeSubsystemSpec_Amd{&pb.NVMeSubsystemSpecAMD{NewAmdFeature: "foo"}},
                                 Nqn: "nqn.2022-09.io.spdk:opi3"}}})
         if err != nil {
                 log.Fatalf("could not create NVMe subsystem: %v", err)
@@ -110,7 +122,7 @@ index af514a3..0ac317d 100644
                 AllowAnyHost:  true,
                 MaxNamespaces: int(in.Subsystem.Spec.MaxNamespaces),
         }
-+       log.Printf("found vendor extensions = %s", in.Subsystem.Spec.GetAmd().NewFeature)
++       log.Printf("found vendor extensions = %s", in.Subsystem.Spec.GetAmd().NewAmdFeature)
         var result NvmfCreateSubsystemResult
         err := call("nvmf_create_subsystem", &params, &result)
         if err != nil {
