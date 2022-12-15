@@ -13,11 +13,11 @@ Having limits on many features and scale limits may be generic, however a vendor
 a vendor or generically with a vendor. For example, exposing a limitation on the number of VFs a device should expose, is a limitation
 of a device. But all xPUs  limit the maximum number of VFs supported. So this limit may qualify as a generic limitation and doesn't
 belong in vendor specific extensions. On the other hand, if a vendor's product (say, an older generation of xPU) has a limitation on
-supporting VirtIO device emulation onf PF/VFs, then that would be a vendor (specifically vendor's product) specific limitation.
+supporting VirtIO device emulation on PF/VFs, then that would be a vendor (specifically vendor's product) specific limitation.
 - Experimental feature: If the proposed extension is an experimental feature that a vendor wants to expose but it lacks general
 consensus that this is a generic feature. For example, providing deeper IO telemetry (e.g. IO completion time, read/write failure
 codes) seems generic enough, but can start as a vendor extension (in Status part of an object), and can make into OPI API as it
-gains more adoption/support. On the other hand, supporting a custom programmable compression algorithm is likely goin to be
+gains more adoption/support. On the other hand, supporting a custom programmable compression algorithm is likely going to be
 vendor specific feature.
 - The boundaries on generic vs vendor specific extensions may look blur - there are some easy ones to fall on either side i.e.
 generic vs. vendor specific. The ones in the middle ground can start as vendor specific extensions making their way into
@@ -83,7 +83,7 @@ For improved backward compatibility of the OPI APIs
 - Vendor specific messages are enumerated from the values `1024` onwards
 - Specific fields are never included directly in the extensions, but a vendor specific messsage is include
 - Vendor specific message can have its own (and evolving) fields
-- The vendor speific messages are kept in the vendor specific directories, however in the above example, they are kept in the same
+- The vendor specific messages are kept in the vendor specific directories, however in the above example, they are kept in the same
 file for brevity of diffs.
 
 Note that [proto2 extensions](https://developers.google.com/protocol-buffers/docs/proto#extensions) are not
