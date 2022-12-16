@@ -8,12 +8,16 @@ native OPI field/message.
 A generic feature should be considered as part of the native OPI API in the respective areas (network, storage, security, etc.).
 Note that all OPI API fields/messages may not be mandatory, allowing vendors to implement them as their product and/or software
 release process occurs
-- Vendor specific limitation: If the proposed extension exposes a limitation of a product, then it should be added as an extension.
-Having limits on many features and scale limits may be generic, however a vendor specific limitation is specific to a product from
-a vendor or generically with a vendor. For example, exposing a limitation on the number of VFs a device should expose, is a limitation
-of a device. But all xPUs  limit the maximum number of VFs supported. So this limit may qualify as a generic limitation and doesn't
-belong in vendor specific extensions. On the other hand, if a vendor's product (say, an older generation of xPU) has a limitation on
-supporting VirtIO device emulation on PF/VFs, then that would be a vendor (specifically vendor's product) specific limitation.
+- Vendor specific limitation: If the proposed extension exposes a limitation (or a capability) of a product, then it should be
+added as an extension. Having limits on many features and scale limits may be generic, however a vendor specific limitation
+is specific to a product from a vendor or generically with a vendor. For example, all xPUs will have some limit on the maximum
+number of VFs supported, so this limit may qualify as a generic limitation and doesn't belong in vendor specific extensions.
+On the other hand, say a vendor has a limitation (i.e. is only capable) of doing encryption only once at line rate, then on
+an encapsulated IP packet, this could be either done on the inner IP packet (before tunneling) or outer IP packet (after
+tunneling), but not do both at the line rate. So in order to avoid expose this limitation, it can ask user whether to encrypt
+inner IP header or outer IP header when implementing IP layer encryption. Of course user can choose to do encryption at both
+layers, but then it wouldn't be giving them the line rate performance. Exposing an extension to the user to overcome this
+limitation may be vendor specific.
 - Experimental feature: If the proposed extension is an experimental feature that a vendor wants to expose but it lacks general
 consensus that this is a generic feature. For example, providing deeper IO telemetry (e.g. IO completion time, read/write failure
 codes) seems generic enough, but can start as a vendor extension (in Status part of an object), and can make into OPI API as it
@@ -80,7 +84,9 @@ index 1e842e6..d5aab77 100755
 
 For improved backward compatibility of the OPI APIs
 
-- Vendor specific messages are enumerated from the values `1024` onwards
+- Vendor specific messages are enumerated from the field ids from `1024` to `2048`. Field IDs beyond 2048 are
+reserved for future use.
+
 - Specific fields are never included directly in the extensions, but a vendor specific messsage is include
 - Vendor specific message can have its own (and evolving) fields
 - The vendor specific messages are kept in the vendor specific directories, however in the above example, they are kept in the same
