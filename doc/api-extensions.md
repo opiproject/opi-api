@@ -14,7 +14,7 @@ is specific to a product from a vendor or generically with a vendor. For example
 number of VFs supported, so this limit may qualify as a generic limitation and doesn't belong in vendor specific extensions.
 On the other hand, say a vendor has a limitation (i.e. is only capable) of doing encryption only once at line rate, then on
 an encapsulated IP packet, this could be either done on the inner IP packet (before tunneling) or outer IP packet (after
-tunneling), but not do both at the line rate. So in order to avoid expose this limitation, it can ask user whether to encrypt
+tunneling), but not do both at the line rate. So in order to expose this limitation, it can ask user whether to encrypt
 inner IP header or outer IP header when implementing IP layer encryption. Of course user can choose to do encryption at both
 layers, but then it wouldn't be giving them the line rate performance. Exposing an extension to the user to overcome this
 limitation may be vendor specific.
