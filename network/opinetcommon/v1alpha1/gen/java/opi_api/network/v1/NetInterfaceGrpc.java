@@ -9,7 +9,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
-    comments = "Source: oc_interfaces.proto")
+    comments = "Source: openconfig_interfaces.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NetInterfaceGrpc {
 
@@ -18,29 +18,29 @@ public final class NetInterfaceGrpc {
   public static final String SERVICE_NAME = "opi_api.network.v1.NetInterface";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NetInterfaceGet",
-      requestType = opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest.class,
-      responseType = opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse.class,
+      requestType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest.class,
+      responseType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest, opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod;
+  public static io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> getNetInterfaceGetMethod;
     if ((getNetInterfaceGetMethod = NetInterfaceGrpc.getNetInterfaceGetMethod) == null) {
       synchronized (NetInterfaceGrpc.class) {
         if ((getNetInterfaceGetMethod = NetInterfaceGrpc.getNetInterfaceGetMethod) == null) {
           NetInterfaceGrpc.getNetInterfaceGetMethod = getNetInterfaceGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest, opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NetInterfaceGet"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse.getDefaultInstance()))
               .setSchemaDescriptor(new NetInterfaceMethodDescriptorSupplier("NetInterfaceGet"))
               .build();
         }
@@ -49,29 +49,29 @@ public final class NetInterfaceGrpc {
     return getNetInterfaceGetMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceListRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NetInterfaceList",
-      requestType = opi_api.network.v1.OcInterfaces.NetInterfaceListRequest.class,
-      responseType = opi_api.network.v1.OcInterfaces.NetInterfaceListResponse.class,
+      requestType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest.class,
+      responseType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceListRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod() {
-    io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceListRequest, opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod;
+  public static io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> getNetInterfaceListMethod;
     if ((getNetInterfaceListMethod = NetInterfaceGrpc.getNetInterfaceListMethod) == null) {
       synchronized (NetInterfaceGrpc.class) {
         if ((getNetInterfaceListMethod = NetInterfaceGrpc.getNetInterfaceListMethod) == null) {
           NetInterfaceGrpc.getNetInterfaceListMethod = getNetInterfaceListMethod =
-              io.grpc.MethodDescriptor.<opi_api.network.v1.OcInterfaces.NetInterfaceListRequest, opi_api.network.v1.OcInterfaces.NetInterfaceListResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NetInterfaceList"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceListRequest.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceListResponse.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse.getDefaultInstance()))
               .setSchemaDescriptor(new NetInterfaceMethodDescriptorSupplier("NetInterfaceList"))
               .build();
         }
@@ -80,29 +80,29 @@ public final class NetInterfaceGrpc {
     return getNetInterfaceListMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "NetInterfaceUpdate",
-      requestType = opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest.class,
-      responseType = opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse.class,
+      requestType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest.class,
+      responseType = opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest,
-      opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod() {
-    io.grpc.MethodDescriptor<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest, opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod;
+  public static io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest,
+      opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod() {
+    io.grpc.MethodDescriptor<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> getNetInterfaceUpdateMethod;
     if ((getNetInterfaceUpdateMethod = NetInterfaceGrpc.getNetInterfaceUpdateMethod) == null) {
       synchronized (NetInterfaceGrpc.class) {
         if ((getNetInterfaceUpdateMethod = NetInterfaceGrpc.getNetInterfaceUpdateMethod) == null) {
           NetInterfaceGrpc.getNetInterfaceUpdateMethod = getNetInterfaceUpdateMethod =
-              io.grpc.MethodDescriptor.<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest, opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest, opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "NetInterfaceUpdate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse.getDefaultInstance()))
+                  opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse.getDefaultInstance()))
               .setSchemaDescriptor(new NetInterfaceMethodDescriptorSupplier("NetInterfaceUpdate"))
               .build();
         }
@@ -167,8 +167,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the interface information for a given interface
      * </pre>
      */
-    public void netInterfaceGet(opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> responseObserver) {
+    public void netInterfaceGet(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNetInterfaceGetMethod(), responseObserver);
     }
 
@@ -177,8 +177,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the set of interfaces on the device
      * </pre>
      */
-    public void netInterfaceList(opi_api.network.v1.OcInterfaces.NetInterfaceListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> responseObserver) {
+    public void netInterfaceList(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNetInterfaceListMethod(), responseObserver);
     }
 
@@ -187,8 +187,8 @@ public final class NetInterfaceGrpc {
      * A method for setting or changing configuration of an interface
      * </pre>
      */
-    public void netInterfaceUpdate(opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> responseObserver) {
+    public void netInterfaceUpdate(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNetInterfaceUpdateMethod(), responseObserver);
     }
 
@@ -198,22 +198,22 @@ public final class NetInterfaceGrpc {
             getNetInterfaceGetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest,
-                opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse>(
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest,
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse>(
                   this, METHODID_NET_INTERFACE_GET)))
           .addMethod(
             getNetInterfaceListMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.network.v1.OcInterfaces.NetInterfaceListRequest,
-                opi_api.network.v1.OcInterfaces.NetInterfaceListResponse>(
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest,
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse>(
                   this, METHODID_NET_INTERFACE_LIST)))
           .addMethod(
             getNetInterfaceUpdateMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest,
-                opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse>(
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest,
+                opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse>(
                   this, METHODID_NET_INTERFACE_UPDATE)))
           .build();
     }
@@ -241,8 +241,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the interface information for a given interface
      * </pre>
      */
-    public void netInterfaceGet(opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> responseObserver) {
+    public void netInterfaceGet(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNetInterfaceGetMethod(), getCallOptions()), request, responseObserver);
     }
@@ -252,8 +252,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the set of interfaces on the device
      * </pre>
      */
-    public void netInterfaceList(opi_api.network.v1.OcInterfaces.NetInterfaceListRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> responseObserver) {
+    public void netInterfaceList(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNetInterfaceListMethod(), getCallOptions()), request, responseObserver);
     }
@@ -263,8 +263,8 @@ public final class NetInterfaceGrpc {
      * A method for setting or changing configuration of an interface
      * </pre>
      */
-    public void netInterfaceUpdate(opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest request,
-        io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> responseObserver) {
+    public void netInterfaceUpdate(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest request,
+        io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNetInterfaceUpdateMethod(), getCallOptions()), request, responseObserver);
     }
@@ -292,7 +292,7 @@ public final class NetInterfaceGrpc {
      * Retrieves the interface information for a given interface
      * </pre>
      */
-    public opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse netInterfaceGet(opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest request) {
+    public opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse netInterfaceGet(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNetInterfaceGetMethod(), getCallOptions(), request);
     }
@@ -302,7 +302,7 @@ public final class NetInterfaceGrpc {
      * Retrieves the set of interfaces on the device
      * </pre>
      */
-    public opi_api.network.v1.OcInterfaces.NetInterfaceListResponse netInterfaceList(opi_api.network.v1.OcInterfaces.NetInterfaceListRequest request) {
+    public opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse netInterfaceList(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNetInterfaceListMethod(), getCallOptions(), request);
     }
@@ -312,7 +312,7 @@ public final class NetInterfaceGrpc {
      * A method for setting or changing configuration of an interface
      * </pre>
      */
-    public opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse netInterfaceUpdate(opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest request) {
+    public opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse netInterfaceUpdate(opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNetInterfaceUpdateMethod(), getCallOptions(), request);
     }
@@ -340,8 +340,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the interface information for a given interface
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse> netInterfaceGet(
-        opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse> netInterfaceGet(
+        opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNetInterfaceGetMethod(), getCallOptions()), request);
     }
@@ -351,8 +351,8 @@ public final class NetInterfaceGrpc {
      * Retrieves the set of interfaces on the device
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OcInterfaces.NetInterfaceListResponse> netInterfaceList(
-        opi_api.network.v1.OcInterfaces.NetInterfaceListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse> netInterfaceList(
+        opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNetInterfaceListMethod(), getCallOptions()), request);
     }
@@ -362,8 +362,8 @@ public final class NetInterfaceGrpc {
      * A method for setting or changing configuration of an interface
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse> netInterfaceUpdate(
-        opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse> netInterfaceUpdate(
+        opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNetInterfaceUpdateMethod(), getCallOptions()), request);
     }
@@ -391,16 +391,16 @@ public final class NetInterfaceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_NET_INTERFACE_GET:
-          serviceImpl.netInterfaceGet((opi_api.network.v1.OcInterfaces.NetInterfaceGetRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceGetResponse>) responseObserver);
+          serviceImpl.netInterfaceGet((opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceGetResponse>) responseObserver);
           break;
         case METHODID_NET_INTERFACE_LIST:
-          serviceImpl.netInterfaceList((opi_api.network.v1.OcInterfaces.NetInterfaceListRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceListResponse>) responseObserver);
+          serviceImpl.netInterfaceList((opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceListResponse>) responseObserver);
           break;
         case METHODID_NET_INTERFACE_UPDATE:
-          serviceImpl.netInterfaceUpdate((opi_api.network.v1.OcInterfaces.NetInterfaceUpdateRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.network.v1.OcInterfaces.NetInterfaceUpdateResponse>) responseObserver);
+          serviceImpl.netInterfaceUpdate((opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.network.v1.OpenconfigInterfaces.NetInterfaceUpdateResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -424,7 +424,7 @@ public final class NetInterfaceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return opi_api.network.v1.OcInterfaces.getDescriptor();
+      return opi_api.network.v1.OpenconfigInterfaces.getDescriptor();
     }
 
     @java.lang.Override

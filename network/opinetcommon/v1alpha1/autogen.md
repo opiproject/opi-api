@@ -4,6 +4,32 @@
 ## Table of Contents
 
 - [ip.proto](#ip-proto)
+- [openconfig_interfaces.proto](#openconfig_interfaces-proto)
+    - [Interface](#opi_api-network-v1-Interface)
+    - [Interface.Config](#opi_api-network-v1-Interface-Config)
+    - [Interface.HoldTime](#opi_api-network-v1-Interface-HoldTime)
+    - [Interface.HoldTime.Config](#opi_api-network-v1-Interface-HoldTime-Config)
+    - [Interface.HoldTime.State](#opi_api-network-v1-Interface-HoldTime-State)
+    - [Interface.State](#opi_api-network-v1-Interface-State)
+    - [Interface.State.Counters](#opi_api-network-v1-Interface-State-Counters)
+    - [Interface.Subinterfaces](#opi_api-network-v1-Interface-Subinterfaces)
+    - [Interface.Subinterfaces.Subinterface](#opi_api-network-v1-Interface-Subinterfaces-Subinterface)
+    - [Interface.Subinterfaces.Subinterface.Config](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-Config)
+    - [Interface.Subinterfaces.Subinterface.State](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-State)
+    - [Interface.Subinterfaces.Subinterface.State.Counters](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-State-Counters)
+    - [Interfaces](#opi_api-network-v1-Interfaces)
+    - [NetInterfaceGetRequest](#opi_api-network-v1-NetInterfaceGetRequest)
+    - [NetInterfaceGetResponse](#opi_api-network-v1-NetInterfaceGetResponse)
+    - [NetInterfaceListRequest](#opi_api-network-v1-NetInterfaceListRequest)
+    - [NetInterfaceListResponse](#opi_api-network-v1-NetInterfaceListResponse)
+    - [NetInterfaceUpdateRequest](#opi_api-network-v1-NetInterfaceUpdateRequest)
+    - [NetInterfaceUpdateResponse](#opi_api-network-v1-NetInterfaceUpdateResponse)
+  
+    - [InterfaceState](#opi_api-network-v1-InterfaceState)
+    - [InterfaceType](#opi_api-network-v1-InterfaceType)
+  
+    - [NetInterface](#opi_api-network-v1-NetInterface)
+  
 - [inventory.proto](#inventory-proto)
     - [BIOSInfo](#opi_api-inventory-v1-BIOSInfo)
     - [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo)
@@ -38,6 +64,413 @@
  
 
  
+
+ 
+
+
+
+<a name="openconfig_interfaces-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## openconfig_interfaces.proto
+openconfig-interfaces.proto file
+Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
+
+
+<a name="opi_api-network-v1-Interface"></a>
+
+### Interface
+Main Data Structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| config | [Interface.Config](#opi_api-network-v1-Interface-Config) |  |  |
+| state | [Interface.State](#opi_api-network-v1-Interface-State) |  |  |
+| holdtime | [Interface.HoldTime](#opi_api-network-v1-Interface-HoldTime) |  |  |
+| subinterfaces | [Interface.Subinterfaces](#opi_api-network-v1-Interface-Subinterfaces) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Config"></a>
+
+### Interface.Config
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| type | [InterfaceType](#opi_api-network-v1-InterfaceType) |  |  |
+| mtu | [uint32](#uint32) |  |  |
+| loopback_mode | [bool](#bool) |  |  |
+| description | [string](#string) |  |  |
+| enabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-HoldTime"></a>
+
+### Interface.HoldTime
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config | [Interface.HoldTime.Config](#opi_api-network-v1-Interface-HoldTime-Config) |  |  |
+| state | [Interface.HoldTime.State](#opi_api-network-v1-Interface-HoldTime-State) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-HoldTime-Config"></a>
+
+### Interface.HoldTime.Config
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| up | [uint32](#uint32) |  |  |
+| down | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-HoldTime-State"></a>
+
+### Interface.HoldTime.State
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| up | [uint32](#uint32) |  |  |
+| down | [uint32](#uint32) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-State"></a>
+
+### Interface.State
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| type | [InterfaceType](#opi_api-network-v1-InterfaceType) |  |  |
+| mtu | [uint32](#uint32) |  |  |
+| loopback_mode | [bool](#bool) |  |  |
+| description | [string](#string) |  |  |
+| enabled | [bool](#bool) |  |  |
+| ifindex | [uint32](#uint32) |  |  |
+| admin_status | [InterfaceState](#opi_api-network-v1-InterfaceState) |  |  |
+| oper_status | [InterfaceState](#opi_api-network-v1-InterfaceState) |  |  |
+| last_change | [uint64](#uint64) |  |  |
+| logical | [bool](#bool) |  |  |
+| management | [bool](#bool) |  |  |
+| cpu | [bool](#bool) |  |  |
+| counters | [Interface.State.Counters](#opi_api-network-v1-Interface-State-Counters) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-State-Counters"></a>
+
+### Interface.State.Counters
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| in_octets | [uint64](#uint64) |  |  |
+| in_packets | [uint64](#uint64) |  |  |
+| in_unicast_pkts | [uint64](#uint64) |  |  |
+| in_broadcast_pkts | [uint64](#uint64) |  |  |
+| in_multicast_pkts | [uint64](#uint64) |  |  |
+| in_discards | [uint64](#uint64) |  |  |
+| in_errors | [uint64](#uint64) |  |  |
+| in_unknown_protos | [uint64](#uint64) |  |  |
+| in_fcs_errors | [uint64](#uint64) |  |  |
+| out_octets | [uint64](#uint64) |  |  |
+| out_packets | [uint64](#uint64) |  |  |
+| out_unicast_pkts | [uint64](#uint64) |  |  |
+| out_broadcast_pkts | [uint64](#uint64) |  |  |
+| out_multicast_pkts | [uint64](#uint64) |  |  |
+| out_discards | [uint64](#uint64) |  |  |
+| out_errors | [uint64](#uint64) |  |  |
+| carrier_transitions | [uint64](#uint64) |  |  |
+| last_clear | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Subinterfaces"></a>
+
+### Interface.Subinterfaces
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subinterface | [Interface.Subinterfaces.Subinterface](#opi_api-network-v1-Interface-Subinterfaces-Subinterface) | repeated |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Subinterfaces-Subinterface"></a>
+
+### Interface.Subinterfaces.Subinterface
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| index | [uint64](#uint64) |  |  |
+| config | [Interface.Subinterfaces.Subinterface.Config](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-Config) |  |  |
+| state | [Interface.Subinterfaces.Subinterface.State](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-State) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Subinterfaces-Subinterface-Config"></a>
+
+### Interface.Subinterfaces.Subinterface.Config
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| index | [uint64](#uint64) |  |  |
+| description | [string](#string) |  |  |
+| enabled | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Subinterfaces-Subinterface-State"></a>
+
+### Interface.Subinterfaces.Subinterface.State
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| index | [uint32](#uint32) |  |  |
+| description | [string](#string) |  |  |
+| enabled | [bool](#bool) |  |  |
+| name | [string](#string) |  |  |
+| ifindex | [uint32](#uint32) |  |  |
+| admin_status | [InterfaceState](#opi_api-network-v1-InterfaceState) |  |  |
+| oper_status | [InterfaceState](#opi_api-network-v1-InterfaceState) |  |  |
+| last_change | [uint64](#uint64) |  |  |
+| logical | [bool](#bool) |  |  |
+| management | [bool](#bool) |  |  |
+| cpu | [bool](#bool) |  |  |
+| counters | [Interface.Subinterfaces.Subinterface.State.Counters](#opi_api-network-v1-Interface-Subinterfaces-Subinterface-State-Counters) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interface-Subinterfaces-Subinterface-State-Counters"></a>
+
+### Interface.Subinterfaces.Subinterface.State.Counters
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| in_octets | [uint64](#uint64) |  |  |
+| in_packets | [uint64](#uint64) |  |  |
+| in_unicast_pkts | [uint64](#uint64) |  |  |
+| in_broadcast_pkts | [uint64](#uint64) |  |  |
+| in_multicast_pkts | [uint64](#uint64) |  |  |
+| in_discards | [uint64](#uint64) |  |  |
+| in_errors | [uint64](#uint64) |  |  |
+| in_unknown_protos | [uint64](#uint64) |  |  |
+| in_fcs_errors | [uint64](#uint64) |  |  |
+| out_octets | [uint64](#uint64) |  |  |
+| out_packets | [uint64](#uint64) |  |  |
+| out_unicast_pkts | [uint64](#uint64) |  |  |
+| out_broadcast_pkts | [uint64](#uint64) |  |  |
+| out_multicast_pkts | [uint64](#uint64) |  |  |
+| out_discards | [uint64](#uint64) |  |  |
+| out_errors | [uint64](#uint64) |  |  |
+| carrier_transitions | [uint64](#uint64) |  |  |
+| last_clear | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-Interfaces"></a>
+
+### Interfaces
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-v1-Interface) | repeated |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceGetRequest"></a>
+
+### NetInterfaceGetRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceGetResponse"></a>
+
+### NetInterfaceGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-v1-Interface) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceListRequest"></a>
+
+### NetInterfaceListRequest
+empty
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceListResponse"></a>
+
+### NetInterfaceListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-v1-Interface) | repeated |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceUpdateRequest"></a>
+
+### NetInterfaceUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-v1-Interface) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-v1-NetInterfaceUpdateResponse"></a>
+
+### NetInterfaceUpdateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [uint32](#uint32) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="opi_api-network-v1-InterfaceState"></a>
+
+### InterfaceState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DOWN | 0 |  |
+| UP | 1 |  |
+
+
+
+<a name="opi_api-network-v1-InterfaceType"></a>
+
+### InterfaceType
+Data Types
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ETHERNET | 0 |  |
+| LOOPBACK | 1 |  |
+
+
+ 
+
+ 
+
+
+<a name="opi_api-network-v1-NetInterface"></a>
+
+### NetInterface
+Service functions for Network Interface exported by the server
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| NetInterfaceGet | [NetInterfaceGetRequest](#opi_api-network-v1-NetInterfaceGetRequest) | [NetInterfaceGetResponse](#opi_api-network-v1-NetInterfaceGetResponse) | Retrieves the interface information for a given interface |
+| NetInterfaceList | [NetInterfaceListRequest](#opi_api-network-v1-NetInterfaceListRequest) | [NetInterfaceListResponse](#opi_api-network-v1-NetInterfaceListResponse) | Retrieves the set of interfaces on the device |
+| NetInterfaceUpdate | [NetInterfaceUpdateRequest](#opi_api-network-v1-NetInterfaceUpdateRequest) | [NetInterfaceUpdateResponse](#opi_api-network-v1-NetInterfaceUpdateResponse) | A method for setting or changing configuration of an interface |
 
  
 
