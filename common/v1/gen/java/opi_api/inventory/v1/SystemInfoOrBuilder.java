@@ -8,11 +8,37 @@ public interface SystemInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies the family to which a
+   * particular computer belongs. A family refers to a
+   * set of computers that are similar but not identical
+   * from a hardware or software point of view.
+   * Typically, a family is composed of different
+   * computer models, which have different
+   * configurations and pricing points. Computers in
+   * the same family often have similar branding and
+   * cosmetic features.
+   * </pre>
+   *
    * <code>string family = 1;</code>
    * @return The family.
    */
   java.lang.String getFamily();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies the family to which a
+   * particular computer belongs. A family refers to a
+   * set of computers that are similar but not identical
+   * from a hardware or software point of view.
+   * Typically, a family is composed of different
+   * computer models, which have different
+   * configurations and pricing points. Computers in
+   * the same family often have similar branding and
+   * cosmetic features.
+   * </pre>
+   *
    * <code>string family = 1;</code>
    * @return The bytes for family.
    */
@@ -20,11 +46,19 @@ public interface SystemInfoOrBuilder extends
       getFamilyBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
@@ -32,11 +66,19 @@ public interface SystemInfoOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The vendor.
    */
   java.lang.String getVendor();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The bytes for vendor.
    */
@@ -44,11 +86,19 @@ public interface SystemInfoOrBuilder extends
       getVendorBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 4;</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 4;</code>
    * @return The bytes for serialNumber.
    */
@@ -56,11 +106,27 @@ public interface SystemInfoOrBuilder extends
       getSerialNumberBytes();
 
   /**
+   * <pre>
+   * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+   * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+   * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+   * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+   * historical practice.
+   * </pre>
+   *
    * <code>string uuid = 5;</code>
    * @return The uuid.
    */
   java.lang.String getUuid();
   /**
+   * <pre>
+   * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+   * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+   * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+   * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+   * historical practice.
+   * </pre>
+   *
    * <code>string uuid = 5;</code>
    * @return The bytes for uuid.
    */
@@ -68,11 +134,35 @@ public interface SystemInfoOrBuilder extends
       getUuidBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies a particular computer
+   * configuration for sale. It is sometimes also called
+   * a product ID or purchase order number. This
+   * number is frequently found in existing fields, but
+   * there is no standard format. Typically for a given
+   * system board from a given OEM, there are tens
+   * of unique processor, memory, hard drive, and
+   * optical drive configurations.
+   * </pre>
+   *
    * <code>string sku = 6;</code>
    * @return The sku.
    */
   java.lang.String getSku();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies a particular computer
+   * configuration for sale. It is sometimes also called
+   * a product ID or purchase order number. This
+   * number is frequently found in existing fields, but
+   * there is no standard format. Typically for a given
+   * system board from a given OEM, there are tens
+   * of unique processor, memory, hard drive, and
+   * optical drive configurations.
+   * </pre>
+   *
    * <code>string sku = 6;</code>
    * @return The bytes for sku.
    */
@@ -80,11 +170,19 @@ public interface SystemInfoOrBuilder extends
       getSkuBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 7;</code>
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 7;</code>
    * @return The bytes for version.
    */

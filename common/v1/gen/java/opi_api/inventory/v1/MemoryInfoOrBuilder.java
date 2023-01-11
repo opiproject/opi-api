@@ -8,12 +8,25 @@ public interface MemoryInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Maximum memory capacity, in kilobytes, for this array
+   * If the capacity is not represented in this field, then this
+   * field contains 8000 0000h and the Extended
+   * Maximum Capacity field should be used. Values 2 TB
+   * (8000 0000h) or greater must be represented in the
+   * Extended Maximum Capacity field.
+   * </pre>
+   *
    * <code>int64 total_physical_bytes = 1;</code>
    * @return The totalPhysicalBytes.
    */
   long getTotalPhysicalBytes();
 
   /**
+   * <pre>
+   * TBD
+   * </pre>
+   *
    * <code>int64 total_usable_bytes = 2;</code>
    * @return The totalUsableBytes.
    */

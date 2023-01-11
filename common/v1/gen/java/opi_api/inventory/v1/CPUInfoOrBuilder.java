@@ -8,12 +8,28 @@ public interface CPUInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Number of cores per processor socket
+   * See 7.5.6. If the value is unknown, the field is set
+   * to 0. For core counts of 256 or greater, the Core
+   * Count field is set to FFh and the Core Count 2
+   * field is set to the number of cores.
+   * </pre>
+   *
    * <code>int32 total_cores = 1;</code>
    * @return The totalCores.
    */
   int getTotalCores();
 
   /**
+   * <pre>
+   * Number of threads per processor socket
+   * See 7.5.8. If the value is unknown, the field is set
+   * to 0. For thread counts of 256 or greater, the
+   * Thread Count field is set to FFh and the Thread
+   * Count 2 field is set to the number of threads.
+   * </pre>
+   *
    * <code>int32 total_threads = 2;</code>
    * @return The totalThreads.
    */

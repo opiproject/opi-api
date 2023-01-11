@@ -4,6 +4,14 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * System Information (Type 1)
+ *  The information in this structure defines attributes of the overall system and is intended to be associated
+ *  with the Component ID group of the system’s MIF. An SMBIOS implementation is associated with a single
+ *  system instance and contains one and only one System Information (Type 1) structure. Table 10 shows
+ *  the contents of this structure.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.SystemInfo}
  */
 public final class SystemInfo extends
@@ -132,6 +140,19 @@ private static final long serialVersionUID = 0L;
   public static final int FAMILY_FIELD_NUMBER = 1;
   private volatile java.lang.Object family_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies the family to which a
+   * particular computer belongs. A family refers to a
+   * set of computers that are similar but not identical
+   * from a hardware or software point of view.
+   * Typically, a family is composed of different
+   * computer models, which have different
+   * configurations and pricing points. Computers in
+   * the same family often have similar branding and
+   * cosmetic features.
+   * </pre>
+   *
    * <code>string family = 1;</code>
    * @return The family.
    */
@@ -149,6 +170,19 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies the family to which a
+   * particular computer belongs. A family refers to a
+   * set of computers that are similar but not identical
+   * from a hardware or software point of view.
+   * Typically, a family is composed of different
+   * computer models, which have different
+   * configurations and pricing points. Computers in
+   * the same family often have similar branding and
+   * cosmetic features.
+   * </pre>
+   *
    * <code>string family = 1;</code>
    * @return The bytes for family.
    */
@@ -170,6 +204,10 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The name.
    */
@@ -187,6 +225,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
@@ -208,6 +250,10 @@ private static final long serialVersionUID = 0L;
   public static final int VENDOR_FIELD_NUMBER = 3;
   private volatile java.lang.Object vendor_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The vendor.
    */
@@ -225,6 +271,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The bytes for vendor.
    */
@@ -246,6 +296,10 @@ private static final long serialVersionUID = 0L;
   public static final int SERIAL_NUMBER_FIELD_NUMBER = 4;
   private volatile java.lang.Object serialNumber_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 4;</code>
    * @return The serialNumber.
    */
@@ -263,6 +317,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 4;</code>
    * @return The bytes for serialNumber.
    */
@@ -284,6 +342,14 @@ private static final long serialVersionUID = 0L;
   public static final int UUID_FIELD_NUMBER = 5;
   private volatile java.lang.Object uuid_;
   /**
+   * <pre>
+   * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+   * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+   * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+   * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+   * historical practice.
+   * </pre>
+   *
    * <code>string uuid = 5;</code>
    * @return The uuid.
    */
@@ -301,6 +367,14 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+   * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+   * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+   * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+   * historical practice.
+   * </pre>
+   *
    * <code>string uuid = 5;</code>
    * @return The bytes for uuid.
    */
@@ -322,6 +396,18 @@ private static final long serialVersionUID = 0L;
   public static final int SKU_FIELD_NUMBER = 6;
   private volatile java.lang.Object sku_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies a particular computer
+   * configuration for sale. It is sometimes also called
+   * a product ID or purchase order number. This
+   * number is frequently found in existing fields, but
+   * there is no standard format. Typically for a given
+   * system board from a given OEM, there are tens
+   * of unique processor, memory, hard drive, and
+   * optical drive configurations.
+   * </pre>
+   *
    * <code>string sku = 6;</code>
    * @return The sku.
    */
@@ -339,6 +425,18 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * This text string identifies a particular computer
+   * configuration for sale. It is sometimes also called
+   * a product ID or purchase order number. This
+   * number is frequently found in existing fields, but
+   * there is no standard format. Typically for a given
+   * system board from a given OEM, there are tens
+   * of unique processor, memory, hard drive, and
+   * optical drive configurations.
+   * </pre>
+   *
    * <code>string sku = 6;</code>
    * @return The bytes for sku.
    */
@@ -360,6 +458,10 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 7;
   private volatile java.lang.Object version_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 7;</code>
    * @return The version.
    */
@@ -377,6 +479,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 7;</code>
    * @return The bytes for version.
    */
@@ -610,6 +716,14 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * System Information (Type 1)
+   *  The information in this structure defines attributes of the overall system and is intended to be associated
+   *  with the Component ID group of the system’s MIF. An SMBIOS implementation is associated with a single
+   *  system instance and contains one and only one System Information (Type 1) structure. Table 10 shows
+   *  the contents of this structure.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.SystemInfo}
    */
   public static final class Builder extends
@@ -801,6 +915,19 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object family_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies the family to which a
+     * particular computer belongs. A family refers to a
+     * set of computers that are similar but not identical
+     * from a hardware or software point of view.
+     * Typically, a family is composed of different
+     * computer models, which have different
+     * configurations and pricing points. Computers in
+     * the same family often have similar branding and
+     * cosmetic features.
+     * </pre>
+     *
      * <code>string family = 1;</code>
      * @return The family.
      */
@@ -817,6 +944,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies the family to which a
+     * particular computer belongs. A family refers to a
+     * set of computers that are similar but not identical
+     * from a hardware or software point of view.
+     * Typically, a family is composed of different
+     * computer models, which have different
+     * configurations and pricing points. Computers in
+     * the same family often have similar branding and
+     * cosmetic features.
+     * </pre>
+     *
      * <code>string family = 1;</code>
      * @return The bytes for family.
      */
@@ -834,6 +974,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies the family to which a
+     * particular computer belongs. A family refers to a
+     * set of computers that are similar but not identical
+     * from a hardware or software point of view.
+     * Typically, a family is composed of different
+     * computer models, which have different
+     * configurations and pricing points. Computers in
+     * the same family often have similar branding and
+     * cosmetic features.
+     * </pre>
+     *
      * <code>string family = 1;</code>
      * @param value The family to set.
      * @return This builder for chaining.
@@ -849,6 +1002,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies the family to which a
+     * particular computer belongs. A family refers to a
+     * set of computers that are similar but not identical
+     * from a hardware or software point of view.
+     * Typically, a family is composed of different
+     * computer models, which have different
+     * configurations and pricing points. Computers in
+     * the same family often have similar branding and
+     * cosmetic features.
+     * </pre>
+     *
      * <code>string family = 1;</code>
      * @return This builder for chaining.
      */
@@ -859,6 +1025,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies the family to which a
+     * particular computer belongs. A family refers to a
+     * set of computers that are similar but not identical
+     * from a hardware or software point of view.
+     * Typically, a family is composed of different
+     * computer models, which have different
+     * configurations and pricing points. Computers in
+     * the same family often have similar branding and
+     * cosmetic features.
+     * </pre>
+     *
      * <code>string family = 1;</code>
      * @param value The bytes for family to set.
      * @return This builder for chaining.
@@ -877,6 +1056,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -893,6 +1076,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -910,6 +1097,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
@@ -925,6 +1116,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
@@ -935,6 +1130,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -953,6 +1152,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object vendor_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return The vendor.
      */
@@ -969,6 +1172,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return The bytes for vendor.
      */
@@ -986,6 +1193,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @param value The vendor to set.
      * @return This builder for chaining.
@@ -1001,6 +1212,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return This builder for chaining.
      */
@@ -1011,6 +1226,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @param value The bytes for vendor to set.
      * @return This builder for chaining.
@@ -1029,6 +1248,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serialNumber_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 4;</code>
      * @return The serialNumber.
      */
@@ -1045,6 +1268,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 4;</code>
      * @return The bytes for serialNumber.
      */
@@ -1062,6 +1289,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 4;</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
@@ -1077,6 +1308,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 4;</code>
      * @return This builder for chaining.
      */
@@ -1087,6 +1322,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 4;</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
@@ -1105,6 +1344,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object uuid_ = "";
     /**
+     * <pre>
+     * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+     * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+     * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+     * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+     * historical practice.
+     * </pre>
+     *
      * <code>string uuid = 5;</code>
      * @return The uuid.
      */
@@ -1121,6 +1368,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+     * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+     * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+     * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+     * historical practice.
+     * </pre>
+     *
      * <code>string uuid = 5;</code>
      * @return The bytes for uuid.
      */
@@ -1138,6 +1393,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+     * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+     * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+     * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+     * historical practice.
+     * </pre>
+     *
      * <code>string uuid = 5;</code>
      * @param value The uuid to set.
      * @return This builder for chaining.
@@ -1153,6 +1416,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+     * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+     * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+     * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+     * historical practice.
+     * </pre>
+     *
      * <code>string uuid = 5;</code>
      * @return This builder for chaining.
      */
@@ -1163,6 +1434,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+     * registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+     * contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+     * byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+     * historical practice.
+     * </pre>
+     *
      * <code>string uuid = 5;</code>
      * @param value The bytes for uuid to set.
      * @return This builder for chaining.
@@ -1181,6 +1460,18 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sku_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies a particular computer
+     * configuration for sale. It is sometimes also called
+     * a product ID or purchase order number. This
+     * number is frequently found in existing fields, but
+     * there is no standard format. Typically for a given
+     * system board from a given OEM, there are tens
+     * of unique processor, memory, hard drive, and
+     * optical drive configurations.
+     * </pre>
+     *
      * <code>string sku = 6;</code>
      * @return The sku.
      */
@@ -1197,6 +1488,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies a particular computer
+     * configuration for sale. It is sometimes also called
+     * a product ID or purchase order number. This
+     * number is frequently found in existing fields, but
+     * there is no standard format. Typically for a given
+     * system board from a given OEM, there are tens
+     * of unique processor, memory, hard drive, and
+     * optical drive configurations.
+     * </pre>
+     *
      * <code>string sku = 6;</code>
      * @return The bytes for sku.
      */
@@ -1214,6 +1517,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies a particular computer
+     * configuration for sale. It is sometimes also called
+     * a product ID or purchase order number. This
+     * number is frequently found in existing fields, but
+     * there is no standard format. Typically for a given
+     * system board from a given OEM, there are tens
+     * of unique processor, memory, hard drive, and
+     * optical drive configurations.
+     * </pre>
+     *
      * <code>string sku = 6;</code>
      * @param value The sku to set.
      * @return This builder for chaining.
@@ -1229,6 +1544,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies a particular computer
+     * configuration for sale. It is sometimes also called
+     * a product ID or purchase order number. This
+     * number is frequently found in existing fields, but
+     * there is no standard format. Typically for a given
+     * system board from a given OEM, there are tens
+     * of unique processor, memory, hard drive, and
+     * optical drive configurations.
+     * </pre>
+     *
      * <code>string sku = 6;</code>
      * @return This builder for chaining.
      */
@@ -1239,6 +1566,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * This text string identifies a particular computer
+     * configuration for sale. It is sometimes also called
+     * a product ID or purchase order number. This
+     * number is frequently found in existing fields, but
+     * there is no standard format. Typically for a given
+     * system board from a given OEM, there are tens
+     * of unique processor, memory, hard drive, and
+     * optical drive configurations.
+     * </pre>
+     *
      * <code>string sku = 6;</code>
      * @param value The bytes for sku to set.
      * @return This builder for chaining.
@@ -1257,6 +1596,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 7;</code>
      * @return The version.
      */
@@ -1273,6 +1616,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 7;</code>
      * @return The bytes for version.
      */
@@ -1290,6 +1637,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 7;</code>
      * @param value The version to set.
      * @return This builder for chaining.
@@ -1305,6 +1656,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 7;</code>
      * @return This builder for chaining.
      */
@@ -1315,6 +1670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 7;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.

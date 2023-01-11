@@ -8,11 +8,19 @@ public interface ChassisInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The assetTag.
    */
   java.lang.String getAssetTag();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The bytes for assetTag.
    */
@@ -20,11 +28,19 @@ public interface ChassisInfoOrBuilder extends
       getAssetTagBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
@@ -32,11 +48,23 @@ public interface ChassisInfoOrBuilder extends
       getSerialNumberBytes();
 
   /**
+   * <pre>
+   * Bit 7 Chassis lock is present if 1.
+   * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+   * Bits 6:0 Enumeration value; see below. 
+   * </pre>
+   *
    * <code>string type = 3;</code>
    * @return The type.
    */
   java.lang.String getType();
   /**
+   * <pre>
+   * Bit 7 Chassis lock is present if 1.
+   * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+   * Bits 6:0 Enumeration value; see below. 
+   * </pre>
+   *
    * <code>string type = 3;</code>
    * @return The bytes for type.
    */
@@ -44,11 +72,21 @@ public interface ChassisInfoOrBuilder extends
       getTypeBytes();
 
   /**
+   * <pre>
+   * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string type_description = 4;</code>
    * @return The typeDescription.
    */
   java.lang.String getTypeDescription();
   /**
+   * <pre>
+   * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string type_description = 4;</code>
    * @return The bytes for typeDescription.
    */
@@ -56,11 +94,19 @@ public interface ChassisInfoOrBuilder extends
       getTypeDescriptionBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 5;</code>
    * @return The vendor.
    */
   java.lang.String getVendor();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 5;</code>
    * @return The bytes for vendor.
    */
@@ -68,11 +114,19 @@ public interface ChassisInfoOrBuilder extends
       getVendorBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 6;</code>
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 6;</code>
    * @return The bytes for version.
    */

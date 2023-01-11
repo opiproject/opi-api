@@ -4,6 +4,15 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * System Enclosure or Chassis (Type 3)
+ *  The information in this structure (see Table 16) defines attributes of the system’s mechanical
+ *  enclosure(s). For example, if a system included a separate enclosure for its peripheral devices, two
+ *  structures would be returned: one for the main system enclosure and the second for the peripheral device
+ *  enclosure. The additions to this structure in version 2.1 of this specification support the population of the
+ *  CIM_Chassis class.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.ChassisInfo}
  */
 public final class ChassisInfo extends
@@ -125,6 +134,10 @@ private static final long serialVersionUID = 0L;
   public static final int ASSET_TAG_FIELD_NUMBER = 1;
   private volatile java.lang.Object assetTag_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The assetTag.
    */
@@ -142,6 +155,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The bytes for assetTag.
    */
@@ -163,6 +180,10 @@ private static final long serialVersionUID = 0L;
   public static final int SERIAL_NUMBER_FIELD_NUMBER = 2;
   private volatile java.lang.Object serialNumber_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
@@ -180,6 +201,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
@@ -201,6 +226,12 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 3;
   private volatile java.lang.Object type_;
   /**
+   * <pre>
+   * Bit 7 Chassis lock is present if 1.
+   * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+   * Bits 6:0 Enumeration value; see below. 
+   * </pre>
+   *
    * <code>string type = 3;</code>
    * @return The type.
    */
@@ -218,6 +249,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Bit 7 Chassis lock is present if 1.
+   * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+   * Bits 6:0 Enumeration value; see below. 
+   * </pre>
+   *
    * <code>string type = 3;</code>
    * @return The bytes for type.
    */
@@ -239,6 +276,11 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object typeDescription_;
   /**
+   * <pre>
+   * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string type_description = 4;</code>
    * @return The typeDescription.
    */
@@ -256,6 +298,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string type_description = 4;</code>
    * @return The bytes for typeDescription.
    */
@@ -277,6 +324,10 @@ private static final long serialVersionUID = 0L;
   public static final int VENDOR_FIELD_NUMBER = 5;
   private volatile java.lang.Object vendor_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 5;</code>
    * @return The vendor.
    */
@@ -294,6 +345,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 5;</code>
    * @return The bytes for vendor.
    */
@@ -315,6 +370,10 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 6;
   private volatile java.lang.Object version_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 6;</code>
    * @return The version.
    */
@@ -332,6 +391,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 6;</code>
    * @return The bytes for version.
    */
@@ -555,6 +618,15 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * System Enclosure or Chassis (Type 3)
+   *  The information in this structure (see Table 16) defines attributes of the system’s mechanical
+   *  enclosure(s). For example, if a system included a separate enclosure for its peripheral devices, two
+   *  structures would be returned: one for the main system enclosure and the second for the peripheral device
+   *  enclosure. The additions to this structure in version 2.1 of this specification support the population of the
+   *  CIM_Chassis class.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.ChassisInfo}
    */
   public static final class Builder extends
@@ -739,6 +811,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object assetTag_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return The assetTag.
      */
@@ -755,6 +831,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return The bytes for assetTag.
      */
@@ -772,6 +852,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @param value The assetTag to set.
      * @return This builder for chaining.
@@ -787,6 +871,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return This builder for chaining.
      */
@@ -797,6 +885,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @param value The bytes for assetTag to set.
      * @return This builder for chaining.
@@ -815,6 +907,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serialNumber_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return The serialNumber.
      */
@@ -831,6 +927,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return The bytes for serialNumber.
      */
@@ -848,6 +948,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
@@ -863,6 +967,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return This builder for chaining.
      */
@@ -873,6 +981,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
@@ -891,6 +1003,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
+     * <pre>
+     * Bit 7 Chassis lock is present if 1.
+     * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+     * Bits 6:0 Enumeration value; see below. 
+     * </pre>
+     *
      * <code>string type = 3;</code>
      * @return The type.
      */
@@ -907,6 +1025,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Bit 7 Chassis lock is present if 1.
+     * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+     * Bits 6:0 Enumeration value; see below. 
+     * </pre>
+     *
      * <code>string type = 3;</code>
      * @return The bytes for type.
      */
@@ -924,6 +1048,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Bit 7 Chassis lock is present if 1.
+     * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+     * Bits 6:0 Enumeration value; see below. 
+     * </pre>
+     *
      * <code>string type = 3;</code>
      * @param value The type to set.
      * @return This builder for chaining.
@@ -939,6 +1069,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bit 7 Chassis lock is present if 1.
+     * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+     * Bits 6:0 Enumeration value; see below. 
+     * </pre>
+     *
      * <code>string type = 3;</code>
      * @return This builder for chaining.
      */
@@ -949,6 +1085,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Bit 7 Chassis lock is present if 1.
+     * Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+     * Bits 6:0 Enumeration value; see below. 
+     * </pre>
+     *
      * <code>string type = 3;</code>
      * @param value The bytes for type to set.
      * @return This builder for chaining.
@@ -967,6 +1109,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object typeDescription_ = "";
     /**
+     * <pre>
+     * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string type_description = 4;</code>
      * @return The typeDescription.
      */
@@ -983,6 +1130,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string type_description = 4;</code>
      * @return The bytes for typeDescription.
      */
@@ -1000,6 +1152,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string type_description = 4;</code>
      * @param value The typeDescription to set.
      * @return This builder for chaining.
@@ -1015,6 +1172,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string type_description = 4;</code>
      * @return This builder for chaining.
      */
@@ -1025,6 +1187,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Table 17 shows the byte values for the System Enclosure or Chassis Types field
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string type_description = 4;</code>
      * @param value The bytes for typeDescription to set.
      * @return This builder for chaining.
@@ -1043,6 +1210,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object vendor_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 5;</code>
      * @return The vendor.
      */
@@ -1059,6 +1230,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 5;</code>
      * @return The bytes for vendor.
      */
@@ -1076,6 +1251,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 5;</code>
      * @param value The vendor to set.
      * @return This builder for chaining.
@@ -1091,6 +1270,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 5;</code>
      * @return This builder for chaining.
      */
@@ -1101,6 +1284,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 5;</code>
      * @param value The bytes for vendor to set.
      * @return This builder for chaining.
@@ -1119,6 +1306,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 6;</code>
      * @return The version.
      */
@@ -1135,6 +1326,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 6;</code>
      * @return The bytes for version.
      */
@@ -1152,6 +1347,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 6;</code>
      * @param value The version to set.
      * @return This builder for chaining.
@@ -1167,6 +1366,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 6;</code>
      * @return This builder for chaining.
      */
@@ -1177,6 +1380,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 6;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.

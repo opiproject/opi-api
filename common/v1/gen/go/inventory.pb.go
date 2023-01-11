@@ -27,14 +27,25 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// BIOS Information (Type 0)
 type BIOSInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Vendor  string `protobuf:"bytes,1,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// String number of the BIOS Vendor’s Name.
+	Vendor string `protobuf:"bytes,1,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// String number of the BIOS Version. This value is a
+	// free-form string that may contain Core and OEM
+	// version information.
 	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
-	Date    string `protobuf:"bytes,3,opt,name=date,proto3" json:"date,omitempty"`
+	// String number of the BIOS release date. The date
+	// string, if supplied, is in either mm/dd/yy or
+	// mm/dd/yyyy format. If the year portion of the string
+	// is two digits, the year is assumed to be 19yy.
+	// NOTE: The mm/dd/yyyy format is required for SMBIOS
+	// version 2.3 and later
+	Date string `protobuf:"bytes,3,opt,name=date,proto3" json:"date,omitempty"`
 }
 
 func (x *BIOSInfo) Reset() {
@@ -90,18 +101,51 @@ func (x *BIOSInfo) GetDate() string {
 	return ""
 }
 
+// System Information (Type 1)
+//  The information in this structure defines attributes of the overall system and is intended to be associated
+//  with the Component ID group of the system’s MIF. An SMBIOS implementation is associated with a single
+//  system instance and contains one and only one System Information (Type 1) structure. Table 10 shows
+//  the contents of this structure.
 type SystemInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Family       string `protobuf:"bytes,1,opt,name=family,proto3" json:"family,omitempty"`
-	Name         string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Vendor       string `protobuf:"bytes,3,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// Number of null-terminated string
+	// This text string identifies the family to which a
+	// particular computer belongs. A family refers to a
+	// set of computers that are similar but not identical
+	// from a hardware or software point of view.
+	// Typically, a family is composed of different
+	// computer models, which have different
+	// configurations and pricing points. Computers in
+	// the same family often have similar branding and
+	// cosmetic features.
+	Family string `protobuf:"bytes,1,opt,name=family,proto3" json:"family,omitempty"`
+	// Number of null-terminated string
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	// Number of null-terminated string
+	Vendor string `protobuf:"bytes,3,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// Number of null-terminated string
 	SerialNumber string `protobuf:"bytes,4,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
-	Uuid         string `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	Sku          string `protobuf:"bytes,6,opt,name=sku,proto3" json:"sku,omitempty"`
-	Version      string `protobuf:"bytes,7,opt,name=version,proto3" json:"version,omitempty"`
+	// A UUID is an identifier that is designed to be unique across both time and space. It requires no central
+	// registration process. The UUID is 128 bits long. Its format is described in RFC4122, but the actual field
+	// contents are opaque and not significant to the SMBIOS specification, which is only concerned with the
+	// byte order. Table 11 shows the field names; these field names, particularly for multiplexed fields, follow
+	// historical practice.
+	Uuid string `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	// Number of null-terminated string
+	// This text string identifies a particular computer
+	// configuration for sale. It is sometimes also called
+	// a product ID or purchase order number. This
+	// number is frequently found in existing fields, but
+	// there is no standard format. Typically for a given
+	// system board from a given OEM, there are tens
+	// of unique processor, memory, hard drive, and
+	// optical drive configurations.
+	Sku string `protobuf:"bytes,6,opt,name=sku,proto3" json:"sku,omitempty"`
+	// Number of null-terminated string
+	Version string `protobuf:"bytes,7,opt,name=version,proto3" json:"version,omitempty"`
 }
 
 func (x *SystemInfo) Reset() {
@@ -185,17 +229,32 @@ func (x *SystemInfo) GetVersion() string {
 	return ""
 }
 
+// System Enclosure or Chassis (Type 3)
+//  The information in this structure (see Table 16) defines attributes of the system’s mechanical
+//  enclosure(s). For example, if a system included a separate enclosure for its peripheral devices, two
+//  structures would be returned: one for the main system enclosure and the second for the peripheral device
+//  enclosure. The additions to this structure in version 2.1 of this specification support the population of the
+//  CIM_Chassis class.
 type ChassisInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AssetTag        string `protobuf:"bytes,1,opt,name=asset_tag,json=assetTag,proto3" json:"asset_tag,omitempty"`
-	SerialNumber    string `protobuf:"bytes,2,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
-	Type            string `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
+	// Number of null-terminated string
+	AssetTag string `protobuf:"bytes,1,opt,name=asset_tag,json=assetTag,proto3" json:"asset_tag,omitempty"`
+	// Number of null-terminated string
+	SerialNumber string `protobuf:"bytes,2,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
+	// Bit 7 Chassis lock is present if 1.
+	// Otherwise, either a lock is not present, or it is unknown if the enclosure has a lock.
+	// Bits 6:0 Enumeration value; see below.
+	Type string `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
+	// Table 17 shows the byte values for the System Enclosure or Chassis Types field
+	// Number of null-terminated string
 	TypeDescription string `protobuf:"bytes,4,opt,name=type_description,json=typeDescription,proto3" json:"type_description,omitempty"`
-	Vendor          string `protobuf:"bytes,5,opt,name=vendor,proto3" json:"vendor,omitempty"`
-	Version         string `protobuf:"bytes,6,opt,name=version,proto3" json:"version,omitempty"`
+	// Number of null-terminated string
+	Vendor string `protobuf:"bytes,5,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// Number of null-terminated string
+	Version string `protobuf:"bytes,6,opt,name=version,proto3" json:"version,omitempty"`
 }
 
 func (x *ChassisInfo) Reset() {
@@ -272,16 +331,24 @@ func (x *ChassisInfo) GetVersion() string {
 	return ""
 }
 
+// Baseboard (or Module) Information (Type 2)
+//  The information in this structure defines attributes of a system baseboard (for
+//  example, a motherboard, planar, server blade, or other standard system module)
 type BaseboardInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AssetTag     string `protobuf:"bytes,1,opt,name=asset_tag,json=assetTag,proto3" json:"asset_tag,omitempty"`
+	// Number of a null-terminated string
+	AssetTag string `protobuf:"bytes,1,opt,name=asset_tag,json=assetTag,proto3" json:"asset_tag,omitempty"`
+	// Number of null-terminated string
 	SerialNumber string `protobuf:"bytes,2,opt,name=serial_number,json=serialNumber,proto3" json:"serial_number,omitempty"`
-	Vendor       string `protobuf:"bytes,3,opt,name=vendor,proto3" json:"vendor,omitempty"`
-	Version      string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
-	Product      string `protobuf:"bytes,5,opt,name=product,proto3" json:"product,omitempty"`
+	// Number of null-terminated string
+	Vendor string `protobuf:"bytes,3,opt,name=vendor,proto3" json:"vendor,omitempty"`
+	// Number of null-terminated string
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
+	// Number of null-terminated string
+	Product string `protobuf:"bytes,5,opt,name=product,proto3" json:"product,omitempty"`
 }
 
 func (x *BaseboardInfo) Reset() {
@@ -351,12 +418,27 @@ func (x *BaseboardInfo) GetProduct() string {
 	return ""
 }
 
+// Processor Information (Type 4)
+//  The information in this structure (see Table 21) defines the attributes of a single processor; a separate
+//  structure instance is provided for each system processor socket/slot. For example, a system with an
+//  IntelDX2™ processor would have a single structure instance while a system with an IntelSX2™ processor
+//  would have a structure to describe the main CPU and a second structure to describe the 80487 co1054 processor.
 type CPUInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TotalCores   int32 `protobuf:"varint,1,opt,name=total_cores,json=totalCores,proto3" json:"total_cores,omitempty"`
+	// Number of cores per processor socket
+	// See 7.5.6. If the value is unknown, the field is set
+	// to 0. For core counts of 256 or greater, the Core
+	// Count field is set to FFh and the Core Count 2
+	// field is set to the number of cores.
+	TotalCores int32 `protobuf:"varint,1,opt,name=total_cores,json=totalCores,proto3" json:"total_cores,omitempty"`
+	// Number of threads per processor socket
+	// See 7.5.8. If the value is unknown, the field is set
+	// to 0. For thread counts of 256 or greater, the
+	// Thread Count field is set to FFh and the Thread
+	// Count 2 field is set to the number of threads.
 	TotalThreads int32 `protobuf:"varint,2,opt,name=total_threads,json=totalThreads,proto3" json:"total_threads,omitempty"`
 }
 
@@ -406,13 +488,23 @@ func (x *CPUInfo) GetTotalThreads() int32 {
 	return 0
 }
 
+// Physical Memory Array (Type 16)
+//  This structure describes a collection of memory devices that operate together to form a memory address
+//  space.
 type MemoryInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Maximum memory capacity, in kilobytes, for this array
+	// If the capacity is not represented in this field, then this
+	// field contains 8000 0000h and the Extended
+	// Maximum Capacity field should be used. Values 2 TB
+	// (8000 0000h) or greater must be represented in the
+	// Extended Maximum Capacity field.
 	TotalPhysicalBytes int64 `protobuf:"varint,1,opt,name=total_physical_bytes,json=totalPhysicalBytes,proto3" json:"total_physical_bytes,omitempty"`
-	TotalUsableBytes   int64 `protobuf:"varint,2,opt,name=total_usable_bytes,json=totalUsableBytes,proto3" json:"total_usable_bytes,omitempty"`
+	// TBD
+	TotalUsableBytes int64 `protobuf:"varint,2,opt,name=total_usable_bytes,json=totalUsableBytes,proto3" json:"total_usable_bytes,omitempty"`
 }
 
 func (x *MemoryInfo) Reset() {
@@ -461,6 +553,7 @@ func (x *MemoryInfo) GetTotalUsableBytes() int64 {
 	return 0
 }
 
+// TODO: remove this message
 type DeviceInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

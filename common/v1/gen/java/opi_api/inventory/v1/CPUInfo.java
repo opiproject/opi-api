@@ -4,6 +4,14 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * Processor Information (Type 4)
+ *  The information in this structure (see Table 21) defines the attributes of a single processor; a separate
+ *  structure instance is provided for each system processor socket/slot. For example, a system with an
+ *  IntelDX2™ processor would have a single structure instance while a system with an IntelSX2™ processor
+ *  would have a structure to describe the main CPU and a second structure to describe the 80487 co1054 processor.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.CPUInfo}
  */
 public final class CPUInfo extends
@@ -93,6 +101,14 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_CORES_FIELD_NUMBER = 1;
   private int totalCores_;
   /**
+   * <pre>
+   * Number of cores per processor socket
+   * See 7.5.6. If the value is unknown, the field is set
+   * to 0. For core counts of 256 or greater, the Core
+   * Count field is set to FFh and the Core Count 2
+   * field is set to the number of cores.
+   * </pre>
+   *
    * <code>int32 total_cores = 1;</code>
    * @return The totalCores.
    */
@@ -104,6 +120,14 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_THREADS_FIELD_NUMBER = 2;
   private int totalThreads_;
   /**
+   * <pre>
+   * Number of threads per processor socket
+   * See 7.5.8. If the value is unknown, the field is set
+   * to 0. For thread counts of 256 or greater, the
+   * Thread Count field is set to FFh and the Thread
+   * Count 2 field is set to the number of threads.
+   * </pre>
+   *
    * <code>int32 total_threads = 2;</code>
    * @return The totalThreads.
    */
@@ -279,6 +303,14 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Processor Information (Type 4)
+   *  The information in this structure (see Table 21) defines the attributes of a single processor; a separate
+   *  structure instance is provided for each system processor socket/slot. For example, a system with an
+   *  IntelDX2™ processor would have a single structure instance while a system with an IntelSX2™ processor
+   *  would have a structure to describe the main CPU and a second structure to describe the 80487 co1054 processor.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.CPUInfo}
    */
   public static final class Builder extends
@@ -433,6 +465,14 @@ private static final long serialVersionUID = 0L;
 
     private int totalCores_ ;
     /**
+     * <pre>
+     * Number of cores per processor socket
+     * See 7.5.6. If the value is unknown, the field is set
+     * to 0. For core counts of 256 or greater, the Core
+     * Count field is set to FFh and the Core Count 2
+     * field is set to the number of cores.
+     * </pre>
+     *
      * <code>int32 total_cores = 1;</code>
      * @return The totalCores.
      */
@@ -441,6 +481,14 @@ private static final long serialVersionUID = 0L;
       return totalCores_;
     }
     /**
+     * <pre>
+     * Number of cores per processor socket
+     * See 7.5.6. If the value is unknown, the field is set
+     * to 0. For core counts of 256 or greater, the Core
+     * Count field is set to FFh and the Core Count 2
+     * field is set to the number of cores.
+     * </pre>
+     *
      * <code>int32 total_cores = 1;</code>
      * @param value The totalCores to set.
      * @return This builder for chaining.
@@ -452,6 +500,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of cores per processor socket
+     * See 7.5.6. If the value is unknown, the field is set
+     * to 0. For core counts of 256 or greater, the Core
+     * Count field is set to FFh and the Core Count 2
+     * field is set to the number of cores.
+     * </pre>
+     *
      * <code>int32 total_cores = 1;</code>
      * @return This builder for chaining.
      */
@@ -464,6 +520,14 @@ private static final long serialVersionUID = 0L;
 
     private int totalThreads_ ;
     /**
+     * <pre>
+     * Number of threads per processor socket
+     * See 7.5.8. If the value is unknown, the field is set
+     * to 0. For thread counts of 256 or greater, the
+     * Thread Count field is set to FFh and the Thread
+     * Count 2 field is set to the number of threads.
+     * </pre>
+     *
      * <code>int32 total_threads = 2;</code>
      * @return The totalThreads.
      */
@@ -472,6 +536,14 @@ private static final long serialVersionUID = 0L;
       return totalThreads_;
     }
     /**
+     * <pre>
+     * Number of threads per processor socket
+     * See 7.5.8. If the value is unknown, the field is set
+     * to 0. For thread counts of 256 or greater, the
+     * Thread Count field is set to FFh and the Thread
+     * Count 2 field is set to the number of threads.
+     * </pre>
+     *
      * <code>int32 total_threads = 2;</code>
      * @param value The totalThreads to set.
      * @return This builder for chaining.
@@ -483,6 +555,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of threads per processor socket
+     * See 7.5.8. If the value is unknown, the field is set
+     * to 0. For thread counts of 256 or greater, the
+     * Thread Count field is set to FFh and the Thread
+     * Count 2 field is set to the number of threads.
+     * </pre>
+     *
      * <code>int32 total_threads = 2;</code>
      * @return This builder for chaining.
      */

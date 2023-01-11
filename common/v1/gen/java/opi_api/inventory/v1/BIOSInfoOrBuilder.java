@@ -8,11 +8,19 @@ public interface BIOSInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * String number of the BIOS Vendor’s Name.
+   * </pre>
+   *
    * <code>string vendor = 1;</code>
    * @return The vendor.
    */
   java.lang.String getVendor();
   /**
+   * <pre>
+   * String number of the BIOS Vendor’s Name.
+   * </pre>
+   *
    * <code>string vendor = 1;</code>
    * @return The bytes for vendor.
    */
@@ -20,11 +28,23 @@ public interface BIOSInfoOrBuilder extends
       getVendorBytes();
 
   /**
+   * <pre>
+   * String number of the BIOS Version. This value is a
+   * free-form string that may contain Core and OEM
+   * version information.
+   * </pre>
+   *
    * <code>string version = 2;</code>
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   * <pre>
+   * String number of the BIOS Version. This value is a
+   * free-form string that may contain Core and OEM
+   * version information.
+   * </pre>
+   *
    * <code>string version = 2;</code>
    * @return The bytes for version.
    */
@@ -32,11 +52,29 @@ public interface BIOSInfoOrBuilder extends
       getVersionBytes();
 
   /**
+   * <pre>
+   * String number of the BIOS release date. The date
+   * string, if supplied, is in either mm/dd/yy or
+   * mm/dd/yyyy format. If the year portion of the string
+   * is two digits, the year is assumed to be 19yy.
+   * NOTE: The mm/dd/yyyy format is required for SMBIOS
+   * version 2.3 and later
+   * </pre>
+   *
    * <code>string date = 3;</code>
    * @return The date.
    */
   java.lang.String getDate();
   /**
+   * <pre>
+   * String number of the BIOS release date. The date
+   * string, if supplied, is in either mm/dd/yy or
+   * mm/dd/yyyy format. If the year portion of the string
+   * is two digits, the year is assumed to be 19yy.
+   * NOTE: The mm/dd/yyyy format is required for SMBIOS
+   * version 2.3 and later
+   * </pre>
+   *
    * <code>string date = 3;</code>
    * @return The bytes for date.
    */

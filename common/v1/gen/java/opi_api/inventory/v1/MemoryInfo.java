@@ -4,6 +4,12 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * Physical Memory Array (Type 16)
+ *  This structure describes a collection of memory devices that operate together to form a memory address
+ *  space.
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.MemoryInfo}
  */
 public final class MemoryInfo extends
@@ -93,6 +99,15 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_PHYSICAL_BYTES_FIELD_NUMBER = 1;
   private long totalPhysicalBytes_;
   /**
+   * <pre>
+   * Maximum memory capacity, in kilobytes, for this array
+   * If the capacity is not represented in this field, then this
+   * field contains 8000 0000h and the Extended
+   * Maximum Capacity field should be used. Values 2 TB
+   * (8000 0000h) or greater must be represented in the
+   * Extended Maximum Capacity field.
+   * </pre>
+   *
    * <code>int64 total_physical_bytes = 1;</code>
    * @return The totalPhysicalBytes.
    */
@@ -104,6 +119,10 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_USABLE_BYTES_FIELD_NUMBER = 2;
   private long totalUsableBytes_;
   /**
+   * <pre>
+   * TBD
+   * </pre>
+   *
    * <code>int64 total_usable_bytes = 2;</code>
    * @return The totalUsableBytes.
    */
@@ -281,6 +300,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Physical Memory Array (Type 16)
+   *  This structure describes a collection of memory devices that operate together to form a memory address
+   *  space.
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.MemoryInfo}
    */
   public static final class Builder extends
@@ -435,6 +460,15 @@ private static final long serialVersionUID = 0L;
 
     private long totalPhysicalBytes_ ;
     /**
+     * <pre>
+     * Maximum memory capacity, in kilobytes, for this array
+     * If the capacity is not represented in this field, then this
+     * field contains 8000 0000h and the Extended
+     * Maximum Capacity field should be used. Values 2 TB
+     * (8000 0000h) or greater must be represented in the
+     * Extended Maximum Capacity field.
+     * </pre>
+     *
      * <code>int64 total_physical_bytes = 1;</code>
      * @return The totalPhysicalBytes.
      */
@@ -443,6 +477,15 @@ private static final long serialVersionUID = 0L;
       return totalPhysicalBytes_;
     }
     /**
+     * <pre>
+     * Maximum memory capacity, in kilobytes, for this array
+     * If the capacity is not represented in this field, then this
+     * field contains 8000 0000h and the Extended
+     * Maximum Capacity field should be used. Values 2 TB
+     * (8000 0000h) or greater must be represented in the
+     * Extended Maximum Capacity field.
+     * </pre>
+     *
      * <code>int64 total_physical_bytes = 1;</code>
      * @param value The totalPhysicalBytes to set.
      * @return This builder for chaining.
@@ -454,6 +497,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Maximum memory capacity, in kilobytes, for this array
+     * If the capacity is not represented in this field, then this
+     * field contains 8000 0000h and the Extended
+     * Maximum Capacity field should be used. Values 2 TB
+     * (8000 0000h) or greater must be represented in the
+     * Extended Maximum Capacity field.
+     * </pre>
+     *
      * <code>int64 total_physical_bytes = 1;</code>
      * @return This builder for chaining.
      */
@@ -466,6 +518,10 @@ private static final long serialVersionUID = 0L;
 
     private long totalUsableBytes_ ;
     /**
+     * <pre>
+     * TBD
+     * </pre>
+     *
      * <code>int64 total_usable_bytes = 2;</code>
      * @return The totalUsableBytes.
      */
@@ -474,6 +530,10 @@ private static final long serialVersionUID = 0L;
       return totalUsableBytes_;
     }
     /**
+     * <pre>
+     * TBD
+     * </pre>
+     *
      * <code>int64 total_usable_bytes = 2;</code>
      * @param value The totalUsableBytes to set.
      * @return This builder for chaining.
@@ -485,6 +545,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * TBD
+     * </pre>
+     *
      * <code>int64 total_usable_bytes = 2;</code>
      * @return This builder for chaining.
      */

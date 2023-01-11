@@ -8,11 +8,19 @@ public interface BaseboardInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Number of a null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The assetTag.
    */
   java.lang.String getAssetTag();
   /**
+   * <pre>
+   * Number of a null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The bytes for assetTag.
    */
@@ -20,11 +28,19 @@ public interface BaseboardInfoOrBuilder extends
       getAssetTagBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
@@ -32,11 +48,19 @@ public interface BaseboardInfoOrBuilder extends
       getSerialNumberBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The vendor.
    */
   java.lang.String getVendor();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The bytes for vendor.
    */
@@ -44,11 +68,19 @@ public interface BaseboardInfoOrBuilder extends
       getVendorBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 4;</code>
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 4;</code>
    * @return The bytes for version.
    */
@@ -56,11 +88,19 @@ public interface BaseboardInfoOrBuilder extends
       getVersionBytes();
 
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string product = 5;</code>
    * @return The product.
    */
   java.lang.String getProduct();
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string product = 5;</code>
    * @return The bytes for product.
    */

@@ -4,6 +4,12 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * Baseboard (or Module) Information (Type 2)
+ *  The information in this structure defines attributes of a system baseboard (for
+ *  example, a motherboard, planar, server blade, or other standard system module)
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.BaseboardInfo}
  */
 public final class BaseboardInfo extends
@@ -118,6 +124,10 @@ private static final long serialVersionUID = 0L;
   public static final int ASSET_TAG_FIELD_NUMBER = 1;
   private volatile java.lang.Object assetTag_;
   /**
+   * <pre>
+   * Number of a null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The assetTag.
    */
@@ -135,6 +145,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of a null-terminated string
+   * </pre>
+   *
    * <code>string asset_tag = 1;</code>
    * @return The bytes for assetTag.
    */
@@ -156,6 +170,10 @@ private static final long serialVersionUID = 0L;
   public static final int SERIAL_NUMBER_FIELD_NUMBER = 2;
   private volatile java.lang.Object serialNumber_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
@@ -173,6 +191,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
@@ -194,6 +216,10 @@ private static final long serialVersionUID = 0L;
   public static final int VENDOR_FIELD_NUMBER = 3;
   private volatile java.lang.Object vendor_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The vendor.
    */
@@ -211,6 +237,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string vendor = 3;</code>
    * @return The bytes for vendor.
    */
@@ -232,6 +262,10 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object version_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 4;</code>
    * @return The version.
    */
@@ -249,6 +283,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string version = 4;</code>
    * @return The bytes for version.
    */
@@ -270,6 +308,10 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_FIELD_NUMBER = 5;
   private volatile java.lang.Object product_;
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string product = 5;</code>
    * @return The product.
    */
@@ -287,6 +329,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Number of null-terminated string
+   * </pre>
+   *
    * <code>string product = 5;</code>
    * @return The bytes for product.
    */
@@ -500,6 +546,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Baseboard (or Module) Information (Type 2)
+   *  The information in this structure defines attributes of a system baseboard (for
+   *  example, a motherboard, planar, server blade, or other standard system module)
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.BaseboardInfo}
    */
   public static final class Builder extends
@@ -677,6 +729,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object assetTag_ = "";
     /**
+     * <pre>
+     * Number of a null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return The assetTag.
      */
@@ -693,6 +749,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of a null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return The bytes for assetTag.
      */
@@ -710,6 +770,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of a null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @param value The assetTag to set.
      * @return This builder for chaining.
@@ -725,6 +789,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of a null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @return This builder for chaining.
      */
@@ -735,6 +803,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of a null-terminated string
+     * </pre>
+     *
      * <code>string asset_tag = 1;</code>
      * @param value The bytes for assetTag to set.
      * @return This builder for chaining.
@@ -753,6 +825,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serialNumber_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return The serialNumber.
      */
@@ -769,6 +845,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return The bytes for serialNumber.
      */
@@ -786,6 +866,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
@@ -801,6 +885,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @return This builder for chaining.
      */
@@ -811,6 +899,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string serial_number = 2;</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
@@ -829,6 +921,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object vendor_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return The vendor.
      */
@@ -845,6 +941,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return The bytes for vendor.
      */
@@ -862,6 +962,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @param value The vendor to set.
      * @return This builder for chaining.
@@ -877,6 +981,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @return This builder for chaining.
      */
@@ -887,6 +995,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string vendor = 3;</code>
      * @param value The bytes for vendor to set.
      * @return This builder for chaining.
@@ -905,6 +1017,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 4;</code>
      * @return The version.
      */
@@ -921,6 +1037,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 4;</code>
      * @return The bytes for version.
      */
@@ -938,6 +1058,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 4;</code>
      * @param value The version to set.
      * @return This builder for chaining.
@@ -953,6 +1077,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 4;</code>
      * @return This builder for chaining.
      */
@@ -963,6 +1091,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string version = 4;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.
@@ -981,6 +1113,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object product_ = "";
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string product = 5;</code>
      * @return The product.
      */
@@ -997,6 +1133,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string product = 5;</code>
      * @return The bytes for product.
      */
@@ -1014,6 +1154,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string product = 5;</code>
      * @param value The product to set.
      * @return This builder for chaining.
@@ -1029,6 +1173,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string product = 5;</code>
      * @return This builder for chaining.
      */
@@ -1039,6 +1187,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Number of null-terminated string
+     * </pre>
+     *
      * <code>string product = 5;</code>
      * @param value The bytes for product to set.
      * @return This builder for chaining.

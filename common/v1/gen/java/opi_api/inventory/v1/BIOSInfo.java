@@ -4,6 +4,10 @@
 package opi_api.inventory.v1;
 
 /**
+ * <pre>
+ * BIOS Information (Type 0)
+ * </pre>
+ *
  * Protobuf type {@code opi_api.inventory.v1.BIOSInfo}
  */
 public final class BIOSInfo extends
@@ -104,6 +108,10 @@ private static final long serialVersionUID = 0L;
   public static final int VENDOR_FIELD_NUMBER = 1;
   private volatile java.lang.Object vendor_;
   /**
+   * <pre>
+   * String number of the BIOS Vendor’s Name.
+   * </pre>
+   *
    * <code>string vendor = 1;</code>
    * @return The vendor.
    */
@@ -121,6 +129,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * String number of the BIOS Vendor’s Name.
+   * </pre>
+   *
    * <code>string vendor = 1;</code>
    * @return The bytes for vendor.
    */
@@ -142,6 +154,12 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 2;
   private volatile java.lang.Object version_;
   /**
+   * <pre>
+   * String number of the BIOS Version. This value is a
+   * free-form string that may contain Core and OEM
+   * version information.
+   * </pre>
+   *
    * <code>string version = 2;</code>
    * @return The version.
    */
@@ -159,6 +177,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * String number of the BIOS Version. This value is a
+   * free-form string that may contain Core and OEM
+   * version information.
+   * </pre>
+   *
    * <code>string version = 2;</code>
    * @return The bytes for version.
    */
@@ -180,6 +204,15 @@ private static final long serialVersionUID = 0L;
   public static final int DATE_FIELD_NUMBER = 3;
   private volatile java.lang.Object date_;
   /**
+   * <pre>
+   * String number of the BIOS release date. The date
+   * string, if supplied, is in either mm/dd/yy or
+   * mm/dd/yyyy format. If the year portion of the string
+   * is two digits, the year is assumed to be 19yy.
+   * NOTE: The mm/dd/yyyy format is required for SMBIOS
+   * version 2.3 and later
+   * </pre>
+   *
    * <code>string date = 3;</code>
    * @return The date.
    */
@@ -197,6 +230,15 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * String number of the BIOS release date. The date
+   * string, if supplied, is in either mm/dd/yy or
+   * mm/dd/yyyy format. If the year portion of the string
+   * is two digits, the year is assumed to be 19yy.
+   * NOTE: The mm/dd/yyyy format is required for SMBIOS
+   * version 2.3 and later
+   * </pre>
+   *
    * <code>string date = 3;</code>
    * @return The bytes for date.
    */
@@ -390,6 +432,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * BIOS Information (Type 0)
+   * </pre>
+   *
    * Protobuf type {@code opi_api.inventory.v1.BIOSInfo}
    */
   public static final class Builder extends
@@ -553,6 +599,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object vendor_ = "";
     /**
+     * <pre>
+     * String number of the BIOS Vendor’s Name.
+     * </pre>
+     *
      * <code>string vendor = 1;</code>
      * @return The vendor.
      */
@@ -569,6 +619,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS Vendor’s Name.
+     * </pre>
+     *
      * <code>string vendor = 1;</code>
      * @return The bytes for vendor.
      */
@@ -586,6 +640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS Vendor’s Name.
+     * </pre>
+     *
      * <code>string vendor = 1;</code>
      * @param value The vendor to set.
      * @return This builder for chaining.
@@ -601,6 +659,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS Vendor’s Name.
+     * </pre>
+     *
      * <code>string vendor = 1;</code>
      * @return This builder for chaining.
      */
@@ -611,6 +673,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS Vendor’s Name.
+     * </pre>
+     *
      * <code>string vendor = 1;</code>
      * @param value The bytes for vendor to set.
      * @return This builder for chaining.
@@ -629,6 +695,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     * <pre>
+     * String number of the BIOS Version. This value is a
+     * free-form string that may contain Core and OEM
+     * version information.
+     * </pre>
+     *
      * <code>string version = 2;</code>
      * @return The version.
      */
@@ -645,6 +717,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS Version. This value is a
+     * free-form string that may contain Core and OEM
+     * version information.
+     * </pre>
+     *
      * <code>string version = 2;</code>
      * @return The bytes for version.
      */
@@ -662,6 +740,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS Version. This value is a
+     * free-form string that may contain Core and OEM
+     * version information.
+     * </pre>
+     *
      * <code>string version = 2;</code>
      * @param value The version to set.
      * @return This builder for chaining.
@@ -677,6 +761,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS Version. This value is a
+     * free-form string that may contain Core and OEM
+     * version information.
+     * </pre>
+     *
      * <code>string version = 2;</code>
      * @return This builder for chaining.
      */
@@ -687,6 +777,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS Version. This value is a
+     * free-form string that may contain Core and OEM
+     * version information.
+     * </pre>
+     *
      * <code>string version = 2;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.
@@ -705,6 +801,15 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object date_ = "";
     /**
+     * <pre>
+     * String number of the BIOS release date. The date
+     * string, if supplied, is in either mm/dd/yy or
+     * mm/dd/yyyy format. If the year portion of the string
+     * is two digits, the year is assumed to be 19yy.
+     * NOTE: The mm/dd/yyyy format is required for SMBIOS
+     * version 2.3 and later
+     * </pre>
+     *
      * <code>string date = 3;</code>
      * @return The date.
      */
@@ -721,6 +826,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS release date. The date
+     * string, if supplied, is in either mm/dd/yy or
+     * mm/dd/yyyy format. If the year portion of the string
+     * is two digits, the year is assumed to be 19yy.
+     * NOTE: The mm/dd/yyyy format is required for SMBIOS
+     * version 2.3 and later
+     * </pre>
+     *
      * <code>string date = 3;</code>
      * @return The bytes for date.
      */
@@ -738,6 +852,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * String number of the BIOS release date. The date
+     * string, if supplied, is in either mm/dd/yy or
+     * mm/dd/yyyy format. If the year portion of the string
+     * is two digits, the year is assumed to be 19yy.
+     * NOTE: The mm/dd/yyyy format is required for SMBIOS
+     * version 2.3 and later
+     * </pre>
+     *
      * <code>string date = 3;</code>
      * @param value The date to set.
      * @return This builder for chaining.
@@ -753,6 +876,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS release date. The date
+     * string, if supplied, is in either mm/dd/yy or
+     * mm/dd/yyyy format. If the year portion of the string
+     * is two digits, the year is assumed to be 19yy.
+     * NOTE: The mm/dd/yyyy format is required for SMBIOS
+     * version 2.3 and later
+     * </pre>
+     *
      * <code>string date = 3;</code>
      * @return This builder for chaining.
      */
@@ -763,6 +895,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * String number of the BIOS release date. The date
+     * string, if supplied, is in either mm/dd/yy or
+     * mm/dd/yyyy format. If the year portion of the string
+     * is two digits, the year is assumed to be 19yy.
+     * NOTE: The mm/dd/yyyy format is required for SMBIOS
+     * version 2.3 and later
+     * </pre>
+     *
      * <code>string date = 3;</code>
      * @param value The bytes for date to set.
      * @return This builder for chaining.
