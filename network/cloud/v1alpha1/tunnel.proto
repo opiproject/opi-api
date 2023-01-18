@@ -1,0 +1,111 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for Tunnel EndPoint (TEP) object
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "TunnelProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// tunnel object
+message Tunnel {
+  // configuration
+  TunnelSpec spec = 3;
+  // operational status
+  TunnelStatus status = 4;
+}
+
+// tunnel configuration - identified by 3-tuple (LocalIP, RemoteIP, encap)
+// If multiple tunnels with same RemoteIP address are created, they should
+// have same Type attribute value i.e., different tunnels with same IP can't
+// have different tunnel type
+message TunnelSpec {
+  // unique tunnel identifier
+  // NOTE: Tunnel id of 0 is reserve for local TEP/host
+  common.v1.ObjectKey id = 1;
+  // virtual private cloud this is tunnel belongs to
+  common.v1.ObjectKey vpc_id = 2;
+  // local IP of the tunnel (used as outer SIP in tunneled packets)
+  network.opinetcommon.v1alpha1.IPAddress local_ip = 3;
+  // remote IP of the tunnel (used as outer DIP in tunneled packets)
+  network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;
+  // type of the tunnel
+  TunnelType type = 5;
+  // encap used while sending traffic to this tunnel
+  network.opinetcommon.v1alpha1.Encap encap = 6;
+  // Tunnel points to a underlay nexthop, nexthop-group(ECMP), or another Tunnel
+  oneof nh {
+    // underlay nexthop for this tunnel
+    common.v1.ObjectKey nexthop_id = 8;
+    // underlay nexthop group for this tunnel
+    common.v1.ObjectKey nexthop_group_id = 9;
+    // a tunnel can point to another tunnel for double encap
+    // - supported combinations of double encap is platform specific
+    // - unsupported combination of cascading tunnels would result in configuration failure
+    // -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
+    common.v1.ObjectKey tunnel_id = 10;
+    // DropNexthop is used to explicitly drop traffic destined to this tunnel
+    // even when there is reachability, this is administrative override
+    DropNexthop drop_next_hop = 11;
+  }
+  // MAC address of the remote IP (i.e., remote side of the tunnel)
+  // set to zero if dataplane is expected to resolve this
+  bytes mac_address = 12;
+  // type of this tunnel
+  // RemoteService flag is true when tunnel is pointing to a service
+  // that is in a different data center and packet needs to be carried
+  // with 2 fabric encaps. IPv4 traffic in this case goes thru protocol
+  // translation (to IPv6) and then goes in a Vxlan tunnel
+  bool remote_service = 13;
+  // RemoteServiceEncap must be set if the tunnel type is
+  // TUNNEL_TYPE_REMOTE_SERVICE, this is the outer most vnid seen when the
+  // packet is receievd from the remote service
+  network.opinetcommon.v1alpha1.Encap remote_service_encap = 14;
+  // public IP of the remote service tunnel that is used as SIPo
+  // in the encapped VXLAN packet in the Tx direction
+  network.opinetcommon.v1alpha1.IPAddress remote_service_public_ip = 15;
+  // when ToS is configured on a tunnel object, all traffic destined to the
+  // tunnel will carry dscp value as configured.
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane.
+  // The ToS value configured on the tunnel will override ToS configuration
+  // in vpc and subnet objects
+  int32 tos = 16;
+}
+
+// DropNexthop is used to blackhole the traffic
+message DropNexthop {}
+
+// operational status of the tunnel, if any
+message TunnelStatus {
+  // tunnel_hw_handle
+  network.opinetcommon.v1alpha1.HwHandle hw_handle = 1;
+  // no. of vnics behind the tunnel
+  int32 vnic_count = 2;
+}
+
+// TunnelType defines the role of the tunnel
+enum TunnelType {
+  // unspecified
+  TUNNEL_TYPE_UNSPECIFIED = 0;
+  // tunnel type for Internet Gateway
+  TUNNEL_TYPE_IGW         = 1;
+  // tunnel type for east-traffic workloads with in a data center
+  TUNNEL_TYPE_WORKLOAD    = 2;
+  // tunnel type for inter data center traffic
+  TUNNEL_TYPE_INTER_DC    = 3;
+  // tunnel type for provider services
+  TUNNEL_TYPE_SERVICE     = 4;
+  // tunnel pointing to an intermediate Virtual Network Function (VNF) devices
+  TUNNEL_TYPE_VNF         = 5;
+  // tunnel type ipsec
+  TUNNEL_TYPE_IPSEC       = 6;
+}

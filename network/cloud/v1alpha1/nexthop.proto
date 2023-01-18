@@ -1,0 +1,159 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for nexthop and nexthop group objects
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "NextHopProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+
+// nexthop object
+message NextHop {
+  // configuration
+  NextHopSpec spec = 1;
+  // status
+  NextHopStatus status = 2;
+}
+// nexthop specification
+message NextHopSpec {
+  // unique nexthop id
+  common.v1.ObjectKey id = 1;
+  // nexthop is different for underlay vs. overlay
+  oneof nhinfo {
+    // Tunnel/TEP member is used for overlay routing
+    OverlayNextHopSpec overlay_nh_info = 2;
+    // Underlay nexthop info is used for a resolved underlay IP
+    UnderlayNextHopSpec underlay_nh_info = 3;
+    // Indirectly resolve to the next hop of another IP
+    IPNextHopSpec ip_nh_info = 4;
+  }
+}
+
+// Underlay nexthop information
+message UnderlayNextHopSpec {
+  // L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
+  // are picked from this L3 interface)
+  common.v1.ObjectKey l3_interface_id = 1;
+  // underlay_nh_mac is the outer DMAC in case of VxLAN fabric
+  bytes underlay_nh_mac = 2;
+}
+
+// Overlay nexthop information
+message OverlayNextHopSpec {
+  // tunnel id
+  common.v1.ObjectKey tunnel_id = 1;
+}
+
+// IP nexthop information
+message IPNextHopSpec {
+  // egress VRF id
+  common.v1.ObjectKey vpc_id = 1;
+  // nexthop's IP address
+  network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
+  // egress vlan
+  int32 vlan = 3;
+  // mac address
+  bytes mac = 4;
+}
+
+// operational status of nexthop, if any
+message NextHopStatus {
+  // nexthop hw id
+  network.opinetcommon.v1alpha1.HwHandle hw_handle = 1;
+  // next hop info
+  oneof nhinfo {
+    // nh is underlay
+    UnderlayNextHopStatus underlay_nh_info = 2;
+    // nh is overlay
+    OverlayNextHopStatus  overlay_nh_info = 3;
+  }
+}
+
+// underlay next hop status
+message UnderlayNextHopStatus {
+  // port
+  int32 port = 1;
+  // vlan
+  int32 vlan = 2;
+}
+
+// overlay next hop status
+message OverlayNextHopStatus {
+  // tunnel ip
+  network.opinetcommon.v1alpha1.IPAddress tunnel_ip = 1;
+}
+
+// nexthop get request
+message NextHopLookup {
+  oneof gettype {
+    // nexthop type to be retrieved
+    NextHopType type = 1;
+    // nexthop to be retrieved
+    common.v1.ObjectKey nh_id = 2;
+  }
+}
+
+// nexthop group object
+message NextHopGroup {
+  // configuration
+  NextHopGroupSpec spec = 3;
+  // status
+  NextHopGroupStatus status = 4;
+}
+
+// nexthop group specification - a nextgroup consists of bunch of nexthops
+message NextHopGroupSpec {
+  // unique nexthop group id
+  common.v1.ObjectKey id = 1;
+  // type of the nexthop
+  NextHopGroupType type = 2;
+  // zero or more member nexthops or nexthop groups
+  repeated NextHopSpec members = 3;
+}
+
+// operational status of nexthop group, if any
+message NextHopGroupStatus {
+  // nexthop group member status
+  repeated NextHopStatus members = 1;
+  // nexthop group hw id
+  network.opinetcommon.v1alpha1.HwHandle hw_handle = 2;
+}
+
+// nexthop group lookup request
+message NextHopGroupLookup {
+  oneof gettype {
+    // retrieve based on the group type
+    NextHopGroupType type = 1;
+    // retreive based on nh id
+    common.v1.ObjectKey id = 2;
+  }
+}
+
+// next hop type
+enum NextHopType {
+  // unspecified
+  NEXT_HOP_TYPE_UNSPECIFIED = 0;
+  // ip
+  NEXT_HOP_TYPE_IP          = 1;
+  // underlay
+  NEXT_HOP_TYPE_UNDERLAY    = 2;
+  // overlay
+  NEXT_HOP_TYPE_OVERLAY     = 3;
+}
+
+// type of the nexthop group
+enum NextHopGroupType {
+  // unspecified
+  NEXT_HOP_GROUP_TYPE_UNSPECIFIED = 0;
+  // ECMP for overlay routes pointing to VTEPs
+  NEXT_HOP_GROUP_TYPE_OVERLAY_ECMP = 1;
+  // ECMP for underlay VTEPs pointing to nexthops
+  NEXT_HOP_GROUP_TYPE_UNDERLAY_ECMP = 2;
+}

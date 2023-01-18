@@ -1,0 +1,281 @@
+// Copyright (c) 2023 AMD Inc.
+
+syntax = "proto3";
+package opi_api.network.opinetcommon.v1alpha1;
+
+option java_package = "opi_api.network.opinetcommon.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkTypesProto";
+
+option go_package = "github.com/opiproject/opi-api/network/opinetcommon/v1alpha1/gen/go";
+
+// IP address families
+enum IpAf {
+  IP_AF_NONE  = 0;
+  IP_AF_INET  = 1;
+  IP_AF_INET6 = 2;
+}
+
+// IP Address object
+message IPAddress {
+  IpAf af = 1;
+  // IP address family
+  oneof v4_or_v6 {
+    // IPv4 address
+    fixed32 v4_addr = 2;
+    // IPv6 address
+    bytes  v6_addr = 3;
+  }
+}
+
+// IP Prefix object
+message IPPrefix {
+  // IP prefix address
+  IPAddress addr = 1;
+  // IP Prefix length (range:0-128)
+  int32 len = 2;
+}
+
+// IPv4 Prefix
+message IPv4Prefix {
+  // IPv4 address portion
+  fixed32 addr = 1;
+  // prefix length; range:0-32
+  uint32  len  = 2;
+}
+
+// IPv6 Prefix
+message IPv6Prefix {
+  // IPv6 address bytes
+  bytes  addr = 1;
+  // prefix length: range:0-128
+  uint32 len  = 2;
+}
+
+// encap types in the network
+enum EncapType {
+  // no encap
+  ENCAP_TYPE_NONE          = 0;
+  // 802.1q
+  ENCAP_TYPE_DOT1Q         = 1;
+  // MPLS over UDP
+  ENCAP_TYPE_MPLS_OVER_UDP = 2;
+  // VXLAN
+  ENCAP_TYPE_VXLAN         = 3;
+  // NVGRE
+  ENCAP_TYPE_NVGRE         = 4;
+}
+
+// tag values for various encap types
+message EncapVal {
+  oneof val {
+    // vlan id for DOT1Q
+    int32  vlan_id  = 1;
+    // MPLS tag/slot for MPLS over UDP
+    int32  mpls_tag = 2;
+    // VXLAN VNID (24bit value)
+    int32  vnid     = 3;
+    // NVGRE VSID
+    int32  vsid     = 5;
+  }
+}
+
+// fabric encap
+message Encap {
+  // encyp type
+  EncapType type  = 1;
+  // encap value
+  EncapVal  value = 2;
+}
+
+// route type
+enum RouteType {
+  // unspecified
+  ROUTE_TYPE_UNSPECIFIED = 0;
+  // other
+  ROUTE_TYPE_OTHER       = 1;
+  // reject
+  ROUTE_TYPE_REJECT      = 2;
+  // local
+  ROUTE_TYPE_LOCAL       = 3;
+  // remote
+  ROUTE_TYPE_REMOTE      = 4;
+}
+
+// route protocols
+enum RouteProtocol {
+  // unspecified
+  ROUTE_PROTO_UNSPECIFIED = 0;
+  // local
+  ROUTE_PROTO_LOCAL       = 1;
+  // static
+  ROUTE_PROTO_STATIC      = 2;
+  // bgp (dynamic)
+  ROUTE_PROTO_BGP         = 3;
+}
+
+// admin state of control plane objects
+enum AdminState {
+  // unspecified
+  ADMIN_STATE_UNSPECIFIED = 0;
+  // enable
+  ADMIN_STATE_ENABLE      = 1;
+  // disable
+  ADMIN_STATE_DISABLE     = 2;
+}
+
+// PortRange object has low and high end of the port ranges
+message PortRange {
+  // range:0-65535
+  uint32 port_low  = 1;
+  // range:0-65535
+  uint32 port_high = 2;
+}
+
+// IP Range
+message IPRange {
+  // starting IP address
+  IPAddress low  = 1;
+  // ending IP address
+  IPAddress high = 2;
+}
+
+// AddressRange represents an IPv4 or IPv6 address range
+message AddressRange {
+  oneof range {
+    // IPv4 address range
+    IPRange ipv4_range = 1;
+    // IPv6 address range
+    IPRange ipv6_range = 2;
+  }
+}
+
+// IPEntry represents any form of IP address/prefix/range/tag etc.
+message IPEntry {
+  oneof ip_entry {
+    // IP prefix
+    IPPrefix     prefix = 1;
+    // IP range
+    AddressRange range  = 2;
+    // tag that represents IP addres/pfx/range, range:1-4294967294
+    uint32       tag    = 3;
+  }
+}
+
+// IPList is a list of IPEntry objects
+message IPList {
+  repeated IPEntry ip_entries = 1;
+}
+
+// direction in which policy is enforced
+// INGRESS/EGRESS is w.r.t vnic (i.e., traffic leaving vnic is marked as
+// EGRESS and traffic going to vnic is marked as INGRESS
+enum PolicyDir {
+  POLICY_DIR_NONE    = 0;
+  POLICY_DIR_INGRESS = 1;
+  POLICY_DIR_EGRESS  = 2;
+}
+
+// WildcardMatch options
+enum WildcardMatch {
+  MATCH_NONE = 0;
+  MATCH_ANY  = 256;
+}
+
+// L3 rule match criteria
+message RuleL3Match {
+  // IP protocol match MUST be specified even if it is wildcard
+  oneof protomatch {
+    uint32        proto_num       = 1;
+    // match ANY protocol
+    WildcardMatch proto_wild_card = 2;
+  }
+  oneof srcmatch {
+    IPPrefix      src_prefix      = 3;
+    AddressRange  src_range       = 4;
+    // range:1-429496729
+    uint32        src_tag         = 5;
+    IPList        src_ip_list     = 6;
+  }
+  oneof dstmatch {
+    IPPrefix      dst_prefix      = 7;
+    // range:1-429496729
+    AddressRange  dst_range       = 8;
+    uint32        dst_tag         = 9;
+    IPList        dst_ip_list     = 10;
+  }
+}
+
+// TCP/UDP rule match criteria
+message PortMatch {
+  // source port range
+  PortRange src_port_range = 1;
+  // destination port range
+  PortRange dst_port_range = 2;
+}
+
+// ICMPv4/ICMPv6 rule match criteria
+message ICMPMatch {
+  // ICMP type
+  oneof typematch {
+    // match any ICMP type
+    uint32        type          = 1;
+    // match any ICMP type
+    WildcardMatch type_wildcard = 2;
+  }
+  // ICMP code
+  oneof codematch {
+    // match any ICMP code
+    uint32        code          = 3;
+    // match any ICMP code
+    WildcardMatch code_wildcard = 4;
+  }
+}
+
+// TCP/UDP source and destination port list
+message PortListMatch {
+  // list of source ports or port ranges
+  repeated PortRange src_port_range = 1;
+  // list of destination ports or port ranges
+  repeated PortRange dst_port_range = 2;
+}
+
+// ICMP type/code match condition list
+message ICMPMatchList {
+  // ICMP type/code list
+  repeated ICMPMatch icmp_match_list = 1;
+}
+
+// L4 rule match criteria
+message RuleL4Match {
+  oneof l4info {
+    // source and/or destination ports/ranges
+    PortMatch     ports           = 1;
+    // ICMP type/code match criteria
+    ICMPMatch     type_code       = 2;
+    // list of source and/or destination ports/ranges
+    PortListMatch port_list       = 3;
+    // list ICMP type/code match criteria
+    ICMPMatchList icmp_match_list = 4;
+  }
+}
+
+// rule match criteria
+message RuleMatch {
+  // Layer 3 match criteria
+  RuleL3Match l3_match = 1;
+  // Layer 4 match criteria
+  RuleL4Match l4_match = 2;
+}
+
+// security rule action is one of the below
+enum SecurityRuleAction {
+  SECURITY_RULE_ACTION_NONE  = 0;
+  SECURITY_RULE_ACTION_ALLOW = 1;
+  SECURITY_RULE_ACTION_DENY  = 2;
+}
+
+// Opaque handle to identify the index in hardware
+message HwHandle {
+  uint32 idx = 1;
+}

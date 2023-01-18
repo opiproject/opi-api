@@ -1,0 +1,195 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for interface (layer2 and layer3 configuration) related objects
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "InterfaceProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// interface - ethernet interface (layer2 and layer3 configuration)
+message Interface {
+  // interface configuration
+  InterfaceSpec   spec     = 1;
+  // interface status
+  InterfaceStatus status   = 2;
+}
+
+// InterfaceSpec is used to add or update of an interface
+message InterfaceSpec {
+  // interface key
+  common.v1.ObjectKey id = 1;
+  // interface number is numerical port identifier starting from 1 range [1...max-ports#]
+  int32 ifid = 2;
+  // admin state - default up
+  // for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
+  IfStatus admin_status = 3;
+  // interface type specific configuration
+  oneof ifinfo {
+    // uplink specific configuration
+    UplinkSpec uplink_spec = 4;
+    // uplink port-channel configuration
+    UplinkPCSpec uplink_pc_spec = 5;
+    // layer3 interface configuration
+    L3IfSpec l3_if_spec = 6;
+    // loopback interface configuration
+    LoopbackIfSpec loopback_if_spec  = 7;
+    // control interface configuration
+    ControlIfSpec control_if_spec   = 8;
+    // host facing interface's configuration
+    HostIfSpec host_if_spec = 9;
+  }
+}
+
+// Uplink configuration; interface type IF_TYPE_UPLINK
+message UplinkSpec {
+  // physical port id corresponding to this interface
+  common.v1.ObjectKey port_id = 1;
+  // native vlan-id, untagged rx/tx vlan id
+  int32 native_vlanid = 2;
+}
+
+// Uplink port-channel configuration; interface type IF_TYPE_UPLINK_PC
+message UplinkPCSpec {
+  // bitmap of member ifids that make up this the port-channel
+  // e.g. if uplink interfaces 1 and 2 part of this port channel this is set to 0x11
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: bitmap must be uint and not int. --)
+  uint64 member_ifids_bitmap = 1;
+  // native vlan-id, untagged rx/tx vlan id
+  int32 native_vlanid = 2;
+}
+
+// L3 interface configuration
+message L3IfSpec {
+  // vpc/vrf this L3 interface belongs to
+  common.v1.ObjectKey vpc_id = 1;
+  // Physical port of this L3 interface
+  common.v1.ObjectKey port_id = 3;
+  // IP address, prefix of this L3 interface
+  repeated network.opinetcommon.v1alpha1.IPPrefix prefix = 2;
+  // encap used for packet rewrites if this is a L3 sub interface
+  network.opinetcommon.v1alpha1.Encap encap = 4;
+  // MAC address of this L3 interface; can be set only once
+  bytes mac_address = 5;
+}
+
+// BGP standard community
+message BGPCommunity {
+  // first 16-bit of standard community (range:0-65535)
+  int32 asn = 1;
+  // second 16-bit of standard community (range:0-65535)
+  int32 community = 2;
+}
+
+// Loopback interface configuration
+message LoopbackIfSpec {
+  // IP address hosted on the loopback interface (also DPU's TEP IP)
+  network.opinetcommon.v1alpha1.IPPrefix prefix = 1;
+  // BGP standard community to be attached to the route advertising this loopback TEP IP
+  repeated BGPCommunity communities = 2;
+}
+
+// Inband control interface configuration
+message ControlIfSpec {
+  // IP address hosted on the inband control interface
+  network.opinetcommon.v1alpha1.IPPrefix prefix = 1;
+  // mac address of the interface
+  bytes mac_address = 2;
+}
+
+// HostIfSpec represents a host visisble device (e.g. eth interface)
+// Host interfaces are created based on the device configuration (see device.proto)
+// This object provides cloud provider a control over the host VFs or PFs for various
+// cloud infrastructure functions (e.g. rate limiting)
+message HostIfSpec {
+  // VF has vf set to true, otherwise the interface is assumed to be a PF
+  bool vf = 1;
+  // ConnTrackEnable will enable full connection tracking, enabled for new connections
+  bool enable_connection_tracking = 2;
+  // DPU will assign a mac address to a PF, user can modify this (effective upon reboot)
+  bytes mac_address = 3;
+  // interface name (this can be populated from what is obtaine from the driver
+  // for easier troublsehooting, or other operations
+  string  ifname = 4;
+}
+
+// operational status of uplink interface
+message UplinkIfStatus {
+  // hw specific index associated with this uplink, useful for operations
+  int32     hw_if_idx     = 1;
+  // hw port number is hw identifier of the port, usefor for operations
+  int32     hw_port_number = 2;
+}
+
+// operational status of loopback interface
+message LoopbackIfStatus {
+  // loopback interface name in DPU's OS
+  string ifname = 1;
+}
+
+// operational status of host interfaces
+message HostIfStatus {
+  // hw ifidx is a range of hw specifc interfaces index values associated with this host interface
+  repeated bytes hw_if_idxes = 1;
+  // MAC address of this interface
+  bytes mac_address = 2;
+  // operational status of this interface
+  IfStatus status = 3;
+  // host interface name
+  string ifname = 4;
+}
+
+// operational status of an interface, if any
+message InterfaceStatus {
+  // encoded interface index of this interface
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: interface index is an opaque uint32 value. --)
+  uint32             if_index           = 1;
+  // operational status of the interface
+  IfStatus           oper_status        = 2;
+  oneof ifstatus {
+    // uplink specific status
+    UplinkIfStatus   uplink_if_status   = 3;
+    // loopback interface specific status
+    LoopbackIfStatus loopback_if_status = 4;
+    // host interface specific status
+    HostIfStatus     host_if_status     = 5;
+  }
+}
+
+// types of interfaces
+enum IfType {
+  // unspecified
+  IF_TYPE_UNSPECIFIED = 0;
+  // uplink interface
+  IF_TYPE_UPLINK      = 1;
+  // uplink port-channel interface
+  IF_TYPE_UPLINK_PC   = 2;
+  // L3 interface
+  IF_TYPE_L3          = 3;
+  // loopback interface
+  IF_TYPE_LOOPBACK    = 4;
+  // inband management/control interface
+  IF_TYPE_CONTROL     = 5;
+  // host visible PF/VF device
+  IF_TYPE_HOST        = 6;
+}
+
+// IfStatus status reflects the operational status of Interface
+// (-- api-linter: core::0216::synonyms=disabled
+//     aip.dev/not-precedent: interface status is up or down, not interface state. --)
+enum IfStatus {
+  // unknown
+  IF_STATUS_UNSPECIFIED = 0;
+  // interface is up
+  IF_STATUS_UP          = 1;
+  // interface is down
+  IF_STATUS_DOWN        = 2;
+}

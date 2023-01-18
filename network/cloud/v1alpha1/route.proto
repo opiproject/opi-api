@@ -1,0 +1,199 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for static routing
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RouteProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// route table object
+message RouteTable {
+  // route table configuration
+  RouteTableSpec spec = 3;
+  // route table status
+  RouteTableStatus status = 4;
+}
+
+// Route table - a prioritized list of static routes/prefixes used for
+// forwarding traffic within a VPC, across VPCs or to the outside world
+// Individual routes within the route table can be updated using Route object
+message RouteTableSpec {
+  // globally unique route table id
+  common.v1.ObjectKey id = 1;
+  // IP address family
+  network.opinetcommon.v1alpha1.IpAf af = 2;
+  // enable or disable priority based routing for the route table
+  bool priority_enable = 3;
+  // all routes in this route table
+  // In a given route table, same prefix must not appear more than once.
+  // For multipathing, use nexthop group instead
+  repeated RouteInfo routes = 4;
+}
+
+// route configuration information
+message RouteInfo {
+  // unique id of this specific route (used for specific route update)
+  common.v1.ObjectKey id = 1;
+  // route attributes
+  RouteAttrs attrs = 2;
+}
+
+// operational status of the route table, if any
+message RouteTableStatus {
+  // no. of VPCs using the route table
+  int32 vpc_count = 1;
+  // no. of subnets using the route table
+  int32 subnet_count = 2;
+  // no. of vnics using the route table
+  int32 vnic_count = 3;
+  // route table pool
+  int32 pool_id = 4;
+  // route table h/w index
+  int32 hw_idx = 5;
+  // route table base memory address
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: this is the actual 64bit memory address. --)
+  uint64 route_table_base_address = 6;
+  // LPM memory block id
+  int32 hw_lpm_block_idx = 7;
+  // LPM info block id that contains rewrites
+  int32 hw_lpm_rewrite_block_idx = 8;
+}
+
+// route attributes
+//
+// Routes types: static route, internet route, service routes, etc.
+// Priority of a route allows the cloud controller to manage the routes
+// based on arbitrary algorithm (vs longest prefix match)
+// Route class priority can be used to order the lookup of certain class
+// of routes. If priority is same (or not specified for any routes),
+// then the lookup is done according to the longest prefix match.
+message RouteAttrs {
+  // IP prefix
+  network.opinetcommon.v1alpha1.IPPrefix prefix = 1;
+  // class of the route
+  RouteClass route_class = 2;
+  // priority of the route class this route belongs to (range: 0-15)
+  // route table must have set priority_enable to true for this to take effect
+  int32 class_priority = 3;
+  // priority of the route within the class. Priority behavior:
+  // - lower the numerical value, higher the priority in the datapath
+  // - a route table MUST have either all the routes with priority set or no
+  //   priority set on all the routes
+  // - if multiple routes have same priority, route with longest prefix length
+  //    will take effect
+  // - if no priority value is set (i.e. 0) then route priority is computed as
+  //    128 - <prefix length>, so longer prefixes will have higher precedence
+  //    over shorter ones giving regular LPM semantics
+  // - Priority attribute on the route is used only when PriorityEn is set to
+  //    true on the corresponding routing table
+  // - range:0-1023
+  int32 priority = 4;
+  // next hop information
+  oneof nh {
+    // overlay IP nexthop information for this route
+    OverlayNextHopIPInfo overlay_nh_ip_info = 5;
+    // nexthop for this route
+    common.v1.ObjectKey nexthop_id = 6;
+    // ECMP nexthop for this route
+    common.v1.ObjectKey nh_group_id = 7;
+    // peer's VPC nexthop info, in case of VPC peering
+    VPCPeerNhInfo vpc_nh_info = 8;
+    // Tunnel this prefix is pointing to
+    common.v1.ObjectKey tunnel_id = 9;
+    // if next hop is a route table: used to create exceptions in hierarchal
+    // routing. next hop can't point to same route table (causing rout lookup loop)
+    common.v1.ObjectKey route_table_id = 10;
+    // EvalMapping is set in cases where mapping lookup result will provided the
+    // forwarding information, this is useful to punch holes in some routes
+    // that encompass sub-prefixes that require different forwarding behavior
+    // e.g.
+    // 10.1.0.0/16 -> Tunnel-X
+    // 10.1.1.0/24 -> EvalMapping
+    bool eval_mapping = 11;
+  }
+  // the ToS value (range: 0-255) configured on the route will override ToS configuration
+  // in vpc, subnet and tunnel objects
+  int32 tos = 12;
+  // override encap for this route (from what is programmed for a subnet or a vpc)
+  network.opinetcommon.v1alpha1.Encap encap = 13;
+  // when a custom overlay MAC is provided in the route configuration, the MAC
+  // address is used as inner DMAC in the (VxLAN) encapped packet
+  bytes overlay_mac = 14;
+}
+
+// Inter VPC routing: if a route in a route table points to VPCPeerNhInfo
+// that contains peer VPC's uuid and the route table, to launch a
+// lookup in the route table.
+message VPCPeerNhInfo {
+  // peer VPC's id
+  common.v1.ObjectKey vpc_id         = 1;
+  // route table id in the peer VPC
+  common.v1.ObjectKey route_table_id = 2;
+}
+
+// OverlayNextHopIPInfo captures list of overlay IP destinations for a given
+// route. Overlay destination could be the destinaton TEP or a service node
+// - when more than one overlay nexthop IP is configured, one of them is
+//   picked based on the flow hash
+// - when more than one overlay nexthop IP is configured, IPv4 is considered
+// - if VPCId is not set, the lookups will continue in the current VPC
+message OverlayNextHopIPInfo {
+  // overlay nexthop IP list
+  repeated network.opinetcommon.v1alpha1.IPAddress nexthop_ip = 1;
+  // overlay MAC (DMAC inner) to be used when corresponding
+  // to the overlay nexthop IP picked
+  repeated bytes nexthop_mac = 2;
+  // if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set
+  common.v1.ObjectKey vpc_id = 3;
+}
+
+// route identifier
+message RouteId {
+  // unique route id (this id is not scoped under VPC or subnet)
+  common.v1.ObjectKey id = 1;
+  // route table this route belongs to
+  common.v1.ObjectKey route_table_id = 2;
+}
+
+// route object
+message Route {
+  // route configuration
+  RouteSpec     spec     = 3;
+  // route status
+  RouteStatus   status   = 4;
+}
+
+// route specification
+message RouteSpec {
+  // globally unique route table id
+  common.v1.ObjectKey id = 1;
+  // route table this route belongs to
+  common.v1.ObjectKey route_table_id = 2;
+  // route configuration
+  RouteAttrs attrs = 3;
+}
+
+// operational status of the route, if any
+message RouteStatus {
+}
+
+// RouteClass captures different types/classes of routes
+enum RouteClass {
+  // unspecified
+  ROUTE_CLASS_UNSPECIFIED = 0;
+  // route pointing to Internet
+  ROUTE_CLASS_INTERNET = 1;
+  // route used for internal/shared services
+  ROUTE_CLASS_SERVICE = 2;
+  // VPC internal routes
+  ROUTE_CLASS_VPC = 3;
+}
+

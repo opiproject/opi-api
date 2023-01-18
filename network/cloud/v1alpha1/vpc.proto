@@ -1,0 +1,118 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for Virtual Private Cloud (VPC) object
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "VpcProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// Virtual Private Cloud object
+message Vpc {
+  // configuration
+  VpcSpec spec = 1;
+  // status
+  VpcStatus status = 2;
+}
+
+// VpcSpec captures VPC configuration
+message VpcSpec {
+  // unique key/identifier of VPC
+  common.v1.ObjectKey id = 1;
+  // type of the VPC
+  VPCType type = 2;
+  // identifier of the IPv4 route table to be used and this route table is
+  // inherited by the subnets under this VPC, if they are created with no route
+  // table explicitly
+  common.v1.ObjectKey v4_route_table_id = 3;
+  // identifier of the IPv6 route table to be used, if any and this route table
+  // is inherited by the subnets under this VPC, if they are created with no
+  // route table explicitly
+  common.v1.ObjectKey v6_route_table_id = 4;
+  // For various security policies
+  // - all vnics in this VPC will inherit the policies configured under VPC
+  // - there can be multiple policies per vnic per direction (ingress/egress)
+  // - vpc policy in each direction is to be aggregated to contain all rules in a given direction
+  // identifier of ingress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey ingress_v4_security_policy_id = 5;
+  // identifier of ingress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 6;
+  // identifier of egress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v4_security_policy_id = 7;
+  // identifier of egress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v6_security_policy_id = 8;
+  // Virtual Router (VR) MAC address, any packets originated or routed in this
+  // VPC carry this MAC as source MAC
+  bytes virtual_router_mac = 9;
+  // encapped traffic coming with the specified encap from fabric side will be
+  // mapped to this VPC. FabricEncap is needed only for VPCs of type VPC_TYPE_TENANT,
+  // for other types of VPCs user need not provide fabric encap and will be unused when provided
+  network.opinetcommon.v1alpha1.Encap fabric_encap = 10;
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane
+  // - subnets under this VPC don't inherit this ToS value, subnets need to
+  //   be explicitly configured with same ToS value as that of VPC or
+  //   potentially different ToS value of their own
+  // - tunnel objects, if configured with tos, will override this tos value
+  int32 tos = 13;
+  // VxLAN Network Identifiers(VNI) associated with this VPC (other than
+  // FabricEncap)
+  // NOTE:
+  // any incoming VxLAN traffic received with the VNI list configured is
+  // associated with the VPC for mapping and flow lookup purposes
+  repeated int32 vni = 14;
+}
+
+// operational status of a VPC, if any
+message VpcStatus {
+  // vpc hw handle
+  network.opinetcommon.v1alpha1.HwHandle hw_handle = 1;
+  // vpc's layer2 hw handle
+  network.opinetcommon.v1alpha1.HwHandle bd_hw_handle = 2;
+  // number of subnets in the vpc
+  int32 subnet_count = 3;
+}
+
+// Virtual Private Cloud Peer (aka. pairing) object
+message VPCPeer {
+  // configuration
+  VPCPeerSpec spec = 1;
+  // status
+  VPCPeerStatus status = 2;
+}
+
+// VPCPeerSpec captures configuration for a VPC peering relation
+// Given two vpcs, only one vpc peering objects needs to be created as
+// the vpc peering is commutative relation
+message VPCPeerSpec {
+  // unique id/key idenitifying this VPC peering relation
+  common.v1.ObjectKey id = 1;
+  // unique key/identifier of VPC1
+  common.v1.ObjectKey vpc1_id = 2;
+  // unique key/identifier of VPC2
+  common.v1.ObjectKey vpc2_id = 3;
+}
+
+// operational status of a VPC peering, if any
+message VPCPeerStatus {
+}
+
+// type of the virtual private cloud
+enum VPCType {
+  // unspecified
+  VPC_TYPE_UNSPECIFIED = 0;
+  // underlay
+  VPC_TYPE_UNDERLAY    = 1;
+  // tenant
+  VPC_TYPE_TENANT      = 2;
+  // control
+  VPC_TYPE_CONTROL     = 3;
+}

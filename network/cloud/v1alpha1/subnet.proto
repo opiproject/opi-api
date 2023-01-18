@@ -1,0 +1,110 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for subnet (IP network) object
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "SubnetProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// subnet object
+message Subnet {
+  // configuration
+  SubnetSpec spec = 3;
+  // status
+  SubnetStatus status = 4;
+}
+
+// SubnetSpec captures subnet specific configuration
+message SubnetSpec {
+  // unique identifier of the subnet
+  common.v1.ObjectKey id = 1;
+  // virtual private cloud this subnet is belongs to
+  common.v1.ObjectKey vpc_id = 2;
+  // IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
+  network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 3;
+  // IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
+  network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 4;
+  // IPv4 Virtual Router (VR) IP of this subnet, this IP is owned by the device
+  // and packets originated by this device carry this IP as source IP
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: ipv4 address is unsigned. --)
+  uint32 ipv4_virtual_router_ip = 5;
+  // Ipv6 Virtual Router (VR) IP of this subnet, this IP is owned by the device
+  // and packets originated by this device carry this IP as source IP
+  bytes ipv6_virtual_router_ip = 6;
+  // Virtual Router (VR) MAC address, any packets originated or routed by
+  // the device carry this MAC as source MAC
+  bytes virtual_router_mac = 7;
+  // identifier of the IPv4 route table to be used
+  common.v1.ObjectKey v4_route_table_id = 8;
+  // identifier of the IPv6 route table to be used, if any
+  common.v1.ObjectKey v6_router_table_id = 9;
+  // security policies per subnet:
+  // - all vnics in this subnet will inherit the policies configured under subnet
+  // - multiple policies per vnic per direction (ingress/egress) can be specified
+  // - an implementation may limit the #policies per subnet in each direction
+  // identifier of ingress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey ingess_v4_security_policy_id = 10;
+  // identifier of ingress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 11;
+  // identifier of egress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v4_security_policy_id = 12;
+  // identifier of egress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v6_security_policy_id = 13;
+  // AccessEncap is either ENCAP_TYPE_NONE (untagged) or ENCAP_TYPE_DOT1Q
+  // and when AccessEncap is ENCAP_TYPE_DOT1Q, multiple vnics can send
+  // traffic with same DOT1Q tag, in which case vnics are identified with
+  // their MAC or IP based on the datapath in addition to the DOT1Q tag
+  // - when subnet's AccessEncap is ENCAP_TYPE_NONE, vnics can also be
+  //   identified by the encap of their own (e.g. VLAN as VNIC or QinQ as
+  //   VNIC etc.)
+  // - when subnet's AccessEncap is ENCAP_TYPE_DOT1Q, it is expected that
+  //   all traffic from vnics in that subnet is transmitted with this encap
+  //   (so vnics can be configured with VnicEncap as ENCAP_TYPE_NONE, so they
+  //   inherit the subnet's encap)
+  // - it is also possible to have subnet encap as ENCAP_TYPE_DOT1Q with
+  //   certain tag value but some vnic's in that subnet to have different
+  //   DOT1Q encap than that of subnet
+  network.opinetcommon.v1alpha1.Encap access_encap = 14;
+  // encapped traffic coming with the specified encap from fabric side will be
+  // mapped to this subnet and traffic from workloads in this subnet will carry
+  // this encap towards the fabric side
+  network.opinetcommon.v1alpha1.Encap fabric_encap = 15;
+  // when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
+  // present, subnet needs to be attached to a PF/VF (aka. host interface),
+  // HostIf is list of such VF/PFs
+  repeated common.v1.ObjectKey host_interface_id = 16;
+  // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
+  // header or in the Traffic Class field of IPv6 outer header, this value, if
+  // non-zero, will be used as-is (i.e., not interpreted) during encap time by
+  // the dataplane; tunnel objects, if configured with ToS, will override this
+  int32 tos = 18;
+  // a subnet is marked connected if vnics in this subnet can communicate with
+  // external endpoints via routes with some kind of NAT (e.g. 1:1 NAT, NAPT)
+  bool connected = 19;
+  // default ingress stateful security policy for this subnet
+  // if configured, is the 1st policy evaluated before other security policies on a given vnic
+  common.v1.ObjectKey ingress_default_sg_policy = 20;
+  // default egress stateful security policy for this subnet
+  // if configured, is the 1st policy evaluated before other security polices on a given vnic
+  common.v1.ObjectKey  egress_default_sg_policy = 21;
+  // remote_subnet, if set, indicates that the subnet does not have any IP
+  // mappings in local pod and such subnets are used to program all remote
+  // pod IP mappings behind it
+  bool remote_subnet = 22;
+}
+
+// operational status of the subnet, if any
+message SubnetStatus {
+  // subnet's hw handle
+  int32 hw_index = 1;
+  // number of vnics in the subnet
+  int32 vnic_count = 2;
+}

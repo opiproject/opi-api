@@ -1,0 +1,124 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for virtual nics
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "VnicProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// vnic is a generic abstraction representing tenant workload's interface
+// tenant workload could be a VM, container or bare-metal.  VNIC is identified
+// using various mechanisms to ensure it can be abstractly represented on the DPU.
+// VNIC represents a different abstraction from that of a port or interface object
+message Vnic {
+  // vnic configuration
+  VnicSpec spec = 1;
+  // vnic status
+  VnicStatus status = 2;
+}
+
+// vnic configuration
+message VnicSpec {
+  // unique vnic id
+  common.v1.ObjectKey id = 1;
+  // id of the subnet this vnic belongs to
+  common.v1.ObjectKey subnet_id = 2;
+  // vnic encap information to be used while sending packets to this vnic
+  network.opinetcommon.v1alpha1.Encap vnic_encap = 3;
+  // overlay MAC of this VNIC
+  bytes mac_address = 4;
+  // enable or disable reverse path checks while rx/tx traffic from/to this vnic
+  bool  source_guard_enable = 5;
+  // fabric encap information to be used for traffic originated from this vnic
+  network.opinetcommon.v1alpha1.Encap fabric_encap = 6;
+  // VNFs (virtual network functions are workloads that implement network
+  // features such as firewalls, virtual switches/bridges, security monitoring, etc.
+  // since VNFs are devices in the middle, they can rx/tx traffic on behalf of other
+  // workloads to allow for source/destination checks, and exceptions that of a mapping
+  bool vnf = 7;
+  // identifier of ingress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey ingress_v4_security_policy_id = 8;
+  // identifier of ingress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 9;
+  // identifier of egress IPv4 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v4_security_policy_id = 10;
+  // identifier of egress IPv6 security policy to be enforced
+  repeated common.v1.ObjectKey egress_v6_security_policy_id = 11;
+  oneof ifinfo {
+    // if VNIC Is attahced to a PF/VF, this identifies the corresponding interface object
+    common.v1.ObjectKey host_if_id = 12;
+    // when operating in DEVICE_OPER_MODE_SMART_SWITCH, vnic can be behind a
+    // tunnel between the host and the DSC
+    common.v1.ObjectKey tunnel_id = 15;
+  }
+  // max_sessions, if set, is total number of active sessions (across all
+  // protocols) allowed from/to this vnic; zero means unlimited
+  int32  max_sessions = 20;
+  // guest workload's MAC in rx/tx direction is rewritten with this mac if non zero
+  bytes public_mac_address = 25;
+  // if allow_internet_access is set to false and traffic from the vnic hits a
+  // route of class ROUTE_CLASS_INTERNET, then traffic is dropped. To allow
+  // Internet connectivity for the vnic, AllowInternetAccess must be set to
+  // true
+  bool allow_internet_access   = 28;
+  // max_cps, if non-zero, is the maximum no. of connections per second (cps)
+  // allowed for this vnic and if cps exceeds this configured limit all
+  // new connections will get dropped; zero means unlimited
+  int32 max_cps = 29;
+  // CPS burst to be absorbed when CPS exceeds MaxCPS; zero means
+  // no burst is allowed
+  int32  cps_burst = 30;
+  // multiple vnics can be created with same MAC but only of them can be primary
+  // VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and
+  // secondary vnic can have one or more local IP mappings behind them
+  common.v1.ObjectKey  primary_vnic_id = 32;
+  // identifier of the IPv4 route table to be used
+  common.v1.ObjectKey v4_route_table_id = 33;
+  // identifier of the IPv6 route table to be used, if any
+  common.v1.ObjectKey  v6_route_table_id = 34;
+  // vnic if assigned a VIP in the underlay, can be used as
+  // outer encap source IP, if configured, for traffic going to certain vpc
+  // private service endpoints
+  network.opinetcommon.v1alpha1.IPAddress service_ip = 36;
+  // max_tcp_sessions is the maximum number of TCP sessions allowed from/to this
+  // vnic, if it is non-zero; zero implies no limit
+  int32 max_tcp_sessions = 38;
+  // max_udp_sessions is the maximum number of UDP sessions allowed from/to this
+  // vnic, if it is non-zero; zero implies no limit
+  int32 max_udp_sessions = 39;
+  // max_icmp_sessions is the maximum number of ICMP sessions allowed from/to this
+  // vnic, if it is non-zero; zero implies no limit
+  int32 max_icmp_sessions = 40;
+  // max other session is the maximum number of non-TCP/UDP/ICMP sessions allowed
+  // from/to this vnic; zero implies no limit
+  int32 max_other_sessions = 41;
+}
+
+// operational status of Vnic, if any
+message VnicStatus {
+  // true if vnic's configured total session limit is hit
+  bool max_session_limit_hit = 13;
+  // true if vnic's configured TCP session limit is hit
+  bool max_tcp_session_limit_hit = 14;
+  // true if vnic's configured UDP session limit is hit
+  bool max_udp_session_limit_hit = 15;
+  // true if vnic's configured ICMP session limit is hit
+  bool max_icmp_session_limit_hit = 16;
+  // true if vnic's configured non-TCP/UDP/ICMP session limit is hit
+  bool max_other_session_limit_hit = 17;
+  // h/w id of the vnic
+  int32 hw_idx = 1;
+  // nexthop h/w id
+  int32 nexthop_hw_idx = 2;
+  // ARM cpu bound policer hw_idx for CPS rate limiting
+  int32 cps_copp_hw_idx = 10;
+  // secondary vnic of (primary) vnic
+  common.v1.ObjectKey secondary_vnic_id = 11;
+}

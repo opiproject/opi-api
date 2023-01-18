@@ -1,0 +1,369 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for port related objects
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "PortProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+
+import "google/protobuf/timestamp.proto";
+
+// link level configuration
+message Port {
+  // port configuration
+  PortSpec   spec   = 1;
+  // status of port
+  PortStatus status = 2;
+}
+
+// port configuration
+message PortSpec {
+  // unique port id
+  common.v1.ObjectKey id = 1;
+  // port number is numerical port identifier starting from 1
+  int32            port_number     = 2;
+  // port admin state
+  PortAdminState   admin_state     = 3;
+  // type of port
+  PortType         type            = 4;
+  // operational speed of the port
+  PortSpeed        speed           = 5;
+  // Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
+  PortFecType      fec_type        = 6;
+  // set AutoNegEn to true to enable auto negotiation
+  bool             autoneg_enable  = 7;
+  // values for link debounce timeout in msec (default = 0 ms)
+  int32            debounce_timeout= 8;
+  // MTU size in bytes (64 to 9216)
+  int32            mtu             = 9;
+  // pause type - PFC or Link Level or Disable
+  PortPauseType    pause_type      = 10;
+  // MAC TX pause enable
+  bool             tx_pause_en     = 11;
+  // MAC RX pause enable
+  bool             rx_pause_en     = 12;
+  // port loopback mode - MAC or PHY 
+  PortLoopBackMode loopback_mode   = 13;
+  // number of serdes lanes for port (range: 1-4)
+  int32            lanes_count     = 14;
+}
+
+// port status
+message PortStatus {
+  // encoded interface index
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: interface index is an opaque uint32 value. --)
+  uint32                     if_index    = 1;
+  // operational link status
+  PortLinkStatus             link_status = 2;
+  // transceiver status
+  PortXcvrStatus             xcvr_status = 3;
+  // internal port link state machine
+  PortLinkFSM                fsm_state   = 4;
+  // mac associated with the port
+  int32                      mac_id      = 5;
+  // mac channel associated with the port
+  int32                      mac_ch      = 6;
+  // port link state machine record
+  repeated PortLinkFSMRecord fsm_record  = 7;
+}
+
+// port link status
+message PortLinkStatus {
+  // operational state of port
+  PortOperState    oper_state  = 1;
+  // operational speed of the port
+  PortSpeed        port_speed  = 2;
+  // operational state of AN
+  bool             autoneg_en  = 3;
+  // operational value of NumLanes
+  int32            lanes_count = 4;
+  // operational fec type of port
+  PortFecType      fec_type    = 5;
+}
+
+// transciever status
+message PortXcvrStatus {
+  // port number
+  int32         port              = 1;
+  // xcvr state
+  PortXcvrState state             = 2;
+  // xcvr pid
+  PortXcvrPid   pid               = 3;
+  // media type
+  MediaType     media_type        = 4;
+  // xcvr sprom
+  bytes         xcvr_sprom        = 5;
+  // xcvr vendor name
+  string        vendorname        = 6;
+  // xcvr vendor oui
+  string        vendor_oui        = 7;
+  // encoding type
+  int32         encoding_type     = 8;
+  // xcvr serial number
+  string        serial_number     = 9;
+  // xcvr part number
+  string        part_number       = 10;
+  // xcvr firmware revision
+  string        revision          = 11;
+  // xcvr temperature
+  int32         temperature       = 12;
+  // xcvr warning tempreture
+  int32         warn_temperature  = 13;
+  // xcvr alarming tempreture
+  int32         alarm_temperature = 14;
+}
+
+// port's link state machine transition record
+message PortLinkFSMRecord {
+  // internal port link state machine
+  PortLinkFSM fsm_state                = 1;
+  // port state time stamp
+  google.protobuf.Timestamp state_time = 2;
+  // port state duration
+  string duration                      = 3;
+}
+
+// PortAdminState specifies if the port is enabled (admin up) or disabled (admin down)
+enum PortAdminState {
+  // port admin state not configured
+  PORT_ADMIN_STATE_UNSPECIFIED = 0;
+  // port is admin disabled
+  PORT_ADMIN_STATE_DOWN = 1;
+  // port is admin enabled
+  PORT_ADMIN_STATE_UP   = 2;
+}
+
+// port's transceiver state
+enum PortXcvrState {
+  // state - removed
+  PORT_XCVR_STATE_UNSPECIFIED    = 0;
+  // state - inserted
+  PORT_XCVR_STATE_INSERTED       = 1;
+  // state - pending
+  PORT_XCVR_STATE_PENDING        = 2;
+  // state - sprom read
+  PORT_XCVR_STATE_SPROM_READ     = 3;
+  // state - sprom read error
+  PORT_XCVR_STATE_SPROM_READ_ERR = 4;
+}
+
+// transciever product id
+enum PortXcvrPid {
+  // unspecified
+  PORT_XCVR_PID_UNSPECIFIED      = 0;
+
+  // Copper
+  // QSFP 100G CR4
+  PORT_XCVR_PID_QSFP_100G_CR4    = 1;
+  // QSFP 40G CR4
+  PORT_XCVR_PID_QSFP_40GBASE_CR4 = 2;
+  // 25G CR S
+  PORT_XCVR_PID_SFP_25GBASE_CR_S = 3;
+  // 25G CR L
+  PORT_XCVR_PID_SFP_25GBASE_CR_L = 4;
+  // 25G CR N
+  PORT_XCVR_PID_SFP_25GBASE_CR_N = 5;
+  // 50G CR2 FC
+  PORT_XCVR_PID_QSFP_50G_CR2_FC  = 6;
+  // 50G CR2
+  PORT_XCVR_PID_QSFP_50G_CR2     = 7;
+  // 200G CR4
+  PORT_XCVR_PID_QSFP_200G_CR4    = 8;
+
+  // Fiber
+  // QSFP 100G AOC
+  PORT_XCVR_PID_QSFP_100G_AOC    = 50;
+  // QSFP 100G ACC
+  PORT_XCVR_PID_QSFP_100G_ACC    = 51;
+  // QSFP 100G SR4
+  PORT_XCVR_PID_QSFP_100G_SR4    = 52;
+  // QSFP 100G LR4
+  PORT_XCVR_PID_QSFP_100G_LR4    = 53;
+  // QSFP 100G ER4
+  PORT_XCVR_PID_QSFP_100G_ER4    = 54;
+  // QSFP 40G ER4
+  PORT_XCVR_PID_QSFP_40GBASE_ER4 = 55;
+  // QSFP 40G SR4
+  PORT_XCVR_PID_QSFP_40GBASE_SR4 = 56;
+  // QSFP 40G LR4
+  PORT_XCVR_PID_QSFP_40GBASE_LR4 = 57;
+  // QSFP 40G AOC
+  PORT_XCVR_PID_QSFP_40GBASE_AOC = 58;
+  // SFP 25G SR
+  PORT_XCVR_PID_SFP_25GBASE_SR   = 59;
+  // SFP 25G LR
+  PORT_XCVR_PID_SFP_25GBASE_LR   = 60;
+  // SFP 25G ER
+  PORT_XCVR_PID_SFP_25GBASE_ER   = 61;
+  // SFP 25G AOC
+  PORT_XCVR_PID_SFP_25GBASE_AOC  = 62;
+  // SFP 10G SR
+  PORT_XCVR_PID_SFP_10GBASE_SR   = 63;
+  // SFP 10G LR
+  PORT_XCVR_PID_SFP_10GBASE_LR   = 64;
+  // SFP 10G LRM
+  PORT_XCVR_PID_SFP_10GBASE_LRM  = 65;
+  // SFP 10G ER
+  PORT_XCVR_PID_SFP_10GBASE_ER   = 66;
+  // SFP 10G AOC
+  PORT_XCVR_PID_SFP_10GBASE_AOC  = 67;
+  // SFP 10G CU
+  PORT_XCVR_PID_SFP_10GBASE_CU   = 68;
+  // QSFP 100G CXWDM4
+  PORT_XCVR_PID_QSFP_100G_CWDM4  = 69;
+  // QSFP 100G PSM4
+  PORT_XCVR_PID_QSFP_100G_PSM4   = 70;
+  // SFP 125G ACC
+  PORT_XCVR_PID_SFP_25GBASE_ACC  = 71;
+  // SFP 10G BASE T
+  PORT_XCVR_PID_SFP_10GBASE_T    = 72;
+  // SFP 100G BASE T
+  PORT_XCVR_PID_SFP_1000BASE_T   = 73;
+}
+
+// port's media type
+enum MediaType {
+  // media not connected
+  MEDIA_TYPE_UNSPECIFIED = 0;
+  // copper cable
+  MEDIA_TYPE_COPPER      = 1;
+  // fiber cable
+  MEDIA_TYPE_FIBER       = 2;
+}
+
+// PortOperState reflects the current status of the port
+enum PortOperState {
+  // unknown
+  PORT_OPER_STATE_UNSPECIFIED = 0;
+  // port is linked up
+  PORT_OPER_STATE_UP          = 1;
+  // port link status is down
+  PORT_OPER_STATE_DOWN        = 2;
+}
+
+// port pause type
+enum PortPauseType {
+  // Disable Pause
+  PORT_PAUSE_TYPE_UNSPECIFIED = 0;
+  // Link level pause
+  PORT_PAUSE_TYPE_LINK        = 1;
+  // PFC
+  PORT_PAUSE_TYPE_PFC         = 2;
+}
+
+// port link state
+enum PortLinkFSM {
+  // unspecified1
+  PORT_LINK_FSM_UNSPECIFIED             =  0;
+  // enabled
+  PORT_LINK_FSM_ENABLED                 =  1;
+  // auto negotiation configured
+  PORT_LINK_FSM_AN_CFG                  =  2;
+  // auto negotiation disabled
+  PORT_LINK_FSM_AN_DISABLED             =  3;
+  // auto negotiation started
+  PORT_LINK_FSM_AN_START                =  4;
+  // auto negotiation signal detect
+  PORT_LINK_FSM_AN_SIGNAL_DETECT        =  5;
+  // auto negotiation wait HCD
+  PORT_LINK_FSM_AN_WAIT_HCD             =  6;
+  // auto negotiation complete
+  PORT_LINK_FSM_AN_COMPLETE             =  7;
+  // seredes configured
+  PORT_LINK_FSM_SERDES_CFG              =  8;
+  // serdes ready
+  PORT_LINK_FSM_WAIT_SERDES_RDY         =  9;
+  // mac configured
+  PORT_LINK_FSM_MAC_CFG                 = 10;
+  // signal detected
+  PORT_LINK_FSM_SIGNAL_DETECT           = 11;
+  // auto negotiation dfe tuning
+  PORT_LINK_FSM_AN_DFE_TUNING           = 12;
+  // dfe tuning enabled
+  PORT_LINK_FSM_DFE_TUNING              = 13;
+  // dfe disabled
+  PORT_LINK_FSM_DFE_DISABLED            = 14;
+  // dfe start ical
+  PORT_LINK_FSM_DFE_START_ICAL          = 15;
+  // dfe wait ical
+  PORT_LINK_FSM_DFE_WAIT_ICAL           = 16;
+  // dfe start pcal
+  PORT_LINK_FSM_DFE_START_PCAL          = 17;
+  // dfe wait pcal
+  PORT_LINK_FSM_DFE_WAIT_PCAL           = 18;
+  // dfe pcal continuous
+  PORT_LINK_FSM_DFE_PCAL_CONTINUOUS     = 19;
+  // clear mac remote faults
+  PORT_LINK_FSM_CLEAR_MAC_REMOTE_FAULTS = 20;
+  // wait mac sync
+  PORT_LINK_FSM_WAIT_MAC_SYNC           = 21;
+  // mac faults cleared
+  PORT_LINK_FSM_WAIT_MAC_FAULTS_CLEAR   = 22;
+  // wait phy link up
+  PORT_LINK_FSM_WAIT_PHY_LINK_UP        = 23;
+  // link up
+  PORT_LINK_FSM_UP                      = 24;
+}
+
+// loop back mode configuration
+enum PortLoopBackMode {
+  // No loopback
+  PORT_LOOP_BACK_MODE_UNSPECIFIED = 0;
+  // MAC loopback
+  PORT_LOOP_BACK_MODE_MAC = 1;
+  // PHY/Serdes loopback
+  PORT_LOOP_BACK_MODE_PHY = 2;
+}
+
+// Forward Error Correction
+enum PortFecType {
+  // Disable FEC
+  PORT_FEC_TYPE_UNSPECIFIED = 0;
+  // FireCode (FC) FEC
+  PORT_FEC_TYPE_FC          = 1;
+  // ReedSolomon (RS) FEC
+  PORT_FEC_TYPE_RS          = 2;
+}
+
+// port type - date or management
+enum PortType {
+  // unspecified
+  PORT_TYPE_UNSPECIFIED = 0;
+  // data ethernet
+  PORT_TYPE_ETH         = 1;
+  // management ethernet
+  PORT_TYPE_ETH_MGMT    = 2;
+}
+
+// PortSpeed specifies the speed of the port
+enum PortSpeed {
+  // unconfigured
+  PORT_SPEED_UNSPECIFIED = 0;
+  // port speed is 10Mbps
+  PORT_SPEED_10M         = 1;
+  // port speed is 100Mbps
+  PORT_SPEED_100M        = 2;
+  // port speed is 1Gbps
+  PORT_SPEED_1G          = 3;
+  // port speed is 10Gbps
+  PORT_SPEED_10G         = 4;
+  // port speed is 25Gbps
+  PORT_SPEED_25G         = 5;
+  // port speed is 40Gbps
+  PORT_SPEED_40G         = 6;
+  // port speed is 50Gbps
+  PORT_SPEED_50G         = 7;
+  // port speed is 100Gbps
+  PORT_SPEED_100G        = 8;
+  // port speed is 200Gbps
+  PORT_SPEED_200G        = 9;
+  // port speed is 400Gbps
+  PORT_SPEED_400G        = 10;
+}

@@ -1,0 +1,246 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// device's network configuration
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "DeviceProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/timestamp.proto";
+
+// Cloud Infra Service configure/operate objects to manage cloud infrastructure
+// TB added:
+//  Port APIs
+//  rpc PortGet (PortGetRequest) returns (PortGetResponse) {}
+//  rpc PortUpdate (PortUpdateRequest) returns (PortUpdateResponse) {}
+//  rpc PortStatsReset (types.Id) returns (types.Empty) {}
+//
+//  Interface APIs
+//  rpc InterfaceCreate (InterfaceRequest) returns (InterfaceResponse) {}
+//  rpc InterfaceUpdate (InterfaceRequest) returns (InterfaceResponse) {}
+//  rpc InterfaceDelete (InterfaceDeleteRequest) returns (InterfaceDeleteResponse) {}
+//  rpc InterfaceGet (InterfaceGetRequest) returns (InterfaceGetResponse) {}
+//
+//  Route APIs
+//  rpc RouteTableCreate (RouteTableRequest) returns (RouteTableResponse) {}
+//  rpc RouteTableUpdate (RouteTableRequest) returns (RouteTableResponse) {}
+//  rpc RouteTableGet (RouteTableGetRequest) returns (RouteTableGetResponse) {}
+//  rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
+//  rpc RouteTableDelete (RouteTableDeleteRequest) returns (RouteTableDeleteResponse) {}
+//
+//  rpc RouteCreate (RouteRequest) returns (RouteResponse) {}
+//  rpc RouteUpdate (RouteRequest) returns (RouteResponse) {}
+//  rpc RouteGet (RouteGetRequest) returns (RouteGetResponse) {}
+//  rpc RouteDelete (RouteDeleteRequest) returns (RouteDeleteResponse) {}
+//  rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
+//
+//  rpc VnicCreate (VnicRequest) returns (VnicResponse) {}
+//  rpc VnicUpdate (VnicRequest) returns (VnicResponse) {}
+//  rpc VnicGet (VnicGetRequest) returns (VnicGetResponse) {}
+//  rpc VnicDelete (VnicDeleteRequest) returns (VnicDeleteResponse) {}
+//
+//  rpc CPRouteCreate (CPRouteRequest) returns (CPRouteResponse) {}
+//  rpc CPRouteUpdate(CPRouteRequest) returns (CPRouteResponse) {}
+//  rpc CPRouteDelete (CPRouteDeleteRequest) returns (CPRouteDeleteResponse) {}
+//  rpc CPRouteGet (CPRouteGetRequest) returns (CPRouteGetResponse) {}
+//  rpc CPRouteLookup (CPRouteGetRequest) returns (CPRouteGetResponse) {}
+//  rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
+//
+//  rpc BGPCreate (BGPRequest) returns (BGPResponse) {}
+//  rpc BGPUpdate (BGPRequest) returns (BGPResponse) {}
+//  rpc BGPDelete (BGPDeleteRequest) returns (BGPDeleteResponse) {}
+//  rpc BGPGet (BGPGetRequest) returns (BGPGetResponse) {}
+//  rpc BGPPeerCreate (BGPPeerRequest) returns (BGPPeerResponse) {}
+//  rpc BGPPeerUpdate (BGPPeerRequest) returns (BGPPeerResponse) {}
+//  rpc BGPPeerDelete (BGPPeerDeleteRequest) returns (BGPPeerDeleteResponse) {}
+//  rpc BGPPeerGet (BGPPeerGetRequest) returns (BGPPeerGetResponse) {}
+//  rpc BGPPeerAfCreate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
+//  rpc BGPPeerAfUpdate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
+//  rpc BGPPeerAfDelete (BGPPeerAfDeleteRequest) returns (BGPPeerAfDeleteResponse) {}
+//  rpc BGPPeerAfGet (BGPPeerAfGetRequest) returns (BGPPeerAfGetResponse) {}
+//  rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
+//  rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
+//  rpc BGPPrfxCntrsGet (BGPPrfxCntrsGetRequest) returns (BGPPrfxCntrsGetResponse) {}
+//  rpc BGPAdjRibOutGet (BGPAdjRibOutGetRequest) returns (BGPAdjRibOutGetResponse) {}
+//
+//  rpc MappingCreate (MappingRequest) returns (MappingResponse) {}
+//  rpc MappingUpdate (MappingRequest) returns (MappingResponse) {}
+//  rpc MappingGet (MappingGetRequest) returns (MappingGetResponse) {}
+//  rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
+//  rpc MappingDelete (MappingDeleteRequest) returns (MappingDeleteResponse) {}
+//
+//  rpc NexthopCreate (NexthopRequest) returns (NexthopResponse) {}
+//  rpc NexthopUpdate (NexthopRequest) returns (NexthopResponse) {}
+//  rpc NexthopGet (NexthopGetRequest) returns (NexthopGetResponse) {}
+//  rpc NexthopDelete (NexthopDeleteRequest) returns (NexthopDeleteResponse) {}
+//  rpc NhGroupCreate (NhGroupRequest) returns (NhGroupResponse) {}
+//  rpc NhGroupUpdate (NhGroupRequest) returns (NhGroupResponse) {}
+//  rpc NhGroupGet (NhGroupGetRequest) returns (NhGroupGetResponse) {}
+//  rpc NhGroupDelete (NhGroupDeleteRequest) returns (NhGroupDeleteResponse) {}
+//
+//  rpc SubnetCreate (SubnetRequest) returns (SubnetResponse) {}
+//  rpc SubnetUpdate (SubnetRequest) returns (SubnetResponse) {}
+//  rpc SubnetGet (SubnetGetRequest) returns (SubnetGetResponse) {}
+//  rpc SubnetDelete (SubnetDeleteRequest) returns (SubnetDeleteResponse) {}
+//
+//  rpc TunnelCreate (TunnelRequest) returns (TunnelResponse) {}
+//  rpc TunnelUpdate (TunnelRequest) returns (TunnelResponse) {}
+//  rpc TunnelGet (TunnelGetRequest) returns (TunnelGetResponse) {}
+//  rpc TunnelDelete (TunnelDeleteRequest) returns (TunnelDeleteResponse) {}
+// 
+//  rpc VPCCreate (VPCRequest) returns (VPCResponse) {}
+//  rpc VPCUpdate (VPCRequest) returns (VPCResponse) {}
+//  rpc VPCGet (VPCGetRequest) returns (VPCGetResponse) {}
+//  rpc VPCDelete (VPCDeleteRequest) returns (VPCDeleteResponse) {}
+//  rpc VPCPeerCreate (VPCPeerRequest) returns (VPCPeerResponse) {}
+//  rpc VPCPeerUpdate (VPCPeerRequest) returns (VPCPeerResponse) {}
+//  rpc VPCPeerGet (VPCPeerGetRequest) returns (VPCPeerGetResponse) {}
+//  rpc VPCPeerDelete (VPCPeerDeleteRequest) returns (VPCPeerDeleteResponse) {}
+//
+//  rpc SecurityPolicyCreate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
+//  rpc SecurityPolicyUpdate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
+//  rpc SecurityPolicyGet (SecurityPolicyGetRequest) returns (SecurityPolicyGetResponse) {}
+//  rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
+//  rpc SecurityPolicyDelete (SecurityPolicyDeleteRequest) returns (SecurityPolicyDeleteResponse) {}
+//
+//  rpc SecurityRuleCreate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
+//  rpc SecurityRuleUpdate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
+//  rpc SecurityRuleGet (SecurityRuleGetRequest) returns (SecurityRuleGetResponse) {}
+//  rpc SecurityRuleDelete (SecurityRuleDeleteRequest) returns (SecurityRuleDeleteResponse) {}
+//
+//  rpc SecurityProfileCreate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
+//  rpc SecurityProfileUpdate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
+//  rpc SecurityProfileGet (SecurityProfileGetRequest) returns (SecurityProfileGetResponse) {}
+//  rpc SecurityProfileDelete (SecurityProfileDeleteRequest) returns (SecurityProfileDeleteResponse) {}
+//
+//  rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}
+//
+service CloudInfraService {
+    // device create request
+    rpc CreateDevice (CreateDeviceRequest) returns (Device) {
+        option (google.api.http) = {
+            post: "/v1/{parent=device}"
+            body: "device"
+        };
+        option (google.api.method_signature) = "parent,device,device_id";
+    }
+}
+
+// device level network configuration and status
+message Device {
+  // device's network configuration
+  DeviceSpec spec = 1;
+  // device's network status
+  DeviceStatus status = 2;
+}
+
+// device's network configuration
+message DeviceSpec {
+  // object's unique identifier
+  common.v1.ObjectKey id = 1;
+
+  // underlay ipv4 address for tunnel initiation/termination
+  network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+  // underlay ipv6 address for tunnel initiation/termination
+  network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+  // device's mac address - for outer ethernet header
+  bytes mac_addr = 4;
+  // IP address of the underlay gateway in the underlay
+  network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+  // number and type of pcie functions exposed
+  PCIeFunctionsSpec pcie_functions = 6;
+  // ovelay routing
+  bool overlay_routing_enabled = 7; 
+  // system name is used as named identifier in protocols (e.g. LLDP)
+  string systemname = 8;
+  // management network details
+  MgmtNetworkSpec mgmt_network_spec = 9;
+}
+
+// PCIe functions to be configured on the device
+message PCIeFunctionsSpec {
+  // number of physical functions
+  int32 pf_count = 5;
+  // number of virtual functions
+  int32 vf_count = 6;
+}
+
+// MgmtNetworkSpec captures all the management network related parameters
+message MgmtNetworkSpec {
+  // LLDPMgmtIP, if configured, will be used to advertise in LLDP's management address TLV
+  network.opinetcommon.v1alpha1.IPAddress lldp_mgmt_ip = 1;
+  // MgmtIP is the management IP address of the DSC (also for flow log generation)
+  network.opinetcommon.v1alpha1.IPAddress mgmt_ip = 2;
+  // Vlan ID (0-4095) is the management network's vlan tag (zero = untagged)
+  int32 vlan = 3;
+  // IP address of the default gateway in the management vlan
+  network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
+  // MAC address of the default gateway in the management vlan
+  bytes gateway_mac = 5;
+}
+
+// device's network status
+message DeviceStatus {
+  // device description
+  string description = 1;
+  // system MAC address (unique for a device in cluster)
+  bytes system_mac_address = 2;
+  // vendor identifier
+  string vendor_id = 3;
+  // chip type
+  string chip_type = 4;
+  // OS version
+  string os_version = 5;
+  // number of PCIe ports
+  int32 pcie_port_count = 6;
+  // Number of uplink ports
+  int32 port_count = 7;
+  // number of host interfaces
+  int32 host_if_count = 8;
+  // Network DataPath Program Name
+  string pipeline = 9;
+  // critical network events at device level
+  repeated SystemEvent critical_events = 10;
+  // active network alerts at device level
+  repeated SystemAlert alerts = 11;
+}
+
+// system events happened during device operations
+message SystemEvent {
+  // event timestamp
+  google.protobuf.Timestamp event_time  = 1;
+  // name of the event
+  string                    event_description = 2;
+}
+
+// critical alerts effecting the health of the system
+message SystemAlert {
+  // alert timestamp
+  google.protobuf.Timestamp alert_time  = 1;
+  // name of the alert
+  string                    alert_description = 2;
+}
+
+// Device Create Request
+message CreateDeviceRequest {
+    // parent
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
+    ];
+    // device
+    Device device = 2 [(google.api.field_behavior) = REQUIRED];
+    // device_id
+    string device_id = 3;
+}

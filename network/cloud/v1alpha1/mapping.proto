@@ -1,0 +1,142 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for ip mappings of tenant workloads
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "MappingProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// mapping object
+message Mapping {
+  // configuration
+  MappingSpec spec = 1;
+  // status
+  MappingStatus status = 2;
+}
+
+// MappingSpec captures configuration of each mapping
+// NOTE: Mapping is either on the local host/TEP or remote TEP
+message MappingSpec {
+  // unique mapping id
+  common.v1.ObjectKey id = 1;
+  // along with uuid, either IPKey or MACKey attrs
+  oneof mac_or_ip {
+    // IP mapping key
+    L3MappingKey ip_key = 2;
+    // MAC mapping key
+    L2MappingKey mac_key = 3;
+  }
+  // subnet this mapping is in
+  common.v1.ObjectKey subnet_id = 4;
+  // mapping's destination information
+  oneof dstinfo {
+      // if IP is that of local vnic, corresponding vnic id
+      // this is mandatory attribute for local IP mappings
+      common.v1.ObjectKey vnic_id = 5;
+      // Tunnel ID of the remote TEP for remote mapping
+      // this is mandatory attribute for remote MAC/IP mappings for
+      // non-ECMP cases
+      common.v1.ObjectKey  tunnel_id = 6;
+      // overlay nexthop/TEP group for remote mappings
+      // this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+      common.v1.ObjectKey nh_group_id = 7;
+  }
+  // overlay MAC address of this mapping
+  bytes mac_addr = 8;
+  // fabric encap information specific to this mapping, if any
+  network.opinetcommon.v1alpha1.Encap  encap = 9;
+  // public IP, if overlay IP has corresponding public IP
+  network.opinetcommon.v1alpha1.IPAddress public_ip = 10;
+  // tag/label/security group of this IP mapping, these tags/labels/SGs can be
+  // used in defining security policy rules
+  // range: 1 - 4294967294
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: the allowed values need it to be uint32. --)
+  repeated uint32 tags = 11;
+  // type of the IP mapping endpoint, default is vpc mapping
+  MappingType type = 12;
+}
+
+// operational status of a mapping
+message MappingStatus {
+  // private to public IP xlation nat index
+  int32 public_nat_index = 1;
+  // public to private IP xlation nat index
+  int32 private_nat_index = 2;
+  // tunnel IP address
+  repeated network.opinetcommon.v1alpha1.IPAddress tunnel_ip = 3;
+  // service to backend port mapping hw handle
+  network.opinetcommon.v1alpha1.HwHandle svc_port_map_hw_handle = 4;
+  // VNF tunnel hw handle
+  network.opinetcommon.v1alpha1.HwHandle vnf_tunnel_hw_handle = 5;
+  // rewrite index
+  int32 rewrite_index = 6;
+}
+
+// L3MappingKey is the 2nd-ary key of the remote IP mapping
+message L3MappingKey {
+  // virtual private cloud of the IP mapping
+  common.v1.ObjectKey vpc_id  = 1;
+  // private/overlay IP of the mapping
+  network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
+}
+
+// L2MappingKey is the 2nd-ary key of the remote MAC mapping
+message L2MappingKey {
+  // subnet id of this MAC
+  common.v1.ObjectKey subnet_id = 1;
+  // MAC address of this mapping
+  bytes mac_address = 2;
+}
+
+// Filter criteria for a mapping lookup api
+message MappingLookupFilter {
+  // Local is set to true for local mappings or else false
+  bool local = 1;
+  // KeyType is used for query based on L3 or L2 without specifically
+  // providing exact key (i.e. list all L2/L3 mappings)
+  MappingKeyType key_type = 2;
+  // Type is used to specify the type of mapping
+  MappingType type = 3;
+  oneof ip_or_mac {
+    // IP mapping key
+    L3MappingKey ip_key = 4;
+    // MAC mapping key
+    L2MappingKey mac_key = 5;
+    // IP address
+    network.opinetcommon.v1alpha1.IPAddress ip_address  = 6;
+    // MAC address
+    bytes mac_address = 7;
+    // VPC id
+    common.v1.ObjectKey vpc_id = 8;
+  }
+}
+
+// MappingType captures the type of the mapping
+enum MappingType {
+  // unspecified
+  MAPPING_TYPE_UNSPECIFIED = 0;
+  // MAPPING_TYPE_VPC is used for regular VPC endpoints and is the default
+  MAPPING_TYPE_VPC         = 1;
+  // MAPPING_TYPE_SERVICE is used for mappings that represent service endpoints
+  MAPPING_TYPE_SERVICE     = 2;
+  // MAPPING_TYPE_LB_VIP is used for mappings that represent load balancer service VIP
+  MAPPING_TYPE_LB_VIP      = 3;
+}
+
+// mapping key type can be L2 or L3
+enum MappingKeyType {
+  // unspecified 
+  MAPPING_KEY_TYPE_UNSPECIFIED = 0;
+  // l2 mapping
+  MAPPING_KEY_TYPE_L2 = 1;
+  // l3 mapping
+  MAPPING_KEY_TYPE_L3 = 2;
+}

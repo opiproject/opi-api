@@ -1,0 +1,371 @@
+// Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
+// protobuf specification for network security policies
+
+syntax = "proto3";
+package opi_api.network.cloud.v1alpha1;
+
+option java_package = "opi_api.network.cloud.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "NetworkPolicyProto";
+
+option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
+
+import "object_key.proto";
+import "networktypes.proto";
+
+// security policy object
+message SecurityPolicy {
+  // configuration
+  SecurityPolicySpec spec = 1;
+  // status
+  SecurityPolicyStatus status = 2;
+}
+
+// security policy configuration
+message SecurityPolicySpec {
+  // unique identifier of security policy
+  common.v1.ObjectKey id = 1;
+  // SecurityPolicyType is either TENANT or UNDERLAY (aka. infra) policy
+  // - only one instance of UNDERLAY policy is allowed (or makes sense)
+  // - if Type is not specified, policy type defaults to TENANT policy
+  SecurityPolicyType type = 2;
+  // IPv4 or IPv6 policy
+  network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  // when Stateless attribute is set on a policy, the policy is applied for
+  // traffic in both directions before deciding the final action of the flow
+  // when Stateless is set to false, the policy behavior is same as Network
+  // Security Group (NSG) construct whereas if Stateless is set to true, the
+  // behavior is same as ACL construct
+  bool stateless = 4;
+  // DefaultFWAction is the action taken by the firewall when security policies are
+  // configured on vnic but no rule is hit. Similarly, when NACLs are configured
+  // on a subnet and no rule is hit, this action is taken by the firewall.
+  // if this attribute is not set, it will inherit from security profile and if
+  // that is also not set then  default "deny" action is enforced
+  // When no policy is configured on subnet and vnic, this knob doesn't
+  // apply and traffic is allowed in that case
+  network.opinetcommon.v1alpha1.SecurityRuleAction  default_security_action = 5;
+  // list of security rules
+  repeated SecurityRuleInfo rules = 6;
+  // PolicyRuleFormat indicates whether the policy is set of flattened rules
+  // or whether they are aggregated (DPU can be efficient based ont his hint)
+  PolicyRuleFormat rule_format = 7;
+}
+
+// SecurityRuleInfo is a single rule in the security policy
+message SecurityRuleInfo {
+  // rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+  common.v1.ObjectKey id = 1;
+  // rule attributes
+  SecurityRuleAttrs attrs = 2;
+}
+
+// security rule attributes
+message SecurityRuleAttrs {
+  // priority of this rule (lower the numeric value, higher the priority is)
+  // if there are multiple rules with same highest priority that match the
+  // packet, the first such matching rule in the policy is picked (i.e., based
+  // on the order, first in the list of such matching rules)
+  // range:0-65534
+  int32 priority= 1;
+  // rule match criteria
+  network.opinetcommon.v1alpha1.RuleMatch match = 2;
+  // action to take when this rule is matched
+  network.opinetcommon.v1alpha1.SecurityRuleAction action = 3;
+  // when a rule marked as terminating is picked (based on the priority) as the
+  // matching rule from a policy, then the action of such rule will prevail or
+  // stick over the matching rules picked from already evaluated policies and
+  // the search for other matching rules in policies yet to be evaluated for
+  // that packet will stop (i.e., packet hitting terminating rule will pick
+  // corresponding action irrespective any other matching rules across all
+  // policies)
+  bool terminating = 4;
+  // ALGSpec, if specified contains ALG specific behavior
+  ALGSpec alg_spec = 5;
+}
+
+// FTP ALG specific options
+message FTPOptions {
+  // allow FTP data sessions with IP address that is different from control sessions
+  bool allow_ip_mismatch = 1;
+}
+
+// DNS ALG specific options
+// these options are applicable to DNS request messages only
+message DNSOptions {
+  //  when DropMultiQueryMessage is set, drop DNS query messages that contain
+  //  more than one DNS query in same packet
+  bool drop_multi_query_messages = 1;
+  // when DropLargeDomainNameMessage is set, DNS mwessages containing domain
+  // name exceeding 255 bytes are dropped
+  bool drop_large_domain_name_messages = 2;
+  // when DropLongLabelMessage is set, DNS messages containing labels
+  // exceeding 63 bytes are dropped
+  bool drop_long_label_messages = 3;
+  // when DropMultiZoneMessagesis set, DNS messages containing more than one
+  // zone are dropped
+  bool drop_multi_zone_messages = 4;
+  // DNS session will be closed if response is not seen for a DNS query within
+  // ResponseTimeout seconds, default 60
+  int32 response_timeout = 5;
+  // MaxMessageLength defines the maximum length of the DNS query/response
+  // message the ALG will handle range:512-8192,default=512
+  int32 max_message_length = 6;
+}
+
+// MSRPC ALG specific options
+message MSRPCOptions {
+  // RPC program uuids
+  repeated bytes program_id = 1;
+}
+
+// SunRPC ALG specific options
+message SunRPCOptions {
+  // RPC program identifiers
+  repeated bytes program_id = 1;
+}
+
+// ALC configuration
+message ALGSpec {
+  // ALG to invoke (if set to ALG_TYPE_UNSPECIFIED, no ALG is invoked)
+  ALGType alg_type = 1;
+  // IdleTimeout indicates ALG specific session timeout in seconds
+  // if IdleTimeout is not set, timeout from SecurityProfile object
+  // is applied on both control and data sessions of the ALG
+  int32 idle_timeout = 2;
+  // ALG specific options, if any
+  oneof alg_options {
+    // ftp alg options
+    FTPOptions    ftp_options    = 3;
+    // dns alg options 
+    DNSOptions    dns_options    = 4;
+    // msrpc options
+    MSRPCOptions  msrpc_options  = 5;
+    // sunrpc options
+    SunRPCOptions sunrpc_options = 6;
+  }
+}
+
+// operational status of security policy, if any
+message SecurityPolicyStatus {
+  // no.of unique rules in h/w
+  int32 rule_count = 1;
+  // no. of VPCs using the policy
+  int32 vpc_count = 2;
+  // no. of subnets using the policy
+  int32 subnet_count = 3;
+  // no. of vnics using the policy
+  int32 vnic_count = 4;
+  // security policy h/w pool handle, if any
+  network.opinetcommon.v1alpha1.HwHandle hw_pool_handle = 5;
+  // security-policy h/w handle
+  network.opinetcommon.v1alpha1.HwHandle hw_handle = 6;
+  // security-policy base address
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: this is the actual 64bit memory address. --)
+  uint64 policy_base_address = 7;
+}
+
+// security rule object
+message SecurityRule {
+  // configuration
+  SecurityRuleSpec spec = 1;
+  // status
+  SecurityRuleStatus status = 2;
+}
+
+// security rule configuration
+message SecurityRuleSpec {
+  // unique identifier of security rule
+  common.v1.ObjectKey id = 1;
+  // security policy this rule belongs to
+  common.v1.ObjectKey security_policy_id = 2;
+  // rule information
+  SecurityRuleAttrs attrs = 3;
+}
+
+// operational status of the security rule, if any
+message SecurityRuleStatus {
+}
+
+// security profile object
+message SecurityProfile {
+  // configuration
+  SecurityProfileSpec spec = 1;
+  // status
+  SecurityProfileStatus status = 2;
+}
+
+// security profile - defaults for network security behavior
+// - currently security profile object is global and only a singleton object,
+//   any attempt to create multiple objects will be treated as an error
+// - if no object is created, indicated default values will be used
+// - all timeouts specified in this object are in seconds
+message SecurityProfileSpec {
+  // unique identifier of security profile
+  common.v1.ObjectKey id = 1;
+  // ConnTrackEn, if set to true, will enable full connection tracking
+  // if connection_tracking_enable is modified on the fly, it will take affect only
+  // on sessions created thereafter and doesn't affect existing sessions
+  bool connection_tracking_enable = 2;
+  // rule_stats_enable, if set to true, will enable per security policy rule
+  // statistics feature in the datapath (by default rule stats functionality is
+  // turned off and can be enabled on the fly for debugging)
+  bool rule_stats_enable = 3;
+  // default_firewall_action is the action taken by the smartnic when policies are
+  // configured on the subnet or vnic, no rule matches and default action for policy is none
+  // this will have effect iff policy is attached on either vnic or subnet.
+  // if no action is specified  in security profile, default action is "deny"
+  network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+  // timeouts for established sessions per TCP/UDP/ICMP and other protocols
+  // range:1-86400, default=600
+  int32 tcp_idle_timeout = 5;
+  // range:1-86400, default=120
+  int32 udp_idle_timeout = 6;
+  // range:1-86400, default=15
+  int32 icmp_idle_timeout = 7;
+  // range:1-86400, default=90
+  int32 other_idle_timeout = 8;
+  // TCP specific timeouts
+  // tcp_connection_setup_timeout is the maximum allowed time since first SYN seen to
+  // 3-way handshake completion, session gets cleaned up if 3-way handshake is
+  // not completed and session moves to ESTABLISHED state by then.  range:1-60, default=10
+  int32 tcp_connection_setup_timeout = 9;
+  // tcp_half_close_timeout is the maximum allowed time since first FIN seen to
+  // 3/4way close, session gets cleaned up if this timer elapses. range:1-172800, default=120
+  int32 tcp_half_close_timeout = 10;
+  // tcp_close_timeout is wait time since FIN is seen from *both* sides (or RST)
+  // before cleaning up the session range:1-300, default=15
+  int32 tcp_close_timeout = 11;
+  // timeouts applicable to sessions installed with drop action
+  // range:1-300, default=90
+  int32 tcp_dorp_timeout = 12;
+  // range:1-172800, default=60
+  int32 udp_drop_timeout = 13;
+  // range:1-300, default=30
+  int32 icmp_drop_timeout = 14;
+  // range:1-300, default=60
+  int32 other_drop_timeout = 15;
+}
+
+// operational status of security profile, if any
+message SecurityProfileStatus {
+}
+
+// PolicyLookupMatch captures all the policy lookup match conditions
+message PolicyLookupMatch {
+  // source IP address
+  network.opinetcommon.v1alpha1.IPAddress source_ip = 1;
+  // tags corresponding to the source; an implementation may limit the maximum number of tags
+  // range:1-4294967294
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: tags are 32bit values. --)
+  repeated uint32 source_tags = 2;
+  // destination IP address
+  network.opinetcommon.v1alpha1.IPAddress destination_ip = 3;
+  // tags corresponding to the destination; an implementation may limit the maximum number of tags
+  // range:1-4294967294
+  // (-- api-linter: core::0141::forbidden-types=disabled
+  //     aip.dev/not-precedent: tags are 32bit values. --)
+  repeated uint32 destination_tags = 4;
+  // IP protocol
+  int32 protocol = 5;
+  // source port, valid only for TCP and UDP
+  int32 source_port = 6;
+  // destination port, valid only for TCP and UDP
+  int32 destination_port = 7;
+  // valid only for ICMPv4 and ICMPv6
+  int32 icmp_type = 8;
+  // valid only for ICMPv4 and ICMPv6
+  int32 icmp_code = 9;
+}
+
+// SecurityPolicyLookup is used to fetch security policy based on various
+// lookup criteria
+message SecurityPolicyLookupRequest {
+  // given a vnic and policy direction (ingress/egress) and packet fields,
+  // evaluate all the policies and return the results
+  message VnicLookupInfo {
+    // vnic uuid
+    common.v1.ObjectKey vnic_id = 1;
+    // policy evaluation direction
+    network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
+    // IPv4 or IPv6 policy
+    network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  }
+  // lookup_info is mandatory
+  oneof lookup_info {
+    // security policy uuid to do the lookup in
+    common.v1.ObjectKey policy_id= 1;
+    // vnic specific policies will be evaluated when vnic info is provided
+    VnicLookupInfo vnic_lookup_info = 2;
+  }
+  // packet match fields
+  PolicyLookupMatch match_fields = 3;
+}
+
+// PolicyLookupResult captures the results of one security policy lookup
+message PolicyLookupResult {
+  // h/w id of the rule that matched
+  network.opinetcommon.v1alpha1.HwHandle rule_hw_handle = 1;
+  // priority of the rule that matched
+  int32 priority = 2;
+  // action associated with the rule
+  network.opinetcommon.v1alpha1.SecurityRuleAction action = 3;
+  // ALG associated with the rule, if any
+  ALGType alg_type = 4;
+  // terminating is set to true, if this rule is configured as terminating
+  bool terminating = 5;
+}
+
+// types of security policies
+enum SecurityPolicyType {
+  // unspecified 
+  SECURITY_POLICY_TYPE_UNSPECIFIED = 0;
+  // UNDERLAY security policy object is singleton object per DSC
+  SECURITY_POLICY_TYPE_UNDERLAY = 1;
+  /// TENANT security policy objects are attached to tenant VPCs
+  SECURITY_POLICY_TYPE_TENANT = 2;
+}
+
+// ALG specifices with Application Level Gateway (ALG) should be invoked
+// when a rule match happens. This ALG will also be reported in the flow logs.
+// Any platform specific limitations may result into errors during configuration
+enum ALGType {
+  // unspecified
+  ALG_TYPE_UNSPECIFIED = 0;
+  // TFTP ALG
+  ALG_TYPE_TFTP        = 1;
+  // FTP ALG
+  ALG_TYPE_FTP         = 2;
+  // DNS ALG
+  ALG_TYPE_DNS         = 3;
+  // SUNRPC ALG
+  ALG_TYPE_SUNRPC      = 4;
+  // MSRPC ALG
+  ALG_TYPE_MSRPC       = 5;
+  // RTSP ALG
+  ALG_TYPE_RTSP        = 6;
+}
+
+// PolicyRuleFormat captures what format is used for the rules in a given
+// SecurityPolicySpec object
+enum PolicyRuleFormat {
+  // POLICY_RULE_FORMAT_UNSPECIFIED indicates that user has not set format
+  // explicitly, in which case POLICY_RULE_FORMAT_FLATTENED is assumed
+  // for backward compatibility
+  POLICY_RULE_FORMAT_UNSPECIFIED = 0;
+  // POLICY_RULE_FORMAT_FLATTENED is used when agent expands the
+  // user configured rules so that each rule has only single source
+  // IP address/prefix/range, destination IP address/prefix/range,
+  // source port range, destination port range as match conditions
+  // In this format none of the rules must use SrcIPList,
+  // DstIPList, PortList, ICMPMatchList attributes, wherever applicable
+  POLICY_RULE_FORMAT_FLATTENED = 1;
+  // POLICY_RULE_FORMAT_COMPACT is used when rules contain list of
+  // source IP, destination IP, src port range, destination port ranges
+  // as match conditions
+  // In this format, ALL the rules must use SrcIPList, DstIPList,
+  // PortList, ICMPMatchList attributes only, whereever applicable
+  POLICY_RULE_FORMAT_COMPACT   = 2;
+}
