@@ -93,7 +93,9 @@ Following diagram describes the physical layout of the cloud infrastructure
 Each workload (VM, BM or a container) is identified by the xPU as a vNIC (virtual NIC).
 A VNIC could be a physical pcie device (PF/VF) or a virtual identifier (e.g. a VLAN-id
 tagged by the hypervisor that runs on the host. Once xPU identifes the workload, it then
-maps its traffic into a relevant VPC. Of course, the
+maps its traffic into a relevant VPC. Any subsequent lookups (routing, NAT, policy, etc.)
+are scoped vpc identifier to ensure independently configured (and possibly overlapping)
+subnets, IP addresses, policy, etc. within a VPC.
 
 ## Bringing it all together in XPU's datapath pipeline
 

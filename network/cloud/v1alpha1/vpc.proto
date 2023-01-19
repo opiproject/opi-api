@@ -63,12 +63,6 @@ message VpcSpec {
   //   potentially different ToS value of their own
   // - tunnel objects, if configured with tos, will override this tos value
   int32 tos = 13;
-  // VxLAN Network Identifiers(VNI) associated with this VPC (other than
-  // FabricEncap)
-  // NOTE:
-  // any incoming VxLAN traffic received with the VNI list configured is
-  // associated with the VPC for mapping and flow lookup purposes
-  repeated int32 vni = 14;
 }
 
 // operational status of a VPC, if any

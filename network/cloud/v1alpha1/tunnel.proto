@@ -27,7 +27,6 @@ message Tunnel {
 // have different tunnel type
 message TunnelSpec {
   // unique tunnel identifier
-  // NOTE: Tunnel id of 0 is reserve for local TEP/host
   common.v1.ObjectKey id = 1;
   // virtual private cloud this is tunnel belongs to
   common.v1.ObjectKey vpc_id = 2;
@@ -57,19 +56,6 @@ message TunnelSpec {
   // MAC address of the remote IP (i.e., remote side of the tunnel)
   // set to zero if dataplane is expected to resolve this
   bytes mac_address = 12;
-  // type of this tunnel
-  // RemoteService flag is true when tunnel is pointing to a service
-  // that is in a different data center and packet needs to be carried
-  // with 2 fabric encaps. IPv4 traffic in this case goes thru protocol
-  // translation (to IPv6) and then goes in a Vxlan tunnel
-  bool remote_service = 13;
-  // RemoteServiceEncap must be set if the tunnel type is
-  // TUNNEL_TYPE_REMOTE_SERVICE, this is the outer most vnid seen when the
-  // packet is receievd from the remote service
-  network.opinetcommon.v1alpha1.Encap remote_service_encap = 14;
-  // public IP of the remote service tunnel that is used as SIPo
-  // in the encapped VXLAN packet in the Tx direction
-  network.opinetcommon.v1alpha1.IPAddress remote_service_public_ip = 15;
   // when ToS is configured on a tunnel object, all traffic destined to the
   // tunnel will carry dscp value as configured.
   // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
@@ -78,7 +64,7 @@ message TunnelSpec {
   // the dataplane.
   // The ToS value configured on the tunnel will override ToS configuration
   // in vpc and subnet objects
-  int32 tos = 16;
+  int32 tos = 13;
 }
 
 // DropNexthop is used to blackhole the traffic

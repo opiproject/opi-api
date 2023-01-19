@@ -353,9 +353,9 @@ enum ALGType {
 enum PolicyRuleFormat {
   // POLICY_RULE_FORMAT_UNSPECIFIED indicates that user has not set format
   // explicitly, in which case POLICY_RULE_FORMAT_FLATTENED is assumed
-  // for backward compatibility
+  // for an implementation is agnostic to flattened or compressed rules
   POLICY_RULE_FORMAT_UNSPECIFIED = 0;
-  // POLICY_RULE_FORMAT_FLATTENED is used when agent expands the
+  // POLICY_RULE_FORMAT_FLATTENED is used when xPU expands the
   // user configured rules so that each rule has only single source
   // IP address/prefix/range, destination IP address/prefix/range,
   // source port range, destination port range as match conditions
