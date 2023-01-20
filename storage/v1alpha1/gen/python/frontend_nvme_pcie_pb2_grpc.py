@@ -106,6 +106,16 @@ class FrontendNvmeServiceStub(object):
                 request_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceStatsRequest.SerializeToString,
                 response_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceStatsResponse.FromString,
                 )
+        self.AttachControllerNVMeNamespace = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendNvmeService/AttachControllerNVMeNamespace',
+                request_serializer=frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.DetachControllerNVMeNamespace = channel.unary_unary(
+                '/opi_api.storage.v1.FrontendNvmeService/DetachControllerNVMeNamespace',
+                request_serializer=frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class FrontendNvmeServiceServicer(object):
@@ -220,6 +230,18 @@ class FrontendNvmeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AttachControllerNVMeNamespace(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DetachControllerNVMeNamespace(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FrontendNvmeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -312,6 +334,16 @@ def add_FrontendNvmeServiceServicer_to_server(servicer, server):
                     servicer.NVMeNamespaceStats,
                     request_deserializer=frontend__nvme__pcie__pb2.NVMeNamespaceStatsRequest.FromString,
                     response_serializer=frontend__nvme__pcie__pb2.NVMeNamespaceStatsResponse.SerializeToString,
+            ),
+            'AttachControllerNVMeNamespace': grpc.unary_unary_rpc_method_handler(
+                    servicer.AttachControllerNVMeNamespace,
+                    request_deserializer=frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DetachControllerNVMeNamespace': grpc.unary_unary_rpc_method_handler(
+                    servicer.DetachControllerNVMeNamespace,
+                    request_deserializer=frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -627,5 +659,39 @@ class FrontendNvmeService(object):
         return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendNvmeService/NVMeNamespaceStats',
             frontend__nvme__pcie__pb2.NVMeNamespaceStatsRequest.SerializeToString,
             frontend__nvme__pcie__pb2.NVMeNamespaceStatsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AttachControllerNVMeNamespace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendNvmeService/AttachControllerNVMeNamespace',
+            frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DetachControllerNVMeNamespace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.FrontendNvmeService/DetachControllerNVMeNamespace',
+            frontend__nvme__pcie__pb2.ControllerNVMeNamespaceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

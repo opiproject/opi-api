@@ -576,6 +576,68 @@ public final class FrontendNvmeServiceGrpc {
     return getNVMeNamespaceStatsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+      com.google.protobuf.Empty> getAttachControllerNVMeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AttachControllerNVMeNamespace",
+      requestType = opi_api.storage.v1.ControllerNVMeNamespaceRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+      com.google.protobuf.Empty> getAttachControllerNVMeNamespaceMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest, com.google.protobuf.Empty> getAttachControllerNVMeNamespaceMethod;
+    if ((getAttachControllerNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getAttachControllerNVMeNamespaceMethod) == null) {
+      synchronized (FrontendNvmeServiceGrpc.class) {
+        if ((getAttachControllerNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getAttachControllerNVMeNamespaceMethod) == null) {
+          FrontendNvmeServiceGrpc.getAttachControllerNVMeNamespaceMethod = getAttachControllerNVMeNamespaceMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ControllerNVMeNamespaceRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AttachControllerNVMeNamespace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.ControllerNVMeNamespaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("AttachControllerNVMeNamespace"))
+              .build();
+        }
+      }
+    }
+    return getAttachControllerNVMeNamespaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+      com.google.protobuf.Empty> getDetachControllerNVMeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DetachControllerNVMeNamespace",
+      requestType = opi_api.storage.v1.ControllerNVMeNamespaceRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+      com.google.protobuf.Empty> getDetachControllerNVMeNamespaceMethod() {
+    io.grpc.MethodDescriptor<opi_api.storage.v1.ControllerNVMeNamespaceRequest, com.google.protobuf.Empty> getDetachControllerNVMeNamespaceMethod;
+    if ((getDetachControllerNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getDetachControllerNVMeNamespaceMethod) == null) {
+      synchronized (FrontendNvmeServiceGrpc.class) {
+        if ((getDetachControllerNVMeNamespaceMethod = FrontendNvmeServiceGrpc.getDetachControllerNVMeNamespaceMethod) == null) {
+          FrontendNvmeServiceGrpc.getDetachControllerNVMeNamespaceMethod = getDetachControllerNVMeNamespaceMethod =
+              io.grpc.MethodDescriptor.<opi_api.storage.v1.ControllerNVMeNamespaceRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DetachControllerNVMeNamespace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  opi_api.storage.v1.ControllerNVMeNamespaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new FrontendNvmeServiceMethodDescriptorSupplier("DetachControllerNVMeNamespace"))
+              .build();
+        }
+      }
+    }
+    return getDetachControllerNVMeNamespaceMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -753,6 +815,20 @@ public final class FrontendNvmeServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNVMeNamespaceStatsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void attachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAttachControllerNVMeNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void detachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachControllerNVMeNamespaceMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -881,6 +957,20 @@ public final class FrontendNvmeServiceGrpc {
                 opi_api.storage.v1.NVMeNamespaceStatsRequest,
                 opi_api.storage.v1.NVMeNamespaceStatsResponse>(
                   this, METHODID_NVME_NAMESPACE_STATS)))
+          .addMethod(
+            getAttachControllerNVMeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_ATTACH_CONTROLLER_NVME_NAMESPACE)))
+          .addMethod(
+            getDetachControllerNVMeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                opi_api.storage.v1.ControllerNVMeNamespaceRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_DETACH_CONTROLLER_NVME_NAMESPACE)))
           .build();
     }
   }
@@ -1045,6 +1135,22 @@ public final class FrontendNvmeServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNVMeNamespaceStatsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void attachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAttachControllerNVMeNamespaceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void detachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDetachControllerNVMeNamespaceMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1188,6 +1294,20 @@ public final class FrontendNvmeServiceGrpc {
     public opi_api.storage.v1.NVMeNamespaceStatsResponse nVMeNamespaceStats(opi_api.storage.v1.NVMeNamespaceStatsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNVMeNamespaceStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty attachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAttachControllerNVMeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty detachControllerNVMeNamespace(opi_api.storage.v1.ControllerNVMeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachControllerNVMeNamespaceMethod(), getCallOptions(), request);
     }
   }
 
@@ -1351,6 +1471,22 @@ public final class FrontendNvmeServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNVMeNamespaceStatsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> attachControllerNVMeNamespace(
+        opi_api.storage.v1.ControllerNVMeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAttachControllerNVMeNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> detachControllerNVMeNamespace(
+        opi_api.storage.v1.ControllerNVMeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDetachControllerNVMeNamespaceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_NVME_SUBSYSTEM = 0;
@@ -1371,6 +1507,8 @@ public final class FrontendNvmeServiceGrpc {
   private static final int METHODID_LIST_NVME_NAMESPACES = 15;
   private static final int METHODID_GET_NVME_NAMESPACE = 16;
   private static final int METHODID_NVME_NAMESPACE_STATS = 17;
+  private static final int METHODID_ATTACH_CONTROLLER_NVME_NAMESPACE = 18;
+  private static final int METHODID_DETACH_CONTROLLER_NVME_NAMESPACE = 19;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1461,6 +1599,14 @@ public final class FrontendNvmeServiceGrpc {
           serviceImpl.nVMeNamespaceStats((opi_api.storage.v1.NVMeNamespaceStatsRequest) request,
               (io.grpc.stub.StreamObserver<opi_api.storage.v1.NVMeNamespaceStatsResponse>) responseObserver);
           break;
+        case METHODID_ATTACH_CONTROLLER_NVME_NAMESPACE:
+          serviceImpl.attachControllerNVMeNamespace((opi_api.storage.v1.ControllerNVMeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DETACH_CONTROLLER_NVME_NAMESPACE:
+          serviceImpl.detachControllerNVMeNamespace((opi_api.storage.v1.ControllerNVMeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1540,6 +1686,8 @@ public final class FrontendNvmeServiceGrpc {
               .addMethod(getListNVMeNamespacesMethod())
               .addMethod(getGetNVMeNamespaceMethod())
               .addMethod(getNVMeNamespaceStatsMethod())
+              .addMethod(getAttachControllerNVMeNamespaceMethod())
+              .addMethod(getDetachControllerNVMeNamespaceMethod())
               .build();
         }
       }

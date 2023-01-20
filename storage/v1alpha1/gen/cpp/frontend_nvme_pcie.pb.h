@@ -56,7 +56,7 @@ struct TableStruct_frontend_5fnvme_5fpcie_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[33]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[34]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -66,6 +66,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace opi_api {
 namespace storage {
 namespace v1 {
+class ControllerNVMeNamespaceRequest;
+struct ControllerNVMeNamespaceRequestDefaultTypeInternal;
+extern ControllerNVMeNamespaceRequestDefaultTypeInternal _ControllerNVMeNamespaceRequest_default_instance_;
 class CreateNVMeControllerRequest;
 struct CreateNVMeControllerRequestDefaultTypeInternal;
 extern CreateNVMeControllerRequestDefaultTypeInternal _CreateNVMeControllerRequest_default_instance_;
@@ -169,6 +172,7 @@ extern UpdateNVMeSubsystemRequestDefaultTypeInternal _UpdateNVMeSubsystemRequest
 }  // namespace storage
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
+template<> ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::ControllerNVMeNamespaceRequest>(Arena*);
 template<> ::opi_api::storage::v1::CreateNVMeControllerRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::CreateNVMeControllerRequest>(Arena*);
 template<> ::opi_api::storage::v1::CreateNVMeNamespaceRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::CreateNVMeNamespaceRequest>(Arena*);
 template<> ::opi_api::storage::v1::CreateNVMeSubsystemRequest* Arena::CreateMaybeMessage<::opi_api::storage::v1::CreateNVMeSubsystemRequest>(Arena*);
@@ -5992,6 +5996,197 @@ class NVMeNamespaceStatsResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ControllerNVMeNamespaceRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.ControllerNVMeNamespaceRequest) */ {
+ public:
+  inline ControllerNVMeNamespaceRequest() : ControllerNVMeNamespaceRequest(nullptr) {}
+  ~ControllerNVMeNamespaceRequest() override;
+  explicit constexpr ControllerNVMeNamespaceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ControllerNVMeNamespaceRequest(const ControllerNVMeNamespaceRequest& from);
+  ControllerNVMeNamespaceRequest(ControllerNVMeNamespaceRequest&& from) noexcept
+    : ControllerNVMeNamespaceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ControllerNVMeNamespaceRequest& operator=(const ControllerNVMeNamespaceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ControllerNVMeNamespaceRequest& operator=(ControllerNVMeNamespaceRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ControllerNVMeNamespaceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ControllerNVMeNamespaceRequest* internal_default_instance() {
+    return reinterpret_cast<const ControllerNVMeNamespaceRequest*>(
+               &_ControllerNVMeNamespaceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    33;
+
+  friend void swap(ControllerNVMeNamespaceRequest& a, ControllerNVMeNamespaceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ControllerNVMeNamespaceRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ControllerNVMeNamespaceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ControllerNVMeNamespaceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ControllerNVMeNamespaceRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ControllerNVMeNamespaceRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ControllerNVMeNamespaceRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ControllerNVMeNamespaceRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.storage.v1.ControllerNVMeNamespaceRequest";
+  }
+  protected:
+  explicit ControllerNVMeNamespaceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSubsystemFieldNumber = 1,
+    kControllerFieldNumber = 2,
+    kNvMeNamespaceIdFieldNumber = 3,
+  };
+  // string subsystem = 1 [(.google.api.field_behavior) = REQUIRED];
+  void clear_subsystem();
+  const std::string& subsystem() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_subsystem(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_subsystem();
+  PROTOBUF_NODISCARD std::string* release_subsystem();
+  void set_allocated_subsystem(std::string* subsystem);
+  private:
+  const std::string& _internal_subsystem() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem(const std::string& value);
+  std::string* _internal_mutable_subsystem();
+  public:
+
+  // .opi_api.common.v1.ObjectKey controller = 2 [(.google.api.field_behavior) = REQUIRED];
+  bool has_controller() const;
+  private:
+  bool _internal_has_controller() const;
+  public:
+  void clear_controller();
+  const ::opi_api::common::v1::ObjectKey& controller() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_controller();
+  ::opi_api::common::v1::ObjectKey* mutable_controller();
+  void set_allocated_controller(::opi_api::common::v1::ObjectKey* controller);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_controller() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_controller();
+  public:
+  void unsafe_arena_set_allocated_controller(
+      ::opi_api::common::v1::ObjectKey* controller);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_controller();
+
+  // .opi_api.common.v1.ObjectKey nv_me_namespace_id = 3 [(.google.api.field_behavior) = REQUIRED];
+  bool has_nv_me_namespace_id() const;
+  private:
+  bool _internal_has_nv_me_namespace_id() const;
+  public:
+  void clear_nv_me_namespace_id();
+  const ::opi_api::common::v1::ObjectKey& nv_me_namespace_id() const;
+  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_nv_me_namespace_id();
+  ::opi_api::common::v1::ObjectKey* mutable_nv_me_namespace_id();
+  void set_allocated_nv_me_namespace_id(::opi_api::common::v1::ObjectKey* nv_me_namespace_id);
+  private:
+  const ::opi_api::common::v1::ObjectKey& _internal_nv_me_namespace_id() const;
+  ::opi_api::common::v1::ObjectKey* _internal_mutable_nv_me_namespace_id();
+  public:
+  void unsafe_arena_set_allocated_nv_me_namespace_id(
+      ::opi_api::common::v1::ObjectKey* nv_me_namespace_id);
+  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_nv_me_namespace_id();
+
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.ControllerNVMeNamespaceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_;
+  ::opi_api::common::v1::ObjectKey* controller_;
+  ::opi_api::common::v1::ObjectKey* nv_me_namespace_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
+};
 // ===================================================================
 
 
@@ -10642,9 +10837,238 @@ inline void NVMeNamespaceStatsResponse::set_allocated_stats(::opi_api::storage::
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespaceStatsResponse.stats)
 }
 
+// -------------------------------------------------------------------
+
+// ControllerNVMeNamespaceRequest
+
+// string subsystem = 1 [(.google.api.field_behavior) = REQUIRED];
+inline void ControllerNVMeNamespaceRequest::clear_subsystem() {
+  subsystem_.ClearToEmpty();
+}
+inline const std::string& ControllerNVMeNamespaceRequest::subsystem() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ControllerNVMeNamespaceRequest.subsystem)
+  return _internal_subsystem();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ControllerNVMeNamespaceRequest::set_subsystem(ArgT0&& arg0, ArgT... args) {
+ 
+ subsystem_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.ControllerNVMeNamespaceRequest.subsystem)
+}
+inline std::string* ControllerNVMeNamespaceRequest::mutable_subsystem() {
+  std::string* _s = _internal_mutable_subsystem();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ControllerNVMeNamespaceRequest.subsystem)
+  return _s;
+}
+inline const std::string& ControllerNVMeNamespaceRequest::_internal_subsystem() const {
+  return subsystem_.Get();
+}
+inline void ControllerNVMeNamespaceRequest::_internal_set_subsystem(const std::string& value) {
+  
+  subsystem_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ControllerNVMeNamespaceRequest::_internal_mutable_subsystem() {
+  
+  return subsystem_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ControllerNVMeNamespaceRequest::release_subsystem() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ControllerNVMeNamespaceRequest.subsystem)
+  return subsystem_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ControllerNVMeNamespaceRequest::set_allocated_subsystem(std::string* subsystem) {
+  if (subsystem != nullptr) {
+    
+  } else {
+    
+  }
+  subsystem_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (subsystem_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    subsystem_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ControllerNVMeNamespaceRequest.subsystem)
+}
+
+// .opi_api.common.v1.ObjectKey controller = 2 [(.google.api.field_behavior) = REQUIRED];
+inline bool ControllerNVMeNamespaceRequest::_internal_has_controller() const {
+  return this != internal_default_instance() && controller_ != nullptr;
+}
+inline bool ControllerNVMeNamespaceRequest::has_controller() const {
+  return _internal_has_controller();
+}
+inline const ::opi_api::common::v1::ObjectKey& ControllerNVMeNamespaceRequest::_internal_controller() const {
+  const ::opi_api::common::v1::ObjectKey* p = controller_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& ControllerNVMeNamespaceRequest::controller() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ControllerNVMeNamespaceRequest.controller)
+  return _internal_controller();
+}
+inline void ControllerNVMeNamespaceRequest::unsafe_arena_set_allocated_controller(
+    ::opi_api::common::v1::ObjectKey* controller) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_);
+  }
+  controller_ = controller;
+  if (controller) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.ControllerNVMeNamespaceRequest.controller)
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::release_controller() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = controller_;
+  controller_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::unsafe_arena_release_controller() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ControllerNVMeNamespaceRequest.controller)
+  
+  ::opi_api::common::v1::ObjectKey* temp = controller_;
+  controller_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::_internal_mutable_controller() {
+  
+  if (controller_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    controller_ = p;
+  }
+  return controller_;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::mutable_controller() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_controller();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ControllerNVMeNamespaceRequest.controller)
+  return _msg;
+}
+inline void ControllerNVMeNamespaceRequest::set_allocated_controller(::opi_api::common::v1::ObjectKey* controller) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller_);
+  }
+  if (controller) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(controller));
+    if (message_arena != submessage_arena) {
+      controller = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, controller, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  controller_ = controller;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ControllerNVMeNamespaceRequest.controller)
+}
+
+// .opi_api.common.v1.ObjectKey nv_me_namespace_id = 3 [(.google.api.field_behavior) = REQUIRED];
+inline bool ControllerNVMeNamespaceRequest::_internal_has_nv_me_namespace_id() const {
+  return this != internal_default_instance() && nv_me_namespace_id_ != nullptr;
+}
+inline bool ControllerNVMeNamespaceRequest::has_nv_me_namespace_id() const {
+  return _internal_has_nv_me_namespace_id();
+}
+inline const ::opi_api::common::v1::ObjectKey& ControllerNVMeNamespaceRequest::_internal_nv_me_namespace_id() const {
+  const ::opi_api::common::v1::ObjectKey* p = nv_me_namespace_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
+      ::opi_api::common::v1::_ObjectKey_default_instance_);
+}
+inline const ::opi_api::common::v1::ObjectKey& ControllerNVMeNamespaceRequest::nv_me_namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.ControllerNVMeNamespaceRequest.nv_me_namespace_id)
+  return _internal_nv_me_namespace_id();
+}
+inline void ControllerNVMeNamespaceRequest::unsafe_arena_set_allocated_nv_me_namespace_id(
+    ::opi_api::common::v1::ObjectKey* nv_me_namespace_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nv_me_namespace_id_);
+  }
+  nv_me_namespace_id_ = nv_me_namespace_id;
+  if (nv_me_namespace_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.ControllerNVMeNamespaceRequest.nv_me_namespace_id)
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::release_nv_me_namespace_id() {
+  
+  ::opi_api::common::v1::ObjectKey* temp = nv_me_namespace_id_;
+  nv_me_namespace_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::unsafe_arena_release_nv_me_namespace_id() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.ControllerNVMeNamespaceRequest.nv_me_namespace_id)
+  
+  ::opi_api::common::v1::ObjectKey* temp = nv_me_namespace_id_;
+  nv_me_namespace_id_ = nullptr;
+  return temp;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::_internal_mutable_nv_me_namespace_id() {
+  
+  if (nv_me_namespace_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
+    nv_me_namespace_id_ = p;
+  }
+  return nv_me_namespace_id_;
+}
+inline ::opi_api::common::v1::ObjectKey* ControllerNVMeNamespaceRequest::mutable_nv_me_namespace_id() {
+  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_nv_me_namespace_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.ControllerNVMeNamespaceRequest.nv_me_namespace_id)
+  return _msg;
+}
+inline void ControllerNVMeNamespaceRequest::set_allocated_nv_me_namespace_id(::opi_api::common::v1::ObjectKey* nv_me_namespace_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(nv_me_namespace_id_);
+  }
+  if (nv_me_namespace_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nv_me_namespace_id));
+    if (message_arena != submessage_arena) {
+      nv_me_namespace_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, nv_me_namespace_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  nv_me_namespace_id_ = nv_me_namespace_id;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.ControllerNVMeNamespaceRequest.nv_me_namespace_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
