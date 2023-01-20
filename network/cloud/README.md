@@ -135,7 +135,7 @@ objects as seen by the xPU to help manage tenant's connectivity and offer networ
   Route object (configured routes)---+-----> [route/forward traffic to next-hop]            |
   NextHop object                     |           |                                          |
                                      |           v                                          |
-  Tunnel object (encap/decap)--------+-----> [tunnel traffic, insert vpc-id                 |
+  Tunnel object (encap/decap)--------+-----> [tunnel traffic, insert vpc-id]                |
                                      |           |                                          |
                                      |           v                                          |
   CPRoute object (underlay routing)--+-----> [route based on underlay static routing/bgp]   |
@@ -175,29 +175,30 @@ access from outside the xPU. Following diagram illustrates the xPU manageability
                                      |                                                      |
                                      |  [Network Softdatapath]   [ Network API Server ]     |
                                      |         ^                 [  serves grpc APIs  ]     |
-                                     |  rx/tx  |                          ^                 |
-                                     |         |                          |                 |
-                                     |         |                          |                 |
+                                     |  rx/tx  |                             ^              |
+                                     |         |                          |  .              |
+                                     |         |                          |  .              |
                                      |         |           Management I/f (inband/oob)      |
-                                     |         |                          |                 |
-                                     |         |                          |                 |
-                                     | --------|--------------------------|---------------  |
-                                     |         |             xPU OS       |                 |
-                                     |         |                                            |
-                                     | --------|------------------------------------------  |
-                                     |         |           xPU Datapath                     |
-                                     |         v                                            |
-                                     .______________________________________________________.
-                                                  |                            |
-                                                  |                            |
-                                                  |                            |
-                                         .--------------------------------------------.
-                                        (                                              )
-                                        (             Network Fabric                   )
-                                        (                                              )
-                                         \____________________________________________/
-                                                  \
-                                                   \
+                                     |         |                          |  .              |
+                                     |         |                          |  .              |
+                                     | --------|--------------------------|--.------------  |
+                                     |         |             xPU OS       |  .              |
+                                     |         |                            .               |
+                                     | --------|---------------------------.--------------  |
+                                     |         |           xPU Datapath   .                 |
+                                     |         v                       . .                  |
+                                     ._______________________________.______________________.
+                                                  |                 .          |
+                                                  |                .           |
+                                                  |               .            |
+                                         .-----------------------.--------------------.
+                                        (                        .                     )
+                                        (        Network Fabric .                      )
+                                        (                      .                       )
+                                         \____________________._______________________/
+                                                              .
+                                                              .
+                                                              v
                                            .--------------------------------------.
                                            |  Cloud Network Management controller |
                                            .______________________________________.

@@ -277,5 +277,5 @@ enum SecurityRuleAction {
 
 // Opaque handle to identify the index in hardware
 message HwHandle {
-  uint32 idx = 1;
+  uint64 idx = 1;
 }
