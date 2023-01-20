@@ -30,6 +30,8 @@ Tenant
         |
         |--- Subnets (IP networks)
         |
+        |--- Mapping (IP/MAC of workloads)
+        |
         |--- Routes (forward traffic within VPC, to peer VPCs (same tenant), and to/from Internet
         |
         |--- Network Security Policy (Security Groups)
@@ -152,3 +154,53 @@ objects as seen by the xPU to help manage tenant's connectivity and offer networ
 
 The above diagram specifies typical order in which various services are performed in egress direction.
 A similar forwarding is done for ingress direction. However the objects used by the pipeline is similar.
+
+## xPU Management
+
+xPU exposes above objects via secure GRPC APIs that a cloud infrastructure controller calls into
+from over the management network. These APIs are offered by the network-management processes running
+on the xPU. In addition to a successful OS bootup, as defined by the OPI lifecycle group, it is also
+essential to initialize and bring up hardware and soft-datapath to be ready for programming using these
+APIs. The external communication can reuse the certificates used by opi-lifecycle to establish secure
+access from outside the xPU. Following diagram illustrates the xPU manageability and bootstrap process.
+
+```text
+
+                                        Connectivity to Host
+                                              |      |
+                                              |      |
+                                              |      |
+                                     .--------+------+----- xPU ----------------------------.
+                                     |                                                      |
+                                     |                                                      |
+                                     |  [Network Softdatapath]   [ Network API Server ]     |
+                                     |         ^                 [  serves grpc APIs  ]     |
+                                     |  rx/tx  |                          ^                 |
+                                     |         |                          |                 |
+                                     |         |                          |                 |
+                                     |         |           Management I/f (inband/oob)      |
+                                     |         |                          |                 |
+                                     |         |                          |                 |
+                                     | --------|--------------------------|---------------  |
+                                     |         |             xPU OS       |                 |
+                                     |         |                                            |
+                                     | --------|------------------------------------------  |
+                                     |         |           xPU Datapath                     |
+                                     |         v                                            |
+                                     .______________________________________________________.
+                                                  |                            |
+                                                  |                            |
+                                                  |                            |
+                                         .--------------------------------------------.
+                                        (                                              )
+                                        (             Network Fabric                   )
+                                        (                                              )
+                                         \____________________________________________/
+                                                  \
+                                                   \
+                                           .--------------------------------------.
+                                           |  Cloud Network Management controller |
+                                           .______________________________________.
+
+
+```

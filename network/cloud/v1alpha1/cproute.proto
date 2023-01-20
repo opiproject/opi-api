@@ -37,7 +37,8 @@ message CPRouteSpec {
   network.opinetcommon.v1alpha1.AdminState state = 5;
   // override admin distance
   bool override = 6;
-  // admin distance
+  // admin distance set for a static route vs. what a routing
+  // protocol computes it for the dynamic route.
   uint32 admin_dist = 7;
   // interface ID, if this route is configured on RR
   common.v1.ObjectKey interface_id = 8;

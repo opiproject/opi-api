@@ -137,6 +137,28 @@ service CloudInfraService {
     }
 }
 
+// device capabilities indicate the capabilities of software/hardware
+// as exposed by current firmware of the device. This can help cloud controller
+// to adapt to the underlying xPU capabilities/feature
+message DeviceCapabilities {
+  // traffic routing capabilities
+  DeviceCapabilitiesDynamicRouting routing_capabilties = 1;
+  // network security policy capabilities
+  DeviceCapabilitiesNetworkPolicy network_policy_capabilities = 2;
+}
+
+// device capabilities for dynamic routing
+message DeviceCapabilitiesDynamicRouting {
+  // device is capable of doing bgp routing for the underlay
+  bool underlay_bgp = 1;
+}
+
+// device capabilities for network security policies
+message DeviceCapabilitiesNetworkPolicy {
+  // compact routes: capability for the datapath to do summarized route lookups vs flat flow lookups (default)
+  bool compact_rules = 1;
+}
+
 // device level network configuration and status
 message Device {
   // device's network configuration
