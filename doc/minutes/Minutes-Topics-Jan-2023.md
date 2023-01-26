@@ -32,6 +32,16 @@ Topics Covered:
 
 Recording at: <https://zoom.us/rec/share/re99yNOrrEMMrYNTd4Lj_jOuJflwujCQiRLTud_o6Kb6iVvF2L8vZNwa3bDAvMbh.947-smAQFKXCO3O7>
 
-Future Topics:
+## Jan 25
 
-- K8s Offload Methods
+Topics Covered:
+
+1. K8s Offload Methods
+
+Recording at: <https://zoom.us/rec/share/OZ3HbYXgIZP83FjwdP-JHWxdm5Ilhr1TSZraIVh1PZZ-4bptrFyrMiUXwjLXVIf6.S5mfB3DSUYMxyJxX>
+
+Topics for Feb 2 Meeting:
+
+- Continue K8s/CNI discussion
+- Brownfield, Greenfield
+- Layering views (Shim layer, Plugin's, etc.)
