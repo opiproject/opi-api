@@ -1,6 +1,6 @@
 // Copyright (c) 2023 Pensando, AMD Inc, or its subsidiaries.
-// protobuf specification for Control Plane (i.e. underlay) Route Table
-// CProute object differ from overlay/tenant Route  object because 
+// protobuf specification for underlay (i.e. control plane) route table
+// Underlayroute object differ from overlay/tenant Route  object because 
 // next hop is very different, doesn't require priority, classification, metering, etc.
 
 syntax = "proto3";
@@ -8,23 +8,23 @@ package opi_api.network.cloud.v1alpha1;
 
 option java_package = "opi_api.network.cloud.v1alpha1";
 option java_multiple_files = true;
-option java_outer_classname = "CPRouteProto";
+option java_outer_classname = "UnderlayRouteProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
 import "object_key.proto";
 import "networktypes.proto";
 
-// CP Route can be static or dynamic underlay route
-message CPRoute {
-    // CProute configuration (can specify fields to query route for get operations)
-    CPRouteSpec spec = 1;
-    // CPRoute status
-    CPRouteStatus status = 2;
+// Underlay Route can be static or dynamic underlay route
+message UnderlayRoute {
+    // Underlayroute configuration (can specify fields to query route for get operations)
+    UnderlayRouteSpec spec = 1;
+    // UnderlayRoute status
+    UnderlayRouteStatus status = 2;
 }
 
 // control plane static route configuration
-message CPRouteSpec {
+message UnderlayRouteSpec {
   // route's unique id
   common.v1.ObjectKey id = 1;
   // route table id this route belongs to
@@ -35,8 +35,8 @@ message CPRouteSpec {
   network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;
   // route is enabled or not
   network.opinetcommon.v1alpha1.AdminState state = 5;
-  // override admin distance
-  bool override = 6;
+  // enable/disable admin distance
+  bool enable_admin_distance = 6;
   // admin distance set for a static route vs. what a routing
   // protocol computes it for the dynamic route.
   uint32 admin_dist = 7;
@@ -44,8 +44,8 @@ message CPRouteSpec {
   common.v1.ObjectKey interface_id = 8;
 }
 
-// CP Route status for a control plane static or dynamic route
-message CPRouteStatus {
+// Underlay Route status for a control plane static or dynamic route
+message UnderlayRouteStatus {
   // route table id this route belongs to
   uint32 route_table_id  = 1;
   // destination address
@@ -61,7 +61,7 @@ message CPRouteStatus {
   // The number of seconds since this route was last updated or otherwise determined to be correct.
   int32 age = 8;
   // The primary routing metric for this route
-  int32 metric1 = 9;
+  int32 metric = 9;
   // Is this route programmed either to a forwarding table, or to a partner that queries route information
   bool fib_route = 10;
   // Indicates whether the route destination is directly connected
@@ -70,8 +70,8 @@ message CPRouteStatus {
   int32 admin_distance = 12;
 }
 
-// CPRouteLookupKey can be used to query one or more routes based on various fields
-message CPRouteLookupKey {
+// UnderlayRouteLookupKey can be used to query one or more routes based on various fields
+message UnderlayRouteLookupKey {
   // route table id this route belongs to
   common.v1.ObjectKey route_table_id = 1;
   // destination address

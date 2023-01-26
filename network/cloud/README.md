@@ -138,7 +138,7 @@ objects as seen by the xPU to help manage tenant's connectivity and offer networ
   Tunnel object (encap/decap)--------+-----> [tunnel traffic, insert vpc-id]                |
                                      |           |                                          |
                                      |           v                                          |
-  CPRoute object (underlay routing)--+-----> [route based on underlay static routing/bgp]   |
+  UnderlayRoute object --------------+-----> [route based on underlay static routing/bgp]   |
   BGP object                         |           |                                          |
                                      |           v                                          |
                                      |       [Send out on uplink port to Network Switch]    |
