@@ -39,7 +39,7 @@ message UnderlayRouteSpec {
   bool enable_admin_distance = 6;
   // admin distance set for a static route vs. what a routing
   // protocol computes it for the dynamic route.
-  uint32 admin_dist = 7;
+  int32 admin_dist = 7;
   // interface ID, if this route is configured on RR
   common.v1.ObjectKey interface_id = 8;
 }
@@ -47,7 +47,7 @@ message UnderlayRouteSpec {
 // Underlay Route status for a control plane static or dynamic route
 message UnderlayRouteStatus {
   // route table id this route belongs to
-  uint32 route_table_id  = 1;
+  int32 route_table_id  = 1;
   // destination address
   network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
   // next-hop address
