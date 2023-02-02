@@ -19,6 +19,4 @@ Topics Covered:
 
 - Continued Kubernetes Scenarios
 
-Recording at: 
-
-
+Recording at:
