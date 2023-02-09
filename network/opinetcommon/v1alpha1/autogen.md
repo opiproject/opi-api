@@ -3,7 +3,36 @@
 
 ## Table of Contents
 
-- [ip.proto](#ip-proto)
+- [networktypes.proto](#networktypes-proto)
+    - [AddressRange](#opi_api-network-opinetcommon-v1alpha1-AddressRange)
+    - [Encap](#opi_api-network-opinetcommon-v1alpha1-Encap)
+    - [EncapVal](#opi_api-network-opinetcommon-v1alpha1-EncapVal)
+    - [HwHandle](#opi_api-network-opinetcommon-v1alpha1-HwHandle)
+    - [ICMPMatch](#opi_api-network-opinetcommon-v1alpha1-ICMPMatch)
+    - [ICMPMatchList](#opi_api-network-opinetcommon-v1alpha1-ICMPMatchList)
+    - [IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress)
+    - [IPEntry](#opi_api-network-opinetcommon-v1alpha1-IPEntry)
+    - [IPList](#opi_api-network-opinetcommon-v1alpha1-IPList)
+    - [IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix)
+    - [IPRange](#opi_api-network-opinetcommon-v1alpha1-IPRange)
+    - [IPv4Prefix](#opi_api-network-opinetcommon-v1alpha1-IPv4Prefix)
+    - [IPv6Prefix](#opi_api-network-opinetcommon-v1alpha1-IPv6Prefix)
+    - [PortListMatch](#opi_api-network-opinetcommon-v1alpha1-PortListMatch)
+    - [PortMatch](#opi_api-network-opinetcommon-v1alpha1-PortMatch)
+    - [PortRange](#opi_api-network-opinetcommon-v1alpha1-PortRange)
+    - [RuleL3Match](#opi_api-network-opinetcommon-v1alpha1-RuleL3Match)
+    - [RuleL4Match](#opi_api-network-opinetcommon-v1alpha1-RuleL4Match)
+    - [RuleMatch](#opi_api-network-opinetcommon-v1alpha1-RuleMatch)
+  
+    - [AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState)
+    - [EncapType](#opi_api-network-opinetcommon-v1alpha1-EncapType)
+    - [IpAf](#opi_api-network-opinetcommon-v1alpha1-IpAf)
+    - [PolicyDir](#opi_api-network-opinetcommon-v1alpha1-PolicyDir)
+    - [RouteProtocol](#opi_api-network-opinetcommon-v1alpha1-RouteProtocol)
+    - [RouteType](#opi_api-network-opinetcommon-v1alpha1-RouteType)
+    - [SecurityRuleAction](#opi_api-network-opinetcommon-v1alpha1-SecurityRuleAction)
+    - [WildcardMatch](#opi_api-network-opinetcommon-v1alpha1-WildcardMatch)
+  
 - [openconfig_interfaces.proto](#openconfig_interfaces-proto)
     - [Interface](#opi_api-network-v1-Interface)
     - [Interface.Config](#opi_api-network-v1-Interface-Config)
@@ -53,13 +82,440 @@
 
 
 
-<a name="ip-proto"></a>
+<a name="networktypes-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ip.proto
+## networktypes.proto
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-AddressRange"></a>
+
+### AddressRange
+AddressRange represents an IPv4 or IPv6 address range
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ipv4_range | [IPRange](#opi_api-network-opinetcommon-v1alpha1-IPRange) |  | IPv4 address range |
+| ipv6_range | [IPRange](#opi_api-network-opinetcommon-v1alpha1-IPRange) |  | IPv6 address range |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-Encap"></a>
+
+### Encap
+fabric encap
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [EncapType](#opi_api-network-opinetcommon-v1alpha1-EncapType) |  | encyp type |
+| value | [EncapVal](#opi_api-network-opinetcommon-v1alpha1-EncapVal) |  | encap value |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-EncapVal"></a>
+
+### EncapVal
+tag values for various encap types
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vlan_id | [int32](#int32) |  | vlan id for DOT1Q |
+| mpls_tag | [int32](#int32) |  | MPLS tag/slot for MPLS over UDP |
+| vnid | [int32](#int32) |  | VXLAN VNID (24bit value) |
+| vsid | [int32](#int32) |  | NVGRE VSID |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-HwHandle"></a>
+
+### HwHandle
+Opaque handle to identify the index in hardware
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| idx | [uint64](#uint64) |  | hardware handle (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: hw handle must be uint64. --) |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-ICMPMatch"></a>
+
+### ICMPMatch
+ICMPv4/ICMPv6 rule match criteria
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [int32](#int32) |  | match any ICMP type |
+| type_wildcard | [WildcardMatch](#opi_api-network-opinetcommon-v1alpha1-WildcardMatch) |  | match any ICMP type |
+| code | [int32](#int32) |  | match any ICMP code |
+| code_wildcard | [WildcardMatch](#opi_api-network-opinetcommon-v1alpha1-WildcardMatch) |  | match any ICMP code |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-ICMPMatchList"></a>
+
+### ICMPMatchList
+ICMP type/code match condition list
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| icmp_match_list | [ICMPMatch](#opi_api-network-opinetcommon-v1alpha1-ICMPMatch) | repeated | ICMP type/code list |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPAddress"></a>
+
+### IPAddress
+IP Address object
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| af | [IpAf](#opi_api-network-opinetcommon-v1alpha1-IpAf) |  | IP Address family |
+| v4_addr | [fixed32](#fixed32) |  | IPv4 address (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use fixed32 --) |
+| v6_addr | [bytes](#bytes) |  | IPv6 address |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPEntry"></a>
+
+### IPEntry
+IPEntry represents any form of IP address/prefix/range/tag etc.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| prefix | [IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | IP prefix |
+| range | [AddressRange](#opi_api-network-opinetcommon-v1alpha1-AddressRange) |  | IP range |
+| tag | [int32](#int32) |  | tag that represents IP addres/pfx/range, range:1-4294967294 |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPList"></a>
+
+### IPList
+IPList is a list of IPEntry objects
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ip_entries | [IPEntry](#opi_api-network-opinetcommon-v1alpha1-IPEntry) | repeated | list of ip entries (prefix, range) |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPPrefix"></a>
+
+### IPPrefix
+IP Prefix object
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| addr | [IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | IP prefix address |
+| len | [int32](#int32) |  | IP Prefix length (range:0-128) |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPRange"></a>
+
+### IPRange
+IP Range
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| low | [IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | starting IP address |
+| high | [IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | ending IP address |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPv4Prefix"></a>
+
+### IPv4Prefix
+IPv4 Prefix
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| addr | [fixed32](#fixed32) |  | IPv4 address portion (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use fixed32 --) |
+| len | [int32](#int32) |  | prefix length; range:0-32 |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IPv6Prefix"></a>
+
+### IPv6Prefix
+IPv6 Prefix
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| addr | [bytes](#bytes) |  | IPv6 address bytes |
+| len | [int32](#int32) |  | prefix length: range:0-128 |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-PortListMatch"></a>
+
+### PortListMatch
+TCP/UDP source and destination port list
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| src_port_range | [PortRange](#opi_api-network-opinetcommon-v1alpha1-PortRange) | repeated | list of source ports or port ranges |
+| dst_port_range | [PortRange](#opi_api-network-opinetcommon-v1alpha1-PortRange) | repeated | list of destination ports or port ranges |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-PortMatch"></a>
+
+### PortMatch
+TCP/UDP rule match criteria
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| src_port_range | [PortRange](#opi_api-network-opinetcommon-v1alpha1-PortRange) |  | source port range |
+| dst_port_range | [PortRange](#opi_api-network-opinetcommon-v1alpha1-PortRange) |  | destination port range |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-PortRange"></a>
+
+### PortRange
+PortRange object has low and high end of the port ranges
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| port_low | [int32](#int32) |  | range:0-65535 |
+| port_high | [int32](#int32) |  | range:0-65535 |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-RuleL3Match"></a>
+
+### RuleL3Match
+L3 rule match criteria
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proto_num | [int32](#int32) |  | protocol number |
+| proto_wild_card | [WildcardMatch](#opi_api-network-opinetcommon-v1alpha1-WildcardMatch) |  | match ANY protocol |
+| src_prefix | [IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | ip prefix |
+| src_range | [AddressRange](#opi_api-network-opinetcommon-v1alpha1-AddressRange) |  | source ip address range |
+| src_tag | [int32](#int32) |  | source tag for the range (range:1-429496729) |
+| src_ip_list | [IPList](#opi_api-network-opinetcommon-v1alpha1-IPList) |  | ip list |
+| dst_prefix | [IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | ip prefix |
+| dst_range | [AddressRange](#opi_api-network-opinetcommon-v1alpha1-AddressRange) |  | destination ip range |
+| dst_tag | [int32](#int32) |  | destination tag (range:1-429496729) |
+| dst_ip_list | [IPList](#opi_api-network-opinetcommon-v1alpha1-IPList) |  | ip list |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-RuleL4Match"></a>
+
+### RuleL4Match
+L4 rule match criteria
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ports | [PortMatch](#opi_api-network-opinetcommon-v1alpha1-PortMatch) |  | source and/or destination ports/ranges |
+| type_code | [ICMPMatch](#opi_api-network-opinetcommon-v1alpha1-ICMPMatch) |  | ICMP type/code match criteria |
+| port_list | [PortListMatch](#opi_api-network-opinetcommon-v1alpha1-PortListMatch) |  | list of source and/or destination ports/ranges |
+| icmp_match_list | [ICMPMatchList](#opi_api-network-opinetcommon-v1alpha1-ICMPMatchList) |  | list ICMP type/code match criteria |
+
+
+
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-RuleMatch"></a>
+
+### RuleMatch
+rule match criteria
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| l3_match | [RuleL3Match](#opi_api-network-opinetcommon-v1alpha1-RuleL3Match) |  | Layer 3 match criteria |
+| l4_match | [RuleL4Match](#opi_api-network-opinetcommon-v1alpha1-RuleL4Match) |  | Layer 4 match criteria |
+
+
+
 
 
  
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-AdminState"></a>
+
+### AdminState
+admin state of control plane objects
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ADMIN_STATE_UNSPECIFIED | 0 | unspecified |
+| ADMIN_STATE_ENABLE | 1 | enable |
+| ADMIN_STATE_DISABLE | 2 | disable |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-EncapType"></a>
+
+### EncapType
+encap types in the network
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ENCAP_TYPE_UNSPECIFIED | 0 | no encap |
+| ENCAP_TYPE_DOT1Q | 1 | 802.1q |
+| ENCAP_TYPE_MPLS_OVER_UDP | 2 | MPLS over UDP |
+| ENCAP_TYPE_VXLAN | 3 | VXLAN |
+| ENCAP_TYPE_NVGRE | 4 | NVGRE |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-IpAf"></a>
+
+### IpAf
+IP address families
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| IP_AF_UNSPECIFIED | 0 | unspecified |
+| IP_AF_INET | 1 | ipv4 |
+| IP_AF_INET6 | 2 | ipv6 |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-PolicyDir"></a>
+
+### PolicyDir
+direction in which policy is enforced
+INGRESS/EGRESS is w.r.t vnic (i.e., traffic leaving vnic is marked as
+EGRESS and traffic going to vnic is marked as INGRESS
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| POLICY_DIR_UNSPECIFIED | 0 | unspecified |
+| POLICY_DIR_INGRESS | 1 | ingress (towards vnic from network) |
+| POLICY_DIR_EGRESS | 2 | egress (from vnic to network) |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-RouteProtocol"></a>
+
+### RouteProtocol
+route protocols
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROUTE_PROTOCOL_UNSPECIFIED | 0 | unspecified |
+| ROUTE_PROTOCOL_LOCAL | 1 | local |
+| ROUTE_PROTOCOL_STATIC | 2 | static |
+| ROUTE_PROTOCOL_BGP | 3 | bgp (dynamic) |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-RouteType"></a>
+
+### RouteType
+route type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROUTE_TYPE_UNSPECIFIED | 0 | unspecified |
+| ROUTE_TYPE_OTHER | 1 | other |
+| ROUTE_TYPE_REJECT | 2 | reject |
+| ROUTE_TYPE_LOCAL | 3 | local |
+| ROUTE_TYPE_REMOTE | 4 | remote |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-SecurityRuleAction"></a>
+
+### SecurityRuleAction
+security rule action is one of the below
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SECURITY_RULE_ACTION_NONE | 0 | no action (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: NONE means no action. --) |
+| SECURITY_RULE_ACTION_ALLOW | 1 | allow |
+| SECURITY_RULE_ACTION_DENY | 2 | deny |
+
+
+
+<a name="opi_api-network-opinetcommon-v1alpha1-WildcardMatch"></a>
+
+### WildcardMatch
+WildcardMatch options
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MATCH_NONE | 0 | wouldn&#39;t match anything (-- api-linter: core::0126::unspecified=disabled aip.dev/not-precedent: NONE means don&#39;t match anything. --) |
+| MATCH_ANY | 256 | match everything |
+
 
  
 
