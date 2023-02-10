@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != opi_api.network.opinetcommon.v1alpha1.RouteType.ROUTE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, type_);
     }
-    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTO_UNSPECIFIED.getNumber()) {
+    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTOCOL_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, proto_);
     }
     if (age_ != 0) {
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, type_);
     }
-    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTO_UNSPECIFIED.getNumber()) {
+    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTOCOL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, proto_);
     }

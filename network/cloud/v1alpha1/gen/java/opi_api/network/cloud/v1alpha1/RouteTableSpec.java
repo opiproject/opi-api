@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
     if (id_ != null) {
       output.writeMessage(1, getId());
     }
-    if (af_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_NONE.getNumber()) {
+    if (af_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, af_);
     }
     if (priorityEnable_ != false) {
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getId());
     }
-    if (af_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_NONE.getNumber()) {
+    if (af_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, af_);
     }

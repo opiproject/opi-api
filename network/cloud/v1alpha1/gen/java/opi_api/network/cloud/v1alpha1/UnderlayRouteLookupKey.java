@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     if (ifid_ != 0) {
       output.writeInt32(4, ifid_);
     }
-    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTO_UNSPECIFIED.getNumber()) {
+    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTOCOL_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, proto_);
     }
     unknownFields.writeTo(output);
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, ifid_);
     }
-    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTO_UNSPECIFIED.getNumber()) {
+    if (proto_ != opi_api.network.opinetcommon.v1alpha1.RouteProtocol.ROUTE_PROTOCOL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, proto_);
     }

@@ -413,10 +413,10 @@ private static final long serialVersionUID = 0L;
       if (vnicId_ != null) {
         output.writeMessage(1, getVnicId());
       }
-      if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_NONE.getNumber()) {
+      if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, policyDirection_);
       }
-      if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_NONE.getNumber()) {
+      if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, addressFamily_);
       }
       unknownFields.writeTo(output);
@@ -432,11 +432,11 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getVnicId());
       }
-      if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_NONE.getNumber()) {
+      if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, policyDirection_);
       }
-      if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_NONE.getNumber()) {
+      if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, addressFamily_);
       }
