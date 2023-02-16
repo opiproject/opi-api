@@ -36,3 +36,14 @@ Group Actions:
 - Work toward detailed architecture/implementation for CNI aspects and OPI Translation Shim layer in the diagrams.
 
 ---
+
+## Feb 16
+
+Topics Covered:
+
+- xPU Extension Capabilities Addition for SPDK Bridge PR#146
+- K8s and CNI Discussion Continued
+
+Recording at: <https://zoom.us/rec/share/8Vc_P5iwSUafn1xqX79ta3Lr4xZOVHv3HUTIVbe99M2SaZo7Ry7lNlvcrhaARm5A.Sgv5aGKECfXiPHp6>
+
+---
