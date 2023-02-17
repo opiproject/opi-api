@@ -153,18 +153,26 @@ message MemoryInfo{
     int64 total_usable_bytes = 2;
 }
 
-// TODO: remove this message
-message DeviceInfo {
-    string name = 1;
-    string description = 2;
-    string id = 3;
-    string mfg_name = 4;
-    string mfg_date = 5;
-    string hw_version = 6;
-    string fw_version = 7;
-    string sw_version = 8;
-    string serial_no = 9;
-    string part_no = 10;
+// PCI device information
+//  TBD: Type 9 or Type 41 ?
+//  This structure describes a collection of PCI devices.
+message PCIeDeviceInfo {
+    // Driver assiociated with the device
+    string driver = 1;
+    // BDF address in a string format, for example "0000:00:17.7"
+    string address = 2;
+    // string vendor info
+    string vendor = 3;
+    // string product info
+    string product = 4;
+    // string revision info
+    string revision = 5;
+    // string subsystem info
+    string subsystem = 6;
+    // string class info
+    string class = 7;
+    // string subclass info
+    string subclass = 8;
 }
 
 message InventoryGetRequest {
@@ -178,5 +186,5 @@ message InventoryGetResponse {
     ChassisInfo chassis = 4;
     CPUInfo processor = 5;
     MemoryInfo memory = 6;
-    DeviceInfo devinfo = 7;
+    repeated PCIeDeviceInfo pci = 7;
 }
