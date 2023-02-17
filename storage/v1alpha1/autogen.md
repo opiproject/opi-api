@@ -158,10 +158,10 @@
     - [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo)
     - [CPUInfo](#opi_api-inventory-v1-CPUInfo)
     - [ChassisInfo](#opi_api-inventory-v1-ChassisInfo)
-    - [DeviceInfo](#opi_api-inventory-v1-DeviceInfo)
     - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
     - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
     - [MemoryInfo](#opi_api-inventory-v1-MemoryInfo)
+    - [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo)
     - [SystemInfo](#opi_api-inventory-v1-SystemInfo)
   
     - [InventorySvc](#opi_api-inventory-v1-InventorySvc)
@@ -2426,30 +2426,6 @@ System Enclosure or Chassis (Type 3)
 
 
 
-<a name="opi_api-inventory-v1-DeviceInfo"></a>
-
-### DeviceInfo
-TODO: remove this message
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| id | [string](#string) |  |  |
-| mfg_name | [string](#string) |  |  |
-| mfg_date | [string](#string) |  |  |
-| hw_version | [string](#string) |  |  |
-| fw_version | [string](#string) |  |  |
-| sw_version | [string](#string) |  |  |
-| serial_no | [string](#string) |  |  |
-| part_no | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="opi_api-inventory-v1-InventoryGetRequest"></a>
 
 ### InventoryGetRequest
@@ -2474,7 +2450,7 @@ Empty
 | chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  |  |
 | processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  |  |
 | memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  |  |
-| devinfo | [DeviceInfo](#opi_api-inventory-v1-DeviceInfo) |  |  |
+| pci | [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo) | repeated |  |
 
 
 
@@ -2493,6 +2469,30 @@ Physical Memory Array (Type 16)
 | ----- | ---- | ----- | ----------- |
 | total_physical_bytes | [int64](#int64) |  | Maximum memory capacity, in kilobytes, for this array If the capacity is not represented in this field, then this field contains 8000 0000h and the Extended Maximum Capacity field should be used. Values 2 TB (8000 0000h) or greater must be represented in the Extended Maximum Capacity field. |
 | total_usable_bytes | [int64](#int64) |  | TBD |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-PCIeDeviceInfo"></a>
+
+### PCIeDeviceInfo
+PCI device information
+ TBD: Type 9 or Type 41 ?
+ This structure describes a collection of PCI devices.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| driver | [string](#string) |  | Driver assiociated with the device |
+| address | [string](#string) |  | BDF address in a string format, for example &#34;0000:00:17.7&#34; |
+| vendor | [string](#string) |  | string vendor info |
+| product | [string](#string) |  | string product info |
+| revision | [string](#string) |  | string revision info |
+| subsystem | [string](#string) |  | string subsystem info |
+| class | [string](#string) |  | string class info |
+| subclass | [string](#string) |  | string subclass info |
 
 
 
