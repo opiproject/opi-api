@@ -167,25 +167,11 @@ struct SystemAlertDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemAlertDefaultTypeInternal _SystemAlert_default_instance_;
-constexpr CreateDeviceRequest::CreateDeviceRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : parent_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , device_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , device_(nullptr){}
-struct CreateDeviceRequestDefaultTypeInternal {
-  constexpr CreateDeviceRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~CreateDeviceRequestDefaultTypeInternal() {}
-  union {
-    CreateDeviceRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateDeviceRequestDefaultTypeInternal _CreateDeviceRequest_default_instance_;
 }  // namespace v1alpha1
 }  // namespace cloud
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_device_2eproto[11];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_device_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_device_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_device_2eproto = nullptr;
 
@@ -287,15 +273,6 @@ const uint32_t TableStruct_device_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SystemAlert, alert_time_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SystemAlert, alert_description_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, parent_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, device_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, device_id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceCapabilities)},
@@ -308,7 +285,6 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 64, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceStatus)},
   { 81, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SystemEvent)},
   { 89, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SystemAlert)},
-  { 97, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::CreateDeviceRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -322,87 +298,70 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_DeviceStatus_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_SystemEvent_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_SystemAlert_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::cloud::v1alpha1::_CreateDeviceRequest_default_instance_),
 };
 
 const char descriptor_table_protodef_device_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014device.proto\022\036opi_api.network.cloud.v1"
   "alpha1\032\020object_key.proto\032\022networktypes.p"
-  "roto\032\027google/api/client.proto\032\031google/ap"
-  "i/resource.proto\032\034google/api/annotations"
-  ".proto\032\037google/api/field_behavior.proto\032"
-  "\037google/protobuf/timestamp.proto\"\331\001\n\022Dev"
-  "iceCapabilities\022]\n\023routing_capabilties\030\001"
-  " \001(\0132@.opi_api.network.cloud.v1alpha1.De"
-  "viceCapabilitiesDynamicRouting\022d\n\033networ"
-  "k_policy_capabilities\030\002 \001(\0132\?.opi_api.ne"
-  "twork.cloud.v1alpha1.DeviceCapabilitiesN"
-  "etworkPolicy\"8\n DeviceCapabilitiesDynami"
-  "cRouting\022\024\n\014underlay_bgp\030\001 \001(\010\"8\n\037Device"
-  "CapabilitiesNetworkPolicy\022\025\n\rcompact_rul"
-  "es\030\001 \001(\010\"\200\001\n\006Device\0228\n\004spec\030\001 \001(\0132*.opi_"
-  "api.network.cloud.v1alpha1.DeviceSpec\022<\n"
-  "\006status\030\002 \001(\0132,.opi_api.network.cloud.v1"
-  "alpha1.DeviceStatus\"\352\003\n\nDeviceSpec\022(\n\002id"
-  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022F\n\014"
-  "ipv4_address\030\002 \001(\01320.opi_api.network.opi"
-  "netcommon.v1alpha1.IPAddress\022F\n\014ipv6_add"
-  "ress\030\003 \001(\01320.opi_api.network.opinetcommo"
-  "n.v1alpha1.IPAddress\022\020\n\010mac_addr\030\004 \001(\014\022D"
-  "\n\ngateway_ip\030\005 \001(\01320.opi_api.network.opi"
-  "netcommon.v1alpha1.IPAddress\022I\n\016pcie_fun"
-  "ctions\030\006 \001(\01321.opi_api.network.cloud.v1a"
-  "lpha1.PCIeFunctionsSpec\022\037\n\027overlay_routi"
-  "ng_enabled\030\007 \001(\010\022\022\n\nsystemname\030\010 \001(\t\022J\n\021"
-  "mgmt_network_spec\030\t \001(\0132/.opi_api.networ"
-  "k.cloud.v1alpha1.MgmtNetworkSpec\"7\n\021PCIe"
-  "FunctionsSpec\022\020\n\010pf_count\030\005 \001(\005\022\020\n\010vf_co"
-  "unt\030\006 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n\014lldp_mg"
-  "mt_ip\030\001 \001(\01320.opi_api.network.opinetcomm"
-  "on.v1alpha1.IPAddress\022A\n\007mgmt_ip\030\002 \001(\01320"
-  ".opi_api.network.opinetcommon.v1alpha1.I"
-  "PAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngateway_ip\030\004 \001"
-  "(\01320.opi_api.network.opinetcommon.v1alph"
-  "a1.IPAddress\022\023\n\013gateway_mac\030\005 \001(\014\"\322\002\n\014De"
-  "viceStatus\022\023\n\013description\030\001 \001(\t\022\032\n\022syste"
-  "m_mac_address\030\002 \001(\014\022\021\n\tvendor_id\030\003 \001(\t\022\021"
-  "\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030\005 \001(\t\022\027\n"
-  "\017pcie_port_count\030\006 \001(\005\022\022\n\nport_count\030\007 \001"
-  "(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pipeline\030\t "
-  "\001(\t\022D\n\017critical_events\030\n \003(\0132+.opi_api.n"
-  "etwork.cloud.v1alpha1.SystemEvent\022;\n\006ale"
-  "rts\030\013 \003(\0132+.opi_api.network.cloud.v1alph"
-  "a1.SystemAlert\"X\n\013SystemEvent\022.\n\nevent_t"
-  "ime\030\001 \001(\0132\032.google.protobuf.Timestamp\022\031\n"
-  "\021event_description\030\002 \001(\t\"X\n\013SystemAlert\022"
-  ".\n\nalert_time\030\001 \001(\0132\032.google.protobuf.Ti"
-  "mestamp\022\031\n\021alert_description\030\002 \001(\t\"\236\001\n\023C"
-  "reateDeviceRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372"
-  "A!\n\037opi_api.network.v1alpha1/Device\022;\n\006d"
-  "evice\030\002 \001(\0132&.opi_api.network.cloud.v1al"
-  "pha1.DeviceB\003\340A\002\022\021\n\tdevice_id\030\003 \001(\t2\300\001\n\021"
-  "CloudInfraService\022\252\001\n\014CreateDevice\0223.opi"
-  "_api.network.cloud.v1alpha1.CreateDevice"
-  "Request\032&.opi_api.network.cloud.v1alpha1"
-  ".Device\"=\202\323\344\223\002\035\"\023/v1/{parent=device}:\006de"
-  "vice\332A\027parent,device,device_idBl\n\036opi_ap"
-  "i.network.cloud.v1alpha1B\013DeviceProtoP\001Z"
-  ";github.com/opiproject/opi-api/network/c"
-  "loud/v1alpha1/gen/gob\006proto3"
+  "roto\032\037google/protobuf/timestamp.proto\"\331\001"
+  "\n\022DeviceCapabilities\022]\n\023routing_capabilt"
+  "ies\030\001 \001(\0132@.opi_api.network.cloud.v1alph"
+  "a1.DeviceCapabilitiesDynamicRouting\022d\n\033n"
+  "etwork_policy_capabilities\030\002 \001(\0132\?.opi_a"
+  "pi.network.cloud.v1alpha1.DeviceCapabili"
+  "tiesNetworkPolicy\"8\n DeviceCapabilitiesD"
+  "ynamicRouting\022\024\n\014underlay_bgp\030\001 \001(\010\"8\n\037D"
+  "eviceCapabilitiesNetworkPolicy\022\025\n\rcompac"
+  "t_rules\030\001 \001(\010\"\200\001\n\006Device\0228\n\004spec\030\001 \001(\0132*"
+  ".opi_api.network.cloud.v1alpha1.DeviceSp"
+  "ec\022<\n\006status\030\002 \001(\0132,.opi_api.network.clo"
+  "ud.v1alpha1.DeviceStatus\"\352\003\n\nDeviceSpec\022"
+  "(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe"
+  "y\022F\n\014ipv4_address\030\002 \001(\01320.opi_api.networ"
+  "k.opinetcommon.v1alpha1.IPAddress\022F\n\014ipv"
+  "6_address\030\003 \001(\01320.opi_api.network.opinet"
+  "common.v1alpha1.IPAddress\022\020\n\010mac_addr\030\004 "
+  "\001(\014\022D\n\ngateway_ip\030\005 \001(\01320.opi_api.networ"
+  "k.opinetcommon.v1alpha1.IPAddress\022I\n\016pci"
+  "e_functions\030\006 \001(\01321.opi_api.network.clou"
+  "d.v1alpha1.PCIeFunctionsSpec\022\037\n\027overlay_"
+  "routing_enabled\030\007 \001(\010\022\022\n\nsystemname\030\010 \001("
+  "\t\022J\n\021mgmt_network_spec\030\t \001(\0132/.opi_api.n"
+  "etwork.cloud.v1alpha1.MgmtNetworkSpec\"7\n"
+  "\021PCIeFunctionsSpec\022\020\n\010pf_count\030\005 \001(\005\022\020\n\010"
+  "vf_count\030\006 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n\014ll"
+  "dp_mgmt_ip\030\001 \001(\01320.opi_api.network.opine"
+  "tcommon.v1alpha1.IPAddress\022A\n\007mgmt_ip\030\002 "
+  "\001(\01320.opi_api.network.opinetcommon.v1alp"
+  "ha1.IPAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngateway_i"
+  "p\030\004 \001(\01320.opi_api.network.opinetcommon.v"
+  "1alpha1.IPAddress\022\023\n\013gateway_mac\030\005 \001(\014\"\322"
+  "\002\n\014DeviceStatus\022\023\n\013description\030\001 \001(\t\022\032\n\022"
+  "system_mac_address\030\002 \001(\014\022\021\n\tvendor_id\030\003 "
+  "\001(\t\022\021\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030\005 \001"
+  "(\t\022\027\n\017pcie_port_count\030\006 \001(\005\022\022\n\nport_coun"
+  "t\030\007 \001(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pipeli"
+  "ne\030\t \001(\t\022D\n\017critical_events\030\n \003(\0132+.opi_"
+  "api.network.cloud.v1alpha1.SystemEvent\022;"
+  "\n\006alerts\030\013 \003(\0132+.opi_api.network.cloud.v"
+  "1alpha1.SystemAlert\"X\n\013SystemEvent\022.\n\nev"
+  "ent_time\030\001 \001(\0132\032.google.protobuf.Timesta"
+  "mp\022\031\n\021event_description\030\002 \001(\t\"X\n\013SystemA"
+  "lert\022.\n\nalert_time\030\001 \001(\0132\032.google.protob"
+  "uf.Timestamp\022\031\n\021alert_description\030\002 \001(\tB"
+  "l\n\036opi_api.network.cloud.v1alpha1B\013Devic"
+  "eProtoP\001Z;github.com/opiproject/opi-api/"
+  "network/cloud/v1alpha1/gen/gob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_2eproto_deps[7] = {
-  &::descriptor_table_google_2fapi_2fannotations_2eproto,
-  &::descriptor_table_google_2fapi_2fclient_2eproto,
-  &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
-  &::descriptor_table_google_2fapi_2fresource_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
   &::descriptor_table_networktypes_2eproto,
   &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_device_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_2eproto = {
-  false, false, 2508, descriptor_table_protodef_device_2eproto, "device.proto", 
-  &descriptor_table_device_2eproto_once, descriptor_table_device_2eproto_deps, 7, 11,
+  false, false, 2037, descriptor_table_protodef_device_2eproto, "device.proto", 
+  &descriptor_table_device_2eproto_once, descriptor_table_device_2eproto_deps, 3, 10,
   schemas, file_default_instances, TableStruct_device_2eproto::offsets,
   file_level_metadata_device_2eproto, file_level_enum_descriptors_device_2eproto, file_level_service_descriptors_device_2eproto,
 };
@@ -3492,301 +3451,6 @@ void SystemAlert::InternalSwap(SystemAlert* other) {
       file_level_metadata_device_2eproto[9]);
 }
 
-// ===================================================================
-
-class CreateDeviceRequest::_Internal {
- public:
-  static const ::opi_api::network::cloud::v1alpha1::Device& device(const CreateDeviceRequest* msg);
-};
-
-const ::opi_api::network::cloud::v1alpha1::Device&
-CreateDeviceRequest::_Internal::device(const CreateDeviceRequest* msg) {
-  return *msg->device_;
-}
-CreateDeviceRequest::CreateDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-}
-CreateDeviceRequest::CreateDeviceRequest(const CreateDeviceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_parent().empty()) {
-    parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_parent(), 
-      GetArenaForAllocation());
-  }
-  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_device_id().empty()) {
-    device_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_id(), 
-      GetArenaForAllocation());
-  }
-  if (from._internal_has_device()) {
-    device_ = new ::opi_api::network::cloud::v1alpha1::Device(*from.device_);
-  } else {
-    device_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-}
-
-inline void CreateDeviceRequest::SharedCtor() {
-parent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-device_ = nullptr;
-}
-
-CreateDeviceRequest::~CreateDeviceRequest() {
-  // @@protoc_insertion_point(destructor:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void CreateDeviceRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  parent_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete device_;
-}
-
-void CreateDeviceRequest::ArenaDtor(void* object) {
-  CreateDeviceRequest* _this = reinterpret_cast< CreateDeviceRequest* >(object);
-  (void)_this;
-}
-void CreateDeviceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void CreateDeviceRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void CreateDeviceRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  parent_.ClearToEmpty();
-  device_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
-    delete device_;
-  }
-  device_ = nullptr;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* CreateDeviceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_parent();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.cloud.v1alpha1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string device_id = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_device_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* CreateDeviceRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_parent().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_parent().data(), static_cast<int>(this->_internal_parent().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_parent(), target);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_has_device()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::device(this), target, stream);
-  }
-
-  // string device_id = 3;
-  if (!this->_internal_device_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_device_id(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  return target;
-}
-
-size_t CreateDeviceRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  if (!this->_internal_parent().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_parent());
-  }
-
-  // string device_id = 3;
-  if (!this->_internal_device_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_device_id());
-  }
-
-  // .opi_api.network.cloud.v1alpha1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_has_device()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *device_);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateDeviceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    CreateDeviceRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateDeviceRequest::GetClassData() const { return &_class_data_; }
-
-void CreateDeviceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<CreateDeviceRequest *>(to)->MergeFrom(
-      static_cast<const CreateDeviceRequest &>(from));
-}
-
-
-void CreateDeviceRequest::MergeFrom(const CreateDeviceRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_parent().empty()) {
-    _internal_set_parent(from._internal_parent());
-  }
-  if (!from._internal_device_id().empty()) {
-    _internal_set_device_id(from._internal_device_id());
-  }
-  if (from._internal_has_device()) {
-    _internal_mutable_device()->::opi_api::network::cloud::v1alpha1::Device::MergeFrom(from._internal_device());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void CreateDeviceRequest::CopyFrom(const CreateDeviceRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CreateDeviceRequest::IsInitialized() const {
-  return true;
-}
-
-void CreateDeviceRequest::InternalSwap(CreateDeviceRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &parent_, lhs_arena,
-      &other->parent_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &device_id_, lhs_arena,
-      &other->device_id_, rhs_arena
-  );
-  swap(device_, other->device_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata CreateDeviceRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_device_2eproto_getter, &descriptor_table_device_2eproto_once,
-      file_level_metadata_device_2eproto[10]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace cloud
@@ -3822,9 +3486,6 @@ template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::SystemEvent* A
 }
 template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::SystemAlert* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::SystemAlert >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::SystemAlert >(arena);
-}
-template<> PROTOBUF_NOINLINE ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* Arena::CreateMaybeMessage< ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

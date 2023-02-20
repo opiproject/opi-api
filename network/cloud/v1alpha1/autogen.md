@@ -37,8 +37,130 @@
     - [BgpNlriIsActive](#opi_api-network-cloud-v1alpha1-BgpNlriIsActive)
     - [NLRISrc](#opi_api-network-cloud-v1alpha1-NLRISrc)
   
-- [device.proto](#device-proto)
+- [cloudrpc.proto](#cloudrpc-proto)
+    - [CreateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerAfRequest)
+    - [CreateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerRequest)
+    - [CreateBgpRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRequest)
     - [CreateDeviceRequest](#opi_api-network-cloud-v1alpha1-CreateDeviceRequest)
+    - [CreateInterfaceRequest](#opi_api-network-cloud-v1alpha1-CreateInterfaceRequest)
+    - [CreateMappingRequest](#opi_api-network-cloud-v1alpha1-CreateMappingRequest)
+    - [CreateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopGroupRequest)
+    - [CreateNextHopRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopRequest)
+    - [CreateRouteRequest](#opi_api-network-cloud-v1alpha1-CreateRouteRequest)
+    - [CreateRouteTableRequest](#opi_api-network-cloud-v1alpha1-CreateRouteTableRequest)
+    - [CreateSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityPolicyRequest)
+    - [CreateSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityProfileRequest)
+    - [CreateSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityRuleRequest)
+    - [CreateSubnetRequest](#opi_api-network-cloud-v1alpha1-CreateSubnetRequest)
+    - [CreateTunnelRequest](#opi_api-network-cloud-v1alpha1-CreateTunnelRequest)
+    - [CreateUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-CreateUnderlayRouteRequest)
+    - [CreateVPCPeerRequest](#opi_api-network-cloud-v1alpha1-CreateVPCPeerRequest)
+    - [CreateVnicRequest](#opi_api-network-cloud-v1alpha1-CreateVnicRequest)
+    - [CreateVpcRequest](#opi_api-network-cloud-v1alpha1-CreateVpcRequest)
+    - [DeleteBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerAfRequest)
+    - [DeleteBGPPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerRequest)
+    - [DeleteBgpRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRequest)
+    - [DeleteDeviceRequest](#opi_api-network-cloud-v1alpha1-DeleteDeviceRequest)
+    - [DeleteInterfaceRequest](#opi_api-network-cloud-v1alpha1-DeleteInterfaceRequest)
+    - [DeleteMappingRequest](#opi_api-network-cloud-v1alpha1-DeleteMappingRequest)
+    - [DeleteNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopGroupRequest)
+    - [DeleteNextHopRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopRequest)
+    - [DeleteRouteRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteRequest)
+    - [DeleteRouteTableRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteTableRequest)
+    - [DeleteSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityPolicyRequest)
+    - [DeleteSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityProfileRequest)
+    - [DeleteSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityRuleRequest)
+    - [DeleteSubnetRequest](#opi_api-network-cloud-v1alpha1-DeleteSubnetRequest)
+    - [DeleteTunnelRequest](#opi_api-network-cloud-v1alpha1-DeleteTunnelRequest)
+    - [DeleteUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-DeleteUnderlayRouteRequest)
+    - [DeleteVPCPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteVPCPeerRequest)
+    - [DeleteVnicRequest](#opi_api-network-cloud-v1alpha1-DeleteVnicRequest)
+    - [DeleteVpcRequest](#opi_api-network-cloud-v1alpha1-DeleteVpcRequest)
+    - [GetBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerAfRequest)
+    - [GetBGPPeerRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerRequest)
+    - [GetBgpRequest](#opi_api-network-cloud-v1alpha1-GetBgpRequest)
+    - [GetDeviceCapabilitiesRequest](#opi_api-network-cloud-v1alpha1-GetDeviceCapabilitiesRequest)
+    - [GetDeviceRequest](#opi_api-network-cloud-v1alpha1-GetDeviceRequest)
+    - [GetInterfaceRequest](#opi_api-network-cloud-v1alpha1-GetInterfaceRequest)
+    - [GetMappingRequest](#opi_api-network-cloud-v1alpha1-GetMappingRequest)
+    - [GetNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-GetNextHopGroupRequest)
+    - [GetNextHopRequest](#opi_api-network-cloud-v1alpha1-GetNextHopRequest)
+    - [GetPortRequest](#opi_api-network-cloud-v1alpha1-GetPortRequest)
+    - [GetRouteRequest](#opi_api-network-cloud-v1alpha1-GetRouteRequest)
+    - [GetRouteTableRequest](#opi_api-network-cloud-v1alpha1-GetRouteTableRequest)
+    - [GetSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-GetSecurityPolicyRequest)
+    - [GetSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-GetSecurityProfileRequest)
+    - [GetSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-GetSecurityRuleRequest)
+    - [GetSubnetRequest](#opi_api-network-cloud-v1alpha1-GetSubnetRequest)
+    - [GetTunnelRequest](#opi_api-network-cloud-v1alpha1-GetTunnelRequest)
+    - [GetUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-GetUnderlayRouteRequest)
+    - [GetVPCPeerRequest](#opi_api-network-cloud-v1alpha1-GetVPCPeerRequest)
+    - [GetVnicRequest](#opi_api-network-cloud-v1alpha1-GetVnicRequest)
+    - [GetVpcRequest](#opi_api-network-cloud-v1alpha1-GetVpcRequest)
+    - [ListBGPPeerAfsRequest](#opi_api-network-cloud-v1alpha1-ListBGPPeerAfsRequest)
+    - [ListBGPPeerAfsResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeerAfsResponse)
+    - [ListBGPPeersRequest](#opi_api-network-cloud-v1alpha1-ListBGPPeersRequest)
+    - [ListBGPPeersResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeersResponse)
+    - [ListBgpsRequest](#opi_api-network-cloud-v1alpha1-ListBgpsRequest)
+    - [ListBgpsResponse](#opi_api-network-cloud-v1alpha1-ListBgpsResponse)
+    - [ListDevicesRequest](#opi_api-network-cloud-v1alpha1-ListDevicesRequest)
+    - [ListDevicesResponse](#opi_api-network-cloud-v1alpha1-ListDevicesResponse)
+    - [ListInterfacesRequest](#opi_api-network-cloud-v1alpha1-ListInterfacesRequest)
+    - [ListInterfacesResponse](#opi_api-network-cloud-v1alpha1-ListInterfacesResponse)
+    - [ListMappingsRequest](#opi_api-network-cloud-v1alpha1-ListMappingsRequest)
+    - [ListMappingsResponse](#opi_api-network-cloud-v1alpha1-ListMappingsResponse)
+    - [ListNextHopGroupsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsRequest)
+    - [ListNextHopGroupsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsResponse)
+    - [ListNextHopsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopsRequest)
+    - [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse)
+    - [ListPortsRequest](#opi_api-network-cloud-v1alpha1-ListPortsRequest)
+    - [ListPortsResponse](#opi_api-network-cloud-v1alpha1-ListPortsResponse)
+    - [ListRouteTablesRequest](#opi_api-network-cloud-v1alpha1-ListRouteTablesRequest)
+    - [ListRouteTablesResponse](#opi_api-network-cloud-v1alpha1-ListRouteTablesResponse)
+    - [ListRoutesRequest](#opi_api-network-cloud-v1alpha1-ListRoutesRequest)
+    - [ListRoutesResponse](#opi_api-network-cloud-v1alpha1-ListRoutesResponse)
+    - [ListSecurityPolicysRequest](#opi_api-network-cloud-v1alpha1-ListSecurityPolicysRequest)
+    - [ListSecurityPolicysResponse](#opi_api-network-cloud-v1alpha1-ListSecurityPolicysResponse)
+    - [ListSecurityProfilesRequest](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesRequest)
+    - [ListSecurityProfilesResponse](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesResponse)
+    - [ListSecurityRulesRequest](#opi_api-network-cloud-v1alpha1-ListSecurityRulesRequest)
+    - [ListSecurityRulesResponse](#opi_api-network-cloud-v1alpha1-ListSecurityRulesResponse)
+    - [ListSubnetsRequest](#opi_api-network-cloud-v1alpha1-ListSubnetsRequest)
+    - [ListSubnetsResponse](#opi_api-network-cloud-v1alpha1-ListSubnetsResponse)
+    - [ListTunnelsRequest](#opi_api-network-cloud-v1alpha1-ListTunnelsRequest)
+    - [ListTunnelsResponse](#opi_api-network-cloud-v1alpha1-ListTunnelsResponse)
+    - [ListUnderlayRoutesRequest](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesRequest)
+    - [ListUnderlayRoutesResponse](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesResponse)
+    - [ListVPCPeersRequest](#opi_api-network-cloud-v1alpha1-ListVPCPeersRequest)
+    - [ListVPCPeersResponse](#opi_api-network-cloud-v1alpha1-ListVPCPeersResponse)
+    - [ListVnicsRequest](#opi_api-network-cloud-v1alpha1-ListVnicsRequest)
+    - [ListVnicsResponse](#opi_api-network-cloud-v1alpha1-ListVnicsResponse)
+    - [ListVpcsRequest](#opi_api-network-cloud-v1alpha1-ListVpcsRequest)
+    - [ListVpcsResponse](#opi_api-network-cloud-v1alpha1-ListVpcsResponse)
+    - [UpdateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerAfRequest)
+    - [UpdateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerRequest)
+    - [UpdateBgpRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRequest)
+    - [UpdateDeviceRequest](#opi_api-network-cloud-v1alpha1-UpdateDeviceRequest)
+    - [UpdateInterfaceRequest](#opi_api-network-cloud-v1alpha1-UpdateInterfaceRequest)
+    - [UpdateMappingRequest](#opi_api-network-cloud-v1alpha1-UpdateMappingRequest)
+    - [UpdateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopGroupRequest)
+    - [UpdateNextHopRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopRequest)
+    - [UpdatePortRequest](#opi_api-network-cloud-v1alpha1-UpdatePortRequest)
+    - [UpdateRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteRequest)
+    - [UpdateRouteTableRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteTableRequest)
+    - [UpdateSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityPolicyRequest)
+    - [UpdateSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityProfileRequest)
+    - [UpdateSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityRuleRequest)
+    - [UpdateSubnetRequest](#opi_api-network-cloud-v1alpha1-UpdateSubnetRequest)
+    - [UpdateTunnelRequest](#opi_api-network-cloud-v1alpha1-UpdateTunnelRequest)
+    - [UpdateUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateUnderlayRouteRequest)
+    - [UpdateVPCPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateVPCPeerRequest)
+    - [UpdateVnicRequest](#opi_api-network-cloud-v1alpha1-UpdateVnicRequest)
+    - [UpdateVpcRequest](#opi_api-network-cloud-v1alpha1-UpdateVpcRequest)
+  
+    - [CloudInfraService](#opi_api-network-cloud-v1alpha1-CloudInfraService)
+  
+- [device.proto](#device-proto)
     - [Device](#opi_api-network-cloud-v1alpha1-Device)
     - [DeviceCapabilities](#opi_api-network-cloud-v1alpha1-DeviceCapabilities)
     - [DeviceCapabilitiesDynamicRouting](#opi_api-network-cloud-v1alpha1-DeviceCapabilitiesDynamicRouting)
@@ -49,8 +171,6 @@
     - [PCIeFunctionsSpec](#opi_api-network-cloud-v1alpha1-PCIeFunctionsSpec)
     - [SystemAlert](#opi_api-network-cloud-v1alpha1-SystemAlert)
     - [SystemEvent](#opi_api-network-cloud-v1alpha1-SystemEvent)
-  
-    - [CloudInfraService](#opi_api-network-cloud-v1alpha1-CloudInfraService)
   
 - [interface.proto](#interface-proto)
     - [BGPCommunity](#opi_api-network-cloud-v1alpha1-BGPCommunity)
@@ -856,17 +976,68 @@ NLRI source
 
 
 
-<a name="device-proto"></a>
+<a name="cloudrpc-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## device.proto
+## cloudrpc.proto
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateBGPPeerAfRequest"></a>
+
+### CreateBGPPeerAfRequest
+Create BGPPeerAf Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| bgppeeraf | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) |  | bgppeeraf |
+| bgppeeraf_id | [string](#string) |  | bgppeeraf_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateBGPPeerRequest"></a>
+
+### CreateBGPPeerRequest
+Create BGPPeer Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| bgppeer | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  | bgppeer |
+| bgppeer_id | [string](#string) |  | bgppeer_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateBgpRequest"></a>
+
+### CreateBgpRequest
+Create Bgp Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  | bgp |
+| bgp_id | [string](#string) |  | bgp_id |
+
+
+
 
 
 
 <a name="opi_api-network-cloud-v1alpha1-CreateDeviceRequest"></a>
 
 ### CreateDeviceRequest
-Device Create Request
+Create Device Request
 
 
 | Field | Type | Label | Description |
@@ -877,6 +1048,1960 @@ Device Create Request
 
 
 
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateInterfaceRequest"></a>
+
+### CreateInterfaceRequest
+Create Interface Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| interface | [Interface](#opi_api-network-cloud-v1alpha1-Interface) |  | interface |
+| interface_id | [string](#string) |  | interface_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateMappingRequest"></a>
+
+### CreateMappingRequest
+Create Mapping Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| mapping | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) |  | mapping |
+| mapping_id | [string](#string) |  | mapping_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateNextHopGroupRequest"></a>
+
+### CreateNextHopGroupRequest
+Create NextHopGroup Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| nexthopgroup | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) |  | nexthopgroup |
+| nexthopgroup_id | [string](#string) |  | nexthopgroup_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateNextHopRequest"></a>
+
+### CreateNextHopRequest
+Create NextHop Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| nexthop | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  | nexthop |
+| nexthop_id | [string](#string) |  | nexthop_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateRouteRequest"></a>
+
+### CreateRouteRequest
+Create Route Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| route | [Route](#opi_api-network-cloud-v1alpha1-Route) |  | route |
+| route_id | [string](#string) |  | route_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateRouteTableRequest"></a>
+
+### CreateRouteTableRequest
+Create RouteTable Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| routetable | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) |  | routetable |
+| routetable_id | [string](#string) |  | routetable_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateSecurityPolicyRequest"></a>
+
+### CreateSecurityPolicyRequest
+Create SecurityPolicy Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| securitypolicy | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) |  | securitypolicy |
+| securitypolicy_id | [string](#string) |  | securitypolicy_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateSecurityProfileRequest"></a>
+
+### CreateSecurityProfileRequest
+Create SecurityProfile Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| securityprofile | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  | securityprofile |
+| securityprofile_id | [string](#string) |  | securityprofile_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateSecurityRuleRequest"></a>
+
+### CreateSecurityRuleRequest
+Create SecurityRule Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| securityrule | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) |  | securityrule |
+| securityrule_id | [string](#string) |  | securityrule_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateSubnetRequest"></a>
+
+### CreateSubnetRequest
+Create Subnet Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| subnet | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  | subnet |
+| subnet_id | [string](#string) |  | subnet_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateTunnelRequest"></a>
+
+### CreateTunnelRequest
+Create Tunnel Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| tunnel | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) |  | tunnel |
+| tunnel_id | [string](#string) |  | tunnel_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateUnderlayRouteRequest"></a>
+
+### CreateUnderlayRouteRequest
+Create UnderlayRoute Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| underlayroute | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  | underlayroute |
+| underlayroute_id | [string](#string) |  | underlayroute_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateVPCPeerRequest"></a>
+
+### CreateVPCPeerRequest
+Create VPCPeer Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| vpcpeer | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) |  | vpcpeer |
+| vpcpeer_id | [string](#string) |  | vpcpeer_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateVnicRequest"></a>
+
+### CreateVnicRequest
+Create Vnic Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| vnic | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) |  | vnic |
+| vnic_id | [string](#string) |  | vnic_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-CreateVpcRequest"></a>
+
+### CreateVpcRequest
+Create Vpc Request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| vpc | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) |  | vpc |
+| vpc_id | [string](#string) |  | vpc_id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteBGPPeerAfRequest"></a>
+
+### DeleteBGPPeerAfRequest
+Delete bgppeeraf request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | bgppeeraf id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteBGPPeerRequest"></a>
+
+### DeleteBGPPeerRequest
+Delete bgppeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | bgppeer id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteBgpRequest"></a>
+
+### DeleteBgpRequest
+Delete bgp request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | bgp id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteDeviceRequest"></a>
+
+### DeleteDeviceRequest
+Delete device request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | device id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteInterfaceRequest"></a>
+
+### DeleteInterfaceRequest
+Delete interface request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | interface id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteMappingRequest"></a>
+
+### DeleteMappingRequest
+Delete mapping request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | mapping id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteNextHopGroupRequest"></a>
+
+### DeleteNextHopGroupRequest
+Delete nexthopgroup request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | nexthopgroup id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteNextHopRequest"></a>
+
+### DeleteNextHopRequest
+Delete nexthop request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | nexthop id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteRouteRequest"></a>
+
+### DeleteRouteRequest
+Delete route request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | route id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteRouteTableRequest"></a>
+
+### DeleteRouteTableRequest
+Delete routetable request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | routetable id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteSecurityPolicyRequest"></a>
+
+### DeleteSecurityPolicyRequest
+Delete securitypolicy request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | securitypolicy id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteSecurityProfileRequest"></a>
+
+### DeleteSecurityProfileRequest
+Delete securityprofile request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | securityprofile id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteSecurityRuleRequest"></a>
+
+### DeleteSecurityRuleRequest
+Delete securityrule request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | securityrule id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteSubnetRequest"></a>
+
+### DeleteSubnetRequest
+Delete subnet request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | subnet id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteTunnelRequest"></a>
+
+### DeleteTunnelRequest
+Delete Tunnel request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | tunnel id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteUnderlayRouteRequest"></a>
+
+### DeleteUnderlayRouteRequest
+Delete underlayroute request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | underlayroute id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteVPCPeerRequest"></a>
+
+### DeleteVPCPeerRequest
+Delete vpcpeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | vpcpeer id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteVnicRequest"></a>
+
+### DeleteVnicRequest
+Delete vnic request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | vnic id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-DeleteVpcRequest"></a>
+
+### DeleteVpcRequest
+Delete vpc request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | vpc id |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetBGPPeerAfRequest"></a>
+
+### GetBGPPeerAfRequest
+Get bgppeeraf request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetBGPPeerRequest"></a>
+
+### GetBGPPeerRequest
+Get bgppeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetBgpRequest"></a>
+
+### GetBgpRequest
+Get bgp request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetDeviceCapabilitiesRequest"></a>
+
+### GetDeviceCapabilitiesRequest
+Get DeviceCapabilities Request
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetDeviceRequest"></a>
+
+### GetDeviceRequest
+Get device request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetInterfaceRequest"></a>
+
+### GetInterfaceRequest
+Get interface request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetMappingRequest"></a>
+
+### GetMappingRequest
+Get mapping request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetNextHopGroupRequest"></a>
+
+### GetNextHopGroupRequest
+Get nexthopgroup request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetNextHopRequest"></a>
+
+### GetNextHopRequest
+Get nexthop request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetPortRequest"></a>
+
+### GetPortRequest
+Get port request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetRouteRequest"></a>
+
+### GetRouteRequest
+Get route request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetRouteTableRequest"></a>
+
+### GetRouteTableRequest
+Get routetable request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetSecurityPolicyRequest"></a>
+
+### GetSecurityPolicyRequest
+Get securitypolicy request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetSecurityProfileRequest"></a>
+
+### GetSecurityProfileRequest
+Get securityprofile request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetSecurityRuleRequest"></a>
+
+### GetSecurityRuleRequest
+Get securityrule request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetSubnetRequest"></a>
+
+### GetSubnetRequest
+Get subnet request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetTunnelRequest"></a>
+
+### GetTunnelRequest
+Get Tunnel request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetUnderlayRouteRequest"></a>
+
+### GetUnderlayRouteRequest
+Get underlayroute request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetVPCPeerRequest"></a>
+
+### GetVPCPeerRequest
+Get vpcpeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetVnicRequest"></a>
+
+### GetVnicRequest
+Get vnic request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-GetVpcRequest"></a>
+
+### GetVpcRequest
+Get vpc request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBGPPeerAfsRequest"></a>
+
+### ListBGPPeerAfsRequest
+List bgppeeraf request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBGPPeerAfsResponse"></a>
+
+### ListBGPPeerAfsResponse
+List bgppeeraf response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgppeeraf | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) | repeated | list of bgppeerafs |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBGPPeersRequest"></a>
+
+### ListBGPPeersRequest
+List bgppeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBGPPeersResponse"></a>
+
+### ListBGPPeersResponse
+List bgppeer response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgppeer | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) | repeated | list of bgppeers |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBgpsRequest"></a>
+
+### ListBgpsRequest
+List bgp request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListBgpsResponse"></a>
+
+### ListBgpsResponse
+List bgp response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) | repeated | list of bgps |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListDevicesRequest"></a>
+
+### ListDevicesRequest
+List device request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListDevicesResponse"></a>
+
+### ListDevicesResponse
+List device response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [Device](#opi_api-network-cloud-v1alpha1-Device) | repeated | list of devices |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListInterfacesRequest"></a>
+
+### ListInterfacesRequest
+List interface request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListInterfacesResponse"></a>
+
+### ListInterfacesResponse
+List interface response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-cloud-v1alpha1-Interface) | repeated | list of interfaces |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListMappingsRequest"></a>
+
+### ListMappingsRequest
+List mapping request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListMappingsResponse"></a>
+
+### ListMappingsResponse
+List mapping response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| mapping | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) | repeated | list of mappings |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListNextHopGroupsRequest"></a>
+
+### ListNextHopGroupsRequest
+List nexthopgroup request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListNextHopGroupsResponse"></a>
+
+### ListNextHopGroupsResponse
+List nexthopgroup response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nexthopgroup | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) | repeated | list of nexthopgroups |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListNextHopsRequest"></a>
+
+### ListNextHopsRequest
+List nexthop request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListNextHopsResponse"></a>
+
+### ListNextHopsResponse
+List nexthop response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nexthop | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) | repeated | list of nexthops |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListPortsRequest"></a>
+
+### ListPortsRequest
+List port request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListPortsResponse"></a>
+
+### ListPortsResponse
+List port response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| port | [Port](#opi_api-network-cloud-v1alpha1-Port) | repeated | list of ports |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListRouteTablesRequest"></a>
+
+### ListRouteTablesRequest
+List routetable request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListRouteTablesResponse"></a>
+
+### ListRouteTablesResponse
+List routetable response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| routetable | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) | repeated | list of routetables |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListRoutesRequest"></a>
+
+### ListRoutesRequest
+List route request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListRoutesResponse"></a>
+
+### ListRoutesResponse
+List route response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| route | [Route](#opi_api-network-cloud-v1alpha1-Route) | repeated | list of routes |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityPolicysRequest"></a>
+
+### ListSecurityPolicysRequest
+List securitypolicy request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityPolicysResponse"></a>
+
+### ListSecurityPolicysResponse
+List securitypolicy response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securitypolicy | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) | repeated | list of securitypolicys |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityProfilesRequest"></a>
+
+### ListSecurityProfilesRequest
+List securityprofile request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityProfilesResponse"></a>
+
+### ListSecurityProfilesResponse
+List securityprofile response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securityprofile | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) | repeated | list of securityprofiles |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityRulesRequest"></a>
+
+### ListSecurityRulesRequest
+List securityrule request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSecurityRulesResponse"></a>
+
+### ListSecurityRulesResponse
+List securityrule response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securityrule | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) | repeated | list of securityrules |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSubnetsRequest"></a>
+
+### ListSubnetsRequest
+List subnet request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListSubnetsResponse"></a>
+
+### ListSubnetsResponse
+List subnet response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subnet | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) | repeated | list of subnets |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListTunnelsRequest"></a>
+
+### ListTunnelsRequest
+List Tunnel request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListTunnelsResponse"></a>
+
+### ListTunnelsResponse
+List Tunnel response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tunnel | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) | repeated | list of tunnels |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListUnderlayRoutesRequest"></a>
+
+### ListUnderlayRoutesRequest
+List underlayroute request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListUnderlayRoutesResponse"></a>
+
+### ListUnderlayRoutesResponse
+List underlayroute response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| underlayroute | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) | repeated | list of underlayroutes |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVPCPeersRequest"></a>
+
+### ListVPCPeersRequest
+List vpcpeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVPCPeersResponse"></a>
+
+### ListVPCPeersResponse
+List vpcpeer response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vpcpeer | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) | repeated | list of vpcpeers |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVnicsRequest"></a>
+
+### ListVnicsRequest
+List vnic request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVnicsResponse"></a>
+
+### ListVnicsResponse
+List vnic response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vnic | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) | repeated | list of vnics |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVpcsRequest"></a>
+
+### ListVpcsRequest
+List vpc request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  | parent |
+| page_size | [int32](#int32) |  | pagination: page-size |
+| page_token | [string](#string) |  | pagination: start token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-ListVpcsResponse"></a>
+
+### ListVpcsResponse
+List vpc response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vpc | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) | repeated | list of vpcs |
+| next_page_token | [string](#string) |  | next page token |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateBGPPeerAfRequest"></a>
+
+### UpdateBGPPeerAfRequest
+Update bgppeeraf request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgppeeraf | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) |  | updated bgppeeraf info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateBGPPeerRequest"></a>
+
+### UpdateBGPPeerRequest
+Update bgppeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgppeer | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  | updated bgppeer info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateBgpRequest"></a>
+
+### UpdateBgpRequest
+Update bgp request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bgp | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  | updated bgp info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateDeviceRequest"></a>
+
+### UpdateDeviceRequest
+Update device request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| device | [Device](#opi_api-network-cloud-v1alpha1-Device) |  | updated device info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateInterfaceRequest"></a>
+
+### UpdateInterfaceRequest
+Update interface request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| interface | [Interface](#opi_api-network-cloud-v1alpha1-Interface) |  | updated interface info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateMappingRequest"></a>
+
+### UpdateMappingRequest
+Update mapping request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| mapping | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) |  | updated mapping info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateNextHopGroupRequest"></a>
+
+### UpdateNextHopGroupRequest
+Update nexthopgroup request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nexthopgroup | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) |  | updated nexthopgroup info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateNextHopRequest"></a>
+
+### UpdateNextHopRequest
+Update nexthop request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nexthop | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  | updated nexthop info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdatePortRequest"></a>
+
+### UpdatePortRequest
+Update port request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| port | [Port](#opi_api-network-cloud-v1alpha1-Port) |  | updated port info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateRouteRequest"></a>
+
+### UpdateRouteRequest
+Update route request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| route | [Route](#opi_api-network-cloud-v1alpha1-Route) |  | updated route info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateRouteTableRequest"></a>
+
+### UpdateRouteTableRequest
+Update routetable request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| routetable | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) |  | updated routetable info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateSecurityPolicyRequest"></a>
+
+### UpdateSecurityPolicyRequest
+Update securitypolicy request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securitypolicy | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) |  | updated securitypolicy info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateSecurityProfileRequest"></a>
+
+### UpdateSecurityProfileRequest
+Update securityprofile request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securityprofile | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  | updated securityprofile info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateSecurityRuleRequest"></a>
+
+### UpdateSecurityRuleRequest
+Update securityrule request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| securityrule | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) |  | updated securityrule info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateSubnetRequest"></a>
+
+### UpdateSubnetRequest
+Update subnet request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subnet | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  | updated subnet info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateTunnelRequest"></a>
+
+### UpdateTunnelRequest
+Update Tunnel request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tunnel | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) |  | updated tunnel info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateUnderlayRouteRequest"></a>
+
+### UpdateUnderlayRouteRequest
+Update underlayroute request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| underlayroute | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  | updated underlayroute info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateVPCPeerRequest"></a>
+
+### UpdateVPCPeerRequest
+Update vpcpeer request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vpcpeer | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) |  | updated vpcpeer info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateVnicRequest"></a>
+
+### UpdateVnicRequest
+Update vnic request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vnic | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) |  | updated vnic info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+
+<a name="opi_api-network-cloud-v1alpha1-UpdateVpcRequest"></a>
+
+### UpdateVpcRequest
+Update vpc request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vpc | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) |  | updated vpc info |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | list of fields to update. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-network-cloud-v1alpha1-CloudInfraService"></a>
+
+### CloudInfraService
+Cloud Infra APIs - to manage a multi-node cloud infrastructure on a xPU
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| GetDeviceCapabilities | [GetDeviceCapabilitiesRequest](#opi_api-network-cloud-v1alpha1-GetDeviceCapabilitiesRequest) | [DeviceCapabilities](#opi_api-network-cloud-v1alpha1-DeviceCapabilities) | device capabilities |
+| CreateDevice | [CreateDeviceRequest](#opi_api-network-cloud-v1alpha1-CreateDeviceRequest) | [Device](#opi_api-network-cloud-v1alpha1-Device) | device apis |
+| DeleteDevice | [DeleteDeviceRequest](#opi_api-network-cloud-v1alpha1-DeleteDeviceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateDevice | [UpdateDeviceRequest](#opi_api-network-cloud-v1alpha1-UpdateDeviceRequest) | [Device](#opi_api-network-cloud-v1alpha1-Device) |  |
+| ListDevices | [ListDevicesRequest](#opi_api-network-cloud-v1alpha1-ListDevicesRequest) | [ListDevicesResponse](#opi_api-network-cloud-v1alpha1-ListDevicesResponse) |  |
+| GetDevice | [GetDeviceRequest](#opi_api-network-cloud-v1alpha1-GetDeviceRequest) | [Device](#opi_api-network-cloud-v1alpha1-Device) |  |
+| UpdatePort | [UpdatePortRequest](#opi_api-network-cloud-v1alpha1-UpdatePortRequest) | [Port](#opi_api-network-cloud-v1alpha1-Port) | port apis |
+| ListPorts | [ListPortsRequest](#opi_api-network-cloud-v1alpha1-ListPortsRequest) | [ListPortsResponse](#opi_api-network-cloud-v1alpha1-ListPortsResponse) |  |
+| GetPort | [GetPortRequest](#opi_api-network-cloud-v1alpha1-GetPortRequest) | [Port](#opi_api-network-cloud-v1alpha1-Port) |  |
+| CreateVnic | [CreateVnicRequest](#opi_api-network-cloud-v1alpha1-CreateVnicRequest) | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) | vnic apis |
+| DeleteVnic | [DeleteVnicRequest](#opi_api-network-cloud-v1alpha1-DeleteVnicRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateVnic | [UpdateVnicRequest](#opi_api-network-cloud-v1alpha1-UpdateVnicRequest) | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) |  |
+| ListVnics | [ListVnicsRequest](#opi_api-network-cloud-v1alpha1-ListVnicsRequest) | [ListVnicsResponse](#opi_api-network-cloud-v1alpha1-ListVnicsResponse) |  |
+| GetVnic | [GetVnicRequest](#opi_api-network-cloud-v1alpha1-GetVnicRequest) | [Vnic](#opi_api-network-cloud-v1alpha1-Vnic) |  |
+| CreateInterface | [CreateInterfaceRequest](#opi_api-network-cloud-v1alpha1-CreateInterfaceRequest) | [Interface](#opi_api-network-cloud-v1alpha1-Interface) | interface apis |
+| DeleteInterface | [DeleteInterfaceRequest](#opi_api-network-cloud-v1alpha1-DeleteInterfaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateInterface | [UpdateInterfaceRequest](#opi_api-network-cloud-v1alpha1-UpdateInterfaceRequest) | [Interface](#opi_api-network-cloud-v1alpha1-Interface) |  |
+| ListInterfaces | [ListInterfacesRequest](#opi_api-network-cloud-v1alpha1-ListInterfacesRequest) | [ListInterfacesResponse](#opi_api-network-cloud-v1alpha1-ListInterfacesResponse) |  |
+| GetInterface | [GetInterfaceRequest](#opi_api-network-cloud-v1alpha1-GetInterfaceRequest) | [Interface](#opi_api-network-cloud-v1alpha1-Interface) |  |
+| CreateRouteTable | [CreateRouteTableRequest](#opi_api-network-cloud-v1alpha1-CreateRouteTableRequest) | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) | routetable apis |
+| DeleteRouteTable | [DeleteRouteTableRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteTableRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateRouteTable | [UpdateRouteTableRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteTableRequest) | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) |  |
+| ListRouteTables | [ListRouteTablesRequest](#opi_api-network-cloud-v1alpha1-ListRouteTablesRequest) | [ListRouteTablesResponse](#opi_api-network-cloud-v1alpha1-ListRouteTablesResponse) |  |
+| GetRouteTable | [GetRouteTableRequest](#opi_api-network-cloud-v1alpha1-GetRouteTableRequest) | [RouteTable](#opi_api-network-cloud-v1alpha1-RouteTable) |  |
+| CreateRoute | [CreateRouteRequest](#opi_api-network-cloud-v1alpha1-CreateRouteRequest) | [Route](#opi_api-network-cloud-v1alpha1-Route) | route apis |
+| DeleteRoute | [DeleteRouteRequest](#opi_api-network-cloud-v1alpha1-DeleteRouteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateRoute | [UpdateRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateRouteRequest) | [Route](#opi_api-network-cloud-v1alpha1-Route) |  |
+| ListRoutes | [ListRoutesRequest](#opi_api-network-cloud-v1alpha1-ListRoutesRequest) | [ListRoutesResponse](#opi_api-network-cloud-v1alpha1-ListRoutesResponse) |  |
+| GetRoute | [GetRouteRequest](#opi_api-network-cloud-v1alpha1-GetRouteRequest) | [Route](#opi_api-network-cloud-v1alpha1-Route) |  |
+| CreateUnderlayRoute | [CreateUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-CreateUnderlayRouteRequest) | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) | underlayroute apis |
+| DeleteUnderlayRoute | [DeleteUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-DeleteUnderlayRouteRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateUnderlayRoute | [UpdateUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-UpdateUnderlayRouteRequest) | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  |
+| ListUnderlayRoutes | [ListUnderlayRoutesRequest](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesRequest) | [ListUnderlayRoutesResponse](#opi_api-network-cloud-v1alpha1-ListUnderlayRoutesResponse) |  |
+| GetUnderlayRoute | [GetUnderlayRouteRequest](#opi_api-network-cloud-v1alpha1-GetUnderlayRouteRequest) | [UnderlayRoute](#opi_api-network-cloud-v1alpha1-UnderlayRoute) |  |
+| CreateBgp | [CreateBgpRequest](#opi_api-network-cloud-v1alpha1-CreateBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) | bgp (optional) apis |
+| DeleteBgp | [DeleteBgpRequest](#opi_api-network-cloud-v1alpha1-DeleteBgpRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateBgp | [UpdateBgpRequest](#opi_api-network-cloud-v1alpha1-UpdateBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  |
+| ListBgps | [ListBgpsRequest](#opi_api-network-cloud-v1alpha1-ListBgpsRequest) | [ListBgpsResponse](#opi_api-network-cloud-v1alpha1-ListBgpsResponse) |  |
+| GetBgp | [GetBgpRequest](#opi_api-network-cloud-v1alpha1-GetBgpRequest) | [Bgp](#opi_api-network-cloud-v1alpha1-Bgp) |  |
+| CreateBGPPeer | [CreateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerRequest) | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) | bgppeer (optional) apis |
+| DeleteBGPPeer | [DeleteBGPPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateBGPPeer | [UpdateBGPPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerRequest) | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  |
+| ListBGPPeers | [ListBGPPeersRequest](#opi_api-network-cloud-v1alpha1-ListBGPPeersRequest) | [ListBGPPeersResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeersResponse) |  |
+| GetBGPPeer | [GetBGPPeerRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerRequest) | [BGPPeer](#opi_api-network-cloud-v1alpha1-BGPPeer) |  |
+| CreateBGPPeerAf | [CreateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-CreateBGPPeerAfRequest) | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) | bgppeeraf (optional) apis |
+| DeleteBGPPeerAf | [DeleteBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-DeleteBGPPeerAfRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateBGPPeerAf | [UpdateBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-UpdateBGPPeerAfRequest) | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) |  |
+| ListBGPPeerAfs | [ListBGPPeerAfsRequest](#opi_api-network-cloud-v1alpha1-ListBGPPeerAfsRequest) | [ListBGPPeerAfsResponse](#opi_api-network-cloud-v1alpha1-ListBGPPeerAfsResponse) |  |
+| GetBGPPeerAf | [GetBGPPeerAfRequest](#opi_api-network-cloud-v1alpha1-GetBGPPeerAfRequest) | [BGPPeerAf](#opi_api-network-cloud-v1alpha1-BGPPeerAf) |  |
+| CreateMapping | [CreateMappingRequest](#opi_api-network-cloud-v1alpha1-CreateMappingRequest) | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) | mapping apis |
+| DeleteMapping | [DeleteMappingRequest](#opi_api-network-cloud-v1alpha1-DeleteMappingRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateMapping | [UpdateMappingRequest](#opi_api-network-cloud-v1alpha1-UpdateMappingRequest) | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) |  |
+| ListMappings | [ListMappingsRequest](#opi_api-network-cloud-v1alpha1-ListMappingsRequest) | [ListMappingsResponse](#opi_api-network-cloud-v1alpha1-ListMappingsResponse) |  |
+| GetMapping | [GetMappingRequest](#opi_api-network-cloud-v1alpha1-GetMappingRequest) | [Mapping](#opi_api-network-cloud-v1alpha1-Mapping) |  |
+| CreateNextHop | [CreateNextHopRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) | nexthop apis |
+| DeleteNextHop | [DeleteNextHopRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNextHop | [UpdateNextHopRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  |
+| ListNextHop | [ListNextHopsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopsRequest) | [ListNextHopsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopsResponse) |  |
+| GetNextHop | [GetNextHopRequest](#opi_api-network-cloud-v1alpha1-GetNextHopRequest) | [NextHop](#opi_api-network-cloud-v1alpha1-NextHop) |  |
+| CreateNextHopGroup | [CreateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-CreateNextHopGroupRequest) | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) | nexthopgroup apis |
+| DeleteNextHopGroup | [DeleteNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-DeleteNextHopGroupRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNextHopGroup | [UpdateNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-UpdateNextHopGroupRequest) | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) |  |
+| ListNextHopGroups | [ListNextHopGroupsRequest](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsRequest) | [ListNextHopGroupsResponse](#opi_api-network-cloud-v1alpha1-ListNextHopGroupsResponse) |  |
+| GetNextHopGroup | [GetNextHopGroupRequest](#opi_api-network-cloud-v1alpha1-GetNextHopGroupRequest) | [NextHopGroup](#opi_api-network-cloud-v1alpha1-NextHopGroup) |  |
+| CreateSubnet | [CreateSubnetRequest](#opi_api-network-cloud-v1alpha1-CreateSubnetRequest) | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) | subnet apis |
+| DeleteSubnet | [DeleteSubnetRequest](#opi_api-network-cloud-v1alpha1-DeleteSubnetRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateSubnet | [UpdateSubnetRequest](#opi_api-network-cloud-v1alpha1-UpdateSubnetRequest) | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  |
+| ListSubnets | [ListSubnetsRequest](#opi_api-network-cloud-v1alpha1-ListSubnetsRequest) | [ListSubnetsResponse](#opi_api-network-cloud-v1alpha1-ListSubnetsResponse) |  |
+| GetSubnet | [GetSubnetRequest](#opi_api-network-cloud-v1alpha1-GetSubnetRequest) | [Subnet](#opi_api-network-cloud-v1alpha1-Subnet) |  |
+| CreateTunnel | [CreateTunnelRequest](#opi_api-network-cloud-v1alpha1-CreateTunnelRequest) | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) | tunnel apis |
+| DeleteTunnel | [DeleteTunnelRequest](#opi_api-network-cloud-v1alpha1-DeleteTunnelRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateTunnel | [UpdateTunnelRequest](#opi_api-network-cloud-v1alpha1-UpdateTunnelRequest) | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) |  |
+| ListTunnels | [ListTunnelsRequest](#opi_api-network-cloud-v1alpha1-ListTunnelsRequest) | [ListTunnelsResponse](#opi_api-network-cloud-v1alpha1-ListTunnelsResponse) |  |
+| GetTunnel | [GetTunnelRequest](#opi_api-network-cloud-v1alpha1-GetTunnelRequest) | [Tunnel](#opi_api-network-cloud-v1alpha1-Tunnel) |  |
+| CreateVpc | [CreateVpcRequest](#opi_api-network-cloud-v1alpha1-CreateVpcRequest) | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) | vpc apis |
+| DeleteVpc | [DeleteVpcRequest](#opi_api-network-cloud-v1alpha1-DeleteVpcRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateVpc | [UpdateVpcRequest](#opi_api-network-cloud-v1alpha1-UpdateVpcRequest) | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) |  |
+| ListVpcs | [ListVpcsRequest](#opi_api-network-cloud-v1alpha1-ListVpcsRequest) | [ListVpcsResponse](#opi_api-network-cloud-v1alpha1-ListVpcsResponse) |  |
+| GetVpc | [GetVpcRequest](#opi_api-network-cloud-v1alpha1-GetVpcRequest) | [Vpc](#opi_api-network-cloud-v1alpha1-Vpc) |  |
+| CreateVPCPeer | [CreateVPCPeerRequest](#opi_api-network-cloud-v1alpha1-CreateVPCPeerRequest) | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) | vpcpeer apis |
+| DeleteVPCPeer | [DeleteVPCPeerRequest](#opi_api-network-cloud-v1alpha1-DeleteVPCPeerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateVPCPeer | [UpdateVPCPeerRequest](#opi_api-network-cloud-v1alpha1-UpdateVPCPeerRequest) | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) |  |
+| ListVPCPeers | [ListVPCPeersRequest](#opi_api-network-cloud-v1alpha1-ListVPCPeersRequest) | [ListVPCPeersResponse](#opi_api-network-cloud-v1alpha1-ListVPCPeersResponse) |  |
+| GetVPCPeer | [GetVPCPeerRequest](#opi_api-network-cloud-v1alpha1-GetVPCPeerRequest) | [VPCPeer](#opi_api-network-cloud-v1alpha1-VPCPeer) |  |
+| CreateSecurityPolicy | [CreateSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityPolicyRequest) | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) | securitypolicy apis |
+| DeleteSecurityPolicy | [DeleteSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityPolicyRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateSecurityPolicy | [UpdateSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityPolicyRequest) | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) |  |
+| ListSecurityPolicys | [ListSecurityPolicysRequest](#opi_api-network-cloud-v1alpha1-ListSecurityPolicysRequest) | [ListSecurityPolicysResponse](#opi_api-network-cloud-v1alpha1-ListSecurityPolicysResponse) |  |
+| GetSecurityPolicy | [GetSecurityPolicyRequest](#opi_api-network-cloud-v1alpha1-GetSecurityPolicyRequest) | [SecurityPolicy](#opi_api-network-cloud-v1alpha1-SecurityPolicy) |  |
+| CreateSecurityRule | [CreateSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityRuleRequest) | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) | securityrule apis |
+| DeleteSecurityRule | [DeleteSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityRuleRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateSecurityRule | [UpdateSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityRuleRequest) | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) |  |
+| ListSecurityRules | [ListSecurityRulesRequest](#opi_api-network-cloud-v1alpha1-ListSecurityRulesRequest) | [ListSecurityRulesResponse](#opi_api-network-cloud-v1alpha1-ListSecurityRulesResponse) |  |
+| GetSecurityRule | [GetSecurityRuleRequest](#opi_api-network-cloud-v1alpha1-GetSecurityRuleRequest) | [SecurityRule](#opi_api-network-cloud-v1alpha1-SecurityRule) |  |
+| CreateSecurityProfile | [CreateSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-CreateSecurityProfileRequest) | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) | securityprofile apis |
+| DeleteSecurityProfile | [DeleteSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-DeleteSecurityProfileRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateSecurityProfile | [UpdateSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-UpdateSecurityProfileRequest) | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  |
+| ListSecurityProfiles | [ListSecurityProfilesRequest](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesRequest) | [ListSecurityProfilesResponse](#opi_api-network-cloud-v1alpha1-ListSecurityProfilesResponse) |  |
+| GetSecurityProfile | [GetSecurityProfileRequest](#opi_api-network-cloud-v1alpha1-GetSecurityProfileRequest) | [SecurityProfile](#opi_api-network-cloud-v1alpha1-SecurityProfile) |  |
+
+ 
+
+
+
+<a name="device-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## device.proto
 
 
 
@@ -1063,121 +3188,6 @@ system events happened during device operations
  
 
  
-
-
-<a name="opi_api-network-cloud-v1alpha1-CloudInfraService"></a>
-
-### CloudInfraService
-Cloud Infra Service configure/operate objects to manage cloud infrastructure
-TB added:
- Port APIs
- rpc PortGet (PortGetRequest) returns (PortGetResponse) {}
- rpc PortUpdate (PortUpdateRequest) returns (PortUpdateResponse) {}
- rpc PortStatsReset (types.Id) returns (types.Empty) {}
-
- Interface APIs
- rpc InterfaceCreate (InterfaceRequest) returns (InterfaceResponse) {}
- rpc InterfaceUpdate (InterfaceRequest) returns (InterfaceResponse) {}
- rpc InterfaceDelete (InterfaceDeleteRequest) returns (InterfaceDeleteResponse) {}
- rpc InterfaceGet (InterfaceGetRequest) returns (InterfaceGetResponse) {}
-
- Route APIs
- rpc RouteTableCreate (RouteTableRequest) returns (RouteTableResponse) {}
- rpc RouteTableUpdate (RouteTableRequest) returns (RouteTableResponse) {}
- rpc RouteTableGet (RouteTableGetRequest) returns (RouteTableGetResponse) {}
- rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
- rpc RouteTableDelete (RouteTableDeleteRequest) returns (RouteTableDeleteResponse) {}
-
- rpc RouteCreate (RouteRequest) returns (RouteResponse) {}
- rpc RouteUpdate (RouteRequest) returns (RouteResponse) {}
- rpc RouteGet (RouteGetRequest) returns (RouteGetResponse) {}
- rpc RouteDelete (RouteDeleteRequest) returns (RouteDeleteResponse) {}
- rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
-
- rpc VnicCreate (VnicRequest) returns (VnicResponse) {}
- rpc VnicUpdate (VnicRequest) returns (VnicResponse) {}
- rpc VnicGet (VnicGetRequest) returns (VnicGetResponse) {}
- rpc VnicDelete (VnicDeleteRequest) returns (VnicDeleteResponse) {}
-
- rpc CPRouteCreate (CPRouteRequest) returns (CPRouteResponse) {}
- rpc CPRouteUpdate(CPRouteRequest) returns (CPRouteResponse) {}
- rpc CPRouteDelete (CPRouteDeleteRequest) returns (CPRouteDeleteResponse) {}
- rpc CPRouteGet (CPRouteGetRequest) returns (CPRouteGetResponse) {}
- rpc CPRouteLookup (CPRouteGetRequest) returns (CPRouteGetResponse) {}
- rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
-
- rpc BGPCreate (BGPRequest) returns (BGPResponse) {}
- rpc BGPUpdate (BGPRequest) returns (BGPResponse) {}
- rpc BGPDelete (BGPDeleteRequest) returns (BGPDeleteResponse) {}
- rpc BGPGet (BGPGetRequest) returns (BGPGetResponse) {}
- rpc BGPPeerCreate (BGPPeerRequest) returns (BGPPeerResponse) {}
- rpc BGPPeerUpdate (BGPPeerRequest) returns (BGPPeerResponse) {}
- rpc BGPPeerDelete (BGPPeerDeleteRequest) returns (BGPPeerDeleteResponse) {}
- rpc BGPPeerGet (BGPPeerGetRequest) returns (BGPPeerGetResponse) {}
- rpc BGPPeerAfCreate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
- rpc BGPPeerAfUpdate (BGPPeerAfRequest) returns (BGPPeerAfResponse) {}
- rpc BGPPeerAfDelete (BGPPeerAfDeleteRequest) returns (BGPPeerAfDeleteResponse) {}
- rpc BGPPeerAfGet (BGPPeerAfGetRequest) returns (BGPPeerAfGetResponse) {}
- rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
- rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
- rpc BGPPrfxCntrsGet (BGPPrfxCntrsGetRequest) returns (BGPPrfxCntrsGetResponse) {}
- rpc BGPAdjRibOutGet (BGPAdjRibOutGetRequest) returns (BGPAdjRibOutGetResponse) {}
-
- rpc MappingCreate (MappingRequest) returns (MappingResponse) {}
- rpc MappingUpdate (MappingRequest) returns (MappingResponse) {}
- rpc MappingGet (MappingGetRequest) returns (MappingGetResponse) {}
- rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
- rpc MappingDelete (MappingDeleteRequest) returns (MappingDeleteResponse) {}
-
- rpc NexthopCreate (NexthopRequest) returns (NexthopResponse) {}
- rpc NexthopUpdate (NexthopRequest) returns (NexthopResponse) {}
- rpc NexthopGet (NexthopGetRequest) returns (NexthopGetResponse) {}
- rpc NexthopDelete (NexthopDeleteRequest) returns (NexthopDeleteResponse) {}
- rpc NhGroupCreate (NhGroupRequest) returns (NhGroupResponse) {}
- rpc NhGroupUpdate (NhGroupRequest) returns (NhGroupResponse) {}
- rpc NhGroupGet (NhGroupGetRequest) returns (NhGroupGetResponse) {}
- rpc NhGroupDelete (NhGroupDeleteRequest) returns (NhGroupDeleteResponse) {}
-
- rpc SubnetCreate (SubnetRequest) returns (SubnetResponse) {}
- rpc SubnetUpdate (SubnetRequest) returns (SubnetResponse) {}
- rpc SubnetGet (SubnetGetRequest) returns (SubnetGetResponse) {}
- rpc SubnetDelete (SubnetDeleteRequest) returns (SubnetDeleteResponse) {}
-
- rpc TunnelCreate (TunnelRequest) returns (TunnelResponse) {}
- rpc TunnelUpdate (TunnelRequest) returns (TunnelResponse) {}
- rpc TunnelGet (TunnelGetRequest) returns (TunnelGetResponse) {}
- rpc TunnelDelete (TunnelDeleteRequest) returns (TunnelDeleteResponse) {}
-
- rpc VPCCreate (VPCRequest) returns (VPCResponse) {}
- rpc VPCUpdate (VPCRequest) returns (VPCResponse) {}
- rpc VPCGet (VPCGetRequest) returns (VPCGetResponse) {}
- rpc VPCDelete (VPCDeleteRequest) returns (VPCDeleteResponse) {}
- rpc VPCPeerCreate (VPCPeerRequest) returns (VPCPeerResponse) {}
- rpc VPCPeerUpdate (VPCPeerRequest) returns (VPCPeerResponse) {}
- rpc VPCPeerGet (VPCPeerGetRequest) returns (VPCPeerGetResponse) {}
- rpc VPCPeerDelete (VPCPeerDeleteRequest) returns (VPCPeerDeleteResponse) {}
-
- rpc SecurityPolicyCreate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
- rpc SecurityPolicyUpdate (SecurityPolicyRequest) returns (SecurityPolicyResponse) {}
- rpc SecurityPolicyGet (SecurityPolicyGetRequest) returns (SecurityPolicyGetResponse) {}
- rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
- rpc SecurityPolicyDelete (SecurityPolicyDeleteRequest) returns (SecurityPolicyDeleteResponse) {}
-
- rpc SecurityRuleCreate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
- rpc SecurityRuleUpdate (SecurityRuleRequest) returns (SecurityRuleResponse) {}
- rpc SecurityRuleGet (SecurityRuleGetRequest) returns (SecurityRuleGetResponse) {}
- rpc SecurityRuleDelete (SecurityRuleDeleteRequest) returns (SecurityRuleDeleteResponse) {}
-
- rpc SecurityProfileCreate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
- rpc SecurityProfileUpdate (SecurityProfileRequest) returns (SecurityProfileResponse) {}
- rpc SecurityProfileGet (SecurityProfileGetRequest) returns (SecurityProfileGetResponse) {}
- rpc SecurityProfileDelete (SecurityProfileDeleteRequest) returns (SecurityProfileDeleteResponse) {}
-
- rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| CreateDevice | [CreateDeviceRequest](#opi_api-network-cloud-v1alpha1-CreateDeviceRequest) | [Device](#opi_api-network-cloud-v1alpha1-Device) | device create request |
 
  
 

@@ -33,10 +33,6 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "object_key.pb.h"
 #include "networktypes.pb.h"
-#include "google/api/client.pb.h"
-#include "google/api/resource.pb.h"
-#include "google/api/annotations.pb.h"
-#include "google/api/field_behavior.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -53,7 +49,7 @@ struct TableStruct_device_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,9 +60,6 @@ namespace opi_api {
 namespace network {
 namespace cloud {
 namespace v1alpha1 {
-class CreateDeviceRequest;
-struct CreateDeviceRequestDefaultTypeInternal;
-extern CreateDeviceRequestDefaultTypeInternal _CreateDeviceRequest_default_instance_;
 class Device;
 struct DeviceDefaultTypeInternal;
 extern DeviceDefaultTypeInternal _Device_default_instance_;
@@ -102,7 +95,6 @@ extern SystemEventDefaultTypeInternal _SystemEvent_default_instance_;
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
-template<> ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* Arena::CreateMaybeMessage<::opi_api::network::cloud::v1alpha1::CreateDeviceRequest>(Arena*);
 template<> ::opi_api::network::cloud::v1alpha1::Device* Arena::CreateMaybeMessage<::opi_api::network::cloud::v1alpha1::Device>(Arena*);
 template<> ::opi_api::network::cloud::v1alpha1::DeviceCapabilities* Arena::CreateMaybeMessage<::opi_api::network::cloud::v1alpha1::DeviceCapabilities>(Arena*);
 template<> ::opi_api::network::cloud::v1alpha1::DeviceCapabilitiesDynamicRouting* Arena::CreateMaybeMessage<::opi_api::network::cloud::v1alpha1::DeviceCapabilitiesDynamicRouting>(Arena*);
@@ -2081,193 +2073,6 @@ class SystemAlert final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr alert_description_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* alert_time_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_device_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CreateDeviceRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.cloud.v1alpha1.CreateDeviceRequest) */ {
- public:
-  inline CreateDeviceRequest() : CreateDeviceRequest(nullptr) {}
-  ~CreateDeviceRequest() override;
-  explicit constexpr CreateDeviceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CreateDeviceRequest(const CreateDeviceRequest& from);
-  CreateDeviceRequest(CreateDeviceRequest&& from) noexcept
-    : CreateDeviceRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline CreateDeviceRequest& operator=(const CreateDeviceRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateDeviceRequest& operator=(CreateDeviceRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreateDeviceRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreateDeviceRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateDeviceRequest*>(
-               &_CreateDeviceRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  friend void swap(CreateDeviceRequest& a, CreateDeviceRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CreateDeviceRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateDeviceRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CreateDeviceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CreateDeviceRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CreateDeviceRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const CreateDeviceRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CreateDeviceRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "opi_api.network.cloud.v1alpha1.CreateDeviceRequest";
-  }
-  protected:
-  explicit CreateDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kParentFieldNumber = 1,
-    kDeviceIdFieldNumber = 3,
-    kDeviceFieldNumber = 2,
-  };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
-  // string device_id = 3;
-  void clear_device_id();
-  const std::string& device_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_device_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_device_id();
-  PROTOBUF_NODISCARD std::string* release_device_id();
-  void set_allocated_device_id(std::string* device_id);
-  private:
-  const std::string& _internal_device_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_device_id(const std::string& value);
-  std::string* _internal_mutable_device_id();
-  public:
-
-  // .opi_api.network.cloud.v1alpha1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
-  bool has_device() const;
-  private:
-  bool _internal_has_device() const;
-  public:
-  void clear_device();
-  const ::opi_api::network::cloud::v1alpha1::Device& device() const;
-  PROTOBUF_NODISCARD ::opi_api::network::cloud::v1alpha1::Device* release_device();
-  ::opi_api::network::cloud::v1alpha1::Device* mutable_device();
-  void set_allocated_device(::opi_api::network::cloud::v1alpha1::Device* device);
-  private:
-  const ::opi_api::network::cloud::v1alpha1::Device& _internal_device() const;
-  ::opi_api::network::cloud::v1alpha1::Device* _internal_mutable_device();
-  public:
-  void unsafe_arena_set_allocated_device(
-      ::opi_api::network::cloud::v1alpha1::Device* device);
-  ::opi_api::network::cloud::v1alpha1::Device* unsafe_arena_release_device();
-
-  // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.CreateDeviceRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
-  ::opi_api::network::cloud::v1alpha1::Device* device_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_device_2eproto;
 };
@@ -4453,207 +4258,9 @@ inline void SystemAlert::set_allocated_alert_description(std::string* alert_desc
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SystemAlert.alert_description)
 }
 
-// -------------------------------------------------------------------
-
-// CreateDeviceRequest
-
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void CreateDeviceRequest::clear_parent() {
-  parent_.ClearToEmpty();
-}
-inline const std::string& CreateDeviceRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateDeviceRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent)
-}
-inline std::string* CreateDeviceRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent)
-  return _s;
-}
-inline const std::string& CreateDeviceRequest::_internal_parent() const {
-  return parent_.Get();
-}
-inline void CreateDeviceRequest::_internal_set_parent(const std::string& value) {
-  
-  parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateDeviceRequest::_internal_mutable_parent() {
-  
-  return parent_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateDeviceRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent)
-  return parent_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateDeviceRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  parent_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parent,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (parent_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.parent)
-}
-
-// .opi_api.network.cloud.v1alpha1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];
-inline bool CreateDeviceRequest::_internal_has_device() const {
-  return this != internal_default_instance() && device_ != nullptr;
-}
-inline bool CreateDeviceRequest::has_device() const {
-  return _internal_has_device();
-}
-inline void CreateDeviceRequest::clear_device() {
-  if (GetArenaForAllocation() == nullptr && device_ != nullptr) {
-    delete device_;
-  }
-  device_ = nullptr;
-}
-inline const ::opi_api::network::cloud::v1alpha1::Device& CreateDeviceRequest::_internal_device() const {
-  const ::opi_api::network::cloud::v1alpha1::Device* p = device_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::cloud::v1alpha1::Device&>(
-      ::opi_api::network::cloud::v1alpha1::_Device_default_instance_);
-}
-inline const ::opi_api::network::cloud::v1alpha1::Device& CreateDeviceRequest::device() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device)
-  return _internal_device();
-}
-inline void CreateDeviceRequest::unsafe_arena_set_allocated_device(
-    ::opi_api::network::cloud::v1alpha1::Device* device) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device_);
-  }
-  device_ = device;
-  if (device) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device)
-}
-inline ::opi_api::network::cloud::v1alpha1::Device* CreateDeviceRequest::release_device() {
-  
-  ::opi_api::network::cloud::v1alpha1::Device* temp = device_;
-  device_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::network::cloud::v1alpha1::Device* CreateDeviceRequest::unsafe_arena_release_device() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device)
-  
-  ::opi_api::network::cloud::v1alpha1::Device* temp = device_;
-  device_ = nullptr;
-  return temp;
-}
-inline ::opi_api::network::cloud::v1alpha1::Device* CreateDeviceRequest::_internal_mutable_device() {
-  
-  if (device_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::network::cloud::v1alpha1::Device>(GetArenaForAllocation());
-    device_ = p;
-  }
-  return device_;
-}
-inline ::opi_api::network::cloud::v1alpha1::Device* CreateDeviceRequest::mutable_device() {
-  ::opi_api::network::cloud::v1alpha1::Device* _msg = _internal_mutable_device();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device)
-  return _msg;
-}
-inline void CreateDeviceRequest::set_allocated_device(::opi_api::network::cloud::v1alpha1::Device* device) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete device_;
-  }
-  if (device) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::cloud::v1alpha1::Device>::GetOwningArena(device);
-    if (message_arena != submessage_arena) {
-      device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, device, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  device_ = device;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device)
-}
-
-// string device_id = 3;
-inline void CreateDeviceRequest::clear_device_id() {
-  device_id_.ClearToEmpty();
-}
-inline const std::string& CreateDeviceRequest::device_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id)
-  return _internal_device_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateDeviceRequest::set_device_id(ArgT0&& arg0, ArgT... args) {
- 
- device_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id)
-}
-inline std::string* CreateDeviceRequest::mutable_device_id() {
-  std::string* _s = _internal_mutable_device_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id)
-  return _s;
-}
-inline const std::string& CreateDeviceRequest::_internal_device_id() const {
-  return device_id_.Get();
-}
-inline void CreateDeviceRequest::_internal_set_device_id(const std::string& value) {
-  
-  device_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateDeviceRequest::_internal_mutable_device_id() {
-  
-  return device_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateDeviceRequest::release_device_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id)
-  return device_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateDeviceRequest::set_allocated_device_id(std::string* device_id) {
-  if (device_id != nullptr) {
-    
-  } else {
-    
-  }
-  device_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_id,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (device_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.CreateDeviceRequest.device_id)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

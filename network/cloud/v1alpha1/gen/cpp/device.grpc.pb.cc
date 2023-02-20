@@ -24,67 +24,6 @@ namespace network {
 namespace cloud {
 namespace v1alpha1 {
 
-static const char* CloudInfraService_method_names[] = {
-  "/opi_api.network.cloud.v1alpha1.CloudInfraService/CreateDevice",
-};
-
-std::unique_ptr< CloudInfraService::Stub> CloudInfraService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
-  (void)options;
-  std::unique_ptr< CloudInfraService::Stub> stub(new CloudInfraService::Stub(channel, options));
-  return stub;
-}
-
-CloudInfraService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_CreateDevice_(CloudInfraService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  {}
-
-::grpc::Status CloudInfraService::Stub::CreateDevice(::grpc::ClientContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest& request, ::opi_api::network::cloud::v1alpha1::Device* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, ::opi_api::network::cloud::v1alpha1::Device, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateDevice_, context, request, response);
-}
-
-void CloudInfraService::Stub::async::CreateDevice(::grpc::ClientContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* request, ::opi_api::network::cloud::v1alpha1::Device* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, ::opi_api::network::cloud::v1alpha1::Device, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateDevice_, context, request, response, std::move(f));
-}
-
-void CloudInfraService::Stub::async::CreateDevice(::grpc::ClientContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* request, ::opi_api::network::cloud::v1alpha1::Device* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateDevice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::opi_api::network::cloud::v1alpha1::Device>* CloudInfraService::Stub::PrepareAsyncCreateDeviceRaw(::grpc::ClientContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::network::cloud::v1alpha1::Device, ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateDevice_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::opi_api::network::cloud::v1alpha1::Device>* CloudInfraService::Stub::AsyncCreateDeviceRaw(::grpc::ClientContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncCreateDeviceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-CloudInfraService::Service::Service() {
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      CloudInfraService_method_names[0],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< CloudInfraService::Service, ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest, ::opi_api::network::cloud::v1alpha1::Device, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](CloudInfraService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* req,
-             ::opi_api::network::cloud::v1alpha1::Device* resp) {
-               return service->CreateDevice(ctx, req, resp);
-             }, this)));
-}
-
-CloudInfraService::Service::~Service() {
-}
-
-::grpc::Status CloudInfraService::Service::CreateDevice(::grpc::ServerContext* context, const ::opi_api::network::cloud::v1alpha1::CreateDeviceRequest* request, ::opi_api::network::cloud::v1alpha1::Device* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-
 }  // namespace opi_api
 }  // namespace network
 }  // namespace cloud
