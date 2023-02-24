@@ -47,3 +47,14 @@ Topics Covered:
 Recording at: <https://zoom.us/rec/share/8Vc_P5iwSUafn1xqX79ta3Lr4xZOVHv3HUTIVbe99M2SaZo7Ry7lNlvcrhaARm5A.Sgv5aGKECfXiPHp6>
 
 ---
+
+## Feb 23
+
+Topics Covered:
+
+- Brief introduction to the Intel and Ericsson K8s networking and EVPN transport use case and demo that was done in the Use-Case meeting.
+  - Recording at: <https://zoom.us/rec/share/uFRNCvUD6fDokjmNjl7iGSeQ2rD8fHiK7J-eLjc0QGH7Q_3cPhuuE10M2o6-Lei-.ILLSlFdVXpxbGiNb>
+- Continue K8s and CNI Discussion
+  - Covered the Intel IPDK K8s Delineations
+
+Recording at: <https://zoom.us/rec/share/6ZitpjEeCsu5WorM9i-KD3fdfa03YEmjIBrmcZTQluUkOvQbiHQ4yZ8t0kfWKaCJ.iGnyVWvrRd0kOBp2>
