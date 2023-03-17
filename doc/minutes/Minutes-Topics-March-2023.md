@@ -36,3 +36,30 @@ Actions:
 - Continue the discussion on this topic next week.
 
 ---
+
+## March 16
+
+Topics:
+
+- Storage Backend Discussion - defered to later meeting
+- Layering Approach Discussion - deferred to later meeting
+- Continue Container Lauch discussion from last week
+- Primary and Secondary K8s Networking Offload
+- SAI Support for Networking Use Case.
+
+Recording at: <https://zoom.us/rec/share/Y-vCfrhWvle6WCNHXxTabZ0DQPd059qn8gb0XzED9-U_qE11hKjphSuelBbwhuvI.T9tINeit3lh1XId9>
+
+Actions:
+
+- Consider the layering where the provisioning has additional granularity around Underlay (Phy, L2, L3 configuration), Overlay (VxLAN), VF allocation.
+- Consider how the Tenant can utilize elements of the provisioning for their traffic needs over the exposed interfaces.
+
+---
+
+Upcoming Topics:
+
+- Storage Backend Discussion
+- Layering Approach
+- Primary and Secondary K8s Networking Offload
+  - Deeper level discussion on Primary Offload
+  - Deeper level discussion on Secondary capabilities
