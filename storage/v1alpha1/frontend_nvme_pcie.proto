@@ -124,6 +124,20 @@ service FrontendNvmeService {
         option (google.api.method_signature) = "name";
     }
     rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
+
+    rpc AttachControllerNVMeNamespace (ControllerNVMeNamespaceRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/v1/{subsystem=subsystemId/*/controller=nvmeControllerId/*}:attachControllerNvMeNamespace"
+            body: "*"
+        };
+    }
+
+    rpc DetachControllerNVMeNamespace (ControllerNVMeNamespaceRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/v1/{subsystem=subsystemId/*/controller=nvmeControllerId/*}:detachControllerNvMeNamespace"
+            body: "*"
+        };
+    }
 }
 
 message NVMeSubsystem {
@@ -398,6 +412,13 @@ message NVMeNamespaceStatsResponse {
     VolumeStats stats = 2;
 }
 
+message ControllerNVMeNamespaceRequest {
+    string subsystem = 1 [
+        (google.api.field_behavior) = REQUIRED
+    ];
+    common.v1.ObjectKey controller = 2 [(google.api.field_behavior) = REQUIRED];
+    common.v1.ObjectKey nv_me_namespace_id = 3 [(google.api.field_behavior) = REQUIRED];
+}
 // Namespace  Administrative States
 enum NVMeNamespacePciState {
     // unspecified

@@ -50,6 +50,7 @@
     - [NVMfRemoteControllerService](#opi_api-storage-v1-NVMfRemoteControllerService)
   
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
+    - [ControllerNVMeNamespaceRequest](#opi_api-storage-v1-ControllerNVMeNamespaceRequest)
     - [CreateNVMeControllerRequest](#opi_api-storage-v1-CreateNVMeControllerRequest)
     - [CreateNVMeNamespaceRequest](#opi_api-storage-v1-CreateNVMeNamespaceRequest)
     - [CreateNVMeSubsystemRequest](#opi_api-storage-v1-CreateNVMeSubsystemRequest)
@@ -813,6 +814,23 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
+<a name="opi_api-storage-v1-ControllerNVMeNamespaceRequest"></a>
+
+### ControllerNVMeNamespaceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subsystem | [string](#string) |  |  |
+| controller | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| nv_me_namespace_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
 <a name="opi_api-storage-v1-CreateNVMeControllerRequest"></a>
 
 ### CreateNVMeControllerRequest
@@ -1409,6 +1427,8 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | ListNVMeNamespaces | [ListNVMeNamespacesRequest](#opi_api-storage-v1-ListNVMeNamespacesRequest) | [ListNVMeNamespacesResponse](#opi_api-storage-v1-ListNVMeNamespacesResponse) |  |
 | GetNVMeNamespace | [GetNVMeNamespaceRequest](#opi_api-storage-v1-GetNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
 | NVMeNamespaceStats | [NVMeNamespaceStatsRequest](#opi_api-storage-v1-NVMeNamespaceStatsRequest) | [NVMeNamespaceStatsResponse](#opi_api-storage-v1-NVMeNamespaceStatsResponse) |  |
+| AttachControllerNVMeNamespace | [ControllerNVMeNamespaceRequest](#opi_api-storage-v1-ControllerNVMeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| DetachControllerNVMeNamespace | [ControllerNVMeNamespaceRequest](#opi_api-storage-v1-ControllerNVMeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 
  
 

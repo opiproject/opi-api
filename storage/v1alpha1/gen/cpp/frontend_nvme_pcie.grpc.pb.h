@@ -169,6 +169,20 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
     }
+    virtual ::grpc::Status AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncAttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncAttachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncAttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncAttachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDetachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncDetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncDetachControllerNVMeNamespaceRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -208,6 +222,10 @@ class FrontendNvmeService final {
       virtual void GetNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNVMeNamespaceRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -249,6 +267,10 @@ class FrontendNvmeService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncGetNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncAttachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncAttachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncDetachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncDetachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -379,6 +401,20 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>> PrepareAsyncNVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>>(PrepareAsyncNVMeNamespaceStatsRaw(context, request, cq));
     }
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncAttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncAttachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncAttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncAttachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncDetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncDetachControllerNVMeNamespaceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncDetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncDetachControllerNVMeNamespaceRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -418,6 +454,10 @@ class FrontendNvmeService final {
       void GetNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNVMeNamespaceRequest* request, ::opi_api::storage::v1::NVMeNamespace* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, std::function<void(::grpc::Status)>) override;
       void NVMeNamespaceStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void AttachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      void DetachControllerNVMeNamespace(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -465,6 +505,10 @@ class FrontendNvmeService final {
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespace>* PrepareAsyncGetNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::GetNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* AsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::opi_api::storage::v1::NVMeNamespaceStatsResponse>* PrepareAsyncNVMeNamespaceStatsRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncAttachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncAttachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncDetachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncDetachControllerNVMeNamespaceRaw(::grpc::ClientContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateNVMeSubsystem_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteNVMeSubsystem_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateNVMeSubsystem_;
@@ -483,6 +527,8 @@ class FrontendNvmeService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListNVMeNamespaces_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNVMeNamespace_;
     const ::grpc::internal::RpcMethod rpcmethod_NVMeNamespaceStats_;
+    const ::grpc::internal::RpcMethod rpcmethod_AttachControllerNVMeNamespace_;
+    const ::grpc::internal::RpcMethod rpcmethod_DetachControllerNVMeNamespace_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -508,6 +554,8 @@ class FrontendNvmeService final {
     virtual ::grpc::Status ListNVMeNamespaces(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNVMeNamespacesRequest* request, ::opi_api::storage::v1::ListNVMeNamespacesResponse* response);
     virtual ::grpc::Status GetNVMeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNVMeNamespaceRequest* request, ::opi_api::storage::v1::NVMeNamespace* response);
     virtual ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* request, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* response);
+    virtual ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateNVMeSubsystem : public BaseClass {
@@ -869,7 +917,47 @@ class FrontendNvmeService final {
       ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateNVMeSubsystem<WithAsyncMethod_DeleteNVMeSubsystem<WithAsyncMethod_UpdateNVMeSubsystem<WithAsyncMethod_ListNVMeSubsystems<WithAsyncMethod_GetNVMeSubsystem<WithAsyncMethod_NVMeSubsystemStats<WithAsyncMethod_CreateNVMeController<WithAsyncMethod_DeleteNVMeController<WithAsyncMethod_UpdateNVMeController<WithAsyncMethod_ListNVMeControllers<WithAsyncMethod_GetNVMeController<WithAsyncMethod_NVMeControllerStats<WithAsyncMethod_CreateNVMeNamespace<WithAsyncMethod_DeleteNVMeNamespace<WithAsyncMethod_UpdateNVMeNamespace<WithAsyncMethod_ListNVMeNamespaces<WithAsyncMethod_GetNVMeNamespace<WithAsyncMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodAsync(18);
+    }
+    ~WithAsyncMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachControllerNVMeNamespace(::grpc::ServerContext* context, ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodAsync(19);
+    }
+    ~WithAsyncMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDetachControllerNVMeNamespace(::grpc::ServerContext* context, ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateNVMeSubsystem<WithAsyncMethod_DeleteNVMeSubsystem<WithAsyncMethod_UpdateNVMeSubsystem<WithAsyncMethod_ListNVMeSubsystems<WithAsyncMethod_GetNVMeSubsystem<WithAsyncMethod_NVMeSubsystemStats<WithAsyncMethod_CreateNVMeController<WithAsyncMethod_DeleteNVMeController<WithAsyncMethod_UpdateNVMeController<WithAsyncMethod_ListNVMeControllers<WithAsyncMethod_GetNVMeController<WithAsyncMethod_NVMeControllerStats<WithAsyncMethod_CreateNVMeNamespace<WithAsyncMethod_DeleteNVMeNamespace<WithAsyncMethod_UpdateNVMeNamespace<WithAsyncMethod_ListNVMeNamespaces<WithAsyncMethod_GetNVMeNamespace<WithAsyncMethod_NVMeNamespaceStats<WithAsyncMethod_AttachControllerNVMeNamespace<WithAsyncMethod_DetachControllerNVMeNamespace<Service > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateNVMeSubsystem : public BaseClass {
    private:
@@ -1356,7 +1444,61 @@ class FrontendNvmeService final {
     virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
       ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateNVMeSubsystem<WithCallbackMethod_DeleteNVMeSubsystem<WithCallbackMethod_UpdateNVMeSubsystem<WithCallbackMethod_ListNVMeSubsystems<WithCallbackMethod_GetNVMeSubsystem<WithCallbackMethod_NVMeSubsystemStats<WithCallbackMethod_CreateNVMeController<WithCallbackMethod_DeleteNVMeController<WithCallbackMethod_UpdateNVMeController<WithCallbackMethod_ListNVMeControllers<WithCallbackMethod_GetNVMeController<WithCallbackMethod_NVMeControllerStats<WithCallbackMethod_CreateNVMeNamespace<WithCallbackMethod_DeleteNVMeNamespace<WithCallbackMethod_UpdateNVMeNamespace<WithCallbackMethod_ListNVMeNamespaces<WithCallbackMethod_GetNVMeNamespace<WithCallbackMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodCallback(18,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response) { return this->AttachControllerNVMeNamespace(context, request, response); }));}
+    void SetMessageAllocatorFor_AttachControllerNVMeNamespace(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AttachControllerNVMeNamespace(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodCallback(19,
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* request, ::google::protobuf::Empty* response) { return this->DetachControllerNVMeNamespace(context, request, response); }));}
+    void SetMessageAllocatorFor_DetachControllerNVMeNamespace(
+        ::grpc::MessageAllocator< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DetachControllerNVMeNamespace(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_CreateNVMeSubsystem<WithCallbackMethod_DeleteNVMeSubsystem<WithCallbackMethod_UpdateNVMeSubsystem<WithCallbackMethod_ListNVMeSubsystems<WithCallbackMethod_GetNVMeSubsystem<WithCallbackMethod_NVMeSubsystemStats<WithCallbackMethod_CreateNVMeController<WithCallbackMethod_DeleteNVMeController<WithCallbackMethod_UpdateNVMeController<WithCallbackMethod_ListNVMeControllers<WithCallbackMethod_GetNVMeController<WithCallbackMethod_NVMeControllerStats<WithCallbackMethod_CreateNVMeNamespace<WithCallbackMethod_DeleteNVMeNamespace<WithCallbackMethod_UpdateNVMeNamespace<WithCallbackMethod_ListNVMeNamespaces<WithCallbackMethod_GetNVMeNamespace<WithCallbackMethod_NVMeNamespaceStats<WithCallbackMethod_AttachControllerNVMeNamespace<WithCallbackMethod_DetachControllerNVMeNamespace<Service > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateNVMeSubsystem : public BaseClass {
@@ -1660,6 +1802,40 @@ class FrontendNvmeService final {
     }
     // disable synchronous version of this method
     ::grpc::Status NVMeNamespaceStats(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::NVMeNamespaceStatsRequest* /*request*/, ::opi_api::storage::v1::NVMeNamespaceStatsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodGeneric(18);
+    }
+    ~WithGenericMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodGeneric(19);
+    }
+    ~WithGenericMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2022,6 +2198,46 @@ class FrontendNvmeService final {
     }
     void RequestNVMeNamespaceStats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodRaw(18);
+    }
+    ~WithRawMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachControllerNVMeNamespace(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodRaw(19);
+    }
+    ~WithRawMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDetachControllerNVMeNamespace(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2418,6 +2634,50 @@ class FrontendNvmeService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* NVMeNamespaceStats(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodRawCallback(18,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AttachControllerNVMeNamespace(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AttachControllerNVMeNamespace(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodRawCallback(19,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DetachControllerNVMeNamespace(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DetachControllerNVMeNamespace(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -2906,9 +3166,63 @@ class FrontendNvmeService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedNVMeNamespaceStats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::NVMeNamespaceStatsRequest,::opi_api::storage::v1::NVMeNamespaceStatsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateNVMeSubsystem<WithStreamedUnaryMethod_DeleteNVMeSubsystem<WithStreamedUnaryMethod_UpdateNVMeSubsystem<WithStreamedUnaryMethod_ListNVMeSubsystems<WithStreamedUnaryMethod_GetNVMeSubsystem<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_CreateNVMeController<WithStreamedUnaryMethod_DeleteNVMeController<WithStreamedUnaryMethod_UpdateNVMeController<WithStreamedUnaryMethod_ListNVMeControllers<WithStreamedUnaryMethod_GetNVMeController<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_CreateNVMeNamespace<WithStreamedUnaryMethod_DeleteNVMeNamespace<WithStreamedUnaryMethod_UpdateNVMeNamespace<WithStreamedUnaryMethod_ListNVMeNamespaces<WithStreamedUnaryMethod_GetNVMeNamespace<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AttachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AttachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodStreamed(18,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>* streamer) {
+                       return this->StreamedAttachControllerNVMeNamespace(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AttachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AttachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAttachControllerNVMeNamespace(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DetachControllerNVMeNamespace : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DetachControllerNVMeNamespace() {
+      ::grpc::Service::MarkMethodStreamed(19,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::opi_api::storage::v1::ControllerNVMeNamespaceRequest, ::google::protobuf::Empty>* streamer) {
+                       return this->StreamedDetachControllerNVMeNamespace(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DetachControllerNVMeNamespace() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DetachControllerNVMeNamespace(::grpc::ServerContext* /*context*/, const ::opi_api::storage::v1::ControllerNVMeNamespaceRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDetachControllerNVMeNamespace(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::storage::v1::ControllerNVMeNamespaceRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateNVMeSubsystem<WithStreamedUnaryMethod_DeleteNVMeSubsystem<WithStreamedUnaryMethod_UpdateNVMeSubsystem<WithStreamedUnaryMethod_ListNVMeSubsystems<WithStreamedUnaryMethod_GetNVMeSubsystem<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_CreateNVMeController<WithStreamedUnaryMethod_DeleteNVMeController<WithStreamedUnaryMethod_UpdateNVMeController<WithStreamedUnaryMethod_ListNVMeControllers<WithStreamedUnaryMethod_GetNVMeController<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_CreateNVMeNamespace<WithStreamedUnaryMethod_DeleteNVMeNamespace<WithStreamedUnaryMethod_UpdateNVMeNamespace<WithStreamedUnaryMethod_ListNVMeNamespaces<WithStreamedUnaryMethod_GetNVMeNamespace<WithStreamedUnaryMethod_NVMeNamespaceStats<WithStreamedUnaryMethod_AttachControllerNVMeNamespace<WithStreamedUnaryMethod_DetachControllerNVMeNamespace<Service > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateNVMeSubsystem<WithStreamedUnaryMethod_DeleteNVMeSubsystem<WithStreamedUnaryMethod_UpdateNVMeSubsystem<WithStreamedUnaryMethod_ListNVMeSubsystems<WithStreamedUnaryMethod_GetNVMeSubsystem<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_CreateNVMeController<WithStreamedUnaryMethod_DeleteNVMeController<WithStreamedUnaryMethod_UpdateNVMeController<WithStreamedUnaryMethod_ListNVMeControllers<WithStreamedUnaryMethod_GetNVMeController<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_CreateNVMeNamespace<WithStreamedUnaryMethod_DeleteNVMeNamespace<WithStreamedUnaryMethod_UpdateNVMeNamespace<WithStreamedUnaryMethod_ListNVMeNamespaces<WithStreamedUnaryMethod_GetNVMeNamespace<WithStreamedUnaryMethod_NVMeNamespaceStats<Service > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateNVMeSubsystem<WithStreamedUnaryMethod_DeleteNVMeSubsystem<WithStreamedUnaryMethod_UpdateNVMeSubsystem<WithStreamedUnaryMethod_ListNVMeSubsystems<WithStreamedUnaryMethod_GetNVMeSubsystem<WithStreamedUnaryMethod_NVMeSubsystemStats<WithStreamedUnaryMethod_CreateNVMeController<WithStreamedUnaryMethod_DeleteNVMeController<WithStreamedUnaryMethod_UpdateNVMeController<WithStreamedUnaryMethod_ListNVMeControllers<WithStreamedUnaryMethod_GetNVMeController<WithStreamedUnaryMethod_NVMeControllerStats<WithStreamedUnaryMethod_CreateNVMeNamespace<WithStreamedUnaryMethod_DeleteNVMeNamespace<WithStreamedUnaryMethod_UpdateNVMeNamespace<WithStreamedUnaryMethod_ListNVMeNamespaces<WithStreamedUnaryMethod_GetNVMeNamespace<WithStreamedUnaryMethod_NVMeNamespaceStats<WithStreamedUnaryMethod_AttachControllerNVMeNamespace<WithStreamedUnaryMethod_DetachControllerNVMeNamespace<Service > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1
