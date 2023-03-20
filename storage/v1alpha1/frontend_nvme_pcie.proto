@@ -257,6 +257,9 @@ message DeleteNVMeSubsystemRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NVMeSubsystem"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateNVMeSubsystemRequest {
@@ -308,6 +311,9 @@ message DeleteNVMeControllerRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NVMeController"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateNVMeControllerRequest {
@@ -360,6 +366,9 @@ message DeleteNVMeNamespaceRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NVMeNamespace"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateNVMeNamespaceRequest {

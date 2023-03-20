@@ -162,6 +162,9 @@ message DeleteVirtioScsiTargetRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateVirtioScsiTargetRequest {
@@ -214,6 +217,9 @@ message DeleteVirtioScsiControllerRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateVirtioScsiControllerRequest {
@@ -266,6 +272,9 @@ message DeleteVirtioScsiLunRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateVirtioScsiLunRequest {

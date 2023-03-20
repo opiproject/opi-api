@@ -79,6 +79,9 @@ message DeleteNullDebugRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.storage.v1/NullDebug"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 message UpdateNullDebugRequest {
