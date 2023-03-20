@@ -50,7 +50,8 @@ struct CreateNullDebugRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateNullDebugRequestDefaultTypeInternal _CreateNullDebugRequest_default_instance_;
 constexpr DeleteNullDebugRequest::DeleteNullDebugRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , allow_missing_(false){}
 struct DeleteNullDebugRequestDefaultTypeInternal {
   constexpr DeleteNullDebugRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -171,6 +172,7 @@ const uint32_t TableStruct_backend_5fnull_2eproto::offsets[] PROTOBUF_SECTION_VA
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullDebugRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::DeleteNullDebugRequest, allow_missing_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::UpdateNullDebugRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -223,12 +225,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, -1, sizeof(::opi_api::storage::v1::NullDebug)},
   { 10, -1, -1, sizeof(::opi_api::storage::v1::CreateNullDebugRequest)},
   { 19, -1, -1, sizeof(::opi_api::storage::v1::DeleteNullDebugRequest)},
-  { 26, -1, -1, sizeof(::opi_api::storage::v1::UpdateNullDebugRequest)},
-  { 34, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsRequest)},
-  { 43, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsResponse)},
-  { 51, -1, -1, sizeof(::opi_api::storage::v1::GetNullDebugRequest)},
-  { 58, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
-  { 65, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
+  { 27, -1, -1, sizeof(::opi_api::storage::v1::UpdateNullDebugRequest)},
+  { 35, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsRequest)},
+  { 44, -1, -1, sizeof(::opi_api::storage::v1::ListNullDebugsResponse)},
+  { 52, -1, -1, sizeof(::opi_api::storage::v1::GetNullDebugRequest)},
+  { 59, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsRequest)},
+  { 66, -1, -1, sizeof(::opi_api::storage::v1::NullDebugStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -258,49 +260,50 @@ const char descriptor_table_protodef_backend_5fnull_2eproto[] PROTOBUF_SECTION_V
   "ent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Nu"
   "llDebug\0226\n\nnull_debug\030\002 \001(\0132\035.opi_api.st"
   "orage.v1.NullDebugB\003\340A\002\022\025\n\rnull_debug_id"
-  "\030\003 \001(\t\"L\n\026DeleteNullDebugRequest\0222\n\004name"
+  "\030\003 \001(\t\"c\n\026DeleteNullDebugRequest\0222\n\004name"
   "\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/NullD"
-  "ebug\"|\n\026UpdateNullDebugRequest\0221\n\nnull_d"
-  "ebug\030\001 \001(\0132\035.opi_api.storage.v1.NullDebu"
-  "g\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
-  ".FieldMask\"t\n\025ListNullDebugsRequest\0224\n\006p"
-  "arent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/"
-  "NullDebug\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
-  "en\030\003 \001(\t\"e\n\026ListNullDebugsResponse\0222\n\013nu"
-  "ll_debugs\030\001 \003(\0132\035.opi_api.storage.v1.Nul"
-  "lDebug\022\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetNu"
-  "llDebugRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034op"
-  "i_api.storage.v1/NullDebug\"E\n\025NullDebugS"
-  "tatsRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.co"
-  "mmon.v1.ObjectKey\"v\n\026NullDebugStatsRespo"
-  "nse\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1."
-  "ObjectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.stora"
-  "ge.v1.VolumeStats2\202\007\n\020NullDebugService\022\253"
-  "\001\n\017CreateNullDebug\022*.opi_api.storage.v1."
-  "CreateNullDebugRequest\032\035.opi_api.storage"
-  ".v1.NullDebug\"M\202\323\344\223\002%\"\027/v1/{parent=subsy"
-  "stems}:\nnull_debug\332A\037parent,null_debug,n"
-  "ull_debug_id\022\207\001\n\017DeleteNullDebug\022*.opi_a"
-  "pi.storage.v1.DeleteNullDebugRequest\032\026.g"
-  "oogle.protobuf.Empty\"0\202\323\344\223\002#*!/v1/{name="
-  "subsystems}/{subsystem}\332A\004name\022\253\001\n\017Updat"
-  "eNullDebug\022*.opi_api.storage.v1.UpdateNu"
-  "llDebugRequest\032\035.opi_api.storage.v1.Null"
-  "Debug\"M\202\323\344\223\002.2 /v1/{null_debug.name=subs"
-  "ystems}:\nnull_debug\332A\026null_debug,update_"
-  "mask\022\221\001\n\016ListNullDebugs\022).opi_api.storag"
-  "e.v1.ListNullDebugsRequest\032*.opi_api.sto"
-  "rage.v1.ListNullDebugsResponse\"(\202\323\344\223\002\031\022\027"
-  "/v1/{parent=subsystems}\332A\006parent\022\210\001\n\014Get"
-  "NullDebug\022\'.opi_api.storage.v1.GetNullDe"
-  "bugRequest\032\035.opi_api.storage.v1.NullDebu"
-  "g\"0\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsys"
-  "tem}\332A\004name\022i\n\016NullDebugStats\022).opi_api."
-  "storage.v1.NullDebugStatsRequest\032*.opi_a"
-  "pi.storage.v1.NullDebugStatsResponse\"\000B_"
-  "\n\022opi_api.storage.v1B\020BackendNullProtoP\001"
-  "Z5github.com/opiproject/opi-api/storage/"
-  "v1alpha1/gen/gob\006proto3"
+  "ebug\022\025\n\rallow_missing\030\002 \001(\010\"|\n\026UpdateNul"
+  "lDebugRequest\0221\n\nnull_debug\030\001 \001(\0132\035.opi_"
+  "api.storage.v1.NullDebug\022/\n\013update_mask\030"
+  "\002 \001(\0132\032.google.protobuf.FieldMask\"t\n\025Lis"
+  "tNullDebugsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372"
+  "A\036\n\034opi_api.storage.v1/NullDebug\022\021\n\tpage"
+  "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"e\n\026ListN"
+  "ullDebugsResponse\0222\n\013null_debugs\030\001 \003(\0132\035"
+  ".opi_api.storage.v1.NullDebug\022\027\n\017next_pa"
+  "ge_token\030\002 \001(\t\"I\n\023GetNullDebugRequest\0222\n"
+  "\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/"
+  "NullDebug\"E\n\025NullDebugStatsRequest\022,\n\006ha"
+  "ndle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey"
+  "\"v\n\026NullDebugStatsResponse\022,\n\006handle\030\001 \001"
+  "(\0132\034.opi_api.common.v1.ObjectKey\022.\n\005stat"
+  "s\030\002 \001(\0132\037.opi_api.storage.v1.VolumeStats"
+  "2\202\007\n\020NullDebugService\022\253\001\n\017CreateNullDebu"
+  "g\022*.opi_api.storage.v1.CreateNullDebugRe"
+  "quest\032\035.opi_api.storage.v1.NullDebug\"M\202\323"
+  "\344\223\002%\"\027/v1/{parent=subsystems}:\nnull_debu"
+  "g\332A\037parent,null_debug,null_debug_id\022\207\001\n\017"
+  "DeleteNullDebug\022*.opi_api.storage.v1.Del"
+  "eteNullDebugRequest\032\026.google.protobuf.Em"
+  "pty\"0\202\323\344\223\002#*!/v1/{name=subsystems}/{subs"
+  "ystem}\332A\004name\022\253\001\n\017UpdateNullDebug\022*.opi_"
+  "api.storage.v1.UpdateNullDebugRequest\032\035."
+  "opi_api.storage.v1.NullDebug\"M\202\323\344\223\002.2 /v"
+  "1/{null_debug.name=subsystems}:\nnull_deb"
+  "ug\332A\026null_debug,update_mask\022\221\001\n\016ListNull"
+  "Debugs\022).opi_api.storage.v1.ListNullDebu"
+  "gsRequest\032*.opi_api.storage.v1.ListNullD"
+  "ebugsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsy"
+  "stems}\332A\006parent\022\210\001\n\014GetNullDebug\022\'.opi_a"
+  "pi.storage.v1.GetNullDebugRequest\032\035.opi_"
+  "api.storage.v1.NullDebug\"0\202\323\344\223\002#\022!/v1/{n"
+  "ame=subsystems}/{subsystem}\332A\004name\022i\n\016Nu"
+  "llDebugStats\022).opi_api.storage.v1.NullDe"
+  "bugStatsRequest\032*.opi_api.storage.v1.Nul"
+  "lDebugStatsResponse\"\000B_\n\022opi_api.storage"
+  ".v1B\020BackendNullProtoP\001Z5github.com/opip"
+  "roject/opi-api/storage/v1alpha1/gen/gob\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5fnull_2eproto_deps[9] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -315,7 +318,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5fnull_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5fnull_2eproto = {
-  false, false, 2263, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
+  false, false, 2286, descriptor_table_protodef_backend_5fnull_2eproto, "backend_null.proto", 
   &descriptor_table_backend_5fnull_2eproto_once, descriptor_table_backend_5fnull_2eproto_deps, 9, 9,
   schemas, file_default_instances, TableStruct_backend_5fnull_2eproto::offsets,
   file_level_metadata_backend_5fnull_2eproto, file_level_enum_descriptors_backend_5fnull_2eproto, file_level_service_descriptors_backend_5fnull_2eproto,
@@ -957,6 +960,7 @@ DeleteNullDebugRequest::DeleteNullDebugRequest(const DeleteNullDebugRequest& fro
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
+  allow_missing_ = from.allow_missing_;
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.DeleteNullDebugRequest)
 }
 
@@ -965,6 +969,7 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+allow_missing_ = false;
 }
 
 DeleteNullDebugRequest::~DeleteNullDebugRequest() {
@@ -996,6 +1001,7 @@ void DeleteNullDebugRequest::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
+  allow_missing_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1011,6 +1017,14 @@ const char* DeleteNullDebugRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.DeleteNullDebugRequest.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool allow_missing = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          allow_missing_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1054,6 +1068,12 @@ uint8_t* DeleteNullDebugRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_allow_missing(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1075,6 +1095,11 @@ size_t DeleteNullDebugRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // bool allow_missing = 2;
+  if (this->_internal_allow_missing() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1102,6 +1127,9 @@ void DeleteNullDebugRequest::MergeFrom(const DeleteNullDebugRequest& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
+  if (from._internal_allow_missing() != 0) {
+    _internal_set_allow_missing(from._internal_allow_missing());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1126,6 +1154,7 @@ void DeleteNullDebugRequest::InternalSwap(DeleteNullDebugRequest* other) {
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
+  swap(allow_missing_, other->allow_missing_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteNullDebugRequest::GetMetadata() const {

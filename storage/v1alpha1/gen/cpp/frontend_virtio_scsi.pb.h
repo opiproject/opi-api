@@ -1029,6 +1029,7 @@ class DeleteVirtioScsiTargetRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -1044,6 +1045,15 @@ class DeleteVirtioScsiTargetRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioScsiTargetRequest)
  private:
   class _Internal;
@@ -1052,6 +1062,7 @@ class DeleteVirtioScsiTargetRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -2372,6 +2383,7 @@ class DeleteVirtioScsiControllerRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -2387,6 +2399,15 @@ class DeleteVirtioScsiControllerRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioScsiControllerRequest)
  private:
   class _Internal;
@@ -2395,6 +2416,7 @@ class DeleteVirtioScsiControllerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -3715,6 +3737,7 @@ class DeleteVirtioScsiLunRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -3730,6 +3753,15 @@ class DeleteVirtioScsiLunRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioScsiLunRequest)
  private:
   class _Internal;
@@ -3738,6 +3770,7 @@ class DeleteVirtioScsiLunRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -5572,6 +5605,26 @@ inline void DeleteVirtioScsiTargetRequest::set_allocated_name(std::string* name)
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteVirtioScsiTargetRequest.name)
 }
 
+// bool allow_missing = 2;
+inline void DeleteVirtioScsiTargetRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVirtioScsiTargetRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVirtioScsiTargetRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteVirtioScsiTargetRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVirtioScsiTargetRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVirtioScsiTargetRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.DeleteVirtioScsiTargetRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateVirtioScsiTargetRequest
@@ -6545,6 +6598,26 @@ inline void DeleteVirtioScsiControllerRequest::set_allocated_name(std::string* n
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteVirtioScsiControllerRequest.name)
 }
 
+// bool allow_missing = 2;
+inline void DeleteVirtioScsiControllerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVirtioScsiControllerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVirtioScsiControllerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteVirtioScsiControllerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVirtioScsiControllerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVirtioScsiControllerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.DeleteVirtioScsiControllerRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateVirtioScsiControllerRequest
@@ -7516,6 +7589,26 @@ inline void DeleteVirtioScsiLunRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteVirtioScsiLunRequest.name)
+}
+
+// bool allow_missing = 2;
+inline void DeleteVirtioScsiLunRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVirtioScsiLunRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVirtioScsiLunRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteVirtioScsiLunRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVirtioScsiLunRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVirtioScsiLunRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.DeleteVirtioScsiLunRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

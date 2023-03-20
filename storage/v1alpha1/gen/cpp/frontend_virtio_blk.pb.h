@@ -627,6 +627,7 @@ class DeleteVirtioBlkRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_name();
@@ -642,6 +643,15 @@ class DeleteVirtioBlkRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteVirtioBlkRequest)
  private:
   class _Internal;
@@ -650,6 +660,7 @@ class DeleteVirtioBlkRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
 };
@@ -2196,6 +2207,26 @@ inline void DeleteVirtioBlkRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.DeleteVirtioBlkRequest.name)
+}
+
+// bool allow_missing = 2;
+inline void DeleteVirtioBlkRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVirtioBlkRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVirtioBlkRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.DeleteVirtioBlkRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVirtioBlkRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVirtioBlkRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.DeleteVirtioBlkRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
