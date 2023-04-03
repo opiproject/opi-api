@@ -51,8 +51,29 @@ Recording at: <https://zoom.us/rec/share/Y-vCfrhWvle6WCNHXxTabZ0DQPd059qn8gb0XzE
 
 Actions:
 
+- Review the existing layering diagrams and expand the diagrams for the areas discussed.
 - Consider the layering where the provisioning has additional granularity around Underlay (Phy, L2, L3 configuration), Overlay (VxLAN), VF allocation.
 - Consider how the Tenant can utilize elements of the provisioning for their traffic needs over the exposed interfaces.
+
+---
+
+## March 23
+
+Topics:
+
+- Kubernetes Networking Infrastructure Offload and API specifics around K8s Networking Infra Offload
+
+Recording at: <https://zoom.us/rec/share/vmZu1cvEAZLG5N-3uGfr1EK8OvXHVWT9sMrFW0TurkMa8fvlP8E1yD2S_owwzlMh.dcWnh4G5X_JDWk_5>
+
+---
+
+## March 30
+
+Topics:
+
+- Continue Kubernetes Networking Infrastructure Offload and API discussion
+
+Recording at: <https://zoom.us/rec/share/bHSSlU7E7RtPWK6Kj4esBx0YlMZPPqeWFFUx1QvrIPCc_F0GpCrLkn2jI0ZVWBwv.0n_WWbYudJGPYjDn>
 
 ---
 
