@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 // {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
 
 option java_package = "opi_api.storage.v1";
 option java_multiple_files = true;
-option java_outer_classname = "MiddleendProto";
+option java_outer_classname = "MiddleendEncryptionProto";
 
 option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
 import "opicommon.proto";
@@ -21,7 +22,7 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/field_mask.proto";
 
 // Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
-service MiddleendService {
+service MiddleendEncryptionService {
     rpc CreateEncryptedVolume (CreateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
             post: "/v1/{parent=subsystems}"
