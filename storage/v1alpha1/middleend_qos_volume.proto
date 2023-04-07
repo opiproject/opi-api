@@ -1,0 +1,123 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (C) 2023 Intel Corporation
+
+syntax = "proto3";
+package opi_api.storage.v1;
+
+option java_package = "opi_api.storage.v1";
+option java_multiple_files = true;
+option java_outer_classname = "MiddleendQosVolumeProto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+import "opicommon.proto";
+import "object_key.proto";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
+
+service MiddleendQosVolumeService {
+    rpc CreateQosVolume(CreateQosVolumeRequest) returns (QosVolume) {
+        option (google.api.http) = {
+            post : "/v1/{parent=subsystems}"
+            body : "qos_volume"
+        };
+        option (google.api.method_signature) = "parent,qos_volume,qos_volume_id";
+    }
+    rpc DeleteQosVolume(DeleteQosVolumeRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete : "/v1/{name=qosvolumes}/{qosvolume}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc UpdateQosVolume(UpdateQosVolumeRequest) returns (QosVolume) {
+        option (google.api.http) = {
+            patch : "/v1/{qos_volume.name=subsystems}"
+            body : "qos_volume"
+        };
+        option (google.api.method_signature) = "qos_volume,update_mask";
+    }
+    rpc ListQosVolumes(ListQosVolumesRequest) returns (ListQosVolumesResponse) {
+        option (google.api.http) = {
+            get : "/v1/{parent=volumes}"
+        };
+        option (google.api.method_signature) = "parent";
+    }
+    rpc GetQosVolume(GetQosVolumeRequest) returns (QosVolume) {
+        option (google.api.http) = {
+            get : "/v1/{name=subsystems}/{qos_volume}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc QosVolumeStats(QosVolumeStatsRequest) returns (QosVolumeStatsResponse) {}
+}
+
+message QosVolume {
+    common.v1.ObjectKey qos_volume_id = 1;
+
+    // Middleend/backend volume to apply QoS on
+    common.v1.ObjectKey volume_id = 2;
+
+    QosLimit limit_min = 3;
+    QosLimit limit_max = 4;
+}
+
+message CreateQosVolumeRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
+    ];
+    QosVolume qos_volume = 2 [ (google.api.field_behavior) = REQUIRED ];
+    string qos_volume_id = 3;
+}
+
+message DeleteQosVolumeRequest {
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
+    ];
+
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
+}
+
+message UpdateQosVolumeRequest {
+    QosVolume qos_volume = 1;
+
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message ListQosVolumesRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListQosVolumesResponse {
+    repeated QosVolume qos_volumes = 1;
+    string next_page_token = 2;
+}
+
+message GetQosVolumeRequest {
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
+    ];
+}
+
+message QosVolumeStatsRequest {
+    common.v1.ObjectKey volume_id = 1;
+}
+
+message QosVolumeStatsResponse {
+    common.v1.ObjectKey id = 1;
+    VolumeStats stats = 2;
+}
