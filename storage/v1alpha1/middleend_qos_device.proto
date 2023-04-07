@@ -1,0 +1,126 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (C) 2023 Intel Corporation
+
+syntax = "proto3";
+package opi_api.storage.v1;
+
+option java_package = "opi_api.storage.v1";
+option java_multiple_files = true;
+option java_outer_classname = "MiddleendQosDeviceProto";
+
+option go_package = "github.com/opiproject/opi-api/storage/v1alpha1/gen/go";
+import "opicommon.proto";
+import "object_key.proto";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
+
+// Should we request capabilities? It is not usual in OPI to request any capabilities..
+service MiddleendQosDeviceService {
+    rpc CreateQosDevice(CreateQosDeviceRequest) returns (QosDevice) {
+        option (google.api.http) = {
+            post : "/v1/{parent=subsystems}"
+            body : "qos_device"
+        };
+        option (google.api.method_signature) = "parent,qos_device,qos_device_id";
+    }
+    rpc DeleteQosDevice(DeleteQosDeviceRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete : "/v1/{name=qosdevices}/{qosdevice}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc UpdateQosDevice(UpdateQosDeviceRequest) returns (QosDevice) {
+        option (google.api.http) = {
+            patch : "/v1/{qos_device.name=subsystems}"
+            body : "qos_device"
+        };
+        option (google.api.method_signature) = "qos_device,update_mask";
+    }
+    rpc ListQosDevices(ListQosDevicesRequest) returns (ListQosDevicesResponse) {
+        option (google.api.http) = {
+            get : "/v1/{parent=devices}"
+        };
+        option (google.api.method_signature) = "parent";
+    }
+    rpc GetQosDevice(GetQosDeviceRequest) returns (QosDevice) {
+        option (google.api.http) = {
+            get : "/v1/{name=subsystems}/{qos_device}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    rpc QosDeviceStats(QosDeviceStatsRequest) returns (QosDeviceStatsResponse) {}
+}
+
+message QosDevice {
+    common.v1.ObjectKey qos_device_id = 1;
+
+    // Frontend device(NVMe Controller, Virtio-blk, SCSI) to apply QoS on
+    common.v1.ObjectKey device_id = 2;
+
+    QosLimit limit_min = 3;
+    QosLimit limit_max = 4;
+}
+
+message CreateQosDeviceRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosDevice"
+    ];
+    QosDevice qos_device = 2 [ (google.api.field_behavior) = REQUIRED ];
+    string qos_device_id = 3;
+}
+
+message DeleteQosDeviceRequest {
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosDevice"
+    ];
+
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
+}
+
+message UpdateQosDeviceRequest {
+    QosDevice qos_device = 1;
+
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+message ListQosDevicesRequest {
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosDevice"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListQosDevicesResponse {
+    repeated QosDevice qos_devices = 1;
+    string next_page_token = 2;
+}
+
+message GetQosDeviceRequest {
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/QosDevice"
+    ];
+}
+
+message QosDeviceStatsRequest {
+    common.v1.ObjectKey device_id = 1;
+}
+
+message QosDeviceStatsResponse {
+  common.v1.ObjectKey id = 1;
+  // repeated? Rename VolumeStats to something more abstract like
+  // StorageUnitStats?
+  VolumeStats stats = 2;
+}
