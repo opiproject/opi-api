@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -136,6 +137,12 @@ message VirtioScsiController {
 
     // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 2;
+
+    // min QoS limits for the controller
+    QosLimit min_limit = 3;
+
+    // max QoS limits for the controller
+    QosLimit max_limit = 4;
 }
 
 message VirtioScsiLun {

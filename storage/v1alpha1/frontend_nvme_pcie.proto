@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 // {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -196,6 +197,12 @@ message NVMeControllerSpec {
     // maximum Number of namespaces that will be provisioned under
     // the controller.
     int32 max_namespaces = 9;
+
+    // min QoS limits for the controller
+    QosLimit min_limit = 10;
+
+    // max QoS limits for the controller
+    QosLimit max_limit = 11;
 }
 
 message NVMeControllerStatus {
