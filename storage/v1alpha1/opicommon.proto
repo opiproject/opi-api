@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 // {C} Copyright 2022 Pensando Systems Inc. All rights reserved
+// Copyright (C) 2023 Intel Corporation
 
 syntax = "proto3";
 package opi_api.storage.v1;
@@ -47,6 +48,23 @@ message VolumeStats {
     int32    read_latency_ticks     = 7;
     int32    write_latency_ticks    = 8;
     int32    unmap_latency_ticks    = 9;
+}
+
+// QoS limits applied to volumes/devices
+message QosLimit {
+    // Read kIOPS
+    int64 rd_iops_kiops = 1;
+    // Write kIOPS
+    int64 wr_iops_kiops = 2;
+    // Read/write kIOPS
+    int64 rw_iops_kiops = 3;
+
+    // Read bandwidth (MB/s)
+    int64 rd_bandwidth_mbs = 4;
+    // Write bandwidth (MB/s)
+    int64 wr_bandwidth_mbs = 5;
+    // Read/write bandwidth (MB/s)
+    int64 rw_bandwidth_mbs = 6;
 }
 
 // AES encryption types
