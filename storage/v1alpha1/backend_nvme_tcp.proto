@@ -64,6 +64,21 @@ service NVMfRemoteControllerService {
         };
         option (google.api.method_signature) = "parent";
     }
+
+    rpc CreateNVMfPath (CreateNVMfPathRequest) returns (NVMfPath) {
+        option (google.api.http) = {
+            post: "/v1/volumes"
+            body: "nv_mf_path"
+        };
+        option (google.api.method_signature) = "nv_mf_path,nv_mf_path_id";
+    }
+
+    rpc DeleteNVMfPath (DeleteNVMfPathRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            delete: "/v1/{name=subsystems}/{subsystem}"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
 message NVMfRemoteController {
@@ -77,17 +92,44 @@ message NVMfRemoteController {
     // user can only set {resource}_id on the Create request object
     string name = 1;
 
-    NvmeTransportType trtype = 2;
-    NvmeAddressFamily adrfam = 3;
-    string traddr = 4;
-    int64 trsvcid = 5;
-    string subnqn = 6;
-    bool hdgst = 7;
-    bool ddgst = 8;
-    NvmeMultipath multipath = 9;
-    int64 io_queues_count = 10;
-    int64 queue_size = 11;
-    string hostnqn = 12;
+    bool hdgst = 2;
+    bool ddgst = 3;
+    NvmeMultipath multipath = 4;
+    int64 io_queues_count = 5;
+    int64 queue_size = 6;
+}
+
+message NVMfPath {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NVMfPath"
+        pattern: "volumes/{volume}"
+    };
+
+    // user can only set {resource}_id on the Create request object
+    string name = 1;
+
+    common.v1.ObjectKey controller_id = 2;
+
+    NvmeTransportType trtype = 3;
+    NvmeAddressFamily adrfam = 4;
+
+    // Destination address (e.g. IP address)
+    string traddr = 5;
+
+    // Destination service id (e.g. Port)
+    int64 trsvcid = 6;
+
+    // Subsystem NQN
+    string subnqn = 7;
+
+    // Source address (e.g. IP of local NIC)
+    string source_traddr = 8;
+
+    // Source port (e.g. Port of local NIC)
+    int64 source_trsvcid = 9;
+
+    // Host NQN
+    string hostnqn = 10;
 }
 
 message NVMfRemoteNamespace {
@@ -104,17 +146,17 @@ message NVMfRemoteNamespace {
     common.v1.ObjectKey controller_id = 2;
 
     // NSID
-    int32 nsid = 4;
+    int32 nsid = 3;
 
     // Globally unique identifier for the namespace
-    string nguid = 7;
+    string nguid = 4;
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified
-    int64 eui64 = 8;
+    int64 eui64 = 5;
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 9;
+    common.v1.Uuid uuid = 6;
 
     // ANA state and such?
 }
@@ -195,6 +237,22 @@ message ListNVMfRemoteNamespacesRequest {
 message ListNVMfRemoteNamespacesResponse {
     repeated NVMfRemoteNamespace nv_mf_remote_namespaces = 1;
     string next_page_token = 2;
+}
+
+message CreateNVMfPathRequest {
+    NVMfPath nv_mf_path = 1 [(google.api.field_behavior) = REQUIRED];
+    string nv_mf_path_id = 2;
+}
+
+message DeleteNVMfPathRequest {
+    // object's unique identifier
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfPath"
+    ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 enum NvmeTransportType {
