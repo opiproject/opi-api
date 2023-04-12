@@ -19,6 +19,7 @@ import "google/protobuf/field_mask.proto";
 
 import "object_key.proto";
 import "opicommon.proto";
+import "uuid.proto";
 
 // Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered by this service.
 service NVMfRemoteControllerService {
@@ -56,6 +57,13 @@ service NVMfRemoteControllerService {
     }
     rpc NVMfRemoteControllerReset (NVMfRemoteControllerResetRequest) returns (google.protobuf.Empty) {}
     rpc NVMfRemoteControllerStats  (NVMfRemoteControllerStatsRequest)  returns (NVMfRemoteControllerStatsResponse)  {}
+
+    rpc ListNVMfRemoteNamespaces   (ListNVMfRemoteNamespacesRequest)   returns (ListNVMfRemoteNamespacesResponse)   {
+        option (google.api.http) = {
+            get: "/v1/{parent=subsystems}"
+        };
+        option (google.api.method_signature) = "parent";
+    }
 }
 
 message NVMfRemoteController {
@@ -80,6 +88,35 @@ message NVMfRemoteController {
     int64 io_queues_count = 10;
     int64 queue_size = 11;
     string hostnqn = 12;
+}
+
+message NVMfRemoteNamespace {
+    // namespace's unique key. Assign to middle/front-end objects.
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NVMfRemoteNamespace"
+        pattern: "volumes/{volume}"
+    };
+
+    // user can only set {resource}_id on the Create request object
+    string name = 1;
+
+    // controller through which the namespace is visible
+    common.v1.ObjectKey controller_id = 2;
+
+    // NSID
+    int32 nsid = 4;
+
+    // Globally unique identifier for the namespace
+    string nguid = 7;
+
+    // 64bit Extended unique identifier for the namespace
+    // mandatory if guid is not specified
+    int64 eui64 = 8;
+
+    // Globally unique identifier for the namespace
+    common.v1.Uuid uuid = 9;
+
+    // ANA state and such?
 }
 
 message CreateNVMfRemoteControllerRequest {
@@ -142,6 +179,22 @@ message NVMfRemoteControllerStatsRequest {
 
 message NVMfRemoteControllerStatsResponse {
     VolumeStats stats = 1;
+}
+
+message ListNVMfRemoteNamespacesRequest {
+    // The controller's unique object identifier. This lists
+    // namespaces for a particular controller.
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteNamespace"
+    ];
+    int32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListNVMfRemoteNamespacesResponse {
+    repeated NVMfRemoteNamespace nv_mf_remote_namespaces = 1;
+    string next_page_token = 2;
 }
 
 enum NvmeTransportType {
