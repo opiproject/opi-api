@@ -9,13 +9,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
-    comments = "Source: middleend.proto")
+    comments = "Source: middleend_encryption.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class MiddleendServiceGrpc {
+public final class MiddleendEncryptionServiceGrpc {
 
-  private MiddleendServiceGrpc() {}
+  private MiddleendEncryptionServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "opi_api.storage.v1.MiddleendService";
+  public static final String SERVICE_NAME = "opi_api.storage.v1.MiddleendEncryptionService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest,
@@ -29,10 +29,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest,
       opi_api.storage.v1.EncryptedVolume> getCreateEncryptedVolumeMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.CreateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getCreateEncryptedVolumeMethod;
-    if ((getCreateEncryptedVolumeMethod = MiddleendServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getCreateEncryptedVolumeMethod = MiddleendServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
-          MiddleendServiceGrpc.getCreateEncryptedVolumeMethod = getCreateEncryptedVolumeMethod =
+    if ((getCreateEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getCreateEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getCreateEncryptedVolumeMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getCreateEncryptedVolumeMethod = getCreateEncryptedVolumeMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.CreateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEncryptedVolume"))
@@ -41,7 +41,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.CreateEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("CreateEncryptedVolume"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("CreateEncryptedVolume"))
               .build();
         }
       }
@@ -60,10 +60,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteEncryptedVolumeRequest,
       com.google.protobuf.Empty> getDeleteEncryptedVolumeMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.DeleteEncryptedVolumeRequest, com.google.protobuf.Empty> getDeleteEncryptedVolumeMethod;
-    if ((getDeleteEncryptedVolumeMethod = MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getDeleteEncryptedVolumeMethod = MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
-          MiddleendServiceGrpc.getDeleteEncryptedVolumeMethod = getDeleteEncryptedVolumeMethod =
+    if ((getDeleteEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getDeleteEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getDeleteEncryptedVolumeMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getDeleteEncryptedVolumeMethod = getDeleteEncryptedVolumeMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.DeleteEncryptedVolumeRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEncryptedVolume"))
@@ -72,7 +72,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.DeleteEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("DeleteEncryptedVolume"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("DeleteEncryptedVolume"))
               .build();
         }
       }
@@ -91,10 +91,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateEncryptedVolumeRequest,
       opi_api.storage.v1.EncryptedVolume> getUpdateEncryptedVolumeMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.UpdateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getUpdateEncryptedVolumeMethod;
-    if ((getUpdateEncryptedVolumeMethod = MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getUpdateEncryptedVolumeMethod = MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
-          MiddleendServiceGrpc.getUpdateEncryptedVolumeMethod = getUpdateEncryptedVolumeMethod =
+    if ((getUpdateEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getUpdateEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getUpdateEncryptedVolumeMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getUpdateEncryptedVolumeMethod = getUpdateEncryptedVolumeMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.UpdateEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEncryptedVolume"))
@@ -103,7 +103,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.UpdateEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("UpdateEncryptedVolume"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("UpdateEncryptedVolume"))
               .build();
         }
       }
@@ -122,10 +122,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumesRequest,
       opi_api.storage.v1.ListEncryptedVolumesResponse> getListEncryptedVolumesMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.ListEncryptedVolumesRequest, opi_api.storage.v1.ListEncryptedVolumesResponse> getListEncryptedVolumesMethod;
-    if ((getListEncryptedVolumesMethod = MiddleendServiceGrpc.getListEncryptedVolumesMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getListEncryptedVolumesMethod = MiddleendServiceGrpc.getListEncryptedVolumesMethod) == null) {
-          MiddleendServiceGrpc.getListEncryptedVolumesMethod = getListEncryptedVolumesMethod =
+    if ((getListEncryptedVolumesMethod = MiddleendEncryptionServiceGrpc.getListEncryptedVolumesMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getListEncryptedVolumesMethod = MiddleendEncryptionServiceGrpc.getListEncryptedVolumesMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getListEncryptedVolumesMethod = getListEncryptedVolumesMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.ListEncryptedVolumesRequest, opi_api.storage.v1.ListEncryptedVolumesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEncryptedVolumes"))
@@ -134,7 +134,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.ListEncryptedVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.ListEncryptedVolumesResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("ListEncryptedVolumes"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("ListEncryptedVolumes"))
               .build();
         }
       }
@@ -153,10 +153,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest,
       opi_api.storage.v1.EncryptedVolume> getGetEncryptedVolumeMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.GetEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume> getGetEncryptedVolumeMethod;
-    if ((getGetEncryptedVolumeMethod = MiddleendServiceGrpc.getGetEncryptedVolumeMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getGetEncryptedVolumeMethod = MiddleendServiceGrpc.getGetEncryptedVolumeMethod) == null) {
-          MiddleendServiceGrpc.getGetEncryptedVolumeMethod = getGetEncryptedVolumeMethod =
+    if ((getGetEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getGetEncryptedVolumeMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getGetEncryptedVolumeMethod = MiddleendEncryptionServiceGrpc.getGetEncryptedVolumeMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getGetEncryptedVolumeMethod = getGetEncryptedVolumeMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.GetEncryptedVolumeRequest, opi_api.storage.v1.EncryptedVolume>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEncryptedVolume"))
@@ -165,7 +165,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.GetEncryptedVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.EncryptedVolume.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("GetEncryptedVolume"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("GetEncryptedVolume"))
               .build();
         }
       }
@@ -184,10 +184,10 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest,
       opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod() {
     io.grpc.MethodDescriptor<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse> getEncryptedVolumeStatsMethod;
-    if ((getEncryptedVolumeStatsMethod = MiddleendServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
-      synchronized (MiddleendServiceGrpc.class) {
-        if ((getEncryptedVolumeStatsMethod = MiddleendServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
-          MiddleendServiceGrpc.getEncryptedVolumeStatsMethod = getEncryptedVolumeStatsMethod =
+    if ((getEncryptedVolumeStatsMethod = MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
+        if ((getEncryptedVolumeStatsMethod = MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod) == null) {
+          MiddleendEncryptionServiceGrpc.getEncryptedVolumeStatsMethod = getEncryptedVolumeStatsMethod =
               io.grpc.MethodDescriptor.<opi_api.storage.v1.EncryptedVolumeStatsRequest, opi_api.storage.v1.EncryptedVolumeStatsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EncryptedVolumeStats"))
@@ -196,7 +196,7 @@ public final class MiddleendServiceGrpc {
                   opi_api.storage.v1.EncryptedVolumeStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   opi_api.storage.v1.EncryptedVolumeStatsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MiddleendServiceMethodDescriptorSupplier("EncryptedVolumeStats"))
+              .setSchemaDescriptor(new MiddleendEncryptionServiceMethodDescriptorSupplier("EncryptedVolumeStats"))
               .build();
         }
       }
@@ -207,45 +207,45 @@ public final class MiddleendServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static MiddleendServiceStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceStub>() {
+  public static MiddleendEncryptionServiceStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceStub>() {
         @java.lang.Override
-        public MiddleendServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new MiddleendServiceStub(channel, callOptions);
+        public MiddleendEncryptionServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MiddleendEncryptionServiceStub(channel, callOptions);
         }
       };
-    return MiddleendServiceStub.newStub(factory, channel);
+    return MiddleendEncryptionServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static MiddleendServiceBlockingStub newBlockingStub(
+  public static MiddleendEncryptionServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceBlockingStub>() {
         @java.lang.Override
-        public MiddleendServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new MiddleendServiceBlockingStub(channel, callOptions);
+        public MiddleendEncryptionServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MiddleendEncryptionServiceBlockingStub(channel, callOptions);
         }
       };
-    return MiddleendServiceBlockingStub.newStub(factory, channel);
+    return MiddleendEncryptionServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static MiddleendServiceFutureStub newFutureStub(
+  public static MiddleendEncryptionServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<MiddleendServiceFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MiddleendEncryptionServiceFutureStub>() {
         @java.lang.Override
-        public MiddleendServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new MiddleendServiceFutureStub(channel, callOptions);
+        public MiddleendEncryptionServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MiddleendEncryptionServiceFutureStub(channel, callOptions);
         }
       };
-    return MiddleendServiceFutureStub.newStub(factory, channel);
+    return MiddleendEncryptionServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -253,7 +253,7 @@ public final class MiddleendServiceGrpc {
    * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
    * </pre>
    */
-  public static abstract class MiddleendServiceImplBase implements io.grpc.BindableService {
+  public static abstract class MiddleendEncryptionServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
@@ -350,16 +350,16 @@ public final class MiddleendServiceGrpc {
    * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
    * </pre>
    */
-  public static final class MiddleendServiceStub extends io.grpc.stub.AbstractAsyncStub<MiddleendServiceStub> {
-    private MiddleendServiceStub(
+  public static final class MiddleendEncryptionServiceStub extends io.grpc.stub.AbstractAsyncStub<MiddleendEncryptionServiceStub> {
+    private MiddleendEncryptionServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected MiddleendServiceStub build(
+    protected MiddleendEncryptionServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MiddleendServiceStub(channel, callOptions);
+      return new MiddleendEncryptionServiceStub(channel, callOptions);
     }
 
     /**
@@ -416,16 +416,16 @@ public final class MiddleendServiceGrpc {
    * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
    * </pre>
    */
-  public static final class MiddleendServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MiddleendServiceBlockingStub> {
-    private MiddleendServiceBlockingStub(
+  public static final class MiddleendEncryptionServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MiddleendEncryptionServiceBlockingStub> {
+    private MiddleendEncryptionServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected MiddleendServiceBlockingStub build(
+    protected MiddleendEncryptionServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MiddleendServiceBlockingStub(channel, callOptions);
+      return new MiddleendEncryptionServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -476,16 +476,16 @@ public final class MiddleendServiceGrpc {
    * Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
    * </pre>
    */
-  public static final class MiddleendServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MiddleendServiceFutureStub> {
-    private MiddleendServiceFutureStub(
+  public static final class MiddleendEncryptionServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MiddleendEncryptionServiceFutureStub> {
+    private MiddleendEncryptionServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected MiddleendServiceFutureStub build(
+    protected MiddleendEncryptionServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MiddleendServiceFutureStub(channel, callOptions);
+      return new MiddleendEncryptionServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -549,10 +549,10 @@ public final class MiddleendServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MiddleendServiceImplBase serviceImpl;
+    private final MiddleendEncryptionServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MiddleendServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(MiddleendEncryptionServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -601,32 +601,32 @@ public final class MiddleendServiceGrpc {
     }
   }
 
-  private static abstract class MiddleendServiceBaseDescriptorSupplier
+  private static abstract class MiddleendEncryptionServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    MiddleendServiceBaseDescriptorSupplier() {}
+    MiddleendEncryptionServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return opi_api.storage.v1.MiddleendProto.getDescriptor();
+      return opi_api.storage.v1.MiddleendEncryptionProto.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("MiddleendService");
+      return getFileDescriptor().findServiceByName("MiddleendEncryptionService");
     }
   }
 
-  private static final class MiddleendServiceFileDescriptorSupplier
-      extends MiddleendServiceBaseDescriptorSupplier {
-    MiddleendServiceFileDescriptorSupplier() {}
+  private static final class MiddleendEncryptionServiceFileDescriptorSupplier
+      extends MiddleendEncryptionServiceBaseDescriptorSupplier {
+    MiddleendEncryptionServiceFileDescriptorSupplier() {}
   }
 
-  private static final class MiddleendServiceMethodDescriptorSupplier
-      extends MiddleendServiceBaseDescriptorSupplier
+  private static final class MiddleendEncryptionServiceMethodDescriptorSupplier
+      extends MiddleendEncryptionServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    MiddleendServiceMethodDescriptorSupplier(String methodName) {
+    MiddleendEncryptionServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -641,11 +641,11 @@ public final class MiddleendServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (MiddleendServiceGrpc.class) {
+      synchronized (MiddleendEncryptionServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new MiddleendServiceFileDescriptorSupplier())
+              .setSchemaDescriptor(new MiddleendEncryptionServiceFileDescriptorSupplier())
               .addMethod(getCreateEncryptedVolumeMethod())
               .addMethod(getDeleteEncryptedVolumeMethod())
               .addMethod(getUpdateEncryptedVolumeMethod())

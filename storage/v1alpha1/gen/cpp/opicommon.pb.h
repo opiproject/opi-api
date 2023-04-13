@@ -47,7 +47,7 @@ struct TableStruct_opicommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -60,6 +60,9 @@ namespace v1 {
 class PciEndpoint;
 struct PciEndpointDefaultTypeInternal;
 extern PciEndpointDefaultTypeInternal _PciEndpoint_default_instance_;
+class QosLimit;
+struct QosLimitDefaultTypeInternal;
+extern QosLimitDefaultTypeInternal _QosLimit_default_instance_;
 class VolumeStats;
 struct VolumeStatsDefaultTypeInternal;
 extern VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
@@ -68,6 +71,7 @@ extern VolumeStatsDefaultTypeInternal _VolumeStats_default_instance_;
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
 template<> ::opi_api::storage::v1::PciEndpoint* Arena::CreateMaybeMessage<::opi_api::storage::v1::PciEndpoint>(Arena*);
+template<> ::opi_api::storage::v1::QosLimit* Arena::CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(Arena*);
 template<> ::opi_api::storage::v1::VolumeStats* Arena::CreateMaybeMessage<::opi_api::storage::v1::VolumeStats>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
@@ -506,6 +510,207 @@ class VolumeStats final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_opicommon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class QosLimit final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.QosLimit) */ {
+ public:
+  inline QosLimit() : QosLimit(nullptr) {}
+  ~QosLimit() override;
+  explicit constexpr QosLimit(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  QosLimit(const QosLimit& from);
+  QosLimit(QosLimit&& from) noexcept
+    : QosLimit() {
+    *this = ::std::move(from);
+  }
+
+  inline QosLimit& operator=(const QosLimit& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QosLimit& operator=(QosLimit&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const QosLimit& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const QosLimit* internal_default_instance() {
+    return reinterpret_cast<const QosLimit*>(
+               &_QosLimit_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(QosLimit& a, QosLimit& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QosLimit* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(QosLimit* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  QosLimit* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<QosLimit>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const QosLimit& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const QosLimit& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QosLimit* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.storage.v1.QosLimit";
+  }
+  protected:
+  explicit QosLimit(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRdIopsKiopsFieldNumber = 1,
+    kWrIopsKiopsFieldNumber = 2,
+    kRwIopsKiopsFieldNumber = 3,
+    kRdBandwidthMbsFieldNumber = 4,
+    kWrBandwidthMbsFieldNumber = 5,
+    kRwBandwidthMbsFieldNumber = 6,
+  };
+  // int64 rd_iops_kiops = 1;
+  void clear_rd_iops_kiops();
+  int64_t rd_iops_kiops() const;
+  void set_rd_iops_kiops(int64_t value);
+  private:
+  int64_t _internal_rd_iops_kiops() const;
+  void _internal_set_rd_iops_kiops(int64_t value);
+  public:
+
+  // int64 wr_iops_kiops = 2;
+  void clear_wr_iops_kiops();
+  int64_t wr_iops_kiops() const;
+  void set_wr_iops_kiops(int64_t value);
+  private:
+  int64_t _internal_wr_iops_kiops() const;
+  void _internal_set_wr_iops_kiops(int64_t value);
+  public:
+
+  // int64 rw_iops_kiops = 3;
+  void clear_rw_iops_kiops();
+  int64_t rw_iops_kiops() const;
+  void set_rw_iops_kiops(int64_t value);
+  private:
+  int64_t _internal_rw_iops_kiops() const;
+  void _internal_set_rw_iops_kiops(int64_t value);
+  public:
+
+  // int64 rd_bandwidth_mbs = 4;
+  void clear_rd_bandwidth_mbs();
+  int64_t rd_bandwidth_mbs() const;
+  void set_rd_bandwidth_mbs(int64_t value);
+  private:
+  int64_t _internal_rd_bandwidth_mbs() const;
+  void _internal_set_rd_bandwidth_mbs(int64_t value);
+  public:
+
+  // int64 wr_bandwidth_mbs = 5;
+  void clear_wr_bandwidth_mbs();
+  int64_t wr_bandwidth_mbs() const;
+  void set_wr_bandwidth_mbs(int64_t value);
+  private:
+  int64_t _internal_wr_bandwidth_mbs() const;
+  void _internal_set_wr_bandwidth_mbs(int64_t value);
+  public:
+
+  // int64 rw_bandwidth_mbs = 6;
+  void clear_rw_bandwidth_mbs();
+  int64_t rw_bandwidth_mbs() const;
+  void set_rw_bandwidth_mbs(int64_t value);
+  private:
+  int64_t _internal_rw_bandwidth_mbs() const;
+  void _internal_set_rw_bandwidth_mbs(int64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.storage.v1.QosLimit)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  int64_t rd_iops_kiops_;
+  int64_t wr_iops_kiops_;
+  int64_t rw_iops_kiops_;
+  int64_t rd_bandwidth_mbs_;
+  int64_t wr_bandwidth_mbs_;
+  int64_t rw_bandwidth_mbs_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_opicommon_2eproto;
+};
 // ===================================================================
 
 
@@ -761,9 +966,135 @@ inline void VolumeStats::set_unmap_latency_ticks(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VolumeStats.unmap_latency_ticks)
 }
 
+// -------------------------------------------------------------------
+
+// QosLimit
+
+// int64 rd_iops_kiops = 1;
+inline void QosLimit::clear_rd_iops_kiops() {
+  rd_iops_kiops_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_rd_iops_kiops() const {
+  return rd_iops_kiops_;
+}
+inline int64_t QosLimit::rd_iops_kiops() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.rd_iops_kiops)
+  return _internal_rd_iops_kiops();
+}
+inline void QosLimit::_internal_set_rd_iops_kiops(int64_t value) {
+  
+  rd_iops_kiops_ = value;
+}
+inline void QosLimit::set_rd_iops_kiops(int64_t value) {
+  _internal_set_rd_iops_kiops(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.rd_iops_kiops)
+}
+
+// int64 wr_iops_kiops = 2;
+inline void QosLimit::clear_wr_iops_kiops() {
+  wr_iops_kiops_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_wr_iops_kiops() const {
+  return wr_iops_kiops_;
+}
+inline int64_t QosLimit::wr_iops_kiops() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.wr_iops_kiops)
+  return _internal_wr_iops_kiops();
+}
+inline void QosLimit::_internal_set_wr_iops_kiops(int64_t value) {
+  
+  wr_iops_kiops_ = value;
+}
+inline void QosLimit::set_wr_iops_kiops(int64_t value) {
+  _internal_set_wr_iops_kiops(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.wr_iops_kiops)
+}
+
+// int64 rw_iops_kiops = 3;
+inline void QosLimit::clear_rw_iops_kiops() {
+  rw_iops_kiops_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_rw_iops_kiops() const {
+  return rw_iops_kiops_;
+}
+inline int64_t QosLimit::rw_iops_kiops() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.rw_iops_kiops)
+  return _internal_rw_iops_kiops();
+}
+inline void QosLimit::_internal_set_rw_iops_kiops(int64_t value) {
+  
+  rw_iops_kiops_ = value;
+}
+inline void QosLimit::set_rw_iops_kiops(int64_t value) {
+  _internal_set_rw_iops_kiops(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.rw_iops_kiops)
+}
+
+// int64 rd_bandwidth_mbs = 4;
+inline void QosLimit::clear_rd_bandwidth_mbs() {
+  rd_bandwidth_mbs_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_rd_bandwidth_mbs() const {
+  return rd_bandwidth_mbs_;
+}
+inline int64_t QosLimit::rd_bandwidth_mbs() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.rd_bandwidth_mbs)
+  return _internal_rd_bandwidth_mbs();
+}
+inline void QosLimit::_internal_set_rd_bandwidth_mbs(int64_t value) {
+  
+  rd_bandwidth_mbs_ = value;
+}
+inline void QosLimit::set_rd_bandwidth_mbs(int64_t value) {
+  _internal_set_rd_bandwidth_mbs(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.rd_bandwidth_mbs)
+}
+
+// int64 wr_bandwidth_mbs = 5;
+inline void QosLimit::clear_wr_bandwidth_mbs() {
+  wr_bandwidth_mbs_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_wr_bandwidth_mbs() const {
+  return wr_bandwidth_mbs_;
+}
+inline int64_t QosLimit::wr_bandwidth_mbs() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.wr_bandwidth_mbs)
+  return _internal_wr_bandwidth_mbs();
+}
+inline void QosLimit::_internal_set_wr_bandwidth_mbs(int64_t value) {
+  
+  wr_bandwidth_mbs_ = value;
+}
+inline void QosLimit::set_wr_bandwidth_mbs(int64_t value) {
+  _internal_set_wr_bandwidth_mbs(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.wr_bandwidth_mbs)
+}
+
+// int64 rw_bandwidth_mbs = 6;
+inline void QosLimit::clear_rw_bandwidth_mbs() {
+  rw_bandwidth_mbs_ = int64_t{0};
+}
+inline int64_t QosLimit::_internal_rw_bandwidth_mbs() const {
+  return rw_bandwidth_mbs_;
+}
+inline int64_t QosLimit::rw_bandwidth_mbs() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosLimit.rw_bandwidth_mbs)
+  return _internal_rw_bandwidth_mbs();
+}
+inline void QosLimit::_internal_set_rw_bandwidth_mbs(int64_t value) {
+  
+  rw_bandwidth_mbs_ = value;
+}
+inline void QosLimit::set_rw_bandwidth_mbs(int64_t value) {
+  _internal_set_rw_bandwidth_mbs(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosLimit.rw_bandwidth_mbs)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

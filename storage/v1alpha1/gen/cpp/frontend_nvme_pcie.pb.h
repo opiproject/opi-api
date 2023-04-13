@@ -1118,6 +1118,8 @@ class NVMeControllerSpec final :
     kIdFieldNumber = 1,
     kSubsystemIdFieldNumber = 3,
     kPcieIdFieldNumber = 4,
+    kMinLimitFieldNumber = 10,
+    kMaxLimitFieldNumber = 11,
     kNvmeControllerIdFieldNumber = 2,
     kMaxNsqFieldNumber = 5,
     kMaxNcqFieldNumber = 6,
@@ -1178,6 +1180,42 @@ class NVMeControllerSpec final :
   void unsafe_arena_set_allocated_pcie_id(
       ::opi_api::storage::v1::PciEndpoint* pcie_id);
   ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
+
+  // .opi_api.storage.v1.QosLimit min_limit = 10;
+  bool has_min_limit() const;
+  private:
+  bool _internal_has_min_limit() const;
+  public:
+  void clear_min_limit();
+  const ::opi_api::storage::v1::QosLimit& min_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_min_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_min_limit();
+  void set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_min_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_min_limit();
+  public:
+  void unsafe_arena_set_allocated_min_limit(
+      ::opi_api::storage::v1::QosLimit* min_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_min_limit();
+
+  // .opi_api.storage.v1.QosLimit max_limit = 11;
+  bool has_max_limit() const;
+  private:
+  bool _internal_has_max_limit() const;
+  public:
+  void clear_max_limit();
+  const ::opi_api::storage::v1::QosLimit& max_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_max_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_max_limit();
+  void set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_max_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_max_limit();
+  public:
+  void unsafe_arena_set_allocated_max_limit(
+      ::opi_api::storage::v1::QosLimit* max_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_max_limit();
 
   // int32 nvme_controller_id = 2;
   void clear_nvme_controller_id();
@@ -1243,6 +1281,8 @@ class NVMeControllerSpec final :
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::common::v1::ObjectKey* subsystem_id_;
   ::opi_api::storage::v1::PciEndpoint* pcie_id_;
+  ::opi_api::storage::v1::QosLimit* min_limit_;
+  ::opi_api::storage::v1::QosLimit* max_limit_;
   int32_t nvme_controller_id_;
   int32_t max_nsq_;
   int32_t max_ncq_;
@@ -7149,6 +7189,178 @@ inline void NVMeControllerSpec::_internal_set_max_namespaces(int32_t value) {
 inline void NVMeControllerSpec::set_max_namespaces(int32_t value) {
   _internal_set_max_namespaces(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerSpec.max_namespaces)
+}
+
+// .opi_api.storage.v1.QosLimit min_limit = 10;
+inline bool NVMeControllerSpec::_internal_has_min_limit() const {
+  return this != internal_default_instance() && min_limit_ != nullptr;
+}
+inline bool NVMeControllerSpec::has_min_limit() const {
+  return _internal_has_min_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& NVMeControllerSpec::_internal_min_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = min_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& NVMeControllerSpec::min_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerSpec.min_limit)
+  return _internal_min_limit();
+}
+inline void NVMeControllerSpec::unsafe_arena_set_allocated_min_limit(
+    ::opi_api::storage::v1::QosLimit* min_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  min_limit_ = min_limit;
+  if (min_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeControllerSpec.min_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::release_min_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::unsafe_arena_release_min_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeControllerSpec.min_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::_internal_mutable_min_limit() {
+  
+  if (min_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    min_limit_ = p;
+  }
+  return min_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::mutable_min_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_min_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeControllerSpec.min_limit)
+  return _msg;
+}
+inline void NVMeControllerSpec::set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  if (min_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit));
+    if (message_arena != submessage_arena) {
+      min_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, min_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  min_limit_ = min_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeControllerSpec.min_limit)
+}
+
+// .opi_api.storage.v1.QosLimit max_limit = 11;
+inline bool NVMeControllerSpec::_internal_has_max_limit() const {
+  return this != internal_default_instance() && max_limit_ != nullptr;
+}
+inline bool NVMeControllerSpec::has_max_limit() const {
+  return _internal_has_max_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& NVMeControllerSpec::_internal_max_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = max_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& NVMeControllerSpec::max_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerSpec.max_limit)
+  return _internal_max_limit();
+}
+inline void NVMeControllerSpec::unsafe_arena_set_allocated_max_limit(
+    ::opi_api::storage::v1::QosLimit* max_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  max_limit_ = max_limit;
+  if (max_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NVMeControllerSpec.max_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::release_max_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::unsafe_arena_release_max_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeControllerSpec.max_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::_internal_mutable_max_limit() {
+  
+  if (max_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    max_limit_ = p;
+  }
+  return max_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* NVMeControllerSpec::mutable_max_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_max_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeControllerSpec.max_limit)
+  return _msg;
+}
+inline void NVMeControllerSpec::set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  if (max_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit));
+    if (message_arena != submessage_arena) {
+      max_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, max_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  max_limit_ = max_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeControllerSpec.max_limit)
 }
 
 // -------------------------------------------------------------------

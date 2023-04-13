@@ -48,4 +48,58 @@ public interface VirtioScsiControllerOrBuilder extends
    * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 2;</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
+
+  /**
+   * <pre>
+   * min QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return Whether the minLimit field is set.
+   */
+  boolean hasMinLimit();
+  /**
+   * <pre>
+   * min QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return The minLimit.
+   */
+  opi_api.storage.v1.QosLimit getMinLimit();
+  /**
+   * <pre>
+   * min QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   */
+  opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
+
+  /**
+   * <pre>
+   * max QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return Whether the maxLimit field is set.
+   */
+  boolean hasMaxLimit();
+  /**
+   * <pre>
+   * max QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return The maxLimit.
+   */
+  opi_api.storage.v1.QosLimit getMaxLimit();
+  /**
+   * <pre>
+   * max QoS limits for the controller
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   */
+  opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

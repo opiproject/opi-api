@@ -473,6 +473,8 @@ class VirtioScsiController final :
   enum : int {
     kIdFieldNumber = 1,
     kPcieIdFieldNumber = 2,
+    kMinLimitFieldNumber = 3,
+    kMaxLimitFieldNumber = 4,
   };
   // .opi_api.common.v1.ObjectKey id = 1;
   bool has_id() const;
@@ -510,6 +512,42 @@ class VirtioScsiController final :
       ::opi_api::storage::v1::PciEndpoint* pcie_id);
   ::opi_api::storage::v1::PciEndpoint* unsafe_arena_release_pcie_id();
 
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  bool has_min_limit() const;
+  private:
+  bool _internal_has_min_limit() const;
+  public:
+  void clear_min_limit();
+  const ::opi_api::storage::v1::QosLimit& min_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_min_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_min_limit();
+  void set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_min_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_min_limit();
+  public:
+  void unsafe_arena_set_allocated_min_limit(
+      ::opi_api::storage::v1::QosLimit* min_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_min_limit();
+
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  bool has_max_limit() const;
+  private:
+  bool _internal_has_max_limit() const;
+  public:
+  void clear_max_limit();
+  const ::opi_api::storage::v1::QosLimit& max_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_max_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_max_limit();
+  void set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_max_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_max_limit();
+  public:
+  void unsafe_arena_set_allocated_max_limit(
+      ::opi_api::storage::v1::QosLimit* max_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_max_limit();
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.VirtioScsiController)
  private:
   class _Internal;
@@ -519,6 +557,8 @@ class VirtioScsiController final :
   typedef void DestructorSkippable_;
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::storage::v1::PciEndpoint* pcie_id_;
+  ::opi_api::storage::v1::QosLimit* min_limit_;
+  ::opi_api::storage::v1::QosLimit* max_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fscsi_2eproto;
 };
@@ -5090,6 +5130,178 @@ inline void VirtioScsiController::set_allocated_pcie_id(::opi_api::storage::v1::
   }
   pcie_id_ = pcie_id;
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiController.pcie_id)
+}
+
+// .opi_api.storage.v1.QosLimit min_limit = 3;
+inline bool VirtioScsiController::_internal_has_min_limit() const {
+  return this != internal_default_instance() && min_limit_ != nullptr;
+}
+inline bool VirtioScsiController::has_min_limit() const {
+  return _internal_has_min_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioScsiController::_internal_min_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = min_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioScsiController::min_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiController.min_limit)
+  return _internal_min_limit();
+}
+inline void VirtioScsiController::unsafe_arena_set_allocated_min_limit(
+    ::opi_api::storage::v1::QosLimit* min_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  min_limit_ = min_limit;
+  if (min_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiController.min_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::release_min_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::unsafe_arena_release_min_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiController.min_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::_internal_mutable_min_limit() {
+  
+  if (min_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    min_limit_ = p;
+  }
+  return min_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::mutable_min_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_min_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiController.min_limit)
+  return _msg;
+}
+inline void VirtioScsiController::set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  if (min_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit));
+    if (message_arena != submessage_arena) {
+      min_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, min_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  min_limit_ = min_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiController.min_limit)
+}
+
+// .opi_api.storage.v1.QosLimit max_limit = 4;
+inline bool VirtioScsiController::_internal_has_max_limit() const {
+  return this != internal_default_instance() && max_limit_ != nullptr;
+}
+inline bool VirtioScsiController::has_max_limit() const {
+  return _internal_has_max_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioScsiController::_internal_max_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = max_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioScsiController::max_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioScsiController.max_limit)
+  return _internal_max_limit();
+}
+inline void VirtioScsiController::unsafe_arena_set_allocated_max_limit(
+    ::opi_api::storage::v1::QosLimit* max_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  max_limit_ = max_limit;
+  if (max_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioScsiController.max_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::release_max_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::unsafe_arena_release_max_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioScsiController.max_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::_internal_mutable_max_limit() {
+  
+  if (max_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    max_limit_ = p;
+  }
+  return max_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioScsiController::mutable_max_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_max_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioScsiController.max_limit)
+  return _msg;
+}
+inline void VirtioScsiController::set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  if (max_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit));
+    if (message_arena != submessage_arena) {
+      max_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, max_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  max_limit_ = max_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioScsiController.max_limit)
 }
 
 // -------------------------------------------------------------------

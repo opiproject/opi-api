@@ -24,6 +24,11 @@ public final class OpiCommonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_storage_v1_VolumeStats_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_storage_v1_QosLimit_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_storage_v1_QosLimit_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,7 +47,11 @@ public final class OpiCommonProto {
       "\022\031\n\021unmap_bytes_count\030\005 \001(\005\022\027\n\017unmap_ops" +
       "_count\030\006 \001(\005\022\032\n\022read_latency_ticks\030\007 \001(\005" +
       "\022\033\n\023write_latency_ticks\030\010 \001(\005\022\033\n\023unmap_l" +
-      "atency_ticks\030\t \001(\005*\367\001\n\016EncryptionType\022\037\n" +
+      "atency_ticks\030\t \001(\005\"\235\001\n\010QosLimit\022\025\n\rrd_io" +
+      "ps_kiops\030\001 \001(\003\022\025\n\rwr_iops_kiops\030\002 \001(\003\022\025\n" +
+      "\rrw_iops_kiops\030\003 \001(\003\022\030\n\020rd_bandwidth_mbs" +
+      "\030\004 \001(\003\022\030\n\020wr_bandwidth_mbs\030\005 \001(\003\022\030\n\020rw_b" +
+      "andwidth_mbs\030\006 \001(\003*\367\001\n\016EncryptionType\022\037\n" +
       "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\037\n\033ENCRYP" +
       "TION_TYPE_AES_CBC_128\020\001\022\037\n\033ENCRYPTION_TY" +
       "PE_AES_CBC_192\020\002\022\037\n\033ENCRYPTION_TYPE_AES_" +
@@ -69,6 +78,12 @@ public final class OpiCommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_VolumeStats_descriptor,
         new java.lang.String[] { "ReadBytesCount", "ReadOpsCount", "WriteBytesCount", "WriteOpsCount", "UnmapBytesCount", "UnmapOpsCount", "ReadLatencyTicks", "WriteLatencyTicks", "UnmapLatencyTicks", });
+    internal_static_opi_api_storage_v1_QosLimit_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_opi_api_storage_v1_QosLimit_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_storage_v1_QosLimit_descriptor,
+        new java.lang.String[] { "RdIopsKiops", "WrIopsKiops", "RwIopsKiops", "RdBandwidthMbs", "WrBandwidthMbs", "RwBandwidthMbs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

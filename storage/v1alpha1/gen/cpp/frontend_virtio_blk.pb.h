@@ -236,6 +236,8 @@ class VirtioBlk final :
     kIdFieldNumber = 1,
     kPcieIdFieldNumber = 2,
     kVolumeIdFieldNumber = 3,
+    kMinLimitFieldNumber = 5,
+    kMaxLimitFieldNumber = 6,
     kMaxIoQpsFieldNumber = 4,
   };
   // .opi_api.common.v1.ObjectKey id = 1;
@@ -292,6 +294,42 @@ class VirtioBlk final :
       ::opi_api::common::v1::ObjectKey* volume_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
 
+  // .opi_api.storage.v1.QosLimit min_limit = 5;
+  bool has_min_limit() const;
+  private:
+  bool _internal_has_min_limit() const;
+  public:
+  void clear_min_limit();
+  const ::opi_api::storage::v1::QosLimit& min_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_min_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_min_limit();
+  void set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_min_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_min_limit();
+  public:
+  void unsafe_arena_set_allocated_min_limit(
+      ::opi_api::storage::v1::QosLimit* min_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_min_limit();
+
+  // .opi_api.storage.v1.QosLimit max_limit = 6;
+  bool has_max_limit() const;
+  private:
+  bool _internal_has_max_limit() const;
+  public:
+  void clear_max_limit();
+  const ::opi_api::storage::v1::QosLimit& max_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_max_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_max_limit();
+  void set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit);
+  private:
+  const ::opi_api::storage::v1::QosLimit& _internal_max_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_max_limit();
+  public:
+  void unsafe_arena_set_allocated_max_limit(
+      ::opi_api::storage::v1::QosLimit* max_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_max_limit();
+
   // int64 max_io_qps = 4;
   void clear_max_io_qps();
   int64_t max_io_qps() const;
@@ -311,6 +349,8 @@ class VirtioBlk final :
   ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::storage::v1::PciEndpoint* pcie_id_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
+  ::opi_api::storage::v1::QosLimit* min_limit_;
+  ::opi_api::storage::v1::QosLimit* max_limit_;
   int64_t max_io_qps_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fvirtio_5fblk_2eproto;
@@ -1956,6 +1996,178 @@ inline void VirtioBlk::_internal_set_max_io_qps(int64_t value) {
 inline void VirtioBlk::set_max_io_qps(int64_t value) {
   _internal_set_max_io_qps(value);
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.VirtioBlk.max_io_qps)
+}
+
+// .opi_api.storage.v1.QosLimit min_limit = 5;
+inline bool VirtioBlk::_internal_has_min_limit() const {
+  return this != internal_default_instance() && min_limit_ != nullptr;
+}
+inline bool VirtioBlk::has_min_limit() const {
+  return _internal_has_min_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioBlk::_internal_min_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = min_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioBlk::min_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlk.min_limit)
+  return _internal_min_limit();
+}
+inline void VirtioBlk::unsafe_arena_set_allocated_min_limit(
+    ::opi_api::storage::v1::QosLimit* min_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  min_limit_ = min_limit;
+  if (min_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlk.min_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::release_min_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::unsafe_arena_release_min_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlk.min_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::_internal_mutable_min_limit() {
+  
+  if (min_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    min_limit_ = p;
+  }
+  return min_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::mutable_min_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_min_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlk.min_limit)
+  return _msg;
+}
+inline void VirtioBlk::set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
+  }
+  if (min_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit));
+    if (message_arena != submessage_arena) {
+      min_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, min_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  min_limit_ = min_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.min_limit)
+}
+
+// .opi_api.storage.v1.QosLimit max_limit = 6;
+inline bool VirtioBlk::_internal_has_max_limit() const {
+  return this != internal_default_instance() && max_limit_ != nullptr;
+}
+inline bool VirtioBlk::has_max_limit() const {
+  return _internal_has_max_limit();
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioBlk::_internal_max_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = max_limit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
+      ::opi_api::storage::v1::_QosLimit_default_instance_);
+}
+inline const ::opi_api::storage::v1::QosLimit& VirtioBlk::max_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.VirtioBlk.max_limit)
+  return _internal_max_limit();
+}
+inline void VirtioBlk::unsafe_arena_set_allocated_max_limit(
+    ::opi_api::storage::v1::QosLimit* max_limit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  max_limit_ = max_limit;
+  if (max_limit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.VirtioBlk.max_limit)
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::release_max_limit() {
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::unsafe_arena_release_max_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.VirtioBlk.max_limit)
+  
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
+  return temp;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::_internal_mutable_max_limit() {
+  
+  if (max_limit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
+    max_limit_ = p;
+  }
+  return max_limit_;
+}
+inline ::opi_api::storage::v1::QosLimit* VirtioBlk::mutable_max_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_max_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.VirtioBlk.max_limit)
+  return _msg;
+}
+inline void VirtioBlk::set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
+  }
+  if (max_limit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit));
+    if (message_arena != submessage_arena) {
+      max_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, max_limit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  max_limit_ = max_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.VirtioBlk.max_limit)
 }
 
 // -------------------------------------------------------------------

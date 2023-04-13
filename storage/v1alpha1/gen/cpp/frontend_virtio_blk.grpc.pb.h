@@ -4,6 +4,7 @@
 // Original file comments:
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// Copyright (C) 2023 Intel Corporation
 //
 #ifndef GRPC_frontend_5fvirtio_5fblk_2eproto__INCLUDED
 #define GRPC_frontend_5fvirtio_5fblk_2eproto__INCLUDED

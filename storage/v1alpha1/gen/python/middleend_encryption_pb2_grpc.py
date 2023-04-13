@@ -3,10 +3,10 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import middleend_pb2 as middleend__pb2
+import middleend_encryption_pb2 as middleend__encryption__pb2
 
 
-class MiddleendServiceStub(object):
+class MiddleendEncryptionServiceStub(object):
     """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
     """
 
@@ -17,38 +17,38 @@ class MiddleendServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateEncryptedVolume = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/CreateEncryptedVolume',
-                request_serializer=middleend__pb2.CreateEncryptedVolumeRequest.SerializeToString,
-                response_deserializer=middleend__pb2.EncryptedVolume.FromString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/CreateEncryptedVolume',
+                request_serializer=middleend__encryption__pb2.CreateEncryptedVolumeRequest.SerializeToString,
+                response_deserializer=middleend__encryption__pb2.EncryptedVolume.FromString,
                 )
         self.DeleteEncryptedVolume = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/DeleteEncryptedVolume',
-                request_serializer=middleend__pb2.DeleteEncryptedVolumeRequest.SerializeToString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/DeleteEncryptedVolume',
+                request_serializer=middleend__encryption__pb2.DeleteEncryptedVolumeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.UpdateEncryptedVolume = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/UpdateEncryptedVolume',
-                request_serializer=middleend__pb2.UpdateEncryptedVolumeRequest.SerializeToString,
-                response_deserializer=middleend__pb2.EncryptedVolume.FromString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/UpdateEncryptedVolume',
+                request_serializer=middleend__encryption__pb2.UpdateEncryptedVolumeRequest.SerializeToString,
+                response_deserializer=middleend__encryption__pb2.EncryptedVolume.FromString,
                 )
         self.ListEncryptedVolumes = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/ListEncryptedVolumes',
-                request_serializer=middleend__pb2.ListEncryptedVolumesRequest.SerializeToString,
-                response_deserializer=middleend__pb2.ListEncryptedVolumesResponse.FromString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes',
+                request_serializer=middleend__encryption__pb2.ListEncryptedVolumesRequest.SerializeToString,
+                response_deserializer=middleend__encryption__pb2.ListEncryptedVolumesResponse.FromString,
                 )
         self.GetEncryptedVolume = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/GetEncryptedVolume',
-                request_serializer=middleend__pb2.GetEncryptedVolumeRequest.SerializeToString,
-                response_deserializer=middleend__pb2.EncryptedVolume.FromString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/GetEncryptedVolume',
+                request_serializer=middleend__encryption__pb2.GetEncryptedVolumeRequest.SerializeToString,
+                response_deserializer=middleend__encryption__pb2.EncryptedVolume.FromString,
                 )
         self.EncryptedVolumeStats = channel.unary_unary(
-                '/opi_api.storage.v1.MiddleendService/EncryptedVolumeStats',
-                request_serializer=middleend__pb2.EncryptedVolumeStatsRequest.SerializeToString,
-                response_deserializer=middleend__pb2.EncryptedVolumeStatsResponse.FromString,
+                '/opi_api.storage.v1.MiddleendEncryptionService/EncryptedVolumeStats',
+                request_serializer=middleend__encryption__pb2.EncryptedVolumeStatsRequest.SerializeToString,
+                response_deserializer=middleend__encryption__pb2.EncryptedVolumeStatsResponse.FromString,
                 )
 
 
-class MiddleendServiceServicer(object):
+class MiddleendEncryptionServiceServicer(object):
     """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
     """
 
@@ -89,46 +89,46 @@ class MiddleendServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_MiddleendServiceServicer_to_server(servicer, server):
+def add_MiddleendEncryptionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateEncryptedVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateEncryptedVolume,
-                    request_deserializer=middleend__pb2.CreateEncryptedVolumeRequest.FromString,
-                    response_serializer=middleend__pb2.EncryptedVolume.SerializeToString,
+                    request_deserializer=middleend__encryption__pb2.CreateEncryptedVolumeRequest.FromString,
+                    response_serializer=middleend__encryption__pb2.EncryptedVolume.SerializeToString,
             ),
             'DeleteEncryptedVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteEncryptedVolume,
-                    request_deserializer=middleend__pb2.DeleteEncryptedVolumeRequest.FromString,
+                    request_deserializer=middleend__encryption__pb2.DeleteEncryptedVolumeRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'UpdateEncryptedVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateEncryptedVolume,
-                    request_deserializer=middleend__pb2.UpdateEncryptedVolumeRequest.FromString,
-                    response_serializer=middleend__pb2.EncryptedVolume.SerializeToString,
+                    request_deserializer=middleend__encryption__pb2.UpdateEncryptedVolumeRequest.FromString,
+                    response_serializer=middleend__encryption__pb2.EncryptedVolume.SerializeToString,
             ),
             'ListEncryptedVolumes': grpc.unary_unary_rpc_method_handler(
                     servicer.ListEncryptedVolumes,
-                    request_deserializer=middleend__pb2.ListEncryptedVolumesRequest.FromString,
-                    response_serializer=middleend__pb2.ListEncryptedVolumesResponse.SerializeToString,
+                    request_deserializer=middleend__encryption__pb2.ListEncryptedVolumesRequest.FromString,
+                    response_serializer=middleend__encryption__pb2.ListEncryptedVolumesResponse.SerializeToString,
             ),
             'GetEncryptedVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEncryptedVolume,
-                    request_deserializer=middleend__pb2.GetEncryptedVolumeRequest.FromString,
-                    response_serializer=middleend__pb2.EncryptedVolume.SerializeToString,
+                    request_deserializer=middleend__encryption__pb2.GetEncryptedVolumeRequest.FromString,
+                    response_serializer=middleend__encryption__pb2.EncryptedVolume.SerializeToString,
             ),
             'EncryptedVolumeStats': grpc.unary_unary_rpc_method_handler(
                     servicer.EncryptedVolumeStats,
-                    request_deserializer=middleend__pb2.EncryptedVolumeStatsRequest.FromString,
-                    response_serializer=middleend__pb2.EncryptedVolumeStatsResponse.SerializeToString,
+                    request_deserializer=middleend__encryption__pb2.EncryptedVolumeStatsRequest.FromString,
+                    response_serializer=middleend__encryption__pb2.EncryptedVolumeStatsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'opi_api.storage.v1.MiddleendService', rpc_method_handlers)
+            'opi_api.storage.v1.MiddleendEncryptionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class MiddleendService(object):
+class MiddleendEncryptionService(object):
     """Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
     """
 
@@ -143,9 +143,9 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/CreateEncryptedVolume',
-            middleend__pb2.CreateEncryptedVolumeRequest.SerializeToString,
-            middleend__pb2.EncryptedVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/CreateEncryptedVolume',
+            middleend__encryption__pb2.CreateEncryptedVolumeRequest.SerializeToString,
+            middleend__encryption__pb2.EncryptedVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -160,8 +160,8 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/DeleteEncryptedVolume',
-            middleend__pb2.DeleteEncryptedVolumeRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/DeleteEncryptedVolume',
+            middleend__encryption__pb2.DeleteEncryptedVolumeRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -177,9 +177,9 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/UpdateEncryptedVolume',
-            middleend__pb2.UpdateEncryptedVolumeRequest.SerializeToString,
-            middleend__pb2.EncryptedVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/UpdateEncryptedVolume',
+            middleend__encryption__pb2.UpdateEncryptedVolumeRequest.SerializeToString,
+            middleend__encryption__pb2.EncryptedVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -194,9 +194,9 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/ListEncryptedVolumes',
-            middleend__pb2.ListEncryptedVolumesRequest.SerializeToString,
-            middleend__pb2.ListEncryptedVolumesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/ListEncryptedVolumes',
+            middleend__encryption__pb2.ListEncryptedVolumesRequest.SerializeToString,
+            middleend__encryption__pb2.ListEncryptedVolumesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -211,9 +211,9 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/GetEncryptedVolume',
-            middleend__pb2.GetEncryptedVolumeRequest.SerializeToString,
-            middleend__pb2.EncryptedVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/GetEncryptedVolume',
+            middleend__encryption__pb2.GetEncryptedVolumeRequest.SerializeToString,
+            middleend__encryption__pb2.EncryptedVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -228,8 +228,8 @@ class MiddleendService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendService/EncryptedVolumeStats',
-            middleend__pb2.EncryptedVolumeStatsRequest.SerializeToString,
-            middleend__pb2.EncryptedVolumeStatsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.storage.v1.MiddleendEncryptionService/EncryptedVolumeStats',
+            middleend__encryption__pb2.EncryptedVolumeStatsRequest.SerializeToString,
+            middleend__encryption__pb2.EncryptedVolumeStatsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

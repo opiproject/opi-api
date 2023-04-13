@@ -35,7 +35,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VirtioScsiTargetDefaultTypeInte
 constexpr VirtioScsiController::VirtioScsiController(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(nullptr)
-  , pcie_id_(nullptr){}
+  , pcie_id_(nullptr)
+  , min_limit_(nullptr)
+  , max_limit_(nullptr){}
 struct VirtioScsiControllerDefaultTypeInternal {
   constexpr VirtioScsiControllerDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -396,6 +398,8 @@ const uint32_t TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiController, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiController, pcie_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiController, min_limit_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiController, max_limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::VirtioScsiLun, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -602,31 +606,31 @@ const uint32_t TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets[] PROTOBUF_
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiTarget)},
   { 8, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiController)},
-  { 16, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLun)},
-  { 25, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiTargetRequest)},
-  { 34, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiTargetRequest)},
-  { 42, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiTargetRequest)},
-  { 50, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiTargetsRequest)},
-  { 59, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiTargetsResponse)},
-  { 67, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiTargetRequest)},
-  { 74, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiTargetStatsRequest)},
-  { 81, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiTargetStatsResponse)},
-  { 89, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiControllerRequest)},
-  { 98, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiControllerRequest)},
-  { 106, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiControllerRequest)},
-  { 114, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiControllersRequest)},
-  { 123, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiControllersResponse)},
-  { 131, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiControllerRequest)},
-  { 138, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsRequest)},
-  { 145, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsResponse)},
-  { 153, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiLunRequest)},
-  { 162, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiLunRequest)},
-  { 170, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiLunRequest)},
-  { 178, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiLunsRequest)},
-  { 187, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiLunsResponse)},
-  { 195, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiLunRequest)},
-  { 202, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsRequest)},
-  { 210, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsResponse)},
+  { 18, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLun)},
+  { 27, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiTargetRequest)},
+  { 36, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiTargetRequest)},
+  { 44, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiTargetRequest)},
+  { 52, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiTargetsRequest)},
+  { 61, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiTargetsResponse)},
+  { 69, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiTargetRequest)},
+  { 76, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiTargetStatsRequest)},
+  { 83, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiTargetStatsResponse)},
+  { 91, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiControllerRequest)},
+  { 100, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiControllerRequest)},
+  { 108, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiControllerRequest)},
+  { 116, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiControllersRequest)},
+  { 125, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiControllersResponse)},
+  { 133, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiControllerRequest)},
+  { 140, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsRequest)},
+  { 147, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiControllerStatsResponse)},
+  { 155, -1, -1, sizeof(::opi_api::storage::v1::CreateVirtioScsiLunRequest)},
+  { 164, -1, -1, sizeof(::opi_api::storage::v1::DeleteVirtioScsiLunRequest)},
+  { 172, -1, -1, sizeof(::opi_api::storage::v1::UpdateVirtioScsiLunRequest)},
+  { 180, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiLunsRequest)},
+  { 189, -1, -1, sizeof(::opi_api::storage::v1::ListVirtioScsiLunsResponse)},
+  { 197, -1, -1, sizeof(::opi_api::storage::v1::GetVirtioScsiLunRequest)},
+  { 204, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsRequest)},
+  { 212, -1, -1, sizeof(::opi_api::storage::v1::VirtioScsiLunStatsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -668,175 +672,178 @@ const char descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto[] PROTOBUF
   "le/api/field_behavior.proto\032 google/prot"
   "obuf/field_mask.proto\"N\n\020VirtioScsiTarge"
   "t\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Object"
-  "Key\022\020\n\010max_luns\030\002 \001(\005\"r\n\024VirtioScsiContr"
-  "oller\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
-  "jectKey\0220\n\007pcie_id\030\002 \001(\0132\037.opi_api.stora"
-  "ge.v1.PciEndpoint\"\233\001\n\rVirtioScsiLun\022(\n\002i"
-  "d\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022/\n"
-  "\ttarget_id\030\002 \001(\0132\034.opi_api.common.v1.Obj"
-  "ectKey\022/\n\tvolume_id\030\003 \001(\0132\034.opi_api.comm"
-  "on.v1.ObjectKey\"\302\001\n\035CreateVirtioScsiTarg"
-  "etRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#opi_a"
-  "pi.storage.v1/VirtioScsiTarget\022E\n\022virtio"
-  "_scsi_target\030\002 \001(\0132$.opi_api.storage.v1."
-  "VirtioScsiTargetB\003\340A\002\022\035\n\025virtio_scsi_tar"
-  "get_id\030\003 \001(\t\"q\n\035DeleteVirtioScsiTargetRe"
-  "quest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#opi_api.sto"
-  "rage.v1/VirtioScsiTarget\022\025\n\rallow_missin"
-  "g\030\002 \001(\010\"\222\001\n\035UpdateVirtioScsiTargetReques"
-  "t\022@\n\022virtio_scsi_target\030\001 \001(\0132$.opi_api."
-  "storage.v1.VirtioScsiTarget\022/\n\013update_ma"
-  "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"\202\001\n"
-  "\034ListVirtioScsiTargetsRequest\022;\n\006parent\030"
-  "\001 \001(\tB+\340A\002\372A%\n#opi_api.storage.v1/Virtio"
-  "ScsiTarget\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
-  "ken\030\003 \001(\t\"{\n\035ListVirtioScsiTargetsRespon"
-  "se\022A\n\023virtio_scsi_targets\030\001 \003(\0132$.opi_ap"
-  "i.storage.v1.VirtioScsiTarget\022\027\n\017next_pa"
-  "ge_token\030\002 \001(\t\"W\n\032GetVirtioScsiTargetReq"
-  "uest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#opi_api.stor"
-  "age.v1/VirtioScsiTarget\"O\n\034VirtioScsiTar"
-  "getStatsRequest\022/\n\ttarget_id\030\001 \001(\0132\034.opi"
-  "_api.common.v1.ObjectKey\"y\n\035VirtioScsiTa"
-  "rgetStatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api."
-  "common.v1.ObjectKey\022.\n\005stats\030\002 \001(\0132\037.opi"
-  "_api.storage.v1.VolumeStats\"\326\001\n!CreateVi"
-  "rtioScsiControllerRequest\022\?\n\006parent\030\001 \001("
-  "\tB/\340A\002\372A)\n\'opi_api.storage.v1/VirtioScsi"
-  "Controller\022M\n\026virtio_scsi_controller\030\002 \001"
-  "(\0132(.opi_api.storage.v1.VirtioScsiContro"
-  "llerB\003\340A\002\022!\n\031virtio_scsi_controller_id\030\003"
-  " \001(\t\"y\n!DeleteVirtioScsiControllerReques"
-  "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage"
-  ".v1/VirtioScsiController\022\025\n\rallow_missin"
-  "g\030\002 \001(\010\"\236\001\n!UpdateVirtioScsiControllerRe"
-  "quest\022H\n\026virtio_scsi_controller\030\001 \001(\0132(."
-  "opi_api.storage.v1.VirtioScsiController\022"
-  "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
-  "ieldMask\"\212\001\n ListVirtioScsiControllersRe"
-  "quest\022\?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.s"
-  "torage.v1/VirtioScsiController\022\021\n\tpage_s"
-  "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\207\001\n!ListVi"
-  "rtioScsiControllersResponse\022I\n\027virtio_sc"
-  "si_controllers\030\001 \003(\0132(.opi_api.storage.v"
-  "1.VirtioScsiController\022\027\n\017next_page_toke"
-  "n\030\002 \001(\t\"_\n\036GetVirtioScsiControllerReques"
-  "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.storage"
-  ".v1/VirtioScsiController\"W\n VirtioScsiCo"
-  "ntrollerStatsRequest\0223\n\rcontroller_id\030\001 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\"}\n!Vir"
-  "tioScsiControllerStatsResponse\022(\n\002id\030\001 \001"
-  "(\0132\034.opi_api.common.v1.ObjectKey\022.\n\005stat"
-  "s\030\002 \001(\0132\037.opi_api.storage.v1.VolumeStats"
-  "\"\263\001\n\032CreateVirtioScsiLunRequest\0228\n\006paren"
-  "t\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/Virt"
-  "ioScsiLun\022\?\n\017virtio_scsi_lun\030\002 \001(\0132!.opi"
-  "_api.storage.v1.VirtioScsiLunB\003\340A\002\022\032\n\022vi"
-  "rtio_scsi_lun_id\030\003 \001(\t\"k\n\032DeleteVirtioSc"
-  "siLunRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_"
-  "api.storage.v1/VirtioScsiLun\022\025\n\rallow_mi"
-  "ssing\030\002 \001(\010\"\211\001\n\032UpdateVirtioScsiLunReque"
-  "st\022:\n\017virtio_scsi_lun\030\001 \001(\0132!.opi_api.st"
-  "orage.v1.VirtioScsiLun\022/\n\013update_mask\030\002 "
-  "\001(\0132\032.google.protobuf.FieldMask\"|\n\031ListV"
-  "irtioScsiLunsRequest\0228\n\006parent\030\001 \001(\tB(\340A"
-  "\002\372A\"\n opi_api.storage.v1/VirtioScsiLun\022\021"
-  "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n"
-  "\032ListVirtioScsiLunsResponse\022;\n\020virtio_sc"
-  "si_luns\030\001 \003(\0132!.opi_api.storage.v1.Virti"
-  "oScsiLun\022\027\n\017next_page_token\030\002 \001(\t\"Q\n\027Get"
-  "VirtioScsiLunRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372"
-  "A\"\n opi_api.storage.v1/VirtioScsiLun\"~\n\031"
-  "VirtioScsiLunStatsRequest\0223\n\rcontroller_"
-  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022,"
-  "\n\006lun_id\030\002 \001(\0132\034.opi_api.common.v1.Objec"
-  "tKey\"v\n\032VirtioScsiLunStatsResponse\022(\n\002id"
-  "\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022.\n\005"
-  "stats\030\002 \001(\0132\037.opi_api.storage.v1.VolumeS"
-  "tats2\241\031\n\031FrontendVirtioScsiService\022\330\001\n\026C"
-  "reateVirtioScsiTarget\0221.opi_api.storage."
-  "v1.CreateVirtioScsiTargetRequest\032$.opi_a"
-  "pi.storage.v1.VirtioScsiTarget\"e\202\323\344\223\002-\"\027"
-  "/v1/{parent=subsystems}:\022virtio_scsi_tar"
-  "get\332A/parent,virtio_scsi_target,virtio_s"
-  "csi_target_id\022\234\001\n\026DeleteVirtioScsiTarget"
-  "\0221.opi_api.storage.v1.DeleteVirtioScsiTa"
-  "rgetRequest\032\026.google.protobuf.Empty\"7\202\323\344"
-  "\223\002**(/v1/{name=subsystems}/{virtioscsita"
-  "rget}\332A\004name\022\330\001\n\026UpdateVirtioScsiTarget\022"
-  "1.opi_api.storage.v1.UpdateVirtioScsiTar"
-  "getRequest\032$.opi_api.storage.v1.VirtioSc"
-  "siTarget\"e\202\323\344\223\002>2(/v1/{virtio_scsi_targe"
-  "t.name=subsystems}:\022virtio_scsi_target\332A"
-  "\036virtio_scsi_target,update_mask\022\246\001\n\025List"
-  "VirtioScsiTargets\0220.opi_api.storage.v1.L"
-  "istVirtioScsiTargetsRequest\0321.opi_api.st"
-  "orage.v1.ListVirtioScsiTargetsResponse\"("
-  "\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent"
-  "\022\244\001\n\023GetVirtioScsiTarget\022..opi_api.stora"
-  "ge.v1.GetVirtioScsiTargetRequest\032$.opi_a"
-  "pi.storage.v1.VirtioScsiTarget\"7\202\323\344\223\002*\022("
-  "/v1/{name=subsystems}/{virtioscsitarget}"
-  "\332A\004name\022~\n\025VirtioScsiTargetStats\0220.opi_a"
-  "pi.storage.v1.VirtioScsiTargetStatsReque"
-  "st\0321.opi_api.storage.v1.VirtioScsiTarget"
-  "StatsResponse\"\000\022\360\001\n\032CreateVirtioScsiCont"
-  "roller\0225.opi_api.storage.v1.CreateVirtio"
-  "ScsiControllerRequest\032(.opi_api.storage."
-  "v1.VirtioScsiController\"q\202\323\344\223\0021\"\027/v1/{pa"
-  "rent=subsystems}:\026virtio_scsi_controller"
-  "\332A7parent,virtio_scsi_controller,virtio_"
-  "scsi_controller_id\022\247\001\n\032DeleteVirtioScsiC"
-  "ontroller\0225.opi_api.storage.v1.DeleteVir"
-  "tioScsiControllerRequest\032\026.google.protob"
-  "uf.Empty\":\202\323\344\223\002-*+/v1/{name=virtioscsict"
-  "rls}/{virtioscsictrl}\332A\004name\022\360\001\n\032UpdateV"
-  "irtioScsiController\0225.opi_api.storage.v1"
-  ".UpdateVirtioScsiControllerRequest\032(.opi"
-  "_api.storage.v1.VirtioScsiController\"q\202\323"
-  "\344\223\002F2,/v1/{virtio_scsi_controller.name=s"
-  "ubsystems}:\026virtio_scsi_controller\332A\"vir"
-  "tio_scsi_controller,update_mask\022\262\001\n\031List"
-  "VirtioScsiControllers\0224.opi_api.storage."
-  "v1.ListVirtioScsiControllersRequest\0325.op"
-  "i_api.storage.v1.ListVirtioScsiControlle"
-  "rsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsyste"
-  "ms}\332A\006parent\022\256\001\n\027GetVirtioScsiController"
-  "\0222.opi_api.storage.v1.GetVirtioScsiContr"
-  "ollerRequest\032(.opi_api.storage.v1.Virtio"
-  "ScsiController\"5\202\323\344\223\002(\022&/v1/{name=subsys"
-  "tems}/{virtioscsictrl}\332A\004name\022\212\001\n\031Virtio"
-  "ScsiControllerStats\0224.opi_api.storage.v1"
-  ".VirtioScsiControllerStatsRequest\0325.opi_"
-  "api.storage.v1.VirtioScsiControllerStats"
-  "Response\"\000\022\306\001\n\023CreateVirtioScsiLun\022..opi"
-  "_api.storage.v1.CreateVirtioScsiLunReque"
-  "st\032!.opi_api.storage.v1.VirtioScsiLun\"\\\202"
-  "\323\344\223\002*\"\027/v1/{parent=subsystems}:\017virtio_s"
-  "csi_lun\332A)parent,virtio_scsi_lun,virtio_"
-  "scsi_lun_id\022\227\001\n\023DeleteVirtioScsiLun\022..op"
-  "i_api.storage.v1.DeleteVirtioScsiLunRequ"
-  "est\032\026.google.protobuf.Empty\"8\202\323\344\223\002+*)/v1"
-  "/{name=virtioscsiluns}/{virtioscsilun}\332A"
-  "\004name\022\306\001\n\023UpdateVirtioScsiLun\022..opi_api."
-  "storage.v1.UpdateVirtioScsiLunRequest\032!."
-  "opi_api.storage.v1.VirtioScsiLun\"\\\202\323\344\223\0028"
-  "2%/v1/{virtio_scsi_lun.name=subsystems}:"
-  "\017virtio_scsi_lun\332A\033virtio_scsi_lun,updat"
-  "e_mask\022\235\001\n\022ListVirtioScsiLuns\022-.opi_api."
-  "storage.v1.ListVirtioScsiLunsRequest\032..o"
-  "pi_api.storage.v1.ListVirtioScsiLunsResp"
-  "onse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006"
-  "parent\022\230\001\n\020GetVirtioScsiLun\022+.opi_api.st"
-  "orage.v1.GetVirtioScsiLunRequest\032!.opi_a"
-  "pi.storage.v1.VirtioScsiLun\"4\202\323\344\223\002\'\022%/v1"
-  "/{name=subsystems}/{virtioscsilun}\332A\004nam"
-  "e\022u\n\022VirtioScsiLunStats\022-.opi_api.storag"
-  "e.v1.VirtioScsiLunStatsRequest\032..opi_api"
-  ".storage.v1.VirtioScsiLunStatsResponse\"\000"
-  "Bf\n\022opi_api.storage.v1B\027FrontendVirtioSc"
-  "siProtoP\001Z5github.com/opiproject/opi-api"
-  "/storage/v1alpha1/gen/gob\006proto3"
+  "Key\022\020\n\010max_luns\030\002 \001(\005\"\324\001\n\024VirtioScsiCont"
+  "roller\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.O"
+  "bjectKey\0220\n\007pcie_id\030\002 \001(\0132\037.opi_api.stor"
+  "age.v1.PciEndpoint\022/\n\tmin_limit\030\003 \001(\0132\034."
+  "opi_api.storage.v1.QosLimit\022/\n\tmax_limit"
+  "\030\004 \001(\0132\034.opi_api.storage.v1.QosLimit\"\233\001\n"
+  "\rVirtioScsiLun\022(\n\002id\030\001 \001(\0132\034.opi_api.com"
+  "mon.v1.ObjectKey\022/\n\ttarget_id\030\002 \001(\0132\034.op"
+  "i_api.common.v1.ObjectKey\022/\n\tvolume_id\030\003"
+  " \001(\0132\034.opi_api.common.v1.ObjectKey\"\302\001\n\035C"
+  "reateVirtioScsiTargetRequest\022;\n\006parent\030\001"
+  " \001(\tB+\340A\002\372A%\n#opi_api.storage.v1/VirtioS"
+  "csiTarget\022E\n\022virtio_scsi_target\030\002 \001(\0132$."
+  "opi_api.storage.v1.VirtioScsiTargetB\003\340A\002"
+  "\022\035\n\025virtio_scsi_target_id\030\003 \001(\t\"q\n\035Delet"
+  "eVirtioScsiTargetRequest\0229\n\004name\030\001 \001(\tB+"
+  "\340A\002\372A%\n#opi_api.storage.v1/VirtioScsiTar"
+  "get\022\025\n\rallow_missing\030\002 \001(\010\"\222\001\n\035UpdateVir"
+  "tioScsiTargetRequest\022@\n\022virtio_scsi_targ"
+  "et\030\001 \001(\0132$.opi_api.storage.v1.VirtioScsi"
+  "Target\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
+  "tobuf.FieldMask\"\202\001\n\034ListVirtioScsiTarget"
+  "sRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#opi_ap"
+  "i.storage.v1/VirtioScsiTarget\022\021\n\tpage_si"
+  "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"{\n\035ListVirt"
+  "ioScsiTargetsResponse\022A\n\023virtio_scsi_tar"
+  "gets\030\001 \003(\0132$.opi_api.storage.v1.VirtioSc"
+  "siTarget\022\027\n\017next_page_token\030\002 \001(\t\"W\n\032Get"
+  "VirtioScsiTargetRequest\0229\n\004name\030\001 \001(\tB+\340"
+  "A\002\372A%\n#opi_api.storage.v1/VirtioScsiTarg"
+  "et\"O\n\034VirtioScsiTargetStatsRequest\022/\n\tta"
+  "rget_id\030\001 \001(\0132\034.opi_api.common.v1.Object"
+  "Key\"y\n\035VirtioScsiTargetStatsResponse\022(\n\002"
+  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022."
+  "\n\005stats\030\002 \001(\0132\037.opi_api.storage.v1.Volum"
+  "eStats\"\326\001\n!CreateVirtioScsiControllerReq"
+  "uest\022\?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.st"
+  "orage.v1/VirtioScsiController\022M\n\026virtio_"
+  "scsi_controller\030\002 \001(\0132(.opi_api.storage."
+  "v1.VirtioScsiControllerB\003\340A\002\022!\n\031virtio_s"
+  "csi_controller_id\030\003 \001(\t\"y\n!DeleteVirtioS"
+  "csiControllerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372"
+  "A)\n\'opi_api.storage.v1/VirtioScsiControl"
+  "ler\022\025\n\rallow_missing\030\002 \001(\010\"\236\001\n!UpdateVir"
+  "tioScsiControllerRequest\022H\n\026virtio_scsi_"
+  "controller\030\001 \001(\0132(.opi_api.storage.v1.Vi"
+  "rtioScsiController\022/\n\013update_mask\030\002 \001(\0132"
+  "\032.google.protobuf.FieldMask\"\212\001\n ListVirt"
+  "ioScsiControllersRequest\022\?\n\006parent\030\001 \001(\t"
+  "B/\340A\002\372A)\n\'opi_api.storage.v1/VirtioScsiC"
+  "ontroller\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+  "en\030\003 \001(\t\"\207\001\n!ListVirtioScsiControllersRe"
+  "sponse\022I\n\027virtio_scsi_controllers\030\001 \003(\0132"
+  "(.opi_api.storage.v1.VirtioScsiControlle"
+  "r\022\027\n\017next_page_token\030\002 \001(\t\"_\n\036GetVirtioS"
+  "csiControllerRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372"
+  "A)\n\'opi_api.storage.v1/VirtioScsiControl"
+  "ler\"W\n VirtioScsiControllerStatsRequest\022"
+  "3\n\rcontroller_id\030\001 \001(\0132\034.opi_api.common."
+  "v1.ObjectKey\"}\n!VirtioScsiControllerStat"
+  "sResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v"
+  "1.ObjectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api.sto"
+  "rage.v1.VolumeStats\"\263\001\n\032CreateVirtioScsi"
+  "LunRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_"
+  "api.storage.v1/VirtioScsiLun\022\?\n\017virtio_s"
+  "csi_lun\030\002 \001(\0132!.opi_api.storage.v1.Virti"
+  "oScsiLunB\003\340A\002\022\032\n\022virtio_scsi_lun_id\030\003 \001("
+  "\t\"k\n\032DeleteVirtioScsiLunRequest\0226\n\004name\030"
+  "\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v1/Virtio"
+  "ScsiLun\022\025\n\rallow_missing\030\002 \001(\010\"\211\001\n\032Updat"
+  "eVirtioScsiLunRequest\022:\n\017virtio_scsi_lun"
+  "\030\001 \001(\0132!.opi_api.storage.v1.VirtioScsiLu"
+  "n\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
+  ".FieldMask\"|\n\031ListVirtioScsiLunsRequest\022"
+  "8\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage"
+  ".v1/VirtioScsiLun\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+  "page_token\030\003 \001(\t\"r\n\032ListVirtioScsiLunsRe"
+  "sponse\022;\n\020virtio_scsi_luns\030\001 \003(\0132!.opi_a"
+  "pi.storage.v1.VirtioScsiLun\022\027\n\017next_page"
+  "_token\030\002 \001(\t\"Q\n\027GetVirtioScsiLunRequest\022"
+  "6\n\004name\030\001 \001(\tB(\340A\002\372A\"\n opi_api.storage.v"
+  "1/VirtioScsiLun\"~\n\031VirtioScsiLunStatsReq"
+  "uest\0223\n\rcontroller_id\030\001 \001(\0132\034.opi_api.co"
+  "mmon.v1.ObjectKey\022,\n\006lun_id\030\002 \001(\0132\034.opi_"
+  "api.common.v1.ObjectKey\"v\n\032VirtioScsiLun"
+  "StatsResponse\022(\n\002id\030\001 \001(\0132\034.opi_api.comm"
+  "on.v1.ObjectKey\022.\n\005stats\030\002 \001(\0132\037.opi_api"
+  ".storage.v1.VolumeStats2\241\031\n\031FrontendVirt"
+  "ioScsiService\022\330\001\n\026CreateVirtioScsiTarget"
+  "\0221.opi_api.storage.v1.CreateVirtioScsiTa"
+  "rgetRequest\032$.opi_api.storage.v1.VirtioS"
+  "csiTarget\"e\202\323\344\223\002-\"\027/v1/{parent=subsystem"
+  "s}:\022virtio_scsi_target\332A/parent,virtio_s"
+  "csi_target,virtio_scsi_target_id\022\234\001\n\026Del"
+  "eteVirtioScsiTarget\0221.opi_api.storage.v1"
+  ".DeleteVirtioScsiTargetRequest\032\026.google."
+  "protobuf.Empty\"7\202\323\344\223\002**(/v1/{name=subsys"
+  "tems}/{virtioscsitarget}\332A\004name\022\330\001\n\026Upda"
+  "teVirtioScsiTarget\0221.opi_api.storage.v1."
+  "UpdateVirtioScsiTargetRequest\032$.opi_api."
+  "storage.v1.VirtioScsiTarget\"e\202\323\344\223\002>2(/v1"
+  "/{virtio_scsi_target.name=subsystems}:\022v"
+  "irtio_scsi_target\332A\036virtio_scsi_target,u"
+  "pdate_mask\022\246\001\n\025ListVirtioScsiTargets\0220.o"
+  "pi_api.storage.v1.ListVirtioScsiTargetsR"
+  "equest\0321.opi_api.storage.v1.ListVirtioSc"
+  "siTargetsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=s"
+  "ubsystems}\332A\006parent\022\244\001\n\023GetVirtioScsiTar"
+  "get\022..opi_api.storage.v1.GetVirtioScsiTa"
+  "rgetRequest\032$.opi_api.storage.v1.VirtioS"
+  "csiTarget\"7\202\323\344\223\002*\022(/v1/{name=subsystems}"
+  "/{virtioscsitarget}\332A\004name\022~\n\025VirtioScsi"
+  "TargetStats\0220.opi_api.storage.v1.VirtioS"
+  "csiTargetStatsRequest\0321.opi_api.storage."
+  "v1.VirtioScsiTargetStatsResponse\"\000\022\360\001\n\032C"
+  "reateVirtioScsiController\0225.opi_api.stor"
+  "age.v1.CreateVirtioScsiControllerRequest"
+  "\032(.opi_api.storage.v1.VirtioScsiControll"
+  "er\"q\202\323\344\223\0021\"\027/v1/{parent=subsystems}:\026vir"
+  "tio_scsi_controller\332A7parent,virtio_scsi"
+  "_controller,virtio_scsi_controller_id\022\247\001"
+  "\n\032DeleteVirtioScsiController\0225.opi_api.s"
+  "torage.v1.DeleteVirtioScsiControllerRequ"
+  "est\032\026.google.protobuf.Empty\":\202\323\344\223\002-*+/v1"
+  "/{name=virtioscsictrls}/{virtioscsictrl}"
+  "\332A\004name\022\360\001\n\032UpdateVirtioScsiController\0225"
+  ".opi_api.storage.v1.UpdateVirtioScsiCont"
+  "rollerRequest\032(.opi_api.storage.v1.Virti"
+  "oScsiController\"q\202\323\344\223\002F2,/v1/{virtio_scs"
+  "i_controller.name=subsystems}:\026virtio_sc"
+  "si_controller\332A\"virtio_scsi_controller,u"
+  "pdate_mask\022\262\001\n\031ListVirtioScsiControllers"
+  "\0224.opi_api.storage.v1.ListVirtioScsiCont"
+  "rollersRequest\0325.opi_api.storage.v1.List"
+  "VirtioScsiControllersResponse\"(\202\323\344\223\002\031\022\027/"
+  "v1/{parent=subsystems}\332A\006parent\022\256\001\n\027GetV"
+  "irtioScsiController\0222.opi_api.storage.v1"
+  ".GetVirtioScsiControllerRequest\032(.opi_ap"
+  "i.storage.v1.VirtioScsiController\"5\202\323\344\223\002"
+  "(\022&/v1/{name=subsystems}/{virtioscsictrl"
+  "}\332A\004name\022\212\001\n\031VirtioScsiControllerStats\0224"
+  ".opi_api.storage.v1.VirtioScsiController"
+  "StatsRequest\0325.opi_api.storage.v1.Virtio"
+  "ScsiControllerStatsResponse\"\000\022\306\001\n\023Create"
+  "VirtioScsiLun\022..opi_api.storage.v1.Creat"
+  "eVirtioScsiLunRequest\032!.opi_api.storage."
+  "v1.VirtioScsiLun\"\\\202\323\344\223\002*\"\027/v1/{parent=su"
+  "bsystems}:\017virtio_scsi_lun\332A)parent,virt"
+  "io_scsi_lun,virtio_scsi_lun_id\022\227\001\n\023Delet"
+  "eVirtioScsiLun\022..opi_api.storage.v1.Dele"
+  "teVirtioScsiLunRequest\032\026.google.protobuf"
+  ".Empty\"8\202\323\344\223\002+*)/v1/{name=virtioscsiluns"
+  "}/{virtioscsilun}\332A\004name\022\306\001\n\023UpdateVirti"
+  "oScsiLun\022..opi_api.storage.v1.UpdateVirt"
+  "ioScsiLunRequest\032!.opi_api.storage.v1.Vi"
+  "rtioScsiLun\"\\\202\323\344\223\00282%/v1/{virtio_scsi_lu"
+  "n.name=subsystems}:\017virtio_scsi_lun\332A\033vi"
+  "rtio_scsi_lun,update_mask\022\235\001\n\022ListVirtio"
+  "ScsiLuns\022-.opi_api.storage.v1.ListVirtio"
+  "ScsiLunsRequest\032..opi_api.storage.v1.Lis"
+  "tVirtioScsiLunsResponse\"(\202\323\344\223\002\031\022\027/v1/{pa"
+  "rent=subsystems}\332A\006parent\022\230\001\n\020GetVirtioS"
+  "csiLun\022+.opi_api.storage.v1.GetVirtioScs"
+  "iLunRequest\032!.opi_api.storage.v1.VirtioS"
+  "csiLun\"4\202\323\344\223\002\'\022%/v1/{name=subsystems}/{v"
+  "irtioscsilun}\332A\004name\022u\n\022VirtioScsiLunSta"
+  "ts\022-.opi_api.storage.v1.VirtioScsiLunSta"
+  "tsRequest\032..opi_api.storage.v1.VirtioScs"
+  "iLunStatsResponse\"\000Bf\n\022opi_api.storage.v"
+  "1B\027FrontendVirtioScsiProtoP\001Z5github.com"
+  "/opiproject/opi-api/storage/v1alpha1/gen"
+  "/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_frontend_5fvirtio_5fscsi_2eproto_deps[8] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -850,7 +857,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_frontend_5fvirtio_5fscsi_2eproto = {
-  false, false, 7072, descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto, "frontend_virtio_scsi.proto", 
+  false, false, 7171, descriptor_table_protodef_frontend_5fvirtio_5fscsi_2eproto, "frontend_virtio_scsi.proto", 
   &descriptor_table_frontend_5fvirtio_5fscsi_2eproto_once, descriptor_table_frontend_5fvirtio_5fscsi_2eproto_deps, 8, 27,
   schemas, file_default_instances, TableStruct_frontend_5fvirtio_5fscsi_2eproto::offsets,
   file_level_metadata_frontend_5fvirtio_5fscsi_2eproto, file_level_enum_descriptors_frontend_5fvirtio_5fscsi_2eproto, file_level_service_descriptors_frontend_5fvirtio_5fscsi_2eproto,
@@ -1104,6 +1111,8 @@ class VirtioScsiController::_Internal {
  public:
   static const ::opi_api::common::v1::ObjectKey& id(const VirtioScsiController* msg);
   static const ::opi_api::storage::v1::PciEndpoint& pcie_id(const VirtioScsiController* msg);
+  static const ::opi_api::storage::v1::QosLimit& min_limit(const VirtioScsiController* msg);
+  static const ::opi_api::storage::v1::QosLimit& max_limit(const VirtioScsiController* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
@@ -1113,6 +1122,14 @@ VirtioScsiController::_Internal::id(const VirtioScsiController* msg) {
 const ::opi_api::storage::v1::PciEndpoint&
 VirtioScsiController::_Internal::pcie_id(const VirtioScsiController* msg) {
   return *msg->pcie_id_;
+}
+const ::opi_api::storage::v1::QosLimit&
+VirtioScsiController::_Internal::min_limit(const VirtioScsiController* msg) {
+  return *msg->min_limit_;
+}
+const ::opi_api::storage::v1::QosLimit&
+VirtioScsiController::_Internal::max_limit(const VirtioScsiController* msg) {
+  return *msg->max_limit_;
 }
 void VirtioScsiController::clear_id() {
   if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
@@ -1125,6 +1142,18 @@ void VirtioScsiController::clear_pcie_id() {
     delete pcie_id_;
   }
   pcie_id_ = nullptr;
+}
+void VirtioScsiController::clear_min_limit() {
+  if (GetArenaForAllocation() == nullptr && min_limit_ != nullptr) {
+    delete min_limit_;
+  }
+  min_limit_ = nullptr;
+}
+void VirtioScsiController::clear_max_limit() {
+  if (GetArenaForAllocation() == nullptr && max_limit_ != nullptr) {
+    delete max_limit_;
+  }
+  max_limit_ = nullptr;
 }
 VirtioScsiController::VirtioScsiController(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1148,14 +1177,24 @@ VirtioScsiController::VirtioScsiController(const VirtioScsiController& from)
   } else {
     pcie_id_ = nullptr;
   }
+  if (from._internal_has_min_limit()) {
+    min_limit_ = new ::opi_api::storage::v1::QosLimit(*from.min_limit_);
+  } else {
+    min_limit_ = nullptr;
+  }
+  if (from._internal_has_max_limit()) {
+    max_limit_ = new ::opi_api::storage::v1::QosLimit(*from.max_limit_);
+  } else {
+    max_limit_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.VirtioScsiController)
 }
 
 inline void VirtioScsiController::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&pcie_id_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(pcie_id_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&max_limit_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(max_limit_));
 }
 
 VirtioScsiController::~VirtioScsiController() {
@@ -1169,6 +1208,8 @@ inline void VirtioScsiController::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete pcie_id_;
+  if (this != internal_default_instance()) delete min_limit_;
+  if (this != internal_default_instance()) delete max_limit_;
 }
 
 void VirtioScsiController::ArenaDtor(void* object) {
@@ -1195,6 +1236,14 @@ void VirtioScsiController::Clear() {
     delete pcie_id_;
   }
   pcie_id_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && min_limit_ != nullptr) {
+    delete min_limit_;
+  }
+  min_limit_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && max_limit_ != nullptr) {
+    delete max_limit_;
+  }
+  max_limit_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1216,6 +1265,22 @@ const char* VirtioScsiController::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_pcie_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.storage.v1.QosLimit min_limit = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_min_limit(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.storage.v1.QosLimit max_limit = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_max_limit(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1265,6 +1330,22 @@ uint8_t* VirtioScsiController::_InternalSerialize(
         2, _Internal::pcie_id(this), target, stream);
   }
 
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  if (this->_internal_has_min_limit()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::min_limit(this), target, stream);
+  }
+
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  if (this->_internal_has_max_limit()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::max_limit(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1295,6 +1376,20 @@ size_t VirtioScsiController::ByteSizeLong() const {
         *pcie_id_);
   }
 
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  if (this->_internal_has_min_limit()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *min_limit_);
+  }
+
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  if (this->_internal_has_max_limit()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *max_limit_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -1323,6 +1418,12 @@ void VirtioScsiController::MergeFrom(const VirtioScsiController& from) {
   if (from._internal_has_pcie_id()) {
     _internal_mutable_pcie_id()->::opi_api::storage::v1::PciEndpoint::MergeFrom(from._internal_pcie_id());
   }
+  if (from._internal_has_min_limit()) {
+    _internal_mutable_min_limit()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_min_limit());
+  }
+  if (from._internal_has_max_limit()) {
+    _internal_mutable_max_limit()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_max_limit());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1341,8 +1442,8 @@ void VirtioScsiController::InternalSwap(VirtioScsiController* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VirtioScsiController, pcie_id_)
-      + sizeof(VirtioScsiController::pcie_id_)
+      PROTOBUF_FIELD_OFFSET(VirtioScsiController, max_limit_)
+      + sizeof(VirtioScsiController::max_limit_)
       - PROTOBUF_FIELD_OFFSET(VirtioScsiController, id_)>(
           reinterpret_cast<char*>(&id_),
           reinterpret_cast<char*>(&other->id_));

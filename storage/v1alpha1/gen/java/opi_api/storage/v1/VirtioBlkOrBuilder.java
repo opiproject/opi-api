@@ -81,4 +81,58 @@ public interface VirtioBlkOrBuilder extends
    * @return The maxIoQps.
    */
   long getMaxIoQps();
+
+  /**
+   * <pre>
+   * min QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   * @return Whether the minLimit field is set.
+   */
+  boolean hasMinLimit();
+  /**
+   * <pre>
+   * min QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   * @return The minLimit.
+   */
+  opi_api.storage.v1.QosLimit getMinLimit();
+  /**
+   * <pre>
+   * min QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 5;</code>
+   */
+  opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
+
+  /**
+   * <pre>
+   * max QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   * @return Whether the maxLimit field is set.
+   */
+  boolean hasMaxLimit();
+  /**
+   * <pre>
+   * max QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   * @return The maxLimit.
+   */
+  opi_api.storage.v1.QosLimit getMaxLimit();
+  /**
+   * <pre>
+   * max QoS limits for the virtio-blk device
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 6;</code>
+   */
+  opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

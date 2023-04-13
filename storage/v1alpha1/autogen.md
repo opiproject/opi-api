@@ -134,7 +134,7 @@
   
     - [FrontendVirtioScsiService](#opi_api-storage-v1-FrontendVirtioScsiService)
   
-- [middleend.proto](#middleend-proto)
+- [middleend_encryption.proto](#middleend_encryption-proto)
     - [CreateEncryptedVolumeRequest](#opi_api-storage-v1-CreateEncryptedVolumeRequest)
     - [DeleteEncryptedVolumeRequest](#opi_api-storage-v1-DeleteEncryptedVolumeRequest)
     - [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume)
@@ -145,10 +145,24 @@
     - [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse)
     - [UpdateEncryptedVolumeRequest](#opi_api-storage-v1-UpdateEncryptedVolumeRequest)
   
-    - [MiddleendService](#opi_api-storage-v1-MiddleendService)
+    - [MiddleendEncryptionService](#opi_api-storage-v1-MiddleendEncryptionService)
+  
+- [middleend_qos_volume.proto](#middleend_qos_volume-proto)
+    - [CreateQosVolumeRequest](#opi_api-storage-v1-CreateQosVolumeRequest)
+    - [DeleteQosVolumeRequest](#opi_api-storage-v1-DeleteQosVolumeRequest)
+    - [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest)
+    - [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest)
+    - [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse)
+    - [QosVolume](#opi_api-storage-v1-QosVolume)
+    - [QosVolumeStatsRequest](#opi_api-storage-v1-QosVolumeStatsRequest)
+    - [QosVolumeStatsResponse](#opi_api-storage-v1-QosVolumeStatsResponse)
+    - [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest)
+  
+    - [MiddleendQosVolumeService](#opi_api-storage-v1-MiddleendQosVolumeService)
   
 - [opicommon.proto](#opicommon-proto)
     - [PciEndpoint](#opi_api-storage-v1-PciEndpoint)
+    - [QosLimit](#opi_api-storage-v1-QosLimit)
     - [VolumeStats](#opi_api-storage-v1-VolumeStats)
   
     - [EncryptionType](#opi_api-storage-v1-EncryptionType)
@@ -1092,6 +1106,8 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | sqes | [int32](#int32) |  | maximum number of submission queue entries per submission queue, as a power of 2. default value as per spec is 6 |
 | cqes | [int32](#int32) |  | maximum number of completion queue entries per completion queue, as a power of 2. default value as per spec is 4 |
 | max_namespaces | [int32](#int32) |  | maximum Number of namespaces that will be provisioned under the controller. |
+| min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the controller |
+| max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the controller |
 
 
 
@@ -1536,6 +1552,8 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | The PCI endpoint where this device should appear |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this controller |
 | max_io_qps | [int64](#int64) |  |  |
+| min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the virtio-blk device |
+| max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the virtio-blk device |
 
 
 
@@ -1921,6 +1939,8 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 | ----- | ---- | ----- | ----------- |
 | id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
+| min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the controller |
+| max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the controller |
 
 
 
@@ -2090,10 +2110,10 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 
 
-<a name="middleend-proto"></a>
+<a name="middleend_encryption-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## middleend.proto
+## middleend_encryption.proto
 
 
 
@@ -2249,9 +2269,9 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
  
 
 
-<a name="opi_api-storage-v1-MiddleendService"></a>
+<a name="opi_api-storage-v1-MiddleendEncryptionService"></a>
 
-### MiddleendService
+### MiddleendEncryptionService
 Middle End (Storage Services) APIs. For example, encryption, compression, raid, QoS, multipath, ...
 
 | Method Name | Request Type | Response Type | Description |
@@ -2262,6 +2282,183 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 | ListEncryptedVolumes | [ListEncryptedVolumesRequest](#opi_api-storage-v1-ListEncryptedVolumesRequest) | [ListEncryptedVolumesResponse](#opi_api-storage-v1-ListEncryptedVolumesResponse) |  |
 | GetEncryptedVolume | [GetEncryptedVolumeRequest](#opi_api-storage-v1-GetEncryptedVolumeRequest) | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |
 | EncryptedVolumeStats | [EncryptedVolumeStatsRequest](#opi_api-storage-v1-EncryptedVolumeStatsRequest) | [EncryptedVolumeStatsResponse](#opi_api-storage-v1-EncryptedVolumeStatsResponse) |  |
+
+ 
+
+
+
+<a name="middleend_qos_volume-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## middleend_qos_volume.proto
+
+
+
+<a name="opi_api-storage-v1-CreateQosVolumeRequest"></a>
+
+### CreateQosVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
+| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  |  |
+| qos_volume_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteQosVolumeRequest"></a>
+
+### DeleteQosVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetQosVolumeRequest"></a>
+
+### GetQosVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListQosVolumesRequest"></a>
+
+### ListQosVolumesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
+| page_size | [int32](#int32) |  |  |
+| page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListQosVolumesResponse"></a>
+
+### ListQosVolumesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| qos_volumes | [QosVolume](#opi_api-storage-v1-QosVolume) | repeated |  |
+| next_page_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-QosVolume"></a>
+
+### QosVolume
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| qos_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Middleend/backend volume to apply QoS on |
+| limit_min | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+| limit_max | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-QosVolumeStatsRequest"></a>
+
+### QosVolumeStatsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-QosVolumeStatsResponse"></a>
+
+### QosVolumeStatsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| stats | [VolumeStats](#opi_api-storage-v1-VolumeStats) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-UpdateQosVolumeRequest"></a>
+
+### UpdateQosVolumeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  |  |
+| update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="opi_api-storage-v1-MiddleendQosVolumeService"></a>
+
+### MiddleendQosVolumeService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateQosVolume | [CreateQosVolumeRequest](#opi_api-storage-v1-CreateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
+| DeleteQosVolume | [DeleteQosVolumeRequest](#opi_api-storage-v1-DeleteQosVolumeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateQosVolume | [UpdateQosVolumeRequest](#opi_api-storage-v1-UpdateQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
+| ListQosVolumes | [ListQosVolumesRequest](#opi_api-storage-v1-ListQosVolumesRequest) | [ListQosVolumesResponse](#opi_api-storage-v1-ListQosVolumesResponse) |  |
+| GetQosVolume | [GetQosVolumeRequest](#opi_api-storage-v1-GetQosVolumeRequest) | [QosVolume](#opi_api-storage-v1-QosVolume) |  |
+| QosVolumeStats | [QosVolumeStatsRequest](#opi_api-storage-v1-QosVolumeStatsRequest) | [QosVolumeStatsResponse](#opi_api-storage-v1-QosVolumeStatsResponse) |  |
 
  
 
@@ -2292,6 +2489,26 @@ confusion with storage &#34;devices&#34;.
 | port_id | [int32](#int32) |  | The &#34;port&#34; or &#34;device&#34;. In other words, the connector/cable that&#39;s plugged into a particular host. This number may end up matching the host-assigned &#34;device&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 | physical_function | [int32](#int32) |  | Physical function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
 | virtual_function | [int32](#int32) |  | Virtual function index. This may end up matching the host-assigned &#34;function&#34; value in the bus:device:function identifier, but it does not strictly have to and that should not be relied upon. |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-QosLimit"></a>
+
+### QosLimit
+QoS limits applied to volumes/devices
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| rd_iops_kiops | [int64](#int64) |  | Read kIOPS |
+| wr_iops_kiops | [int64](#int64) |  | Write kIOPS |
+| rw_iops_kiops | [int64](#int64) |  | Read/write kIOPS |
+| rd_bandwidth_mbs | [int64](#int64) |  | Read bandwidth (MB/s) |
+| wr_bandwidth_mbs | [int64](#int64) |  | Write bandwidth (MB/s) |
+| rw_bandwidth_mbs | [int64](#int64) |  | Read/write bandwidth (MB/s) |
 
 
 
