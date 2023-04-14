@@ -29,7 +29,7 @@ There is possibly a third API that needs to be considered, __Application__ API. 
 
 The objective of the API definition is to identify a common programming interface; however, given the various solutions that need to be considered, there may be solution specific APIs for a particular domain.
 
-#### Considerations
+### Considerations
 
 The nework APIs need to consider the various deployment types that can be leveraged with the DPU/IPU solution.  These deployment types consist of, but are not limited to:
 
