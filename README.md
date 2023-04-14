@@ -31,6 +31,7 @@ OPI subgroup dealing with APIs.  The focus of the subgroup is:
 - Create/Define the Backend/Southbound facing interface APIs
 - Produce protocol buffer (protobuf) definitions.
 - Produce reference orchestration client to support testing of the API.
+- Align the APIs with the [Use cases](USECASES.md), usage deployments, and service chaining to support various capabilities.
 
 The API subgroup does not want to re-invent any industry standard APIs that already exist.  Standard APIs such as OVS DB, OpenConfig, VPP, etc. that are used for configuration of service capabilities will be reviewed and examined for gaps.  Gaps in capabilities will be addressed either by defining extensions to existing APIs or new APIs will need to be defined (such as Storage APIs).
 

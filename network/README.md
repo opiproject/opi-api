@@ -27,11 +27,23 @@ We have identified two network APIs that need to be defined
 
 There is possibly a third API that needs to be considered, __Application__ API.  This API supports the ability to provide service chaining between operations within the DPU which may be processed locally or be terminated into the PF/VF to the CPU complex that handles the Container/VMs.
 
+The objective of the API definition is to identify a common programming interface; however, given the various solutions that need to be considered, there may be solution specific APIs for a particular domain.
+
+#### Considerations
+
+The nework APIs need to consider the various deployment types that can be leveraged with the DPU/IPU solution.  These deployment types consist of, but are not limited to:
+
+- Cloud
+- Kubernetes
+- Telco
+
+Where each of these solutions may have a common set of API operations and a solution unique set of API operations.
+
 ## Mapping Diagram
 
 Mapping models for the industry available APIs.
 
-### OpenConfig Model
+#### OpenConfig Model
 
 The openconfig model below is a majority subset of the full OpenConfig model set.  Some of the available capabilities (such as WiFi) have been left out since the current xPU cards don't currently have support for those specific operations.
 
