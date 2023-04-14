@@ -43,7 +43,7 @@ Where each of these solutions may have a common set of API operations and a solu
 
 Mapping models for the industry available APIs.
 
-#### OpenConfig Model
+### OpenConfig Model
 
 The openconfig model below is a majority subset of the full OpenConfig model set.  Some of the available capabilities (such as WiFi) have been left out since the current xPU cards don't currently have support for those specific operations.
 
