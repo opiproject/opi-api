@@ -50,15 +50,15 @@ public final class InventoryProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_inventory_v1_PCIeDeviceInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor;
+    internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_inventory_v1_InventoryGetRequest_fieldAccessorTable;
+      internal_static_opi_api_inventory_v1_GetInventoryRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor;
+    internal_static_opi_api_inventory_v1_Inventory_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_opi_api_inventory_v1_InventoryGetResponse_fieldAccessorTable;
+      internal_static_opi_api_inventory_v1_Inventory_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -68,45 +68,54 @@ public final class InventoryProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017inventory.proto\022\024opi_api.inventory.v1\"" +
-      "9\n\010BIOSInfo\022\016\n\006vendor\030\001 \001(\t\022\017\n\007version\030\002" +
-      " \001(\t\022\014\n\004date\030\003 \001(\t\"}\n\nSystemInfo\022\016\n\006fami" +
-      "ly\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\025" +
-      "\n\rserial_number\030\004 \001(\t\022\014\n\004uuid\030\005 \001(\t\022\013\n\003s" +
-      "ku\030\006 \001(\t\022\017\n\007version\030\007 \001(\t\"\200\001\n\013ChassisInf" +
-      "o\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 " +
-      "\001(\t\022\014\n\004type\030\003 \001(\t\022\030\n\020type_description\030\004 " +
-      "\001(\t\022\016\n\006vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\r" +
-      "BaseboardInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rseri" +
-      "al_number\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007versi" +
-      "on\030\004 \001(\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013" +
-      "total_cores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005" +
-      "\"F\n\nMemoryInfo\022\034\n\024total_physical_bytes\030\001" +
-      " \001(\003\022\032\n\022total_usable_bytes\030\002 \001(\003\"\230\001\n\016PCI" +
-      "eDeviceInfo\022\016\n\006driver\030\001 \001(\t\022\017\n\007address\030\002" +
-      " \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007product\030\004 \001(\t\022\020\n" +
-      "\010revision\030\005 \001(\t\022\021\n\tsubsystem\030\006 \001(\t\022\r\n\005cl" +
-      "ass\030\007 \001(\t\022\020\n\010subclass\030\010 \001(\t\"\025\n\023Inventory" +
-      "GetRequest\"\371\002\n\024InventoryGetResponse\022,\n\004b" +
-      "ios\030\001 \001(\0132\036.opi_api.inventory.v1.BIOSInf" +
-      "o\0220\n\006system\030\002 \001(\0132 .opi_api.inventory.v1" +
-      ".SystemInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api" +
-      ".inventory.v1.BaseboardInfo\0222\n\007chassis\030\004" +
-      " \001(\0132!.opi_api.inventory.v1.ChassisInfo\022" +
-      "0\n\tprocessor\030\005 \001(\0132\035.opi_api.inventory.v" +
-      "1.CPUInfo\0220\n\006memory\030\006 \001(\0132 .opi_api.inve" +
-      "ntory.v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_a" +
-      "pi.inventory.v1.PCIeDeviceInfo2w\n\014Invent" +
-      "orySvc\022g\n\014InventoryGet\022).opi_api.invento" +
-      "ry.v1.InventoryGetRequest\032*.opi_api.inve" +
-      "ntory.v1.InventoryGetResponse\"\000BX\n\024opi_a" +
-      "pi.inventory.v1B\016InventoryProtoP\001Z.githu" +
-      "b.com/opiproject/opi-api/common/v1/gen/g" +
-      "ob\006proto3"
+      "\n\017inventory.proto\022\024opi_api.inventory.v1\032" +
+      "\027google/api/client.proto\032\031google/api/res" +
+      "ource.proto\032\034google/api/annotations.prot" +
+      "o\032\037google/api/field_behavior.proto\"9\n\010BI" +
+      "OSInfo\022\016\n\006vendor\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022" +
+      "\014\n\004date\030\003 \001(\t\"}\n\nSystemInfo\022\016\n\006family\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\025\n\rser" +
+      "ial_number\030\004 \001(\t\022\014\n\004uuid\030\005 \001(\t\022\013\n\003sku\030\006 " +
+      "\001(\t\022\017\n\007version\030\007 \001(\t\"\200\001\n\013ChassisInfo\022\021\n\t" +
+      "asset_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 \001(\t\022\014" +
+      "\n\004type\030\003 \001(\t\022\030\n\020type_description\030\004 \001(\t\022\016" +
+      "\n\006vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\rBaseb" +
+      "oardInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_nu" +
+      "mber\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007version\030\004 " +
+      "\001(\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013total" +
+      "_cores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005\"F\n\nM" +
+      "emoryInfo\022\034\n\024total_physical_bytes\030\001 \001(\003\022" +
+      "\032\n\022total_usable_bytes\030\002 \001(\003\"\230\001\n\016PCIeDevi" +
+      "ceInfo\022\016\n\006driver\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022" +
+      "\016\n\006vendor\030\003 \001(\t\022\017\n\007product\030\004 \001(\t\022\020\n\010revi" +
+      "sion\030\005 \001(\t\022\021\n\tsubsystem\030\006 \001(\t\022\r\n\005class\030\007" +
+      " \001(\t\022\020\n\010subclass\030\010 \001(\t\"H\n\023GetInventoryRe" +
+      "quest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.com" +
+      "mon.v1/Inventory\"\356\002\n\tInventory\022,\n\004bios\030\001" +
+      " \001(\0132\036.opi_api.inventory.v1.BIOSInfo\0220\n\006" +
+      "system\030\002 \001(\0132 .opi_api.inventory.v1.Syst" +
+      "emInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api.inve" +
+      "ntory.v1.BaseboardInfo\0222\n\007chassis\030\004 \001(\0132" +
+      "!.opi_api.inventory.v1.ChassisInfo\0220\n\tpr" +
+      "ocessor\030\005 \001(\0132\035.opi_api.inventory.v1.CPU" +
+      "Info\0220\n\006memory\030\006 \001(\0132 .opi_api.inventory" +
+      ".v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_api.in" +
+      "ventory.v1.PCIeDeviceInfo2\236\001\n\014InventoryS" +
+      "vc\022\215\001\n\014GetInventory\022).opi_api.inventory." +
+      "v1.GetInventoryRequest\032\037.opi_api.invento" +
+      "ry.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=inven" +
+      "tory/*/inventory/*}\332A\004nameBX\n\024opi_api.in" +
+      "ventory.v1B\016InventoryProtoP\001Z.github.com" +
+      "/opiproject/opi-api/common/v1/gen/gob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
         });
     internal_static_opi_api_inventory_v1_BIOSInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -150,18 +159,30 @@ public final class InventoryProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_inventory_v1_PCIeDeviceInfo_descriptor,
         new java.lang.String[] { "Driver", "Address", "Vendor", "Product", "Revision", "Subsystem", "Class_", "Subclass", });
-    internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor =
+    internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_opi_api_inventory_v1_InventoryGetRequest_fieldAccessorTable = new
+    internal_static_opi_api_inventory_v1_GetInventoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor =
+        internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_opi_api_inventory_v1_Inventory_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_opi_api_inventory_v1_InventoryGetResponse_fieldAccessorTable = new
+    internal_static_opi_api_inventory_v1_Inventory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor,
+        internal_static_opi_api_inventory_v1_Inventory_descriptor,
         new java.lang.String[] { "Bios", "System", "Baseboard", "Chassis", "Processor", "Memory", "Pci", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

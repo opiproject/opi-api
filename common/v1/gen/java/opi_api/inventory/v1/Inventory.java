@@ -4,18 +4,22 @@
 package opi_api.inventory.v1;
 
 /**
- * Protobuf type {@code opi_api.inventory.v1.InventoryGetResponse}
+ * <pre>
+ * Response for device inventory data
+ * </pre>
+ *
+ * Protobuf type {@code opi_api.inventory.v1.Inventory}
  */
-public final class InventoryGetResponse extends
+public final class Inventory extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.inventory.v1.InventoryGetResponse)
-    InventoryGetResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.inventory.v1.Inventory)
+    InventoryOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use InventoryGetResponse.newBuilder() to construct.
-  private InventoryGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Inventory.newBuilder() to construct.
+  private Inventory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private InventoryGetResponse() {
+  private Inventory() {
     pci_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +27,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new InventoryGetResponse();
+    return new Inventory();
   }
 
   @java.lang.Override
@@ -31,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private InventoryGetResponse(
+  private Inventory(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -161,20 +165,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor;
+    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_Inventory_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetResponse_fieldAccessorTable
+    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_Inventory_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.inventory.v1.InventoryGetResponse.class, opi_api.inventory.v1.InventoryGetResponse.Builder.class);
+            opi_api.inventory.v1.Inventory.class, opi_api.inventory.v1.Inventory.Builder.class);
   }
 
   public static final int BIOS_FIELD_NUMBER = 1;
   private opi_api.inventory.v1.BIOSInfo bios_;
   /**
+   * <pre>
+   * BIOS Inventory 
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
    * @return Whether the bios field is set.
    */
@@ -183,6 +191,10 @@ private static final long serialVersionUID = 0L;
     return bios_ != null;
   }
   /**
+   * <pre>
+   * BIOS Inventory 
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
    * @return The bios.
    */
@@ -191,6 +203,10 @@ private static final long serialVersionUID = 0L;
     return bios_ == null ? opi_api.inventory.v1.BIOSInfo.getDefaultInstance() : bios_;
   }
   /**
+   * <pre>
+   * BIOS Inventory 
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
    */
   @java.lang.Override
@@ -201,6 +217,10 @@ private static final long serialVersionUID = 0L;
   public static final int SYSTEM_FIELD_NUMBER = 2;
   private opi_api.inventory.v1.SystemInfo system_;
   /**
+   * <pre>
+   * System Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
    * @return Whether the system field is set.
    */
@@ -209,6 +229,10 @@ private static final long serialVersionUID = 0L;
     return system_ != null;
   }
   /**
+   * <pre>
+   * System Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
    * @return The system.
    */
@@ -217,6 +241,10 @@ private static final long serialVersionUID = 0L;
     return system_ == null ? opi_api.inventory.v1.SystemInfo.getDefaultInstance() : system_;
   }
   /**
+   * <pre>
+   * System Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
    */
   @java.lang.Override
@@ -227,6 +255,10 @@ private static final long serialVersionUID = 0L;
   public static final int BASEBOARD_FIELD_NUMBER = 3;
   private opi_api.inventory.v1.BaseboardInfo baseboard_;
   /**
+   * <pre>
+   * Baseboard Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return Whether the baseboard field is set.
    */
@@ -235,6 +267,10 @@ private static final long serialVersionUID = 0L;
     return baseboard_ != null;
   }
   /**
+   * <pre>
+   * Baseboard Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    * @return The baseboard.
    */
@@ -243,6 +279,10 @@ private static final long serialVersionUID = 0L;
     return baseboard_ == null ? opi_api.inventory.v1.BaseboardInfo.getDefaultInstance() : baseboard_;
   }
   /**
+   * <pre>
+   * Baseboard Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
    */
   @java.lang.Override
@@ -253,6 +293,10 @@ private static final long serialVersionUID = 0L;
   public static final int CHASSIS_FIELD_NUMBER = 4;
   private opi_api.inventory.v1.ChassisInfo chassis_;
   /**
+   * <pre>
+   * Chassis Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
    * @return Whether the chassis field is set.
    */
@@ -261,6 +305,10 @@ private static final long serialVersionUID = 0L;
     return chassis_ != null;
   }
   /**
+   * <pre>
+   * Chassis Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
    * @return The chassis.
    */
@@ -269,6 +317,10 @@ private static final long serialVersionUID = 0L;
     return chassis_ == null ? opi_api.inventory.v1.ChassisInfo.getDefaultInstance() : chassis_;
   }
   /**
+   * <pre>
+   * Chassis Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
    */
   @java.lang.Override
@@ -279,6 +331,10 @@ private static final long serialVersionUID = 0L;
   public static final int PROCESSOR_FIELD_NUMBER = 5;
   private opi_api.inventory.v1.CPUInfo processor_;
   /**
+   * <pre>
+   * CPU Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
    * @return Whether the processor field is set.
    */
@@ -287,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return processor_ != null;
   }
   /**
+   * <pre>
+   * CPU Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
    * @return The processor.
    */
@@ -295,6 +355,10 @@ private static final long serialVersionUID = 0L;
     return processor_ == null ? opi_api.inventory.v1.CPUInfo.getDefaultInstance() : processor_;
   }
   /**
+   * <pre>
+   * CPU Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
    */
   @java.lang.Override
@@ -305,6 +369,10 @@ private static final long serialVersionUID = 0L;
   public static final int MEMORY_FIELD_NUMBER = 6;
   private opi_api.inventory.v1.MemoryInfo memory_;
   /**
+   * <pre>
+   * Memory Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
    * @return Whether the memory field is set.
    */
@@ -313,6 +381,10 @@ private static final long serialVersionUID = 0L;
     return memory_ != null;
   }
   /**
+   * <pre>
+   * Memory Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
    * @return The memory.
    */
@@ -321,6 +393,10 @@ private static final long serialVersionUID = 0L;
     return memory_ == null ? opi_api.inventory.v1.MemoryInfo.getDefaultInstance() : memory_;
   }
   /**
+   * <pre>
+   * Memory Inventory
+   * </pre>
+   *
    * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
    */
   @java.lang.Override
@@ -331,6 +407,10 @@ private static final long serialVersionUID = 0L;
   public static final int PCI_FIELD_NUMBER = 7;
   private java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> pci_;
   /**
+   * <pre>
+   * PCI Devices Inventory
+   * </pre>
+   *
    * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
@@ -338,6 +418,10 @@ private static final long serialVersionUID = 0L;
     return pci_;
   }
   /**
+   * <pre>
+   * PCI Devices Inventory
+   * </pre>
+   *
    * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
@@ -346,6 +430,10 @@ private static final long serialVersionUID = 0L;
     return pci_;
   }
   /**
+   * <pre>
+   * PCI Devices Inventory
+   * </pre>
+   *
    * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
@@ -353,6 +441,10 @@ private static final long serialVersionUID = 0L;
     return pci_.size();
   }
   /**
+   * <pre>
+   * PCI Devices Inventory
+   * </pre>
+   *
    * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
@@ -360,6 +452,10 @@ private static final long serialVersionUID = 0L;
     return pci_.get(index);
   }
   /**
+   * <pre>
+   * PCI Devices Inventory
+   * </pre>
+   *
    * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
    */
   @java.lang.Override
@@ -450,10 +546,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.inventory.v1.InventoryGetResponse)) {
+    if (!(obj instanceof opi_api.inventory.v1.Inventory)) {
       return super.equals(obj);
     }
-    opi_api.inventory.v1.InventoryGetResponse other = (opi_api.inventory.v1.InventoryGetResponse) obj;
+    opi_api.inventory.v1.Inventory other = (opi_api.inventory.v1.Inventory) obj;
 
     if (hasBios() != other.hasBios()) return false;
     if (hasBios()) {
@@ -531,69 +627,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(byte[] data)
+  public static opi_api.inventory.v1.Inventory parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(java.io.InputStream input)
+  public static opi_api.inventory.v1.Inventory parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.inventory.v1.Inventory parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseDelimitedFrom(
+  public static opi_api.inventory.v1.Inventory parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetResponse parseFrom(
+  public static opi_api.inventory.v1.Inventory parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -606,7 +702,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.inventory.v1.InventoryGetResponse prototype) {
+  public static Builder newBuilder(opi_api.inventory.v1.Inventory prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -622,26 +718,30 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code opi_api.inventory.v1.InventoryGetResponse}
+   * <pre>
+   * Response for device inventory data
+   * </pre>
+   *
+   * Protobuf type {@code opi_api.inventory.v1.Inventory}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.inventory.v1.InventoryGetResponse)
-      opi_api.inventory.v1.InventoryGetResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.inventory.v1.Inventory)
+      opi_api.inventory.v1.InventoryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor;
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_Inventory_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetResponse_fieldAccessorTable
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_Inventory_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.inventory.v1.InventoryGetResponse.class, opi_api.inventory.v1.InventoryGetResponse.Builder.class);
+              opi_api.inventory.v1.Inventory.class, opi_api.inventory.v1.Inventory.Builder.class);
     }
 
-    // Construct using opi_api.inventory.v1.InventoryGetResponse.newBuilder()
+    // Construct using opi_api.inventory.v1.Inventory.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -708,17 +808,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetResponse_descriptor;
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_Inventory_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetResponse getDefaultInstanceForType() {
-      return opi_api.inventory.v1.InventoryGetResponse.getDefaultInstance();
+    public opi_api.inventory.v1.Inventory getDefaultInstanceForType() {
+      return opi_api.inventory.v1.Inventory.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetResponse build() {
-      opi_api.inventory.v1.InventoryGetResponse result = buildPartial();
+    public opi_api.inventory.v1.Inventory build() {
+      opi_api.inventory.v1.Inventory result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -726,8 +826,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetResponse buildPartial() {
-      opi_api.inventory.v1.InventoryGetResponse result = new opi_api.inventory.v1.InventoryGetResponse(this);
+    public opi_api.inventory.v1.Inventory buildPartial() {
+      opi_api.inventory.v1.Inventory result = new opi_api.inventory.v1.Inventory(this);
       int from_bitField0_ = bitField0_;
       if (biosBuilder_ == null) {
         result.bios_ = bios_;
@@ -806,16 +906,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.inventory.v1.InventoryGetResponse) {
-        return mergeFrom((opi_api.inventory.v1.InventoryGetResponse)other);
+      if (other instanceof opi_api.inventory.v1.Inventory) {
+        return mergeFrom((opi_api.inventory.v1.Inventory)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.inventory.v1.InventoryGetResponse other) {
-      if (other == opi_api.inventory.v1.InventoryGetResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(opi_api.inventory.v1.Inventory other) {
+      if (other == opi_api.inventory.v1.Inventory.getDefaultInstance()) return this;
       if (other.hasBios()) {
         mergeBios(other.getBios());
       }
@@ -875,11 +975,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.inventory.v1.InventoryGetResponse parsedMessage = null;
+      opi_api.inventory.v1.Inventory parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.inventory.v1.InventoryGetResponse) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.inventory.v1.Inventory) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -894,6 +994,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.BIOSInfo, opi_api.inventory.v1.BIOSInfo.Builder, opi_api.inventory.v1.BIOSInfoOrBuilder> biosBuilder_;
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      * @return Whether the bios field is set.
      */
@@ -901,6 +1005,10 @@ private static final long serialVersionUID = 0L;
       return biosBuilder_ != null || bios_ != null;
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      * @return The bios.
      */
@@ -912,6 +1020,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public Builder setBios(opi_api.inventory.v1.BIOSInfo value) {
@@ -928,6 +1040,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public Builder setBios(
@@ -942,6 +1058,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public Builder mergeBios(opi_api.inventory.v1.BIOSInfo value) {
@@ -960,6 +1080,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public Builder clearBios() {
@@ -974,6 +1098,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public opi_api.inventory.v1.BIOSInfo.Builder getBiosBuilder() {
@@ -982,6 +1110,10 @@ private static final long serialVersionUID = 0L;
       return getBiosFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     public opi_api.inventory.v1.BIOSInfoOrBuilder getBiosOrBuilder() {
@@ -993,6 +1125,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * BIOS Inventory 
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BIOSInfo bios = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1013,6 +1149,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.SystemInfo, opi_api.inventory.v1.SystemInfo.Builder, opi_api.inventory.v1.SystemInfoOrBuilder> systemBuilder_;
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      * @return Whether the system field is set.
      */
@@ -1020,6 +1160,10 @@ private static final long serialVersionUID = 0L;
       return systemBuilder_ != null || system_ != null;
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      * @return The system.
      */
@@ -1031,6 +1175,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public Builder setSystem(opi_api.inventory.v1.SystemInfo value) {
@@ -1047,6 +1195,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public Builder setSystem(
@@ -1061,6 +1213,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public Builder mergeSystem(opi_api.inventory.v1.SystemInfo value) {
@@ -1079,6 +1235,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public Builder clearSystem() {
@@ -1093,6 +1253,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public opi_api.inventory.v1.SystemInfo.Builder getSystemBuilder() {
@@ -1101,6 +1265,10 @@ private static final long serialVersionUID = 0L;
       return getSystemFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     public opi_api.inventory.v1.SystemInfoOrBuilder getSystemOrBuilder() {
@@ -1112,6 +1280,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * System Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.SystemInfo system = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1132,6 +1304,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.BaseboardInfo, opi_api.inventory.v1.BaseboardInfo.Builder, opi_api.inventory.v1.BaseboardInfoOrBuilder> baseboardBuilder_;
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      * @return Whether the baseboard field is set.
      */
@@ -1139,6 +1315,10 @@ private static final long serialVersionUID = 0L;
       return baseboardBuilder_ != null || baseboard_ != null;
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      * @return The baseboard.
      */
@@ -1150,6 +1330,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder setBaseboard(opi_api.inventory.v1.BaseboardInfo value) {
@@ -1166,6 +1350,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder setBaseboard(
@@ -1180,6 +1368,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder mergeBaseboard(opi_api.inventory.v1.BaseboardInfo value) {
@@ -1198,6 +1390,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public Builder clearBaseboard() {
@@ -1212,6 +1408,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public opi_api.inventory.v1.BaseboardInfo.Builder getBaseboardBuilder() {
@@ -1220,6 +1420,10 @@ private static final long serialVersionUID = 0L;
       return getBaseboardFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     public opi_api.inventory.v1.BaseboardInfoOrBuilder getBaseboardOrBuilder() {
@@ -1231,6 +1435,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Baseboard Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.BaseboardInfo baseboard = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1251,6 +1459,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.ChassisInfo, opi_api.inventory.v1.ChassisInfo.Builder, opi_api.inventory.v1.ChassisInfoOrBuilder> chassisBuilder_;
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      * @return Whether the chassis field is set.
      */
@@ -1258,6 +1470,10 @@ private static final long serialVersionUID = 0L;
       return chassisBuilder_ != null || chassis_ != null;
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      * @return The chassis.
      */
@@ -1269,6 +1485,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public Builder setChassis(opi_api.inventory.v1.ChassisInfo value) {
@@ -1285,6 +1505,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public Builder setChassis(
@@ -1299,6 +1523,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public Builder mergeChassis(opi_api.inventory.v1.ChassisInfo value) {
@@ -1317,6 +1545,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public Builder clearChassis() {
@@ -1331,6 +1563,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public opi_api.inventory.v1.ChassisInfo.Builder getChassisBuilder() {
@@ -1339,6 +1575,10 @@ private static final long serialVersionUID = 0L;
       return getChassisFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     public opi_api.inventory.v1.ChassisInfoOrBuilder getChassisOrBuilder() {
@@ -1350,6 +1590,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Chassis Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.ChassisInfo chassis = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1370,6 +1614,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.CPUInfo, opi_api.inventory.v1.CPUInfo.Builder, opi_api.inventory.v1.CPUInfoOrBuilder> processorBuilder_;
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      * @return Whether the processor field is set.
      */
@@ -1377,6 +1625,10 @@ private static final long serialVersionUID = 0L;
       return processorBuilder_ != null || processor_ != null;
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      * @return The processor.
      */
@@ -1388,6 +1640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public Builder setProcessor(opi_api.inventory.v1.CPUInfo value) {
@@ -1404,6 +1660,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public Builder setProcessor(
@@ -1418,6 +1678,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public Builder mergeProcessor(opi_api.inventory.v1.CPUInfo value) {
@@ -1436,6 +1700,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public Builder clearProcessor() {
@@ -1450,6 +1718,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public opi_api.inventory.v1.CPUInfo.Builder getProcessorBuilder() {
@@ -1458,6 +1730,10 @@ private static final long serialVersionUID = 0L;
       return getProcessorFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     public opi_api.inventory.v1.CPUInfoOrBuilder getProcessorOrBuilder() {
@@ -1469,6 +1745,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * CPU Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.CPUInfo processor = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1489,6 +1769,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.inventory.v1.MemoryInfo, opi_api.inventory.v1.MemoryInfo.Builder, opi_api.inventory.v1.MemoryInfoOrBuilder> memoryBuilder_;
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      * @return Whether the memory field is set.
      */
@@ -1496,6 +1780,10 @@ private static final long serialVersionUID = 0L;
       return memoryBuilder_ != null || memory_ != null;
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      * @return The memory.
      */
@@ -1507,6 +1795,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public Builder setMemory(opi_api.inventory.v1.MemoryInfo value) {
@@ -1523,6 +1815,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public Builder setMemory(
@@ -1537,6 +1833,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public Builder mergeMemory(opi_api.inventory.v1.MemoryInfo value) {
@@ -1555,6 +1855,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public Builder clearMemory() {
@@ -1569,6 +1873,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public opi_api.inventory.v1.MemoryInfo.Builder getMemoryBuilder() {
@@ -1577,6 +1885,10 @@ private static final long serialVersionUID = 0L;
       return getMemoryFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     public opi_api.inventory.v1.MemoryInfoOrBuilder getMemoryOrBuilder() {
@@ -1588,6 +1900,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Memory Inventory
+     * </pre>
+     *
      * <code>.opi_api.inventory.v1.MemoryInfo memory = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1617,6 +1933,10 @@ private static final long serialVersionUID = 0L;
         opi_api.inventory.v1.PCIeDeviceInfo, opi_api.inventory.v1.PCIeDeviceInfo.Builder, opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> pciBuilder_;
 
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public java.util.List<opi_api.inventory.v1.PCIeDeviceInfo> getPciList() {
@@ -1627,6 +1947,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public int getPciCount() {
@@ -1637,6 +1961,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public opi_api.inventory.v1.PCIeDeviceInfo getPci(int index) {
@@ -1647,6 +1975,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder setPci(
@@ -1664,6 +1996,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder setPci(
@@ -1678,6 +2014,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder addPci(opi_api.inventory.v1.PCIeDeviceInfo value) {
@@ -1694,6 +2034,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder addPci(
@@ -1711,6 +2055,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder addPci(
@@ -1725,6 +2073,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder addPci(
@@ -1739,6 +2091,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder addAllPci(
@@ -1754,6 +2110,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder clearPci() {
@@ -1767,6 +2127,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public Builder removePci(int index) {
@@ -1780,6 +2144,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public opi_api.inventory.v1.PCIeDeviceInfo.Builder getPciBuilder(
@@ -1787,6 +2155,10 @@ private static final long serialVersionUID = 0L;
       return getPciFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public opi_api.inventory.v1.PCIeDeviceInfoOrBuilder getPciOrBuilder(
@@ -1797,6 +2169,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public java.util.List<? extends opi_api.inventory.v1.PCIeDeviceInfoOrBuilder> 
@@ -1808,6 +2184,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public opi_api.inventory.v1.PCIeDeviceInfo.Builder addPciBuilder() {
@@ -1815,6 +2195,10 @@ private static final long serialVersionUID = 0L;
           opi_api.inventory.v1.PCIeDeviceInfo.getDefaultInstance());
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public opi_api.inventory.v1.PCIeDeviceInfo.Builder addPciBuilder(
@@ -1823,6 +2207,10 @@ private static final long serialVersionUID = 0L;
           index, opi_api.inventory.v1.PCIeDeviceInfo.getDefaultInstance());
     }
     /**
+     * <pre>
+     * PCI Devices Inventory
+     * </pre>
+     *
      * <code>repeated .opi_api.inventory.v1.PCIeDeviceInfo pci = 7;</code>
      */
     public java.util.List<opi_api.inventory.v1.PCIeDeviceInfo.Builder> 
@@ -1856,41 +2244,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.inventory.v1.InventoryGetResponse)
+    // @@protoc_insertion_point(builder_scope:opi_api.inventory.v1.Inventory)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.InventoryGetResponse)
-  private static final opi_api.inventory.v1.InventoryGetResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.Inventory)
+  private static final opi_api.inventory.v1.Inventory DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.inventory.v1.InventoryGetResponse();
+    DEFAULT_INSTANCE = new opi_api.inventory.v1.Inventory();
   }
 
-  public static opi_api.inventory.v1.InventoryGetResponse getDefaultInstance() {
+  public static opi_api.inventory.v1.Inventory getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InventoryGetResponse>
-      PARSER = new com.google.protobuf.AbstractParser<InventoryGetResponse>() {
+  private static final com.google.protobuf.Parser<Inventory>
+      PARSER = new com.google.protobuf.AbstractParser<Inventory>() {
     @java.lang.Override
-    public InventoryGetResponse parsePartialFrom(
+    public Inventory parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InventoryGetResponse(input, extensionRegistry);
+      return new Inventory(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<InventoryGetResponse> parser() {
+  public static com.google.protobuf.Parser<Inventory> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<InventoryGetResponse> getParserForType() {
+  public com.google.protobuf.Parser<Inventory> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.inventory.v1.InventoryGetResponse getDefaultInstanceForType() {
+  public opi_api.inventory.v1.Inventory getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

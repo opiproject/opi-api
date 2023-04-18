@@ -4,6 +4,11 @@
 // Original file comments:
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// (-- api-linter: core::0140::reserved-words=disabled
+//     aip.dev/not-precedent: We do this since inventory may use
+//     reserved words --)
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: Currently not supporting resource annotation)
 //
 #ifndef GRPC_inventory_2eproto__INCLUDED
 #define GRPC_inventory_2eproto__INCLUDED
@@ -43,42 +48,42 @@ class InventorySvc final {
    public:
     virtual ~StubInterface() {}
     // retrieves the inventory data for the device
-    virtual ::grpc::Status InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::opi_api::inventory::v1::InventoryGetResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>> AsyncInventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>>(AsyncInventoryGetRaw(context, request, cq));
+    virtual ::grpc::Status GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::opi_api::inventory::v1::Inventory* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>> AsyncGetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>>(AsyncGetInventoryRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>> PrepareAsyncInventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>>(PrepareAsyncInventoryGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>> PrepareAsyncGetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>>(PrepareAsyncGetInventoryRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
       // retrieves the inventory data for the device
-      virtual void InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>* AsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::InventoryGetResponse>* PrepareAsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>* AsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::inventory::v1::Inventory>* PrepareAsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::opi_api::inventory::v1::InventoryGetResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>> AsyncInventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>>(AsyncInventoryGetRaw(context, request, cq));
+    ::grpc::Status GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::opi_api::inventory::v1::Inventory* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>> AsyncGetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>>(AsyncGetInventoryRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>> PrepareAsyncInventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>>(PrepareAsyncInventoryGetRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>> PrepareAsyncGetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>>(PrepareAsyncGetInventoryRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, std::function<void(::grpc::Status)>) override;
-      void InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, std::function<void(::grpc::Status)>) override;
+      void GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -90,9 +95,9 @@ class InventorySvc final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>* AsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>* PrepareAsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_InventoryGet_;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>* AsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>* PrepareAsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_GetInventory_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -101,147 +106,147 @@ class InventorySvc final {
     Service();
     virtual ~Service();
     // retrieves the inventory data for the device
-    virtual ::grpc::Status InventoryGet(::grpc::ServerContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response);
+    virtual ::grpc::Status GetInventory(::grpc::ServerContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_InventoryGet : public BaseClass {
+  class WithAsyncMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_InventoryGet() {
+    WithAsyncMethod_GetInventory() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_InventoryGet() override {
+    ~WithAsyncMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestInventoryGet(::grpc::ServerContext* context, ::opi_api::inventory::v1::InventoryGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::inventory::v1::InventoryGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetInventory(::grpc::ServerContext* context, ::opi_api::inventory::v1::GetInventoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::opi_api::inventory::v1::Inventory>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_InventoryGet<Service > AsyncService;
+  typedef WithAsyncMethod_GetInventory<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_InventoryGet : public BaseClass {
+  class WithCallbackMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_InventoryGet() {
+    WithCallbackMethod_GetInventory() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response) { return this->InventoryGet(context, request, response); }));}
-    void SetMessageAllocatorFor_InventoryGet(
-        ::grpc::MessageAllocator< ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response) { return this->GetInventory(context, request, response); }));}
+    void SetMessageAllocatorFor_GetInventory(
+        ::grpc::MessageAllocator< ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_InventoryGet() override {
+    ~WithCallbackMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* InventoryGet(
-      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* GetInventory(
+      ::grpc::CallbackServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_InventoryGet<Service > CallbackService;
+  typedef WithCallbackMethod_GetInventory<Service > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_InventoryGet : public BaseClass {
+  class WithGenericMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_InventoryGet() {
+    WithGenericMethod_GetInventory() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_InventoryGet() override {
+    ~WithGenericMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithRawMethod_InventoryGet : public BaseClass {
+  class WithRawMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_InventoryGet() {
+    WithRawMethod_GetInventory() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_InventoryGet() override {
+    ~WithRawMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestInventoryGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetInventory(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_InventoryGet : public BaseClass {
+  class WithRawCallbackMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_InventoryGet() {
+    WithRawCallbackMethod_GetInventory() {
       ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->InventoryGet(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInventory(context, request, response); }));
     }
-    ~WithRawCallbackMethod_InventoryGet() override {
+    ~WithRawCallbackMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* InventoryGet(
+    virtual ::grpc::ServerUnaryReactor* GetInventory(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_InventoryGet : public BaseClass {
+  class WithStreamedUnaryMethod_GetInventory : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_InventoryGet() {
+    WithStreamedUnaryMethod_GetInventory() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse>(
+          ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse>* streamer) {
-                       return this->StreamedInventoryGet(context,
+                     ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory>* streamer) {
+                       return this->StreamedGetInventory(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_InventoryGet() override {
+    ~WithStreamedUnaryMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status InventoryGet(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::InventoryGetRequest* /*request*/, ::opi_api::inventory::v1::InventoryGetResponse* /*response*/) override {
+    ::grpc::Status GetInventory(::grpc::ServerContext* /*context*/, const ::opi_api::inventory::v1::GetInventoryRequest* /*request*/, ::opi_api::inventory::v1::Inventory* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedInventoryGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::inventory::v1::InventoryGetRequest,::opi_api::inventory::v1::InventoryGetResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetInventory(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::opi_api::inventory::v1::GetInventoryRequest,::opi_api::inventory::v1::Inventory>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_InventoryGet<Service > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetInventory<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_InventoryGet<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_GetInventory<Service > StreamedService;
 };
 
 }  // namespace v1

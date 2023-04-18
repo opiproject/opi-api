@@ -15,10 +15,10 @@ class InventorySvcStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.InventoryGet = channel.unary_unary(
-                '/opi_api.inventory.v1.InventorySvc/InventoryGet',
-                request_serializer=inventory__pb2.InventoryGetRequest.SerializeToString,
-                response_deserializer=inventory__pb2.InventoryGetResponse.FromString,
+        self.GetInventory = channel.unary_unary(
+                '/opi_api.inventory.v1.InventorySvc/GetInventory',
+                request_serializer=inventory__pb2.GetInventoryRequest.SerializeToString,
+                response_deserializer=inventory__pb2.Inventory.FromString,
                 )
 
 
@@ -26,7 +26,7 @@ class InventorySvcServicer(object):
     """Service functions for the device inventory data
     """
 
-    def InventoryGet(self, request, context):
+    def GetInventory(self, request, context):
         """retrieves the inventory data for the device
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -36,10 +36,10 @@ class InventorySvcServicer(object):
 
 def add_InventorySvcServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'InventoryGet': grpc.unary_unary_rpc_method_handler(
-                    servicer.InventoryGet,
-                    request_deserializer=inventory__pb2.InventoryGetRequest.FromString,
-                    response_serializer=inventory__pb2.InventoryGetResponse.SerializeToString,
+            'GetInventory': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInventory,
+                    request_deserializer=inventory__pb2.GetInventoryRequest.FromString,
+                    response_serializer=inventory__pb2.Inventory.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -53,7 +53,7 @@ class InventorySvc(object):
     """
 
     @staticmethod
-    def InventoryGet(request,
+    def GetInventory(request,
             target,
             options=(),
             channel_credentials=None,
@@ -63,8 +63,8 @@ class InventorySvc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/opi_api.inventory.v1.InventorySvc/InventoryGet',
-            inventory__pb2.InventoryGetRequest.SerializeToString,
-            inventory__pb2.InventoryGetResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/opi_api.inventory.v1.InventorySvc/GetInventory',
+            inventory__pb2.GetInventoryRequest.SerializeToString,
+            inventory__pb2.Inventory.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

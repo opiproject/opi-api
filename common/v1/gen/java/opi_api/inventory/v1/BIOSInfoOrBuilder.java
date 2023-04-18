@@ -57,8 +57,8 @@ public interface BIOSInfoOrBuilder extends
    * string, if supplied, is in either mm/dd/yy or
    * mm/dd/yyyy format. If the year portion of the string
    * is two digits, the year is assumed to be 19yy.
-   * NOTE: The mm/dd/yyyy format is required for SMBIOS
-   * version 2.3 and later
+   * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+   * format is only used.
    * </pre>
    *
    * <code>string date = 3;</code>
@@ -71,8 +71,8 @@ public interface BIOSInfoOrBuilder extends
    * string, if supplied, is in either mm/dd/yy or
    * mm/dd/yyyy format. If the year portion of the string
    * is two digits, the year is assumed to be 19yy.
-   * NOTE: The mm/dd/yyyy format is required for SMBIOS
-   * version 2.3 and later
+   * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+   * format is only used.
    * </pre>
    *
    * <code>string date = 3;</code>

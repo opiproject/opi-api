@@ -24,7 +24,7 @@ namespace inventory {
 namespace v1 {
 
 static const char* InventorySvc_method_names[] = {
-  "/opi_api.inventory.v1.InventorySvc/InventoryGet",
+  "/opi_api.inventory.v1.InventorySvc/GetInventory",
 };
 
 std::unique_ptr< InventorySvc::Stub> InventorySvc::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -34,28 +34,28 @@ std::unique_ptr< InventorySvc::Stub> InventorySvc::NewStub(const std::shared_ptr
 }
 
 InventorySvc::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_InventoryGet_(InventorySvc_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_GetInventory_(InventorySvc_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status InventorySvc::Stub::InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::opi_api::inventory::v1::InventoryGetResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_InventoryGet_, context, request, response);
+::grpc::Status InventorySvc::Stub::GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::opi_api::inventory::v1::Inventory* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInventory_, context, request, response);
 }
 
-void InventorySvc::Stub::async::InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_InventoryGet_, context, request, response, std::move(f));
+void InventorySvc::Stub::async::GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInventory_, context, request, response, std::move(f));
 }
 
-void InventorySvc::Stub::async::InventoryGet(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_InventoryGet_, context, request, response, reactor);
+void InventorySvc::Stub::async::GetInventory(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInventory_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>* InventorySvc::Stub::PrepareAsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::inventory::v1::InventoryGetResponse, ::opi_api::inventory::v1::InventoryGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_InventoryGet_, context, request);
+::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>* InventorySvc::Stub::PrepareAsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::opi_api::inventory::v1::Inventory, ::opi_api::inventory::v1::GetInventoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInventory_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::InventoryGetResponse>* InventorySvc::Stub::AsyncInventoryGetRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::InventoryGetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::opi_api::inventory::v1::Inventory>* InventorySvc::Stub::AsyncGetInventoryRaw(::grpc::ClientContext* context, const ::opi_api::inventory::v1::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncInventoryGetRaw(context, request, cq);
+    this->PrepareAsyncGetInventoryRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -64,19 +64,19 @@ InventorySvc::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       InventorySvc_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< InventorySvc::Service, ::opi_api::inventory::v1::InventoryGetRequest, ::opi_api::inventory::v1::InventoryGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< InventorySvc::Service, ::opi_api::inventory::v1::GetInventoryRequest, ::opi_api::inventory::v1::Inventory, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](InventorySvc::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::opi_api::inventory::v1::InventoryGetRequest* req,
-             ::opi_api::inventory::v1::InventoryGetResponse* resp) {
-               return service->InventoryGet(ctx, req, resp);
+             const ::opi_api::inventory::v1::GetInventoryRequest* req,
+             ::opi_api::inventory::v1::Inventory* resp) {
+               return service->GetInventory(ctx, req, resp);
              }, this)));
 }
 
 InventorySvc::Service::~Service() {
 }
 
-::grpc::Status InventorySvc::Service::InventoryGet(::grpc::ServerContext* context, const ::opi_api::inventory::v1::InventoryGetRequest* request, ::opi_api::inventory::v1::InventoryGetResponse* response) {
+::grpc::Status InventorySvc::Service::GetInventory(::grpc::ServerContext* context, const ::opi_api::inventory::v1::GetInventoryRequest* request, ::opi_api::inventory::v1::Inventory* response) {
   (void) context;
   (void) request;
   (void) response;

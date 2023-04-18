@@ -9,8 +9,8 @@
     - [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo)
     - [CPUInfo](#opi_api-inventory-v1-CPUInfo)
     - [ChassisInfo](#opi_api-inventory-v1-ChassisInfo)
-    - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
-    - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
+    - [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest)
+    - [Inventory](#opi_api-inventory-v1-Inventory)
     - [MemoryInfo](#opi_api-inventory-v1-MemoryInfo)
     - [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo)
     - [SystemInfo](#opi_api-inventory-v1-SystemInfo)
@@ -54,13 +54,16 @@
 
 ### BIOSInfo
 BIOS Information (Type 0)
+(-- api-linter: core::0142::time-field-type=disabled
+    api.dev/not-precedent: We need to do this because date is a
+    inventory parameter being reported by the BIOS on the device )
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | vendor | [string](#string) |  | String number of the BIOS Vendor’s Name. |
 | version | [string](#string) |  | String number of the BIOS Version. This value is a free-form string that may contain Core and OEM version information. |
-| date | [string](#string) |  | String number of the BIOS release date. The date string, if supplied, is in either mm/dd/yy or mm/dd/yyyy format. If the year portion of the string is two digits, the year is assumed to be 19yy. NOTE: The mm/dd/yyyy format is required for SMBIOS version 2.3 and later |
+| date | [string](#string) |  | String number of the BIOS release date. The date string, if supplied, is in either mm/dd/yy or mm/dd/yyyy format. If the year portion of the string is two digits, the year is assumed to be 19yy. NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy format is only used. |
 
 
 
@@ -133,31 +136,36 @@ System Enclosure or Chassis (Type 3)
 
 
 
-<a name="opi_api-inventory-v1-InventoryGetRequest"></a>
+<a name="opi_api-inventory-v1-GetInventoryRequest"></a>
 
-### InventoryGetRequest
-Empty
-
-
-
-
-
-
-<a name="opi_api-inventory-v1-InventoryGetResponse"></a>
-
-### InventoryGetResponse
-
+### GetInventoryRequest
+Request for Retrieving Inventory data from a device
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  |  |
-| system | [SystemInfo](#opi_api-inventory-v1-SystemInfo) |  |  |
-| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  |  |
-| chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  |  |
-| processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  |  |
-| memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  |  |
-| pci | [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo) | repeated |  |
+| name | [string](#string) |  | The name of the inventory to retrieve - blank for the full inventory |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-Inventory"></a>
+
+### Inventory
+Response for device inventory data
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  | BIOS Inventory |
+| system | [SystemInfo](#opi_api-inventory-v1-SystemInfo) |  | System Inventory |
+| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  | Baseboard Inventory |
+| chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  | Chassis Inventory |
+| processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  | CPU Inventory |
+| memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  | Memory Inventory |
+| pci | [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo) | repeated | PCI Devices Inventory |
 
 
 
@@ -244,7 +252,7 @@ Service functions for the device inventory data
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| InventoryGet | [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest) | [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse) | retrieves the inventory data for the device |
+| GetInventory | [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest) | [Inventory](#opi_api-inventory-v1-Inventory) | retrieves the inventory data for the device |
 
  
 

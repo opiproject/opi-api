@@ -18,35 +18,35 @@ public final class InventorySvcGrpc {
   public static final String SERVICE_NAME = "opi_api.inventory.v1.InventorySvc";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<opi_api.inventory.v1.InventoryGetRequest,
-      opi_api.inventory.v1.InventoryGetResponse> getInventoryGetMethod;
+  private static volatile io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest,
+      opi_api.inventory.v1.Inventory> getGetInventoryMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "InventoryGet",
-      requestType = opi_api.inventory.v1.InventoryGetRequest.class,
-      responseType = opi_api.inventory.v1.InventoryGetResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetInventory",
+      requestType = opi_api.inventory.v1.GetInventoryRequest.class,
+      responseType = opi_api.inventory.v1.Inventory.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<opi_api.inventory.v1.InventoryGetRequest,
-      opi_api.inventory.v1.InventoryGetResponse> getInventoryGetMethod() {
-    io.grpc.MethodDescriptor<opi_api.inventory.v1.InventoryGetRequest, opi_api.inventory.v1.InventoryGetResponse> getInventoryGetMethod;
-    if ((getInventoryGetMethod = InventorySvcGrpc.getInventoryGetMethod) == null) {
+  public static io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest,
+      opi_api.inventory.v1.Inventory> getGetInventoryMethod() {
+    io.grpc.MethodDescriptor<opi_api.inventory.v1.GetInventoryRequest, opi_api.inventory.v1.Inventory> getGetInventoryMethod;
+    if ((getGetInventoryMethod = InventorySvcGrpc.getGetInventoryMethod) == null) {
       synchronized (InventorySvcGrpc.class) {
-        if ((getInventoryGetMethod = InventorySvcGrpc.getInventoryGetMethod) == null) {
-          InventorySvcGrpc.getInventoryGetMethod = getInventoryGetMethod =
-              io.grpc.MethodDescriptor.<opi_api.inventory.v1.InventoryGetRequest, opi_api.inventory.v1.InventoryGetResponse>newBuilder()
+        if ((getGetInventoryMethod = InventorySvcGrpc.getGetInventoryMethod) == null) {
+          InventorySvcGrpc.getGetInventoryMethod = getGetInventoryMethod =
+              io.grpc.MethodDescriptor.<opi_api.inventory.v1.GetInventoryRequest, opi_api.inventory.v1.Inventory>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InventoryGet"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInventory"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.inventory.v1.InventoryGetRequest.getDefaultInstance()))
+                  opi_api.inventory.v1.GetInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  opi_api.inventory.v1.InventoryGetResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new InventorySvcMethodDescriptorSupplier("InventoryGet"))
+                  opi_api.inventory.v1.Inventory.getDefaultInstance()))
+              .setSchemaDescriptor(new InventorySvcMethodDescriptorSupplier("GetInventory"))
               .build();
         }
       }
     }
-    return getInventoryGetMethod;
+    return getGetInventoryMethod;
   }
 
   /**
@@ -105,20 +105,20 @@ public final class InventorySvcGrpc {
      * retrieves the inventory data for the device
      * </pre>
      */
-    public void inventoryGet(opi_api.inventory.v1.InventoryGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.inventory.v1.InventoryGetResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInventoryGetMethod(), responseObserver);
+    public void getInventory(opi_api.inventory.v1.GetInventoryRequest request,
+        io.grpc.stub.StreamObserver<opi_api.inventory.v1.Inventory> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInventoryMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getInventoryGetMethod(),
+            getGetInventoryMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                opi_api.inventory.v1.InventoryGetRequest,
-                opi_api.inventory.v1.InventoryGetResponse>(
-                  this, METHODID_INVENTORY_GET)))
+                opi_api.inventory.v1.GetInventoryRequest,
+                opi_api.inventory.v1.Inventory>(
+                  this, METHODID_GET_INVENTORY)))
           .build();
     }
   }
@@ -145,10 +145,10 @@ public final class InventorySvcGrpc {
      * retrieves the inventory data for the device
      * </pre>
      */
-    public void inventoryGet(opi_api.inventory.v1.InventoryGetRequest request,
-        io.grpc.stub.StreamObserver<opi_api.inventory.v1.InventoryGetResponse> responseObserver) {
+    public void getInventory(opi_api.inventory.v1.GetInventoryRequest request,
+        io.grpc.stub.StreamObserver<opi_api.inventory.v1.Inventory> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getInventoryGetMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetInventoryMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -174,9 +174,9 @@ public final class InventorySvcGrpc {
      * retrieves the inventory data for the device
      * </pre>
      */
-    public opi_api.inventory.v1.InventoryGetResponse inventoryGet(opi_api.inventory.v1.InventoryGetRequest request) {
+    public opi_api.inventory.v1.Inventory getInventory(opi_api.inventory.v1.GetInventoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInventoryGetMethod(), getCallOptions(), request);
+          getChannel(), getGetInventoryMethod(), getCallOptions(), request);
     }
   }
 
@@ -202,14 +202,14 @@ public final class InventorySvcGrpc {
      * retrieves the inventory data for the device
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<opi_api.inventory.v1.InventoryGetResponse> inventoryGet(
-        opi_api.inventory.v1.InventoryGetRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<opi_api.inventory.v1.Inventory> getInventory(
+        opi_api.inventory.v1.GetInventoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getInventoryGetMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetInventoryMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_INVENTORY_GET = 0;
+  private static final int METHODID_GET_INVENTORY = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -228,9 +228,9 @@ public final class InventorySvcGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_INVENTORY_GET:
-          serviceImpl.inventoryGet((opi_api.inventory.v1.InventoryGetRequest) request,
-              (io.grpc.stub.StreamObserver<opi_api.inventory.v1.InventoryGetResponse>) responseObserver);
+        case METHODID_GET_INVENTORY:
+          serviceImpl.getInventory((opi_api.inventory.v1.GetInventoryRequest) request,
+              (io.grpc.stub.StreamObserver<opi_api.inventory.v1.Inventory>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -293,7 +293,7 @@ public final class InventorySvcGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new InventorySvcFileDescriptorSupplier())
-              .addMethod(getInventoryGetMethod())
+              .addMethod(getGetInventoryMethod())
               .build();
         }
       }

@@ -129,18 +129,19 @@ struct PCIeDeviceInfoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PCIeDeviceInfoDefaultTypeInternal _PCIeDeviceInfo_default_instance_;
-constexpr InventoryGetRequest::InventoryGetRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct InventoryGetRequestDefaultTypeInternal {
-  constexpr InventoryGetRequestDefaultTypeInternal()
+constexpr GetInventoryRequest::GetInventoryRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetInventoryRequestDefaultTypeInternal {
+  constexpr GetInventoryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~InventoryGetRequestDefaultTypeInternal() {}
+  ~GetInventoryRequestDefaultTypeInternal() {}
   union {
-    InventoryGetRequest _instance;
+    GetInventoryRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InventoryGetRequestDefaultTypeInternal _InventoryGetRequest_default_instance_;
-constexpr InventoryGetResponse::InventoryGetResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetInventoryRequestDefaultTypeInternal _GetInventoryRequest_default_instance_;
+constexpr Inventory::Inventory(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : pci_()
   , bios_(nullptr)
@@ -149,15 +150,15 @@ constexpr InventoryGetResponse::InventoryGetResponse(
   , chassis_(nullptr)
   , processor_(nullptr)
   , memory_(nullptr){}
-struct InventoryGetResponseDefaultTypeInternal {
-  constexpr InventoryGetResponseDefaultTypeInternal()
+struct InventoryDefaultTypeInternal {
+  constexpr InventoryDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~InventoryGetResponseDefaultTypeInternal() {}
+  ~InventoryDefaultTypeInternal() {}
   union {
-    InventoryGetResponse _instance;
+    Inventory _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InventoryGetResponseDefaultTypeInternal _InventoryGetResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InventoryDefaultTypeInternal _Inventory_default_instance_;
 }  // namespace v1
 }  // namespace inventory
 }  // namespace opi_api
@@ -242,24 +243,25 @@ const uint32_t TableStruct_inventory_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::PCIeDeviceInfo, class__),
   PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::PCIeDeviceInfo, subclass_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::GetInventoryRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::GetInventoryRequest, name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, bios_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, system_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, baseboard_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, chassis_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, processor_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, memory_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::InventoryGetResponse, pci_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, bios_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, system_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, baseboard_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, chassis_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, processor_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, memory_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::inventory::v1::Inventory, pci_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::inventory::v1::BIOSInfo)},
@@ -269,8 +271,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 45, -1, -1, sizeof(::opi_api::inventory::v1::CPUInfo)},
   { 53, -1, -1, sizeof(::opi_api::inventory::v1::MemoryInfo)},
   { 61, -1, -1, sizeof(::opi_api::inventory::v1::PCIeDeviceInfo)},
-  { 75, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetRequest)},
-  { 81, -1, -1, sizeof(::opi_api::inventory::v1::InventoryGetResponse)},
+  { 75, -1, -1, sizeof(::opi_api::inventory::v1::GetInventoryRequest)},
+  { 82, -1, -1, sizeof(::opi_api::inventory::v1::Inventory)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -281,51 +283,62 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_CPUInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_MemoryInfo_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_PCIeDeviceInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_InventoryGetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_InventoryGetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_GetInventoryRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::inventory::v1::_Inventory_default_instance_),
 };
 
 const char descriptor_table_protodef_inventory_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017inventory.proto\022\024opi_api.inventory.v1\""
-  "9\n\010BIOSInfo\022\016\n\006vendor\030\001 \001(\t\022\017\n\007version\030\002"
-  " \001(\t\022\014\n\004date\030\003 \001(\t\"}\n\nSystemInfo\022\016\n\006fami"
-  "ly\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\025"
-  "\n\rserial_number\030\004 \001(\t\022\014\n\004uuid\030\005 \001(\t\022\013\n\003s"
-  "ku\030\006 \001(\t\022\017\n\007version\030\007 \001(\t\"\200\001\n\013ChassisInf"
-  "o\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 "
-  "\001(\t\022\014\n\004type\030\003 \001(\t\022\030\n\020type_description\030\004 "
-  "\001(\t\022\016\n\006vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\r"
-  "BaseboardInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rseri"
-  "al_number\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007versi"
-  "on\030\004 \001(\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013"
-  "total_cores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005"
-  "\"F\n\nMemoryInfo\022\034\n\024total_physical_bytes\030\001"
-  " \001(\003\022\032\n\022total_usable_bytes\030\002 \001(\003\"\230\001\n\016PCI"
-  "eDeviceInfo\022\016\n\006driver\030\001 \001(\t\022\017\n\007address\030\002"
-  " \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007product\030\004 \001(\t\022\020\n"
-  "\010revision\030\005 \001(\t\022\021\n\tsubsystem\030\006 \001(\t\022\r\n\005cl"
-  "ass\030\007 \001(\t\022\020\n\010subclass\030\010 \001(\t\"\025\n\023Inventory"
-  "GetRequest\"\371\002\n\024InventoryGetResponse\022,\n\004b"
-  "ios\030\001 \001(\0132\036.opi_api.inventory.v1.BIOSInf"
-  "o\0220\n\006system\030\002 \001(\0132 .opi_api.inventory.v1"
-  ".SystemInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api"
-  ".inventory.v1.BaseboardInfo\0222\n\007chassis\030\004"
-  " \001(\0132!.opi_api.inventory.v1.ChassisInfo\022"
-  "0\n\tprocessor\030\005 \001(\0132\035.opi_api.inventory.v"
-  "1.CPUInfo\0220\n\006memory\030\006 \001(\0132 .opi_api.inve"
-  "ntory.v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_a"
-  "pi.inventory.v1.PCIeDeviceInfo2w\n\014Invent"
-  "orySvc\022g\n\014InventoryGet\022).opi_api.invento"
-  "ry.v1.InventoryGetRequest\032*.opi_api.inve"
-  "ntory.v1.InventoryGetResponse\"\000BX\n\024opi_a"
-  "pi.inventory.v1B\016InventoryProtoP\001Z.githu"
-  "b.com/opiproject/opi-api/common/v1/gen/g"
-  "ob\006proto3"
+  "\n\017inventory.proto\022\024opi_api.inventory.v1\032"
+  "\027google/api/client.proto\032\031google/api/res"
+  "ource.proto\032\034google/api/annotations.prot"
+  "o\032\037google/api/field_behavior.proto\"9\n\010BI"
+  "OSInfo\022\016\n\006vendor\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022"
+  "\014\n\004date\030\003 \001(\t\"}\n\nSystemInfo\022\016\n\006family\030\001 "
+  "\001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\025\n\rser"
+  "ial_number\030\004 \001(\t\022\014\n\004uuid\030\005 \001(\t\022\013\n\003sku\030\006 "
+  "\001(\t\022\017\n\007version\030\007 \001(\t\"\200\001\n\013ChassisInfo\022\021\n\t"
+  "asset_tag\030\001 \001(\t\022\025\n\rserial_number\030\002 \001(\t\022\014"
+  "\n\004type\030\003 \001(\t\022\030\n\020type_description\030\004 \001(\t\022\016"
+  "\n\006vendor\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\"k\n\rBaseb"
+  "oardInfo\022\021\n\tasset_tag\030\001 \001(\t\022\025\n\rserial_nu"
+  "mber\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\017\n\007version\030\004 "
+  "\001(\t\022\017\n\007product\030\005 \001(\t\"5\n\007CPUInfo\022\023\n\013total"
+  "_cores\030\001 \001(\005\022\025\n\rtotal_threads\030\002 \001(\005\"F\n\nM"
+  "emoryInfo\022\034\n\024total_physical_bytes\030\001 \001(\003\022"
+  "\032\n\022total_usable_bytes\030\002 \001(\003\"\230\001\n\016PCIeDevi"
+  "ceInfo\022\016\n\006driver\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022"
+  "\016\n\006vendor\030\003 \001(\t\022\017\n\007product\030\004 \001(\t\022\020\n\010revi"
+  "sion\030\005 \001(\t\022\021\n\tsubsystem\030\006 \001(\t\022\r\n\005class\030\007"
+  " \001(\t\022\020\n\010subclass\030\010 \001(\t\"H\n\023GetInventoryRe"
+  "quest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033opi_api.com"
+  "mon.v1/Inventory\"\356\002\n\tInventory\022,\n\004bios\030\001"
+  " \001(\0132\036.opi_api.inventory.v1.BIOSInfo\0220\n\006"
+  "system\030\002 \001(\0132 .opi_api.inventory.v1.Syst"
+  "emInfo\0226\n\tbaseboard\030\003 \001(\0132#.opi_api.inve"
+  "ntory.v1.BaseboardInfo\0222\n\007chassis\030\004 \001(\0132"
+  "!.opi_api.inventory.v1.ChassisInfo\0220\n\tpr"
+  "ocessor\030\005 \001(\0132\035.opi_api.inventory.v1.CPU"
+  "Info\0220\n\006memory\030\006 \001(\0132 .opi_api.inventory"
+  ".v1.MemoryInfo\0221\n\003pci\030\007 \003(\0132$.opi_api.in"
+  "ventory.v1.PCIeDeviceInfo2\236\001\n\014InventoryS"
+  "vc\022\215\001\n\014GetInventory\022).opi_api.inventory."
+  "v1.GetInventoryRequest\032\037.opi_api.invento"
+  "ry.v1.Inventory\"1\202\323\344\223\002$\022\"/v1/{name=inven"
+  "tory/*/inventory/*}\332A\004nameBX\n\024opi_api.in"
+  "ventory.v1B\016InventoryProtoP\001Z.github.com"
+  "/opiproject/opi-api/common/v1/gen/gob\006pr"
+  "oto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_inventory_2eproto_deps[4] = {
+  &::descriptor_table_google_2fapi_2fannotations_2eproto,
+  &::descriptor_table_google_2fapi_2fclient_2eproto,
+  &::descriptor_table_google_2fapi_2ffield_5fbehavior_2eproto,
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_inventory_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_inventory_2eproto = {
-  false, false, 1369, descriptor_table_protodef_inventory_2eproto, "inventory.proto", 
-  &descriptor_table_inventory_2eproto_once, nullptr, 0, 9,
+  false, false, 1564, descriptor_table_protodef_inventory_2eproto, "inventory.proto", 
+  &descriptor_table_inventory_2eproto_once, descriptor_table_inventory_2eproto_deps, 4, 9,
   schemas, file_default_instances, TableStruct_inventory_2eproto::offsets,
   file_level_metadata_inventory_2eproto, file_level_enum_descriptors_inventory_2eproto, file_level_service_descriptors_inventory_2eproto,
 };
@@ -2956,38 +2969,202 @@ void PCIeDeviceInfo::InternalSwap(PCIeDeviceInfo* other) {
 
 // ===================================================================
 
-class InventoryGetRequest::_Internal {
+class GetInventoryRequest::_Internal {
  public:
 };
 
-InventoryGetRequest::InventoryGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetInventoryRequest::GetInventoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:opi_api.inventory.v1.InventoryGetRequest)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.inventory.v1.GetInventoryRequest)
 }
-InventoryGetRequest::InventoryGetRequest(const InventoryGetRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+GetInventoryRequest::GetInventoryRequest(const GetInventoryRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:opi_api.inventory.v1.InventoryGetRequest)
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:opi_api.inventory.v1.GetInventoryRequest)
+}
+
+inline void GetInventoryRequest::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+GetInventoryRequest::~GetInventoryRequest() {
+  // @@protoc_insertion_point(destructor:opi_api.inventory.v1.GetInventoryRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetInventoryRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetInventoryRequest::ArenaDtor(void* object) {
+  GetInventoryRequest* _this = reinterpret_cast< GetInventoryRequest* >(object);
+  (void)_this;
+}
+void GetInventoryRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetInventoryRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetInventoryRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.inventory.v1.GetInventoryRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetInventoryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.inventory.v1.GetInventoryRequest.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetInventoryRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.inventory.v1.GetInventoryRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.inventory.v1.GetInventoryRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.inventory.v1.GetInventoryRequest)
+  return target;
+}
+
+size_t GetInventoryRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.inventory.v1.GetInventoryRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetInventoryRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetInventoryRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetInventoryRequest::GetClassData() const { return &_class_data_; }
+
+void GetInventoryRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetInventoryRequest *>(to)->MergeFrom(
+      static_cast<const GetInventoryRequest &>(from));
 }
 
 
+void GetInventoryRequest::MergeFrom(const GetInventoryRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.inventory.v1.GetInventoryRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void GetInventoryRequest::CopyFrom(const GetInventoryRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.inventory.v1.GetInventoryRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InventoryGetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InventoryGetRequest::GetClassData() const { return &_class_data_; }
+bool GetInventoryRequest::IsInitialized() const {
+  return true;
+}
 
+void GetInventoryRequest::InternalSwap(GetInventoryRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+}
 
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata InventoryGetRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetInventoryRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
       file_level_metadata_inventory_2eproto[7]);
@@ -2995,41 +3172,41 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InventoryGetRequest::GetClassD
 
 // ===================================================================
 
-class InventoryGetResponse::_Internal {
+class Inventory::_Internal {
  public:
-  static const ::opi_api::inventory::v1::BIOSInfo& bios(const InventoryGetResponse* msg);
-  static const ::opi_api::inventory::v1::SystemInfo& system(const InventoryGetResponse* msg);
-  static const ::opi_api::inventory::v1::BaseboardInfo& baseboard(const InventoryGetResponse* msg);
-  static const ::opi_api::inventory::v1::ChassisInfo& chassis(const InventoryGetResponse* msg);
-  static const ::opi_api::inventory::v1::CPUInfo& processor(const InventoryGetResponse* msg);
-  static const ::opi_api::inventory::v1::MemoryInfo& memory(const InventoryGetResponse* msg);
+  static const ::opi_api::inventory::v1::BIOSInfo& bios(const Inventory* msg);
+  static const ::opi_api::inventory::v1::SystemInfo& system(const Inventory* msg);
+  static const ::opi_api::inventory::v1::BaseboardInfo& baseboard(const Inventory* msg);
+  static const ::opi_api::inventory::v1::ChassisInfo& chassis(const Inventory* msg);
+  static const ::opi_api::inventory::v1::CPUInfo& processor(const Inventory* msg);
+  static const ::opi_api::inventory::v1::MemoryInfo& memory(const Inventory* msg);
 };
 
 const ::opi_api::inventory::v1::BIOSInfo&
-InventoryGetResponse::_Internal::bios(const InventoryGetResponse* msg) {
+Inventory::_Internal::bios(const Inventory* msg) {
   return *msg->bios_;
 }
 const ::opi_api::inventory::v1::SystemInfo&
-InventoryGetResponse::_Internal::system(const InventoryGetResponse* msg) {
+Inventory::_Internal::system(const Inventory* msg) {
   return *msg->system_;
 }
 const ::opi_api::inventory::v1::BaseboardInfo&
-InventoryGetResponse::_Internal::baseboard(const InventoryGetResponse* msg) {
+Inventory::_Internal::baseboard(const Inventory* msg) {
   return *msg->baseboard_;
 }
 const ::opi_api::inventory::v1::ChassisInfo&
-InventoryGetResponse::_Internal::chassis(const InventoryGetResponse* msg) {
+Inventory::_Internal::chassis(const Inventory* msg) {
   return *msg->chassis_;
 }
 const ::opi_api::inventory::v1::CPUInfo&
-InventoryGetResponse::_Internal::processor(const InventoryGetResponse* msg) {
+Inventory::_Internal::processor(const Inventory* msg) {
   return *msg->processor_;
 }
 const ::opi_api::inventory::v1::MemoryInfo&
-InventoryGetResponse::_Internal::memory(const InventoryGetResponse* msg) {
+Inventory::_Internal::memory(const Inventory* msg) {
   return *msg->memory_;
 }
-InventoryGetResponse::InventoryGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Inventory::Inventory(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   pci_(arena) {
@@ -3037,9 +3214,9 @@ InventoryGetResponse::InventoryGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:opi_api.inventory.v1.InventoryGetResponse)
+  // @@protoc_insertion_point(arena_constructor:opi_api.inventory.v1.Inventory)
 }
-InventoryGetResponse::InventoryGetResponse(const InventoryGetResponse& from)
+Inventory::Inventory(const Inventory& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       pci_(from.pci_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3073,24 +3250,24 @@ InventoryGetResponse::InventoryGetResponse(const InventoryGetResponse& from)
   } else {
     memory_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:opi_api.inventory.v1.InventoryGetResponse)
+  // @@protoc_insertion_point(copy_constructor:opi_api.inventory.v1.Inventory)
 }
 
-inline void InventoryGetResponse::SharedCtor() {
+inline void Inventory::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&bios_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&memory_) -
     reinterpret_cast<char*>(&bios_)) + sizeof(memory_));
 }
 
-InventoryGetResponse::~InventoryGetResponse() {
-  // @@protoc_insertion_point(destructor:opi_api.inventory.v1.InventoryGetResponse)
+Inventory::~Inventory() {
+  // @@protoc_insertion_point(destructor:opi_api.inventory.v1.Inventory)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void InventoryGetResponse::SharedDtor() {
+inline void Inventory::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete bios_;
   if (this != internal_default_instance()) delete system_;
@@ -3100,18 +3277,18 @@ inline void InventoryGetResponse::SharedDtor() {
   if (this != internal_default_instance()) delete memory_;
 }
 
-void InventoryGetResponse::ArenaDtor(void* object) {
-  InventoryGetResponse* _this = reinterpret_cast< InventoryGetResponse* >(object);
+void Inventory::ArenaDtor(void* object) {
+  Inventory* _this = reinterpret_cast< Inventory* >(object);
   (void)_this;
 }
-void InventoryGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void Inventory::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void InventoryGetResponse::SetCachedSize(int size) const {
+void Inventory::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void InventoryGetResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:opi_api.inventory.v1.InventoryGetResponse)
+void Inventory::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.inventory.v1.Inventory)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3144,7 +3321,7 @@ void InventoryGetResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* InventoryGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Inventory::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -3234,9 +3411,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* InventoryGetResponse::_InternalSerialize(
+uint8_t* Inventory::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:opi_api.inventory.v1.InventoryGetResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.inventory.v1.Inventory)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3300,12 +3477,12 @@ uint8_t* InventoryGetResponse::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:opi_api.inventory.v1.InventoryGetResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.inventory.v1.Inventory)
   return target;
 }
 
-size_t InventoryGetResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:opi_api.inventory.v1.InventoryGetResponse)
+size_t Inventory::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.inventory.v1.Inventory)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -3364,21 +3541,21 @@ size_t InventoryGetResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InventoryGetResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Inventory::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    InventoryGetResponse::MergeImpl
+    Inventory::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InventoryGetResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Inventory::GetClassData() const { return &_class_data_; }
 
-void InventoryGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void Inventory::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<InventoryGetResponse *>(to)->MergeFrom(
-      static_cast<const InventoryGetResponse &>(from));
+  static_cast<Inventory *>(to)->MergeFrom(
+      static_cast<const Inventory &>(from));
 }
 
 
-void InventoryGetResponse::MergeFrom(const InventoryGetResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.inventory.v1.InventoryGetResponse)
+void Inventory::MergeFrom(const Inventory& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.inventory.v1.Inventory)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -3405,30 +3582,30 @@ void InventoryGetResponse::MergeFrom(const InventoryGetResponse& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void InventoryGetResponse::CopyFrom(const InventoryGetResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.inventory.v1.InventoryGetResponse)
+void Inventory::CopyFrom(const Inventory& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.inventory.v1.Inventory)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool InventoryGetResponse::IsInitialized() const {
+bool Inventory::IsInitialized() const {
   return true;
 }
 
-void InventoryGetResponse::InternalSwap(InventoryGetResponse* other) {
+void Inventory::InternalSwap(Inventory* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   pci_.InternalSwap(&other->pci_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(InventoryGetResponse, memory_)
-      + sizeof(InventoryGetResponse::memory_)
-      - PROTOBUF_FIELD_OFFSET(InventoryGetResponse, bios_)>(
+      PROTOBUF_FIELD_OFFSET(Inventory, memory_)
+      + sizeof(Inventory::memory_)
+      - PROTOBUF_FIELD_OFFSET(Inventory, bios_)>(
           reinterpret_cast<char*>(&bios_),
           reinterpret_cast<char*>(&other->bios_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata InventoryGetResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Inventory::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_inventory_2eproto_getter, &descriptor_table_inventory_2eproto_once,
       file_level_metadata_inventory_2eproto[8]);
@@ -3460,11 +3637,11 @@ template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::MemoryInfo* Arena::Create
 template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::PCIeDeviceInfo* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::PCIeDeviceInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::inventory::v1::PCIeDeviceInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::InventoryGetRequest* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::InventoryGetRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::inventory::v1::InventoryGetRequest >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::GetInventoryRequest* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::GetInventoryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::inventory::v1::GetInventoryRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::InventoryGetResponse* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::InventoryGetResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::opi_api::inventory::v1::InventoryGetResponse >(arena);
+template<> PROTOBUF_NOINLINE ::opi_api::inventory::v1::Inventory* Arena::CreateMaybeMessage< ::opi_api::inventory::v1::Inventory >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::inventory::v1::Inventory >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

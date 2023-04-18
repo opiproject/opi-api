@@ -6,6 +6,9 @@ package opi_api.inventory.v1;
 /**
  * <pre>
  * BIOS Information (Type 0)
+ * (-- api-linter: core::0142::time-field-type=disabled
+ *     api.dev/not-precedent: We need to do this because date is a
+ *     inventory parameter being reported by the BIOS on the device )
  * </pre>
  *
  * Protobuf type {@code opi_api.inventory.v1.BIOSInfo}
@@ -209,8 +212,8 @@ private static final long serialVersionUID = 0L;
    * string, if supplied, is in either mm/dd/yy or
    * mm/dd/yyyy format. If the year portion of the string
    * is two digits, the year is assumed to be 19yy.
-   * NOTE: The mm/dd/yyyy format is required for SMBIOS
-   * version 2.3 and later
+   * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+   * format is only used.
    * </pre>
    *
    * <code>string date = 3;</code>
@@ -235,8 +238,8 @@ private static final long serialVersionUID = 0L;
    * string, if supplied, is in either mm/dd/yy or
    * mm/dd/yyyy format. If the year portion of the string
    * is two digits, the year is assumed to be 19yy.
-   * NOTE: The mm/dd/yyyy format is required for SMBIOS
-   * version 2.3 and later
+   * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+   * format is only used.
    * </pre>
    *
    * <code>string date = 3;</code>
@@ -434,6 +437,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * BIOS Information (Type 0)
+   * (-- api-linter: core::0142::time-field-type=disabled
+   *     api.dev/not-precedent: We need to do this because date is a
+   *     inventory parameter being reported by the BIOS on the device )
    * </pre>
    *
    * Protobuf type {@code opi_api.inventory.v1.BIOSInfo}
@@ -806,8 +812,8 @@ private static final long serialVersionUID = 0L;
      * string, if supplied, is in either mm/dd/yy or
      * mm/dd/yyyy format. If the year portion of the string
      * is two digits, the year is assumed to be 19yy.
-     * NOTE: The mm/dd/yyyy format is required for SMBIOS
-     * version 2.3 and later
+     * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+     * format is only used.
      * </pre>
      *
      * <code>string date = 3;</code>
@@ -831,8 +837,8 @@ private static final long serialVersionUID = 0L;
      * string, if supplied, is in either mm/dd/yy or
      * mm/dd/yyyy format. If the year portion of the string
      * is two digits, the year is assumed to be 19yy.
-     * NOTE: The mm/dd/yyyy format is required for SMBIOS
-     * version 2.3 and later
+     * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+     * format is only used.
      * </pre>
      *
      * <code>string date = 3;</code>
@@ -857,8 +863,8 @@ private static final long serialVersionUID = 0L;
      * string, if supplied, is in either mm/dd/yy or
      * mm/dd/yyyy format. If the year portion of the string
      * is two digits, the year is assumed to be 19yy.
-     * NOTE: The mm/dd/yyyy format is required for SMBIOS
-     * version 2.3 and later
+     * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+     * format is only used.
      * </pre>
      *
      * <code>string date = 3;</code>
@@ -881,8 +887,8 @@ private static final long serialVersionUID = 0L;
      * string, if supplied, is in either mm/dd/yy or
      * mm/dd/yyyy format. If the year portion of the string
      * is two digits, the year is assumed to be 19yy.
-     * NOTE: The mm/dd/yyyy format is required for SMBIOS
-     * version 2.3 and later
+     * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+     * format is only used.
      * </pre>
      *
      * <code>string date = 3;</code>
@@ -900,8 +906,8 @@ private static final long serialVersionUID = 0L;
      * string, if supplied, is in either mm/dd/yy or
      * mm/dd/yyyy format. If the year portion of the string
      * is two digits, the year is assumed to be 19yy.
-     * NOTE: The mm/dd/yyyy format is required for SMBIOS
-     * version 2.3 and later
+     * NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+     * format is only used.
      * </pre>
      *
      * <code>string date = 3;</code>

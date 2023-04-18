@@ -1,5 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
+// (-- api-linter: core::0140::reserved-words=disabled
+//     aip.dev/not-precedent: We do this since inventory may use
+//     reserved words --)
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: Currently not supporting resource annotation)
 
 syntax = "proto3";
 package opi_api.inventory.v1;
@@ -10,15 +15,28 @@ option java_outer_classname = "InventoryProto";
 
 option go_package = "github.com/opiproject/opi-api/common/v1/gen/go";
 
+import "google/api/client.proto";
+import "google/api/resource.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+
 // Service functions for the device inventory data
 service InventorySvc {
     // retrieves the inventory data for the device
-    rpc InventoryGet (InventoryGetRequest) returns (InventoryGetResponse) {}
+    rpc GetInventory (GetInventoryRequest) returns (Inventory) {
+        option (google.api.http) = {
+            get: "/v1/{name=inventory/*/inventory/*}"
+        };
+        option (google.api.method_signature) = "name";
+    }
 }
 
-// Doc taken from https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.6.0.pdf
+// (-- Doc taken from https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.6.0.pdf --)
 
 // BIOS Information (Type 0)
+// (-- api-linter: core::0142::time-field-type=disabled
+//     api.dev/not-precedent: We need to do this because date is a
+//     inventory parameter being reported by the BIOS on the device )
 message BIOSInfo {
     // String number of the BIOS Vendor’s Name.
     string vendor = 1;
@@ -30,8 +48,8 @@ message BIOSInfo {
     // string, if supplied, is in either mm/dd/yy or
     // mm/dd/yyyy format. If the year portion of the string
     // is two digits, the year is assumed to be 19yy.
-    // NOTE: The mm/dd/yyyy format is required for SMBIOS
-    // version 2.3 and later
+    // NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy
+    // format is only used.
     string date = 3;
 }
 
@@ -175,16 +193,29 @@ message PCIeDeviceInfo {
     string subclass = 8;
 }
 
-message InventoryGetRequest {
-    // Empty
+// Request for Retrieving Inventory data from a device
+message GetInventoryRequest {
+    // The name of the inventory to retrieve - blank for the full inventory
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.common.v1/Inventory"
+    ];
 }
 
-message InventoryGetResponse {
+// Response for device inventory data
+message Inventory {
+    // BIOS Inventory 
     BIOSInfo bios = 1;
+    // System Inventory
     SystemInfo system = 2;
+    // Baseboard Inventory
     BaseboardInfo baseboard = 3;
+    // Chassis Inventory
     ChassisInfo chassis = 4;
+    // CPU Inventory
     CPUInfo processor = 5;
+    // Memory Inventory
     MemoryInfo memory = 6;
+    // PCI Devices Inventory
     repeated PCIeDeviceInfo pci = 7;
 }

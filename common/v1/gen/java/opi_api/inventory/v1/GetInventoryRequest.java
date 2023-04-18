@@ -5,28 +5,29 @@ package opi_api.inventory.v1;
 
 /**
  * <pre>
- * Empty
+ * Request for Retrieving Inventory data from a device
  * </pre>
  *
- * Protobuf type {@code opi_api.inventory.v1.InventoryGetRequest}
+ * Protobuf type {@code opi_api.inventory.v1.GetInventoryRequest}
  */
-public final class InventoryGetRequest extends
+public final class GetInventoryRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.inventory.v1.InventoryGetRequest)
-    InventoryGetRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.inventory.v1.GetInventoryRequest)
+    GetInventoryRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use InventoryGetRequest.newBuilder() to construct.
-  private InventoryGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetInventoryRequest.newBuilder() to construct.
+  private GetInventoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private InventoryGetRequest() {
+  private GetInventoryRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new InventoryGetRequest();
+    return new GetInventoryRequest();
   }
 
   @java.lang.Override
@@ -34,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private InventoryGetRequest(
+  private GetInventoryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,6 +53,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -73,15 +80,61 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor;
+    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetRequest_fieldAccessorTable
+    return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_GetInventoryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.inventory.v1.InventoryGetRequest.class, opi_api.inventory.v1.InventoryGetRequest.Builder.class);
+            opi_api.inventory.v1.GetInventoryRequest.class, opi_api.inventory.v1.GetInventoryRequest.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * The name of the inventory to retrieve - blank for the full inventory
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The name of the inventory to retrieve - blank for the full inventory
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -98,6 +151,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -107,6 +163,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -117,11 +176,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.inventory.v1.InventoryGetRequest)) {
+    if (!(obj instanceof opi_api.inventory.v1.GetInventoryRequest)) {
       return super.equals(obj);
     }
-    opi_api.inventory.v1.InventoryGetRequest other = (opi_api.inventory.v1.InventoryGetRequest) obj;
+    opi_api.inventory.v1.GetInventoryRequest other = (opi_api.inventory.v1.GetInventoryRequest) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -133,74 +194,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(byte[] data)
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(java.io.InputStream input)
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.inventory.v1.GetInventoryRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseDelimitedFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.inventory.v1.InventoryGetRequest parseFrom(
+  public static opi_api.inventory.v1.GetInventoryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -213,7 +276,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.inventory.v1.InventoryGetRequest prototype) {
+  public static Builder newBuilder(opi_api.inventory.v1.GetInventoryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -230,29 +293,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Empty
+   * Request for Retrieving Inventory data from a device
    * </pre>
    *
-   * Protobuf type {@code opi_api.inventory.v1.InventoryGetRequest}
+   * Protobuf type {@code opi_api.inventory.v1.GetInventoryRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.inventory.v1.InventoryGetRequest)
-      opi_api.inventory.v1.InventoryGetRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.inventory.v1.GetInventoryRequest)
+      opi_api.inventory.v1.GetInventoryRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor;
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetRequest_fieldAccessorTable
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_GetInventoryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.inventory.v1.InventoryGetRequest.class, opi_api.inventory.v1.InventoryGetRequest.Builder.class);
+              opi_api.inventory.v1.GetInventoryRequest.class, opi_api.inventory.v1.GetInventoryRequest.Builder.class);
     }
 
-    // Construct using opi_api.inventory.v1.InventoryGetRequest.newBuilder()
+    // Construct using opi_api.inventory.v1.GetInventoryRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -270,23 +333,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_InventoryGetRequest_descriptor;
+      return opi_api.inventory.v1.InventoryProto.internal_static_opi_api_inventory_v1_GetInventoryRequest_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetRequest getDefaultInstanceForType() {
-      return opi_api.inventory.v1.InventoryGetRequest.getDefaultInstance();
+    public opi_api.inventory.v1.GetInventoryRequest getDefaultInstanceForType() {
+      return opi_api.inventory.v1.GetInventoryRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetRequest build() {
-      opi_api.inventory.v1.InventoryGetRequest result = buildPartial();
+    public opi_api.inventory.v1.GetInventoryRequest build() {
+      opi_api.inventory.v1.GetInventoryRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -294,8 +359,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.inventory.v1.InventoryGetRequest buildPartial() {
-      opi_api.inventory.v1.InventoryGetRequest result = new opi_api.inventory.v1.InventoryGetRequest(this);
+    public opi_api.inventory.v1.GetInventoryRequest buildPartial() {
+      opi_api.inventory.v1.GetInventoryRequest result = new opi_api.inventory.v1.GetInventoryRequest(this);
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -334,16 +400,20 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.inventory.v1.InventoryGetRequest) {
-        return mergeFrom((opi_api.inventory.v1.InventoryGetRequest)other);
+      if (other instanceof opi_api.inventory.v1.GetInventoryRequest) {
+        return mergeFrom((opi_api.inventory.v1.GetInventoryRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.inventory.v1.InventoryGetRequest other) {
-      if (other == opi_api.inventory.v1.InventoryGetRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(opi_api.inventory.v1.GetInventoryRequest other) {
+      if (other == opi_api.inventory.v1.GetInventoryRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -359,17 +429,113 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.inventory.v1.InventoryGetRequest parsedMessage = null;
+      opi_api.inventory.v1.GetInventoryRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.inventory.v1.InventoryGetRequest) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.inventory.v1.GetInventoryRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * The name of the inventory to retrieve - blank for the full inventory
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the inventory to retrieve - blank for the full inventory
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the inventory to retrieve - blank for the full inventory
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the inventory to retrieve - blank for the full inventory
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the inventory to retrieve - blank for the full inventory
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
       return this;
     }
     @java.lang.Override
@@ -385,41 +551,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.inventory.v1.InventoryGetRequest)
+    // @@protoc_insertion_point(builder_scope:opi_api.inventory.v1.GetInventoryRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.InventoryGetRequest)
-  private static final opi_api.inventory.v1.InventoryGetRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.inventory.v1.GetInventoryRequest)
+  private static final opi_api.inventory.v1.GetInventoryRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.inventory.v1.InventoryGetRequest();
+    DEFAULT_INSTANCE = new opi_api.inventory.v1.GetInventoryRequest();
   }
 
-  public static opi_api.inventory.v1.InventoryGetRequest getDefaultInstance() {
+  public static opi_api.inventory.v1.GetInventoryRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InventoryGetRequest>
-      PARSER = new com.google.protobuf.AbstractParser<InventoryGetRequest>() {
+  private static final com.google.protobuf.Parser<GetInventoryRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetInventoryRequest>() {
     @java.lang.Override
-    public InventoryGetRequest parsePartialFrom(
+    public GetInventoryRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InventoryGetRequest(input, extensionRegistry);
+      return new GetInventoryRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<InventoryGetRequest> parser() {
+  public static com.google.protobuf.Parser<GetInventoryRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<InventoryGetRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetInventoryRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.inventory.v1.InventoryGetRequest getDefaultInstanceForType() {
+  public opi_api.inventory.v1.GetInventoryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
