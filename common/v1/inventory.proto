@@ -5,6 +5,9 @@
 //     reserved words --)
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: Currently not supporting resource annotation --)
+// (-- api-linter: core::0142::time-field-type=disabled
+//     api.dev/not-precedent: We need to do this because date is a
+//     inventory parameter being reported by the device in the set format --)
 
 syntax = "proto3";
 package opi_api.inventory.v1;
@@ -34,9 +37,6 @@ service InventorySvc {
 // (-- Doc taken from https://www.dmtf.org/sites/default/files/standards/documents/DSP0134_3.6.0.pdf --)
 
 // BIOS Information (Type 0)
-// (-- api-linter: core::0142::time-field-type=disabled
-//     api.dev/not-precedent: We need to do this because date is a
-//     inventory parameter being reported by the BIOS on the device --)
 message BIOSInfo {
     // String number of the BIOS Vendor’s Name.
     string vendor = 1;

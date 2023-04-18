@@ -9,6 +9,9 @@
 //     reserved words --)
 // (-- api-linter: core::0123::resource-annotation=disabled
 //     aip.dev/not-precedent: Currently not supporting resource annotation --)
+// (-- api-linter: core::0142::time-field-type=disabled
+//     api.dev/not-precedent: We need to do this because date is a
+//     inventory parameter being reported by the device in the set format --)
 //
 #ifndef GRPC_inventory_2eproto__INCLUDED
 #define GRPC_inventory_2eproto__INCLUDED
