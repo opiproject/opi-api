@@ -56,7 +56,7 @@
 BIOS Information (Type 0)
 (-- api-linter: core::0142::time-field-type=disabled
     api.dev/not-precedent: We need to do this because date is a
-    inventory parameter being reported by the BIOS on the device )
+    inventory parameter being reported by the BIOS on the device --)
 
 
 | Field | Type | Label | Description |

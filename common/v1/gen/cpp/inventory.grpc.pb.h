@@ -8,7 +8,7 @@
 //     aip.dev/not-precedent: We do this since inventory may use
 //     reserved words --)
 // (-- api-linter: core::0123::resource-annotation=disabled
-//     aip.dev/not-precedent: Currently not supporting resource annotation)
+//     aip.dev/not-precedent: Currently not supporting resource annotation --)
 //
 #ifndef GRPC_inventory_2eproto__INCLUDED
 #define GRPC_inventory_2eproto__INCLUDED

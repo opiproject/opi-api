@@ -4,7 +4,7 @@
 //     aip.dev/not-precedent: We do this since inventory may use
 //     reserved words --)
 // (-- api-linter: core::0123::resource-annotation=disabled
-//     aip.dev/not-precedent: Currently not supporting resource annotation)
+//     aip.dev/not-precedent: Currently not supporting resource annotation --)
 
 syntax = "proto3";
 package opi_api.inventory.v1;
@@ -36,7 +36,7 @@ service InventorySvc {
 // BIOS Information (Type 0)
 // (-- api-linter: core::0142::time-field-type=disabled
 //     api.dev/not-precedent: We need to do this because date is a
-//     inventory parameter being reported by the BIOS on the device )
+//     inventory parameter being reported by the BIOS on the device --)
 message BIOSInfo {
     // String number of the BIOS Vendor’s Name.
     string vendor = 1;
