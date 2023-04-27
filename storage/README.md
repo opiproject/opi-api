@@ -99,4 +99,44 @@ The [Specification](proto/autogen.md) is implemented in proto. Compile it as:
 
 ## Mindmap Diagram
 
-![Storage APIs High Level Diagram](DPU-API-Storage.png)
+```mermaid
+mindmap
+    root((Device))
+        Front End to host
+            NVMe
+                NVMe Subsystem
+                NVMe Controller
+                NVMe Namespace
+            VirtIO scsi
+                tbd
+            VirtIO fs
+                tbd
+            VirtIO blk
+                VirtIO blk Controller
+                VirtIO blk Volume
+        Middle End Storage Services
+            Compression
+            RAID across storage backends
+            DARE Data at Rest Encryption
+            QoS Min and Max Iops and BW
+            others...
+        BackEnd to fabric
+            NVMe
+                PCIe
+                TCP
+                    ipv4
+                    ipv6
+                RDMA
+                    ipv4
+                    ipv6
+            iSCSI
+                ipv4
+                ipv6
+            Null
+            AIO
+            Memory
+        System
+            telemetry
+            log
+             statsistics
+```
