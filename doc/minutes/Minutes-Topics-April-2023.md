@@ -41,11 +41,26 @@ Actions:
 
 ---
 
+## April 20
+
+Topics Covered:
+
+- Short update on PR#273.
+  - Comments included and addressed.
+  - No additional issues/comments.
+  - Approved for Merge into the repository.
+- Brief update on Storage Backend - Plan to discuss summary on April 27th meeting
+- Detailed API walkthrough - IPU PoC Demo from Ericsson & Intel
+
+Recording at: <https://zoom.us/rec/share/Ky0Uke9HY3lxaHvOMWdJMSkIH-6clJT9vFKF7MAjjUle-EYQlgTA_5wN-1dFp2l3.1T3LVieVI8EOZTyg>
+
+---
+
 Upcoming Topics - Next week:
 
 - Storage Backend Discussion - Vipin/Ben
   - Summary and overview of ongoing Slack discussion.
-- Detailed API walkthrough for IPU PoC Demo
+- EVPN Gateway Repo and contribution.
 
 Future/Continuing Topics:
 
