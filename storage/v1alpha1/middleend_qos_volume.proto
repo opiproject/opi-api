@@ -69,8 +69,8 @@ message QosVolume {
     // Middleend/backend volume to apply QoS on
     common.v1.ObjectKey volume_id = 2;
 
-    QosLimit limit_min = 3;
-    QosLimit limit_max = 4;
+    QosLimit min_limit = 3;
+    QosLimit max_limit = 4;
 }
 
 message CreateQosVolumeRequest {
