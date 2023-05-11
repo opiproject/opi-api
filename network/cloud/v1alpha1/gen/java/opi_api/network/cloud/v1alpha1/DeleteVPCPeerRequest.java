@@ -59,6 +59,11 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
+          case 16: {
+
+            allowMissing_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +142,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
+  private boolean allowMissing_;
+  /**
+   * <pre>
+   * If set to true, and the resource is not found, the request will succeed
+   * but no action will be taken on the server
+   * </pre>
+   *
+   * <code>bool allow_missing = 2;</code>
+   * @return The allowMissing.
+   */
+  @java.lang.Override
+  public boolean getAllowMissing() {
+    return allowMissing_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -154,6 +175,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
+    if (allowMissing_ != false) {
+      output.writeBool(2, allowMissing_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -165,6 +189,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
+    if (allowMissing_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, allowMissing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +211,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (getAllowMissing()
+        != other.getAllowMissing()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,6 +226,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowMissing());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +368,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      allowMissing_ = false;
+
       return this;
     }
 
@@ -362,6 +397,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest buildPartial() {
       opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest result = new opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest(this);
       result.id_ = id_;
+      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
     }
@@ -413,6 +449,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
+      }
+      if (other.getAllowMissing() != false) {
+        setAllowMissing(other.getAllowMissing());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -535,6 +574,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       id_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowMissing_ ;
+    /**
+     * <pre>
+     * If set to true, and the resource is not found, the request will succeed
+     * but no action will be taken on the server
+     * </pre>
+     *
+     * <code>bool allow_missing = 2;</code>
+     * @return The allowMissing.
+     */
+    @java.lang.Override
+    public boolean getAllowMissing() {
+      return allowMissing_;
+    }
+    /**
+     * <pre>
+     * If set to true, and the resource is not found, the request will succeed
+     * but no action will be taken on the server
+     * </pre>
+     *
+     * <code>bool allow_missing = 2;</code>
+     * @param value The allowMissing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMissing(boolean value) {
+      
+      allowMissing_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to true, and the resource is not found, the request will succeed
+     * but no action will be taken on the server
+     * </pre>
+     *
+     * <code>bool allow_missing = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowMissing() {
+      
+      allowMissing_ = false;
       onChanged();
       return this;
     }

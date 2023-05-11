@@ -26,4 +26,15 @@ public interface DeleteVPCPeerRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <pre>
+   * If set to true, and the resource is not found, the request will succeed
+   * but no action will be taken on the server
+   * </pre>
+   *
+   * <code>bool allow_missing = 2;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

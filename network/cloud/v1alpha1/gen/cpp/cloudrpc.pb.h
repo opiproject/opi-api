@@ -994,6 +994,7 @@ class DeleteDeviceRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -1009,6 +1010,15 @@ class DeleteDeviceRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest)
  private:
   class _Internal;
@@ -1017,6 +1027,7 @@ class DeleteDeviceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -2682,6 +2693,7 @@ class DeleteVnicRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -2697,6 +2709,15 @@ class DeleteVnicRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteVnicRequest)
  private:
   class _Internal;
@@ -2705,6 +2726,7 @@ class DeleteVnicRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -3695,6 +3717,7 @@ class DeleteInterfaceRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -3710,6 +3733,15 @@ class DeleteInterfaceRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest)
  private:
   class _Internal;
@@ -3718,6 +3750,7 @@ class DeleteInterfaceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -4708,6 +4741,7 @@ class DeleteRouteTableRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -4723,6 +4757,15 @@ class DeleteRouteTableRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest)
  private:
   class _Internal;
@@ -4731,6 +4774,7 @@ class DeleteRouteTableRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -5721,6 +5765,7 @@ class DeleteRouteRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -5736,6 +5781,15 @@ class DeleteRouteRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteRouteRequest)
  private:
   class _Internal;
@@ -5744,6 +5798,7 @@ class DeleteRouteRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -6734,6 +6789,7 @@ class DeleteUnderlayRouteRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -6749,6 +6805,15 @@ class DeleteUnderlayRouteRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest)
  private:
   class _Internal;
@@ -6757,6 +6822,7 @@ class DeleteUnderlayRouteRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -7747,6 +7813,7 @@ class DeleteBgpRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -7762,6 +7829,15 @@ class DeleteBgpRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteBgpRequest)
  private:
   class _Internal;
@@ -7770,6 +7846,7 @@ class DeleteBgpRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -8760,6 +8837,7 @@ class DeleteBGPPeerRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -8775,6 +8853,15 @@ class DeleteBGPPeerRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest)
  private:
   class _Internal;
@@ -8783,6 +8870,7 @@ class DeleteBGPPeerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -9773,6 +9861,7 @@ class DeleteBGPPeerAfRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -9788,6 +9877,15 @@ class DeleteBGPPeerAfRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest)
  private:
   class _Internal;
@@ -9796,6 +9894,7 @@ class DeleteBGPPeerAfRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -10786,6 +10885,7 @@ class DeleteMappingRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -10801,6 +10901,15 @@ class DeleteMappingRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteMappingRequest)
  private:
   class _Internal;
@@ -10809,6 +10918,7 @@ class DeleteMappingRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -11799,6 +11909,7 @@ class DeleteNextHopRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -11814,6 +11925,15 @@ class DeleteNextHopRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest)
  private:
   class _Internal;
@@ -11822,6 +11942,7 @@ class DeleteNextHopRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -12812,6 +12933,7 @@ class DeleteNextHopGroupRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -12827,6 +12949,15 @@ class DeleteNextHopGroupRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest)
  private:
   class _Internal;
@@ -12835,6 +12966,7 @@ class DeleteNextHopGroupRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -13825,6 +13957,7 @@ class DeleteSubnetRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -13840,6 +13973,15 @@ class DeleteSubnetRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest)
  private:
   class _Internal;
@@ -13848,6 +13990,7 @@ class DeleteSubnetRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -14838,6 +14981,7 @@ class DeleteTunnelRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -14853,6 +14997,15 @@ class DeleteTunnelRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest)
  private:
   class _Internal;
@@ -14861,6 +15014,7 @@ class DeleteTunnelRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -15851,6 +16005,7 @@ class DeleteVpcRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -15866,6 +16021,15 @@ class DeleteVpcRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteVpcRequest)
  private:
   class _Internal;
@@ -15874,6 +16038,7 @@ class DeleteVpcRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -16864,6 +17029,7 @@ class DeleteVPCPeerRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -16879,6 +17045,15 @@ class DeleteVPCPeerRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest)
  private:
   class _Internal;
@@ -16887,6 +17062,7 @@ class DeleteVPCPeerRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -17877,6 +18053,7 @@ class DeleteSecurityPolicyRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -17892,6 +18069,15 @@ class DeleteSecurityPolicyRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest)
  private:
   class _Internal;
@@ -17900,6 +18086,7 @@ class DeleteSecurityPolicyRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -18890,6 +19077,7 @@ class DeleteSecurityRuleRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -18905,6 +19093,15 @@ class DeleteSecurityRuleRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest)
  private:
   class _Internal;
@@ -18913,6 +19110,7 @@ class DeleteSecurityRuleRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -19903,6 +20101,7 @@ class DeleteSecurityProfileRequest final :
 
   enum : int {
     kIdFieldNumber = 1,
+    kAllowMissingFieldNumber = 2,
   };
   // string id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
   void clear_id();
@@ -19918,6 +20117,15 @@ class DeleteSecurityProfileRequest final :
   std::string* _internal_mutable_id();
   public:
 
+  // bool allow_missing = 2;
+  void clear_allow_missing();
+  bool allow_missing() const;
+  void set_allow_missing(bool value);
+  private:
+  bool _internal_allow_missing() const;
+  void _internal_set_allow_missing(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest)
  private:
   class _Internal;
@@ -19926,6 +20134,7 @@ class DeleteSecurityProfileRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  bool allow_missing_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cloudrpc_2eproto;
 };
@@ -20860,6 +21069,26 @@ inline void DeleteDeviceRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteDeviceRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteDeviceRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteDeviceRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteDeviceRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteDeviceRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteDeviceRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -22007,6 +22236,26 @@ inline void DeleteVnicRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteVnicRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVnicRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVnicRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVnicRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVnicRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVnicRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateVnicRequest
@@ -22701,6 +22950,26 @@ inline void DeleteInterfaceRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteInterfaceRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteInterfaceRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteInterfaceRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteInterfaceRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteInterfaceRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteInterfaceRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -23399,6 +23668,26 @@ inline void DeleteRouteTableRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteRouteTableRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteRouteTableRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteRouteTableRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteRouteTableRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteRouteTableRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteTableRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateRouteTableRequest
@@ -24093,6 +24382,26 @@ inline void DeleteRouteRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteRouteRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteRouteRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteRouteRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteRouteRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteRouteRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteRouteRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -24791,6 +25100,26 @@ inline void DeleteUnderlayRouteRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteUnderlayRouteRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteUnderlayRouteRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteUnderlayRouteRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteUnderlayRouteRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteUnderlayRouteRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteUnderlayRouteRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateUnderlayRouteRequest
@@ -25485,6 +25814,26 @@ inline void DeleteBgpRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteBgpRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteBgpRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteBgpRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteBgpRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteBgpRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBgpRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -26183,6 +26532,26 @@ inline void DeleteBGPPeerRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteBGPPeerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteBGPPeerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteBGPPeerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteBGPPeerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteBGPPeerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateBGPPeerRequest
@@ -26877,6 +27246,26 @@ inline void DeleteBGPPeerAfRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteBGPPeerAfRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteBGPPeerAfRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteBGPPeerAfRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteBGPPeerAfRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteBGPPeerAfRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteBGPPeerAfRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -27575,6 +27964,26 @@ inline void DeleteMappingRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteMappingRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteMappingRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteMappingRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteMappingRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteMappingRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteMappingRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateMappingRequest
@@ -28269,6 +28678,26 @@ inline void DeleteNextHopRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteNextHopRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteNextHopRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteNextHopRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteNextHopRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteNextHopRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -28967,6 +29396,26 @@ inline void DeleteNextHopGroupRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteNextHopGroupRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteNextHopGroupRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteNextHopGroupRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteNextHopGroupRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteNextHopGroupRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteNextHopGroupRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateNextHopGroupRequest
@@ -29661,6 +30110,26 @@ inline void DeleteSubnetRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteSubnetRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteSubnetRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteSubnetRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteSubnetRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteSubnetRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSubnetRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -30359,6 +30828,26 @@ inline void DeleteTunnelRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteTunnelRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteTunnelRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteTunnelRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteTunnelRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteTunnelRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteTunnelRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateTunnelRequest
@@ -31053,6 +31542,26 @@ inline void DeleteVpcRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteVpcRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVpcRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVpcRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVpcRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVpcRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVpcRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -31751,6 +32260,26 @@ inline void DeleteVPCPeerRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteVPCPeerRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteVPCPeerRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteVPCPeerRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteVPCPeerRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteVPCPeerRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteVPCPeerRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateVPCPeerRequest
@@ -32445,6 +32974,26 @@ inline void DeleteSecurityPolicyRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteSecurityPolicyRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteSecurityPolicyRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteSecurityPolicyRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteSecurityPolicyRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteSecurityPolicyRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityPolicyRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------
@@ -33143,6 +33692,26 @@ inline void DeleteSecurityRuleRequest::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.id)
 }
 
+// bool allow_missing = 2;
+inline void DeleteSecurityRuleRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteSecurityRuleRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteSecurityRuleRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteSecurityRuleRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteSecurityRuleRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityRuleRequest.allow_missing)
+}
+
 // -------------------------------------------------------------------
 
 // UpdateSecurityRuleRequest
@@ -33837,6 +34406,26 @@ inline void DeleteSecurityProfileRequest::set_allocated_id(std::string* id) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.id)
+}
+
+// bool allow_missing = 2;
+inline void DeleteSecurityProfileRequest::clear_allow_missing() {
+  allow_missing_ = false;
+}
+inline bool DeleteSecurityProfileRequest::_internal_allow_missing() const {
+  return allow_missing_;
+}
+inline bool DeleteSecurityProfileRequest::allow_missing() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.allow_missing)
+  return _internal_allow_missing();
+}
+inline void DeleteSecurityProfileRequest::_internal_set_allow_missing(bool value) {
+  
+  allow_missing_ = value;
+}
+inline void DeleteSecurityProfileRequest::set_allow_missing(bool value) {
+  _internal_set_allow_missing(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeleteSecurityProfileRequest.allow_missing)
 }
 
 // -------------------------------------------------------------------

@@ -633,763 +633,774 @@ public final class CloudRPC {
       "nt\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alph" +
       "a1/Device\022;\n\006device\030\002 \001(\0132&.opi_api.netw" +
       "ork.cloud.v1alpha1.DeviceB\003\340A\002\022\021\n\tdevice" +
-      "_id\030\003 \001(\t\"J\n\023DeleteDeviceRequest\0223\n\002id\030\001" +
+      "_id\030\003 \001(\t\"a\n\023DeleteDeviceRequest\0223\n\002id\030\001" +
       " \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/D" +
-      "evice\"~\n\023UpdateDeviceRequest\0226\n\006device\030\001" +
-      " \001(\0132&.opi_api.network.cloud.v1alpha1.De" +
-      "vice\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
-      "buf.FieldMask\"t\n\022ListDevicesRequest\0227\n\006p" +
-      "arent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1a" +
-      "lpha1/Device\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\"f\n\023ListDevicesResponse\0226\n\006de" +
-      "vice\030\001 \003(\0132&.opi_api.network.cloud.v1alp" +
-      "ha1.Device\022\027\n\017next_page_token\030\002 \001(\t\"G\n\020G" +
-      "etDeviceRequest\0223\n\002id\030\001 \001(\tB\'\340A\002\372A!\n\037opi" +
-      "_api.network.v1alpha1/Device\"x\n\021UpdatePo" +
-      "rtRequest\0222\n\004port\030\001 \001(\0132$.opi_api.networ" +
-      "k.cloud.v1alpha1.Port\022/\n\013update_mask\030\002 \001" +
-      "(\0132\032.google.protobuf.FieldMask\"p\n\020ListPo" +
-      "rtsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_" +
-      "api.network.v1alpha1/Port\022\021\n\tpage_size\030\002" +
-      " \001(\005\022\022\n\npage_token\030\003 \001(\t\"`\n\021ListPortsRes" +
-      "ponse\0222\n\004port\030\001 \003(\0132$.opi_api.network.cl" +
-      "oud.v1alpha1.Port\022\027\n\017next_page_token\030\002 \001" +
-      "(\t\"C\n\016GetPortRequest\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037" +
-      "\n\035opi_api.network.v1alpha1/Port\"\224\001\n\021Crea" +
-      "teVnicRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035o" +
-      "pi_api.network.v1alpha1/Vnic\0227\n\004vnic\030\002 \001" +
-      "(\0132$.opi_api.network.cloud.v1alpha1.Vnic" +
-      "B\003\340A\002\022\017\n\007vnic_id\030\003 \001(\t\"F\n\021DeleteVnicRequ" +
+      "evice\022\025\n\rallow_missing\030\002 \001(\010\"~\n\023UpdateDe" +
+      "viceRequest\0226\n\006device\030\001 \001(\0132&.opi_api.ne" +
+      "twork.cloud.v1alpha1.Device\022/\n\013update_ma" +
+      "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"t\n\022" +
+      "ListDevicesRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372" +
+      "A!\n\037opi_api.network.v1alpha1/Device\022\021\n\tp" +
+      "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023Li" +
+      "stDevicesResponse\0226\n\006device\030\001 \003(\0132&.opi_" +
+      "api.network.cloud.v1alpha1.Device\022\027\n\017nex" +
+      "t_page_token\030\002 \001(\t\"G\n\020GetDeviceRequest\0223" +
+      "\n\002id\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1al" +
+      "pha1/Device\"x\n\021UpdatePortRequest\0222\n\004port" +
+      "\030\001 \001(\0132$.opi_api.network.cloud.v1alpha1." +
+      "Port\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
+      "buf.FieldMask\"p\n\020ListPortsRequest\0225\n\006par" +
+      "ent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1alp" +
+      "ha1/Port\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke" +
+      "n\030\003 \001(\t\"`\n\021ListPortsResponse\0222\n\004port\030\001 \003" +
+      "(\0132$.opi_api.network.cloud.v1alpha1.Port" +
+      "\022\027\n\017next_page_token\030\002 \001(\t\"C\n\016GetPortRequ" +
       "est\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network" +
-      ".v1alpha1/Vnic\"x\n\021UpdateVnicRequest\0222\n\004v" +
-      "nic\030\001 \001(\0132$.opi_api.network.cloud.v1alph" +
-      "a1.Vnic\022/\n\013update_mask\030\002 \001(\0132\032.google.pr" +
-      "otobuf.FieldMask\"p\n\020ListVnicsRequest\0225\n\006" +
+      ".v1alpha1/Port\"\224\001\n\021CreateVnicRequest\0225\n\006" +
       "parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1" +
-      "alpha1/Vnic\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t" +
-      "oken\030\003 \001(\t\"`\n\021ListVnicsResponse\0222\n\004vnic\030" +
-      "\001 \003(\0132$.opi_api.network.cloud.v1alpha1.V" +
-      "nic\022\027\n\017next_page_token\030\002 \001(\t\"C\n\016GetVnicR" +
-      "equest\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.netw" +
-      "ork.v1alpha1/Vnic\"\255\001\n\026CreateInterfaceReq" +
-      "uest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.ne" +
-      "twork.v1alpha1/Interface\022A\n\tinterface\030\002 " +
-      "\001(\0132).opi_api.network.cloud.v1alpha1.Int" +
-      "erfaceB\003\340A\002\022\024\n\014interface_id\030\003 \001(\t\"P\n\026Del" +
-      "eteInterfaceRequest\0226\n\002id\030\001 \001(\tB*\340A\002\372A$\n" +
-      "\"opi_api.network.v1alpha1/Interface\"\207\001\n\026" +
-      "UpdateInterfaceRequest\022<\n\tinterface\030\001 \001(" +
-      "\0132).opi_api.network.cloud.v1alpha1.Inter" +
-      "face\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
-      "buf.FieldMask\"z\n\025ListInterfacesRequest\022:" +
-      "\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network." +
-      "v1alpha1/Interface\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\"o\n\026ListInterfacesRespo" +
-      "nse\022<\n\tinterface\030\001 \003(\0132).opi_api.network" +
-      ".cloud.v1alpha1.Interface\022\027\n\017next_page_t" +
-      "oken\030\002 \001(\t\"M\n\023GetInterfaceRequest\0226\n\002id\030" +
-      "\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/" +
-      "Interface\"\262\001\n\027CreateRouteTableRequest\022;\n" +
-      "\006parent\030\001 \001(\tB+\340A\002\372A%\n#opi_api.network.v" +
-      "1alpha1/RouteTable\022C\n\nroutetable\030\002 \001(\0132*" +
-      ".opi_api.network.cloud.v1alpha1.RouteTab" +
-      "leB\003\340A\002\022\025\n\rroutetable_id\030\003 \001(\t\"R\n\027Delete" +
-      "RouteTableRequest\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#o" +
-      "pi_api.network.v1alpha1/RouteTable\"\212\001\n\027U" +
-      "pdateRouteTableRequest\022>\n\nroutetable\030\001 \001" +
-      "(\0132*.opi_api.network.cloud.v1alpha1.Rout" +
-      "eTable\022/\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\"|\n\026ListRouteTablesReques" +
-      "t\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#opi_api.netwo" +
-      "rk.v1alpha1/RouteTable\022\021\n\tpage_size\030\002 \001(" +
-      "\005\022\022\n\npage_token\030\003 \001(\t\"r\n\027ListRouteTables" +
-      "Response\022>\n\nroutetable\030\001 \003(\0132*.opi_api.n" +
-      "etwork.cloud.v1alpha1.RouteTable\022\027\n\017next" +
-      "_page_token\030\002 \001(\t\"O\n\024GetRouteTableReques" +
-      "t\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#opi_api.network.v" +
-      "1alpha1/RouteTable\"\231\001\n\022CreateRouteReques" +
-      "t\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \n\036opi_api.netwo" +
-      "rk.v1alpha1/Route\0229\n\005route\030\002 \001(\0132%.opi_a" +
-      "pi.network.cloud.v1alpha1.RouteB\003\340A\002\022\020\n\010" +
-      "route_id\030\003 \001(\t\"H\n\022DeleteRouteRequest\0222\n\002" +
-      "id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.network.v1alph" +
-      "a1/Route\"{\n\022UpdateRouteRequest\0224\n\005route\030" +
-      "\001 \001(\0132%.opi_api.network.cloud.v1alpha1.R" +
-      "oute\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
-      "buf.FieldMask\"r\n\021ListRoutesRequest\0226\n\006pa" +
-      "rent\030\001 \001(\tB&\340A\002\372A \n\036opi_api.network.v1al" +
-      "pha1/Route\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
-      "ken\030\003 \001(\t\"c\n\022ListRoutesResponse\0224\n\005route" +
-      "\030\001 \003(\0132%.opi_api.network.cloud.v1alpha1." +
-      "Route\022\027\n\017next_page_token\030\002 \001(\t\"E\n\017GetRou" +
-      "teRequest\0222\n\002id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.n" +
-      "etwork.v1alpha1/Route\"\301\001\n\032CreateUnderlay" +
-      "RouteRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&op" +
-      "i_api.network.v1alpha1/UnderlayRoute\022I\n\r" +
-      "underlayroute\030\002 \001(\0132-.opi_api.network.cl" +
-      "oud.v1alpha1.UnderlayRouteB\003\340A\002\022\030\n\020under" +
-      "layroute_id\030\003 \001(\t\"X\n\032DeleteUnderlayRoute" +
-      "Request\022:\n\002id\030\001 \001(\tB.\340A\002\372A(\n&opi_api.net" +
-      "work.v1alpha1/UnderlayRoute\"\223\001\n\032UpdateUn" +
-      "derlayRouteRequest\022D\n\runderlayroute\030\001 \001(" +
-      "\0132-.opi_api.network.cloud.v1alpha1.Under" +
-      "layRoute\022/\n\013update_mask\030\002 \001(\0132\032.google.p" +
-      "rotobuf.FieldMask\"\202\001\n\031ListUnderlayRoutes" +
+      "alpha1/Vnic\0227\n\004vnic\030\002 \001(\0132$.opi_api.netw" +
+      "ork.cloud.v1alpha1.VnicB\003\340A\002\022\017\n\007vnic_id\030" +
+      "\003 \001(\t\"]\n\021DeleteVnicRequest\0221\n\002id\030\001 \001(\tB%" +
+      "\340A\002\372A\037\n\035opi_api.network.v1alpha1/Vnic\022\025\n" +
+      "\rallow_missing\030\002 \001(\010\"x\n\021UpdateVnicReques" +
+      "t\0222\n\004vnic\030\001 \001(\0132$.opi_api.network.cloud." +
+      "v1alpha1.Vnic\022/\n\013update_mask\030\002 \001(\0132\032.goo" +
+      "gle.protobuf.FieldMask\"p\n\020ListVnicsReque" +
+      "st\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.netw" +
+      "ork.v1alpha1/Vnic\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n" +
+      "page_token\030\003 \001(\t\"`\n\021ListVnicsResponse\0222\n" +
+      "\004vnic\030\001 \003(\0132$.opi_api.network.cloud.v1al" +
+      "pha1.Vnic\022\027\n\017next_page_token\030\002 \001(\t\"C\n\016Ge" +
+      "tVnicRequest\0221\n\002id\030\001 \001(\tB%\340A\002\372A\037\n\035opi_ap" +
+      "i.network.v1alpha1/Vnic\"\255\001\n\026CreateInterf" +
+      "aceRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_" +
+      "api.network.v1alpha1/Interface\022A\n\tinterf" +
+      "ace\030\002 \001(\0132).opi_api.network.cloud.v1alph" +
+      "a1.InterfaceB\003\340A\002\022\024\n\014interface_id\030\003 \001(\t\"" +
+      "g\n\026DeleteInterfaceRequest\0226\n\002id\030\001 \001(\tB*\340" +
+      "A\002\372A$\n\"opi_api.network.v1alpha1/Interfac" +
+      "e\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n\026UpdateInter" +
+      "faceRequest\022<\n\tinterface\030\001 \001(\0132).opi_api" +
+      ".network.cloud.v1alpha1.Interface\022/\n\013upd" +
+      "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa" +
+      "sk\"z\n\025ListInterfacesRequest\022:\n\006parent\030\001 " +
+      "\001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/In" +
+      "terface\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token" +
+      "\030\003 \001(\t\"o\n\026ListInterfacesResponse\022<\n\tinte" +
+      "rface\030\001 \003(\0132).opi_api.network.cloud.v1al" +
+      "pha1.Interface\022\027\n\017next_page_token\030\002 \001(\t\"" +
+      "M\n\023GetInterfaceRequest\0226\n\002id\030\001 \001(\tB*\340A\002\372" +
+      "A$\n\"opi_api.network.v1alpha1/Interface\"\262" +
+      "\001\n\027CreateRouteTableRequest\022;\n\006parent\030\001 \001" +
+      "(\tB+\340A\002\372A%\n#opi_api.network.v1alpha1/Rou" +
+      "teTable\022C\n\nroutetable\030\002 \001(\0132*.opi_api.ne" +
+      "twork.cloud.v1alpha1.RouteTableB\003\340A\002\022\025\n\r" +
+      "routetable_id\030\003 \001(\t\"i\n\027DeleteRouteTableR" +
+      "equest\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#opi_api.netw" +
+      "ork.v1alpha1/RouteTable\022\025\n\rallow_missing" +
+      "\030\002 \001(\010\"\212\001\n\027UpdateRouteTableRequest\022>\n\nro" +
+      "utetable\030\001 \001(\0132*.opi_api.network.cloud.v" +
+      "1alpha1.RouteTable\022/\n\013update_mask\030\002 \001(\0132" +
+      "\032.google.protobuf.FieldMask\"|\n\026ListRoute" +
+      "TablesRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#o" +
+      "pi_api.network.v1alpha1/RouteTable\022\021\n\tpa" +
+      "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n\027Lis" +
+      "tRouteTablesResponse\022>\n\nroutetable\030\001 \003(\013" +
+      "2*.opi_api.network.cloud.v1alpha1.RouteT" +
+      "able\022\027\n\017next_page_token\030\002 \001(\t\"O\n\024GetRout" +
+      "eTableRequest\0227\n\002id\030\001 \001(\tB+\340A\002\372A%\n#opi_a" +
+      "pi.network.v1alpha1/RouteTable\"\231\001\n\022Creat" +
+      "eRouteRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \n\036o" +
+      "pi_api.network.v1alpha1/Route\0229\n\005route\030\002" +
+      " \001(\0132%.opi_api.network.cloud.v1alpha1.Ro" +
+      "uteB\003\340A\002\022\020\n\010route_id\030\003 \001(\t\"_\n\022DeleteRout" +
+      "eRequest\0222\n\002id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.ne" +
+      "twork.v1alpha1/Route\022\025\n\rallow_missing\030\002 " +
+      "\001(\010\"{\n\022UpdateRouteRequest\0224\n\005route\030\001 \001(\013" +
+      "2%.opi_api.network.cloud.v1alpha1.Route\022" +
+      "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F" +
+      "ieldMask\"r\n\021ListRoutesRequest\0226\n\006parent\030" +
+      "\001 \001(\tB&\340A\002\372A \n\036opi_api.network.v1alpha1/" +
+      "Route\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
+      " \001(\t\"c\n\022ListRoutesResponse\0224\n\005route\030\001 \003(" +
+      "\0132%.opi_api.network.cloud.v1alpha1.Route" +
+      "\022\027\n\017next_page_token\030\002 \001(\t\"E\n\017GetRouteReq" +
+      "uest\0222\n\002id\030\001 \001(\tB&\340A\002\372A \n\036opi_api.networ" +
+      "k.v1alpha1/Route\"\301\001\n\032CreateUnderlayRoute" +
       "Request\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&opi_api" +
-      ".network.v1alpha1/UnderlayRoute\022\021\n\tpage_" +
-      "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"{\n\032ListUn" +
-      "derlayRoutesResponse\022D\n\runderlayroute\030\001 " +
-      "\003(\0132-.opi_api.network.cloud.v1alpha1.Und" +
-      "erlayRoute\022\027\n\017next_page_token\030\002 \001(\t\"U\n\027G" +
-      "etUnderlayRouteRequest\022:\n\002id\030\001 \001(\tB.\340A\002\372" +
-      "A(\n&opi_api.network.v1alpha1/UnderlayRou" +
-      "te\"\217\001\n\020CreateBgpRequest\0224\n\006parent\030\001 \001(\tB" +
-      "$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Bgp\0225\n" +
-      "\003bgp\030\002 \001(\0132#.opi_api.network.cloud.v1alp" +
-      "ha1.BgpB\003\340A\002\022\016\n\006bgp_id\030\003 \001(\t\"D\n\020DeleteBg" +
-      "pRequest\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.ne" +
-      "twork.v1alpha1/Bgp\"u\n\020UpdateBgpRequest\0220" +
-      "\n\003bgp\030\001 \001(\0132#.opi_api.network.cloud.v1al" +
-      "pha1.Bgp\022/\n\013update_mask\030\002 \001(\0132\032.google.p" +
-      "rotobuf.FieldMask\"n\n\017ListBgpsRequest\0224\n\006" +
-      "parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v1" +
-      "alpha1/Bgp\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
-      "ken\030\003 \001(\t\"]\n\020ListBgpsResponse\0220\n\003bgp\030\001 \003" +
-      "(\0132#.opi_api.network.cloud.v1alpha1.Bgp\022" +
-      "\027\n\017next_page_token\030\002 \001(\t\"A\n\rGetBgpReques" +
-      "t\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v" +
-      "1alpha1/Bgp\"\243\001\n\024CreateBGPPeerRequest\0228\n\006" +
-      "parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1" +
-      "alpha1/BGPPeer\022=\n\007bgppeer\030\002 \001(\0132\'.opi_ap" +
-      "i.network.cloud.v1alpha1.BGPPeerB\003\340A\002\022\022\n" +
-      "\nbgppeer_id\030\003 \001(\t\"L\n\024DeleteBGPPeerReques" +
-      "t\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v" +
-      "1alpha1/BGPPeer\"\201\001\n\024UpdateBGPPeerRequest" +
-      "\0228\n\007bgppeer\030\001 \001(\0132\'.opi_api.network.clou" +
-      "d.v1alpha1.BGPPeer\022/\n\013update_mask\030\002 \001(\0132" +
-      "\032.google.protobuf.FieldMask\"v\n\023ListBGPPe" +
-      "ersRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_" +
-      "api.network.v1alpha1/BGPPeer\022\021\n\tpage_siz" +
-      "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024ListBGPPe" +
-      "ersResponse\0228\n\007bgppeer\030\001 \003(\0132\'.opi_api.n" +
-      "etwork.cloud.v1alpha1.BGPPeer\022\027\n\017next_pa" +
-      "ge_token\030\002 \001(\t\"I\n\021GetBGPPeerRequest\0224\n\002i" +
-      "d\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha" +
-      "1/BGPPeer\"\255\001\n\026CreateBGPPeerAfRequest\022:\n\006" +
-      "parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1" +
-      "alpha1/BGPPeerAf\022A\n\tbgppeeraf\030\002 \001(\0132).op" +
-      "i_api.network.cloud.v1alpha1.BGPPeerAfB\003" +
-      "\340A\002\022\024\n\014bgppeeraf_id\030\003 \001(\t\"P\n\026DeleteBGPPe" +
-      "erAfRequest\0226\n\002id\030\001 \001(\tB*\340A\002\372A$\n\"opi_api" +
-      ".network.v1alpha1/BGPPeerAf\"\207\001\n\026UpdateBG" +
-      "PPeerAfRequest\022<\n\tbgppeeraf\030\001 \001(\0132).opi_" +
-      "api.network.cloud.v1alpha1.BGPPeerAf\022/\n\013" +
-      "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel" +
-      "dMask\"z\n\025ListBGPPeerAfsRequest\022:\n\006parent" +
-      "\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1" +
-      "/BGPPeerAf\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
-      "ken\030\003 \001(\t\"o\n\026ListBGPPeerAfsResponse\022<\n\tb" +
-      "gppeeraf\030\001 \003(\0132).opi_api.network.cloud.v" +
-      "1alpha1.BGPPeerAf\022\027\n\017next_page_token\030\002 \001" +
-      "(\t\"M\n\023GetBGPPeerAfRequest\0226\n\002id\030\001 \001(\tB*\340" +
-      "A\002\372A$\n\"opi_api.network.v1alpha1/BGPPeerA" +
-      "f\"\243\001\n\024CreateMappingRequest\0228\n\006parent\030\001 \001" +
-      "(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1/Map" +
-      "ping\022=\n\007mapping\030\002 \001(\0132\'.opi_api.network." +
-      "cloud.v1alpha1.MappingB\003\340A\002\022\022\n\nmapping_i" +
-      "d\030\003 \001(\t\"L\n\024DeleteMappingRequest\0224\n\002id\030\001 " +
-      "\001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1/Ma" +
-      "pping\"\201\001\n\024UpdateMappingRequest\0228\n\007mappin" +
-      "g\030\001 \001(\0132\'.opi_api.network.cloud.v1alpha1" +
-      ".Mapping\022/\n\013update_mask\030\002 \001(\0132\032.google.p" +
-      "rotobuf.FieldMask\"v\n\023ListMappingsRequest" +
-      "\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.networ" +
-      "k.v1alpha1/Mapping\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\"i\n\024ListMappingsRespons" +
-      "e\0228\n\007mapping\030\001 \003(\0132\'.opi_api.network.clo" +
-      "ud.v1alpha1.Mapping\022\027\n\017next_page_token\030\002" +
-      " \001(\t\"I\n\021GetMappingRequest\0224\n\002id\030\001 \001(\tB(\340" +
-      "A\002\372A\"\n opi_api.network.v1alpha1/Mapping\"" +
-      "\243\001\n\024CreateNextHopRequest\0228\n\006parent\030\001 \001(\t" +
-      "B(\340A\002\372A\"\n opi_api.network.v1alpha1/NextH" +
-      "op\022=\n\007nexthop\030\002 \001(\0132\'.opi_api.network.cl" +
-      "oud.v1alpha1.NextHopB\003\340A\002\022\022\n\nnexthop_id\030" +
-      "\003 \001(\t\"L\n\024DeleteNextHopRequest\0224\n\002id\030\001 \001(" +
-      "\tB(\340A\002\372A\"\n opi_api.network.v1alpha1/Next" +
-      "Hop\"\201\001\n\024UpdateNextHopRequest\0228\n\007nexthop\030" +
-      "\001 \001(\0132\'.opi_api.network.cloud.v1alpha1.N" +
-      "extHop\022/\n\013update_mask\030\002 \001(\0132\032.google.pro" +
-      "tobuf.FieldMask\"v\n\023ListNextHopsRequest\0228" +
-      "\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network." +
-      "v1alpha1/NextHop\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np" +
-      "age_token\030\003 \001(\t\"i\n\024ListNextHopsResponse\022" +
-      "8\n\007nexthop\030\001 \003(\0132\'.opi_api.network.cloud" +
-      ".v1alpha1.NextHop\022\027\n\017next_page_token\030\002 \001" +
-      "(\t\"I\n\021GetNextHopRequest\0224\n\002id\030\001 \001(\tB(\340A\002" +
-      "\372A\"\n opi_api.network.v1alpha1/NextHop\"\274\001" +
-      "\n\031CreateNextHopGroupRequest\022=\n\006parent\030\001 " +
-      "\001(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Ne" +
-      "xtHopGroup\022G\n\014nexthopgroup\030\002 \001(\0132,.opi_a" +
-      "pi.network.cloud.v1alpha1.NextHopGroupB\003" +
-      "\340A\002\022\027\n\017nexthopgroup_id\030\003 \001(\t\"V\n\031DeleteNe" +
-      "xtHopGroupRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%o" +
-      "pi_api.network.v1alpha1/NextHopGroup\"\220\001\n" +
-      "\031UpdateNextHopGroupRequest\022B\n\014nexthopgro" +
-      "up\030\001 \001(\0132,.opi_api.network.cloud.v1alpha" +
-      "1.NextHopGroup\022/\n\013update_mask\030\002 \001(\0132\032.go" +
-      "ogle.protobuf.FieldMask\"\200\001\n\030ListNextHopG" +
-      "roupsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%op" +
-      "i_api.network.v1alpha1/NextHopGroup\022\021\n\tp" +
-      "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"x\n\031Li" +
-      "stNextHopGroupsResponse\022B\n\014nexthopgroup\030" +
-      "\001 \003(\0132,.opi_api.network.cloud.v1alpha1.N" +
-      "extHopGroup\022\027\n\017next_page_token\030\002 \001(\t\"S\n\026" +
-      "GetNextHopGroupRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372" +
-      "A\'\n%opi_api.network.v1alpha1/NextHopGrou" +
-      "p\"\236\001\n\023CreateSubnetRequest\0227\n\006parent\030\001 \001(" +
-      "\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Subn" +
-      "et\022;\n\006subnet\030\002 \001(\0132&.opi_api.network.clo" +
-      "ud.v1alpha1.SubnetB\003\340A\002\022\021\n\tsubnet_id\030\003 \001" +
-      "(\t\"J\n\023DeleteSubnetRequest\0223\n\002id\030\001 \001(\tB\'\340" +
-      "A\002\372A!\n\037opi_api.network.v1alpha1/Subnet\"~" +
-      "\n\023UpdateSubnetRequest\0226\n\006subnet\030\001 \001(\0132&." +
-      "opi_api.network.cloud.v1alpha1.Subnet\022/\n" +
-      "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie" +
-      "ldMask\"t\n\022ListSubnetsRequest\0227\n\006parent\030\001" +
-      " \001(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/S" +
-      "ubnet\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
-      " \001(\t\"f\n\023ListSubnetsResponse\0226\n\006subnet\030\001 " +
-      "\003(\0132&.opi_api.network.cloud.v1alpha1.Sub" +
-      "net\022\027\n\017next_page_token\030\002 \001(\t\"G\n\020GetSubne" +
-      "tRequest\0223\n\002id\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.ne" +
-      "twork.v1alpha1/Subnet\"\236\001\n\023CreateTunnelRe" +
-      "quest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.n" +
-      "etwork.v1alpha1/Tunnel\022;\n\006tunnel\030\002 \001(\0132&" +
-      ".opi_api.network.cloud.v1alpha1.TunnelB\003" +
-      "\340A\002\022\021\n\ttunnel_id\030\003 \001(\t\"J\n\023DeleteTunnelRe" +
-      "quest\0223\n\002id\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api.netwo" +
-      "rk.v1alpha1/Tunnel\"~\n\023UpdateTunnelReques" +
-      "t\0226\n\006tunnel\030\001 \001(\0132&.opi_api.network.clou" +
-      "d.v1alpha1.Tunnel\022/\n\013update_mask\030\002 \001(\0132\032" +
-      ".google.protobuf.FieldMask\"t\n\022ListTunnel" +
-      "sRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_ap" +
-      "i.network.v1alpha1/Tunnel\022\021\n\tpage_size\030\002" +
-      " \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023ListTunnelsR" +
-      "esponse\0226\n\006tunnel\030\001 \003(\0132&.opi_api.networ" +
-      "k.cloud.v1alpha1.Tunnel\022\027\n\017next_page_tok" +
-      "en\030\002 \001(\t\"G\n\020GetTunnelRequest\0223\n\002id\030\001 \001(\t" +
-      "B\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Tunne" +
-      "l\"\217\001\n\020CreateVpcRequest\0224\n\006parent\030\001 \001(\tB$" +
-      "\340A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\0225\n\003" +
-      "vpc\030\002 \001(\0132#.opi_api.network.cloud.v1alph" +
-      "a1.VpcB\003\340A\002\022\016\n\006vpc_id\030\003 \001(\t\"D\n\020DeleteVpc" +
-      "Request\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.net" +
-      "work.v1alpha1/Vpc\"u\n\020UpdateVpcRequest\0220\n" +
-      "\003vpc\030\001 \001(\0132#.opi_api.network.cloud.v1alp" +
-      "ha1.Vpc\022/\n\013update_mask\030\002 \001(\0132\032.google.pr" +
-      "otobuf.FieldMask\"n\n\017ListVpcsRequest\0224\n\006p" +
-      "arent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v1a" +
-      "lpha1/Vpc\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
-      "en\030\003 \001(\t\"]\n\020ListVpcsResponse\0220\n\003vpc\030\001 \003(" +
-      "\0132#.opi_api.network.cloud.v1alpha1.Vpc\022\027" +
-      "\n\017next_page_token\030\002 \001(\t\"A\n\rGetVpcRequest" +
-      "\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v1" +
-      "alpha1/Vpc\"\243\001\n\024CreateVPCPeerRequest\0228\n\006p" +
-      "arent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1a" +
-      "lpha1/VPCPeer\022=\n\007vpcpeer\030\002 \001(\0132\'.opi_api" +
-      ".network.cloud.v1alpha1.VPCPeerB\003\340A\002\022\022\n\n" +
-      "vpcpeer_id\030\003 \001(\t\"L\n\024DeleteVPCPeerRequest" +
-      "\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1" +
-      "alpha1/VPCPeer\"\201\001\n\024UpdateVPCPeerRequest\022" +
-      "8\n\007vpcpeer\030\001 \001(\0132\'.opi_api.network.cloud" +
-      ".v1alpha1.VPCPeer\022/\n\013update_mask\030\002 \001(\0132\032" +
-      ".google.protobuf.FieldMask\"v\n\023ListVPCPee" +
-      "rsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_a" +
-      "pi.network.v1alpha1/VPCPeer\022\021\n\tpage_size" +
-      "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024ListVPCPee" +
-      "rsResponse\0228\n\007vpcpeer\030\001 \003(\0132\'.opi_api.ne" +
-      "twork.cloud.v1alpha1.VPCPeer\022\027\n\017next_pag" +
-      "e_token\030\002 \001(\t\"I\n\021GetVPCPeerRequest\0224\n\002id" +
+      ".network.v1alpha1/UnderlayRoute\022I\n\runder" +
+      "layroute\030\002 \001(\0132-.opi_api.network.cloud.v" +
+      "1alpha1.UnderlayRouteB\003\340A\002\022\030\n\020underlayro" +
+      "ute_id\030\003 \001(\t\"o\n\032DeleteUnderlayRouteReque" +
+      "st\022:\n\002id\030\001 \001(\tB.\340A\002\372A(\n&opi_api.network." +
+      "v1alpha1/UnderlayRoute\022\025\n\rallow_missing\030" +
+      "\002 \001(\010\"\223\001\n\032UpdateUnderlayRouteRequest\022D\n\r" +
+      "underlayroute\030\001 \001(\0132-.opi_api.network.cl" +
+      "oud.v1alpha1.UnderlayRoute\022/\n\013update_mas" +
+      "k\030\002 \001(\0132\032.google.protobuf.FieldMask\"\202\001\n\031" +
+      "ListUnderlayRoutesRequest\022>\n\006parent\030\001 \001(" +
+      "\tB.\340A\002\372A(\n&opi_api.network.v1alpha1/Unde" +
+      "rlayRoute\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
+      "en\030\003 \001(\t\"{\n\032ListUnderlayRoutesResponse\022D" +
+      "\n\runderlayroute\030\001 \003(\0132-.opi_api.network." +
+      "cloud.v1alpha1.UnderlayRoute\022\027\n\017next_pag" +
+      "e_token\030\002 \001(\t\"U\n\027GetUnderlayRouteRequest" +
+      "\022:\n\002id\030\001 \001(\tB.\340A\002\372A(\n&opi_api.network.v1" +
+      "alpha1/UnderlayRoute\"\217\001\n\020CreateBgpReques" +
+      "t\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.netwo" +
+      "rk.v1alpha1/Bgp\0225\n\003bgp\030\002 \001(\0132#.opi_api.n" +
+      "etwork.cloud.v1alpha1.BgpB\003\340A\002\022\016\n\006bgp_id" +
+      "\030\003 \001(\t\"[\n\020DeleteBgpRequest\0220\n\002id\030\001 \001(\tB$" +
+      "\340A\002\372A\036\n\034opi_api.network.v1alpha1/Bgp\022\025\n\r" +
+      "allow_missing\030\002 \001(\010\"u\n\020UpdateBgpRequest\022" +
+      "0\n\003bgp\030\001 \001(\0132#.opi_api.network.cloud.v1a" +
+      "lpha1.Bgp\022/\n\013update_mask\030\002 \001(\0132\032.google." +
+      "protobuf.FieldMask\"n\n\017ListBgpsRequest\0224\n" +
+      "\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network.v" +
+      "1alpha1/Bgp\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t" +
+      "oken\030\003 \001(\t\"]\n\020ListBgpsResponse\0220\n\003bgp\030\001 " +
+      "\003(\0132#.opi_api.network.cloud.v1alpha1.Bgp" +
+      "\022\027\n\017next_page_token\030\002 \001(\t\"A\n\rGetBgpReque" +
+      "st\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.network." +
+      "v1alpha1/Bgp\"\243\001\n\024CreateBGPPeerRequest\0228\n" +
+      "\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v" +
+      "1alpha1/BGPPeer\022=\n\007bgppeer\030\002 \001(\0132\'.opi_a" +
+      "pi.network.cloud.v1alpha1.BGPPeerB\003\340A\002\022\022" +
+      "\n\nbgppeer_id\030\003 \001(\t\"c\n\024DeleteBGPPeerReque" +
+      "st\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network." +
+      "v1alpha1/BGPPeer\022\025\n\rallow_missing\030\002 \001(\010\"" +
+      "\201\001\n\024UpdateBGPPeerRequest\0228\n\007bgppeer\030\001 \001(" +
+      "\0132\'.opi_api.network.cloud.v1alpha1.BGPPe" +
+      "er\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
+      "f.FieldMask\"v\n\023ListBGPPeersRequest\0228\n\006pa" +
+      "rent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1al" +
+      "pha1/BGPPeer\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
+      "token\030\003 \001(\t\"i\n\024ListBGPPeersResponse\0228\n\007b" +
+      "gppeer\030\001 \003(\0132\'.opi_api.network.cloud.v1a" +
+      "lpha1.BGPPeer\022\027\n\017next_page_token\030\002 \001(\t\"I" +
+      "\n\021GetBGPPeerRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n" +
+      " opi_api.network.v1alpha1/BGPPeer\"\255\001\n\026Cr" +
+      "eateBGPPeerAfRequest\022:\n\006parent\030\001 \001(\tB*\340A" +
+      "\002\372A$\n\"opi_api.network.v1alpha1/BGPPeerAf" +
+      "\022A\n\tbgppeeraf\030\002 \001(\0132).opi_api.network.cl" +
+      "oud.v1alpha1.BGPPeerAfB\003\340A\002\022\024\n\014bgppeeraf" +
+      "_id\030\003 \001(\t\"g\n\026DeleteBGPPeerAfRequest\0226\n\002i" +
+      "d\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha" +
+      "1/BGPPeerAf\022\025\n\rallow_missing\030\002 \001(\010\"\207\001\n\026U" +
+      "pdateBGPPeerAfRequest\022<\n\tbgppeeraf\030\001 \001(\013" +
+      "2).opi_api.network.cloud.v1alpha1.BGPPee" +
+      "rAf\022/\n\013update_mask\030\002 \001(\0132\032.google.protob" +
+      "uf.FieldMask\"z\n\025ListBGPPeerAfsRequest\022:\n" +
+      "\006parent\030\001 \001(\tB*\340A\002\372A$\n\"opi_api.network.v" +
+      "1alpha1/BGPPeerAf\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n" +
+      "page_token\030\003 \001(\t\"o\n\026ListBGPPeerAfsRespon" +
+      "se\022<\n\tbgppeeraf\030\001 \003(\0132).opi_api.network." +
+      "cloud.v1alpha1.BGPPeerAf\022\027\n\017next_page_to" +
+      "ken\030\002 \001(\t\"M\n\023GetBGPPeerAfRequest\0226\n\002id\030\001" +
+      " \001(\tB*\340A\002\372A$\n\"opi_api.network.v1alpha1/B" +
+      "GPPeerAf\"\243\001\n\024CreateMappingRequest\0228\n\006par" +
+      "ent\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alp" +
+      "ha1/Mapping\022=\n\007mapping\030\002 \001(\0132\'.opi_api.n" +
+      "etwork.cloud.v1alpha1.MappingB\003\340A\002\022\022\n\nma" +
+      "pping_id\030\003 \001(\t\"c\n\024DeleteMappingRequest\0224" +
+      "\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1al" +
+      "pha1/Mapping\022\025\n\rallow_missing\030\002 \001(\010\"\201\001\n\024" +
+      "UpdateMappingRequest\0228\n\007mapping\030\001 \001(\0132\'." +
+      "opi_api.network.cloud.v1alpha1.Mapping\022/" +
+      "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi" +
+      "eldMask\"v\n\023ListMappingsRequest\0228\n\006parent" +
       "\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alpha1" +
-      "/VPCPeer\"\306\001\n\033CreateSecurityPolicyRequest" +
-      "\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.networ" +
-      "k.v1alpha1/SecurityPolicy\022K\n\016securitypol" +
-      "icy\030\002 \001(\0132..opi_api.network.cloud.v1alph" +
-      "a1.SecurityPolicyB\003\340A\002\022\031\n\021securitypolicy" +
-      "_id\030\003 \001(\t\"Z\n\033DeleteSecurityPolicyRequest" +
-      "\022;\n\002id\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.network.v1" +
-      "alpha1/SecurityPolicy\"\226\001\n\033UpdateSecurity" +
-      "PolicyRequest\022F\n\016securitypolicy\030\001 \001(\0132.." +
-      "opi_api.network.cloud.v1alpha1.SecurityP" +
-      "olicy\022/\n\013update_mask\030\002 \001(\0132\032.google.prot" +
-      "obuf.FieldMask\"\204\001\n\032ListSecurityPolicysRe" +
-      "quest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.n" +
-      "etwork.v1alpha1/SecurityPolicy\022\021\n\tpage_s" +
-      "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"~\n\033ListSec" +
-      "urityPolicysResponse\022F\n\016securitypolicy\030\001" +
-      " \003(\0132..opi_api.network.cloud.v1alpha1.Se" +
-      "curityPolicy\022\027\n\017next_page_token\030\002 \001(\t\"W\n" +
-      "\030GetSecurityPolicyRequest\022;\n\002id\030\001 \001(\tB/\340" +
-      "A\002\372A)\n\'opi_api.network.v1alpha1/Security" +
-      "Policy\"\274\001\n\031CreateSecurityRuleRequest\022=\n\006" +
-      "parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.network.v1" +
-      "alpha1/SecurityRule\022G\n\014securityrule\030\002 \001(" +
-      "\0132,.opi_api.network.cloud.v1alpha1.Secur" +
-      "ityRuleB\003\340A\002\022\027\n\017securityrule_id\030\003 \001(\t\"V\n" +
-      "\031DeleteSecurityRuleRequest\0229\n\002id\030\001 \001(\tB-" +
-      "\340A\002\372A\'\n%opi_api.network.v1alpha1/Securit" +
-      "yRule\"\220\001\n\031UpdateSecurityRuleRequest\022B\n\014s" +
-      "ecurityrule\030\001 \001(\0132,.opi_api.network.clou" +
-      "d.v1alpha1.SecurityRule\022/\n\013update_mask\030\002" +
-      " \001(\0132\032.google.protobuf.FieldMask\"\200\001\n\030Lis" +
-      "tSecurityRulesRequest\022=\n\006parent\030\001 \001(\tB-\340" +
-      "A\002\372A\'\n%opi_api.network.v1alpha1/Security" +
-      "Rule\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 " +
-      "\001(\t\"x\n\031ListSecurityRulesResponse\022B\n\014secu" +
-      "rityrule\030\001 \003(\0132,.opi_api.network.cloud.v" +
-      "1alpha1.SecurityRule\022\027\n\017next_page_token\030" +
-      "\002 \001(\t\"S\n\026GetSecurityRuleRequest\0229\n\002id\030\001 " +
-      "\001(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Se" +
-      "curityRule\"\313\001\n\034CreateSecurityProfileRequ" +
-      "est\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(opi_api.net" +
-      "work.v1alpha1/SecurityProfile\022M\n\017securit" +
-      "yprofile\030\002 \001(\0132/.opi_api.network.cloud.v" +
-      "1alpha1.SecurityProfileB\003\340A\002\022\032\n\022security" +
-      "profile_id\030\003 \001(\t\"\\\n\034DeleteSecurityProfil" +
-      "eRequest\022<\n\002id\030\001 \001(\tB0\340A\002\372A*\n(opi_api.ne" +
-      "twork.v1alpha1/SecurityProfile\"\231\001\n\034Updat" +
-      "eSecurityProfileRequest\022H\n\017securityprofi" +
-      "le\030\001 \001(\0132/.opi_api.network.cloud.v1alpha" +
-      "1.SecurityProfile\022/\n\013update_mask\030\002 \001(\0132\032" +
-      ".google.protobuf.FieldMask\"\206\001\n\033ListSecur" +
-      "ityProfilesRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372" +
-      "A*\n(opi_api.network.v1alpha1/SecurityPro" +
-      "file\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 " +
-      "\001(\t\"\201\001\n\034ListSecurityProfilesResponse\022H\n\017" +
-      "securityprofile\030\001 \003(\0132/.opi_api.network." +
-      "cloud.v1alpha1.SecurityProfile\022\027\n\017next_p" +
-      "age_token\030\002 \001(\t\"Y\n\031GetSecurityProfileReq" +
-      "uest\022<\n\002id\030\001 \001(\tB0\340A\002\372A*\n(opi_api.networ" +
-      "k.v1alpha1/SecurityProfile2\217\202\001\n\021CloudInf" +
-      "raService\022\255\001\n\025GetDeviceCapabilities\022<.op" +
-      "i_api.network.cloud.v1alpha1.GetDeviceCa" +
-      "pabilitiesRequest\0322.opi_api.network.clou" +
-      "d.v1alpha1.DeviceCapabilities\"\"\202\323\344\223\002\031\022\027/" +
-      "v1/devicecapabilitiess\332A\000\022\253\001\n\014CreateDevi" +
-      "ce\0223.opi_api.network.cloud.v1alpha1.Crea" +
-      "teDeviceRequest\032&.opi_api.network.cloud." +
-      "v1alpha1.Device\">\202\323\344\223\002\036\"\024/v1/{parent=dev" +
-      "ices}:\006device\332A\027parent,device,device_id\022" +
-      "\203\001\n\014DeleteDevice\0223.opi_api.network.cloud" +
-      ".v1alpha1.DeleteDeviceRequest\032\026.google.p" +
-      "rotobuf.Empty\"&\202\323\344\223\002\033*\031/v1/{id=devices}/" +
-      "{device}\332A\002id\022\252\001\n\014UpdateDevice\0223.opi_api" +
-      ".network.cloud.v1alpha1.UpdateDeviceRequ" +
-      "est\032&.opi_api.network.cloud.v1alpha1.Dev" +
-      "ice\"=\202\323\344\223\002!2\027/v1/{device.id=devices}:\006de" +
-      "vice\332A\023device, update_mask\022\235\001\n\013ListDevic" +
-      "es\0222.opi_api.network.cloud.v1alpha1.List" +
-      "DevicesRequest\0323.opi_api.network.cloud.v" +
-      "1alpha1.ListDevicesResponse\"%\202\323\344\223\002\026\022\024/v1" +
-      "/{parent=devices}\332A\006parent\022\215\001\n\tGetDevice" +
-      "\0220.opi_api.network.cloud.v1alpha1.GetDev" +
-      "iceRequest\032&.opi_api.network.cloud.v1alp" +
-      "ha1.Device\"&\202\323\344\223\002\033\022\031/v1/{id=devices}/{de" +
-      "vice}\332A\002id\022\234\001\n\nUpdatePort\0221.opi_api.netw" +
-      "ork.cloud.v1alpha1.UpdatePortRequest\032$.o" +
-      "pi_api.network.cloud.v1alpha1.Port\"5\202\323\344\223" +
-      "\002\0332\023/v1/{port.id=ports}:\004port\332A\021port, up" +
-      "date_mask\022\225\001\n\tListPorts\0220.opi_api.networ" +
-      "k.cloud.v1alpha1.ListPortsRequest\0321.opi_" +
-      "api.network.cloud.v1alpha1.ListPortsResp" +
-      "onse\"#\202\323\344\223\002\024\022\022/v1/{parent=ports}\332A\006paren" +
-      "t\022\203\001\n\007GetPort\022..opi_api.network.cloud.v1" +
-      "alpha1.GetPortRequest\032$.opi_api.network." +
-      "cloud.v1alpha1.Port\"\"\202\323\344\223\002\027\022\025/v1/{id=por" +
-      "ts}/{port}\332A\002id\022\235\001\n\nCreateVnic\0221.opi_api" +
-      ".network.cloud.v1alpha1.CreateVnicReques" +
-      "t\032$.opi_api.network.cloud.v1alpha1.Vnic\"" +
-      "6\202\323\344\223\002\032\"\022/v1/{parent=vnics}:\004vnic\332A\023pare" +
-      "nt,vnic,vnic_id\022{\n\nDeleteVnic\0221.opi_api." +
-      "network.cloud.v1alpha1.DeleteVnicRequest" +
-      "\032\026.google.protobuf.Empty\"\"\202\323\344\223\002\027*\025/v1/{i" +
-      "d=vnics}/{vnic}\332A\002id\022\234\001\n\nUpdateVnic\0221.op" +
-      "i_api.network.cloud.v1alpha1.UpdateVnicR" +
-      "equest\032$.opi_api.network.cloud.v1alpha1." +
-      "Vnic\"5\202\323\344\223\002\0332\023/v1/{vnic.id=vnics}:\004vnic\332" +
-      "A\021vnic, update_mask\022\225\001\n\tListVnics\0220.opi_",
-      "api.network.cloud.v1alpha1.ListVnicsRequ" +
-      "est\0321.opi_api.network.cloud.v1alpha1.Lis" +
-      "tVnicsResponse\"#\202\323\344\223\002\024\022\022/v1/{parent=vnic" +
-      "s}\332A\006parent\022\203\001\n\007GetVnic\022..opi_api.networ" +
-      "k.cloud.v1alpha1.GetVnicRequest\032$.opi_ap" +
-      "i.network.cloud.v1alpha1.Vnic\"\"\202\323\344\223\002\027\022\025/" +
-      "v1/{id=vnics}/{vnic}\332A\002id\022\300\001\n\017CreateInte" +
-      "rface\0226.opi_api.network.cloud.v1alpha1.C" +
-      "reateInterfaceRequest\032).opi_api.network." +
-      "cloud.v1alpha1.Interface\"J\202\323\344\223\002$\"\027/v1/{p" +
-      "arent=interfaces}:\tinterface\332A\035parent,in" +
-      "terface,interface_id\022\217\001\n\017DeleteInterface" +
-      "\0226.opi_api.network.cloud.v1alpha1.Delete" +
-      "InterfaceRequest\032\026.google.protobuf.Empty" +
-      "\",\202\323\344\223\002!*\037/v1/{id=interfaces}/{interface" +
-      "}\332A\002id\022\277\001\n\017UpdateInterface\0226.opi_api.net" +
-      "work.cloud.v1alpha1.UpdateInterfaceReque" +
-      "st\032).opi_api.network.cloud.v1alpha1.Inte" +
-      "rface\"I\202\323\344\223\002*2\035/v1/{interface.id=interfa" +
-      "ces}:\tinterface\332A\026interface, update_mask" +
-      "\022\251\001\n\016ListInterfaces\0225.opi_api.network.cl" +
-      "oud.v1alpha1.ListInterfacesRequest\0326.opi" +
-      "_api.network.cloud.v1alpha1.ListInterfac" +
-      "esResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=interfac" +
-      "es}\332A\006parent\022\234\001\n\014GetInterface\0223.opi_api." +
-      "network.cloud.v1alpha1.GetInterfaceReque" +
-      "st\032).opi_api.network.cloud.v1alpha1.Inte" +
-      "rface\",\202\323\344\223\002!\022\037/v1/{id=interfaces}/{inte" +
-      "rface}\332A\002id\022\307\001\n\020CreateRouteTable\0227.opi_a" +
-      "pi.network.cloud.v1alpha1.CreateRouteTab" +
-      "leRequest\032*.opi_api.network.cloud.v1alph" +
-      "a1.RouteTable\"N\202\323\344\223\002&\"\030/v1/{parent=route" +
-      "tables}:\nroutetable\332A\037parent,routetable," +
-      "routetable_id\022\223\001\n\020DeleteRouteTable\0227.opi" +
-      "_api.network.cloud.v1alpha1.DeleteRouteT" +
-      "ableRequest\032\026.google.protobuf.Empty\".\202\323\344" +
-      "\223\002#*!/v1/{id=routetables}/{routetable}\332A" +
-      "\002id\022\306\001\n\020UpdateRouteTable\0227.opi_api.netwo" +
-      "rk.cloud.v1alpha1.UpdateRouteTableReques" +
-      "t\032*.opi_api.network.cloud.v1alpha1.Route" +
-      "Table\"M\202\323\344\223\002-2\037/v1/{routetable.id=routet" +
-      "ables}:\nroutetable\332A\027routetable, update_" +
-      "mask\022\255\001\n\017ListRouteTables\0226.opi_api.netwo" +
-      "rk.cloud.v1alpha1.ListRouteTablesRequest" +
-      "\0327.opi_api.network.cloud.v1alpha1.ListRo" +
-      "uteTablesResponse\")\202\323\344\223\002\032\022\030/v1/{parent=r" +
-      "outetables}\332A\006parent\022\241\001\n\rGetRouteTable\0224" +
-      ".opi_api.network.cloud.v1alpha1.GetRoute" +
-      "TableRequest\032*.opi_api.network.cloud.v1a" +
-      "lpha1.RouteTable\".\202\323\344\223\002#\022!/v1/{id=routet" +
-      "ables}/{routetable}\332A\002id\022\244\001\n\013CreateRoute" +
-      "\0222.opi_api.network.cloud.v1alpha1.Create" +
-      "RouteRequest\032%.opi_api.network.cloud.v1a" +
-      "lpha1.Route\":\202\323\344\223\002\034\"\023/v1/{parent=routes}" +
-      ":\005route\332A\025parent,route,route_id\022\177\n\013Delet" +
-      "eRoute\0222.opi_api.network.cloud.v1alpha1." +
-      "DeleteRouteRequest\032\026.google.protobuf.Emp" +
-      "ty\"$\202\323\344\223\002\031*\027/v1/{id=routes}/{route}\332A\002id" +
-      "\022\243\001\n\013UpdateRoute\0222.opi_api.network.cloud" +
-      ".v1alpha1.UpdateRouteRequest\032%.opi_api.n" +
-      "etwork.cloud.v1alpha1.Route\"9\202\323\344\223\002\0362\025/v1" +
-      "/{route.id=routes}:\005route\332A\022route, updat" +
-      "e_mask\022\231\001\n\nListRoutes\0221.opi_api.network." +
-      "cloud.v1alpha1.ListRoutesRequest\0322.opi_a" +
-      "pi.network.cloud.v1alpha1.ListRoutesResp" +
-      "onse\"$\202\323\344\223\002\025\022\023/v1/{parent=routes}\332A\006pare" +
-      "nt\022\210\001\n\010GetRoute\022/.opi_api.network.cloud." +
-      "v1alpha1.GetRouteRequest\032%.opi_api.netwo" +
-      "rk.cloud.v1alpha1.Route\"$\202\323\344\223\002\031\022\027/v1/{id" +
-      "=routes}/{route}\332A\002id\022\334\001\n\023CreateUnderlay" +
-      "Route\022:.opi_api.network.cloud.v1alpha1.C" +
-      "reateUnderlayRouteRequest\032-.opi_api.netw" +
-      "ork.cloud.v1alpha1.UnderlayRoute\"Z\202\323\344\223\002," +
-      "\"\033/v1/{parent=underlayroutes}:\runderlayr" +
-      "oute\332A%parent,underlayroute,underlayrout" +
-      "e_id\022\237\001\n\023DeleteUnderlayRoute\022:.opi_api.n" +
-      "etwork.cloud.v1alpha1.DeleteUnderlayRout" +
-      "eRequest\032\026.google.protobuf.Empty\"4\202\323\344\223\002)" +
-      "*\'/v1/{id=underlayroutes}/{underlayroute" +
-      "}\332A\002id\022\333\001\n\023UpdateUnderlayRoute\022:.opi_api" +
-      ".network.cloud.v1alpha1.UpdateUnderlayRo" +
-      "uteRequest\032-.opi_api.network.cloud.v1alp" +
-      "ha1.UnderlayRoute\"Y\202\323\344\223\00262%/v1/{underlay" +
-      "route.id=underlayroutes}:\runderlayroute\332" +
-      "A\032underlayroute, update_mask\022\271\001\n\022ListUnd" +
-      "erlayRoutes\0229.opi_api.network.cloud.v1al" +
-      "pha1.ListUnderlayRoutesRequest\032:.opi_api" +
-      ".network.cloud.v1alpha1.ListUnderlayRout" +
-      "esResponse\",\202\323\344\223\002\035\022\033/v1/{parent=underlay" +
-      "routes}\332A\006parent\022\260\001\n\020GetUnderlayRoute\0227." +
-      "opi_api.network.cloud.v1alpha1.GetUnderl" +
-      "ayRouteRequest\032-.opi_api.network.cloud.v" +
-      "1alpha1.UnderlayRoute\"4\202\323\344\223\002)\022\'/v1/{id=u" +
-      "nderlayroutes}/{underlayroute}\332A\002id\022\226\001\n\t" +
-      "CreateBgp\0220.opi_api.network.cloud.v1alph" +
-      "a1.CreateBgpRequest\032#.opi_api.network.cl" +
-      "oud.v1alpha1.Bgp\"2\202\323\344\223\002\030\"\021/v1/{parent=bg" +
-      "ps}:\003bgp\332A\021parent,bgp,bgp_id\022w\n\tDeleteBg" +
-      "p\0220.opi_api.network.cloud.v1alpha1.Delet" +
-      "eBgpRequest\032\026.google.protobuf.Empty\" \202\323\344" +
-      "\223\002\025*\023/v1/{id=bgps}/{bgp}\332A\002id\022\225\001\n\tUpdate" +
-      "Bgp\0220.opi_api.network.cloud.v1alpha1.Upd" +
-      "ateBgpRequest\032#.opi_api.network.cloud.v1" +
-      "alpha1.Bgp\"1\202\323\344\223\002\0302\021/v1/{bgp.id=bgps}:\003b" +
-      "gp\332A\020bgp, update_mask\022\221\001\n\010ListBgps\022/.opi" +
-      "_api.network.cloud.v1alpha1.ListBgpsRequ" +
-      "est\0320.opi_api.network.cloud.v1alpha1.Lis" +
-      "tBgpsResponse\"\"\202\323\344\223\002\023\022\021/v1/{parent=bgps}" +
-      "\332A\006parent\022~\n\006GetBgp\022-.opi_api.network.cl" +
-      "oud.v1alpha1.GetBgpRequest\032#.opi_api.net" +
-      "work.cloud.v1alpha1.Bgp\" \202\323\344\223\002\025\022\023/v1/{id" +
-      "=bgps}/{bgp}\332A\002id\022\262\001\n\rCreateBGPPeer\0224.op" +
-      "i_api.network.cloud.v1alpha1.CreateBGPPe" +
-      "erRequest\032\'.opi_api.network.cloud.v1alph" +
-      "a1.BGPPeer\"B\202\323\344\223\002 \"\025/v1/{parent=bgppeers" +
-      "}:\007bgppeer\332A\031parent,bgppeer,bgppeer_id\022\207" +
-      "\001\n\rDeleteBGPPeer\0224.opi_api.network.cloud" +
-      ".v1alpha1.DeleteBGPPeerRequest\032\026.google." +
-      "protobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=bgppeers" +
-      "}/{bgppeer}\332A\002id\022\261\001\n\rUpdateBGPPeer\0224.opi" +
-      "_api.network.cloud.v1alpha1.UpdateBGPPee" +
-      "rRequest\032\'.opi_api.network.cloud.v1alpha" +
-      "1.BGPPeer\"A\202\323\344\223\002$2\031/v1/{bgppeer.id=bgppe" +
-      "ers}:\007bgppeer\332A\024bgppeer, update_mask\022\241\001\n" +
-      "\014ListBGPPeers\0223.opi_api.network.cloud.v1" +
-      "alpha1.ListBGPPeersRequest\0324.opi_api.net" +
-      "work.cloud.v1alpha1.ListBGPPeersResponse" +
-      "\"&\202\323\344\223\002\027\022\025/v1/{parent=bgppeers}\332A\006parent" +
-      "\022\222\001\n\nGetBGPPeer\0221.opi_api.network.cloud." +
-      "v1alpha1.GetBGPPeerRequest\032\'.opi_api.net" +
-      "work.cloud.v1alpha1.BGPPeer\"(\202\323\344\223\002\035\022\033/v1" +
-      "/{id=bgppeers}/{bgppeer}\332A\002id\022\300\001\n\017Create" +
-      "BGPPeerAf\0226.opi_api.network.cloud.v1alph" +
-      "a1.CreateBGPPeerAfRequest\032).opi_api.netw" +
-      "ork.cloud.v1alpha1.BGPPeerAf\"J\202\323\344\223\002$\"\027/v" +
-      "1/{parent=bgppeerafs}:\tbgppeeraf\332A\035paren" +
-      "t,bgppeeraf,bgppeeraf_id\022\217\001\n\017DeleteBGPPe" +
-      "erAf\0226.opi_api.network.cloud.v1alpha1.De" +
-      "leteBGPPeerAfRequest\032\026.google.protobuf.E" +
-      "mpty\",\202\323\344\223\002!*\037/v1/{id=bgppeerafs}/{bgppe" +
-      "eraf}\332A\002id\022\277\001\n\017UpdateBGPPeerAf\0226.opi_api" +
-      ".network.cloud.v1alpha1.UpdateBGPPeerAfR" +
-      "equest\032).opi_api.network.cloud.v1alpha1." +
-      "BGPPeerAf\"I\202\323\344\223\002*2\035/v1/{bgppeeraf.id=bgp" +
-      "peerafs}:\tbgppeeraf\332A\026bgppeeraf, update_" +
-      "mask\022\251\001\n\016ListBGPPeerAfs\0225.opi_api.networ" +
-      "k.cloud.v1alpha1.ListBGPPeerAfsRequest\0326" +
-      ".opi_api.network.cloud.v1alpha1.ListBGPP" +
-      "eerAfsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=bgpp" +
-      "eerafs}\332A\006parent\022\234\001\n\014GetBGPPeerAf\0223.opi_" +
-      "api.network.cloud.v1alpha1.GetBGPPeerAfR" +
-      "equest\032).opi_api.network.cloud.v1alpha1." +
-      "BGPPeerAf\",\202\323\344\223\002!\022\037/v1/{id=bgppeerafs}/{" +
-      "bgppeeraf}\332A\002id\022\262\001\n\rCreateMapping\0224.opi_" +
-      "api.network.cloud.v1alpha1.CreateMapping" +
-      "Request\032\'.opi_api.network.cloud.v1alpha1" +
-      ".Mapping\"B\202\323\344\223\002 \"\025/v1/{parent=mappings}:" +
-      "\007mapping\332A\031parent,mapping,mapping_id\022\207\001\n" +
-      "\rDeleteMapping\0224.opi_api.network.cloud.v" +
-      "1alpha1.DeleteMappingRequest\032\026.google.pr" +
-      "otobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=mappings}/" +
-      "{mapping}\332A\002id\022\261\001\n\rUpdateMapping\0224.opi_a" +
-      "pi.network.cloud.v1alpha1.UpdateMappingR" +
-      "equest\032\'.opi_api.network.cloud.v1alpha1." +
-      "Mapping\"A\202\323\344\223\002$2\031/v1/{mapping.id=mapping" +
-      "s}:\007mapping\332A\024mapping, update_mask\022\241\001\n\014L" +
-      "istMappings\0223.opi_api.network.cloud.v1al" +
-      "pha1.ListMappingsRequest\0324.opi_api.netwo" +
-      "rk.cloud.v1alpha1.ListMappingsResponse\"&" +
-      "\202\323\344\223\002\027\022\025/v1/{parent=mappings}\332A\006parent\022\222" +
-      "\001\n\nGetMapping\0221.opi_api.network.cloud.v1" +
-      "alpha1.GetMappingRequest\032\'.opi_api.netwo" +
-      "rk.cloud.v1alpha1.Mapping\"(\202\323\344\223\002\035\022\033/v1/{" +
-      "id=mappings}/{mapping}\332A\002id\022\262\001\n\rCreateNe" +
-      "xtHop\0224.opi_api.network.cloud.v1alpha1.C" +
-      "reateNextHopRequest\032\'.opi_api.network.cl" +
-      "oud.v1alpha1.NextHop\"B\202\323\344\223\002 \"\025/v1/{paren" +
-      "t=nexthops}:\007nexthop\332A\031parent,nexthop,ne" +
-      "xthop_id\022\207\001\n\rDeleteNextHop\0224.opi_api.net" +
-      "work.cloud.v1alpha1.DeleteNextHopRequest" +
-      "\032\026.google.protobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{i" +
-      "d=nexthops}/{nexthop}\332A\002id\022\261\001\n\rUpdateNex" +
-      "tHop\0224.opi_api.network.cloud.v1alpha1.Up" +
-      "dateNextHopRequest\032\'.opi_api.network.clo" +
-      "ud.v1alpha1.NextHop\"A\202\323\344\223\002$2\031/v1/{nextho" +
-      "p.id=nexthops}:\007nexthop\332A\024nexthop, updat" +
-      "e_mask\022\240\001\n\013ListNextHop\0223.opi_api.network" +
-      ".cloud.v1alpha1.ListNextHopsRequest\0324.op" +
-      "i_api.network.cloud.v1alpha1.ListNextHop" +
-      "sResponse\"&\202\323\344\223\002\027\022\025/v1/{parent=nexthops}" +
-      "\332A\006parent\022\222\001\n\nGetNextHop\0221.opi_api.netwo" +
-      "rk.cloud.v1alpha1.GetNextHopRequest\032\'.op" +
-      "i_api.network.cloud.v1alpha1.NextHop\"(\202\323" +
-      "\344\223\002\035\022\033/v1/{id=nexthops}/{nexthop}\332A\002id\022\325" +
-      "\001\n\022CreateNextHopGroup\0229.opi_api.network." +
-      "cloud.v1alpha1.CreateNextHopGroupRequest" +
-      "\032,.opi_api.network.cloud.v1alpha1.NextHo" +
-      "pGroup\"V\202\323\344\223\002*\"\032/v1/{parent=nexthopgroup" +
-      "s}:\014nexthopgroup\332A#parent,nexthopgroup,n" +
-      "exthopgroup_id\022\233\001\n\022DeleteNextHopGroup\0229." +
-      "opi_api.network.cloud.v1alpha1.DeleteNex" +
-      "tHopGroupRequest\032\026.google.protobuf.Empty" +
-      "\"2\202\323\344\223\002\'*%/v1/{id=nexthopgroups}/{nextho" +
-      "pgroup}\332A\002id\022\324\001\n\022UpdateNextHopGroup\0229.op" +
-      "i_api.network.cloud.v1alpha1.UpdateNextH" +
-      "opGroupRequest\032,.opi_api.network.cloud.v" +
-      "1alpha1.NextHopGroup\"U\202\323\344\223\00232#/v1/{nexth" +
-      "opgroup.id=nexthopgroups}:\014nexthopgroup\332" +
-      "A\031nexthopgroup, update_mask\022\265\001\n\021ListNext" +
-      "HopGroups\0228.opi_api.network.cloud.v1alph" +
-      "a1.ListNextHopGroupsRequest\0329.opi_api.ne" +
-      "twork.cloud.v1alpha1.ListNextHopGroupsRe" +
-      "sponse\"+\202\323\344\223\002\034\022\032/v1/{parent=nexthopgroup" +
-      "s}\332A\006parent\022\253\001\n\017GetNextHopGroup\0226.opi_ap" +
-      "i.network.cloud.v1alpha1.GetNextHopGroup" +
-      "Request\032,.opi_api.network.cloud.v1alpha1" +
-      ".NextHopGroup\"2\202\323\344\223\002\'\022%/v1/{id=nexthopgr" +
-      "oups}/{nexthopgroup}\332A\002id\022\253\001\n\014CreateSubn" +
-      "et\0223.opi_api.network.cloud.v1alpha1.Crea" +
-      "teSubnetRequest\032&.opi_api.network.cloud." +
-      "v1alpha1.Subnet\">\202\323\344\223\002\036\"\024/v1/{parent=sub" +
-      "nets}:\006subnet\332A\027parent,subnet,subnet_id\022" +
-      "\203\001\n\014DeleteSubnet\0223.opi_api.network.cloud" +
-      ".v1alpha1.DeleteSubnetRequest\032\026.google.p" +
-      "rotobuf.Empty\"&\202\323\344\223\002\033*\031/v1/{id=subnets}/" +
-      "{subnet}\332A\002id\022\252\001\n\014UpdateSubnet\0223.opi_api" +
-      ".network.cloud.v1alpha1.UpdateSubnetRequ" +
-      "est\032&.opi_api.network.cloud.v1alpha1.Sub" +
-      "net\"=\202\323\344\223\002!2\027/v1/{subnet.id=subnets}:\006su" +
-      "bnet\332A\023subnet, update_mask\022\235\001\n\013ListSubne" +
-      "ts\0222.opi_api.network.cloud.v1alpha1.List" +
-      "SubnetsRequest\0323.opi_api.network.cloud.v" +
-      "1alpha1.ListSubnetsResponse\"%\202\323\344\223\002\026\022\024/v1" +
-      "/{parent=subnets}\332A\006parent\022\215\001\n\tGetSubnet" +
-      "\0220.opi_api.network.cloud.v1alpha1.GetSub" +
-      "netRequest\032&.opi_api.network.cloud.v1alp" +
-      "ha1.Subnet\"&\202\323\344\223\002\033\022\031/v1/{id=subnets}/{su" +
-      "bnet}\332A\002id\022\253\001\n\014CreateTunnel\0223.opi_api.ne" +
-      "twork.cloud.v1alpha1.CreateTunnelRequest" +
-      "\032&.opi_api.network.cloud.v1alpha1.Tunnel" +
-      "\">\202\323\344\223\002\036\"\024/v1/{parent=tunnels}:\006tunnel\332A" +
-      "\027parent,tunnel,tunnel_id\022\203\001\n\014DeleteTunne" +
-      "l\0223.opi_api.network.cloud.v1alpha1.Delet" +
-      "eTunnelRequest\032\026.google.protobuf.Empty\"&" +
-      "\202\323\344\223\002\033*\031/v1/{id=tunnels}/{tunnel}\332A\002id\022\252" +
-      "\001\n\014UpdateTunnel\0223.opi_api.network.cloud." +
-      "v1alpha1.UpdateTunnelRequest\032&.opi_api.n" +
-      "etwork.cloud.v1alpha1.Tunnel\"=\202\323\344\223\002!2\027/v" +
-      "1/{tunnel.id=tunnels}:\006tunnel\332A\023tunnel, " +
-      "update_mask\022\235\001\n\013ListTunnels\0222.opi_api.ne" +
-      "twork.cloud.v1alpha1.ListTunnelsRequest\032" +
-      "3.opi_api.network.cloud.v1alpha1.ListTun" +
-      "nelsResponse\"%\202\323\344\223\002\026\022\024/v1/{parent=tunnel" +
-      "s}\332A\006parent\022\215\001\n\tGetTunnel\0220.opi_api.netw" +
-      "ork.cloud.v1alpha1.GetTunnelRequest\032&.op" +
-      "i_api.network.cloud.v1alpha1.Tunnel\"&\202\323\344" +
-      "\223\002\033\022\031/v1/{id=tunnels}/{tunnel}\332A\002id\022\226\001\n\t" +
-      "CreateVpc\0220.opi_api.network.cloud.v1alph" +
-      "a1.CreateVpcRequest\032#.opi_api.network.cl" +
-      "oud.v1alpha1.Vpc\"2\202\323\344\223\002\030\"\021/v1/{parent=vp" +
-      "cs}:\003vpc\332A\021parent,vpc,vpc_id\022w\n\tDeleteVp" +
-      "c\0220.opi_api.network.cloud.v1alpha1.Delet" +
-      "eVpcRequest\032\026.google.protobuf.Empty\" \202\323\344" +
-      "\223\002\025*\023/v1/{id=vpcs}/{vpc}\332A\002id\022\225\001\n\tUpdate" +
-      "Vpc\0220.opi_api.network.cloud.v1alpha1.Upd" +
-      "ateVpcRequest\032#.opi_api.network.cloud.v1" +
-      "alpha1.Vpc\"1\202\323\344\223\002\0302\021/v1/{vpc.id=vpcs}:\003v" +
-      "pc\332A\020vpc, update_mask\022\221\001\n\010ListVpcs\022/.opi" +
-      "_api.network.cloud.v1alpha1.ListVpcsRequ" +
-      "est\0320.opi_api.network.cloud.v1alpha1.Lis" +
-      "tVpcsResponse\"\"\202\323\344\223\002\023\022\021/v1/{parent=vpcs}" +
-      "\332A\006parent\022~\n\006GetVpc\022-.opi_api.network.cl" +
-      "oud.v1alpha1.GetVpcRequest\032#.opi_api.net" +
-      "work.cloud.v1alpha1.Vpc\" \202\323\344\223\002\025\022\023/v1/{id" +
-      "=vpcs}/{vpc}\332A\002id\022\262\001\n\rCreateVPCPeer\0224.op" +
-      "i_api.network.cloud.v1alpha1.CreateVPCPe" +
-      "erRequest\032\'.opi_api.network.cloud.v1alph" +
-      "a1.VPCPeer\"B\202\323\344\223\002 \"\025/v1/{parent=vpcpeers" +
-      "}:\007vpcpeer\332A\031parent,vpcpeer,vpcpeer_id\022\207" +
-      "\001\n\rDeleteVPCPeer\0224.opi_api.network.cloud" +
-      ".v1alpha1.DeleteVPCPeerRequest\032\026.google." +
-      "protobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=vpcpeers" +
-      "}/{vpcpeer}\332A\002id\022\261\001\n\rUpdateVPCPeer\0224.opi" +
-      "_api.network.cloud.v1alpha1.UpdateVPCPee" +
-      "rRequest\032\'.opi_api.network.cloud.v1alpha" +
-      "1.VPCPeer\"A\202\323\344\223\002$2\031/v1/{vpcpeer.id=vpcpe" +
-      "ers}:\007vpcpeer\332A\024vpcpeer, update_mask\022\241\001\n" +
-      "\014ListVPCPeers\0223.opi_api.network.cloud.v1" +
-      "alpha1.ListVPCPeersRequest\0324.opi_api.net" +
-      "work.cloud.v1alpha1.ListVPCPeersResponse" +
-      "\"&\202\323\344\223\002\027\022\025/v1/{parent=vpcpeers}\332A\006parent" +
-      "\022\222\001\n\nGetVPCPeer\0221.opi_api.network.cloud." +
-      "v1alpha1.GetVPCPeerRequest\032\'.opi_api.net" +
-      "work.cloud.v1alpha1.VPCPeer\"(\202\323\344\223\002\035\022\033/v1" +
-      "/{id=vpcpeers}/{vpcpeer}\332A\002id\022\343\001\n\024Create" +
-      "SecurityPolicy\022;.opi_api.network.cloud.v" +
-      "1alpha1.CreateSecurityPolicyRequest\032..op" +
+      "/Mapping\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke" +
+      "n\030\003 \001(\t\"i\n\024ListMappingsResponse\0228\n\007mappi" +
+      "ng\030\001 \003(\0132\'.opi_api.network.cloud.v1alpha" +
+      "1.Mapping\022\027\n\017next_page_token\030\002 \001(\t\"I\n\021Ge" +
+      "tMappingRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi" +
+      "_api.network.v1alpha1/Mapping\"\243\001\n\024Create" +
+      "NextHopRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n " +
+      "opi_api.network.v1alpha1/NextHop\022=\n\007next" +
+      "hop\030\002 \001(\0132\'.opi_api.network.cloud.v1alph" +
+      "a1.NextHopB\003\340A\002\022\022\n\nnexthop_id\030\003 \001(\t\"c\n\024D" +
+      "eleteNextHopRequest\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n" +
+      " opi_api.network.v1alpha1/NextHop\022\025\n\rall" +
+      "ow_missing\030\002 \001(\010\"\201\001\n\024UpdateNextHopReques" +
+      "t\0228\n\007nexthop\030\001 \001(\0132\'.opi_api.network.clo" +
+      "ud.v1alpha1.NextHop\022/\n\013update_mask\030\002 \001(\013" +
+      "2\032.google.protobuf.FieldMask\"v\n\023ListNext" +
+      "HopsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n opi" +
+      "_api.network.v1alpha1/NextHop\022\021\n\tpage_si" +
+      "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024ListNext" +
+      "HopsResponse\0228\n\007nexthop\030\001 \003(\0132\'.opi_api." +
+      "network.cloud.v1alpha1.NextHop\022\027\n\017next_p" +
+      "age_token\030\002 \001(\t\"I\n\021GetNextHopRequest\0224\n\002" +
+      "id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network.v1alph" +
+      "a1/NextHop\"\274\001\n\031CreateNextHopGroupRequest" +
+      "\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.networ" +
+      "k.v1alpha1/NextHopGroup\022G\n\014nexthopgroup\030" +
+      "\002 \001(\0132,.opi_api.network.cloud.v1alpha1.N" +
+      "extHopGroupB\003\340A\002\022\027\n\017nexthopgroup_id\030\003 \001(" +
+      "\t\"m\n\031DeleteNextHopGroupRequest\0229\n\002id\030\001 \001" +
+      "(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Nex" +
+      "tHopGroup\022\025\n\rallow_missing\030\002 \001(\010\"\220\001\n\031Upd" +
+      "ateNextHopGroupRequest\022B\n\014nexthopgroup\030\001" +
+      " \001(\0132,.opi_api.network.cloud.v1alpha1.Ne" +
+      "xtHopGroup\022/\n\013update_mask\030\002 \001(\0132\032.google" +
+      ".protobuf.FieldMask\"\200\001\n\030ListNextHopGroup" +
+      "sRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%opi_ap" +
+      "i.network.v1alpha1/NextHopGroup\022\021\n\tpage_" +
+      "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"x\n\031ListNe" +
+      "xtHopGroupsResponse\022B\n\014nexthopgroup\030\001 \003(" +
+      "\0132,.opi_api.network.cloud.v1alpha1.NextH" +
+      "opGroup\022\027\n\017next_page_token\030\002 \001(\t\"S\n\026GetN" +
+      "extHopGroupRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%" +
+      "opi_api.network.v1alpha1/NextHopGroup\"\236\001" +
+      "\n\023CreateSubnetRequest\0227\n\006parent\030\001 \001(\tB\'\340" +
+      "A\002\372A!\n\037opi_api.network.v1alpha1/Subnet\022;" +
+      "\n\006subnet\030\002 \001(\0132&.opi_api.network.cloud.v" +
+      "1alpha1.SubnetB\003\340A\002\022\021\n\tsubnet_id\030\003 \001(\t\"a" +
+      "\n\023DeleteSubnetRequest\0223\n\002id\030\001 \001(\tB\'\340A\002\372A" +
+      "!\n\037opi_api.network.v1alpha1/Subnet\022\025\n\ral" +
+      "low_missing\030\002 \001(\010\"~\n\023UpdateSubnetRequest" +
+      "\0226\n\006subnet\030\001 \001(\0132&.opi_api.network.cloud" +
+      ".v1alpha1.Subnet\022/\n\013update_mask\030\002 \001(\0132\032." +
+      "google.protobuf.FieldMask\"t\n\022ListSubnets" +
+      "Request\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_api" +
+      ".network.v1alpha1/Subnet\022\021\n\tpage_size\030\002 " +
+      "\001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023ListSubnetsRe" +
+      "sponse\0226\n\006subnet\030\001 \003(\0132&.opi_api.network" +
+      ".cloud.v1alpha1.Subnet\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t\"G\n\020GetSubnetRequest\0223\n\002id\030\001 \001(\tB" +
+      "\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Subnet" +
+      "\"\236\001\n\023CreateTunnelRequest\0227\n\006parent\030\001 \001(\t" +
+      "B\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Tunne" +
+      "l\022;\n\006tunnel\030\002 \001(\0132&.opi_api.network.clou" +
+      "d.v1alpha1.TunnelB\003\340A\002\022\021\n\ttunnel_id\030\003 \001(" +
+      "\t\"a\n\023DeleteTunnelRequest\0223\n\002id\030\001 \001(\tB\'\340A" +
+      "\002\372A!\n\037opi_api.network.v1alpha1/Tunnel\022\025\n" +
+      "\rallow_missing\030\002 \001(\010\"~\n\023UpdateTunnelRequ" +
+      "est\0226\n\006tunnel\030\001 \001(\0132&.opi_api.network.cl" +
+      "oud.v1alpha1.Tunnel\022/\n\013update_mask\030\002 \001(\013" +
+      "2\032.google.protobuf.FieldMask\"t\n\022ListTunn" +
+      "elsRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037opi_" +
+      "api.network.v1alpha1/Tunnel\022\021\n\tpage_size" +
+      "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"f\n\023ListTunnel" +
+      "sResponse\0226\n\006tunnel\030\001 \003(\0132&.opi_api.netw" +
+      "ork.cloud.v1alpha1.Tunnel\022\027\n\017next_page_t" +
+      "oken\030\002 \001(\t\"G\n\020GetTunnelRequest\0223\n\002id\030\001 \001" +
+      "(\tB\'\340A\002\372A!\n\037opi_api.network.v1alpha1/Tun" +
+      "nel\"\217\001\n\020CreateVpcRequest\0224\n\006parent\030\001 \001(\t" +
+      "B$\340A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\0225" +
+      "\n\003vpc\030\002 \001(\0132#.opi_api.network.cloud.v1al" +
+      "pha1.VpcB\003\340A\002\022\016\n\006vpc_id\030\003 \001(\t\"[\n\020DeleteV" +
+      "pcRequest\0220\n\002id\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.n" +
+      "etwork.v1alpha1/Vpc\022\025\n\rallow_missing\030\002 \001" +
+      "(\010\"u\n\020UpdateVpcRequest\0220\n\003vpc\030\001 \001(\0132#.op" +
+      "i_api.network.cloud.v1alpha1.Vpc\022/\n\013upda" +
+      "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas" +
+      "k\"n\n\017ListVpcsRequest\0224\n\006parent\030\001 \001(\tB$\340A" +
+      "\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\022\021\n\tpa" +
+      "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"]\n\020Lis" +
+      "tVpcsResponse\0220\n\003vpc\030\001 \003(\0132#.opi_api.net" +
+      "work.cloud.v1alpha1.Vpc\022\027\n\017next_page_tok" +
+      "en\030\002 \001(\t\"A\n\rGetVpcRequest\0220\n\002id\030\001 \001(\tB$\340" +
+      "A\002\372A\036\n\034opi_api.network.v1alpha1/Vpc\"\243\001\n\024" +
+      "CreateVPCPeerRequest\0228\n\006parent\030\001 \001(\tB(\340A" +
+      "\002\372A\"\n opi_api.network.v1alpha1/VPCPeer\022=" +
+      "\n\007vpcpeer\030\002 \001(\0132\'.opi_api.network.cloud." +
+      "v1alpha1.VPCPeerB\003\340A\002\022\022\n\nvpcpeer_id\030\003 \001(" +
+      "\t\"c\n\024DeleteVPCPeerRequest\0224\n\002id\030\001 \001(\tB(\340" +
+      "A\002\372A\"\n opi_api.network.v1alpha1/VPCPeer\022" +
+      "\025\n\rallow_missing\030\002 \001(\010\"\201\001\n\024UpdateVPCPeer" +
+      "Request\0228\n\007vpcpeer\030\001 \001(\0132\'.opi_api.netwo" +
+      "rk.cloud.v1alpha1.VPCPeer\022/\n\013update_mask" +
+      "\030\002 \001(\0132\032.google.protobuf.FieldMask\"v\n\023Li" +
+      "stVPCPeersRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A" +
+      "\"\n opi_api.network.v1alpha1/VPCPeer\022\021\n\tp" +
+      "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n\024Li" +
+      "stVPCPeersResponse\0228\n\007vpcpeer\030\001 \003(\0132\'.op" +
+      "i_api.network.cloud.v1alpha1.VPCPeer\022\027\n\017" +
+      "next_page_token\030\002 \001(\t\"I\n\021GetVPCPeerReque" +
+      "st\0224\n\002id\030\001 \001(\tB(\340A\002\372A\"\n opi_api.network." +
+      "v1alpha1/VPCPeer\"\306\001\n\033CreateSecurityPolic" +
+      "yRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_ap" +
+      "i.network.v1alpha1/SecurityPolicy\022K\n\016sec" +
+      "uritypolicy\030\002 \001(\0132..opi_api.network.clou" +
+      "d.v1alpha1.SecurityPolicyB\003\340A\002\022\031\n\021securi" +
+      "typolicy_id\030\003 \001(\t\"q\n\033DeleteSecurityPolic" +
+      "yRequest\022;\n\002id\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.ne" +
+      "twork.v1alpha1/SecurityPolicy\022\025\n\rallow_m" +
+      "issing\030\002 \001(\010\"\226\001\n\033UpdateSecurityPolicyReq" +
+      "uest\022F\n\016securitypolicy\030\001 \001(\0132..opi_api.n" +
+      "etwork.cloud.v1alpha1.SecurityPolicy\022/\n\013" +
+      "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel" +
+      "dMask\"\204\001\n\032ListSecurityPolicysRequest\022?\n\006" +
+      "parent\030\001 \001(\tB/\340A\002\372A)\n\'opi_api.network.v1" +
+      "alpha1/SecurityPolicy\022\021\n\tpage_size\030\002 \001(\005" +
+      "\022\022\n\npage_token\030\003 \001(\t\"~\n\033ListSecurityPoli" +
+      "cysResponse\022F\n\016securitypolicy\030\001 \003(\0132..op" +
       "i_api.network.cloud.v1alpha1.SecurityPol" +
-      "icy\"^\202\323\344\223\002.\"\034/v1/{parent=securitypolicys" +
-      "}:\016securitypolicy\332A\'parent,securitypolic" +
-      "y,securitypolicy_id\022\243\001\n\024DeleteSecurityPo" +
-      "licy\022;.opi_api.network.cloud.v1alpha1.De" +
-      "leteSecurityPolicyRequest\032\026.google.proto" +
-      "buf.Empty\"6\202\323\344\223\002+*)/v1/{id=securitypolic" +
-      "ys}/{securitypolicy}\332A\002id\022\342\001\n\024UpdateSecu" +
-      "rityPolicy\022;.opi_api.network.cloud.v1alp" +
-      "ha1.UpdateSecurityPolicyRequest\032..opi_ap" +
-      "i.network.cloud.v1alpha1.SecurityPolicy\"" +
-      "]\202\323\344\223\00292\'/v1/{securitypolicy.id=security" +
-      "policys}:\016securitypolicy\332A\033securitypolic" +
-      "y, update_mask\022\275\001\n\023ListSecurityPolicys\022:" +
+      "icy\022\027\n\017next_page_token\030\002 \001(\t\"W\n\030GetSecur" +
+      "ityPolicyRequest\022;\n\002id\030\001 \001(\tB/\340A\002\372A)\n\'op" +
+      "i_api.network.v1alpha1/SecurityPolicy\"\274\001" +
+      "\n\031CreateSecurityRuleRequest\022=\n\006parent\030\001 " +
+      "\001(\tB-\340A\002\372A\'\n%opi_api.network.v1alpha1/Se" +
+      "curityRule\022G\n\014securityrule\030\002 \001(\0132,.opi_a" +
+      "pi.network.cloud.v1alpha1.SecurityRuleB\003" +
+      "\340A\002\022\027\n\017securityrule_id\030\003 \001(\t\"m\n\031DeleteSe" +
+      "curityRuleRequest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%o" +
+      "pi_api.network.v1alpha1/SecurityRule\022\025\n\r" +
+      "allow_missing\030\002 \001(\010\"\220\001\n\031UpdateSecurityRu" +
+      "leRequest\022B\n\014securityrule\030\001 \001(\0132,.opi_ap" +
+      "i.network.cloud.v1alpha1.SecurityRule\022/\n" +
+      "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie" +
+      "ldMask\"\200\001\n\030ListSecurityRulesRequest\022=\n\006p" +
+      "arent\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.network.v1a" +
+      "lpha1/SecurityRule\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
+      "\npage_token\030\003 \001(\t\"x\n\031ListSecurityRulesRe" +
+      "sponse\022B\n\014securityrule\030\001 \003(\0132,.opi_api.n" +
+      "etwork.cloud.v1alpha1.SecurityRule\022\027\n\017ne" +
+      "xt_page_token\030\002 \001(\t\"S\n\026GetSecurityRuleRe" +
+      "quest\0229\n\002id\030\001 \001(\tB-\340A\002\372A\'\n%opi_api.netwo" +
+      "rk.v1alpha1/SecurityRule\"\313\001\n\034CreateSecur" +
+      "ityProfileRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A" +
+      "*\n(opi_api.network.v1alpha1/SecurityProf" +
+      "ile\022M\n\017securityprofile\030\002 \001(\0132/.opi_api.n" +
+      "etwork.cloud.v1alpha1.SecurityProfileB\003\340" +
+      "A\002\022\032\n\022securityprofile_id\030\003 \001(\t\"s\n\034Delete" +
+      "SecurityProfileRequest\022<\n\002id\030\001 \001(\tB0\340A\002\372" +
+      "A*\n(opi_api.network.v1alpha1/SecurityPro" +
+      "file\022\025\n\rallow_missing\030\002 \001(\010\"\231\001\n\034UpdateSe" +
+      "curityProfileRequest\022H\n\017securityprofile\030" +
+      "\001 \001(\0132/.opi_api.network.cloud.v1alpha1.S" +
+      "ecurityProfile\022/\n\013update_mask\030\002 \001(\0132\032.go" +
+      "ogle.protobuf.FieldMask\"\206\001\n\033ListSecurity" +
+      "ProfilesRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n" +
+      "(opi_api.network.v1alpha1/SecurityProfil" +
+      "e\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t" +
+      "\"\201\001\n\034ListSecurityProfilesResponse\022H\n\017sec" +
+      "urityprofile\030\001 \003(\0132/.opi_api.network.clo" +
+      "ud.v1alpha1.SecurityProfile\022\027\n\017next_page" +
+      "_token\030\002 \001(\t\"Y\n\031GetSecurityProfileReques" +
+      "t\022<\n\002id\030\001 \001(\tB0\340A\002\372A*\n(opi_api.network.v" +
+      "1alpha1/SecurityProfile2\217\202\001\n\021CloudInfraS" +
+      "ervice\022\255\001\n\025GetDeviceCapabilities\022<.opi_a" +
+      "pi.network.cloud.v1alpha1.GetDeviceCapab" +
+      "ilitiesRequest\0322.opi_api.network.cloud.v" +
+      "1alpha1.DeviceCapabilities\"\"\202\323\344\223\002\031\022\027/v1/" +
+      "devicecapabilitiess\332A\000\022\253\001\n\014CreateDevice\022" +
+      "3.opi_api.network.cloud.v1alpha1.CreateD" +
+      "eviceRequest\032&.opi_api.network.cloud.v1a" +
+      "lpha1.Device\">\202\323\344\223\002\036\"\024/v1/{parent=device" +
+      "s}:\006device\332A\027parent,device,device_id\022\203\001\n" +
+      "\014DeleteDevice\0223.opi_api.network.cloud.v1" +
+      "alpha1.DeleteDeviceRequest\032\026.google.prot" +
+      "obuf.Empty\"&\202\323\344\223\002\033*\031/v1/{id=devices}/{de" +
+      "vice}\332A\002id\022\252\001\n\014UpdateDevice\0223.opi_api.ne" +
+      "twork.cloud.v1alpha1.UpdateDeviceRequest" +
+      "\032&.opi_api.network.cloud.v1alpha1.Device" +
+      "\"=\202\323\344\223\002!2\027/v1/{device.id=devices}:\006devic" +
+      "e\332A\023device, update_mask\022\235\001\n\013ListDevices\022" +
+      "2.opi_api.network.cloud.v1alpha1.ListDev" +
+      "icesRequest\0323.opi_api.network.cloud.v1al" +
+      "pha1.ListDevicesResponse\"%\202\323\344\223\002\026\022\024/v1/{p" +
+      "arent=devices}\332A\006parent\022\215\001\n\tGetDevice\0220." +
+      "opi_api.network.cloud.v1alpha1.GetDevice" +
+      "Request\032&.opi_api.network.cloud.v1alpha1" +
+      ".Device\"&\202\323\344\223\002\033\022\031/v1/{id=devices}/{devic" +
+      "e}\332A\002id\022\234\001\n\nUpdatePort\0221.opi_api.network" +
+      ".cloud.v1alpha1.UpdatePortRequest\032$.opi_" +
+      "api.network.cloud.v1alpha1.Port\"5\202\323\344\223\002\0332" +
+      "\023/v1/{port.id=ports}:\004port\332A\021port, updat" +
+      "e_mask\022\225\001\n\tListPorts\0220.opi_api.network.c" +
+      "loud.v1alpha1.ListPortsRequest\0321.opi_api" +
+      ".network.cloud.v1alpha1.ListPortsRespons" +
+      "e\"#\202\323\344\223\002\024\022\022/v1/{parent=ports}\332A\006parent\022\203" +
+      "\001\n\007GetPort\022..opi_api.network.cloud.v1alp" +
+      "ha1.GetPortRequest\032$.opi_api.network.clo" +
+      "ud.v1alpha1.Port\"\"\202\323\344\223\002\027\022\025/v1/{id=ports}" +
+      "/{port}\332A\002id\022\235\001\n\nCreateVnic\0221.opi_api.ne",
+      "twork.cloud.v1alpha1.CreateVnicRequest\032$" +
+      ".opi_api.network.cloud.v1alpha1.Vnic\"6\202\323" +
+      "\344\223\002\032\"\022/v1/{parent=vnics}:\004vnic\332A\023parent," +
+      "vnic,vnic_id\022{\n\nDeleteVnic\0221.opi_api.net" +
+      "work.cloud.v1alpha1.DeleteVnicRequest\032\026." +
+      "google.protobuf.Empty\"\"\202\323\344\223\002\027*\025/v1/{id=v" +
+      "nics}/{vnic}\332A\002id\022\234\001\n\nUpdateVnic\0221.opi_a" +
+      "pi.network.cloud.v1alpha1.UpdateVnicRequ" +
+      "est\032$.opi_api.network.cloud.v1alpha1.Vni" +
+      "c\"5\202\323\344\223\002\0332\023/v1/{vnic.id=vnics}:\004vnic\332A\021v" +
+      "nic, update_mask\022\225\001\n\tListVnics\0220.opi_api" +
+      ".network.cloud.v1alpha1.ListVnicsRequest" +
+      "\0321.opi_api.network.cloud.v1alpha1.ListVn" +
+      "icsResponse\"#\202\323\344\223\002\024\022\022/v1/{parent=vnics}\332" +
+      "A\006parent\022\203\001\n\007GetVnic\022..opi_api.network.c" +
+      "loud.v1alpha1.GetVnicRequest\032$.opi_api.n" +
+      "etwork.cloud.v1alpha1.Vnic\"\"\202\323\344\223\002\027\022\025/v1/" +
+      "{id=vnics}/{vnic}\332A\002id\022\300\001\n\017CreateInterfa" +
+      "ce\0226.opi_api.network.cloud.v1alpha1.Crea" +
+      "teInterfaceRequest\032).opi_api.network.clo" +
+      "ud.v1alpha1.Interface\"J\202\323\344\223\002$\"\027/v1/{pare" +
+      "nt=interfaces}:\tinterface\332A\035parent,inter" +
+      "face,interface_id\022\217\001\n\017DeleteInterface\0226." +
+      "opi_api.network.cloud.v1alpha1.DeleteInt" +
+      "erfaceRequest\032\026.google.protobuf.Empty\",\202" +
+      "\323\344\223\002!*\037/v1/{id=interfaces}/{interface}\332A" +
+      "\002id\022\277\001\n\017UpdateInterface\0226.opi_api.networ" +
+      "k.cloud.v1alpha1.UpdateInterfaceRequest\032" +
+      ").opi_api.network.cloud.v1alpha1.Interfa" +
+      "ce\"I\202\323\344\223\002*2\035/v1/{interface.id=interfaces" +
+      "}:\tinterface\332A\026interface, update_mask\022\251\001" +
+      "\n\016ListInterfaces\0225.opi_api.network.cloud" +
+      ".v1alpha1.ListInterfacesRequest\0326.opi_ap" +
+      "i.network.cloud.v1alpha1.ListInterfacesR" +
+      "esponse\"(\202\323\344\223\002\031\022\027/v1/{parent=interfaces}" +
+      "\332A\006parent\022\234\001\n\014GetInterface\0223.opi_api.net" +
+      "work.cloud.v1alpha1.GetInterfaceRequest\032" +
+      ").opi_api.network.cloud.v1alpha1.Interfa" +
+      "ce\",\202\323\344\223\002!\022\037/v1/{id=interfaces}/{interfa" +
+      "ce}\332A\002id\022\307\001\n\020CreateRouteTable\0227.opi_api." +
+      "network.cloud.v1alpha1.CreateRouteTableR" +
+      "equest\032*.opi_api.network.cloud.v1alpha1." +
+      "RouteTable\"N\202\323\344\223\002&\"\030/v1/{parent=routetab" +
+      "les}:\nroutetable\332A\037parent,routetable,rou" +
+      "tetable_id\022\223\001\n\020DeleteRouteTable\0227.opi_ap" +
+      "i.network.cloud.v1alpha1.DeleteRouteTabl" +
+      "eRequest\032\026.google.protobuf.Empty\".\202\323\344\223\002#" +
+      "*!/v1/{id=routetables}/{routetable}\332A\002id" +
+      "\022\306\001\n\020UpdateRouteTable\0227.opi_api.network." +
+      "cloud.v1alpha1.UpdateRouteTableRequest\032*" +
+      ".opi_api.network.cloud.v1alpha1.RouteTab" +
+      "le\"M\202\323\344\223\002-2\037/v1/{routetable.id=routetabl" +
+      "es}:\nroutetable\332A\027routetable, update_mas" +
+      "k\022\255\001\n\017ListRouteTables\0226.opi_api.network." +
+      "cloud.v1alpha1.ListRouteTablesRequest\0327." +
+      "opi_api.network.cloud.v1alpha1.ListRoute" +
+      "TablesResponse\")\202\323\344\223\002\032\022\030/v1/{parent=rout" +
+      "etables}\332A\006parent\022\241\001\n\rGetRouteTable\0224.op" +
+      "i_api.network.cloud.v1alpha1.GetRouteTab" +
+      "leRequest\032*.opi_api.network.cloud.v1alph" +
+      "a1.RouteTable\".\202\323\344\223\002#\022!/v1/{id=routetabl" +
+      "es}/{routetable}\332A\002id\022\244\001\n\013CreateRoute\0222." +
+      "opi_api.network.cloud.v1alpha1.CreateRou" +
+      "teRequest\032%.opi_api.network.cloud.v1alph" +
+      "a1.Route\":\202\323\344\223\002\034\"\023/v1/{parent=routes}:\005r" +
+      "oute\332A\025parent,route,route_id\022\177\n\013DeleteRo" +
+      "ute\0222.opi_api.network.cloud.v1alpha1.Del" +
+      "eteRouteRequest\032\026.google.protobuf.Empty\"" +
+      "$\202\323\344\223\002\031*\027/v1/{id=routes}/{route}\332A\002id\022\243\001" +
+      "\n\013UpdateRoute\0222.opi_api.network.cloud.v1" +
+      "alpha1.UpdateRouteRequest\032%.opi_api.netw" +
+      "ork.cloud.v1alpha1.Route\"9\202\323\344\223\002\0362\025/v1/{r" +
+      "oute.id=routes}:\005route\332A\022route, update_m" +
+      "ask\022\231\001\n\nListRoutes\0221.opi_api.network.clo" +
+      "ud.v1alpha1.ListRoutesRequest\0322.opi_api." +
+      "network.cloud.v1alpha1.ListRoutesRespons" +
+      "e\"$\202\323\344\223\002\025\022\023/v1/{parent=routes}\332A\006parent\022" +
+      "\210\001\n\010GetRoute\022/.opi_api.network.cloud.v1a" +
+      "lpha1.GetRouteRequest\032%.opi_api.network." +
+      "cloud.v1alpha1.Route\"$\202\323\344\223\002\031\022\027/v1/{id=ro" +
+      "utes}/{route}\332A\002id\022\334\001\n\023CreateUnderlayRou" +
+      "te\022:.opi_api.network.cloud.v1alpha1.Crea" +
+      "teUnderlayRouteRequest\032-.opi_api.network" +
+      ".cloud.v1alpha1.UnderlayRoute\"Z\202\323\344\223\002,\"\033/" +
+      "v1/{parent=underlayroutes}:\runderlayrout" +
+      "e\332A%parent,underlayroute,underlayroute_i" +
+      "d\022\237\001\n\023DeleteUnderlayRoute\022:.opi_api.netw" +
+      "ork.cloud.v1alpha1.DeleteUnderlayRouteRe" +
+      "quest\032\026.google.protobuf.Empty\"4\202\323\344\223\002)*\'/" +
+      "v1/{id=underlayroutes}/{underlayroute}\332A" +
+      "\002id\022\333\001\n\023UpdateUnderlayRoute\022:.opi_api.ne" +
+      "twork.cloud.v1alpha1.UpdateUnderlayRoute" +
+      "Request\032-.opi_api.network.cloud.v1alpha1" +
+      ".UnderlayRoute\"Y\202\323\344\223\00262%/v1/{underlayrou" +
+      "te.id=underlayroutes}:\runderlayroute\332A\032u" +
+      "nderlayroute, update_mask\022\271\001\n\022ListUnderl" +
+      "ayRoutes\0229.opi_api.network.cloud.v1alpha" +
+      "1.ListUnderlayRoutesRequest\032:.opi_api.ne" +
+      "twork.cloud.v1alpha1.ListUnderlayRoutesR" +
+      "esponse\",\202\323\344\223\002\035\022\033/v1/{parent=underlayrou" +
+      "tes}\332A\006parent\022\260\001\n\020GetUnderlayRoute\0227.opi" +
+      "_api.network.cloud.v1alpha1.GetUnderlayR" +
+      "outeRequest\032-.opi_api.network.cloud.v1al" +
+      "pha1.UnderlayRoute\"4\202\323\344\223\002)\022\'/v1/{id=unde" +
+      "rlayroutes}/{underlayroute}\332A\002id\022\226\001\n\tCre" +
+      "ateBgp\0220.opi_api.network.cloud.v1alpha1." +
+      "CreateBgpRequest\032#.opi_api.network.cloud" +
+      ".v1alpha1.Bgp\"2\202\323\344\223\002\030\"\021/v1/{parent=bgps}" +
+      ":\003bgp\332A\021parent,bgp,bgp_id\022w\n\tDeleteBgp\0220" +
+      ".opi_api.network.cloud.v1alpha1.DeleteBg" +
+      "pRequest\032\026.google.protobuf.Empty\" \202\323\344\223\002\025" +
+      "*\023/v1/{id=bgps}/{bgp}\332A\002id\022\225\001\n\tUpdateBgp" +
+      "\0220.opi_api.network.cloud.v1alpha1.Update" +
+      "BgpRequest\032#.opi_api.network.cloud.v1alp" +
+      "ha1.Bgp\"1\202\323\344\223\002\0302\021/v1/{bgp.id=bgps}:\003bgp\332" +
+      "A\020bgp, update_mask\022\221\001\n\010ListBgps\022/.opi_ap" +
+      "i.network.cloud.v1alpha1.ListBgpsRequest" +
+      "\0320.opi_api.network.cloud.v1alpha1.ListBg" +
+      "psResponse\"\"\202\323\344\223\002\023\022\021/v1/{parent=bgps}\332A\006" +
+      "parent\022~\n\006GetBgp\022-.opi_api.network.cloud" +
+      ".v1alpha1.GetBgpRequest\032#.opi_api.networ" +
+      "k.cloud.v1alpha1.Bgp\" \202\323\344\223\002\025\022\023/v1/{id=bg" +
+      "ps}/{bgp}\332A\002id\022\262\001\n\rCreateBGPPeer\0224.opi_a" +
+      "pi.network.cloud.v1alpha1.CreateBGPPeerR" +
+      "equest\032\'.opi_api.network.cloud.v1alpha1." +
+      "BGPPeer\"B\202\323\344\223\002 \"\025/v1/{parent=bgppeers}:\007" +
+      "bgppeer\332A\031parent,bgppeer,bgppeer_id\022\207\001\n\r" +
+      "DeleteBGPPeer\0224.opi_api.network.cloud.v1" +
+      "alpha1.DeleteBGPPeerRequest\032\026.google.pro" +
+      "tobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=bgppeers}/{" +
+      "bgppeer}\332A\002id\022\261\001\n\rUpdateBGPPeer\0224.opi_ap" +
+      "i.network.cloud.v1alpha1.UpdateBGPPeerRe" +
+      "quest\032\'.opi_api.network.cloud.v1alpha1.B" +
+      "GPPeer\"A\202\323\344\223\002$2\031/v1/{bgppeer.id=bgppeers" +
+      "}:\007bgppeer\332A\024bgppeer, update_mask\022\241\001\n\014Li" +
+      "stBGPPeers\0223.opi_api.network.cloud.v1alp" +
+      "ha1.ListBGPPeersRequest\0324.opi_api.networ" +
+      "k.cloud.v1alpha1.ListBGPPeersResponse\"&\202" +
+      "\323\344\223\002\027\022\025/v1/{parent=bgppeers}\332A\006parent\022\222\001" +
+      "\n\nGetBGPPeer\0221.opi_api.network.cloud.v1a" +
+      "lpha1.GetBGPPeerRequest\032\'.opi_api.networ" +
+      "k.cloud.v1alpha1.BGPPeer\"(\202\323\344\223\002\035\022\033/v1/{i" +
+      "d=bgppeers}/{bgppeer}\332A\002id\022\300\001\n\017CreateBGP" +
+      "PeerAf\0226.opi_api.network.cloud.v1alpha1." +
+      "CreateBGPPeerAfRequest\032).opi_api.network" +
+      ".cloud.v1alpha1.BGPPeerAf\"J\202\323\344\223\002$\"\027/v1/{" +
+      "parent=bgppeerafs}:\tbgppeeraf\332A\035parent,b" +
+      "gppeeraf,bgppeeraf_id\022\217\001\n\017DeleteBGPPeerA" +
+      "f\0226.opi_api.network.cloud.v1alpha1.Delet" +
+      "eBGPPeerAfRequest\032\026.google.protobuf.Empt" +
+      "y\",\202\323\344\223\002!*\037/v1/{id=bgppeerafs}/{bgppeera" +
+      "f}\332A\002id\022\277\001\n\017UpdateBGPPeerAf\0226.opi_api.ne" +
+      "twork.cloud.v1alpha1.UpdateBGPPeerAfRequ" +
+      "est\032).opi_api.network.cloud.v1alpha1.BGP" +
+      "PeerAf\"I\202\323\344\223\002*2\035/v1/{bgppeeraf.id=bgppee" +
+      "rafs}:\tbgppeeraf\332A\026bgppeeraf, update_mas" +
+      "k\022\251\001\n\016ListBGPPeerAfs\0225.opi_api.network.c" +
+      "loud.v1alpha1.ListBGPPeerAfsRequest\0326.op" +
+      "i_api.network.cloud.v1alpha1.ListBGPPeer" +
+      "AfsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=bgppeer" +
+      "afs}\332A\006parent\022\234\001\n\014GetBGPPeerAf\0223.opi_api" +
+      ".network.cloud.v1alpha1.GetBGPPeerAfRequ" +
+      "est\032).opi_api.network.cloud.v1alpha1.BGP" +
+      "PeerAf\",\202\323\344\223\002!\022\037/v1/{id=bgppeerafs}/{bgp" +
+      "peeraf}\332A\002id\022\262\001\n\rCreateMapping\0224.opi_api" +
+      ".network.cloud.v1alpha1.CreateMappingReq" +
+      "uest\032\'.opi_api.network.cloud.v1alpha1.Ma" +
+      "pping\"B\202\323\344\223\002 \"\025/v1/{parent=mappings}:\007ma" +
+      "pping\332A\031parent,mapping,mapping_id\022\207\001\n\rDe" +
+      "leteMapping\0224.opi_api.network.cloud.v1al" +
+      "pha1.DeleteMappingRequest\032\026.google.proto" +
+      "buf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=mappings}/{ma" +
+      "pping}\332A\002id\022\261\001\n\rUpdateMapping\0224.opi_api." +
+      "network.cloud.v1alpha1.UpdateMappingRequ" +
+      "est\032\'.opi_api.network.cloud.v1alpha1.Map" +
+      "ping\"A\202\323\344\223\002$2\031/v1/{mapping.id=mappings}:" +
+      "\007mapping\332A\024mapping, update_mask\022\241\001\n\014List" +
+      "Mappings\0223.opi_api.network.cloud.v1alpha" +
+      "1.ListMappingsRequest\0324.opi_api.network." +
+      "cloud.v1alpha1.ListMappingsResponse\"&\202\323\344" +
+      "\223\002\027\022\025/v1/{parent=mappings}\332A\006parent\022\222\001\n\n" +
+      "GetMapping\0221.opi_api.network.cloud.v1alp" +
+      "ha1.GetMappingRequest\032\'.opi_api.network." +
+      "cloud.v1alpha1.Mapping\"(\202\323\344\223\002\035\022\033/v1/{id=" +
+      "mappings}/{mapping}\332A\002id\022\262\001\n\rCreateNextH" +
+      "op\0224.opi_api.network.cloud.v1alpha1.Crea" +
+      "teNextHopRequest\032\'.opi_api.network.cloud" +
+      ".v1alpha1.NextHop\"B\202\323\344\223\002 \"\025/v1/{parent=n" +
+      "exthops}:\007nexthop\332A\031parent,nexthop,nexth" +
+      "op_id\022\207\001\n\rDeleteNextHop\0224.opi_api.networ" +
+      "k.cloud.v1alpha1.DeleteNextHopRequest\032\026." +
+      "google.protobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=n" +
+      "exthops}/{nexthop}\332A\002id\022\261\001\n\rUpdateNextHo" +
+      "p\0224.opi_api.network.cloud.v1alpha1.Updat" +
+      "eNextHopRequest\032\'.opi_api.network.cloud." +
+      "v1alpha1.NextHop\"A\202\323\344\223\002$2\031/v1/{nexthop.i" +
+      "d=nexthops}:\007nexthop\332A\024nexthop, update_m" +
+      "ask\022\240\001\n\013ListNextHop\0223.opi_api.network.cl" +
+      "oud.v1alpha1.ListNextHopsRequest\0324.opi_a" +
+      "pi.network.cloud.v1alpha1.ListNextHopsRe" +
+      "sponse\"&\202\323\344\223\002\027\022\025/v1/{parent=nexthops}\332A\006" +
+      "parent\022\222\001\n\nGetNextHop\0221.opi_api.network." +
+      "cloud.v1alpha1.GetNextHopRequest\032\'.opi_a" +
+      "pi.network.cloud.v1alpha1.NextHop\"(\202\323\344\223\002" +
+      "\035\022\033/v1/{id=nexthops}/{nexthop}\332A\002id\022\325\001\n\022" +
+      "CreateNextHopGroup\0229.opi_api.network.clo" +
+      "ud.v1alpha1.CreateNextHopGroupRequest\032,." +
+      "opi_api.network.cloud.v1alpha1.NextHopGr" +
+      "oup\"V\202\323\344\223\002*\"\032/v1/{parent=nexthopgroups}:" +
+      "\014nexthopgroup\332A#parent,nexthopgroup,next" +
+      "hopgroup_id\022\233\001\n\022DeleteNextHopGroup\0229.opi" +
+      "_api.network.cloud.v1alpha1.DeleteNextHo" +
+      "pGroupRequest\032\026.google.protobuf.Empty\"2\202" +
+      "\323\344\223\002\'*%/v1/{id=nexthopgroups}/{nexthopgr" +
+      "oup}\332A\002id\022\324\001\n\022UpdateNextHopGroup\0229.opi_a" +
+      "pi.network.cloud.v1alpha1.UpdateNextHopG" +
+      "roupRequest\032,.opi_api.network.cloud.v1al" +
+      "pha1.NextHopGroup\"U\202\323\344\223\00232#/v1/{nexthopg" +
+      "roup.id=nexthopgroups}:\014nexthopgroup\332A\031n" +
+      "exthopgroup, update_mask\022\265\001\n\021ListNextHop" +
+      "Groups\0228.opi_api.network.cloud.v1alpha1." +
+      "ListNextHopGroupsRequest\0329.opi_api.netwo" +
+      "rk.cloud.v1alpha1.ListNextHopGroupsRespo" +
+      "nse\"+\202\323\344\223\002\034\022\032/v1/{parent=nexthopgroups}\332" +
+      "A\006parent\022\253\001\n\017GetNextHopGroup\0226.opi_api.n" +
+      "etwork.cloud.v1alpha1.GetNextHopGroupReq" +
+      "uest\032,.opi_api.network.cloud.v1alpha1.Ne" +
+      "xtHopGroup\"2\202\323\344\223\002\'\022%/v1/{id=nexthopgroup" +
+      "s}/{nexthopgroup}\332A\002id\022\253\001\n\014CreateSubnet\022" +
+      "3.opi_api.network.cloud.v1alpha1.CreateS" +
+      "ubnetRequest\032&.opi_api.network.cloud.v1a" +
+      "lpha1.Subnet\">\202\323\344\223\002\036\"\024/v1/{parent=subnet" +
+      "s}:\006subnet\332A\027parent,subnet,subnet_id\022\203\001\n" +
+      "\014DeleteSubnet\0223.opi_api.network.cloud.v1" +
+      "alpha1.DeleteSubnetRequest\032\026.google.prot" +
+      "obuf.Empty\"&\202\323\344\223\002\033*\031/v1/{id=subnets}/{su" +
+      "bnet}\332A\002id\022\252\001\n\014UpdateSubnet\0223.opi_api.ne" +
+      "twork.cloud.v1alpha1.UpdateSubnetRequest" +
+      "\032&.opi_api.network.cloud.v1alpha1.Subnet" +
+      "\"=\202\323\344\223\002!2\027/v1/{subnet.id=subnets}:\006subne" +
+      "t\332A\023subnet, update_mask\022\235\001\n\013ListSubnets\022" +
+      "2.opi_api.network.cloud.v1alpha1.ListSub" +
+      "netsRequest\0323.opi_api.network.cloud.v1al" +
+      "pha1.ListSubnetsResponse\"%\202\323\344\223\002\026\022\024/v1/{p" +
+      "arent=subnets}\332A\006parent\022\215\001\n\tGetSubnet\0220." +
+      "opi_api.network.cloud.v1alpha1.GetSubnet" +
+      "Request\032&.opi_api.network.cloud.v1alpha1" +
+      ".Subnet\"&\202\323\344\223\002\033\022\031/v1/{id=subnets}/{subne" +
+      "t}\332A\002id\022\253\001\n\014CreateTunnel\0223.opi_api.netwo" +
+      "rk.cloud.v1alpha1.CreateTunnelRequest\032&." +
+      "opi_api.network.cloud.v1alpha1.Tunnel\">\202" +
+      "\323\344\223\002\036\"\024/v1/{parent=tunnels}:\006tunnel\332A\027pa" +
+      "rent,tunnel,tunnel_id\022\203\001\n\014DeleteTunnel\0223" +
+      ".opi_api.network.cloud.v1alpha1.DeleteTu" +
+      "nnelRequest\032\026.google.protobuf.Empty\"&\202\323\344" +
+      "\223\002\033*\031/v1/{id=tunnels}/{tunnel}\332A\002id\022\252\001\n\014" +
+      "UpdateTunnel\0223.opi_api.network.cloud.v1a" +
+      "lpha1.UpdateTunnelRequest\032&.opi_api.netw" +
+      "ork.cloud.v1alpha1.Tunnel\"=\202\323\344\223\002!2\027/v1/{" +
+      "tunnel.id=tunnels}:\006tunnel\332A\023tunnel, upd" +
+      "ate_mask\022\235\001\n\013ListTunnels\0222.opi_api.netwo" +
+      "rk.cloud.v1alpha1.ListTunnelsRequest\0323.o" +
+      "pi_api.network.cloud.v1alpha1.ListTunnel" +
+      "sResponse\"%\202\323\344\223\002\026\022\024/v1/{parent=tunnels}\332" +
+      "A\006parent\022\215\001\n\tGetTunnel\0220.opi_api.network" +
+      ".cloud.v1alpha1.GetTunnelRequest\032&.opi_a" +
+      "pi.network.cloud.v1alpha1.Tunnel\"&\202\323\344\223\002\033" +
+      "\022\031/v1/{id=tunnels}/{tunnel}\332A\002id\022\226\001\n\tCre" +
+      "ateVpc\0220.opi_api.network.cloud.v1alpha1." +
+      "CreateVpcRequest\032#.opi_api.network.cloud" +
+      ".v1alpha1.Vpc\"2\202\323\344\223\002\030\"\021/v1/{parent=vpcs}" +
+      ":\003vpc\332A\021parent,vpc,vpc_id\022w\n\tDeleteVpc\0220" +
+      ".opi_api.network.cloud.v1alpha1.DeleteVp" +
+      "cRequest\032\026.google.protobuf.Empty\" \202\323\344\223\002\025" +
+      "*\023/v1/{id=vpcs}/{vpc}\332A\002id\022\225\001\n\tUpdateVpc" +
+      "\0220.opi_api.network.cloud.v1alpha1.Update" +
+      "VpcRequest\032#.opi_api.network.cloud.v1alp" +
+      "ha1.Vpc\"1\202\323\344\223\002\0302\021/v1/{vpc.id=vpcs}:\003vpc\332" +
+      "A\020vpc, update_mask\022\221\001\n\010ListVpcs\022/.opi_ap" +
+      "i.network.cloud.v1alpha1.ListVpcsRequest" +
+      "\0320.opi_api.network.cloud.v1alpha1.ListVp" +
+      "csResponse\"\"\202\323\344\223\002\023\022\021/v1/{parent=vpcs}\332A\006" +
+      "parent\022~\n\006GetVpc\022-.opi_api.network.cloud" +
+      ".v1alpha1.GetVpcRequest\032#.opi_api.networ" +
+      "k.cloud.v1alpha1.Vpc\" \202\323\344\223\002\025\022\023/v1/{id=vp" +
+      "cs}/{vpc}\332A\002id\022\262\001\n\rCreateVPCPeer\0224.opi_a" +
+      "pi.network.cloud.v1alpha1.CreateVPCPeerR" +
+      "equest\032\'.opi_api.network.cloud.v1alpha1." +
+      "VPCPeer\"B\202\323\344\223\002 \"\025/v1/{parent=vpcpeers}:\007" +
+      "vpcpeer\332A\031parent,vpcpeer,vpcpeer_id\022\207\001\n\r" +
+      "DeleteVPCPeer\0224.opi_api.network.cloud.v1" +
+      "alpha1.DeleteVPCPeerRequest\032\026.google.pro" +
+      "tobuf.Empty\"(\202\323\344\223\002\035*\033/v1/{id=vpcpeers}/{" +
+      "vpcpeer}\332A\002id\022\261\001\n\rUpdateVPCPeer\0224.opi_ap" +
+      "i.network.cloud.v1alpha1.UpdateVPCPeerRe" +
+      "quest\032\'.opi_api.network.cloud.v1alpha1.V" +
+      "PCPeer\"A\202\323\344\223\002$2\031/v1/{vpcpeer.id=vpcpeers" +
+      "}:\007vpcpeer\332A\024vpcpeer, update_mask\022\241\001\n\014Li" +
+      "stVPCPeers\0223.opi_api.network.cloud.v1alp" +
+      "ha1.ListVPCPeersRequest\0324.opi_api.networ" +
+      "k.cloud.v1alpha1.ListVPCPeersResponse\"&\202" +
+      "\323\344\223\002\027\022\025/v1/{parent=vpcpeers}\332A\006parent\022\222\001" +
+      "\n\nGetVPCPeer\0221.opi_api.network.cloud.v1a" +
+      "lpha1.GetVPCPeerRequest\032\'.opi_api.networ" +
+      "k.cloud.v1alpha1.VPCPeer\"(\202\323\344\223\002\035\022\033/v1/{i" +
+      "d=vpcpeers}/{vpcpeer}\332A\002id\022\343\001\n\024CreateSec" +
+      "urityPolicy\022;.opi_api.network.cloud.v1al" +
+      "pha1.CreateSecurityPolicyRequest\032..opi_a" +
+      "pi.network.cloud.v1alpha1.SecurityPolicy" +
+      "\"^\202\323\344\223\002.\"\034/v1/{parent=securitypolicys}:\016" +
+      "securitypolicy\332A\'parent,securitypolicy,s" +
+      "ecuritypolicy_id\022\243\001\n\024DeleteSecurityPolic" +
+      "y\022;.opi_api.network.cloud.v1alpha1.Delet" +
+      "eSecurityPolicyRequest\032\026.google.protobuf" +
+      ".Empty\"6\202\323\344\223\002+*)/v1/{id=securitypolicys}" +
+      "/{securitypolicy}\332A\002id\022\342\001\n\024UpdateSecurit" +
+      "yPolicy\022;.opi_api.network.cloud.v1alpha1" +
+      ".UpdateSecurityPolicyRequest\032..opi_api.n" +
+      "etwork.cloud.v1alpha1.SecurityPolicy\"]\202\323" +
+      "\344\223\00292\'/v1/{securitypolicy.id=securitypol" +
+      "icys}:\016securitypolicy\332A\033securitypolicy, " +
+      "update_mask\022\275\001\n\023ListSecurityPolicys\022:.op" +
+      "i_api.network.cloud.v1alpha1.ListSecurit" +
+      "yPolicysRequest\032;.opi_api.network.cloud." +
+      "v1alpha1.ListSecurityPolicysResponse\"-\202\323" +
+      "\344\223\002\036\022\034/v1/{parent=securitypolicys}\332A\006par" +
+      "ent\022\265\001\n\021GetSecurityPolicy\0228.opi_api.netw" +
+      "ork.cloud.v1alpha1.GetSecurityPolicyRequ" +
+      "est\032..opi_api.network.cloud.v1alpha1.Sec" +
+      "urityPolicy\"6\202\323\344\223\002+\022)/v1/{id=securitypol" +
+      "icys}/{securitypolicy}\332A\002id\022\325\001\n\022CreateSe" +
+      "curityRule\0229.opi_api.network.cloud.v1alp" +
+      "ha1.CreateSecurityRuleRequest\032,.opi_api." +
+      "network.cloud.v1alpha1.SecurityRule\"V\202\323\344" +
+      "\223\002*\"\032/v1/{parent=securityrules}:\014securit" +
+      "yrule\332A#parent,securityrule,securityrule" +
+      "_id\022\233\001\n\022DeleteSecurityRule\0229.opi_api.net" +
+      "work.cloud.v1alpha1.DeleteSecurityRuleRe" +
+      "quest\032\026.google.protobuf.Empty\"2\202\323\344\223\002\'*%/" +
+      "v1/{id=securityrules}/{securityrule}\332A\002i" +
+      "d\022\324\001\n\022UpdateSecurityRule\0229.opi_api.netwo" +
+      "rk.cloud.v1alpha1.UpdateSecurityRuleRequ" +
+      "est\032,.opi_api.network.cloud.v1alpha1.Sec" +
+      "urityRule\"U\202\323\344\223\00232#/v1/{securityrule.id=" +
+      "securityrules}:\014securityrule\332A\031securityr" +
+      "ule, update_mask\022\265\001\n\021ListSecurityRules\0228" +
       ".opi_api.network.cloud.v1alpha1.ListSecu" +
-      "rityPolicysRequest\032;.opi_api.network.clo" +
-      "ud.v1alpha1.ListSecurityPolicysResponse\"" +
-      "-\202\323\344\223\002\036\022\034/v1/{parent=securitypolicys}\332A\006" +
-      "parent\022\265\001\n\021GetSecurityPolicy\0228.opi_api.n" +
-      "etwork.cloud.v1alpha1.GetSecurityPolicyR" +
-      "equest\032..opi_api.network.cloud.v1alpha1." +
-      "SecurityPolicy\"6\202\323\344\223\002+\022)/v1/{id=security" +
-      "policys}/{securitypolicy}\332A\002id\022\325\001\n\022Creat" +
-      "eSecurityRule\0229.opi_api.network.cloud.v1" +
-      "alpha1.CreateSecurityRuleRequest\032,.opi_a" +
-      "pi.network.cloud.v1alpha1.SecurityRule\"V" +
-      "\202\323\344\223\002*\"\032/v1/{parent=securityrules}:\014secu" +
-      "rityrule\332A#parent,securityrule,securityr" +
-      "ule_id\022\233\001\n\022DeleteSecurityRule\0229.opi_api." +
-      "network.cloud.v1alpha1.DeleteSecurityRul" +
-      "eRequest\032\026.google.protobuf.Empty\"2\202\323\344\223\002\'" +
-      "*%/v1/{id=securityrules}/{securityrule}\332" +
-      "A\002id\022\324\001\n\022UpdateSecurityRule\0229.opi_api.ne" +
-      "twork.cloud.v1alpha1.UpdateSecurityRuleR" +
-      "equest\032,.opi_api.network.cloud.v1alpha1." +
-      "SecurityRule\"U\202\323\344\223\00232#/v1/{securityrule." +
-      "id=securityrules}:\014securityrule\332A\031securi" +
-      "tyrule, update_mask\022\265\001\n\021ListSecurityRule" +
-      "s\0228.opi_api.network.cloud.v1alpha1.ListS" +
-      "ecurityRulesRequest\0329.opi_api.network.cl" +
-      "oud.v1alpha1.ListSecurityRulesResponse\"+" +
-      "\202\323\344\223\002\034\022\032/v1/{parent=securityrules}\332A\006par" +
-      "ent\022\253\001\n\017GetSecurityRule\0226.opi_api.networ" +
-      "k.cloud.v1alpha1.GetSecurityRuleRequest\032" +
-      ",.opi_api.network.cloud.v1alpha1.Securit" +
-      "yRule\"2\202\323\344\223\002\'\022%/v1/{id=securityrules}/{s" +
-      "ecurityrule}\332A\002id\022\352\001\n\025CreateSecurityProf" +
-      "ile\022<.opi_api.network.cloud.v1alpha1.Cre" +
-      "ateSecurityProfileRequest\032/.opi_api.netw" +
-      "ork.cloud.v1alpha1.SecurityProfile\"b\202\323\344\223" +
-      "\0020\"\035/v1/{parent=securityprofiles}:\017secur" +
-      "ityprofile\332A)parent,securityprofile,secu" +
-      "rityprofile_id\022\247\001\n\025DeleteSecurityProfile" +
-      "\022<.opi_api.network.cloud.v1alpha1.Delete" +
-      "SecurityProfileRequest\032\026.google.protobuf" +
-      ".Empty\"8\202\323\344\223\002-*+/v1/{id=securityprofiles" +
-      "}/{securityprofile}\332A\002id\022\351\001\n\025UpdateSecur" +
-      "ityProfile\022<.opi_api.network.cloud.v1alp" +
-      "ha1.UpdateSecurityProfileRequest\032/.opi_a" +
-      "pi.network.cloud.v1alpha1.SecurityProfil" +
-      "e\"a\202\323\344\223\002<2)/v1/{securityprofile.id=secur" +
-      "ityprofiles}:\017securityprofile\332A\034security" +
-      "profile, update_mask\022\301\001\n\024ListSecurityPro" +
-      "files\022;.opi_api.network.cloud.v1alpha1.L" +
-      "istSecurityProfilesRequest\032<.opi_api.net" +
-      "work.cloud.v1alpha1.ListSecurityProfiles" +
-      "Response\".\202\323\344\223\002\037\022\035/v1/{parent=securitypr" +
-      "ofiles}\332A\006parent\022\272\001\n\022GetSecurityProfile\022" +
-      "9.opi_api.network.cloud.v1alpha1.GetSecu" +
-      "rityProfileRequest\032/.opi_api.network.clo" +
-      "ud.v1alpha1.SecurityProfile\"8\202\323\344\223\002-\022+/v1" +
-      "/{id=securityprofiles}/{securityprofile}" +
-      "\332A\002idBi\n\036opi_api.network.cloud.v1alpha1B" +
-      "\010CloudRPCP\001Z;github.com/opiproject/opi-a" +
-      "pi/network/cloud/v1alpha1/gen/gob\006proto3"
+      "rityRulesRequest\0329.opi_api.network.cloud" +
+      ".v1alpha1.ListSecurityRulesResponse\"+\202\323\344" +
+      "\223\002\034\022\032/v1/{parent=securityrules}\332A\006parent" +
+      "\022\253\001\n\017GetSecurityRule\0226.opi_api.network.c" +
+      "loud.v1alpha1.GetSecurityRuleRequest\032,.o" +
+      "pi_api.network.cloud.v1alpha1.SecurityRu" +
+      "le\"2\202\323\344\223\002\'\022%/v1/{id=securityrules}/{secu" +
+      "rityrule}\332A\002id\022\352\001\n\025CreateSecurityProfile" +
+      "\022<.opi_api.network.cloud.v1alpha1.Create" +
+      "SecurityProfileRequest\032/.opi_api.network" +
+      ".cloud.v1alpha1.SecurityProfile\"b\202\323\344\223\0020\"" +
+      "\035/v1/{parent=securityprofiles}:\017security" +
+      "profile\332A)parent,securityprofile,securit" +
+      "yprofile_id\022\247\001\n\025DeleteSecurityProfile\022<." +
+      "opi_api.network.cloud.v1alpha1.DeleteSec" +
+      "urityProfileRequest\032\026.google.protobuf.Em" +
+      "pty\"8\202\323\344\223\002-*+/v1/{id=securityprofiles}/{" +
+      "securityprofile}\332A\002id\022\351\001\n\025UpdateSecurity" +
+      "Profile\022<.opi_api.network.cloud.v1alpha1" +
+      ".UpdateSecurityProfileRequest\032/.opi_api." +
+      "network.cloud.v1alpha1.SecurityProfile\"a" +
+      "\202\323\344\223\002<2)/v1/{securityprofile.id=security" +
+      "profiles}:\017securityprofile\332A\034securitypro" +
+      "file, update_mask\022\301\001\n\024ListSecurityProfil" +
+      "es\022;.opi_api.network.cloud.v1alpha1.List" +
+      "SecurityProfilesRequest\032<.opi_api.networ" +
+      "k.cloud.v1alpha1.ListSecurityProfilesRes" +
+      "ponse\".\202\323\344\223\002\037\022\035/v1/{parent=securityprofi" +
+      "les}\332A\006parent\022\272\001\n\022GetSecurityProfile\0229.o" +
+      "pi_api.network.cloud.v1alpha1.GetSecurit" +
+      "yProfileRequest\032/.opi_api.network.cloud." +
+      "v1alpha1.SecurityProfile\"8\202\323\344\223\002-\022+/v1/{i" +
+      "d=securityprofiles}/{securityprofile}\332A\002" +
+      "idBi\n\036opi_api.network.cloud.v1alpha1B\010Cl" +
+      "oudRPCP\001Z;github.com/opiproject/opi-api/" +
+      "network/cloud/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1431,7 +1442,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteDeviceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteDeviceRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateDeviceRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateDeviceRequest_fieldAccessorTable = new
@@ -1491,7 +1502,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteVnicRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteVnicRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVnicRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVnicRequest_fieldAccessorTable = new
@@ -1527,7 +1538,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteInterfaceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteInterfaceRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateInterfaceRequest_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateInterfaceRequest_fieldAccessorTable = new
@@ -1563,7 +1574,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteRouteTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteRouteTableRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateRouteTableRequest_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateRouteTableRequest_fieldAccessorTable = new
@@ -1599,7 +1610,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteRouteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteRouteRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateRouteRequest_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateRouteRequest_fieldAccessorTable = new
@@ -1635,7 +1646,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteUnderlayRouteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteUnderlayRouteRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateUnderlayRouteRequest_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateUnderlayRouteRequest_fieldAccessorTable = new
@@ -1671,7 +1682,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteBgpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteBgpRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBgpRequest_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBgpRequest_fieldAccessorTable = new
@@ -1707,7 +1718,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteBGPPeerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteBGPPeerRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBGPPeerRequest_descriptor =
       getDescriptor().getMessageTypes().get(49);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBGPPeerRequest_fieldAccessorTable = new
@@ -1743,7 +1754,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteBGPPeerAfRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteBGPPeerAfRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBGPPeerAfRequest_descriptor =
       getDescriptor().getMessageTypes().get(55);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateBGPPeerAfRequest_fieldAccessorTable = new
@@ -1779,7 +1790,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteMappingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteMappingRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateMappingRequest_descriptor =
       getDescriptor().getMessageTypes().get(61);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateMappingRequest_fieldAccessorTable = new
@@ -1815,7 +1826,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteNextHopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteNextHopRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateNextHopRequest_descriptor =
       getDescriptor().getMessageTypes().get(67);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateNextHopRequest_fieldAccessorTable = new
@@ -1851,7 +1862,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteNextHopGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteNextHopGroupRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateNextHopGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(73);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateNextHopGroupRequest_fieldAccessorTable = new
@@ -1887,7 +1898,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteSubnetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteSubnetRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSubnetRequest_descriptor =
       getDescriptor().getMessageTypes().get(79);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSubnetRequest_fieldAccessorTable = new
@@ -1923,7 +1934,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteTunnelRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteTunnelRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateTunnelRequest_descriptor =
       getDescriptor().getMessageTypes().get(85);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateTunnelRequest_fieldAccessorTable = new
@@ -1959,7 +1970,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteVpcRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteVpcRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVpcRequest_descriptor =
       getDescriptor().getMessageTypes().get(91);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVpcRequest_fieldAccessorTable = new
@@ -1995,7 +2006,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteVPCPeerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteVPCPeerRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVPCPeerRequest_descriptor =
       getDescriptor().getMessageTypes().get(97);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateVPCPeerRequest_fieldAccessorTable = new
@@ -2031,7 +2042,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityPolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityPolicyRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityPolicyRequest_descriptor =
       getDescriptor().getMessageTypes().get(103);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityPolicyRequest_fieldAccessorTable = new
@@ -2067,7 +2078,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityRuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityRuleRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityRuleRequest_descriptor =
       getDescriptor().getMessageTypes().get(109);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityRuleRequest_fieldAccessorTable = new
@@ -2103,7 +2114,7 @@ public final class CloudRPC {
     internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityProfileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeleteSecurityProfileRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "AllowMissing", });
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityProfileRequest_descriptor =
       getDescriptor().getMessageTypes().get(115);
     internal_static_opi_api_network_cloud_v1alpha1_UpdateSecurityProfileRequest_fieldAccessorTable = new
