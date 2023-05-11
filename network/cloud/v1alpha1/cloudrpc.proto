@@ -769,6 +769,9 @@ message DeleteDeviceRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update device request
@@ -869,6 +872,9 @@ message DeleteVnicRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update vnic request
@@ -931,6 +937,9 @@ message DeleteInterfaceRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update interface request
@@ -994,6 +1003,9 @@ message DeleteRouteTableRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update routetable request
@@ -1057,6 +1069,9 @@ message DeleteRouteRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update route request
@@ -1120,6 +1135,9 @@ message DeleteUnderlayRouteRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update underlayroute request
@@ -1183,6 +1201,9 @@ message DeleteBgpRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update bgp request
@@ -1246,6 +1267,9 @@ message DeleteBGPPeerRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update bgppeer request
@@ -1309,6 +1333,9 @@ message DeleteBGPPeerAfRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update bgppeeraf request
@@ -1372,6 +1399,9 @@ message DeleteMappingRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update mapping request
@@ -1435,6 +1465,9 @@ message DeleteNextHopRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update nexthop request
@@ -1498,6 +1531,9 @@ message DeleteNextHopGroupRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update nexthopgroup request
@@ -1561,6 +1597,9 @@ message DeleteSubnetRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update subnet request
@@ -1624,6 +1663,9 @@ message DeleteTunnelRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update Tunnel request
@@ -1687,6 +1729,9 @@ message DeleteVpcRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update vpc request
@@ -1750,6 +1795,9 @@ message DeleteVPCPeerRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update vpcpeer request
@@ -1813,6 +1861,9 @@ message DeleteSecurityPolicyRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update securitypolicy request
@@ -1876,6 +1927,9 @@ message DeleteSecurityRuleRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update securityrule request
@@ -1939,6 +1993,9 @@ message DeleteSecurityProfileRequest {
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
     ];
+    // If set to true, and the resource is not found, the request will succeed
+    // but no action will be taken on the server
+    bool allow_missing = 2;
 }
 
 // Update securityprofile request
