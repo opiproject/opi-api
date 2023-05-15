@@ -1,19 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
 
-// (-- api-linter: core::0132::request-parent-required=disabled
-//     aip.dev/not-precedent: All the resources are top level. --)
-// (-- api-linter: core::0131::request-unknown-fields=disabled
-//     aip.dev/not-precedent: "Different keys have been used for creation/retrieval of objects". --)
-// (-- api-linter: core::0131::request-name-required=disabled
-//     aip.dev/not-precedent: No "name" is used as key for retrieval or deletion of objects. --)
-// (-- api-linter: core::0133::request-parent-required=disabled
-//     aip.dev/not-precedent: All the resources are top level. --)
-// (-- api-linter: core::0133::http-uri-parent=disabled
-//     aip.dev/not-precedent: All resources are top-level. --)
-// (-- api-linter: core::0135::request-name-required=disabled
-//     aip.dev/not-precedent: No "name" is used as key for retrieval or deletion of objects. --)
-
 syntax = "proto3";
 
 package opi_api.network.evpn_gw.v1alpha1;
@@ -31,124 +18,120 @@ import "google/api/resource.proto";
 
 // Management of LogicalBridge Resources
 service LogicalBridgeService {
-    // Create a LogicalBridge
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+    // Create a Logical Bridge
     rpc CreateLogicalBridge(CreateLogicalBridgeRequest) returns (LogicalBridge){
         option (google.api.http) = {
           post: "/v1/logicalBridges"
           body: "logical_bridge"
         };
-        option (google.api.method_signature) = "logical_bridge";
+        option (google.api.method_signature) = "logical_bridge,logical_bridge_id";
     }
-    // List LogicalBridges
+    // List Logical Bridges
     rpc ListLogicalBridges(ListLogicalBridgesRequest) returns (ListLogicalBridgesResponse){
         option (google.api.http) = {
           get: "/v1/logicalBridges"
         };
     }
-    // Retrieve a LogicalBridge
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Logical Bridge
     rpc GetLogicalBridge(GetLogicalBridgeRequest) returns (LogicalBridge){
         option (google.api.http) = {
-          get: "/v1/{vlan_id=logicalBridges/*}"
+          get: "/v1/{name=logicalBridges/*}"
         };
-        option (google.api.method_signature) = "vlan_id";
+        option (google.api.method_signature) = "name";
     }
-    // Delete a LogicalBridge
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Logical Bridge
     rpc DeleteLogicalBridge(DeleteLogicalBridgeRequest) returns (google.protobuf.Empty){
         option (google.api.http) = {
-          delete: "/v1/{vlan_id=logicalBridges/*}"
+          delete: "/v1/{name=logicalBridges/*}"
         };
-        option (google.api.method_signature) = "vlan_id";
+        option (google.api.method_signature) = "name";
     }
 }
 
 // Management of BridgePort resources
 service BridgePortService {
-    // Create a BridgePort
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+    // Create a Bridge Port
     rpc CreateBridgePort(CreateBridgePortRequest) returns (BridgePort){
         option (google.api.http) = {
           post: "/v1/bridgePorts"
           body: "bridge_port"
         };
-        option (google.api.method_signature) = "bridge_port";
+        option (google.api.method_signature) = "bridge_port,bridge_port_id";
     }
-    // List BridgePorts
+    // List Bridge Ports
     rpc ListBridgePorts(ListBridgePortsRequest) returns (ListBridgePortsResponse){
         option (google.api.http) = {
           get: "/v1/bridgePorts"
         };
     }
-    // Retrieve a BridgePort
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Bridge Port
     rpc GetBridgePort(GetBridgePortRequest) returns (BridgePort){
         option (google.api.http) = {
-          get: "/v1/{vport_id=bridgePorts/*}"
+          get: "/v1/{name=bridgePorts/*}"
         };
-        option (google.api.method_signature) = "vport_id";
+        option (google.api.method_signature) = "name";
     }
-    // Delete a BridgePort
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Bridge Port
     rpc DeleteBridgePort(DeleteBridgePortRequest) returns (google.protobuf.Empty){
         option (google.api.http) = {
-          delete: "/v1/{vport_id=bridgePorts/*}"
+          delete: "/v1/{name=bridgePorts/*}"
         };
-        option (google.api.method_signature) = "vport_id";
+        option (google.api.method_signature) = "name";
     }
 }
 
-// LogicalBridge structure
+// Logical Bridge network configuration and status
 message LogicalBridge {
-    option (google.api.resource) = {
-      type: "library.googleapis.com/LogicalBridge"
-      pattern: "logicalBridges/logicalBridge"
-    };
-    // Free text description
-    string name = 1;
-    // Key
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)           
-    uint32 vlan_id = 2 [(google.api.field_behavior) = REQUIRED];
-    // VXLAN VNI for L2 EVPN. Also used as EVPN route target
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vni cannot be negative number. --)     
-    uint32 vni = 3;
+    // The resource name of the Logical Bridge.
+    // Format: logicalBridges/{logical_bridge}
+    string name                = 1;
+
+    // Logical Bridge network configuration
+    LogicalBridgeSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
+    // Logical Bridge network status
+    LogicalBridgeStatus status = 3;
+}
+
+// Logical Bridge network configuration
+message LogicalBridgeSpec {
+    // the VLAN of the L2 domain
+    uint32 vlan_id         = 1 [(google.api.field_behavior) = REQUIRED];
+    //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
+    uint32 vni             = 2;
+}
+
+// operational status of a Logical Bridge
+message LogicalBridgeStatus {
+    // operational status of a Logical Bridge
+    LBOperStatus oper_status = 1;
+}
+
+enum LBOperStatus {
+    // unknown
+    LB_OPER_STATUS_UNSPECIFIED = 0;
+    // Logical Bridge is up
+    LB_OPER_STATUS_UP          = 1;
+    // Logical Bridge is down
+    LB_OPER_STATUS_DOWN        = 2;
 }
 
 // CreateLogicalBridgeRequest structure
 message CreateLogicalBridgeRequest {
+    // The ID to use for the logical bridge, which will become the final component of
+    // the logical bridge's resource name.
+    //
+    // This value should be 4-63 characters, and valid characters
+    // are /[a-z][0-9]-/.
+    string logical_bridge_id     = 1 [(google.api.field_behavior) = REQUIRED];
+
     // The logical bridge to create
-    LogicalBridge logical_bridge = 1 [(google.api.field_behavior) = REQUIRED];
+    LogicalBridge logical_bridge = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListLogicalBridgesRequest structure
 message ListLogicalBridgesRequest {
     // page size of list request
-    int32 page_size = 1;
+    int32 page_size   = 1;
     // page token of list request
     string page_token = 2;
 }
@@ -158,72 +141,90 @@ message ListLogicalBridgesResponse {
     // List of all the logical bridges
     repeated LogicalBridge logical_bridges = 1;
     // Next page token of list response
-    string next_page_token = 2;
+    string next_page_token                 = 2;
 }
 
-//(-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vlan_id" because is used as key
-//     for the retrieve operation. --)
 // GetLogicalBridgeRequest structure
 message GetLogicalBridgeRequest {
-    // The vlan id of the logical bridge to retrieve
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id = 1 [(google.api.field_behavior) = REQUIRED];
+    // The name of the logical bridge to retrieve
+    // Format: logicalBridges/{logical_bridge}
+    string name = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "opi_api.network.v1alpha1/LogicalBridge"
+    ];
 }
 
-// (-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vlan_id" because is used as key
-//     for deletion. --)
-// DeleteLogicalBridgeRequest structure
 message DeleteLogicalBridgeRequest {
-    // The vlan id of the logical bridge to delete
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id = 1 [(google.api.field_behavior) = REQUIRED];
+    // The name of the logical bridge to retrieve
+    // Format: logicalBridges/{logical_bridge}
+    string name = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "opi_api.network.v1alpha1/LogicalBridge"
+    ];
 }
 
-// BridgePort structure
+// Bridge Port network configuration and status
 message BridgePort {
-    option (google.api.resource) = {
-      type: "library.googleapis.com/BridgePort"
-      pattern: "bridgePorts/bridgePort"
-    };
-    // Free text description
-    string name = 1;
-    // Key. Read-only. Assigned by the server in CreateBridgePort
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vport_id cannot be negative number. --)
-    uint32 vport_id = 2;
-    // Use "aa:bb:cc:dd:ee:ff" format
-    string mac_address = 3 [(google.api.field_behavior) = REQUIRED];
-    // Defines the available types of a bridge port
-    enum BridgePortType {
-        // "unknown" bridge port type
-        UNKNOWN = 0;
-        // "access" bridge port type 
-        ACCESS = 1;
-        // "trunk" bridge port type
-        TRUNK = 2;
-    }
-    // holds the type of the bridge port
-    BridgePortType ptype = 4 [(google.api.field_behavior) = REQUIRED];
+    // The resource name of the Bridge Port.
+    // Format: bridge_ports/{bridge_port}
+    string name             = 1;
+
+    // Bridge Port network configuration
+    BridgePortSpec spec     = 2;
+    // Bridge Port network status
+    BridgePortStatus status = 3;
+}
+
+// Bridge Port network configuration
+message BridgePortSpec {
+    // Bridge Port's MAC address.
+    bytes mac_address        = 1 [(google.api.field_behavior) = REQUIRED];
+    // Type of Bridge Port
+    BridgePortType ptype     = 2 [(google.api.field_behavior) = REQUIRED];
     // Configured vlan ids on the bridge port
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    repeated uint32 vlan_id = 5;
+    repeated uint32 vlan_ids = 3;
+}
+
+// operational status of a Bridge Port
+message BridgePortStatus {
+    // operational status of a Bridge Port
+    BPOperStatus oper_status = 1;
+}
+
+enum BPOperStatus {
+    // unknown
+    BP_OPER_STATUS_UNSPECIFIED = 0;
+    // Bridge Port is up
+    BP_OPER_STATUS_UP          = 1;
+    // Bridge Port is down
+    BP_OPER_STATUS_DOWN        = 2;
+}
+
+enum BridgePortType {
+    // "unknown" bridge port type
+    UNKNOWN = 0;
+    // "access" bridge port type 
+    ACCESS  = 1;
+    // "trunk" bridge port type
+    TRUNK   = 2;
 }
 
 // CreateBridgePortRequest structure
 message CreateBridgePortRequest {
+    // The ID to use for the bridge port, which will become the final component of
+    // the bridge port's resource name.
+    //
+    // This value should be 4-63 characters, and valid characters
+    // are /[a-z][0-9]-/.
+    string bridge_port_id     = 1 [(google.api.field_behavior) = REQUIRED];
     // The bridge port to create
-    BridgePort bridge_port = 1 [(google.api.field_behavior) = REQUIRED];
+    BridgePort bridge_port    = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListBridgePortsRequest structure
 message ListBridgePortsRequest {
     // page size of list request
-    int32 page_size = 1;
+    int32 page_size   = 1;
     // page token of list request
     string page_token = 2;
 }
@@ -233,27 +234,25 @@ message ListBridgePortsResponse {
     // List of all the bridge ports
     repeated BridgePort bridge_ports = 1;
     // Next page token of list response
-    string next_page_token = 2;
+    string next_page_token           = 2;
 }
 
-// (-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vport_id" because is used as key
-//     for the retrieve operation. --)
 // GetBridgePortRequest structure
 message GetBridgePortRequest {
-    // The vport id of the bridge port to retrieve
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vport_id cannot be negative number. --)
-    uint32 vport_id = 1 [(google.api.field_behavior) = REQUIRED];
+    // The name of the bridge port to retrieve
+    // Format: bridgePorts/{bridge_port}
+    string name = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "opi_api.network.v1alpha1/BridgePort"
+    ];
 }
 
-// (-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vport_id" because is used as key
-//     for deletion. --)
 // DeleteBridgePortRequest structure
 message DeleteBridgePortRequest {
-    // The vport id of the bridge port to delete
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vport_id cannot be negative number. --)
-    uint32 vport_id = 1 [(google.api.field_behavior) = REQUIRED];
+    // The name of the bridge port to retrieve
+    // Format: bridgePorts/{bridge_port}
+    string name = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "opi_api.network.v1alpha1/BridgePort"
+    ];
 }

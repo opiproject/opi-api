@@ -1,13 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
 
-// (-- api-linter: core::0132::request-parent-required=disabled
-//     aip.dev/not-precedent: All the resources are top level. --)
-// (-- api-linter: core::0133::request-parent-required=disabled
-//     aip.dev/not-precedent: All the resources are top level. --)
-// (-- api-linter: core::0133::http-uri-parent=disabled
-//     aip.dev/not-precedent: All resources are top-level. --)
-
 syntax = "proto3";
 
 package opi_api.network.evpn_gw.v1alpha1;
@@ -31,7 +24,7 @@ service VrfService {
           post: "/v1/vrfs"
           body: "vrf"
         };
-        option (google.api.method_signature) = "vrf";
+        option (google.api.method_signature) = "vrf,vrf_id";
     }
     // List Vrfs
     rpc ListVrfs(ListVrfsRequest) returns (ListVrfsResponse){
@@ -63,7 +56,7 @@ service SviService {
           post: "/v1/svis"
           body: "svi"
         };
-        option (google.api.method_signature) = "svi";
+        option (google.api.method_signature) = "svi,svi_id";
     }
     // List Svis
     rpc ListSvis(ListSvisRequest) returns (ListSvisResponse){
@@ -72,89 +65,97 @@ service SviService {
         };
     }
     // Retrieve a Svi
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
     rpc GetSvi(GetSviRequest) returns (Svi){
         option (google.api.http) = {
-          get: "/v1/{vrf&vlan_id=svis/*}"
+          get: ""/v1/{name=svis/*}""
         };
-        option (google.api.method_signature) = "vrf, vlan_id";
+        option (google.api.method_signature) = "name";
     }
     // Delete a Svi
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
     rpc DeleteSvi(DeleteSviRequest) returns (google.protobuf.Empty){
         option (google.api.http) = {
-          delete: "/v1/{vrf&vlan_id=svis/*}"
+          delete: "/v1/{name=svis/*}"
         };
-        option (google.api.method_signature) = "vrf, vlan_id";
+        option (google.api.method_signature) = "name";
     }
 }
 
-// Vrf structure
+
+// Vrf level network configuration
 message Vrf {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/Vrf"
-      pattern: "vrfs/{vrf}"
-    };
-    // Key, also used as name of the Linux vrf device (max 9 chars)
-    string name = 1 [(google.api.field_behavior) = REQUIRED];
+    // The resource name of the Vrf.
+    // Format: vrfs/{vrf}
+    string name      = 1;
+
+    // Vrf's network configuration
+    VrfSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
+    // Vrf's network status
+    VrfStatus status = 3;
+}
+
+// Vrf network configuration
+message VrfSpec {
     // VXLAN VNI for L3 EVPN. Also used as EVPN route target
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vni cannot be negative number. --)                  
-    uint32 vni = 2;
-    // Linux routing table number (range 1001-3999). Defaults to vni
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: routing_table cannot be negative number. --)
-    uint32 routing_table = 3;
-    // IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
-    string loopback_ip = 4 [(google.api.field_behavior) = REQUIRED];
-    // IPv4 or IPv6 IP address for the VXLAN TEP
-    string vtep_ip = 5;
-    // Read-only: Local AS configured for VRF
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: local_as cannot be negative number. --)
-    uint32 local_as = 6;
-    // Read-only: Route distinguisher chosen by FRR
-    string rd = 7;
-    // Read-only: Router MAC address of the VRF
-    string rmac = 8;
-    // Read-only: List of import RTs chosen by FRR
-    repeated string import_rts = 9;
-    // Read-only: List of export RTs chosen by FRR
-    repeated string export_rts = 10;
-    // Read-only: List of connected LogicalBridges
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    repeated uint32 vlan_ids = 11;
+    uint32 vni                                                    = 1;
+    // IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR
+    network.opinetcommon.v1alpha1.IPPrefix loopback_ip_prefix     = 2 [(google.api.field_behavior) = REQUIRED];
+    // IPv4 or IPv6 IP address prefix for the VXLAN TEP
+    network.opinetcommon.v1alpha1.IPPrefix vtep_ip_prefix         = 3;
+}
+
+message VrfStatus {
+    // Routing table number
+    uint32 routing_table       = 1;
+    // Local AS configured for VRF
+    uint32 local_as            = 2;
+    // Route distinguisher
+    string rd                  = 3;
+    // Router MAC address of the Vrf
+    bytes rmac                 = 4;
+    // List of import RTs
+    repeated string import_rts = 5;
+    // List of export RTs
+    repeated string export_rts = 6;
+    // List of connected VLANs to Vrf
+    repeated uint32 vlan_ids   = 7;
+    // operational status of a Vrf
+    VRFOperStatus oper_status  = 8;
+}
+
+enum VRFOperStatus {
+    // unknown
+    VRF_OPER_STATUS_UNSPECIFIED = 0;
+    // Vrf is up
+    VRF_OPER_STATUS_UP          = 1;
+    // Vrf is down
+    VRF_OPER_STATUS_DOWN        = 2;
 }
 
 // CreateVrfRequest structure
 message CreateVrfRequest {
+    // The ID to use for the vrf, which will become the final component of
+    // the vrf's resource name.
+    //
+    // This value should be 4-63 characters, and valid characters
+    // are /[a-z][0-9]-/.
+    string vrf_id = 1 [(google.api.field_behavior) = REQUIRED];
+
     // The vrf to create
-    Vrf vrf = 1 [(google.api.field_behavior) = REQUIRED];
+    Vrf vrf       = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListVrfsRequest structure
 message ListVrfsRequest {
     // page size of list request
-    int32 page_size = 1;
+    int32 page_size   = 1;
     // page token of list request
     string page_token = 2;
 }
 
 // ListVrfsResponse structure
 message ListVrfsResponse {
-    // List of all the bridge ports
-    repeated Vrf vrfs = 1;
+    // List of all the vrfs
+    repeated Vrf vrfs      = 1;
     // Next page token of list response
     string next_page_token = 2;
 }
@@ -162,6 +163,7 @@ message ListVrfsResponse {
 // GetVrfRequest structure
 message GetVrfRequest {
     // The name of the vrf to retrieve
+    // Format: vrfs/{vrf}
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
@@ -171,59 +173,77 @@ message GetVrfRequest {
 // DeleteVrfRequest structure
 message DeleteVrfRequest {
     // The name of the vrf to delete
+    // Format: vrfs/{vrf}
     string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Vrf"
     ];
 }
 
-// IpAddressMasklen structure
-message IpAddressMasklen {
-    // IP address
-    string ip_addr = 1;
-    // Length of the subnet prefix mask
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: subnet mask cannot be negative number. --)
-    uint32 len = 2;
+// Svi network configuration
+message Svi {
+    // The resource name of the Svi.
+    // Format: svis/{svi}
+    string name      = 1;
+
+    // Svi's network configuration
+    SviSpec spec     = 2 [(google.api.field_behavior) = REQUIRED];
+    // Svi's network status
+    SviStatus status = 3;
 }
 
-// (-- api-linter: core::0123::resource-name-field=disabled
-//     aip.dev/not-precedent: The "vrf", "vlan_id" are used for unique identification
-//     of the svi object. --)
-//Svi structure
-message Svi {
-    option (google.api.resource) = {
-      type: "opi_api.network.evpn_gw.v1alpha1/Svi"
-      pattern: "svis/{svi}"
-    };
-    // Name of the VRF
-    string vrf = 1 [(google.api.field_behavior) = REQUIRED];
-    // Key of the LogicalBridge
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id = 2 [(google.api.field_behavior) = REQUIRED];
-    // Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
-    string mac_address = 3 [(google.api.field_behavior) = REQUIRED];
-    // The GW IP addresses with masks assigned to the SVI
-    repeated IpAddressMasklen gw_ip = 4 [(google.api.field_behavior) = REQUIRED];
-    // Set to true to enable BGP peering with VRF on SVI
-    bool enable_bgp = 5;
+message SviSpec {
+    //Vrf name
+    // Format is `vrfs/{vrf}`
+    string vrf                                                   = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/Vrf"}
+    ];
+    // Logical Bridge name
+    // Format is `logicalBridges/{logical_bridge}`
+    string logical_bridge                                        = 2 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference) = {type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"}
+    ];
+    // Svi's MAC address.
+    bytes mac_address                                            = 3 [(google.api.field_behavior) = REQUIRED];
+    repeated network.opinetcommon.v1alpha1.IPPrefix gw_ip_prefix = 4 [(google.api.field_behavior) = REQUIRED];
+    // Set to true to enable BGP peering with Vrf on Svi
+    bool enable_bgp                                              = 5;
     // Conditional: The remote AS used by BGP speakers on LB (1-65535)
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: remote_as cannot be negative number. --)
-    uint32 remote_as = 6;
+    uint32 remote_as                                             = 6;
+}
+
+message SviStatus {
+    // operational status of a Svi
+    SVIOperStatus oper_status  = 1;
+}
+
+enum SVIOperStatus {
+    // unknown
+    SVI_OPER_STATUS_UNSPECIFIED = 0;
+    // Svi is up
+    SVI_OPER_STATUS_UP          = 1;
+    // Svi is down
+    SVI_OPER_STATUS_DOWN        = 2;
 }
 
 // CreateSviRequest structure
 message CreateSviRequest {
+    // The ID to use for the svi, which will become the final component of
+    // the svi's resource name.
+    //
+    // This value should be 4-63 characters, and valid characters
+    // are /[a-z][0-9]-/.
+    string svi_id = 1 [(google.api.field_behavior) = REQUIRED];
     // The Svi to create
-    Svi svi = 1 [(google.api.field_behavior) = REQUIRED];
+    Svi svi       = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // ListSvisRequest structure
 message ListSvisRequest {
     // page size of list request
-    int32 page_size = 1;
+    int32 page_size   = 1;
     // page token of list request
     string page_token = 2;
 }
@@ -231,41 +251,27 @@ message ListSvisRequest {
 // ListSvisResponse structure
 message ListSvisResponse {
     // List of all the svis
-    repeated Svi svis = 1;
+    repeated Svi svis      = 1;
     // Next page token of list response
     string next_page_token = 2;
 }
 
-//(-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vrf", "vlan_id" because are used as keys
-//     for the retrieve operation. --)
-// (-- api-linter: core::0131::request-name-required=disabled
-//     aip.dev/not-precedent: We really need "vrf", "vlan_id" because are used as keys
-//     for the retrieve operation. --)
-// (-- api-linter: core::0131::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vrf", "vlan_id" because are used as keys
-//     for the retrieve operation. --)
 // GetSviRequest structure
 message GetSviRequest {
-    // The name of the associated vrf
-    string vrf = 1 [(google.api.field_behavior) = REQUIRED];
-    // The vlan id of the associated logical bridge
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id = 2 [(google.api.field_behavior) = REQUIRED];
+    // The name of the svi to retrieve
+    // Format: svis/{svi}
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
+    ];
 }
 
-// (-- api-linter: core::0135::request-unknown-fields=disabled
-//     aip.dev/not-precedent: We really need "vrf", "vlan_id" because are used as keys
-//     for deletion. --)
-// (-- api-linter: core::0135::request-name-required=disabled
-//     aip.dev/not-precedent: The "vrf", "vlan_id" keys are used for deletion. --)
 // DeleteSviRequest structure
 message DeleteSviRequest {
-    // The name of the associated vrf
-    string vrf = 1 [(google.api.field_behavior) = REQUIRED];
-    // The vlan id of the associated logical bridge
-    // (-- api-linter: core::0141::forbidden-types=disabled
-    //     aip.dev/not-precedent: vlan cannot be negative number. --)
-    uint32 vlan_id = 2 [(google.api.field_behavior) = REQUIRED];
+    // The name of the svi to delete
+    // Format: svis/{svi}
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/Svi"
+    ];
 }
