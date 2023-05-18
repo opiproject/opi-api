@@ -133,6 +133,11 @@ message NVMeSubsystem {
 }
 
 message NVMeSubsystemSpec {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NVMeSubsystemSpec"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
@@ -167,6 +172,11 @@ message NVMeController {
 }
 
 message NVMeControllerSpec {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NVMeControllerSpec"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
@@ -220,6 +230,11 @@ message NVMeNamespace {
 }
 
 message NVMeNamespaceSpec {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NVMeNamespaceSpec"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object

@@ -59,6 +59,11 @@ service NullDebugService {
 }
 
 message NullDebug {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/NullDebug"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object

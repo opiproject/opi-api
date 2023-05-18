@@ -126,6 +126,11 @@ service FrontendVirtioScsiService {
 }
 
 message VirtioScsiTarget {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/VirtioScsiTarget"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
@@ -136,6 +141,11 @@ message VirtioScsiTarget {
 }
 
 message VirtioScsiController {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/VirtioScsiController"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
@@ -152,6 +162,11 @@ message VirtioScsiController {
 }
 
 message VirtioScsiLun {
+    option (google.api.resource) = {
+        type: "storage.opiproject.org/VirtioScsiLun"
+        pattern: "volumes/{volume}"
+    };
+
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
