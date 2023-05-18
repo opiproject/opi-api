@@ -134,7 +134,7 @@ message VirtioScsiTarget {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // maximum LUNs within a target
     int32 max_luns = 2;
@@ -149,7 +149,7 @@ message VirtioScsiController {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // xPU's PCI ID for the controller
     PciEndpoint pcie_id = 2;
@@ -170,7 +170,7 @@ message VirtioScsiLun {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // The target that this LUN is in
     common.v1.ObjectKey target_id = 2;

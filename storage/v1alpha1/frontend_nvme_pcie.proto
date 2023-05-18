@@ -141,7 +141,7 @@ message NVMeSubsystemSpec {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // NVMe subsystem NQN to which the controller belongs
     // Refer to the NQN format in the NVMe base specifications, must not
@@ -180,7 +180,7 @@ message NVMeControllerSpec {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // subsystem controller id range: 0 to 65535.
     // must not be reused under the same subsystem
@@ -238,7 +238,7 @@ message NVMeNamespaceSpec {
     // name is an opaque object handle that is not user settable.
     // name will be returned with created object
     // user can only set {resource}_id on the Create request object
-    common.v1.ObjectKey name = 1;
+    string name = 1;
 
     // subsystem for this namespace
     common.v1.ObjectKey subsystem_id = 2;
