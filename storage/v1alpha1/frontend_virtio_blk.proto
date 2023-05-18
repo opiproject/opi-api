@@ -58,7 +58,10 @@ service FrontendVirtioBlkService {
 }
 
 message VirtioBlk {
-    common.v1.ObjectKey id = 1;
+    // name is an opaque object handle that is not user settable.
+    // name will be returned with created object
+    // user can only set {resource}_id on the Create request object
+    common.v1.ObjectKey name = 1;
 
     // The PCI endpoint where this device should appear
     PciEndpoint pcie_id = 2;

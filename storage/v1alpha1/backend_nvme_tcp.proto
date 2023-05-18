@@ -59,8 +59,10 @@ service NVMfRemoteControllerService {
 }
 
 message NVMfRemoteController {
-    // object's unique identifier
-    common.v1.ObjectKey id = 1;
+    // name is an opaque object handle that is not user settable.
+    // name will be returned with created object
+    // user can only set {resource}_id on the Create request object
+    common.v1.ObjectKey name = 1;
 
     NvmeTransportType trtype = 2;
     NvmeAddressFamily adrfam = 3;

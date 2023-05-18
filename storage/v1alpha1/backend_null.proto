@@ -59,7 +59,10 @@ service NullDebugService {
 }
 
 message NullDebug {
-    common.v1.ObjectKey handle = 1;
+    // name is an opaque object handle that is not user settable.
+    // name will be returned with created object
+    // user can only set {resource}_id on the Create request object
+    common.v1.ObjectKey name = 1;
     int64 block_size = 2;
     int64 blocks_count = 3;
     common.v1.Uuid uuid = 4;
