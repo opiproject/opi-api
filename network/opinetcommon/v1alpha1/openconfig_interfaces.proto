@@ -1,0 +1,287 @@
+// openconfig_interfaces.proto file
+// Derived from the OpenConfig interfaces model github.com/openconfig/public/release/models/interfaces
+// Copyright (c) 2023 Dell Inc, or its subsidiaries.
+// (-- api-linter: core::0141::forbidden-types=disabled
+//     aip.dev/not-precedent: counters, mtu, index must be uint and not int. --)
+syntax = "proto3";
+
+package opi_api.network.v1alpha1;
+
+option java_package = "opi_api.network.v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "OpenconfigInterfacesProto";
+
+option go_package = "github.com/opiproject/opi-api/network/v1alpha1/gen/go";
+
+import "google/api/client.proto";
+import "google/api/resource.proto";
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/field_mask.proto";
+
+// Service functions for Network Interface exported by the server
+service NetInterfaceService {
+    // Retrieves the interface information for a given interface
+    rpc GetNetInterface (GetNetInterfaceRequest) returns (NetInterface) {
+        option (google.api.http) = {
+            get: "/v1/{name=interfaces/*/interface/*}"
+        };
+        option (google.api.method_signature) = "name";
+    }
+    // Retrieves the set of interfaces on the device
+    rpc ListNetInterfaces (ListNetInterfacesRequest) returns (ListNetInterfacesResponse) {
+        option (google.api.http) = {
+            get: "/v1/{parent=interfaces}"
+        };
+        option (google.api.method_signature) = "parent";
+    }
+    // A method for setting or changing configuration of an interface
+    rpc UpdateNetInterface (UpdateNetInterfaceRequest) returns (NetInterface) {
+        option (google.api.http) = {
+            patch: "/v1/{net_interface.name=interfaces/*/interface/*}"
+            body: "net_interface"
+        };
+        option (google.api.method_signature) = "net_interface,update_mask";
+    }
+    // (-- TODO Add Create network interface for adding additional virtual interfaces --)
+    // (-- TODO Add Delete network interface for removing virtual interfaces --)
+}
+
+// Interface config
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: the name field is an opaque object --)
+message Config {
+    // Name of the interface.  This is the opaque object
+    // used for designating the created interface.
+    string name = 1;
+    // Type of interface - Ethernet and others
+    InterfaceType type = 2;
+    // MTU for the interface that can be configured
+    uint32 mtu = 3;
+    // Setting the loopback mode of the interface
+    bool loopback_mode = 4;
+    // Description of the interface and usage
+    string description = 5;
+    // Setting for enabling/disabling the interface
+    bool enabled = 6;
+}
+
+// Statistics Counters for the interface - ro
+message Counters {
+    // Received Octet counter
+    uint64 rx_octets = 1;
+    // Received Packet counter
+    uint64 rx_packets = 2;
+    // Unicast packets received counter
+    uint64 rx_unicast_pkts = 3;
+    // Broadcast packets received counter
+    uint64 rx_broadcast_pkts = 4;
+    // multicast packets received counter
+    uint64 rx_multicast_pkts = 5;
+    // discarded received packets counter
+    uint64 rx_discards = 6;
+    // Receive error counter
+    uint64 rx_errors = 7;
+    // Unknown received protocol counter
+    uint64 rx_unknown_protos = 8;
+    // Received FCS error counter
+    uint64 rx_fcs_errors = 9;
+    // Transmit octet counter
+    uint64 out_octets = 10;
+    // Transmit packet counter
+    uint64 out_packets = 11;
+    // Unicast packet transmit counter
+    uint64 out_unicast_pkts = 12;
+    // Broadcast packet transmit counter
+    uint64 out_broadcast_pkts = 13;
+    // Multicast packet transmit counter
+    uint64 out_multicast_pkts = 14;
+    // Discarded transmit packet counter
+    uint64 out_discards = 15;
+    // Transmit error counter
+    uint64 out_errors = 16;
+    // Carrier transition count
+    uint64 carrier_transitions = 17;
+    // Last Clear
+    uint64 last_clear = 18;
+}
+
+// Interface State information - ro
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: the name field is an opaque object --)
+message State {
+    // Name of the interface.  This is the opaque object
+    // used for designating the created interface.
+    string name = 1;
+    // Interface type indicator
+    InterfaceType type = 2;
+    // Configured MTU size
+    uint32 mtu = 3;
+    // Configured Loopback mode
+    bool loopback_mode = 4;
+    // Interface description
+    string description = 5;
+    // Interface enabled indicator
+    bool enabled = 6;
+    // Interface Index
+    uint32 ifindex = 7;
+    // Admin State
+    AdminState admin_state = 8;
+    // Operational State
+    OperState oper_state = 9;
+    // Last Change
+    uint64 last_change = 10;
+    // Logical interface
+    bool logical = 11;
+    // Management interface indicator
+    bool management = 12;
+    // CPU
+    bool cpu = 13;
+    // Interface Statistics Counters
+    Counters counters = 14;
+}
+
+//Interface - physical or virtual interface reported
+// (-- api-linter: core::0123::resource-annotation=disabled
+//     aip.dev/not-precedent: the name field is an opaque object --)
+message NetInterface {
+    // Name of the interface.  This is an opaque object that is not
+    // user settable.  It is returned by the created object
+    string name = 1;
+    // Configuration settings - rw
+    Config config = 2;
+    // Interface State and Statistics - ro
+    State state = 3;
+
+    // Hold Time Settings
+    message HoldTime {
+        // Hold Time Config - rw
+        message HoldConfig {
+            // Hold time up
+            uint32 up = 1;
+            // Hold time down
+            uint32 down = 2;
+        }
+        // Hold Time Config
+        HoldConfig hold_config = 1;
+
+        // Hold State Settings - ro
+        message HoldState {
+            // Hold state up
+            uint32 up = 1;
+            // Hold state down
+            uint32 down = 2;
+        }
+        // Hold State Settings
+        HoldState hold_state = 2;
+    }
+    // Hold Time Settings
+    HoldTime holdtime = 4;
+
+    // Subinterfaces settings - VLAN, etc.
+    message Subinterfaces {
+        // Subinterface settings
+        message Subinterface {
+            // Subinterface index
+            int64 index = 1;
+
+            // Subinterface configuration
+            message SubifConfig {
+                // Subinterface Index
+                uint64 index = 1;
+                // Subinterface description
+                string description = 2;
+                // Subinterface enabled
+                bool enabled = 3;
+            }
+            // Subinterface Configuration
+            SubifConfig subif_config = 2;
+
+            // Subinterface State and Statistics
+            State state = 3;
+        }
+        // Subinterface Settings
+        repeated Subinterface subinterface = 2;
+    }
+    // Subinterfaces assigned to the interface
+    Subinterfaces subinterfaces = 5;
+}
+
+// Get Interface Request
+message GetNetInterfaceRequest {
+    // Name of interface requested
+    string name = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
+    ];
+}
+
+// List Interfaces Request
+message ListNetInterfacesRequest {
+    // parent
+    string parent = 1 [
+        (google.api.field_behavior) = REQUIRED,
+        (google.api.resource_reference).type = "opi_api.network.v1/Interfaces"
+    ];
+    // page size
+    int32 page_size = 2;
+    // page token
+    string page_token = 3;
+}
+
+// List of Interfaces Response
+message ListNetInterfacesResponse {
+    // List of interfaces
+    repeated NetInterface net_interfaces = 1;
+    // next page token
+    string next_page_token = 2;
+}
+
+// Update Interface Request
+message UpdateNetInterfaceRequest {
+    // Interface update settings
+    NetInterface net_interface = 1;
+    // list of fields to update
+    google.protobuf.FieldMask update_mask = 2;
+}
+
+// Interface Types Enumeration
+enum InterfaceType {
+    // Interface Unspecified
+    INTERFACE_TYPE_UNSPECIFIED = 0;
+    // Ethernet Interface
+    ETHERNET = 1;
+    // Loopback Interface
+    LOOPBACK = 2;
+}
+
+// Admin State Enumeration
+enum AdminState {
+    // Unspecified
+    ADMIN_STATE_UNSPECIFIED = 0;
+    // Up
+    ADMIN_STATE_UP = 1;
+    // Down
+    ADMIN_STATE_DOWN = 2;
+    // Testing
+    ADMIN_STATE_TESTING = 3;
+}
+// Operational State Enumeration
+enum OperState {
+    // Unspecified
+    OPER_STATE_UNSPECIFIED = 0;
+    // Operational Up
+    OPER_STATE_UP = 2;
+    // Operational Down
+    OPER_STATE_DOWN = 3;
+    // Operational Testing
+    OPER_STATE_TESTING = 4;
+    // Unknown
+    OPER_STATE_UNKNOWN = 5;
+    // Dormant
+    OPER_STATE_DORMANT = 6;
+    // Not Present
+    OPER_STATE_NOT_PRESENT = 7;
+    // Lower Layer Down
+    OPER_STATE_LOWER_LAYER_DOWN = 8;
+}
