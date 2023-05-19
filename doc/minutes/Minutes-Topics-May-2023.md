@@ -22,15 +22,45 @@ Please Review PRs for:
 
 ---
 
+## May 11
+
+Topics
+
+- EVPN GW API PR #276 Feedback Discussion.
+
+Recording at: <https://zoom.us/rec/share/rRpZAvvuhqrn99fsBAWXjrIUrfUmLP1XjuYBZ1N6FQyjOVl0fh2zAOnCVomxnAS-.bKnoKm9CIb1gsFK_>
+
+Actions:
+Update the API Readme with guidelines for API creation to include unique identifier - Opaque field as a common aspect
+--> Opaque string is used as identifier to allow for any information to be identity for whatever is desired for the solution.
+--> Unique ID can be provided by user or server (hybrid approach) depending on the use case.
+--> Uniqueness is left to implementation
+
+---
+
+## May 18
+
+Topics
+
+- DASH and OPI Synergies and Alignment Discussion
+- API Object Field Naming Convention
+
+Recording at: <https://zoom.us/rec/share/3nS8OrYR5YGzE2VYNZqWDkrVS8_wdPDx1q8XJ91Fo33_rn14FbWmftCysrbVtjT6.5DWsX2TK969MY-OH>
+
+Actions:
+
+- Resolve object field naming convvention in Slack channel discussion.
+
+---
+
 Upcoming Topics - Next week:
 
-- TBD
-  - Continue K8s Topics?
-  - Layering Approach?
+- Transaction Support PR #212 Update/Status.
 
 Future/Continuing Topics:
 
 - Layering Approach - Venkat
+- Revisit API Diagrams and Discuss updates
 - Primary and Secondary K8s Networking Offload
   - Deeper level discussion on Primary Offload
   - Deeper level discussion on Secondary capabilities
