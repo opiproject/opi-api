@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateVirtioScsiLunRequest() {
-    parent_ = "";
     virtioScsiLunId_ = "";
   }
 
@@ -50,12 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parent_ = s;
-            break;
-          }
           case 18: {
             opi_api.storage.v1.VirtioScsiLun.Builder subBuilder = null;
             if (virtioScsiLun_ != null) {
@@ -105,44 +98,6 @@ private static final long serialVersionUID = 0L;
     return opi_api.storage.v1.FrontendVirtioScsiProto.internal_static_opi_api_storage_v1_CreateVirtioScsiLunRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             opi_api.storage.v1.CreateVirtioScsiLunRequest.class, opi_api.storage.v1.CreateVirtioScsiLunRequest.Builder.class);
-  }
-
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
-  /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int VIRTIO_SCSI_LUN_FIELD_NUMBER = 2;
@@ -223,9 +178,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
-    }
     if (virtioScsiLun_ != null) {
       output.writeMessage(2, getVirtioScsiLun());
     }
@@ -241,9 +193,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
     if (virtioScsiLun_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getVirtioScsiLun());
@@ -266,8 +215,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateVirtioScsiLunRequest other = (opi_api.storage.v1.CreateVirtioScsiLunRequest) obj;
 
-    if (!getParent()
-        .equals(other.getParent())) return false;
     if (hasVirtioScsiLun() != other.hasVirtioScsiLun()) return false;
     if (hasVirtioScsiLun()) {
       if (!getVirtioScsiLun()
@@ -286,8 +233,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     if (hasVirtioScsiLun()) {
       hash = (37 * hash) + VIRTIO_SCSI_LUN_FIELD_NUMBER;
       hash = (53 * hash) + getVirtioScsiLun().hashCode();
@@ -427,8 +372,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
       if (virtioScsiLunBuilder_ == null) {
         virtioScsiLun_ = null;
       } else {
@@ -463,7 +406,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateVirtioScsiLunRequest buildPartial() {
       opi_api.storage.v1.CreateVirtioScsiLunRequest result = new opi_api.storage.v1.CreateVirtioScsiLunRequest(this);
-      result.parent_ = parent_;
       if (virtioScsiLunBuilder_ == null) {
         result.virtioScsiLun_ = virtioScsiLun_;
       } else {
@@ -518,10 +460,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateVirtioScsiLunRequest other) {
       if (other == opi_api.storage.v1.CreateVirtioScsiLunRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
       if (other.hasVirtioScsiLun()) {
         mergeVirtioScsiLun(other.getVirtioScsiLun());
       }
@@ -555,82 +493,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object parent_ = "";
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-      
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      parent_ = value;
-      onChanged();
       return this;
     }
 

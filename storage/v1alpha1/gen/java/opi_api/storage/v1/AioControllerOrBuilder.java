@@ -9,33 +9,27 @@ public interface AioControllerOrBuilder extends
 
   /**
    * <pre>
-   * handle is an opaque object handle that is not user settable.
-   * handle will be returned with created object
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return Whether the handle field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasHandle();
+  java.lang.String getName();
   /**
    * <pre>
-   * handle is an opaque object handle that is not user settable.
-   * handle will be returned with created object
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return The handle.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getHandle();
-  /**
-   * <pre>
-   * handle is an opaque object handle that is not user settable.
-   * handle will be returned with created object
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
    * <code>int64 block_size = 2;</code>

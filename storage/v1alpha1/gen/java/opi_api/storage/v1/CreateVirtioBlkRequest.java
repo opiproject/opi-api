@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateVirtioBlkRequest() {
-    parent_ = "";
     virtioBlkId_ = "";
   }
 
@@ -50,12 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parent_ = s;
-            break;
-          }
           case 18: {
             opi_api.storage.v1.VirtioBlk.Builder subBuilder = null;
             if (virtioBlk_ != null) {
@@ -105,44 +98,6 @@ private static final long serialVersionUID = 0L;
     return opi_api.storage.v1.FrontendVirtioBlkProto.internal_static_opi_api_storage_v1_CreateVirtioBlkRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             opi_api.storage.v1.CreateVirtioBlkRequest.class, opi_api.storage.v1.CreateVirtioBlkRequest.Builder.class);
-  }
-
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
-  /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int VIRTIO_BLK_FIELD_NUMBER = 2;
@@ -223,9 +178,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
-    }
     if (virtioBlk_ != null) {
       output.writeMessage(2, getVirtioBlk());
     }
@@ -241,9 +193,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
     if (virtioBlk_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getVirtioBlk());
@@ -266,8 +215,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.CreateVirtioBlkRequest other = (opi_api.storage.v1.CreateVirtioBlkRequest) obj;
 
-    if (!getParent()
-        .equals(other.getParent())) return false;
     if (hasVirtioBlk() != other.hasVirtioBlk()) return false;
     if (hasVirtioBlk()) {
       if (!getVirtioBlk()
@@ -286,8 +233,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     if (hasVirtioBlk()) {
       hash = (37 * hash) + VIRTIO_BLK_FIELD_NUMBER;
       hash = (53 * hash) + getVirtioBlk().hashCode();
@@ -427,8 +372,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
       if (virtioBlkBuilder_ == null) {
         virtioBlk_ = null;
       } else {
@@ -463,7 +406,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.CreateVirtioBlkRequest buildPartial() {
       opi_api.storage.v1.CreateVirtioBlkRequest result = new opi_api.storage.v1.CreateVirtioBlkRequest(this);
-      result.parent_ = parent_;
       if (virtioBlkBuilder_ == null) {
         result.virtioBlk_ = virtioBlk_;
       } else {
@@ -518,10 +460,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.CreateVirtioBlkRequest other) {
       if (other == opi_api.storage.v1.CreateVirtioBlkRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
       if (other.hasVirtioBlk()) {
         mergeVirtioBlk(other.getVirtioBlk());
       }
@@ -555,82 +493,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object parent_ = "";
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-      
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      parent_ = value;
-      onChanged();
       return this;
     }
 

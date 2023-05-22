@@ -74,58 +74,56 @@ public final class BackendNullProto {
       "o\032\034google/api/annotations.proto\032\037google/" +
       "api/field_behavior.proto\032 google/protobu" +
       "f/field_mask.proto\032\020object_key.proto\032\017op" +
-      "icommon.proto\032\nuuid.proto\"\212\001\n\tNullDebug\022" +
-      ",\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Obje" +
-      "ctKey\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_coun" +
-      "t\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.common.v" +
-      "1.Uuid\"\235\001\n\026CreateNullDebugRequest\0224\n\006par" +
-      "ent\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/Nu" +
-      "llDebug\0226\n\nnull_debug\030\002 \001(\0132\035.opi_api.st" +
-      "orage.v1.NullDebugB\003\340A\002\022\025\n\rnull_debug_id" +
-      "\030\003 \001(\t\"c\n\026DeleteNullDebugRequest\0222\n\004name" +
-      "\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/NullD" +
-      "ebug\022\025\n\rallow_missing\030\002 \001(\010\"|\n\026UpdateNul" +
-      "lDebugRequest\0221\n\nnull_debug\030\001 \001(\0132\035.opi_" +
-      "api.storage.v1.NullDebug\022/\n\013update_mask\030" +
-      "\002 \001(\0132\032.google.protobuf.FieldMask\"t\n\025Lis" +
-      "tNullDebugsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372" +
-      "A\036\n\034opi_api.storage.v1/NullDebug\022\021\n\tpage" +
-      "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"e\n\026ListN" +
-      "ullDebugsResponse\0222\n\013null_debugs\030\001 \003(\0132\035" +
-      ".opi_api.storage.v1.NullDebug\022\027\n\017next_pa" +
-      "ge_token\030\002 \001(\t\"I\n\023GetNullDebugRequest\0222\n" +
-      "\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/" +
-      "NullDebug\"E\n\025NullDebugStatsRequest\022,\n\006ha" +
-      "ndle\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey" +
-      "\"v\n\026NullDebugStatsResponse\022,\n\006handle\030\001 \001" +
-      "(\0132\034.opi_api.common.v1.ObjectKey\022.\n\005stat" +
-      "s\030\002 \001(\0132\037.opi_api.storage.v1.VolumeStats" +
-      "2\202\007\n\020NullDebugService\022\253\001\n\017CreateNullDebu" +
-      "g\022*.opi_api.storage.v1.CreateNullDebugRe" +
-      "quest\032\035.opi_api.storage.v1.NullDebug\"M\202\323" +
-      "\344\223\002%\"\027/v1/{parent=subsystems}:\nnull_debu" +
-      "g\332A\037parent,null_debug,null_debug_id\022\207\001\n\017" +
-      "DeleteNullDebug\022*.opi_api.storage.v1.Del" +
-      "eteNullDebugRequest\032\026.google.protobuf.Em" +
-      "pty\"0\202\323\344\223\002#*!/v1/{name=subsystems}/{subs" +
-      "ystem}\332A\004name\022\253\001\n\017UpdateNullDebug\022*.opi_" +
-      "api.storage.v1.UpdateNullDebugRequest\032\035." +
-      "opi_api.storage.v1.NullDebug\"M\202\323\344\223\002.2 /v" +
-      "1/{null_debug.name=subsystems}:\nnull_deb" +
-      "ug\332A\026null_debug,update_mask\022\221\001\n\016ListNull" +
-      "Debugs\022).opi_api.storage.v1.ListNullDebu" +
-      "gsRequest\032*.opi_api.storage.v1.ListNullD" +
-      "ebugsResponse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsy" +
-      "stems}\332A\006parent\022\210\001\n\014GetNullDebug\022\'.opi_a" +
-      "pi.storage.v1.GetNullDebugRequest\032\035.opi_" +
-      "api.storage.v1.NullDebug\"0\202\323\344\223\002#\022!/v1/{n" +
-      "ame=subsystems}/{subsystem}\332A\004name\022i\n\016Nu" +
-      "llDebugStats\022).opi_api.storage.v1.NullDe" +
-      "bugStatsRequest\032*.opi_api.storage.v1.Nul" +
-      "lDebugStatsResponse\"\000B_\n\022opi_api.storage" +
-      ".v1B\020BackendNullProtoP\001Z5github.com/opip" +
-      "roject/opi-api/storage/v1alpha1/gen/gob\006" +
-      "proto3"
+      "icommon.proto\032\nuuid.proto\"\243\001\n\tNullDebug\022" +
+      "\014\n\004name\030\001 \001(\t\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blo" +
+      "cks_count\030\003 \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api." +
+      "common.v1.Uuid:7\352A4\n storage.opiproject." +
+      "org/NullDebug\022\020volumes/{volume}\"g\n\026Creat" +
+      "eNullDebugRequest\0226\n\nnull_debug\030\002 \001(\0132\035." +
+      "opi_api.storage.v1.NullDebugB\003\340A\002\022\025\n\rnul" +
+      "l_debug_id\030\003 \001(\t\"c\n\026DeleteNullDebugReque" +
+      "st\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.storag" +
+      "e.v1/NullDebug\022\025\n\rallow_missing\030\002 \001(\010\"|\n" +
+      "\026UpdateNullDebugRequest\0221\n\nnull_debug\030\001 " +
+      "\001(\0132\035.opi_api.storage.v1.NullDebug\022/\n\013up" +
+      "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM" +
+      "ask\"t\n\025ListNullDebugsRequest\0224\n\006parent\030\001" +
+      " \001(\tB$\340A\002\372A\036\n\034opi_api.storage.v1/NullDeb" +
+      "ug\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(" +
+      "\t\"e\n\026ListNullDebugsResponse\0222\n\013null_debu" +
+      "gs\030\001 \003(\0132\035.opi_api.storage.v1.NullDebug\022" +
+      "\027\n\017next_page_token\030\002 \001(\t\"I\n\023GetNullDebug" +
+      "Request\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034opi_api.s" +
+      "torage.v1/NullDebug\"E\n\025NullDebugStatsReq" +
+      "uest\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1" +
+      ".ObjectKey\"v\n\026NullDebugStatsResponse\022,\n\006" +
+      "handle\030\001 \001(\0132\034.opi_api.common.v1.ObjectK" +
+      "ey\022.\n\005stats\030\002 \001(\0132\037.opi_api.storage.v1.V" +
+      "olumeStats2\357\006\n\020NullDebugService\022\230\001\n\017Crea" +
+      "teNullDebug\022*.opi_api.storage.v1.CreateN" +
+      "ullDebugRequest\032\035.opi_api.storage.v1.Nul" +
+      "lDebug\":\202\323\344\223\002\031\"\013/v1/volumes:\nnull_debug\332" +
+      "A\030null_debug,null_debug_id\022\207\001\n\017DeleteNul" +
+      "lDebug\022*.opi_api.storage.v1.DeleteNullDe" +
+      "bugRequest\032\026.google.protobuf.Empty\"0\202\323\344\223" +
+      "\002#*!/v1/{name=subsystems}/{subsystem}\332A\004" +
+      "name\022\253\001\n\017UpdateNullDebug\022*.opi_api.stora" +
+      "ge.v1.UpdateNullDebugRequest\032\035.opi_api.s" +
+      "torage.v1.NullDebug\"M\202\323\344\223\002.2 /v1/{null_d" +
+      "ebug.name=subsystems}:\nnull_debug\332A\026null" +
+      "_debug,update_mask\022\221\001\n\016ListNullDebugs\022)." +
+      "opi_api.storage.v1.ListNullDebugsRequest" +
+      "\032*.opi_api.storage.v1.ListNullDebugsResp" +
+      "onse\"(\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006" +
+      "parent\022\210\001\n\014GetNullDebug\022\'.opi_api.storag" +
+      "e.v1.GetNullDebugRequest\032\035.opi_api.stora" +
+      "ge.v1.NullDebug\"0\202\323\344\223\002#\022!/v1/{name=subsy" +
+      "stems}/{subsystem}\332A\004name\022i\n\016NullDebugSt" +
+      "ats\022).opi_api.storage.v1.NullDebugStatsR" +
+      "equest\032*.opi_api.storage.v1.NullDebugSta" +
+      "tsResponse\"\000B_\n\022opi_api.storage.v1B\020Back" +
+      "endNullProtoP\001Z5github.com/opiproject/op" +
+      "i-api/storage/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -145,13 +143,13 @@ public final class BackendNullProto {
     internal_static_opi_api_storage_v1_NullDebug_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_NullDebug_descriptor,
-        new java.lang.String[] { "Handle", "BlockSize", "BlocksCount", "Uuid", });
+        new java.lang.String[] { "Name", "BlockSize", "BlocksCount", "Uuid", });
     internal_static_opi_api_storage_v1_CreateNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_storage_v1_CreateNullDebugRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_CreateNullDebugRequest_descriptor,
-        new java.lang.String[] { "Parent", "NullDebug", "NullDebugId", });
+        new java.lang.String[] { "NullDebug", "NullDebugId", });
     internal_static_opi_api_storage_v1_DeleteNullDebugRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_storage_v1_DeleteNullDebugRequest_fieldAccessorTable = new
@@ -199,6 +197,7 @@ public final class BackendNullProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

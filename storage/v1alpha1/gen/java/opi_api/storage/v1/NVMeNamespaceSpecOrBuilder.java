@@ -9,30 +9,27 @@ public interface NVMeNamespaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * namespace's unique key
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasId();
+  java.lang.String getName();
   /**
    * <pre>
-   * namespace's unique key
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * namespace's unique key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
    * <pre>

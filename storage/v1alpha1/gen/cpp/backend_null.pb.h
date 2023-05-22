@@ -234,28 +234,24 @@ class NullDebug final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHandleFieldNumber = 1,
+    kNameFieldNumber = 1,
     kUuidFieldNumber = 4,
     kBlockSizeFieldNumber = 2,
     kBlocksCountFieldNumber = 3,
   };
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  bool has_handle() const;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  bool _internal_has_handle() const;
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
-  void clear_handle();
-  const ::opi_api::common::v1::ObjectKey& handle() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_handle();
-  ::opi_api::common::v1::ObjectKey* mutable_handle();
-  void set_allocated_handle(::opi_api::common::v1::ObjectKey* handle);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_handle() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_handle();
-  public:
-  void unsafe_arena_set_allocated_handle(
-      ::opi_api::common::v1::ObjectKey* handle);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
   // .opi_api.common.v1.Uuid uuid = 4;
   bool has_uuid() const;
@@ -300,7 +296,7 @@ class NullDebug final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* handle_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::common::v1::Uuid* uuid_;
   int64_t block_size_;
   int64_t blocks_count_;
@@ -431,24 +427,9 @@ class CreateNullDebugRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParentFieldNumber = 1,
     kNullDebugIdFieldNumber = 3,
     kNullDebugFieldNumber = 2,
   };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
   // string null_debug_id = 3;
   void clear_null_debug_id();
   const std::string& null_debug_id() const;
@@ -488,7 +469,6 @@ class CreateNullDebugRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr null_debug_id_;
   ::opi_api::storage::v1::NullDebug* null_debug_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1672,90 +1652,55 @@ class NullDebugStatsResponse final :
 #endif  // __GNUC__
 // NullDebug
 
-// .opi_api.common.v1.ObjectKey handle = 1;
-inline bool NullDebug::_internal_has_handle() const {
-  return this != internal_default_instance() && handle_ != nullptr;
+// string name = 1;
+inline void NullDebug::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool NullDebug::has_handle() const {
-  return _internal_has_handle();
+inline const std::string& NullDebug::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebug.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& NullDebug::_internal_handle() const {
-  const ::opi_api::common::v1::ObjectKey* p = handle_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NullDebug::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NullDebug.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& NullDebug::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NullDebug.handle)
-  return _internal_handle();
+inline std::string* NullDebug::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebug.name)
+  return _s;
 }
-inline void NullDebug::unsafe_arena_set_allocated_handle(
-    ::opi_api::common::v1::ObjectKey* handle) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  handle_ = handle;
-  if (handle) {
+inline const std::string& NullDebug::_internal_name() const {
+  return name_.Get();
+}
+inline void NullDebug::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NullDebug::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NullDebug::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebug.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NullDebug::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.NullDebug.handle)
-}
-inline ::opi_api::common::v1::ObjectKey* NullDebug::release_handle() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NullDebug::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NullDebug.handle)
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NullDebug::_internal_mutable_handle() {
-  
-  if (handle_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    handle_ = p;
-  }
-  return handle_;
-}
-inline ::opi_api::common::v1::ObjectKey* NullDebug::mutable_handle() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NullDebug.handle)
-  return _msg;
-}
-inline void NullDebug::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  if (handle) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle));
-    if (message_arena != submessage_arena) {
-      handle = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, handle, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebug.handle)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NullDebug.name)
 }
 
 // int64 block_size = 2;
@@ -1887,57 +1832,6 @@ inline void NullDebug::set_allocated_uuid(::opi_api::common::v1::Uuid* uuid) {
 // -------------------------------------------------------------------
 
 // CreateNullDebugRequest
-
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void CreateNullDebugRequest::clear_parent() {
-  parent_.ClearToEmpty();
-}
-inline const std::string& CreateNullDebugRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateNullDebugRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateNullDebugRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.CreateNullDebugRequest.parent)
-}
-inline std::string* CreateNullDebugRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateNullDebugRequest.parent)
-  return _s;
-}
-inline const std::string& CreateNullDebugRequest::_internal_parent() const {
-  return parent_.Get();
-}
-inline void CreateNullDebugRequest::_internal_set_parent(const std::string& value) {
-  
-  parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateNullDebugRequest::_internal_mutable_parent() {
-  
-  return parent_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateNullDebugRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateNullDebugRequest.parent)
-  return parent_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateNullDebugRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  parent_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parent,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (parent_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateNullDebugRequest.parent)
-}
 
 // .opi_api.storage.v1.NullDebug null_debug = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateNullDebugRequest::_internal_has_null_debug() const {

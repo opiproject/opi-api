@@ -8,18 +8,6 @@ public interface CreateVirtioScsiLunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  java.lang.String getParent();
-  /**
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  com.google.protobuf.ByteString
-      getParentBytes();
-
-  /**
    * <code>.opi_api.storage.v1.VirtioScsiLun virtio_scsi_lun = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the virtioScsiLun field is set.
    */

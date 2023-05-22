@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private QosVolume() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (qosVolumeId_ != null) {
-              subBuilder = qosVolumeId_.toBuilder();
-            }
-            qosVolumeId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(qosVolumeId_);
-              qosVolumeId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           case 18: {
@@ -132,30 +126,54 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.QosVolume.class, opi_api.storage.v1.QosVolume.Builder.class);
   }
 
-  public static final int QOS_VOLUME_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey qosVolumeId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   * @return Whether the qosVolumeId field is set.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasQosVolumeId() {
-    return qosVolumeId_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   * @return The qosVolumeId.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getQosVolumeId() {
-    return qosVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : qosVolumeId_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getQosVolumeIdOrBuilder() {
-    return getQosVolumeId();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VOLUME_ID_FIELD_NUMBER = 2;
@@ -262,8 +280,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (qosVolumeId_ != null) {
-      output.writeMessage(1, getQosVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (volumeId_ != null) {
       output.writeMessage(2, getVolumeId());
@@ -283,9 +301,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (qosVolumeId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getQosVolumeId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (volumeId_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -314,11 +331,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.QosVolume other = (opi_api.storage.v1.QosVolume) obj;
 
-    if (hasQosVolumeId() != other.hasQosVolumeId()) return false;
-    if (hasQosVolumeId()) {
-      if (!getQosVolumeId()
-          .equals(other.getQosVolumeId())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (hasVolumeId() != other.hasVolumeId()) return false;
     if (hasVolumeId()) {
       if (!getVolumeId()
@@ -345,10 +359,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasQosVolumeId()) {
-      hash = (37 * hash) + QOS_VOLUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQosVolumeId().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasVolumeId()) {
       hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVolumeId().hashCode();
@@ -494,12 +506,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (qosVolumeIdBuilder_ == null) {
-        qosVolumeId_ = null;
-      } else {
-        qosVolumeId_ = null;
-        qosVolumeIdBuilder_ = null;
-      }
+      name_ = "";
+
       if (volumeIdBuilder_ == null) {
         volumeId_ = null;
       } else {
@@ -544,11 +552,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.QosVolume buildPartial() {
       opi_api.storage.v1.QosVolume result = new opi_api.storage.v1.QosVolume(this);
-      if (qosVolumeIdBuilder_ == null) {
-        result.qosVolumeId_ = qosVolumeId_;
-      } else {
-        result.qosVolumeId_ = qosVolumeIdBuilder_.build();
-      }
+      result.name_ = name_;
       if (volumeIdBuilder_ == null) {
         result.volumeId_ = volumeId_;
       } else {
@@ -612,8 +616,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.QosVolume other) {
       if (other == opi_api.storage.v1.QosVolume.getDefaultInstance()) return this;
-      if (other.hasQosVolumeId()) {
-        mergeQosVolumeId(other.getQosVolumeId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       if (other.hasVolumeId()) {
         mergeVolumeId(other.getVolumeId());
@@ -653,123 +658,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey qosVolumeId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> qosVolumeIdBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-     * @return Whether the qosVolumeId field is set.
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    public boolean hasQosVolumeId() {
-      return qosVolumeIdBuilder_ != null || qosVolumeId_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-     * @return The qosVolumeId.
-     */
-    public opi_api.common.v1.ObjectKey getQosVolumeId() {
-      if (qosVolumeIdBuilder_ == null) {
-        return qosVolumeId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : qosVolumeId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return qosVolumeIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
-    public Builder setQosVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (qosVolumeIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        qosVolumeId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        qosVolumeIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setQosVolumeId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (qosVolumeIdBuilder_ == null) {
-        qosVolumeId_ = builderForValue.build();
-        onChanged();
-      } else {
-        qosVolumeIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-     */
-    public Builder mergeQosVolumeId(opi_api.common.v1.ObjectKey value) {
-      if (qosVolumeIdBuilder_ == null) {
-        if (qosVolumeId_ != null) {
-          qosVolumeId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(qosVolumeId_).mergeFrom(value).buildPartial();
-        } else {
-          qosVolumeId_ = value;
-        }
-        onChanged();
-      } else {
-        qosVolumeIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-     */
-    public Builder clearQosVolumeId() {
-      if (qosVolumeIdBuilder_ == null) {
-        qosVolumeId_ = null;
-        onChanged();
-      } else {
-        qosVolumeId_ = null;
-        qosVolumeIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getQosVolumeIdBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getQosVolumeIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getQosVolumeIdOrBuilder() {
-      if (qosVolumeIdBuilder_ != null) {
-        return qosVolumeIdBuilder_.getMessageOrBuilder();
-      } else {
-        return qosVolumeId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : qosVolumeId_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getQosVolumeIdFieldBuilder() {
-      if (qosVolumeIdBuilder_ == null) {
-        qosVolumeIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getQosVolumeId(),
-                getParentForChildren(),
-                isClean());
-        qosVolumeId_ = null;
-      }
-      return qosVolumeIdBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.common.v1.ObjectKey volumeId_;

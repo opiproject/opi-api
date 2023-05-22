@@ -233,28 +233,24 @@ class QosVolume final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kQosVolumeIdFieldNumber = 1,
+    kNameFieldNumber = 1,
     kVolumeIdFieldNumber = 2,
     kLimitMinFieldNumber = 3,
     kLimitMaxFieldNumber = 4,
   };
-  // .opi_api.common.v1.ObjectKey qos_volume_id = 1;
-  bool has_qos_volume_id() const;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  bool _internal_has_qos_volume_id() const;
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
-  void clear_qos_volume_id();
-  const ::opi_api::common::v1::ObjectKey& qos_volume_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_qos_volume_id();
-  ::opi_api::common::v1::ObjectKey* mutable_qos_volume_id();
-  void set_allocated_qos_volume_id(::opi_api::common::v1::ObjectKey* qos_volume_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_qos_volume_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_qos_volume_id();
-  public:
-  void unsafe_arena_set_allocated_qos_volume_id(
-      ::opi_api::common::v1::ObjectKey* qos_volume_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_qos_volume_id();
 
   // .opi_api.common.v1.ObjectKey volume_id = 2;
   bool has_volume_id() const;
@@ -317,7 +313,7 @@ class QosVolume final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* qos_volume_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
   ::opi_api::storage::v1::QosLimit* limit_min_;
   ::opi_api::storage::v1::QosLimit* limit_max_;
@@ -448,24 +444,9 @@ class CreateQosVolumeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParentFieldNumber = 1,
     kQosVolumeIdFieldNumber = 3,
     kQosVolumeFieldNumber = 2,
   };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
   // string qos_volume_id = 3;
   void clear_qos_volume_id();
   const std::string& qos_volume_id() const;
@@ -505,7 +486,6 @@ class CreateQosVolumeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr qos_volume_id_;
   ::opi_api::storage::v1::QosVolume* qos_volume_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1689,90 +1669,55 @@ class QosVolumeStatsResponse final :
 #endif  // __GNUC__
 // QosVolume
 
-// .opi_api.common.v1.ObjectKey qos_volume_id = 1;
-inline bool QosVolume::_internal_has_qos_volume_id() const {
-  return this != internal_default_instance() && qos_volume_id_ != nullptr;
+// string name = 1;
+inline void QosVolume::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool QosVolume::has_qos_volume_id() const {
-  return _internal_has_qos_volume_id();
+inline const std::string& QosVolume::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& QosVolume::_internal_qos_volume_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = qos_volume_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void QosVolume::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.QosVolume.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& QosVolume::qos_volume_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.qos_volume_id)
-  return _internal_qos_volume_id();
+inline std::string* QosVolume::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.name)
+  return _s;
 }
-inline void QosVolume::unsafe_arena_set_allocated_qos_volume_id(
-    ::opi_api::common::v1::ObjectKey* qos_volume_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(qos_volume_id_);
-  }
-  qos_volume_id_ = qos_volume_id;
-  if (qos_volume_id) {
+inline const std::string& QosVolume::_internal_name() const {
+  return name_.Get();
+}
+inline void QosVolume::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* QosVolume::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* QosVolume::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void QosVolume::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.QosVolume.qos_volume_id)
-}
-inline ::opi_api::common::v1::ObjectKey* QosVolume::release_qos_volume_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = qos_volume_id_;
-  qos_volume_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* QosVolume::unsafe_arena_release_qos_volume_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.qos_volume_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = qos_volume_id_;
-  qos_volume_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* QosVolume::_internal_mutable_qos_volume_id() {
-  
-  if (qos_volume_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    qos_volume_id_ = p;
-  }
-  return qos_volume_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* QosVolume::mutable_qos_volume_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_qos_volume_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.qos_volume_id)
-  return _msg;
-}
-inline void QosVolume::set_allocated_qos_volume_id(::opi_api::common::v1::ObjectKey* qos_volume_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(qos_volume_id_);
-  }
-  if (qos_volume_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(qos_volume_id));
-    if (message_arena != submessage_arena) {
-      qos_volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, qos_volume_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  qos_volume_id_ = qos_volume_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.qos_volume_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.name)
 }
 
 // .opi_api.common.v1.ObjectKey volume_id = 2;
@@ -2036,57 +1981,6 @@ inline void QosVolume::set_allocated_limit_max(::opi_api::storage::v1::QosLimit*
 // -------------------------------------------------------------------
 
 // CreateQosVolumeRequest
-
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void CreateQosVolumeRequest::clear_parent() {
-  parent_.ClearToEmpty();
-}
-inline const std::string& CreateQosVolumeRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateQosVolumeRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateQosVolumeRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.CreateQosVolumeRequest.parent)
-}
-inline std::string* CreateQosVolumeRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateQosVolumeRequest.parent)
-  return _s;
-}
-inline const std::string& CreateQosVolumeRequest::_internal_parent() const {
-  return parent_.Get();
-}
-inline void CreateQosVolumeRequest::_internal_set_parent(const std::string& value) {
-  
-  parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateQosVolumeRequest::_internal_mutable_parent() {
-  
-  return parent_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateQosVolumeRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateQosVolumeRequest.parent)
-  return parent_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateQosVolumeRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  parent_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parent,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (parent_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateQosVolumeRequest.parent)
-}
 
 // .opi_api.storage.v1.QosVolume qos_volume = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateQosVolumeRequest::_internal_has_qos_volume() const {

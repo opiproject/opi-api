@@ -233,11 +233,25 @@ class EncryptedVolume final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kNameFieldNumber = 1,
     kKeyFieldNumber = 3,
-    kEncryptedVolumeIdFieldNumber = 1,
     kVolumeIdFieldNumber = 2,
     kCipherFieldNumber = 4,
   };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // bytes key = 3;
   void clear_key();
   const std::string& key() const;
@@ -251,24 +265,6 @@ class EncryptedVolume final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(const std::string& value);
   std::string* _internal_mutable_key();
   public:
-
-  // .opi_api.common.v1.ObjectKey encrypted_volume_id = 1;
-  bool has_encrypted_volume_id() const;
-  private:
-  bool _internal_has_encrypted_volume_id() const;
-  public:
-  void clear_encrypted_volume_id();
-  const ::opi_api::common::v1::ObjectKey& encrypted_volume_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_encrypted_volume_id();
-  ::opi_api::common::v1::ObjectKey* mutable_encrypted_volume_id();
-  void set_allocated_encrypted_volume_id(::opi_api::common::v1::ObjectKey* encrypted_volume_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_encrypted_volume_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_encrypted_volume_id();
-  public:
-  void unsafe_arena_set_allocated_encrypted_volume_id(
-      ::opi_api::common::v1::ObjectKey* encrypted_volume_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_encrypted_volume_id();
 
   // .opi_api.common.v1.ObjectKey volume_id = 2;
   bool has_volume_id() const;
@@ -304,8 +300,8 @@ class EncryptedVolume final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
-  ::opi_api::common::v1::ObjectKey* encrypted_volume_id_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
   int cipher_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -435,24 +431,9 @@ class CreateEncryptedVolumeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParentFieldNumber = 1,
     kEncryptedVolumeIdFieldNumber = 3,
     kEncryptedVolumeFieldNumber = 2,
   };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
   // string encrypted_volume_id = 3;
   void clear_encrypted_volume_id();
   const std::string& encrypted_volume_id() const;
@@ -492,7 +473,6 @@ class CreateEncryptedVolumeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr encrypted_volume_id_;
   ::opi_api::storage::v1::EncryptedVolume* encrypted_volume_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1676,90 +1656,55 @@ class EncryptedVolumeStatsResponse final :
 #endif  // __GNUC__
 // EncryptedVolume
 
-// .opi_api.common.v1.ObjectKey encrypted_volume_id = 1;
-inline bool EncryptedVolume::_internal_has_encrypted_volume_id() const {
-  return this != internal_default_instance() && encrypted_volume_id_ != nullptr;
+// string name = 1;
+inline void EncryptedVolume::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool EncryptedVolume::has_encrypted_volume_id() const {
-  return _internal_has_encrypted_volume_id();
+inline const std::string& EncryptedVolume::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.EncryptedVolume.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& EncryptedVolume::_internal_encrypted_volume_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = encrypted_volume_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void EncryptedVolume::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.EncryptedVolume.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& EncryptedVolume::encrypted_volume_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.EncryptedVolume.encrypted_volume_id)
-  return _internal_encrypted_volume_id();
+inline std::string* EncryptedVolume::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.EncryptedVolume.name)
+  return _s;
 }
-inline void EncryptedVolume::unsafe_arena_set_allocated_encrypted_volume_id(
-    ::opi_api::common::v1::ObjectKey* encrypted_volume_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(encrypted_volume_id_);
-  }
-  encrypted_volume_id_ = encrypted_volume_id;
-  if (encrypted_volume_id) {
+inline const std::string& EncryptedVolume::_internal_name() const {
+  return name_.Get();
+}
+inline void EncryptedVolume::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* EncryptedVolume::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* EncryptedVolume::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.EncryptedVolume.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void EncryptedVolume::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.EncryptedVolume.encrypted_volume_id)
-}
-inline ::opi_api::common::v1::ObjectKey* EncryptedVolume::release_encrypted_volume_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = encrypted_volume_id_;
-  encrypted_volume_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* EncryptedVolume::unsafe_arena_release_encrypted_volume_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.EncryptedVolume.encrypted_volume_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = encrypted_volume_id_;
-  encrypted_volume_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* EncryptedVolume::_internal_mutable_encrypted_volume_id() {
-  
-  if (encrypted_volume_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    encrypted_volume_id_ = p;
-  }
-  return encrypted_volume_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* EncryptedVolume::mutable_encrypted_volume_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_encrypted_volume_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.EncryptedVolume.encrypted_volume_id)
-  return _msg;
-}
-inline void EncryptedVolume::set_allocated_encrypted_volume_id(::opi_api::common::v1::ObjectKey* encrypted_volume_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(encrypted_volume_id_);
-  }
-  if (encrypted_volume_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(encrypted_volume_id));
-    if (message_arena != submessage_arena) {
-      encrypted_volume_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, encrypted_volume_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  encrypted_volume_id_ = encrypted_volume_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolume.encrypted_volume_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.EncryptedVolume.name)
 }
 
 // .opi_api.common.v1.ObjectKey volume_id = 2;
@@ -1922,57 +1867,6 @@ inline void EncryptedVolume::set_cipher(::opi_api::storage::v1::EncryptionType v
 // -------------------------------------------------------------------
 
 // CreateEncryptedVolumeRequest
-
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void CreateEncryptedVolumeRequest::clear_parent() {
-  parent_.ClearToEmpty();
-}
-inline const std::string& CreateEncryptedVolumeRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateEncryptedVolumeRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateEncryptedVolumeRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.CreateEncryptedVolumeRequest.parent)
-}
-inline std::string* CreateEncryptedVolumeRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateEncryptedVolumeRequest.parent)
-  return _s;
-}
-inline const std::string& CreateEncryptedVolumeRequest::_internal_parent() const {
-  return parent_.Get();
-}
-inline void CreateEncryptedVolumeRequest::_internal_set_parent(const std::string& value) {
-  
-  parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateEncryptedVolumeRequest::_internal_mutable_parent() {
-  
-  return parent_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateEncryptedVolumeRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateEncryptedVolumeRequest.parent)
-  return parent_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateEncryptedVolumeRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  parent_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parent,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (parent_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateEncryptedVolumeRequest.parent)
-}
 
 // .opi_api.storage.v1.EncryptedVolume encrypted_volume = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateEncryptedVolumeRequest::_internal_has_encrypted_volume() const {

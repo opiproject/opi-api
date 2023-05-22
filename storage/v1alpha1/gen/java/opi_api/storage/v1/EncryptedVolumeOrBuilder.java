@@ -8,19 +8,28 @@ public interface EncryptedVolumeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return Whether the encryptedVolumeId field is set.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasEncryptedVolumeId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   * @return The encryptedVolumeId.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getEncryptedVolumeId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey encrypted_volume_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getEncryptedVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
    * <pre>

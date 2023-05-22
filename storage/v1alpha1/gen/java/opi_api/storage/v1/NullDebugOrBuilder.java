@@ -8,19 +8,28 @@ public interface NullDebugOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return Whether the handle field is set.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasHandle();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   * @return The handle.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getHandle();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey handle = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getHandleOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
    * <code>int64 block_size = 2;</code>

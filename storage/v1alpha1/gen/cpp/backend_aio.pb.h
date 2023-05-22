@@ -234,12 +234,26 @@ class AioController final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kNameFieldNumber = 1,
     kFilenameFieldNumber = 5,
-    kHandleFieldNumber = 1,
     kUuidFieldNumber = 4,
     kBlockSizeFieldNumber = 2,
     kBlocksCountFieldNumber = 3,
   };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // string filename = 5;
   void clear_filename();
   const std::string& filename() const;
@@ -253,24 +267,6 @@ class AioController final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const std::string& value);
   std::string* _internal_mutable_filename();
   public:
-
-  // .opi_api.common.v1.ObjectKey handle = 1;
-  bool has_handle() const;
-  private:
-  bool _internal_has_handle() const;
-  public:
-  void clear_handle();
-  const ::opi_api::common::v1::ObjectKey& handle() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_handle();
-  ::opi_api::common::v1::ObjectKey* mutable_handle();
-  void set_allocated_handle(::opi_api::common::v1::ObjectKey* handle);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_handle() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_handle();
-  public:
-  void unsafe_arena_set_allocated_handle(
-      ::opi_api::common::v1::ObjectKey* handle);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_handle();
 
   // .opi_api.common.v1.Uuid uuid = 4;
   bool has_uuid() const;
@@ -315,8 +311,8 @@ class AioController final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filename_;
-  ::opi_api::common::v1::ObjectKey* handle_;
   ::opi_api::common::v1::Uuid* uuid_;
   int64_t block_size_;
   int64_t blocks_count_;
@@ -447,24 +443,9 @@ class CreateAioControllerRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParentFieldNumber = 1,
     kAioControllerIdFieldNumber = 3,
     kAioControllerFieldNumber = 2,
   };
-  // string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-  void clear_parent();
-  const std::string& parent() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_parent(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_parent();
-  PROTOBUF_NODISCARD std::string* release_parent();
-  void set_allocated_parent(std::string* parent);
-  private:
-  const std::string& _internal_parent() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent(const std::string& value);
-  std::string* _internal_mutable_parent();
-  public:
-
   // string aio_controller_id = 3;
   void clear_aio_controller_id();
   const std::string& aio_controller_id() const;
@@ -504,7 +485,6 @@ class CreateAioControllerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aio_controller_id_;
   ::opi_api::storage::v1::AioController* aio_controller_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1688,90 +1668,55 @@ class AioControllerStatsResponse final :
 #endif  // __GNUC__
 // AioController
 
-// .opi_api.common.v1.ObjectKey handle = 1;
-inline bool AioController::_internal_has_handle() const {
-  return this != internal_default_instance() && handle_ != nullptr;
+// string name = 1;
+inline void AioController::clear_name() {
+  name_.ClearToEmpty();
 }
-inline bool AioController::has_handle() const {
-  return _internal_has_handle();
+inline const std::string& AioController::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.name)
+  return _internal_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& AioController::_internal_handle() const {
-  const ::opi_api::common::v1::ObjectKey* p = handle_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AioController::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.AioController.name)
 }
-inline const ::opi_api::common::v1::ObjectKey& AioController::handle() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.AioController.handle)
-  return _internal_handle();
+inline std::string* AioController::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.name)
+  return _s;
 }
-inline void AioController::unsafe_arena_set_allocated_handle(
-    ::opi_api::common::v1::ObjectKey* handle) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  handle_ = handle;
-  if (handle) {
+inline const std::string& AioController::_internal_name() const {
+  return name_.Get();
+}
+inline void AioController::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AioController::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AioController::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AioController::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.AioController.handle)
-}
-inline ::opi_api::common::v1::ObjectKey* AioController::release_handle() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioController::unsafe_arena_release_handle() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.AioController.handle)
-  
-  ::opi_api::common::v1::ObjectKey* temp = handle_;
-  handle_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* AioController::_internal_mutable_handle() {
-  
-  if (handle_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    handle_ = p;
-  }
-  return handle_;
-}
-inline ::opi_api::common::v1::ObjectKey* AioController::mutable_handle() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_handle();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.AioController.handle)
-  return _msg;
-}
-inline void AioController::set_allocated_handle(::opi_api::common::v1::ObjectKey* handle) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle_);
-  }
-  if (handle) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(handle));
-    if (message_arena != submessage_arena) {
-      handle = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, handle, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  handle_ = handle;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.handle)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.AioController.name)
 }
 
 // int64 block_size = 2;
@@ -1954,57 +1899,6 @@ inline void AioController::set_allocated_filename(std::string* filename) {
 // -------------------------------------------------------------------
 
 // CreateAioControllerRequest
-
-// string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
-inline void CreateAioControllerRequest::clear_parent() {
-  parent_.ClearToEmpty();
-}
-inline const std::string& CreateAioControllerRequest::parent() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.CreateAioControllerRequest.parent)
-  return _internal_parent();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CreateAioControllerRequest::set_parent(ArgT0&& arg0, ArgT... args) {
- 
- parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.CreateAioControllerRequest.parent)
-}
-inline std::string* CreateAioControllerRequest::mutable_parent() {
-  std::string* _s = _internal_mutable_parent();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.CreateAioControllerRequest.parent)
-  return _s;
-}
-inline const std::string& CreateAioControllerRequest::_internal_parent() const {
-  return parent_.Get();
-}
-inline void CreateAioControllerRequest::_internal_set_parent(const std::string& value) {
-  
-  parent_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* CreateAioControllerRequest::_internal_mutable_parent() {
-  
-  return parent_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* CreateAioControllerRequest::release_parent() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.CreateAioControllerRequest.parent)
-  return parent_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void CreateAioControllerRequest::set_allocated_parent(std::string* parent) {
-  if (parent != nullptr) {
-    
-  } else {
-    
-  }
-  parent_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), parent,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (parent_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    parent_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.CreateAioControllerRequest.parent)
-}
 
 // .opi_api.storage.v1.AioController aio_controller = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateAioControllerRequest::_internal_has_aio_controller() const {

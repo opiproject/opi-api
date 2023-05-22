@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VirtioScsiTarget() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            name_ = s;
             break;
           }
           case 16: {
@@ -98,30 +92,54 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.VirtioScsiTarget.class, opi_api.storage.v1.VirtioScsiTarget.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MAX_LUNS_FIELD_NUMBER = 2;
@@ -153,8 +171,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (maxLuns_ != 0) {
       output.writeInt32(2, maxLuns_);
@@ -168,9 +186,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (maxLuns_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -191,11 +208,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.VirtioScsiTarget other = (opi_api.storage.v1.VirtioScsiTarget) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
+    if (!getName()
+        .equals(other.getName())) return false;
     if (getMaxLuns()
         != other.getMaxLuns()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -209,10 +223,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MAX_LUNS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxLuns();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -348,12 +360,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
+      name_ = "";
+
       maxLuns_ = 0;
 
       return this;
@@ -382,11 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.VirtioScsiTarget buildPartial() {
       opi_api.storage.v1.VirtioScsiTarget result = new opi_api.storage.v1.VirtioScsiTarget(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
+      result.name_ = name_;
       result.maxLuns_ = maxLuns_;
       onBuilt();
       return result;
@@ -436,8 +440,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.VirtioScsiTarget other) {
       if (other == opi_api.storage.v1.VirtioScsiTarget.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       if (other.getMaxLuns() != 0) {
         setMaxLuns(other.getMaxLuns());
@@ -471,123 +476,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object name_ = "";
     /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
     }
 
     private int maxLuns_ ;

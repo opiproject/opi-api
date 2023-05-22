@@ -8,19 +8,28 @@ public interface QosVolumeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   * @return Whether the qosVolumeId field is set.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  boolean hasQosVolumeId();
+  java.lang.String getName();
   /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   * @return The qosVolumeId.
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
-  opi_api.common.v1.ObjectKey getQosVolumeId();
-  /**
-   * <code>.opi_api.common.v1.ObjectKey qos_volume_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getQosVolumeIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
    * <pre>

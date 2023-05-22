@@ -205,7 +205,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | handle is an opaque object handle that is not user settable. handle will be returned with created object |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | block_size | [int64](#int64) |  |  |
 | blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
@@ -255,7 +255,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | aio_controller | [AioController](#opi_api-storage-v1-AioController) |  |  |
 | aio_controller_id | [string](#string) |  |  |
 
@@ -399,7 +398,6 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | null_debug | [NullDebug](#opi_api-storage-v1-NullDebug) |  |  |
 | null_debug_id | [string](#string) |  |  |
 
@@ -480,7 +478,7 @@ Back End (network-facing) APIs. This service is for AIO generic kernel block dev
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| handle | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | block_size | [int64](#int64) |  |  |
 | blocks_count | [int64](#int64) |  |  |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  |  |
@@ -592,7 +590,6 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | nv_mf_remote_controller | [NVMfRemoteController](#opi_api-storage-v1-NVMfRemoteController) |  |  |
 | nv_mf_remote_controller_id | [string](#string) |  |  |
 
@@ -673,7 +670,7 @@ Back End (network-facing) APIs. This is debug interface for null block devices.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | trtype | [NvmeTransportType](#opi_api-storage-v1-NvmeTransportType) |  |  |
 | adrfam | [NvmeAddressFamily](#opi_api-storage-v1-NvmeAddressFamily) |  |  |
 | traddr | [string](#string) |  |  |
@@ -1097,7 +1094,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
@@ -1184,7 +1181,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | namespace&#39;s unique key |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem for this namespace |
 | host_nsid | [int32](#int32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
@@ -1268,7 +1265,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | nqn | [string](#string) |  | NVMe subsystem NQN to which the controller belongs Refer to the NQN format in the NVMe base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes |
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |
@@ -1451,7 +1448,6 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | virtio_blk | [VirtioBlk](#opi_api-storage-v1-VirtioBlk) |  |  |
 | virtio_blk_id | [string](#string) |  |  |
 
@@ -1548,7 +1544,7 @@ Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host prese
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | The PCI endpoint where this device should appear |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this controller |
 | max_io_qps | [int64](#int64) |  |  |
@@ -1646,7 +1642,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | virtio_scsi_controller | [VirtioScsiController](#opi_api-storage-v1-VirtioScsiController) |  |  |
 | virtio_scsi_controller_id | [string](#string) |  |  |
 
@@ -1663,7 +1658,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | virtio_scsi_lun | [VirtioScsiLun](#opi_api-storage-v1-VirtioScsiLun) |  |  |
 | virtio_scsi_lun_id | [string](#string) |  |  |
 
@@ -1680,7 +1674,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | virtio_scsi_target | [VirtioScsiTarget](#opi_api-storage-v1-VirtioScsiTarget) |  |  |
 | virtio_scsi_target_id | [string](#string) |  |  |
 
@@ -1937,7 +1930,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
 | min_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | min QoS limits for the controller |
 | max_limit | [QosLimit](#opi_api-storage-v1-QosLimit) |  | max QoS limits for the controller |
@@ -1986,7 +1979,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | target_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The target that this LUN is in |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The middle/back-end volume for this LLUN |
 
@@ -2035,7 +2028,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-blk emulation emulation and
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | max_luns | [int32](#int32) |  | maximum LUNs within a target |
 
 
@@ -2125,7 +2118,6 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | encrypted_volume | [EncryptedVolume](#opi_api-storage-v1-EncryptedVolume) |  |  |
 | encrypted_volume_id | [string](#string) |  |  |
 
@@ -2158,7 +2150,7 @@ Front End (host-facing) APIs. Mostly used for Virtio-scsi emulation and host pre
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| encrypted_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | The back/middle-end volume to back this volume |
 | key | [bytes](#bytes) |  | Key to be used for encryption |
 | cipher | [EncryptionType](#opi_api-storage-v1-EncryptionType) |  | Cipher to use |
@@ -2302,7 +2294,6 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | qos_volume | [QosVolume](#opi_api-storage-v1-QosVolume) |  |  |
 | qos_volume_id | [string](#string) |  |  |
 
@@ -2383,7 +2374,7 @@ Middle End (Storage Services) APIs. For example, encryption, compression, raid, 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| qos_volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | volume_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Middleend/backend volume to apply QoS on |
 | limit_min | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
 | limit_max | [QosLimit](#opi_api-storage-v1-QosLimit) |  |  |
