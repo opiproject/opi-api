@@ -24,10 +24,10 @@ import "google/protobuf/field_mask.proto";
 service FrontendVirtioBlkService {
     rpc CreateVirtioBlk (CreateVirtioBlkRequest) returns (VirtioBlk) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "virtio_blk"
         };
-        option (google.api.method_signature) = "parent,virtio_blk,virtio_blk_id";
+        option (google.api.method_signature) = "virtio_blk,virtio_blk_id";
     }
     rpc DeleteVirtioBlk (DeleteVirtioBlkRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -84,10 +84,6 @@ message VirtioBlk {
 }
 
 message CreateVirtioBlkRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioBlk"
-    ];
     VirtioBlk virtio_blk = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_blk_id = 3;
 }

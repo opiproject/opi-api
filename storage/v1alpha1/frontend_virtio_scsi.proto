@@ -24,10 +24,10 @@ import "google/protobuf/field_mask.proto";
 service FrontendVirtioScsiService {
     rpc CreateVirtioScsiTarget (CreateVirtioScsiTargetRequest) returns (VirtioScsiTarget) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "virtio_scsi_target"
         };
-        option (google.api.method_signature) = "parent,virtio_scsi_target,virtio_scsi_target_id";
+        option (google.api.method_signature) = "virtio_scsi_target,virtio_scsi_target_id";
     }
     rpc DeleteVirtioScsiTarget (DeleteVirtioScsiTargetRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -58,10 +58,10 @@ service FrontendVirtioScsiService {
 
     rpc CreateVirtioScsiController (CreateVirtioScsiControllerRequest) returns (VirtioScsiController) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "virtio_scsi_controller"
         };
-        option (google.api.method_signature) = "parent,virtio_scsi_controller,virtio_scsi_controller_id";
+        option (google.api.method_signature) = "virtio_scsi_controller,virtio_scsi_controller_id";
     }
     rpc DeleteVirtioScsiController (DeleteVirtioScsiControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -92,10 +92,10 @@ service FrontendVirtioScsiService {
 
     rpc CreateVirtioScsiLun (CreateVirtioScsiLunRequest) returns (VirtioScsiLun) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "virtio_scsi_lun"
         };
-        option (google.api.method_signature) = "parent,virtio_scsi_lun,virtio_scsi_lun_id";
+        option (google.api.method_signature) = "virtio_scsi_lun,virtio_scsi_lun_id";
     }
     rpc DeleteVirtioScsiLun (DeleteVirtioScsiLunRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -180,10 +180,6 @@ message VirtioScsiLun {
 }
 
 message CreateVirtioScsiTargetRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiTarget"
-    ];
     VirtioScsiTarget virtio_scsi_target = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_target_id = 3;
 }
@@ -235,10 +231,6 @@ message VirtioScsiTargetStatsResponse {
 }
 
 message CreateVirtioScsiControllerRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiController"
-    ];
     VirtioScsiController virtio_scsi_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_controller_id = 3;
 }
@@ -290,10 +282,6 @@ message VirtioScsiControllerStatsResponse {
 }
 
 message CreateVirtioScsiLunRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/VirtioScsiLun"
-    ];
     VirtioScsiLun virtio_scsi_lun = 2 [(google.api.field_behavior) = REQUIRED];
     string virtio_scsi_lun_id = 3;
 }

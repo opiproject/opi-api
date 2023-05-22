@@ -25,10 +25,10 @@ import "uuid.proto";
 service AioControllerService {
     rpc CreateAioController (CreateAioControllerRequest) returns (AioController) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "aio_controller"
         };
-        option (google.api.method_signature) = "parent,aio_controller,aio_controller_id";
+        option (google.api.method_signature) = "aio_controller,aio_controller_id";
     }
     rpc DeleteAioController (DeleteAioControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -76,10 +76,6 @@ message AioController {
 }
 
 message CreateAioControllerRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/AioController"
-    ];
     AioController aio_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string aio_controller_id = 3;
 }

@@ -22,10 +22,10 @@ import "google/protobuf/field_mask.proto";
 service MiddleendQosVolumeService {
     rpc CreateQosVolume(CreateQosVolumeRequest) returns (QosVolume) {
         option (google.api.http) = {
-            post : "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body : "qos_volume"
         };
-        option (google.api.method_signature) = "parent,qos_volume,qos_volume_id";
+        option (google.api.method_signature) = "qos_volume,qos_volume_id";
     }
     rpc DeleteQosVolume(DeleteQosVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -74,10 +74,6 @@ message QosVolume {
 }
 
 message CreateQosVolumeRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/QosVolume"
-    ];
     QosVolume qos_volume = 2 [ (google.api.field_behavior) = REQUIRED ];
     string qos_volume_id = 3;
 }

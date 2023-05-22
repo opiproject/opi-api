@@ -25,10 +25,10 @@ import "google/protobuf/field_mask.proto";
 service MiddleendEncryptionService {
     rpc CreateEncryptedVolume (CreateEncryptedVolumeRequest) returns (EncryptedVolume) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "encrypted_volume"
         };
-        option (google.api.method_signature) = "parent,encrypted_volume,encrypted_volume_id";
+        option (google.api.method_signature) = "encrypted_volume,encrypted_volume_id";
     }
     rpc DeleteEncryptedVolume (DeleteEncryptedVolumeRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -81,10 +81,6 @@ message EncryptedVolume {
 }
 
 message CreateEncryptedVolumeRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/EncryptedVolume"
-    ];
     EncryptedVolume encrypted_volume = 2 [(google.api.field_behavior) = REQUIRED];
     string encrypted_volume_id = 3;
 }

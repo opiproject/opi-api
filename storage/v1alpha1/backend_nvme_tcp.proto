@@ -24,10 +24,10 @@ import "opicommon.proto";
 service NVMfRemoteControllerService {
     rpc CreateNVMfRemoteController (CreateNVMfRemoteControllerRequest) returns (NVMfRemoteController) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "nv_mf_remote_controller"
         };
-        option (google.api.method_signature) = "parent,nv_mf_remote_controller,nv_mf_remote_controller_id";
+        option (google.api.method_signature) = "nv_mf_remote_controller,nv_mf_remote_controller_id";
     }
     rpc DeleteNVMfRemoteController (DeleteNVMfRemoteControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -83,10 +83,6 @@ message NVMfRemoteController {
 }
 
 message CreateNVMfRemoteControllerRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NVMfRemoteController"
-    ];
     NVMfRemoteController nv_mf_remote_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string nv_mf_remote_controller_id = 3;
 }
