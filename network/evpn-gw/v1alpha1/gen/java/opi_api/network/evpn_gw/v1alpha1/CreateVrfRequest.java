@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateVrfRequest() {
+    vrfId_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            vrfId_ = s;
+            break;
+          }
+          case 18: {
             opi_api.network.evpn_gw.v1alpha1.Vrf.Builder subBuilder = null;
             if (vrf_ != null) {
               subBuilder = vrf_.toBuilder();
@@ -97,14 +104,68 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest.class, opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest.Builder.class);
   }
 
-  public static final int VRF_FIELD_NUMBER = 1;
+  public static final int VRF_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object vrfId_;
+  /**
+   * <pre>
+   * The ID to use for the vrf, which will become the final component of
+   * the vrf's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string vrf_id = 1;</code>
+   * @return The vrfId.
+   */
+  @java.lang.Override
+  public java.lang.String getVrfId() {
+    java.lang.Object ref = vrfId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vrfId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The ID to use for the vrf, which will become the final component of
+   * the vrf's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string vrf_id = 1;</code>
+   * @return The bytes for vrfId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVrfIdBytes() {
+    java.lang.Object ref = vrfId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vrfId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VRF_FIELD_NUMBER = 2;
   private opi_api.network.evpn_gw.v1alpha1.Vrf vrf_;
   /**
    * <pre>
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vrf field is set.
    */
   @java.lang.Override
@@ -116,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vrf.
    */
   @java.lang.Override
@@ -128,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder getVrfOrBuilder() {
@@ -149,8 +210,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vrfId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vrfId_);
+    }
     if (vrf_ != null) {
-      output.writeMessage(1, getVrf());
+      output.writeMessage(2, getVrf());
     }
     unknownFields.writeTo(output);
   }
@@ -161,9 +225,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vrfId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vrfId_);
+    }
     if (vrf_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getVrf());
+        .computeMessageSize(2, getVrf());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,6 +247,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest other = (opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest) obj;
 
+    if (!getVrfId()
+        .equals(other.getVrfId())) return false;
     if (hasVrf() != other.hasVrf()) return false;
     if (hasVrf()) {
       if (!getVrf()
@@ -196,6 +265,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + VRF_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVrfId().hashCode();
     if (hasVrf()) {
       hash = (37 * hash) + VRF_FIELD_NUMBER;
       hash = (53 * hash) + getVrf().hashCode();
@@ -337,6 +408,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      vrfId_ = "";
+
       if (vrfBuilder_ == null) {
         vrf_ = null;
       } else {
@@ -369,6 +442,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest result = new opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest(this);
+      result.vrfId_ = vrfId_;
       if (vrfBuilder_ == null) {
         result.vrf_ = vrf_;
       } else {
@@ -422,6 +496,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.CreateVrfRequest.getDefaultInstance()) return this;
+      if (!other.getVrfId().isEmpty()) {
+        vrfId_ = other.vrfId_;
+        onChanged();
+      }
       if (other.hasVrf()) {
         mergeVrf(other.getVrf());
       }
@@ -454,6 +532,122 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object vrfId_ = "";
+    /**
+     * <pre>
+     * The ID to use for the vrf, which will become the final component of
+     * the vrf's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string vrf_id = 1;</code>
+     * @return The vrfId.
+     */
+    public java.lang.String getVrfId() {
+      java.lang.Object ref = vrfId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vrfId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the vrf, which will become the final component of
+     * the vrf's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string vrf_id = 1;</code>
+     * @return The bytes for vrfId.
+     */
+    public com.google.protobuf.ByteString
+        getVrfIdBytes() {
+      java.lang.Object ref = vrfId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vrfId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the vrf, which will become the final component of
+     * the vrf's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string vrf_id = 1;</code>
+     * @param value The vrfId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVrfId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vrfId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the vrf, which will become the final component of
+     * the vrf's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string vrf_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVrfId() {
+      
+      vrfId_ = getDefaultInstance().getVrfId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the vrf, which will become the final component of
+     * the vrf's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string vrf_id = 1;</code>
+     * @param value The bytes for vrfId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVrfIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      vrfId_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.network.evpn_gw.v1alpha1.Vrf vrf_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.Vrf, opi_api.network.evpn_gw.v1alpha1.Vrf.Builder, opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder> vrfBuilder_;
@@ -462,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the vrf field is set.
      */
     public boolean hasVrf() {
@@ -473,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The vrf.
      */
     public opi_api.network.evpn_gw.v1alpha1.Vrf getVrf() {
@@ -488,7 +682,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVrf(opi_api.network.evpn_gw.v1alpha1.Vrf value) {
       if (vrfBuilder_ == null) {
@@ -508,7 +702,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVrf(
         opi_api.network.evpn_gw.v1alpha1.Vrf.Builder builderForValue) {
@@ -526,7 +720,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeVrf(opi_api.network.evpn_gw.v1alpha1.Vrf value) {
       if (vrfBuilder_ == null) {
@@ -548,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearVrf() {
       if (vrfBuilder_ == null) {
@@ -566,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.Vrf.Builder getVrfBuilder() {
       
@@ -578,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder getVrfOrBuilder() {
       if (vrfBuilder_ != null) {
@@ -593,7 +787,7 @@ private static final long serialVersionUID = 0L;
      * The vrf to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.Vrf, opi_api.network.evpn_gw.v1alpha1.Vrf.Builder, opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder> 

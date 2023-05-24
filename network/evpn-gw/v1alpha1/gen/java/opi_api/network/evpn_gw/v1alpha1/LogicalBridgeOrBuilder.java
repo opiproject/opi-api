@@ -9,7 +9,11 @@ public interface LogicalBridgeOrBuilder extends
 
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Logical Bridge.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -18,7 +22,11 @@ public interface LogicalBridgeOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Logical Bridge.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -29,25 +37,55 @@ public interface LogicalBridgeOrBuilder extends
 
   /**
    * <pre>
-   * Key
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)           
+   * Logical Bridge network configuration
    * </pre>
    *
-   * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the spec field is set.
    */
-  int getVlanId();
+  boolean hasSpec();
+  /**
+   * <pre>
+   * Logical Bridge network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The spec.
+   */
+  opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec getSpec();
+  /**
+   * <pre>
+   * Logical Bridge network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder getSpecOrBuilder();
 
   /**
    * <pre>
-   * VXLAN VNI for L2 EVPN. Also used as EVPN route target
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vni cannot be negative number. --)     
+   * Logical Bridge network status
    * </pre>
    *
-   * <code>uint32 vni = 3;</code>
-   * @return The vni.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
-  int getVni();
+  boolean hasStatus();
+  /**
+   * <pre>
+   * Logical Bridge network status
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * @return The status.
+   */
+  opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus getStatus();
+  /**
+   * <pre>
+   * Logical Bridge network status
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   */
+  opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder getStatusOrBuilder();
 }

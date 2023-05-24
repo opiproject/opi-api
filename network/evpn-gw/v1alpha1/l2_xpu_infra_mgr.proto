@@ -1,6 +1,15 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (C) 2023 Nordix Foundation.
 
+// (-- api-linter: core::0132::request-parent-required=disabled
+//     aip.dev/not-precedent: All the resources are top level. --)
+// (-- api-linter: core::0133::request-parent-required=disabled
+//     aip.dev/not-precedent: All the resources are top level. --)
+// (-- api-linter: core::0133::http-uri-parent=disabled
+//     aip.dev/not-precedent: All resources are top-level. --)
+// (-- api-linter: core::0216::synonyms=disabled
+//     aip.dev/not-precedent: Word "Status" will be used instead of "State". --)
+
 syntax = "proto3";
 
 package opi_api.network.evpn_gw.v1alpha1;
@@ -82,7 +91,14 @@ service BridgePortService {
 
 // Logical Bridge network configuration and status
 message LogicalBridge {
+    option (google.api.resource) = {
+      type: "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
+      pattern: "logicalBridges/{logical_bridge}"
+    };
     // The resource name of the Logical Bridge.
+    // "name" is an opaque object handle that is not user settable.
+    // "name" will be returned with created object
+    // user can only set {resource}_id on the Create request object
     // Format: logicalBridges/{logical_bridge}
     string name                = 1;
 
@@ -95,24 +111,19 @@ message LogicalBridge {
 // Logical Bridge network configuration
 message LogicalBridgeSpec {
     // the VLAN of the L2 domain
+    // (-- api-linter: core::0141::forbidden-types=disabled
+    //     aip.dev/not-precedent: vlan cannot be negative number. --)
     uint32 vlan_id         = 1 [(google.api.field_behavior) = REQUIRED];
     //VXLAN VNI for the L2 EVPN. Also used as EVPN route target
+    // (-- api-linter: core::0141::forbidden-types=disabled
+    //     aip.dev/not-precedent: vni cannot be negative number. --)
     uint32 vni             = 2;
 }
 
 // operational status of a Logical Bridge
 message LogicalBridgeStatus {
-    // operational status of a Logical Bridge
+    // operational state of a Logical Bridge
     LBOperStatus oper_status = 1;
-}
-
-enum LBOperStatus {
-    // unknown
-    LB_OPER_STATUS_UNSPECIFIED = 0;
-    // Logical Bridge is up
-    LB_OPER_STATUS_UP          = 1;
-    // Logical Bridge is down
-    LB_OPER_STATUS_DOWN        = 2;
 }
 
 // CreateLogicalBridgeRequest structure
@@ -122,7 +133,8 @@ message CreateLogicalBridgeRequest {
     //
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
-    string logical_bridge_id     = 1 [(google.api.field_behavior) = REQUIRED];
+    // If this is not provided the system will auto-generate it.
+    string logical_bridge_id     = 1;
 
     // The logical bridge to create
     LogicalBridge logical_bridge = 2 [(google.api.field_behavior) = REQUIRED];
@@ -150,22 +162,30 @@ message GetLogicalBridgeRequest {
     // Format: logicalBridges/{logical_bridge}
     string name = 1 [
       (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.v1alpha1/LogicalBridge"
+      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
     ];
 }
 
+// DeleteLogicalBridgeRequest structure
 message DeleteLogicalBridgeRequest {
     // The name of the logical bridge to retrieve
     // Format: logicalBridges/{logical_bridge}
     string name = 1 [
       (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.v1alpha1/LogicalBridge"
+      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/LogicalBridge"
     ];
 }
 
 // Bridge Port network configuration and status
 message BridgePort {
+    option (google.api.resource) = {
+      type: "opi_api.network.evpn_gw.v1alpha1/bridgePort"
+      pattern: "bridgePorts/{bridge_port}"
+    };
     // The resource name of the Bridge Port.
+    // "name" is an opaque object handle that is not user settable.
+    // "name" will be returned with created object
+    // user can only set {resource}_id on the Create request object
     // Format: bridge_ports/{bridge_port}
     string name             = 1;
 
@@ -178,35 +198,18 @@ message BridgePort {
 // Bridge Port network configuration
 message BridgePortSpec {
     // Bridge Port's MAC address.
-    bytes mac_address        = 1 [(google.api.field_behavior) = REQUIRED];
+    bytes mac_address               = 1 [(google.api.field_behavior) = REQUIRED];
     // Type of Bridge Port
-    BridgePortType ptype     = 2 [(google.api.field_behavior) = REQUIRED];
-    // Configured vlan ids on the bridge port
-    repeated uint32 vlan_ids = 3;
+    BridgePortType ptype            = 2 [(google.api.field_behavior) = REQUIRED];
+    // List of Logical Bridges this Bridge Port will attach.
+    // This will define the VLANs that will be enabled in this Bridge Port
+    repeated string logical_bridges = 3;
 }
 
 // operational status of a Bridge Port
 message BridgePortStatus {
     // operational status of a Bridge Port
     BPOperStatus oper_status = 1;
-}
-
-enum BPOperStatus {
-    // unknown
-    BP_OPER_STATUS_UNSPECIFIED = 0;
-    // Bridge Port is up
-    BP_OPER_STATUS_UP          = 1;
-    // Bridge Port is down
-    BP_OPER_STATUS_DOWN        = 2;
-}
-
-enum BridgePortType {
-    // "unknown" bridge port type
-    UNKNOWN = 0;
-    // "access" bridge port type 
-    ACCESS  = 1;
-    // "trunk" bridge port type
-    TRUNK   = 2;
 }
 
 // CreateBridgePortRequest structure
@@ -216,7 +219,8 @@ message CreateBridgePortRequest {
     //
     // This value should be 4-63 characters, and valid characters
     // are /[a-z][0-9]-/.
-    string bridge_port_id     = 1 [(google.api.field_behavior) = REQUIRED];
+    // If this is not provided the system will auto-generate it.
+    string bridge_port_id     = 1;
     // The bridge port to create
     BridgePort bridge_port    = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -243,7 +247,7 @@ message GetBridgePortRequest {
     // Format: bridgePorts/{bridge_port}
     string name = 1 [
       (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.v1alpha1/BridgePort"
+      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
     ];
 }
 
@@ -253,6 +257,36 @@ message DeleteBridgePortRequest {
     // Format: bridgePorts/{bridge_port}
     string name = 1 [
       (google.api.field_behavior) = REQUIRED,
-      (google.api.resource_reference).type = "opi_api.network.v1alpha1/BridgePort"
+      (google.api.resource_reference).type = "opi_api.network.evpn_gw.v1alpha1/BridgePort"
     ];
+}
+
+// LBOperStatus status reflects the operational status of a Logical Bridge
+enum LBOperStatus {
+    // unknown
+    LB_OPER_STATUS_UNSPECIFIED = 0;
+    // Logical Bridge is up
+    LB_OPER_STATUS_UP          = 1;
+    // Logical Bridge is down
+    LB_OPER_STATUS_DOWN        = 2;
+}
+
+// BPOperStatus status reflects the operational status of a Bridge Port
+enum BPOperStatus {
+    // unknown
+    BP_OPER_STATUS_UNSPECIFIED = 0;
+    // Bridge Port is up
+    BP_OPER_STATUS_UP          = 1;
+    // Bridge Port is down
+    BP_OPER_STATUS_DOWN        = 2;
+}
+
+// BridgePortType reflects the different types of a Bridge Port
+enum BridgePortType {
+    // "unknown" bridge port type
+    UNKNOWN = 0;
+    // "access" bridge port type 
+    ACCESS  = 1;
+    // "trunk" bridge port type
+    TRUNK   = 2;
 }

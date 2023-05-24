@@ -5,6 +5,8 @@
 
 - [l2_xpu_infra_mgr.proto](#l2_xpu_infra_mgr-proto)
     - [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort)
+    - [BridgePortSpec](#opi_api-network-evpn_gw-v1alpha1-BridgePortSpec)
+    - [BridgePortStatus](#opi_api-network-evpn_gw-v1alpha1-BridgePortStatus)
     - [CreateBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-CreateBridgePortRequest)
     - [CreateLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-CreateLogicalBridgeRequest)
     - [DeleteBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteBridgePortRequest)
@@ -16,8 +18,12 @@
     - [ListLogicalBridgesRequest](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesRequest)
     - [ListLogicalBridgesResponse](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesResponse)
     - [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge)
+    - [LogicalBridgeSpec](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeSpec)
+    - [LogicalBridgeStatus](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeStatus)
   
-    - [BridgePort.BridgePortType](#opi_api-network-evpn_gw-v1alpha1-BridgePort-BridgePortType)
+    - [BPOperStatus](#opi_api-network-evpn_gw-v1alpha1-BPOperStatus)
+    - [BridgePortType](#opi_api-network-evpn_gw-v1alpha1-BridgePortType)
+    - [LBOperStatus](#opi_api-network-evpn_gw-v1alpha1-LBOperStatus)
   
     - [BridgePortService](#opi_api-network-evpn_gw-v1alpha1-BridgePortService)
     - [LogicalBridgeService](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeService)
@@ -29,13 +35,19 @@
     - [DeleteVrfRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteVrfRequest)
     - [GetSviRequest](#opi_api-network-evpn_gw-v1alpha1-GetSviRequest)
     - [GetVrfRequest](#opi_api-network-evpn_gw-v1alpha1-GetVrfRequest)
-    - [IpAddressMasklen](#opi_api-network-evpn_gw-v1alpha1-IpAddressMasklen)
     - [ListSvisRequest](#opi_api-network-evpn_gw-v1alpha1-ListSvisRequest)
     - [ListSvisResponse](#opi_api-network-evpn_gw-v1alpha1-ListSvisResponse)
     - [ListVrfsRequest](#opi_api-network-evpn_gw-v1alpha1-ListVrfsRequest)
     - [ListVrfsResponse](#opi_api-network-evpn_gw-v1alpha1-ListVrfsResponse)
     - [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi)
+    - [SviSpec](#opi_api-network-evpn_gw-v1alpha1-SviSpec)
+    - [SviStatus](#opi_api-network-evpn_gw-v1alpha1-SviStatus)
     - [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf)
+    - [VrfSpec](#opi_api-network-evpn_gw-v1alpha1-VrfSpec)
+    - [VrfStatus](#opi_api-network-evpn_gw-v1alpha1-VrfStatus)
+  
+    - [SVIOperStatus](#opi_api-network-evpn_gw-v1alpha1-SVIOperStatus)
+    - [VRFOperStatus](#opi_api-network-evpn_gw-v1alpha1-VRFOperStatus)
   
     - [SviService](#opi_api-network-evpn_gw-v1alpha1-SviService)
     - [VrfService](#opi_api-network-evpn_gw-v1alpha1-VrfService)
@@ -45,8 +57,8 @@
     - [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo)
     - [CPUInfo](#opi_api-inventory-v1-CPUInfo)
     - [ChassisInfo](#opi_api-inventory-v1-ChassisInfo)
-    - [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest)
-    - [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse)
+    - [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest)
+    - [Inventory](#opi_api-inventory-v1-Inventory)
     - [MemoryInfo](#opi_api-inventory-v1-MemoryInfo)
     - [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo)
     - [SystemInfo](#opi_api-inventory-v1-SystemInfo)
@@ -73,16 +85,46 @@
 <a name="opi_api-network-evpn_gw-v1alpha1-BridgePort"></a>
 
 ### BridgePort
-BridgePort structure
+Bridge Port network configuration and status
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Free text description |
-| vport_id | [uint32](#uint32) |  | Key. Read-only. Assigned by the server in CreateBridgePort (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vport_id cannot be negative number. --) |
-| mac_address | [string](#string) |  | Use &#34;aa:bb:cc:dd:ee:ff&#34; format |
-| ptype | [BridgePort.BridgePortType](#opi_api-network-evpn_gw-v1alpha1-BridgePort-BridgePortType) |  | holds the type of the bridge port |
-| vlan_id | [uint32](#uint32) | repeated | Configured vlan ids on the bridge port (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| name | [string](#string) |  | The resource name of the Bridge Port. &#34;name&#34; is an opaque object handle that is not user settable. &#34;name&#34; will be returned with created object user can only set {resource}_id on the Create request object Format: bridge_ports/{bridge_port} |
+| spec | [BridgePortSpec](#opi_api-network-evpn_gw-v1alpha1-BridgePortSpec) |  | Bridge Port network configuration |
+| status | [BridgePortStatus](#opi_api-network-evpn_gw-v1alpha1-BridgePortStatus) |  | Bridge Port network status |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-BridgePortSpec"></a>
+
+### BridgePortSpec
+Bridge Port network configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| mac_address | [bytes](#bytes) |  | Bridge Port&#39;s MAC address. |
+| ptype | [BridgePortType](#opi_api-network-evpn_gw-v1alpha1-BridgePortType) |  | Type of Bridge Port |
+| logical_bridges | [string](#string) | repeated | List of Logical Bridges this Bridge Port will attach. This will define the VLANs that will be enabled in this Bridge Port |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-BridgePortStatus"></a>
+
+### BridgePortStatus
+operational status of a Bridge Port
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oper_status | [BPOperStatus](#opi_api-network-evpn_gw-v1alpha1-BPOperStatus) |  | operational status of a Bridge Port |
 
 
 
@@ -97,6 +139,9 @@ CreateBridgePortRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| bridge_port_id | [string](#string) |  | The ID to use for the bridge port, which will become the final component of the bridge port&#39;s resource name.
+
+This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/. If this is not provided the system will auto-generate it. |
 | bridge_port | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) |  | The bridge port to create |
 
 
@@ -112,6 +157,9 @@ CreateLogicalBridgeRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| logical_bridge_id | [string](#string) |  | The ID to use for the logical bridge, which will become the final component of the logical bridge&#39;s resource name.
+
+This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/. If this is not provided the system will auto-generate it. |
 | logical_bridge | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) |  | The logical bridge to create |
 
 
@@ -122,15 +170,12 @@ CreateLogicalBridgeRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-DeleteBridgePortRequest"></a>
 
 ### DeleteBridgePortRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vport_id&#34; because is used as key
-    for deletion. --)
 DeleteBridgePortRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vport_id | [uint32](#uint32) |  | The vport id of the bridge port to delete (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vport_id cannot be negative number. --) |
+| name | [string](#string) |  | The name of the bridge port to retrieve Format: bridgePorts/{bridge_port} |
 
 
 
@@ -140,15 +185,12 @@ DeleteBridgePortRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-DeleteLogicalBridgeRequest"></a>
 
 ### DeleteLogicalBridgeRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vlan_id&#34; because is used as key
-    for deletion. --)
 DeleteLogicalBridgeRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vlan_id | [uint32](#uint32) |  | The vlan id of the logical bridge to delete (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| name | [string](#string) |  | The name of the logical bridge to retrieve Format: logicalBridges/{logical_bridge} |
 
 
 
@@ -158,15 +200,12 @@ DeleteLogicalBridgeRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-GetBridgePortRequest"></a>
 
 ### GetBridgePortRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vport_id&#34; because is used as key
-    for the retrieve operation. --)
 GetBridgePortRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vport_id | [uint32](#uint32) |  | The vport id of the bridge port to retrieve (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vport_id cannot be negative number. --) |
+| name | [string](#string) |  | The name of the bridge port to retrieve Format: bridgePorts/{bridge_port} |
 
 
 
@@ -176,15 +215,12 @@ GetBridgePortRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-GetLogicalBridgeRequest"></a>
 
 ### GetLogicalBridgeRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vlan_id&#34; because is used as key
-    for the retrieve operation. --)
 GetLogicalBridgeRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vlan_id | [uint32](#uint32) |  | The vlan id of the logical bridge to retrieve (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| name | [string](#string) |  | The name of the logical bridge to retrieve Format: logicalBridges/{logical_bridge} |
 
 
 
@@ -258,14 +294,45 @@ ListLogicalBridgesResponse structure
 <a name="opi_api-network-evpn_gw-v1alpha1-LogicalBridge"></a>
 
 ### LogicalBridge
-LogicalBridge structure
+Logical Bridge network configuration and status
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Free text description |
-| vlan_id | [uint32](#uint32) |  | Key (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
-| vni | [uint32](#uint32) |  | VXLAN VNI for L2 EVPN. Also used as EVPN route target (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vni cannot be negative number. --) |
+| name | [string](#string) |  | The resource name of the Logical Bridge. &#34;name&#34; is an opaque object handle that is not user settable. &#34;name&#34; will be returned with created object user can only set {resource}_id on the Create request object Format: logicalBridges/{logical_bridge} |
+| spec | [LogicalBridgeSpec](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeSpec) |  | Logical Bridge network configuration |
+| status | [LogicalBridgeStatus](#opi_api-network-evpn_gw-v1alpha1-LogicalBridgeStatus) |  | Logical Bridge network status |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-LogicalBridgeSpec"></a>
+
+### LogicalBridgeSpec
+Logical Bridge network configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vlan_id | [uint32](#uint32) |  | the VLAN of the L2 domain (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| vni | [uint32](#uint32) |  | VXLAN VNI for the L2 EVPN. Also used as EVPN route target (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vni cannot be negative number. --) |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-LogicalBridgeStatus"></a>
+
+### LogicalBridgeStatus
+operational status of a Logical Bridge
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oper_status | [LBOperStatus](#opi_api-network-evpn_gw-v1alpha1-LBOperStatus) |  | operational state of a Logical Bridge |
 
 
 
@@ -274,16 +341,42 @@ LogicalBridge structure
  
 
 
-<a name="opi_api-network-evpn_gw-v1alpha1-BridgePort-BridgePortType"></a>
+<a name="opi_api-network-evpn_gw-v1alpha1-BPOperStatus"></a>
 
-### BridgePort.BridgePortType
-Defines the available types of a bridge port
+### BPOperStatus
+BPOperStatus status reflects the operational status of a Bridge Port
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| BP_OPER_STATUS_UNSPECIFIED | 0 | unknown |
+| BP_OPER_STATUS_UP | 1 | Bridge Port is up |
+| BP_OPER_STATUS_DOWN | 2 | Bridge Port is down |
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-BridgePortType"></a>
+
+### BridgePortType
+BridgePortType reflects the different types of a Bridge Port
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | UNKNOWN | 0 | &#34;unknown&#34; bridge port type |
 | ACCESS | 1 | &#34;access&#34; bridge port type |
 | TRUNK | 2 | &#34;trunk&#34; bridge port type |
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-LBOperStatus"></a>
+
+### LBOperStatus
+LBOperStatus status reflects the operational status of a Logical Bridge
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LB_OPER_STATUS_UNSPECIFIED | 0 | unknown |
+| LB_OPER_STATUS_UP | 1 | Logical Bridge is up |
+| LB_OPER_STATUS_DOWN | 2 | Logical Bridge is down |
 
 
  
@@ -298,10 +391,10 @@ Management of BridgePort resources
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateBridgePort | [CreateBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-CreateBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Create a BridgePort (-- api-linter: core::0133::method-signature=disabled aip.dev/not-precedent: The &#34;bridge_port&#34; is top-level resource. --) |
-| ListBridgePorts | [ListBridgePortsRequest](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsRequest) | [ListBridgePortsResponse](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsResponse) | List BridgePorts |
-| GetBridgePort | [GetBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-GetBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Retrieve a BridgePort (-- api-linter: core::0131::method-signature=disabled aip.dev/not-precedent: &#34;vport_id&#34; is the key. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: &#34;vport_id&#34; is the required field. --) (-- api-linter: core::0131::http-uri-name=disabled aip.dev/not-precedent: No &#34;name&#34; is used as key. --) |
-| DeleteBridgePort | [DeleteBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteBridgePortRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a BridgePort (-- api-linter: core::0135::method-signature=disabled aip.dev/not-precedent: &#34;vport_id&#34; is the key. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: &#34;vport_id&#34; is the required field. --) (-- api-linter: core::0135::http-uri-name=disabled aip.dev/not-precedent: The &#34;name&#34; is not used as key. --) |
+| CreateBridgePort | [CreateBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-CreateBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Create a Bridge Port |
+| ListBridgePorts | [ListBridgePortsRequest](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsRequest) | [ListBridgePortsResponse](#opi_api-network-evpn_gw-v1alpha1-ListBridgePortsResponse) | List Bridge Ports |
+| GetBridgePort | [GetBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-GetBridgePortRequest) | [BridgePort](#opi_api-network-evpn_gw-v1alpha1-BridgePort) | Retrieve a Bridge Port |
+| DeleteBridgePort | [DeleteBridgePortRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteBridgePortRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Bridge Port |
 
 
 <a name="opi_api-network-evpn_gw-v1alpha1-LogicalBridgeService"></a>
@@ -311,10 +404,10 @@ Management of LogicalBridge Resources
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateLogicalBridge | [CreateLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-CreateLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Create a LogicalBridge (-- api-linter: core::0133::method-signature=disabled aip.dev/not-precedent: The &#34;logical_bridge&#34; is top-level resource. --) |
-| ListLogicalBridges | [ListLogicalBridgesRequest](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesRequest) | [ListLogicalBridgesResponse](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesResponse) | List LogicalBridges |
-| GetLogicalBridge | [GetLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-GetLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Retrieve a LogicalBridge (-- api-linter: core::0131::method-signature=disabled aip.dev/not-precedent: &#34;vlan_id&#34; is the key. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: &#34;vlan_id&#34; is the required field. --) (-- api-linter: core::0131::http-uri-name=disabled aip.dev/not-precedent: No &#34;name&#34; is used as key. --) |
-| DeleteLogicalBridge | [DeleteLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteLogicalBridgeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a LogicalBridge (-- api-linter: core::0135::method-signature=disabled aip.dev/not-precedent: &#34;vlan_id&#34; is the key. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: &#34;vlan_id&#34; is the required field. --) (-- api-linter: core::0135::http-uri-name=disabled aip.dev/not-precedent: The &#34;name&#34; is not used as key. --) |
+| CreateLogicalBridge | [CreateLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-CreateLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Create a Logical Bridge |
+| ListLogicalBridges | [ListLogicalBridgesRequest](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesRequest) | [ListLogicalBridgesResponse](#opi_api-network-evpn_gw-v1alpha1-ListLogicalBridgesResponse) | List Logical Bridges |
+| GetLogicalBridge | [GetLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-GetLogicalBridgeRequest) | [LogicalBridge](#opi_api-network-evpn_gw-v1alpha1-LogicalBridge) | Retrieve a Logical Bridge |
+| DeleteLogicalBridge | [DeleteLogicalBridgeRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteLogicalBridgeRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Logical Bridge |
 
  
 
@@ -335,6 +428,9 @@ CreateSviRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| svi_id | [string](#string) |  | The ID to use for the svi, which will become the final component of the svi&#39;s resource name.
+
+This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/. If this is not provided the system will auto-generate it. |
 | svi | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) |  | The Svi to create |
 
 
@@ -350,6 +446,9 @@ CreateVrfRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| vrf_id | [string](#string) |  | The ID to use for the vrf, which will become the final component of the vrf&#39;s resource name.
+
+This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/. If this is not provided the system will auto-generate it. |
 | vrf | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) |  | The vrf to create |
 
 
@@ -360,18 +459,12 @@ CreateVrfRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-DeleteSviRequest"></a>
 
 ### DeleteSviRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vrf&#34;, &#34;vlan_id&#34; because are used as keys
-    for deletion. --)
-(-- api-linter: core::0135::request-name-required=disabled
-    aip.dev/not-precedent: The &#34;vrf&#34;, &#34;vlan_id&#34; keys are used for deletion. --)
 DeleteSviRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vrf | [string](#string) |  | The name of the associated vrf |
-| vlan_id | [uint32](#uint32) |  | The vlan id of the associated logical bridge (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| name | [string](#string) |  | The name of the svi to delete Format: svis/{svi} |
 
 
 
@@ -386,7 +479,7 @@ DeleteVrfRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | The name of the vrf to delete |
+| name | [string](#string) |  | The name of the vrf to delete Format: vrfs/{vrf} |
 
 
 
@@ -396,22 +489,12 @@ DeleteVrfRequest structure
 <a name="opi_api-network-evpn_gw-v1alpha1-GetSviRequest"></a>
 
 ### GetSviRequest
-(-- api-linter: core::0135::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vrf&#34;, &#34;vlan_id&#34; because are used as keys
-    for the retrieve operation. --)
-(-- api-linter: core::0131::request-name-required=disabled
-    aip.dev/not-precedent: We really need &#34;vrf&#34;, &#34;vlan_id&#34; because are used as keys
-    for the retrieve operation. --)
-(-- api-linter: core::0131::request-unknown-fields=disabled
-    aip.dev/not-precedent: We really need &#34;vrf&#34;, &#34;vlan_id&#34; because are used as keys
-    for the retrieve operation. --)
 GetSviRequest structure
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vrf | [string](#string) |  | The name of the associated vrf |
-| vlan_id | [uint32](#uint32) |  | The vlan id of the associated logical bridge (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| name | [string](#string) |  | The name of the svi to retrieve Format: svis/{svi} |
 
 
 
@@ -426,23 +509,7 @@ GetVrfRequest structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | The name of the vrf to retrieve |
-
-
-
-
-
-
-<a name="opi_api-network-evpn_gw-v1alpha1-IpAddressMasklen"></a>
-
-### IpAddressMasklen
-IpAddressMasklen structure
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ip_addr | [string](#string) |  | IP address |
-| len | [uint32](#uint32) |  | Length of the subnet prefix mask (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: subnet mask cannot be negative number. --) |
+| name | [string](#string) |  | The name of the vrf to retrieve Format: vrfs/{vrf} |
 
 
 
@@ -505,7 +572,7 @@ ListVrfsResponse structure
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vrfs | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | repeated | List of all the bridge ports |
+| vrfs | [Vrf](#opi_api-network-evpn_gw-v1alpha1-Vrf) | repeated | List of all the vrfs |
 | next_page_token | [string](#string) |  | Next page token of list response |
 
 
@@ -516,20 +583,49 @@ ListVrfsResponse structure
 <a name="opi_api-network-evpn_gw-v1alpha1-Svi"></a>
 
 ### Svi
-(-- api-linter: core::0123::resource-name-field=disabled
-    aip.dev/not-precedent: The &#34;vrf&#34;, &#34;vlan_id&#34; are used for unique identification
-    of the svi object. --)
-Svi structure
+Svi network configuration
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vrf | [string](#string) |  | Name of the VRF |
-| vlan_id | [uint32](#uint32) |  | Key of the LogicalBridge (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
-| mac_address | [string](#string) |  | Use &#34;aa:bb:cc:dd:ee:ff&#34; format. Randomly assigned if not specified |
-| gw_ip | [IpAddressMasklen](#opi_api-network-evpn_gw-v1alpha1-IpAddressMasklen) | repeated | The GW IP addresses with masks assigned to the SVI |
-| enable_bgp | [bool](#bool) |  | Set to true to enable BGP peering with VRF on SVI |
+| name | [string](#string) |  | The resource name of the Svi. &#34;name&#34; is an opaque object handle that is not user settable. &#34;name&#34; will be returned with created object user can only set {resource}_id on the Create request object Format: svis/{svi} |
+| spec | [SviSpec](#opi_api-network-evpn_gw-v1alpha1-SviSpec) |  | Svi&#39;s network configuration |
+| status | [SviStatus](#opi_api-network-evpn_gw-v1alpha1-SviStatus) |  | Svi&#39;s network status |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-SviSpec"></a>
+
+### SviSpec
+Svi&#39;s network configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| vrf | [string](#string) |  | Vrf name Format is `vrfs/{vrf}` |
+| logical_bridge | [string](#string) |  | Logical Bridge name Format is `logicalBridges/{logical_bridge}` |
+| mac_address | [bytes](#bytes) |  | Svi&#39;s MAC address. |
+| gw_ip_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) | repeated | The GW IP addresses assigned to the SVI |
+| enable_bgp | [bool](#bool) |  | Set to true to enable BGP peering with Vrf on Svi |
 | remote_as | [uint32](#uint32) |  | Conditional: The remote AS used by BGP speakers on LB (1-65535) (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: remote_as cannot be negative number. --) |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-SviStatus"></a>
+
+### SviStatus
+operational status of a Svi
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oper_status | [SVIOperStatus](#opi_api-network-evpn_gw-v1alpha1-SVIOperStatus) |  | operational status of a Svi |
 
 
 
@@ -539,28 +635,85 @@ Svi structure
 <a name="opi_api-network-evpn_gw-v1alpha1-Vrf"></a>
 
 ### Vrf
-Vrf structure
+Vrf level network configuration
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Key, also used as name of the Linux vrf device (max 9 chars) |
+| name | [string](#string) |  | The resource name of the Vrf. &#34;name&#34; is an opaque object handle that is not user settable. &#34;name&#34; will be returned with created object user can only set {resource}_id on the Create request object Format: vrfs/{vrf} |
+| spec | [VrfSpec](#opi_api-network-evpn_gw-v1alpha1-VrfSpec) |  | Vrf&#39;s network configuration |
+| status | [VrfStatus](#opi_api-network-evpn_gw-v1alpha1-VrfStatus) |  | Vrf&#39;s network status |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-VrfSpec"></a>
+
+### VrfSpec
+Vrf network configuration
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | vni | [uint32](#uint32) |  | VXLAN VNI for L3 EVPN. Also used as EVPN route target (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vni cannot be negative number. --) |
-| routing_table | [uint32](#uint32) |  | Linux routing table number (range 1001-3999). Defaults to vni (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: routing_table cannot be negative number. --) |
-| loopback_ip | [string](#string) |  | IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR |
-| vtep_ip | [string](#string) |  | IPv4 or IPv6 IP address for the VXLAN TEP |
-| local_as | [uint32](#uint32) |  | Read-only: Local AS configured for VRF (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: local_as cannot be negative number. --) |
-| rd | [string](#string) |  | Read-only: Route distinguisher chosen by FRR |
-| rmac | [string](#string) |  | Read-only: Router MAC address of the VRF |
-| import_rts | [string](#string) | repeated | Read-only: List of import RTs chosen by FRR |
-| export_rts | [string](#string) | repeated | Read-only: List of export RTs chosen by FRR |
-| vlan_ids | [uint32](#uint32) | repeated | Read-only: List of connected LogicalBridges (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: vlan cannot be negative number. --) |
+| loopback_ip_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | IPv4 or IPv6 loopback address prefix. Also serves as basis for RD in FRR |
+| vtep_ip_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | IPv4 or IPv6 IP address prefix for the VXLAN TEP |
+
+
+
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-VrfStatus"></a>
+
+### VrfStatus
+operational status of a Vrf
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| routing_table | [uint32](#uint32) |  | Routing table number (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: routing_table cannot be negative number. --) |
+| local_as | [uint32](#uint32) |  | Local AS configured for VRF (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: local_as cannot be negative number. --) |
+| rd | [string](#string) |  | Route distinguisher |
+| rmac | [bytes](#bytes) |  | Router MAC address of the Vrf |
+| import_rts | [string](#string) | repeated | List of import RTs |
+| export_rts | [string](#string) | repeated | List of export RTs |
+| logical_bridges | [string](#string) | repeated | List of connected Logical Bridges to Vrf This defines the VLANs that are connected to the Vrf |
+| oper_status | [VRFOperStatus](#opi_api-network-evpn_gw-v1alpha1-VRFOperStatus) |  | operational status of a Vrf |
 
 
 
 
 
  
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-SVIOperStatus"></a>
+
+### SVIOperStatus
+SVIOperStatus status reflects the operational status of a Svi
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SVI_OPER_STATUS_UNSPECIFIED | 0 | unknown |
+| SVI_OPER_STATUS_UP | 1 | Svi is up |
+| SVI_OPER_STATUS_DOWN | 2 | Svi is down |
+
+
+
+<a name="opi_api-network-evpn_gw-v1alpha1-VRFOperStatus"></a>
+
+### VRFOperStatus
+VRFOperStatus status reflects the operational status of a Vrf
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VRF_OPER_STATUS_UNSPECIFIED | 0 | unknown |
+| VRF_OPER_STATUS_UP | 1 | Vrf is up |
+| VRF_OPER_STATUS_DOWN | 2 | Vrf is down |
+
 
  
 
@@ -576,8 +729,8 @@ Management of switch virtual interfaces (SVIs) binding LogicalBridges to VRFs.
 | ----------- | ------------ | ------------- | ------------|
 | CreateSvi | [CreateSviRequest](#opi_api-network-evpn_gw-v1alpha1-CreateSviRequest) | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) | Create a Svi |
 | ListSvis | [ListSvisRequest](#opi_api-network-evpn_gw-v1alpha1-ListSvisRequest) | [ListSvisResponse](#opi_api-network-evpn_gw-v1alpha1-ListSvisResponse) | List Svis |
-| GetSvi | [GetSviRequest](#opi_api-network-evpn_gw-v1alpha1-GetSviRequest) | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) | Retrieve a Svi (-- api-linter: core::0131::method-signature=disabled aip.dev/not-precedent: &#34;vrf&#34; and &#34;vlan_id&#34; are the keys. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: vrf&#34; and &#34;vlan_id&#34; are the required fields. --) (-- api-linter: core::0131::http-uri-name=disabled aip.dev/not-precedent: No &#34;name&#34; is used as key. --) |
-| DeleteSvi | [DeleteSviRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteSviRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Svi (-- api-linter: core::0135::method-signature=disabled aip.dev/not-precedent: &#34;vrf&#34; and &#34;vlan_id&#34; are the keys. --) (-- api-linter: client-libraries::4232::required-fields=disabled aip.dev/not-precedent: &#34;vrf&#34; and &#34;vlan_id&#34; are the required fields. --) (-- api-linter: core::0135::http-uri-name=disabled aip.dev/not-precedent: The &#34;name&#34; is not used as key. --) |
+| GetSvi | [GetSviRequest](#opi_api-network-evpn_gw-v1alpha1-GetSviRequest) | [Svi](#opi_api-network-evpn_gw-v1alpha1-Svi) | Retrieve a Svi |
+| DeleteSvi | [DeleteSviRequest](#opi_api-network-evpn_gw-v1alpha1-DeleteSviRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete a Svi |
 
 
 <a name="opi_api-network-evpn_gw-v1alpha1-VrfService"></a>
@@ -613,7 +766,7 @@ BIOS Information (Type 0)
 | ----- | ---- | ----- | ----------- |
 | vendor | [string](#string) |  | String number of the BIOS Vendor’s Name. |
 | version | [string](#string) |  | String number of the BIOS Version. This value is a free-form string that may contain Core and OEM version information. |
-| date | [string](#string) |  | String number of the BIOS release date. The date string, if supplied, is in either mm/dd/yy or mm/dd/yyyy format. If the year portion of the string is two digits, the year is assumed to be 19yy. NOTE: The mm/dd/yyyy format is required for SMBIOS version 2.3 and later |
+| date | [string](#string) |  | String number of the BIOS release date. The date string, if supplied, is in either mm/dd/yy or mm/dd/yyyy format. If the year portion of the string is two digits, the year is assumed to be 19yy. NOTE: In version 2.3 and later of SMBIOS the mm/dd/yyyy format is only used. |
 
 
 
@@ -686,31 +839,36 @@ System Enclosure or Chassis (Type 3)
 
 
 
-<a name="opi_api-inventory-v1-InventoryGetRequest"></a>
+<a name="opi_api-inventory-v1-GetInventoryRequest"></a>
 
-### InventoryGetRequest
-Empty
-
-
-
-
-
-
-<a name="opi_api-inventory-v1-InventoryGetResponse"></a>
-
-### InventoryGetResponse
-
+### GetInventoryRequest
+Request for Retrieving Inventory data from a device
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  |  |
-| system | [SystemInfo](#opi_api-inventory-v1-SystemInfo) |  |  |
-| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  |  |
-| chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  |  |
-| processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  |  |
-| memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  |  |
-| pci | [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo) | repeated |  |
+| name | [string](#string) |  | The name of the inventory to retrieve - blank for the full inventory |
+
+
+
+
+
+
+<a name="opi_api-inventory-v1-Inventory"></a>
+
+### Inventory
+Response for device inventory data
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bios | [BIOSInfo](#opi_api-inventory-v1-BIOSInfo) |  | BIOS Inventory |
+| system | [SystemInfo](#opi_api-inventory-v1-SystemInfo) |  | System Inventory |
+| baseboard | [BaseboardInfo](#opi_api-inventory-v1-BaseboardInfo) |  | Baseboard Inventory |
+| chassis | [ChassisInfo](#opi_api-inventory-v1-ChassisInfo) |  | Chassis Inventory |
+| processor | [CPUInfo](#opi_api-inventory-v1-CPUInfo) |  | CPU Inventory |
+| memory | [MemoryInfo](#opi_api-inventory-v1-MemoryInfo) |  | Memory Inventory |
+| pci | [PCIeDeviceInfo](#opi_api-inventory-v1-PCIeDeviceInfo) | repeated | PCI Devices Inventory |
 
 
 
@@ -797,7 +955,7 @@ Service functions for the device inventory data
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| InventoryGet | [InventoryGetRequest](#opi_api-inventory-v1-InventoryGetRequest) | [InventoryGetResponse](#opi_api-inventory-v1-InventoryGetResponse) | retrieves the inventory data for the device |
+| GetInventory | [GetInventoryRequest](#opi_api-inventory-v1-GetInventoryRequest) | [Inventory](#opi_api-inventory-v1-Inventory) | retrieves the inventory data for the device |
 
  
 

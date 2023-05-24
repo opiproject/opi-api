@@ -52,7 +52,7 @@ struct TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -66,6 +66,12 @@ namespace v1alpha1 {
 class BridgePort;
 struct BridgePortDefaultTypeInternal;
 extern BridgePortDefaultTypeInternal _BridgePort_default_instance_;
+class BridgePortSpec;
+struct BridgePortSpecDefaultTypeInternal;
+extern BridgePortSpecDefaultTypeInternal _BridgePortSpec_default_instance_;
+class BridgePortStatus;
+struct BridgePortStatusDefaultTypeInternal;
+extern BridgePortStatusDefaultTypeInternal _BridgePortStatus_default_instance_;
 class CreateBridgePortRequest;
 struct CreateBridgePortRequestDefaultTypeInternal;
 extern CreateBridgePortRequestDefaultTypeInternal _CreateBridgePortRequest_default_instance_;
@@ -99,12 +105,20 @@ extern ListLogicalBridgesResponseDefaultTypeInternal _ListLogicalBridgesResponse
 class LogicalBridge;
 struct LogicalBridgeDefaultTypeInternal;
 extern LogicalBridgeDefaultTypeInternal _LogicalBridge_default_instance_;
+class LogicalBridgeSpec;
+struct LogicalBridgeSpecDefaultTypeInternal;
+extern LogicalBridgeSpecDefaultTypeInternal _LogicalBridgeSpec_default_instance_;
+class LogicalBridgeStatus;
+struct LogicalBridgeStatusDefaultTypeInternal;
+extern LogicalBridgeStatusDefaultTypeInternal _LogicalBridgeStatus_default_instance_;
 }  // namespace v1alpha1
 }  // namespace evpn_gw
 }  // namespace network
 }  // namespace opi_api
 PROTOBUF_NAMESPACE_OPEN
 template<> ::opi_api::network::evpn_gw::v1alpha1::BridgePort* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::BridgePort>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest>(Arena*);
@@ -116,37 +130,91 @@ template<> ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse* Arena
 template<> ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse>(Arena*);
 template<> ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec>(Arena*);
+template<> ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* Arena::CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace opi_api {
 namespace network {
 namespace evpn_gw {
 namespace v1alpha1 {
 
-enum BridgePort_BridgePortType : int {
-  BridgePort_BridgePortType_UNKNOWN = 0,
-  BridgePort_BridgePortType_ACCESS = 1,
-  BridgePort_BridgePortType_TRUNK = 2,
-  BridgePort_BridgePortType_BridgePort_BridgePortType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  BridgePort_BridgePortType_BridgePort_BridgePortType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum LBOperStatus : int {
+  LB_OPER_STATUS_UNSPECIFIED = 0,
+  LB_OPER_STATUS_UP = 1,
+  LB_OPER_STATUS_DOWN = 2,
+  LBOperStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  LBOperStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool BridgePort_BridgePortType_IsValid(int value);
-constexpr BridgePort_BridgePortType BridgePort_BridgePortType_BridgePortType_MIN = BridgePort_BridgePortType_UNKNOWN;
-constexpr BridgePort_BridgePortType BridgePort_BridgePortType_BridgePortType_MAX = BridgePort_BridgePortType_TRUNK;
-constexpr int BridgePort_BridgePortType_BridgePortType_ARRAYSIZE = BridgePort_BridgePortType_BridgePortType_MAX + 1;
+bool LBOperStatus_IsValid(int value);
+constexpr LBOperStatus LBOperStatus_MIN = LB_OPER_STATUS_UNSPECIFIED;
+constexpr LBOperStatus LBOperStatus_MAX = LB_OPER_STATUS_DOWN;
+constexpr int LBOperStatus_ARRAYSIZE = LBOperStatus_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BridgePort_BridgePortType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LBOperStatus_descriptor();
 template<typename T>
-inline const std::string& BridgePort_BridgePortType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, BridgePort_BridgePortType>::value ||
+inline const std::string& LBOperStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, LBOperStatus>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function BridgePort_BridgePortType_Name.");
+    "Incorrect type passed to function LBOperStatus_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    BridgePort_BridgePortType_descriptor(), enum_t_value);
+    LBOperStatus_descriptor(), enum_t_value);
 }
-inline bool BridgePort_BridgePortType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BridgePort_BridgePortType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BridgePort_BridgePortType>(
-    BridgePort_BridgePortType_descriptor(), name, value);
+inline bool LBOperStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, LBOperStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<LBOperStatus>(
+    LBOperStatus_descriptor(), name, value);
+}
+enum BPOperStatus : int {
+  BP_OPER_STATUS_UNSPECIFIED = 0,
+  BP_OPER_STATUS_UP = 1,
+  BP_OPER_STATUS_DOWN = 2,
+  BPOperStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  BPOperStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool BPOperStatus_IsValid(int value);
+constexpr BPOperStatus BPOperStatus_MIN = BP_OPER_STATUS_UNSPECIFIED;
+constexpr BPOperStatus BPOperStatus_MAX = BP_OPER_STATUS_DOWN;
+constexpr int BPOperStatus_ARRAYSIZE = BPOperStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BPOperStatus_descriptor();
+template<typename T>
+inline const std::string& BPOperStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BPOperStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BPOperStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BPOperStatus_descriptor(), enum_t_value);
+}
+inline bool BPOperStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BPOperStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BPOperStatus>(
+    BPOperStatus_descriptor(), name, value);
+}
+enum BridgePortType : int {
+  UNKNOWN = 0,
+  ACCESS = 1,
+  TRUNK = 2,
+  BridgePortType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  BridgePortType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool BridgePortType_IsValid(int value);
+constexpr BridgePortType BridgePortType_MIN = UNKNOWN;
+constexpr BridgePortType BridgePortType_MAX = TRUNK;
+constexpr int BridgePortType_ARRAYSIZE = BridgePortType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BridgePortType_descriptor();
+template<typename T>
+inline const std::string& BridgePortType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BridgePortType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BridgePortType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BridgePortType_descriptor(), enum_t_value);
+}
+inline bool BridgePortType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BridgePortType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BridgePortType>(
+    BridgePortType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -273,8 +341,8 @@ class LogicalBridge final :
 
   enum : int {
     kNameFieldNumber = 1,
-    kVlanIdFieldNumber = 2,
-    kVniFieldNumber = 3,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
   // string name = 1;
   void clear_name();
@@ -290,23 +358,41 @@ class LogicalBridge final :
   std::string* _internal_mutable_name();
   public:
 
-  // uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];
-  void clear_vlan_id();
-  uint32_t vlan_id() const;
-  void set_vlan_id(uint32_t value);
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
+  bool has_spec() const;
   private:
-  uint32_t _internal_vlan_id() const;
-  void _internal_set_vlan_id(uint32_t value);
+  bool _internal_has_spec() const;
   public:
+  void clear_spec();
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec& spec() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* release_spec();
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* mutable_spec();
+  void set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec& _internal_spec() const;
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* _internal_mutable_spec();
+  public:
+  void unsafe_arena_set_allocated_spec(
+      ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec);
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* unsafe_arena_release_spec();
 
-  // uint32 vni = 3;
-  void clear_vni();
-  uint32_t vni() const;
-  void set_vni(uint32_t value);
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+  bool has_status() const;
   private:
-  uint32_t _internal_vni() const;
-  void _internal_set_vni(uint32_t value);
+  bool _internal_has_status() const;
   public:
+  void clear_status();
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus& status() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* release_status();
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* mutable_status();
+  void set_allocated_status(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* status);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus& _internal_status() const;
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* _internal_mutable_status();
+  public:
+  void unsafe_arena_set_allocated_status(
+      ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* status);
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* unsafe_arena_release_status();
 
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.LogicalBridge)
  private:
@@ -316,8 +402,311 @@ class LogicalBridge final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec_;
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LogicalBridgeSpec final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec) */ {
+ public:
+  inline LogicalBridgeSpec() : LogicalBridgeSpec(nullptr) {}
+  ~LogicalBridgeSpec() override;
+  explicit constexpr LogicalBridgeSpec(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LogicalBridgeSpec(const LogicalBridgeSpec& from);
+  LogicalBridgeSpec(LogicalBridgeSpec&& from) noexcept
+    : LogicalBridgeSpec() {
+    *this = ::std::move(from);
+  }
+
+  inline LogicalBridgeSpec& operator=(const LogicalBridgeSpec& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LogicalBridgeSpec& operator=(LogicalBridgeSpec&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LogicalBridgeSpec& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LogicalBridgeSpec* internal_default_instance() {
+    return reinterpret_cast<const LogicalBridgeSpec*>(
+               &_LogicalBridgeSpec_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(LogicalBridgeSpec& a, LogicalBridgeSpec& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LogicalBridgeSpec* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LogicalBridgeSpec* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  LogicalBridgeSpec* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LogicalBridgeSpec>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LogicalBridgeSpec& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LogicalBridgeSpec& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LogicalBridgeSpec* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec";
+  }
+  protected:
+  explicit LogicalBridgeSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVlanIdFieldNumber = 1,
+    kVniFieldNumber = 2,
+  };
+  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+  void clear_vlan_id();
+  uint32_t vlan_id() const;
+  void set_vlan_id(uint32_t value);
+  private:
+  uint32_t _internal_vlan_id() const;
+  void _internal_set_vlan_id(uint32_t value);
+  public:
+
+  // uint32 vni = 2;
+  void clear_vni();
+  uint32_t vni() const;
+  void set_vni(uint32_t value);
+  private:
+  uint32_t _internal_vni() const;
+  void _internal_set_vni(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
   uint32_t vlan_id_;
   uint32_t vni_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LogicalBridgeStatus final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus) */ {
+ public:
+  inline LogicalBridgeStatus() : LogicalBridgeStatus(nullptr) {}
+  ~LogicalBridgeStatus() override;
+  explicit constexpr LogicalBridgeStatus(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LogicalBridgeStatus(const LogicalBridgeStatus& from);
+  LogicalBridgeStatus(LogicalBridgeStatus&& from) noexcept
+    : LogicalBridgeStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline LogicalBridgeStatus& operator=(const LogicalBridgeStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LogicalBridgeStatus& operator=(LogicalBridgeStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LogicalBridgeStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LogicalBridgeStatus* internal_default_instance() {
+    return reinterpret_cast<const LogicalBridgeStatus*>(
+               &_LogicalBridgeStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(LogicalBridgeStatus& a, LogicalBridgeStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LogicalBridgeStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LogicalBridgeStatus* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  LogicalBridgeStatus* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LogicalBridgeStatus>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LogicalBridgeStatus& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LogicalBridgeStatus& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LogicalBridgeStatus* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus";
+  }
+  protected:
+  explicit LogicalBridgeStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOperStatusFieldNumber = 1,
+  };
+  // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+  void clear_oper_status();
+  ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus oper_status() const;
+  void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::LBOperStatus value);
+  private:
+  ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus _internal_oper_status() const;
+  void _internal_set_oper_status(::opi_api::network::evpn_gw::v1alpha1::LBOperStatus value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  int oper_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -371,7 +760,7 @@ class CreateLogicalBridgeRequest final :
                &_CreateLogicalBridgeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(CreateLogicalBridgeRequest& a, CreateLogicalBridgeRequest& b) {
     a.Swap(&b);
@@ -445,9 +834,24 @@ class CreateLogicalBridgeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLogicalBridgeFieldNumber = 1,
+    kLogicalBridgeIdFieldNumber = 1,
+    kLogicalBridgeFieldNumber = 2,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string logical_bridge_id = 1;
+  void clear_logical_bridge_id();
+  const std::string& logical_bridge_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_logical_bridge_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_logical_bridge_id();
+  PROTOBUF_NODISCARD std::string* release_logical_bridge_id();
+  void set_allocated_logical_bridge_id(std::string* logical_bridge_id);
+  private:
+  const std::string& _internal_logical_bridge_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_logical_bridge_id(const std::string& value);
+  std::string* _internal_mutable_logical_bridge_id();
+  public:
+
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 2 [(.google.api.field_behavior) = REQUIRED];
   bool has_logical_bridge() const;
   private:
   bool _internal_has_logical_bridge() const;
@@ -472,6 +876,7 @@ class CreateLogicalBridgeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr logical_bridge_id_;
   ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* logical_bridge_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
@@ -526,7 +931,7 @@ class ListLogicalBridgesRequest final :
                &_ListLogicalBridgesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(ListLogicalBridgesRequest& a, ListLogicalBridgesRequest& b) {
     a.Swap(&b);
@@ -688,7 +1093,7 @@ class ListLogicalBridgesResponse final :
                &_ListLogicalBridgesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(ListLogicalBridgesResponse& a, ListLogicalBridgesResponse& b) {
     a.Swap(&b);
@@ -859,7 +1264,7 @@ class GetLogicalBridgeRequest final :
                &_GetLogicalBridgeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(GetLogicalBridgeRequest& a, GetLogicalBridgeRequest& b) {
     a.Swap(&b);
@@ -933,15 +1338,20 @@ class GetLogicalBridgeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVlanIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  void clear_vlan_id();
-  uint32_t vlan_id() const;
-  void set_vlan_id(uint32_t value);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  uint32_t _internal_vlan_id() const;
-  void _internal_set_vlan_id(uint32_t value);
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest)
@@ -951,7 +1361,7 @@ class GetLogicalBridgeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t vlan_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -1005,7 +1415,7 @@ class DeleteLogicalBridgeRequest final :
                &_DeleteLogicalBridgeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(DeleteLogicalBridgeRequest& a, DeleteLogicalBridgeRequest& b) {
     a.Swap(&b);
@@ -1079,15 +1489,20 @@ class DeleteLogicalBridgeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVlanIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  void clear_vlan_id();
-  uint32_t vlan_id() const;
-  void set_vlan_id(uint32_t value);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  uint32_t _internal_vlan_id() const;
-  void _internal_set_vlan_id(uint32_t value);
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest)
@@ -1097,7 +1512,7 @@ class DeleteLogicalBridgeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t vlan_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -1151,7 +1566,7 @@ class BridgePort final :
                &_BridgePort_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(BridgePort& a, BridgePort& b) {
     a.Swap(&b);
@@ -1222,69 +1637,13 @@ class BridgePort final :
 
   // nested types ----------------------------------------------------
 
-  typedef BridgePort_BridgePortType BridgePortType;
-  static constexpr BridgePortType UNKNOWN =
-    BridgePort_BridgePortType_UNKNOWN;
-  static constexpr BridgePortType ACCESS =
-    BridgePort_BridgePortType_ACCESS;
-  static constexpr BridgePortType TRUNK =
-    BridgePort_BridgePortType_TRUNK;
-  static inline bool BridgePortType_IsValid(int value) {
-    return BridgePort_BridgePortType_IsValid(value);
-  }
-  static constexpr BridgePortType BridgePortType_MIN =
-    BridgePort_BridgePortType_BridgePortType_MIN;
-  static constexpr BridgePortType BridgePortType_MAX =
-    BridgePort_BridgePortType_BridgePortType_MAX;
-  static constexpr int BridgePortType_ARRAYSIZE =
-    BridgePort_BridgePortType_BridgePortType_ARRAYSIZE;
-  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  BridgePortType_descriptor() {
-    return BridgePort_BridgePortType_descriptor();
-  }
-  template<typename T>
-  static inline const std::string& BridgePortType_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, BridgePortType>::value ||
-      ::std::is_integral<T>::value,
-      "Incorrect type passed to function BridgePortType_Name.");
-    return BridgePort_BridgePortType_Name(enum_t_value);
-  }
-  static inline bool BridgePortType_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
-      BridgePortType* value) {
-    return BridgePort_BridgePortType_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVlanIdFieldNumber = 5,
     kNameFieldNumber = 1,
-    kMacAddressFieldNumber = 3,
-    kVportIdFieldNumber = 2,
-    kPtypeFieldNumber = 4,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // repeated uint32 vlan_id = 5;
-  int vlan_id_size() const;
-  private:
-  int _internal_vlan_id_size() const;
-  public:
-  void clear_vlan_id();
-  private:
-  uint32_t _internal_vlan_id(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      _internal_vlan_id() const;
-  void _internal_add_vlan_id(uint32_t value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      _internal_mutable_vlan_id();
-  public:
-  uint32_t vlan_id(int index) const;
-  void set_vlan_id(int index, uint32_t value);
-  void add_vlan_id(uint32_t value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      vlan_id() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      mutable_vlan_id();
-
   // string name = 1;
   void clear_name();
   const std::string& name() const;
@@ -1299,7 +1658,208 @@ class BridgePort final :
   std::string* _internal_mutable_name();
   public:
 
-  // string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+  bool has_spec() const;
+  private:
+  bool _internal_has_spec() const;
+  public:
+  void clear_spec();
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec& spec() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* release_spec();
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* mutable_spec();
+  void set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec& _internal_spec() const;
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* _internal_mutable_spec();
+  public:
+  void unsafe_arena_set_allocated_spec(
+      ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec);
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* unsafe_arena_release_spec();
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+  bool has_status() const;
+  private:
+  bool _internal_has_status() const;
+  public:
+  void clear_status();
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus& status() const;
+  PROTOBUF_NODISCARD ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* release_status();
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* mutable_status();
+  void set_allocated_status(::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* status);
+  private:
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus& _internal_status() const;
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* _internal_mutable_status();
+  public:
+  void unsafe_arena_set_allocated_status(
+      ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* status);
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* unsafe_arena_release_status();
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.BridgePort)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec_;
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BridgePortSpec final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec) */ {
+ public:
+  inline BridgePortSpec() : BridgePortSpec(nullptr) {}
+  ~BridgePortSpec() override;
+  explicit constexpr BridgePortSpec(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BridgePortSpec(const BridgePortSpec& from);
+  BridgePortSpec(BridgePortSpec&& from) noexcept
+    : BridgePortSpec() {
+    *this = ::std::move(from);
+  }
+
+  inline BridgePortSpec& operator=(const BridgePortSpec& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BridgePortSpec& operator=(BridgePortSpec&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BridgePortSpec& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BridgePortSpec* internal_default_instance() {
+    return reinterpret_cast<const BridgePortSpec*>(
+               &_BridgePortSpec_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(BridgePortSpec& a, BridgePortSpec& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BridgePortSpec* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BridgePortSpec* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BridgePortSpec* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BridgePortSpec>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BridgePortSpec& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BridgePortSpec& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BridgePortSpec* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.BridgePortSpec";
+  }
+  protected:
+  explicit BridgePortSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLogicalBridgesFieldNumber = 3,
+    kMacAddressFieldNumber = 1,
+    kPtypeFieldNumber = 2,
+  };
+  // repeated string logical_bridges = 3;
+  int logical_bridges_size() const;
+  private:
+  int _internal_logical_bridges_size() const;
+  public:
+  void clear_logical_bridges();
+  const std::string& logical_bridges(int index) const;
+  std::string* mutable_logical_bridges(int index);
+  void set_logical_bridges(int index, const std::string& value);
+  void set_logical_bridges(int index, std::string&& value);
+  void set_logical_bridges(int index, const char* value);
+  void set_logical_bridges(int index, const char* value, size_t size);
+  std::string* add_logical_bridges();
+  void add_logical_bridges(const std::string& value);
+  void add_logical_bridges(std::string&& value);
+  void add_logical_bridges(const char* value);
+  void add_logical_bridges(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& logical_bridges() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_logical_bridges();
+  private:
+  const std::string& _internal_logical_bridges(int index) const;
+  std::string* _internal_add_logical_bridges();
+  public:
+
+  // bytes mac_address = 1 [(.google.api.field_behavior) = REQUIRED];
   void clear_mac_address();
   const std::string& mac_address() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1313,37 +1873,171 @@ class BridgePort final :
   std::string* _internal_mutable_mac_address();
   public:
 
-  // uint32 vport_id = 2;
-  void clear_vport_id();
-  uint32_t vport_id() const;
-  void set_vport_id(uint32_t value);
-  private:
-  uint32_t _internal_vport_id() const;
-  void _internal_set_vport_id(uint32_t value);
-  public:
-
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortType ptype = 2 [(.google.api.field_behavior) = REQUIRED];
   void clear_ptype();
-  ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType ptype() const;
-  void set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType value);
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortType ptype() const;
+  void set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePortType value);
   private:
-  ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType _internal_ptype() const;
-  void _internal_set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType value);
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortType _internal_ptype() const;
+  void _internal_set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePortType value);
   public:
 
-  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.BridgePort)
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > vlan_id_;
-  mutable std::atomic<int> _vlan_id_cached_byte_size_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> logical_bridges_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mac_address_;
-  uint32_t vport_id_;
   int ptype_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BridgePortStatus final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus) */ {
+ public:
+  inline BridgePortStatus() : BridgePortStatus(nullptr) {}
+  ~BridgePortStatus() override;
+  explicit constexpr BridgePortStatus(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BridgePortStatus(const BridgePortStatus& from);
+  BridgePortStatus(BridgePortStatus&& from) noexcept
+    : BridgePortStatus() {
+    *this = ::std::move(from);
+  }
+
+  inline BridgePortStatus& operator=(const BridgePortStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BridgePortStatus& operator=(BridgePortStatus&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BridgePortStatus& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BridgePortStatus* internal_default_instance() {
+    return reinterpret_cast<const BridgePortStatus*>(
+               &_BridgePortStatus_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(BridgePortStatus& a, BridgePortStatus& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BridgePortStatus* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BridgePortStatus* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BridgePortStatus* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BridgePortStatus>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BridgePortStatus& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BridgePortStatus& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BridgePortStatus* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "opi_api.network.evpn_gw.v1alpha1.BridgePortStatus";
+  }
+  protected:
+  explicit BridgePortStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOperStatusFieldNumber = 1,
+  };
+  // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+  void clear_oper_status();
+  ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus oper_status() const;
+  void set_oper_status(::opi_api::network::evpn_gw::v1alpha1::BPOperStatus value);
+  private:
+  ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus _internal_oper_status() const;
+  void _internal_set_oper_status(::opi_api::network::evpn_gw::v1alpha1::BPOperStatus value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  int oper_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -1397,7 +2091,7 @@ class CreateBridgePortRequest final :
                &_CreateBridgePortRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(CreateBridgePortRequest& a, CreateBridgePortRequest& b) {
     a.Swap(&b);
@@ -1471,9 +2165,24 @@ class CreateBridgePortRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBridgePortFieldNumber = 1,
+    kBridgePortIdFieldNumber = 1,
+    kBridgePortFieldNumber = 2,
   };
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string bridge_port_id = 1;
+  void clear_bridge_port_id();
+  const std::string& bridge_port_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_bridge_port_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_bridge_port_id();
+  PROTOBUF_NODISCARD std::string* release_bridge_port_id();
+  void set_allocated_bridge_port_id(std::string* bridge_port_id);
+  private:
+  const std::string& _internal_bridge_port_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_bridge_port_id(const std::string& value);
+  std::string* _internal_mutable_bridge_port_id();
+  public:
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];
   bool has_bridge_port() const;
   private:
   bool _internal_has_bridge_port() const;
@@ -1498,6 +2207,7 @@ class CreateBridgePortRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bridge_port_id_;
   ::opi_api::network::evpn_gw::v1alpha1::BridgePort* bridge_port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
@@ -1552,7 +2262,7 @@ class ListBridgePortsRequest final :
                &_ListBridgePortsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(ListBridgePortsRequest& a, ListBridgePortsRequest& b) {
     a.Swap(&b);
@@ -1714,7 +2424,7 @@ class ListBridgePortsResponse final :
                &_ListBridgePortsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(ListBridgePortsResponse& a, ListBridgePortsResponse& b) {
     a.Swap(&b);
@@ -1885,7 +2595,7 @@ class GetBridgePortRequest final :
                &_GetBridgePortRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(GetBridgePortRequest& a, GetBridgePortRequest& b) {
     a.Swap(&b);
@@ -1959,15 +2669,20 @@ class GetBridgePortRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVportIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  void clear_vport_id();
-  uint32_t vport_id() const;
-  void set_vport_id(uint32_t value);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  uint32_t _internal_vport_id() const;
-  void _internal_set_vport_id(uint32_t value);
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest)
@@ -1977,7 +2692,7 @@ class GetBridgePortRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t vport_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -2031,7 +2746,7 @@ class DeleteBridgePortRequest final :
                &_DeleteBridgePortRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(DeleteBridgePortRequest& a, DeleteBridgePortRequest& b) {
     a.Swap(&b);
@@ -2105,15 +2820,20 @@ class DeleteBridgePortRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVportIdFieldNumber = 1,
+    kNameFieldNumber = 1,
   };
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  void clear_vport_id();
-  uint32_t vport_id() const;
-  void set_vport_id(uint32_t value);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  uint32_t _internal_vport_id() const;
-  void _internal_set_vport_id(uint32_t value);
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest)
@@ -2123,7 +2843,7 @@ class DeleteBridgePortRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t vport_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto;
 };
@@ -2189,51 +2909,310 @@ inline void LogicalBridge::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.name)
 }
 
-// uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];
-inline void LogicalBridge::clear_vlan_id() {
+// .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
+inline bool LogicalBridge::_internal_has_spec() const {
+  return this != internal_default_instance() && spec_ != nullptr;
+}
+inline bool LogicalBridge::has_spec() const {
+  return _internal_has_spec();
+}
+inline void LogicalBridge::clear_spec() {
+  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
+    delete spec_;
+  }
+  spec_ = nullptr;
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec& LogicalBridge::_internal_spec() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* p = spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_LogicalBridgeSpec_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec& LogicalBridge::spec() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
+  return _internal_spec();
+}
+inline void LogicalBridge::unsafe_arena_set_allocated_spec(
+    ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(spec_);
+  }
+  spec_ = spec;
+  if (spec) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* LogicalBridge::release_spec() {
+  
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* temp = spec_;
+  spec_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* LogicalBridge::unsafe_arena_release_spec() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* temp = spec_;
+  spec_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* LogicalBridge::_internal_mutable_spec() {
+  
+  if (spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec>(GetArenaForAllocation());
+    spec_ = p;
+  }
+  return spec_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* LogicalBridge::mutable_spec() {
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* _msg = _internal_mutable_spec();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
+  return _msg;
+}
+inline void LogicalBridge::set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete spec_;
+  }
+  if (spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec>::GetOwningArena(spec);
+    if (message_arena != submessage_arena) {
+      spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, spec, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  spec_ = spec;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.spec)
+}
+
+// .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+inline bool LogicalBridge::_internal_has_status() const {
+  return this != internal_default_instance() && status_ != nullptr;
+}
+inline bool LogicalBridge::has_status() const {
+  return _internal_has_status();
+}
+inline void LogicalBridge::clear_status() {
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
+  }
+  status_ = nullptr;
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus& LogicalBridge::_internal_status() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* p = status_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_LogicalBridgeStatus_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus& LogicalBridge::status() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.status)
+  return _internal_status();
+}
+inline void LogicalBridge::unsafe_arena_set_allocated_status(
+    ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* status) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(status_);
+  }
+  status_ = status;
+  if (status) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.status)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* LogicalBridge::release_status() {
+  
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* temp = status_;
+  status_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* LogicalBridge::unsafe_arena_release_status() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.status)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* temp = status_;
+  status_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* LogicalBridge::_internal_mutable_status() {
+  
+  if (status_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus>(GetArenaForAllocation());
+    status_ = p;
+  }
+  return status_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* LogicalBridge::mutable_status() {
+  ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* _msg = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.status)
+  return _msg;
+}
+inline void LogicalBridge::set_allocated_status(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* status) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete status_;
+  }
+  if (status) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus>::GetOwningArena(status);
+    if (message_arena != submessage_arena) {
+      status = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.status)
+}
+
+// -------------------------------------------------------------------
+
+// LogicalBridgeSpec
+
+// uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+inline void LogicalBridgeSpec::clear_vlan_id() {
   vlan_id_ = 0u;
 }
-inline uint32_t LogicalBridge::_internal_vlan_id() const {
+inline uint32_t LogicalBridgeSpec::_internal_vlan_id() const {
   return vlan_id_;
 }
-inline uint32_t LogicalBridge::vlan_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.vlan_id)
+inline uint32_t LogicalBridgeSpec::vlan_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vlan_id)
   return _internal_vlan_id();
 }
-inline void LogicalBridge::_internal_set_vlan_id(uint32_t value) {
+inline void LogicalBridgeSpec::_internal_set_vlan_id(uint32_t value) {
   
   vlan_id_ = value;
 }
-inline void LogicalBridge::set_vlan_id(uint32_t value) {
+inline void LogicalBridgeSpec::set_vlan_id(uint32_t value) {
   _internal_set_vlan_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.vlan_id)
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vlan_id)
 }
 
-// uint32 vni = 3;
-inline void LogicalBridge::clear_vni() {
+// uint32 vni = 2;
+inline void LogicalBridgeSpec::clear_vni() {
   vni_ = 0u;
 }
-inline uint32_t LogicalBridge::_internal_vni() const {
+inline uint32_t LogicalBridgeSpec::_internal_vni() const {
   return vni_;
 }
-inline uint32_t LogicalBridge::vni() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.vni)
+inline uint32_t LogicalBridgeSpec::vni() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vni)
   return _internal_vni();
 }
-inline void LogicalBridge::_internal_set_vni(uint32_t value) {
+inline void LogicalBridgeSpec::_internal_set_vni(uint32_t value) {
   
   vni_ = value;
 }
-inline void LogicalBridge::set_vni(uint32_t value) {
+inline void LogicalBridgeSpec::set_vni(uint32_t value) {
   _internal_set_vni(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridge.vni)
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.vni)
+}
+
+// -------------------------------------------------------------------
+
+// LogicalBridgeStatus
+
+// .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+inline void LogicalBridgeStatus::clear_oper_status() {
+  oper_status_ = 0;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus LogicalBridgeStatus::_internal_oper_status() const {
+  return static_cast< ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus >(oper_status_);
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus LogicalBridgeStatus::oper_status() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.oper_status)
+  return _internal_oper_status();
+}
+inline void LogicalBridgeStatus::_internal_set_oper_status(::opi_api::network::evpn_gw::v1alpha1::LBOperStatus value) {
+  
+  oper_status_ = value;
+}
+inline void LogicalBridgeStatus::set_oper_status(::opi_api::network::evpn_gw::v1alpha1::LBOperStatus value) {
+  _internal_set_oper_status(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.oper_status)
 }
 
 // -------------------------------------------------------------------
 
 // CreateLogicalBridgeRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
+// string logical_bridge_id = 1;
+inline void CreateLogicalBridgeRequest::clear_logical_bridge_id() {
+  logical_bridge_id_.ClearToEmpty();
+}
+inline const std::string& CreateLogicalBridgeRequest::logical_bridge_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id)
+  return _internal_logical_bridge_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateLogicalBridgeRequest::set_logical_bridge_id(ArgT0&& arg0, ArgT... args) {
+ 
+ logical_bridge_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id)
+}
+inline std::string* CreateLogicalBridgeRequest::mutable_logical_bridge_id() {
+  std::string* _s = _internal_mutable_logical_bridge_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id)
+  return _s;
+}
+inline const std::string& CreateLogicalBridgeRequest::_internal_logical_bridge_id() const {
+  return logical_bridge_id_.Get();
+}
+inline void CreateLogicalBridgeRequest::_internal_set_logical_bridge_id(const std::string& value) {
+  
+  logical_bridge_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateLogicalBridgeRequest::_internal_mutable_logical_bridge_id() {
+  
+  return logical_bridge_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateLogicalBridgeRequest::release_logical_bridge_id() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id)
+  return logical_bridge_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateLogicalBridgeRequest::set_allocated_logical_bridge_id(std::string* logical_bridge_id) {
+  if (logical_bridge_id != nullptr) {
+    
+  } else {
+    
+  }
+  logical_bridge_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), logical_bridge_id,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (logical_bridge_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    logical_bridge_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id)
+}
+
+// .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateLogicalBridgeRequest::_internal_has_logical_bridge() const {
   return this != internal_default_instance() && logical_bridge_ != nullptr;
 }
@@ -2497,48 +3476,110 @@ inline void ListLogicalBridgesResponse::set_allocated_next_page_token(std::strin
 
 // GetLogicalBridgeRequest
 
-// uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-inline void GetLogicalBridgeRequest::clear_vlan_id() {
-  vlan_id_ = 0u;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetLogicalBridgeRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline uint32_t GetLogicalBridgeRequest::_internal_vlan_id() const {
-  return vlan_id_;
+inline const std::string& GetLogicalBridgeRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name)
+  return _internal_name();
 }
-inline uint32_t GetLogicalBridgeRequest::vlan_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.vlan_id)
-  return _internal_vlan_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetLogicalBridgeRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name)
 }
-inline void GetLogicalBridgeRequest::_internal_set_vlan_id(uint32_t value) {
+inline std::string* GetLogicalBridgeRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name)
+  return _s;
+}
+inline const std::string& GetLogicalBridgeRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void GetLogicalBridgeRequest::_internal_set_name(const std::string& value) {
   
-  vlan_id_ = value;
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void GetLogicalBridgeRequest::set_vlan_id(uint32_t value) {
-  _internal_set_vlan_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.vlan_id)
+inline std::string* GetLogicalBridgeRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetLogicalBridgeRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetLogicalBridgeRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name)
 }
 
 // -------------------------------------------------------------------
 
 // DeleteLogicalBridgeRequest
 
-// uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-inline void DeleteLogicalBridgeRequest::clear_vlan_id() {
-  vlan_id_ = 0u;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteLogicalBridgeRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline uint32_t DeleteLogicalBridgeRequest::_internal_vlan_id() const {
-  return vlan_id_;
+inline const std::string& DeleteLogicalBridgeRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
+  return _internal_name();
 }
-inline uint32_t DeleteLogicalBridgeRequest::vlan_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.vlan_id)
-  return _internal_vlan_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteLogicalBridgeRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
 }
-inline void DeleteLogicalBridgeRequest::_internal_set_vlan_id(uint32_t value) {
+inline std::string* DeleteLogicalBridgeRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
+  return _s;
+}
+inline const std::string& DeleteLogicalBridgeRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void DeleteLogicalBridgeRequest::_internal_set_name(const std::string& value) {
   
-  vlan_id_ = value;
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void DeleteLogicalBridgeRequest::set_vlan_id(uint32_t value) {
-  _internal_set_vlan_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.vlan_id)
+inline std::string* DeleteLogicalBridgeRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteLogicalBridgeRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteLogicalBridgeRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -2596,62 +3637,226 @@ inline void BridgePort::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.name)
 }
 
-// uint32 vport_id = 2;
-inline void BridgePort::clear_vport_id() {
-  vport_id_ = 0u;
+// .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+inline bool BridgePort::_internal_has_spec() const {
+  return this != internal_default_instance() && spec_ != nullptr;
 }
-inline uint32_t BridgePort::_internal_vport_id() const {
-  return vport_id_;
+inline bool BridgePort::has_spec() const {
+  return _internal_has_spec();
 }
-inline uint32_t BridgePort::vport_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.vport_id)
-  return _internal_vport_id();
+inline void BridgePort::clear_spec() {
+  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
+    delete spec_;
+  }
+  spec_ = nullptr;
 }
-inline void BridgePort::_internal_set_vport_id(uint32_t value) {
+inline const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec& BridgePort::_internal_spec() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* p = spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_BridgePortSpec_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec& BridgePort::spec() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
+  return _internal_spec();
+}
+inline void BridgePort::unsafe_arena_set_allocated_spec(
+    ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(spec_);
+  }
+  spec_ = spec;
+  if (spec) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* BridgePort::release_spec() {
   
-  vport_id_ = value;
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* temp = spec_;
+  spec_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline void BridgePort::set_vport_id(uint32_t value) {
-  _internal_set_vport_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePort.vport_id)
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* BridgePort::unsafe_arena_release_spec() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* temp = spec_;
+  spec_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* BridgePort::_internal_mutable_spec() {
+  
+  if (spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec>(GetArenaForAllocation());
+    spec_ = p;
+  }
+  return spec_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* BridgePort::mutable_spec() {
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* _msg = _internal_mutable_spec();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
+  return _msg;
+}
+inline void BridgePort::set_allocated_spec(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete spec_;
+  }
+  if (spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec>::GetOwningArena(spec);
+    if (message_arena != submessage_arena) {
+      spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, spec, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  spec_ = spec;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.spec)
 }
 
-// string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];
-inline void BridgePort::clear_mac_address() {
+// .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+inline bool BridgePort::_internal_has_status() const {
+  return this != internal_default_instance() && status_ != nullptr;
+}
+inline bool BridgePort::has_status() const {
+  return _internal_has_status();
+}
+inline void BridgePort::clear_status() {
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
+  }
+  status_ = nullptr;
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus& BridgePort::_internal_status() const {
+  const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* p = status_;
+  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus&>(
+      ::opi_api::network::evpn_gw::v1alpha1::_BridgePortStatus_default_instance_);
+}
+inline const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus& BridgePort::status() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.status)
+  return _internal_status();
+}
+inline void BridgePort::unsafe_arena_set_allocated_status(
+    ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* status) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(status_);
+  }
+  status_ = status;
+  if (status) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.status)
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* BridgePort::release_status() {
+  
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* temp = status_;
+  status_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* BridgePort::unsafe_arena_release_status() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.BridgePort.status)
+  
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* temp = status_;
+  status_ = nullptr;
+  return temp;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* BridgePort::_internal_mutable_status() {
+  
+  if (status_ == nullptr) {
+    auto* p = CreateMaybeMessage<::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus>(GetArenaForAllocation());
+    status_ = p;
+  }
+  return status_;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* BridgePort::mutable_status() {
+  ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* _msg = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePort.status)
+  return _msg;
+}
+inline void BridgePort::set_allocated_status(::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* status) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete status_;
+  }
+  if (status) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus>::GetOwningArena(status);
+    if (message_arena != submessage_arena) {
+      status = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.status)
+}
+
+// -------------------------------------------------------------------
+
+// BridgePortSpec
+
+// bytes mac_address = 1 [(.google.api.field_behavior) = REQUIRED];
+inline void BridgePortSpec::clear_mac_address() {
   mac_address_.ClearToEmpty();
 }
-inline const std::string& BridgePort::mac_address() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address)
+inline const std::string& BridgePortSpec::mac_address() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.mac_address)
   return _internal_mac_address();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void BridgePort::set_mac_address(ArgT0&& arg0, ArgT... args) {
+void BridgePortSpec::set_mac_address(ArgT0&& arg0, ArgT... args) {
  
- mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address)
+ mac_address_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.mac_address)
 }
-inline std::string* BridgePort::mutable_mac_address() {
+inline std::string* BridgePortSpec::mutable_mac_address() {
   std::string* _s = _internal_mutable_mac_address();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address)
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.mac_address)
   return _s;
 }
-inline const std::string& BridgePort::_internal_mac_address() const {
+inline const std::string& BridgePortSpec::_internal_mac_address() const {
   return mac_address_.Get();
 }
-inline void BridgePort::_internal_set_mac_address(const std::string& value) {
+inline void BridgePortSpec::_internal_set_mac_address(const std::string& value) {
   
   mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* BridgePort::_internal_mutable_mac_address() {
+inline std::string* BridgePortSpec::_internal_mutable_mac_address() {
   
   return mac_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* BridgePort::release_mac_address() {
-  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address)
+inline std::string* BridgePortSpec::release_mac_address() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.mac_address)
   return mac_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void BridgePort::set_allocated_mac_address(std::string* mac_address) {
+inline void BridgePortSpec::set_allocated_mac_address(std::string* mac_address) {
   if (mac_address != nullptr) {
     
   } else {
@@ -2664,81 +3869,184 @@ inline void BridgePort::set_allocated_mac_address(std::string* mac_address) {
     mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.mac_address)
 }
 
-// .opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];
-inline void BridgePort::clear_ptype() {
+// .opi_api.network.evpn_gw.v1alpha1.BridgePortType ptype = 2 [(.google.api.field_behavior) = REQUIRED];
+inline void BridgePortSpec::clear_ptype() {
   ptype_ = 0;
 }
-inline ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType BridgePort::_internal_ptype() const {
-  return static_cast< ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType >(ptype_);
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortType BridgePortSpec::_internal_ptype() const {
+  return static_cast< ::opi_api::network::evpn_gw::v1alpha1::BridgePortType >(ptype_);
 }
-inline ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType BridgePort::ptype() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.ptype)
+inline ::opi_api::network::evpn_gw::v1alpha1::BridgePortType BridgePortSpec::ptype() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.ptype)
   return _internal_ptype();
 }
-inline void BridgePort::_internal_set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType value) {
+inline void BridgePortSpec::_internal_set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePortType value) {
   
   ptype_ = value;
 }
-inline void BridgePort::set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType value) {
+inline void BridgePortSpec::set_ptype(::opi_api::network::evpn_gw::v1alpha1::BridgePortType value) {
   _internal_set_ptype(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePort.ptype)
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.ptype)
 }
 
-// repeated uint32 vlan_id = 5;
-inline int BridgePort::_internal_vlan_id_size() const {
-  return vlan_id_.size();
+// repeated string logical_bridges = 3;
+inline int BridgePortSpec::_internal_logical_bridges_size() const {
+  return logical_bridges_.size();
 }
-inline int BridgePort::vlan_id_size() const {
-  return _internal_vlan_id_size();
+inline int BridgePortSpec::logical_bridges_size() const {
+  return _internal_logical_bridges_size();
 }
-inline void BridgePort::clear_vlan_id() {
-  vlan_id_.Clear();
+inline void BridgePortSpec::clear_logical_bridges() {
+  logical_bridges_.Clear();
 }
-inline uint32_t BridgePort::_internal_vlan_id(int index) const {
-  return vlan_id_.Get(index);
+inline std::string* BridgePortSpec::add_logical_bridges() {
+  std::string* _s = _internal_add_logical_bridges();
+  // @@protoc_insertion_point(field_add_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+  return _s;
 }
-inline uint32_t BridgePort::vlan_id(int index) const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePort.vlan_id)
-  return _internal_vlan_id(index);
+inline const std::string& BridgePortSpec::_internal_logical_bridges(int index) const {
+  return logical_bridges_.Get(index);
 }
-inline void BridgePort::set_vlan_id(int index, uint32_t value) {
-  vlan_id_.Set(index, value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePort.vlan_id)
+inline const std::string& BridgePortSpec::logical_bridges(int index) const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+  return _internal_logical_bridges(index);
 }
-inline void BridgePort::_internal_add_vlan_id(uint32_t value) {
-  vlan_id_.Add(value);
+inline std::string* BridgePortSpec::mutable_logical_bridges(int index) {
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+  return logical_bridges_.Mutable(index);
 }
-inline void BridgePort::add_vlan_id(uint32_t value) {
-  _internal_add_vlan_id(value);
-  // @@protoc_insertion_point(field_add:opi_api.network.evpn_gw.v1alpha1.BridgePort.vlan_id)
+inline void BridgePortSpec::set_logical_bridges(int index, const std::string& value) {
+  logical_bridges_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-BridgePort::_internal_vlan_id() const {
-  return vlan_id_;
+inline void BridgePortSpec::set_logical_bridges(int index, std::string&& value) {
+  logical_bridges_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-BridgePort::vlan_id() const {
-  // @@protoc_insertion_point(field_list:opi_api.network.evpn_gw.v1alpha1.BridgePort.vlan_id)
-  return _internal_vlan_id();
+inline void BridgePortSpec::set_logical_bridges(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logical_bridges_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-BridgePort::_internal_mutable_vlan_id() {
-  return &vlan_id_;
+inline void BridgePortSpec::set_logical_bridges(int index, const char* value, size_t size) {
+  logical_bridges_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-BridgePort::mutable_vlan_id() {
-  // @@protoc_insertion_point(field_mutable_list:opi_api.network.evpn_gw.v1alpha1.BridgePort.vlan_id)
-  return _internal_mutable_vlan_id();
+inline std::string* BridgePortSpec::_internal_add_logical_bridges() {
+  return logical_bridges_.Add();
+}
+inline void BridgePortSpec::add_logical_bridges(const std::string& value) {
+  logical_bridges_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+}
+inline void BridgePortSpec::add_logical_bridges(std::string&& value) {
+  logical_bridges_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+}
+inline void BridgePortSpec::add_logical_bridges(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logical_bridges_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+}
+inline void BridgePortSpec::add_logical_bridges(const char* value, size_t size) {
+  logical_bridges_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+BridgePortSpec::logical_bridges() const {
+  // @@protoc_insertion_point(field_list:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+  return logical_bridges_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+BridgePortSpec::mutable_logical_bridges() {
+  // @@protoc_insertion_point(field_mutable_list:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges)
+  return &logical_bridges_;
+}
+
+// -------------------------------------------------------------------
+
+// BridgePortStatus
+
+// .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+inline void BridgePortStatus::clear_oper_status() {
+  oper_status_ = 0;
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus BridgePortStatus::_internal_oper_status() const {
+  return static_cast< ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus >(oper_status_);
+}
+inline ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus BridgePortStatus::oper_status() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.oper_status)
+  return _internal_oper_status();
+}
+inline void BridgePortStatus::_internal_set_oper_status(::opi_api::network::evpn_gw::v1alpha1::BPOperStatus value) {
+  
+  oper_status_ = value;
+}
+inline void BridgePortStatus::set_oper_status(::opi_api::network::evpn_gw::v1alpha1::BPOperStatus value) {
+  _internal_set_oper_status(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.oper_status)
 }
 
 // -------------------------------------------------------------------
 
 // CreateBridgePortRequest
 
-// .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
+// string bridge_port_id = 1;
+inline void CreateBridgePortRequest::clear_bridge_port_id() {
+  bridge_port_id_.ClearToEmpty();
+}
+inline const std::string& CreateBridgePortRequest::bridge_port_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id)
+  return _internal_bridge_port_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateBridgePortRequest::set_bridge_port_id(ArgT0&& arg0, ArgT... args) {
+ 
+ bridge_port_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id)
+}
+inline std::string* CreateBridgePortRequest::mutable_bridge_port_id() {
+  std::string* _s = _internal_mutable_bridge_port_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id)
+  return _s;
+}
+inline const std::string& CreateBridgePortRequest::_internal_bridge_port_id() const {
+  return bridge_port_id_.Get();
+}
+inline void CreateBridgePortRequest::_internal_set_bridge_port_id(const std::string& value) {
+  
+  bridge_port_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateBridgePortRequest::_internal_mutable_bridge_port_id() {
+  
+  return bridge_port_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateBridgePortRequest::release_bridge_port_id() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id)
+  return bridge_port_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateBridgePortRequest::set_allocated_bridge_port_id(std::string* bridge_port_id) {
+  if (bridge_port_id != nullptr) {
+    
+  } else {
+    
+  }
+  bridge_port_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bridge_port_id,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (bridge_port_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    bridge_port_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id)
+}
+
+// .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];
 inline bool CreateBridgePortRequest::_internal_has_bridge_port() const {
   return this != internal_default_instance() && bridge_port_ != nullptr;
 }
@@ -3002,53 +4310,123 @@ inline void ListBridgePortsResponse::set_allocated_next_page_token(std::string* 
 
 // GetBridgePortRequest
 
-// uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-inline void GetBridgePortRequest::clear_vport_id() {
-  vport_id_ = 0u;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void GetBridgePortRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline uint32_t GetBridgePortRequest::_internal_vport_id() const {
-  return vport_id_;
+inline const std::string& GetBridgePortRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name)
+  return _internal_name();
 }
-inline uint32_t GetBridgePortRequest::vport_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.vport_id)
-  return _internal_vport_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetBridgePortRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name)
 }
-inline void GetBridgePortRequest::_internal_set_vport_id(uint32_t value) {
+inline std::string* GetBridgePortRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name)
+  return _s;
+}
+inline const std::string& GetBridgePortRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void GetBridgePortRequest::_internal_set_name(const std::string& value) {
   
-  vport_id_ = value;
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void GetBridgePortRequest::set_vport_id(uint32_t value) {
-  _internal_set_vport_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.vport_id)
+inline std::string* GetBridgePortRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetBridgePortRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetBridgePortRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name)
 }
 
 // -------------------------------------------------------------------
 
 // DeleteBridgePortRequest
 
-// uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-inline void DeleteBridgePortRequest::clear_vport_id() {
-  vport_id_ = 0u;
+// string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+inline void DeleteBridgePortRequest::clear_name() {
+  name_.ClearToEmpty();
 }
-inline uint32_t DeleteBridgePortRequest::_internal_vport_id() const {
-  return vport_id_;
+inline const std::string& DeleteBridgePortRequest::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
+  return _internal_name();
 }
-inline uint32_t DeleteBridgePortRequest::vport_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.vport_id)
-  return _internal_vport_id();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteBridgePortRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
 }
-inline void DeleteBridgePortRequest::_internal_set_vport_id(uint32_t value) {
+inline std::string* DeleteBridgePortRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
+  return _s;
+}
+inline const std::string& DeleteBridgePortRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void DeleteBridgePortRequest::_internal_set_name(const std::string& value) {
   
-  vport_id_ = value;
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline void DeleteBridgePortRequest::set_vport_id(uint32_t value) {
-  _internal_set_vport_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.vport_id)
+inline std::string* DeleteBridgePortRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* DeleteBridgePortRequest::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void DeleteBridgePortRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -3081,10 +4459,20 @@ inline void DeleteBridgePortRequest::set_vport_id(uint32_t value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType> : ::std::true_type {};
+template <> struct is_proto_enum< ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType>() {
-  return ::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus>() {
+  return ::opi_api::network::evpn_gw::v1alpha1::LBOperStatus_descriptor();
+}
+template <> struct is_proto_enum< ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus>() {
+  return ::opi_api::network::evpn_gw::v1alpha1::BPOperStatus_descriptor();
+}
+template <> struct is_proto_enum< ::opi_api::network::evpn_gw::v1alpha1::BridgePortType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::evpn_gw::v1alpha1::BridgePortType>() {
+  return ::opi_api::network::evpn_gw::v1alpha1::BridgePortType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

@@ -5,9 +5,6 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- *(-- api-linter: core::0135::request-unknown-fields=disabled
- *     aip.dev/not-precedent: We really need "vlan_id" because is used as key
- *     for the retrieve operation. --)
  * GetLogicalBridgeRequest structure
  * </pre>
  *
@@ -23,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetLogicalBridgeRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -55,9 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            vlanId_ = input.readUInt32();
+            name_ = s;
             break;
           }
           default: {
@@ -92,21 +91,52 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.class, opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.Builder.class);
   }
 
-  public static final int VLAN_ID_FIELD_NUMBER = 1;
-  private int vlanId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The vlan id of the logical bridge to retrieve
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
+   * The name of the logical bridge to retrieve
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
-   * <code>uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public int getVlanId() {
-    return vlanId_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The name of the logical bridge to retrieve
+   * Format: logicalBridges/{logical_bridge}
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -123,8 +153,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (vlanId_ != 0) {
-      output.writeUInt32(1, vlanId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -135,9 +165,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (vlanId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, vlanId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,8 +183,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest other = (opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest) obj;
 
-    if (getVlanId()
-        != other.getVlanId()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -167,8 +196,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVlanId();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -266,9 +295,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *(-- api-linter: core::0135::request-unknown-fields=disabled
-   *     aip.dev/not-precedent: We really need "vlan_id" because is used as key
-   *     for the retrieve operation. --)
    * GetLogicalBridgeRequest structure
    * </pre>
    *
@@ -309,7 +335,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      vlanId_ = 0;
+      name_ = "";
 
       return this;
     }
@@ -337,7 +363,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest result = new opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest(this);
-      result.vlanId_ = vlanId_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -386,8 +412,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.getDefaultInstance()) return this;
-      if (other.getVlanId() != 0) {
-        setVlanId(other.getVlanId());
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -418,51 +445,103 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int vlanId_ ;
+    private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The vlan id of the logical bridge to retrieve
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * The name of the logical bridge to retrieve
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The vlanId.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    @java.lang.Override
-    public int getVlanId() {
-      return vlanId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * The vlan id of the logical bridge to retrieve
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * The name of the logical bridge to retrieve
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The vlanId to set.
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the logical bridge to retrieve
+     * Format: logicalBridges/{logical_bridge}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setVlanId(int value) {
-      
-      vlanId_ = value;
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The vlan id of the logical bridge to retrieve
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * The name of the logical bridge to retrieve
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
-     * <code>uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearVlanId() {
+    public Builder clearName() {
       
-      vlanId_ = 0;
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the logical bridge to retrieve
+     * Format: logicalBridges/{logical_bridge}
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
       onChanged();
       return this;
     }

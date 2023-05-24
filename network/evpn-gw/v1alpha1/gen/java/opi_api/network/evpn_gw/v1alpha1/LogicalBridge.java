@@ -5,7 +5,7 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- * LogicalBridge structure
+ * Logical Bridge network configuration and status
  * </pre>
  *
  * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.LogicalBridge}
@@ -59,14 +59,30 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
+            }
+            spec_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
+            }
 
-            vlanId_ = input.readUInt32();
             break;
           }
-          case 24: {
+          case 26: {
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
+            }
+            status_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
 
-            vni_ = input.readUInt32();
             break;
           }
           default: {
@@ -105,7 +121,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Logical Bridge.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -126,7 +146,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Logical Bridge.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -147,38 +171,80 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VLAN_ID_FIELD_NUMBER = 2;
-  private int vlanId_;
+  public static final int SPEC_FIELD_NUMBER = 2;
+  private opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec_;
   /**
    * <pre>
-   * Key
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)           
+   * Logical Bridge network configuration
    * </pre>
    *
-   * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public int getVlanId() {
-    return vlanId_;
+  public boolean hasSpec() {
+    return spec_ != null;
+  }
+  /**
+   * <pre>
+   * Logical Bridge network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The spec.
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec getSpec() {
+    return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.getDefaultInstance() : spec_;
+  }
+  /**
+   * <pre>
+   * Logical Bridge network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int VNI_FIELD_NUMBER = 3;
-  private int vni_;
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status_;
   /**
    * <pre>
-   * VXLAN VNI for L2 EVPN. Also used as EVPN route target
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vni cannot be negative number. --)     
+   * Logical Bridge network status
    * </pre>
    *
-   * <code>uint32 vni = 3;</code>
-   * @return The vni.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public int getVni() {
-    return vni_;
+  public boolean hasStatus() {
+    return status_ != null;
+  }
+  /**
+   * <pre>
+   * Logical Bridge network status
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus getStatus() {
+    return status_ == null ? opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.getDefaultInstance() : status_;
+  }
+  /**
+   * <pre>
+   * Logical Bridge network status
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -198,11 +264,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (vlanId_ != 0) {
-      output.writeUInt32(2, vlanId_);
+    if (spec_ != null) {
+      output.writeMessage(2, getSpec());
     }
-    if (vni_ != 0) {
-      output.writeUInt32(3, vni_);
+    if (status_ != null) {
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -216,13 +282,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (vlanId_ != 0) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, vlanId_);
+        .computeMessageSize(2, getSpec());
     }
-    if (vni_ != 0) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, vni_);
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -241,10 +307,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getVlanId()
-        != other.getVlanId()) return false;
-    if (getVni()
-        != other.getVni()) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -258,10 +330,14 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVlanId();
-    hash = (37 * hash) + VNI_FIELD_NUMBER;
-    hash = (53 * hash) + getVni();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -359,7 +435,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * LogicalBridge structure
+   * Logical Bridge network configuration and status
    * </pre>
    *
    * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.LogicalBridge}
@@ -401,10 +477,18 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      vlanId_ = 0;
-
-      vni_ = 0;
-
+      if (specBuilder_ == null) {
+        spec_ = null;
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -432,8 +516,16 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridge buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.LogicalBridge result = new opi_api.network.evpn_gw.v1alpha1.LogicalBridge(this);
       result.name_ = name_;
-      result.vlanId_ = vlanId_;
-      result.vni_ = vni_;
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
+      } else {
+        result.spec_ = specBuilder_.build();
+      }
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -486,11 +578,11 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getVlanId() != 0) {
-        setVlanId(other.getVlanId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (other.getVni() != 0) {
-        setVni(other.getVni());
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -524,7 +616,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Logical Bridge.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -544,7 +640,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Logical Bridge.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -565,7 +665,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Logical Bridge.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -584,7 +688,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Logical Bridge.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -598,7 +706,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Logical Bridge.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: logicalBridges/{logical_bridge}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -617,102 +729,314 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int vlanId_ ;
+    private opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder> specBuilder_;
     /**
      * <pre>
-     * Key
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)           
+     * Logical Bridge network configuration
      * </pre>
      *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The vlanId.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the spec field is set.
      */
-    @java.lang.Override
-    public int getVlanId() {
-      return vlanId_;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
      * <pre>
-     * Key
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)           
+     * Logical Bridge network configuration
      * </pre>
      *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The vlanId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The spec.
      */
-    public Builder setVlanId(int value) {
-      
-      vlanId_ = value;
-      onChanged();
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.getDefaultInstance() : spec_;
+      } else {
+        return specBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setSpec(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec value) {
+      if (specBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        specBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Key
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)           
+     * Logical Bridge network configuration
      * </pre>
      *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearVlanId() {
-      
-      vlanId_ = 0;
-      onChanged();
+    public Builder setSpec(
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        specBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeSpec(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        specBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
+        onChanged();
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder getSpecBuilder() {
+      
+      onChanged();
+      return getSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
+      } else {
+        return spec_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.getDefaultInstance() : spec_;
+      }
+    }
+    /**
+     * <pre>
+     * Logical Bridge network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpecOrBuilder>(
+                getSpec(),
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      return specBuilder_;
     }
 
-    private int vni_ ;
+    private opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * VXLAN VNI for L2 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)     
+     * Logical Bridge network status
      * </pre>
      *
-     * <code>uint32 vni = 3;</code>
-     * @return The vni.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * @return Whether the status field is set.
      */
-    @java.lang.Override
-    public int getVni() {
-      return vni_;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
     }
     /**
      * <pre>
-     * VXLAN VNI for L2 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)     
+     * Logical Bridge network status
      * </pre>
      *
-     * <code>uint32 vni = 3;</code>
-     * @param value The vni to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     * @return The status.
      */
-    public Builder setVni(int value) {
-      
-      vni_ = value;
-      onChanged();
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * VXLAN VNI for L2 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)     
+     * Logical Bridge network status
      * </pre>
      *
-     * <code>uint32 vni = 3;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
      */
-    public Builder clearVni() {
-      
-      vni_ = 0;
-      onChanged();
+    public Builder setStatus(
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.getDefaultInstance() : status_;
+      }
+    }
+    /**
+     * <pre>
+     * Logical Bridge network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus.Builder, opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

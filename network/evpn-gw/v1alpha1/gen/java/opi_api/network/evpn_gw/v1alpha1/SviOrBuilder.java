@@ -9,119 +9,83 @@ public interface SviOrBuilder extends
 
   /**
    * <pre>
-   * Name of the VRF
+   * The resource name of the Svi.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vrf.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
-  java.lang.String getVrf();
+  java.lang.String getName();
   /**
    * <pre>
-   * Name of the VRF
+   * The resource name of the Svi.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for vrf.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
-      getVrfBytes();
+      getNameBytes();
 
   /**
    * <pre>
-   * Key of the LogicalBridge
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
+   * Svi's network configuration
    * </pre>
    *
-   * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the spec field is set.
    */
-  int getVlanId();
+  boolean hasSpec();
+  /**
+   * <pre>
+   * Svi's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The spec.
+   */
+  opi_api.network.evpn_gw.v1alpha1.SviSpec getSpec();
+  /**
+   * <pre>
+   * Svi's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder getSpecOrBuilder();
 
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
+   * Svi's network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
-  java.lang.String getMacAddress();
+  boolean hasStatus();
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
+   * Svi's network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+   * @return The status.
    */
-  com.google.protobuf.ByteString
-      getMacAddressBytes();
-
+  opi_api.network.evpn_gw.v1alpha1.SviStatus getStatus();
   /**
    * <pre>
-   * The GW IP addresses with masks assigned to the SVI
+   * Svi's network status
    * </pre>
    *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
    */
-  java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> 
-      getGwIpList();
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getGwIp(int index);
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  int getGwIpCount();
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  java.util.List<? extends opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder> 
-      getGwIpOrBuilderList();
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder getGwIpOrBuilder(
-      int index);
-
-  /**
-   * <pre>
-   * Set to true to enable BGP peering with VRF on SVI
-   * </pre>
-   *
-   * <code>bool enable_bgp = 5;</code>
-   * @return The enableBgp.
-   */
-  boolean getEnableBgp();
-
-  /**
-   * <pre>
-   * Conditional: The remote AS used by BGP speakers on LB (1-65535)
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: remote_as cannot be negative number. --)
-   * </pre>
-   *
-   * <code>uint32 remote_as = 6;</code>
-   * @return The remoteAs.
-   */
-  int getRemoteAs();
+  opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder getStatusOrBuilder();
 }

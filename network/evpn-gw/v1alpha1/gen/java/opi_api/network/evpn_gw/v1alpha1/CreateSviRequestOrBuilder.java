@@ -9,10 +9,38 @@ public interface CreateSviRequestOrBuilder extends
 
   /**
    * <pre>
+   * The ID to use for the svi, which will become the final component of
+   * the svi's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string svi_id = 1;</code>
+   * @return The sviId.
+   */
+  java.lang.String getSviId();
+  /**
+   * <pre>
+   * The ID to use for the svi, which will become the final component of
+   * the svi's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string svi_id = 1;</code>
+   * @return The bytes for sviId.
+   */
+  com.google.protobuf.ByteString
+      getSviIdBytes();
+
+  /**
+   * <pre>
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the svi field is set.
    */
   boolean hasSvi();
@@ -21,7 +49,7 @@ public interface CreateSviRequestOrBuilder extends
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The svi.
    */
   opi_api.network.evpn_gw.v1alpha1.Svi getSvi();
@@ -30,7 +58,7 @@ public interface CreateSviRequestOrBuilder extends
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.network.evpn_gw.v1alpha1.SviOrBuilder getSviOrBuilder();
 }

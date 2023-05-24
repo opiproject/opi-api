@@ -10,6 +10,7 @@ public interface GetVrfRequestOrBuilder extends
   /**
    * <pre>
    * The name of the vrf to retrieve
+   * Format: vrfs/{vrf}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,6 +20,7 @@ public interface GetVrfRequestOrBuilder extends
   /**
    * <pre>
    * The name of the vrf to retrieve
+   * Format: vrfs/{vrf}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

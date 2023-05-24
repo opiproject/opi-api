@@ -5,29 +5,29 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- * IpAddressMasklen structure
+ * operational status of a Svi
  * </pre>
  *
- * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen}
+ * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.SviStatus}
  */
-public final class IpAddressMasklen extends
+public final class SviStatus extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)
-    IpAddressMasklenOrBuilder {
+    // @@protoc_insertion_point(message_implements:opi_api.network.evpn_gw.v1alpha1.SviStatus)
+    SviStatusOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use IpAddressMasklen.newBuilder() to construct.
-  private IpAddressMasklen(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SviStatus.newBuilder() to construct.
+  private SviStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private IpAddressMasklen() {
-    ipAddr_ = "";
+  private SviStatus() {
+    operStatus_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new IpAddressMasklen();
+    return new SviStatus();
   }
 
   @java.lang.Override
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private IpAddressMasklen(
+  private SviStatus(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,15 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
+            int rawValue = input.readEnum();
 
-            ipAddr_ = s;
-            break;
-          }
-          case 16: {
-
-            len_ = input.readUInt32();
+            operStatus_ = rawValue;
             break;
           }
           default: {
@@ -85,78 +80,42 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_IpAddressMasklen_descriptor;
+    return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_SviStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_IpAddressMasklen_fieldAccessorTable
+    return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_SviStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.class, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder.class);
+            opi_api.network.evpn_gw.v1alpha1.SviStatus.class, opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder.class);
   }
 
-  public static final int IP_ADDR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ipAddr_;
+  public static final int OPER_STATUS_FIELD_NUMBER = 1;
+  private int operStatus_;
   /**
    * <pre>
-   * IP address
+   * operational status of a Svi
    * </pre>
    *
-   * <code>string ip_addr = 1;</code>
-   * @return The ipAddr.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+   * @return The enum numeric value on the wire for operStatus.
    */
-  @java.lang.Override
-  public java.lang.String getIpAddr() {
-    java.lang.Object ref = ipAddr_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      ipAddr_ = s;
-      return s;
-    }
+  @java.lang.Override public int getOperStatusValue() {
+    return operStatus_;
   }
   /**
    * <pre>
-   * IP address
+   * operational status of a Svi
    * </pre>
    *
-   * <code>string ip_addr = 1;</code>
-   * @return The bytes for ipAddr.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+   * @return The operStatus.
    */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIpAddrBytes() {
-    java.lang.Object ref = ipAddr_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      ipAddr_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LEN_FIELD_NUMBER = 2;
-  private int len_;
-  /**
-   * <pre>
-   * Length of the subnet prefix mask
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: subnet mask cannot be negative number. --)
-   * </pre>
-   *
-   * <code>uint32 len = 2;</code>
-   * @return The len.
-   */
-  @java.lang.Override
-  public int getLen() {
-    return len_;
+  @java.lang.Override public opi_api.network.evpn_gw.v1alpha1.SVIOperStatus getOperStatus() {
+    @SuppressWarnings("deprecation")
+    opi_api.network.evpn_gw.v1alpha1.SVIOperStatus result = opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.valueOf(operStatus_);
+    return result == null ? opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -173,11 +132,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddr_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ipAddr_);
-    }
-    if (len_ != 0) {
-      output.writeUInt32(2, len_);
+    if (operStatus_ != opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.SVI_OPER_STATUS_UNSPECIFIED.getNumber()) {
+      output.writeEnum(1, operStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,12 +144,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddr_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ipAddr_);
-    }
-    if (len_ != 0) {
+    if (operStatus_ != opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.SVI_OPER_STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, len_);
+        .computeEnumSize(1, operStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,15 +158,12 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)) {
+    if (!(obj instanceof opi_api.network.evpn_gw.v1alpha1.SviStatus)) {
       return super.equals(obj);
     }
-    opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen other = (opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen) obj;
+    opi_api.network.evpn_gw.v1alpha1.SviStatus other = (opi_api.network.evpn_gw.v1alpha1.SviStatus) obj;
 
-    if (!getIpAddr()
-        .equals(other.getIpAddr())) return false;
-    if (getLen()
-        != other.getLen()) return false;
+    if (operStatus_ != other.operStatus_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -225,78 +175,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IP_ADDR_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddr().hashCode();
-    hash = (37 * hash) + LEN_FIELD_NUMBER;
-    hash = (53 * hash) + getLen();
+    hash = (37 * hash) + OPER_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + operStatus_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(byte[] data)
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(java.io.InputStream input)
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseDelimitedFrom(java.io.InputStream input)
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseDelimitedFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parseFrom(
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -309,7 +257,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen prototype) {
+  public static Builder newBuilder(opi_api.network.evpn_gw.v1alpha1.SviStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -326,29 +274,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * IpAddressMasklen structure
+   * operational status of a Svi
    * </pre>
    *
-   * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen}
+   * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.SviStatus}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)
-      opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder {
+      // @@protoc_insertion_point(builder_implements:opi_api.network.evpn_gw.v1alpha1.SviStatus)
+      opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_IpAddressMasklen_descriptor;
+      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_SviStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_IpAddressMasklen_fieldAccessorTable
+      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_SviStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.class, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder.class);
+              opi_api.network.evpn_gw.v1alpha1.SviStatus.class, opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder.class);
     }
 
-    // Construct using opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.newBuilder()
+    // Construct using opi_api.network.evpn_gw.v1alpha1.SviStatus.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -366,9 +314,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      ipAddr_ = "";
-
-      len_ = 0;
+      operStatus_ = 0;
 
       return this;
     }
@@ -376,17 +322,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_IpAddressMasklen_descriptor;
+      return opi_api.network.evpn_gw.v1alpha1.L3XpuInfraMgrProto.internal_static_opi_api_network_evpn_gw_v1alpha1_SviStatus_descriptor;
     }
 
     @java.lang.Override
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getDefaultInstanceForType() {
-      return opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.getDefaultInstance();
+    public opi_api.network.evpn_gw.v1alpha1.SviStatus getDefaultInstanceForType() {
+      return opi_api.network.evpn_gw.v1alpha1.SviStatus.getDefaultInstance();
     }
 
     @java.lang.Override
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen build() {
-      opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen result = buildPartial();
+    public opi_api.network.evpn_gw.v1alpha1.SviStatus build() {
+      opi_api.network.evpn_gw.v1alpha1.SviStatus result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -394,10 +340,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen buildPartial() {
-      opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen result = new opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen(this);
-      result.ipAddr_ = ipAddr_;
-      result.len_ = len_;
+    public opi_api.network.evpn_gw.v1alpha1.SviStatus buildPartial() {
+      opi_api.network.evpn_gw.v1alpha1.SviStatus result = new opi_api.network.evpn_gw.v1alpha1.SviStatus(this);
+      result.operStatus_ = operStatus_;
       onBuilt();
       return result;
     }
@@ -436,22 +381,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen) {
-        return mergeFrom((opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)other);
+      if (other instanceof opi_api.network.evpn_gw.v1alpha1.SviStatus) {
+        return mergeFrom((opi_api.network.evpn_gw.v1alpha1.SviStatus)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen other) {
-      if (other == opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.getDefaultInstance()) return this;
-      if (!other.getIpAddr().isEmpty()) {
-        ipAddr_ = other.ipAddr_;
-        onChanged();
-      }
-      if (other.getLen() != 0) {
-        setLen(other.getLen());
+    public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.SviStatus other) {
+      if (other == opi_api.network.evpn_gw.v1alpha1.SviStatus.getDefaultInstance()) return this;
+      if (other.operStatus_ != 0) {
+        setOperStatusValue(other.getOperStatusValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -468,11 +409,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen parsedMessage = null;
+      opi_api.network.evpn_gw.v1alpha1.SviStatus parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen) e.getUnfinishedMessage();
+        parsedMessage = (opi_api.network.evpn_gw.v1alpha1.SviStatus) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -482,147 +423,76 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object ipAddr_ = "";
+    private int operStatus_ = 0;
     /**
      * <pre>
-     * IP address
+     * operational status of a Svi
      * </pre>
      *
-     * <code>string ip_addr = 1;</code>
-     * @return The ipAddr.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * @return The enum numeric value on the wire for operStatus.
      */
-    public java.lang.String getIpAddr() {
-      java.lang.Object ref = ipAddr_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ipAddr_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override public int getOperStatusValue() {
+      return operStatus_;
     }
     /**
      * <pre>
-     * IP address
+     * operational status of a Svi
      * </pre>
      *
-     * <code>string ip_addr = 1;</code>
-     * @return The bytes for ipAddr.
-     */
-    public com.google.protobuf.ByteString
-        getIpAddrBytes() {
-      java.lang.Object ref = ipAddr_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ipAddr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * IP address
-     * </pre>
-     *
-     * <code>string ip_addr = 1;</code>
-     * @param value The ipAddr to set.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * @param value The enum numeric value on the wire for operStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setIpAddr(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      ipAddr_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * IP address
-     * </pre>
-     *
-     * <code>string ip_addr = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIpAddr() {
+    public Builder setOperStatusValue(int value) {
       
-      ipAddr_ = getDefaultInstance().getIpAddr();
+      operStatus_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * IP address
+     * operational status of a Svi
      * </pre>
      *
-     * <code>string ip_addr = 1;</code>
-     * @param value The bytes for ipAddr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIpAddrBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      ipAddr_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int len_ ;
-    /**
-     * <pre>
-     * Length of the subnet prefix mask
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: subnet mask cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 len = 2;</code>
-     * @return The len.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * @return The operStatus.
      */
     @java.lang.Override
-    public int getLen() {
-      return len_;
+    public opi_api.network.evpn_gw.v1alpha1.SVIOperStatus getOperStatus() {
+      @SuppressWarnings("deprecation")
+      opi_api.network.evpn_gw.v1alpha1.SVIOperStatus result = opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.valueOf(operStatus_);
+      return result == null ? opi_api.network.evpn_gw.v1alpha1.SVIOperStatus.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * Length of the subnet prefix mask
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: subnet mask cannot be negative number. --)
+     * operational status of a Svi
      * </pre>
      *
-     * <code>uint32 len = 2;</code>
-     * @param value The len to set.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
+     * @param value The operStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setLen(int value) {
+    public Builder setOperStatus(opi_api.network.evpn_gw.v1alpha1.SVIOperStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       
-      len_ = value;
+      operStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Length of the subnet prefix mask
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: subnet mask cannot be negative number. --)
+     * operational status of a Svi
      * </pre>
      *
-     * <code>uint32 len = 2;</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SVIOperStatus oper_status = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearLen() {
+    public Builder clearOperStatus() {
       
-      len_ = 0;
+      operStatus_ = 0;
       onChanged();
       return this;
     }
@@ -639,41 +509,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)
+    // @@protoc_insertion_point(builder_scope:opi_api.network.evpn_gw.v1alpha1.SviStatus)
   }
 
-  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen)
-  private static final opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:opi_api.network.evpn_gw.v1alpha1.SviStatus)
+  private static final opi_api.network.evpn_gw.v1alpha1.SviStatus DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen();
+    DEFAULT_INSTANCE = new opi_api.network.evpn_gw.v1alpha1.SviStatus();
   }
 
-  public static opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getDefaultInstance() {
+  public static opi_api.network.evpn_gw.v1alpha1.SviStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IpAddressMasklen>
-      PARSER = new com.google.protobuf.AbstractParser<IpAddressMasklen>() {
+  private static final com.google.protobuf.Parser<SviStatus>
+      PARSER = new com.google.protobuf.AbstractParser<SviStatus>() {
     @java.lang.Override
-    public IpAddressMasklen parsePartialFrom(
+    public SviStatus parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new IpAddressMasklen(input, extensionRegistry);
+      return new SviStatus(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<IpAddressMasklen> parser() {
+  public static com.google.protobuf.Parser<SviStatus> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IpAddressMasklen> getParserForType() {
+  public com.google.protobuf.Parser<SviStatus> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getDefaultInstanceForType() {
+  public opi_api.network.evpn_gw.v1alpha1.SviStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

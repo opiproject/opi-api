@@ -20,6 +20,16 @@ public final class L2XpuInfraMgrProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridge_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeSpec_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeStatus_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_network_evpn_gw_v1alpha1_CreateLogicalBridgeRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -49,6 +59,16 @@ public final class L2XpuInfraMgrProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePort_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortSpec_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortStatus_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_opi_api_network_evpn_gw_v1alpha1_CreateBridgePortRequest_descriptor;
   static final 
@@ -88,76 +108,99 @@ public final class L2XpuInfraMgrProto {
       "ns.proto\032\027google/api/client.proto\032\033googl" +
       "e/protobuf/empty.proto\032\037google/api/field" +
       "_behavior.proto\032\031google/api/resource.pro" +
-      "to\"\211\001\n\rLogicalBridge\022\014\n\004name\030\001 \001(\t\022\024\n\007vl" +
-      "an_id\030\002 \001(\rB\003\340A\002\022\013\n\003vni\030\003 \001(\r:G\352AD\n$libr" +
-      "ary.googleapis.com/LogicalBridge\022\034logica" +
-      "lBridges/logicalBridge\"j\n\032CreateLogicalB" +
-      "ridgeRequest\022L\n\016logical_bridge\030\001 \001(\0132/.o" +
-      "pi_api.network.evpn_gw.v1alpha1.LogicalB" +
-      "ridgeB\003\340A\002\"B\n\031ListLogicalBridgesRequest\022" +
-      "\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\177" +
-      "\n\032ListLogicalBridgesResponse\022H\n\017logical_" +
-      "bridges\030\001 \003(\0132/.opi_api.network.evpn_gw." +
-      "v1alpha1.LogicalBridge\022\027\n\017next_page_toke" +
-      "n\030\002 \001(\t\"/\n\027GetLogicalBridgeRequest\022\024\n\007vl" +
-      "an_id\030\001 \001(\rB\003\340A\002\"2\n\032DeleteLogicalBridgeR" +
-      "equest\022\024\n\007vlan_id\030\001 \001(\rB\003\340A\002\"\236\002\n\nBridgeP" +
-      "ort\022\014\n\004name\030\001 \001(\t\022\020\n\010vport_id\030\002 \001(\r\022\030\n\013m" +
-      "ac_address\030\003 \001(\tB\003\340A\002\022O\n\005ptype\030\004 \001(\0162;.o" +
-      "pi_api.network.evpn_gw.v1alpha1.BridgePo" +
-      "rt.BridgePortTypeB\003\340A\002\022\017\n\007vlan_id\030\005 \003(\r\"" +
-      "4\n\016BridgePortType\022\013\n\007UNKNOWN\020\000\022\n\n\006ACCESS" +
-      "\020\001\022\t\n\005TRUNK\020\002:>\352A;\n!library.googleapis.c" +
-      "om/BridgePort\022\026bridgePorts/bridgePort\"a\n" +
-      "\027CreateBridgePortRequest\022F\n\013bridge_port\030" +
-      "\001 \001(\0132,.opi_api.network.evpn_gw.v1alpha1" +
-      ".BridgePortB\003\340A\002\"?\n\026ListBridgePortsReque" +
-      "st\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(" +
-      "\t\"v\n\027ListBridgePortsResponse\022B\n\014bridge_p" +
-      "orts\030\001 \003(\0132,.opi_api.network.evpn_gw.v1a" +
-      "lpha1.BridgePort\022\027\n\017next_page_token\030\002 \001(" +
-      "\t\"-\n\024GetBridgePortRequest\022\025\n\010vport_id\030\001 " +
-      "\001(\rB\003\340A\002\"0\n\027DeleteBridgePortRequest\022\025\n\010v" +
-      "port_id\030\001 \001(\rB\003\340A\0022\333\005\n\024LogicalBridgeServ" +
-      "ice\022\301\001\n\023CreateLogicalBridge\022<.opi_api.ne" +
-      "twork.evpn_gw.v1alpha1.CreateLogicalBrid" +
-      "geRequest\032/.opi_api.network.evpn_gw.v1al" +
-      "pha1.LogicalBridge\";\202\323\344\223\002$\"\022/v1/logicalB" +
-      "ridges:\016logical_bridge\332A\016logical_bridge\022" +
-      "\253\001\n\022ListLogicalBridges\022;.opi_api.network" +
-      ".evpn_gw.v1alpha1.ListLogicalBridgesRequ" +
-      "est\032<.opi_api.network.evpn_gw.v1alpha1.L" +
-      "istLogicalBridgesResponse\"\032\202\323\344\223\002\024\022\022/v1/l" +
-      "ogicalBridges\022\260\001\n\020GetLogicalBridge\0229.opi" +
-      "_api.network.evpn_gw.v1alpha1.GetLogical" +
-      "BridgeRequest\032/.opi_api.network.evpn_gw." +
-      "v1alpha1.LogicalBridge\"0\202\323\344\223\002 \022\036/v1/{vla" +
-      "n_id=logicalBridges/*}\332A\007vlan_id\022\235\001\n\023Del" +
-      "eteLogicalBridge\022<.opi_api.network.evpn_" +
-      "gw.v1alpha1.DeleteLogicalBridgeRequest\032\026" +
-      ".google.protobuf.Empty\"0\202\323\344\223\002 *\036/v1/{vla" +
-      "n_id=logicalBridges/*}\332A\007vlan_id2\251\005\n\021Bri" +
-      "dgePortService\022\257\001\n\020CreateBridgePort\0229.op" +
-      "i_api.network.evpn_gw.v1alpha1.CreateBri" +
-      "dgePortRequest\032,.opi_api.network.evpn_gw" +
-      ".v1alpha1.BridgePort\"2\202\323\344\223\002\036\"\017/v1/bridge" +
-      "Ports:\013bridge_port\332A\013bridge_port\022\237\001\n\017Lis" +
-      "tBridgePorts\0228.opi_api.network.evpn_gw.v" +
-      "1alpha1.ListBridgePortsRequest\0329.opi_api" +
-      ".network.evpn_gw.v1alpha1.ListBridgePort" +
-      "sResponse\"\027\202\323\344\223\002\021\022\017/v1/bridgePorts\022\246\001\n\rG" +
-      "etBridgePort\0226.opi_api.network.evpn_gw.v" +
-      "1alpha1.GetBridgePortRequest\032,.opi_api.n" +
-      "etwork.evpn_gw.v1alpha1.BridgePort\"/\202\323\344\223" +
-      "\002\036\022\034/v1/{vport_id=bridgePorts/*}\332A\010vport" +
-      "_id\022\226\001\n\020DeleteBridgePort\0229.opi_api.netwo" +
-      "rk.evpn_gw.v1alpha1.DeleteBridgePortRequ" +
-      "est\032\026.google.protobuf.Empty\"/\202\323\344\223\002\036*\034/v1" +
-      "/{vport_id=bridgePorts/*}\332A\010vport_idBw\n " +
-      "opi_api.network.evpn_gw.v1alpha1B\022L2XpuI" +
-      "nfraMgrProtoP\001Z=github.com/opiproject/op" +
-      "i-api/network/evpn-gw/v1alpha1/gen/gob\006p" +
-      "roto3"
+      "to\"\202\002\n\rLogicalBridge\022\014\n\004name\030\001 \001(\t\022F\n\004sp" +
+      "ec\030\002 \001(\01323.opi_api.network.evpn_gw.v1alp" +
+      "ha1.LogicalBridgeSpecB\003\340A\002\022E\n\006status\030\003 \001" +
+      "(\01325.opi_api.network.evpn_gw.v1alpha1.Lo" +
+      "gicalBridgeStatus:T\352AQ\n.opi_api.network." +
+      "evpn_gw.v1alpha1/LogicalBridge\022\037logicalB" +
+      "ridges/{logical_bridge}\"6\n\021LogicalBridge" +
+      "Spec\022\024\n\007vlan_id\030\001 \001(\rB\003\340A\002\022\013\n\003vni\030\002 \001(\r\"" +
+      "Z\n\023LogicalBridgeStatus\022C\n\013oper_status\030\001 " +
+      "\001(\0162..opi_api.network.evpn_gw.v1alpha1.L" +
+      "BOperStatus\"\205\001\n\032CreateLogicalBridgeReque" +
+      "st\022\031\n\021logical_bridge_id\030\001 \001(\t\022L\n\016logical" +
+      "_bridge\030\002 \001(\0132/.opi_api.network.evpn_gw." +
+      "v1alpha1.LogicalBridgeB\003\340A\002\"B\n\031ListLogic" +
+      "alBridgesRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\np" +
+      "age_token\030\002 \001(\t\"\177\n\032ListLogicalBridgesRes" +
+      "ponse\022H\n\017logical_bridges\030\001 \003(\0132/.opi_api" +
+      ".network.evpn_gw.v1alpha1.LogicalBridge\022" +
+      "\027\n\017next_page_token\030\002 \001(\t\"_\n\027GetLogicalBr" +
+      "idgeRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.opi_a" +
+      "pi.network.evpn_gw.v1alpha1/LogicalBridg" +
+      "e\"b\n\032DeleteLogicalBridgeRequest\022D\n\004name\030" +
+      "\001 \001(\tB6\340A\002\372A0\n.opi_api.network.evpn_gw.v" +
+      "1alpha1/LogicalBridge\"\353\001\n\nBridgePort\022\014\n\004" +
+      "name\030\001 \001(\t\022>\n\004spec\030\002 \001(\01320.opi_api.netwo" +
+      "rk.evpn_gw.v1alpha1.BridgePortSpec\022B\n\006st" +
+      "atus\030\003 \001(\01322.opi_api.network.evpn_gw.v1a" +
+      "lpha1.BridgePortStatus:K\352AH\n+opi_api.net" +
+      "work.evpn_gw.v1alpha1/bridgePort\022\031bridge" +
+      "Ports/{bridge_port}\"\211\001\n\016BridgePortSpec\022\030" +
+      "\n\013mac_address\030\001 \001(\014B\003\340A\002\022D\n\005ptype\030\002 \001(\0162" +
+      "0.opi_api.network.evpn_gw.v1alpha1.Bridg" +
+      "ePortTypeB\003\340A\002\022\027\n\017logical_bridges\030\003 \003(\t\"" +
+      "W\n\020BridgePortStatus\022C\n\013oper_status\030\001 \001(\016" +
+      "2..opi_api.network.evpn_gw.v1alpha1.BPOp" +
+      "erStatus\"y\n\027CreateBridgePortRequest\022\026\n\016b" +
+      "ridge_port_id\030\001 \001(\t\022F\n\013bridge_port\030\002 \001(\013" +
+      "2,.opi_api.network.evpn_gw.v1alpha1.Brid" +
+      "gePortB\003\340A\002\"?\n\026ListBridgePortsRequest\022\021\n" +
+      "\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"v\n\027" +
+      "ListBridgePortsResponse\022B\n\014bridge_ports\030" +
+      "\001 \003(\0132,.opi_api.network.evpn_gw.v1alpha1" +
+      ".BridgePort\022\027\n\017next_page_token\030\002 \001(\t\"Y\n\024" +
+      "GetBridgePortRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372" +
+      "A-\n+opi_api.network.evpn_gw.v1alpha1/Bri" +
+      "dgePort\"\\\n\027DeleteBridgePortRequest\022A\n\004na" +
+      "me\030\001 \001(\tB3\340A\002\372A-\n+opi_api.network.evpn_g" +
+      "w.v1alpha1/BridgePort*^\n\014LBOperStatus\022\036\n" +
+      "\032LB_OPER_STATUS_UNSPECIFIED\020\000\022\025\n\021LB_OPER" +
+      "_STATUS_UP\020\001\022\027\n\023LB_OPER_STATUS_DOWN\020\002*^\n" +
+      "\014BPOperStatus\022\036\n\032BP_OPER_STATUS_UNSPECIF" +
+      "IED\020\000\022\025\n\021BP_OPER_STATUS_UP\020\001\022\027\n\023BP_OPER_" +
+      "STATUS_DOWN\020\002*4\n\016BridgePortType\022\013\n\007UNKNO" +
+      "WN\020\000\022\n\n\006ACCESS\020\001\022\t\n\005TRUNK\020\0022\341\005\n\024LogicalB" +
+      "ridgeService\022\323\001\n\023CreateLogicalBridge\022<.o" +
+      "pi_api.network.evpn_gw.v1alpha1.CreateLo" +
+      "gicalBridgeRequest\032/.opi_api.network.evp" +
+      "n_gw.v1alpha1.LogicalBridge\"M\202\323\344\223\002$\"\022/v1" +
+      "/logicalBridges:\016logical_bridge\332A logica" +
+      "l_bridge,logical_bridge_id\022\253\001\n\022ListLogic" +
+      "alBridges\022;.opi_api.network.evpn_gw.v1al" +
+      "pha1.ListLogicalBridgesRequest\032<.opi_api" +
+      ".network.evpn_gw.v1alpha1.ListLogicalBri" +
+      "dgesResponse\"\032\202\323\344\223\002\024\022\022/v1/logicalBridges" +
+      "\022\252\001\n\020GetLogicalBridge\0229.opi_api.network." +
+      "evpn_gw.v1alpha1.GetLogicalBridgeRequest" +
+      "\032/.opi_api.network.evpn_gw.v1alpha1.Logi" +
+      "calBridge\"*\202\323\344\223\002\035\022\033/v1/{name=logicalBrid" +
+      "ges/*}\332A\004name\022\227\001\n\023DeleteLogicalBridge\022<." +
+      "opi_api.network.evpn_gw.v1alpha1.DeleteL" +
+      "ogicalBridgeRequest\032\026.google.protobuf.Em" +
+      "pty\"*\202\323\344\223\002\035*\033/v1/{name=logicalBridges/*}" +
+      "\332A\004name2\250\005\n\021BridgePortService\022\276\001\n\020Create" +
+      "BridgePort\0229.opi_api.network.evpn_gw.v1a" +
+      "lpha1.CreateBridgePortRequest\032,.opi_api." +
+      "network.evpn_gw.v1alpha1.BridgePort\"A\202\323\344" +
+      "\223\002\036\"\017/v1/bridgePorts:\013bridge_port\332A\032brid" +
+      "ge_port,bridge_port_id\022\237\001\n\017ListBridgePor" +
+      "ts\0228.opi_api.network.evpn_gw.v1alpha1.Li" +
+      "stBridgePortsRequest\0329.opi_api.network.e" +
+      "vpn_gw.v1alpha1.ListBridgePortsResponse\"" +
+      "\027\202\323\344\223\002\021\022\017/v1/bridgePorts\022\236\001\n\rGetBridgePo" +
+      "rt\0226.opi_api.network.evpn_gw.v1alpha1.Ge" +
+      "tBridgePortRequest\032,.opi_api.network.evp" +
+      "n_gw.v1alpha1.BridgePort\"\'\202\323\344\223\002\032\022\030/v1/{n" +
+      "ame=bridgePorts/*}\332A\004name\022\216\001\n\020DeleteBrid" +
+      "gePort\0229.opi_api.network.evpn_gw.v1alpha" +
+      "1.DeleteBridgePortRequest\032\026.google.proto" +
+      "buf.Empty\"\'\202\323\344\223\002\032*\030/v1/{name=bridgePorts" +
+      "/*}\332A\004nameBw\n opi_api.network.evpn_gw.v1" +
+      "alpha1B\022L2XpuInfraMgrProtoP\001Z=github.com" +
+      "/opiproject/opi-api/network/evpn-gw/v1al" +
+      "pha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -173,79 +216,104 @@ public final class L2XpuInfraMgrProto {
     internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridge_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridge_descriptor,
-        new java.lang.String[] { "Name", "VlanId", "Vni", });
-    internal_static_opi_api_network_evpn_gw_v1alpha1_CreateLogicalBridgeRequest_descriptor =
+        new java.lang.String[] { "Name", "Spec", "Status", });
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeSpec_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeSpec_descriptor,
+        new java.lang.String[] { "VlanId", "Vni", });
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeStatus_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_network_evpn_gw_v1alpha1_LogicalBridgeStatus_descriptor,
+        new java.lang.String[] { "OperStatus", });
+    internal_static_opi_api_network_evpn_gw_v1alpha1_CreateLogicalBridgeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_network_evpn_gw_v1alpha1_CreateLogicalBridgeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_CreateLogicalBridgeRequest_descriptor,
-        new java.lang.String[] { "LogicalBridge", });
+        new java.lang.String[] { "LogicalBridgeId", "LogicalBridge", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesRequest_descriptor,
         new java.lang.String[] { "PageSize", "PageToken", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_ListLogicalBridgesResponse_descriptor,
         new java.lang.String[] { "LogicalBridges", "NextPageToken", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_GetLogicalBridgeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_opi_api_network_evpn_gw_v1alpha1_GetLogicalBridgeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_GetLogicalBridgeRequest_descriptor,
-        new java.lang.String[] { "VlanId", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteLogicalBridgeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteLogicalBridgeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteLogicalBridgeRequest_descriptor,
-        new java.lang.String[] { "VlanId", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePort_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePort_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePort_descriptor,
-        new java.lang.String[] { "Name", "VportId", "MacAddress", "Ptype", "VlanId", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortSpec_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortSpec_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortSpec_descriptor,
+        new java.lang.String[] { "MacAddress", "Ptype", "LogicalBridges", });
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortStatus_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_opi_api_network_evpn_gw_v1alpha1_BridgePortStatus_descriptor,
+        new java.lang.String[] { "OperStatus", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_CreateBridgePortRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_opi_api_network_evpn_gw_v1alpha1_CreateBridgePortRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_CreateBridgePortRequest_descriptor,
-        new java.lang.String[] { "BridgePort", });
+        new java.lang.String[] { "BridgePortId", "BridgePort", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsRequest_descriptor,
         new java.lang.String[] { "PageSize", "PageToken", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_ListBridgePortsResponse_descriptor,
         new java.lang.String[] { "BridgePorts", "NextPageToken", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_GetBridgePortRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_opi_api_network_evpn_gw_v1alpha1_GetBridgePortRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_GetBridgePortRequest_descriptor,
-        new java.lang.String[] { "VportId", });
+        new java.lang.String[] { "Name", });
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteBridgePortRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteBridgePortRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_evpn_gw_v1alpha1_DeleteBridgePortRequest_descriptor,
-        new java.lang.String[] { "VportId", });
+        new java.lang.String[] { "Name", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();

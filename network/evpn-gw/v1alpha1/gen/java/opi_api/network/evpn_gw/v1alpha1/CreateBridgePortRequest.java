@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateBridgePortRequest() {
+    bridgePortId_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bridgePortId_ = s;
+            break;
+          }
+          case 18: {
             opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder subBuilder = null;
             if (bridgePort_ != null) {
               subBuilder = bridgePort_.toBuilder();
@@ -97,14 +104,68 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.class, opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.Builder.class);
   }
 
-  public static final int BRIDGE_PORT_FIELD_NUMBER = 1;
+  public static final int BRIDGE_PORT_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object bridgePortId_;
+  /**
+   * <pre>
+   * The ID to use for the bridge port, which will become the final component of
+   * the bridge port's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string bridge_port_id = 1;</code>
+   * @return The bridgePortId.
+   */
+  @java.lang.Override
+  public java.lang.String getBridgePortId() {
+    java.lang.Object ref = bridgePortId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bridgePortId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The ID to use for the bridge port, which will become the final component of
+   * the bridge port's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string bridge_port_id = 1;</code>
+   * @return The bytes for bridgePortId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBridgePortIdBytes() {
+    java.lang.Object ref = bridgePortId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bridgePortId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BRIDGE_PORT_FIELD_NUMBER = 2;
   private opi_api.network.evpn_gw.v1alpha1.BridgePort bridgePort_;
   /**
    * <pre>
    * The bridge port to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the bridgePort field is set.
    */
   @java.lang.Override
@@ -116,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * The bridge port to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bridgePort.
    */
   @java.lang.Override
@@ -128,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * The bridge port to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.BridgePortOrBuilder getBridgePortOrBuilder() {
@@ -149,8 +210,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bridgePortId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bridgePortId_);
+    }
     if (bridgePort_ != null) {
-      output.writeMessage(1, getBridgePort());
+      output.writeMessage(2, getBridgePort());
     }
     unknownFields.writeTo(output);
   }
@@ -161,9 +225,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bridgePortId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bridgePortId_);
+    }
     if (bridgePort_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBridgePort());
+        .computeMessageSize(2, getBridgePort());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,6 +247,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest other = (opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest) obj;
 
+    if (!getBridgePortId()
+        .equals(other.getBridgePortId())) return false;
     if (hasBridgePort() != other.hasBridgePort()) return false;
     if (hasBridgePort()) {
       if (!getBridgePort()
@@ -196,6 +265,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + BRIDGE_PORT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBridgePortId().hashCode();
     if (hasBridgePort()) {
       hash = (37 * hash) + BRIDGE_PORT_FIELD_NUMBER;
       hash = (53 * hash) + getBridgePort().hashCode();
@@ -337,6 +408,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bridgePortId_ = "";
+
       if (bridgePortBuilder_ == null) {
         bridgePort_ = null;
       } else {
@@ -369,6 +442,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest result = new opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest(this);
+      result.bridgePortId_ = bridgePortId_;
       if (bridgePortBuilder_ == null) {
         result.bridgePort_ = bridgePort_;
       } else {
@@ -422,6 +496,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.getDefaultInstance()) return this;
+      if (!other.getBridgePortId().isEmpty()) {
+        bridgePortId_ = other.bridgePortId_;
+        onChanged();
+      }
       if (other.hasBridgePort()) {
         mergeBridgePort(other.getBridgePort());
       }
@@ -454,6 +532,122 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object bridgePortId_ = "";
+    /**
+     * <pre>
+     * The ID to use for the bridge port, which will become the final component of
+     * the bridge port's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string bridge_port_id = 1;</code>
+     * @return The bridgePortId.
+     */
+    public java.lang.String getBridgePortId() {
+      java.lang.Object ref = bridgePortId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bridgePortId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the bridge port, which will become the final component of
+     * the bridge port's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string bridge_port_id = 1;</code>
+     * @return The bytes for bridgePortId.
+     */
+    public com.google.protobuf.ByteString
+        getBridgePortIdBytes() {
+      java.lang.Object ref = bridgePortId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bridgePortId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the bridge port, which will become the final component of
+     * the bridge port's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string bridge_port_id = 1;</code>
+     * @param value The bridgePortId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBridgePortId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bridgePortId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the bridge port, which will become the final component of
+     * the bridge port's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string bridge_port_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBridgePortId() {
+      
+      bridgePortId_ = getDefaultInstance().getBridgePortId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the bridge port, which will become the final component of
+     * the bridge port's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string bridge_port_id = 1;</code>
+     * @param value The bytes for bridgePortId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBridgePortIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bridgePortId_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.network.evpn_gw.v1alpha1.BridgePort bridgePort_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.BridgePort, opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortOrBuilder> bridgePortBuilder_;
@@ -462,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the bridgePort field is set.
      */
     public boolean hasBridgePort() {
@@ -473,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bridgePort.
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePort getBridgePort() {
@@ -488,7 +682,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setBridgePort(opi_api.network.evpn_gw.v1alpha1.BridgePort value) {
       if (bridgePortBuilder_ == null) {
@@ -508,7 +702,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setBridgePort(
         opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder builderForValue) {
@@ -526,7 +720,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeBridgePort(opi_api.network.evpn_gw.v1alpha1.BridgePort value) {
       if (bridgePortBuilder_ == null) {
@@ -548,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearBridgePort() {
       if (bridgePortBuilder_ == null) {
@@ -566,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder getBridgePortBuilder() {
       
@@ -578,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePortOrBuilder getBridgePortOrBuilder() {
       if (bridgePortBuilder_ != null) {
@@ -593,7 +787,7 @@ private static final long serialVersionUID = 0L;
      * The bridge port to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.BridgePort, opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortOrBuilder> 

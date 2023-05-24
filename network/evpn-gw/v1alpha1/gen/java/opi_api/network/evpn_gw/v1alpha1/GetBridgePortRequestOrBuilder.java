@@ -9,13 +9,23 @@ public interface GetBridgePortRequestOrBuilder extends
 
   /**
    * <pre>
-   * The vport id of the bridge port to retrieve
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vport_id cannot be negative number. --)
+   * The name of the bridge port to retrieve
+   * Format: bridgePorts/{bridge_port}
    * </pre>
    *
-   * <code>uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vportId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  int getVportId();
+  java.lang.String getName();
+  /**
+   * <pre>
+   * The name of the bridge port to retrieve
+   * Format: bridgePorts/{bridge_port}
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

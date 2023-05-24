@@ -5,10 +5,7 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- * (-- api-linter: core::0123::resource-name-field=disabled
- *     aip.dev/not-precedent: The "vrf", "vlan_id" are used for unique identification
- *     of the svi object. --)
- *Svi structure
+ * Svi network configuration
  * </pre>
  *
  * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.Svi}
@@ -23,9 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Svi() {
-    vrf_ = "";
-    macAddress_ = "";
-    gwIp_ = java.util.Collections.emptyList();
+    name_ = "";
   }
 
   @java.lang.Override
@@ -48,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,37 +56,33 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            vrf_ = s;
+            name_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
+            }
+            spec_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.SviSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
+            }
 
-            vlanId_ = input.readUInt32();
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            macAddress_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              gwIp_ = new java.util.ArrayList<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen>();
-              mutable_bitField0_ |= 0x00000001;
+            opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
             }
-            gwIp_.add(
-                input.readMessage(opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.parser(), extensionRegistry));
-            break;
-          }
-          case 40: {
+            status_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.SviStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
 
-            enableBgp_ = input.readBool();
-            break;
-          }
-          case 48: {
-
-            remoteAs_ = input.readUInt32();
             break;
           }
           default: {
@@ -110,9 +100,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        gwIp_ = java.util.Collections.unmodifiableList(gwIp_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -130,205 +117,134 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.Svi.class, opi_api.network.evpn_gw.v1alpha1.Svi.Builder.class);
   }
 
-  public static final int VRF_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vrf_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Name of the VRF
+   * The resource name of the Svi.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vrf.
+   * <code>string name = 1;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getVrf() {
-    java.lang.Object ref = vrf_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      vrf_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Name of the VRF
+   * The resource name of the Svi.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for vrf.
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getVrfBytes() {
-    java.lang.Object ref = vrf_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      vrf_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VLAN_ID_FIELD_NUMBER = 2;
-  private int vlanId_;
+  public static final int SPEC_FIELD_NUMBER = 2;
+  private opi_api.network.evpn_gw.v1alpha1.SviSpec spec_;
   /**
    * <pre>
-   * Key of the LogicalBridge
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
+   * Svi's network configuration
    * </pre>
    *
-   * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public int getVlanId() {
-    return vlanId_;
+  public boolean hasSpec() {
+    return spec_ != null;
+  }
+  /**
+   * <pre>
+   * Svi's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The spec.
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.SviSpec getSpec() {
+    return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.SviSpec.getDefaultInstance() : spec_;
+  }
+  /**
+   * <pre>
+   * Svi's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object macAddress_;
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private opi_api.network.evpn_gw.v1alpha1.SviStatus status_;
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
+   * Svi's network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public java.lang.String getMacAddress() {
-    java.lang.Object ref = macAddress_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      macAddress_ = s;
-      return s;
-    }
+  public boolean hasStatus() {
+    return status_ != null;
   }
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
+   * Svi's network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMacAddressBytes() {
-    java.lang.Object ref = macAddress_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      macAddress_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int GW_IP_FIELD_NUMBER = 4;
-  private java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> gwIp_;
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  @java.lang.Override
-  public java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> getGwIpList() {
-    return gwIp_;
+  public opi_api.network.evpn_gw.v1alpha1.SviStatus getStatus() {
+    return status_ == null ? opi_api.network.evpn_gw.v1alpha1.SviStatus.getDefaultInstance() : status_;
   }
   /**
    * <pre>
-   * The GW IP addresses with masks assigned to the SVI
+   * Svi's network status
    * </pre>
    *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder> 
-      getGwIpOrBuilderList() {
-    return gwIp_;
-  }
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  @java.lang.Override
-  public int getGwIpCount() {
-    return gwIp_.size();
-  }
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  @java.lang.Override
-  public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getGwIp(int index) {
-    return gwIp_.get(index);
-  }
-  /**
-   * <pre>
-   * The GW IP addresses with masks assigned to the SVI
-   * </pre>
-   *
-   * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   */
-  @java.lang.Override
-  public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder getGwIpOrBuilder(
-      int index) {
-    return gwIp_.get(index);
-  }
-
-  public static final int ENABLE_BGP_FIELD_NUMBER = 5;
-  private boolean enableBgp_;
-  /**
-   * <pre>
-   * Set to true to enable BGP peering with VRF on SVI
-   * </pre>
-   *
-   * <code>bool enable_bgp = 5;</code>
-   * @return The enableBgp.
-   */
-  @java.lang.Override
-  public boolean getEnableBgp() {
-    return enableBgp_;
-  }
-
-  public static final int REMOTE_AS_FIELD_NUMBER = 6;
-  private int remoteAs_;
-  /**
-   * <pre>
-   * Conditional: The remote AS used by BGP speakers on LB (1-65535)
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: remote_as cannot be negative number. --)
-   * </pre>
-   *
-   * <code>uint32 remote_as = 6;</code>
-   * @return The remoteAs.
-   */
-  @java.lang.Override
-  public int getRemoteAs() {
-    return remoteAs_;
+  public opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -345,23 +261,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vrf_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vrf_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (vlanId_ != 0) {
-      output.writeUInt32(2, vlanId_);
+    if (spec_ != null) {
+      output.writeMessage(2, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(macAddress_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, macAddress_);
-    }
-    for (int i = 0; i < gwIp_.size(); i++) {
-      output.writeMessage(4, gwIp_.get(i));
-    }
-    if (enableBgp_ != false) {
-      output.writeBool(5, enableBgp_);
-    }
-    if (remoteAs_ != 0) {
-      output.writeUInt32(6, remoteAs_);
+    if (status_ != null) {
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -372,27 +279,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vrf_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vrf_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (vlanId_ != 0) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, vlanId_);
+        .computeMessageSize(2, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(macAddress_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, macAddress_);
-    }
-    for (int i = 0; i < gwIp_.size(); i++) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, gwIp_.get(i));
-    }
-    if (enableBgp_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, enableBgp_);
-    }
-    if (remoteAs_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(6, remoteAs_);
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -409,18 +305,18 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.Svi other = (opi_api.network.evpn_gw.v1alpha1.Svi) obj;
 
-    if (!getVrf()
-        .equals(other.getVrf())) return false;
-    if (getVlanId()
-        != other.getVlanId()) return false;
-    if (!getMacAddress()
-        .equals(other.getMacAddress())) return false;
-    if (!getGwIpList()
-        .equals(other.getGwIpList())) return false;
-    if (getEnableBgp()
-        != other.getEnableBgp()) return false;
-    if (getRemoteAs()
-        != other.getRemoteAs()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -432,21 +328,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VRF_FIELD_NUMBER;
-    hash = (53 * hash) + getVrf().hashCode();
-    hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVlanId();
-    hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getMacAddress().hashCode();
-    if (getGwIpCount() > 0) {
-      hash = (37 * hash) + GW_IP_FIELD_NUMBER;
-      hash = (53 * hash) + getGwIpList().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
     }
-    hash = (37 * hash) + ENABLE_BGP_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableBgp());
-    hash = (37 * hash) + REMOTE_AS_FIELD_NUMBER;
-    hash = (53 * hash) + getRemoteAs();
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -544,10 +435,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (-- api-linter: core::0123::resource-name-field=disabled
-   *     aip.dev/not-precedent: The "vrf", "vlan_id" are used for unique identification
-   *     of the svi object. --)
-   *Svi structure
+   * Svi network configuration
    * </pre>
    *
    * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.Svi}
@@ -582,28 +470,25 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getGwIpFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      vrf_ = "";
+      name_ = "";
 
-      vlanId_ = 0;
-
-      macAddress_ = "";
-
-      if (gwIpBuilder_ == null) {
-        gwIp_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (specBuilder_ == null) {
+        spec_ = null;
       } else {
-        gwIpBuilder_.clear();
+        spec_ = null;
+        specBuilder_ = null;
       }
-      enableBgp_ = false;
-
-      remoteAs_ = 0;
-
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -630,21 +515,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.Svi buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.Svi result = new opi_api.network.evpn_gw.v1alpha1.Svi(this);
-      int from_bitField0_ = bitField0_;
-      result.vrf_ = vrf_;
-      result.vlanId_ = vlanId_;
-      result.macAddress_ = macAddress_;
-      if (gwIpBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          gwIp_ = java.util.Collections.unmodifiableList(gwIp_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.gwIp_ = gwIp_;
+      result.name_ = name_;
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
       } else {
-        result.gwIp_ = gwIpBuilder_.build();
+        result.spec_ = specBuilder_.build();
       }
-      result.enableBgp_ = enableBgp_;
-      result.remoteAs_ = remoteAs_;
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -693,48 +574,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.Svi other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.Svi.getDefaultInstance()) return this;
-      if (!other.getVrf().isEmpty()) {
-        vrf_ = other.vrf_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
-      if (other.getVlanId() != 0) {
-        setVlanId(other.getVlanId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (!other.getMacAddress().isEmpty()) {
-        macAddress_ = other.macAddress_;
-        onChanged();
-      }
-      if (gwIpBuilder_ == null) {
-        if (!other.gwIp_.isEmpty()) {
-          if (gwIp_.isEmpty()) {
-            gwIp_ = other.gwIp_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureGwIpIsMutable();
-            gwIp_.addAll(other.gwIp_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.gwIp_.isEmpty()) {
-          if (gwIpBuilder_.isEmpty()) {
-            gwIpBuilder_.dispose();
-            gwIpBuilder_ = null;
-            gwIp_ = other.gwIp_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            gwIpBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getGwIpFieldBuilder() : null;
-          } else {
-            gwIpBuilder_.addAllMessages(other.gwIp_);
-          }
-        }
-      }
-      if (other.getEnableBgp() != false) {
-        setEnableBgp(other.getEnableBgp());
-      }
-      if (other.getRemoteAs() != 0) {
-        setRemoteAs(other.getRemoteAs());
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -764,24 +612,27 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private java.lang.Object vrf_ = "";
+    private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Name of the VRF
+     * The resource name of the Svi.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: svis/{svi}
      * </pre>
      *
-     * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The vrf.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    public java.lang.String getVrf() {
-      java.lang.Object ref = vrf_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vrf_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -789,20 +640,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the VRF
+     * The resource name of the Svi.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: svis/{svi}
      * </pre>
      *
-     * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for vrf.
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getVrfBytes() {
-      java.lang.Object ref = vrf_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vrf_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -810,605 +665,378 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the VRF
+     * The resource name of the Svi.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: svis/{svi}
      * </pre>
      *
-     * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The vrf to set.
+     * <code>string name = 1;</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setVrf(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      vrf_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Name of the VRF
+     * The resource name of the Svi.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: svis/{svi}
      * </pre>
      *
-     * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearVrf() {
+    public Builder clearName() {
       
-      vrf_ = getDefaultInstance().getVrf();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Name of the VRF
+     * The resource name of the Svi.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: svis/{svi}
      * </pre>
      *
-     * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for vrf to set.
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setVrfBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      vrf_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
 
-    private int vlanId_ ;
+    private opi_api.network.evpn_gw.v1alpha1.SviSpec spec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.SviSpec, opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder, opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder> specBuilder_;
     /**
      * <pre>
-     * Key of the LogicalBridge
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Svi's network configuration
      * </pre>
      *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The vlanId.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the spec field is set.
      */
-    @java.lang.Override
-    public int getVlanId() {
-      return vlanId_;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
      * <pre>
-     * Key of the LogicalBridge
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Svi's network configuration
      * </pre>
      *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The vlanId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The spec.
      */
-    public Builder setVlanId(int value) {
-      
-      vlanId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Key of the LogicalBridge
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVlanId() {
-      
-      vlanId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object macAddress_ = "";
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The macAddress.
-     */
-    public java.lang.String getMacAddress() {
-      java.lang.Object ref = macAddress_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        macAddress_ = s;
-        return s;
+    public opi_api.network.evpn_gw.v1alpha1.SviSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.SviSpec.getDefaultInstance() : spec_;
       } else {
-        return (java.lang.String) ref;
+        return specBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
+     * Svi's network configuration
      * </pre>
      *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for macAddress.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public com.google.protobuf.ByteString
-        getMacAddressBytes() {
-      java.lang.Object ref = macAddress_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        macAddress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The macAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMacAddress(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      macAddress_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMacAddress() {
-      
-      macAddress_ = getDefaultInstance().getMacAddress();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format. Randomly assigned if not specified
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for macAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMacAddressBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      macAddress_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> gwIp_ =
-      java.util.Collections.emptyList();
-    private void ensureGwIpIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        gwIp_ = new java.util.ArrayList<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen>(gwIp_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder> gwIpBuilder_;
-
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> getGwIpList() {
-      if (gwIpBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(gwIp_);
-      } else {
-        return gwIpBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public int getGwIpCount() {
-      if (gwIpBuilder_ == null) {
-        return gwIp_.size();
-      } else {
-        return gwIpBuilder_.getCount();
-      }
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen getGwIp(int index) {
-      if (gwIpBuilder_ == null) {
-        return gwIp_.get(index);
-      } else {
-        return gwIpBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public Builder setGwIp(
-        int index, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen value) {
-      if (gwIpBuilder_ == null) {
+    public Builder setSpec(opi_api.network.evpn_gw.v1alpha1.SviSpec value) {
+      if (specBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureGwIpIsMutable();
-        gwIp_.set(index, value);
+        spec_ = value;
         onChanged();
       } else {
-        gwIpBuilder_.setMessage(index, value);
+        specBuilder_.setMessage(value);
       }
+
       return this;
     }
     /**
      * <pre>
-     * The GW IP addresses with masks assigned to the SVI
+     * Svi's network configuration
      * </pre>
      *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setGwIp(
-        int index, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder builderForValue) {
-      if (gwIpBuilder_ == null) {
-        ensureGwIpIsMutable();
-        gwIp_.set(index, builderForValue.build());
+    public Builder setSpec(
+        opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
         onChanged();
       } else {
-        gwIpBuilder_.setMessage(index, builderForValue.build());
+        specBuilder_.setMessage(builderForValue.build());
       }
+
       return this;
     }
     /**
      * <pre>
-     * The GW IP addresses with masks assigned to the SVI
+     * Svi's network configuration
      * </pre>
      *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder addGwIp(opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen value) {
-      if (gwIpBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
+    public Builder mergeSpec(opi_api.network.evpn_gw.v1alpha1.SviSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.network.evpn_gw.v1alpha1.SviSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
         }
-        ensureGwIpIsMutable();
-        gwIp_.add(value);
         onChanged();
       } else {
-        gwIpBuilder_.addMessage(value);
+        specBuilder_.mergeFrom(value);
       }
+
       return this;
     }
     /**
      * <pre>
-     * The GW IP addresses with masks assigned to the SVI
+     * Svi's network configuration
      * </pre>
      *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder addGwIp(
-        int index, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen value) {
-      if (gwIpBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureGwIpIsMutable();
-        gwIp_.add(index, value);
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
         onChanged();
       } else {
-        gwIpBuilder_.addMessage(index, value);
+        spec_ = null;
+        specBuilder_ = null;
       }
+
       return this;
     }
     /**
      * <pre>
-     * The GW IP addresses with masks assigned to the SVI
+     * Svi's network configuration
      * </pre>
      *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder addGwIp(
-        opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder builderForValue) {
-      if (gwIpBuilder_ == null) {
-        ensureGwIpIsMutable();
-        gwIp_.add(builderForValue.build());
-        onChanged();
+    public opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder getSpecBuilder() {
+      
+      onChanged();
+      return getSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Svi's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
       } else {
-        gwIpBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public Builder addGwIp(
-        int index, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder builderForValue) {
-      if (gwIpBuilder_ == null) {
-        ensureGwIpIsMutable();
-        gwIp_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        gwIpBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public Builder addAllGwIp(
-        java.lang.Iterable<? extends opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen> values) {
-      if (gwIpBuilder_ == null) {
-        ensureGwIpIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, gwIp_);
-        onChanged();
-      } else {
-        gwIpBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public Builder clearGwIp() {
-      if (gwIpBuilder_ == null) {
-        gwIp_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        gwIpBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public Builder removeGwIp(int index) {
-      if (gwIpBuilder_ == null) {
-        ensureGwIpIsMutable();
-        gwIp_.remove(index);
-        onChanged();
-      } else {
-        gwIpBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder getGwIpBuilder(
-        int index) {
-      return getGwIpFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder getGwIpOrBuilder(
-        int index) {
-      if (gwIpBuilder_ == null) {
-        return gwIp_.get(index);  } else {
-        return gwIpBuilder_.getMessageOrBuilder(index);
+        return spec_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.SviSpec.getDefaultInstance() : spec_;
       }
     }
     /**
      * <pre>
-     * The GW IP addresses with masks assigned to the SVI
+     * Svi's network configuration
      * </pre>
      *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public java.util.List<? extends opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder> 
-         getGwIpOrBuilderList() {
-      if (gwIpBuilder_ != null) {
-        return gwIpBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(gwIp_);
-      }
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder addGwIpBuilder() {
-      return getGwIpFieldBuilder().addBuilder(
-          opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder addGwIpBuilder(
-        int index) {
-      return getGwIpFieldBuilder().addBuilder(
-          index, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * The GW IP addresses with masks assigned to the SVI
-     * </pre>
-     *
-     * <code>repeated .opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen gw_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    public java.util.List<opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder> 
-         getGwIpBuilderList() {
-      return getGwIpFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder> 
-        getGwIpFieldBuilder() {
-      if (gwIpBuilder_ == null) {
-        gwIpBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklen.Builder, opi_api.network.evpn_gw.v1alpha1.IpAddressMasklenOrBuilder>(
-                gwIp_,
-                ((bitField0_ & 0x00000001) != 0),
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.SviSpec, opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder, opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.SviSpec, opi_api.network.evpn_gw.v1alpha1.SviSpec.Builder, opi_api.network.evpn_gw.v1alpha1.SviSpecOrBuilder>(
+                getSpec(),
                 getParentForChildren(),
                 isClean());
-        gwIp_ = null;
+        spec_ = null;
       }
-      return gwIpBuilder_;
+      return specBuilder_;
     }
 
-    private boolean enableBgp_ ;
+    private opi_api.network.evpn_gw.v1alpha1.SviStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.SviStatus, opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder, opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * Set to true to enable BGP peering with VRF on SVI
+     * Svi's network status
      * </pre>
      *
-     * <code>bool enable_bgp = 5;</code>
-     * @return The enableBgp.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     * @return Whether the status field is set.
      */
-    @java.lang.Override
-    public boolean getEnableBgp() {
-      return enableBgp_;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
     }
     /**
      * <pre>
-     * Set to true to enable BGP peering with VRF on SVI
+     * Svi's network status
      * </pre>
      *
-     * <code>bool enable_bgp = 5;</code>
-     * @param value The enableBgp to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     * @return The status.
      */
-    public Builder setEnableBgp(boolean value) {
-      
-      enableBgp_ = value;
-      onChanged();
-      return this;
+    public opi_api.network.evpn_gw.v1alpha1.SviStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.network.evpn_gw.v1alpha1.SviStatus.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
-     * Set to true to enable BGP peering with VRF on SVI
+     * Svi's network status
      * </pre>
      *
-     * <code>bool enable_bgp = 5;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
      */
-    public Builder clearEnableBgp() {
-      
-      enableBgp_ = false;
-      onChanged();
-      return this;
-    }
+    public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.SviStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(value);
+      }
 
-    private int remoteAs_ ;
-    /**
-     * <pre>
-     * Conditional: The remote AS used by BGP speakers on LB (1-65535)
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: remote_as cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 remote_as = 6;</code>
-     * @return The remoteAs.
-     */
-    @java.lang.Override
-    public int getRemoteAs() {
-      return remoteAs_;
-    }
-    /**
-     * <pre>
-     * Conditional: The remote AS used by BGP speakers on LB (1-65535)
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: remote_as cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 remote_as = 6;</code>
-     * @param value The remoteAs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRemoteAs(int value) {
-      
-      remoteAs_ = value;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * Conditional: The remote AS used by BGP speakers on LB (1-65535)
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: remote_as cannot be negative number. --)
+     * Svi's network status
      * </pre>
      *
-     * <code>uint32 remote_as = 6;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
      */
-    public Builder clearRemoteAs() {
-      
-      remoteAs_ = 0;
-      onChanged();
+    public Builder setStatus(
+        opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Svi's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     */
+    public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.SviStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.network.evpn_gw.v1alpha1.SviStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Svi's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     */
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Svi's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Svi's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.SviStatus.getDefaultInstance() : status_;
+      }
+    }
+    /**
+     * <pre>
+     * Svi's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.SviStatus status = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.SviStatus, opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder, opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.SviStatus, opi_api.network.evpn_gw.v1alpha1.SviStatus.Builder, opi_api.network.evpn_gw.v1alpha1.SviStatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

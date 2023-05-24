@@ -9,13 +9,23 @@ public interface DeleteLogicalBridgeRequestOrBuilder extends
 
   /**
    * <pre>
-   * The vlan id of the logical bridge to delete
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
+   * The name of the logical bridge to retrieve
+   * Format: logicalBridges/{logical_bridge}
    * </pre>
    *
-   * <code>uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  int getVlanId();
+  java.lang.String getName();
+  /**
+   * <pre>
+   * The name of the logical bridge to retrieve
+   * Format: logicalBridges/{logical_bridge}
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

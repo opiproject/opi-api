@@ -195,9 +195,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Create a LogicalBridge
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+     * Create a Logical Bridge
      * </pre>
      */
     public void createLogicalBridge(opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest request,
@@ -207,7 +205,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * List LogicalBridges
+     * List Logical Bridges
      * </pre>
      */
     public void listLogicalBridges(opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesRequest request,
@@ -217,13 +215,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a LogicalBridge
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Logical Bridge
      * </pre>
      */
     public void getLogicalBridge(opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest request,
@@ -233,13 +225,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Delete a LogicalBridge
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Logical Bridge
      * </pre>
      */
     public void deleteLogicalBridge(opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest request,
@@ -300,9 +286,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Create a LogicalBridge
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+     * Create a Logical Bridge
      * </pre>
      */
     public void createLogicalBridge(opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest request,
@@ -313,7 +297,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * List LogicalBridges
+     * List Logical Bridges
      * </pre>
      */
     public void listLogicalBridges(opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesRequest request,
@@ -324,13 +308,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a LogicalBridge
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Logical Bridge
      * </pre>
      */
     public void getLogicalBridge(opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest request,
@@ -341,13 +319,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Delete a LogicalBridge
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Logical Bridge
      * </pre>
      */
     public void deleteLogicalBridge(opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest request,
@@ -376,9 +348,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Create a LogicalBridge
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+     * Create a Logical Bridge
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridge createLogicalBridge(opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest request) {
@@ -388,7 +358,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * List LogicalBridges
+     * List Logical Bridges
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesResponse listLogicalBridges(opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesRequest request) {
@@ -398,13 +368,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a LogicalBridge
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Logical Bridge
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.LogicalBridge getLogicalBridge(opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest request) {
@@ -414,13 +378,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Delete a LogicalBridge
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Logical Bridge
      * </pre>
      */
     public com.google.protobuf.Empty deleteLogicalBridge(opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest request) {
@@ -448,9 +406,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Create a LogicalBridge
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+     * Create a Logical Bridge
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.LogicalBridge> createLogicalBridge(
@@ -461,7 +417,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * List LogicalBridges
+     * List Logical Bridges
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.ListLogicalBridgesResponse> listLogicalBridges(
@@ -472,13 +428,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a LogicalBridge
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Logical Bridge
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.LogicalBridge> getLogicalBridge(
@@ -489,13 +439,7 @@ public final class LogicalBridgeServiceGrpc {
 
     /**
      * <pre>
-     * Delete a LogicalBridge
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vlan_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Logical Bridge
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteLogicalBridge(

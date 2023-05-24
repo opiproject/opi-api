@@ -23,8 +23,8 @@ namespace v1alpha1 {
 constexpr LogicalBridge::LogicalBridge(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , vlan_id_(0u)
-  , vni_(0u){}
+  , spec_(nullptr)
+  , status_(nullptr){}
 struct LogicalBridgeDefaultTypeInternal {
   constexpr LogicalBridgeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -34,9 +34,36 @@ struct LogicalBridgeDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LogicalBridgeDefaultTypeInternal _LogicalBridge_default_instance_;
+constexpr LogicalBridgeSpec::LogicalBridgeSpec(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vlan_id_(0u)
+  , vni_(0u){}
+struct LogicalBridgeSpecDefaultTypeInternal {
+  constexpr LogicalBridgeSpecDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LogicalBridgeSpecDefaultTypeInternal() {}
+  union {
+    LogicalBridgeSpec _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LogicalBridgeSpecDefaultTypeInternal _LogicalBridgeSpec_default_instance_;
+constexpr LogicalBridgeStatus::LogicalBridgeStatus(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : oper_status_(0)
+{}
+struct LogicalBridgeStatusDefaultTypeInternal {
+  constexpr LogicalBridgeStatusDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LogicalBridgeStatusDefaultTypeInternal() {}
+  union {
+    LogicalBridgeStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LogicalBridgeStatusDefaultTypeInternal _LogicalBridgeStatus_default_instance_;
 constexpr CreateLogicalBridgeRequest::CreateLogicalBridgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : logical_bridge_(nullptr){}
+  : logical_bridge_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , logical_bridge_(nullptr){}
 struct CreateLogicalBridgeRequestDefaultTypeInternal {
   constexpr CreateLogicalBridgeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -74,7 +101,7 @@ struct ListLogicalBridgesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListLogicalBridgesResponseDefaultTypeInternal _ListLogicalBridgesResponse_default_instance_;
 constexpr GetLogicalBridgeRequest::GetLogicalBridgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vlan_id_(0u){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetLogicalBridgeRequestDefaultTypeInternal {
   constexpr GetLogicalBridgeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -86,7 +113,7 @@ struct GetLogicalBridgeRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetLogicalBridgeRequestDefaultTypeInternal _GetLogicalBridgeRequest_default_instance_;
 constexpr DeleteLogicalBridgeRequest::DeleteLogicalBridgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vlan_id_(0u){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteLogicalBridgeRequestDefaultTypeInternal {
   constexpr DeleteLogicalBridgeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -98,13 +125,9 @@ struct DeleteLogicalBridgeRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteLogicalBridgeRequestDefaultTypeInternal _DeleteLogicalBridgeRequest_default_instance_;
 constexpr BridgePort::BridgePort(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vlan_id_()
-  , _vlan_id_cached_byte_size_(0)
-  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , mac_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , vport_id_(0u)
-  , ptype_(0)
-{}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
+  , status_(nullptr){}
 struct BridgePortDefaultTypeInternal {
   constexpr BridgePortDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -114,9 +137,38 @@ struct BridgePortDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BridgePortDefaultTypeInternal _BridgePort_default_instance_;
+constexpr BridgePortSpec::BridgePortSpec(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : logical_bridges_()
+  , mac_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ptype_(0)
+{}
+struct BridgePortSpecDefaultTypeInternal {
+  constexpr BridgePortSpecDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BridgePortSpecDefaultTypeInternal() {}
+  union {
+    BridgePortSpec _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BridgePortSpecDefaultTypeInternal _BridgePortSpec_default_instance_;
+constexpr BridgePortStatus::BridgePortStatus(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : oper_status_(0)
+{}
+struct BridgePortStatusDefaultTypeInternal {
+  constexpr BridgePortStatusDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BridgePortStatusDefaultTypeInternal() {}
+  union {
+    BridgePortStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BridgePortStatusDefaultTypeInternal _BridgePortStatus_default_instance_;
 constexpr CreateBridgePortRequest::CreateBridgePortRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : bridge_port_(nullptr){}
+  : bridge_port_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , bridge_port_(nullptr){}
 struct CreateBridgePortRequestDefaultTypeInternal {
   constexpr CreateBridgePortRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -154,7 +206,7 @@ struct ListBridgePortsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListBridgePortsResponseDefaultTypeInternal _ListBridgePortsResponse_default_instance_;
 constexpr GetBridgePortRequest::GetBridgePortRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vport_id_(0u){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct GetBridgePortRequestDefaultTypeInternal {
   constexpr GetBridgePortRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -166,7 +218,7 @@ struct GetBridgePortRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetBridgePortRequestDefaultTypeInternal _GetBridgePortRequest_default_instance_;
 constexpr DeleteBridgePortRequest::DeleteBridgePortRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vport_id_(0u){}
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteBridgePortRequestDefaultTypeInternal {
   constexpr DeleteBridgePortRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -180,8 +232,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeleteBridgePortRequestDefaultT
 }  // namespace evpn_gw
 }  // namespace network
 }  // namespace opi_api
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[12];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[16];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto = nullptr;
 
 const uint32_t TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -192,14 +244,30 @@ const uint32_t TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, vlan_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, vni_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec, vlan_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec, vni_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus, oper_status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest, logical_bridge_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest, logical_bridge_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest, _internal_metadata_),
@@ -223,14 +291,14 @@ const uint32_t TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest, vlan_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest, vlan_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -238,16 +306,31 @@ const uint32_t TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, name_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, vport_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, mac_address_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, ptype_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, vlan_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, spec_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePort, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec, mac_address_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec, ptype_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec, logical_bridges_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus, oper_status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest, bridge_port_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest, bridge_port_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest, _internal_metadata_),
@@ -271,38 +354,46 @@ const uint32_t TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets[] PROTOBUF_SE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest, vport_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest, vport_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest, name_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::LogicalBridge)},
-  { 9, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest)},
-  { 16, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest)},
-  { 24, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse)},
-  { 32, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest)},
-  { 39, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest)},
-  { 46, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::BridgePort)},
-  { 57, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest)},
-  { 64, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest)},
-  { 72, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse)},
-  { 80, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest)},
-  { 87, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest)},
+  { 9, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec)},
+  { 17, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus)},
+  { 24, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest)},
+  { 32, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest)},
+  { 40, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse)},
+  { 48, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest)},
+  { 55, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest)},
+  { 62, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::BridgePort)},
+  { 71, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec)},
+  { 80, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus)},
+  { 87, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest)},
+  { 95, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest)},
+  { 103, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse)},
+  { 111, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest)},
+  { 118, -1, -1, sizeof(::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_LogicalBridge_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_LogicalBridgeSpec_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_LogicalBridgeStatus_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_CreateLogicalBridgeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_ListLogicalBridgesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_ListLogicalBridgesResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_GetLogicalBridgeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_DeleteLogicalBridgeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_BridgePort_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_BridgePortSpec_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_BridgePortStatus_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_CreateBridgePortRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_ListBridgePortsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::opi_api::network::evpn_gw::v1alpha1::_ListBridgePortsResponse_default_instance_),
@@ -316,76 +407,99 @@ const char descriptor_table_protodef_l2_5fxpu_5finfra_5fmgr_2eproto[] PROTOBUF_S
   "ns.proto\032\027google/api/client.proto\032\033googl"
   "e/protobuf/empty.proto\032\037google/api/field"
   "_behavior.proto\032\031google/api/resource.pro"
-  "to\"\211\001\n\rLogicalBridge\022\014\n\004name\030\001 \001(\t\022\024\n\007vl"
-  "an_id\030\002 \001(\rB\003\340A\002\022\013\n\003vni\030\003 \001(\r:G\352AD\n$libr"
-  "ary.googleapis.com/LogicalBridge\022\034logica"
-  "lBridges/logicalBridge\"j\n\032CreateLogicalB"
-  "ridgeRequest\022L\n\016logical_bridge\030\001 \001(\0132/.o"
-  "pi_api.network.evpn_gw.v1alpha1.LogicalB"
-  "ridgeB\003\340A\002\"B\n\031ListLogicalBridgesRequest\022"
-  "\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"\177"
-  "\n\032ListLogicalBridgesResponse\022H\n\017logical_"
-  "bridges\030\001 \003(\0132/.opi_api.network.evpn_gw."
-  "v1alpha1.LogicalBridge\022\027\n\017next_page_toke"
-  "n\030\002 \001(\t\"/\n\027GetLogicalBridgeRequest\022\024\n\007vl"
-  "an_id\030\001 \001(\rB\003\340A\002\"2\n\032DeleteLogicalBridgeR"
-  "equest\022\024\n\007vlan_id\030\001 \001(\rB\003\340A\002\"\236\002\n\nBridgeP"
-  "ort\022\014\n\004name\030\001 \001(\t\022\020\n\010vport_id\030\002 \001(\r\022\030\n\013m"
-  "ac_address\030\003 \001(\tB\003\340A\002\022O\n\005ptype\030\004 \001(\0162;.o"
-  "pi_api.network.evpn_gw.v1alpha1.BridgePo"
-  "rt.BridgePortTypeB\003\340A\002\022\017\n\007vlan_id\030\005 \003(\r\""
-  "4\n\016BridgePortType\022\013\n\007UNKNOWN\020\000\022\n\n\006ACCESS"
-  "\020\001\022\t\n\005TRUNK\020\002:>\352A;\n!library.googleapis.c"
-  "om/BridgePort\022\026bridgePorts/bridgePort\"a\n"
-  "\027CreateBridgePortRequest\022F\n\013bridge_port\030"
-  "\001 \001(\0132,.opi_api.network.evpn_gw.v1alpha1"
-  ".BridgePortB\003\340A\002\"\?\n\026ListBridgePortsReque"
-  "st\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001("
-  "\t\"v\n\027ListBridgePortsResponse\022B\n\014bridge_p"
-  "orts\030\001 \003(\0132,.opi_api.network.evpn_gw.v1a"
-  "lpha1.BridgePort\022\027\n\017next_page_token\030\002 \001("
-  "\t\"-\n\024GetBridgePortRequest\022\025\n\010vport_id\030\001 "
-  "\001(\rB\003\340A\002\"0\n\027DeleteBridgePortRequest\022\025\n\010v"
-  "port_id\030\001 \001(\rB\003\340A\0022\333\005\n\024LogicalBridgeServ"
-  "ice\022\301\001\n\023CreateLogicalBridge\022<.opi_api.ne"
-  "twork.evpn_gw.v1alpha1.CreateLogicalBrid"
-  "geRequest\032/.opi_api.network.evpn_gw.v1al"
-  "pha1.LogicalBridge\";\202\323\344\223\002$\"\022/v1/logicalB"
-  "ridges:\016logical_bridge\332A\016logical_bridge\022"
-  "\253\001\n\022ListLogicalBridges\022;.opi_api.network"
-  ".evpn_gw.v1alpha1.ListLogicalBridgesRequ"
-  "est\032<.opi_api.network.evpn_gw.v1alpha1.L"
-  "istLogicalBridgesResponse\"\032\202\323\344\223\002\024\022\022/v1/l"
-  "ogicalBridges\022\260\001\n\020GetLogicalBridge\0229.opi"
-  "_api.network.evpn_gw.v1alpha1.GetLogical"
-  "BridgeRequest\032/.opi_api.network.evpn_gw."
-  "v1alpha1.LogicalBridge\"0\202\323\344\223\002 \022\036/v1/{vla"
-  "n_id=logicalBridges/*}\332A\007vlan_id\022\235\001\n\023Del"
-  "eteLogicalBridge\022<.opi_api.network.evpn_"
-  "gw.v1alpha1.DeleteLogicalBridgeRequest\032\026"
-  ".google.protobuf.Empty\"0\202\323\344\223\002 *\036/v1/{vla"
-  "n_id=logicalBridges/*}\332A\007vlan_id2\251\005\n\021Bri"
-  "dgePortService\022\257\001\n\020CreateBridgePort\0229.op"
-  "i_api.network.evpn_gw.v1alpha1.CreateBri"
-  "dgePortRequest\032,.opi_api.network.evpn_gw"
-  ".v1alpha1.BridgePort\"2\202\323\344\223\002\036\"\017/v1/bridge"
-  "Ports:\013bridge_port\332A\013bridge_port\022\237\001\n\017Lis"
-  "tBridgePorts\0228.opi_api.network.evpn_gw.v"
-  "1alpha1.ListBridgePortsRequest\0329.opi_api"
-  ".network.evpn_gw.v1alpha1.ListBridgePort"
-  "sResponse\"\027\202\323\344\223\002\021\022\017/v1/bridgePorts\022\246\001\n\rG"
-  "etBridgePort\0226.opi_api.network.evpn_gw.v"
-  "1alpha1.GetBridgePortRequest\032,.opi_api.n"
-  "etwork.evpn_gw.v1alpha1.BridgePort\"/\202\323\344\223"
-  "\002\036\022\034/v1/{vport_id=bridgePorts/*}\332A\010vport"
-  "_id\022\226\001\n\020DeleteBridgePort\0229.opi_api.netwo"
-  "rk.evpn_gw.v1alpha1.DeleteBridgePortRequ"
-  "est\032\026.google.protobuf.Empty\"/\202\323\344\223\002\036*\034/v1"
-  "/{vport_id=bridgePorts/*}\332A\010vport_idBw\n "
-  "opi_api.network.evpn_gw.v1alpha1B\022L2XpuI"
-  "nfraMgrProtoP\001Z=github.com/opiproject/op"
-  "i-api/network/evpn-gw/v1alpha1/gen/gob\006p"
-  "roto3"
+  "to\"\202\002\n\rLogicalBridge\022\014\n\004name\030\001 \001(\t\022F\n\004sp"
+  "ec\030\002 \001(\01323.opi_api.network.evpn_gw.v1alp"
+  "ha1.LogicalBridgeSpecB\003\340A\002\022E\n\006status\030\003 \001"
+  "(\01325.opi_api.network.evpn_gw.v1alpha1.Lo"
+  "gicalBridgeStatus:T\352AQ\n.opi_api.network."
+  "evpn_gw.v1alpha1/LogicalBridge\022\037logicalB"
+  "ridges/{logical_bridge}\"6\n\021LogicalBridge"
+  "Spec\022\024\n\007vlan_id\030\001 \001(\rB\003\340A\002\022\013\n\003vni\030\002 \001(\r\""
+  "Z\n\023LogicalBridgeStatus\022C\n\013oper_status\030\001 "
+  "\001(\0162..opi_api.network.evpn_gw.v1alpha1.L"
+  "BOperStatus\"\205\001\n\032CreateLogicalBridgeReque"
+  "st\022\031\n\021logical_bridge_id\030\001 \001(\t\022L\n\016logical"
+  "_bridge\030\002 \001(\0132/.opi_api.network.evpn_gw."
+  "v1alpha1.LogicalBridgeB\003\340A\002\"B\n\031ListLogic"
+  "alBridgesRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\np"
+  "age_token\030\002 \001(\t\"\177\n\032ListLogicalBridgesRes"
+  "ponse\022H\n\017logical_bridges\030\001 \003(\0132/.opi_api"
+  ".network.evpn_gw.v1alpha1.LogicalBridge\022"
+  "\027\n\017next_page_token\030\002 \001(\t\"_\n\027GetLogicalBr"
+  "idgeRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.opi_a"
+  "pi.network.evpn_gw.v1alpha1/LogicalBridg"
+  "e\"b\n\032DeleteLogicalBridgeRequest\022D\n\004name\030"
+  "\001 \001(\tB6\340A\002\372A0\n.opi_api.network.evpn_gw.v"
+  "1alpha1/LogicalBridge\"\353\001\n\nBridgePort\022\014\n\004"
+  "name\030\001 \001(\t\022>\n\004spec\030\002 \001(\01320.opi_api.netwo"
+  "rk.evpn_gw.v1alpha1.BridgePortSpec\022B\n\006st"
+  "atus\030\003 \001(\01322.opi_api.network.evpn_gw.v1a"
+  "lpha1.BridgePortStatus:K\352AH\n+opi_api.net"
+  "work.evpn_gw.v1alpha1/bridgePort\022\031bridge"
+  "Ports/{bridge_port}\"\211\001\n\016BridgePortSpec\022\030"
+  "\n\013mac_address\030\001 \001(\014B\003\340A\002\022D\n\005ptype\030\002 \001(\0162"
+  "0.opi_api.network.evpn_gw.v1alpha1.Bridg"
+  "ePortTypeB\003\340A\002\022\027\n\017logical_bridges\030\003 \003(\t\""
+  "W\n\020BridgePortStatus\022C\n\013oper_status\030\001 \001(\016"
+  "2..opi_api.network.evpn_gw.v1alpha1.BPOp"
+  "erStatus\"y\n\027CreateBridgePortRequest\022\026\n\016b"
+  "ridge_port_id\030\001 \001(\t\022F\n\013bridge_port\030\002 \001(\013"
+  "2,.opi_api.network.evpn_gw.v1alpha1.Brid"
+  "gePortB\003\340A\002\"\?\n\026ListBridgePortsRequest\022\021\n"
+  "\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"v\n\027"
+  "ListBridgePortsResponse\022B\n\014bridge_ports\030"
+  "\001 \003(\0132,.opi_api.network.evpn_gw.v1alpha1"
+  ".BridgePort\022\027\n\017next_page_token\030\002 \001(\t\"Y\n\024"
+  "GetBridgePortRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372"
+  "A-\n+opi_api.network.evpn_gw.v1alpha1/Bri"
+  "dgePort\"\\\n\027DeleteBridgePortRequest\022A\n\004na"
+  "me\030\001 \001(\tB3\340A\002\372A-\n+opi_api.network.evpn_g"
+  "w.v1alpha1/BridgePort*^\n\014LBOperStatus\022\036\n"
+  "\032LB_OPER_STATUS_UNSPECIFIED\020\000\022\025\n\021LB_OPER"
+  "_STATUS_UP\020\001\022\027\n\023LB_OPER_STATUS_DOWN\020\002*^\n"
+  "\014BPOperStatus\022\036\n\032BP_OPER_STATUS_UNSPECIF"
+  "IED\020\000\022\025\n\021BP_OPER_STATUS_UP\020\001\022\027\n\023BP_OPER_"
+  "STATUS_DOWN\020\002*4\n\016BridgePortType\022\013\n\007UNKNO"
+  "WN\020\000\022\n\n\006ACCESS\020\001\022\t\n\005TRUNK\020\0022\341\005\n\024LogicalB"
+  "ridgeService\022\323\001\n\023CreateLogicalBridge\022<.o"
+  "pi_api.network.evpn_gw.v1alpha1.CreateLo"
+  "gicalBridgeRequest\032/.opi_api.network.evp"
+  "n_gw.v1alpha1.LogicalBridge\"M\202\323\344\223\002$\"\022/v1"
+  "/logicalBridges:\016logical_bridge\332A logica"
+  "l_bridge,logical_bridge_id\022\253\001\n\022ListLogic"
+  "alBridges\022;.opi_api.network.evpn_gw.v1al"
+  "pha1.ListLogicalBridgesRequest\032<.opi_api"
+  ".network.evpn_gw.v1alpha1.ListLogicalBri"
+  "dgesResponse\"\032\202\323\344\223\002\024\022\022/v1/logicalBridges"
+  "\022\252\001\n\020GetLogicalBridge\0229.opi_api.network."
+  "evpn_gw.v1alpha1.GetLogicalBridgeRequest"
+  "\032/.opi_api.network.evpn_gw.v1alpha1.Logi"
+  "calBridge\"*\202\323\344\223\002\035\022\033/v1/{name=logicalBrid"
+  "ges/*}\332A\004name\022\227\001\n\023DeleteLogicalBridge\022<."
+  "opi_api.network.evpn_gw.v1alpha1.DeleteL"
+  "ogicalBridgeRequest\032\026.google.protobuf.Em"
+  "pty\"*\202\323\344\223\002\035*\033/v1/{name=logicalBridges/*}"
+  "\332A\004name2\250\005\n\021BridgePortService\022\276\001\n\020Create"
+  "BridgePort\0229.opi_api.network.evpn_gw.v1a"
+  "lpha1.CreateBridgePortRequest\032,.opi_api."
+  "network.evpn_gw.v1alpha1.BridgePort\"A\202\323\344"
+  "\223\002\036\"\017/v1/bridgePorts:\013bridge_port\332A\032brid"
+  "ge_port,bridge_port_id\022\237\001\n\017ListBridgePor"
+  "ts\0228.opi_api.network.evpn_gw.v1alpha1.Li"
+  "stBridgePortsRequest\0329.opi_api.network.e"
+  "vpn_gw.v1alpha1.ListBridgePortsResponse\""
+  "\027\202\323\344\223\002\021\022\017/v1/bridgePorts\022\236\001\n\rGetBridgePo"
+  "rt\0226.opi_api.network.evpn_gw.v1alpha1.Ge"
+  "tBridgePortRequest\032,.opi_api.network.evp"
+  "n_gw.v1alpha1.BridgePort\"\'\202\323\344\223\002\032\022\030/v1/{n"
+  "ame=bridgePorts/*}\332A\004name\022\216\001\n\020DeleteBrid"
+  "gePort\0229.opi_api.network.evpn_gw.v1alpha"
+  "1.DeleteBridgePortRequest\032\026.google.proto"
+  "buf.Empty\"\'\202\323\344\223\002\032*\030/v1/{name=bridgePorts"
+  "/*}\332A\004nameBw\n opi_api.network.evpn_gw.v1"
+  "alpha1B\022L2XpuInfraMgrProtoP\001Z=github.com"
+  "/opiproject/opi-api/network/evpn-gw/v1al"
+  "pha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_deps[5] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -396,8 +510,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto = {
-  false, false, 2965, descriptor_table_protodef_l2_5fxpu_5finfra_5fmgr_2eproto, "l2_xpu_infra_mgr.proto", 
-  &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once, descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_deps, 5, 12,
+  false, false, 3899, descriptor_table_protodef_l2_5fxpu_5finfra_5fmgr_2eproto, "l2_xpu_infra_mgr.proto", 
+  &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once, descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_deps, 5, 16,
   schemas, file_default_instances, TableStruct_l2_5fxpu_5finfra_5fmgr_2eproto::offsets,
   file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto, file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto, file_level_service_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto,
 };
@@ -411,11 +525,11 @@ namespace opi_api {
 namespace network {
 namespace evpn_gw {
 namespace v1alpha1 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BridgePort_BridgePortType_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LBOperStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto);
   return file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto[0];
 }
-bool BridgePort_BridgePortType_IsValid(int value) {
+bool LBOperStatus_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -426,21 +540,53 @@ bool BridgePort_BridgePortType_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr BridgePort_BridgePortType BridgePort::UNKNOWN;
-constexpr BridgePort_BridgePortType BridgePort::ACCESS;
-constexpr BridgePort_BridgePortType BridgePort::TRUNK;
-constexpr BridgePort_BridgePortType BridgePort::BridgePortType_MIN;
-constexpr BridgePort_BridgePortType BridgePort::BridgePortType_MAX;
-constexpr int BridgePort::BridgePortType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BPOperStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto);
+  return file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto[1];
+}
+bool BPOperStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BridgePortType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto);
+  return file_level_enum_descriptors_l2_5fxpu_5finfra_5fmgr_2eproto[2];
+}
+bool BridgePortType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
 class LogicalBridge::_Internal {
  public:
+  static const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec& spec(const LogicalBridge* msg);
+  static const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus& status(const LogicalBridge* msg);
 };
 
+const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec&
+LogicalBridge::_Internal::spec(const LogicalBridge* msg) {
+  return *msg->spec_;
+}
+const ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus&
+LogicalBridge::_Internal::status(const LogicalBridge* msg) {
+  return *msg->status_;
+}
 LogicalBridge::LogicalBridge(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -461,9 +607,16 @@ LogicalBridge::LogicalBridge(const LogicalBridge& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&vlan_id_, &from.vlan_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&vni_) -
-    reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+  if (from._internal_has_spec()) {
+    spec_ = new ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec(*from.spec_);
+  } else {
+    spec_ = nullptr;
+  }
+  if (from._internal_has_status()) {
+    status_ = new ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus(*from.status_);
+  } else {
+    status_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridge)
 }
 
@@ -473,9 +626,9 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vlan_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&vni_) -
-    reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
+    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
 }
 
 LogicalBridge::~LogicalBridge() {
@@ -488,6 +641,8 @@ LogicalBridge::~LogicalBridge() {
 inline void LogicalBridge::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete spec_;
+  if (this != internal_default_instance()) delete status_;
 }
 
 void LogicalBridge::ArenaDtor(void* object) {
@@ -507,9 +662,14 @@ void LogicalBridge::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmpty();
-  ::memset(&vlan_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&vni_) -
-      reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
+    delete spec_;
+  }
+  spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
+  }
+  status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -529,18 +689,18 @@ const char* LogicalBridge::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];
+      // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          vlan_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 vni = 3;
+      // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          vni_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -584,16 +744,20 @@ uint8_t* LogicalBridge::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_vlan_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::spec(this), target, stream);
   }
 
-  // uint32 vni = 3;
-  if (this->_internal_vni() != 0) {
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+  if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_vni(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -619,14 +783,18 @@ size_t LogicalBridge::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vlan_id());
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_has_spec()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *spec_);
   }
 
-  // uint32 vni = 3;
-  if (this->_internal_vni() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vni());
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus status = 3;
+  if (this->_internal_has_status()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *status_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -654,11 +822,11 @@ void LogicalBridge::MergeFrom(const LogicalBridge& from) {
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
-  if (from._internal_vlan_id() != 0) {
-    _internal_set_vlan_id(from._internal_vlan_id());
+  if (from._internal_has_spec()) {
+    _internal_mutable_spec()->::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec::MergeFrom(from._internal_spec());
   }
-  if (from._internal_vni() != 0) {
-    _internal_set_vni(from._internal_vni());
+  if (from._internal_has_status()) {
+    _internal_mutable_status()->::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus::MergeFrom(from._internal_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -685,17 +853,410 @@ void LogicalBridge::InternalSwap(LogicalBridge* other) {
       &other->name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(LogicalBridge, vni_)
-      + sizeof(LogicalBridge::vni_)
-      - PROTOBUF_FIELD_OFFSET(LogicalBridge, vlan_id_)>(
-          reinterpret_cast<char*>(&vlan_id_),
-          reinterpret_cast<char*>(&other->vlan_id_));
+      PROTOBUF_FIELD_OFFSET(LogicalBridge, status_)
+      + sizeof(LogicalBridge::status_)
+      - PROTOBUF_FIELD_OFFSET(LogicalBridge, spec_)>(
+          reinterpret_cast<char*>(&spec_),
+          reinterpret_cast<char*>(&other->spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LogicalBridge::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
       file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[0]);
+}
+
+// ===================================================================
+
+class LogicalBridgeSpec::_Internal {
+ public:
+};
+
+LogicalBridgeSpec::LogicalBridgeSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+}
+LogicalBridgeSpec::LogicalBridgeSpec(const LogicalBridgeSpec& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&vlan_id_, &from.vlan_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&vni_) -
+    reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+  // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+}
+
+inline void LogicalBridgeSpec::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&vlan_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&vni_) -
+    reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+}
+
+LogicalBridgeSpec::~LogicalBridgeSpec() {
+  // @@protoc_insertion_point(destructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void LogicalBridgeSpec::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void LogicalBridgeSpec::ArenaDtor(void* object) {
+  LogicalBridgeSpec* _this = reinterpret_cast< LogicalBridgeSpec* >(object);
+  (void)_this;
+}
+void LogicalBridgeSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LogicalBridgeSpec::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void LogicalBridgeSpec::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&vlan_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&vni_) -
+      reinterpret_cast<char*>(&vlan_id_)) + sizeof(vni_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LogicalBridgeSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          vlan_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 vni = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          vni_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* LogicalBridgeSpec::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_vlan_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_vlan_id(), target);
+  }
+
+  // uint32 vni = 2;
+  if (this->_internal_vni() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_vni(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  return target;
+}
+
+size_t LogicalBridgeSpec::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_vlan_id() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vlan_id());
+  }
+
+  // uint32 vni = 2;
+  if (this->_internal_vni() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vni());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LogicalBridgeSpec::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    LogicalBridgeSpec::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LogicalBridgeSpec::GetClassData() const { return &_class_data_; }
+
+void LogicalBridgeSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<LogicalBridgeSpec *>(to)->MergeFrom(
+      static_cast<const LogicalBridgeSpec &>(from));
+}
+
+
+void LogicalBridgeSpec::MergeFrom(const LogicalBridgeSpec& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_vlan_id() != 0) {
+    _internal_set_vlan_id(from._internal_vlan_id());
+  }
+  if (from._internal_vni() != 0) {
+    _internal_set_vni(from._internal_vni());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void LogicalBridgeSpec::CopyFrom(const LogicalBridgeSpec& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeSpec)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LogicalBridgeSpec::IsInitialized() const {
+  return true;
+}
+
+void LogicalBridgeSpec::InternalSwap(LogicalBridgeSpec* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(LogicalBridgeSpec, vni_)
+      + sizeof(LogicalBridgeSpec::vni_)
+      - PROTOBUF_FIELD_OFFSET(LogicalBridgeSpec, vlan_id_)>(
+          reinterpret_cast<char*>(&vlan_id_),
+          reinterpret_cast<char*>(&other->vlan_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LogicalBridgeSpec::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[1]);
+}
+
+// ===================================================================
+
+class LogicalBridgeStatus::_Internal {
+ public:
+};
+
+LogicalBridgeStatus::LogicalBridgeStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+}
+LogicalBridgeStatus::LogicalBridgeStatus(const LogicalBridgeStatus& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  oper_status_ = from.oper_status_;
+  // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+}
+
+inline void LogicalBridgeStatus::SharedCtor() {
+oper_status_ = 0;
+}
+
+LogicalBridgeStatus::~LogicalBridgeStatus() {
+  // @@protoc_insertion_point(destructor:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void LogicalBridgeStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void LogicalBridgeStatus::ArenaDtor(void* object) {
+  LogicalBridgeStatus* _this = reinterpret_cast< LogicalBridgeStatus* >(object);
+  (void)_this;
+}
+void LogicalBridgeStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LogicalBridgeStatus::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void LogicalBridgeStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  oper_status_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LogicalBridgeStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_oper_status(static_cast<::opi_api::network::evpn_gw::v1alpha1::LBOperStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* LogicalBridgeStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+  if (this->_internal_oper_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_oper_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  return target;
+}
+
+size_t LogicalBridgeStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .opi_api.network.evpn_gw.v1alpha1.LBOperStatus oper_status = 1;
+  if (this->_internal_oper_status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_status());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LogicalBridgeStatus::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    LogicalBridgeStatus::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LogicalBridgeStatus::GetClassData() const { return &_class_data_; }
+
+void LogicalBridgeStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<LogicalBridgeStatus *>(to)->MergeFrom(
+      static_cast<const LogicalBridgeStatus &>(from));
+}
+
+
+void LogicalBridgeStatus::MergeFrom(const LogicalBridgeStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_oper_status() != 0) {
+    _internal_set_oper_status(from._internal_oper_status());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void LogicalBridgeStatus::CopyFrom(const LogicalBridgeStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.network.evpn_gw.v1alpha1.LogicalBridgeStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LogicalBridgeStatus::IsInitialized() const {
+  return true;
+}
+
+void LogicalBridgeStatus::InternalSwap(LogicalBridgeStatus* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(oper_status_, other->oper_status_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LogicalBridgeStatus::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[2]);
 }
 
 // ===================================================================
@@ -721,6 +1282,14 @@ CreateLogicalBridgeRequest::CreateLogicalBridgeRequest(::PROTOBUF_NAMESPACE_ID::
 CreateLogicalBridgeRequest::CreateLogicalBridgeRequest(const CreateLogicalBridgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  logical_bridge_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    logical_bridge_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_logical_bridge_id().empty()) {
+    logical_bridge_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_logical_bridge_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_logical_bridge()) {
     logical_bridge_ = new ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge(*from.logical_bridge_);
   } else {
@@ -730,6 +1299,10 @@ CreateLogicalBridgeRequest::CreateLogicalBridgeRequest(const CreateLogicalBridge
 }
 
 inline void CreateLogicalBridgeRequest::SharedCtor() {
+logical_bridge_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  logical_bridge_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 logical_bridge_ = nullptr;
 }
 
@@ -742,6 +1315,7 @@ CreateLogicalBridgeRequest::~CreateLogicalBridgeRequest() {
 
 inline void CreateLogicalBridgeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  logical_bridge_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete logical_bridge_;
 }
 
@@ -761,6 +1335,7 @@ void CreateLogicalBridgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  logical_bridge_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && logical_bridge_ != nullptr) {
     delete logical_bridge_;
   }
@@ -774,9 +1349,19 @@ const char* CreateLogicalBridgeRequest::_InternalParse(const char* ptr, ::PROTOB
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string logical_bridge_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_logical_bridge_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 2 [(.google.api.field_behavior) = REQUIRED];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_logical_bridge(), ptr);
           CHK_(ptr);
         } else
@@ -811,12 +1396,22 @@ uint8_t* CreateLogicalBridgeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string logical_bridge_id = 1;
+  if (!this->_internal_logical_bridge_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_logical_bridge_id().data(), static_cast<int>(this->_internal_logical_bridge_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.CreateLogicalBridgeRequest.logical_bridge_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_logical_bridge_id(), target);
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_logical_bridge()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::logical_bridge(this), target, stream);
+        2, _Internal::logical_bridge(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -835,7 +1430,14 @@ size_t CreateLogicalBridgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string logical_bridge_id = 1;
+  if (!this->_internal_logical_bridge_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_logical_bridge_id());
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.LogicalBridge logical_bridge = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_logical_bridge()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -864,6 +1466,9 @@ void CreateLogicalBridgeRequest::MergeFrom(const CreateLogicalBridgeRequest& fro
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_logical_bridge_id().empty()) {
+    _internal_set_logical_bridge_id(from._internal_logical_bridge_id());
+  }
   if (from._internal_has_logical_bridge()) {
     _internal_mutable_logical_bridge()->::opi_api::network::evpn_gw::v1alpha1::LogicalBridge::MergeFrom(from._internal_logical_bridge());
   }
@@ -883,14 +1488,21 @@ bool CreateLogicalBridgeRequest::IsInitialized() const {
 
 void CreateLogicalBridgeRequest::InternalSwap(CreateLogicalBridgeRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &logical_bridge_id_, lhs_arena,
+      &other->logical_bridge_id_, rhs_arena
+  );
   swap(logical_bridge_, other->logical_bridge_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateLogicalBridgeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[1]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[3]);
 }
 
 // ===================================================================
@@ -1119,7 +1731,7 @@ void ListLogicalBridgesRequest::InternalSwap(ListLogicalBridgesRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListLogicalBridgesRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[2]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[4]);
 }
 
 // ===================================================================
@@ -1355,7 +1967,7 @@ void ListLogicalBridgesResponse::InternalSwap(ListLogicalBridgesResponse* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata ListLogicalBridgesResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[3]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[5]);
 }
 
 // ===================================================================
@@ -1376,12 +1988,22 @@ GetLogicalBridgeRequest::GetLogicalBridgeRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 GetLogicalBridgeRequest::GetLogicalBridgeRequest(const GetLogicalBridgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vlan_id_ = from.vlan_id_;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest)
 }
 
 inline void GetLogicalBridgeRequest::SharedCtor() {
-vlan_id_ = 0u;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetLogicalBridgeRequest::~GetLogicalBridgeRequest() {
@@ -1393,6 +2015,7 @@ GetLogicalBridgeRequest::~GetLogicalBridgeRequest() {
 
 inline void GetLogicalBridgeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetLogicalBridgeRequest::ArenaDtor(void* object) {
@@ -1411,7 +2034,7 @@ void GetLogicalBridgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vlan_id_ = 0u;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1421,10 +2044,12 @@ const char* GetLogicalBridgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          vlan_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1458,10 +2083,14 @@ uint8_t* GetLogicalBridgeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_vlan_id(), target);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.GetLogicalBridgeRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1480,9 +2109,11 @@ size_t GetLogicalBridgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vlan_id());
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1507,8 +2138,8 @@ void GetLogicalBridgeRequest::MergeFrom(const GetLogicalBridgeRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_vlan_id() != 0) {
-    _internal_set_vlan_id(from._internal_vlan_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1526,14 +2157,20 @@ bool GetLogicalBridgeRequest::IsInitialized() const {
 
 void GetLogicalBridgeRequest::InternalSwap(GetLogicalBridgeRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(vlan_id_, other->vlan_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetLogicalBridgeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[4]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[6]);
 }
 
 // ===================================================================
@@ -1554,12 +2191,22 @@ DeleteLogicalBridgeRequest::DeleteLogicalBridgeRequest(::PROTOBUF_NAMESPACE_ID::
 DeleteLogicalBridgeRequest::DeleteLogicalBridgeRequest(const DeleteLogicalBridgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vlan_id_ = from.vlan_id_;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest)
 }
 
 inline void DeleteLogicalBridgeRequest::SharedCtor() {
-vlan_id_ = 0u;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DeleteLogicalBridgeRequest::~DeleteLogicalBridgeRequest() {
@@ -1571,6 +2218,7 @@ DeleteLogicalBridgeRequest::~DeleteLogicalBridgeRequest() {
 
 inline void DeleteLogicalBridgeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteLogicalBridgeRequest::ArenaDtor(void* object) {
@@ -1589,7 +2237,7 @@ void DeleteLogicalBridgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vlan_id_ = 0u;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1599,10 +2247,12 @@ const char* DeleteLogicalBridgeRequest::_InternalParse(const char* ptr, ::PROTOB
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          vlan_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1636,10 +2286,14 @@ uint8_t* DeleteLogicalBridgeRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_vlan_id(), target);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.DeleteLogicalBridgeRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1658,9 +2312,11 @@ size_t DeleteLogicalBridgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 vlan_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vlan_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vlan_id());
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1685,8 +2341,8 @@ void DeleteLogicalBridgeRequest::MergeFrom(const DeleteLogicalBridgeRequest& fro
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_vlan_id() != 0) {
-    _internal_set_vlan_id(from._internal_vlan_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1704,26 +2360,41 @@ bool DeleteLogicalBridgeRequest::IsInitialized() const {
 
 void DeleteLogicalBridgeRequest::InternalSwap(DeleteLogicalBridgeRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(vlan_id_, other->vlan_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteLogicalBridgeRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[5]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[7]);
 }
 
 // ===================================================================
 
 class BridgePort::_Internal {
  public:
+  static const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec& spec(const BridgePort* msg);
+  static const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus& status(const BridgePort* msg);
 };
 
+const ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec&
+BridgePort::_Internal::spec(const BridgePort* msg) {
+  return *msg->spec_;
+}
+const ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus&
+BridgePort::_Internal::status(const BridgePort* msg) {
+  return *msg->status_;
+}
 BridgePort::BridgePort(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  vlan_id_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1731,8 +2402,7 @@ BridgePort::BridgePort(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePort)
 }
 BridgePort::BridgePort(const BridgePort& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      vlan_id_(from.vlan_id_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1742,17 +2412,16 @@ BridgePort::BridgePort(const BridgePort& from)
     name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArenaForAllocation());
   }
-  mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_mac_address().empty()) {
-    mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mac_address(), 
-      GetArenaForAllocation());
+  if (from._internal_has_spec()) {
+    spec_ = new ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec(*from.spec_);
+  } else {
+    spec_ = nullptr;
   }
-  ::memcpy(&vport_id_, &from.vport_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ptype_) -
-    reinterpret_cast<char*>(&vport_id_)) + sizeof(ptype_));
+  if (from._internal_has_status()) {
+    status_ = new ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus(*from.status_);
+  } else {
+    status_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePort)
 }
 
@@ -1761,14 +2430,10 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vport_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ptype_) -
-    reinterpret_cast<char*>(&vport_id_)) + sizeof(ptype_));
+    reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
+    reinterpret_cast<char*>(&spec_)) + sizeof(status_));
 }
 
 BridgePort::~BridgePort() {
@@ -1781,7 +2446,8 @@ BridgePort::~BridgePort() {
 inline void BridgePort::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mac_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete spec_;
+  if (this != internal_default_instance()) delete status_;
 }
 
 void BridgePort::ArenaDtor(void* object) {
@@ -1800,12 +2466,15 @@ void BridgePort::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vlan_id_.Clear();
   name_.ClearToEmpty();
-  mac_address_.ClearToEmpty();
-  ::memset(&vport_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ptype_) -
-      reinterpret_cast<char*>(&vport_id_)) + sizeof(ptype_));
+  if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
+    delete spec_;
+  }
+  spec_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
+  }
+  status_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1825,40 +2494,18 @@ const char* BridgePort::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
-      // uint32 vport_id = 2;
+      // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          vport_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];
+      // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_mac_address();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_ptype(static_cast<::opi_api::network::evpn_gw::v1alpha1::BridgePort_BridgePortType>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated uint32 vlan_id = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_vlan_id(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 40) {
-          _internal_add_vlan_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1902,36 +2549,20 @@ uint8_t* BridgePort::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // uint32 vport_id = 2;
-  if (this->_internal_vport_id() != 0) {
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+  if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_vport_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::spec(this), target, stream);
   }
 
-  // string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];
-  if (!this->_internal_mac_address().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_mac_address().data(), static_cast<int>(this->_internal_mac_address().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "opi_api.network.evpn_gw.v1alpha1.BridgePort.mac_address");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_mac_address(), target);
-  }
-
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_ptype() != 0) {
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+  if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_ptype(), target);
-  }
-
-  // repeated uint32 vlan_id = 5;
-  {
-    int byte_size = _vlan_id_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteUInt32Packed(
-          5, _internal_vlan_id(), byte_size, target);
-    }
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1950,21 +2581,6 @@ size_t BridgePort::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated uint32 vlan_id = 5;
-  {
-    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      UInt32Size(this->vlan_id_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _vlan_id_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
   // string name = 1;
   if (!this->_internal_name().empty()) {
     total_size += 1 +
@@ -1972,22 +2588,18 @@ size_t BridgePort::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];
-  if (!this->_internal_mac_address().empty()) {
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;
+  if (this->_internal_has_spec()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_mac_address());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *spec_);
   }
 
-  // uint32 vport_id = 2;
-  if (this->_internal_vport_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vport_id());
-  }
-
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_ptype() != 0) {
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;
+  if (this->_internal_has_status()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ptype());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *status_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2012,18 +2624,14 @@ void BridgePort::MergeFrom(const BridgePort& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  vlan_id_.MergeFrom(from.vlan_id_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
-  if (!from._internal_mac_address().empty()) {
-    _internal_set_mac_address(from._internal_mac_address());
+  if (from._internal_has_spec()) {
+    _internal_mutable_spec()->::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec::MergeFrom(from._internal_spec());
   }
-  if (from._internal_vport_id() != 0) {
-    _internal_set_vport_id(from._internal_vport_id());
-  }
-  if (from._internal_ptype() != 0) {
-    _internal_set_ptype(from._internal_ptype());
+  if (from._internal_has_status()) {
+    _internal_mutable_status()->::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus::MergeFrom(from._internal_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2044,29 +2652,469 @@ void BridgePort::InternalSwap(BridgePort* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  vlan_id_.InternalSwap(&other->vlan_id_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, lhs_arena,
       &other->name_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &mac_address_, lhs_arena,
-      &other->mac_address_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BridgePort, ptype_)
-      + sizeof(BridgePort::ptype_)
-      - PROTOBUF_FIELD_OFFSET(BridgePort, vport_id_)>(
-          reinterpret_cast<char*>(&vport_id_),
-          reinterpret_cast<char*>(&other->vport_id_));
+      PROTOBUF_FIELD_OFFSET(BridgePort, status_)
+      + sizeof(BridgePort::status_)
+      - PROTOBUF_FIELD_OFFSET(BridgePort, spec_)>(
+          reinterpret_cast<char*>(&spec_),
+          reinterpret_cast<char*>(&other->spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BridgePort::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[6]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[8]);
+}
+
+// ===================================================================
+
+class BridgePortSpec::_Internal {
+ public:
+};
+
+BridgePortSpec::BridgePortSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  logical_bridges_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+}
+BridgePortSpec::BridgePortSpec(const BridgePortSpec& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      logical_bridges_(from.logical_bridges_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_mac_address().empty()) {
+    mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mac_address(), 
+      GetArenaForAllocation());
+  }
+  ptype_ = from.ptype_;
+  // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+}
+
+inline void BridgePortSpec::SharedCtor() {
+mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+ptype_ = 0;
+}
+
+BridgePortSpec::~BridgePortSpec() {
+  // @@protoc_insertion_point(destructor:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void BridgePortSpec::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  mac_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void BridgePortSpec::ArenaDtor(void* object) {
+  BridgePortSpec* _this = reinterpret_cast< BridgePortSpec* >(object);
+  (void)_this;
+}
+void BridgePortSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BridgePortSpec::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BridgePortSpec::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  logical_bridges_.Clear();
+  mac_address_.ClearToEmpty();
+  ptype_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BridgePortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes mac_address = 1 [(.google.api.field_behavior) = REQUIRED];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_mac_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.evpn_gw.v1alpha1.BridgePortType ptype = 2 [(.google.api.field_behavior) = REQUIRED];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_ptype(static_cast<::opi_api::network::evpn_gw::v1alpha1::BridgePortType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string logical_bridges = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_logical_bridges();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BridgePortSpec::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes mac_address = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (!this->_internal_mac_address().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_mac_address(), target);
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortType ptype = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_ptype() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_ptype(), target);
+  }
+
+  // repeated string logical_bridges = 3;
+  for (int i = 0, n = this->_internal_logical_bridges_size(); i < n; i++) {
+    const auto& s = this->_internal_logical_bridges(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.logical_bridges");
+    target = stream->WriteString(3, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  return target;
+}
+
+size_t BridgePortSpec::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string logical_bridges = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(logical_bridges_.size());
+  for (int i = 0, n = logical_bridges_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      logical_bridges_.Get(i));
+  }
+
+  // bytes mac_address = 1 [(.google.api.field_behavior) = REQUIRED];
+  if (!this->_internal_mac_address().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_mac_address());
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePortType ptype = 2 [(.google.api.field_behavior) = REQUIRED];
+  if (this->_internal_ptype() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ptype());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BridgePortSpec::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BridgePortSpec::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BridgePortSpec::GetClassData() const { return &_class_data_; }
+
+void BridgePortSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BridgePortSpec *>(to)->MergeFrom(
+      static_cast<const BridgePortSpec &>(from));
+}
+
+
+void BridgePortSpec::MergeFrom(const BridgePortSpec& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  logical_bridges_.MergeFrom(from.logical_bridges_);
+  if (!from._internal_mac_address().empty()) {
+    _internal_set_mac_address(from._internal_mac_address());
+  }
+  if (from._internal_ptype() != 0) {
+    _internal_set_ptype(from._internal_ptype());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BridgePortSpec::CopyFrom(const BridgePortSpec& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.network.evpn_gw.v1alpha1.BridgePortSpec)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BridgePortSpec::IsInitialized() const {
+  return true;
+}
+
+void BridgePortSpec::InternalSwap(BridgePortSpec* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  logical_bridges_.InternalSwap(&other->logical_bridges_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &mac_address_, lhs_arena,
+      &other->mac_address_, rhs_arena
+  );
+  swap(ptype_, other->ptype_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BridgePortSpec::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[9]);
+}
+
+// ===================================================================
+
+class BridgePortStatus::_Internal {
+ public:
+};
+
+BridgePortStatus::BridgePortStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+}
+BridgePortStatus::BridgePortStatus(const BridgePortStatus& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  oper_status_ = from.oper_status_;
+  // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+}
+
+inline void BridgePortStatus::SharedCtor() {
+oper_status_ = 0;
+}
+
+BridgePortStatus::~BridgePortStatus() {
+  // @@protoc_insertion_point(destructor:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void BridgePortStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BridgePortStatus::ArenaDtor(void* object) {
+  BridgePortStatus* _this = reinterpret_cast< BridgePortStatus* >(object);
+  (void)_this;
+}
+void BridgePortStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void BridgePortStatus::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BridgePortStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  oper_status_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BridgePortStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_oper_status(static_cast<::opi_api::network::evpn_gw::v1alpha1::BPOperStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BridgePortStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+  if (this->_internal_oper_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_oper_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  return target;
+}
+
+size_t BridgePortStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .opi_api.network.evpn_gw.v1alpha1.BPOperStatus oper_status = 1;
+  if (this->_internal_oper_status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_oper_status());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BridgePortStatus::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BridgePortStatus::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BridgePortStatus::GetClassData() const { return &_class_data_; }
+
+void BridgePortStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BridgePortStatus *>(to)->MergeFrom(
+      static_cast<const BridgePortStatus &>(from));
+}
+
+
+void BridgePortStatus::MergeFrom(const BridgePortStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_oper_status() != 0) {
+    _internal_set_oper_status(from._internal_oper_status());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BridgePortStatus::CopyFrom(const BridgePortStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:opi_api.network.evpn_gw.v1alpha1.BridgePortStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BridgePortStatus::IsInitialized() const {
+  return true;
+}
+
+void BridgePortStatus::InternalSwap(BridgePortStatus* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(oper_status_, other->oper_status_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BridgePortStatus::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[10]);
 }
 
 // ===================================================================
@@ -2092,6 +3140,14 @@ CreateBridgePortRequest::CreateBridgePortRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 CreateBridgePortRequest::CreateBridgePortRequest(const CreateBridgePortRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  bridge_port_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    bridge_port_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_bridge_port_id().empty()) {
+    bridge_port_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bridge_port_id(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_bridge_port()) {
     bridge_port_ = new ::opi_api::network::evpn_gw::v1alpha1::BridgePort(*from.bridge_port_);
   } else {
@@ -2101,6 +3157,10 @@ CreateBridgePortRequest::CreateBridgePortRequest(const CreateBridgePortRequest& 
 }
 
 inline void CreateBridgePortRequest::SharedCtor() {
+bridge_port_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  bridge_port_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 bridge_port_ = nullptr;
 }
 
@@ -2113,6 +3173,7 @@ CreateBridgePortRequest::~CreateBridgePortRequest() {
 
 inline void CreateBridgePortRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  bridge_port_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete bridge_port_;
 }
 
@@ -2132,6 +3193,7 @@ void CreateBridgePortRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  bridge_port_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && bridge_port_ != nullptr) {
     delete bridge_port_;
   }
@@ -2145,9 +3207,19 @@ const char* CreateBridgePortRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string bridge_port_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_bridge_port_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_bridge_port(), ptr);
           CHK_(ptr);
         } else
@@ -2182,12 +3254,22 @@ uint8_t* CreateBridgePortRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string bridge_port_id = 1;
+  if (!this->_internal_bridge_port_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_bridge_port_id().data(), static_cast<int>(this->_internal_bridge_port_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest.bridge_port_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_bridge_port_id(), target);
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_bridge_port()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::bridge_port(this), target, stream);
+        2, _Internal::bridge_port(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2206,7 +3288,14 @@ size_t CreateBridgePortRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 1 [(.google.api.field_behavior) = REQUIRED];
+  // string bridge_port_id = 1;
+  if (!this->_internal_bridge_port_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_bridge_port_id());
+  }
+
+  // .opi_api.network.evpn_gw.v1alpha1.BridgePort bridge_port = 2 [(.google.api.field_behavior) = REQUIRED];
   if (this->_internal_has_bridge_port()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2235,6 +3324,9 @@ void CreateBridgePortRequest::MergeFrom(const CreateBridgePortRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_bridge_port_id().empty()) {
+    _internal_set_bridge_port_id(from._internal_bridge_port_id());
+  }
   if (from._internal_has_bridge_port()) {
     _internal_mutable_bridge_port()->::opi_api::network::evpn_gw::v1alpha1::BridgePort::MergeFrom(from._internal_bridge_port());
   }
@@ -2254,14 +3346,21 @@ bool CreateBridgePortRequest::IsInitialized() const {
 
 void CreateBridgePortRequest::InternalSwap(CreateBridgePortRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &bridge_port_id_, lhs_arena,
+      &other->bridge_port_id_, rhs_arena
+  );
   swap(bridge_port_, other->bridge_port_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateBridgePortRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[7]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[11]);
 }
 
 // ===================================================================
@@ -2490,7 +3589,7 @@ void ListBridgePortsRequest::InternalSwap(ListBridgePortsRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListBridgePortsRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[8]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[12]);
 }
 
 // ===================================================================
@@ -2726,7 +3825,7 @@ void ListBridgePortsResponse::InternalSwap(ListBridgePortsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListBridgePortsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[9]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[13]);
 }
 
 // ===================================================================
@@ -2747,12 +3846,22 @@ GetBridgePortRequest::GetBridgePortRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 GetBridgePortRequest::GetBridgePortRequest(const GetBridgePortRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vport_id_ = from.vport_id_;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest)
 }
 
 inline void GetBridgePortRequest::SharedCtor() {
-vport_id_ = 0u;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetBridgePortRequest::~GetBridgePortRequest() {
@@ -2764,6 +3873,7 @@ GetBridgePortRequest::~GetBridgePortRequest() {
 
 inline void GetBridgePortRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetBridgePortRequest::ArenaDtor(void* object) {
@@ -2782,7 +3892,7 @@ void GetBridgePortRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vport_id_ = 0u;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2792,10 +3902,12 @@ const char* GetBridgePortRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          vport_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2829,10 +3941,14 @@ uint8_t* GetBridgePortRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vport_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_vport_id(), target);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2851,9 +3967,11 @@ size_t GetBridgePortRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vport_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vport_id());
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2878,8 +3996,8 @@ void GetBridgePortRequest::MergeFrom(const GetBridgePortRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_vport_id() != 0) {
-    _internal_set_vport_id(from._internal_vport_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2897,14 +4015,20 @@ bool GetBridgePortRequest::IsInitialized() const {
 
 void GetBridgePortRequest::InternalSwap(GetBridgePortRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(vport_id_, other->vport_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetBridgePortRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[10]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[14]);
 }
 
 // ===================================================================
@@ -2925,12 +4049,22 @@ DeleteBridgePortRequest::DeleteBridgePortRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 DeleteBridgePortRequest::DeleteBridgePortRequest(const DeleteBridgePortRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vport_id_ = from.vport_id_;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest)
 }
 
 inline void DeleteBridgePortRequest::SharedCtor() {
-vport_id_ = 0u;
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DeleteBridgePortRequest::~DeleteBridgePortRequest() {
@@ -2942,6 +4076,7 @@ DeleteBridgePortRequest::~DeleteBridgePortRequest() {
 
 inline void DeleteBridgePortRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteBridgePortRequest::ArenaDtor(void* object) {
@@ -2960,7 +4095,7 @@ void DeleteBridgePortRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vport_id_ = 0u;
+  name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2970,10 +4105,12 @@ const char* DeleteBridgePortRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
+      // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          vport_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3007,10 +4144,14 @@ uint8_t* DeleteBridgePortRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vport_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_vport_id(), target);
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3029,9 +4170,11 @@ size_t DeleteBridgePortRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 vport_id = 1 [(.google.api.field_behavior) = REQUIRED];
-  if (this->_internal_vport_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vport_id());
+  // string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3056,8 +4199,8 @@ void DeleteBridgePortRequest::MergeFrom(const DeleteBridgePortRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_vport_id() != 0) {
-    _internal_set_vport_id(from._internal_vport_id());
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3075,14 +4218,20 @@ bool DeleteBridgePortRequest::IsInitialized() const {
 
 void DeleteBridgePortRequest::InternalSwap(DeleteBridgePortRequest* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(vport_id_, other->vport_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteBridgePortRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_getter, &descriptor_table_l2_5fxpu_5finfra_5fmgr_2eproto_once,
-      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[11]);
+      file_level_metadata_l2_5fxpu_5finfra_5fmgr_2eproto[15]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -3093,6 +4242,12 @@ void DeleteBridgePortRequest::InternalSwap(DeleteBridgePortRequest* other) {
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeSpec >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridgeStatus >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest >(arena);
@@ -3111,6 +4266,12 @@ template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::DeleteLogica
 }
 template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::BridgePort* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::BridgePort >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::BridgePort >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::BridgePortSpec >(arena);
+}
+template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::BridgePortStatus >(arena);
 }
 template<> PROTOBUF_NOINLINE ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest* Arena::CreateMaybeMessage< ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest >(arena);

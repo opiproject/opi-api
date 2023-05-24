@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateSviRequest() {
+    sviId_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sviId_ = s;
+            break;
+          }
+          case 18: {
             opi_api.network.evpn_gw.v1alpha1.Svi.Builder subBuilder = null;
             if (svi_ != null) {
               subBuilder = svi_.toBuilder();
@@ -97,14 +104,68 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.CreateSviRequest.class, opi_api.network.evpn_gw.v1alpha1.CreateSviRequest.Builder.class);
   }
 
-  public static final int SVI_FIELD_NUMBER = 1;
+  public static final int SVI_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object sviId_;
+  /**
+   * <pre>
+   * The ID to use for the svi, which will become the final component of
+   * the svi's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string svi_id = 1;</code>
+   * @return The sviId.
+   */
+  @java.lang.Override
+  public java.lang.String getSviId() {
+    java.lang.Object ref = sviId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sviId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The ID to use for the svi, which will become the final component of
+   * the svi's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string svi_id = 1;</code>
+   * @return The bytes for sviId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSviIdBytes() {
+    java.lang.Object ref = sviId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sviId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SVI_FIELD_NUMBER = 2;
   private opi_api.network.evpn_gw.v1alpha1.Svi svi_;
   /**
    * <pre>
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the svi field is set.
    */
   @java.lang.Override
@@ -116,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The svi.
    */
   @java.lang.Override
@@ -128,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * The Svi to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public opi_api.network.evpn_gw.v1alpha1.SviOrBuilder getSviOrBuilder() {
@@ -149,8 +210,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sviId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sviId_);
+    }
     if (svi_ != null) {
-      output.writeMessage(1, getSvi());
+      output.writeMessage(2, getSvi());
     }
     unknownFields.writeTo(output);
   }
@@ -161,9 +225,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sviId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sviId_);
+    }
     if (svi_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSvi());
+        .computeMessageSize(2, getSvi());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,6 +247,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.evpn_gw.v1alpha1.CreateSviRequest other = (opi_api.network.evpn_gw.v1alpha1.CreateSviRequest) obj;
 
+    if (!getSviId()
+        .equals(other.getSviId())) return false;
     if (hasSvi() != other.hasSvi()) return false;
     if (hasSvi()) {
       if (!getSvi()
@@ -196,6 +265,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SVI_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSviId().hashCode();
     if (hasSvi()) {
       hash = (37 * hash) + SVI_FIELD_NUMBER;
       hash = (53 * hash) + getSvi().hashCode();
@@ -337,6 +408,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      sviId_ = "";
+
       if (sviBuilder_ == null) {
         svi_ = null;
       } else {
@@ -369,6 +442,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.CreateSviRequest buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.CreateSviRequest result = new opi_api.network.evpn_gw.v1alpha1.CreateSviRequest(this);
+      result.sviId_ = sviId_;
       if (sviBuilder_ == null) {
         result.svi_ = svi_;
       } else {
@@ -422,6 +496,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.evpn_gw.v1alpha1.CreateSviRequest other) {
       if (other == opi_api.network.evpn_gw.v1alpha1.CreateSviRequest.getDefaultInstance()) return this;
+      if (!other.getSviId().isEmpty()) {
+        sviId_ = other.sviId_;
+        onChanged();
+      }
       if (other.hasSvi()) {
         mergeSvi(other.getSvi());
       }
@@ -454,6 +532,122 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object sviId_ = "";
+    /**
+     * <pre>
+     * The ID to use for the svi, which will become the final component of
+     * the svi's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string svi_id = 1;</code>
+     * @return The sviId.
+     */
+    public java.lang.String getSviId() {
+      java.lang.Object ref = sviId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sviId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the svi, which will become the final component of
+     * the svi's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string svi_id = 1;</code>
+     * @return The bytes for sviId.
+     */
+    public com.google.protobuf.ByteString
+        getSviIdBytes() {
+      java.lang.Object ref = sviId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sviId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID to use for the svi, which will become the final component of
+     * the svi's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string svi_id = 1;</code>
+     * @param value The sviId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSviId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sviId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the svi, which will become the final component of
+     * the svi's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string svi_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSviId() {
+      
+      sviId_ = getDefaultInstance().getSviId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID to use for the svi, which will become the final component of
+     * the svi's resource name.
+     * This value should be 4-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * If this is not provided the system will auto-generate it.
+     * </pre>
+     *
+     * <code>string svi_id = 1;</code>
+     * @param value The bytes for sviId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSviIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sviId_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.network.evpn_gw.v1alpha1.Svi svi_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.Svi, opi_api.network.evpn_gw.v1alpha1.Svi.Builder, opi_api.network.evpn_gw.v1alpha1.SviOrBuilder> sviBuilder_;
@@ -462,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the svi field is set.
      */
     public boolean hasSvi() {
@@ -473,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The svi.
      */
     public opi_api.network.evpn_gw.v1alpha1.Svi getSvi() {
@@ -488,7 +682,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSvi(opi_api.network.evpn_gw.v1alpha1.Svi value) {
       if (sviBuilder_ == null) {
@@ -508,7 +702,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSvi(
         opi_api.network.evpn_gw.v1alpha1.Svi.Builder builderForValue) {
@@ -526,7 +720,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeSvi(opi_api.network.evpn_gw.v1alpha1.Svi value) {
       if (sviBuilder_ == null) {
@@ -548,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSvi() {
       if (sviBuilder_ == null) {
@@ -566,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.Svi.Builder getSviBuilder() {
       
@@ -578,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public opi_api.network.evpn_gw.v1alpha1.SviOrBuilder getSviOrBuilder() {
       if (sviBuilder_ != null) {
@@ -593,7 +787,7 @@ private static final long serialVersionUID = 0L;
      * The Svi to create
      * </pre>
      *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.opi_api.network.evpn_gw.v1alpha1.Svi svi = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.evpn_gw.v1alpha1.Svi, opi_api.network.evpn_gw.v1alpha1.Svi.Builder, opi_api.network.evpn_gw.v1alpha1.SviOrBuilder> 

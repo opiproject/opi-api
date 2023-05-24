@@ -5,7 +5,7 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- * BridgePort structure
+ * Bridge Port network configuration and status
  * </pre>
  *
  * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.BridgePort}
@@ -21,9 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private BridgePort() {
     name_ = "";
-    macAddress_ = "";
-    ptype_ = 0;
-    vlanId_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -46,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -63,42 +59,30 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
+            }
+            spec_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
+            }
 
-            vportId_ = input.readUInt32();
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
+            }
+            status_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
 
-            macAddress_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            ptype_ = rawValue;
-            break;
-          }
-          case 40: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              vlanId_ = newIntList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            vlanId_.addInt(input.readUInt32());
-            break;
-          }
-          case 42: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              vlanId_ = newIntList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            while (input.getBytesUntilLimit() > 0) {
-              vlanId_.addInt(input.readUInt32());
-            }
-            input.popLimit(limit);
             break;
           }
           default: {
@@ -116,9 +100,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        vlanId_.makeImmutable(); // C
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -136,156 +117,15 @@ private static final long serialVersionUID = 0L;
             opi_api.network.evpn_gw.v1alpha1.BridgePort.class, opi_api.network.evpn_gw.v1alpha1.BridgePort.Builder.class);
   }
 
-  /**
-   * <pre>
-   * Defines the available types of a bridge port
-   * </pre>
-   *
-   * Protobuf enum {@code opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType}
-   */
-  public enum BridgePortType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * "unknown" bridge port type
-     * </pre>
-     *
-     * <code>UNKNOWN = 0;</code>
-     */
-    UNKNOWN(0),
-    /**
-     * <pre>
-     * "access" bridge port type 
-     * </pre>
-     *
-     * <code>ACCESS = 1;</code>
-     */
-    ACCESS(1),
-    /**
-     * <pre>
-     * "trunk" bridge port type
-     * </pre>
-     *
-     * <code>TRUNK = 2;</code>
-     */
-    TRUNK(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * "unknown" bridge port type
-     * </pre>
-     *
-     * <code>UNKNOWN = 0;</code>
-     */
-    public static final int UNKNOWN_VALUE = 0;
-    /**
-     * <pre>
-     * "access" bridge port type 
-     * </pre>
-     *
-     * <code>ACCESS = 1;</code>
-     */
-    public static final int ACCESS_VALUE = 1;
-    /**
-     * <pre>
-     * "trunk" bridge port type
-     * </pre>
-     *
-     * <code>TRUNK = 2;</code>
-     */
-    public static final int TRUNK_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static BridgePortType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static BridgePortType forNumber(int value) {
-      switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return ACCESS;
-        case 2: return TRUNK;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<BridgePortType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        BridgePortType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BridgePortType>() {
-            public BridgePortType findValueByNumber(int number) {
-              return BridgePortType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return opi_api.network.evpn_gw.v1alpha1.BridgePort.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final BridgePortType[] VALUES = values();
-
-    public static BridgePortType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private BridgePortType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType)
-  }
-
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Bridge Port.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: bridge_ports/{bridge_port}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -306,7 +146,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Bridge Port.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: bridge_ports/{bridge_port}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -327,141 +171,81 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VPORT_ID_FIELD_NUMBER = 2;
-  private int vportId_;
+  public static final int SPEC_FIELD_NUMBER = 2;
+  private opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec_;
   /**
    * <pre>
-   * Key. Read-only. Assigned by the server in CreateBridgePort
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vport_id cannot be negative number. --)
+   * Bridge Port network configuration
    * </pre>
    *
-   * <code>uint32 vport_id = 2;</code>
-   * @return The vportId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public int getVportId() {
-    return vportId_;
+  public boolean hasSpec() {
+    return spec_ != null;
+  }
+  /**
+   * <pre>
+   * Bridge Port network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * @return The spec.
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.BridgePortSpec getSpec() {
+    return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.getDefaultInstance() : spec_;
+  }
+  /**
+   * <pre>
+   * Bridge Port network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object macAddress_;
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status_;
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format
+   * Bridge Port network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public java.lang.String getMacAddress() {
-    java.lang.Object ref = macAddress_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      macAddress_ = s;
-      return s;
-    }
+  public boolean hasStatus() {
+    return status_ != null;
   }
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format
+   * Bridge Port network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMacAddressBytes() {
-    java.lang.Object ref = macAddress_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      macAddress_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PTYPE_FIELD_NUMBER = 4;
-  private int ptype_;
-  /**
-   * <pre>
-   * holds the type of the bridge port
-   * </pre>
-   *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The enum numeric value on the wire for ptype.
-   */
-  @java.lang.Override public int getPtypeValue() {
-    return ptype_;
+  public opi_api.network.evpn_gw.v1alpha1.BridgePortStatus getStatus() {
+    return status_ == null ? opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.getDefaultInstance() : status_;
   }
   /**
    * <pre>
-   * holds the type of the bridge port
+   * Bridge Port network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The ptype.
-   */
-  @java.lang.Override public opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType getPtype() {
-    @SuppressWarnings("deprecation")
-    opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType result = opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.valueOf(ptype_);
-    return result == null ? opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.UNRECOGNIZED : result;
-  }
-
-  public static final int VLAN_ID_FIELD_NUMBER = 5;
-  private com.google.protobuf.Internal.IntList vlanId_;
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @return A list containing the vlanId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<java.lang.Integer>
-      getVlanIdList() {
-    return vlanId_;
+  public opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @return The count of vlanId.
-   */
-  public int getVlanIdCount() {
-    return vlanId_.size();
-  }
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @param index The index of the element to return.
-   * @return The vlanId at the given index.
-   */
-  public int getVlanId(int index) {
-    return vlanId_.getInt(index);
-  }
-  private int vlanIdMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -477,25 +261,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (vportId_ != 0) {
-      output.writeUInt32(2, vportId_);
+    if (spec_ != null) {
+      output.writeMessage(2, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(macAddress_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, macAddress_);
-    }
-    if (ptype_ != opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.UNKNOWN.getNumber()) {
-      output.writeEnum(4, ptype_);
-    }
-    if (getVlanIdList().size() > 0) {
-      output.writeUInt32NoTag(42);
-      output.writeUInt32NoTag(vlanIdMemoizedSerializedSize);
-    }
-    for (int i = 0; i < vlanId_.size(); i++) {
-      output.writeUInt32NoTag(vlanId_.getInt(i));
+    if (status_ != null) {
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -509,30 +282,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (vportId_ != 0) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, vportId_);
+        .computeMessageSize(2, getSpec());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(macAddress_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, macAddress_);
-    }
-    if (ptype_ != opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.UNKNOWN.getNumber()) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, ptype_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < vlanId_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(vlanId_.getInt(i));
-      }
-      size += dataSize;
-      if (!getVlanIdList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      vlanIdMemoizedSerializedSize = dataSize;
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -551,13 +307,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getVportId()
-        != other.getVportId()) return false;
-    if (!getMacAddress()
-        .equals(other.getMacAddress())) return false;
-    if (ptype_ != other.ptype_) return false;
-    if (!getVlanIdList()
-        .equals(other.getVlanIdList())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -571,15 +330,13 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VPORT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVportId();
-    hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getMacAddress().hashCode();
-    hash = (37 * hash) + PTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + ptype_;
-    if (getVlanIdCount() > 0) {
-      hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVlanIdList().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -678,7 +435,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * BridgePort structure
+   * Bridge Port network configuration and status
    * </pre>
    *
    * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.BridgePort}
@@ -720,14 +477,18 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      vportId_ = 0;
-
-      macAddress_ = "";
-
-      ptype_ = 0;
-
-      vlanId_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      if (specBuilder_ == null) {
+        spec_ = null;
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -754,16 +515,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.BridgePort buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.BridgePort result = new opi_api.network.evpn_gw.v1alpha1.BridgePort(this);
-      int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.vportId_ = vportId_;
-      result.macAddress_ = macAddress_;
-      result.ptype_ = ptype_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        vlanId_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
+      } else {
+        result.spec_ = specBuilder_.build();
       }
-      result.vlanId_ = vlanId_;
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -816,25 +578,11 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getVportId() != 0) {
-        setVportId(other.getVportId());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (!other.getMacAddress().isEmpty()) {
-        macAddress_ = other.macAddress_;
-        onChanged();
-      }
-      if (other.ptype_ != 0) {
-        setPtypeValue(other.getPtypeValue());
-      }
-      if (!other.vlanId_.isEmpty()) {
-        if (vlanId_.isEmpty()) {
-          vlanId_ = other.vlanId_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureVlanIdIsMutable();
-          vlanId_.addAll(other.vlanId_);
-        }
-        onChanged();
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -864,12 +612,15 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Bridge Port.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: bridge_ports/{bridge_port}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -889,7 +640,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Bridge Port.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: bridge_ports/{bridge_port}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -910,7 +665,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Bridge Port.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: bridge_ports/{bridge_port}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -929,7 +688,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Bridge Port.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: bridge_ports/{bridge_port}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -943,7 +706,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Free text description
+     * The resource name of the Bridge Port.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: bridge_ports/{bridge_port}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -962,344 +729,314 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int vportId_ ;
+    private opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.BridgePortSpec, opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder> specBuilder_;
     /**
      * <pre>
-     * Key. Read-only. Assigned by the server in CreateBridgePort
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vport_id cannot be negative number. --)
+     * Bridge Port network configuration
      * </pre>
      *
-     * <code>uint32 vport_id = 2;</code>
-     * @return The vportId.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * @return Whether the spec field is set.
      */
-    @java.lang.Override
-    public int getVportId() {
-      return vportId_;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
      * <pre>
-     * Key. Read-only. Assigned by the server in CreateBridgePort
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vport_id cannot be negative number. --)
+     * Bridge Port network configuration
      * </pre>
      *
-     * <code>uint32 vport_id = 2;</code>
-     * @param value The vportId to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     * @return The spec.
      */
-    public Builder setVportId(int value) {
-      
-      vportId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Key. Read-only. Assigned by the server in CreateBridgePort
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vport_id cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 vport_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVportId() {
-      
-      vportId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object macAddress_ = "";
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The macAddress.
-     */
-    public java.lang.String getMacAddress() {
-      java.lang.Object ref = macAddress_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        macAddress_ = s;
-        return s;
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.getDefaultInstance() : spec_;
       } else {
-        return (java.lang.String) ref;
+        return specBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format
+     * Bridge Port network configuration
      * </pre>
      *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for macAddress.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getMacAddressBytes() {
-      java.lang.Object ref = macAddress_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        macAddress_ = b;
-        return b;
+    public Builder setSpec(opi_api.network.evpn_gw.v1alpha1.BridgePortSpec value) {
+      if (specBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        specBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bridge Port network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     */
+    public Builder setSpec(
+        opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        specBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bridge Port network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     */
+    public Builder mergeSpec(opi_api.network.evpn_gw.v1alpha1.BridgePortSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        specBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bridge Port network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     */
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
+        onChanged();
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Bridge Port network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder getSpecBuilder() {
+      
+      onChanged();
+      return getSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Bridge Port network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
+      } else {
+        return spec_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.getDefaultInstance() : spec_;
       }
     }
     /**
      * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format
+     * Bridge Port network configuration
      * </pre>
      *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The macAddress to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
      */
-    public Builder setMacAddress(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      macAddress_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMacAddress() {
-      
-      macAddress_ = getDefaultInstance().getMacAddress();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Use "aa:bb:cc:dd:ee:ff" format
-     * </pre>
-     *
-     * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for macAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMacAddressBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      macAddress_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int ptype_ = 0;
-    /**
-     * <pre>
-     * holds the type of the bridge port
-     * </pre>
-     *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The enum numeric value on the wire for ptype.
-     */
-    @java.lang.Override public int getPtypeValue() {
-      return ptype_;
-    }
-    /**
-     * <pre>
-     * holds the type of the bridge port
-     * </pre>
-     *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The enum numeric value on the wire for ptype to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPtypeValue(int value) {
-      
-      ptype_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * holds the type of the bridge port
-     * </pre>
-     *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The ptype.
-     */
-    @java.lang.Override
-    public opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType getPtype() {
-      @SuppressWarnings("deprecation")
-      opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType result = opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.valueOf(ptype_);
-      return result == null ? opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * holds the type of the bridge port
-     * </pre>
-     *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The ptype to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPtype(opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType value) {
-      if (value == null) {
-        throw new NullPointerException();
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.BridgePortSpec, opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.BridgePortSpec, opi_api.network.evpn_gw.v1alpha1.BridgePortSpec.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder>(
+                getSpec(),
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
       }
-      
-      ptype_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * holds the type of the bridge port
-     * </pre>
-     *
-     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPtype() {
-      
-      ptype_ = 0;
-      onChanged();
-      return this;
+      return specBuilder_;
     }
 
-    private com.google.protobuf.Internal.IntList vlanId_ = emptyIntList();
-    private void ensureVlanIdIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        vlanId_ = mutableCopy(vlanId_);
-        bitField0_ |= 0x00000001;
-       }
+    private opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.BridgePortStatus, opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder> statusBuilder_;
+    /**
+     * <pre>
+     * Bridge Port network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
     }
     /**
      * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Bridge Port network status
      * </pre>
      *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @return A list containing the vlanId.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     * @return The status.
      */
-    public java.util.List<java.lang.Integer>
-        getVlanIdList() {
-      return ((bitField0_ & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(vlanId_) : vlanId_;
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Bridge Port network status
      * </pre>
      *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @return The count of vlanId.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
      */
-    public int getVlanIdCount() {
-      return vlanId_.size();
-    }
-    /**
-     * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @param index The index of the element to return.
-     * @return The vlanId at the given index.
-     */
-    public int getVlanId(int index) {
-      return vlanId_.getInt(index);
-    }
-    /**
-     * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @param index The index to set the value at.
-     * @param value The vlanId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVlanId(
-        int index, int value) {
-      ensureVlanIdIsMutable();
-      vlanId_.setInt(index, value);
-      onChanged();
+    public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.BridgePortStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Bridge Port network status
      * </pre>
      *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @param value The vlanId to add.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
      */
-    public Builder addVlanId(int value) {
-      ensureVlanIdIsMutable();
-      vlanId_.addInt(value);
-      onChanged();
+    public Builder setStatus(
+        opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Bridge Port network status
      * </pre>
      *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @param values The vlanId to add.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
      */
-    public Builder addAllVlanId(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
-      ensureVlanIdIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, vlanId_);
-      onChanged();
+    public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.BridgePortStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Configured vlan ids on the bridge port
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
+     * Bridge Port network status
      * </pre>
      *
-     * <code>repeated uint32 vlan_id = 5;</code>
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
      */
-    public Builder clearVlanId() {
-      vlanId_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Bridge Port network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Bridge Port network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.getDefaultInstance() : status_;
+      }
+    }
+    /**
+     * <pre>
+     * Bridge Port network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.BridgePortStatus, opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.BridgePortStatus, opi_api.network.evpn_gw.v1alpha1.BridgePortStatus.Builder, opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

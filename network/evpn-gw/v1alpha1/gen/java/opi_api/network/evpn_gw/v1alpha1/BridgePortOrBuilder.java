@@ -9,7 +9,11 @@ public interface BridgePortOrBuilder extends
 
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Bridge Port.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: bridge_ports/{bridge_port}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -18,7 +22,11 @@ public interface BridgePortOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Free text description
+   * The resource name of the Bridge Port.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: bridge_ports/{bridge_port}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -29,87 +37,55 @@ public interface BridgePortOrBuilder extends
 
   /**
    * <pre>
-   * Key. Read-only. Assigned by the server in CreateBridgePort
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vport_id cannot be negative number. --)
+   * Bridge Port network configuration
    * </pre>
    *
-   * <code>uint32 vport_id = 2;</code>
-   * @return The vportId.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * @return Whether the spec field is set.
    */
-  int getVportId();
+  boolean hasSpec();
+  /**
+   * <pre>
+   * Bridge Port network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   * @return The spec.
+   */
+  opi_api.network.evpn_gw.v1alpha1.BridgePortSpec getSpec();
+  /**
+   * <pre>
+   * Bridge Port network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortSpec spec = 2;</code>
+   */
+  opi_api.network.evpn_gw.v1alpha1.BridgePortSpecOrBuilder getSpecOrBuilder();
 
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format
+   * Bridge Port network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
-  java.lang.String getMacAddress();
+  boolean hasStatus();
   /**
    * <pre>
-   * Use "aa:bb:cc:dd:ee:ff" format
+   * Bridge Port network status
    * </pre>
    *
-   * <code>string mac_address = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for macAddress.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
+   * @return The status.
    */
-  com.google.protobuf.ByteString
-      getMacAddressBytes();
-
+  opi_api.network.evpn_gw.v1alpha1.BridgePortStatus getStatus();
   /**
    * <pre>
-   * holds the type of the bridge port
+   * Bridge Port network status
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The enum numeric value on the wire for ptype.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePortStatus status = 3;</code>
    */
-  int getPtypeValue();
-  /**
-   * <pre>
-   * holds the type of the bridge port
-   * </pre>
-   *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType ptype = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The ptype.
-   */
-  opi_api.network.evpn_gw.v1alpha1.BridgePort.BridgePortType getPtype();
-
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @return A list containing the vlanId.
-   */
-  java.util.List<java.lang.Integer> getVlanIdList();
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @return The count of vlanId.
-   */
-  int getVlanIdCount();
-  /**
-   * <pre>
-   * Configured vlan ids on the bridge port
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_id = 5;</code>
-   * @param index The index of the element to return.
-   * @return The vlanId at the given index.
-   */
-  int getVlanId(int index);
+  opi_api.network.evpn_gw.v1alpha1.BridgePortStatusOrBuilder getStatusOrBuilder();
 }

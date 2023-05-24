@@ -216,12 +216,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Retrieve a Svi
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
      * </pre>
      */
     public void getSvi(opi_api.network.evpn_gw.v1alpha1.GetSviRequest request,
@@ -232,12 +226,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Delete a Svi
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
      * </pre>
      */
     public void deleteSvi(opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest request,
@@ -321,12 +309,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Retrieve a Svi
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
      * </pre>
      */
     public void getSvi(opi_api.network.evpn_gw.v1alpha1.GetSviRequest request,
@@ -338,12 +320,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Delete a Svi
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
      * </pre>
      */
     public void deleteSvi(opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest request,
@@ -393,12 +369,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Retrieve a Svi
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.Svi getSvi(opi_api.network.evpn_gw.v1alpha1.GetSviRequest request) {
@@ -409,12 +379,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Delete a Svi
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
      * </pre>
      */
     public com.google.protobuf.Empty deleteSvi(opi_api.network.evpn_gw.v1alpha1.DeleteSviRequest request) {
@@ -465,12 +429,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Retrieve a Svi
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.Svi> getSvi(
@@ -482,12 +440,6 @@ public final class SviServiceGrpc {
     /**
      * <pre>
      * Delete a Svi
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSvi(

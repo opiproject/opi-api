@@ -9,33 +9,23 @@ public interface DeleteSviRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the associated vrf
+   * The name of the svi to delete
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vrf.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  java.lang.String getVrf();
+  java.lang.String getName();
   /**
    * <pre>
-   * The name of the associated vrf
+   * The name of the svi to delete
+   * Format: svis/{svi}
    * </pre>
    *
-   * <code>string vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for vrf.
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
-      getVrfBytes();
-
-  /**
-   * <pre>
-   * The vlan id of the associated logical bridge
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>uint32 vlan_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The vlanId.
-   */
-  int getVlanId();
+      getNameBytes();
 }

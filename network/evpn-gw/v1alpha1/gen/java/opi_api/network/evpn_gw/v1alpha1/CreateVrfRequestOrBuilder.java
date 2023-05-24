@@ -9,10 +9,38 @@ public interface CreateVrfRequestOrBuilder extends
 
   /**
    * <pre>
+   * The ID to use for the vrf, which will become the final component of
+   * the vrf's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string vrf_id = 1;</code>
+   * @return The vrfId.
+   */
+  java.lang.String getVrfId();
+  /**
+   * <pre>
+   * The ID to use for the vrf, which will become the final component of
+   * the vrf's resource name.
+   * This value should be 4-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * If this is not provided the system will auto-generate it.
+   * </pre>
+   *
+   * <code>string vrf_id = 1;</code>
+   * @return The bytes for vrfId.
+   */
+  com.google.protobuf.ByteString
+      getVrfIdBytes();
+
+  /**
+   * <pre>
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vrf field is set.
    */
   boolean hasVrf();
@@ -21,7 +49,7 @@ public interface CreateVrfRequestOrBuilder extends
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vrf.
    */
   opi_api.network.evpn_gw.v1alpha1.Vrf getVrf();
@@ -30,7 +58,7 @@ public interface CreateVrfRequestOrBuilder extends
    * The vrf to create
    * </pre>
    *
-   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.opi_api.network.evpn_gw.v1alpha1.Vrf vrf = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   opi_api.network.evpn_gw.v1alpha1.VrfOrBuilder getVrfOrBuilder();
 }

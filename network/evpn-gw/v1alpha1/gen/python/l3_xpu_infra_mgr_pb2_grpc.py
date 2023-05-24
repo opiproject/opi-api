@@ -225,12 +225,6 @@ class SviServiceServicer(object):
 
     def GetSvi(self, request, context):
         """Retrieve a Svi
-        (-- api-linter: core::0131::method-signature=disabled
-        aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-        (-- api-linter: core::0131::http-uri-name=disabled
-        aip.dev/not-precedent: No "name" is used as key. --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -238,12 +232,6 @@ class SviServiceServicer(object):
 
     def DeleteSvi(self, request, context):
         """Delete a Svi
-        (-- api-linter: core::0135::method-signature=disabled
-        aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-        (-- api-linter: core::0135::http-uri-name=disabled
-        aip.dev/not-precedent: The "name" is not used as key. --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

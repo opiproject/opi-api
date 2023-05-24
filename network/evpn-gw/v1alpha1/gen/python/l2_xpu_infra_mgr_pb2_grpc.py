@@ -43,42 +43,28 @@ class LogicalBridgeServiceServicer(object):
     """
 
     def CreateLogicalBridge(self, request, context):
-        """Create a LogicalBridge
-        (-- api-linter: core::0133::method-signature=disabled
-        aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+        """Create a Logical Bridge
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListLogicalBridges(self, request, context):
-        """List LogicalBridges
+        """List Logical Bridges
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetLogicalBridge(self, request, context):
-        """Retrieve a LogicalBridge
-        (-- api-linter: core::0131::method-signature=disabled
-        aip.dev/not-precedent: "vlan_id" is the key. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: "vlan_id" is the required field. --)
-        (-- api-linter: core::0131::http-uri-name=disabled
-        aip.dev/not-precedent: No "name" is used as key. --)
+        """Retrieve a Logical Bridge
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteLogicalBridge(self, request, context):
-        """Delete a LogicalBridge
-        (-- api-linter: core::0135::method-signature=disabled
-        aip.dev/not-precedent: "vlan_id" is the key. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: "vlan_id" is the required field. --)
-        (-- api-linter: core::0135::http-uri-name=disabled
-        aip.dev/not-precedent: The "name" is not used as key. --)
+        """Delete a Logical Bridge
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -224,42 +210,28 @@ class BridgePortServiceServicer(object):
     """
 
     def CreateBridgePort(self, request, context):
-        """Create a BridgePort
-        (-- api-linter: core::0133::method-signature=disabled
-        aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+        """Create a Bridge Port
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListBridgePorts(self, request, context):
-        """List BridgePorts
+        """List Bridge Ports
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetBridgePort(self, request, context):
-        """Retrieve a BridgePort
-        (-- api-linter: core::0131::method-signature=disabled
-        aip.dev/not-precedent: "vport_id" is the key. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: "vport_id" is the required field. --)
-        (-- api-linter: core::0131::http-uri-name=disabled
-        aip.dev/not-precedent: No "name" is used as key. --)
+        """Retrieve a Bridge Port
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBridgePort(self, request, context):
-        """Delete a BridgePort
-        (-- api-linter: core::0135::method-signature=disabled
-        aip.dev/not-precedent: "vport_id" is the key. --)
-        (-- api-linter: client-libraries::4232::required-fields=disabled
-        aip.dev/not-precedent: "vport_id" is the required field. --)
-        (-- api-linter: core::0135::http-uri-name=disabled
-        aip.dev/not-precedent: The "name" is not used as key. --)
+        """Delete a Bridge Port
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

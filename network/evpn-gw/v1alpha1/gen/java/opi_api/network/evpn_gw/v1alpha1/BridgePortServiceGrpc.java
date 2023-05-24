@@ -195,9 +195,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Create a BridgePort
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+     * Create a Bridge Port
      * </pre>
      */
     public void createBridgePort(opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest request,
@@ -207,7 +205,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * List BridgePorts
+     * List Bridge Ports
      * </pre>
      */
     public void listBridgePorts(opi_api.network.evpn_gw.v1alpha1.ListBridgePortsRequest request,
@@ -217,13 +215,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a BridgePort
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Bridge Port
      * </pre>
      */
     public void getBridgePort(opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest request,
@@ -233,13 +225,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Delete a BridgePort
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Bridge Port
      * </pre>
      */
     public void deleteBridgePort(opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest request,
@@ -300,9 +286,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Create a BridgePort
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+     * Create a Bridge Port
      * </pre>
      */
     public void createBridgePort(opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest request,
@@ -313,7 +297,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * List BridgePorts
+     * List Bridge Ports
      * </pre>
      */
     public void listBridgePorts(opi_api.network.evpn_gw.v1alpha1.ListBridgePortsRequest request,
@@ -324,13 +308,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a BridgePort
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Bridge Port
      * </pre>
      */
     public void getBridgePort(opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest request,
@@ -341,13 +319,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Delete a BridgePort
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Bridge Port
      * </pre>
      */
     public void deleteBridgePort(opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest request,
@@ -376,9 +348,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Create a BridgePort
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+     * Create a Bridge Port
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePort createBridgePort(opi_api.network.evpn_gw.v1alpha1.CreateBridgePortRequest request) {
@@ -388,7 +358,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * List BridgePorts
+     * List Bridge Ports
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.ListBridgePortsResponse listBridgePorts(opi_api.network.evpn_gw.v1alpha1.ListBridgePortsRequest request) {
@@ -398,13 +368,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a BridgePort
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Bridge Port
      * </pre>
      */
     public opi_api.network.evpn_gw.v1alpha1.BridgePort getBridgePort(opi_api.network.evpn_gw.v1alpha1.GetBridgePortRequest request) {
@@ -414,13 +378,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Delete a BridgePort
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Bridge Port
      * </pre>
      */
     public com.google.protobuf.Empty deleteBridgePort(opi_api.network.evpn_gw.v1alpha1.DeleteBridgePortRequest request) {
@@ -448,9 +406,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Create a BridgePort
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+     * Create a Bridge Port
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.BridgePort> createBridgePort(
@@ -461,7 +417,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * List BridgePorts
+     * List Bridge Ports
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.ListBridgePortsResponse> listBridgePorts(
@@ -472,13 +428,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Retrieve a BridgePort
-     * (-- api-linter: core::0131::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0131::http-uri-name=disabled
-     *     aip.dev/not-precedent: No "name" is used as key. --)
+     * Retrieve a Bridge Port
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<opi_api.network.evpn_gw.v1alpha1.BridgePort> getBridgePort(
@@ -489,13 +439,7 @@ public final class BridgePortServiceGrpc {
 
     /**
      * <pre>
-     * Delete a BridgePort
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: "vport_id" is the key. --)
-     * (-- api-linter: client-libraries::4232::required-fields=disabled
-     *     aip.dev/not-precedent: "vport_id" is the required field. --)
-     * (-- api-linter: core::0135::http-uri-name=disabled
-     *     aip.dev/not-precedent: The "name" is not used as key. --)
+     * Delete a Bridge Port
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBridgePort(

@@ -9,7 +9,7 @@ public interface ListVrfsResponseOrBuilder extends
 
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -18,7 +18,7 @@ public interface ListVrfsResponseOrBuilder extends
       getVrfsList();
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -26,7 +26,7 @@ public interface ListVrfsResponseOrBuilder extends
   opi_api.network.evpn_gw.v1alpha1.Vrf getVrfs(int index);
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -34,7 +34,7 @@ public interface ListVrfsResponseOrBuilder extends
   int getVrfsCount();
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -43,7 +43,7 @@ public interface ListVrfsResponseOrBuilder extends
       getVrfsOrBuilderList();
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>

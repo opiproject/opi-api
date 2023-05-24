@@ -5,7 +5,7 @@ package opi_api.network.evpn_gw.v1alpha1;
 
 /**
  * <pre>
- * Vrf structure
+ * Vrf level network configuration
  * </pre>
  *
  * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.Vrf}
@@ -21,13 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private Vrf() {
     name_ = "";
-    loopbackIp_ = "";
-    vtepIp_ = "";
-    rd_ = "";
-    rmac_ = "";
-    importRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    exportRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    vlanIds_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -50,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,82 +59,30 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 16: {
-
-            vni_ = input.readUInt32();
-            break;
-          }
-          case 24: {
-
-            routingTable_ = input.readUInt32();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            loopbackIp_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            vtepIp_ = s;
-            break;
-          }
-          case 48: {
-
-            localAs_ = input.readUInt32();
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            rd_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            rmac_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              importRts_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+          case 18: {
+            opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder subBuilder = null;
+            if (spec_ != null) {
+              subBuilder = spec_.toBuilder();
             }
-            importRts_.add(s);
+            spec_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.VrfSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(spec_);
+              spec_ = subBuilder.buildPartial();
+            }
+
             break;
           }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              exportRts_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+          case 26: {
+            opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
             }
-            exportRts_.add(s);
-            break;
-          }
-          case 88: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              vlanIds_ = newIntList();
-              mutable_bitField0_ |= 0x00000004;
+            status_ = input.readMessage(opi_api.network.evpn_gw.v1alpha1.VrfStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
             }
-            vlanIds_.addInt(input.readUInt32());
-            break;
-          }
-          case 90: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-              vlanIds_ = newIntList();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            while (input.getBytesUntilLimit() > 0) {
-              vlanIds_.addInt(input.readUInt32());
-            }
-            input.popLimit(limit);
+
             break;
           }
           default: {
@@ -160,15 +100,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        importRts_ = importRts_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        exportRts_ = exportRts_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        vlanIds_.makeImmutable(); // C
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -190,10 +121,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Key, also used as name of the Linux vrf device (max 9 chars)
+   * The resource name of the Vrf.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: vrfs/{vrf}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -211,10 +146,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Key, also used as name of the Linux vrf device (max 9 chars)
+   * The resource name of the Vrf.
+   * "name" is an opaque object handle that is not user settable.
+   * "name" will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * Format: vrfs/{vrf}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -232,388 +171,81 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VNI_FIELD_NUMBER = 2;
-  private int vni_;
+  public static final int SPEC_FIELD_NUMBER = 2;
+  private opi_api.network.evpn_gw.v1alpha1.VrfSpec spec_;
   /**
    * <pre>
-   * VXLAN VNI for L3 EVPN. Also used as EVPN route target
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vni cannot be negative number. --)                  
+   * Vrf's network configuration
    * </pre>
    *
-   * <code>uint32 vni = 2;</code>
-   * @return The vni.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the spec field is set.
    */
   @java.lang.Override
-  public int getVni() {
-    return vni_;
+  public boolean hasSpec() {
+    return spec_ != null;
+  }
+  /**
+   * <pre>
+   * Vrf's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The spec.
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.VrfSpec getSpec() {
+    return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.VrfSpec.getDefaultInstance() : spec_;
+  }
+  /**
+   * <pre>
+   * Vrf's network configuration
+   * </pre>
+   *
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public opi_api.network.evpn_gw.v1alpha1.VrfSpecOrBuilder getSpecOrBuilder() {
+    return getSpec();
   }
 
-  public static final int ROUTING_TABLE_FIELD_NUMBER = 3;
-  private int routingTable_;
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private opi_api.network.evpn_gw.v1alpha1.VrfStatus status_;
   /**
    * <pre>
-   * Linux routing table number (range 1001-3999). Defaults to vni
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: routing_table cannot be negative number. --)
+   * Vrf's network status
    * </pre>
    *
-   * <code>uint32 routing_table = 3;</code>
-   * @return The routingTable.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+   * @return Whether the status field is set.
    */
   @java.lang.Override
-  public int getRoutingTable() {
-    return routingTable_;
+  public boolean hasStatus() {
+    return status_ != null;
   }
-
-  public static final int LOOPBACK_IP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object loopbackIp_;
   /**
    * <pre>
-   * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
+   * Vrf's network status
    * </pre>
    *
-   * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The loopbackIp.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public java.lang.String getLoopbackIp() {
-    java.lang.Object ref = loopbackIp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      loopbackIp_ = s;
-      return s;
-    }
+  public opi_api.network.evpn_gw.v1alpha1.VrfStatus getStatus() {
+    return status_ == null ? opi_api.network.evpn_gw.v1alpha1.VrfStatus.getDefaultInstance() : status_;
   }
   /**
    * <pre>
-   * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
+   * Vrf's network status
    * </pre>
    *
-   * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for loopbackIp.
+   * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLoopbackIpBytes() {
-    java.lang.Object ref = loopbackIp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      loopbackIp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
   }
-
-  public static final int VTEP_IP_FIELD_NUMBER = 5;
-  private volatile java.lang.Object vtepIp_;
-  /**
-   * <pre>
-   * IPv4 or IPv6 IP address for the VXLAN TEP
-   * </pre>
-   *
-   * <code>string vtep_ip = 5;</code>
-   * @return The vtepIp.
-   */
-  @java.lang.Override
-  public java.lang.String getVtepIp() {
-    java.lang.Object ref = vtepIp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      vtepIp_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * IPv4 or IPv6 IP address for the VXLAN TEP
-   * </pre>
-   *
-   * <code>string vtep_ip = 5;</code>
-   * @return The bytes for vtepIp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getVtepIpBytes() {
-    java.lang.Object ref = vtepIp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      vtepIp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LOCAL_AS_FIELD_NUMBER = 6;
-  private int localAs_;
-  /**
-   * <pre>
-   * Read-only: Local AS configured for VRF
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: local_as cannot be negative number. --)
-   * </pre>
-   *
-   * <code>uint32 local_as = 6;</code>
-   * @return The localAs.
-   */
-  @java.lang.Override
-  public int getLocalAs() {
-    return localAs_;
-  }
-
-  public static final int RD_FIELD_NUMBER = 7;
-  private volatile java.lang.Object rd_;
-  /**
-   * <pre>
-   * Read-only: Route distinguisher chosen by FRR
-   * </pre>
-   *
-   * <code>string rd = 7;</code>
-   * @return The rd.
-   */
-  @java.lang.Override
-  public java.lang.String getRd() {
-    java.lang.Object ref = rd_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      rd_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Read-only: Route distinguisher chosen by FRR
-   * </pre>
-   *
-   * <code>string rd = 7;</code>
-   * @return The bytes for rd.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRdBytes() {
-    java.lang.Object ref = rd_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      rd_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int RMAC_FIELD_NUMBER = 8;
-  private volatile java.lang.Object rmac_;
-  /**
-   * <pre>
-   * Read-only: Router MAC address of the VRF
-   * </pre>
-   *
-   * <code>string rmac = 8;</code>
-   * @return The rmac.
-   */
-  @java.lang.Override
-  public java.lang.String getRmac() {
-    java.lang.Object ref = rmac_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      rmac_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Read-only: Router MAC address of the VRF
-   * </pre>
-   *
-   * <code>string rmac = 8;</code>
-   * @return The bytes for rmac.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRmacBytes() {
-    java.lang.Object ref = rmac_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      rmac_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int IMPORT_RTS_FIELD_NUMBER = 9;
-  private com.google.protobuf.LazyStringList importRts_;
-  /**
-   * <pre>
-   * Read-only: List of import RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string import_rts = 9;</code>
-   * @return A list containing the importRts.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getImportRtsList() {
-    return importRts_;
-  }
-  /**
-   * <pre>
-   * Read-only: List of import RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string import_rts = 9;</code>
-   * @return The count of importRts.
-   */
-  public int getImportRtsCount() {
-    return importRts_.size();
-  }
-  /**
-   * <pre>
-   * Read-only: List of import RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string import_rts = 9;</code>
-   * @param index The index of the element to return.
-   * @return The importRts at the given index.
-   */
-  public java.lang.String getImportRts(int index) {
-    return importRts_.get(index);
-  }
-  /**
-   * <pre>
-   * Read-only: List of import RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string import_rts = 9;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the importRts at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getImportRtsBytes(int index) {
-    return importRts_.getByteString(index);
-  }
-
-  public static final int EXPORT_RTS_FIELD_NUMBER = 10;
-  private com.google.protobuf.LazyStringList exportRts_;
-  /**
-   * <pre>
-   * Read-only: List of export RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string export_rts = 10;</code>
-   * @return A list containing the exportRts.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getExportRtsList() {
-    return exportRts_;
-  }
-  /**
-   * <pre>
-   * Read-only: List of export RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string export_rts = 10;</code>
-   * @return The count of exportRts.
-   */
-  public int getExportRtsCount() {
-    return exportRts_.size();
-  }
-  /**
-   * <pre>
-   * Read-only: List of export RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string export_rts = 10;</code>
-   * @param index The index of the element to return.
-   * @return The exportRts at the given index.
-   */
-  public java.lang.String getExportRts(int index) {
-    return exportRts_.get(index);
-  }
-  /**
-   * <pre>
-   * Read-only: List of export RTs chosen by FRR
-   * </pre>
-   *
-   * <code>repeated string export_rts = 10;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the exportRts at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getExportRtsBytes(int index) {
-    return exportRts_.getByteString(index);
-  }
-
-  public static final int VLAN_IDS_FIELD_NUMBER = 11;
-  private com.google.protobuf.Internal.IntList vlanIds_;
-  /**
-   * <pre>
-   * Read-only: List of connected LogicalBridges
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_ids = 11;</code>
-   * @return A list containing the vlanIds.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-      getVlanIdsList() {
-    return vlanIds_;
-  }
-  /**
-   * <pre>
-   * Read-only: List of connected LogicalBridges
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_ids = 11;</code>
-   * @return The count of vlanIds.
-   */
-  public int getVlanIdsCount() {
-    return vlanIds_.size();
-  }
-  /**
-   * <pre>
-   * Read-only: List of connected LogicalBridges
-   * (-- api-linter: core::0141::forbidden-types=disabled
-   *     aip.dev/not-precedent: vlan cannot be negative number. --)
-   * </pre>
-   *
-   * <code>repeated uint32 vlan_ids = 11;</code>
-   * @param index The index of the element to return.
-   * @return The vlanIds at the given index.
-   */
-  public int getVlanIds(int index) {
-    return vlanIds_.getInt(index);
-  }
-  private int vlanIdsMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -629,43 +261,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (vni_ != 0) {
-      output.writeUInt32(2, vni_);
+    if (spec_ != null) {
+      output.writeMessage(2, getSpec());
     }
-    if (routingTable_ != 0) {
-      output.writeUInt32(3, routingTable_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loopbackIp_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loopbackIp_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vtepIp_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, vtepIp_);
-    }
-    if (localAs_ != 0) {
-      output.writeUInt32(6, localAs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rd_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rd_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rmac_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, rmac_);
-    }
-    for (int i = 0; i < importRts_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, importRts_.getRaw(i));
-    }
-    for (int i = 0; i < exportRts_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, exportRts_.getRaw(i));
-    }
-    if (getVlanIdsList().size() > 0) {
-      output.writeUInt32NoTag(90);
-      output.writeUInt32NoTag(vlanIdsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < vlanIds_.size(); i++) {
-      output.writeUInt32NoTag(vlanIds_.getInt(i));
+    if (status_ != null) {
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -679,59 +282,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (vni_ != 0) {
+    if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, vni_);
+        .computeMessageSize(2, getSpec());
     }
-    if (routingTable_ != 0) {
+    if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, routingTable_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loopbackIp_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loopbackIp_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vtepIp_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, vtepIp_);
-    }
-    if (localAs_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(6, localAs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rd_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rd_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rmac_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, rmac_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < importRts_.size(); i++) {
-        dataSize += computeStringSizeNoTag(importRts_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getImportRtsList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < exportRts_.size(); i++) {
-        dataSize += computeStringSizeNoTag(exportRts_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getExportRtsList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < vlanIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(vlanIds_.getInt(i));
-      }
-      size += dataSize;
-      if (!getVlanIdsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      vlanIdsMemoizedSerializedSize = dataSize;
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -750,26 +307,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getVni()
-        != other.getVni()) return false;
-    if (getRoutingTable()
-        != other.getRoutingTable()) return false;
-    if (!getLoopbackIp()
-        .equals(other.getLoopbackIp())) return false;
-    if (!getVtepIp()
-        .equals(other.getVtepIp())) return false;
-    if (getLocalAs()
-        != other.getLocalAs()) return false;
-    if (!getRd()
-        .equals(other.getRd())) return false;
-    if (!getRmac()
-        .equals(other.getRmac())) return false;
-    if (!getImportRtsList()
-        .equals(other.getImportRtsList())) return false;
-    if (!getExportRtsList()
-        .equals(other.getExportRtsList())) return false;
-    if (!getVlanIdsList()
-        .equals(other.getVlanIdsList())) return false;
+    if (hasSpec() != other.hasSpec()) return false;
+    if (hasSpec()) {
+      if (!getSpec()
+          .equals(other.getSpec())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -783,31 +330,13 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VNI_FIELD_NUMBER;
-    hash = (53 * hash) + getVni();
-    hash = (37 * hash) + ROUTING_TABLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRoutingTable();
-    hash = (37 * hash) + LOOPBACK_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getLoopbackIp().hashCode();
-    hash = (37 * hash) + VTEP_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getVtepIp().hashCode();
-    hash = (37 * hash) + LOCAL_AS_FIELD_NUMBER;
-    hash = (53 * hash) + getLocalAs();
-    hash = (37 * hash) + RD_FIELD_NUMBER;
-    hash = (53 * hash) + getRd().hashCode();
-    hash = (37 * hash) + RMAC_FIELD_NUMBER;
-    hash = (53 * hash) + getRmac().hashCode();
-    if (getImportRtsCount() > 0) {
-      hash = (37 * hash) + IMPORT_RTS_FIELD_NUMBER;
-      hash = (53 * hash) + getImportRtsList().hashCode();
+    if (hasSpec()) {
+      hash = (37 * hash) + SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpec().hashCode();
     }
-    if (getExportRtsCount() > 0) {
-      hash = (37 * hash) + EXPORT_RTS_FIELD_NUMBER;
-      hash = (53 * hash) + getExportRtsList().hashCode();
-    }
-    if (getVlanIdsCount() > 0) {
-      hash = (37 * hash) + VLAN_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getVlanIdsList().hashCode();
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -906,7 +435,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Vrf structure
+   * Vrf level network configuration
    * </pre>
    *
    * Protobuf type {@code opi_api.network.evpn_gw.v1alpha1.Vrf}
@@ -948,26 +477,18 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      vni_ = 0;
-
-      routingTable_ = 0;
-
-      loopbackIp_ = "";
-
-      vtepIp_ = "";
-
-      localAs_ = 0;
-
-      rd_ = "";
-
-      rmac_ = "";
-
-      importRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      exportRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      vlanIds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      if (specBuilder_ == null) {
+        spec_ = null;
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -994,30 +515,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.evpn_gw.v1alpha1.Vrf buildPartial() {
       opi_api.network.evpn_gw.v1alpha1.Vrf result = new opi_api.network.evpn_gw.v1alpha1.Vrf(this);
-      int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.vni_ = vni_;
-      result.routingTable_ = routingTable_;
-      result.loopbackIp_ = loopbackIp_;
-      result.vtepIp_ = vtepIp_;
-      result.localAs_ = localAs_;
-      result.rd_ = rd_;
-      result.rmac_ = rmac_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        importRts_ = importRts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (specBuilder_ == null) {
+        result.spec_ = spec_;
+      } else {
+        result.spec_ = specBuilder_.build();
       }
-      result.importRts_ = importRts_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        exportRts_ = exportRts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
       }
-      result.exportRts_ = exportRts_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        vlanIds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.vlanIds_ = vlanIds_;
       onBuilt();
       return result;
     }
@@ -1070,60 +578,11 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getVni() != 0) {
-        setVni(other.getVni());
+      if (other.hasSpec()) {
+        mergeSpec(other.getSpec());
       }
-      if (other.getRoutingTable() != 0) {
-        setRoutingTable(other.getRoutingTable());
-      }
-      if (!other.getLoopbackIp().isEmpty()) {
-        loopbackIp_ = other.loopbackIp_;
-        onChanged();
-      }
-      if (!other.getVtepIp().isEmpty()) {
-        vtepIp_ = other.vtepIp_;
-        onChanged();
-      }
-      if (other.getLocalAs() != 0) {
-        setLocalAs(other.getLocalAs());
-      }
-      if (!other.getRd().isEmpty()) {
-        rd_ = other.rd_;
-        onChanged();
-      }
-      if (!other.getRmac().isEmpty()) {
-        rmac_ = other.rmac_;
-        onChanged();
-      }
-      if (!other.importRts_.isEmpty()) {
-        if (importRts_.isEmpty()) {
-          importRts_ = other.importRts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureImportRtsIsMutable();
-          importRts_.addAll(other.importRts_);
-        }
-        onChanged();
-      }
-      if (!other.exportRts_.isEmpty()) {
-        if (exportRts_.isEmpty()) {
-          exportRts_ = other.exportRts_;
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          ensureExportRtsIsMutable();
-          exportRts_.addAll(other.exportRts_);
-        }
-        onChanged();
-      }
-      if (!other.vlanIds_.isEmpty()) {
-        if (vlanIds_.isEmpty()) {
-          vlanIds_ = other.vlanIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          ensureVlanIdsIsMutable();
-          vlanIds_.addAll(other.vlanIds_);
-        }
-        onChanged();
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1153,15 +612,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Key, also used as name of the Linux vrf device (max 9 chars)
+     * The resource name of the Vrf.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: vrfs/{vrf}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1178,10 +640,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Key, also used as name of the Linux vrf device (max 9 chars)
+     * The resource name of the Vrf.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: vrfs/{vrf}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1199,10 +665,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Key, also used as name of the Linux vrf device (max 9 chars)
+     * The resource name of the Vrf.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: vrfs/{vrf}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1218,10 +688,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Key, also used as name of the Linux vrf device (max 9 chars)
+     * The resource name of the Vrf.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: vrfs/{vrf}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1232,10 +706,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Key, also used as name of the Linux vrf device (max 9 chars)
+     * The resource name of the Vrf.
+     * "name" is an opaque object handle that is not user settable.
+     * "name" will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * Format: vrfs/{vrf}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1251,948 +729,314 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int vni_ ;
+    private opi_api.network.evpn_gw.v1alpha1.VrfSpec spec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.VrfSpec, opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder, opi_api.network.evpn_gw.v1alpha1.VrfSpecOrBuilder> specBuilder_;
     /**
      * <pre>
-     * VXLAN VNI for L3 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)                  
+     * Vrf's network configuration
      * </pre>
      *
-     * <code>uint32 vni = 2;</code>
-     * @return The vni.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the spec field is set.
      */
-    @java.lang.Override
-    public int getVni() {
-      return vni_;
+    public boolean hasSpec() {
+      return specBuilder_ != null || spec_ != null;
     }
     /**
      * <pre>
-     * VXLAN VNI for L3 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)                  
+     * Vrf's network configuration
      * </pre>
      *
-     * <code>uint32 vni = 2;</code>
-     * @param value The vni to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The spec.
      */
-    public Builder setVni(int value) {
-      
-      vni_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * VXLAN VNI for L3 EVPN. Also used as EVPN route target
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vni cannot be negative number. --)                  
-     * </pre>
-     *
-     * <code>uint32 vni = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVni() {
-      
-      vni_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int routingTable_ ;
-    /**
-     * <pre>
-     * Linux routing table number (range 1001-3999). Defaults to vni
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: routing_table cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 routing_table = 3;</code>
-     * @return The routingTable.
-     */
-    @java.lang.Override
-    public int getRoutingTable() {
-      return routingTable_;
-    }
-    /**
-     * <pre>
-     * Linux routing table number (range 1001-3999). Defaults to vni
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: routing_table cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 routing_table = 3;</code>
-     * @param value The routingTable to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoutingTable(int value) {
-      
-      routingTable_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Linux routing table number (range 1001-3999). Defaults to vni
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: routing_table cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 routing_table = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRoutingTable() {
-      
-      routingTable_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object loopbackIp_ = "";
-    /**
-     * <pre>
-     * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
-     * </pre>
-     *
-     * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The loopbackIp.
-     */
-    public java.lang.String getLoopbackIp() {
-      java.lang.Object ref = loopbackIp_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        loopbackIp_ = s;
-        return s;
+    public opi_api.network.evpn_gw.v1alpha1.VrfSpec getSpec() {
+      if (specBuilder_ == null) {
+        return spec_ == null ? opi_api.network.evpn_gw.v1alpha1.VrfSpec.getDefaultInstance() : spec_;
       } else {
-        return (java.lang.String) ref;
+        return specBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
+     * Vrf's network configuration
      * </pre>
      *
-     * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for loopbackIp.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public com.google.protobuf.ByteString
-        getLoopbackIpBytes() {
-      java.lang.Object ref = loopbackIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        loopbackIp_ = b;
-        return b;
+    public Builder setSpec(opi_api.network.evpn_gw.v1alpha1.VrfSpec value) {
+      if (specBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        specBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setSpec(
+        opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder builderForValue) {
+      if (specBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        specBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeSpec(opi_api.network.evpn_gw.v1alpha1.VrfSpec value) {
+      if (specBuilder_ == null) {
+        if (spec_ != null) {
+          spec_ =
+            opi_api.network.evpn_gw.v1alpha1.VrfSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        specBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder clearSpec() {
+      if (specBuilder_ == null) {
+        spec_ = null;
+        onChanged();
+      } else {
+        spec_ = null;
+        specBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder getSpecBuilder() {
+      
+      onChanged();
+      return getSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Vrf's network configuration
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.VrfSpecOrBuilder getSpecOrBuilder() {
+      if (specBuilder_ != null) {
+        return specBuilder_.getMessageOrBuilder();
+      } else {
+        return spec_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.VrfSpec.getDefaultInstance() : spec_;
       }
     }
     /**
      * <pre>
-     * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
+     * Vrf's network configuration
      * </pre>
      *
-     * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The loopbackIp to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfSpec spec = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setLoopbackIp(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      loopbackIp_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
-     * </pre>
-     *
-     * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLoopbackIp() {
-      
-      loopbackIp_ = getDefaultInstance().getLoopbackIp();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * IPv4 or IPv6 loopback address. Also serves as basis for RD in FRR
-     * </pre>
-     *
-     * <code>string loopback_ip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for loopbackIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLoopbackIpBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      loopbackIp_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.VrfSpec, opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder, opi_api.network.evpn_gw.v1alpha1.VrfSpecOrBuilder> 
+        getSpecFieldBuilder() {
+      if (specBuilder_ == null) {
+        specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.VrfSpec, opi_api.network.evpn_gw.v1alpha1.VrfSpec.Builder, opi_api.network.evpn_gw.v1alpha1.VrfSpecOrBuilder>(
+                getSpec(),
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      return specBuilder_;
     }
 
-    private java.lang.Object vtepIp_ = "";
+    private opi_api.network.evpn_gw.v1alpha1.VrfStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.VrfStatus, opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder, opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * IPv4 or IPv6 IP address for the VXLAN TEP
+     * Vrf's network status
      * </pre>
      *
-     * <code>string vtep_ip = 5;</code>
-     * @return The vtepIp.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     * @return Whether the status field is set.
      */
-    public java.lang.String getVtepIp() {
-      java.lang.Object ref = vtepIp_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vtepIp_ = s;
-        return s;
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     * @return The status.
+     */
+    public opi_api.network.evpn_gw.v1alpha1.VrfStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? opi_api.network.evpn_gw.v1alpha1.VrfStatus.getDefaultInstance() : status_;
       } else {
-        return (java.lang.String) ref;
+        return statusBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * IPv4 or IPv6 IP address for the VXLAN TEP
+     * Vrf's network status
      * </pre>
      *
-     * <code>string vtep_ip = 5;</code>
-     * @return The bytes for vtepIp.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getVtepIpBytes() {
-      java.lang.Object ref = vtepIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vtepIp_ = b;
-        return b;
+    public Builder setStatus(opi_api.network.evpn_gw.v1alpha1.VrfStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        statusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     */
+    public Builder setStatus(
+        opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     */
+    public Builder mergeStatus(opi_api.network.evpn_gw.v1alpha1.VrfStatus value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            opi_api.network.evpn_gw.v1alpha1.VrfStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     */
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Vrf's network status
+     * </pre>
+     *
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
+     */
+    public opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            opi_api.network.evpn_gw.v1alpha1.VrfStatus.getDefaultInstance() : status_;
       }
     }
     /**
      * <pre>
-     * IPv4 or IPv6 IP address for the VXLAN TEP
+     * Vrf's network status
      * </pre>
      *
-     * <code>string vtep_ip = 5;</code>
-     * @param value The vtepIp to set.
-     * @return This builder for chaining.
+     * <code>.opi_api.network.evpn_gw.v1alpha1.VrfStatus status = 3;</code>
      */
-    public Builder setVtepIp(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      vtepIp_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * IPv4 or IPv6 IP address for the VXLAN TEP
-     * </pre>
-     *
-     * <code>string vtep_ip = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVtepIp() {
-      
-      vtepIp_ = getDefaultInstance().getVtepIp();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * IPv4 or IPv6 IP address for the VXLAN TEP
-     * </pre>
-     *
-     * <code>string vtep_ip = 5;</code>
-     * @param value The bytes for vtepIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVtepIpBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      vtepIp_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int localAs_ ;
-    /**
-     * <pre>
-     * Read-only: Local AS configured for VRF
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: local_as cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 local_as = 6;</code>
-     * @return The localAs.
-     */
-    @java.lang.Override
-    public int getLocalAs() {
-      return localAs_;
-    }
-    /**
-     * <pre>
-     * Read-only: Local AS configured for VRF
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: local_as cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 local_as = 6;</code>
-     * @param value The localAs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLocalAs(int value) {
-      
-      localAs_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: Local AS configured for VRF
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: local_as cannot be negative number. --)
-     * </pre>
-     *
-     * <code>uint32 local_as = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLocalAs() {
-      
-      localAs_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object rd_ = "";
-    /**
-     * <pre>
-     * Read-only: Route distinguisher chosen by FRR
-     * </pre>
-     *
-     * <code>string rd = 7;</code>
-     * @return The rd.
-     */
-    public java.lang.String getRd() {
-      java.lang.Object ref = rd_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rd_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        opi_api.network.evpn_gw.v1alpha1.VrfStatus, opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder, opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            opi_api.network.evpn_gw.v1alpha1.VrfStatus, opi_api.network.evpn_gw.v1alpha1.VrfStatus.Builder, opi_api.network.evpn_gw.v1alpha1.VrfStatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
       }
-    }
-    /**
-     * <pre>
-     * Read-only: Route distinguisher chosen by FRR
-     * </pre>
-     *
-     * <code>string rd = 7;</code>
-     * @return The bytes for rd.
-     */
-    public com.google.protobuf.ByteString
-        getRdBytes() {
-      java.lang.Object ref = rd_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rd_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Read-only: Route distinguisher chosen by FRR
-     * </pre>
-     *
-     * <code>string rd = 7;</code>
-     * @param value The rd to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRd(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      rd_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: Route distinguisher chosen by FRR
-     * </pre>
-     *
-     * <code>string rd = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRd() {
-      
-      rd_ = getDefaultInstance().getRd();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: Route distinguisher chosen by FRR
-     * </pre>
-     *
-     * <code>string rd = 7;</code>
-     * @param value The bytes for rd to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      rd_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object rmac_ = "";
-    /**
-     * <pre>
-     * Read-only: Router MAC address of the VRF
-     * </pre>
-     *
-     * <code>string rmac = 8;</code>
-     * @return The rmac.
-     */
-    public java.lang.String getRmac() {
-      java.lang.Object ref = rmac_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rmac_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Read-only: Router MAC address of the VRF
-     * </pre>
-     *
-     * <code>string rmac = 8;</code>
-     * @return The bytes for rmac.
-     */
-    public com.google.protobuf.ByteString
-        getRmacBytes() {
-      java.lang.Object ref = rmac_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rmac_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Read-only: Router MAC address of the VRF
-     * </pre>
-     *
-     * <code>string rmac = 8;</code>
-     * @param value The rmac to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRmac(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      rmac_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: Router MAC address of the VRF
-     * </pre>
-     *
-     * <code>string rmac = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRmac() {
-      
-      rmac_ = getDefaultInstance().getRmac();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: Router MAC address of the VRF
-     * </pre>
-     *
-     * <code>string rmac = 8;</code>
-     * @param value The bytes for rmac to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRmacBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      rmac_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList importRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureImportRtsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        importRts_ = new com.google.protobuf.LazyStringArrayList(importRts_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @return A list containing the importRts.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getImportRtsList() {
-      return importRts_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @return The count of importRts.
-     */
-    public int getImportRtsCount() {
-      return importRts_.size();
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param index The index of the element to return.
-     * @return The importRts at the given index.
-     */
-    public java.lang.String getImportRts(int index) {
-      return importRts_.get(index);
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the importRts at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getImportRtsBytes(int index) {
-      return importRts_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param index The index to set the value at.
-     * @param value The importRts to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImportRts(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImportRtsIsMutable();
-      importRts_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param value The importRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImportRts(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImportRtsIsMutable();
-      importRts_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param values The importRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllImportRts(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureImportRtsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, importRts_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImportRts() {
-      importRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of import RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string import_rts = 9;</code>
-     * @param value The bytes of the importRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImportRtsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureImportRtsIsMutable();
-      importRts_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList exportRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureExportRtsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        exportRts_ = new com.google.protobuf.LazyStringArrayList(exportRts_);
-        bitField0_ |= 0x00000002;
-       }
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @return A list containing the exportRts.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getExportRtsList() {
-      return exportRts_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @return The count of exportRts.
-     */
-    public int getExportRtsCount() {
-      return exportRts_.size();
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param index The index of the element to return.
-     * @return The exportRts at the given index.
-     */
-    public java.lang.String getExportRts(int index) {
-      return exportRts_.get(index);
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the exportRts at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getExportRtsBytes(int index) {
-      return exportRts_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param index The index to set the value at.
-     * @param value The exportRts to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExportRts(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExportRtsIsMutable();
-      exportRts_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param value The exportRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExportRts(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExportRtsIsMutable();
-      exportRts_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param values The exportRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllExportRts(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureExportRtsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, exportRts_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearExportRts() {
-      exportRts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of export RTs chosen by FRR
-     * </pre>
-     *
-     * <code>repeated string export_rts = 10;</code>
-     * @param value The bytes of the exportRts to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExportRtsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureExportRtsIsMutable();
-      exportRts_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.IntList vlanIds_ = emptyIntList();
-    private void ensureVlanIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
-        vlanIds_ = mutableCopy(vlanIds_);
-        bitField0_ |= 0x00000004;
-       }
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @return A list containing the vlanIds.
-     */
-    public java.util.List<java.lang.Integer>
-        getVlanIdsList() {
-      return ((bitField0_ & 0x00000004) != 0) ?
-               java.util.Collections.unmodifiableList(vlanIds_) : vlanIds_;
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @return The count of vlanIds.
-     */
-    public int getVlanIdsCount() {
-      return vlanIds_.size();
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @param index The index of the element to return.
-     * @return The vlanIds at the given index.
-     */
-    public int getVlanIds(int index) {
-      return vlanIds_.getInt(index);
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @param index The index to set the value at.
-     * @param value The vlanIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVlanIds(
-        int index, int value) {
-      ensureVlanIdsIsMutable();
-      vlanIds_.setInt(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @param value The vlanIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addVlanIds(int value) {
-      ensureVlanIdsIsMutable();
-      vlanIds_.addInt(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @param values The vlanIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllVlanIds(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
-      ensureVlanIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, vlanIds_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Read-only: List of connected LogicalBridges
-     * (-- api-linter: core::0141::forbidden-types=disabled
-     *     aip.dev/not-precedent: vlan cannot be negative number. --)
-     * </pre>
-     *
-     * <code>repeated uint32 vlan_ids = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearVlanIds() {
-      vlanIds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

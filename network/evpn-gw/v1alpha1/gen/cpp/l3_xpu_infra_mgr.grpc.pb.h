@@ -11,6 +11,8 @@
 //     aip.dev/not-precedent: All the resources are top level. --)
 // (-- api-linter: core::0133::http-uri-parent=disabled
 //     aip.dev/not-precedent: All resources are top-level. --)
+// (-- api-linter: core::0216::synonyms=disabled
+//     aip.dev/not-precedent: Word "Status" will be used instead of "State". --)
 //
 #ifndef GRPC_l3_5fxpu_5finfra_5fmgr_2eproto__INCLUDED
 #define GRPC_l3_5fxpu_5finfra_5fmgr_2eproto__INCLUDED
@@ -758,12 +760,6 @@ class SviService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse>>(PrepareAsyncListSvisRaw(context, request, cq));
     }
     // Retrieve a Svi
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
     virtual ::grpc::Status GetSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest& request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>> AsyncGetSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(AsyncGetSviRaw(context, request, cq));
@@ -772,12 +768,6 @@ class SviService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::Svi>>(PrepareAsyncGetSviRaw(context, request, cq));
     }
     // Delete a Svi
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
     virtual ::grpc::Status DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteSviRaw(context, request, cq));
@@ -795,21 +785,9 @@ class SviService final {
       virtual void ListSvis(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListSvisRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListSvis(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListSvisRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Retrieve a Svi
-      // (-- api-linter: core::0131::method-signature=disabled
-      //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-      // (-- api-linter: core::0131::http-uri-name=disabled
-      //     aip.dev/not-precedent: No "name" is used as key. --)
       virtual void GetSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Delete a Svi
-      // (-- api-linter: core::0135::method-signature=disabled
-      //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-      // (-- api-linter: core::0135::http-uri-name=disabled
-      //     aip.dev/not-precedent: The "name" is not used as key. --)
       virtual void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteSvi(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -903,20 +881,8 @@ class SviService final {
     // List Svis
     virtual ::grpc::Status ListSvis(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListSvisRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListSvisResponse* response);
     // Retrieve a Svi
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
     virtual ::grpc::Status GetSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetSviRequest* request, ::opi_api::network::evpn_gw::v1alpha1::Svi* response);
     // Delete a Svi
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the keys. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vrf" and "vlan_id" are the required fields. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
     virtual ::grpc::Status DeleteSvi(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteSviRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>

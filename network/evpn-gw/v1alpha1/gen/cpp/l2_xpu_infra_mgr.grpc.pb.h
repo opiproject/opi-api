@@ -7,16 +7,12 @@
 //
 // (-- api-linter: core::0132::request-parent-required=disabled
 //     aip.dev/not-precedent: All the resources are top level. --)
-// (-- api-linter: core::0131::request-unknown-fields=disabled
-//     aip.dev/not-precedent: "Different keys have been used for creation/retrieval of objects". --)
-// (-- api-linter: core::0131::request-name-required=disabled
-//     aip.dev/not-precedent: No "name" is used as key for retrieval or deletion of objects. --)
 // (-- api-linter: core::0133::request-parent-required=disabled
 //     aip.dev/not-precedent: All the resources are top level. --)
 // (-- api-linter: core::0133::http-uri-parent=disabled
 //     aip.dev/not-precedent: All resources are top-level. --)
-// (-- api-linter: core::0135::request-name-required=disabled
-//     aip.dev/not-precedent: No "name" is used as key for retrieval or deletion of objects. --)
+// (-- api-linter: core::0216::synonyms=disabled
+//     aip.dev/not-precedent: Word "Status" will be used instead of "State". --)
 //
 #ifndef GRPC_l2_5fxpu_5finfra_5fmgr_2eproto__INCLUDED
 #define GRPC_l2_5fxpu_5finfra_5fmgr_2eproto__INCLUDED
@@ -56,9 +52,7 @@ class LogicalBridgeService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Create a LogicalBridge
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+    // Create a Logical Bridge
     virtual ::grpc::Status CreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> AsyncCreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(AsyncCreateLogicalBridgeRaw(context, request, cq));
@@ -66,7 +60,7 @@ class LogicalBridgeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> PrepareAsyncCreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(PrepareAsyncCreateLogicalBridgeRaw(context, request, cq));
     }
-    // List LogicalBridges
+    // List Logical Bridges
     virtual ::grpc::Status ListLogicalBridges(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest& request, ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse>> AsyncListLogicalBridges(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse>>(AsyncListLogicalBridgesRaw(context, request, cq));
@@ -74,13 +68,7 @@ class LogicalBridgeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse>> PrepareAsyncListLogicalBridges(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse>>(PrepareAsyncListLogicalBridgesRaw(context, request, cq));
     }
-    // Retrieve a LogicalBridge
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Logical Bridge
     virtual ::grpc::Status GetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest& request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> AsyncGetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(AsyncGetLogicalBridgeRaw(context, request, cq));
@@ -88,13 +76,7 @@ class LogicalBridgeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>> PrepareAsyncGetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge>>(PrepareAsyncGetLogicalBridgeRaw(context, request, cq));
     }
-    // Delete a LogicalBridge
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Logical Bridge
     virtual ::grpc::Status DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteLogicalBridgeRaw(context, request, cq));
@@ -105,30 +87,16 @@ class LogicalBridgeService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      // Create a LogicalBridge
-      // (-- api-linter: core::0133::method-signature=disabled
-      //     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+      // Create a Logical Bridge
       virtual void CreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // List LogicalBridges
+      // List Logical Bridges
       virtual void ListLogicalBridges(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListLogicalBridges(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Retrieve a LogicalBridge
-      // (-- api-linter: core::0131::method-signature=disabled
-      //     aip.dev/not-precedent: "vlan_id" is the key. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-      // (-- api-linter: core::0131::http-uri-name=disabled
-      //     aip.dev/not-precedent: No "name" is used as key. --)
+      // Retrieve a Logical Bridge
       virtual void GetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Delete a LogicalBridge
-      // (-- api-linter: core::0135::method-signature=disabled
-      //     aip.dev/not-precedent: "vlan_id" is the key. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-      // (-- api-linter: core::0135::http-uri-name=disabled
-      //     aip.dev/not-precedent: The "name" is not used as key. --)
+      // Delete a Logical Bridge
       virtual void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteLogicalBridge(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -217,27 +185,13 @@ class LogicalBridgeService final {
    public:
     Service();
     virtual ~Service();
-    // Create a LogicalBridge
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "logical_bridge" is top-level resource. --)
+    // Create a Logical Bridge
     virtual ::grpc::Status CreateLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response);
-    // List LogicalBridges
+    // List Logical Bridges
     virtual ::grpc::Status ListLogicalBridges(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListLogicalBridgesResponse* response);
-    // Retrieve a LogicalBridge
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Logical Bridge
     virtual ::grpc::Status GetLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetLogicalBridgeRequest* request, ::opi_api::network::evpn_gw::v1alpha1::LogicalBridge* response);
-    // Delete a LogicalBridge
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vlan_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Logical Bridge
     virtual ::grpc::Status DeleteLogicalBridge(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteLogicalBridgeRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>
@@ -789,9 +743,7 @@ class BridgePortService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Create a BridgePort
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+    // Create a Bridge Port
     virtual ::grpc::Status CreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> AsyncCreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(AsyncCreateBridgePortRaw(context, request, cq));
@@ -799,7 +751,7 @@ class BridgePortService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> PrepareAsyncCreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(PrepareAsyncCreateBridgePortRaw(context, request, cq));
     }
-    // List BridgePorts
+    // List Bridge Ports
     virtual ::grpc::Status ListBridgePorts(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest& request, ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse>> AsyncListBridgePorts(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse>>(AsyncListBridgePortsRaw(context, request, cq));
@@ -807,13 +759,7 @@ class BridgePortService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse>> PrepareAsyncListBridgePorts(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse>>(PrepareAsyncListBridgePortsRaw(context, request, cq));
     }
-    // Retrieve a BridgePort
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Bridge Port
     virtual ::grpc::Status GetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest& request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> AsyncGetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(AsyncGetBridgePortRaw(context, request, cq));
@@ -821,13 +767,7 @@ class BridgePortService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>> PrepareAsyncGetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::network::evpn_gw::v1alpha1::BridgePort>>(PrepareAsyncGetBridgePortRaw(context, request, cq));
     }
-    // Delete a BridgePort
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Bridge Port
     virtual ::grpc::Status DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteBridgePortRaw(context, request, cq));
@@ -838,30 +778,16 @@ class BridgePortService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      // Create a BridgePort
-      // (-- api-linter: core::0133::method-signature=disabled
-      //     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+      // Create a Bridge Port
       virtual void CreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // List BridgePorts
+      // List Bridge Ports
       virtual void ListBridgePorts(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListBridgePorts(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Retrieve a BridgePort
-      // (-- api-linter: core::0131::method-signature=disabled
-      //     aip.dev/not-precedent: "vport_id" is the key. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: "vport_id" is the required field. --)
-      // (-- api-linter: core::0131::http-uri-name=disabled
-      //     aip.dev/not-precedent: No "name" is used as key. --)
+      // Retrieve a Bridge Port
       virtual void GetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Delete a BridgePort
-      // (-- api-linter: core::0135::method-signature=disabled
-      //     aip.dev/not-precedent: "vport_id" is the key. --)
-      // (-- api-linter: client-libraries::4232::required-fields=disabled
-      //     aip.dev/not-precedent: "vport_id" is the required field. --)
-      // (-- api-linter: core::0135::http-uri-name=disabled
-      //     aip.dev/not-precedent: The "name" is not used as key. --)
+      // Delete a Bridge Port
       virtual void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteBridgePort(::grpc::ClientContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -950,27 +876,13 @@ class BridgePortService final {
    public:
     Service();
     virtual ~Service();
-    // Create a BridgePort
-    // (-- api-linter: core::0133::method-signature=disabled
-    //     aip.dev/not-precedent: The "bridge_port" is top-level resource. --)
+    // Create a Bridge Port
     virtual ::grpc::Status CreateBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::CreateBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response);
-    // List BridgePorts
+    // List Bridge Ports
     virtual ::grpc::Status ListBridgePorts(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsRequest* request, ::opi_api::network::evpn_gw::v1alpha1::ListBridgePortsResponse* response);
-    // Retrieve a BridgePort
-    // (-- api-linter: core::0131::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0131::http-uri-name=disabled
-    //     aip.dev/not-precedent: No "name" is used as key. --)
+    // Retrieve a Bridge Port
     virtual ::grpc::Status GetBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::GetBridgePortRequest* request, ::opi_api::network::evpn_gw::v1alpha1::BridgePort* response);
-    // Delete a BridgePort
-    // (-- api-linter: core::0135::method-signature=disabled
-    //     aip.dev/not-precedent: "vport_id" is the key. --)
-    // (-- api-linter: client-libraries::4232::required-fields=disabled
-    //     aip.dev/not-precedent: "vport_id" is the required field. --)
-    // (-- api-linter: core::0135::http-uri-name=disabled
-    //     aip.dev/not-precedent: The "name" is not used as key. --)
+    // Delete a Bridge Port
     virtual ::grpc::Status DeleteBridgePort(::grpc::ServerContext* context, const ::opi_api::network::evpn_gw::v1alpha1::DeleteBridgePortRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>

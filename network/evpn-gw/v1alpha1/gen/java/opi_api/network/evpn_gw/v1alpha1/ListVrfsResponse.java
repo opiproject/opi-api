@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<opi_api.network.evpn_gw.v1alpha1.Vrf> vrfs_;
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of all the bridge ports
+   * List of all the vrfs
    * </pre>
    *
    * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -746,7 +746,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -839,7 +839,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of all the bridge ports
+     * List of all the vrfs
      * </pre>
      *
      * <code>repeated .opi_api.network.evpn_gw.v1alpha1.Vrf vrfs = 1;</code>
