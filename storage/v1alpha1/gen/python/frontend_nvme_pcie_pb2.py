@@ -24,284 +24,284 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66rontend_nvme_pcie.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\nuuid.proto\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\"}\n\rNVMeSubsystem\x12\x33\n\x04spec\x18\x01 \x01(\x0b\x32%.opi_api.storage.v1.NVMeSubsystemSpec\x12\x37\n\x06status\x18\x02 \x01(\x0b\x32\'.opi_api.storage.v1.NVMeSubsystemStatus\"\xb4\x01\n\x11NVMeSubsystemSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03nqn\x18\x02 \x01(\t\x12\x15\n\rserial_number\x18\x03 \x01(\t\x12\x14\n\x0cmodel_number\x18\x04 \x01(\t\x12\x16\n\x0emax_namespaces\x18\x05 \x01(\x03:?\xea\x41<\n(storage.opiproject.org/NVMeSubsystemSpec\x12\x10volumes/{volume}\"B\n\x13NVMeSubsystemStatus\x12\x19\n\x11\x66irmware_revision\x18\x01 \x01(\t\x12\x10\n\x08\x66ru_guid\x18\x02 \x01(\x0c\"\x80\x01\n\x0eNVMeController\x12\x34\n\x04spec\x18\x01 \x01(\x0b\x32&.opi_api.storage.v1.NVMeControllerSpec\x12\x38\n\x06status\x18\x02 \x01(\x0b\x32(.opi_api.storage.v1.NVMeControllerStatus\"\x9e\x03\n\x12NVMeControllerSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1a\n\x12nvme_controller_id\x18\x02 \x01(\x05\x12\x32\n\x0csubsystem_id\x18\x03 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x04 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\x12\x0f\n\x07max_nsq\x18\x05 \x01(\x05\x12\x0f\n\x07max_ncq\x18\x06 \x01(\x05\x12\x0c\n\x04sqes\x18\x07 \x01(\x05\x12\x0c\n\x04\x63qes\x18\x08 \x01(\x05\x12\x16\n\x0emax_namespaces\x18\t \x01(\x05\x12/\n\tmin_limit\x18\n \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimit\x12/\n\tmax_limit\x18\x0b \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimit:@\xea\x41=\n)storage.opiproject.org/NVMeControllerSpec\x12\x10volumes/{volume}\"&\n\x14NVMeControllerStatus\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\"}\n\rNVMeNamespace\x12\x33\n\x04spec\x18\x01 \x01(\x0b\x32%.opi_api.storage.v1.NVMeNamespaceSpec\x12\x37\n\x06status\x18\x02 \x01(\x0b\x32\'.opi_api.storage.v1.NVMeNamespaceStatus\"\x9f\x02\n\x11NVMeNamespaceSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x32\n\x0csubsystem_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x11\n\thost_nsid\x18\x04 \x01(\x05\x12\r\n\x05nguid\x18\x07 \x01(\t\x12\r\n\x05\x65ui64\x18\x08 \x01(\x03\x12%\n\x04uuid\x18\t \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12/\n\tvolume_id\x18\n \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey:?\xea\x41<\n(storage.opiproject.org/NVMeNamespaceSpec\x12\x10volumes/{volume}\"\x9a\x01\n\x13NVMeNamespaceStatus\x12<\n\tpci_state\x18\x01 \x01(\x0e\x32).opi_api.storage.v1.NVMeNamespacePciState\x12\x45\n\x0epci_oper_state\x18\x02 \x01(\x0e\x32-.opi_api.storage.v1.NVMeNamespacePciOperState\"\xb3\x01\n\x1a\x43reateNVMeSubsystemRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeSubsystem\x12?\n\x0fnv_me_subsystem\x18\x02 \x01(\x0b\x32!.opi_api.storage.v1.NVMeSubsystemB\x03\xe0\x41\x02\x12\x1a\n\x12nv_me_subsystem_id\x18\x03 \x01(\t\"k\n\x1a\x44\x65leteNVMeSubsystemRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeSubsystem\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x89\x01\n\x1aUpdateNVMeSubsystemRequest\x12:\n\x0fnv_me_subsystem\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.NVMeSubsystem\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"|\n\x19ListNVMeSubsystemsRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeSubsystem\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"r\n\x1aListNVMeSubsystemsResponse\x12;\n\x10nv_me_subsystems\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.NVMeSubsystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"Q\n\x17GetNVMeSubsystemRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeSubsystem\"O\n\x19NVMeSubsystemStatsRequest\x12\x32\n\x0csubsystem_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x1aNVMeSubsystemStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\xb8\x01\n\x1b\x43reateNVMeControllerRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NVMeController\x12\x41\n\x10nv_me_controller\x18\x02 \x01(\x0b\x32\".opi_api.storage.v1.NVMeControllerB\x03\xe0\x41\x02\x12\x1b\n\x13nv_me_controller_id\x18\x03 \x01(\t\"m\n\x1b\x44\x65leteNVMeControllerRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NVMeController\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x8c\x01\n\x1bUpdateNVMeControllerRequest\x12<\n\x10nv_me_controller\x18\x01 \x01(\x0b\x32\".opi_api.storage.v1.NVMeController\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"~\n\x1aListNVMeControllersRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NVMeController\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"u\n\x1bListNVMeControllersResponse\x12=\n\x11nv_me_controllers\x18\x01 \x03(\x0b\x32\".opi_api.storage.v1.NVMeController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"S\n\x18GetNVMeControllerRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NVMeController\"F\n\x1aNVMeControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"w\n\x1bNVMeControllerStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12.\n\x05stats\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\xb3\x01\n\x1a\x43reateNVMeNamespaceRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeNamespace\x12?\n\x0fnv_me_namespace\x18\x02 \x01(\x0b\x32!.opi_api.storage.v1.NVMeNamespaceB\x03\xe0\x41\x02\x12\x1a\n\x12nv_me_namespace_id\x18\x03 \x01(\t\"k\n\x1a\x44\x65leteNVMeNamespaceRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeNamespace\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x89\x01\n\x1aUpdateNVMeNamespaceRequest\x12:\n\x0fnv_me_namespace\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.NVMeNamespace\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"|\n\x19ListNVMeNamespacesRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeNamespace\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"r\n\x1aListNVMeNamespacesResponse\x12;\n\x10nv_me_namespaces\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.NVMeNamespace\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"Q\n\x17GetNVMeNamespaceRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NVMeNamespace\"O\n\x19NVMeNamespaceStatsRequest\x12\x32\n\x0cnamespace_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"v\n\x1aNVMeNamespaceStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12.\n\x05stats\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats*\xb6\x01\n\x15NVMeNamespacePciState\x12)\n%NV_ME_NAMESPACE_PCI_STATE_UNSPECIFIED\x10\x00\x12%\n!NVME_NAMESPACE_PCI_STATE_DISABLED\x10\x01\x12$\n NVME_NAMESPACE_PCI_STATE_ENABLED\x10\x02\x12%\n!NVME_NAMESPACE_PCI_STATE_DELETING\x10\x03*\xa0\x01\n\x19NVMeNamespacePciOperState\x12.\n*NV_ME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED\x10\x00\x12(\n$NVME_NAMESPACE_PCI_OPER_STATE_ONLINE\x10\x01\x12)\n%NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE\x10\x02\x32\xa5\x17\n\x13\x46rontendNvmeService\x12\xc6\x01\n\x13\x43reateNVMeSubsystem\x12..opi_api.storage.v1.CreateNVMeSubsystemRequest\x1a!.opi_api.storage.v1.NVMeSubsystem\"\\\x82\xd3\xe4\x93\x02*\"\x17/v1/{parent=subsystems}:\x0fnv_me_subsystem\xda\x41)parent,nv_me_subsystem,nv_me_subsystem_id\x12\x8f\x01\n\x13\x44\x65leteNVMeSubsystem\x12..opi_api.storage.v1.DeleteNVMeSubsystemRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xc6\x01\n\x13UpdateNVMeSubsystem\x12..opi_api.storage.v1.UpdateNVMeSubsystemRequest\x1a!.opi_api.storage.v1.NVMeSubsystem\"\\\x82\xd3\xe4\x93\x02\x38\x32%/v1/{nv_me_subsystem.name=subsystems}:\x0fnv_me_subsystem\xda\x41\x1bnv_me_subsystem,update_mask\x12\x9d\x01\n\x12ListNVMeSubsystems\x12-.opi_api.storage.v1.ListNVMeSubsystemsRequest\x1a..opi_api.storage.v1.ListNVMeSubsystemsResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x94\x01\n\x10GetNVMeSubsystem\x12+.opi_api.storage.v1.GetNVMeSubsystemRequest\x1a!.opi_api.storage.v1.NVMeSubsystem\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12u\n\x12NVMeSubsystemStats\x12-.opi_api.storage.v1.NVMeSubsystemStatsRequest\x1a..opi_api.storage.v1.NVMeSubsystemStatsResponse\"\x00\x12\xcc\x01\n\x14\x43reateNVMeController\x12/.opi_api.storage.v1.CreateNVMeControllerRequest\x1a\".opi_api.storage.v1.NVMeController\"_\x82\xd3\xe4\x93\x02+\"\x17/v1/{parent=subsystems}:\x10nv_me_controller\xda\x41+parent,nv_me_controller,nv_me_controller_id\x12\x93\x01\n\x14\x44\x65leteNVMeController\x12/.opi_api.storage.v1.DeleteNVMeControllerRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02%*#/v1/{name=controllers}/{controller}\xda\x41\x04name\x12\xcc\x01\n\x14UpdateNVMeController\x12/.opi_api.storage.v1.UpdateNVMeControllerRequest\x1a\".opi_api.storage.v1.NVMeController\"_\x82\xd3\xe4\x93\x02:2&/v1/{nv_me_controller.name=subsystems}:\x10nv_me_controller\xda\x41\x1cnv_me_controller,update_mask\x12\xa0\x01\n\x13ListNVMeControllers\x12..opi_api.storage.v1.ListNVMeControllersRequest\x1a/.opi_api.storage.v1.ListNVMeControllersResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x98\x01\n\x11GetNVMeController\x12,.opi_api.storage.v1.GetNVMeControllerRequest\x1a\".opi_api.storage.v1.NVMeController\"1\x82\xd3\xe4\x93\x02$\x12\"/v1/{name=subsystems}/{controller}\xda\x41\x04name\x12x\n\x13NVMeControllerStats\x12..opi_api.storage.v1.NVMeControllerStatsRequest\x1a/.opi_api.storage.v1.NVMeControllerStatsResponse\"\x00\x12\xc6\x01\n\x13\x43reateNVMeNamespace\x12..opi_api.storage.v1.CreateNVMeNamespaceRequest\x1a!.opi_api.storage.v1.NVMeNamespace\"\\\x82\xd3\xe4\x93\x02*\"\x17/v1/{parent=subsystems}:\x0fnv_me_namespace\xda\x41)parent,nv_me_namespace,nv_me_namespace_id\x12\x8f\x01\n\x13\x44\x65leteNVMeNamespace\x12..opi_api.storage.v1.DeleteNVMeNamespaceRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=namespaces}/{namespace}\xda\x41\x04name\x12\xc6\x01\n\x13UpdateNVMeNamespace\x12..opi_api.storage.v1.UpdateNVMeNamespaceRequest\x1a!.opi_api.storage.v1.NVMeNamespace\"\\\x82\xd3\xe4\x93\x02\x38\x32%/v1/{nv_me_namespace.name=subsystems}:\x0fnv_me_namespace\xda\x41\x1bnv_me_namespace,update_mask\x12\x9d\x01\n\x12ListNVMeNamespaces\x12-.opi_api.storage.v1.ListNVMeNamespacesRequest\x1a..opi_api.storage.v1.ListNVMeNamespacesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x94\x01\n\x10GetNVMeNamespace\x12+.opi_api.storage.v1.GetNVMeNamespaceRequest\x1a!.opi_api.storage.v1.NVMeNamespace\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{namespace}\xda\x41\x04name\x12u\n\x12NVMeNamespaceStats\x12-.opi_api.storage.v1.NVMeNamespaceStatsRequest\x1a..opi_api.storage.v1.NVMeNamespaceStatsResponse\"\x00\x42\x64\n\x12opi_api.storage.v1B\x15\x46rontendNvmePcieProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66rontend_nvme_pcie.proto\x12\x12opi_api.storage.v1\x1a\x0fopicommon.proto\x1a\x10object_key.proto\x1a\nuuid.proto\x1a\x17google/api/client.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\"}\n\rNvmeSubsystem\x12\x33\n\x04spec\x18\x01 \x01(\x0b\x32%.opi_api.storage.v1.NvmeSubsystemSpec\x12\x37\n\x06status\x18\x02 \x01(\x0b\x32\'.opi_api.storage.v1.NvmeSubsystemStatus\"\xb4\x01\n\x11NvmeSubsystemSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03nqn\x18\x02 \x01(\t\x12\x15\n\rserial_number\x18\x03 \x01(\t\x12\x14\n\x0cmodel_number\x18\x04 \x01(\t\x12\x16\n\x0emax_namespaces\x18\x05 \x01(\x03:?\xea\x41<\n(storage.opiproject.org/NvmeSubsystemSpec\x12\x10volumes/{volume}\"B\n\x13NvmeSubsystemStatus\x12\x19\n\x11\x66irmware_revision\x18\x01 \x01(\t\x12\x10\n\x08\x66ru_guid\x18\x02 \x01(\x0c\"\x80\x01\n\x0eNvmeController\x12\x34\n\x04spec\x18\x01 \x01(\x0b\x32&.opi_api.storage.v1.NvmeControllerSpec\x12\x38\n\x06status\x18\x02 \x01(\x0b\x32(.opi_api.storage.v1.NvmeControllerStatus\"\x9e\x03\n\x12NvmeControllerSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1a\n\x12nvme_controller_id\x18\x02 \x01(\x05\x12\x32\n\x0csubsystem_id\x18\x03 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x30\n\x07pcie_id\x18\x04 \x01(\x0b\x32\x1f.opi_api.storage.v1.PciEndpoint\x12\x0f\n\x07max_nsq\x18\x05 \x01(\x05\x12\x0f\n\x07max_ncq\x18\x06 \x01(\x05\x12\x0c\n\x04sqes\x18\x07 \x01(\x05\x12\x0c\n\x04\x63qes\x18\x08 \x01(\x05\x12\x16\n\x0emax_namespaces\x18\t \x01(\x05\x12/\n\tmin_limit\x18\n \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimit\x12/\n\tmax_limit\x18\x0b \x01(\x0b\x32\x1c.opi_api.storage.v1.QosLimit:@\xea\x41=\n)storage.opiproject.org/NvmeControllerSpec\x12\x10volumes/{volume}\"&\n\x14NvmeControllerStatus\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\"}\n\rNvmeNamespace\x12\x33\n\x04spec\x18\x01 \x01(\x0b\x32%.opi_api.storage.v1.NvmeNamespaceSpec\x12\x37\n\x06status\x18\x02 \x01(\x0b\x32\'.opi_api.storage.v1.NvmeNamespaceStatus\"\x9f\x02\n\x11NvmeNamespaceSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x32\n\x0csubsystem_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x11\n\thost_nsid\x18\x04 \x01(\x05\x12\r\n\x05nguid\x18\x07 \x01(\t\x12\r\n\x05\x65ui64\x18\x08 \x01(\x03\x12%\n\x04uuid\x18\t \x01(\x0b\x32\x17.opi_api.common.v1.Uuid\x12/\n\tvolume_id\x18\n \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey:?\xea\x41<\n(storage.opiproject.org/NvmeNamespaceSpec\x12\x10volumes/{volume}\"\x9a\x01\n\x13NvmeNamespaceStatus\x12<\n\tpci_state\x18\x01 \x01(\x0e\x32).opi_api.storage.v1.NvmeNamespacePciState\x12\x45\n\x0epci_oper_state\x18\x02 \x01(\x0e\x32-.opi_api.storage.v1.NvmeNamespacePciOperState\"\xb1\x01\n\x1a\x43reateNvmeSubsystemRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeSubsystem\x12>\n\x0envme_subsystem\x18\x02 \x01(\x0b\x32!.opi_api.storage.v1.NvmeSubsystemB\x03\xe0\x41\x02\x12\x19\n\x11nvme_subsystem_id\x18\x03 \x01(\t\"k\n\x1a\x44\x65leteNvmeSubsystemRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeSubsystem\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x88\x01\n\x1aUpdateNvmeSubsystemRequest\x12\x39\n\x0envme_subsystem\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.NvmeSubsystem\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"|\n\x19ListNvmeSubsystemsRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeSubsystem\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"q\n\x1aListNvmeSubsystemsResponse\x12:\n\x0fnvme_subsystems\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.NvmeSubsystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"Q\n\x17GetNvmeSubsystemRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeSubsystem\"O\n\x19NvmeSubsystemStatsRequest\x12\x32\n\x0csubsystem_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"L\n\x1aNvmeSubsystemStatsResponse\x12.\n\x05stats\x18\x01 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\xb6\x01\n\x1b\x43reateNvmeControllerRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NvmeController\x12@\n\x0fnvme_controller\x18\x02 \x01(\x0b\x32\".opi_api.storage.v1.NvmeControllerB\x03\xe0\x41\x02\x12\x1a\n\x12nvme_controller_id\x18\x03 \x01(\t\"m\n\x1b\x44\x65leteNvmeControllerRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NvmeController\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x8b\x01\n\x1bUpdateNvmeControllerRequest\x12;\n\x0fnvme_controller\x18\x01 \x01(\x0b\x32\".opi_api.storage.v1.NvmeController\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"~\n\x1aListNvmeControllersRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NvmeController\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"t\n\x1bListNvmeControllersResponse\x12<\n\x10nvme_controllers\x18\x01 \x03(\x0b\x32\".opi_api.storage.v1.NvmeController\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"S\n\x18GetNvmeControllerRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!opi_api.storage.v1/NvmeController\"F\n\x1aNvmeControllerStatsRequest\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"w\n\x1bNvmeControllerStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12.\n\x05stats\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats\"\xb1\x01\n\x1a\x43reateNvmeNamespaceRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeNamespace\x12>\n\x0envme_namespace\x18\x02 \x01(\x0b\x32!.opi_api.storage.v1.NvmeNamespaceB\x03\xe0\x41\x02\x12\x19\n\x11nvme_namespace_id\x18\x03 \x01(\t\"k\n\x1a\x44\x65leteNvmeNamespaceRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeNamespace\x12\x15\n\rallow_missing\x18\x02 \x01(\x08\"\x88\x01\n\x1aUpdateNvmeNamespaceRequest\x12\x39\n\x0envme_namespace\x18\x01 \x01(\x0b\x32!.opi_api.storage.v1.NvmeNamespace\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"|\n\x19ListNvmeNamespacesRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeNamespace\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"q\n\x1aListNvmeNamespacesResponse\x12:\n\x0fnvme_namespaces\x18\x01 \x03(\x0b\x32!.opi_api.storage.v1.NvmeNamespace\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"Q\n\x17GetNvmeNamespaceRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41\"\n opi_api.storage.v1/NvmeNamespace\"O\n\x19NvmeNamespaceStatsRequest\x12\x32\n\x0cnamespace_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"v\n\x1aNvmeNamespaceStatsResponse\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12.\n\x05stats\x18\x02 \x01(\x0b\x32\x1f.opi_api.storage.v1.VolumeStats*\xb5\x01\n\x15NvmeNamespacePciState\x12(\n$NVME_NAMESPACE_PCI_STATE_UNSPECIFIED\x10\x00\x12%\n!NVME_NAMESPACE_PCI_STATE_DISABLED\x10\x01\x12$\n NVME_NAMESPACE_PCI_STATE_ENABLED\x10\x02\x12%\n!NVME_NAMESPACE_PCI_STATE_DELETING\x10\x03*\x9f\x01\n\x19NvmeNamespacePciOperState\x12-\n)NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED\x10\x00\x12(\n$NVME_NAMESPACE_PCI_OPER_STATE_ONLINE\x10\x01\x12)\n%NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE\x10\x02\x32\x93\x17\n\x13\x46rontendNvmeService\x12\xc3\x01\n\x13\x43reateNvmeSubsystem\x12..opi_api.storage.v1.CreateNvmeSubsystemRequest\x1a!.opi_api.storage.v1.NvmeSubsystem\"Y\x82\xd3\xe4\x93\x02)\"\x17/v1/{parent=subsystems}:\x0envme_subsystem\xda\x41\'parent,nvme_subsystem,nvme_subsystem_id\x12\x8f\x01\n\x13\x44\x65leteNvmeSubsystem\x12..opi_api.storage.v1.DeleteNvmeSubsystemRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12\xc3\x01\n\x13UpdateNvmeSubsystem\x12..opi_api.storage.v1.UpdateNvmeSubsystemRequest\x1a!.opi_api.storage.v1.NvmeSubsystem\"Y\x82\xd3\xe4\x93\x02\x36\x32$/v1/{nvme_subsystem.name=subsystems}:\x0envme_subsystem\xda\x41\x1anvme_subsystem,update_mask\x12\x9d\x01\n\x12ListNvmeSubsystems\x12-.opi_api.storage.v1.ListNvmeSubsystemsRequest\x1a..opi_api.storage.v1.ListNvmeSubsystemsResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x94\x01\n\x10GetNvmeSubsystem\x12+.opi_api.storage.v1.GetNvmeSubsystemRequest\x1a!.opi_api.storage.v1.NvmeSubsystem\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{subsystem}\xda\x41\x04name\x12u\n\x12NvmeSubsystemStats\x12-.opi_api.storage.v1.NvmeSubsystemStatsRequest\x1a..opi_api.storage.v1.NvmeSubsystemStatsResponse\"\x00\x12\xc9\x01\n\x14\x43reateNvmeController\x12/.opi_api.storage.v1.CreateNvmeControllerRequest\x1a\".opi_api.storage.v1.NvmeController\"\\\x82\xd3\xe4\x93\x02*\"\x17/v1/{parent=subsystems}:\x0fnvme_controller\xda\x41)parent,nvme_controller,nvme_controller_id\x12\x93\x01\n\x14\x44\x65leteNvmeController\x12/.opi_api.storage.v1.DeleteNvmeControllerRequest\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02%*#/v1/{name=controllers}/{controller}\xda\x41\x04name\x12\xc9\x01\n\x14UpdateNvmeController\x12/.opi_api.storage.v1.UpdateNvmeControllerRequest\x1a\".opi_api.storage.v1.NvmeController\"\\\x82\xd3\xe4\x93\x02\x38\x32%/v1/{nvme_controller.name=subsystems}:\x0fnvme_controller\xda\x41\x1bnvme_controller,update_mask\x12\xa0\x01\n\x13ListNvmeControllers\x12..opi_api.storage.v1.ListNvmeControllersRequest\x1a/.opi_api.storage.v1.ListNvmeControllersResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x98\x01\n\x11GetNvmeController\x12,.opi_api.storage.v1.GetNvmeControllerRequest\x1a\".opi_api.storage.v1.NvmeController\"1\x82\xd3\xe4\x93\x02$\x12\"/v1/{name=subsystems}/{controller}\xda\x41\x04name\x12x\n\x13NvmeControllerStats\x12..opi_api.storage.v1.NvmeControllerStatsRequest\x1a/.opi_api.storage.v1.NvmeControllerStatsResponse\"\x00\x12\xc3\x01\n\x13\x43reateNvmeNamespace\x12..opi_api.storage.v1.CreateNvmeNamespaceRequest\x1a!.opi_api.storage.v1.NvmeNamespace\"Y\x82\xd3\xe4\x93\x02)\"\x17/v1/{parent=subsystems}:\x0envme_namespace\xda\x41\'parent,nvme_namespace,nvme_namespace_id\x12\x8f\x01\n\x13\x44\x65leteNvmeNamespace\x12..opi_api.storage.v1.DeleteNvmeNamespaceRequest\x1a\x16.google.protobuf.Empty\"0\x82\xd3\xe4\x93\x02#*!/v1/{name=namespaces}/{namespace}\xda\x41\x04name\x12\xc3\x01\n\x13UpdateNvmeNamespace\x12..opi_api.storage.v1.UpdateNvmeNamespaceRequest\x1a!.opi_api.storage.v1.NvmeNamespace\"Y\x82\xd3\xe4\x93\x02\x36\x32$/v1/{nvme_namespace.name=subsystems}:\x0envme_namespace\xda\x41\x1anvme_namespace,update_mask\x12\x9d\x01\n\x12ListNvmeNamespaces\x12-.opi_api.storage.v1.ListNvmeNamespacesRequest\x1a..opi_api.storage.v1.ListNvmeNamespacesResponse\"(\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/{parent=subsystems}\xda\x41\x06parent\x12\x94\x01\n\x10GetNvmeNamespace\x12+.opi_api.storage.v1.GetNvmeNamespaceRequest\x1a!.opi_api.storage.v1.NvmeNamespace\"0\x82\xd3\xe4\x93\x02#\x12!/v1/{name=subsystems}/{namespace}\xda\x41\x04name\x12u\n\x12NvmeNamespaceStats\x12-.opi_api.storage.v1.NvmeNamespaceStatsRequest\x1a..opi_api.storage.v1.NvmeNamespaceStatsResponse\"\x00\x42\x64\n\x12opi_api.storage.v1B\x15\x46rontendNvmePcieProtoP\x01Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/gob\x06proto3')
 
-_NVMENAMESPACEPCISTATE = DESCRIPTOR.enum_types_by_name['NVMeNamespacePciState']
-NVMeNamespacePciState = enum_type_wrapper.EnumTypeWrapper(_NVMENAMESPACEPCISTATE)
-_NVMENAMESPACEPCIOPERSTATE = DESCRIPTOR.enum_types_by_name['NVMeNamespacePciOperState']
-NVMeNamespacePciOperState = enum_type_wrapper.EnumTypeWrapper(_NVMENAMESPACEPCIOPERSTATE)
-NV_ME_NAMESPACE_PCI_STATE_UNSPECIFIED = 0
+_NVMENAMESPACEPCISTATE = DESCRIPTOR.enum_types_by_name['NvmeNamespacePciState']
+NvmeNamespacePciState = enum_type_wrapper.EnumTypeWrapper(_NVMENAMESPACEPCISTATE)
+_NVMENAMESPACEPCIOPERSTATE = DESCRIPTOR.enum_types_by_name['NvmeNamespacePciOperState']
+NvmeNamespacePciOperState = enum_type_wrapper.EnumTypeWrapper(_NVMENAMESPACEPCIOPERSTATE)
+NVME_NAMESPACE_PCI_STATE_UNSPECIFIED = 0
 NVME_NAMESPACE_PCI_STATE_DISABLED = 1
 NVME_NAMESPACE_PCI_STATE_ENABLED = 2
 NVME_NAMESPACE_PCI_STATE_DELETING = 3
-NV_ME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED = 0
+NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED = 0
 NVME_NAMESPACE_PCI_OPER_STATE_ONLINE = 1
 NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE = 2
 
 
-_NVMESUBSYSTEM = DESCRIPTOR.message_types_by_name['NVMeSubsystem']
-_NVMESUBSYSTEMSPEC = DESCRIPTOR.message_types_by_name['NVMeSubsystemSpec']
-_NVMESUBSYSTEMSTATUS = DESCRIPTOR.message_types_by_name['NVMeSubsystemStatus']
-_NVMECONTROLLER = DESCRIPTOR.message_types_by_name['NVMeController']
-_NVMECONTROLLERSPEC = DESCRIPTOR.message_types_by_name['NVMeControllerSpec']
-_NVMECONTROLLERSTATUS = DESCRIPTOR.message_types_by_name['NVMeControllerStatus']
-_NVMENAMESPACE = DESCRIPTOR.message_types_by_name['NVMeNamespace']
-_NVMENAMESPACESPEC = DESCRIPTOR.message_types_by_name['NVMeNamespaceSpec']
-_NVMENAMESPACESTATUS = DESCRIPTOR.message_types_by_name['NVMeNamespaceStatus']
-_CREATENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMeSubsystemRequest']
-_DELETENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMeSubsystemRequest']
-_UPDATENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMeSubsystemRequest']
-_LISTNVMESUBSYSTEMSREQUEST = DESCRIPTOR.message_types_by_name['ListNVMeSubsystemsRequest']
-_LISTNVMESUBSYSTEMSRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMeSubsystemsResponse']
-_GETNVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['GetNVMeSubsystemRequest']
-_NVMESUBSYSTEMSTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMeSubsystemStatsRequest']
-_NVMESUBSYSTEMSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMeSubsystemStatsResponse']
-_CREATENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMeControllerRequest']
-_DELETENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMeControllerRequest']
-_UPDATENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMeControllerRequest']
-_LISTNVMECONTROLLERSREQUEST = DESCRIPTOR.message_types_by_name['ListNVMeControllersRequest']
-_LISTNVMECONTROLLERSRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMeControllersResponse']
-_GETNVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['GetNVMeControllerRequest']
-_NVMECONTROLLERSTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMeControllerStatsRequest']
-_NVMECONTROLLERSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMeControllerStatsResponse']
-_CREATENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['CreateNVMeNamespaceRequest']
-_DELETENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['DeleteNVMeNamespaceRequest']
-_UPDATENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['UpdateNVMeNamespaceRequest']
-_LISTNVMENAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['ListNVMeNamespacesRequest']
-_LISTNVMENAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['ListNVMeNamespacesResponse']
-_GETNVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['GetNVMeNamespaceRequest']
-_NVMENAMESPACESTATSREQUEST = DESCRIPTOR.message_types_by_name['NVMeNamespaceStatsRequest']
-_NVMENAMESPACESTATSRESPONSE = DESCRIPTOR.message_types_by_name['NVMeNamespaceStatsResponse']
-NVMeSubsystem = _reflection.GeneratedProtocolMessageType('NVMeSubsystem', (_message.Message,), {
+_NVMESUBSYSTEM = DESCRIPTOR.message_types_by_name['NvmeSubsystem']
+_NVMESUBSYSTEMSPEC = DESCRIPTOR.message_types_by_name['NvmeSubsystemSpec']
+_NVMESUBSYSTEMSTATUS = DESCRIPTOR.message_types_by_name['NvmeSubsystemStatus']
+_NVMECONTROLLER = DESCRIPTOR.message_types_by_name['NvmeController']
+_NVMECONTROLLERSPEC = DESCRIPTOR.message_types_by_name['NvmeControllerSpec']
+_NVMECONTROLLERSTATUS = DESCRIPTOR.message_types_by_name['NvmeControllerStatus']
+_NVMENAMESPACE = DESCRIPTOR.message_types_by_name['NvmeNamespace']
+_NVMENAMESPACESPEC = DESCRIPTOR.message_types_by_name['NvmeNamespaceSpec']
+_NVMENAMESPACESTATUS = DESCRIPTOR.message_types_by_name['NvmeNamespaceStatus']
+_CREATENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['CreateNvmeSubsystemRequest']
+_DELETENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['DeleteNvmeSubsystemRequest']
+_UPDATENVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['UpdateNvmeSubsystemRequest']
+_LISTNVMESUBSYSTEMSREQUEST = DESCRIPTOR.message_types_by_name['ListNvmeSubsystemsRequest']
+_LISTNVMESUBSYSTEMSRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmeSubsystemsResponse']
+_GETNVMESUBSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['GetNvmeSubsystemRequest']
+_NVMESUBSYSTEMSTATSREQUEST = DESCRIPTOR.message_types_by_name['NvmeSubsystemStatsRequest']
+_NVMESUBSYSTEMSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NvmeSubsystemStatsResponse']
+_CREATENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['CreateNvmeControllerRequest']
+_DELETENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['DeleteNvmeControllerRequest']
+_UPDATENVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['UpdateNvmeControllerRequest']
+_LISTNVMECONTROLLERSREQUEST = DESCRIPTOR.message_types_by_name['ListNvmeControllersRequest']
+_LISTNVMECONTROLLERSRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmeControllersResponse']
+_GETNVMECONTROLLERREQUEST = DESCRIPTOR.message_types_by_name['GetNvmeControllerRequest']
+_NVMECONTROLLERSTATSREQUEST = DESCRIPTOR.message_types_by_name['NvmeControllerStatsRequest']
+_NVMECONTROLLERSTATSRESPONSE = DESCRIPTOR.message_types_by_name['NvmeControllerStatsResponse']
+_CREATENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['CreateNvmeNamespaceRequest']
+_DELETENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['DeleteNvmeNamespaceRequest']
+_UPDATENVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['UpdateNvmeNamespaceRequest']
+_LISTNVMENAMESPACESREQUEST = DESCRIPTOR.message_types_by_name['ListNvmeNamespacesRequest']
+_LISTNVMENAMESPACESRESPONSE = DESCRIPTOR.message_types_by_name['ListNvmeNamespacesResponse']
+_GETNVMENAMESPACEREQUEST = DESCRIPTOR.message_types_by_name['GetNvmeNamespaceRequest']
+_NVMENAMESPACESTATSREQUEST = DESCRIPTOR.message_types_by_name['NvmeNamespaceStatsRequest']
+_NVMENAMESPACESTATSRESPONSE = DESCRIPTOR.message_types_by_name['NvmeNamespaceStatsResponse']
+NvmeSubsystem = _reflection.GeneratedProtocolMessageType('NvmeSubsystem', (_message.Message,), {
   'DESCRIPTOR' : _NVMESUBSYSTEM,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystem)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystem)
   })
-_sym_db.RegisterMessage(NVMeSubsystem)
+_sym_db.RegisterMessage(NvmeSubsystem)
 
-NVMeSubsystemSpec = _reflection.GeneratedProtocolMessageType('NVMeSubsystemSpec', (_message.Message,), {
+NvmeSubsystemSpec = _reflection.GeneratedProtocolMessageType('NvmeSubsystemSpec', (_message.Message,), {
   'DESCRIPTOR' : _NVMESUBSYSTEMSPEC,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystemSpec)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystemSpec)
   })
-_sym_db.RegisterMessage(NVMeSubsystemSpec)
+_sym_db.RegisterMessage(NvmeSubsystemSpec)
 
-NVMeSubsystemStatus = _reflection.GeneratedProtocolMessageType('NVMeSubsystemStatus', (_message.Message,), {
+NvmeSubsystemStatus = _reflection.GeneratedProtocolMessageType('NvmeSubsystemStatus', (_message.Message,), {
   'DESCRIPTOR' : _NVMESUBSYSTEMSTATUS,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystemStatus)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystemStatus)
   })
-_sym_db.RegisterMessage(NVMeSubsystemStatus)
+_sym_db.RegisterMessage(NvmeSubsystemStatus)
 
-NVMeController = _reflection.GeneratedProtocolMessageType('NVMeController', (_message.Message,), {
+NvmeController = _reflection.GeneratedProtocolMessageType('NvmeController', (_message.Message,), {
   'DESCRIPTOR' : _NVMECONTROLLER,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeController)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeController)
   })
-_sym_db.RegisterMessage(NVMeController)
+_sym_db.RegisterMessage(NvmeController)
 
-NVMeControllerSpec = _reflection.GeneratedProtocolMessageType('NVMeControllerSpec', (_message.Message,), {
+NvmeControllerSpec = _reflection.GeneratedProtocolMessageType('NvmeControllerSpec', (_message.Message,), {
   'DESCRIPTOR' : _NVMECONTROLLERSPEC,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerSpec)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerSpec)
   })
-_sym_db.RegisterMessage(NVMeControllerSpec)
+_sym_db.RegisterMessage(NvmeControllerSpec)
 
-NVMeControllerStatus = _reflection.GeneratedProtocolMessageType('NVMeControllerStatus', (_message.Message,), {
+NvmeControllerStatus = _reflection.GeneratedProtocolMessageType('NvmeControllerStatus', (_message.Message,), {
   'DESCRIPTOR' : _NVMECONTROLLERSTATUS,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerStatus)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerStatus)
   })
-_sym_db.RegisterMessage(NVMeControllerStatus)
+_sym_db.RegisterMessage(NvmeControllerStatus)
 
-NVMeNamespace = _reflection.GeneratedProtocolMessageType('NVMeNamespace', (_message.Message,), {
+NvmeNamespace = _reflection.GeneratedProtocolMessageType('NvmeNamespace', (_message.Message,), {
   'DESCRIPTOR' : _NVMENAMESPACE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespace)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespace)
   })
-_sym_db.RegisterMessage(NVMeNamespace)
+_sym_db.RegisterMessage(NvmeNamespace)
 
-NVMeNamespaceSpec = _reflection.GeneratedProtocolMessageType('NVMeNamespaceSpec', (_message.Message,), {
+NvmeNamespaceSpec = _reflection.GeneratedProtocolMessageType('NvmeNamespaceSpec', (_message.Message,), {
   'DESCRIPTOR' : _NVMENAMESPACESPEC,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceSpec)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespaceSpec)
   })
-_sym_db.RegisterMessage(NVMeNamespaceSpec)
+_sym_db.RegisterMessage(NvmeNamespaceSpec)
 
-NVMeNamespaceStatus = _reflection.GeneratedProtocolMessageType('NVMeNamespaceStatus', (_message.Message,), {
+NvmeNamespaceStatus = _reflection.GeneratedProtocolMessageType('NvmeNamespaceStatus', (_message.Message,), {
   'DESCRIPTOR' : _NVMENAMESPACESTATUS,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceStatus)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespaceStatus)
   })
-_sym_db.RegisterMessage(NVMeNamespaceStatus)
+_sym_db.RegisterMessage(NvmeNamespaceStatus)
 
-CreateNVMeSubsystemRequest = _reflection.GeneratedProtocolMessageType('CreateNVMeSubsystemRequest', (_message.Message,), {
+CreateNvmeSubsystemRequest = _reflection.GeneratedProtocolMessageType('CreateNvmeSubsystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATENVMESUBSYSTEMREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeSubsystemRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNvmeSubsystemRequest)
   })
-_sym_db.RegisterMessage(CreateNVMeSubsystemRequest)
+_sym_db.RegisterMessage(CreateNvmeSubsystemRequest)
 
-DeleteNVMeSubsystemRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMeSubsystemRequest', (_message.Message,), {
+DeleteNvmeSubsystemRequest = _reflection.GeneratedProtocolMessageType('DeleteNvmeSubsystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETENVMESUBSYSTEMREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeSubsystemRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNvmeSubsystemRequest)
   })
-_sym_db.RegisterMessage(DeleteNVMeSubsystemRequest)
+_sym_db.RegisterMessage(DeleteNvmeSubsystemRequest)
 
-UpdateNVMeSubsystemRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMeSubsystemRequest', (_message.Message,), {
+UpdateNvmeSubsystemRequest = _reflection.GeneratedProtocolMessageType('UpdateNvmeSubsystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENVMESUBSYSTEMREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeSubsystemRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeSubsystemRequest)
   })
-_sym_db.RegisterMessage(UpdateNVMeSubsystemRequest)
+_sym_db.RegisterMessage(UpdateNvmeSubsystemRequest)
 
-ListNVMeSubsystemsRequest = _reflection.GeneratedProtocolMessageType('ListNVMeSubsystemsRequest', (_message.Message,), {
+ListNvmeSubsystemsRequest = _reflection.GeneratedProtocolMessageType('ListNvmeSubsystemsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMESUBSYSTEMSREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeSubsystemsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeSubsystemsRequest)
   })
-_sym_db.RegisterMessage(ListNVMeSubsystemsRequest)
+_sym_db.RegisterMessage(ListNvmeSubsystemsRequest)
 
-ListNVMeSubsystemsResponse = _reflection.GeneratedProtocolMessageType('ListNVMeSubsystemsResponse', (_message.Message,), {
+ListNvmeSubsystemsResponse = _reflection.GeneratedProtocolMessageType('ListNvmeSubsystemsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMESUBSYSTEMSRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeSubsystemsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeSubsystemsResponse)
   })
-_sym_db.RegisterMessage(ListNVMeSubsystemsResponse)
+_sym_db.RegisterMessage(ListNvmeSubsystemsResponse)
 
-GetNVMeSubsystemRequest = _reflection.GeneratedProtocolMessageType('GetNVMeSubsystemRequest', (_message.Message,), {
+GetNvmeSubsystemRequest = _reflection.GeneratedProtocolMessageType('GetNvmeSubsystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNVMESUBSYSTEMREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMeSubsystemRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmeSubsystemRequest)
   })
-_sym_db.RegisterMessage(GetNVMeSubsystemRequest)
+_sym_db.RegisterMessage(GetNvmeSubsystemRequest)
 
-NVMeSubsystemStatsRequest = _reflection.GeneratedProtocolMessageType('NVMeSubsystemStatsRequest', (_message.Message,), {
+NvmeSubsystemStatsRequest = _reflection.GeneratedProtocolMessageType('NvmeSubsystemStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _NVMESUBSYSTEMSTATSREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystemStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystemStatsRequest)
   })
-_sym_db.RegisterMessage(NVMeSubsystemStatsRequest)
+_sym_db.RegisterMessage(NvmeSubsystemStatsRequest)
 
-NVMeSubsystemStatsResponse = _reflection.GeneratedProtocolMessageType('NVMeSubsystemStatsResponse', (_message.Message,), {
+NvmeSubsystemStatsResponse = _reflection.GeneratedProtocolMessageType('NvmeSubsystemStatsResponse', (_message.Message,), {
   'DESCRIPTOR' : _NVMESUBSYSTEMSTATSRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeSubsystemStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeSubsystemStatsResponse)
   })
-_sym_db.RegisterMessage(NVMeSubsystemStatsResponse)
+_sym_db.RegisterMessage(NvmeSubsystemStatsResponse)
 
-CreateNVMeControllerRequest = _reflection.GeneratedProtocolMessageType('CreateNVMeControllerRequest', (_message.Message,), {
+CreateNvmeControllerRequest = _reflection.GeneratedProtocolMessageType('CreateNvmeControllerRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATENVMECONTROLLERREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNvmeControllerRequest)
   })
-_sym_db.RegisterMessage(CreateNVMeControllerRequest)
+_sym_db.RegisterMessage(CreateNvmeControllerRequest)
 
-DeleteNVMeControllerRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMeControllerRequest', (_message.Message,), {
+DeleteNvmeControllerRequest = _reflection.GeneratedProtocolMessageType('DeleteNvmeControllerRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETENVMECONTROLLERREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNvmeControllerRequest)
   })
-_sym_db.RegisterMessage(DeleteNVMeControllerRequest)
+_sym_db.RegisterMessage(DeleteNvmeControllerRequest)
 
-UpdateNVMeControllerRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMeControllerRequest', (_message.Message,), {
+UpdateNvmeControllerRequest = _reflection.GeneratedProtocolMessageType('UpdateNvmeControllerRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENVMECONTROLLERREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeControllerRequest)
   })
-_sym_db.RegisterMessage(UpdateNVMeControllerRequest)
+_sym_db.RegisterMessage(UpdateNvmeControllerRequest)
 
-ListNVMeControllersRequest = _reflection.GeneratedProtocolMessageType('ListNVMeControllersRequest', (_message.Message,), {
+ListNvmeControllersRequest = _reflection.GeneratedProtocolMessageType('ListNvmeControllersRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMECONTROLLERSREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeControllersRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeControllersRequest)
   })
-_sym_db.RegisterMessage(ListNVMeControllersRequest)
+_sym_db.RegisterMessage(ListNvmeControllersRequest)
 
-ListNVMeControllersResponse = _reflection.GeneratedProtocolMessageType('ListNVMeControllersResponse', (_message.Message,), {
+ListNvmeControllersResponse = _reflection.GeneratedProtocolMessageType('ListNvmeControllersResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMECONTROLLERSRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeControllersResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeControllersResponse)
   })
-_sym_db.RegisterMessage(ListNVMeControllersResponse)
+_sym_db.RegisterMessage(ListNvmeControllersResponse)
 
-GetNVMeControllerRequest = _reflection.GeneratedProtocolMessageType('GetNVMeControllerRequest', (_message.Message,), {
+GetNvmeControllerRequest = _reflection.GeneratedProtocolMessageType('GetNvmeControllerRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNVMECONTROLLERREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMeControllerRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmeControllerRequest)
   })
-_sym_db.RegisterMessage(GetNVMeControllerRequest)
+_sym_db.RegisterMessage(GetNvmeControllerRequest)
 
-NVMeControllerStatsRequest = _reflection.GeneratedProtocolMessageType('NVMeControllerStatsRequest', (_message.Message,), {
+NvmeControllerStatsRequest = _reflection.GeneratedProtocolMessageType('NvmeControllerStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _NVMECONTROLLERSTATSREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerStatsRequest)
   })
-_sym_db.RegisterMessage(NVMeControllerStatsRequest)
+_sym_db.RegisterMessage(NvmeControllerStatsRequest)
 
-NVMeControllerStatsResponse = _reflection.GeneratedProtocolMessageType('NVMeControllerStatsResponse', (_message.Message,), {
+NvmeControllerStatsResponse = _reflection.GeneratedProtocolMessageType('NvmeControllerStatsResponse', (_message.Message,), {
   'DESCRIPTOR' : _NVMECONTROLLERSTATSRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeControllerStatsResponse)
   })
-_sym_db.RegisterMessage(NVMeControllerStatsResponse)
+_sym_db.RegisterMessage(NvmeControllerStatsResponse)
 
-CreateNVMeNamespaceRequest = _reflection.GeneratedProtocolMessageType('CreateNVMeNamespaceRequest', (_message.Message,), {
+CreateNvmeNamespaceRequest = _reflection.GeneratedProtocolMessageType('CreateNvmeNamespaceRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATENVMENAMESPACEREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNVMeNamespaceRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.CreateNvmeNamespaceRequest)
   })
-_sym_db.RegisterMessage(CreateNVMeNamespaceRequest)
+_sym_db.RegisterMessage(CreateNvmeNamespaceRequest)
 
-DeleteNVMeNamespaceRequest = _reflection.GeneratedProtocolMessageType('DeleteNVMeNamespaceRequest', (_message.Message,), {
+DeleteNvmeNamespaceRequest = _reflection.GeneratedProtocolMessageType('DeleteNvmeNamespaceRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETENVMENAMESPACEREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNVMeNamespaceRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.DeleteNvmeNamespaceRequest)
   })
-_sym_db.RegisterMessage(DeleteNVMeNamespaceRequest)
+_sym_db.RegisterMessage(DeleteNvmeNamespaceRequest)
 
-UpdateNVMeNamespaceRequest = _reflection.GeneratedProtocolMessageType('UpdateNVMeNamespaceRequest', (_message.Message,), {
+UpdateNvmeNamespaceRequest = _reflection.GeneratedProtocolMessageType('UpdateNvmeNamespaceRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENVMENAMESPACEREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNVMeNamespaceRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.UpdateNvmeNamespaceRequest)
   })
-_sym_db.RegisterMessage(UpdateNVMeNamespaceRequest)
+_sym_db.RegisterMessage(UpdateNvmeNamespaceRequest)
 
-ListNVMeNamespacesRequest = _reflection.GeneratedProtocolMessageType('ListNVMeNamespacesRequest', (_message.Message,), {
+ListNvmeNamespacesRequest = _reflection.GeneratedProtocolMessageType('ListNvmeNamespacesRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMENAMESPACESREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeNamespacesRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeNamespacesRequest)
   })
-_sym_db.RegisterMessage(ListNVMeNamespacesRequest)
+_sym_db.RegisterMessage(ListNvmeNamespacesRequest)
 
-ListNVMeNamespacesResponse = _reflection.GeneratedProtocolMessageType('ListNVMeNamespacesResponse', (_message.Message,), {
+ListNvmeNamespacesResponse = _reflection.GeneratedProtocolMessageType('ListNvmeNamespacesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTNVMENAMESPACESRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNVMeNamespacesResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.ListNvmeNamespacesResponse)
   })
-_sym_db.RegisterMessage(ListNVMeNamespacesResponse)
+_sym_db.RegisterMessage(ListNvmeNamespacesResponse)
 
-GetNVMeNamespaceRequest = _reflection.GeneratedProtocolMessageType('GetNVMeNamespaceRequest', (_message.Message,), {
+GetNvmeNamespaceRequest = _reflection.GeneratedProtocolMessageType('GetNvmeNamespaceRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNVMENAMESPACEREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNVMeNamespaceRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.GetNvmeNamespaceRequest)
   })
-_sym_db.RegisterMessage(GetNVMeNamespaceRequest)
+_sym_db.RegisterMessage(GetNvmeNamespaceRequest)
 
-NVMeNamespaceStatsRequest = _reflection.GeneratedProtocolMessageType('NVMeNamespaceStatsRequest', (_message.Message,), {
+NvmeNamespaceStatsRequest = _reflection.GeneratedProtocolMessageType('NvmeNamespaceStatsRequest', (_message.Message,), {
   'DESCRIPTOR' : _NVMENAMESPACESTATSREQUEST,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceStatsRequest)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespaceStatsRequest)
   })
-_sym_db.RegisterMessage(NVMeNamespaceStatsRequest)
+_sym_db.RegisterMessage(NvmeNamespaceStatsRequest)
 
-NVMeNamespaceStatsResponse = _reflection.GeneratedProtocolMessageType('NVMeNamespaceStatsResponse', (_message.Message,), {
+NvmeNamespaceStatsResponse = _reflection.GeneratedProtocolMessageType('NvmeNamespaceStatsResponse', (_message.Message,), {
   'DESCRIPTOR' : _NVMENAMESPACESTATSRESPONSE,
   '__module__' : 'frontend_nvme_pcie_pb2'
-  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceStatsResponse)
+  # @@protoc_insertion_point(class_scope:opi_api.storage.v1.NvmeNamespaceStatsResponse)
   })
-_sym_db.RegisterMessage(NVMeNamespaceStatsResponse)
+_sym_db.RegisterMessage(NvmeNamespaceStatsResponse)
 
 _FRONTENDNVMESERVICE = DESCRIPTOR.services_by_name['FrontendNvmeService']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -309,75 +309,75 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022opi_api.storage.v1B\025FrontendNvmePcieProtoP\001Z5github.com/opiproject/opi-api/storage/v1alpha1/gen/go'
   _NVMESUBSYSTEMSPEC._options = None
-  _NVMESUBSYSTEMSPEC._serialized_options = b'\352A<\n(storage.opiproject.org/NVMeSubsystemSpec\022\020volumes/{volume}'
+  _NVMESUBSYSTEMSPEC._serialized_options = b'\352A<\n(storage.opiproject.org/NvmeSubsystemSpec\022\020volumes/{volume}'
   _NVMECONTROLLERSPEC._options = None
-  _NVMECONTROLLERSPEC._serialized_options = b'\352A=\n)storage.opiproject.org/NVMeControllerSpec\022\020volumes/{volume}'
+  _NVMECONTROLLERSPEC._serialized_options = b'\352A=\n)storage.opiproject.org/NvmeControllerSpec\022\020volumes/{volume}'
   _NVMENAMESPACESPEC._options = None
-  _NVMENAMESPACESPEC._serialized_options = b'\352A<\n(storage.opiproject.org/NVMeNamespaceSpec\022\020volumes/{volume}'
+  _NVMENAMESPACESPEC._serialized_options = b'\352A<\n(storage.opiproject.org/NvmeNamespaceSpec\022\020volumes/{volume}'
   _CREATENVMESUBSYSTEMREQUEST.fields_by_name['parent']._options = None
-  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeSubsystem'
-  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['nv_me_subsystem']._options = None
-  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['nv_me_subsystem']._serialized_options = b'\340A\002'
+  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeSubsystem'
+  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['nvme_subsystem']._options = None
+  _CREATENVMESUBSYSTEMREQUEST.fields_by_name['nvme_subsystem']._serialized_options = b'\340A\002'
   _DELETENVMESUBSYSTEMREQUEST.fields_by_name['name']._options = None
-  _DELETENVMESUBSYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeSubsystem'
+  _DELETENVMESUBSYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeSubsystem'
   _LISTNVMESUBSYSTEMSREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMESUBSYSTEMSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeSubsystem'
+  _LISTNVMESUBSYSTEMSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeSubsystem'
   _GETNVMESUBSYSTEMREQUEST.fields_by_name['name']._options = None
-  _GETNVMESUBSYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeSubsystem'
+  _GETNVMESUBSYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeSubsystem'
   _CREATENVMECONTROLLERREQUEST.fields_by_name['parent']._options = None
-  _CREATENVMECONTROLLERREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NVMeController'
-  _CREATENVMECONTROLLERREQUEST.fields_by_name['nv_me_controller']._options = None
-  _CREATENVMECONTROLLERREQUEST.fields_by_name['nv_me_controller']._serialized_options = b'\340A\002'
+  _CREATENVMECONTROLLERREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NvmeController'
+  _CREATENVMECONTROLLERREQUEST.fields_by_name['nvme_controller']._options = None
+  _CREATENVMECONTROLLERREQUEST.fields_by_name['nvme_controller']._serialized_options = b'\340A\002'
   _DELETENVMECONTROLLERREQUEST.fields_by_name['name']._options = None
-  _DELETENVMECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NVMeController'
+  _DELETENVMECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NvmeController'
   _LISTNVMECONTROLLERSREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMECONTROLLERSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NVMeController'
+  _LISTNVMECONTROLLERSREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NvmeController'
   _GETNVMECONTROLLERREQUEST.fields_by_name['name']._options = None
-  _GETNVMECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NVMeController'
+  _GETNVMECONTROLLERREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A#\n!opi_api.storage.v1/NvmeController'
   _CREATENVMENAMESPACEREQUEST.fields_by_name['parent']._options = None
-  _CREATENVMENAMESPACEREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeNamespace'
-  _CREATENVMENAMESPACEREQUEST.fields_by_name['nv_me_namespace']._options = None
-  _CREATENVMENAMESPACEREQUEST.fields_by_name['nv_me_namespace']._serialized_options = b'\340A\002'
+  _CREATENVMENAMESPACEREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeNamespace'
+  _CREATENVMENAMESPACEREQUEST.fields_by_name['nvme_namespace']._options = None
+  _CREATENVMENAMESPACEREQUEST.fields_by_name['nvme_namespace']._serialized_options = b'\340A\002'
   _DELETENVMENAMESPACEREQUEST.fields_by_name['name']._options = None
-  _DELETENVMENAMESPACEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeNamespace'
+  _DELETENVMENAMESPACEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeNamespace'
   _LISTNVMENAMESPACESREQUEST.fields_by_name['parent']._options = None
-  _LISTNVMENAMESPACESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeNamespace'
+  _LISTNVMENAMESPACESREQUEST.fields_by_name['parent']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeNamespace'
   _GETNVMENAMESPACEREQUEST.fields_by_name['name']._options = None
-  _GETNVMENAMESPACEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NVMeNamespace'
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeSubsystem']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeSubsystem']._serialized_options = b'\202\323\344\223\002*\"\027/v1/{parent=subsystems}:\017nv_me_subsystem\332A)parent,nv_me_subsystem,nv_me_subsystem_id'
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeSubsystem']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeSubsystem']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeSubsystem']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeSubsystem']._serialized_options = b'\202\323\344\223\00282%/v1/{nv_me_subsystem.name=subsystems}:\017nv_me_subsystem\332A\033nv_me_subsystem,update_mask'
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeSubsystems']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeSubsystems']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeSubsystem']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeSubsystem']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeController']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeController']._serialized_options = b'\202\323\344\223\002+\"\027/v1/{parent=subsystems}:\020nv_me_controller\332A+parent,nv_me_controller,nv_me_controller_id'
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeController']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeController']._serialized_options = b'\202\323\344\223\002%*#/v1/{name=controllers}/{controller}\332A\004name'
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeController']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeController']._serialized_options = b'\202\323\344\223\002:2&/v1/{nv_me_controller.name=subsystems}:\020nv_me_controller\332A\034nv_me_controller,update_mask'
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeControllers']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeControllers']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeController']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeController']._serialized_options = b'\202\323\344\223\002$\022\"/v1/{name=subsystems}/{controller}\332A\004name'
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeNamespace']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['CreateNVMeNamespace']._serialized_options = b'\202\323\344\223\002*\"\027/v1/{parent=subsystems}:\017nv_me_namespace\332A)parent,nv_me_namespace,nv_me_namespace_id'
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeNamespace']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['DeleteNVMeNamespace']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=namespaces}/{namespace}\332A\004name'
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeNamespace']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['UpdateNVMeNamespace']._serialized_options = b'\202\323\344\223\00282%/v1/{nv_me_namespace.name=subsystems}:\017nv_me_namespace\332A\033nv_me_namespace,update_mask'
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeNamespaces']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['ListNVMeNamespaces']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeNamespace']._options = None
-  _FRONTENDNVMESERVICE.methods_by_name['GetNVMeNamespace']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{namespace}\332A\004name'
-  _NVMENAMESPACEPCISTATE._serialized_start=4652
-  _NVMENAMESPACEPCISTATE._serialized_end=4834
-  _NVMENAMESPACEPCIOPERSTATE._serialized_start=4837
-  _NVMENAMESPACEPCIOPERSTATE._serialized_end=4997
+  _GETNVMENAMESPACEREQUEST.fields_by_name['name']._serialized_options = b'\340A\002\372A\"\n opi_api.storage.v1/NvmeNamespace'
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeSubsystem']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeSubsystem']._serialized_options = b'\202\323\344\223\002)\"\027/v1/{parent=subsystems}:\016nvme_subsystem\332A\'parent,nvme_subsystem,nvme_subsystem_id'
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeSubsystem']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeSubsystem']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeSubsystem']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeSubsystem']._serialized_options = b'\202\323\344\223\00262$/v1/{nvme_subsystem.name=subsystems}:\016nvme_subsystem\332A\032nvme_subsystem,update_mask'
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeSubsystems']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeSubsystems']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeSubsystem']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeSubsystem']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{subsystem}\332A\004name'
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeController']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeController']._serialized_options = b'\202\323\344\223\002*\"\027/v1/{parent=subsystems}:\017nvme_controller\332A)parent,nvme_controller,nvme_controller_id'
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeController']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeController']._serialized_options = b'\202\323\344\223\002%*#/v1/{name=controllers}/{controller}\332A\004name'
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeController']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeController']._serialized_options = b'\202\323\344\223\00282%/v1/{nvme_controller.name=subsystems}:\017nvme_controller\332A\033nvme_controller,update_mask'
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeControllers']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeControllers']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeController']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeController']._serialized_options = b'\202\323\344\223\002$\022\"/v1/{name=subsystems}/{controller}\332A\004name'
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeNamespace']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['CreateNvmeNamespace']._serialized_options = b'\202\323\344\223\002)\"\027/v1/{parent=subsystems}:\016nvme_namespace\332A\'parent,nvme_namespace,nvme_namespace_id'
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeNamespace']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['DeleteNvmeNamespace']._serialized_options = b'\202\323\344\223\002#*!/v1/{name=namespaces}/{namespace}\332A\004name'
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeNamespace']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['UpdateNvmeNamespace']._serialized_options = b'\202\323\344\223\00262$/v1/{nvme_namespace.name=subsystems}:\016nvme_namespace\332A\032nvme_namespace,update_mask'
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeNamespaces']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['ListNvmeNamespaces']._serialized_options = b'\202\323\344\223\002\031\022\027/v1/{parent=subsystems}\332A\006parent'
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeNamespace']._options = None
+  _FRONTENDNVMESERVICE.methods_by_name['GetNvmeNamespace']._serialized_options = b'\202\323\344\223\002#\022!/v1/{name=subsystems}/{namespace}\332A\004name'
+  _NVMENAMESPACEPCISTATE._serialized_start=4640
+  _NVMENAMESPACEPCISTATE._serialized_end=4821
+  _NVMENAMESPACEPCIOPERSTATE._serialized_start=4824
+  _NVMENAMESPACEPCIOPERSTATE._serialized_end=4983
   _NVMESUBSYSTEM._serialized_start=273
   _NVMESUBSYSTEM._serialized_end=398
   _NVMESUBSYSTEMSPEC._serialized_start=401
@@ -397,53 +397,53 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _NVMENAMESPACESTATUS._serialized_start=1657
   _NVMENAMESPACESTATUS._serialized_end=1811
   _CREATENVMESUBSYSTEMREQUEST._serialized_start=1814
-  _CREATENVMESUBSYSTEMREQUEST._serialized_end=1993
-  _DELETENVMESUBSYSTEMREQUEST._serialized_start=1995
-  _DELETENVMESUBSYSTEMREQUEST._serialized_end=2102
-  _UPDATENVMESUBSYSTEMREQUEST._serialized_start=2105
-  _UPDATENVMESUBSYSTEMREQUEST._serialized_end=2242
-  _LISTNVMESUBSYSTEMSREQUEST._serialized_start=2244
-  _LISTNVMESUBSYSTEMSREQUEST._serialized_end=2368
-  _LISTNVMESUBSYSTEMSRESPONSE._serialized_start=2370
-  _LISTNVMESUBSYSTEMSRESPONSE._serialized_end=2484
-  _GETNVMESUBSYSTEMREQUEST._serialized_start=2486
-  _GETNVMESUBSYSTEMREQUEST._serialized_end=2567
-  _NVMESUBSYSTEMSTATSREQUEST._serialized_start=2569
-  _NVMESUBSYSTEMSTATSREQUEST._serialized_end=2648
-  _NVMESUBSYSTEMSTATSRESPONSE._serialized_start=2650
-  _NVMESUBSYSTEMSTATSRESPONSE._serialized_end=2726
-  _CREATENVMECONTROLLERREQUEST._serialized_start=2729
-  _CREATENVMECONTROLLERREQUEST._serialized_end=2913
-  _DELETENVMECONTROLLERREQUEST._serialized_start=2915
-  _DELETENVMECONTROLLERREQUEST._serialized_end=3024
-  _UPDATENVMECONTROLLERREQUEST._serialized_start=3027
-  _UPDATENVMECONTROLLERREQUEST._serialized_end=3167
-  _LISTNVMECONTROLLERSREQUEST._serialized_start=3169
-  _LISTNVMECONTROLLERSREQUEST._serialized_end=3295
-  _LISTNVMECONTROLLERSRESPONSE._serialized_start=3297
-  _LISTNVMECONTROLLERSRESPONSE._serialized_end=3414
-  _GETNVMECONTROLLERREQUEST._serialized_start=3416
-  _GETNVMECONTROLLERREQUEST._serialized_end=3499
-  _NVMECONTROLLERSTATSREQUEST._serialized_start=3501
-  _NVMECONTROLLERSTATSREQUEST._serialized_end=3571
-  _NVMECONTROLLERSTATSRESPONSE._serialized_start=3573
-  _NVMECONTROLLERSTATSRESPONSE._serialized_end=3692
-  _CREATENVMENAMESPACEREQUEST._serialized_start=3695
-  _CREATENVMENAMESPACEREQUEST._serialized_end=3874
-  _DELETENVMENAMESPACEREQUEST._serialized_start=3876
-  _DELETENVMENAMESPACEREQUEST._serialized_end=3983
-  _UPDATENVMENAMESPACEREQUEST._serialized_start=3986
-  _UPDATENVMENAMESPACEREQUEST._serialized_end=4123
-  _LISTNVMENAMESPACESREQUEST._serialized_start=4125
-  _LISTNVMENAMESPACESREQUEST._serialized_end=4249
-  _LISTNVMENAMESPACESRESPONSE._serialized_start=4251
-  _LISTNVMENAMESPACESRESPONSE._serialized_end=4365
-  _GETNVMENAMESPACEREQUEST._serialized_start=4367
-  _GETNVMENAMESPACEREQUEST._serialized_end=4448
-  _NVMENAMESPACESTATSREQUEST._serialized_start=4450
-  _NVMENAMESPACESTATSREQUEST._serialized_end=4529
-  _NVMENAMESPACESTATSRESPONSE._serialized_start=4531
-  _NVMENAMESPACESTATSRESPONSE._serialized_end=4649
-  _FRONTENDNVMESERVICE._serialized_start=5000
-  _FRONTENDNVMESERVICE._serialized_end=7981
+  _CREATENVMESUBSYSTEMREQUEST._serialized_end=1991
+  _DELETENVMESUBSYSTEMREQUEST._serialized_start=1993
+  _DELETENVMESUBSYSTEMREQUEST._serialized_end=2100
+  _UPDATENVMESUBSYSTEMREQUEST._serialized_start=2103
+  _UPDATENVMESUBSYSTEMREQUEST._serialized_end=2239
+  _LISTNVMESUBSYSTEMSREQUEST._serialized_start=2241
+  _LISTNVMESUBSYSTEMSREQUEST._serialized_end=2365
+  _LISTNVMESUBSYSTEMSRESPONSE._serialized_start=2367
+  _LISTNVMESUBSYSTEMSRESPONSE._serialized_end=2480
+  _GETNVMESUBSYSTEMREQUEST._serialized_start=2482
+  _GETNVMESUBSYSTEMREQUEST._serialized_end=2563
+  _NVMESUBSYSTEMSTATSREQUEST._serialized_start=2565
+  _NVMESUBSYSTEMSTATSREQUEST._serialized_end=2644
+  _NVMESUBSYSTEMSTATSRESPONSE._serialized_start=2646
+  _NVMESUBSYSTEMSTATSRESPONSE._serialized_end=2722
+  _CREATENVMECONTROLLERREQUEST._serialized_start=2725
+  _CREATENVMECONTROLLERREQUEST._serialized_end=2907
+  _DELETENVMECONTROLLERREQUEST._serialized_start=2909
+  _DELETENVMECONTROLLERREQUEST._serialized_end=3018
+  _UPDATENVMECONTROLLERREQUEST._serialized_start=3021
+  _UPDATENVMECONTROLLERREQUEST._serialized_end=3160
+  _LISTNVMECONTROLLERSREQUEST._serialized_start=3162
+  _LISTNVMECONTROLLERSREQUEST._serialized_end=3288
+  _LISTNVMECONTROLLERSRESPONSE._serialized_start=3290
+  _LISTNVMECONTROLLERSRESPONSE._serialized_end=3406
+  _GETNVMECONTROLLERREQUEST._serialized_start=3408
+  _GETNVMECONTROLLERREQUEST._serialized_end=3491
+  _NVMECONTROLLERSTATSREQUEST._serialized_start=3493
+  _NVMECONTROLLERSTATSREQUEST._serialized_end=3563
+  _NVMECONTROLLERSTATSRESPONSE._serialized_start=3565
+  _NVMECONTROLLERSTATSRESPONSE._serialized_end=3684
+  _CREATENVMENAMESPACEREQUEST._serialized_start=3687
+  _CREATENVMENAMESPACEREQUEST._serialized_end=3864
+  _DELETENVMENAMESPACEREQUEST._serialized_start=3866
+  _DELETENVMENAMESPACEREQUEST._serialized_end=3973
+  _UPDATENVMENAMESPACEREQUEST._serialized_start=3976
+  _UPDATENVMENAMESPACEREQUEST._serialized_end=4112
+  _LISTNVMENAMESPACESREQUEST._serialized_start=4114
+  _LISTNVMENAMESPACESREQUEST._serialized_end=4238
+  _LISTNVMENAMESPACESRESPONSE._serialized_start=4240
+  _LISTNVMENAMESPACESRESPONSE._serialized_end=4353
+  _GETNVMENAMESPACEREQUEST._serialized_start=4355
+  _GETNVMENAMESPACEREQUEST._serialized_end=4436
+  _NVMENAMESPACESTATSREQUEST._serialized_start=4438
+  _NVMENAMESPACESTATSREQUEST._serialized_end=4517
+  _NVMENAMESPACESTATSRESPONSE._serialized_start=4519
+  _NVMENAMESPACESTATSRESPONSE._serialized_end=4637
+  _FRONTENDNVMESERVICE._serialized_start=4986
+  _FRONTENDNVMESERVICE._serialized_end=7949
 # @@protoc_insertion_point(module_scope)

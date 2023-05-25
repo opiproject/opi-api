@@ -50,42 +50,42 @@
     - [NVMfRemoteControllerService](#opi_api-storage-v1-NVMfRemoteControllerService)
   
 - [frontend_nvme_pcie.proto](#frontend_nvme_pcie-proto)
-    - [CreateNVMeControllerRequest](#opi_api-storage-v1-CreateNVMeControllerRequest)
-    - [CreateNVMeNamespaceRequest](#opi_api-storage-v1-CreateNVMeNamespaceRequest)
-    - [CreateNVMeSubsystemRequest](#opi_api-storage-v1-CreateNVMeSubsystemRequest)
-    - [DeleteNVMeControllerRequest](#opi_api-storage-v1-DeleteNVMeControllerRequest)
-    - [DeleteNVMeNamespaceRequest](#opi_api-storage-v1-DeleteNVMeNamespaceRequest)
-    - [DeleteNVMeSubsystemRequest](#opi_api-storage-v1-DeleteNVMeSubsystemRequest)
-    - [GetNVMeControllerRequest](#opi_api-storage-v1-GetNVMeControllerRequest)
-    - [GetNVMeNamespaceRequest](#opi_api-storage-v1-GetNVMeNamespaceRequest)
-    - [GetNVMeSubsystemRequest](#opi_api-storage-v1-GetNVMeSubsystemRequest)
-    - [ListNVMeControllersRequest](#opi_api-storage-v1-ListNVMeControllersRequest)
-    - [ListNVMeControllersResponse](#opi_api-storage-v1-ListNVMeControllersResponse)
-    - [ListNVMeNamespacesRequest](#opi_api-storage-v1-ListNVMeNamespacesRequest)
-    - [ListNVMeNamespacesResponse](#opi_api-storage-v1-ListNVMeNamespacesResponse)
-    - [ListNVMeSubsystemsRequest](#opi_api-storage-v1-ListNVMeSubsystemsRequest)
-    - [ListNVMeSubsystemsResponse](#opi_api-storage-v1-ListNVMeSubsystemsResponse)
-    - [NVMeController](#opi_api-storage-v1-NVMeController)
-    - [NVMeControllerSpec](#opi_api-storage-v1-NVMeControllerSpec)
-    - [NVMeControllerStatsRequest](#opi_api-storage-v1-NVMeControllerStatsRequest)
-    - [NVMeControllerStatsResponse](#opi_api-storage-v1-NVMeControllerStatsResponse)
-    - [NVMeControllerStatus](#opi_api-storage-v1-NVMeControllerStatus)
-    - [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace)
-    - [NVMeNamespaceSpec](#opi_api-storage-v1-NVMeNamespaceSpec)
-    - [NVMeNamespaceStatsRequest](#opi_api-storage-v1-NVMeNamespaceStatsRequest)
-    - [NVMeNamespaceStatsResponse](#opi_api-storage-v1-NVMeNamespaceStatsResponse)
-    - [NVMeNamespaceStatus](#opi_api-storage-v1-NVMeNamespaceStatus)
-    - [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem)
-    - [NVMeSubsystemSpec](#opi_api-storage-v1-NVMeSubsystemSpec)
-    - [NVMeSubsystemStatsRequest](#opi_api-storage-v1-NVMeSubsystemStatsRequest)
-    - [NVMeSubsystemStatsResponse](#opi_api-storage-v1-NVMeSubsystemStatsResponse)
-    - [NVMeSubsystemStatus](#opi_api-storage-v1-NVMeSubsystemStatus)
-    - [UpdateNVMeControllerRequest](#opi_api-storage-v1-UpdateNVMeControllerRequest)
-    - [UpdateNVMeNamespaceRequest](#opi_api-storage-v1-UpdateNVMeNamespaceRequest)
-    - [UpdateNVMeSubsystemRequest](#opi_api-storage-v1-UpdateNVMeSubsystemRequest)
+    - [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest)
+    - [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest)
+    - [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest)
+    - [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest)
+    - [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest)
+    - [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest)
+    - [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest)
+    - [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest)
+    - [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest)
+    - [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest)
+    - [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse)
+    - [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest)
+    - [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse)
+    - [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest)
+    - [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse)
+    - [NvmeController](#opi_api-storage-v1-NvmeController)
+    - [NvmeControllerSpec](#opi_api-storage-v1-NvmeControllerSpec)
+    - [NvmeControllerStatsRequest](#opi_api-storage-v1-NvmeControllerStatsRequest)
+    - [NvmeControllerStatsResponse](#opi_api-storage-v1-NvmeControllerStatsResponse)
+    - [NvmeControllerStatus](#opi_api-storage-v1-NvmeControllerStatus)
+    - [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace)
+    - [NvmeNamespaceSpec](#opi_api-storage-v1-NvmeNamespaceSpec)
+    - [NvmeNamespaceStatsRequest](#opi_api-storage-v1-NvmeNamespaceStatsRequest)
+    - [NvmeNamespaceStatsResponse](#opi_api-storage-v1-NvmeNamespaceStatsResponse)
+    - [NvmeNamespaceStatus](#opi_api-storage-v1-NvmeNamespaceStatus)
+    - [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem)
+    - [NvmeSubsystemSpec](#opi_api-storage-v1-NvmeSubsystemSpec)
+    - [NvmeSubsystemStatsRequest](#opi_api-storage-v1-NvmeSubsystemStatsRequest)
+    - [NvmeSubsystemStatsResponse](#opi_api-storage-v1-NvmeSubsystemStatsResponse)
+    - [NvmeSubsystemStatus](#opi_api-storage-v1-NvmeSubsystemStatus)
+    - [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest)
+    - [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest)
+    - [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest)
   
-    - [NVMeNamespacePciOperState](#opi_api-storage-v1-NVMeNamespacePciOperState)
-    - [NVMeNamespacePciState](#opi_api-storage-v1-NVMeNamespacePciState)
+    - [NvmeNamespacePciOperState](#opi_api-storage-v1-NvmeNamespacePciOperState)
+    - [NvmeNamespacePciState](#opi_api-storage-v1-NvmeNamespacePciState)
   
     - [FrontendNvmeService](#opi_api-storage-v1-FrontendNvmeService)
   
@@ -827,60 +827,60 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-CreateNVMeControllerRequest"></a>
+<a name="opi_api-storage-v1-CreateNvmeControllerRequest"></a>
 
-### CreateNVMeControllerRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
-| nv_me_controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
-| nv_me_controller_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-CreateNVMeNamespaceRequest"></a>
-
-### CreateNVMeNamespaceRequest
+### CreateNvmeControllerRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| nv_me_namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
-| nv_me_namespace_id | [string](#string) |  |  |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
+| nvme_controller_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-CreateNVMeSubsystemRequest"></a>
+<a name="opi_api-storage-v1-CreateNvmeNamespaceRequest"></a>
 
-### CreateNVMeSubsystemRequest
+### CreateNvmeNamespaceRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | parent | [string](#string) |  |  |
-| nv_me_subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
-| nv_me_subsystem_id | [string](#string) |  |  |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
+| nvme_namespace_id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-DeleteNVMeControllerRequest"></a>
+<a name="opi_api-storage-v1-CreateNvmeSubsystemRequest"></a>
 
-### DeleteNVMeControllerRequest
+### CreateNvmeSubsystemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parent | [string](#string) |  |  |
+| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |  |
+| nvme_subsystem_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-DeleteNvmeControllerRequest"></a>
+
+### DeleteNvmeControllerRequest
 
 
 
@@ -894,25 +894,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-DeleteNVMeNamespaceRequest"></a>
+<a name="opi_api-storage-v1-DeleteNvmeNamespaceRequest"></a>
 
-### DeleteNVMeNamespaceRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-DeleteNVMeSubsystemRequest"></a>
-
-### DeleteNVMeSubsystemRequest
+### DeleteNvmeNamespaceRequest
 
 
 
@@ -926,9 +910,25 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-GetNVMeControllerRequest"></a>
+<a name="opi_api-storage-v1-DeleteNvmeSubsystemRequest"></a>
 
-### GetNVMeControllerRequest
+### DeleteNvmeSubsystemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| allow_missing | [bool](#bool) |  | If set to true, and the resource is not found, the request will succeed but no action will be taken on the server |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-GetNvmeControllerRequest"></a>
+
+### GetNvmeControllerRequest
 
 
 
@@ -941,24 +941,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-GetNVMeNamespaceRequest"></a>
+<a name="opi_api-storage-v1-GetNvmeNamespaceRequest"></a>
 
-### GetNVMeNamespaceRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-GetNVMeSubsystemRequest"></a>
-
-### GetNVMeSubsystemRequest
+### GetNvmeNamespaceRequest
 
 
 
@@ -971,9 +956,24 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeControllersRequest"></a>
+<a name="opi_api-storage-v1-GetNvmeSubsystemRequest"></a>
 
-### ListNVMeControllersRequest
+### GetNvmeSubsystemRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-ListNvmeControllersRequest"></a>
+
+### ListNvmeControllersRequest
 
 
 
@@ -988,15 +988,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeControllersResponse"></a>
+<a name="opi_api-storage-v1-ListNvmeControllersResponse"></a>
 
-### ListNVMeControllersResponse
+### ListNvmeControllersResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_controllers | [NVMeController](#opi_api-storage-v1-NVMeController) | repeated |  |
+| nvme_controllers | [NvmeController](#opi_api-storage-v1-NvmeController) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1004,9 +1004,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeNamespacesRequest"></a>
+<a name="opi_api-storage-v1-ListNvmeNamespacesRequest"></a>
 
-### ListNVMeNamespacesRequest
+### ListNvmeNamespacesRequest
 
 
 
@@ -1021,15 +1021,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeNamespacesResponse"></a>
+<a name="opi_api-storage-v1-ListNvmeNamespacesResponse"></a>
 
-### ListNVMeNamespacesResponse
+### ListNvmeNamespacesResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_namespaces | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) | repeated |  |
+| nvme_namespaces | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1037,9 +1037,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeSubsystemsRequest"></a>
+<a name="opi_api-storage-v1-ListNvmeSubsystemsRequest"></a>
 
-### ListNVMeSubsystemsRequest
+### ListNvmeSubsystemsRequest
 
 
 
@@ -1054,15 +1054,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-ListNVMeSubsystemsResponse"></a>
+<a name="opi_api-storage-v1-ListNvmeSubsystemsResponse"></a>
 
-### ListNVMeSubsystemsResponse
+### ListNvmeSubsystemsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_subsystems | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) | repeated |  |
+| nvme_subsystems | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) | repeated |  |
 | next_page_token | [string](#string) |  |  |
 
 
@@ -1070,25 +1070,25 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeController"></a>
+<a name="opi_api-storage-v1-NvmeController"></a>
 
-### NVMeController
+### NvmeController
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NVMeControllerSpec](#opi_api-storage-v1-NVMeControllerSpec) |  |  |
-| status | [NVMeControllerStatus](#opi_api-storage-v1-NVMeControllerStatus) |  |  |
+| spec | [NvmeControllerSpec](#opi_api-storage-v1-NvmeControllerSpec) |  |  |
+| status | [NvmeControllerStatus](#opi_api-storage-v1-NvmeControllerStatus) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-NVMeControllerSpec"></a>
+<a name="opi_api-storage-v1-NvmeControllerSpec"></a>
 
-### NVMeControllerSpec
+### NvmeControllerSpec
 
 
 
@@ -1111,9 +1111,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeControllerStatsRequest"></a>
+<a name="opi_api-storage-v1-NvmeControllerStatsRequest"></a>
 
-### NVMeControllerStatsRequest
+### NvmeControllerStatsRequest
 
 
 
@@ -1126,9 +1126,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeControllerStatsResponse"></a>
+<a name="opi_api-storage-v1-NvmeControllerStatsResponse"></a>
 
-### NVMeControllerStatsResponse
+### NvmeControllerStatsResponse
 
 
 
@@ -1142,9 +1142,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeControllerStatus"></a>
+<a name="opi_api-storage-v1-NvmeControllerStatus"></a>
 
-### NVMeControllerStatus
+### NvmeControllerStatus
 
 
 
@@ -1157,25 +1157,25 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespace"></a>
+<a name="opi_api-storage-v1-NvmeNamespace"></a>
 
-### NVMeNamespace
+### NvmeNamespace
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NVMeNamespaceSpec](#opi_api-storage-v1-NVMeNamespaceSpec) |  |  |
-| status | [NVMeNamespaceStatus](#opi_api-storage-v1-NVMeNamespaceStatus) |  |  |
+| spec | [NvmeNamespaceSpec](#opi_api-storage-v1-NvmeNamespaceSpec) |  |  |
+| status | [NvmeNamespaceStatus](#opi_api-storage-v1-NvmeNamespaceStatus) |  |  |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespaceSpec"></a>
+<a name="opi_api-storage-v1-NvmeNamespaceSpec"></a>
 
-### NVMeNamespaceSpec
+### NvmeNamespaceSpec
 
 
 
@@ -1183,7 +1183,7 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem for this namespace |
-| host_nsid | [int32](#int32) |  | NSID present to the host by the NVMe PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
+| host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
 | eui64 | [int64](#int64) |  | 64bit Extended unique identifier for the namespace mandatory if guid is not specified |
 | uuid | [opi_api.common.v1.Uuid](#opi_api-common-v1-Uuid) |  | Globally unique identifier for the namespace |
@@ -1194,9 +1194,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespaceStatsRequest"></a>
+<a name="opi_api-storage-v1-NvmeNamespaceStatsRequest"></a>
 
-### NVMeNamespaceStatsRequest
+### NvmeNamespaceStatsRequest
 
 
 
@@ -1209,9 +1209,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespaceStatsResponse"></a>
+<a name="opi_api-storage-v1-NvmeNamespaceStatsResponse"></a>
 
-### NVMeNamespaceStatsResponse
+### NvmeNamespaceStatsResponse
 
 
 
@@ -1225,48 +1225,48 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespaceStatus"></a>
+<a name="opi_api-storage-v1-NvmeNamespaceStatus"></a>
 
-### NVMeNamespaceStatus
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| pci_state | [NVMeNamespacePciState](#opi_api-storage-v1-NVMeNamespacePciState) |  | config state of the namespace object, (enabled, disable, deleting) |
-| pci_oper_state | [NVMeNamespacePciOperState](#opi_api-storage-v1-NVMeNamespacePciOperState) |  | Operational state of the namespace object, (connected, disconnected) |
-
-
-
-
-
-
-<a name="opi_api-storage-v1-NVMeSubsystem"></a>
-
-### NVMeSubsystem
+### NvmeNamespaceStatus
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NVMeSubsystemSpec](#opi_api-storage-v1-NVMeSubsystemSpec) |  |  |
-| status | [NVMeSubsystemStatus](#opi_api-storage-v1-NVMeSubsystemStatus) |  |  |
+| pci_state | [NvmeNamespacePciState](#opi_api-storage-v1-NvmeNamespacePciState) |  | config state of the namespace object, (enabled, disable, deleting) |
+| pci_oper_state | [NvmeNamespacePciOperState](#opi_api-storage-v1-NvmeNamespacePciOperState) |  | Operational state of the namespace object, (connected, disconnected) |
 
 
 
 
 
 
-<a name="opi_api-storage-v1-NVMeSubsystemSpec"></a>
+<a name="opi_api-storage-v1-NvmeSubsystem"></a>
 
-### NVMeSubsystemSpec
+### NvmeSubsystem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| spec | [NvmeSubsystemSpec](#opi_api-storage-v1-NvmeSubsystemSpec) |  |  |
+| status | [NvmeSubsystemStatus](#opi_api-storage-v1-NvmeSubsystemStatus) |  |  |
+
+
+
+
+
+
+<a name="opi_api-storage-v1-NvmeSubsystemSpec"></a>
+
+### NvmeSubsystemSpec
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
-| nqn | [string](#string) |  | NVMe subsystem NQN to which the controller belongs Refer to the NQN format in the NVMe base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes |
+| nqn | [string](#string) |  | Nvme subsystem NQN to which the controller belongs Refer to the NQN format in the Nvme base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes |
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |
 | max_namespaces | [int64](#int64) |  | maximum namespaces within a subsystem |
@@ -1276,9 +1276,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeSubsystemStatsRequest"></a>
+<a name="opi_api-storage-v1-NvmeSubsystemStatsRequest"></a>
 
-### NVMeSubsystemStatsRequest
+### NvmeSubsystemStatsRequest
 
 
 
@@ -1291,9 +1291,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeSubsystemStatsResponse"></a>
+<a name="opi_api-storage-v1-NvmeSubsystemStatsResponse"></a>
 
-### NVMeSubsystemStatsResponse
+### NvmeSubsystemStatsResponse
 
 
 
@@ -1306,9 +1306,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-NVMeSubsystemStatus"></a>
+<a name="opi_api-storage-v1-NvmeSubsystemStatus"></a>
 
-### NVMeSubsystemStatus
+### NvmeSubsystemStatus
 
 
 
@@ -1322,15 +1322,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-UpdateNVMeControllerRequest"></a>
+<a name="opi_api-storage-v1-UpdateNvmeControllerRequest"></a>
 
-### UpdateNVMeControllerRequest
+### UpdateNvmeControllerRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_controller | [NVMeController](#opi_api-storage-v1-NVMeController) |  |  |
+| nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
@@ -1338,15 +1338,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-UpdateNVMeNamespaceRequest"></a>
+<a name="opi_api-storage-v1-UpdateNvmeNamespaceRequest"></a>
 
-### UpdateNVMeNamespaceRequest
+### UpdateNvmeNamespaceRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_namespace | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |  |
+| nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
@@ -1354,15 +1354,15 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 
 
-<a name="opi_api-storage-v1-UpdateNVMeSubsystemRequest"></a>
+<a name="opi_api-storage-v1-UpdateNvmeSubsystemRequest"></a>
 
-### UpdateNVMeSubsystemRequest
+### UpdateNvmeSubsystemRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| nv_me_subsystem | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |  |
+| nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |  |
 | update_mask | [google.protobuf.FieldMask](#google-protobuf-FieldMask) |  | The list of fields to update. |
 
 
@@ -1372,27 +1372,27 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
  
 
 
-<a name="opi_api-storage-v1-NVMeNamespacePciOperState"></a>
+<a name="opi_api-storage-v1-NvmeNamespacePciOperState"></a>
 
-### NVMeNamespacePciOperState
+### NvmeNamespacePciOperState
 Namespace PCIe operational states
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NV_ME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED | 0 | unspecified |
+| NVME_NAMESPACE_PCI_OPER_STATE_UNSPECIFIED | 0 | unspecified |
 | NVME_NAMESPACE_PCI_OPER_STATE_ONLINE | 1 | namespace is online and operational |
 | NVME_NAMESPACE_PCI_OPER_STATE_OFFLINE | 2 | namespace is offline |
 
 
 
-<a name="opi_api-storage-v1-NVMeNamespacePciState"></a>
+<a name="opi_api-storage-v1-NvmeNamespacePciState"></a>
 
-### NVMeNamespacePciState
+### NvmeNamespacePciState
 Namespace  Administrative States
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NV_ME_NAMESPACE_PCI_STATE_UNSPECIFIED | 0 | unspecified |
+| NVME_NAMESPACE_PCI_STATE_UNSPECIFIED | 0 | unspecified |
 | NVME_NAMESPACE_PCI_STATE_DISABLED | 1 | namespace disabled state |
 | NVME_NAMESPACE_PCI_STATE_ENABLED | 2 | namespace enabled state |
 | NVME_NAMESPACE_PCI_STATE_DELETING | 3 | namespace being deleted |
@@ -1406,28 +1406,28 @@ Namespace  Administrative States
 <a name="opi_api-storage-v1-FrontendNvmeService"></a>
 
 ### FrontendNvmeService
-Front End (host-facing) APIs. Mostly used for NVMe/PCIe emulation and host presentation.
+Front End (host-facing) APIs. Mostly used for Nvme/PCIe emulation and host presentation.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| CreateNVMeSubsystem | [CreateNVMeSubsystemRequest](#opi_api-storage-v1-CreateNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
-| DeleteNVMeSubsystem | [DeleteNVMeSubsystemRequest](#opi_api-storage-v1-DeleteNVMeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNVMeSubsystem | [UpdateNVMeSubsystemRequest](#opi_api-storage-v1-UpdateNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
-| ListNVMeSubsystems | [ListNVMeSubsystemsRequest](#opi_api-storage-v1-ListNVMeSubsystemsRequest) | [ListNVMeSubsystemsResponse](#opi_api-storage-v1-ListNVMeSubsystemsResponse) |  |
-| GetNVMeSubsystem | [GetNVMeSubsystemRequest](#opi_api-storage-v1-GetNVMeSubsystemRequest) | [NVMeSubsystem](#opi_api-storage-v1-NVMeSubsystem) |  |
-| NVMeSubsystemStats | [NVMeSubsystemStatsRequest](#opi_api-storage-v1-NVMeSubsystemStatsRequest) | [NVMeSubsystemStatsResponse](#opi_api-storage-v1-NVMeSubsystemStatsResponse) |  |
-| CreateNVMeController | [CreateNVMeControllerRequest](#opi_api-storage-v1-CreateNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
-| DeleteNVMeController | [DeleteNVMeControllerRequest](#opi_api-storage-v1-DeleteNVMeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNVMeController | [UpdateNVMeControllerRequest](#opi_api-storage-v1-UpdateNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
-| ListNVMeControllers | [ListNVMeControllersRequest](#opi_api-storage-v1-ListNVMeControllersRequest) | [ListNVMeControllersResponse](#opi_api-storage-v1-ListNVMeControllersResponse) |  |
-| GetNVMeController | [GetNVMeControllerRequest](#opi_api-storage-v1-GetNVMeControllerRequest) | [NVMeController](#opi_api-storage-v1-NVMeController) |  |
-| NVMeControllerStats | [NVMeControllerStatsRequest](#opi_api-storage-v1-NVMeControllerStatsRequest) | [NVMeControllerStatsResponse](#opi_api-storage-v1-NVMeControllerStatsResponse) |  |
-| CreateNVMeNamespace | [CreateNVMeNamespaceRequest](#opi_api-storage-v1-CreateNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
-| DeleteNVMeNamespace | [DeleteNVMeNamespaceRequest](#opi_api-storage-v1-DeleteNVMeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
-| UpdateNVMeNamespace | [UpdateNVMeNamespaceRequest](#opi_api-storage-v1-UpdateNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
-| ListNVMeNamespaces | [ListNVMeNamespacesRequest](#opi_api-storage-v1-ListNVMeNamespacesRequest) | [ListNVMeNamespacesResponse](#opi_api-storage-v1-ListNVMeNamespacesResponse) |  |
-| GetNVMeNamespace | [GetNVMeNamespaceRequest](#opi_api-storage-v1-GetNVMeNamespaceRequest) | [NVMeNamespace](#opi_api-storage-v1-NVMeNamespace) |  |
-| NVMeNamespaceStats | [NVMeNamespaceStatsRequest](#opi_api-storage-v1-NVMeNamespaceStatsRequest) | [NVMeNamespaceStatsResponse](#opi_api-storage-v1-NVMeNamespaceStatsResponse) |  |
+| CreateNvmeSubsystem | [CreateNvmeSubsystemRequest](#opi_api-storage-v1-CreateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
+| DeleteNvmeSubsystem | [DeleteNvmeSubsystemRequest](#opi_api-storage-v1-DeleteNvmeSubsystemRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNvmeSubsystem | [UpdateNvmeSubsystemRequest](#opi_api-storage-v1-UpdateNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
+| ListNvmeSubsystems | [ListNvmeSubsystemsRequest](#opi_api-storage-v1-ListNvmeSubsystemsRequest) | [ListNvmeSubsystemsResponse](#opi_api-storage-v1-ListNvmeSubsystemsResponse) |  |
+| GetNvmeSubsystem | [GetNvmeSubsystemRequest](#opi_api-storage-v1-GetNvmeSubsystemRequest) | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |
+| NvmeSubsystemStats | [NvmeSubsystemStatsRequest](#opi_api-storage-v1-NvmeSubsystemStatsRequest) | [NvmeSubsystemStatsResponse](#opi_api-storage-v1-NvmeSubsystemStatsResponse) |  |
+| CreateNvmeController | [CreateNvmeControllerRequest](#opi_api-storage-v1-CreateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
+| DeleteNvmeController | [DeleteNvmeControllerRequest](#opi_api-storage-v1-DeleteNvmeControllerRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNvmeController | [UpdateNvmeControllerRequest](#opi_api-storage-v1-UpdateNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
+| ListNvmeControllers | [ListNvmeControllersRequest](#opi_api-storage-v1-ListNvmeControllersRequest) | [ListNvmeControllersResponse](#opi_api-storage-v1-ListNvmeControllersResponse) |  |
+| GetNvmeController | [GetNvmeControllerRequest](#opi_api-storage-v1-GetNvmeControllerRequest) | [NvmeController](#opi_api-storage-v1-NvmeController) |  |
+| NvmeControllerStats | [NvmeControllerStatsRequest](#opi_api-storage-v1-NvmeControllerStatsRequest) | [NvmeControllerStatsResponse](#opi_api-storage-v1-NvmeControllerStatsResponse) |  |
+| CreateNvmeNamespace | [CreateNvmeNamespaceRequest](#opi_api-storage-v1-CreateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
+| DeleteNvmeNamespace | [DeleteNvmeNamespaceRequest](#opi_api-storage-v1-DeleteNvmeNamespaceRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| UpdateNvmeNamespace | [UpdateNvmeNamespaceRequest](#opi_api-storage-v1-UpdateNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
+| ListNvmeNamespaces | [ListNvmeNamespacesRequest](#opi_api-storage-v1-ListNvmeNamespacesRequest) | [ListNvmeNamespacesResponse](#opi_api-storage-v1-ListNvmeNamespacesResponse) |  |
+| GetNvmeNamespace | [GetNvmeNamespaceRequest](#opi_api-storage-v1-GetNvmeNamespaceRequest) | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |
+| NvmeNamespaceStats | [NvmeNamespaceStatsRequest](#opi_api-storage-v1-NvmeNamespaceStatsRequest) | [NvmeNamespaceStatsResponse](#opi_api-storage-v1-NvmeNamespaceStatsResponse) |  |
 
  
 
