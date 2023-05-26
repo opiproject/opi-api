@@ -26,10 +26,10 @@ import "google/protobuf/field_mask.proto";
 service FrontendNvmeService {
     rpc CreateNvmeSubsystem (CreateNvmeSubsystemRequest) returns (NvmeSubsystem) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "nvme_subsystem"
         };
-        option (google.api.method_signature) = "parent,nvme_subsystem,nvme_subsystem_id";
+        option (google.api.method_signature) = "nvme_subsystem,nvme_subsystem_id";
     }
     rpc DeleteNvmeSubsystem (DeleteNvmeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -60,10 +60,10 @@ service FrontendNvmeService {
 
     rpc CreateNvmeController (CreateNvmeControllerRequest) returns (NvmeController) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "nvme_controller"
         };
-        option (google.api.method_signature) = "parent,nvme_controller,nvme_controller_id";
+        option (google.api.method_signature) = "nvme_controller,nvme_controller_id";
     }
     rpc DeleteNvmeController (DeleteNvmeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -94,10 +94,10 @@ service FrontendNvmeService {
 
     rpc CreateNvmeNamespace (CreateNvmeNamespaceRequest) returns (NvmeNamespace) {
         option (google.api.http) = {
-            post: "/v1/{parent=subsystems}"
+            post: "/v1/volumes"
             body: "nvme_namespace"
         };
-        option (google.api.method_signature) = "parent,nvme_namespace,nvme_namespace_id";
+        option (google.api.method_signature) = "nvme_namespace,nvme_namespace_id";
     }
     rpc DeleteNvmeNamespace (DeleteNvmeNamespaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
@@ -128,13 +128,8 @@ service FrontendNvmeService {
 }
 
 message NvmeSubsystem {
-  NvmeSubsystemSpec   spec   = 1;
-  NvmeSubsystemStatus status = 2;
-}
-
-message NvmeSubsystemSpec {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeSubsystemSpec"
+        type: "storage.opiproject.org/NvmeSubsystem"
         pattern: "volumes/{volume}"
     };
 
@@ -143,19 +138,27 @@ message NvmeSubsystemSpec {
     // user can only set {resource}_id on the Create request object
     string name = 1;
 
+    // spec holds configurable values
+    NvmeSubsystemSpec   spec   = 2;
+
+    // stats holds server generated values
+    NvmeSubsystemStatus status = 3;
+}
+
+message NvmeSubsystemSpec {
     // Nvme subsystem NQN to which the controller belongs
     // Refer to the NQN format in the Nvme base specifications, must not
     // exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
-    string nqn = 2;
+    string nqn = 1;
 
     // serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
-    string serial_number = 3;
+    string serial_number = 2;
 
     // model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
-    string model_number = 4;
+    string model_number = 3;
 
     // maximum namespaces within a subsystem
-    int64 max_namespaces = 5;
+    int64 max_namespaces = 4;
 }
 
 message NvmeSubsystemStatus {
@@ -167,13 +170,8 @@ message NvmeSubsystemStatus {
 }
 
 message NvmeController {
-  NvmeControllerSpec   spec   = 1;
-  NvmeControllerStatus status = 2;
-}
-
-message NvmeControllerSpec {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeControllerSpec"
+        type: "storage.opiproject.org/NvmeController"
         pattern: "volumes/{volume}"
     };
 
@@ -182,41 +180,49 @@ message NvmeControllerSpec {
     // user can only set {resource}_id on the Create request object
     string name = 1;
 
+    // spec holds configurable values
+    NvmeControllerSpec   spec   = 2;
+
+    // stats holds server generated values
+    NvmeControllerStatus status = 3;
+}
+
+message NvmeControllerSpec {
     // subsystem controller id range: 0 to 65535.
     // must not be reused under the same subsystem
-    int32 nvme_controller_id  = 2;
+    int32 nvme_controller_id  = 1;
 
     // subsystem information
-    common.v1.ObjectKey subsystem_id = 3;
+    common.v1.ObjectKey subsystem_id = 2;
 
     // xPU's PCI ID for the controller
-    PciEndpoint pcie_id = 4;
+    PciEndpoint pcie_id = 3;
 
     // maximum number of host submission queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_nsq = 5;
+    int32 max_nsq = 4;
 
     // maximum number of host completion queues allowed.
     // If not set, the xPU will provide a default.
-    int32 max_ncq = 6;
-  
+    int32 max_ncq = 5;
+
     // maximum number of submission queue entries per submission queue, as a power of 2.
     // default value as per spec is 6
-    int32 sqes = 7;
+    int32 sqes = 6;
 
     // maximum number of completion queue entries per completion queue, as a power of 2.
     // default value as per spec is 4
-    int32 cqes = 8;
+    int32 cqes = 7;
 
     // maximum Number of namespaces that will be provisioned under
     // the controller.
-    int32 max_namespaces = 9;
+    int32 max_namespaces = 8;
 
     // min QoS limits for the controller
-    QosLimit min_limit = 10;
+    QosLimit min_limit = 9;
 
     // max QoS limits for the controller
-    QosLimit max_limit = 11;
+    QosLimit max_limit = 10;
 }
 
 message NvmeControllerStatus {
@@ -225,13 +231,8 @@ message NvmeControllerStatus {
 }
 
 message NvmeNamespace {
-  NvmeNamespaceSpec   spec   = 1;
-  NvmeNamespaceStatus status = 2;
-}
-
-message NvmeNamespaceSpec {
     option (google.api.resource) = {
-        type: "storage.opiproject.org/NvmeNamespaceSpec"
+        type: "storage.opiproject.org/NvmeNamespace"
         pattern: "volumes/{volume}"
     };
 
@@ -240,27 +241,35 @@ message NvmeNamespaceSpec {
     // user can only set {resource}_id on the Create request object
     string name = 1;
 
+    // spec holds configurable values
+    NvmeNamespaceSpec   spec   = 2;
+
+    // stats holds server generated values
+    NvmeNamespaceStatus status = 3;
+}
+
+message NvmeNamespaceSpec {
     // subsystem for this namespace
-    common.v1.ObjectKey subsystem_id = 2;
+    common.v1.ObjectKey subsystem_id = 1;
 
     // NSID present to the host by the Nvme PCIe controller.
     // If not provided, then the controller will assign an unused NSID
     // within the max namespace range - auto assigned nsid may not work
     // for live migration
-    int32 host_nsid = 4;
+    int32 host_nsid = 2;
 
     // Globally unique identifier for the namespace
-    string nguid = 7;
+    string nguid = 3;
 
     // 64bit Extended unique identifier for the namespace
     // mandatory if guid is not specified
-    int64 eui64 = 8;
+    int64 eui64 = 4;
 
     // Globally unique identifier for the namespace
-    common.v1.Uuid uuid = 9;
+    common.v1.Uuid uuid = 5;
 
     // The back/middle-end volume to back this namespace.
-    common.v1.ObjectKey volume_id = 10;
+    common.v1.ObjectKey volume_id = 6;
 }
 
 message NvmeNamespaceStatus {
@@ -272,10 +281,6 @@ message NvmeNamespaceStatus {
 }
 
 message CreateNvmeSubsystemRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeSubsystem"
-    ];
     NvmeSubsystem nvme_subsystem = 2 [(google.api.field_behavior) = REQUIRED];
     string nvme_subsystem_id = 3;
 }
@@ -326,10 +331,6 @@ message NvmeSubsystemStatsResponse {
 }
 
 message CreateNvmeControllerRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeController"
-    ];
     NvmeController nvme_controller = 2 [(google.api.field_behavior) = REQUIRED];
     string nvme_controller_id = 3;
 }
@@ -381,10 +382,6 @@ message NvmeControllerStatsResponse {
 }
 
 message CreateNvmeNamespaceRequest {
-    string parent = 1 [
-        (google.api.field_behavior) = REQUIRED,
-        (google.api.resource_reference).type = "opi_api.storage.v1/NvmeNamespace"
-    ];
     NvmeNamespace nvme_namespace = 2 [(google.api.field_behavior) = REQUIRED];
     string nvme_namespace_id = 3;
 }
