@@ -10,47 +10,51 @@ option java_outer_classname = "InterfaceProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // interface - ethernet interface (layer2 and layer3 configuration)
 message Interface {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/interface"
+    pattern: "interfaces/{interface}"
+  };
+  // interface key
+  string name = 1;
   // interface configuration
-  InterfaceSpec   spec     = 1;
+  InterfaceSpec spec = 2;
   // interface status
-  InterfaceStatus status   = 2;
+  InterfaceStatus status = 3;
 }
 
 // InterfaceSpec is used to add or update of an interface
 message InterfaceSpec {
-  // interface key
-  common.v1.ObjectKey id = 1;
   // interface number is numerical port identifier starting from 1 range [1...max-ports#]
-  int32 ifid = 2;
+  int32 ifid = 1;
   // admin state - default up
   // for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
-  IfStatus admin_status = 3;
+  IfStatus admin_status = 2;
   // interface type specific configuration
   oneof ifinfo {
     // uplink specific configuration
-    UplinkSpec uplink_spec = 4;
+    UplinkSpec uplink_spec = 3;
     // uplink port-channel configuration
-    UplinkPCSpec uplink_pc_spec = 5;
+    UplinkPCSpec uplink_pc_spec = 4;
     // layer3 interface configuration
-    L3IfSpec l3_if_spec = 6;
+    L3IfSpec l3_if_spec = 5;
     // loopback interface configuration
-    LoopbackIfSpec loopback_if_spec  = 7;
+    LoopbackIfSpec loopback_if_spec  = 6;
     // control interface configuration
-    ControlIfSpec control_if_spec   = 8;
+    ControlIfSpec control_if_spec   = 7;
     // host facing interface's configuration
-    HostIfSpec host_if_spec = 9;
+    HostIfSpec host_if_spec = 8;
   }
 }
 
 // Uplink configuration; interface type IF_TYPE_UPLINK
 message UplinkSpec {
   // physical port id corresponding to this interface
-  common.v1.ObjectKey port_id = 1;
+  string port_name_ref = 1;
   // native vlan-id, untagged rx/tx vlan id
   int32 native_vlanid = 2;
 }
@@ -69,11 +73,11 @@ message UplinkPCSpec {
 // L3 interface configuration
 message L3IfSpec {
   // vpc/vrf this L3 interface belongs to
-  common.v1.ObjectKey vpc_id = 1;
-  // Physical port of this L3 interface
-  common.v1.ObjectKey port_id = 3;
+  string vpc_name_ref = 1;
   // IP address, prefix of this L3 interface
   repeated network.opinetcommon.v1alpha1.IPPrefix prefix = 2;
+  // Physical port of this L3 interface
+  string port_name_ref = 3;
   // encap used for packet rewrites if this is a L3 sub interface
   network.opinetcommon.v1alpha1.Encap encap = 4;
   // MAC address of this L3 interface; can be set only once

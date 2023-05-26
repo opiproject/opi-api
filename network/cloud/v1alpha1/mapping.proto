@@ -10,58 +10,62 @@ option java_outer_classname = "MappingProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // mapping object
 message Mapping {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/mapping"
+    pattern: "mappings/{mapping}"
+  };
+  // unique mapping id
+  string name = 1;
   // configuration
-  MappingSpec spec = 1;
+  MappingSpec spec = 2;
   // status
-  MappingStatus status = 2;
+  MappingStatus status = 3;
 }
 
 // MappingSpec captures configuration of each mapping
 // NOTE: Mapping is either on the local host/TEP or remote TEP
 message MappingSpec {
-  // unique mapping id
-  common.v1.ObjectKey id = 1;
   // along with uuid, either IPKey or MACKey attrs
   oneof mac_or_ip {
     // IP mapping key
-    L3MappingKey ip_key = 2;
+    L3MappingKey ip_key = 1;
     // MAC mapping key
-    L2MappingKey mac_key = 3;
+    L2MappingKey mac_key = 2;
   }
   // subnet this mapping is in
-  common.v1.ObjectKey subnet_id = 4;
+  string subnet_name_ref = 3;
   // mapping's destination information
   oneof dstinfo {
       // if IP is that of local vnic, corresponding vnic id
       // this is mandatory attribute for local IP mappings
-      common.v1.ObjectKey vnic_id = 5;
+      string vnic_name_ref = 4;
       // Tunnel ID of the remote TEP for remote mapping
       // this is mandatory attribute for remote MAC/IP mappings for
       // non-ECMP cases
-      common.v1.ObjectKey  tunnel_id = 6;
+      string  tunnel_name_ref = 5;
       // overlay nexthop/TEP group for remote mappings
       // this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-      common.v1.ObjectKey nh_group_id = 7;
+      string nh_group_name_ref = 6;
   }
   // overlay MAC address of this mapping
-  bytes mac_addr = 8;
+  bytes mac_addr = 7;
   // fabric encap information specific to this mapping, if any
-  network.opinetcommon.v1alpha1.Encap  encap = 9;
+  network.opinetcommon.v1alpha1.Encap  encap = 8;
   // public IP, if overlay IP has corresponding public IP
-  network.opinetcommon.v1alpha1.IPAddress public_ip = 10;
+  network.opinetcommon.v1alpha1.IPAddress public_ip = 9;
   // tag/label/security group of this IP mapping, these tags/labels/SGs can be
   // used in defining security policy rules
   // range: 1 - 4294967294
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: the allowed values need it to be uint32. --)
-  repeated uint32 tags = 11;
+  repeated uint32 tags = 10;
   // type of the IP mapping endpoint, default is vpc mapping
-  MappingType type = 12;
+  MappingType type = 11;
 }
 
 // operational status of a mapping
@@ -83,7 +87,7 @@ message MappingStatus {
 // L3MappingKey is the 2nd-ary key of the remote IP mapping
 message L3MappingKey {
   // virtual private cloud of the IP mapping
-  common.v1.ObjectKey vpc_id  = 1;
+  string vpc_name_ref  = 1;
   // private/overlay IP of the mapping
   network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
 }
@@ -91,7 +95,7 @@ message L3MappingKey {
 // L2MappingKey is the 2nd-ary key of the remote MAC mapping
 message L2MappingKey {
   // subnet id of this MAC
-  common.v1.ObjectKey subnet_id = 1;
+  string subnet_name_ref = 1;
   // MAC address of this mapping
   bytes mac_address = 2;
 }
@@ -115,7 +119,7 @@ message MappingLookupFilter {
     // MAC address
     bytes mac_address = 7;
     // VPC id
-    common.v1.ObjectKey vpc_id = 8;
+    string vpc_name_ref = 8;
   }
 }
 

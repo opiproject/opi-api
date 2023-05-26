@@ -10,23 +10,27 @@ option java_outer_classname = "RouteProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // route table object
 message RouteTable {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/routetable"
+    pattern: "routetables/{routetable}"
+  };
+  // unique route table id
+  string name = 1;
   // route table configuration
-  RouteTableSpec spec = 3;
+  RouteTableSpec spec = 2;
   // route table status
-  RouteTableStatus status = 4;
+  RouteTableStatus status = 3;
 }
 
 // Route table - a prioritized list of static routes/prefixes used for
 // forwarding traffic within a VPC, across VPCs or to the outside world
 // Individual routes within the route table can be updated using Route object
 message RouteTableSpec {
-  // globally unique route table id
-  common.v1.ObjectKey id = 1;
   // IP address family
   network.opinetcommon.v1alpha1.IpAf af = 2;
   // enable or disable priority based routing for the route table
@@ -40,7 +44,7 @@ message RouteTableSpec {
 // route configuration information
 message RouteInfo {
   // unique id of this specific route (used for specific route update)
-  common.v1.ObjectKey id = 1;
+  string route_id = 1;
   // route attributes
   RouteAttrs attrs = 2;
 }
@@ -101,16 +105,16 @@ message RouteAttrs {
     // overlay IP nexthop information for this route
     OverlayNextHopIPInfo overlay_nh_ip_info = 5;
     // nexthop for this route
-    common.v1.ObjectKey nexthop_id = 6;
+    string nexthop_name_ref = 6;
     // ECMP nexthop for this route
-    common.v1.ObjectKey nh_group_id = 7;
+    string nh_group_name_ref = 7;
     // peer's VPC nexthop info, in case of VPC peering
     VPCPeerNhInfo vpc_nh_info = 8;
     // Tunnel this prefix is pointing to
-    common.v1.ObjectKey tunnel_id = 9;
+    string tunnel_name_ref = 9;
     // if next hop is a route table: used to create exceptions in hierarchal
     // routing. next hop can't point to same route table (causing rout lookup loop)
-    common.v1.ObjectKey route_table_id = 10;
+    string route_table_name_ref = 10;
     // EvalMapping is set in cases where mapping lookup result will provided the
     // forwarding information, this is useful to punch holes in some routes
     // that encompass sub-prefixes that require different forwarding behavior
@@ -134,9 +138,9 @@ message RouteAttrs {
 // lookup in the route table.
 message VPCPeerNhInfo {
   // peer VPC's id
-  common.v1.ObjectKey vpc_id         = 1;
+  string vpc_name_ref = 1;
   // route table id in the peer VPC
-  common.v1.ObjectKey route_table_id = 2;
+  string route_table_name_ref = 2;
 }
 
 // OverlayNextHopIPInfo captures list of overlay IP destinations for a given
@@ -152,33 +156,37 @@ message OverlayNextHopIPInfo {
   // to the overlay nexthop IP picked
   repeated bytes nexthop_mac = 2;
   // if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set
-  common.v1.ObjectKey vpc_id = 3;
+  string vpc_name_ref = 3;
 }
 
 // route identifier
 message RouteId {
   // unique route id (this id is not scoped under VPC or subnet)
-  common.v1.ObjectKey id = 1;
+  string route_id = 1;
   // route table this route belongs to
-  common.v1.ObjectKey route_table_id = 2;
+  string route_table_name_ref = 2;
 }
 
 // route object
 message Route {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/route"
+    pattern: "routes/{route}"
+  };
+  // unique route table id
+  string name = 1;
   // route configuration
-  RouteSpec     spec     = 3;
+  RouteSpec spec = 2;
   // route status
-  RouteStatus   status   = 4;
+  RouteStatus status = 3;
 }
 
 // route specification
 message RouteSpec {
-  // globally unique route table id
-  common.v1.ObjectKey id = 1;
   // route table this route belongs to
-  common.v1.ObjectKey route_table_id = 2;
+  string route_table_name_ref = 1;
   // route configuration
-  RouteAttrs attrs = 3;
+  RouteAttrs attrs = 2;
 }
 
 // operational status of the route, if any

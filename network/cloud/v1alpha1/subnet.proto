@@ -10,23 +10,27 @@ option java_outer_classname = "SubnetProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // subnet object
 message Subnet {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/subnet"
+    pattern: "subnets/{subnet}"
+  };
+  // unique identifier of the subnet
+  string name = 1;
   // configuration
-  SubnetSpec spec = 3;
+  SubnetSpec spec = 2;
   // status
-  SubnetStatus status = 4;
+  SubnetStatus status = 3;
 }
 
 // SubnetSpec captures subnet specific configuration
 message SubnetSpec {
-  // unique identifier of the subnet
-  common.v1.ObjectKey id = 1;
   // virtual private cloud this subnet is belongs to
-  common.v1.ObjectKey vpc_id = 2;
+  string vpc_name_ref = 2;
   // IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
   network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 3;
   // IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
@@ -43,21 +47,21 @@ message SubnetSpec {
   // the device carry this MAC as source MAC
   bytes virtual_router_mac = 7;
   // identifier of the IPv4 route table to be used
-  common.v1.ObjectKey v4_route_table_id = 8;
+  string v4_route_table_name_ref = 8;
   // identifier of the IPv6 route table to be used, if any
-  common.v1.ObjectKey v6_router_table_id = 9;
+  string v6_route_table_name_ref = 9;
   // security policies per subnet:
   // - all vnics in this subnet will inherit the policies configured under subnet
   // - multiple policies per vnic per direction (ingress/egress) can be specified
   // - an implementation may limit the #policies per subnet in each direction
   // identifier of ingress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey ingess_v4_security_policy_id = 10;
+  repeated string ingess_v4_security_policy_name_ref = 10;
   // identifier of ingress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 11;
+  repeated string ingress_v6_security_policy_name_ref = 11;
   // identifier of egress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v4_security_policy_id = 12;
+  repeated string egress_v4_security_policy_name_ref = 12;
   // identifier of egress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v6_security_policy_id = 13;
+  repeated string egress_v6_security_policy_name_ref = 13;
   // AccessEncap is either ENCAP_TYPE_NONE (untagged) or ENCAP_TYPE_DOT1Q
   // and when AccessEncap is ENCAP_TYPE_DOT1Q, multiple vnics can send
   // traffic with same DOT1Q tag, in which case vnics are identified with
@@ -80,7 +84,7 @@ message SubnetSpec {
   // when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
   // present, subnet needs to be attached to a PF/VF (aka. host interface),
   // HostIf is list of such VF/PFs
-  repeated common.v1.ObjectKey host_interface_id = 16;
+  repeated string host_interface_name_ref = 16;
   // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
   // header or in the Traffic Class field of IPv6 outer header, this value, if
   // non-zero, will be used as-is (i.e., not interpreted) during encap time by
@@ -91,10 +95,10 @@ message SubnetSpec {
   bool connected = 19;
   // default ingress stateful security policy for this subnet
   // if configured, is the 1st policy evaluated before other security policies on a given vnic
-  common.v1.ObjectKey ingress_default_sg_policy = 20;
+  string ingress_default_sg_policy_name_ref = 20;
   // default egress stateful security policy for this subnet
   // if configured, is the 1st policy evaluated before other security polices on a given vnic
-  common.v1.ObjectKey  egress_default_sg_policy = 21;
+  string  egress_default_sg_policy_name_ref = 21;
   // remote_subnet, if set, indicates that the subnet does not have any IP
   // mappings in local pod and such subnets are used to program all remote
   // pod IP mappings behind it

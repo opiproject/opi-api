@@ -60,158 +60,158 @@ service CloudInfraService {
     // device apis
     rpc CreateDevice (CreateDeviceRequest) returns (Device) {
         option (google.api.http) = {
-            post: "/v1/{parent=devices}"
+            post: "/v1/devices"
             body: "device"
         };
-        option (google.api.method_signature) = "parent,device,device_id";
+        option (google.api.method_signature) = "device,device_id";
     }
     rpc DeleteDevice (DeleteDeviceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=devices}/{device}"
+            delete: "/v1/{name=devices}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateDevice (UpdateDeviceRequest) returns (Device) {
         option (google.api.http) = {
-            patch: "/v1/{device.id=devices}"
+            patch: "/v1/{name=devices}/*"
             body: "device"
         };
         option (google.api.method_signature) = "device, update_mask";
     }
     rpc ListDevices (ListDevicesRequest) returns (ListDevicesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=devices}"
+            get: "/v1/devices"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetDevice (GetDeviceRequest) returns (Device) {
         option (google.api.http) = {
-            get: "/v1/{id=devices}/{device}"
+            get: "/v1/{name=devices}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // port apis
     rpc UpdatePort (UpdatePortRequest) returns (Port) {
         option (google.api.http) = {
-            patch: "/v1/{port.id=ports}"
+            patch: "/v1/{name=ports}/*"
             body: "port"
         };
         option (google.api.method_signature) = "port, update_mask";
     }
     rpc ListPorts (ListPortsRequest) returns (ListPortsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=ports}"
+            get: "/v1/ports"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetPort (GetPortRequest) returns (Port) {
         option (google.api.http) = {
-            get: "/v1/{id=ports}/{port}"
+            get: "/v1/{name=ports}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // vnic apis
     rpc CreateVnic (CreateVnicRequest) returns (Vnic) {
         option (google.api.http) = {
-            post: "/v1/{parent=vnics}"
+            post: "/v1/vnics"
             body: "vnic"
         };
-        option (google.api.method_signature) = "parent,vnic,vnic_id";
+        option (google.api.method_signature) = "vnic,vnic_id";
     }
     rpc DeleteVnic (DeleteVnicRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=vnics}/{vnic}"
+            delete: "/v1/{name=vnics}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVnic (UpdateVnicRequest) returns (Vnic) {
         option (google.api.http) = {
-            patch: "/v1/{vnic.id=vnics}"
+            patch: "/v1/{name=vnics}/*"
             body: "vnic"
         };
         option (google.api.method_signature) = "vnic, update_mask";
     }
     rpc ListVnics (ListVnicsRequest) returns (ListVnicsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=vnics}"
+            get: "/v1/vnics"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetVnic (GetVnicRequest) returns (Vnic) {
         option (google.api.http) = {
-            get: "/v1/{id=vnics}/{vnic}"
+            get: "/v1/{name=vnics}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // interface apis
     rpc CreateInterface (CreateInterfaceRequest) returns (Interface) {
         option (google.api.http) = {
-            post: "/v1/{parent=interfaces}"
+            post: "/v1/interfaces"
             body: "interface"
         };
-        option (google.api.method_signature) = "parent,interface,interface_id";
+        option (google.api.method_signature) = "interface,interface_id";
     }
     rpc DeleteInterface (DeleteInterfaceRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=interfaces}/{interface}"
+            delete: "/v1/{name=interfaces}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateInterface (UpdateInterfaceRequest) returns (Interface) {
         option (google.api.http) = {
-            patch: "/v1/{interface.id=interfaces}"
+            patch: "/v1/{name=interfaces}/*"
             body: "interface"
         };
         option (google.api.method_signature) = "interface, update_mask";
     }
     rpc ListInterfaces (ListInterfacesRequest) returns (ListInterfacesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=interfaces}"
+            get: "/v1/interfaces"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetInterface (GetInterfaceRequest) returns (Interface) {
         option (google.api.http) = {
-            get: "/v1/{id=interfaces}/{interface}"
+            get: "/v1/{name=interfaces}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // routetable apis
     rpc CreateRouteTable (CreateRouteTableRequest) returns (RouteTable) {
         option (google.api.http) = {
-            post: "/v1/{parent=routetables}"
+            post: "/v1/routetables"
             body: "routetable"
         };
-        option (google.api.method_signature) = "parent,routetable,routetable_id";
+        option (google.api.method_signature) = "routetable,routetable_id";
     }
     rpc DeleteRouteTable (DeleteRouteTableRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=routetables}/{routetable}"
+            delete: "/v1/{name=routetables}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateRouteTable (UpdateRouteTableRequest) returns (RouteTable) {
         option (google.api.http) = {
-            patch: "/v1/{routetable.id=routetables}"
+            patch: "/v1/{name=routetables}/*"
             body: "routetable"
         };
         option (google.api.method_signature) = "routetable, update_mask";
     }
     rpc ListRouteTables (ListRouteTablesRequest) returns (ListRouteTablesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=routetables}"
+            get: "/v1/routetables"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetRouteTable (GetRouteTableRequest) returns (RouteTable) {
         option (google.api.http) = {
-            get: "/v1/{id=routetables}/{routetable}"
+            get: "/v1/{name=routetables}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     // TBD rpc RouteTableGetStreaming (RouteTableGetRequest) returns (stream RouteTableGetResponse) {}
 
@@ -219,70 +219,70 @@ service CloudInfraService {
     // route apis
     rpc CreateRoute (CreateRouteRequest) returns (Route) {
         option (google.api.http) = {
-            post: "/v1/{parent=routes}"
+            post: "/v1/routes"
             body: "route"
         };
-        option (google.api.method_signature) = "parent,route,route_id";
+        option (google.api.method_signature) = "route,route_id";
     }
     rpc DeleteRoute (DeleteRouteRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=routes}/{route}"
+            delete: "/v1/{name=routes}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateRoute (UpdateRouteRequest) returns (Route) {
         option (google.api.http) = {
-            patch: "/v1/{route.id=routes}"
+            patch: "/v1/{name=routes}/*"
             body: "route"
         };
         option (google.api.method_signature) = "route, update_mask";
     }
     rpc ListRoutes (ListRoutesRequest) returns (ListRoutesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=routes}"
+            get: "/v1/routes"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetRoute (GetRouteRequest) returns (Route) {
         option (google.api.http) = {
-            get: "/v1/{id=routes}/{route}"
+            get: "/v1/{name=routes}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     // TBD rpc RouteLookup (RouteLookupRequest) returns (RouteLookupResponse) {}
 
     // underlayroute apis
     rpc CreateUnderlayRoute (CreateUnderlayRouteRequest) returns (UnderlayRoute) {
         option (google.api.http) = {
-            post: "/v1/{parent=underlayroutes}"
+            post: "/v1/underlayroutes"
             body: "underlayroute"
         };
-        option (google.api.method_signature) = "parent,underlayroute,underlayroute_id";
+        option (google.api.method_signature) = "underlayroute,underlayroute_id";
     }
     rpc DeleteUnderlayRoute (DeleteUnderlayRouteRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=underlayroutes}/{underlayroute}"
+            delete: "/v1/{name=underlayroutes}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateUnderlayRoute (UpdateUnderlayRouteRequest) returns (UnderlayRoute) {
         option (google.api.http) = {
-            patch: "/v1/{underlayroute.id=underlayroutes}"
+            patch: "/v1/{name=underlayroutes}/*"
             body: "underlayroute"
         };
         option (google.api.method_signature) = "underlayroute, update_mask";
     }
     rpc ListUnderlayRoutes (ListUnderlayRoutesRequest) returns (ListUnderlayRoutesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=underlayroutes}"
+            get: "/v1/underlayroutes"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetUnderlayRoute (GetUnderlayRouteRequest) returns (UnderlayRoute) {
         option (google.api.http) = {
-            get: "/v1/{id=underlayroutes}/{underlayroute}"
+            get: "/v1/{name=underlayroutes}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     // TBD rpc CPRouteLookup (CPRouteGetRequest) returns (CPRouteGetResponse) {}
     // TBD rpc CPRouteRedistGet (CPRouteRedistGetRequest) returns (CPRouteRedistGetResponse) {}
@@ -290,103 +290,103 @@ service CloudInfraService {
     // bgp (optional) apis
     rpc CreateBgp (CreateBgpRequest) returns (Bgp) {
         option (google.api.http) = {
-            post: "/v1/{parent=bgps}"
+            post: "/v1/bgps"
             body: "bgp"
         };
-        option (google.api.method_signature) = "parent,bgp,bgp_id";
+        option (google.api.method_signature) = "bgp,bgp_id";
     }
     rpc DeleteBgp (DeleteBgpRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=bgps}/{bgp}"
+            delete: "/v1/{name=bgps}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateBgp (UpdateBgpRequest) returns (Bgp) {
         option (google.api.http) = {
-            patch: "/v1/{bgp.id=bgps}"
+            patch: "/v1/{name=bgps}/*"
             body: "bgp"
         };
         option (google.api.method_signature) = "bgp, update_mask";
     }
     rpc ListBgps (ListBgpsRequest) returns (ListBgpsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=bgps}"
+            get: "/v1/bgps"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetBgp (GetBgpRequest) returns (Bgp) {
         option (google.api.http) = {
-            get: "/v1/{id=bgps}/{bgp}"
+            get: "/v1/{name=bgps}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // bgppeer (optional) apis
     rpc CreateBGPPeer (CreateBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
-            post: "/v1/{parent=bgppeers}"
+            post: "/v1/bgppeers"
             body: "bgppeer"
         };
-        option (google.api.method_signature) = "parent,bgppeer,bgppeer_id";
+        option (google.api.method_signature) = "bgppeer,bgppeer_id";
     }
     rpc DeleteBGPPeer (DeleteBGPPeerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=bgppeers}/{bgppeer}"
+            delete: "/v1/{name=bgppeers}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateBGPPeer (UpdateBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
-            patch: "/v1/{bgppeer.id=bgppeers}"
+            patch: "/v1/{name=bgppeers}/*"
             body: "bgppeer"
         };
         option (google.api.method_signature) = "bgppeer, update_mask";
     }
     rpc ListBGPPeers (ListBGPPeersRequest) returns (ListBGPPeersResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=bgppeers}"
+            get: "/v1/bgppeers"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetBGPPeer (GetBGPPeerRequest) returns (BGPPeer) {
         option (google.api.http) = {
-            get: "/v1/{id=bgppeers}/{bgppeer}"
+            get: "/v1/{name=bgppeers}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // bgppeeraf (optional) apis
     rpc CreateBGPPeerAf (CreateBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            post: "/v1/{parent=bgppeerafs}"
+            post: "/v1/bgppeerafs"
             body: "bgppeeraf"
         };
-        option (google.api.method_signature) = "parent,bgppeeraf,bgppeeraf_id";
+        option (google.api.method_signature) = "bgppeeraf,bgppeeraf_id";
     }
     rpc DeleteBGPPeerAf (DeleteBGPPeerAfRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=bgppeerafs}/{bgppeeraf}"
+            delete: "/v1/{name=bgppeerafs}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateBGPPeerAf (UpdateBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            patch: "/v1/{bgppeeraf.id=bgppeerafs}"
+            patch: "/v1/{name=bgppeerafs}/*"
             body: "bgppeeraf"
         };
         option (google.api.method_signature) = "bgppeeraf, update_mask";
     }
     rpc ListBGPPeerAfs (ListBGPPeerAfsRequest) returns (ListBGPPeerAfsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=bgppeerafs}"
+            get: "/v1/bgppeerafs"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetBGPPeerAf (GetBGPPeerAfRequest) returns (BGPPeerAf) {
         option (google.api.http) = {
-            get: "/v1/{id=bgppeerafs}/{bgppeeraf}"
+            get: "/v1/{name=bgppeerafs}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     // TBD rpc BGPClearRoute (BGPClearRouteRequest) returns (BGPClearRouteResponse) {}
     // TBD rpc BGPNLRIPrefixGet (BGPNLRIPrefixGetRequest) returns (BGPNLRIPrefixGetResponse) {}
@@ -396,342 +396,342 @@ service CloudInfraService {
     // mapping apis
     rpc CreateMapping (CreateMappingRequest) returns (Mapping) {
         option (google.api.http) = {
-            post: "/v1/{parent=mappings}"
+            post: "/v1/mappings"
             body: "mapping"
         };
-        option (google.api.method_signature) = "parent,mapping,mapping_id";
+        option (google.api.method_signature) = "mapping,mapping_id";
     }
     rpc DeleteMapping (DeleteMappingRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=mappings}/{mapping}"
+            delete: "/v1/{name=mappings}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateMapping (UpdateMappingRequest) returns (Mapping) {
         option (google.api.http) = {
-            patch: "/v1/{mapping.id=mappings}"
+            patch: "/v1/{name=mappings}/*"
             body: "mapping"
         };
         option (google.api.method_signature) = "mapping, update_mask";
     }
     rpc ListMappings (ListMappingsRequest) returns (ListMappingsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=mappings}"
+            get: "/v1/mappings"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetMapping (GetMappingRequest) returns (Mapping) {
         option (google.api.http) = {
-            get: "/v1/{id=mappings}/{mapping}"
+            get: "/v1/{name=mappings}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     // TBD rpc MappingGetStreaming (MappingGetRequest) returns (stream MappingGetResponse) {}
 
     // nexthop apis
     rpc CreateNextHop (CreateNextHopRequest) returns (NextHop) {
         option (google.api.http) = {
-            post: "/v1/{parent=nexthops}"
+            post: "/v1/nexthops"
             body: "nexthop"
         };
-        option (google.api.method_signature) = "parent,nexthop,nexthop_id";
+        option (google.api.method_signature) = "nexthop,nexthop_id";
     }
     rpc DeleteNextHop (DeleteNextHopRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=nexthops}/{nexthop}"
+            delete: "/v1/{name=nexthops}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateNextHop (UpdateNextHopRequest) returns (NextHop) {
         option (google.api.http) = {
-            patch: "/v1/{nexthop.id=nexthops}"
+            patch: "/v1/{name=nexthops}/*"
             body: "nexthop"
         };
         option (google.api.method_signature) = "nexthop, update_mask";
     }
     rpc ListNextHop (ListNextHopsRequest) returns (ListNextHopsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=nexthops}"
+            get: "/v1/nexthops"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetNextHop (GetNextHopRequest) returns (NextHop) {
         option (google.api.http) = {
-            get: "/v1/{id=nexthops}/{nexthop}"
+            get: "/v1/{name=nexthops}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // nexthopgroup apis
     rpc CreateNextHopGroup (CreateNextHopGroupRequest) returns (NextHopGroup) {
         option (google.api.http) = {
-            post: "/v1/{parent=nexthopgroups}"
+            post: "/v1/nexthopgroups"
             body: "nexthopgroup"
         };
-        option (google.api.method_signature) = "parent,nexthopgroup,nexthopgroup_id";
+        option (google.api.method_signature) = "nexthopgroup,nexthopgroup_id";
     }
     rpc DeleteNextHopGroup (DeleteNextHopGroupRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=nexthopgroups}/{nexthopgroup}"
+            delete: "/v1/{name=nexthopgroups}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateNextHopGroup (UpdateNextHopGroupRequest) returns (NextHopGroup) {
         option (google.api.http) = {
-            patch: "/v1/{nexthopgroup.id=nexthopgroups}"
+            patch: "/v1/{name=nexthopgroups}/*"
             body: "nexthopgroup"
         };
         option (google.api.method_signature) = "nexthopgroup, update_mask";
     }
     rpc ListNextHopGroups (ListNextHopGroupsRequest) returns (ListNextHopGroupsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=nexthopgroups}"
+            get: "/v1/nexthopgroups"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetNextHopGroup (GetNextHopGroupRequest) returns (NextHopGroup) {
         option (google.api.http) = {
-            get: "/v1/{id=nexthopgroups}/{nexthopgroup}"
+            get: "/v1/{name=nexthopgroups}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // subnet apis
     rpc CreateSubnet (CreateSubnetRequest) returns (Subnet) {
         option (google.api.http) = {
-            post: "/v1/{parent=subnets}"
+            post: "/v1/subnets"
             body: "subnet"
         };
-        option (google.api.method_signature) = "parent,subnet,subnet_id";
+        option (google.api.method_signature) = "subnet,subnet_id";
     }
     rpc DeleteSubnet (DeleteSubnetRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=subnets}/{subnet}"
+            delete: "/v1/{name=subnets}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateSubnet (UpdateSubnetRequest) returns (Subnet) {
         option (google.api.http) = {
-            patch: "/v1/{subnet.id=subnets}"
+            patch: "/v1/{name=subnets}/*"
             body: "subnet"
         };
         option (google.api.method_signature) = "subnet, update_mask";
     }
     rpc ListSubnets (ListSubnetsRequest) returns (ListSubnetsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=subnets}"
+            get: "/v1/subnets"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetSubnet (GetSubnetRequest) returns (Subnet) {
         option (google.api.http) = {
-            get: "/v1/{id=subnets}/{subnet}"
+            get: "/v1/{name=subnets}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // tunnel apis
     rpc CreateTunnel (CreateTunnelRequest) returns (Tunnel) {
         option (google.api.http) = {
-            post: "/v1/{parent=tunnels}"
+            post: "/v1/tunnels"
             body: "tunnel"
         };
-        option (google.api.method_signature) = "parent,tunnel,tunnel_id";
+        option (google.api.method_signature) = "tunnel,tunnel_id";
     }
     rpc DeleteTunnel (DeleteTunnelRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=tunnels}/{tunnel}"
+            delete: "/v1/{name=tunnels}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateTunnel (UpdateTunnelRequest) returns (Tunnel) {
         option (google.api.http) = {
-            patch: "/v1/{tunnel.id=tunnels}"
+            patch: "/v1/{name=tunnels}/*"
             body: "tunnel"
         };
         option (google.api.method_signature) = "tunnel, update_mask";
     }
     rpc ListTunnels (ListTunnelsRequest) returns (ListTunnelsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=tunnels}"
+            get: "/v1/tunnels"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetTunnel (GetTunnelRequest) returns (Tunnel) {
         option (google.api.http) = {
-            get: "/v1/{id=tunnels}/{tunnel}"
+            get: "/v1/{name=tunnels}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // vpc apis
     rpc CreateVpc (CreateVpcRequest) returns (Vpc) {
         option (google.api.http) = {
-            post: "/v1/{parent=vpcs}"
+            post: "/v1/vpcs"
             body: "vpc"
         };
-        option (google.api.method_signature) = "parent,vpc,vpc_id";
+        option (google.api.method_signature) = "vpc,vpc_id";
     }
     rpc DeleteVpc (DeleteVpcRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=vpcs}/{vpc}"
+            delete: "/v1/{name=vpcs}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVpc (UpdateVpcRequest) returns (Vpc) {
         option (google.api.http) = {
-            patch: "/v1/{vpc.id=vpcs}"
+            patch: "/v1/{name=vpcs}/*"
             body: "vpc"
         };
         option (google.api.method_signature) = "vpc, update_mask";
     }
     rpc ListVpcs (ListVpcsRequest) returns (ListVpcsResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=vpcs}"
+            get: "/v1/vpcs"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetVpc (GetVpcRequest) returns (Vpc) {
         option (google.api.http) = {
-            get: "/v1/{id=vpcs}/{vpc}"
+            get: "/v1/{name=vpcs}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // vpcpeer apis
     rpc CreateVPCPeer (CreateVPCPeerRequest) returns (VPCPeer) {
         option (google.api.http) = {
-            post: "/v1/{parent=vpcpeers}"
+            post: "/v1/vpcpeers"
             body: "vpcpeer"
         };
-        option (google.api.method_signature) = "parent,vpcpeer,vpcpeer_id";
+        option (google.api.method_signature) = "vpcpeer,vpcpeer_id";
     }
     rpc DeleteVPCPeer (DeleteVPCPeerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=vpcpeers}/{vpcpeer}"
+            delete: "/v1/{name=vpcpeers}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateVPCPeer (UpdateVPCPeerRequest) returns (VPCPeer) {
         option (google.api.http) = {
-            patch: "/v1/{vpcpeer.id=vpcpeers}"
+            patch: "/v1/{name=vpcpeers}/*"
             body: "vpcpeer"
         };
         option (google.api.method_signature) = "vpcpeer, update_mask";
     }
     rpc ListVPCPeers (ListVPCPeersRequest) returns (ListVPCPeersResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=vpcpeers}"
+            get: "/v1/vpcpeers"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetVPCPeer (GetVPCPeerRequest) returns (VPCPeer) {
         option (google.api.http) = {
-            get: "/v1/{id=vpcpeers}/{vpcpeer}"
+            get: "/v1/{name=vpcpeers}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // securitypolicy apis
     rpc CreateSecurityPolicy (CreateSecurityPolicyRequest) returns (SecurityPolicy) {
         option (google.api.http) = {
-            post: "/v1/{parent=securitypolicys}"
+            post: "/v1/securitypolicys"
             body: "securitypolicy"
         };
-        option (google.api.method_signature) = "parent,securitypolicy,securitypolicy_id";
+        option (google.api.method_signature) = "securitypolicy,securitypolicy_id";
     }
     rpc DeleteSecurityPolicy (DeleteSecurityPolicyRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=securitypolicys}/{securitypolicy}"
+            delete: "/v1/{name=securitypolicys}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateSecurityPolicy (UpdateSecurityPolicyRequest) returns (SecurityPolicy) {
         option (google.api.http) = {
-            patch: "/v1/{securitypolicy.id=securitypolicys}"
+            patch: "/v1/{name=securitypolicys}/*"
             body: "securitypolicy"
         };
         option (google.api.method_signature) = "securitypolicy, update_mask";
     }
     rpc ListSecurityPolicys (ListSecurityPolicysRequest) returns (ListSecurityPolicysResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=securitypolicys}"
+            get: "/v1/securitypolicys"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetSecurityPolicy (GetSecurityPolicyRequest) returns (SecurityPolicy) {
         option (google.api.http) = {
-            get: "/v1/{id=securitypolicys}/{securitypolicy}"
+            get: "/v1/{name=securitypolicys}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // securityrule apis
     rpc CreateSecurityRule (CreateSecurityRuleRequest) returns (SecurityRule) {
         option (google.api.http) = {
-            post: "/v1/{parent=securityrules}"
+            post: "/v1/securityrules"
             body: "securityrule"
         };
-        option (google.api.method_signature) = "parent,securityrule,securityrule_id";
+        option (google.api.method_signature) = "securityrule,securityrule_id";
     }
     rpc DeleteSecurityRule (DeleteSecurityRuleRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=securityrules}/{securityrule}"
+            delete: "/v1/{name=securityrules}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateSecurityRule (UpdateSecurityRuleRequest) returns (SecurityRule) {
         option (google.api.http) = {
-            patch: "/v1/{securityrule.id=securityrules}"
+            patch: "/v1/{name=securityrules}/*"
             body: "securityrule"
         };
         option (google.api.method_signature) = "securityrule, update_mask";
     }
     rpc ListSecurityRules (ListSecurityRulesRequest) returns (ListSecurityRulesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=securityrules}"
+            get: "/v1/securityrules"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetSecurityRule (GetSecurityRuleRequest) returns (SecurityRule) {
         option (google.api.http) = {
-            get: "/v1/{id=securityrules}/{securityrule}"
+            get: "/v1/{name=securityrules}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
 
     // securityprofile apis
     rpc CreateSecurityProfile (CreateSecurityProfileRequest) returns (SecurityProfile) {
         option (google.api.http) = {
-            post: "/v1/{parent=securityprofiles}"
+            post: "/v1/securityprofiles"
             body: "securityprofile"
         };
-        option (google.api.method_signature) = "parent,securityprofile,securityprofile_id";
+        option (google.api.method_signature) = "securityprofile,securityprofile_id";
     }
     rpc DeleteSecurityProfile (DeleteSecurityProfileRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            delete: "/v1/{id=securityprofiles}/{securityprofile}"
+            delete: "/v1/{name=securityprofiles}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     rpc UpdateSecurityProfile (UpdateSecurityProfileRequest) returns (SecurityProfile) {
         option (google.api.http) = {
-            patch: "/v1/{securityprofile.id=securityprofiles}"
+            patch: "/v1/{name=securityprofiles}/*"
             body: "securityprofile"
         };
         option (google.api.method_signature) = "securityprofile, update_mask";
     }
     rpc ListSecurityProfiles (ListSecurityProfilesRequest) returns (ListSecurityProfilesResponse) {
         option (google.api.http) = {
-            get: "/v1/{parent=securityprofiles}"
+            get: "/v1/securityprofiles"
         };
-        option (google.api.method_signature) = "parent";
+        option (google.api.method_signature) = "";
     }
     rpc GetSecurityProfile (GetSecurityProfileRequest) returns (SecurityProfile) {
         option (google.api.http) = {
-            get: "/v1/{id=securityprofiles}/{securityprofile}"
+            get: "/v1/{name=securityprofiles}/*"
         };
-        option (google.api.method_signature) = "id";
+        option (google.api.method_signature) = "name";
     }
     //  TBD rpc SecurityPolicyGetStreaming (SecurityPolicyGetRequest) returns (stream SecurityPolicyGetResponse) {}
     //  TBD rpc SecurityPolicyLookup (SecurityPolicyLookupRequest) returns (SecurityPolicyLookupResponse) {}

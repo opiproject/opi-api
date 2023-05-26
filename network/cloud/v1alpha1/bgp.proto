@@ -19,21 +19,25 @@ option java_outer_classname = "BGPProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // BGP object
 message Bgp {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/bgp"
+    pattern: "bgps/{bgp}"
+  };
+  // unique key/identifier of BGP config
+  string name = 1;
   // BGP Configuration
-  BgpSpec spec = 1;
+  BgpSpec spec = 2;
   // BGP Status
-  BgpStatus status = 2;
+  BgpStatus status = 3;
 }
 
 // BGP configuration
 message BgpSpec {
-  // unique key/identifier of BGP config
-  common.v1.ObjectKey id = 1;
   // the local autonomous system number
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: must use uint32 per BGP spec. --)
@@ -70,55 +74,59 @@ message BgpStatus {
 
 // BGP peer object
 message BGPPeer {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/bgppeer"
+    pattern: "bgppeers/{bgppeer}"
+  };
+  // unique key/identifier of peer
+  string name = 1;
   // bgp peer configuration
-  BGPPeerSpec spec = 1;
+  BGPPeerSpec spec = 2;
   // bgp peer status
-  BGPPeerStatus status = 2;
+  BGPPeerStatus status = 3;
 }
 
 // BGP peer configurations
 message BGPPeerSpec {
-  // unique key/identifier of peer
-  common.v1.ObjectKey id = 1;
   // peer enable/disable admin state. if peer is not enabled then local router
   // must not initiate connections to the neighbor and must not respond to
   // TCP connections attempts from neighbor
-  network.opinetcommon.v1alpha1.AdminState state = 2;
+  network.opinetcommon.v1alpha1.AdminState state = 1;
   // BGP local IP address. control plane chooses the local IP address of the
   // session if an all 0 IP address is provided
-  network.opinetcommon.v1alpha1.IPAddress  local_address = 3;
+  network.opinetcommon.v1alpha1.IPAddress  local_address = 2;
   // BGP peer IP address
-  network.opinetcommon.v1alpha1.IPAddress  peer_addr = 4;
+  network.opinetcommon.v1alpha1.IPAddress  peer_addr = 3;
   // remote 4-byte AS number
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: must use uint32 per BGP spec. --)
-  uint32 remote_asn = 5;
+  uint32 remote_asn = 4;
   // send regular community attributes to neighbor
-  bool send_comm = 6;
+  bool send_comm = 5;
   // send extended community attributes to neighbor
-  bool send_ext_comm = 7;
+  bool send_ext_comm = 6;
   // peer is a route reflector client
-  BGPPeerRRClient rr_client = 8;
+  BGPPeerRRClient rr_client = 7;
   // BGP session connect-retry timer in seconds
-  int32 connect_retry = 9;
+  int32 connect_retry = 8;
   // BGP session configured holdtime timer in seconds
-  int32 holdtime = 10;
+  int32 holdtime = 9;
   // BGP session configured keepalive timer in seconds
-  int32 keep_alive = 11;
+  int32 keep_alive = 10;
   // MD5 authentication
-  bytes password = 12;
+  bytes password = 11;
   // TTL, set 1 to enable fast-external-fallover for directly connected eBGP sessions
   // range:1-255, default 64
   // (-- api-linter: core::0214::ttl-type=disabled
   //     aip.dev/not-precedent: ttl is not a duration. --)
-  int32 ttl = 13;
+  int32 ttl = 12;
   // IdleHoldTime in seconds, range:1-32767, default 15
-  int32 idle_holdtime = 14;
+  int32 idle_holdtime = 13;
   // The number of instances of the local AS identifier that may be contained in the route's
   // AS-Path without rejecting the route. Changing the value of this object while the peer
   // is active triggers BGP to refresh its routes from the peer
   // range:0-255, default 0
-  int32 allow_local_as = 15;
+  int32 allow_local_as = 14;
 }
 
 // BGP peer status
@@ -223,16 +231,20 @@ message BGPPeerStatus {
 
 // BGP peer AF object
 message BGPPeerAf {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/bgppeeraf"
+    pattern: "bgppeerafs/{bgppeeraf}"
+  };
+  // unique key/identifier of peer AF config
+  string name = 1;
   // configuration
-  BGPPeerAfSpec spec = 1;
+  BGPPeerAfSpec spec = 2;
   // status
-  BGPPeerAfStatus state = 2;
+  BGPPeerAfStatus state = 3;
 }
 
 // BGP peer AF configurations
 message BGPPeerAfSpec {
-  // unique key/identifier of peer AF config
-  common.v1.ObjectKey id = 1;
   // BGP local IP address
   network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
   // BGP peer IP address

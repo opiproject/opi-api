@@ -10,43 +10,47 @@ option java_outer_classname = "VpcProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // Virtual Private Cloud object
 message Vpc {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/vpc"
+    pattern: "vpcs/{vpc}"
+  };
+  // unique key/identifier of VPC
+  string name = 1;
   // configuration
-  VpcSpec spec = 1;
+  VpcSpec spec = 2;
   // status
-  VpcStatus status = 2;
+  VpcStatus status = 3;
 }
 
 // VpcSpec captures VPC configuration
 message VpcSpec {
-  // unique key/identifier of VPC
-  common.v1.ObjectKey id = 1;
   // type of the VPC
   VPCType type = 2;
   // identifier of the IPv4 route table to be used and this route table is
   // inherited by the subnets under this VPC, if they are created with no route
   // table explicitly
-  common.v1.ObjectKey v4_route_table_id = 3;
+  string v4_route_table_name_ref = 3;
   // identifier of the IPv6 route table to be used, if any and this route table
   // is inherited by the subnets under this VPC, if they are created with no
   // route table explicitly
-  common.v1.ObjectKey v6_route_table_id = 4;
+  string v6_route_table_name_ref = 4;
   // For various security policies
   // - all vnics in this VPC will inherit the policies configured under VPC
   // - there can be multiple policies per vnic per direction (ingress/egress)
   // - vpc policy in each direction is to be aggregated to contain all rules in a given direction
   // identifier of ingress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey ingress_v4_security_policy_id = 5;
+  repeated string ingress_v4_security_policy_name_ref = 5;
   // identifier of ingress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 6;
+  repeated string ingress_v6_security_policy_name_ref = 6;
   // identifier of egress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v4_security_policy_id = 7;
+  repeated string egress_v4_security_policy_name_ref = 7;
   // identifier of egress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v6_security_policy_id = 8;
+  repeated string egress_v6_security_policy_name_ref = 8;
   // Virtual Router (VR) MAC address, any packets originated or routed in this
   // VPC carry this MAC as source MAC
   bytes virtual_router_mac = 9;
@@ -77,22 +81,26 @@ message VpcStatus {
 
 // Virtual Private Cloud Peer (aka. pairing) object
 message VPCPeer {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/vpcpeer"
+    pattern: "vpcpeers/{vpcpeer}"
+  };
+  // unique id/key idenitifying this VPC peering relation
+  string name = 1;
   // configuration
-  VPCPeerSpec spec = 1;
+  VPCPeerSpec spec = 2;
   // status
-  VPCPeerStatus status = 2;
+  VPCPeerStatus status = 3;
 }
 
 // VPCPeerSpec captures configuration for a VPC peering relation
 // Given two vpcs, only one vpc peering objects needs to be created as
 // the vpc peering is commutative relation
 message VPCPeerSpec {
-  // unique id/key idenitifying this VPC peering relation
-  common.v1.ObjectKey id = 1;
   // unique key/identifier of VPC1
-  common.v1.ObjectKey vpc1_id = 2;
+  string vpc1_name_ref = 2;
   // unique key/identifier of VPC2
-  common.v1.ObjectKey vpc2_id = 3;
+  string vpc2_name_ref = 3;
 }
 
 // operational status of a VPC peering, if any

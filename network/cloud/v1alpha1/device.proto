@@ -10,10 +10,10 @@ option java_outer_classname = "DeviceProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
 
 import "google/protobuf/timestamp.proto";
+import "google/api/resource.proto";
 
 // device capabilities indicate the capabilities of software/hardware
 // as exposed by current firmware of the device. This can help cloud controller
@@ -27,7 +27,7 @@ message DeviceCapabilities {
 
 // device capabilities for dynamic routing
 message DeviceCapabilitiesDynamicRouting {
-  // device is capable of doing bgp routing for the underlay
+  // device is capable of doing device routing for the underlay
   bool underlay_bgp = 1;
 }
 
@@ -39,17 +39,20 @@ message DeviceCapabilitiesNetworkPolicy {
 
 // device level network configuration and status
 message Device {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/device"
+    pattern: "devices/{device}"
+  };
+  // device's unique identifier
+  string name = 1;
   // device's network configuration
-  DeviceSpec spec = 1;
+  DeviceSpec spec = 2;
   // device's network status
-  DeviceStatus status = 2;
+  DeviceStatus status = 3;
 }
 
 // device's network configuration
 message DeviceSpec {
-  // object's unique identifier
-  common.v1.ObjectKey id = 1;
-
   // underlay ipv4 address for tunnel initiation/termination
   network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
   // underlay ipv6 address for tunnel initiation/termination

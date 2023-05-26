@@ -10,15 +10,21 @@ option java_outer_classname = "TunnelProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // tunnel object
 message Tunnel {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/tunnel"
+    pattern: "tunnel/{tunnel}"
+  };
+  // unique tunnel identifier
+  string name = 1;
   // configuration
-  TunnelSpec spec = 3;
+  TunnelSpec spec = 2;
   // operational status
-  TunnelStatus status = 4;
+  TunnelStatus status = 3;
 }
 
 // tunnel configuration - identified by 3-tuple (LocalIP, RemoteIP, encap)
@@ -26,10 +32,8 @@ message Tunnel {
 // have same Type attribute value i.e., different tunnels with same IP can't
 // have different tunnel type
 message TunnelSpec {
-  // unique tunnel identifier
-  common.v1.ObjectKey id = 1;
   // virtual private cloud this is tunnel belongs to
-  common.v1.ObjectKey vpc_id = 2;
+  string vpc_name_ref = 2;
   // local IP of the tunnel (used as outer SIP in tunneled packets)
   network.opinetcommon.v1alpha1.IPAddress local_ip = 3;
   // remote IP of the tunnel (used as outer DIP in tunneled packets)
@@ -41,14 +45,14 @@ message TunnelSpec {
   // Tunnel points to a underlay nexthop, nexthop-group(ECMP), or another Tunnel
   oneof nh {
     // underlay nexthop for this tunnel
-    common.v1.ObjectKey nexthop_id = 8;
+    string nexthop_name_ref = 8;
     // underlay nexthop group for this tunnel
-    common.v1.ObjectKey nexthop_group_id = 9;
+    string nexthop_group_name_ref = 9;
     // a tunnel can point to another tunnel for double encap
     // - supported combinations of double encap is platform specific
     // - unsupported combination of cascading tunnels would result in configuration failure
     // -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-    common.v1.ObjectKey tunnel_id = 10;
+    string tunnel_name_ref = 10;
     // DropNexthop is used to explicitly drop traffic destined to this tunnel
     // even when there is reachability, this is administrative override
     DropNexthop drop_next_hop = 11;

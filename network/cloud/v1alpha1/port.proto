@@ -10,48 +10,51 @@ option java_outer_classname = "PortProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
-
 import "google/protobuf/timestamp.proto";
+import "google/api/resource.proto";
 
 // link level configuration
 message Port {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/port"
+    pattern: "ports/{port}"
+  };
+  // unique port id
+  string name = 1;
   // port configuration
-  PortSpec   spec   = 1;
+  PortSpec spec = 2;
   // status of port
-  PortStatus status = 2;
+  PortStatus status = 3;
 }
 
 // port configuration
 message PortSpec {
-  // unique port id
-  common.v1.ObjectKey id = 1;
   // port number is numerical port identifier starting from 1
-  int32            port_number     = 2;
+  int32 port_number = 1;
   // port admin state
-  PortAdminState   admin_state     = 3;
+  PortAdminState admin_state = 2;
   // type of port
-  PortType         type            = 4;
+  PortType type = 3;
   // operational speed of the port
-  PortSpeed        speed           = 5;
+  PortSpeed speed = 4;
   // Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
-  PortFecType      fec_type        = 6;
+  PortFecType fec_type = 5;
   // set AutoNegEn to true to enable auto negotiation
-  bool             autoneg_enable  = 7;
+  bool autoneg_enable = 6;
   // values for link debounce timeout in msec (default = 0 ms)
-  int32            debounce_timeout= 8;
+  int32 debounce_timeout = 7;
   // MTU size in bytes (64 to 9216)
-  int32            mtu             = 9;
+  int32 mtu = 8;
   // pause type - PFC or Link Level or Disable
-  PortPauseType    pause_type      = 10;
+  PortPauseType pause_type = 9;
   // MAC TX pause enable
-  bool             tx_pause_en     = 11;
+  bool tx_pause_en = 10;
   // MAC RX pause enable
-  bool             rx_pause_en     = 12;
+  bool rx_pause_en = 11;
   // port loopback mode - MAC or PHY 
-  PortLoopBackMode loopback_mode   = 13;
+  PortLoopBackMode loopback_mode = 12;
   // number of serdes lanes for port (range: 1-4)
-  int32            lanes_count     = 14;
+  int32 lanes_count = 13;
 }
 
 // port status

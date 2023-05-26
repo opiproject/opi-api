@@ -10,33 +10,37 @@ option java_outer_classname = "NetworkPolicyProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // security policy object
 message SecurityPolicy {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/securitypolicy"
+    pattern: "securitypolicys/{securitypolicy}"
+  };
+  // unique identifier of security policy
+  string name = 1;
   // configuration
-  SecurityPolicySpec spec = 1;
+  SecurityPolicySpec spec = 2;
   // status
-  SecurityPolicyStatus status = 2;
+  SecurityPolicyStatus status = 3;
 }
 
 // security policy configuration
 message SecurityPolicySpec {
-  // unique identifier of security policy
-  common.v1.ObjectKey id = 1;
   // SecurityPolicyType is either TENANT or UNDERLAY (aka. infra) policy
   // - only one instance of UNDERLAY policy is allowed (or makes sense)
   // - if Type is not specified, policy type defaults to TENANT policy
-  SecurityPolicyType type = 2;
+  SecurityPolicyType type = 1;
   // IPv4 or IPv6 policy
-  network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  network.opinetcommon.v1alpha1.IpAf address_family = 2;
   // when Stateless attribute is set on a policy, the policy is applied for
   // traffic in both directions before deciding the final action of the flow
   // when Stateless is set to false, the policy behavior is same as Network
   // Security Group (NSG) construct whereas if Stateless is set to true, the
   // behavior is same as ACL construct
-  bool stateless = 4;
+  bool stateless = 3;
   // DefaultFWAction is the action taken by the firewall when security policies are
   // configured on vnic but no rule is hit. Similarly, when NACLs are configured
   // on a subnet and no rule is hit, this action is taken by the firewall.
@@ -44,18 +48,20 @@ message SecurityPolicySpec {
   // that is also not set then  default "deny" action is enforced
   // When no policy is configured on subnet and vnic, this knob doesn't
   // apply and traffic is allowed in that case
-  network.opinetcommon.v1alpha1.SecurityRuleAction  default_security_action = 5;
+  network.opinetcommon.v1alpha1.SecurityRuleAction  default_security_action = 4;
   // list of security rules
-  repeated SecurityRuleInfo rules = 6;
+  repeated SecurityRuleInfo rules = 5;
   // PolicyRuleFormat indicates whether the policy is set of flattened rules
   // or whether they are aggregated (DPU can be efficient based ont his hint)
-  PolicyRuleFormat rule_format = 7;
+  PolicyRuleFormat rule_format = 6;
 }
 
 // SecurityRuleInfo is a single rule in the security policy
 message SecurityRuleInfo {
-  // rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-  common.v1.ObjectKey id = 1;
+  // rule id needed for incremental rule ADD/DEL/UPD 
+  // (-- api-linter: core::0122::name-suffix=disabled
+  //     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
+  string rule_name = 1;
   // rule attributes
   SecurityRuleAttrs attrs = 2;
 }
@@ -98,7 +104,7 @@ message DNSOptions {
   bool drop_multi_query_messages = 1;
   // when DropLargeDomainNameMessage is set, DNS mwessages containing domain
   // name exceeding 255 bytes are dropped
-  bool drop_large_domain_name_messages = 2;
+  bool drop_large_domain_name_ref = 2;
   // when DropLongLabelMessage is set, DNS messages containing labels
   // exceeding 63 bytes are dropped
   bool drop_long_label_messages = 3;
@@ -168,20 +174,24 @@ message SecurityPolicyStatus {
 
 // security rule object
 message SecurityRule {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/securityrule"
+    pattern: "securityrules/{securityrule}"
+  };
+  // unique identifier of security rule
+  string name = 1;
   // configuration
-  SecurityRuleSpec spec = 1;
+  SecurityRuleSpec spec = 2;
   // status
-  SecurityRuleStatus status = 2;
+  SecurityRuleStatus status = 3;
 }
 
 // security rule configuration
 message SecurityRuleSpec {
-  // unique identifier of security rule
-  common.v1.ObjectKey id = 1;
   // security policy this rule belongs to
-  common.v1.ObjectKey security_policy_id = 2;
+  string security_policy_name_ref = 1;
   // rule information
-  SecurityRuleAttrs attrs = 3;
+  SecurityRuleAttrs attrs = 2;
 }
 
 // operational status of the security rule, if any
@@ -190,10 +200,16 @@ message SecurityRuleStatus {
 
 // security profile object
 message SecurityProfile {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/securityprofile"
+    pattern: "securityprofiles/{securityprofile}"
+  };
+  // unique identifier of security profile
+  string name = 1;
   // configuration
-  SecurityProfileSpec spec = 1;
+  SecurityProfileSpec spec = 2;
   // status
-  SecurityProfileStatus status = 2;
+  SecurityProfileStatus status = 3;
 }
 
 // security profile - defaults for network security behavior
@@ -202,50 +218,48 @@ message SecurityProfile {
 // - if no object is created, indicated default values will be used
 // - all timeouts specified in this object are in seconds
 message SecurityProfileSpec {
-  // unique identifier of security profile
-  common.v1.ObjectKey id = 1;
   // ConnTrackEn, if set to true, will enable full connection tracking
   // if connection_tracking_enable is modified on the fly, it will take affect only
   // on sessions created thereafter and doesn't affect existing sessions
-  bool connection_tracking_enable = 2;
+  bool connection_tracking_enable = 1;
   // rule_stats_enable, if set to true, will enable per security policy rule
   // statistics feature in the datapath (by default rule stats functionality is
   // turned off and can be enabled on the fly for debugging)
-  bool rule_stats_enable = 3;
+  bool rule_stats_enable = 2;
   // default_firewall_action is the action taken by the smartnic when policies are
   // configured on the subnet or vnic, no rule matches and default action for policy is none
   // this will have effect iff policy is attached on either vnic or subnet.
   // if no action is specified  in security profile, default action is "deny"
-  network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+  network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
   // timeouts for established sessions per TCP/UDP/ICMP and other protocols
   // range:1-86400, default=600
-  int32 tcp_idle_timeout = 5;
+  int32 tcp_idle_timeout = 4;
   // range:1-86400, default=120
-  int32 udp_idle_timeout = 6;
+  int32 udp_idle_timeout = 5;
   // range:1-86400, default=15
-  int32 icmp_idle_timeout = 7;
+  int32 icmp_idle_timeout = 6;
   // range:1-86400, default=90
-  int32 other_idle_timeout = 8;
+  int32 other_idle_timeout = 7;
   // TCP specific timeouts
   // tcp_connection_setup_timeout is the maximum allowed time since first SYN seen to
   // 3-way handshake completion, session gets cleaned up if 3-way handshake is
   // not completed and session moves to ESTABLISHED state by then.  range:1-60, default=10
-  int32 tcp_connection_setup_timeout = 9;
+  int32 tcp_connection_setup_timeout = 8;
   // tcp_half_close_timeout is the maximum allowed time since first FIN seen to
   // 3/4way close, session gets cleaned up if this timer elapses. range:1-172800, default=120
-  int32 tcp_half_close_timeout = 10;
+  int32 tcp_half_close_timeout = 9;
   // tcp_close_timeout is wait time since FIN is seen from *both* sides (or RST)
   // before cleaning up the session range:1-300, default=15
-  int32 tcp_close_timeout = 11;
+  int32 tcp_close_timeout = 10;
   // timeouts applicable to sessions installed with drop action
   // range:1-300, default=90
-  int32 tcp_dorp_timeout = 12;
+  int32 tcp_dorp_timeout = 11;
   // range:1-172800, default=60
-  int32 udp_drop_timeout = 13;
+  int32 udp_drop_timeout = 12;
   // range:1-300, default=30
-  int32 icmp_drop_timeout = 14;
+  int32 icmp_drop_timeout = 13;
   // range:1-300, default=60
-  int32 other_drop_timeout = 15;
+  int32 other_drop_timeout = 14;
 }
 
 // operational status of security profile, if any
@@ -287,7 +301,7 @@ message SecurityPolicyLookupRequest {
   // evaluate all the policies and return the results
   message VnicLookupInfo {
     // vnic uuid
-    common.v1.ObjectKey vnic_id = 1;
+    string vnic_name_ref = 1;
     // policy evaluation direction
     network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
     // IPv4 or IPv6 policy
@@ -296,7 +310,7 @@ message SecurityPolicyLookupRequest {
   // lookup_info is mandatory
   oneof lookup_info {
     // security policy uuid to do the lookup in
-    common.v1.ObjectKey policy_id= 1;
+    string policy_name_ref= 1;
     // vnic specific policies will be evaluated when vnic info is provided
     VnicLookupInfo vnic_lookup_info = 2;
   }

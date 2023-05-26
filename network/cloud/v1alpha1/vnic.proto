@@ -10,26 +10,30 @@ option java_outer_classname = "VnicProto";
 
 option go_package = "github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go";
 
-import "object_key.proto";
 import "networktypes.proto";
+import "google/api/resource.proto";
 
 // vnic is a generic abstraction representing tenant workload's interface
 // tenant workload could be a VM, container or bare-metal.  VNIC is identified
 // using various mechanisms to ensure it can be abstractly represented on the DPU.
 // VNIC represents a different abstraction from that of a port or interface object
 message Vnic {
+  option (google.api.resource) = {
+    type: "opi_api.network.cloud.v1alpha1/vnic"
+    pattern: "vnic/{vnic}"
+  };
+  // unique vnic id
+  string name = 1;
   // vnic configuration
-  VnicSpec spec = 1;
+  VnicSpec spec = 2;
   // vnic status
-  VnicStatus status = 2;
+  VnicStatus status = 3;
 }
 
 // vnic configuration
 message VnicSpec {
-  // unique vnic id
-  common.v1.ObjectKey id = 1;
   // id of the subnet this vnic belongs to
-  common.v1.ObjectKey subnet_id = 2;
+  string subnet_name_ref = 2;
   // vnic encap information to be used while sending packets to this vnic
   network.opinetcommon.v1alpha1.Encap vnic_encap = 3;
   // overlay MAC of this VNIC
@@ -44,19 +48,19 @@ message VnicSpec {
   // workloads to allow for source/destination checks, and exceptions that of a mapping
   bool vnf = 7;
   // identifier of ingress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey ingress_v4_security_policy_id = 8;
+  repeated string ingress_v4_security_policy_name_ref = 8;
   // identifier of ingress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey ingress_v6_security_policy_id = 9;
+  repeated string ingress_v6_security_policy_name_ref = 9;
   // identifier of egress IPv4 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v4_security_policy_id = 10;
+  repeated string egress_v4_security_policy_name_ref = 10;
   // identifier of egress IPv6 security policy to be enforced
-  repeated common.v1.ObjectKey egress_v6_security_policy_id = 11;
+  repeated string egress_v6_security_policy_name_ref = 11;
   oneof ifinfo {
     // if VNIC Is attahced to a PF/VF, this identifies the corresponding interface object
-    common.v1.ObjectKey host_if_id = 12;
+    string host_if_name_ref = 12;
     // when operating in DEVICE_OPER_MODE_SMART_SWITCH, vnic can be behind a
     // tunnel between the host and the DSC
-    common.v1.ObjectKey tunnel_id = 15;
+    string tunnel_name_ref = 15;
   }
   // max_sessions, if set, is total number of active sessions (across all
   // protocols) allowed from/to this vnic; zero means unlimited
@@ -78,11 +82,11 @@ message VnicSpec {
   // multiple vnics can be created with same MAC but only of them can be primary
   // VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and
   // secondary vnic can have one or more local IP mappings behind them
-  common.v1.ObjectKey  primary_vnic_id = 32;
+  string  primary_vnic_name_ref = 32;
   // identifier of the IPv4 route table to be used
-  common.v1.ObjectKey v4_route_table_id = 33;
+  string v4_route_table_name_ref = 33;
   // identifier of the IPv6 route table to be used, if any
-  common.v1.ObjectKey  v6_route_table_id = 34;
+  string  v6_route_table_name_ref = 34;
   // vnic if assigned a VIP in the underlay, can be used as
   // outer encap source IP, if configured, for traffic going to certain vpc
   // private service endpoints
@@ -120,5 +124,5 @@ message VnicStatus {
   // ARM cpu bound policer hw_idx for CPS rate limiting
   int32 cps_copp_hw_idx = 10;
   // secondary vnic of (primary) vnic
-  common.v1.ObjectKey secondary_vnic_id = 11;
+  string secondary_vnic_name_ref = 11;
 }
