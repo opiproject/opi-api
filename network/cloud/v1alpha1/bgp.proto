@@ -41,21 +41,21 @@ message BgpSpec {
   // the local autonomous system number
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: must use uint32 per BGP spec. --)
-  uint32  local_asn = 2;
+  uint32  local_asn = 1;
   // router ID for this bgp instance
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
-  fixed32 router_id = 3;
+  fixed32 router_id = 2;
   // cluster ID of the local router. router ID will be used as cluster ID
   // if cluster ID is not configured or configured to zero
   // (-- api-linter: core::0141::forbidden-types=disabled
   //     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
-  fixed32 cluster_id = 4;
+  fixed32 cluster_id = 3;
   // disable/enable BGP
-  bool disable = 5;
+  bool disable = 4;
   // exclude default route from being used to resolve nexthop reachability in the underlay
   // changing this will deactivate and activate the routing stack RIB
-  bool suppress_default_resolution = 6;
+  bool suppress_default_resolution = 5;
 }
 
 // operational status of BGP
@@ -246,27 +246,27 @@ message BGPPeerAf {
 // BGP peer AF configurations
 message BGPPeerAfSpec {
   // BGP local IP address
-  network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
+  network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   // BGP peer IP address
-  network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+  network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   // BGP address family
-  BGPAfi afi = 4;
+  BGPAfi afi = 3;
   // BGP sub-address family
-  BGPSafi safi = 5;
+  BGPSafi safi = 4;
   // enforce this router to set self as next-hop for advertised routes
-  bool nexthop_self = 6;
+  bool nexthop_self = 5;
   // originate a default route to this peer
-  bool default_orig = 7;
+  bool default_orig = 6;
   // The local port configured for the peering session
-  int32 local_port = 8;
+  int32 local_port = 7;
   // The remote port configured for the peering session
-  int32 remote_port = 9;
+  int32 remote_port = 8;
   // For a peer identified by a link-local IPv6 addresses, this is the scope ID
   // of bgpPeerLocalAddr and bgpPeerRemoteAddr. For a peer identified only by
   // interface (bgpPeerLocalAddr and bgpPeerRemoteAddr are both zero), this is
   // the interface index of the local point-to-point interface through which the
   // peer is reachable
-  int32 local_addr_scope_id = 10;
+  int32 local_addr_scope_id = 9;
 }
 
 // BGP peer AF status

@@ -120,9 +120,9 @@ message NextHopGroup {
 // nexthop group specification - a nextgroup consists of bunch of nexthops
 message NextHopGroupSpec {
   // type of the nexthop
-  NextHopGroupType type = 2;
+  NextHopGroupType type = 1;
   // zero or more member nexthops or nexthop groups
-  repeated NextHopSpec members = 3;
+  repeated NextHopSpec members = 2;
 }
 
 // operational status of nexthop group, if any

@@ -32,13 +32,13 @@ message RouteTable {
 // Individual routes within the route table can be updated using Route object
 message RouteTableSpec {
   // IP address family
-  network.opinetcommon.v1alpha1.IpAf af = 2;
+  network.opinetcommon.v1alpha1.IpAf af = 1;
   // enable or disable priority based routing for the route table
-  bool priority_enable = 3;
+  bool priority_enable = 2;
   // all routes in this route table
   // In a given route table, same prefix must not appear more than once.
   // For multipathing, use nexthop group instead
-  repeated RouteInfo routes = 4;
+  repeated RouteInfo routes = 3;
 }
 
 // route configuration information

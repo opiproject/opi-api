@@ -54,29 +54,29 @@ message Device {
 // device's network configuration
 message DeviceSpec {
   // underlay ipv4 address for tunnel initiation/termination
-  network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+  network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
   // underlay ipv6 address for tunnel initiation/termination
-  network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+  network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
   // device's mac address - for outer ethernet header
-  bytes mac_addr = 4;
+  bytes mac_addr = 3;
   // IP address of the underlay gateway in the underlay
-  network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+  network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
   // number and type of pcie functions exposed
-  PCIeFunctionsSpec pcie_functions = 6;
+  PCIeFunctionsSpec pcie_functions = 5;
   // ovelay routing
-  bool overlay_routing_enabled = 7; 
+  bool overlay_routing_enabled = 6; 
   // system name is used as named identifier in protocols (e.g. LLDP)
-  string systemname = 8;
+  string systemname = 7;
   // management network details
-  MgmtNetworkSpec mgmt_network_spec = 9;
+  MgmtNetworkSpec mgmt_network_spec = 8;
 }
 
 // PCIe functions to be configured on the device
 message PCIeFunctionsSpec {
   // number of physical functions
-  int32 pf_count = 5;
+  int32 pf_count = 1;
   // number of virtual functions
-  int32 vf_count = 6;
+  int32 vf_count = 2;
 }
 
 // MgmtNetworkSpec captures all the management network related parameters

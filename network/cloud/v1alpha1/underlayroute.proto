@@ -32,20 +32,20 @@ message UnderlayRoute {
 // control plane static route configuration
 message UnderlayRouteSpec {
   // route table id this route belongs to
-  string route_table_name_ref = 2;
+  string route_table_name_ref = 1;
   // destination address
-  network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;
+  network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
   // next-hop address
-  network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;
+  network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;
   // route is enabled or not
-  network.opinetcommon.v1alpha1.AdminState state = 5;
+  network.opinetcommon.v1alpha1.AdminState state = 4;
   // enable/disable admin distance
-  bool enable_admin_distance = 6;
+  bool enable_admin_distance = 5;
   // admin distance set for a static route vs. what a routing
   // protocol computes it for the dynamic route.
-  int32 admin_dist = 7;
+  int32 admin_dist = 6;
   // interface ID, if this route is configured on RR
-  string interface_name_ref = 8;
+  string interface_name_ref = 7;
 }
 
 // Underlay Route status for a control plane static or dynamic route

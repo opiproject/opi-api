@@ -30,34 +30,34 @@ message Vpc {
 // VpcSpec captures VPC configuration
 message VpcSpec {
   // type of the VPC
-  VPCType type = 2;
+  VPCType type = 1;
   // identifier of the IPv4 route table to be used and this route table is
   // inherited by the subnets under this VPC, if they are created with no route
   // table explicitly
-  string v4_route_table_name_ref = 3;
+  string v4_route_table_name_ref = 2;
   // identifier of the IPv6 route table to be used, if any and this route table
   // is inherited by the subnets under this VPC, if they are created with no
   // route table explicitly
-  string v6_route_table_name_ref = 4;
+  string v6_route_table_name_ref = 3;
   // For various security policies
   // - all vnics in this VPC will inherit the policies configured under VPC
   // - there can be multiple policies per vnic per direction (ingress/egress)
   // - vpc policy in each direction is to be aggregated to contain all rules in a given direction
   // identifier of ingress IPv4 security policy to be enforced
-  repeated string ingress_v4_security_policy_name_ref = 5;
+  repeated string ingress_v4_security_policy_name_ref = 4;
   // identifier of ingress IPv6 security policy to be enforced
-  repeated string ingress_v6_security_policy_name_ref = 6;
+  repeated string ingress_v6_security_policy_name_ref = 5;
   // identifier of egress IPv4 security policy to be enforced
-  repeated string egress_v4_security_policy_name_ref = 7;
+  repeated string egress_v4_security_policy_name_ref = 6;
   // identifier of egress IPv6 security policy to be enforced
-  repeated string egress_v6_security_policy_name_ref = 8;
+  repeated string egress_v6_security_policy_name_ref = 7;
   // Virtual Router (VR) MAC address, any packets originated or routed in this
   // VPC carry this MAC as source MAC
-  bytes virtual_router_mac = 9;
+  bytes virtual_router_mac = 8;
   // encapped traffic coming with the specified encap from fabric side will be
   // mapped to this VPC. FabricEncap is needed only for VPCs of type VPC_TYPE_TENANT,
   // for other types of VPCs user need not provide fabric encap and will be unused when provided
-  network.opinetcommon.v1alpha1.Encap fabric_encap = 10;
+  network.opinetcommon.v1alpha1.Encap fabric_encap = 9;
   // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
   // header or in the Traffic Class field of IPv6 outer header, this value, if
   // non-zero, will be used as-is (i.e., not interpreted) during encap time by
@@ -66,7 +66,7 @@ message VpcSpec {
   //   be explicitly configured with same ToS value as that of VPC or
   //   potentially different ToS value of their own
   // - tunnel objects, if configured with tos, will override this tos value
-  int32 tos = 13;
+  int32 tos = 10;
 }
 
 // operational status of a VPC, if any
@@ -98,9 +98,9 @@ message VPCPeer {
 // the vpc peering is commutative relation
 message VPCPeerSpec {
   // unique key/identifier of VPC1
-  string vpc1_name_ref = 2;
+  string vpc1_name_ref = 1;
   // unique key/identifier of VPC2
-  string vpc2_name_ref = 3;
+  string vpc2_name_ref = 2;
 }
 
 // operational status of a VPC peering, if any

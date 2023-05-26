@@ -33,33 +33,33 @@ message Tunnel {
 // have different tunnel type
 message TunnelSpec {
   // virtual private cloud this is tunnel belongs to
-  string vpc_name_ref = 2;
+  string vpc_name_ref = 1;
   // local IP of the tunnel (used as outer SIP in tunneled packets)
-  network.opinetcommon.v1alpha1.IPAddress local_ip = 3;
+  network.opinetcommon.v1alpha1.IPAddress local_ip = 2;
   // remote IP of the tunnel (used as outer DIP in tunneled packets)
-  network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;
+  network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;
   // type of the tunnel
-  TunnelType type = 5;
+  TunnelType type = 4;
   // encap used while sending traffic to this tunnel
-  network.opinetcommon.v1alpha1.Encap encap = 6;
+  network.opinetcommon.v1alpha1.Encap encap = 5;
   // Tunnel points to a underlay nexthop, nexthop-group(ECMP), or another Tunnel
   oneof nh {
     // underlay nexthop for this tunnel
-    string nexthop_name_ref = 8;
+    string nexthop_name_ref = 6;
     // underlay nexthop group for this tunnel
-    string nexthop_group_name_ref = 9;
+    string nexthop_group_name_ref = 7;
     // a tunnel can point to another tunnel for double encap
     // - supported combinations of double encap is platform specific
     // - unsupported combination of cascading tunnels would result in configuration failure
     // -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-    string tunnel_name_ref = 10;
+    string tunnel_name_ref = 8;
     // DropNexthop is used to explicitly drop traffic destined to this tunnel
     // even when there is reachability, this is administrative override
-    DropNexthop drop_next_hop = 11;
+    DropNexthop drop_next_hop = 9;
   }
   // MAC address of the remote IP (i.e., remote side of the tunnel)
   // set to zero if dataplane is expected to resolve this
-  bytes mac_address = 12;
+  bytes mac_address = 10;
   // when ToS is configured on a tunnel object, all traffic destined to the
   // tunnel will carry dscp value as configured.
   // ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer
@@ -68,7 +68,7 @@ message TunnelSpec {
   // the dataplane.
   // The ToS value configured on the tunnel will override ToS configuration
   // in vpc and subnet objects
-  int32 tos = 13;
+  int32 tos = 11;
 }
 
 // DropNexthop is used to blackhole the traffic
