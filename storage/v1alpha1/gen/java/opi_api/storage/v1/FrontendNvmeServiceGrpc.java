@@ -635,6 +635,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public void deleteNvmeSubsystem(opi_api.storage.v1.DeleteNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -677,6 +680,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public void deleteNvmeController(opi_api.storage.v1.DeleteNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -911,6 +917,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public void deleteNvmeSubsystem(opi_api.storage.v1.DeleteNvmeSubsystemRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -959,6 +968,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public void deleteNvmeController(opi_api.storage.v1.DeleteNvmeControllerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1072,6 +1084,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public com.google.protobuf.Empty deleteNvmeSubsystem(opi_api.storage.v1.DeleteNvmeSubsystemRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1114,6 +1129,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public com.google.protobuf.Empty deleteNvmeController(opi_api.storage.v1.DeleteNvmeControllerRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1217,6 +1235,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNvmeSubsystem(
         opi_api.storage.v1.DeleteNvmeSubsystemRequest request) {
@@ -1265,6 +1286,9 @@ public final class FrontendNvmeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Fails if there are any associated objects
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNvmeController(
         opi_api.storage.v1.DeleteNvmeControllerRequest request) {

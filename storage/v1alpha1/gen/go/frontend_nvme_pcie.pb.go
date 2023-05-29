@@ -3271,12 +3271,14 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type FrontendNvmeServiceClient interface {
 	CreateNvmeSubsystem(ctx context.Context, in *CreateNvmeSubsystemRequest, opts ...grpc.CallOption) (*NvmeSubsystem, error)
+	// Fails if there are any associated objects
 	DeleteNvmeSubsystem(ctx context.Context, in *DeleteNvmeSubsystemRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	UpdateNvmeSubsystem(ctx context.Context, in *UpdateNvmeSubsystemRequest, opts ...grpc.CallOption) (*NvmeSubsystem, error)
 	ListNvmeSubsystems(ctx context.Context, in *ListNvmeSubsystemsRequest, opts ...grpc.CallOption) (*ListNvmeSubsystemsResponse, error)
 	GetNvmeSubsystem(ctx context.Context, in *GetNvmeSubsystemRequest, opts ...grpc.CallOption) (*NvmeSubsystem, error)
 	NvmeSubsystemStats(ctx context.Context, in *NvmeSubsystemStatsRequest, opts ...grpc.CallOption) (*NvmeSubsystemStatsResponse, error)
 	CreateNvmeController(ctx context.Context, in *CreateNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
+	// Fails if there are any associated objects
 	DeleteNvmeController(ctx context.Context, in *DeleteNvmeControllerRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	UpdateNvmeController(ctx context.Context, in *UpdateNvmeControllerRequest, opts ...grpc.CallOption) (*NvmeController, error)
 	ListNvmeControllers(ctx context.Context, in *ListNvmeControllersRequest, opts ...grpc.CallOption) (*ListNvmeControllersResponse, error)
@@ -3463,12 +3465,14 @@ func (c *frontendNvmeServiceClient) NvmeNamespaceStats(ctx context.Context, in *
 // FrontendNvmeServiceServer is the server API for FrontendNvmeService service.
 type FrontendNvmeServiceServer interface {
 	CreateNvmeSubsystem(context.Context, *CreateNvmeSubsystemRequest) (*NvmeSubsystem, error)
+	// Fails if there are any associated objects
 	DeleteNvmeSubsystem(context.Context, *DeleteNvmeSubsystemRequest) (*emptypb.Empty, error)
 	UpdateNvmeSubsystem(context.Context, *UpdateNvmeSubsystemRequest) (*NvmeSubsystem, error)
 	ListNvmeSubsystems(context.Context, *ListNvmeSubsystemsRequest) (*ListNvmeSubsystemsResponse, error)
 	GetNvmeSubsystem(context.Context, *GetNvmeSubsystemRequest) (*NvmeSubsystem, error)
 	NvmeSubsystemStats(context.Context, *NvmeSubsystemStatsRequest) (*NvmeSubsystemStatsResponse, error)
 	CreateNvmeController(context.Context, *CreateNvmeControllerRequest) (*NvmeController, error)
+	// Fails if there are any associated objects
 	DeleteNvmeController(context.Context, *DeleteNvmeControllerRequest) (*emptypb.Empty, error)
 	UpdateNvmeController(context.Context, *UpdateNvmeControllerRequest) (*NvmeController, error)
 	ListNvmeControllers(context.Context, *ListNvmeControllersRequest) (*ListNvmeControllersResponse, error)

@@ -51,6 +51,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>> PrepareAsyncCreateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeSubsystem>>(PrepareAsyncCreateNvmeSubsystemRaw(context, request, cq));
     }
+    // Fails if there are any associated objects
     virtual ::grpc::Status DeleteNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteNvmeSubsystemRaw(context, request, cq));
@@ -93,6 +94,7 @@ class FrontendNvmeService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>> PrepareAsyncCreateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::opi_api::storage::v1::NvmeController>>(PrepareAsyncCreateNvmeControllerRaw(context, request, cq));
     }
+    // Fails if there are any associated objects
     virtual ::grpc::Status DeleteNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest& request, ::google::protobuf::Empty* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncDeleteNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncDeleteNvmeControllerRaw(context, request, cq));
@@ -175,6 +177,7 @@ class FrontendNvmeService final {
       virtual ~async_interface() {}
       virtual void CreateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Fails if there are any associated objects
       virtual void DeleteNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateNvmeSubsystem(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response, std::function<void(::grpc::Status)>) = 0;
@@ -187,6 +190,7 @@ class FrontendNvmeService final {
       virtual void NvmeSubsystemStats(::grpc::ClientContext* context, const ::opi_api::storage::v1::NvmeSubsystemStatsRequest* request, ::opi_api::storage::v1::NvmeSubsystemStatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CreateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::CreateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Fails if there are any associated objects
       virtual void DeleteNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateNvmeController(::grpc::ClientContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response, std::function<void(::grpc::Status)>) = 0;
@@ -492,12 +496,14 @@ class FrontendNvmeService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status CreateNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response);
+    // Fails if there are any associated objects
     virtual ::grpc::Status DeleteNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeSubsystemRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status UpdateNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response);
     virtual ::grpc::Status ListNvmeSubsystems(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeSubsystemsRequest* request, ::opi_api::storage::v1::ListNvmeSubsystemsResponse* response);
     virtual ::grpc::Status GetNvmeSubsystem(::grpc::ServerContext* context, const ::opi_api::storage::v1::GetNvmeSubsystemRequest* request, ::opi_api::storage::v1::NvmeSubsystem* response);
     virtual ::grpc::Status NvmeSubsystemStats(::grpc::ServerContext* context, const ::opi_api::storage::v1::NvmeSubsystemStatsRequest* request, ::opi_api::storage::v1::NvmeSubsystemStatsResponse* response);
     virtual ::grpc::Status CreateNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::CreateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response);
+    // Fails if there are any associated objects
     virtual ::grpc::Status DeleteNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::DeleteNvmeControllerRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status UpdateNvmeController(::grpc::ServerContext* context, const ::opi_api::storage::v1::UpdateNvmeControllerRequest* request, ::opi_api::storage::v1::NvmeController* response);
     virtual ::grpc::Status ListNvmeControllers(::grpc::ServerContext* context, const ::opi_api::storage::v1::ListNvmeControllersRequest* request, ::opi_api::storage::v1::ListNvmeControllersResponse* response);
