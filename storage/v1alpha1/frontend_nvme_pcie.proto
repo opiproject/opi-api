@@ -31,6 +31,7 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "parent,nvme_subsystem,nvme_subsystem_id";
     }
+    // Fails if there are any associated objects
     rpc DeleteNvmeSubsystem (DeleteNvmeSubsystemRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=subsystems}/{subsystem}"
@@ -65,6 +66,7 @@ service FrontendNvmeService {
         };
         option (google.api.method_signature) = "parent,nvme_controller,nvme_controller_id";
     }
+    // Fails if there are any associated objects
     rpc DeleteNvmeController (DeleteNvmeControllerRequest) returns (google.protobuf.Empty) {
         option (google.api.http) = {
             delete: "/v1/{name=controllers}/{controller}"
