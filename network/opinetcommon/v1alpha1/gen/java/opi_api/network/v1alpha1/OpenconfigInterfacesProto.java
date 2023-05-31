@@ -112,79 +112,79 @@ public final class OpenconfigInterfacesProto {
       "\030\014 \001(\004\022\032\n\022out_broadcast_pkts\030\r \001(\004\022\032\n\022ou" +
       "t_multicast_pkts\030\016 \001(\004\022\024\n\014out_discards\030\017" +
       " \001(\004\022\022\n\nout_errors\030\020 \001(\004\022\033\n\023carrier_tran" +
-      "sitions\030\021 \001(\004\022\022\n\nlast_clear\030\022 \001(\004\"\230\003\n\005St" +
+      "sitions\030\021 \001(\004\022\022\n\nlast_clear\030\022 \001(\004\"\232\003\n\005St" +
       "ate\022\014\n\004name\030\001 \001(\t\0225\n\004type\030\002 \001(\0162\'.opi_ap" +
       "i.network.v1alpha1.InterfaceType\022\013\n\003mtu\030" +
       "\003 \001(\r\022\025\n\rloopback_mode\030\004 \001(\010\022\023\n\013descript" +
       "ion\030\005 \001(\t\022\017\n\007enabled\030\006 \001(\010\022\017\n\007ifindex\030\007 " +
-      "\001(\r\0229\n\013admin_state\030\010 \001(\0162$.opi_api.netwo" +
-      "rk.v1alpha1.AdminState\0227\n\noper_state\030\t \001" +
-      "(\0162#.opi_api.network.v1alpha1.OperState\022" +
-      "\023\n\013last_change\030\n \001(\004\022\017\n\007logical\030\013 \001(\010\022\022\n" +
-      "\nmanagement\030\014 \001(\010\022\013\n\003cpu\030\r \001(\010\0224\n\010counte" +
-      "rs\030\016 \001(\0132\".opi_api.network.v1alpha1.Coun" +
-      "ters\"\356\006\n\014NetInterface\022\014\n\004name\030\001 \001(\t\0220\n\006c" +
-      "onfig\030\002 \001(\0132 .opi_api.network.v1alpha1.C" +
-      "onfig\022.\n\005state\030\003 \001(\0132\037.opi_api.network.v" +
-      "1alpha1.State\022A\n\010holdtime\030\004 \001(\0132/.opi_ap" +
-      "i.network.v1alpha1.NetInterface.HoldTime" +
-      "\022K\n\rsubinterfaces\030\005 \001(\01324.opi_api.networ" +
-      "k.v1alpha1.NetInterface.Subinterfaces\032\371\001" +
-      "\n\010HoldTime\022O\n\013hold_config\030\001 \001(\0132:.opi_ap" +
-      "i.network.v1alpha1.NetInterface.HoldTime" +
-      ".HoldConfig\022M\n\nhold_state\030\002 \001(\01329.opi_ap" +
-      "i.network.v1alpha1.NetInterface.HoldTime" +
-      ".HoldState\032&\n\nHoldConfig\022\n\n\002up\030\001 \001(\r\022\014\n\004" +
-      "down\030\002 \001(\r\032%\n\tHoldState\022\n\n\002up\030\001 \001(\r\022\014\n\004d" +
-      "own\030\002 \001(\r\032\341\002\n\rSubinterfaces\022W\n\014subinterf" +
-      "ace\030\002 \003(\0132A.opi_api.network.v1alpha1.Net" +
-      "Interface.Subinterfaces.Subinterface\032\366\001\n" +
-      "\014Subinterface\022\r\n\005index\030\001 \001(\003\022c\n\014subif_co" +
-      "nfig\030\002 \001(\0132M.opi_api.network.v1alpha1.Ne" +
-      "tInterface.Subinterfaces.Subinterface.Su" +
-      "bifConfig\022.\n\005state\030\003 \001(\0132\037.opi_api.netwo" +
-      "rk.v1alpha1.State\032B\n\013SubifConfig\022\r\n\005inde" +
-      "x\030\001 \001(\004\022\023\n\013description\030\002 \001(\t\022\017\n\007enabled\030" +
-      "\003 \001(\010\"M\n\026GetNetInterfaceRequest\0223\n\004name\030" +
-      "\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1/Interf" +
-      "aces\"x\n\030ListNetInterfacesRequest\0225\n\006pare" +
-      "nt\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1/Int" +
-      "erfaces\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token" +
-      "\030\003 \001(\t\"t\n\031ListNetInterfacesResponse\022>\n\016n" +
-      "et_interfaces\030\001 \003(\0132&.opi_api.network.v1" +
-      "alpha1.NetInterface\022\027\n\017next_page_token\030\002" +
-      " \001(\t\"\213\001\n\031UpdateNetInterfaceRequest\022=\n\rne" +
-      "t_interface\030\001 \001(\0132&.opi_api.network.v1al" +
-      "pha1.NetInterface\022/\n\013update_mask\030\002 \001(\0132\032" +
-      ".google.protobuf.FieldMask*K\n\rInterfaceT" +
-      "ype\022\036\n\032INTERFACE_TYPE_UNSPECIFIED\020\000\022\014\n\010E" +
-      "THERNET\020\001\022\014\n\010LOOPBACK\020\002*l\n\nAdminState\022\033\n" +
-      "\027ADMIN_STATE_UNSPECIFIED\020\000\022\022\n\016ADMIN_STAT" +
-      "E_UP\020\001\022\024\n\020ADMIN_STATE_DOWN\020\002\022\027\n\023ADMIN_ST" +
-      "ATE_TESTING\020\003*\324\001\n\tOperState\022\032\n\026OPER_STAT" +
-      "E_UNSPECIFIED\020\000\022\021\n\rOPER_STATE_UP\020\002\022\023\n\017OP" +
-      "ER_STATE_DOWN\020\003\022\026\n\022OPER_STATE_TESTING\020\004\022" +
-      "\026\n\022OPER_STATE_UNKNOWN\020\005\022\026\n\022OPER_STATE_DO" +
-      "RMANT\020\006\022\032\n\026OPER_STATE_NOT_PRESENT\020\007\022\037\n\033O" +
-      "PER_STATE_LOWER_LAYER_DOWN\020\0102\272\004\n\023NetInte" +
-      "rfaceService\022\237\001\n\017GetNetInterface\0220.opi_a" +
-      "pi.network.v1alpha1.GetNetInterfaceReque" +
-      "st\032&.opi_api.network.v1alpha1.NetInterfa" +
-      "ce\"2\202\323\344\223\002%\022#/v1/{name=interfaces/*/inter" +
-      "face/*}\332A\004name\022\246\001\n\021ListNetInterfaces\0222.o" +
-      "pi_api.network.v1alpha1.ListNetInterface" +
-      "sRequest\0323.opi_api.network.v1alpha1.List" +
-      "NetInterfacesResponse\"(\202\323\344\223\002\031\022\027/v1/{pare" +
-      "nt=interfaces}\332A\006parent\022\327\001\n\022UpdateNetInt" +
-      "erface\0223.opi_api.network.v1alpha1.Update" +
-      "NetInterfaceRequest\032&.opi_api.network.v1" +
-      "alpha1.NetInterface\"d\202\323\344\223\002B21/v1/{net_in" +
-      "terface.name=interfaces/*/interface/*}:\r" +
-      "net_interface\332A\031net_interface,update_mas" +
-      "kBn\n\030opi_api.network.v1alpha1B\031Openconfi" +
-      "gInterfacesProtoP\001Z5github.com/opiprojec" +
-      "t/opi-api/network/v1alpha1/gen/gob\006proto" +
-      "3"
+      "\001(\r\022;\n\013admin_state\030\010 \001(\0162&.opi_api.netwo" +
+      "rk.v1alpha1.OcAdminState\0227\n\noper_state\030\t" +
+      " \001(\0162#.opi_api.network.v1alpha1.OperStat" +
+      "e\022\023\n\013last_change\030\n \001(\004\022\017\n\007logical\030\013 \001(\010\022" +
+      "\022\n\nmanagement\030\014 \001(\010\022\013\n\003cpu\030\r \001(\010\0224\n\010coun" +
+      "ters\030\016 \001(\0132\".opi_api.network.v1alpha1.Co" +
+      "unters\"\356\006\n\014NetInterface\022\014\n\004name\030\001 \001(\t\0220\n" +
+      "\006config\030\002 \001(\0132 .opi_api.network.v1alpha1" +
+      ".Config\022.\n\005state\030\003 \001(\0132\037.opi_api.network" +
+      ".v1alpha1.State\022A\n\010holdtime\030\004 \001(\0132/.opi_" +
+      "api.network.v1alpha1.NetInterface.HoldTi" +
+      "me\022K\n\rsubinterfaces\030\005 \001(\01324.opi_api.netw" +
+      "ork.v1alpha1.NetInterface.Subinterfaces\032" +
+      "\371\001\n\010HoldTime\022O\n\013hold_config\030\001 \001(\0132:.opi_" +
+      "api.network.v1alpha1.NetInterface.HoldTi" +
+      "me.HoldConfig\022M\n\nhold_state\030\002 \001(\01329.opi_" +
+      "api.network.v1alpha1.NetInterface.HoldTi" +
+      "me.HoldState\032&\n\nHoldConfig\022\n\n\002up\030\001 \001(\r\022\014" +
+      "\n\004down\030\002 \001(\r\032%\n\tHoldState\022\n\n\002up\030\001 \001(\r\022\014\n" +
+      "\004down\030\002 \001(\r\032\341\002\n\rSubinterfaces\022W\n\014subinte" +
+      "rface\030\002 \003(\0132A.opi_api.network.v1alpha1.N" +
+      "etInterface.Subinterfaces.Subinterface\032\366" +
+      "\001\n\014Subinterface\022\r\n\005index\030\001 \001(\003\022c\n\014subif_" +
+      "config\030\002 \001(\0132M.opi_api.network.v1alpha1." +
+      "NetInterface.Subinterfaces.Subinterface." +
+      "SubifConfig\022.\n\005state\030\003 \001(\0132\037.opi_api.net" +
+      "work.v1alpha1.State\032B\n\013SubifConfig\022\r\n\005in" +
+      "dex\030\001 \001(\004\022\023\n\013description\030\002 \001(\t\022\017\n\007enable" +
+      "d\030\003 \001(\010\"M\n\026GetNetInterfaceRequest\0223\n\004nam" +
+      "e\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1/Inte" +
+      "rfaces\"x\n\030ListNetInterfacesRequest\0225\n\006pa" +
+      "rent\030\001 \001(\tB%\340A\002\372A\037\n\035opi_api.network.v1/I" +
+      "nterfaces\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
+      "en\030\003 \001(\t\"t\n\031ListNetInterfacesResponse\022>\n" +
+      "\016net_interfaces\030\001 \003(\0132&.opi_api.network." +
+      "v1alpha1.NetInterface\022\027\n\017next_page_token" +
+      "\030\002 \001(\t\"\213\001\n\031UpdateNetInterfaceRequest\022=\n\r" +
+      "net_interface\030\001 \001(\0132&.opi_api.network.v1" +
+      "alpha1.NetInterface\022/\n\013update_mask\030\002 \001(\013" +
+      "2\032.google.protobuf.FieldMask*K\n\rInterfac" +
+      "eType\022\036\n\032INTERFACE_TYPE_UNSPECIFIED\020\000\022\014\n" +
+      "\010ETHERNET\020\001\022\014\n\010LOOPBACK\020\002*z\n\014OcAdminStat" +
+      "e\022\036\n\032OC_ADMIN_STATE_UNSPECIFIED\020\000\022\025\n\021OC_" +
+      "ADMIN_STATE_UP\020\001\022\027\n\023OC_ADMIN_STATE_DOWN\020" +
+      "\002\022\032\n\026OC_ADMIN_STATE_TESTING\020\003*\324\001\n\tOperSt" +
+      "ate\022\032\n\026OPER_STATE_UNSPECIFIED\020\000\022\021\n\rOPER_" +
+      "STATE_UP\020\002\022\023\n\017OPER_STATE_DOWN\020\003\022\026\n\022OPER_" +
+      "STATE_TESTING\020\004\022\026\n\022OPER_STATE_UNKNOWN\020\005\022" +
+      "\026\n\022OPER_STATE_DORMANT\020\006\022\032\n\026OPER_STATE_NO" +
+      "T_PRESENT\020\007\022\037\n\033OPER_STATE_LOWER_LAYER_DO" +
+      "WN\020\0102\272\004\n\023NetInterfaceService\022\237\001\n\017GetNetI" +
+      "nterface\0220.opi_api.network.v1alpha1.GetN" +
+      "etInterfaceRequest\032&.opi_api.network.v1a" +
+      "lpha1.NetInterface\"2\202\323\344\223\002%\022#/v1/{name=in" +
+      "terfaces/*/interface/*}\332A\004name\022\246\001\n\021ListN" +
+      "etInterfaces\0222.opi_api.network.v1alpha1." +
+      "ListNetInterfacesRequest\0323.opi_api.netwo" +
+      "rk.v1alpha1.ListNetInterfacesResponse\"(\202" +
+      "\323\344\223\002\031\022\027/v1/{parent=interfaces}\332A\006parent\022" +
+      "\327\001\n\022UpdateNetInterface\0223.opi_api.network" +
+      ".v1alpha1.UpdateNetInterfaceRequest\032&.op" +
+      "i_api.network.v1alpha1.NetInterface\"d\202\323\344" +
+      "\223\002B21/v1/{net_interface.name=interfaces/" +
+      "*/interface/*}:\rnet_interface\332A\031net_inte" +
+      "rface,update_maskBn\n\030opi_api.network.v1a" +
+      "lpha1B\031OpenconfigInterfacesProtoP\001Z5gith" +
+      "ub.com/opiproject/opi-api/network/v1alph" +
+      "a1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

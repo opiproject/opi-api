@@ -126,7 +126,7 @@ message State {
     // Interface Index
     uint32 ifindex = 7;
     // Admin State
-    AdminState admin_state = 8;
+    OcAdminState admin_state = 8;
     // Operational State
     OperState oper_state = 9;
     // Last Change
@@ -256,15 +256,15 @@ enum InterfaceType {
 }
 
 // Admin State Enumeration
-enum AdminState {
+enum OcAdminState {
     // Unspecified
-    ADMIN_STATE_UNSPECIFIED = 0;
+    OC_ADMIN_STATE_UNSPECIFIED = 0;
     // Up
-    ADMIN_STATE_UP = 1;
+    OC_ADMIN_STATE_UP = 1;
     // Down
-    ADMIN_STATE_DOWN = 2;
+    OC_ADMIN_STATE_DOWN = 2;
     // Testing
-    ADMIN_STATE_TESTING = 3;
+    OC_ADMIN_STATE_TESTING = 3;
 }
 // Operational State Enumeration
 enum OperState {

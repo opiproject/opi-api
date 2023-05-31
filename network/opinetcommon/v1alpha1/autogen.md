@@ -49,8 +49,8 @@
     - [State](#opi_api-network-v1alpha1-State)
     - [UpdateNetInterfaceRequest](#opi_api-network-v1alpha1-UpdateNetInterfaceRequest)
   
-    - [AdminState](#opi_api-network-v1alpha1-AdminState)
     - [InterfaceType](#opi_api-network-v1alpha1-InterfaceType)
+    - [OcAdminState](#opi_api-network-v1alpha1-OcAdminState)
     - [OperState](#opi_api-network-v1alpha1-OperState)
   
     - [NetInterfaceService](#opi_api-network-v1alpha1-NetInterfaceService)
@@ -769,7 +769,7 @@ Interface State information - ro
 | description | [string](#string) |  | Interface description |
 | enabled | [bool](#bool) |  | Interface enabled indicator |
 | ifindex | [uint32](#uint32) |  | Interface Index |
-| admin_state | [AdminState](#opi_api-network-v1alpha1-AdminState) |  | Admin State |
+| admin_state | [OcAdminState](#opi_api-network-v1alpha1-OcAdminState) |  | Admin State |
 | oper_state | [OperState](#opi_api-network-v1alpha1-OperState) |  | Operational State |
 | last_change | [uint64](#uint64) |  | Last Change |
 | logical | [bool](#bool) |  | Logical interface |
@@ -800,20 +800,6 @@ Update Interface Request
  
 
 
-<a name="opi_api-network-v1alpha1-AdminState"></a>
-
-### AdminState
-Admin State Enumeration
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ADMIN_STATE_UNSPECIFIED | 0 | Unspecified |
-| ADMIN_STATE_UP | 1 | Up |
-| ADMIN_STATE_DOWN | 2 | Down |
-| ADMIN_STATE_TESTING | 3 | Testing |
-
-
-
 <a name="opi_api-network-v1alpha1-InterfaceType"></a>
 
 ### InterfaceType
@@ -824,6 +810,20 @@ Interface Types Enumeration
 | INTERFACE_TYPE_UNSPECIFIED | 0 | Interface Unspecified |
 | ETHERNET | 1 | Ethernet Interface |
 | LOOPBACK | 2 | Loopback Interface |
+
+
+
+<a name="opi_api-network-v1alpha1-OcAdminState"></a>
+
+### OcAdminState
+Admin State Enumeration
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OC_ADMIN_STATE_UNSPECIFIED | 0 | Unspecified |
+| OC_ADMIN_STATE_UP | 1 | Up |
+| OC_ADMIN_STATE_DOWN | 2 | Down |
+| OC_ADMIN_STATE_TESTING | 3 | Testing |
 
 
 

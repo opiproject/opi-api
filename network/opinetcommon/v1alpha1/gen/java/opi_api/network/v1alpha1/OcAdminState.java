@@ -8,42 +8,42 @@ package opi_api.network.v1alpha1;
  * Admin State Enumeration
  * </pre>
  *
- * Protobuf enum {@code opi_api.network.v1alpha1.AdminState}
+ * Protobuf enum {@code opi_api.network.v1alpha1.OcAdminState}
  */
-public enum AdminState
+public enum OcAdminState
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
    * Unspecified
    * </pre>
    *
-   * <code>ADMIN_STATE_UNSPECIFIED = 0;</code>
+   * <code>OC_ADMIN_STATE_UNSPECIFIED = 0;</code>
    */
-  ADMIN_STATE_UNSPECIFIED(0),
+  OC_ADMIN_STATE_UNSPECIFIED(0),
   /**
    * <pre>
    * Up
    * </pre>
    *
-   * <code>ADMIN_STATE_UP = 1;</code>
+   * <code>OC_ADMIN_STATE_UP = 1;</code>
    */
-  ADMIN_STATE_UP(1),
+  OC_ADMIN_STATE_UP(1),
   /**
    * <pre>
    * Down
    * </pre>
    *
-   * <code>ADMIN_STATE_DOWN = 2;</code>
+   * <code>OC_ADMIN_STATE_DOWN = 2;</code>
    */
-  ADMIN_STATE_DOWN(2),
+  OC_ADMIN_STATE_DOWN(2),
   /**
    * <pre>
    * Testing
    * </pre>
    *
-   * <code>ADMIN_STATE_TESTING = 3;</code>
+   * <code>OC_ADMIN_STATE_TESTING = 3;</code>
    */
-  ADMIN_STATE_TESTING(3),
+  OC_ADMIN_STATE_TESTING(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -52,33 +52,33 @@ public enum AdminState
    * Unspecified
    * </pre>
    *
-   * <code>ADMIN_STATE_UNSPECIFIED = 0;</code>
+   * <code>OC_ADMIN_STATE_UNSPECIFIED = 0;</code>
    */
-  public static final int ADMIN_STATE_UNSPECIFIED_VALUE = 0;
+  public static final int OC_ADMIN_STATE_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
    * Up
    * </pre>
    *
-   * <code>ADMIN_STATE_UP = 1;</code>
+   * <code>OC_ADMIN_STATE_UP = 1;</code>
    */
-  public static final int ADMIN_STATE_UP_VALUE = 1;
+  public static final int OC_ADMIN_STATE_UP_VALUE = 1;
   /**
    * <pre>
    * Down
    * </pre>
    *
-   * <code>ADMIN_STATE_DOWN = 2;</code>
+   * <code>OC_ADMIN_STATE_DOWN = 2;</code>
    */
-  public static final int ADMIN_STATE_DOWN_VALUE = 2;
+  public static final int OC_ADMIN_STATE_DOWN_VALUE = 2;
   /**
    * <pre>
    * Testing
    * </pre>
    *
-   * <code>ADMIN_STATE_TESTING = 3;</code>
+   * <code>OC_ADMIN_STATE_TESTING = 3;</code>
    */
-  public static final int ADMIN_STATE_TESTING_VALUE = 3;
+  public static final int OC_ADMIN_STATE_TESTING_VALUE = 3;
 
 
   public final int getNumber() {
@@ -95,7 +95,7 @@ public enum AdminState
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AdminState valueOf(int value) {
+  public static OcAdminState valueOf(int value) {
     return forNumber(value);
   }
 
@@ -103,25 +103,25 @@ public enum AdminState
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AdminState forNumber(int value) {
+  public static OcAdminState forNumber(int value) {
     switch (value) {
-      case 0: return ADMIN_STATE_UNSPECIFIED;
-      case 1: return ADMIN_STATE_UP;
-      case 2: return ADMIN_STATE_DOWN;
-      case 3: return ADMIN_STATE_TESTING;
+      case 0: return OC_ADMIN_STATE_UNSPECIFIED;
+      case 1: return OC_ADMIN_STATE_UP;
+      case 2: return OC_ADMIN_STATE_DOWN;
+      case 3: return OC_ADMIN_STATE_TESTING;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AdminState>
+  public static com.google.protobuf.Internal.EnumLiteMap<OcAdminState>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AdminState> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AdminState>() {
-          public AdminState findValueByNumber(int number) {
-            return AdminState.forNumber(number);
+      OcAdminState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<OcAdminState>() {
+          public OcAdminState findValueByNumber(int number) {
+            return OcAdminState.forNumber(number);
           }
         };
 
@@ -142,9 +142,9 @@ public enum AdminState
     return opi_api.network.v1alpha1.OpenconfigInterfacesProto.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final AdminState[] VALUES = values();
+  private static final OcAdminState[] VALUES = values();
 
-  public static AdminState valueOf(
+  public static OcAdminState valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -158,10 +158,10 @@ public enum AdminState
 
   private final int value;
 
-  private AdminState(int value) {
+  private OcAdminState(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:opi_api.network.v1alpha1.AdminState)
+  // @@protoc_insertion_point(enum_scope:opi_api.network.v1alpha1.OcAdminState)
 }
 

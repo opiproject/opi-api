@@ -362,7 +362,7 @@ private static final long serialVersionUID = 0L;
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
    * @return The enum numeric value on the wire for adminState.
    */
   @java.lang.Override public int getAdminStateValue() {
@@ -373,13 +373,13 @@ private static final long serialVersionUID = 0L;
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+   * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
    * @return The adminState.
    */
-  @java.lang.Override public opi_api.network.v1alpha1.AdminState getAdminState() {
+  @java.lang.Override public opi_api.network.v1alpha1.OcAdminState getAdminState() {
     @SuppressWarnings("deprecation")
-    opi_api.network.v1alpha1.AdminState result = opi_api.network.v1alpha1.AdminState.valueOf(adminState_);
-    return result == null ? opi_api.network.v1alpha1.AdminState.UNRECOGNIZED : result;
+    opi_api.network.v1alpha1.OcAdminState result = opi_api.network.v1alpha1.OcAdminState.valueOf(adminState_);
+    return result == null ? opi_api.network.v1alpha1.OcAdminState.UNRECOGNIZED : result;
   }
 
   public static final int OPER_STATE_FIELD_NUMBER = 9;
@@ -542,7 +542,7 @@ private static final long serialVersionUID = 0L;
     if (ifindex_ != 0) {
       output.writeUInt32(7, ifindex_);
     }
-    if (adminState_ != opi_api.network.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
+    if (adminState_ != opi_api.network.v1alpha1.OcAdminState.OC_ADMIN_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, adminState_);
     }
     if (operState_ != opi_api.network.v1alpha1.OperState.OPER_STATE_UNSPECIFIED.getNumber()) {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(7, ifindex_);
     }
-    if (adminState_ != opi_api.network.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
+    if (adminState_ != opi_api.network.v1alpha1.OcAdminState.OC_ADMIN_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, adminState_);
     }
@@ -1501,7 +1501,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
      * @return The enum numeric value on the wire for adminState.
      */
     @java.lang.Override public int getAdminStateValue() {
@@ -1512,7 +1512,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
      * @param value The enum numeric value on the wire for adminState to set.
      * @return This builder for chaining.
      */
@@ -1527,25 +1527,25 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
      * @return The adminState.
      */
     @java.lang.Override
-    public opi_api.network.v1alpha1.AdminState getAdminState() {
+    public opi_api.network.v1alpha1.OcAdminState getAdminState() {
       @SuppressWarnings("deprecation")
-      opi_api.network.v1alpha1.AdminState result = opi_api.network.v1alpha1.AdminState.valueOf(adminState_);
-      return result == null ? opi_api.network.v1alpha1.AdminState.UNRECOGNIZED : result;
+      opi_api.network.v1alpha1.OcAdminState result = opi_api.network.v1alpha1.OcAdminState.valueOf(adminState_);
+      return result == null ? opi_api.network.v1alpha1.OcAdminState.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
      * @param value The adminState to set.
      * @return This builder for chaining.
      */
-    public Builder setAdminState(opi_api.network.v1alpha1.AdminState value) {
+    public Builder setAdminState(opi_api.network.v1alpha1.OcAdminState value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1559,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      * Admin State
      * </pre>
      *
-     * <code>.opi_api.network.v1alpha1.AdminState admin_state = 8;</code>
+     * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAdminState() {
