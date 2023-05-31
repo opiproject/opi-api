@@ -60,7 +60,7 @@ public interface NvmeControllerOrBuilder extends
 
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>
@@ -69,7 +69,7 @@ public interface NvmeControllerOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>
@@ -78,7 +78,7 @@ public interface NvmeControllerOrBuilder extends
   opi_api.storage.v1.NvmeControllerStatus getStatus();
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>

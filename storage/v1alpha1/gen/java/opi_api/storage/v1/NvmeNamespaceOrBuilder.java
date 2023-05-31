@@ -60,7 +60,7 @@ public interface NvmeNamespaceOrBuilder extends
 
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
@@ -69,7 +69,7 @@ public interface NvmeNamespaceOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>
@@ -78,7 +78,7 @@ public interface NvmeNamespaceOrBuilder extends
   opi_api.storage.v1.NvmeNamespaceStatus getStatus();
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeNamespaceStatus status = 3;</code>

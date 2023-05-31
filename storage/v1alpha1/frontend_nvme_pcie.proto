@@ -141,7 +141,7 @@ message NvmeSubsystem {
     // spec holds configurable values
     NvmeSubsystemSpec   spec   = 2;
 
-    // stats holds server generated values
+    // status holds server generated values
     NvmeSubsystemStatus status = 3;
 }
 
@@ -183,7 +183,7 @@ message NvmeController {
     // spec holds configurable values
     NvmeControllerSpec   spec   = 2;
 
-    // stats holds server generated values
+    // status holds server generated values
     NvmeControllerStatus status = 3;
 }
 
@@ -244,7 +244,7 @@ message NvmeNamespace {
     // spec holds configurable values
     NvmeNamespaceSpec   spec   = 2;
 
-    // stats holds server generated values
+    // status holds server generated values
     NvmeNamespaceStatus status = 3;
 }
 

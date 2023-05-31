@@ -154,7 +154,7 @@ type NvmeSubsystem struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// spec holds configurable values
 	Spec *NvmeSubsystemSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
-	// stats holds server generated values
+	// status holds server generated values
 	Status *NvmeSubsystemStatus `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 
@@ -356,7 +356,7 @@ type NvmeController struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// spec holds configurable values
 	Spec *NvmeControllerSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
-	// stats holds server generated values
+	// status holds server generated values
 	Status *NvmeControllerStatus `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 
@@ -607,7 +607,7 @@ type NvmeNamespace struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// spec holds configurable values
 	Spec *NvmeNamespaceSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
-	// stats holds server generated values
+	// status holds server generated values
 	Status *NvmeNamespaceStatus `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 

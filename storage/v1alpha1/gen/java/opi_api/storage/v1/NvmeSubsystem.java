@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
   private opi_api.storage.v1.NvmeSubsystemStatus status_;
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -229,7 +229,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * stats holds server generated values
+   * status holds server generated values
    * </pre>
    *
    * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
         opi_api.storage.v1.NvmeSubsystemStatus, opi_api.storage.v1.NvmeSubsystemStatus.Builder, opi_api.storage.v1.NvmeSubsystemStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -913,7 +913,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -931,7 +931,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -953,7 +953,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -983,7 +983,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * stats holds server generated values
+     * status holds server generated values
      * </pre>
      *
      * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
