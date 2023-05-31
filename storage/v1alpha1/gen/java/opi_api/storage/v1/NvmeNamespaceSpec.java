@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeNamespaceSpec() {
-    name_ = "";
     nguid_ = "";
   }
 
@@ -51,12 +50,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 18: {
             opi_api.common.v1.ObjectKey.Builder subBuilder = null;
             if (subsystemId_ != null) {
               subBuilder = subsystemId_.toBuilder();
@@ -69,23 +62,23 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 32: {
+          case 16: {
 
             hostNsid_ = input.readInt32();
             break;
           }
-          case 58: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             nguid_ = s;
             break;
           }
-          case 64: {
+          case 32: {
 
             eui64_ = input.readInt64();
             break;
           }
-          case 74: {
+          case 42: {
             opi_api.common.v1.Uuid.Builder subBuilder = null;
             if (uuid_ != null) {
               subBuilder = uuid_.toBuilder();
@@ -98,7 +91,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 82: {
+          case 50: {
             opi_api.common.v1.ObjectKey.Builder subBuilder = null;
             if (volumeId_ != null) {
               subBuilder = volumeId_.toBuilder();
@@ -143,64 +136,14 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeNamespaceSpec.class, opi_api.storage.v1.NvmeNamespaceSpec.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 2;
+  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 1;
   private opi_api.common.v1.ObjectKey subsystemId_;
   /**
    * <pre>
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    * @return Whether the subsystemId field is set.
    */
   @java.lang.Override
@@ -212,7 +155,7 @@ private static final long serialVersionUID = 0L;
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    * @return The subsystemId.
    */
   @java.lang.Override
@@ -224,14 +167,14 @@ private static final long serialVersionUID = 0L;
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
     return getSubsystemId();
   }
 
-  public static final int HOST_NSID_FIELD_NUMBER = 4;
+  public static final int HOST_NSID_FIELD_NUMBER = 2;
   private int hostNsid_;
   /**
    * <pre>
@@ -241,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 4;</code>
+   * <code>int32 host_nsid = 2;</code>
    * @return The hostNsid.
    */
   @java.lang.Override
@@ -249,14 +192,14 @@ private static final long serialVersionUID = 0L;
     return hostNsid_;
   }
 
-  public static final int NGUID_FIELD_NUMBER = 7;
+  public static final int NGUID_FIELD_NUMBER = 3;
   private volatile java.lang.Object nguid_;
   /**
    * <pre>
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 7;</code>
+   * <code>string nguid = 3;</code>
    * @return The nguid.
    */
   @java.lang.Override
@@ -277,7 +220,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 7;</code>
+   * <code>string nguid = 3;</code>
    * @return The bytes for nguid.
    */
   @java.lang.Override
@@ -295,7 +238,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EUI64_FIELD_NUMBER = 8;
+  public static final int EUI64_FIELD_NUMBER = 4;
   private long eui64_;
   /**
    * <pre>
@@ -303,7 +246,7 @@ private static final long serialVersionUID = 0L;
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 8;</code>
+   * <code>int64 eui64 = 4;</code>
    * @return The eui64.
    */
   @java.lang.Override
@@ -311,14 +254,14 @@ private static final long serialVersionUID = 0L;
     return eui64_;
   }
 
-  public static final int UUID_FIELD_NUMBER = 9;
+  public static final int UUID_FIELD_NUMBER = 5;
   private opi_api.common.v1.Uuid uuid_;
   /**
    * <pre>
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -330,7 +273,7 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -342,21 +285,21 @@ private static final long serialVersionUID = 0L;
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    */
   @java.lang.Override
   public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
     return getUuid();
   }
 
-  public static final int VOLUME_ID_FIELD_NUMBER = 10;
+  public static final int VOLUME_ID_FIELD_NUMBER = 6;
   private opi_api.common.v1.ObjectKey volumeId_;
   /**
    * <pre>
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    * @return Whether the volumeId field is set.
    */
   @java.lang.Override
@@ -368,7 +311,7 @@ private static final long serialVersionUID = 0L;
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    * @return The volumeId.
    */
   @java.lang.Override
@@ -380,7 +323,7 @@ private static final long serialVersionUID = 0L;
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
@@ -401,26 +344,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
     if (subsystemId_ != null) {
-      output.writeMessage(2, getSubsystemId());
+      output.writeMessage(1, getSubsystemId());
     }
     if (hostNsid_ != 0) {
-      output.writeInt32(4, hostNsid_);
+      output.writeInt32(2, hostNsid_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nguid_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nguid_);
     }
     if (eui64_ != 0L) {
-      output.writeInt64(8, eui64_);
+      output.writeInt64(4, eui64_);
     }
     if (uuid_ != null) {
-      output.writeMessage(9, getUuid());
+      output.writeMessage(5, getUuid());
     }
     if (volumeId_ != null) {
-      output.writeMessage(10, getVolumeId());
+      output.writeMessage(6, getVolumeId());
     }
     unknownFields.writeTo(output);
   }
@@ -431,31 +371,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
     if (subsystemId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSubsystemId());
+        .computeMessageSize(1, getSubsystemId());
     }
     if (hostNsid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, hostNsid_);
+        .computeInt32Size(2, hostNsid_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nguid_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nguid_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nguid_);
     }
     if (eui64_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, eui64_);
+        .computeInt64Size(4, eui64_);
     }
     if (uuid_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getUuid());
+        .computeMessageSize(5, getUuid());
     }
     if (volumeId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getVolumeId());
+        .computeMessageSize(6, getVolumeId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -472,8 +409,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeNamespaceSpec other = (opi_api.storage.v1.NvmeNamespaceSpec) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
     if (hasSubsystemId() != other.hasSubsystemId()) return false;
     if (hasSubsystemId()) {
       if (!getSubsystemId()
@@ -506,8 +441,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (hasSubsystemId()) {
       hash = (37 * hash) + SUBSYSTEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSubsystemId().hashCode();
@@ -660,8 +593,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       if (subsystemIdBuilder_ == null) {
         subsystemId_ = null;
       } else {
@@ -712,7 +643,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeNamespaceSpec buildPartial() {
       opi_api.storage.v1.NvmeNamespaceSpec result = new opi_api.storage.v1.NvmeNamespaceSpec(this);
-      result.name_ = name_;
       if (subsystemIdBuilder_ == null) {
         result.subsystemId_ = subsystemId_;
       } else {
@@ -779,10 +709,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeNamespaceSpec other) {
       if (other == opi_api.storage.v1.NvmeNamespaceSpec.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (other.hasSubsystemId()) {
         mergeSubsystemId(other.getSubsystemId());
       }
@@ -831,112 +757,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private opi_api.common.v1.ObjectKey subsystemId_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subsystemIdBuilder_;
@@ -945,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      * @return Whether the subsystemId field is set.
      */
     public boolean hasSubsystemId() {
@@ -956,7 +776,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      * @return The subsystemId.
      */
     public opi_api.common.v1.ObjectKey getSubsystemId() {
@@ -971,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
       if (subsystemIdBuilder_ == null) {
@@ -991,7 +811,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public Builder setSubsystemId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -1009,7 +829,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
       if (subsystemIdBuilder_ == null) {
@@ -1031,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public Builder clearSubsystemId() {
       if (subsystemIdBuilder_ == null) {
@@ -1049,7 +869,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
       
@@ -1061,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
       if (subsystemIdBuilder_ != null) {
@@ -1076,7 +896,7 @@ private static final long serialVersionUID = 0L;
      * subsystem for this namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
@@ -1101,7 +921,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 2;</code>
      * @return The hostNsid.
      */
     @java.lang.Override
@@ -1116,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 2;</code>
      * @param value The hostNsid to set.
      * @return This builder for chaining.
      */
@@ -1134,7 +954,7 @@ private static final long serialVersionUID = 0L;
      * for live migration
      * </pre>
      *
-     * <code>int32 host_nsid = 4;</code>
+     * <code>int32 host_nsid = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearHostNsid() {
@@ -1150,7 +970,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 7;</code>
+     * <code>string nguid = 3;</code>
      * @return The nguid.
      */
     public java.lang.String getNguid() {
@@ -1170,7 +990,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 7;</code>
+     * <code>string nguid = 3;</code>
      * @return The bytes for nguid.
      */
     public com.google.protobuf.ByteString
@@ -1191,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 7;</code>
+     * <code>string nguid = 3;</code>
      * @param value The nguid to set.
      * @return This builder for chaining.
      */
@@ -1210,7 +1030,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 7;</code>
+     * <code>string nguid = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearNguid() {
@@ -1224,7 +1044,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>string nguid = 7;</code>
+     * <code>string nguid = 3;</code>
      * @param value The bytes for nguid to set.
      * @return This builder for chaining.
      */
@@ -1247,7 +1067,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 8;</code>
+     * <code>int64 eui64 = 4;</code>
      * @return The eui64.
      */
     @java.lang.Override
@@ -1260,7 +1080,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 8;</code>
+     * <code>int64 eui64 = 4;</code>
      * @param value The eui64 to set.
      * @return This builder for chaining.
      */
@@ -1276,7 +1096,7 @@ private static final long serialVersionUID = 0L;
      * mandatory if guid is not specified
      * </pre>
      *
-     * <code>int64 eui64 = 8;</code>
+     * <code>int64 eui64 = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearEui64() {
@@ -1294,7 +1114,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
@@ -1305,7 +1125,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      * @return The uuid.
      */
     public opi_api.common.v1.Uuid getUuid() {
@@ -1320,7 +1140,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public Builder setUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1340,7 +1160,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public Builder setUuid(
         opi_api.common.v1.Uuid.Builder builderForValue) {
@@ -1358,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public Builder mergeUuid(opi_api.common.v1.Uuid value) {
       if (uuidBuilder_ == null) {
@@ -1380,7 +1200,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public Builder clearUuid() {
       if (uuidBuilder_ == null) {
@@ -1398,7 +1218,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public opi_api.common.v1.Uuid.Builder getUuidBuilder() {
       
@@ -1410,7 +1230,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     public opi_api.common.v1.UuidOrBuilder getUuidOrBuilder() {
       if (uuidBuilder_ != null) {
@@ -1425,7 +1245,7 @@ private static final long serialVersionUID = 0L;
      * Globally unique identifier for the namespace
      * </pre>
      *
-     * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+     * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.Uuid, opi_api.common.v1.Uuid.Builder, opi_api.common.v1.UuidOrBuilder> 
@@ -1449,7 +1269,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      * @return Whether the volumeId field is set.
      */
     public boolean hasVolumeId() {
@@ -1460,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      * @return The volumeId.
      */
     public opi_api.common.v1.ObjectKey getVolumeId() {
@@ -1475,7 +1295,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public Builder setVolumeId(opi_api.common.v1.ObjectKey value) {
       if (volumeIdBuilder_ == null) {
@@ -1495,7 +1315,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public Builder setVolumeId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -1513,7 +1333,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public Builder mergeVolumeId(opi_api.common.v1.ObjectKey value) {
       if (volumeIdBuilder_ == null) {
@@ -1535,7 +1355,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public Builder clearVolumeId() {
       if (volumeIdBuilder_ == null) {
@@ -1553,7 +1373,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getVolumeIdBuilder() {
       
@@ -1565,7 +1385,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder() {
       if (volumeIdBuilder_ != null) {
@@ -1580,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * The back/middle-end volume to back this namespace.
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+     * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 

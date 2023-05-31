@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeControllerSpec() {
-    name_ = "";
   }
 
   @java.lang.Override
@@ -49,18 +48,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 16: {
+          case 8: {
 
             nvmeControllerId_ = input.readInt32();
             break;
           }
-          case 26: {
+          case 18: {
             opi_api.common.v1.ObjectKey.Builder subBuilder = null;
             if (subsystemId_ != null) {
               subBuilder = subsystemId_.toBuilder();
@@ -73,7 +66,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.storage.v1.PciEndpoint.Builder subBuilder = null;
             if (pcieId_ != null) {
               subBuilder = pcieId_.toBuilder();
@@ -86,32 +79,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 40: {
+          case 32: {
 
             maxNsq_ = input.readInt32();
             break;
           }
-          case 48: {
+          case 40: {
 
             maxNcq_ = input.readInt32();
             break;
           }
-          case 56: {
+          case 48: {
 
             sqes_ = input.readInt32();
             break;
           }
-          case 64: {
+          case 56: {
 
             cqes_ = input.readInt32();
             break;
           }
-          case 72: {
+          case 64: {
 
             maxNamespaces_ = input.readInt32();
             break;
           }
-          case 82: {
+          case 74: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
             if (minLimit_ != null) {
               subBuilder = minLimit_.toBuilder();
@@ -124,7 +117,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 90: {
+          case 82: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
             if (maxLimit_ != null) {
               subBuilder = maxLimit_.toBuilder();
@@ -169,57 +162,7 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeControllerSpec.class, opi_api.storage.v1.NvmeControllerSpec.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 2;
+  public static final int NVME_CONTROLLER_ID_FIELD_NUMBER = 1;
   private int nvmeControllerId_;
   /**
    * <pre>
@@ -227,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * must not be reused under the same subsystem
    * </pre>
    *
-   * <code>int32 nvme_controller_id = 2;</code>
+   * <code>int32 nvme_controller_id = 1;</code>
    * @return The nvmeControllerId.
    */
   @java.lang.Override
@@ -235,14 +178,14 @@ private static final long serialVersionUID = 0L;
     return nvmeControllerId_;
   }
 
-  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 3;
+  public static final int SUBSYSTEM_ID_FIELD_NUMBER = 2;
   private opi_api.common.v1.ObjectKey subsystemId_;
   /**
    * <pre>
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    * @return Whether the subsystemId field is set.
    */
   @java.lang.Override
@@ -254,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    * @return The subsystemId.
    */
   @java.lang.Override
@@ -266,21 +209,21 @@ private static final long serialVersionUID = 0L;
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    */
   @java.lang.Override
   public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
     return getSubsystemId();
   }
 
-  public static final int PCIE_ID_FIELD_NUMBER = 4;
+  public static final int PCIE_ID_FIELD_NUMBER = 3;
   private opi_api.storage.v1.PciEndpoint pcieId_;
   /**
    * <pre>
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    * @return Whether the pcieId field is set.
    */
   @java.lang.Override
@@ -292,7 +235,7 @@ private static final long serialVersionUID = 0L;
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    * @return The pcieId.
    */
   @java.lang.Override
@@ -304,14 +247,14 @@ private static final long serialVersionUID = 0L;
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
     return getPcieId();
   }
 
-  public static final int MAX_NSQ_FIELD_NUMBER = 5;
+  public static final int MAX_NSQ_FIELD_NUMBER = 4;
   private int maxNsq_;
   /**
    * <pre>
@@ -319,7 +262,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_nsq = 5;</code>
+   * <code>int32 max_nsq = 4;</code>
    * @return The maxNsq.
    */
   @java.lang.Override
@@ -327,7 +270,7 @@ private static final long serialVersionUID = 0L;
     return maxNsq_;
   }
 
-  public static final int MAX_NCQ_FIELD_NUMBER = 6;
+  public static final int MAX_NCQ_FIELD_NUMBER = 5;
   private int maxNcq_;
   /**
    * <pre>
@@ -335,7 +278,7 @@ private static final long serialVersionUID = 0L;
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_ncq = 6;</code>
+   * <code>int32 max_ncq = 5;</code>
    * @return The maxNcq.
    */
   @java.lang.Override
@@ -343,7 +286,7 @@ private static final long serialVersionUID = 0L;
     return maxNcq_;
   }
 
-  public static final int SQES_FIELD_NUMBER = 7;
+  public static final int SQES_FIELD_NUMBER = 6;
   private int sqes_;
   /**
    * <pre>
@@ -351,7 +294,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 6
    * </pre>
    *
-   * <code>int32 sqes = 7;</code>
+   * <code>int32 sqes = 6;</code>
    * @return The sqes.
    */
   @java.lang.Override
@@ -359,7 +302,7 @@ private static final long serialVersionUID = 0L;
     return sqes_;
   }
 
-  public static final int CQES_FIELD_NUMBER = 8;
+  public static final int CQES_FIELD_NUMBER = 7;
   private int cqes_;
   /**
    * <pre>
@@ -367,7 +310,7 @@ private static final long serialVersionUID = 0L;
    * default value as per spec is 4
    * </pre>
    *
-   * <code>int32 cqes = 8;</code>
+   * <code>int32 cqes = 7;</code>
    * @return The cqes.
    */
   @java.lang.Override
@@ -375,7 +318,7 @@ private static final long serialVersionUID = 0L;
     return cqes_;
   }
 
-  public static final int MAX_NAMESPACES_FIELD_NUMBER = 9;
+  public static final int MAX_NAMESPACES_FIELD_NUMBER = 8;
   private int maxNamespaces_;
   /**
    * <pre>
@@ -383,7 +326,7 @@ private static final long serialVersionUID = 0L;
    * the controller.
    * </pre>
    *
-   * <code>int32 max_namespaces = 9;</code>
+   * <code>int32 max_namespaces = 8;</code>
    * @return The maxNamespaces.
    */
   @java.lang.Override
@@ -391,14 +334,14 @@ private static final long serialVersionUID = 0L;
     return maxNamespaces_;
   }
 
-  public static final int MIN_LIMIT_FIELD_NUMBER = 10;
+  public static final int MIN_LIMIT_FIELD_NUMBER = 9;
   private opi_api.storage.v1.QosLimit minLimit_;
   /**
    * <pre>
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    * @return Whether the minLimit field is set.
    */
   @java.lang.Override
@@ -410,7 +353,7 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    * @return The minLimit.
    */
   @java.lang.Override
@@ -422,21 +365,21 @@ private static final long serialVersionUID = 0L;
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
     return getMinLimit();
   }
 
-  public static final int MAX_LIMIT_FIELD_NUMBER = 11;
+  public static final int MAX_LIMIT_FIELD_NUMBER = 10;
   private opi_api.storage.v1.QosLimit maxLimit_;
   /**
    * <pre>
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    * @return Whether the maxLimit field is set.
    */
   @java.lang.Override
@@ -448,7 +391,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    * @return The maxLimit.
    */
   @java.lang.Override
@@ -460,7 +403,7 @@ private static final long serialVersionUID = 0L;
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
@@ -481,38 +424,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
     if (nvmeControllerId_ != 0) {
-      output.writeInt32(2, nvmeControllerId_);
+      output.writeInt32(1, nvmeControllerId_);
     }
     if (subsystemId_ != null) {
-      output.writeMessage(3, getSubsystemId());
+      output.writeMessage(2, getSubsystemId());
     }
     if (pcieId_ != null) {
-      output.writeMessage(4, getPcieId());
+      output.writeMessage(3, getPcieId());
     }
     if (maxNsq_ != 0) {
-      output.writeInt32(5, maxNsq_);
+      output.writeInt32(4, maxNsq_);
     }
     if (maxNcq_ != 0) {
-      output.writeInt32(6, maxNcq_);
+      output.writeInt32(5, maxNcq_);
     }
     if (sqes_ != 0) {
-      output.writeInt32(7, sqes_);
+      output.writeInt32(6, sqes_);
     }
     if (cqes_ != 0) {
-      output.writeInt32(8, cqes_);
+      output.writeInt32(7, cqes_);
     }
     if (maxNamespaces_ != 0) {
-      output.writeInt32(9, maxNamespaces_);
+      output.writeInt32(8, maxNamespaces_);
     }
     if (minLimit_ != null) {
-      output.writeMessage(10, getMinLimit());
+      output.writeMessage(9, getMinLimit());
     }
     if (maxLimit_ != null) {
-      output.writeMessage(11, getMaxLimit());
+      output.writeMessage(10, getMaxLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -523,48 +463,45 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
     if (nvmeControllerId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, nvmeControllerId_);
+        .computeInt32Size(1, nvmeControllerId_);
     }
     if (subsystemId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getSubsystemId());
+        .computeMessageSize(2, getSubsystemId());
     }
     if (pcieId_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getPcieId());
+        .computeMessageSize(3, getPcieId());
     }
     if (maxNsq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, maxNsq_);
+        .computeInt32Size(4, maxNsq_);
     }
     if (maxNcq_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, maxNcq_);
+        .computeInt32Size(5, maxNcq_);
     }
     if (sqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, sqes_);
+        .computeInt32Size(6, sqes_);
     }
     if (cqes_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, cqes_);
+        .computeInt32Size(7, cqes_);
     }
     if (maxNamespaces_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, maxNamespaces_);
+        .computeInt32Size(8, maxNamespaces_);
     }
     if (minLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getMinLimit());
+        .computeMessageSize(9, getMinLimit());
     }
     if (maxLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getMaxLimit());
+        .computeMessageSize(10, getMaxLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -581,8 +518,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeControllerSpec other = (opi_api.storage.v1.NvmeControllerSpec) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
     if (getNvmeControllerId()
         != other.getNvmeControllerId()) return false;
     if (hasSubsystemId() != other.hasSubsystemId()) return false;
@@ -626,8 +561,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NVME_CONTROLLER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNvmeControllerId();
     if (hasSubsystemId()) {
@@ -789,8 +722,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       nvmeControllerId_ = 0;
 
       if (subsystemIdBuilder_ == null) {
@@ -853,7 +784,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeControllerSpec buildPartial() {
       opi_api.storage.v1.NvmeControllerSpec result = new opi_api.storage.v1.NvmeControllerSpec(this);
-      result.name_ = name_;
       result.nvmeControllerId_ = nvmeControllerId_;
       if (subsystemIdBuilder_ == null) {
         result.subsystemId_ = subsystemId_;
@@ -928,10 +858,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeControllerSpec other) {
       if (other == opi_api.storage.v1.NvmeControllerSpec.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (other.getNvmeControllerId() != 0) {
         setNvmeControllerId(other.getNvmeControllerId());
       }
@@ -991,112 +917,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private int nvmeControllerId_ ;
     /**
      * <pre>
@@ -1104,7 +924,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>int32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 1;</code>
      * @return The nvmeControllerId.
      */
     @java.lang.Override
@@ -1117,7 +937,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>int32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 1;</code>
      * @param value The nvmeControllerId to set.
      * @return This builder for chaining.
      */
@@ -1133,7 +953,7 @@ private static final long serialVersionUID = 0L;
      * must not be reused under the same subsystem
      * </pre>
      *
-     * <code>int32 nvme_controller_id = 2;</code>
+     * <code>int32 nvme_controller_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearNvmeControllerId() {
@@ -1151,7 +971,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      * @return Whether the subsystemId field is set.
      */
     public boolean hasSubsystemId() {
@@ -1162,7 +982,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      * @return The subsystemId.
      */
     public opi_api.common.v1.ObjectKey getSubsystemId() {
@@ -1177,7 +997,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public Builder setSubsystemId(opi_api.common.v1.ObjectKey value) {
       if (subsystemIdBuilder_ == null) {
@@ -1197,7 +1017,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public Builder setSubsystemId(
         opi_api.common.v1.ObjectKey.Builder builderForValue) {
@@ -1215,7 +1035,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public Builder mergeSubsystemId(opi_api.common.v1.ObjectKey value) {
       if (subsystemIdBuilder_ == null) {
@@ -1237,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public Builder clearSubsystemId() {
       if (subsystemIdBuilder_ == null) {
@@ -1255,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public opi_api.common.v1.ObjectKey.Builder getSubsystemIdBuilder() {
       
@@ -1267,7 +1087,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     public opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder() {
       if (subsystemIdBuilder_ != null) {
@@ -1282,7 +1102,7 @@ private static final long serialVersionUID = 0L;
      * subsystem information
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+     * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
@@ -1306,7 +1126,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      * @return Whether the pcieId field is set.
      */
     public boolean hasPcieId() {
@@ -1317,7 +1137,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      * @return The pcieId.
      */
     public opi_api.storage.v1.PciEndpoint getPcieId() {
@@ -1332,7 +1152,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public Builder setPcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
@@ -1352,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public Builder setPcieId(
         opi_api.storage.v1.PciEndpoint.Builder builderForValue) {
@@ -1370,7 +1190,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public Builder mergePcieId(opi_api.storage.v1.PciEndpoint value) {
       if (pcieIdBuilder_ == null) {
@@ -1392,7 +1212,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public Builder clearPcieId() {
       if (pcieIdBuilder_ == null) {
@@ -1410,7 +1230,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public opi_api.storage.v1.PciEndpoint.Builder getPcieIdBuilder() {
       
@@ -1422,7 +1242,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     public opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder() {
       if (pcieIdBuilder_ != null) {
@@ -1437,7 +1257,7 @@ private static final long serialVersionUID = 0L;
      * xPU's PCI ID for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+     * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.PciEndpoint, opi_api.storage.v1.PciEndpoint.Builder, opi_api.storage.v1.PciEndpointOrBuilder> 
@@ -1460,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 4;</code>
      * @return The maxNsq.
      */
     @java.lang.Override
@@ -1473,7 +1293,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 4;</code>
      * @param value The maxNsq to set.
      * @return This builder for chaining.
      */
@@ -1489,7 +1309,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_nsq = 5;</code>
+     * <code>int32 max_nsq = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNsq() {
@@ -1506,7 +1326,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 5;</code>
      * @return The maxNcq.
      */
     @java.lang.Override
@@ -1519,7 +1339,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 5;</code>
      * @param value The maxNcq to set.
      * @return This builder for chaining.
      */
@@ -1535,7 +1355,7 @@ private static final long serialVersionUID = 0L;
      * If not set, the xPU will provide a default.
      * </pre>
      *
-     * <code>int32 max_ncq = 6;</code>
+     * <code>int32 max_ncq = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNcq() {
@@ -1552,7 +1372,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 7;</code>
+     * <code>int32 sqes = 6;</code>
      * @return The sqes.
      */
     @java.lang.Override
@@ -1565,7 +1385,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 7;</code>
+     * <code>int32 sqes = 6;</code>
      * @param value The sqes to set.
      * @return This builder for chaining.
      */
@@ -1581,7 +1401,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 6
      * </pre>
      *
-     * <code>int32 sqes = 7;</code>
+     * <code>int32 sqes = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearSqes() {
@@ -1598,7 +1418,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 8;</code>
+     * <code>int32 cqes = 7;</code>
      * @return The cqes.
      */
     @java.lang.Override
@@ -1611,7 +1431,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 8;</code>
+     * <code>int32 cqes = 7;</code>
      * @param value The cqes to set.
      * @return This builder for chaining.
      */
@@ -1627,7 +1447,7 @@ private static final long serialVersionUID = 0L;
      * default value as per spec is 4
      * </pre>
      *
-     * <code>int32 cqes = 8;</code>
+     * <code>int32 cqes = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearCqes() {
@@ -1644,7 +1464,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 9;</code>
+     * <code>int32 max_namespaces = 8;</code>
      * @return The maxNamespaces.
      */
     @java.lang.Override
@@ -1657,7 +1477,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 9;</code>
+     * <code>int32 max_namespaces = 8;</code>
      * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
@@ -1673,7 +1493,7 @@ private static final long serialVersionUID = 0L;
      * the controller.
      * </pre>
      *
-     * <code>int32 max_namespaces = 9;</code>
+     * <code>int32 max_namespaces = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNamespaces() {
@@ -1691,7 +1511,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      * @return Whether the minLimit field is set.
      */
     public boolean hasMinLimit() {
@@ -1702,7 +1522,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      * @return The minLimit.
      */
     public opi_api.storage.v1.QosLimit getMinLimit() {
@@ -1717,7 +1537,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public Builder setMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -1737,7 +1557,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public Builder setMinLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1755,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public Builder mergeMinLimit(opi_api.storage.v1.QosLimit value) {
       if (minLimitBuilder_ == null) {
@@ -1777,7 +1597,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public Builder clearMinLimit() {
       if (minLimitBuilder_ == null) {
@@ -1795,7 +1615,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMinLimitBuilder() {
       
@@ -1807,7 +1627,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
       if (minLimitBuilder_ != null) {
@@ -1822,7 +1642,7 @@ private static final long serialVersionUID = 0L;
      * min QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
@@ -1846,7 +1666,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      * @return Whether the maxLimit field is set.
      */
     public boolean hasMaxLimit() {
@@ -1857,7 +1677,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      * @return The maxLimit.
      */
     public opi_api.storage.v1.QosLimit getMaxLimit() {
@@ -1872,7 +1692,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public Builder setMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1892,7 +1712,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public Builder setMaxLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
@@ -1910,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public Builder mergeMaxLimit(opi_api.storage.v1.QosLimit value) {
       if (maxLimitBuilder_ == null) {
@@ -1932,7 +1752,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public Builder clearMaxLimit() {
       if (maxLimitBuilder_ == null) {
@@ -1950,7 +1770,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public opi_api.storage.v1.QosLimit.Builder getMaxLimitBuilder() {
       
@@ -1962,7 +1782,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
       if (maxLimitBuilder_ != null) {
@@ -1977,7 +1797,7 @@ private static final long serialVersionUID = 0L;
      * max QoS limits for the controller
      * </pre>
      *
-     * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 

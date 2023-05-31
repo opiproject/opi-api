@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeSubsystemSpec() {
-    name_ = "";
     nqn_ = "";
     serialNumber_ = "";
     modelNumber_ = "";
@@ -55,28 +54,22 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            nqn_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            nqn_ = s;
+            serialNumber_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            serialNumber_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             modelNumber_ = s;
             break;
           }
-          case 40: {
+          case 32: {
 
             maxNamespaces_ = input.readInt64();
             break;
@@ -113,57 +106,7 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeSubsystemSpec.class, opi_api.storage.v1.NvmeSubsystemSpec.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NQN_FIELD_NUMBER = 2;
+  public static final int NQN_FIELD_NUMBER = 1;
   private volatile java.lang.Object nqn_;
   /**
    * <pre>
@@ -172,7 +115,7 @@ private static final long serialVersionUID = 0L;
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 2;</code>
+   * <code>string nqn = 1;</code>
    * @return The nqn.
    */
   @java.lang.Override
@@ -195,7 +138,7 @@ private static final long serialVersionUID = 0L;
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 2;</code>
+   * <code>string nqn = 1;</code>
    * @return The bytes for nqn.
    */
   @java.lang.Override
@@ -213,14 +156,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SERIAL_NUMBER_FIELD_NUMBER = 3;
+  public static final int SERIAL_NUMBER_FIELD_NUMBER = 2;
   private volatile java.lang.Object serialNumber_;
   /**
    * <pre>
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 3;</code>
+   * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
   @java.lang.Override
@@ -241,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 3;</code>
+   * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
   @java.lang.Override
@@ -259,14 +202,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MODEL_NUMBER_FIELD_NUMBER = 4;
+  public static final int MODEL_NUMBER_FIELD_NUMBER = 3;
   private volatile java.lang.Object modelNumber_;
   /**
    * <pre>
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 4;</code>
+   * <code>string model_number = 3;</code>
    * @return The modelNumber.
    */
   @java.lang.Override
@@ -287,7 +230,7 @@ private static final long serialVersionUID = 0L;
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 4;</code>
+   * <code>string model_number = 3;</code>
    * @return The bytes for modelNumber.
    */
   @java.lang.Override
@@ -305,14 +248,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MAX_NAMESPACES_FIELD_NUMBER = 5;
+  public static final int MAX_NAMESPACES_FIELD_NUMBER = 4;
   private long maxNamespaces_;
   /**
    * <pre>
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_namespaces = 5;</code>
+   * <code>int64 max_namespaces = 4;</code>
    * @return The maxNamespaces.
    */
   @java.lang.Override
@@ -334,20 +277,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nqn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nqn_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nqn_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serialNumber_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serialNumber_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelNumber_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelNumber_);
     }
     if (maxNamespaces_ != 0L) {
-      output.writeInt64(5, maxNamespaces_);
+      output.writeInt64(4, maxNamespaces_);
     }
     unknownFields.writeTo(output);
   }
@@ -358,21 +298,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nqn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nqn_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nqn_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serialNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serialNumber_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serialNumber_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelNumber_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelNumber_);
     }
     if (maxNamespaces_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, maxNamespaces_);
+        .computeInt64Size(4, maxNamespaces_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -389,8 +326,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeSubsystemSpec other = (opi_api.storage.v1.NvmeSubsystemSpec) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
     if (!getNqn()
         .equals(other.getNqn())) return false;
     if (!getSerialNumber()
@@ -410,8 +345,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NQN_FIELD_NUMBER;
     hash = (53 * hash) + getNqn().hashCode();
     hash = (37 * hash) + SERIAL_NUMBER_FIELD_NUMBER;
@@ -554,8 +487,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       nqn_ = "";
 
       serialNumber_ = "";
@@ -590,7 +521,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeSubsystemSpec buildPartial() {
       opi_api.storage.v1.NvmeSubsystemSpec result = new opi_api.storage.v1.NvmeSubsystemSpec(this);
-      result.name_ = name_;
       result.nqn_ = nqn_;
       result.serialNumber_ = serialNumber_;
       result.modelNumber_ = modelNumber_;
@@ -643,10 +573,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeSubsystemSpec other) {
       if (other == opi_api.storage.v1.NvmeSubsystemSpec.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (!other.getNqn().isEmpty()) {
         nqn_ = other.nqn_;
         onChanged();
@@ -691,112 +617,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * name is an opaque object handle that is not user settable.
-     * name will be returned with created object
-     * user can only set {resource}_id on the Create request object
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object nqn_ = "";
     /**
      * <pre>
@@ -805,7 +625,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 2;</code>
+     * <code>string nqn = 1;</code>
      * @return The nqn.
      */
     public java.lang.String getNqn() {
@@ -827,7 +647,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 2;</code>
+     * <code>string nqn = 1;</code>
      * @return The bytes for nqn.
      */
     public com.google.protobuf.ByteString
@@ -850,7 +670,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 2;</code>
+     * <code>string nqn = 1;</code>
      * @param value The nqn to set.
      * @return This builder for chaining.
      */
@@ -871,7 +691,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 2;</code>
+     * <code>string nqn = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearNqn() {
@@ -887,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
      * </pre>
      *
-     * <code>string nqn = 2;</code>
+     * <code>string nqn = 1;</code>
      * @param value The bytes for nqn to set.
      * @return This builder for chaining.
      */
@@ -909,7 +729,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 3;</code>
+     * <code>string serial_number = 2;</code>
      * @return The serialNumber.
      */
     public java.lang.String getSerialNumber() {
@@ -929,7 +749,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 3;</code>
+     * <code>string serial_number = 2;</code>
      * @return The bytes for serialNumber.
      */
     public com.google.protobuf.ByteString
@@ -950,7 +770,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 3;</code>
+     * <code>string serial_number = 2;</code>
      * @param value The serialNumber to set.
      * @return This builder for chaining.
      */
@@ -969,7 +789,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 3;</code>
+     * <code>string serial_number = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearSerialNumber() {
@@ -983,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string serial_number = 3;</code>
+     * <code>string serial_number = 2;</code>
      * @param value The bytes for serialNumber to set.
      * @return This builder for chaining.
      */
@@ -1005,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 4;</code>
+     * <code>string model_number = 3;</code>
      * @return The modelNumber.
      */
     public java.lang.String getModelNumber() {
@@ -1025,7 +845,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 4;</code>
+     * <code>string model_number = 3;</code>
      * @return The bytes for modelNumber.
      */
     public com.google.protobuf.ByteString
@@ -1046,7 +866,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 4;</code>
+     * <code>string model_number = 3;</code>
      * @param value The modelNumber to set.
      * @return This builder for chaining.
      */
@@ -1065,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 4;</code>
+     * <code>string model_number = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearModelNumber() {
@@ -1079,7 +899,7 @@ private static final long serialVersionUID = 0L;
      * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
      * </pre>
      *
-     * <code>string model_number = 4;</code>
+     * <code>string model_number = 3;</code>
      * @param value The bytes for modelNumber to set.
      * @return This builder for chaining.
      */
@@ -1101,7 +921,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 5;</code>
+     * <code>int64 max_namespaces = 4;</code>
      * @return The maxNamespaces.
      */
     @java.lang.Override
@@ -1113,7 +933,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 5;</code>
+     * <code>int64 max_namespaces = 4;</code>
      * @param value The maxNamespaces to set.
      * @return This builder for chaining.
      */
@@ -1128,7 +948,7 @@ private static final long serialVersionUID = 0L;
      * maximum namespaces within a subsystem
      * </pre>
      *
-     * <code>int64 max_namespaces = 5;</code>
+     * <code>int64 max_namespaces = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxNamespaces() {

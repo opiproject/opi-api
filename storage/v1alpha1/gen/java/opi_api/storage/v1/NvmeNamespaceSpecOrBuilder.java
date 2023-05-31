@@ -9,34 +9,10 @@ public interface NvmeNamespaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    * @return Whether the subsystemId field is set.
    */
   boolean hasSubsystemId();
@@ -45,7 +21,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    * @return The subsystemId.
    */
   opi_api.common.v1.ObjectKey getSubsystemId();
@@ -54,7 +30,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * subsystem for this namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 1;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
 
@@ -66,7 +42,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * for live migration
    * </pre>
    *
-   * <code>int32 host_nsid = 4;</code>
+   * <code>int32 host_nsid = 2;</code>
    * @return The hostNsid.
    */
   int getHostNsid();
@@ -76,7 +52,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 7;</code>
+   * <code>string nguid = 3;</code>
    * @return The nguid.
    */
   java.lang.String getNguid();
@@ -85,7 +61,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>string nguid = 7;</code>
+   * <code>string nguid = 3;</code>
    * @return The bytes for nguid.
    */
   com.google.protobuf.ByteString
@@ -97,7 +73,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * mandatory if guid is not specified
    * </pre>
    *
-   * <code>int64 eui64 = 8;</code>
+   * <code>int64 eui64 = 4;</code>
    * @return The eui64.
    */
   long getEui64();
@@ -107,7 +83,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    * @return Whether the uuid field is set.
    */
   boolean hasUuid();
@@ -116,7 +92,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    * @return The uuid.
    */
   opi_api.common.v1.Uuid getUuid();
@@ -125,7 +101,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * Globally unique identifier for the namespace
    * </pre>
    *
-   * <code>.opi_api.common.v1.Uuid uuid = 9;</code>
+   * <code>.opi_api.common.v1.Uuid uuid = 5;</code>
    */
   opi_api.common.v1.UuidOrBuilder getUuidOrBuilder();
 
@@ -134,7 +110,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    * @return Whether the volumeId field is set.
    */
   boolean hasVolumeId();
@@ -143,7 +119,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    * @return The volumeId.
    */
   opi_api.common.v1.ObjectKey getVolumeId();
@@ -152,7 +128,7 @@ public interface NvmeNamespaceSpecOrBuilder extends
    * The back/middle-end volume to back this namespace.
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey volume_id = 10;</code>
+   * <code>.opi_api.common.v1.ObjectKey volume_id = 6;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
 }

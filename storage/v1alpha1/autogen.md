@@ -835,7 +835,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | nvme_controller | [NvmeController](#opi_api-storage-v1-NvmeController) |  |  |
 | nvme_controller_id | [string](#string) |  |  |
 
@@ -852,7 +851,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | nvme_namespace | [NvmeNamespace](#opi_api-storage-v1-NvmeNamespace) |  |  |
 | nvme_namespace_id | [string](#string) |  |  |
 
@@ -869,7 +867,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| parent | [string](#string) |  |  |
 | nvme_subsystem | [NvmeSubsystem](#opi_api-storage-v1-NvmeSubsystem) |  |  |
 | nvme_subsystem_id | [string](#string) |  |  |
 
@@ -1078,8 +1075,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NvmeControllerSpec](#opi_api-storage-v1-NvmeControllerSpec) |  |  |
-| status | [NvmeControllerStatus](#opi_api-storage-v1-NvmeControllerStatus) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
+| spec | [NvmeControllerSpec](#opi_api-storage-v1-NvmeControllerSpec) |  | spec holds configurable values |
+| status | [NvmeControllerStatus](#opi_api-storage-v1-NvmeControllerStatus) |  | stats holds server generated values |
 
 
 
@@ -1094,7 +1092,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | nvme_controller_id | [int32](#int32) |  | subsystem controller id range: 0 to 65535. must not be reused under the same subsystem |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem information |
 | pcie_id | [PciEndpoint](#opi_api-storage-v1-PciEndpoint) |  | xPU&#39;s PCI ID for the controller |
@@ -1165,8 +1162,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NvmeNamespaceSpec](#opi_api-storage-v1-NvmeNamespaceSpec) |  |  |
-| status | [NvmeNamespaceStatus](#opi_api-storage-v1-NvmeNamespaceStatus) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
+| spec | [NvmeNamespaceSpec](#opi_api-storage-v1-NvmeNamespaceSpec) |  | spec holds configurable values |
+| status | [NvmeNamespaceStatus](#opi_api-storage-v1-NvmeNamespaceStatus) |  | stats holds server generated values |
 
 
 
@@ -1181,7 +1179,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | subsystem_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subsystem for this namespace |
 | host_nsid | [int32](#int32) |  | NSID present to the host by the Nvme PCIe controller. If not provided, then the controller will assign an unused NSID within the max namespace range - auto assigned nsid may not work for live migration |
 | nguid | [string](#string) |  | Globally unique identifier for the namespace |
@@ -1249,8 +1246,9 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| spec | [NvmeSubsystemSpec](#opi_api-storage-v1-NvmeSubsystemSpec) |  |  |
-| status | [NvmeSubsystemStatus](#opi_api-storage-v1-NvmeSubsystemStatus) |  |  |
+| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
+| spec | [NvmeSubsystemSpec](#opi_api-storage-v1-NvmeSubsystemSpec) |  | spec holds configurable values |
+| status | [NvmeSubsystemStatus](#opi_api-storage-v1-NvmeSubsystemStatus) |  | stats holds server generated values |
 
 
 
@@ -1265,7 +1263,6 @@ Back End (network-facing) APIs. NVMe/TCP and NVMe/RoCEv2 protocols are covered b
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name is an opaque object handle that is not user settable. name will be returned with created object user can only set {resource}_id on the Create request object |
 | nqn | [string](#string) |  | Nvme subsystem NQN to which the controller belongs Refer to the NQN format in the Nvme base specifications, must not exceed &#39;NSV_NVME_SUBSYSTEM_NQN_LEN&#39; bytes |
 | serial_number | [string](#string) |  | serial number must not exceed &#39;NSV_CTRLR_SERIAL_NO_LEN&#39; bytes |
 | model_number | [string](#string) |  | model number, must not exceed &#39;NSV_CTRLR_MODEL_NO_LEN&#39; bytes |

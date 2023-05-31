@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private NvmeSubsystem() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -49,6 +50,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 18: {
             opi_api.storage.v1.NvmeSubsystemSpec.Builder subBuilder = null;
             if (spec_ != null) {
               subBuilder = spec_.toBuilder();
@@ -61,7 +68,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             opi_api.storage.v1.NvmeSubsystemStatus.Builder subBuilder = null;
             if (status_ != null) {
               subBuilder = status_.toBuilder();
@@ -106,10 +113,64 @@ private static final long serialVersionUID = 0L;
             opi_api.storage.v1.NvmeSubsystem.class, opi_api.storage.v1.NvmeSubsystem.Builder.class);
   }
 
-  public static final int SPEC_FIELD_NUMBER = 1;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SPEC_FIELD_NUMBER = 2;
   private opi_api.storage.v1.NvmeSubsystemSpec spec_;
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   @java.lang.Override
@@ -117,7 +178,11 @@ private static final long serialVersionUID = 0L;
     return spec_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
    * @return The spec.
    */
   @java.lang.Override
@@ -125,17 +190,25 @@ private static final long serialVersionUID = 0L;
     return spec_ == null ? opi_api.storage.v1.NvmeSubsystemSpec.getDefaultInstance() : spec_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeSubsystemSpecOrBuilder getSpecOrBuilder() {
     return getSpec();
   }
 
-  public static final int STATUS_FIELD_NUMBER = 2;
+  public static final int STATUS_FIELD_NUMBER = 3;
   private opi_api.storage.v1.NvmeSubsystemStatus status_;
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -143,7 +216,11 @@ private static final long serialVersionUID = 0L;
     return status_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
    * @return The status.
    */
   @java.lang.Override
@@ -151,7 +228,11 @@ private static final long serialVersionUID = 0L;
     return status_ == null ? opi_api.storage.v1.NvmeSubsystemStatus.getDefaultInstance() : status_;
   }
   /**
-   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
    */
   @java.lang.Override
   public opi_api.storage.v1.NvmeSubsystemStatusOrBuilder getStatusOrBuilder() {
@@ -172,11 +253,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     if (spec_ != null) {
-      output.writeMessage(1, getSpec());
+      output.writeMessage(2, getSpec());
     }
     if (status_ != null) {
-      output.writeMessage(2, getStatus());
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -187,13 +271,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSpec());
+        .computeMessageSize(2, getSpec());
     }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getStatus());
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,6 +297,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.storage.v1.NvmeSubsystem other = (opi_api.storage.v1.NvmeSubsystem) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
     if (hasSpec() != other.hasSpec()) return false;
     if (hasSpec()) {
       if (!getSpec()
@@ -231,6 +320,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasSpec()) {
       hash = (37 * hash) + SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getSpec().hashCode();
@@ -372,6 +463,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       if (specBuilder_ == null) {
         spec_ = null;
       } else {
@@ -410,6 +503,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.storage.v1.NvmeSubsystem buildPartial() {
       opi_api.storage.v1.NvmeSubsystem result = new opi_api.storage.v1.NvmeSubsystem(this);
+      result.name_ = name_;
       if (specBuilder_ == null) {
         result.spec_ = spec_;
       } else {
@@ -468,6 +562,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.storage.v1.NvmeSubsystem other) {
       if (other == opi_api.storage.v1.NvmeSubsystem.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (other.hasSpec()) {
         mergeSpec(other.getSpec());
       }
@@ -503,18 +601,132 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name is an opaque object handle that is not user settable.
+     * name will be returned with created object
+     * user can only set {resource}_id on the Create request object
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.storage.v1.NvmeSubsystemSpec spec_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystemSpec, opi_api.storage.v1.NvmeSubsystemSpec.Builder, opi_api.storage.v1.NvmeSubsystemSpecOrBuilder> specBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
       return specBuilder_ != null || spec_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      * @return The spec.
      */
     public opi_api.storage.v1.NvmeSubsystemSpec getSpec() {
@@ -525,7 +737,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public Builder setSpec(opi_api.storage.v1.NvmeSubsystemSpec value) {
       if (specBuilder_ == null) {
@@ -541,7 +757,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public Builder setSpec(
         opi_api.storage.v1.NvmeSubsystemSpec.Builder builderForValue) {
@@ -555,7 +775,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public Builder mergeSpec(opi_api.storage.v1.NvmeSubsystemSpec value) {
       if (specBuilder_ == null) {
@@ -573,7 +797,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public Builder clearSpec() {
       if (specBuilder_ == null) {
@@ -587,7 +815,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public opi_api.storage.v1.NvmeSubsystemSpec.Builder getSpecBuilder() {
       
@@ -595,7 +827,11 @@ private static final long serialVersionUID = 0L;
       return getSpecFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     public opi_api.storage.v1.NvmeSubsystemSpecOrBuilder getSpecOrBuilder() {
       if (specBuilder_ != null) {
@@ -606,7 +842,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 1;</code>
+     * <pre>
+     * spec holds configurable values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemSpec spec = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystemSpec, opi_api.storage.v1.NvmeSubsystemSpec.Builder, opi_api.storage.v1.NvmeSubsystemSpecOrBuilder> 
@@ -626,14 +866,22 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystemStatus, opi_api.storage.v1.NvmeSubsystemStatus.Builder, opi_api.storage.v1.NvmeSubsystemStatusOrBuilder> statusBuilder_;
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      * @return The status.
      */
     public opi_api.storage.v1.NvmeSubsystemStatus getStatus() {
@@ -644,7 +892,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public Builder setStatus(opi_api.storage.v1.NvmeSubsystemStatus value) {
       if (statusBuilder_ == null) {
@@ -660,7 +912,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public Builder setStatus(
         opi_api.storage.v1.NvmeSubsystemStatus.Builder builderForValue) {
@@ -674,7 +930,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public Builder mergeStatus(opi_api.storage.v1.NvmeSubsystemStatus value) {
       if (statusBuilder_ == null) {
@@ -692,7 +952,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -706,7 +970,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public opi_api.storage.v1.NvmeSubsystemStatus.Builder getStatusBuilder() {
       
@@ -714,7 +982,11 @@ private static final long serialVersionUID = 0L;
       return getStatusFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     public opi_api.storage.v1.NvmeSubsystemStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -725,7 +997,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 2;</code>
+     * <pre>
+     * stats holds server generated values
+     * </pre>
+     *
+     * <code>.opi_api.storage.v1.NvmeSubsystemStatus status = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.NvmeSubsystemStatus, opi_api.storage.v1.NvmeSubsystemStatus.Builder, opi_api.storage.v1.NvmeSubsystemStatusOrBuilder> 

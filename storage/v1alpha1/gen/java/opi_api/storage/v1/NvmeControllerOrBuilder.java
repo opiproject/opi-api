@@ -8,32 +8,80 @@ public interface NvmeControllerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 1;</code>
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * name is an opaque object handle that is not user settable.
+   * name will be returned with created object
+   * user can only set {resource}_id on the Create request object
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 1;</code>
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.storage.v1.NvmeControllerSpec getSpec();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 1;</code>
+   * <pre>
+   * spec holds configurable values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerSpec spec = 2;</code>
    */
   opi_api.storage.v1.NvmeControllerSpecOrBuilder getSpecOrBuilder();
 
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>
    * @return The status.
    */
   opi_api.storage.v1.NvmeControllerStatus getStatus();
   /**
-   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 2;</code>
+   * <pre>
+   * stats holds server generated values
+   * </pre>
+   *
+   * <code>.opi_api.storage.v1.NvmeControllerStatus status = 3;</code>
    */
   opi_api.storage.v1.NvmeControllerStatusOrBuilder getStatusOrBuilder();
 }

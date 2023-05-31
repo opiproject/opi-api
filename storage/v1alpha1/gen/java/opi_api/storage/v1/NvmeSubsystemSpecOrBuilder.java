@@ -9,36 +9,12 @@ public interface NvmeSubsystemSpecOrBuilder extends
 
   /**
    * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
    * Nvme subsystem NQN to which the controller belongs
    * Refer to the NQN format in the Nvme base specifications, must not
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 2;</code>
+   * <code>string nqn = 1;</code>
    * @return The nqn.
    */
   java.lang.String getNqn();
@@ -49,7 +25,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * exceed 'NSV_NVME_SUBSYSTEM_NQN_LEN' bytes
    * </pre>
    *
-   * <code>string nqn = 2;</code>
+   * <code>string nqn = 1;</code>
    * @return The bytes for nqn.
    */
   com.google.protobuf.ByteString
@@ -60,7 +36,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 3;</code>
+   * <code>string serial_number = 2;</code>
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
@@ -69,7 +45,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * serial number must not exceed 'NSV_CTRLR_SERIAL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string serial_number = 3;</code>
+   * <code>string serial_number = 2;</code>
    * @return The bytes for serialNumber.
    */
   com.google.protobuf.ByteString
@@ -80,7 +56,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 4;</code>
+   * <code>string model_number = 3;</code>
    * @return The modelNumber.
    */
   java.lang.String getModelNumber();
@@ -89,7 +65,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * model number, must not exceed 'NSV_CTRLR_MODEL_NO_LEN' bytes
    * </pre>
    *
-   * <code>string model_number = 4;</code>
+   * <code>string model_number = 3;</code>
    * @return The bytes for modelNumber.
    */
   com.google.protobuf.ByteString
@@ -100,7 +76,7 @@ public interface NvmeSubsystemSpecOrBuilder extends
    * maximum namespaces within a subsystem
    * </pre>
    *
-   * <code>int64 max_namespaces = 5;</code>
+   * <code>int64 max_namespaces = 4;</code>
    * @return The maxNamespaces.
    */
   long getMaxNamespaces();

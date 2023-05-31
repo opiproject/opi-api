@@ -9,35 +9,11 @@ public interface NvmeControllerSpecOrBuilder extends
 
   /**
    * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * name is an opaque object handle that is not user settable.
-   * name will be returned with created object
-   * user can only set {resource}_id on the Create request object
-   * </pre>
-   *
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
    * subsystem controller id range: 0 to 65535.
    * must not be reused under the same subsystem
    * </pre>
    *
-   * <code>int32 nvme_controller_id = 2;</code>
+   * <code>int32 nvme_controller_id = 1;</code>
    * @return The nvmeControllerId.
    */
   int getNvmeControllerId();
@@ -47,7 +23,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    * @return Whether the subsystemId field is set.
    */
   boolean hasSubsystemId();
@@ -56,7 +32,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    * @return The subsystemId.
    */
   opi_api.common.v1.ObjectKey getSubsystemId();
@@ -65,7 +41,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * subsystem information
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 3;</code>
+   * <code>.opi_api.common.v1.ObjectKey subsystem_id = 2;</code>
    */
   opi_api.common.v1.ObjectKeyOrBuilder getSubsystemIdOrBuilder();
 
@@ -74,7 +50,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    * @return Whether the pcieId field is set.
    */
   boolean hasPcieId();
@@ -83,7 +59,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    * @return The pcieId.
    */
   opi_api.storage.v1.PciEndpoint getPcieId();
@@ -92,7 +68,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * xPU's PCI ID for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 4;</code>
+   * <code>.opi_api.storage.v1.PciEndpoint pcie_id = 3;</code>
    */
   opi_api.storage.v1.PciEndpointOrBuilder getPcieIdOrBuilder();
 
@@ -102,7 +78,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_nsq = 5;</code>
+   * <code>int32 max_nsq = 4;</code>
    * @return The maxNsq.
    */
   int getMaxNsq();
@@ -113,7 +89,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * If not set, the xPU will provide a default.
    * </pre>
    *
-   * <code>int32 max_ncq = 6;</code>
+   * <code>int32 max_ncq = 5;</code>
    * @return The maxNcq.
    */
   int getMaxNcq();
@@ -124,7 +100,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * default value as per spec is 6
    * </pre>
    *
-   * <code>int32 sqes = 7;</code>
+   * <code>int32 sqes = 6;</code>
    * @return The sqes.
    */
   int getSqes();
@@ -135,7 +111,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * default value as per spec is 4
    * </pre>
    *
-   * <code>int32 cqes = 8;</code>
+   * <code>int32 cqes = 7;</code>
    * @return The cqes.
    */
   int getCqes();
@@ -146,7 +122,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * the controller.
    * </pre>
    *
-   * <code>int32 max_namespaces = 9;</code>
+   * <code>int32 max_namespaces = 8;</code>
    * @return The maxNamespaces.
    */
   int getMaxNamespaces();
@@ -156,7 +132,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    * @return Whether the minLimit field is set.
    */
   boolean hasMinLimit();
@@ -165,7 +141,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    * @return The minLimit.
    */
   opi_api.storage.v1.QosLimit getMinLimit();
@@ -174,7 +150,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * min QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit min_limit = 10;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 9;</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
 
@@ -183,7 +159,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    * @return Whether the maxLimit field is set.
    */
   boolean hasMaxLimit();
@@ -192,7 +168,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    * @return The maxLimit.
    */
   opi_api.storage.v1.QosLimit getMaxLimit();
@@ -201,7 +177,7 @@ public interface NvmeControllerSpecOrBuilder extends
    * max QoS limits for the controller
    * </pre>
    *
-   * <code>.opi_api.storage.v1.QosLimit max_limit = 11;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 10;</code>
    */
   opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }
