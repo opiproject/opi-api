@@ -12,27 +12,20 @@ public interface UplinkSpecOrBuilder extends
    * physical port id corresponding to this interface
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 1;</code>
-   * @return Whether the portId field is set.
+   * <code>string port_name_ref = 1;</code>
+   * @return The portNameRef.
    */
-  boolean hasPortId();
+  java.lang.String getPortNameRef();
   /**
    * <pre>
    * physical port id corresponding to this interface
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 1;</code>
-   * @return The portId.
+   * <code>string port_name_ref = 1;</code>
+   * @return The bytes for portNameRef.
    */
-  opi_api.common.v1.ObjectKey getPortId();
-  /**
-   * <pre>
-   * physical port id corresponding to this interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getPortIdOrBuilder();
+  com.google.protobuf.ByteString
+      getPortNameRefBytes();
 
   /**
    * <pre>

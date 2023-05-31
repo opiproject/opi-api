@@ -9,10 +9,30 @@ public interface RouteOrBuilder extends
 
   /**
    * <pre>
+   * unique route table id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * unique route table id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface RouteOrBuilder extends
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.RouteSpec getSpec();
@@ -30,7 +50,7 @@ public interface RouteOrBuilder extends
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface RouteOrBuilder extends
    * route status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface RouteOrBuilder extends
    * route status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.RouteStatus getStatus();
@@ -57,7 +77,7 @@ public interface RouteOrBuilder extends
    * route status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteStatusOrBuilder getStatusOrBuilder();
 }

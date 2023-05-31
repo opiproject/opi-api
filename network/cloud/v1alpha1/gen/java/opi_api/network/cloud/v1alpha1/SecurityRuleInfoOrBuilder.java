@@ -9,30 +9,27 @@ public interface SecurityRuleInfoOrBuilder extends
 
   /**
    * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+   * rule id needed for incremental rule ADD/DEL/UPD 
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string rule_name = 1;</code>
+   * @return The ruleName.
    */
-  boolean hasId();
+  java.lang.String getRuleName();
   /**
    * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+   * rule id needed for incremental rule ADD/DEL/UPD 
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string rule_name = 1;</code>
+   * @return The bytes for ruleName.
    */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRuleNameBytes();
 
   /**
    * <pre>

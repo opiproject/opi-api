@@ -9,64 +9,30 @@ public interface SecurityRuleSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique identifier of security rule
+   * security policy this rule belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string security_policy_name_ref = 1;</code>
+   * @return The securityPolicyNameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique identifier of security rule
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique identifier of security rule
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getSecurityPolicyNameRef();
   /**
    * <pre>
    * security policy this rule belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   * @return Whether the securityPolicyId field is set.
+   * <code>string security_policy_name_ref = 1;</code>
+   * @return The bytes for securityPolicyNameRef.
    */
-  boolean hasSecurityPolicyId();
-  /**
-   * <pre>
-   * security policy this rule belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   * @return The securityPolicyId.
-   */
-  opi_api.common.v1.ObjectKey getSecurityPolicyId();
-  /**
-   * <pre>
-   * security policy this rule belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSecurityPolicyIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSecurityPolicyNameRefBytes();
 
   /**
    * <pre>
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    * @return Whether the attrs field is set.
    */
   boolean hasAttrs();
@@ -75,7 +41,7 @@ public interface SecurityRuleSpecOrBuilder extends
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    * @return The attrs.
    */
   opi_api.network.cloud.v1alpha1.SecurityRuleAttrs getAttrs();
@@ -84,7 +50,7 @@ public interface SecurityRuleSpecOrBuilder extends
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.SecurityRuleAttrsOrBuilder getAttrsOrBuilder();
 }

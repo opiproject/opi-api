@@ -74,63 +74,64 @@ public final class DeviceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\014device.proto\022\036opi_api.network.cloud.v1" +
-      "alpha1\032\020object_key.proto\032\022networktypes.p" +
-      "roto\032\037google/protobuf/timestamp.proto\"\331\001" +
-      "\n\022DeviceCapabilities\022]\n\023routing_capabilt" +
-      "ies\030\001 \001(\0132@.opi_api.network.cloud.v1alph" +
-      "a1.DeviceCapabilitiesDynamicRouting\022d\n\033n" +
-      "etwork_policy_capabilities\030\002 \001(\0132?.opi_a" +
-      "pi.network.cloud.v1alpha1.DeviceCapabili" +
-      "tiesNetworkPolicy\"8\n DeviceCapabilitiesD" +
-      "ynamicRouting\022\024\n\014underlay_bgp\030\001 \001(\010\"8\n\037D" +
-      "eviceCapabilitiesNetworkPolicy\022\025\n\rcompac" +
-      "t_rules\030\001 \001(\010\"\200\001\n\006Device\0228\n\004spec\030\001 \001(\0132*" +
-      ".opi_api.network.cloud.v1alpha1.DeviceSp" +
-      "ec\022<\n\006status\030\002 \001(\0132,.opi_api.network.clo" +
-      "ud.v1alpha1.DeviceStatus\"\352\003\n\nDeviceSpec\022" +
-      "(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe" +
-      "y\022F\n\014ipv4_address\030\002 \001(\01320.opi_api.networ" +
-      "k.opinetcommon.v1alpha1.IPAddress\022F\n\014ipv" +
-      "6_address\030\003 \001(\01320.opi_api.network.opinet" +
-      "common.v1alpha1.IPAddress\022\020\n\010mac_addr\030\004 " +
-      "\001(\014\022D\n\ngateway_ip\030\005 \001(\01320.opi_api.networ" +
-      "k.opinetcommon.v1alpha1.IPAddress\022I\n\016pci" +
-      "e_functions\030\006 \001(\01321.opi_api.network.clou" +
-      "d.v1alpha1.PCIeFunctionsSpec\022\037\n\027overlay_" +
-      "routing_enabled\030\007 \001(\010\022\022\n\nsystemname\030\010 \001(" +
-      "\t\022J\n\021mgmt_network_spec\030\t \001(\0132/.opi_api.n" +
-      "etwork.cloud.v1alpha1.MgmtNetworkSpec\"7\n" +
-      "\021PCIeFunctionsSpec\022\020\n\010pf_count\030\005 \001(\005\022\020\n\010" +
-      "vf_count\030\006 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n\014ll" +
-      "dp_mgmt_ip\030\001 \001(\01320.opi_api.network.opine" +
-      "tcommon.v1alpha1.IPAddress\022A\n\007mgmt_ip\030\002 " +
-      "\001(\01320.opi_api.network.opinetcommon.v1alp" +
-      "ha1.IPAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngateway_i" +
-      "p\030\004 \001(\01320.opi_api.network.opinetcommon.v" +
-      "1alpha1.IPAddress\022\023\n\013gateway_mac\030\005 \001(\014\"\322" +
-      "\002\n\014DeviceStatus\022\023\n\013description\030\001 \001(\t\022\032\n\022" +
-      "system_mac_address\030\002 \001(\014\022\021\n\tvendor_id\030\003 " +
-      "\001(\t\022\021\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030\005 \001" +
-      "(\t\022\027\n\017pcie_port_count\030\006 \001(\005\022\022\n\nport_coun" +
-      "t\030\007 \001(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pipeli" +
-      "ne\030\t \001(\t\022D\n\017critical_events\030\n \003(\0132+.opi_" +
-      "api.network.cloud.v1alpha1.SystemEvent\022;" +
-      "\n\006alerts\030\013 \003(\0132+.opi_api.network.cloud.v" +
-      "1alpha1.SystemAlert\"X\n\013SystemEvent\022.\n\nev" +
-      "ent_time\030\001 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\022\031\n\021event_description\030\002 \001(\t\"X\n\013SystemA" +
-      "lert\022.\n\nalert_time\030\001 \001(\0132\032.google.protob" +
-      "uf.Timestamp\022\031\n\021alert_description\030\002 \001(\tB" +
-      "l\n\036opi_api.network.cloud.v1alpha1B\013Devic" +
-      "eProtoP\001Z;github.com/opiproject/opi-api/" +
-      "network/cloud/v1alpha1/gen/gob\006proto3"
+      "alpha1\032\022networktypes.proto\032\037google/proto" +
+      "buf/timestamp.proto\032\031google/api/resource" +
+      ".proto\"\331\001\n\022DeviceCapabilities\022]\n\023routing" +
+      "_capabilties\030\001 \001(\0132@.opi_api.network.clo" +
+      "ud.v1alpha1.DeviceCapabilitiesDynamicRou" +
+      "ting\022d\n\033network_policy_capabilities\030\002 \001(" +
+      "\0132?.opi_api.network.cloud.v1alpha1.Devic" +
+      "eCapabilitiesNetworkPolicy\"8\n DeviceCapa" +
+      "bilitiesDynamicRouting\022\024\n\014underlay_bgp\030\001" +
+      " \001(\010\"8\n\037DeviceCapabilitiesNetworkPolicy\022" +
+      "\025\n\rcompact_rules\030\001 \001(\010\"\314\001\n\006Device\022\014\n\004nam" +
+      "e\030\001 \001(\t\0228\n\004spec\030\002 \001(\0132*.opi_api.network." +
+      "cloud.v1alpha1.DeviceSpec\022<\n\006status\030\003 \001(" +
+      "\0132,.opi_api.network.cloud.v1alpha1.Devic" +
+      "eStatus:<\352A9\n%opi_api.network.cloud.v1al" +
+      "pha1/device\022\020devices/{device}\"\300\003\n\nDevice" +
+      "Spec\022F\n\014ipv4_address\030\001 \001(\01320.opi_api.net" +
+      "work.opinetcommon.v1alpha1.IPAddress\022F\n\014" +
+      "ipv6_address\030\002 \001(\01320.opi_api.network.opi" +
+      "netcommon.v1alpha1.IPAddress\022\020\n\010mac_addr" +
+      "\030\003 \001(\014\022D\n\ngateway_ip\030\004 \001(\01320.opi_api.net" +
+      "work.opinetcommon.v1alpha1.IPAddress\022I\n\016" +
+      "pcie_functions\030\005 \001(\01321.opi_api.network.c" +
+      "loud.v1alpha1.PCIeFunctionsSpec\022\037\n\027overl" +
+      "ay_routing_enabled\030\006 \001(\010\022\022\n\nsystemname\030\007" +
+      " \001(\t\022J\n\021mgmt_network_spec\030\010 \001(\0132/.opi_ap" +
+      "i.network.cloud.v1alpha1.MgmtNetworkSpec" +
+      "\"7\n\021PCIeFunctionsSpec\022\020\n\010pf_count\030\001 \001(\005\022" +
+      "\020\n\010vf_count\030\002 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n" +
+      "\014lldp_mgmt_ip\030\001 \001(\01320.opi_api.network.op" +
+      "inetcommon.v1alpha1.IPAddress\022A\n\007mgmt_ip" +
+      "\030\002 \001(\01320.opi_api.network.opinetcommon.v1" +
+      "alpha1.IPAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngatewa" +
+      "y_ip\030\004 \001(\01320.opi_api.network.opinetcommo" +
+      "n.v1alpha1.IPAddress\022\023\n\013gateway_mac\030\005 \001(" +
+      "\014\"\322\002\n\014DeviceStatus\022\023\n\013description\030\001 \001(\t\022" +
+      "\032\n\022system_mac_address\030\002 \001(\014\022\021\n\tvendor_id" +
+      "\030\003 \001(\t\022\021\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030" +
+      "\005 \001(\t\022\027\n\017pcie_port_count\030\006 \001(\005\022\022\n\nport_c" +
+      "ount\030\007 \001(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pip" +
+      "eline\030\t \001(\t\022D\n\017critical_events\030\n \003(\0132+.o" +
+      "pi_api.network.cloud.v1alpha1.SystemEven" +
+      "t\022;\n\006alerts\030\013 \003(\0132+.opi_api.network.clou" +
+      "d.v1alpha1.SystemAlert\"X\n\013SystemEvent\022.\n" +
+      "\nevent_time\030\001 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022\031\n\021event_description\030\002 \001(\t\"X\n\013Syst" +
+      "emAlert\022.\n\nalert_time\030\001 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022\031\n\021alert_description\030\002 \001" +
+      "(\tBl\n\036opi_api.network.cloud.v1alpha1B\013De" +
+      "viceProtoP\001Z;github.com/opiproject/opi-a" +
+      "pi/network/cloud/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         });
     internal_static_opi_api_network_cloud_v1alpha1_DeviceCapabilities_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -155,13 +156,13 @@ public final class DeviceProto {
     internal_static_opi_api_network_cloud_v1alpha1_Device_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_Device_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_DeviceSpec_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_opi_api_network_cloud_v1alpha1_DeviceSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DeviceSpec_descriptor,
-        new java.lang.String[] { "Id", "Ipv4Address", "Ipv6Address", "MacAddr", "GatewayIp", "PcieFunctions", "OverlayRoutingEnabled", "Systemname", "MgmtNetworkSpec", });
+        new java.lang.String[] { "Ipv4Address", "Ipv6Address", "MacAddr", "GatewayIp", "PcieFunctions", "OverlayRoutingEnabled", "Systemname", "MgmtNetworkSpec", });
     internal_static_opi_api_network_cloud_v1alpha1_PCIeFunctionsSpec_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_network_cloud_v1alpha1_PCIeFunctionsSpec_fieldAccessorTable = new
@@ -192,9 +193,14 @@ public final class DeviceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SystemAlert_descriptor,
         new java.lang.String[] { "AlertTime", "AlertDescription", });
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

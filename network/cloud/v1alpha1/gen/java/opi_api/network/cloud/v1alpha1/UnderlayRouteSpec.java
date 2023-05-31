@@ -20,7 +20,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UnderlayRouteSpec() {
+    routeTableNameRef_ = "";
     state_ = 0;
+    interfaceNameRef_ = "";
   }
 
   @java.lang.Override
@@ -54,32 +56,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            routeTableNameRef_ = s;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (routeTableId_ != null) {
-              subBuilder = routeTableId_.toBuilder();
-            }
-            routeTableId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(routeTableId_);
-              routeTableId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
             opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder subBuilder = null;
             if (destPrefix_ != null) {
               subBuilder = destPrefix_.toBuilder();
@@ -92,7 +74,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (nextHopAddress_ != null) {
               subBuilder = nextHopAddress_.toBuilder();
@@ -105,33 +87,26 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 40: {
+          case 32: {
             int rawValue = input.readEnum();
 
             state_ = rawValue;
             break;
           }
-          case 48: {
+          case 40: {
 
             enableAdminDistance_ = input.readBool();
             break;
           }
-          case 56: {
+          case 48: {
 
             adminDist_ = input.readInt32();
             break;
           }
-          case 66: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (interfaceId_ != null) {
-              subBuilder = interfaceId_.toBuilder();
-            }
-            interfaceId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(interfaceId_);
-              interfaceId_ = subBuilder.buildPartial();
-            }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
 
+            interfaceNameRef_ = s;
             break;
           }
           default: {
@@ -166,90 +141,60 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.class, opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object routeTableNameRef_;
   /**
    * <pre>
-   * route's unique id
+   * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getRouteTableNameRef() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeTableNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * route's unique id
+   * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The bytes for routeTableNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * route's unique id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getRouteTableNameRefBytes() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeTableNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int ROUTE_TABLE_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey routeTableId_;
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
-   */
-  @java.lang.Override
-  public boolean hasRouteTableId() {
-    return routeTableId_ != null;
-  }
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getRouteTableId() {
-    return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-  }
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-    return getRouteTableId();
-  }
-
-  public static final int DEST_PREFIX_FIELD_NUMBER = 3;
+  public static final int DEST_PREFIX_FIELD_NUMBER = 2;
   private opi_api.network.opinetcommon.v1alpha1.IPPrefix destPrefix_;
   /**
    * <pre>
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    * @return Whether the destPrefix field is set.
    */
   @java.lang.Override
@@ -261,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    * @return The destPrefix.
    */
   @java.lang.Override
@@ -273,21 +218,21 @@ private static final long serialVersionUID = 0L;
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getDestPrefixOrBuilder() {
     return getDestPrefix();
   }
 
-  public static final int NEXT_HOP_ADDRESS_FIELD_NUMBER = 4;
+  public static final int NEXT_HOP_ADDRESS_FIELD_NUMBER = 3;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress nextHopAddress_;
   /**
    * <pre>
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    * @return Whether the nextHopAddress field is set.
    */
   @java.lang.Override
@@ -299,7 +244,7 @@ private static final long serialVersionUID = 0L;
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    * @return The nextHopAddress.
    */
   @java.lang.Override
@@ -311,21 +256,21 @@ private static final long serialVersionUID = 0L;
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getNextHopAddressOrBuilder() {
     return getNextHopAddress();
   }
 
-  public static final int STATE_FIELD_NUMBER = 5;
+  public static final int STATE_FIELD_NUMBER = 4;
   private int state_;
   /**
    * <pre>
    * route is enabled or not
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -336,7 +281,7 @@ private static final long serialVersionUID = 0L;
    * route is enabled or not
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
    * @return The state.
    */
   @java.lang.Override public opi_api.network.opinetcommon.v1alpha1.AdminState getState() {
@@ -345,14 +290,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.opinetcommon.v1alpha1.AdminState.UNRECOGNIZED : result;
   }
 
-  public static final int ENABLE_ADMIN_DISTANCE_FIELD_NUMBER = 6;
+  public static final int ENABLE_ADMIN_DISTANCE_FIELD_NUMBER = 5;
   private boolean enableAdminDistance_;
   /**
    * <pre>
    * enable/disable admin distance
    * </pre>
    *
-   * <code>bool enable_admin_distance = 6;</code>
+   * <code>bool enable_admin_distance = 5;</code>
    * @return The enableAdminDistance.
    */
   @java.lang.Override
@@ -360,7 +305,7 @@ private static final long serialVersionUID = 0L;
     return enableAdminDistance_;
   }
 
-  public static final int ADMIN_DIST_FIELD_NUMBER = 7;
+  public static final int ADMIN_DIST_FIELD_NUMBER = 6;
   private int adminDist_;
   /**
    * <pre>
@@ -368,7 +313,7 @@ private static final long serialVersionUID = 0L;
    * protocol computes it for the dynamic route.
    * </pre>
    *
-   * <code>int32 admin_dist = 7;</code>
+   * <code>int32 admin_dist = 6;</code>
    * @return The adminDist.
    */
   @java.lang.Override
@@ -376,42 +321,50 @@ private static final long serialVersionUID = 0L;
     return adminDist_;
   }
 
-  public static final int INTERFACE_ID_FIELD_NUMBER = 8;
-  private opi_api.common.v1.ObjectKey interfaceId_;
+  public static final int INTERFACE_NAME_REF_FIELD_NUMBER = 7;
+  private volatile java.lang.Object interfaceNameRef_;
   /**
    * <pre>
    * interface ID, if this route is configured on RR
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   * @return Whether the interfaceId field is set.
+   * <code>string interface_name_ref = 7;</code>
+   * @return The interfaceNameRef.
    */
   @java.lang.Override
-  public boolean hasInterfaceId() {
-    return interfaceId_ != null;
+  public java.lang.String getInterfaceNameRef() {
+    java.lang.Object ref = interfaceNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interfaceNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * interface ID, if this route is configured on RR
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   * @return The interfaceId.
+   * <code>string interface_name_ref = 7;</code>
+   * @return The bytes for interfaceNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getInterfaceId() {
-    return interfaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : interfaceId_;
-  }
-  /**
-   * <pre>
-   * interface ID, if this route is configured on RR
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getInterfaceIdOrBuilder() {
-    return getInterfaceId();
+  public com.google.protobuf.ByteString
+      getInterfaceNameRefBytes() {
+    java.lang.Object ref = interfaceNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interfaceNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -428,29 +381,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
-    if (routeTableId_ != null) {
-      output.writeMessage(2, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
-      output.writeMessage(3, getDestPrefix());
+      output.writeMessage(2, getDestPrefix());
     }
     if (nextHopAddress_ != null) {
-      output.writeMessage(4, getNextHopAddress());
+      output.writeMessage(3, getNextHopAddress());
     }
     if (state_ != opi_api.network.opinetcommon.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(5, state_);
+      output.writeEnum(4, state_);
     }
     if (enableAdminDistance_ != false) {
-      output.writeBool(6, enableAdminDistance_);
+      output.writeBool(5, enableAdminDistance_);
     }
     if (adminDist_ != 0) {
-      output.writeInt32(7, adminDist_);
+      output.writeInt32(6, adminDist_);
     }
-    if (interfaceId_ != null) {
-      output.writeMessage(8, getInterfaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interfaceNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, interfaceNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -461,37 +411,31 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
-    if (routeTableId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getDestPrefix());
+        .computeMessageSize(2, getDestPrefix());
     }
     if (nextHopAddress_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getNextHopAddress());
+        .computeMessageSize(3, getNextHopAddress());
     }
     if (state_ != opi_api.network.opinetcommon.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, state_);
+        .computeEnumSize(4, state_);
     }
     if (enableAdminDistance_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, enableAdminDistance_);
+        .computeBoolSize(5, enableAdminDistance_);
     }
     if (adminDist_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, adminDist_);
+        .computeInt32Size(6, adminDist_);
     }
-    if (interfaceId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getInterfaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interfaceNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, interfaceNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -508,16 +452,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.UnderlayRouteSpec other = (opi_api.network.cloud.v1alpha1.UnderlayRouteSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasRouteTableId() != other.hasRouteTableId()) return false;
-    if (hasRouteTableId()) {
-      if (!getRouteTableId()
-          .equals(other.getRouteTableId())) return false;
-    }
+    if (!getRouteTableNameRef()
+        .equals(other.getRouteTableNameRef())) return false;
     if (hasDestPrefix() != other.hasDestPrefix()) return false;
     if (hasDestPrefix()) {
       if (!getDestPrefix()
@@ -533,11 +469,8 @@ private static final long serialVersionUID = 0L;
         != other.getEnableAdminDistance()) return false;
     if (getAdminDist()
         != other.getAdminDist()) return false;
-    if (hasInterfaceId() != other.hasInterfaceId()) return false;
-    if (hasInterfaceId()) {
-      if (!getInterfaceId()
-          .equals(other.getInterfaceId())) return false;
-    }
+    if (!getInterfaceNameRef()
+        .equals(other.getInterfaceNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -549,14 +482,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasRouteTableId()) {
-      hash = (37 * hash) + ROUTE_TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRouteTableId().hashCode();
-    }
+    hash = (37 * hash) + ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteTableNameRef().hashCode();
     if (hasDestPrefix()) {
       hash = (37 * hash) + DEST_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getDestPrefix().hashCode();
@@ -572,10 +499,8 @@ private static final long serialVersionUID = 0L;
         getEnableAdminDistance());
     hash = (37 * hash) + ADMIN_DIST_FIELD_NUMBER;
     hash = (53 * hash) + getAdminDist();
-    if (hasInterfaceId()) {
-      hash = (37 * hash) + INTERFACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInterfaceId().hashCode();
-    }
+    hash = (37 * hash) + INTERFACE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getInterfaceNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -713,18 +638,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
+      routeTableNameRef_ = "";
+
       if (destPrefixBuilder_ == null) {
         destPrefix_ = null;
       } else {
@@ -743,12 +658,8 @@ private static final long serialVersionUID = 0L;
 
       adminDist_ = 0;
 
-      if (interfaceIdBuilder_ == null) {
-        interfaceId_ = null;
-      } else {
-        interfaceId_ = null;
-        interfaceIdBuilder_ = null;
-      }
+      interfaceNameRef_ = "";
+
       return this;
     }
 
@@ -775,16 +686,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayRouteSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.UnderlayRouteSpec result = new opi_api.network.cloud.v1alpha1.UnderlayRouteSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (routeTableIdBuilder_ == null) {
-        result.routeTableId_ = routeTableId_;
-      } else {
-        result.routeTableId_ = routeTableIdBuilder_.build();
-      }
+      result.routeTableNameRef_ = routeTableNameRef_;
       if (destPrefixBuilder_ == null) {
         result.destPrefix_ = destPrefix_;
       } else {
@@ -798,11 +700,7 @@ private static final long serialVersionUID = 0L;
       result.state_ = state_;
       result.enableAdminDistance_ = enableAdminDistance_;
       result.adminDist_ = adminDist_;
-      if (interfaceIdBuilder_ == null) {
-        result.interfaceId_ = interfaceId_;
-      } else {
-        result.interfaceId_ = interfaceIdBuilder_.build();
-      }
+      result.interfaceNameRef_ = interfaceNameRef_;
       onBuilt();
       return result;
     }
@@ -851,11 +749,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.UnderlayRouteSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
-      if (other.hasRouteTableId()) {
-        mergeRouteTableId(other.getRouteTableId());
+      if (!other.getRouteTableNameRef().isEmpty()) {
+        routeTableNameRef_ = other.routeTableNameRef_;
+        onChanged();
       }
       if (other.hasDestPrefix()) {
         mergeDestPrefix(other.getDestPrefix());
@@ -872,8 +768,9 @@ private static final long serialVersionUID = 0L;
       if (other.getAdminDist() != 0) {
         setAdminDist(other.getAdminDist());
       }
-      if (other.hasInterfaceId()) {
-        mergeInterfaceId(other.getInterfaceId());
+      if (!other.getInterfaceNameRef().isEmpty()) {
+        interfaceNameRef_ = other.interfaceNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -904,208 +801,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object routeTableNameRef_ = "";
     /**
      * <pre>
-     * route's unique id
+     * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string route_table_name_ref = 1;</code>
+     * @return The routeTableNameRef.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getRouteTableNameRef() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeTableNameRef_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * route's unique id
+     * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @return The bytes for routeTableNameRef.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getRouteTableNameRefBytes() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeTableNameRef_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * route's unique id
+     * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @param value The routeTableNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setRouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      routeTableNameRef_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * route's unique id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey routeTableId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> routeTableIdBuilder_;
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     * @return Whether the routeTableId field is set.
-     */
-    public boolean hasRouteTableId() {
-      return routeTableIdBuilder_ != null || routeTableId_ != null;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     * @return The routeTableId.
-     */
-    public opi_api.common.v1.ObjectKey getRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-      } else {
-        return routeTableIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder setRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        routeTableId_ = value;
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
@@ -1113,105 +867,34 @@ private static final long serialVersionUID = 0L;
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public Builder setRouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = builderForValue.build();
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder mergeRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (routeTableId_ != null) {
-          routeTableId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(routeTableId_).mergeFrom(value).buildPartial();
-        } else {
-          routeTableId_ = value;
-        }
-        onChanged();
-      } else {
-        routeTableIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder clearRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-        onChanged();
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getRouteTableIdBuilder() {
+    public Builder clearRouteTableNameRef() {
       
+      routeTableNameRef_ = getDefaultInstance().getRouteTableNameRef();
       onChanged();
-      return getRouteTableIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @param value The bytes for routeTableNameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-      if (routeTableIdBuilder_ != null) {
-        return routeTableIdBuilder_.getMessageOrBuilder();
-      } else {
-        return routeTableId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-      }
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getRouteTableIdFieldBuilder() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getRouteTableId(),
-                getParentForChildren(),
-                isClean());
-        routeTableId_ = null;
-      }
-      return routeTableIdBuilder_;
+    public Builder setRouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      routeTableNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.opinetcommon.v1alpha1.IPPrefix destPrefix_;
@@ -1222,7 +905,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      * @return Whether the destPrefix field is set.
      */
     public boolean hasDestPrefix() {
@@ -1233,7 +916,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      * @return The destPrefix.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefix getDestPrefix() {
@@ -1248,7 +931,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public Builder setDestPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
       if (destPrefixBuilder_ == null) {
@@ -1268,7 +951,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public Builder setDestPrefix(
         opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder builderForValue) {
@@ -1286,7 +969,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public Builder mergeDestPrefix(opi_api.network.opinetcommon.v1alpha1.IPPrefix value) {
       if (destPrefixBuilder_ == null) {
@@ -1308,7 +991,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public Builder clearDestPrefix() {
       if (destPrefixBuilder_ == null) {
@@ -1326,7 +1009,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder getDestPrefixBuilder() {
       
@@ -1338,7 +1021,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getDestPrefixOrBuilder() {
       if (destPrefixBuilder_ != null) {
@@ -1353,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      * destination address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPPrefix, opi_api.network.opinetcommon.v1alpha1.IPPrefix.Builder, opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder> 
@@ -1377,7 +1060,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      * @return Whether the nextHopAddress field is set.
      */
     public boolean hasNextHopAddress() {
@@ -1388,7 +1071,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      * @return The nextHopAddress.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getNextHopAddress() {
@@ -1403,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public Builder setNextHopAddress(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (nextHopAddressBuilder_ == null) {
@@ -1423,7 +1106,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public Builder setNextHopAddress(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1441,7 +1124,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public Builder mergeNextHopAddress(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (nextHopAddressBuilder_ == null) {
@@ -1463,7 +1146,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public Builder clearNextHopAddress() {
       if (nextHopAddressBuilder_ == null) {
@@ -1481,7 +1164,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getNextHopAddressBuilder() {
       
@@ -1493,7 +1176,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getNextHopAddressOrBuilder() {
       if (nextHopAddressBuilder_ != null) {
@@ -1508,7 +1191,7 @@ private static final long serialVersionUID = 0L;
      * next-hop address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1530,7 +1213,7 @@ private static final long serialVersionUID = 0L;
      * route is enabled or not
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -1541,7 +1224,7 @@ private static final long serialVersionUID = 0L;
      * route is enabled or not
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -1556,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      * route is enabled or not
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -1570,7 +1253,7 @@ private static final long serialVersionUID = 0L;
      * route is enabled or not
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
@@ -1588,7 +1271,7 @@ private static final long serialVersionUID = 0L;
      * route is enabled or not
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
@@ -1604,7 +1287,7 @@ private static final long serialVersionUID = 0L;
      * enable/disable admin distance
      * </pre>
      *
-     * <code>bool enable_admin_distance = 6;</code>
+     * <code>bool enable_admin_distance = 5;</code>
      * @return The enableAdminDistance.
      */
     @java.lang.Override
@@ -1616,7 +1299,7 @@ private static final long serialVersionUID = 0L;
      * enable/disable admin distance
      * </pre>
      *
-     * <code>bool enable_admin_distance = 6;</code>
+     * <code>bool enable_admin_distance = 5;</code>
      * @param value The enableAdminDistance to set.
      * @return This builder for chaining.
      */
@@ -1631,7 +1314,7 @@ private static final long serialVersionUID = 0L;
      * enable/disable admin distance
      * </pre>
      *
-     * <code>bool enable_admin_distance = 6;</code>
+     * <code>bool enable_admin_distance = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearEnableAdminDistance() {
@@ -1648,7 +1331,7 @@ private static final long serialVersionUID = 0L;
      * protocol computes it for the dynamic route.
      * </pre>
      *
-     * <code>int32 admin_dist = 7;</code>
+     * <code>int32 admin_dist = 6;</code>
      * @return The adminDist.
      */
     @java.lang.Override
@@ -1661,7 +1344,7 @@ private static final long serialVersionUID = 0L;
      * protocol computes it for the dynamic route.
      * </pre>
      *
-     * <code>int32 admin_dist = 7;</code>
+     * <code>int32 admin_dist = 6;</code>
      * @param value The adminDist to set.
      * @return This builder for chaining.
      */
@@ -1677,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * protocol computes it for the dynamic route.
      * </pre>
      *
-     * <code>int32 admin_dist = 7;</code>
+     * <code>int32 admin_dist = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearAdminDist() {
@@ -1687,33 +1370,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey interfaceId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> interfaceIdBuilder_;
+    private java.lang.Object interfaceNameRef_ = "";
     /**
      * <pre>
      * interface ID, if this route is configured on RR
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-     * @return Whether the interfaceId field is set.
+     * <code>string interface_name_ref = 7;</code>
+     * @return The interfaceNameRef.
      */
-    public boolean hasInterfaceId() {
-      return interfaceIdBuilder_ != null || interfaceId_ != null;
-    }
-    /**
-     * <pre>
-     * interface ID, if this route is configured on RR
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-     * @return The interfaceId.
-     */
-    public opi_api.common.v1.ObjectKey getInterfaceId() {
-      if (interfaceIdBuilder_ == null) {
-        return interfaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : interfaceId_;
+    public java.lang.String getInterfaceNameRef() {
+      java.lang.Object ref = interfaceNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interfaceNameRef_ = s;
+        return s;
       } else {
-        return interfaceIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1721,125 +1396,74 @@ private static final long serialVersionUID = 0L;
      * interface ID, if this route is configured on RR
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
+     * <code>string interface_name_ref = 7;</code>
+     * @return The bytes for interfaceNameRef.
      */
-    public Builder setInterfaceId(opi_api.common.v1.ObjectKey value) {
-      if (interfaceIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        interfaceId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getInterfaceNameRefBytes() {
+      java.lang.Object ref = interfaceNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interfaceNameRef_ = b;
+        return b;
       } else {
-        interfaceIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * interface ID, if this route is configured on RR
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
+     * <code>string interface_name_ref = 7;</code>
+     * @param value The interfaceNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setInterfaceId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (interfaceIdBuilder_ == null) {
-        interfaceId_ = builderForValue.build();
-        onChanged();
-      } else {
-        interfaceIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface ID, if this route is configured on RR
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-     */
-    public Builder mergeInterfaceId(opi_api.common.v1.ObjectKey value) {
-      if (interfaceIdBuilder_ == null) {
-        if (interfaceId_ != null) {
-          interfaceId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(interfaceId_).mergeFrom(value).buildPartial();
-        } else {
-          interfaceId_ = value;
-        }
-        onChanged();
-      } else {
-        interfaceIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface ID, if this route is configured on RR
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-     */
-    public Builder clearInterfaceId() {
-      if (interfaceIdBuilder_ == null) {
-        interfaceId_ = null;
-        onChanged();
-      } else {
-        interfaceId_ = null;
-        interfaceIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface ID, if this route is configured on RR
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getInterfaceIdBuilder() {
-      
+    public Builder setInterfaceNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      interfaceNameRef_ = value;
       onChanged();
-      return getInterfaceIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * interface ID, if this route is configured on RR
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
+     * <code>string interface_name_ref = 7;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getInterfaceIdOrBuilder() {
-      if (interfaceIdBuilder_ != null) {
-        return interfaceIdBuilder_.getMessageOrBuilder();
-      } else {
-        return interfaceId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : interfaceId_;
-      }
+    public Builder clearInterfaceNameRef() {
+      
+      interfaceNameRef_ = getDefaultInstance().getInterfaceNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * interface ID, if this route is configured on RR
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
+     * <code>string interface_name_ref = 7;</code>
+     * @param value The bytes for interfaceNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getInterfaceIdFieldBuilder() {
-      if (interfaceIdBuilder_ == null) {
-        interfaceIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getInterfaceId(),
-                getParentForChildren(),
-                isClean());
-        interfaceId_ = null;
-      }
-      return interfaceIdBuilder_;
+    public Builder setInterfaceNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      interfaceNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

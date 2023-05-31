@@ -12,11 +12,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13underlayroute.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x95\x01\n\rUnderlayRoute\x12?\n\x04spec\x18\x01 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec\x12\x43\n\x06status\x18\x02 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus\"\xae\x03\n\x11UnderlayRouteSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x34\n\x0eroute_table_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x44\n\x0b\x64\x65st_prefix\x18\x03 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x04 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12@\n\x05state\x18\x05 \x01(\x0e\x32\x31.opi_api.network.opinetcommon.v1alpha1.AdminState\x12\x1d\n\x15\x65nable_admin_distance\x18\x06 \x01(\x08\x12\x12\n\nadmin_dist\x18\x07 \x01(\x05\x12\x32\n\x0cinterface_id\x18\x08 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\xb1\x03\n\x13UnderlayRouteStatus\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\x05\x12\x44\n\x0b\x64\x65st_prefix\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x10\n\x08if_index\x18\x05 \x01(\x05\x12>\n\x04type\x18\x06 \x01(\x0e\x32\x30.opi_api.network.opinetcommon.v1alpha1.RouteType\x12\x43\n\x05proto\x18\x07 \x01(\x0e\x32\x34.opi_api.network.opinetcommon.v1alpha1.RouteProtocol\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x05\x12\x0e\n\x06metric\x18\t \x01(\x05\x12\x11\n\tfib_route\x18\n \x01(\x08\x12\x11\n\tconnected\x18\x0b \x01(\x08\x12\x16\n\x0e\x61\x64min_distance\x18\x0c \x01(\x05\"\xb3\x02\n\x16UnderlayRouteLookupKey\x12\x34\n\x0eroute_table_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x44\n\x0b\x64\x65st_prefix\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04ifid\x18\x04 \x01(\x05\x12\x43\n\x05proto\x18\x06 \x01(\x0e\x32\x34.opi_api.network.opinetcommon.v1alpha1.RouteProtocolBs\n\x1eopi_api.network.cloud.v1alpha1B\x12UnderlayRouteProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13underlayroute.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xf6\x01\n\rUnderlayRoute\x12\x0c\n\x04name\x18\x01 \x01(\t\x12?\n\x04spec\x18\x02 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec\x12\x43\n\x06status\x18\x03 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus:Q\xea\x41N\n,opi_api.network.cloud.v1alpha1/underlayroute\x12\x1eunderlayroutes/{underlayroute}\"\xd4\x02\n\x11UnderlayRouteSpec\x12\x1c\n\x14route_table_name_ref\x18\x01 \x01(\t\x12\x44\n\x0b\x64\x65st_prefix\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12@\n\x05state\x18\x04 \x01(\x0e\x32\x31.opi_api.network.opinetcommon.v1alpha1.AdminState\x12\x1d\n\x15\x65nable_admin_distance\x18\x05 \x01(\x08\x12\x12\n\nadmin_dist\x18\x06 \x01(\x05\x12\x1a\n\x12interface_name_ref\x18\x07 \x01(\t\"\xb7\x03\n\x13UnderlayRouteStatus\x12\x1c\n\x14route_table_name_ref\x18\x01 \x01(\x05\x12\x44\n\x0b\x64\x65st_prefix\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x10\n\x08if_index\x18\x05 \x01(\x05\x12>\n\x04type\x18\x06 \x01(\x0e\x32\x30.opi_api.network.opinetcommon.v1alpha1.RouteType\x12\x43\n\x05proto\x18\x07 \x01(\x0e\x32\x34.opi_api.network.opinetcommon.v1alpha1.RouteProtocol\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x05\x12\x0e\n\x06metric\x18\t \x01(\x05\x12\x11\n\tfib_route\x18\n \x01(\x08\x12\x11\n\tconnected\x18\x0b \x01(\x08\x12\x16\n\x0e\x61\x64min_distance\x18\x0c \x01(\x05\"\x9b\x02\n\x16UnderlayRouteLookupKey\x12\x1c\n\x14route_table_name_ref\x18\x01 \x01(\t\x12\x44\n\x0b\x64\x65st_prefix\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12J\n\x10next_hop_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04ifid\x18\x04 \x01(\x05\x12\x43\n\x05proto\x18\x06 \x01(\x0e\x32\x34.opi_api.network.opinetcommon.v1alpha1.RouteProtocolBs\n\x1eopi_api.network.cloud.v1alpha1B\x12UnderlayRouteProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -56,12 +56,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\022UnderlayRouteProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _UNDERLAYROUTE._serialized_start=94
-  _UNDERLAYROUTE._serialized_end=243
-  _UNDERLAYROUTESPEC._serialized_start=246
-  _UNDERLAYROUTESPEC._serialized_end=676
-  _UNDERLAYROUTESTATUS._serialized_start=679
-  _UNDERLAYROUTESTATUS._serialized_end=1112
-  _UNDERLAYROUTELOOKUPKEY._serialized_start=1115
-  _UNDERLAYROUTELOOKUPKEY._serialized_end=1422
+  _UNDERLAYROUTE._options = None
+  _UNDERLAYROUTE._serialized_options = b'\352AN\n,opi_api.network.cloud.v1alpha1/underlayroute\022\036underlayroutes/{underlayroute}'
+  _UNDERLAYROUTE._serialized_start=103
+  _UNDERLAYROUTE._serialized_end=349
+  _UNDERLAYROUTESPEC._serialized_start=352
+  _UNDERLAYROUTESPEC._serialized_end=692
+  _UNDERLAYROUTESTATUS._serialized_start=695
+  _UNDERLAYROUTESTATUS._serialized_end=1134
+  _UNDERLAYROUTELOOKUPKEY._serialized_start=1137
+  _UNDERLAYROUTELOOKUPKEY._serialized_end=1420
 # @@protoc_insertion_point(module_scope)

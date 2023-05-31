@@ -9,39 +9,12 @@ public interface BgpSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * the local autonomous system number
    * (-- api-linter: core::0141::forbidden-types=disabled
    *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
    * </pre>
    *
-   * <code>uint32 local_asn = 2;</code>
+   * <code>uint32 local_asn = 1;</code>
    * @return The localAsn.
    */
   int getLocalAsn();
@@ -53,7 +26,7 @@ public interface BgpSpecOrBuilder extends
    *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
    * </pre>
    *
-   * <code>fixed32 router_id = 3;</code>
+   * <code>fixed32 router_id = 2;</code>
    * @return The routerId.
    */
   int getRouterId();
@@ -66,7 +39,7 @@ public interface BgpSpecOrBuilder extends
    *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
    * </pre>
    *
-   * <code>fixed32 cluster_id = 4;</code>
+   * <code>fixed32 cluster_id = 3;</code>
    * @return The clusterId.
    */
   int getClusterId();
@@ -76,7 +49,7 @@ public interface BgpSpecOrBuilder extends
    * disable/enable BGP
    * </pre>
    *
-   * <code>bool disable = 5;</code>
+   * <code>bool disable = 4;</code>
    * @return The disable.
    */
   boolean getDisable();
@@ -87,7 +60,7 @@ public interface BgpSpecOrBuilder extends
    * changing this will deactivate and activate the routing stack RIB
    * </pre>
    *
-   * <code>bool suppress_default_resolution = 6;</code>
+   * <code>bool suppress_default_resolution = 5;</code>
    * @return The suppressDefaultResolution.
    */
   boolean getSuppressDefaultResolution();

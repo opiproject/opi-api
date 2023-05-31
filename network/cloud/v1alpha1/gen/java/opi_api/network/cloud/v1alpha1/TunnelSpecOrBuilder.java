@@ -9,64 +9,30 @@ public interface TunnelSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique tunnel identifier
+   * virtual private cloud this is tunnel belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique tunnel identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique tunnel identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * virtual private cloud this is tunnel belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
-  boolean hasVpcId();
-  /**
-   * <pre>
-   * virtual private cloud this is tunnel belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return The vpcId.
-   */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * virtual private cloud this is tunnel belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   /**
    * <pre>
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    * @return Whether the localIp field is set.
    */
   boolean hasLocalIp();
@@ -75,7 +41,7 @@ public interface TunnelSpecOrBuilder extends
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    * @return The localIp.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getLocalIp();
@@ -84,7 +50,7 @@ public interface TunnelSpecOrBuilder extends
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalIpOrBuilder();
 
@@ -93,7 +59,7 @@ public interface TunnelSpecOrBuilder extends
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    * @return Whether the remoteIp field is set.
    */
   boolean hasRemoteIp();
@@ -102,7 +68,7 @@ public interface TunnelSpecOrBuilder extends
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    * @return The remoteIp.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getRemoteIp();
@@ -111,7 +77,7 @@ public interface TunnelSpecOrBuilder extends
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getRemoteIpOrBuilder();
 
@@ -120,7 +86,7 @@ public interface TunnelSpecOrBuilder extends
    * type of the tunnel
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -129,7 +95,7 @@ public interface TunnelSpecOrBuilder extends
    * type of the tunnel
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
    * @return The type.
    */
   opi_api.network.cloud.v1alpha1.TunnelType getType();
@@ -139,7 +105,7 @@ public interface TunnelSpecOrBuilder extends
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    * @return Whether the encap field is set.
    */
   boolean hasEncap();
@@ -148,7 +114,7 @@ public interface TunnelSpecOrBuilder extends
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    * @return The encap.
    */
   opi_api.network.opinetcommon.v1alpha1.Encap getEncap();
@@ -157,7 +123,7 @@ public interface TunnelSpecOrBuilder extends
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder();
 
@@ -166,54 +132,58 @@ public interface TunnelSpecOrBuilder extends
    * underlay nexthop for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-   * @return Whether the nexthopId field is set.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return Whether the nexthopNameRef field is set.
    */
-  boolean hasNexthopId();
+  boolean hasNexthopNameRef();
   /**
    * <pre>
    * underlay nexthop for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-   * @return The nexthopId.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The nexthopNameRef.
    */
-  opi_api.common.v1.ObjectKey getNexthopId();
+  java.lang.String getNexthopNameRef();
   /**
    * <pre>
    * underlay nexthop for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The bytes for nexthopNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNexthopNameRefBytes();
 
   /**
    * <pre>
    * underlay nexthop group for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-   * @return Whether the nexthopGroupId field is set.
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return Whether the nexthopGroupNameRef field is set.
    */
-  boolean hasNexthopGroupId();
+  boolean hasNexthopGroupNameRef();
   /**
    * <pre>
    * underlay nexthop group for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-   * @return The nexthopGroupId.
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return The nexthopGroupNameRef.
    */
-  opi_api.common.v1.ObjectKey getNexthopGroupId();
+  java.lang.String getNexthopGroupNameRef();
   /**
    * <pre>
    * underlay nexthop group for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return The bytes for nexthopGroupNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNexthopGroupIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNexthopGroupNameRefBytes();
 
   /**
    * <pre>
@@ -223,10 +193,10 @@ public interface TunnelSpecOrBuilder extends
    * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return Whether the tunnelNameRef field is set.
    */
-  boolean hasTunnelId();
+  boolean hasTunnelNameRef();
   /**
    * <pre>
    * a tunnel can point to another tunnel for double encap
@@ -235,10 +205,10 @@ public interface TunnelSpecOrBuilder extends
    * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return The tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKey getTunnelId();
+  java.lang.String getTunnelNameRef();
   /**
    * <pre>
    * a tunnel can point to another tunnel for double encap
@@ -247,9 +217,11 @@ public interface TunnelSpecOrBuilder extends
    * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder();
+  com.google.protobuf.ByteString
+      getTunnelNameRefBytes();
 
   /**
    * <pre>
@@ -257,7 +229,7 @@ public interface TunnelSpecOrBuilder extends
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    * @return Whether the dropNextHop field is set.
    */
   boolean hasDropNextHop();
@@ -267,7 +239,7 @@ public interface TunnelSpecOrBuilder extends
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    * @return The dropNextHop.
    */
   opi_api.network.cloud.v1alpha1.DropNexthop getDropNextHop();
@@ -277,7 +249,7 @@ public interface TunnelSpecOrBuilder extends
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    */
   opi_api.network.cloud.v1alpha1.DropNexthopOrBuilder getDropNextHopOrBuilder();
 
@@ -287,7 +259,7 @@ public interface TunnelSpecOrBuilder extends
    * set to zero if dataplane is expected to resolve this
    * </pre>
    *
-   * <code>bytes mac_address = 12;</code>
+   * <code>bytes mac_address = 10;</code>
    * @return The macAddress.
    */
   com.google.protobuf.ByteString getMacAddress();
@@ -304,7 +276,7 @@ public interface TunnelSpecOrBuilder extends
    * in vpc and subnet objects
    * </pre>
    *
-   * <code>int32 tos = 13;</code>
+   * <code>int32 tos = 11;</code>
    * @return The tos.
    */
   int getTos();

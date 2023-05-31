@@ -9,37 +9,10 @@ public interface MappingSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    * @return Whether the ipKey field is set.
    */
   boolean hasIpKey();
@@ -48,7 +21,7 @@ public interface MappingSpecOrBuilder extends
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    * @return The ipKey.
    */
   opi_api.network.cloud.v1alpha1.L3MappingKey getIpKey();
@@ -57,7 +30,7 @@ public interface MappingSpecOrBuilder extends
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    */
   opi_api.network.cloud.v1alpha1.L3MappingKeyOrBuilder getIpKeyOrBuilder();
 
@@ -66,7 +39,7 @@ public interface MappingSpecOrBuilder extends
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    * @return Whether the macKey field is set.
    */
   boolean hasMacKey();
@@ -75,7 +48,7 @@ public interface MappingSpecOrBuilder extends
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    * @return The macKey.
    */
   opi_api.network.cloud.v1alpha1.L2MappingKey getMacKey();
@@ -84,7 +57,7 @@ public interface MappingSpecOrBuilder extends
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.L2MappingKeyOrBuilder getMacKeyOrBuilder();
 
@@ -93,27 +66,20 @@ public interface MappingSpecOrBuilder extends
    * subnet this mapping is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   * @return Whether the subnetId field is set.
+   * <code>string subnet_name_ref = 3;</code>
+   * @return The subnetNameRef.
    */
-  boolean hasSubnetId();
+  java.lang.String getSubnetNameRef();
   /**
    * <pre>
    * subnet this mapping is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   * @return The subnetId.
+   * <code>string subnet_name_ref = 3;</code>
+   * @return The bytes for subnetNameRef.
    */
-  opi_api.common.v1.ObjectKey getSubnetId();
-  /**
-   * <pre>
-   * subnet this mapping is in
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSubnetNameRefBytes();
 
   /**
    * <pre>
@@ -121,29 +87,31 @@ public interface MappingSpecOrBuilder extends
    * this is mandatory attribute for local IP mappings
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-   * @return Whether the vnicId field is set.
+   * <code>string vnic_name_ref = 4;</code>
+   * @return Whether the vnicNameRef field is set.
    */
-  boolean hasVnicId();
+  boolean hasVnicNameRef();
   /**
    * <pre>
    * if IP is that of local vnic, corresponding vnic id
    * this is mandatory attribute for local IP mappings
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-   * @return The vnicId.
+   * <code>string vnic_name_ref = 4;</code>
+   * @return The vnicNameRef.
    */
-  opi_api.common.v1.ObjectKey getVnicId();
+  java.lang.String getVnicNameRef();
   /**
    * <pre>
    * if IP is that of local vnic, corresponding vnic id
    * this is mandatory attribute for local IP mappings
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
+   * <code>string vnic_name_ref = 4;</code>
+   * @return The bytes for vnicNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVnicNameRefBytes();
 
   /**
    * <pre>
@@ -152,10 +120,10 @@ public interface MappingSpecOrBuilder extends
    * non-ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return Whether the tunnelNameRef field is set.
    */
-  boolean hasTunnelId();
+  boolean hasTunnelNameRef();
   /**
    * <pre>
    * Tunnel ID of the remote TEP for remote mapping
@@ -163,10 +131,10 @@ public interface MappingSpecOrBuilder extends
    * non-ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return The tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKey getTunnelId();
+  java.lang.String getTunnelNameRef();
   /**
    * <pre>
    * Tunnel ID of the remote TEP for remote mapping
@@ -174,9 +142,11 @@ public interface MappingSpecOrBuilder extends
    * non-ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder();
+  com.google.protobuf.ByteString
+      getTunnelNameRefBytes();
 
   /**
    * <pre>
@@ -184,36 +154,38 @@ public interface MappingSpecOrBuilder extends
    * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return Whether the nhGroupId field is set.
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return Whether the nhGroupNameRef field is set.
    */
-  boolean hasNhGroupId();
+  boolean hasNhGroupNameRef();
   /**
    * <pre>
    * overlay nexthop/TEP group for remote mappings
    * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return The nhGroupId.
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return The nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKey getNhGroupId();
+  java.lang.String getNhGroupNameRef();
   /**
    * <pre>
    * overlay nexthop/TEP group for remote mappings
    * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return The bytes for nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNhGroupNameRefBytes();
 
   /**
    * <pre>
    * overlay MAC address of this mapping
    * </pre>
    *
-   * <code>bytes mac_addr = 8;</code>
+   * <code>bytes mac_addr = 7;</code>
    * @return The macAddr.
    */
   com.google.protobuf.ByteString getMacAddr();
@@ -223,7 +195,7 @@ public interface MappingSpecOrBuilder extends
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    * @return Whether the encap field is set.
    */
   boolean hasEncap();
@@ -232,7 +204,7 @@ public interface MappingSpecOrBuilder extends
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    * @return The encap.
    */
   opi_api.network.opinetcommon.v1alpha1.Encap getEncap();
@@ -241,7 +213,7 @@ public interface MappingSpecOrBuilder extends
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder();
 
@@ -250,7 +222,7 @@ public interface MappingSpecOrBuilder extends
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    * @return Whether the publicIp field is set.
    */
   boolean hasPublicIp();
@@ -259,7 +231,7 @@ public interface MappingSpecOrBuilder extends
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    * @return The publicIp.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getPublicIp();
@@ -268,7 +240,7 @@ public interface MappingSpecOrBuilder extends
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPublicIpOrBuilder();
 
@@ -281,7 +253,7 @@ public interface MappingSpecOrBuilder extends
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @return A list containing the tags.
    */
   java.util.List<java.lang.Integer> getTagsList();
@@ -294,7 +266,7 @@ public interface MappingSpecOrBuilder extends
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @return The count of tags.
    */
   int getTagsCount();
@@ -307,7 +279,7 @@ public interface MappingSpecOrBuilder extends
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @param index The index of the element to return.
    * @return The tags at the given index.
    */
@@ -318,7 +290,7 @@ public interface MappingSpecOrBuilder extends
    * type of the IP mapping endpoint, default is vpc mapping
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -327,7 +299,7 @@ public interface MappingSpecOrBuilder extends
    * type of the IP mapping endpoint, default is vpc mapping
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
    * @return The type.
    */
   opi_api.network.cloud.v1alpha1.MappingType getType();

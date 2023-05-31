@@ -31,9 +31,9 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include "networktypes.pb.h"
 #include <google/protobuf/timestamp.pb.h>
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_device_2eproto
@@ -702,10 +702,25 @@ class Device final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -723,7 +738,7 @@ class Device final :
       ::opi_api::network::cloud::v1alpha1::DeviceSpec* spec);
   ::opi_api::network::cloud::v1alpha1::DeviceSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -748,6 +763,7 @@ class Device final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::DeviceSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::DeviceStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -877,17 +893,16 @@ class DeviceSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMacAddrFieldNumber = 4,
-    kSystemnameFieldNumber = 8,
-    kIdFieldNumber = 1,
-    kIpv4AddressFieldNumber = 2,
-    kIpv6AddressFieldNumber = 3,
-    kGatewayIpFieldNumber = 5,
-    kPcieFunctionsFieldNumber = 6,
-    kMgmtNetworkSpecFieldNumber = 9,
-    kOverlayRoutingEnabledFieldNumber = 7,
+    kMacAddrFieldNumber = 3,
+    kSystemnameFieldNumber = 7,
+    kIpv4AddressFieldNumber = 1,
+    kIpv6AddressFieldNumber = 2,
+    kGatewayIpFieldNumber = 4,
+    kPcieFunctionsFieldNumber = 5,
+    kMgmtNetworkSpecFieldNumber = 8,
+    kOverlayRoutingEnabledFieldNumber = 6,
   };
-  // bytes mac_addr = 4;
+  // bytes mac_addr = 3;
   void clear_mac_addr();
   const std::string& mac_addr() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -901,7 +916,7 @@ class DeviceSpec final :
   std::string* _internal_mutable_mac_addr();
   public:
 
-  // string systemname = 8;
+  // string systemname = 7;
   void clear_systemname();
   const std::string& systemname() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -915,25 +930,7 @@ class DeviceSpec final :
   std::string* _internal_mutable_systemname();
   public:
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
   bool has_ipv4_address() const;
   private:
   bool _internal_has_ipv4_address() const;
@@ -951,7 +948,7 @@ class DeviceSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* ipv4_address);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_ipv4_address();
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
   bool has_ipv6_address() const;
   private:
   bool _internal_has_ipv6_address() const;
@@ -969,7 +966,7 @@ class DeviceSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* ipv6_address);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_ipv6_address();
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
   bool has_gateway_ip() const;
   private:
   bool _internal_has_gateway_ip() const;
@@ -987,7 +984,7 @@ class DeviceSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* gateway_ip);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_gateway_ip();
 
-  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;
+  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;
   bool has_pcie_functions() const;
   private:
   bool _internal_has_pcie_functions() const;
@@ -1005,7 +1002,7 @@ class DeviceSpec final :
       ::opi_api::network::cloud::v1alpha1::PCIeFunctionsSpec* pcie_functions);
   ::opi_api::network::cloud::v1alpha1::PCIeFunctionsSpec* unsafe_arena_release_pcie_functions();
 
-  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;
+  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;
   bool has_mgmt_network_spec() const;
   private:
   bool _internal_has_mgmt_network_spec() const;
@@ -1023,7 +1020,7 @@ class DeviceSpec final :
       ::opi_api::network::cloud::v1alpha1::MgmtNetworkSpec* mgmt_network_spec);
   ::opi_api::network::cloud::v1alpha1::MgmtNetworkSpec* unsafe_arena_release_mgmt_network_spec();
 
-  // bool overlay_routing_enabled = 7;
+  // bool overlay_routing_enabled = 6;
   void clear_overlay_routing_enabled();
   bool overlay_routing_enabled() const;
   void set_overlay_routing_enabled(bool value);
@@ -1041,7 +1038,6 @@ class DeviceSpec final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mac_addr_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr systemname_;
-  ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* ipv4_address_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* ipv6_address_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* gateway_ip_;
@@ -1175,10 +1171,10 @@ class PCIeFunctionsSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPfCountFieldNumber = 5,
-    kVfCountFieldNumber = 6,
+    kPfCountFieldNumber = 1,
+    kVfCountFieldNumber = 2,
   };
-  // int32 pf_count = 5;
+  // int32 pf_count = 1;
   void clear_pf_count();
   int32_t pf_count() const;
   void set_pf_count(int32_t value);
@@ -1187,7 +1183,7 @@ class PCIeFunctionsSpec final :
   void _internal_set_pf_count(int32_t value);
   public:
 
-  // int32 vf_count = 6;
+  // int32 vf_count = 2;
   void clear_vf_count();
   int32_t vf_count() const;
   void set_vf_count(int32_t value);
@@ -2319,7 +2315,58 @@ inline void DeviceCapabilitiesNetworkPolicy::set_compact_rules(bool value) {
 
 // Device
 
-// .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;
+// string name = 1;
+inline void Device::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Device::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.Device.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Device::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.Device.name)
+}
+inline std::string* Device::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.Device.name)
+  return _s;
+}
+inline const std::string& Device::_internal_name() const {
+  return name_.Get();
+}
+inline void Device::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Device::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Device::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.Device.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Device::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Device.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;
 inline bool Device::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -2409,7 +2456,7 @@ inline void Device::set_allocated_spec(::opi_api::network::cloud::v1alpha1::Devi
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Device.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;
 inline bool Device::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -2503,93 +2550,7 @@ inline void Device::set_allocated_status(::opi_api::network::cloud::v1alpha1::De
 
 // DeviceSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool DeviceSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool DeviceSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& DeviceSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& DeviceSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DeviceSpec.id)
-  return _internal_id();
-}
-inline void DeviceSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* DeviceSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* DeviceSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.DeviceSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* DeviceSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* DeviceSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.DeviceSpec.id)
-  return _msg;
-}
-inline void DeviceSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.id)
-}
-
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
 inline bool DeviceSpec::_internal_has_ipv4_address() const {
   return this != internal_default_instance() && ipv4_address_ != nullptr;
 }
@@ -2675,7 +2636,7 @@ inline void DeviceSpec::set_allocated_ipv4_address(::opi_api::network::opinetcom
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.ipv4_address)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
 inline bool DeviceSpec::_internal_has_ipv6_address() const {
   return this != internal_default_instance() && ipv6_address_ != nullptr;
 }
@@ -2761,7 +2722,7 @@ inline void DeviceSpec::set_allocated_ipv6_address(::opi_api::network::opinetcom
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.ipv6_address)
 }
 
-// bytes mac_addr = 4;
+// bytes mac_addr = 3;
 inline void DeviceSpec::clear_mac_addr() {
   mac_addr_.ClearToEmpty();
 }
@@ -2812,7 +2773,7 @@ inline void DeviceSpec::set_allocated_mac_addr(std::string* mac_addr) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.mac_addr)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
 inline bool DeviceSpec::_internal_has_gateway_ip() const {
   return this != internal_default_instance() && gateway_ip_ != nullptr;
 }
@@ -2898,7 +2859,7 @@ inline void DeviceSpec::set_allocated_gateway_ip(::opi_api::network::opinetcommo
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.gateway_ip)
 }
 
-// .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;
+// .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;
 inline bool DeviceSpec::_internal_has_pcie_functions() const {
   return this != internal_default_instance() && pcie_functions_ != nullptr;
 }
@@ -2988,7 +2949,7 @@ inline void DeviceSpec::set_allocated_pcie_functions(::opi_api::network::cloud::
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.pcie_functions)
 }
 
-// bool overlay_routing_enabled = 7;
+// bool overlay_routing_enabled = 6;
 inline void DeviceSpec::clear_overlay_routing_enabled() {
   overlay_routing_enabled_ = false;
 }
@@ -3008,7 +2969,7 @@ inline void DeviceSpec::set_overlay_routing_enabled(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DeviceSpec.overlay_routing_enabled)
 }
 
-// string systemname = 8;
+// string systemname = 7;
 inline void DeviceSpec::clear_systemname() {
   systemname_.ClearToEmpty();
 }
@@ -3059,7 +3020,7 @@ inline void DeviceSpec::set_allocated_systemname(std::string* systemname) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.DeviceSpec.systemname)
 }
 
-// .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;
+// .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;
 inline bool DeviceSpec::_internal_has_mgmt_network_spec() const {
   return this != internal_default_instance() && mgmt_network_spec_ != nullptr;
 }
@@ -3153,7 +3114,7 @@ inline void DeviceSpec::set_allocated_mgmt_network_spec(::opi_api::network::clou
 
 // PCIeFunctionsSpec
 
-// int32 pf_count = 5;
+// int32 pf_count = 1;
 inline void PCIeFunctionsSpec::clear_pf_count() {
   pf_count_ = 0;
 }
@@ -3173,7 +3134,7 @@ inline void PCIeFunctionsSpec::set_pf_count(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.pf_count)
 }
 
-// int32 vf_count = 6;
+// int32 vf_count = 2;
 inline void PCIeFunctionsSpec::clear_vf_count() {
   vf_count_ = 0;
 }

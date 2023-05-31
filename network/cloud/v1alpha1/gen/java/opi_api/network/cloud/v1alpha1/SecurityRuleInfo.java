@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SecurityRuleInfo() {
+    ruleName_ = "";
   }
 
   @java.lang.Override
@@ -53,16 +54,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            ruleName_ = s;
             break;
           }
           case 18: {
@@ -110,42 +104,54 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.SecurityRuleInfo.class, opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int RULE_NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object ruleName_;
   /**
    * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+   * rule id needed for incremental rule ADD/DEL/UPD 
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string rule_name = 1;</code>
+   * @return The ruleName.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getRuleName() {
+    java.lang.Object ref = ruleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ruleName_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+   * rule id needed for incremental rule ADD/DEL/UPD 
+   * (-- api-linter: core::0122::name-suffix=disabled
+   *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string rule_name = 1;</code>
+   * @return The bytes for ruleName.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getRuleNameBytes() {
+    java.lang.Object ref = ruleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ruleName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ATTRS_FIELD_NUMBER = 2;
@@ -200,8 +206,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ruleName_);
     }
     if (attrs_ != null) {
       output.writeMessage(2, getAttrs());
@@ -215,9 +221,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ruleName_);
     }
     if (attrs_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -238,11 +243,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.SecurityRuleInfo other = (opi_api.network.cloud.v1alpha1.SecurityRuleInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
+    if (!getRuleName()
+        .equals(other.getRuleName())) return false;
     if (hasAttrs() != other.hasAttrs()) return false;
     if (hasAttrs()) {
       if (!getAttrs()
@@ -259,10 +261,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
+    hash = (37 * hash) + RULE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRuleName().hashCode();
     if (hasAttrs()) {
       hash = (37 * hash) + ATTRS_FIELD_NUMBER;
       hash = (53 * hash) + getAttrs().hashCode();
@@ -404,12 +404,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
+      ruleName_ = "";
+
       if (attrsBuilder_ == null) {
         attrs_ = null;
       } else {
@@ -442,11 +438,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfo buildPartial() {
       opi_api.network.cloud.v1alpha1.SecurityRuleInfo result = new opi_api.network.cloud.v1alpha1.SecurityRuleInfo(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
+      result.ruleName_ = ruleName_;
       if (attrsBuilder_ == null) {
         result.attrs_ = attrs_;
       } else {
@@ -500,8 +492,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.SecurityRuleInfo other) {
       if (other == opi_api.network.cloud.v1alpha1.SecurityRuleInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (!other.getRuleName().isEmpty()) {
+        ruleName_ = other.ruleName_;
+        onChanged();
       }
       if (other.hasAttrs()) {
         mergeAttrs(other.getAttrs());
@@ -535,159 +528,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object ruleName_ = "";
     /**
      * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+     * rule id needed for incremental rule ADD/DEL/UPD 
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string rule_name = 1;</code>
+     * @return The ruleName.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getRuleName() {
+      java.lang.Object ref = ruleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ruleName_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+     * rule id needed for incremental rule ADD/DEL/UPD 
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string rule_name = 1;</code>
+     * @return The bytes for ruleName.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getRuleNameBytes() {
+      java.lang.Object ref = ruleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ruleName_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+     * rule id needed for incremental rule ADD/DEL/UPD 
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string rule_name = 1;</code>
+     * @param value The ruleName to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setRuleName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ruleName_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+     * rule id needed for incremental rule ADD/DEL/UPD 
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string rule_name = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
+    public Builder clearRuleName() {
+      
+      ruleName_ = getDefaultInstance().getRuleName();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
-     * rule id needed if incremental rule ADD/DEL/UPD functionality is needed
+     * rule id needed for incremental rule ADD/DEL/UPD 
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: security rule info is user assigned name for each rule. --)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string rule_name = 1;</code>
+     * @param value The bytes for ruleName to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
+    public Builder setRuleNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ruleName_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs_;

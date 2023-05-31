@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private L2MappingKey() {
+    subnetNameRef_ = "";
     macAddress_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -54,16 +55,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subnetId_ != null) {
-              subBuilder = subnetId_.toBuilder();
-            }
-            subnetId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(subnetId_);
-              subnetId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            subnetNameRef_ = s;
             break;
           }
           case 18: {
@@ -103,42 +97,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.L2MappingKey.class, opi_api.network.cloud.v1alpha1.L2MappingKey.Builder.class);
   }
 
-  public static final int SUBNET_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey subnetId_;
+  public static final int SUBNET_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object subnetNameRef_;
   /**
    * <pre>
    * subnet id of this MAC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   * @return Whether the subnetId field is set.
+   * <code>string subnet_name_ref = 1;</code>
+   * @return The subnetNameRef.
    */
   @java.lang.Override
-  public boolean hasSubnetId() {
-    return subnetId_ != null;
+  public java.lang.String getSubnetNameRef() {
+    java.lang.Object ref = subnetNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subnetNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * subnet id of this MAC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   * @return The subnetId.
+   * <code>string subnet_name_ref = 1;</code>
+   * @return The bytes for subnetNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubnetId() {
-    return subnetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
-  }
-  /**
-   * <pre>
-   * subnet id of this MAC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder() {
-    return getSubnetId();
+  public com.google.protobuf.ByteString
+      getSubnetNameRefBytes() {
+    java.lang.Object ref = subnetNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      subnetNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MAC_ADDRESS_FIELD_NUMBER = 2;
@@ -170,8 +172,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (subnetId_ != null) {
-      output.writeMessage(1, getSubnetId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subnetNameRef_);
     }
     if (!macAddress_.isEmpty()) {
       output.writeBytes(2, macAddress_);
@@ -185,9 +187,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (subnetId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSubnetId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subnetNameRef_);
     }
     if (!macAddress_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
@@ -208,11 +209,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.L2MappingKey other = (opi_api.network.cloud.v1alpha1.L2MappingKey) obj;
 
-    if (hasSubnetId() != other.hasSubnetId()) return false;
-    if (hasSubnetId()) {
-      if (!getSubnetId()
-          .equals(other.getSubnetId())) return false;
-    }
+    if (!getSubnetNameRef()
+        .equals(other.getSubnetNameRef())) return false;
     if (!getMacAddress()
         .equals(other.getMacAddress())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -226,10 +224,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasSubnetId()) {
-      hash = (37 * hash) + SUBNET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubnetId().hashCode();
-    }
+    hash = (37 * hash) + SUBNET_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSubnetNameRef().hashCode();
     hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getMacAddress().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -369,12 +365,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = null;
-      } else {
-        subnetId_ = null;
-        subnetIdBuilder_ = null;
-      }
+      subnetNameRef_ = "";
+
       macAddress_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -403,11 +395,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L2MappingKey buildPartial() {
       opi_api.network.cloud.v1alpha1.L2MappingKey result = new opi_api.network.cloud.v1alpha1.L2MappingKey(this);
-      if (subnetIdBuilder_ == null) {
-        result.subnetId_ = subnetId_;
-      } else {
-        result.subnetId_ = subnetIdBuilder_.build();
-      }
+      result.subnetNameRef_ = subnetNameRef_;
       result.macAddress_ = macAddress_;
       onBuilt();
       return result;
@@ -457,8 +445,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.L2MappingKey other) {
       if (other == opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance()) return this;
-      if (other.hasSubnetId()) {
-        mergeSubnetId(other.getSubnetId());
+      if (!other.getSubnetNameRef().isEmpty()) {
+        subnetNameRef_ = other.subnetNameRef_;
+        onChanged();
       }
       if (other.getMacAddress() != com.google.protobuf.ByteString.EMPTY) {
         setMacAddress(other.getMacAddress());
@@ -492,33 +481,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey subnetId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subnetIdBuilder_;
+    private java.lang.Object subnetNameRef_ = "";
     /**
      * <pre>
      * subnet id of this MAC
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-     * @return Whether the subnetId field is set.
+     * <code>string subnet_name_ref = 1;</code>
+     * @return The subnetNameRef.
      */
-    public boolean hasSubnetId() {
-      return subnetIdBuilder_ != null || subnetId_ != null;
-    }
-    /**
-     * <pre>
-     * subnet id of this MAC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-     * @return The subnetId.
-     */
-    public opi_api.common.v1.ObjectKey getSubnetId() {
-      if (subnetIdBuilder_ == null) {
-        return subnetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
+    public java.lang.String getSubnetNameRef() {
+      java.lang.Object ref = subnetNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetNameRef_ = s;
+        return s;
       } else {
-        return subnetIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -526,125 +507,74 @@ private static final long serialVersionUID = 0L;
      * subnet id of this MAC
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
+     * <code>string subnet_name_ref = 1;</code>
+     * @return The bytes for subnetNameRef.
      */
-    public Builder setSubnetId(opi_api.common.v1.ObjectKey value) {
-      if (subnetIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        subnetId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSubnetNameRefBytes() {
+      java.lang.Object ref = subnetNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subnetNameRef_ = b;
+        return b;
       } else {
-        subnetIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * subnet id of this MAC
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
+     * <code>string subnet_name_ref = 1;</code>
+     * @param value The subnetNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setSubnetId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = builderForValue.build();
-        onChanged();
-      } else {
-        subnetIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet id of this MAC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-     */
-    public Builder mergeSubnetId(opi_api.common.v1.ObjectKey value) {
-      if (subnetIdBuilder_ == null) {
-        if (subnetId_ != null) {
-          subnetId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subnetId_).mergeFrom(value).buildPartial();
-        } else {
-          subnetId_ = value;
-        }
-        onChanged();
-      } else {
-        subnetIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet id of this MAC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-     */
-    public Builder clearSubnetId() {
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = null;
-        onChanged();
-      } else {
-        subnetId_ = null;
-        subnetIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet id of this MAC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSubnetIdBuilder() {
-      
+    public Builder setSubnetNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      subnetNameRef_ = value;
       onChanged();
-      return getSubnetIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * subnet id of this MAC
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
+     * <code>string subnet_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder() {
-      if (subnetIdBuilder_ != null) {
-        return subnetIdBuilder_.getMessageOrBuilder();
-      } else {
-        return subnetId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
-      }
+    public Builder clearSubnetNameRef() {
+      
+      subnetNameRef_ = getDefaultInstance().getSubnetNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * subnet id of this MAC
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
+     * <code>string subnet_name_ref = 1;</code>
+     * @param value The bytes for subnetNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubnetIdFieldBuilder() {
-      if (subnetIdBuilder_ == null) {
-        subnetIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubnetId(),
-                getParentForChildren(),
-                isClean());
-        subnetId_ = null;
-      }
-      return subnetIdBuilder_;
+    public Builder setSubnetNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      subnetNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.ByteString macAddress_ = com.google.protobuf.ByteString.EMPTY;

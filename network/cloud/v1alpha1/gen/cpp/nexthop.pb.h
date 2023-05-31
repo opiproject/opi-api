@@ -32,8 +32,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include "networktypes.pb.h"
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_nexthop_2eproto
@@ -300,10 +300,25 @@ class NextHop final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.NextHopSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.NextHopSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -321,7 +336,7 @@ class NextHop final :
       ::opi_api::network::cloud::v1alpha1::NextHopSpec* spec);
   ::opi_api::network::cloud::v1alpha1::NextHopSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.NextHopStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.NextHopStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -346,6 +361,7 @@ class NextHop final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::NextHopSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::NextHopStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -397,9 +413,9 @@ class NextHopSpec final :
     return *internal_default_instance();
   }
   enum NhinfoCase {
-    kOverlayNhInfo = 2,
-    kUnderlayNhInfo = 3,
-    kIpNhInfo = 4,
+    kOverlayNhInfo = 1,
+    kUnderlayNhInfo = 2,
+    kIpNhInfo = 3,
     NHINFO_NOT_SET = 0,
   };
 
@@ -482,30 +498,11 @@ class NextHopSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kOverlayNhInfoFieldNumber = 2,
-    kUnderlayNhInfoFieldNumber = 3,
-    kIpNhInfoFieldNumber = 4,
+    kOverlayNhInfoFieldNumber = 1,
+    kUnderlayNhInfoFieldNumber = 2,
+    kIpNhInfoFieldNumber = 3,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;
+  // .opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;
   bool has_overlay_nh_info() const;
   private:
   bool _internal_has_overlay_nh_info() const;
@@ -523,7 +520,7 @@ class NextHopSpec final :
       ::opi_api::network::cloud::v1alpha1::OverlayNextHopSpec* overlay_nh_info);
   ::opi_api::network::cloud::v1alpha1::OverlayNextHopSpec* unsafe_arena_release_overlay_nh_info();
 
-  // .opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;
+  // .opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;
   bool has_underlay_nh_info() const;
   private:
   bool _internal_has_underlay_nh_info() const;
@@ -541,7 +538,7 @@ class NextHopSpec final :
       ::opi_api::network::cloud::v1alpha1::UnderlayNextHopSpec* underlay_nh_info);
   ::opi_api::network::cloud::v1alpha1::UnderlayNextHopSpec* unsafe_arena_release_underlay_nh_info();
 
-  // .opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;
+  // .opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;
   bool has_ip_nh_info() const;
   private:
   bool _internal_has_ip_nh_info() const;
@@ -574,7 +571,6 @@ class NextHopSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
   union NhinfoUnion {
     constexpr NhinfoUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
@@ -711,9 +707,23 @@ class UnderlayNextHopSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kInterfaceNameRefFieldNumber = 1,
     kUnderlayNhMacFieldNumber = 2,
-    kL3InterfaceIdFieldNumber = 1,
   };
+  // string interface_name_ref = 1;
+  void clear_interface_name_ref();
+  const std::string& interface_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_interface_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_interface_name_ref();
+  PROTOBUF_NODISCARD std::string* release_interface_name_ref();
+  void set_allocated_interface_name_ref(std::string* interface_name_ref);
+  private:
+  const std::string& _internal_interface_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_interface_name_ref(const std::string& value);
+  std::string* _internal_mutable_interface_name_ref();
+  public:
+
   // bytes underlay_nh_mac = 2;
   void clear_underlay_nh_mac();
   const std::string& underlay_nh_mac() const;
@@ -728,24 +738,6 @@ class UnderlayNextHopSpec final :
   std::string* _internal_mutable_underlay_nh_mac();
   public:
 
-  // .opi_api.common.v1.ObjectKey l3_interface_id = 1;
-  bool has_l3_interface_id() const;
-  private:
-  bool _internal_has_l3_interface_id() const;
-  public:
-  void clear_l3_interface_id();
-  const ::opi_api::common::v1::ObjectKey& l3_interface_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_l3_interface_id();
-  ::opi_api::common::v1::ObjectKey* mutable_l3_interface_id();
-  void set_allocated_l3_interface_id(::opi_api::common::v1::ObjectKey* l3_interface_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_l3_interface_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_l3_interface_id();
-  public:
-  void unsafe_arena_set_allocated_l3_interface_id(
-      ::opi_api::common::v1::ObjectKey* l3_interface_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_l3_interface_id();
-
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec)
  private:
   class _Internal;
@@ -753,8 +745,8 @@ class UnderlayNextHopSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr interface_name_ref_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr underlay_nh_mac_;
-  ::opi_api::common::v1::ObjectKey* l3_interface_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_nexthop_2eproto;
 };
@@ -882,25 +874,21 @@ class OverlayNextHopSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTunnelIdFieldNumber = 1,
+    kTunnelNameRefFieldNumber = 1,
   };
-  // .opi_api.common.v1.ObjectKey tunnel_id = 1;
-  bool has_tunnel_id() const;
+  // string tunnel_name_ref = 1;
+  void clear_tunnel_name_ref();
+  const std::string& tunnel_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_tunnel_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_tunnel_name_ref();
+  PROTOBUF_NODISCARD std::string* release_tunnel_name_ref();
+  void set_allocated_tunnel_name_ref(std::string* tunnel_name_ref);
   private:
-  bool _internal_has_tunnel_id() const;
+  const std::string& _internal_tunnel_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_tunnel_name_ref(const std::string& value);
+  std::string* _internal_mutable_tunnel_name_ref();
   public:
-  void clear_tunnel_id();
-  const ::opi_api::common::v1::ObjectKey& tunnel_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_tunnel_id();
-  ::opi_api::common::v1::ObjectKey* mutable_tunnel_id();
-  void set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_tunnel_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_tunnel_id();
-  public:
-  void unsafe_arena_set_allocated_tunnel_id(
-      ::opi_api::common::v1::ObjectKey* tunnel_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_tunnel_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec)
  private:
@@ -909,7 +897,7 @@ class OverlayNextHopSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* tunnel_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tunnel_name_ref_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_nexthop_2eproto;
 };
@@ -1037,11 +1025,25 @@ class IPNextHopSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kVpcNameRefFieldNumber = 1,
     kMacFieldNumber = 4,
-    kVpcIdFieldNumber = 1,
     kIpAddressFieldNumber = 2,
     kVlanFieldNumber = 3,
   };
+  // string vpc_name_ref = 1;
+  void clear_vpc_name_ref();
+  const std::string& vpc_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_vpc_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vpc_name_ref();
+  PROTOBUF_NODISCARD std::string* release_vpc_name_ref();
+  void set_allocated_vpc_name_ref(std::string* vpc_name_ref);
+  private:
+  const std::string& _internal_vpc_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vpc_name_ref(const std::string& value);
+  std::string* _internal_mutable_vpc_name_ref();
+  public:
+
   // bytes mac = 4;
   void clear_mac();
   const std::string& mac() const;
@@ -1055,24 +1057,6 @@ class IPNextHopSpec final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_mac(const std::string& value);
   std::string* _internal_mutable_mac();
   public:
-
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  bool has_vpc_id() const;
-  private:
-  bool _internal_has_vpc_id() const;
-  public:
-  void clear_vpc_id();
-  const ::opi_api::common::v1::ObjectKey& vpc_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_vpc_id();
-  ::opi_api::common::v1::ObjectKey* mutable_vpc_id();
-  void set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_vpc_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_vpc_id();
-  public:
-  void unsafe_arena_set_allocated_vpc_id(
-      ::opi_api::common::v1::ObjectKey* vpc_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_vpc_id();
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
   bool has_ip_address() const;
@@ -1108,8 +1092,8 @@ class IPNextHopSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vpc_name_ref_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mac_;
-  ::opi_api::common::v1::ObjectKey* vpc_id_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* ip_address_;
   int32_t vlan_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1688,7 +1672,7 @@ class NextHopLookup final :
   }
   enum GettypeCase {
     kType = 1,
-    kNhId = 2,
+    kNhNameRef = 2,
     GETTYPE_NOT_SET = 0,
   };
 
@@ -1772,7 +1756,7 @@ class NextHopLookup final :
 
   enum : int {
     kTypeFieldNumber = 1,
-    kNhIdFieldNumber = 2,
+    kNhNameRefFieldNumber = 2,
   };
   // .opi_api.network.cloud.v1alpha1.NextHopType type = 1;
   bool has_type() const;
@@ -1787,23 +1771,23 @@ class NextHopLookup final :
   void _internal_set_type(::opi_api::network::cloud::v1alpha1::NextHopType value);
   public:
 
-  // .opi_api.common.v1.ObjectKey nh_id = 2;
-  bool has_nh_id() const;
+  // string nh_name_ref = 2;
+  bool has_nh_name_ref() const;
   private:
-  bool _internal_has_nh_id() const;
+  bool _internal_has_nh_name_ref() const;
   public:
-  void clear_nh_id();
-  const ::opi_api::common::v1::ObjectKey& nh_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_nh_id();
-  ::opi_api::common::v1::ObjectKey* mutable_nh_id();
-  void set_allocated_nh_id(::opi_api::common::v1::ObjectKey* nh_id);
+  void clear_nh_name_ref();
+  const std::string& nh_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nh_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nh_name_ref();
+  PROTOBUF_NODISCARD std::string* release_nh_name_ref();
+  void set_allocated_nh_name_ref(std::string* nh_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_nh_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_nh_id();
+  const std::string& _internal_nh_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nh_name_ref(const std::string& value);
+  std::string* _internal_mutable_nh_name_ref();
   public:
-  void unsafe_arena_set_allocated_nh_id(
-      ::opi_api::common::v1::ObjectKey* nh_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_nh_id();
 
   void clear_gettype();
   GettypeCase gettype_case() const;
@@ -1811,7 +1795,7 @@ class NextHopLookup final :
  private:
   class _Internal;
   void set_has_type();
-  void set_has_nh_id();
+  void set_has_nh_name_ref();
 
   inline bool has_gettype() const;
   inline void clear_has_gettype();
@@ -1823,7 +1807,7 @@ class NextHopLookup final :
     constexpr GettypeUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     int type_;
-    ::opi_api::common::v1::ObjectKey* nh_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nh_name_ref_;
   } gettype_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -1954,10 +1938,25 @@ class NextHopGroup final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 3,
-    kStatusFieldNumber = 4,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.NextHopGroupSpec spec = 3;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.NextHopGroupSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -1975,7 +1974,7 @@ class NextHopGroup final :
       ::opi_api::network::cloud::v1alpha1::NextHopGroupSpec* spec);
   ::opi_api::network::cloud::v1alpha1::NextHopGroupSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.NextHopGroupStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.NextHopGroupStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2000,6 +1999,7 @@ class NextHopGroup final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::NextHopGroupSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::NextHopGroupStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2129,11 +2129,10 @@ class NextHopGroupSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMembersFieldNumber = 3,
-    kIdFieldNumber = 1,
-    kTypeFieldNumber = 2,
+    kMembersFieldNumber = 2,
+    kTypeFieldNumber = 1,
   };
-  // repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;
+  // repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;
   int members_size() const;
   private:
   int _internal_members_size() const;
@@ -2151,25 +2150,7 @@ class NextHopGroupSpec final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::NextHopSpec >&
       members() const;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;
+  // .opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;
   void clear_type();
   ::opi_api::network::cloud::v1alpha1::NextHopGroupType type() const;
   void set_type(::opi_api::network::cloud::v1alpha1::NextHopGroupType value);
@@ -2186,7 +2167,6 @@ class NextHopGroupSpec final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::NextHopSpec > members_;
-  ::opi_api::common::v1::ObjectKey* id_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_nexthop_2eproto;
@@ -2413,7 +2393,7 @@ class NextHopGroupLookup final :
   }
   enum GettypeCase {
     kType = 1,
-    kId = 2,
+    kNhGroupNameRef = 2,
     GETTYPE_NOT_SET = 0,
   };
 
@@ -2497,7 +2477,7 @@ class NextHopGroupLookup final :
 
   enum : int {
     kTypeFieldNumber = 1,
-    kIdFieldNumber = 2,
+    kNhGroupNameRefFieldNumber = 2,
   };
   // .opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;
   bool has_type() const;
@@ -2512,23 +2492,23 @@ class NextHopGroupLookup final :
   void _internal_set_type(::opi_api::network::cloud::v1alpha1::NextHopGroupType value);
   public:
 
-  // .opi_api.common.v1.ObjectKey id = 2;
-  bool has_id() const;
+  // string nh_group_name_ref = 2;
+  bool has_nh_group_name_ref() const;
   private:
-  bool _internal_has_id() const;
+  bool _internal_has_nh_group_name_ref() const;
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
+  void clear_nh_group_name_ref();
+  const std::string& nh_group_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nh_group_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nh_group_name_ref();
+  PROTOBUF_NODISCARD std::string* release_nh_group_name_ref();
+  void set_allocated_nh_group_name_ref(std::string* nh_group_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
+  const std::string& _internal_nh_group_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nh_group_name_ref(const std::string& value);
+  std::string* _internal_mutable_nh_group_name_ref();
   public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
   void clear_gettype();
   GettypeCase gettype_case() const;
@@ -2536,7 +2516,7 @@ class NextHopGroupLookup final :
  private:
   class _Internal;
   void set_has_type();
-  void set_has_id();
+  void set_has_nh_group_name_ref();
 
   inline bool has_gettype() const;
   inline void clear_has_gettype();
@@ -2548,7 +2528,7 @@ class NextHopGroupLookup final :
     constexpr GettypeUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     int type_;
-    ::opi_api::common::v1::ObjectKey* id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nh_group_name_ref_;
   } gettype_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -2566,7 +2546,58 @@ class NextHopGroupLookup final :
 #endif  // __GNUC__
 // NextHop
 
-// .opi_api.network.cloud.v1alpha1.NextHopSpec spec = 1;
+// string name = 1;
+inline void NextHop::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& NextHop::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHop.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NextHop::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHop.name)
+}
+inline std::string* NextHop::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHop.name)
+  return _s;
+}
+inline const std::string& NextHop::_internal_name() const {
+  return name_.Get();
+}
+inline void NextHop::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NextHop::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NextHop::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHop.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NextHop::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHop.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.NextHopSpec spec = 2;
 inline bool NextHop::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -2656,7 +2687,7 @@ inline void NextHop::set_allocated_spec(::opi_api::network::cloud::v1alpha1::Nex
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHop.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.NextHopStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.NextHopStatus status = 3;
 inline bool NextHop::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -2750,93 +2781,7 @@ inline void NextHop::set_allocated_status(::opi_api::network::cloud::v1alpha1::N
 
 // NextHopSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool NextHopSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool NextHopSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& NextHopSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& NextHopSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopSpec.id)
-  return _internal_id();
-}
-inline void NextHopSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.NextHopSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopSpec.id)
-  return _msg;
-}
-inline void NextHopSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopSpec.id)
-}
-
-// .opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;
+// .opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;
 inline bool NextHopSpec::_internal_has_overlay_nh_info() const {
   return nhinfo_case() == kOverlayNhInfo;
 }
@@ -2910,7 +2855,7 @@ inline ::opi_api::network::cloud::v1alpha1::OverlayNextHopSpec* NextHopSpec::mut
   return _msg;
 }
 
-// .opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;
+// .opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;
 inline bool NextHopSpec::_internal_has_underlay_nh_info() const {
   return nhinfo_case() == kUnderlayNhInfo;
 }
@@ -2984,7 +2929,7 @@ inline ::opi_api::network::cloud::v1alpha1::UnderlayNextHopSpec* NextHopSpec::mu
   return _msg;
 }
 
-// .opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;
+// .opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;
 inline bool NextHopSpec::_internal_has_ip_nh_info() const {
   return nhinfo_case() == kIpNhInfo;
 }
@@ -3071,90 +3016,55 @@ inline NextHopSpec::NhinfoCase NextHopSpec::nhinfo_case() const {
 
 // UnderlayNextHopSpec
 
-// .opi_api.common.v1.ObjectKey l3_interface_id = 1;
-inline bool UnderlayNextHopSpec::_internal_has_l3_interface_id() const {
-  return this != internal_default_instance() && l3_interface_id_ != nullptr;
+// string interface_name_ref = 1;
+inline void UnderlayNextHopSpec::clear_interface_name_ref() {
+  interface_name_ref_.ClearToEmpty();
 }
-inline bool UnderlayNextHopSpec::has_l3_interface_id() const {
-  return _internal_has_l3_interface_id();
+inline const std::string& UnderlayNextHopSpec::interface_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.interface_name_ref)
+  return _internal_interface_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& UnderlayNextHopSpec::_internal_l3_interface_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = l3_interface_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UnderlayNextHopSpec::set_interface_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.interface_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& UnderlayNextHopSpec::l3_interface_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.l3_interface_id)
-  return _internal_l3_interface_id();
+inline std::string* UnderlayNextHopSpec::mutable_interface_name_ref() {
+  std::string* _s = _internal_mutable_interface_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.interface_name_ref)
+  return _s;
 }
-inline void UnderlayNextHopSpec::unsafe_arena_set_allocated_l3_interface_id(
-    ::opi_api::common::v1::ObjectKey* l3_interface_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(l3_interface_id_);
-  }
-  l3_interface_id_ = l3_interface_id;
-  if (l3_interface_id) {
+inline const std::string& UnderlayNextHopSpec::_internal_interface_name_ref() const {
+  return interface_name_ref_.Get();
+}
+inline void UnderlayNextHopSpec::_internal_set_interface_name_ref(const std::string& value) {
+  
+  interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UnderlayNextHopSpec::_internal_mutable_interface_name_ref() {
+  
+  return interface_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UnderlayNextHopSpec::release_interface_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.interface_name_ref)
+  return interface_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UnderlayNextHopSpec::set_allocated_interface_name_ref(std::string* interface_name_ref) {
+  if (interface_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.l3_interface_id)
-}
-inline ::opi_api::common::v1::ObjectKey* UnderlayNextHopSpec::release_l3_interface_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = l3_interface_id_;
-  l3_interface_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  interface_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), interface_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (interface_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* UnderlayNextHopSpec::unsafe_arena_release_l3_interface_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.l3_interface_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = l3_interface_id_;
-  l3_interface_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* UnderlayNextHopSpec::_internal_mutable_l3_interface_id() {
-  
-  if (l3_interface_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    l3_interface_id_ = p;
-  }
-  return l3_interface_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* UnderlayNextHopSpec::mutable_l3_interface_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_l3_interface_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.l3_interface_id)
-  return _msg;
-}
-inline void UnderlayNextHopSpec::set_allocated_l3_interface_id(::opi_api::common::v1::ObjectKey* l3_interface_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(l3_interface_id_);
-  }
-  if (l3_interface_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(l3_interface_id));
-    if (message_arena != submessage_arena) {
-      l3_interface_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, l3_interface_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  l3_interface_id_ = l3_interface_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.l3_interface_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.interface_name_ref)
 }
 
 // bytes underlay_nh_mac = 2;
@@ -3212,180 +3122,110 @@ inline void UnderlayNextHopSpec::set_allocated_underlay_nh_mac(std::string* unde
 
 // OverlayNextHopSpec
 
-// .opi_api.common.v1.ObjectKey tunnel_id = 1;
-inline bool OverlayNextHopSpec::_internal_has_tunnel_id() const {
-  return this != internal_default_instance() && tunnel_id_ != nullptr;
+// string tunnel_name_ref = 1;
+inline void OverlayNextHopSpec::clear_tunnel_name_ref() {
+  tunnel_name_ref_.ClearToEmpty();
 }
-inline bool OverlayNextHopSpec::has_tunnel_id() const {
-  return _internal_has_tunnel_id();
+inline const std::string& OverlayNextHopSpec::tunnel_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_name_ref)
+  return _internal_tunnel_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& OverlayNextHopSpec::_internal_tunnel_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = tunnel_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void OverlayNextHopSpec::set_tunnel_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ tunnel_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& OverlayNextHopSpec::tunnel_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_id)
-  return _internal_tunnel_id();
+inline std::string* OverlayNextHopSpec::mutable_tunnel_name_ref() {
+  std::string* _s = _internal_mutable_tunnel_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_name_ref)
+  return _s;
 }
-inline void OverlayNextHopSpec::unsafe_arena_set_allocated_tunnel_id(
-    ::opi_api::common::v1::ObjectKey* tunnel_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tunnel_id_);
-  }
-  tunnel_id_ = tunnel_id;
-  if (tunnel_id) {
+inline const std::string& OverlayNextHopSpec::_internal_tunnel_name_ref() const {
+  return tunnel_name_ref_.Get();
+}
+inline void OverlayNextHopSpec::_internal_set_tunnel_name_ref(const std::string& value) {
+  
+  tunnel_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* OverlayNextHopSpec::_internal_mutable_tunnel_name_ref() {
+  
+  return tunnel_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* OverlayNextHopSpec::release_tunnel_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_name_ref)
+  return tunnel_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void OverlayNextHopSpec::set_allocated_tunnel_name_ref(std::string* tunnel_name_ref) {
+  if (tunnel_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_id)
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopSpec::release_tunnel_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = tunnel_id_;
-  tunnel_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  tunnel_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tunnel_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (tunnel_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    tunnel_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopSpec::unsafe_arena_release_tunnel_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = tunnel_id_;
-  tunnel_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopSpec::_internal_mutable_tunnel_id() {
-  
-  if (tunnel_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    tunnel_id_ = p;
-  }
-  return tunnel_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopSpec::mutable_tunnel_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_tunnel_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_id)
-  return _msg;
-}
-inline void OverlayNextHopSpec::set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(tunnel_id_);
-  }
-  if (tunnel_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tunnel_id));
-    if (message_arena != submessage_arena) {
-      tunnel_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tunnel_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  tunnel_id_ = tunnel_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.tunnel_name_ref)
 }
 
 // -------------------------------------------------------------------
 
 // IPNextHopSpec
 
-// .opi_api.common.v1.ObjectKey vpc_id = 1;
-inline bool IPNextHopSpec::_internal_has_vpc_id() const {
-  return this != internal_default_instance() && vpc_id_ != nullptr;
+// string vpc_name_ref = 1;
+inline void IPNextHopSpec::clear_vpc_name_ref() {
+  vpc_name_ref_.ClearToEmpty();
 }
-inline bool IPNextHopSpec::has_vpc_id() const {
-  return _internal_has_vpc_id();
+inline const std::string& IPNextHopSpec::vpc_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_name_ref)
+  return _internal_vpc_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& IPNextHopSpec::_internal_vpc_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = vpc_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void IPNextHopSpec::set_vpc_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& IPNextHopSpec::vpc_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_id)
-  return _internal_vpc_id();
+inline std::string* IPNextHopSpec::mutable_vpc_name_ref() {
+  std::string* _s = _internal_mutable_vpc_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_name_ref)
+  return _s;
 }
-inline void IPNextHopSpec::unsafe_arena_set_allocated_vpc_id(
-    ::opi_api::common::v1::ObjectKey* vpc_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  vpc_id_ = vpc_id;
-  if (vpc_id) {
+inline const std::string& IPNextHopSpec::_internal_vpc_name_ref() const {
+  return vpc_name_ref_.Get();
+}
+inline void IPNextHopSpec::_internal_set_vpc_name_ref(const std::string& value) {
+  
+  vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* IPNextHopSpec::_internal_mutable_vpc_name_ref() {
+  
+  return vpc_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* IPNextHopSpec::release_vpc_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_name_ref)
+  return vpc_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void IPNextHopSpec::set_allocated_vpc_name_ref(std::string* vpc_name_ref) {
+  if (vpc_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_id)
-}
-inline ::opi_api::common::v1::ObjectKey* IPNextHopSpec::release_vpc_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  vpc_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vpc_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (vpc_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* IPNextHopSpec::unsafe_arena_release_vpc_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* IPNextHopSpec::_internal_mutable_vpc_id() {
-  
-  if (vpc_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    vpc_id_ = p;
-  }
-  return vpc_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* IPNextHopSpec::mutable_vpc_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_vpc_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_id)
-  return _msg;
-}
-inline void IPNextHopSpec::set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  if (vpc_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id));
-    if (message_arena != submessage_arena) {
-      vpc_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vpc_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  vpc_id_ = vpc_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.IPNextHopSpec.vpc_name_ref)
 }
 
 // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
@@ -3968,70 +3808,86 @@ inline void NextHopLookup::set_type(::opi_api::network::cloud::v1alpha1::NextHop
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopLookup.type)
 }
 
-// .opi_api.common.v1.ObjectKey nh_id = 2;
-inline bool NextHopLookup::_internal_has_nh_id() const {
-  return gettype_case() == kNhId;
+// string nh_name_ref = 2;
+inline bool NextHopLookup::_internal_has_nh_name_ref() const {
+  return gettype_case() == kNhNameRef;
 }
-inline bool NextHopLookup::has_nh_id() const {
-  return _internal_has_nh_id();
+inline bool NextHopLookup::has_nh_name_ref() const {
+  return _internal_has_nh_name_ref();
 }
-inline void NextHopLookup::set_has_nh_id() {
-  _oneof_case_[0] = kNhId;
+inline void NextHopLookup::set_has_nh_name_ref() {
+  _oneof_case_[0] = kNhNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* NextHopLookup::release_nh_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_id)
-  if (_internal_has_nh_id()) {
+inline void NextHopLookup::clear_nh_name_ref() {
+  if (_internal_has_nh_name_ref()) {
+    gettype_.nh_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_gettype();
-      ::opi_api::common::v1::ObjectKey* temp = gettype_.nh_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    gettype_.nh_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& NextHopLookup::_internal_nh_id() const {
-  return _internal_has_nh_id()
-      ? *gettype_.nh_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& NextHopLookup::nh_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_name_ref)
+  return _internal_nh_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& NextHopLookup::nh_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_id)
-  return _internal_nh_id();
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopLookup::unsafe_arena_release_nh_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_id)
-  if (_internal_has_nh_id()) {
-    clear_has_gettype();
-    ::opi_api::common::v1::ObjectKey* temp = gettype_.nh_id_;
-    gettype_.nh_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void NextHopLookup::unsafe_arena_set_allocated_nh_id(::opi_api::common::v1::ObjectKey* nh_id) {
-  clear_gettype();
-  if (nh_id) {
-    set_has_nh_id();
-    gettype_.nh_id_ = nh_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_id)
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopLookup::_internal_mutable_nh_id() {
-  if (!_internal_has_nh_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void NextHopLookup::set_nh_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_nh_name_ref()) {
     clear_gettype();
-    set_has_nh_id();
-    gettype_.nh_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_nh_name_ref();
+    gettype_.nh_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return gettype_.nh_id_;
+  gettype_.nh_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* NextHopLookup::mutable_nh_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_nh_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_id)
-  return _msg;
+inline std::string* NextHopLookup::mutable_nh_name_ref() {
+  std::string* _s = _internal_mutable_nh_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_name_ref)
+  return _s;
+}
+inline const std::string& NextHopLookup::_internal_nh_name_ref() const {
+  if (_internal_has_nh_name_ref()) {
+    return gettype_.nh_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void NextHopLookup::_internal_set_nh_name_ref(const std::string& value) {
+  if (!_internal_has_nh_name_ref()) {
+    clear_gettype();
+    set_has_nh_name_ref();
+    gettype_.nh_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  gettype_.nh_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NextHopLookup::_internal_mutable_nh_name_ref() {
+  if (!_internal_has_nh_name_ref()) {
+    clear_gettype();
+    set_has_nh_name_ref();
+    gettype_.nh_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return gettype_.nh_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NextHopLookup::release_nh_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_name_ref)
+  if (_internal_has_nh_name_ref()) {
+    clear_has_gettype();
+    return gettype_.nh_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void NextHopLookup::set_allocated_nh_name_ref(std::string* nh_name_ref) {
+  if (has_gettype()) {
+    clear_gettype();
+  }
+  if (nh_name_ref != nullptr) {
+    set_has_nh_name_ref();
+    gettype_.nh_name_ref_.UnsafeSetDefault(nh_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(nh_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopLookup.nh_name_ref)
 }
 
 inline bool NextHopLookup::has_gettype() const {
@@ -4047,7 +3903,58 @@ inline NextHopLookup::GettypeCase NextHopLookup::gettype_case() const {
 
 // NextHopGroup
 
-// .opi_api.network.cloud.v1alpha1.NextHopGroupSpec spec = 3;
+// string name = 1;
+inline void NextHopGroup::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& NextHopGroup::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopGroup.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NextHopGroup::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopGroup.name)
+}
+inline std::string* NextHopGroup::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopGroup.name)
+  return _s;
+}
+inline const std::string& NextHopGroup::_internal_name() const {
+  return name_.Get();
+}
+inline void NextHopGroup::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NextHopGroup::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NextHopGroup::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopGroup.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NextHopGroup::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroup.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.NextHopGroupSpec spec = 2;
 inline bool NextHopGroup::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -4137,7 +4044,7 @@ inline void NextHopGroup::set_allocated_spec(::opi_api::network::cloud::v1alpha1
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroup.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.NextHopGroupStatus status = 4;
+// .opi_api.network.cloud.v1alpha1.NextHopGroupStatus status = 3;
 inline bool NextHopGroup::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -4231,93 +4138,7 @@ inline void NextHopGroup::set_allocated_status(::opi_api::network::cloud::v1alph
 
 // NextHopGroupSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool NextHopGroupSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool NextHopGroupSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& NextHopGroupSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& NextHopGroupSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.id)
-  return _internal_id();
-}
-inline void NextHopGroupSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.id)
-  return _msg;
-}
-inline void NextHopGroupSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.id)
-}
-
-// .opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;
+// .opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;
 inline void NextHopGroupSpec::clear_type() {
   type_ = 0;
 }
@@ -4337,7 +4158,7 @@ inline void NextHopGroupSpec::set_type(::opi_api::network::cloud::v1alpha1::Next
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopGroupSpec.type)
 }
 
-// repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;
+// repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;
 inline int NextHopGroupSpec::_internal_members_size() const {
   return members_.size();
 }
@@ -4549,70 +4370,86 @@ inline void NextHopGroupLookup::set_type(::opi_api::network::cloud::v1alpha1::Ne
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.type)
 }
 
-// .opi_api.common.v1.ObjectKey id = 2;
-inline bool NextHopGroupLookup::_internal_has_id() const {
-  return gettype_case() == kId;
+// string nh_group_name_ref = 2;
+inline bool NextHopGroupLookup::_internal_has_nh_group_name_ref() const {
+  return gettype_case() == kNhGroupNameRef;
 }
-inline bool NextHopGroupLookup::has_id() const {
-  return _internal_has_id();
+inline bool NextHopGroupLookup::has_nh_group_name_ref() const {
+  return _internal_has_nh_group_name_ref();
 }
-inline void NextHopGroupLookup::set_has_id() {
-  _oneof_case_[0] = kId;
+inline void NextHopGroupLookup::set_has_nh_group_name_ref() {
+  _oneof_case_[0] = kNhGroupNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupLookup::release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.id)
-  if (_internal_has_id()) {
+inline void NextHopGroupLookup::clear_nh_group_name_ref() {
+  if (_internal_has_nh_group_name_ref()) {
+    gettype_.nh_group_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_gettype();
-      ::opi_api::common::v1::ObjectKey* temp = gettype_.id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    gettype_.id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& NextHopGroupLookup::_internal_id() const {
-  return _internal_has_id()
-      ? *gettype_.id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& NextHopGroupLookup::nh_group_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.nh_group_name_ref)
+  return _internal_nh_group_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& NextHopGroupLookup::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.id)
-  return _internal_id();
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupLookup::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.id)
-  if (_internal_has_id()) {
-    clear_has_gettype();
-    ::opi_api::common::v1::ObjectKey* temp = gettype_.id_;
-    gettype_.id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void NextHopGroupLookup::unsafe_arena_set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  clear_gettype();
-  if (id) {
-    set_has_id();
-    gettype_.id_ = id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.id)
-}
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupLookup::_internal_mutable_id() {
-  if (!_internal_has_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void NextHopGroupLookup::set_nh_group_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_nh_group_name_ref()) {
     clear_gettype();
-    set_has_id();
-    gettype_.id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_nh_group_name_ref();
+    gettype_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return gettype_.id_;
+  gettype_.nh_group_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.nh_group_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* NextHopGroupLookup::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.id)
-  return _msg;
+inline std::string* NextHopGroupLookup::mutable_nh_group_name_ref() {
+  std::string* _s = _internal_mutable_nh_group_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.nh_group_name_ref)
+  return _s;
+}
+inline const std::string& NextHopGroupLookup::_internal_nh_group_name_ref() const {
+  if (_internal_has_nh_group_name_ref()) {
+    return gettype_.nh_group_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void NextHopGroupLookup::_internal_set_nh_group_name_ref(const std::string& value) {
+  if (!_internal_has_nh_group_name_ref()) {
+    clear_gettype();
+    set_has_nh_group_name_ref();
+    gettype_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  gettype_.nh_group_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NextHopGroupLookup::_internal_mutable_nh_group_name_ref() {
+  if (!_internal_has_nh_group_name_ref()) {
+    clear_gettype();
+    set_has_nh_group_name_ref();
+    gettype_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return gettype_.nh_group_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NextHopGroupLookup::release_nh_group_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.nh_group_name_ref)
+  if (_internal_has_nh_group_name_ref()) {
+    clear_has_gettype();
+    return gettype_.nh_group_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void NextHopGroupLookup::set_allocated_nh_group_name_ref(std::string* nh_group_name_ref) {
+  if (has_gettype()) {
+    clear_gettype();
+  }
+  if (nh_group_name_ref != nullptr) {
+    set_has_nh_group_name_ref();
+    gettype_.nh_group_name_ref_.UnsafeSetDefault(nh_group_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(nh_group_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.NextHopGroupLookup.nh_group_name_ref)
 }
 
 inline bool NextHopGroupLookup::has_gettype() const {

@@ -60,7 +60,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            dropLargeDomainNameMessages_ = input.readBool();
+            dropLargeDomainNameRef_ = input.readBool();
             break;
           }
           case 24: {
@@ -131,20 +131,20 @@ private static final long serialVersionUID = 0L;
     return dropMultiQueryMessages_;
   }
 
-  public static final int DROP_LARGE_DOMAIN_NAME_MESSAGES_FIELD_NUMBER = 2;
-  private boolean dropLargeDomainNameMessages_;
+  public static final int DROP_LARGE_DOMAIN_NAME_REF_FIELD_NUMBER = 2;
+  private boolean dropLargeDomainNameRef_;
   /**
    * <pre>
    * when DropLargeDomainNameMessage is set, DNS mwessages containing domain
    * name exceeding 255 bytes are dropped
    * </pre>
    *
-   * <code>bool drop_large_domain_name_messages = 2;</code>
-   * @return The dropLargeDomainNameMessages.
+   * <code>bool drop_large_domain_name_ref = 2;</code>
+   * @return The dropLargeDomainNameRef.
    */
   @java.lang.Override
-  public boolean getDropLargeDomainNameMessages() {
-    return dropLargeDomainNameMessages_;
+  public boolean getDropLargeDomainNameRef() {
+    return dropLargeDomainNameRef_;
   }
 
   public static final int DROP_LONG_LABEL_MESSAGES_FIELD_NUMBER = 3;
@@ -228,8 +228,8 @@ private static final long serialVersionUID = 0L;
     if (dropMultiQueryMessages_ != false) {
       output.writeBool(1, dropMultiQueryMessages_);
     }
-    if (dropLargeDomainNameMessages_ != false) {
-      output.writeBool(2, dropLargeDomainNameMessages_);
+    if (dropLargeDomainNameRef_ != false) {
+      output.writeBool(2, dropLargeDomainNameRef_);
     }
     if (dropLongLabelMessages_ != false) {
       output.writeBool(3, dropLongLabelMessages_);
@@ -256,9 +256,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, dropMultiQueryMessages_);
     }
-    if (dropLargeDomainNameMessages_ != false) {
+    if (dropLargeDomainNameRef_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, dropLargeDomainNameMessages_);
+        .computeBoolSize(2, dropLargeDomainNameRef_);
     }
     if (dropLongLabelMessages_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -293,8 +293,8 @@ private static final long serialVersionUID = 0L;
 
     if (getDropMultiQueryMessages()
         != other.getDropMultiQueryMessages()) return false;
-    if (getDropLargeDomainNameMessages()
-        != other.getDropLargeDomainNameMessages()) return false;
+    if (getDropLargeDomainNameRef()
+        != other.getDropLargeDomainNameRef()) return false;
     if (getDropLongLabelMessages()
         != other.getDropLongLabelMessages()) return false;
     if (getDropMultiZoneMessages()
@@ -317,9 +317,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DROP_MULTI_QUERY_MESSAGES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDropMultiQueryMessages());
-    hash = (37 * hash) + DROP_LARGE_DOMAIN_NAME_MESSAGES_FIELD_NUMBER;
+    hash = (37 * hash) + DROP_LARGE_DOMAIN_NAME_REF_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDropLargeDomainNameMessages());
+        getDropLargeDomainNameRef());
     hash = (37 * hash) + DROP_LONG_LABEL_MESSAGES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDropLongLabelMessages());
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       dropMultiQueryMessages_ = false;
 
-      dropLargeDomainNameMessages_ = false;
+      dropLargeDomainNameRef_ = false;
 
       dropLongLabelMessages_ = false;
 
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.DNSOptions buildPartial() {
       opi_api.network.cloud.v1alpha1.DNSOptions result = new opi_api.network.cloud.v1alpha1.DNSOptions(this);
       result.dropMultiQueryMessages_ = dropMultiQueryMessages_;
-      result.dropLargeDomainNameMessages_ = dropLargeDomainNameMessages_;
+      result.dropLargeDomainNameRef_ = dropLargeDomainNameRef_;
       result.dropLongLabelMessages_ = dropLongLabelMessages_;
       result.dropMultiZoneMessages_ = dropMultiZoneMessages_;
       result.responseTimeout_ = responseTimeout_;
@@ -563,8 +563,8 @@ private static final long serialVersionUID = 0L;
       if (other.getDropMultiQueryMessages() != false) {
         setDropMultiQueryMessages(other.getDropMultiQueryMessages());
       }
-      if (other.getDropLargeDomainNameMessages() != false) {
-        setDropLargeDomainNameMessages(other.getDropLargeDomainNameMessages());
+      if (other.getDropLargeDomainNameRef() != false) {
+        setDropLargeDomainNameRef(other.getDropLargeDomainNameRef());
       }
       if (other.getDropLongLabelMessages() != false) {
         setDropLongLabelMessages(other.getDropLongLabelMessages());
@@ -653,19 +653,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean dropLargeDomainNameMessages_ ;
+    private boolean dropLargeDomainNameRef_ ;
     /**
      * <pre>
      * when DropLargeDomainNameMessage is set, DNS mwessages containing domain
      * name exceeding 255 bytes are dropped
      * </pre>
      *
-     * <code>bool drop_large_domain_name_messages = 2;</code>
-     * @return The dropLargeDomainNameMessages.
+     * <code>bool drop_large_domain_name_ref = 2;</code>
+     * @return The dropLargeDomainNameRef.
      */
     @java.lang.Override
-    public boolean getDropLargeDomainNameMessages() {
-      return dropLargeDomainNameMessages_;
+    public boolean getDropLargeDomainNameRef() {
+      return dropLargeDomainNameRef_;
     }
     /**
      * <pre>
@@ -673,13 +673,13 @@ private static final long serialVersionUID = 0L;
      * name exceeding 255 bytes are dropped
      * </pre>
      *
-     * <code>bool drop_large_domain_name_messages = 2;</code>
-     * @param value The dropLargeDomainNameMessages to set.
+     * <code>bool drop_large_domain_name_ref = 2;</code>
+     * @param value The dropLargeDomainNameRef to set.
      * @return This builder for chaining.
      */
-    public Builder setDropLargeDomainNameMessages(boolean value) {
+    public Builder setDropLargeDomainNameRef(boolean value) {
       
-      dropLargeDomainNameMessages_ = value;
+      dropLargeDomainNameRef_ = value;
       onChanged();
       return this;
     }
@@ -689,12 +689,12 @@ private static final long serialVersionUID = 0L;
      * name exceeding 255 bytes are dropped
      * </pre>
      *
-     * <code>bool drop_large_domain_name_messages = 2;</code>
+     * <code>bool drop_large_domain_name_ref = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDropLargeDomainNameMessages() {
+    public Builder clearDropLargeDomainNameRef() {
       
-      dropLargeDomainNameMessages_ = false;
+      dropLargeDomainNameRef_ = false;
       onChanged();
       return this;
     }

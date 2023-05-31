@@ -40,27 +40,29 @@ public interface NextHopLookupOrBuilder extends
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-   * @return Whether the nhId field is set.
+   * <code>string nh_name_ref = 2;</code>
+   * @return Whether the nhNameRef field is set.
    */
-  boolean hasNhId();
+  boolean hasNhNameRef();
   /**
    * <pre>
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-   * @return The nhId.
+   * <code>string nh_name_ref = 2;</code>
+   * @return The nhNameRef.
    */
-  opi_api.common.v1.ObjectKey getNhId();
+  java.lang.String getNhNameRef();
   /**
    * <pre>
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
+   * <code>string nh_name_ref = 2;</code>
+   * @return The bytes for nhNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNhIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNhNameRefBytes();
 
   public opi_api.network.cloud.v1alpha1.NextHopLookup.GettypeCase getGettypeCase();
 }

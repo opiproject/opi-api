@@ -9,37 +9,10 @@ public interface RouteTableSpecOrBuilder extends
 
   /**
    * <pre>
-   * globally unique route table id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * globally unique route table id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * globally unique route table id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * IP address family
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;</code>
    * @return The enum numeric value on the wire for af.
    */
   int getAfValue();
@@ -48,7 +21,7 @@ public interface RouteTableSpecOrBuilder extends
    * IP address family
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;</code>
    * @return The af.
    */
   opi_api.network.opinetcommon.v1alpha1.IpAf getAf();
@@ -58,7 +31,7 @@ public interface RouteTableSpecOrBuilder extends
    * enable or disable priority based routing for the route table
    * </pre>
    *
-   * <code>bool priority_enable = 3;</code>
+   * <code>bool priority_enable = 2;</code>
    * @return The priorityEnable.
    */
   boolean getPriorityEnable();
@@ -70,7 +43,7 @@ public interface RouteTableSpecOrBuilder extends
    * For multipathing, use nexthop group instead
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;</code>
    */
   java.util.List<opi_api.network.cloud.v1alpha1.RouteInfo> 
       getRoutesList();
@@ -81,7 +54,7 @@ public interface RouteTableSpecOrBuilder extends
    * For multipathing, use nexthop group instead
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteInfo getRoutes(int index);
   /**
@@ -91,7 +64,7 @@ public interface RouteTableSpecOrBuilder extends
    * For multipathing, use nexthop group instead
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;</code>
    */
   int getRoutesCount();
   /**
@@ -101,7 +74,7 @@ public interface RouteTableSpecOrBuilder extends
    * For multipathing, use nexthop group instead
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;</code>
    */
   java.util.List<? extends opi_api.network.cloud.v1alpha1.RouteInfoOrBuilder> 
       getRoutesOrBuilderList();
@@ -112,7 +85,7 @@ public interface RouteTableSpecOrBuilder extends
    * For multipathing, use nexthop group instead
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteInfoOrBuilder getRoutesOrBuilder(
       int index);

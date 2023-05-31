@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13networkpolicy.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x98\x01\n\x0eSecurityPolicy\x12@\n\x04spec\x18\x01 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.SecurityPolicySpec\x12\x44\n\x06status\x18\x02 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.SecurityPolicyStatus\"\xbc\x03\n\x12SecurityPolicySpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12@\n\x04type\x18\x02 \x01(\x0e\x32\x32.opi_api.network.cloud.v1alpha1.SecurityPolicyType\x12\x43\n\x0e\x61\x64\x64ress_family\x18\x03 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAf\x12\x11\n\tstateless\x18\x04 \x01(\x08\x12Z\n\x17\x64\x65\x66\x61ult_security_action\x18\x05 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12?\n\x05rules\x18\x06 \x03(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.SecurityRuleInfo\x12\x45\n\x0brule_format\x18\x07 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.PolicyRuleFormat\"~\n\x10SecurityRuleInfo\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12@\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs\"\x81\x02\n\x11SecurityRuleAttrs\x12\x10\n\x08priority\x18\x01 \x01(\x05\x12?\n\x05match\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.RuleMatch\x12I\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x13\n\x0bterminating\x18\x04 \x01(\x08\x12\x39\n\x08\x61lg_spec\x18\x05 \x01(\x0b\x32\'.opi_api.network.cloud.v1alpha1.ALGSpec\"\'\n\nFTPOptions\x12\x19\n\x11\x61llow_ip_mismatch\x18\x01 \x01(\x08\"\xd2\x01\n\nDNSOptions\x12!\n\x19\x64rop_multi_query_messages\x18\x01 \x01(\x08\x12\'\n\x1f\x64rop_large_domain_name_messages\x18\x02 \x01(\x08\x12 \n\x18\x64rop_long_label_messages\x18\x03 \x01(\x08\x12 \n\x18\x64rop_multi_zone_messages\x18\x04 \x01(\x08\x12\x18\n\x10response_timeout\x18\x05 \x01(\x05\x12\x1a\n\x12max_message_length\x18\x06 \x01(\x05\"\"\n\x0cMSRPCOptions\x12\x12\n\nprogram_id\x18\x01 \x03(\x0c\"#\n\rSunRPCOptions\x12\x12\n\nprogram_id\x18\x01 \x03(\x0c\"\xff\x02\n\x07\x41LGSpec\x12\x39\n\x08\x61lg_type\x18\x01 \x01(\x0e\x32\'.opi_api.network.cloud.v1alpha1.ALGType\x12\x14\n\x0cidle_timeout\x18\x02 \x01(\x05\x12\x41\n\x0b\x66tp_options\x18\x03 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.FTPOptionsH\x00\x12\x41\n\x0b\x64ns_options\x18\x04 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.DNSOptionsH\x00\x12\x45\n\rmsrpc_options\x18\x05 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.MSRPCOptionsH\x00\x12G\n\x0esunrpc_options\x18\x06 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.SunRPCOptionsH\x00\x42\r\n\x0b\x61lg_options\"\x91\x02\n\x14SecurityPolicyStatus\x12\x12\n\nrule_count\x18\x01 \x01(\x05\x12\x11\n\tvpc_count\x18\x02 \x01(\x05\x12\x14\n\x0csubnet_count\x18\x03 \x01(\x05\x12\x12\n\nvnic_count\x18\x04 \x01(\x05\x12G\n\x0ehw_pool_handle\x18\x05 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x42\n\thw_handle\x18\x06 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x1b\n\x13policy_base_address\x18\x07 \x01(\x04\"\x92\x01\n\x0cSecurityRule\x12>\n\x04spec\x18\x01 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.SecurityRuleSpec\x12\x42\n\x06status\x18\x02 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.SecurityRuleStatus\"\xb8\x01\n\x10SecurityRuleSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x38\n\x12security_policy_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12@\n\x05\x61ttrs\x18\x03 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs\"\x14\n\x12SecurityRuleStatus\"\x9b\x01\n\x0fSecurityProfile\x12\x41\n\x04spec\x18\x01 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.SecurityProfileSpec\x12\x45\n\x06status\x18\x02 \x01(\x0b\x32\x35.opi_api.network.cloud.v1alpha1.SecurityProfileStatus\"\x91\x04\n\x13SecurityProfileSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\"\n\x1a\x63onnection_tracking_enable\x18\x02 \x01(\x08\x12\x19\n\x11rule_stats_enable\x18\x03 \x01(\x08\x12Z\n\x17\x64\x65\x66\x61ult_firewall_action\x18\x04 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x18\n\x10tcp_idle_timeout\x18\x05 \x01(\x05\x12\x18\n\x10udp_idle_timeout\x18\x06 \x01(\x05\x12\x19\n\x11icmp_idle_timeout\x18\x07 \x01(\x05\x12\x1a\n\x12other_idle_timeout\x18\x08 \x01(\x05\x12$\n\x1ctcp_connection_setup_timeout\x18\t \x01(\x05\x12\x1e\n\x16tcp_half_close_timeout\x18\n \x01(\x05\x12\x19\n\x11tcp_close_timeout\x18\x0b \x01(\x05\x12\x18\n\x10tcp_dorp_timeout\x18\x0c \x01(\x05\x12\x18\n\x10udp_drop_timeout\x18\r \x01(\x05\x12\x19\n\x11icmp_drop_timeout\x18\x0e \x01(\x05\x12\x1a\n\x12other_drop_timeout\x18\x0f \x01(\x05\"\x17\n\x15SecurityProfileStatus\"\xb8\x02\n\x11PolicyLookupMatch\x12\x43\n\tsource_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bsource_tags\x18\x02 \x03(\r\x12H\n\x0e\x64\x65stination_ip\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x18\n\x10\x64\x65stination_tags\x18\x04 \x03(\r\x12\x10\n\x08protocol\x18\x05 \x01(\x05\x12\x13\n\x0bsource_port\x18\x06 \x01(\x05\x12\x18\n\x10\x64\x65stination_port\x18\x07 \x01(\x05\x12\x11\n\ticmp_type\x18\x08 \x01(\x05\x12\x11\n\ticmp_code\x18\t \x01(\x05\"\xe3\x03\n\x1bSecurityPolicyLookupRequest\x12\x31\n\tpolicy_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x66\n\x10vnic_lookup_info\x18\x02 \x01(\x0b\x32J.opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfoH\x00\x12G\n\x0cmatch_fields\x18\x03 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.PolicyLookupMatch\x1a\xd0\x01\n\x0eVnicLookupInfo\x12-\n\x07vnic_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12J\n\x10policy_direction\x18\x02 \x01(\x0e\x32\x30.opi_api.network.opinetcommon.v1alpha1.PolicyDir\x12\x43\n\x0e\x61\x64\x64ress_family\x18\x03 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAfB\r\n\x0blookup_info\"\x8a\x02\n\x12PolicyLookupResult\x12G\n\x0erule_hw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x10\n\x08priority\x18\x02 \x01(\x05\x12I\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x39\n\x08\x61lg_type\x18\x04 \x01(\x0e\x32\'.opi_api.network.cloud.v1alpha1.ALGType\x12\x13\n\x0bterminating\x18\x05 \x01(\x08*~\n\x12SecurityPolicyType\x12$\n SECURITY_POLICY_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1dSECURITY_POLICY_TYPE_UNDERLAY\x10\x01\x12\x1f\n\x1bSECURITY_POLICY_TYPE_TENANT\x10\x02*\x96\x01\n\x07\x41LGType\x12\x18\n\x14\x41LG_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rALG_TYPE_TFTP\x10\x01\x12\x10\n\x0c\x41LG_TYPE_FTP\x10\x02\x12\x10\n\x0c\x41LG_TYPE_DNS\x10\x03\x12\x13\n\x0f\x41LG_TYPE_SUNRPC\x10\x04\x12\x12\n\x0e\x41LG_TYPE_MSRPC\x10\x05\x12\x11\n\rALG_TYPE_RTSP\x10\x06*x\n\x10PolicyRuleFormat\x12\"\n\x1ePOLICY_RULE_FORMAT_UNSPECIFIED\x10\x00\x12 \n\x1cPOLICY_RULE_FORMAT_FLATTENED\x10\x01\x12\x1e\n\x1aPOLICY_RULE_FORMAT_COMPACT\x10\x02\x42s\n\x1eopi_api.network.cloud.v1alpha1B\x12NetworkPolicyProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13networkpolicy.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xfc\x01\n\x0eSecurityPolicy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12@\n\x04spec\x18\x02 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.SecurityPolicySpec\x12\x44\n\x06status\x18\x03 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.SecurityPolicyStatus:T\xea\x41Q\n-opi_api.network.cloud.v1alpha1/securitypolicy\x12 securitypolicys/{securitypolicy}\"\x92\x03\n\x12SecurityPolicySpec\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.opi_api.network.cloud.v1alpha1.SecurityPolicyType\x12\x43\n\x0e\x61\x64\x64ress_family\x18\x02 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAf\x12\x11\n\tstateless\x18\x03 \x01(\x08\x12Z\n\x17\x64\x65\x66\x61ult_security_action\x18\x04 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12?\n\x05rules\x18\x05 \x03(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.SecurityRuleInfo\x12\x45\n\x0brule_format\x18\x06 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.PolicyRuleFormat\"g\n\x10SecurityRuleInfo\x12\x11\n\trule_name\x18\x01 \x01(\t\x12@\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs\"\x81\x02\n\x11SecurityRuleAttrs\x12\x10\n\x08priority\x18\x01 \x01(\x05\x12?\n\x05match\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.RuleMatch\x12I\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x13\n\x0bterminating\x18\x04 \x01(\x08\x12\x39\n\x08\x61lg_spec\x18\x05 \x01(\x0b\x32\'.opi_api.network.cloud.v1alpha1.ALGSpec\"\'\n\nFTPOptions\x12\x19\n\x11\x61llow_ip_mismatch\x18\x01 \x01(\x08\"\xcd\x01\n\nDNSOptions\x12!\n\x19\x64rop_multi_query_messages\x18\x01 \x01(\x08\x12\"\n\x1a\x64rop_large_domain_name_ref\x18\x02 \x01(\x08\x12 \n\x18\x64rop_long_label_messages\x18\x03 \x01(\x08\x12 \n\x18\x64rop_multi_zone_messages\x18\x04 \x01(\x08\x12\x18\n\x10response_timeout\x18\x05 \x01(\x05\x12\x1a\n\x12max_message_length\x18\x06 \x01(\x05\"\"\n\x0cMSRPCOptions\x12\x12\n\nprogram_id\x18\x01 \x03(\x0c\"#\n\rSunRPCOptions\x12\x12\n\nprogram_id\x18\x01 \x03(\x0c\"\xff\x02\n\x07\x41LGSpec\x12\x39\n\x08\x61lg_type\x18\x01 \x01(\x0e\x32\'.opi_api.network.cloud.v1alpha1.ALGType\x12\x14\n\x0cidle_timeout\x18\x02 \x01(\x05\x12\x41\n\x0b\x66tp_options\x18\x03 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.FTPOptionsH\x00\x12\x41\n\x0b\x64ns_options\x18\x04 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.DNSOptionsH\x00\x12\x45\n\rmsrpc_options\x18\x05 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.MSRPCOptionsH\x00\x12G\n\x0esunrpc_options\x18\x06 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.SunRPCOptionsH\x00\x42\r\n\x0b\x61lg_options\"\x91\x02\n\x14SecurityPolicyStatus\x12\x12\n\nrule_count\x18\x01 \x01(\x05\x12\x11\n\tvpc_count\x18\x02 \x01(\x05\x12\x14\n\x0csubnet_count\x18\x03 \x01(\x05\x12\x12\n\nvnic_count\x18\x04 \x01(\x05\x12G\n\x0ehw_pool_handle\x18\x05 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x42\n\thw_handle\x18\x06 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x1b\n\x13policy_base_address\x18\x07 \x01(\x04\"\xf0\x01\n\x0cSecurityRule\x12\x0c\n\x04name\x18\x01 \x01(\t\x12>\n\x04spec\x18\x02 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.SecurityRuleSpec\x12\x42\n\x06status\x18\x03 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.SecurityRuleStatus:N\xea\x41K\n+opi_api.network.cloud.v1alpha1/securityrule\x12\x1csecurityrules/{securityrule}\"v\n\x10SecurityRuleSpec\x12 \n\x18security_policy_name_ref\x18\x01 \x01(\t\x12@\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs\"\x14\n\x12SecurityRuleStatus\"\x82\x02\n\x0fSecurityProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x41\n\x04spec\x18\x02 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.SecurityProfileSpec\x12\x45\n\x06status\x18\x03 \x01(\x0b\x32\x35.opi_api.network.cloud.v1alpha1.SecurityProfileStatus:W\xea\x41T\n.opi_api.network.cloud.v1alpha1/securityprofile\x12\"securityprofiles/{securityprofile}\"\xe7\x03\n\x13SecurityProfileSpec\x12\"\n\x1a\x63onnection_tracking_enable\x18\x01 \x01(\x08\x12\x19\n\x11rule_stats_enable\x18\x02 \x01(\x08\x12Z\n\x17\x64\x65\x66\x61ult_firewall_action\x18\x03 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x18\n\x10tcp_idle_timeout\x18\x04 \x01(\x05\x12\x18\n\x10udp_idle_timeout\x18\x05 \x01(\x05\x12\x19\n\x11icmp_idle_timeout\x18\x06 \x01(\x05\x12\x1a\n\x12other_idle_timeout\x18\x07 \x01(\x05\x12$\n\x1ctcp_connection_setup_timeout\x18\x08 \x01(\x05\x12\x1e\n\x16tcp_half_close_timeout\x18\t \x01(\x05\x12\x19\n\x11tcp_close_timeout\x18\n \x01(\x05\x12\x18\n\x10tcp_dorp_timeout\x18\x0b \x01(\x05\x12\x18\n\x10udp_drop_timeout\x18\x0c \x01(\x05\x12\x19\n\x11icmp_drop_timeout\x18\r \x01(\x05\x12\x1a\n\x12other_drop_timeout\x18\x0e \x01(\x05\"\x17\n\x15SecurityProfileStatus\"\xb8\x02\n\x11PolicyLookupMatch\x12\x43\n\tsource_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bsource_tags\x18\x02 \x03(\r\x12H\n\x0e\x64\x65stination_ip\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x18\n\x10\x64\x65stination_tags\x18\x04 \x03(\r\x12\x10\n\x08protocol\x18\x05 \x01(\x05\x12\x13\n\x0bsource_port\x18\x06 \x01(\x05\x12\x18\n\x10\x64\x65stination_port\x18\x07 \x01(\x05\x12\x11\n\ticmp_type\x18\x08 \x01(\x05\x12\x11\n\ticmp_code\x18\t \x01(\x05\"\xb3\x03\n\x1bSecurityPolicyLookupRequest\x12\x19\n\x0fpolicy_name_ref\x18\x01 \x01(\tH\x00\x12\x66\n\x10vnic_lookup_info\x18\x02 \x01(\x0b\x32J.opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfoH\x00\x12G\n\x0cmatch_fields\x18\x03 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.PolicyLookupMatch\x1a\xb8\x01\n\x0eVnicLookupInfo\x12\x15\n\rvnic_name_ref\x18\x01 \x01(\t\x12J\n\x10policy_direction\x18\x02 \x01(\x0e\x32\x30.opi_api.network.opinetcommon.v1alpha1.PolicyDir\x12\x43\n\x0e\x61\x64\x64ress_family\x18\x03 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAfB\r\n\x0blookup_info\"\x8a\x02\n\x12PolicyLookupResult\x12G\n\x0erule_hw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x10\n\x08priority\x18\x02 \x01(\x05\x12I\n\x06\x61\x63tion\x18\x03 \x01(\x0e\x32\x39.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction\x12\x39\n\x08\x61lg_type\x18\x04 \x01(\x0e\x32\'.opi_api.network.cloud.v1alpha1.ALGType\x12\x13\n\x0bterminating\x18\x05 \x01(\x08*~\n\x12SecurityPolicyType\x12$\n SECURITY_POLICY_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1dSECURITY_POLICY_TYPE_UNDERLAY\x10\x01\x12\x1f\n\x1bSECURITY_POLICY_TYPE_TENANT\x10\x02*\x96\x01\n\x07\x41LGType\x12\x18\n\x14\x41LG_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rALG_TYPE_TFTP\x10\x01\x12\x10\n\x0c\x41LG_TYPE_FTP\x10\x02\x12\x10\n\x0c\x41LG_TYPE_DNS\x10\x03\x12\x13\n\x0f\x41LG_TYPE_SUNRPC\x10\x04\x12\x12\n\x0e\x41LG_TYPE_MSRPC\x10\x05\x12\x11\n\rALG_TYPE_RTSP\x10\x06*x\n\x10PolicyRuleFormat\x12\"\n\x1ePOLICY_RULE_FORMAT_UNSPECIFIED\x10\x00\x12 \n\x1cPOLICY_RULE_FORMAT_FLATTENED\x10\x01\x12\x1e\n\x1aPOLICY_RULE_FORMAT_COMPACT\x10\x02\x42s\n\x1eopi_api.network.cloud.v1alpha1B\x12NetworkPolicyProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 _SECURITYPOLICYTYPE = DESCRIPTOR.enum_types_by_name['SecurityPolicyType']
 SecurityPolicyType = enum_type_wrapper.EnumTypeWrapper(_SECURITYPOLICYTYPE)
@@ -205,50 +205,56 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\022NetworkPolicyProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _SECURITYPOLICYTYPE._serialized_start=4215
-  _SECURITYPOLICYTYPE._serialized_end=4341
-  _ALGTYPE._serialized_start=4344
-  _ALGTYPE._serialized_end=4494
-  _POLICYRULEFORMAT._serialized_start=4496
-  _POLICYRULEFORMAT._serialized_end=4616
-  _SECURITYPOLICY._serialized_start=94
-  _SECURITYPOLICY._serialized_end=246
-  _SECURITYPOLICYSPEC._serialized_start=249
-  _SECURITYPOLICYSPEC._serialized_end=693
-  _SECURITYRULEINFO._serialized_start=695
-  _SECURITYRULEINFO._serialized_end=821
-  _SECURITYRULEATTRS._serialized_start=824
-  _SECURITYRULEATTRS._serialized_end=1081
-  _FTPOPTIONS._serialized_start=1083
-  _FTPOPTIONS._serialized_end=1122
-  _DNSOPTIONS._serialized_start=1125
-  _DNSOPTIONS._serialized_end=1335
-  _MSRPCOPTIONS._serialized_start=1337
-  _MSRPCOPTIONS._serialized_end=1371
-  _SUNRPCOPTIONS._serialized_start=1373
-  _SUNRPCOPTIONS._serialized_end=1408
-  _ALGSPEC._serialized_start=1411
-  _ALGSPEC._serialized_end=1794
-  _SECURITYPOLICYSTATUS._serialized_start=1797
-  _SECURITYPOLICYSTATUS._serialized_end=2070
-  _SECURITYRULE._serialized_start=2073
-  _SECURITYRULE._serialized_end=2219
-  _SECURITYRULESPEC._serialized_start=2222
-  _SECURITYRULESPEC._serialized_end=2406
-  _SECURITYRULESTATUS._serialized_start=2408
-  _SECURITYRULESTATUS._serialized_end=2428
-  _SECURITYPROFILE._serialized_start=2431
-  _SECURITYPROFILE._serialized_end=2586
-  _SECURITYPROFILESPEC._serialized_start=2589
-  _SECURITYPROFILESPEC._serialized_end=3118
-  _SECURITYPROFILESTATUS._serialized_start=3120
-  _SECURITYPROFILESTATUS._serialized_end=3143
-  _POLICYLOOKUPMATCH._serialized_start=3146
-  _POLICYLOOKUPMATCH._serialized_end=3458
-  _SECURITYPOLICYLOOKUPREQUEST._serialized_start=3461
-  _SECURITYPOLICYLOOKUPREQUEST._serialized_end=3944
-  _SECURITYPOLICYLOOKUPREQUEST_VNICLOOKUPINFO._serialized_start=3721
-  _SECURITYPOLICYLOOKUPREQUEST_VNICLOOKUPINFO._serialized_end=3929
-  _POLICYLOOKUPRESULT._serialized_start=3947
-  _POLICYLOOKUPRESULT._serialized_end=4213
+  _SECURITYPOLICY._options = None
+  _SECURITYPOLICY._serialized_options = b'\352AQ\n-opi_api.network.cloud.v1alpha1/securitypolicy\022 securitypolicys/{securitypolicy}'
+  _SECURITYRULE._options = None
+  _SECURITYRULE._serialized_options = b'\352AK\n+opi_api.network.cloud.v1alpha1/securityrule\022\034securityrules/{securityrule}'
+  _SECURITYPROFILE._options = None
+  _SECURITYPROFILE._serialized_options = b'\352AT\n.opi_api.network.cloud.v1alpha1/securityprofile\022\"securityprofiles/{securityprofile}'
+  _SECURITYPOLICYTYPE._serialized_start=4294
+  _SECURITYPOLICYTYPE._serialized_end=4420
+  _ALGTYPE._serialized_start=4423
+  _ALGTYPE._serialized_end=4573
+  _POLICYRULEFORMAT._serialized_start=4575
+  _POLICYRULEFORMAT._serialized_end=4695
+  _SECURITYPOLICY._serialized_start=103
+  _SECURITYPOLICY._serialized_end=355
+  _SECURITYPOLICYSPEC._serialized_start=358
+  _SECURITYPOLICYSPEC._serialized_end=760
+  _SECURITYRULEINFO._serialized_start=762
+  _SECURITYRULEINFO._serialized_end=865
+  _SECURITYRULEATTRS._serialized_start=868
+  _SECURITYRULEATTRS._serialized_end=1125
+  _FTPOPTIONS._serialized_start=1127
+  _FTPOPTIONS._serialized_end=1166
+  _DNSOPTIONS._serialized_start=1169
+  _DNSOPTIONS._serialized_end=1374
+  _MSRPCOPTIONS._serialized_start=1376
+  _MSRPCOPTIONS._serialized_end=1410
+  _SUNRPCOPTIONS._serialized_start=1412
+  _SUNRPCOPTIONS._serialized_end=1447
+  _ALGSPEC._serialized_start=1450
+  _ALGSPEC._serialized_end=1833
+  _SECURITYPOLICYSTATUS._serialized_start=1836
+  _SECURITYPOLICYSTATUS._serialized_end=2109
+  _SECURITYRULE._serialized_start=2112
+  _SECURITYRULE._serialized_end=2352
+  _SECURITYRULESPEC._serialized_start=2354
+  _SECURITYRULESPEC._serialized_end=2472
+  _SECURITYRULESTATUS._serialized_start=2474
+  _SECURITYRULESTATUS._serialized_end=2494
+  _SECURITYPROFILE._serialized_start=2497
+  _SECURITYPROFILE._serialized_end=2755
+  _SECURITYPROFILESPEC._serialized_start=2758
+  _SECURITYPROFILESPEC._serialized_end=3245
+  _SECURITYPROFILESTATUS._serialized_start=3247
+  _SECURITYPROFILESTATUS._serialized_end=3270
+  _POLICYLOOKUPMATCH._serialized_start=3273
+  _POLICYLOOKUPMATCH._serialized_end=3585
+  _SECURITYPOLICYLOOKUPREQUEST._serialized_start=3588
+  _SECURITYPOLICYLOOKUPREQUEST._serialized_end=4023
+  _SECURITYPOLICYLOOKUPREQUEST_VNICLOOKUPINFO._serialized_start=3824
+  _SECURITYPOLICYLOOKUPREQUEST_VNICLOOKUPINFO._serialized_end=4008
+  _POLICYLOOKUPRESULT._serialized_start=4026
+  _POLICYLOOKUPRESULT._serialized_end=4292
 # @@protoc_insertion_point(module_scope)

@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Vnic() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -56,6 +57,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 18: {
             opi_api.network.cloud.v1alpha1.VnicSpec.Builder subBuilder = null;
             if (spec_ != null) {
               subBuilder = spec_.toBuilder();
@@ -68,7 +75,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             opi_api.network.cloud.v1alpha1.VnicStatus.Builder subBuilder = null;
             if (status_ != null) {
               subBuilder = status_.toBuilder();
@@ -113,14 +120,60 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.Vnic.class, opi_api.network.cloud.v1alpha1.Vnic.Builder.class);
   }
 
-  public static final int SPEC_FIELD_NUMBER = 1;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * unique vnic id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * unique vnic id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SPEC_FIELD_NUMBER = 2;
   private opi_api.network.cloud.v1alpha1.VnicSpec spec_;
   /**
    * <pre>
    * vnic configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   @java.lang.Override
@@ -132,7 +185,7 @@ private static final long serialVersionUID = 0L;
    * vnic configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
    * @return The spec.
    */
   @java.lang.Override
@@ -144,21 +197,21 @@ private static final long serialVersionUID = 0L;
    * vnic configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.VnicSpecOrBuilder getSpecOrBuilder() {
     return getSpec();
   }
 
-  public static final int STATUS_FIELD_NUMBER = 2;
+  public static final int STATUS_FIELD_NUMBER = 3;
   private opi_api.network.cloud.v1alpha1.VnicStatus status_;
   /**
    * <pre>
    * vnic status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -170,7 +223,7 @@ private static final long serialVersionUID = 0L;
    * vnic status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
    * @return The status.
    */
   @java.lang.Override
@@ -182,7 +235,7 @@ private static final long serialVersionUID = 0L;
    * vnic status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.VnicStatusOrBuilder getStatusOrBuilder() {
@@ -203,11 +256,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     if (spec_ != null) {
-      output.writeMessage(1, getSpec());
+      output.writeMessage(2, getSpec());
     }
     if (status_ != null) {
-      output.writeMessage(2, getStatus());
+      output.writeMessage(3, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -218,13 +274,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     if (spec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSpec());
+        .computeMessageSize(2, getSpec());
     }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getStatus());
+        .computeMessageSize(3, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -241,6 +300,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.Vnic other = (opi_api.network.cloud.v1alpha1.Vnic) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
     if (hasSpec() != other.hasSpec()) return false;
     if (hasSpec()) {
       if (!getSpec()
@@ -262,6 +323,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasSpec()) {
       hash = (37 * hash) + SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getSpec().hashCode();
@@ -410,6 +473,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       if (specBuilder_ == null) {
         spec_ = null;
       } else {
@@ -448,6 +513,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.Vnic buildPartial() {
       opi_api.network.cloud.v1alpha1.Vnic result = new opi_api.network.cloud.v1alpha1.Vnic(this);
+      result.name_ = name_;
       if (specBuilder_ == null) {
         result.spec_ = spec_;
       } else {
@@ -506,6 +572,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.Vnic other) {
       if (other == opi_api.network.cloud.v1alpha1.Vnic.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (other.hasSpec()) {
         mergeSpec(other.getSpec());
       }
@@ -541,6 +611,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * unique vnic id
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * unique vnic id
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * unique vnic id
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * unique vnic id
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * unique vnic id
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     private opi_api.network.cloud.v1alpha1.VnicSpec spec_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.VnicSpec, opi_api.network.cloud.v1alpha1.VnicSpec.Builder, opi_api.network.cloud.v1alpha1.VnicSpecOrBuilder> specBuilder_;
@@ -549,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
@@ -560,7 +726,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      * @return The spec.
      */
     public opi_api.network.cloud.v1alpha1.VnicSpec getSpec() {
@@ -575,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public Builder setSpec(opi_api.network.cloud.v1alpha1.VnicSpec value) {
       if (specBuilder_ == null) {
@@ -595,7 +761,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public Builder setSpec(
         opi_api.network.cloud.v1alpha1.VnicSpec.Builder builderForValue) {
@@ -613,7 +779,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public Builder mergeSpec(opi_api.network.cloud.v1alpha1.VnicSpec value) {
       if (specBuilder_ == null) {
@@ -635,7 +801,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public Builder clearSpec() {
       if (specBuilder_ == null) {
@@ -653,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.VnicSpec.Builder getSpecBuilder() {
       
@@ -665,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.VnicSpecOrBuilder getSpecOrBuilder() {
       if (specBuilder_ != null) {
@@ -680,7 +846,7 @@ private static final long serialVersionUID = 0L;
      * vnic configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 1;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicSpec spec = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.VnicSpec, opi_api.network.cloud.v1alpha1.VnicSpec.Builder, opi_api.network.cloud.v1alpha1.VnicSpecOrBuilder> 
@@ -704,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
@@ -715,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      * @return The status.
      */
     public opi_api.network.cloud.v1alpha1.VnicStatus getStatus() {
@@ -730,7 +896,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public Builder setStatus(opi_api.network.cloud.v1alpha1.VnicStatus value) {
       if (statusBuilder_ == null) {
@@ -750,7 +916,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public Builder setStatus(
         opi_api.network.cloud.v1alpha1.VnicStatus.Builder builderForValue) {
@@ -768,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public Builder mergeStatus(opi_api.network.cloud.v1alpha1.VnicStatus value) {
       if (statusBuilder_ == null) {
@@ -790,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -808,7 +974,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public opi_api.network.cloud.v1alpha1.VnicStatus.Builder getStatusBuilder() {
       
@@ -820,7 +986,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     public opi_api.network.cloud.v1alpha1.VnicStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -835,7 +1001,7 @@ private static final long serialVersionUID = 0L;
      * vnic status
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VnicStatus status = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.VnicStatus, opi_api.network.cloud.v1alpha1.VnicStatus.Builder, opi_api.network.cloud.v1alpha1.VnicStatusOrBuilder> 

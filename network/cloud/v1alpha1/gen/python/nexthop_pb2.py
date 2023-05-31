@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rnexthop.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x83\x01\n\x07NextHop\x12\x39\n\x04spec\x18\x01 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.NextHopSpec\x12=\n\x06status\x18\x02 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.NextHopStatus\"\xa6\x02\n\x0bNextHopSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12M\n\x0foverlay_nh_info\x18\x02 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.OverlayNextHopSpecH\x00\x12O\n\x10underlay_nh_info\x18\x03 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecH\x00\x12\x43\n\nip_nh_info\x18\x04 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.IPNextHopSpecH\x00\x42\x08\n\x06nhinfo\"e\n\x13UnderlayNextHopSpec\x12\x35\n\x0fl3_interface_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x17\n\x0funderlay_nh_mac\x18\x02 \x01(\x0c\"E\n\x12OverlayNextHopSpec\x12/\n\ttunnel_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\x9e\x01\n\rIPNextHopSpec\x12,\n\x06vpc_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x44\n\nip_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04vlan\x18\x03 \x01(\x05\x12\x0b\n\x03mac\x18\x04 \x01(\x0c\"\x81\x02\n\rNextHopStatus\x12\x42\n\thw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12Q\n\x10underlay_nh_info\x18\x02 \x01(\x0b\x32\x35.opi_api.network.cloud.v1alpha1.UnderlayNextHopStatusH\x00\x12O\n\x0foverlay_nh_info\x18\x03 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.OverlayNextHopStatusH\x00\x42\x08\n\x06nhinfo\"3\n\x15UnderlayNextHopStatus\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x0c\n\x04vlan\x18\x02 \x01(\x05\"[\n\x14OverlayNextHopStatus\x12\x43\n\ttunnel_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\"\x86\x01\n\rNextHopLookup\x12;\n\x04type\x18\x01 \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.NextHopTypeH\x00\x12-\n\x05nh_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x42\t\n\x07gettype\"\x92\x01\n\x0cNextHopGroup\x12>\n\x04spec\x18\x03 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupSpec\x12\x42\n\x06status\x18\x04 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.NextHopGroupStatus\"\xba\x01\n\x10NextHopGroupSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12>\n\x04type\x18\x02 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupType\x12<\n\x07members\x18\x03 \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.NextHopSpec\"\x98\x01\n\x12NextHopGroupStatus\x12>\n\x07members\x18\x01 \x03(\x0b\x32-.opi_api.network.cloud.v1alpha1.NextHopStatus\x12\x42\n\thw_handle\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\"\x8d\x01\n\x12NextHopGroupLookup\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupTypeH\x00\x12*\n\x02id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x42\t\n\x07gettype*y\n\x0bNextHopType\x12\x1d\n\x19NEXT_HOP_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10NEXT_HOP_TYPE_IP\x10\x01\x12\x1a\n\x16NEXT_HOP_TYPE_UNDERLAY\x10\x02\x12\x19\n\x15NEXT_HOP_TYPE_OVERLAY\x10\x03*\x84\x01\n\x10NextHopGroupType\x12#\n\x1fNEXT_HOP_GROUP_TYPE_UNSPECIFIED\x10\x00\x12$\n NEXT_HOP_GROUP_TYPE_OVERLAY_ECMP\x10\x01\x12%\n!NEXT_HOP_GROUP_TYPE_UNDERLAY_ECMP\x10\x02\x42m\n\x1eopi_api.network.cloud.v1alpha1B\x0cNextHopProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rnexthop.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xd2\x01\n\x07NextHop\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x39\n\x04spec\x18\x02 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.NextHopSpec\x12=\n\x06status\x18\x03 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.NextHopStatus:?\xea\x41<\n&opi_api.network.cloud.v1alpha1/nexthop\x12\x12nexthops/{nexthop}\"\xfc\x01\n\x0bNextHopSpec\x12M\n\x0foverlay_nh_info\x18\x01 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.OverlayNextHopSpecH\x00\x12O\n\x10underlay_nh_info\x18\x02 \x01(\x0b\x32\x33.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecH\x00\x12\x43\n\nip_nh_info\x18\x03 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.IPNextHopSpecH\x00\x42\x08\n\x06nhinfo\"J\n\x13UnderlayNextHopSpec\x12\x1a\n\x12interface_name_ref\x18\x01 \x01(\t\x12\x17\n\x0funderlay_nh_mac\x18\x02 \x01(\x0c\"-\n\x12OverlayNextHopSpec\x12\x17\n\x0ftunnel_name_ref\x18\x01 \x01(\t\"\x86\x01\n\rIPNextHopSpec\x12\x14\n\x0cvpc_name_ref\x18\x01 \x01(\t\x12\x44\n\nip_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04vlan\x18\x03 \x01(\x05\x12\x0b\n\x03mac\x18\x04 \x01(\x0c\"\x81\x02\n\rNextHopStatus\x12\x42\n\thw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12Q\n\x10underlay_nh_info\x18\x02 \x01(\x0b\x32\x35.opi_api.network.cloud.v1alpha1.UnderlayNextHopStatusH\x00\x12O\n\x0foverlay_nh_info\x18\x03 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.OverlayNextHopStatusH\x00\x42\x08\n\x06nhinfo\"3\n\x15UnderlayNextHopStatus\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x0c\n\x04vlan\x18\x02 \x01(\x05\"[\n\x14OverlayNextHopStatus\x12\x43\n\ttunnel_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\"n\n\rNextHopLookup\x12;\n\x04type\x18\x01 \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.NextHopTypeH\x00\x12\x15\n\x0bnh_name_ref\x18\x02 \x01(\tH\x00\x42\t\n\x07gettype\"\xf0\x01\n\x0cNextHopGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12>\n\x04spec\x18\x02 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupSpec\x12\x42\n\x06status\x18\x03 \x01(\x0b\x32\x32.opi_api.network.cloud.v1alpha1.NextHopGroupStatus:N\xea\x41K\n+opi_api.network.cloud.v1alpha1/nexthopgroup\x12\x1cnexthopgroups/{nexthopgroup}\"\x90\x01\n\x10NextHopGroupSpec\x12>\n\x04type\x18\x01 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupType\x12<\n\x07members\x18\x02 \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.NextHopSpec\"\x98\x01\n\x12NextHopGroupStatus\x12>\n\x07members\x18\x01 \x03(\x0b\x32-.opi_api.network.cloud.v1alpha1.NextHopStatus\x12\x42\n\thw_handle\x18\x02 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\"~\n\x12NextHopGroupLookup\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x30.opi_api.network.cloud.v1alpha1.NextHopGroupTypeH\x00\x12\x1b\n\x11nh_group_name_ref\x18\x02 \x01(\tH\x00\x42\t\n\x07gettype*y\n\x0bNextHopType\x12\x1d\n\x19NEXT_HOP_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10NEXT_HOP_TYPE_IP\x10\x01\x12\x1a\n\x16NEXT_HOP_TYPE_UNDERLAY\x10\x02\x12\x19\n\x15NEXT_HOP_TYPE_OVERLAY\x10\x03*\x84\x01\n\x10NextHopGroupType\x12#\n\x1fNEXT_HOP_GROUP_TYPE_UNSPECIFIED\x10\x00\x12$\n NEXT_HOP_GROUP_TYPE_OVERLAY_ECMP\x10\x01\x12%\n!NEXT_HOP_GROUP_TYPE_UNDERLAY_ECMP\x10\x02\x42m\n\x1eopi_api.network.cloud.v1alpha1B\x0cNextHopProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 _NEXTHOPTYPE = DESCRIPTOR.enum_types_by_name['NextHopType']
 NextHopType = enum_type_wrapper.EnumTypeWrapper(_NEXTHOPTYPE)
@@ -140,34 +140,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\014NextHopProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _NEXTHOPTYPE._serialized_start=2033
-  _NEXTHOPTYPE._serialized_end=2154
-  _NEXTHOPGROUPTYPE._serialized_start=2157
-  _NEXTHOPGROUPTYPE._serialized_end=2289
-  _NEXTHOP._serialized_start=88
-  _NEXTHOP._serialized_end=219
-  _NEXTHOPSPEC._serialized_start=222
-  _NEXTHOPSPEC._serialized_end=516
-  _UNDERLAYNEXTHOPSPEC._serialized_start=518
-  _UNDERLAYNEXTHOPSPEC._serialized_end=619
-  _OVERLAYNEXTHOPSPEC._serialized_start=621
-  _OVERLAYNEXTHOPSPEC._serialized_end=690
-  _IPNEXTHOPSPEC._serialized_start=693
-  _IPNEXTHOPSPEC._serialized_end=851
-  _NEXTHOPSTATUS._serialized_start=854
-  _NEXTHOPSTATUS._serialized_end=1111
-  _UNDERLAYNEXTHOPSTATUS._serialized_start=1113
-  _UNDERLAYNEXTHOPSTATUS._serialized_end=1164
-  _OVERLAYNEXTHOPSTATUS._serialized_start=1166
-  _OVERLAYNEXTHOPSTATUS._serialized_end=1257
-  _NEXTHOPLOOKUP._serialized_start=1260
-  _NEXTHOPLOOKUP._serialized_end=1394
-  _NEXTHOPGROUP._serialized_start=1397
-  _NEXTHOPGROUP._serialized_end=1543
-  _NEXTHOPGROUPSPEC._serialized_start=1546
-  _NEXTHOPGROUPSPEC._serialized_end=1732
-  _NEXTHOPGROUPSTATUS._serialized_start=1735
-  _NEXTHOPGROUPSTATUS._serialized_end=1887
-  _NEXTHOPGROUPLOOKUP._serialized_start=1890
-  _NEXTHOPGROUPLOOKUP._serialized_end=2031
+  _NEXTHOP._options = None
+  _NEXTHOP._serialized_options = b'\352A<\n&opi_api.network.cloud.v1alpha1/nexthop\022\022nexthops/{nexthop}'
+  _NEXTHOPGROUP._options = None
+  _NEXTHOPGROUP._serialized_options = b'\352AK\n+opi_api.network.cloud.v1alpha1/nexthopgroup\022\034nexthopgroups/{nexthopgroup}'
+  _NEXTHOPTYPE._serialized_start=2015
+  _NEXTHOPTYPE._serialized_end=2136
+  _NEXTHOPGROUPTYPE._serialized_start=2139
+  _NEXTHOPGROUPTYPE._serialized_end=2271
+  _NEXTHOP._serialized_start=97
+  _NEXTHOP._serialized_end=307
+  _NEXTHOPSPEC._serialized_start=310
+  _NEXTHOPSPEC._serialized_end=562
+  _UNDERLAYNEXTHOPSPEC._serialized_start=564
+  _UNDERLAYNEXTHOPSPEC._serialized_end=638
+  _OVERLAYNEXTHOPSPEC._serialized_start=640
+  _OVERLAYNEXTHOPSPEC._serialized_end=685
+  _IPNEXTHOPSPEC._serialized_start=688
+  _IPNEXTHOPSPEC._serialized_end=822
+  _NEXTHOPSTATUS._serialized_start=825
+  _NEXTHOPSTATUS._serialized_end=1082
+  _UNDERLAYNEXTHOPSTATUS._serialized_start=1084
+  _UNDERLAYNEXTHOPSTATUS._serialized_end=1135
+  _OVERLAYNEXTHOPSTATUS._serialized_start=1137
+  _OVERLAYNEXTHOPSTATUS._serialized_end=1228
+  _NEXTHOPLOOKUP._serialized_start=1230
+  _NEXTHOPLOOKUP._serialized_end=1340
+  _NEXTHOPGROUP._serialized_start=1343
+  _NEXTHOPGROUP._serialized_end=1583
+  _NEXTHOPGROUPSPEC._serialized_start=1586
+  _NEXTHOPGROUPSPEC._serialized_end=1730
+  _NEXTHOPGROUPSTATUS._serialized_start=1733
+  _NEXTHOPGROUPSTATUS._serialized_end=1885
+  _NEXTHOPGROUPLOOKUP._serialized_start=1887
+  _NEXTHOPGROUPLOOKUP._serialized_end=2013
 # @@protoc_insertion_point(module_scope)

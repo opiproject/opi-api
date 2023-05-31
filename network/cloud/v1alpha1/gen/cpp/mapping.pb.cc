@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr Mapping::Mapping(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct MappingDefaultTypeInternal {
   constexpr MappingDefaultTypeInternal()
@@ -37,9 +38,8 @@ constexpr MappingSpec::MappingSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : tags_()
   , _tags_cached_byte_size_(0)
+  , subnet_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , mac_addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(nullptr)
-  , subnet_id_(nullptr)
   , encap_(nullptr)
   , public_ip_(nullptr)
   , type_(0)
@@ -73,7 +73,7 @@ struct MappingStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MappingStatusDefaultTypeInternal _MappingStatus_default_instance_;
 constexpr L3MappingKey::L3MappingKey(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vpc_id_(nullptr)
+  : vpc_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ip_address_(nullptr){}
 struct L3MappingKeyDefaultTypeInternal {
   constexpr L3MappingKeyDefaultTypeInternal()
@@ -86,8 +86,8 @@ struct L3MappingKeyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT L3MappingKeyDefaultTypeInternal _L3MappingKey_default_instance_;
 constexpr L2MappingKey::L2MappingKey(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : mac_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , subnet_id_(nullptr){}
+  : subnet_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , mac_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct L2MappingKeyDefaultTypeInternal {
   constexpr L2MappingKeyDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -129,6 +129,7 @@ const uint32_t TableStruct_mapping_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Mapping, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Mapping, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Mapping, status_),
   ~0u,  // no _has_bits_
@@ -137,10 +138,9 @@ const uint32_t TableStruct_mapping_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::MappingSpec, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::MappingSpec, id_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::MappingSpec, subnet_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::MappingSpec, subnet_name_ref_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
@@ -169,7 +169,7 @@ const uint32_t TableStruct_mapping_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L3MappingKey, vpc_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L3MappingKey, vpc_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L3MappingKey, ip_address_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L2MappingKey, _internal_metadata_),
@@ -177,7 +177,7 @@ const uint32_t TableStruct_mapping_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L2MappingKey, subnet_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L2MappingKey, subnet_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::L2MappingKey, mac_address_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::MappingLookupFilter, _internal_metadata_),
@@ -197,7 +197,7 @@ const uint32_t TableStruct_mapping_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Mapping)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::MappingSpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::MappingSpec)},
   { 28, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::MappingStatus)},
   { 40, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::L3MappingKey)},
   { 48, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::L2MappingKey)},
@@ -215,68 +215,65 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_mapping_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rmapping.proto\022\036opi_api.network.cloud.v"
-  "1alpha1\032\020object_key.proto\032\022networktypes."
-  "proto\"\203\001\n\007Mapping\0229\n\004spec\030\001 \001(\0132+.opi_ap"
-  "i.network.cloud.v1alpha1.MappingSpec\022=\n\006"
-  "status\030\002 \001(\0132-.opi_api.network.cloud.v1a"
-  "lpha1.MappingStatus\"\367\004\n\013MappingSpec\022(\n\002i"
-  "d\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022>\n"
-  "\006ip_key\030\002 \001(\0132,.opi_api.network.cloud.v1"
-  "alpha1.L3MappingKeyH\000\022\?\n\007mac_key\030\003 \001(\0132,"
-  ".opi_api.network.cloud.v1alpha1.L2Mappin"
-  "gKeyH\000\022/\n\tsubnet_id\030\004 \001(\0132\034.opi_api.comm"
-  "on.v1.ObjectKey\022/\n\007vnic_id\030\005 \001(\0132\034.opi_a"
-  "pi.common.v1.ObjectKeyH\001\0221\n\ttunnel_id\030\006 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKeyH\001\0223\n\013n"
-  "h_group_id\030\007 \001(\0132\034.opi_api.common.v1.Obj"
-  "ectKeyH\001\022\020\n\010mac_addr\030\010 \001(\014\022;\n\005encap\030\t \001("
-  "\0132,.opi_api.network.opinetcommon.v1alpha"
-  "1.Encap\022C\n\tpublic_ip\030\n \001(\01320.opi_api.net"
-  "work.opinetcommon.v1alpha1.IPAddress\022\014\n\004"
-  "tags\030\013 \003(\r\0229\n\004type\030\014 \001(\0162+.opi_api.netwo"
-  "rk.cloud.v1alpha1.MappingTypeB\013\n\tmac_or_"
-  "ipB\t\n\007dstinfo\"\300\002\n\rMappingStatus\022\030\n\020publi"
-  "c_nat_index\030\001 \001(\005\022\031\n\021private_nat_index\030\002"
-  " \001(\005\022C\n\ttunnel_ip\030\003 \003(\01320.opi_api.networ"
-  "k.opinetcommon.v1alpha1.IPAddress\022O\n\026svc"
-  "_port_map_hw_handle\030\004 \001(\0132/.opi_api.netw"
-  "ork.opinetcommon.v1alpha1.HwHandle\022M\n\024vn"
-  "f_tunnel_hw_handle\030\005 \001(\0132/.opi_api.netwo"
-  "rk.opinetcommon.v1alpha1.HwHandle\022\025\n\rrew"
-  "rite_index\030\006 \001(\005\"\202\001\n\014L3MappingKey\022,\n\006vpc"
-  "_id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022"
-  "D\n\nip_address\030\002 \001(\01320.opi_api.network.op"
-  "inetcommon.v1alpha1.IPAddress\"T\n\014L2Mappi"
-  "ngKey\022/\n\tsubnet_id\030\001 \001(\0132\034.opi_api.commo"
-  "n.v1.ObjectKey\022\023\n\013mac_address\030\002 \001(\014\"\276\003\n\023"
-  "MappingLookupFilter\022\r\n\005local\030\001 \001(\010\022@\n\010ke"
-  "y_type\030\002 \001(\0162..opi_api.network.cloud.v1a"
-  "lpha1.MappingKeyType\0229\n\004type\030\003 \001(\0162+.opi"
-  "_api.network.cloud.v1alpha1.MappingType\022"
-  ">\n\006ip_key\030\004 \001(\0132,.opi_api.network.cloud."
-  "v1alpha1.L3MappingKeyH\000\022\?\n\007mac_key\030\005 \001(\013"
-  "2,.opi_api.network.cloud.v1alpha1.L2Mapp"
-  "ingKeyH\000\022F\n\nip_address\030\006 \001(\01320.opi_api.n"
-  "etwork.opinetcommon.v1alpha1.IPAddressH\000"
-  "\022\025\n\013mac_address\030\007 \001(\014H\000\022.\n\006vpc_id\030\010 \001(\0132"
-  "\034.opi_api.common.v1.ObjectKeyH\000B\013\n\tip_or"
-  "_mac*t\n\013MappingType\022\034\n\030MAPPING_TYPE_UNSP"
-  "ECIFIED\020\000\022\024\n\020MAPPING_TYPE_VPC\020\001\022\030\n\024MAPPI"
-  "NG_TYPE_SERVICE\020\002\022\027\n\023MAPPING_TYPE_LB_VIP"
-  "\020\003*d\n\016MappingKeyType\022 \n\034MAPPING_KEY_TYPE"
-  "_UNSPECIFIED\020\000\022\027\n\023MAPPING_KEY_TYPE_L2\020\001\022"
-  "\027\n\023MAPPING_KEY_TYPE_L3\020\002Bm\n\036opi_api.netw"
-  "ork.cloud.v1alpha1B\014MappingProtoP\001Z;gith"
-  "ub.com/opiproject/opi-api/network/cloud/"
-  "v1alpha1/gen/gob\006proto3"
+  "1alpha1\032\022networktypes.proto\032\031google/api/"
+  "resource.proto\"\322\001\n\007Mapping\022\014\n\004name\030\001 \001(\t"
+  "\0229\n\004spec\030\002 \001(\0132+.opi_api.network.cloud.v"
+  "1alpha1.MappingSpec\022=\n\006status\030\003 \001(\0132-.op"
+  "i_api.network.cloud.v1alpha1.MappingStat"
+  "us:\?\352A<\n&opi_api.network.cloud.v1alpha1/"
+  "mapping\022\022mappings/{mapping}\"\355\003\n\013MappingS"
+  "pec\022>\n\006ip_key\030\001 \001(\0132,.opi_api.network.cl"
+  "oud.v1alpha1.L3MappingKeyH\000\022\?\n\007mac_key\030\002"
+  " \001(\0132,.opi_api.network.cloud.v1alpha1.L2"
+  "MappingKeyH\000\022\027\n\017subnet_name_ref\030\003 \001(\t\022\027\n"
+  "\rvnic_name_ref\030\004 \001(\tH\001\022\031\n\017tunnel_name_re"
+  "f\030\005 \001(\tH\001\022\033\n\021nh_group_name_ref\030\006 \001(\tH\001\022\020"
+  "\n\010mac_addr\030\007 \001(\014\022;\n\005encap\030\010 \001(\0132,.opi_ap"
+  "i.network.opinetcommon.v1alpha1.Encap\022C\n"
+  "\tpublic_ip\030\t \001(\01320.opi_api.network.opine"
+  "tcommon.v1alpha1.IPAddress\022\014\n\004tags\030\n \003(\r"
+  "\0229\n\004type\030\013 \001(\0162+.opi_api.network.cloud.v"
+  "1alpha1.MappingTypeB\013\n\tmac_or_ipB\t\n\007dsti"
+  "nfo\"\300\002\n\rMappingStatus\022\030\n\020public_nat_inde"
+  "x\030\001 \001(\005\022\031\n\021private_nat_index\030\002 \001(\005\022C\n\ttu"
+  "nnel_ip\030\003 \003(\01320.opi_api.network.opinetco"
+  "mmon.v1alpha1.IPAddress\022O\n\026svc_port_map_"
+  "hw_handle\030\004 \001(\0132/.opi_api.network.opinet"
+  "common.v1alpha1.HwHandle\022M\n\024vnf_tunnel_h"
+  "w_handle\030\005 \001(\0132/.opi_api.network.opinetc"
+  "ommon.v1alpha1.HwHandle\022\025\n\rrewrite_index"
+  "\030\006 \001(\005\"j\n\014L3MappingKey\022\024\n\014vpc_name_ref\030\001"
+  " \001(\t\022D\n\nip_address\030\002 \001(\01320.opi_api.netwo"
+  "rk.opinetcommon.v1alpha1.IPAddress\"<\n\014L2"
+  "MappingKey\022\027\n\017subnet_name_ref\030\001 \001(\t\022\023\n\013m"
+  "ac_address\030\002 \001(\014\"\246\003\n\023MappingLookupFilter"
+  "\022\r\n\005local\030\001 \001(\010\022@\n\010key_type\030\002 \001(\0162..opi_"
+  "api.network.cloud.v1alpha1.MappingKeyTyp"
+  "e\0229\n\004type\030\003 \001(\0162+.opi_api.network.cloud."
+  "v1alpha1.MappingType\022>\n\006ip_key\030\004 \001(\0132,.o"
+  "pi_api.network.cloud.v1alpha1.L3MappingK"
+  "eyH\000\022\?\n\007mac_key\030\005 \001(\0132,.opi_api.network."
+  "cloud.v1alpha1.L2MappingKeyH\000\022F\n\nip_addr"
+  "ess\030\006 \001(\01320.opi_api.network.opinetcommon"
+  ".v1alpha1.IPAddressH\000\022\025\n\013mac_address\030\007 \001"
+  "(\014H\000\022\026\n\014vpc_name_ref\030\010 \001(\tH\000B\013\n\tip_or_ma"
+  "c*t\n\013MappingType\022\034\n\030MAPPING_TYPE_UNSPECI"
+  "FIED\020\000\022\024\n\020MAPPING_TYPE_VPC\020\001\022\030\n\024MAPPING_"
+  "TYPE_SERVICE\020\002\022\027\n\023MAPPING_TYPE_LB_VIP\020\003*"
+  "d\n\016MappingKeyType\022 \n\034MAPPING_KEY_TYPE_UN"
+  "SPECIFIED\020\000\022\027\n\023MAPPING_KEY_TYPE_L2\020\001\022\027\n\023"
+  "MAPPING_KEY_TYPE_L3\020\002Bm\n\036opi_api.network"
+  ".cloud.v1alpha1B\014MappingProtoP\001Z;github."
+  "com/opiproject/opi-api/network/cloud/v1a"
+  "lpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mapping_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mapping_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mapping_2eproto = {
-  false, false, 2183, descriptor_table_protodef_mapping_2eproto, "mapping.proto", 
+  false, false, 2060, descriptor_table_protodef_mapping_2eproto, "mapping.proto", 
   &descriptor_table_mapping_2eproto_once, descriptor_table_mapping_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_mapping_2eproto::offsets,
   file_level_metadata_mapping_2eproto, file_level_enum_descriptors_mapping_2eproto, file_level_service_descriptors_mapping_2eproto,
@@ -351,6 +348,14 @@ Mapping::Mapping(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Mapping::Mapping(const Mapping& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::MappingSpec(*from.spec_);
   } else {
@@ -365,6 +370,10 @@ Mapping::Mapping(const Mapping& from)
 }
 
 inline void Mapping::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -380,6 +389,7 @@ Mapping::~Mapping() {
 
 inline void Mapping::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -400,6 +410,7 @@ void Mapping::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -417,17 +428,27 @@ const char* Mapping::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Mapping.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.MappingStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.MappingStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -462,20 +483,30 @@ uint8_t* Mapping::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.Mapping.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.MappingStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.MappingStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -494,14 +525,21 @@ size_t Mapping::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.MappingSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.MappingStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.MappingStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -530,6 +568,9 @@ void Mapping::MergeFrom(const Mapping& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::MappingSpec::MergeFrom(from._internal_spec());
   }
@@ -552,7 +593,14 @@ bool Mapping::IsInitialized() const {
 
 void Mapping::InternalSwap(Mapping* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Mapping, status_)
       + sizeof(Mapping::status_)
@@ -571,21 +619,12 @@ void Mapping::InternalSwap(Mapping* other) {
 
 class MappingSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const MappingSpec* msg);
   static const ::opi_api::network::cloud::v1alpha1::L3MappingKey& ip_key(const MappingSpec* msg);
   static const ::opi_api::network::cloud::v1alpha1::L2MappingKey& mac_key(const MappingSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& subnet_id(const MappingSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& vnic_id(const MappingSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& tunnel_id(const MappingSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& nh_group_id(const MappingSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::Encap& encap(const MappingSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& public_ip(const MappingSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-MappingSpec::_Internal::id(const MappingSpec* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::cloud::v1alpha1::L3MappingKey&
 MappingSpec::_Internal::ip_key(const MappingSpec* msg) {
   return *msg->mac_or_ip_.ip_key_;
@@ -594,22 +633,6 @@ const ::opi_api::network::cloud::v1alpha1::L2MappingKey&
 MappingSpec::_Internal::mac_key(const MappingSpec* msg) {
   return *msg->mac_or_ip_.mac_key_;
 }
-const ::opi_api::common::v1::ObjectKey&
-MappingSpec::_Internal::subnet_id(const MappingSpec* msg) {
-  return *msg->subnet_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-MappingSpec::_Internal::vnic_id(const MappingSpec* msg) {
-  return *msg->dstinfo_.vnic_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-MappingSpec::_Internal::tunnel_id(const MappingSpec* msg) {
-  return *msg->dstinfo_.tunnel_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-MappingSpec::_Internal::nh_group_id(const MappingSpec* msg) {
-  return *msg->dstinfo_.nh_group_id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::Encap&
 MappingSpec::_Internal::encap(const MappingSpec* msg) {
   return *msg->encap_;
@@ -617,12 +640,6 @@ MappingSpec::_Internal::encap(const MappingSpec* msg) {
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 MappingSpec::_Internal::public_ip(const MappingSpec* msg) {
   return *msg->public_ip_;
-}
-void MappingSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 void MappingSpec::set_allocated_ip_key(::opi_api::network::cloud::v1alpha1::L3MappingKey* ip_key) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -654,87 +671,6 @@ void MappingSpec::set_allocated_mac_key(::opi_api::network::cloud::v1alpha1::L2M
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.MappingSpec.mac_key)
 }
-void MappingSpec::clear_subnet_id() {
-  if (GetArenaForAllocation() == nullptr && subnet_id_ != nullptr) {
-    delete subnet_id_;
-  }
-  subnet_id_ = nullptr;
-}
-void MappingSpec::set_allocated_vnic_id(::opi_api::common::v1::ObjectKey* vnic_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_dstinfo();
-  if (vnic_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vnic_id));
-    if (message_arena != submessage_arena) {
-      vnic_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vnic_id, submessage_arena);
-    }
-    set_has_vnic_id();
-    dstinfo_.vnic_id_ = vnic_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.MappingSpec.vnic_id)
-}
-void MappingSpec::clear_vnic_id() {
-  if (_internal_has_vnic_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete dstinfo_.vnic_id_;
-    }
-    clear_has_dstinfo();
-  }
-}
-void MappingSpec::set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_dstinfo();
-  if (tunnel_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tunnel_id));
-    if (message_arena != submessage_arena) {
-      tunnel_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tunnel_id, submessage_arena);
-    }
-    set_has_tunnel_id();
-    dstinfo_.tunnel_id_ = tunnel_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.MappingSpec.tunnel_id)
-}
-void MappingSpec::clear_tunnel_id() {
-  if (_internal_has_tunnel_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete dstinfo_.tunnel_id_;
-    }
-    clear_has_dstinfo();
-  }
-}
-void MappingSpec::set_allocated_nh_group_id(::opi_api::common::v1::ObjectKey* nh_group_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_dstinfo();
-  if (nh_group_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nh_group_id));
-    if (message_arena != submessage_arena) {
-      nh_group_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, nh_group_id, submessage_arena);
-    }
-    set_has_nh_group_id();
-    dstinfo_.nh_group_id_ = nh_group_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.MappingSpec.nh_group_id)
-}
-void MappingSpec::clear_nh_group_id() {
-  if (_internal_has_nh_group_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete dstinfo_.nh_group_id_;
-    }
-    clear_has_dstinfo();
-  }
-}
 void MappingSpec::clear_encap() {
   if (GetArenaForAllocation() == nullptr && encap_ != nullptr) {
     delete encap_;
@@ -761,6 +697,14 @@ MappingSpec::MappingSpec(const MappingSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       tags_(from.tags_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  subnet_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    subnet_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_subnet_name_ref().empty()) {
+    subnet_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subnet_name_ref(), 
+      GetArenaForAllocation());
+  }
   mac_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     mac_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -768,16 +712,6 @@ MappingSpec::MappingSpec(const MappingSpec& from)
   if (!from._internal_mac_addr().empty()) {
     mac_addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mac_addr(), 
       GetArenaForAllocation());
-  }
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
-  if (from._internal_has_subnet_id()) {
-    subnet_id_ = new ::opi_api::common::v1::ObjectKey(*from.subnet_id_);
-  } else {
-    subnet_id_ = nullptr;
   }
   if (from._internal_has_encap()) {
     encap_ = new ::opi_api::network::opinetcommon::v1alpha1::Encap(*from.encap_);
@@ -806,16 +740,16 @@ MappingSpec::MappingSpec(const MappingSpec& from)
   }
   clear_has_dstinfo();
   switch (from.dstinfo_case()) {
-    case kVnicId: {
-      _internal_mutable_vnic_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vnic_id());
+    case kVnicNameRef: {
+      _internal_set_vnic_name_ref(from._internal_vnic_name_ref());
       break;
     }
-    case kTunnelId: {
-      _internal_mutable_tunnel_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_tunnel_id());
+    case kTunnelNameRef: {
+      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
-    case kNhGroupId: {
-      _internal_mutable_nh_group_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nh_group_id());
+    case kNhGroupNameRef: {
+      _internal_set_nh_group_name_ref(from._internal_nh_group_name_ref());
       break;
     }
     case DSTINFO_NOT_SET: {
@@ -826,14 +760,18 @@ MappingSpec::MappingSpec(const MappingSpec& from)
 }
 
 inline void MappingSpec::SharedCtor() {
+subnet_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  subnet_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 mac_addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   mac_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&encap_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(type_));
+    reinterpret_cast<char*>(&encap_)) + sizeof(type_));
 clear_has_mac_or_ip();
 clear_has_dstinfo();
 }
@@ -847,9 +785,8 @@ MappingSpec::~MappingSpec() {
 
 inline void MappingSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  subnet_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mac_addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete subnet_id_;
   if (this != internal_default_instance()) delete encap_;
   if (this != internal_default_instance()) delete public_ip_;
   if (has_mac_or_ip()) {
@@ -895,22 +832,16 @@ void MappingSpec::clear_mac_or_ip() {
 void MappingSpec::clear_dstinfo() {
 // @@protoc_insertion_point(one_of_clear_start:opi_api.network.cloud.v1alpha1.MappingSpec)
   switch (dstinfo_case()) {
-    case kVnicId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete dstinfo_.vnic_id_;
-      }
+    case kVnicNameRef: {
+      dstinfo_.vnic_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
-    case kTunnelId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete dstinfo_.tunnel_id_;
-      }
+    case kTunnelNameRef: {
+      dstinfo_.tunnel_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
-    case kNhGroupId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete dstinfo_.nh_group_id_;
-      }
+    case kNhGroupNameRef: {
+      dstinfo_.nh_group_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case DSTINFO_NOT_SET: {
@@ -928,15 +859,8 @@ void MappingSpec::Clear() {
   (void) cached_has_bits;
 
   tags_.Clear();
+  subnet_name_ref_.ClearToEmpty();
   mac_addr_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && subnet_id_ != nullptr) {
-    delete subnet_id_;
-  }
-  subnet_id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && encap_ != nullptr) {
     delete encap_;
   }
@@ -957,101 +881,101 @@ const char* MappingSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_ip_key(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_mac_key(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey subnet_id = 4;
+      // string subnet_name_ref = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_subnet_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.MappingSpec.subnet_name_ref"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string vnic_name_ref = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_subnet_id(), ptr);
+          auto str = _internal_mutable_vnic_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.MappingSpec.vnic_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey vnic_id = 5;
+      // string tunnel_name_ref = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vnic_id(), ptr);
+          auto str = _internal_mutable_tunnel_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.MappingSpec.tunnel_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey tunnel_id = 6;
+      // string nh_group_name_ref = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tunnel_id(), ptr);
+          auto str = _internal_mutable_nh_group_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.MappingSpec.nh_group_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey nh_group_id = 7;
+      // bytes mac_addr = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_nh_group_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bytes mac_addr = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_mac_addr();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+      // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_encap(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_public_ip(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated uint32 tags = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+      // repeated uint32 tags = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_tags(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 88) {
+        } else if (static_cast<uint8_t>(tag) == 80) {
           _internal_add_tags(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.MappingType type = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+      // .opi_api.network.cloud.v1alpha1.MappingType type = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::opi_api::network::cloud::v1alpha1::MappingType>(val));
@@ -1087,98 +1011,98 @@ uint8_t* MappingSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;
+  // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;
   if (_internal_has_ip_key()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::ip_key(this), target, stream);
+        1, _Internal::ip_key(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;
+  // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;
   if (_internal_has_mac_key()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::mac_key(this), target, stream);
+        2, _Internal::mac_key(this), target, stream);
   }
 
-  // .opi_api.common.v1.ObjectKey subnet_id = 4;
-  if (this->_internal_has_subnet_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::subnet_id(this), target, stream);
+  // string subnet_name_ref = 3;
+  if (!this->_internal_subnet_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_subnet_name_ref().data(), static_cast<int>(this->_internal_subnet_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.MappingSpec.subnet_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_subnet_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey vnic_id = 5;
-  if (_internal_has_vnic_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::vnic_id(this), target, stream);
+  // string vnic_name_ref = 4;
+  if (_internal_has_vnic_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vnic_name_ref().data(), static_cast<int>(this->_internal_vnic_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.MappingSpec.vnic_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_vnic_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey tunnel_id = 6;
-  if (_internal_has_tunnel_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::tunnel_id(this), target, stream);
+  // string tunnel_name_ref = 5;
+  if (_internal_has_tunnel_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tunnel_name_ref().data(), static_cast<int>(this->_internal_tunnel_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.MappingSpec.tunnel_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_tunnel_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey nh_group_id = 7;
-  if (_internal_has_nh_group_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::nh_group_id(this), target, stream);
+  // string nh_group_name_ref = 6;
+  if (_internal_has_nh_group_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nh_group_name_ref().data(), static_cast<int>(this->_internal_nh_group_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.MappingSpec.nh_group_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_nh_group_name_ref(), target);
   }
 
-  // bytes mac_addr = 8;
+  // bytes mac_addr = 7;
   if (!this->_internal_mac_addr().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        8, this->_internal_mac_addr(), target);
+        7, this->_internal_mac_addr(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;
+  // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;
   if (this->_internal_has_encap()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::encap(this), target, stream);
+        8, _Internal::encap(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;
   if (this->_internal_has_public_ip()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        10, _Internal::public_ip(this), target, stream);
+        9, _Internal::public_ip(this), target, stream);
   }
 
-  // repeated uint32 tags = 11;
+  // repeated uint32 tags = 10;
   {
     int byte_size = _tags_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteUInt32Packed(
-          11, _internal_tags(), byte_size, target);
+          10, _internal_tags(), byte_size, target);
     }
   }
 
-  // .opi_api.network.cloud.v1alpha1.MappingType type = 12;
+  // .opi_api.network.cloud.v1alpha1.MappingType type = 11;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      12, this->_internal_type(), target);
+      11, this->_internal_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1197,7 +1121,7 @@ size_t MappingSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated uint32 tags = 11;
+  // repeated uint32 tags = 10;
   {
     size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       UInt32Size(this->tags_);
@@ -1212,56 +1136,49 @@ size_t MappingSpec::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // bytes mac_addr = 8;
+  // string subnet_name_ref = 3;
+  if (!this->_internal_subnet_name_ref().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_subnet_name_ref());
+  }
+
+  // bytes mac_addr = 7;
   if (!this->_internal_mac_addr().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_mac_addr());
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.common.v1.ObjectKey subnet_id = 4;
-  if (this->_internal_has_subnet_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *subnet_id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;
+  // .opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;
   if (this->_internal_has_encap()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *encap_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;
   if (this->_internal_has_public_ip()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *public_ip_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.MappingType type = 12;
+  // .opi_api.network.cloud.v1alpha1.MappingType type = 11;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   switch (mac_or_ip_case()) {
-    // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;
+    // .opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;
     case kIpKey: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *mac_or_ip_.ip_key_);
       break;
     }
-    // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;
+    // .opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;
     case kMacKey: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1273,25 +1190,25 @@ size_t MappingSpec::ByteSizeLong() const {
     }
   }
   switch (dstinfo_case()) {
-    // .opi_api.common.v1.ObjectKey vnic_id = 5;
-    case kVnicId: {
+    // string vnic_name_ref = 4;
+    case kVnicNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstinfo_.vnic_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_vnic_name_ref());
       break;
     }
-    // .opi_api.common.v1.ObjectKey tunnel_id = 6;
-    case kTunnelId: {
+    // string tunnel_name_ref = 5;
+    case kTunnelNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstinfo_.tunnel_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_tunnel_name_ref());
       break;
     }
-    // .opi_api.common.v1.ObjectKey nh_group_id = 7;
-    case kNhGroupId: {
+    // string nh_group_name_ref = 6;
+    case kNhGroupNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *dstinfo_.nh_group_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_nh_group_name_ref());
       break;
     }
     case DSTINFO_NOT_SET: {
@@ -1321,14 +1238,11 @@ void MappingSpec::MergeFrom(const MappingSpec& from) {
   (void) cached_has_bits;
 
   tags_.MergeFrom(from.tags_);
+  if (!from._internal_subnet_name_ref().empty()) {
+    _internal_set_subnet_name_ref(from._internal_subnet_name_ref());
+  }
   if (!from._internal_mac_addr().empty()) {
     _internal_set_mac_addr(from._internal_mac_addr());
-  }
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
-  if (from._internal_has_subnet_id()) {
-    _internal_mutable_subnet_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_subnet_id());
   }
   if (from._internal_has_encap()) {
     _internal_mutable_encap()->::opi_api::network::opinetcommon::v1alpha1::Encap::MergeFrom(from._internal_encap());
@@ -1353,16 +1267,16 @@ void MappingSpec::MergeFrom(const MappingSpec& from) {
     }
   }
   switch (from.dstinfo_case()) {
-    case kVnicId: {
-      _internal_mutable_vnic_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vnic_id());
+    case kVnicNameRef: {
+      _internal_set_vnic_name_ref(from._internal_vnic_name_ref());
       break;
     }
-    case kTunnelId: {
-      _internal_mutable_tunnel_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_tunnel_id());
+    case kTunnelNameRef: {
+      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
-    case kNhGroupId: {
-      _internal_mutable_nh_group_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nh_group_id());
+    case kNhGroupNameRef: {
+      _internal_set_nh_group_name_ref(from._internal_nh_group_name_ref());
       break;
     }
     case DSTINFO_NOT_SET: {
@@ -1391,15 +1305,20 @@ void MappingSpec::InternalSwap(MappingSpec* other) {
   tags_.InternalSwap(&other->tags_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &subnet_name_ref_, lhs_arena,
+      &other->subnet_name_ref_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &mac_addr_, lhs_arena,
       &other->mac_addr_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(MappingSpec, type_)
       + sizeof(MappingSpec::type_)
-      - PROTOBUF_FIELD_OFFSET(MappingSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(MappingSpec, encap_)>(
+          reinterpret_cast<char*>(&encap_),
+          reinterpret_cast<char*>(&other->encap_));
   swap(mac_or_ip_, other->mac_or_ip_);
   swap(dstinfo_, other->dstinfo_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -1780,23 +1699,12 @@ void MappingStatus::InternalSwap(MappingStatus* other) {
 
 class L3MappingKey::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& vpc_id(const L3MappingKey* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& ip_address(const L3MappingKey* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-L3MappingKey::_Internal::vpc_id(const L3MappingKey* msg) {
-  return *msg->vpc_id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 L3MappingKey::_Internal::ip_address(const L3MappingKey* msg) {
   return *msg->ip_address_;
-}
-void L3MappingKey::clear_vpc_id() {
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
 }
 void L3MappingKey::clear_ip_address() {
   if (GetArenaForAllocation() == nullptr && ip_address_ != nullptr) {
@@ -1816,10 +1724,13 @@ L3MappingKey::L3MappingKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 L3MappingKey::L3MappingKey(const L3MappingKey& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_vpc_id()) {
-    vpc_id_ = new ::opi_api::common::v1::ObjectKey(*from.vpc_id_);
-  } else {
-    vpc_id_ = nullptr;
+  vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_vpc_name_ref().empty()) {
+    vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vpc_name_ref(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_ip_address()) {
     ip_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.ip_address_);
@@ -1830,10 +1741,11 @@ L3MappingKey::L3MappingKey(const L3MappingKey& from)
 }
 
 inline void L3MappingKey::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vpc_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ip_address_) -
-    reinterpret_cast<char*>(&vpc_id_)) + sizeof(ip_address_));
+vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+ip_address_ = nullptr;
 }
 
 L3MappingKey::~L3MappingKey() {
@@ -1845,7 +1757,7 @@ L3MappingKey::~L3MappingKey() {
 
 inline void L3MappingKey::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete vpc_id_;
+  vpc_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete ip_address_;
 }
 
@@ -1865,10 +1777,7 @@ void L3MappingKey::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
+  vpc_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && ip_address_ != nullptr) {
     delete ip_address_;
   }
@@ -1882,10 +1791,12 @@ const char* L3MappingKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey vpc_id = 1;
+      // string vpc_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vpc_id(), ptr);
+          auto str = _internal_mutable_vpc_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.L3MappingKey.vpc_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1927,12 +1838,14 @@ uint8_t* L3MappingKey::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  if (this->_internal_has_vpc_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::vpc_id(this), target, stream);
+  // string vpc_name_ref = 1;
+  if (!this->_internal_vpc_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vpc_name_ref().data(), static_cast<int>(this->_internal_vpc_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.L3MappingKey.vpc_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_vpc_name_ref(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
@@ -1959,11 +1872,11 @@ size_t L3MappingKey::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  if (this->_internal_has_vpc_id()) {
+  // string vpc_name_ref = 1;
+  if (!this->_internal_vpc_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vpc_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vpc_name_ref());
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPAddress ip_address = 2;
@@ -1995,8 +1908,8 @@ void L3MappingKey::MergeFrom(const L3MappingKey& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_vpc_id()) {
-    _internal_mutable_vpc_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vpc_id());
+  if (!from._internal_vpc_name_ref().empty()) {
+    _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
   }
   if (from._internal_has_ip_address()) {
     _internal_mutable_ip_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_ip_address());
@@ -2017,13 +1930,15 @@ bool L3MappingKey::IsInitialized() const {
 
 void L3MappingKey::InternalSwap(L3MappingKey* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(L3MappingKey, ip_address_)
-      + sizeof(L3MappingKey::ip_address_)
-      - PROTOBUF_FIELD_OFFSET(L3MappingKey, vpc_id_)>(
-          reinterpret_cast<char*>(&vpc_id_),
-          reinterpret_cast<char*>(&other->vpc_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vpc_name_ref_, lhs_arena,
+      &other->vpc_name_ref_, rhs_arena
+  );
+  swap(ip_address_, other->ip_address_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata L3MappingKey::GetMetadata() const {
@@ -2036,19 +1951,8 @@ void L3MappingKey::InternalSwap(L3MappingKey* other) {
 
 class L2MappingKey::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& subnet_id(const L2MappingKey* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-L2MappingKey::_Internal::subnet_id(const L2MappingKey* msg) {
-  return *msg->subnet_id_;
-}
-void L2MappingKey::clear_subnet_id() {
-  if (GetArenaForAllocation() == nullptr && subnet_id_ != nullptr) {
-    delete subnet_id_;
-  }
-  subnet_id_ = nullptr;
-}
 L2MappingKey::L2MappingKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2061,6 +1965,14 @@ L2MappingKey::L2MappingKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 L2MappingKey::L2MappingKey(const L2MappingKey& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  subnet_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    subnet_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_subnet_name_ref().empty()) {
+    subnet_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subnet_name_ref(), 
+      GetArenaForAllocation());
+  }
   mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -2069,20 +1981,18 @@ L2MappingKey::L2MappingKey(const L2MappingKey& from)
     mac_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mac_address(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_subnet_id()) {
-    subnet_id_ = new ::opi_api::common::v1::ObjectKey(*from.subnet_id_);
-  } else {
-    subnet_id_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.L2MappingKey)
 }
 
 inline void L2MappingKey::SharedCtor() {
+subnet_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  subnet_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 mac_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   mac_address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-subnet_id_ = nullptr;
 }
 
 L2MappingKey::~L2MappingKey() {
@@ -2094,8 +2004,8 @@ L2MappingKey::~L2MappingKey() {
 
 inline void L2MappingKey::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  subnet_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mac_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete subnet_id_;
 }
 
 void L2MappingKey::ArenaDtor(void* object) {
@@ -2114,11 +2024,8 @@ void L2MappingKey::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  subnet_name_ref_.ClearToEmpty();
   mac_address_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && subnet_id_ != nullptr) {
-    delete subnet_id_;
-  }
-  subnet_id_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2128,10 +2035,12 @@ const char* L2MappingKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey subnet_id = 1;
+      // string subnet_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_subnet_id(), ptr);
+          auto str = _internal_mutable_subnet_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.L2MappingKey.subnet_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2174,12 +2083,14 @@ uint8_t* L2MappingKey::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey subnet_id = 1;
-  if (this->_internal_has_subnet_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::subnet_id(this), target, stream);
+  // string subnet_name_ref = 1;
+  if (!this->_internal_subnet_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_subnet_name_ref().data(), static_cast<int>(this->_internal_subnet_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.L2MappingKey.subnet_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_subnet_name_ref(), target);
   }
 
   // bytes mac_address = 2;
@@ -2204,18 +2115,18 @@ size_t L2MappingKey::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string subnet_name_ref = 1;
+  if (!this->_internal_subnet_name_ref().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_subnet_name_ref());
+  }
+
   // bytes mac_address = 2;
   if (!this->_internal_mac_address().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_mac_address());
-  }
-
-  // .opi_api.common.v1.ObjectKey subnet_id = 1;
-  if (this->_internal_has_subnet_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *subnet_id_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2240,11 +2151,11 @@ void L2MappingKey::MergeFrom(const L2MappingKey& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_subnet_name_ref().empty()) {
+    _internal_set_subnet_name_ref(from._internal_subnet_name_ref());
+  }
   if (!from._internal_mac_address().empty()) {
     _internal_set_mac_address(from._internal_mac_address());
-  }
-  if (from._internal_has_subnet_id()) {
-    _internal_mutable_subnet_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_subnet_id());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2267,10 +2178,14 @@ void L2MappingKey::InternalSwap(L2MappingKey* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &subnet_name_ref_, lhs_arena,
+      &other->subnet_name_ref_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &mac_address_, lhs_arena,
       &other->mac_address_, rhs_arena
   );
-  swap(subnet_id_, other->subnet_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata L2MappingKey::GetMetadata() const {
@@ -2286,7 +2201,6 @@ class MappingLookupFilter::_Internal {
   static const ::opi_api::network::cloud::v1alpha1::L3MappingKey& ip_key(const MappingLookupFilter* msg);
   static const ::opi_api::network::cloud::v1alpha1::L2MappingKey& mac_key(const MappingLookupFilter* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& ip_address(const MappingLookupFilter* msg);
-  static const ::opi_api::common::v1::ObjectKey& vpc_id(const MappingLookupFilter* msg);
 };
 
 const ::opi_api::network::cloud::v1alpha1::L3MappingKey&
@@ -2300,10 +2214,6 @@ MappingLookupFilter::_Internal::mac_key(const MappingLookupFilter* msg) {
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 MappingLookupFilter::_Internal::ip_address(const MappingLookupFilter* msg) {
   return *msg->ip_or_mac_.ip_address_;
-}
-const ::opi_api::common::v1::ObjectKey&
-MappingLookupFilter::_Internal::vpc_id(const MappingLookupFilter* msg) {
-  return *msg->ip_or_mac_.vpc_id_;
 }
 void MappingLookupFilter::set_allocated_ip_key(::opi_api::network::cloud::v1alpha1::L3MappingKey* ip_key) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2360,31 +2270,6 @@ void MappingLookupFilter::clear_ip_address() {
     clear_has_ip_or_mac();
   }
 }
-void MappingLookupFilter::set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_ip_or_mac();
-  if (vpc_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id));
-    if (message_arena != submessage_arena) {
-      vpc_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vpc_id, submessage_arena);
-    }
-    set_has_vpc_id();
-    ip_or_mac_.vpc_id_ = vpc_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.MappingLookupFilter.vpc_id)
-}
-void MappingLookupFilter::clear_vpc_id() {
-  if (_internal_has_vpc_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete ip_or_mac_.vpc_id_;
-    }
-    clear_has_ip_or_mac();
-  }
-}
 MappingLookupFilter::MappingLookupFilter(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2418,8 +2303,8 @@ MappingLookupFilter::MappingLookupFilter(const MappingLookupFilter& from)
       _internal_set_mac_address(from._internal_mac_address());
       break;
     }
-    case kVpcId: {
-      _internal_mutable_vpc_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vpc_id());
+    case kVpcNameRef: {
+      _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
       break;
     }
     case IP_OR_MAC_NOT_SET: {
@@ -2486,10 +2371,8 @@ void MappingLookupFilter::clear_ip_or_mac() {
       ip_or_mac_.mac_address_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
-    case kVpcId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete ip_or_mac_.vpc_id_;
-      }
+    case kVpcNameRef: {
+      ip_or_mac_.vpc_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case IP_OR_MAC_NOT_SET: {
@@ -2578,10 +2461,12 @@ const char* MappingLookupFilter::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey vpc_id = 8;
+      // string vpc_name_ref = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vpc_id(), ptr);
+          auto str = _internal_mutable_vpc_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.MappingLookupFilter.vpc_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2665,12 +2550,14 @@ uint8_t* MappingLookupFilter::_InternalSerialize(
         7, this->_internal_mac_address(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 8;
-  if (_internal_has_vpc_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        8, _Internal::vpc_id(this), target, stream);
+  // string vpc_name_ref = 8;
+  if (_internal_has_vpc_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vpc_name_ref().data(), static_cast<int>(this->_internal_vpc_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.MappingLookupFilter.vpc_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_vpc_name_ref(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2735,11 +2622,11 @@ size_t MappingLookupFilter::ByteSizeLong() const {
           this->_internal_mac_address());
       break;
     }
-    // .opi_api.common.v1.ObjectKey vpc_id = 8;
-    case kVpcId: {
+    // string vpc_name_ref = 8;
+    case kVpcNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *ip_or_mac_.vpc_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_vpc_name_ref());
       break;
     }
     case IP_OR_MAC_NOT_SET: {
@@ -2794,8 +2681,8 @@ void MappingLookupFilter::MergeFrom(const MappingLookupFilter& from) {
       _internal_set_mac_address(from._internal_mac_address());
       break;
     }
-    case kVpcId: {
-      _internal_mutable_vpc_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vpc_id());
+    case kVpcNameRef: {
+      _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
       break;
     }
     case IP_OR_MAC_NOT_SET: {

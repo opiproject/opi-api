@@ -12,10 +12,10 @@ public interface UnderlayRouteStatusOrBuilder extends
    * route table id this route belongs to
    * </pre>
    *
-   * <code>int32 route_table_id = 1;</code>
-   * @return The routeTableId.
+   * <code>int32 route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
-  int getRouteTableId();
+  int getRouteTableNameRef();
 
   /**
    * <pre>

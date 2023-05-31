@@ -9,64 +9,30 @@ public interface UnderlayRouteSpecOrBuilder extends
 
   /**
    * <pre>
-   * route's unique id
+   * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * route's unique id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * route's unique id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  boolean hasRouteTableId();
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
-   */
-  opi_api.common.v1.ObjectKey getRouteTableId();
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 
   /**
    * <pre>
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    * @return Whether the destPrefix field is set.
    */
   boolean hasDestPrefix();
@@ -75,7 +41,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    * @return The destPrefix.
    */
   opi_api.network.opinetcommon.v1alpha1.IPPrefix getDestPrefix();
@@ -84,7 +50,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * destination address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getDestPrefixOrBuilder();
 
@@ -93,7 +59,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    * @return Whether the nextHopAddress field is set.
    */
   boolean hasNextHopAddress();
@@ -102,7 +68,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    * @return The nextHopAddress.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getNextHopAddress();
@@ -111,7 +77,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * next-hop address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getNextHopAddressOrBuilder();
 
@@ -120,7 +86,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * route is enabled or not
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
@@ -129,7 +95,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * route is enabled or not
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;</code>
    * @return The state.
    */
   opi_api.network.opinetcommon.v1alpha1.AdminState getState();
@@ -139,7 +105,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * enable/disable admin distance
    * </pre>
    *
-   * <code>bool enable_admin_distance = 6;</code>
+   * <code>bool enable_admin_distance = 5;</code>
    * @return The enableAdminDistance.
    */
   boolean getEnableAdminDistance();
@@ -150,7 +116,7 @@ public interface UnderlayRouteSpecOrBuilder extends
    * protocol computes it for the dynamic route.
    * </pre>
    *
-   * <code>int32 admin_dist = 7;</code>
+   * <code>int32 admin_dist = 6;</code>
    * @return The adminDist.
    */
   int getAdminDist();
@@ -160,25 +126,18 @@ public interface UnderlayRouteSpecOrBuilder extends
    * interface ID, if this route is configured on RR
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   * @return Whether the interfaceId field is set.
+   * <code>string interface_name_ref = 7;</code>
+   * @return The interfaceNameRef.
    */
-  boolean hasInterfaceId();
+  java.lang.String getInterfaceNameRef();
   /**
    * <pre>
    * interface ID, if this route is configured on RR
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   * @return The interfaceId.
+   * <code>string interface_name_ref = 7;</code>
+   * @return The bytes for interfaceNameRef.
    */
-  opi_api.common.v1.ObjectKey getInterfaceId();
-  /**
-   * <pre>
-   * interface ID, if this route is configured on RR
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey interface_id = 8;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getInterfaceIdOrBuilder();
+  com.google.protobuf.ByteString
+      getInterfaceNameRefBytes();
 }

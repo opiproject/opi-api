@@ -104,31 +104,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 6) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             nhCase_ = 6;
+            nh_ = s;
             break;
           }
           case 58: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 7) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             nhCase_ = 7;
+            nh_ = s;
             break;
           }
           case 66: {
@@ -146,31 +130,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 74: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 9) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             nhCase_ = 9;
+            nh_ = s;
             break;
           }
           case 82: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 10) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             nhCase_ = 10;
+            nh_ = s;
             break;
           }
           case 88: {
@@ -239,11 +207,11 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OVERLAY_NH_IP_INFO(5),
-    NEXTHOP_ID(6),
-    NH_GROUP_ID(7),
+    NEXTHOP_NAME_REF(6),
+    NH_GROUP_NAME_REF(7),
     VPC_NH_INFO(8),
-    TUNNEL_ID(9),
-    ROUTE_TABLE_ID(10),
+    TUNNEL_NAME_REF(9),
+    ROUTE_TABLE_NAME_REF(10),
     EVAL_MAPPING(11),
     NH_NOT_SET(0);
     private final int value;
@@ -263,11 +231,11 @@ private static final long serialVersionUID = 0L;
     public static NhCase forNumber(int value) {
       switch (value) {
         case 5: return OVERLAY_NH_IP_INFO;
-        case 6: return NEXTHOP_ID;
-        case 7: return NH_GROUP_ID;
+        case 6: return NEXTHOP_NAME_REF;
+        case 7: return NH_GROUP_NAME_REF;
         case 8: return VPC_NH_INFO;
-        case 9: return TUNNEL_ID;
-        case 10: return ROUTE_TABLE_ID;
+        case 9: return TUNNEL_NAME_REF;
+        case 10: return ROUTE_TABLE_NAME_REF;
         case 11: return EVAL_MAPPING;
         case 0: return NH_NOT_SET;
         default: return null;
@@ -434,17 +402,16 @@ private static final long serialVersionUID = 0L;
     return opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.getDefaultInstance();
   }
 
-  public static final int NEXTHOP_ID_FIELD_NUMBER = 6;
+  public static final int NEXTHOP_NAME_REF_FIELD_NUMBER = 6;
   /**
    * <pre>
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-   * @return Whether the nexthopId field is set.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return Whether the nexthopNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasNexthopId() {
+  public boolean hasNexthopNameRef() {
     return nhCase_ == 6;
   }
   /**
@@ -452,42 +419,63 @@ private static final long serialVersionUID = 0L;
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-   * @return The nexthopId.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The nexthopNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNexthopId() {
+  public java.lang.String getNexthopNameRef() {
+    java.lang.Object ref = "";
     if (nhCase_ == 6) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 6) {
+        nh_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The bytes for nexthopNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getNexthopNameRefBytes() {
+    java.lang.Object ref = "";
     if (nhCase_ == 6) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 6) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int NH_GROUP_ID_FIELD_NUMBER = 7;
+  public static final int NH_GROUP_NAME_REF_FIELD_NUMBER = 7;
   /**
    * <pre>
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return Whether the nhGroupId field is set.
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return Whether the nhGroupNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasNhGroupId() {
+  public boolean hasNhGroupNameRef() {
     return nhCase_ == 7;
   }
   /**
@@ -495,29 +483,51 @@ private static final long serialVersionUID = 0L;
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return The nhGroupId.
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return The nhGroupNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNhGroupId() {
+  public java.lang.String getNhGroupNameRef() {
+    java.lang.Object ref = "";
     if (nhCase_ == 7) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 7) {
+        nh_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return The bytes for nhGroupNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getNhGroupNameRefBytes() {
+    java.lang.Object ref = "";
     if (nhCase_ == 7) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 7) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VPC_NH_INFO_FIELD_NUMBER = 8;
@@ -563,17 +573,16 @@ private static final long serialVersionUID = 0L;
     return opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.getDefaultInstance();
   }
 
-  public static final int TUNNEL_ID_FIELD_NUMBER = 9;
+  public static final int TUNNEL_NAME_REF_FIELD_NUMBER = 9;
   /**
    * <pre>
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return Whether the tunnelNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasTunnelId() {
+  public boolean hasTunnelNameRef() {
     return nhCase_ == 9;
   }
   /**
@@ -581,43 +590,64 @@ private static final long serialVersionUID = 0L;
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return The tunnelNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getTunnelId() {
+  public java.lang.String getTunnelNameRef() {
+    java.lang.Object ref = "";
     if (nhCase_ == 9) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 9) {
+        nh_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getTunnelNameRefBytes() {
+    java.lang.Object ref = "";
     if (nhCase_ == 9) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 9) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int ROUTE_TABLE_ID_FIELD_NUMBER = 10;
+  public static final int ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 10;
   /**
    * <pre>
    * if next hop is a route table: used to create exceptions in hierarchal
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 10;</code>
+   * @return Whether the routeTableNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasRouteTableId() {
+  public boolean hasRouteTableNameRef() {
     return nhCase_ == 10;
   }
   /**
@@ -626,15 +656,25 @@ private static final long serialVersionUID = 0L;
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 10;</code>
+   * @return The routeTableNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getRouteTableId() {
+  public java.lang.String getRouteTableNameRef() {
+    java.lang.Object ref = "";
     if (nhCase_ == 10) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 10) {
+        nh_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
@@ -642,14 +682,26 @@ private static final long serialVersionUID = 0L;
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
+   * <code>string route_table_name_ref = 10;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getRouteTableNameRefBytes() {
+    java.lang.Object ref = "";
     if (nhCase_ == 10) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 10) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int EVAL_MAPPING_FIELD_NUMBER = 11;
@@ -791,19 +843,19 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(5, (opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo) nh_);
     }
     if (nhCase_ == 6) {
-      output.writeMessage(6, (opi_api.common.v1.ObjectKey) nh_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nh_);
     }
     if (nhCase_ == 7) {
-      output.writeMessage(7, (opi_api.common.v1.ObjectKey) nh_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nh_);
     }
     if (nhCase_ == 8) {
       output.writeMessage(8, (opi_api.network.cloud.v1alpha1.VPCPeerNhInfo) nh_);
     }
     if (nhCase_ == 9) {
-      output.writeMessage(9, (opi_api.common.v1.ObjectKey) nh_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, nh_);
     }
     if (nhCase_ == 10) {
-      output.writeMessage(10, (opi_api.common.v1.ObjectKey) nh_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nh_);
     }
     if (nhCase_ == 11) {
       output.writeBool(
@@ -848,24 +900,20 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(5, (opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo) nh_);
     }
     if (nhCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (opi_api.common.v1.ObjectKey) nh_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nh_);
     }
     if (nhCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (opi_api.common.v1.ObjectKey) nh_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nh_);
     }
     if (nhCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, (opi_api.network.cloud.v1alpha1.VPCPeerNhInfo) nh_);
     }
     if (nhCase_ == 9) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (opi_api.common.v1.ObjectKey) nh_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, nh_);
     }
     if (nhCase_ == 10) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (opi_api.common.v1.ObjectKey) nh_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nh_);
     }
     if (nhCase_ == 11) {
       size += com.google.protobuf.CodedOutputStream
@@ -925,24 +973,24 @@ private static final long serialVersionUID = 0L;
             .equals(other.getOverlayNhIpInfo())) return false;
         break;
       case 6:
-        if (!getNexthopId()
-            .equals(other.getNexthopId())) return false;
+        if (!getNexthopNameRef()
+            .equals(other.getNexthopNameRef())) return false;
         break;
       case 7:
-        if (!getNhGroupId()
-            .equals(other.getNhGroupId())) return false;
+        if (!getNhGroupNameRef()
+            .equals(other.getNhGroupNameRef())) return false;
         break;
       case 8:
         if (!getVpcNhInfo()
             .equals(other.getVpcNhInfo())) return false;
         break;
       case 9:
-        if (!getTunnelId()
-            .equals(other.getTunnelId())) return false;
+        if (!getTunnelNameRef()
+            .equals(other.getTunnelNameRef())) return false;
         break;
       case 10:
-        if (!getRouteTableId()
-            .equals(other.getRouteTableId())) return false;
+        if (!getRouteTableNameRef()
+            .equals(other.getRouteTableNameRef())) return false;
         break;
       case 11:
         if (getEvalMapping()
@@ -986,24 +1034,24 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getOverlayNhIpInfo().hashCode();
         break;
       case 6:
-        hash = (37 * hash) + NEXTHOP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNexthopId().hashCode();
+        hash = (37 * hash) + NEXTHOP_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNexthopNameRef().hashCode();
         break;
       case 7:
-        hash = (37 * hash) + NH_GROUP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNhGroupId().hashCode();
+        hash = (37 * hash) + NH_GROUP_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNhGroupNameRef().hashCode();
         break;
       case 8:
         hash = (37 * hash) + VPC_NH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getVpcNhInfo().hashCode();
         break;
       case 9:
-        hash = (37 * hash) + TUNNEL_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTunnelId().hashCode();
+        hash = (37 * hash) + TUNNEL_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getTunnelNameRef().hashCode();
         break;
       case 10:
-        hash = (37 * hash) + ROUTE_TABLE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getRouteTableId().hashCode();
+        hash = (37 * hash) + ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteTableNameRef().hashCode();
         break;
       case 11:
         hash = (37 * hash) + EVAL_MAPPING_FIELD_NUMBER;
@@ -1222,18 +1270,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (nhCase_ == 6) {
-        if (nexthopIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = nexthopIdBuilder_.build();
-        }
+        result.nh_ = nh_;
       }
       if (nhCase_ == 7) {
-        if (nhGroupIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = nhGroupIdBuilder_.build();
-        }
+        result.nh_ = nh_;
       }
       if (nhCase_ == 8) {
         if (vpcNhInfoBuilder_ == null) {
@@ -1243,18 +1283,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (nhCase_ == 9) {
-        if (tunnelIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = tunnelIdBuilder_.build();
-        }
+        result.nh_ = nh_;
       }
       if (nhCase_ == 10) {
-        if (routeTableIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = routeTableIdBuilder_.build();
-        }
+        result.nh_ = nh_;
       }
       if (nhCase_ == 11) {
         result.nh_ = nh_;
@@ -1341,24 +1373,32 @@ private static final long serialVersionUID = 0L;
           mergeOverlayNhIpInfo(other.getOverlayNhIpInfo());
           break;
         }
-        case NEXTHOP_ID: {
-          mergeNexthopId(other.getNexthopId());
+        case NEXTHOP_NAME_REF: {
+          nhCase_ = 6;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
-        case NH_GROUP_ID: {
-          mergeNhGroupId(other.getNhGroupId());
+        case NH_GROUP_NAME_REF: {
+          nhCase_ = 7;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
         case VPC_NH_INFO: {
           mergeVpcNhInfo(other.getVpcNhInfo());
           break;
         }
-        case TUNNEL_ID: {
-          mergeTunnelId(other.getTunnelId());
+        case TUNNEL_NAME_REF: {
+          nhCase_ = 9;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
-        case ROUTE_TABLE_ID: {
-          mergeRouteTableId(other.getRouteTableId());
+        case ROUTE_TABLE_NAME_REF: {
+          nhCase_ = 10;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
         case EVAL_MAPPING: {
@@ -1941,18 +1981,16 @@ private static final long serialVersionUID = 0L;
       return overlayNhIpInfoBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nexthopIdBuilder_;
     /**
      * <pre>
      * nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     * @return Whether the nexthopId field is set.
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return Whether the nexthopNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasNexthopId() {
+    public boolean hasNexthopNameRef() {
       return nhCase_ == 6;
     }
     /**
@@ -1960,21 +1998,25 @@ private static final long serialVersionUID = 0L;
      * nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     * @return The nexthopId.
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return The nexthopNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNexthopId() {
-      if (nexthopIdBuilder_ == null) {
+    public java.lang.String getNexthopNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 6) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (nhCase_ == 6) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (nhCase_ == 6) {
-          return nexthopIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1982,114 +2024,26 @@ private static final long serialVersionUID = 0L;
      * nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     */
-    public Builder setNexthopId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        nexthopIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     */
-    public Builder setNexthopId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nexthopIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        nexthopIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     */
-    public Builder mergeNexthopId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopIdBuilder_ == null) {
-        if (nhCase_ == 6 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 6) {
-          nexthopIdBuilder_.mergeFrom(value);
-        }
-        nexthopIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     */
-    public Builder clearNexthopId() {
-      if (nexthopIdBuilder_ == null) {
-        if (nhCase_ == 6) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 6) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        nexthopIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNexthopIdBuilder() {
-      return getNexthopIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return The bytes for nexthopNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder() {
-      if ((nhCase_ == 6) && (nexthopIdBuilder_ != null)) {
-        return nexthopIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getNexthopNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 6) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (nhCase_ == 6) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -2097,39 +2051,67 @@ private static final long serialVersionUID = 0L;
      * nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
+     * <code>string nexthop_name_ref = 6;</code>
+     * @param value The nexthopNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNexthopIdFieldBuilder() {
-      if (nexthopIdBuilder_ == null) {
-        if (!(nhCase_ == 6)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nexthopIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
+    public Builder setNexthopNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 6;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * nexthop for this route
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNexthopNameRef() {
+      if (nhCase_ == 6) {
+        nhCase_ = 0;
         nh_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * nexthop for this route
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @param value The bytes for nexthopNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNexthopNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       nhCase_ = 6;
-      onChanged();;
-      return nexthopIdBuilder_;
+      nh_ = value;
+      onChanged();
+      return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nhGroupIdBuilder_;
     /**
      * <pre>
      * ECMP nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     * @return Whether the nhGroupId field is set.
+     * <code>string nh_group_name_ref = 7;</code>
+     * @return Whether the nhGroupNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasNhGroupId() {
+    public boolean hasNhGroupNameRef() {
       return nhCase_ == 7;
     }
     /**
@@ -2137,21 +2119,25 @@ private static final long serialVersionUID = 0L;
      * ECMP nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     * @return The nhGroupId.
+     * <code>string nh_group_name_ref = 7;</code>
+     * @return The nhGroupNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNhGroupId() {
-      if (nhGroupIdBuilder_ == null) {
+    public java.lang.String getNhGroupNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 7) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (nhCase_ == 7) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (nhCase_ == 7) {
-          return nhGroupIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -2159,114 +2145,26 @@ private static final long serialVersionUID = 0L;
      * ECMP nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder setNhGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nhGroupIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        nhGroupIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * ECMP nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder setNhGroupId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nhGroupIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        nhGroupIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * ECMP nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder mergeNhGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nhGroupIdBuilder_ == null) {
-        if (nhCase_ == 7 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 7) {
-          nhGroupIdBuilder_.mergeFrom(value);
-        }
-        nhGroupIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * ECMP nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder clearNhGroupId() {
-      if (nhGroupIdBuilder_ == null) {
-        if (nhCase_ == 7) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 7) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        nhGroupIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * ECMP nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNhGroupIdBuilder() {
-      return getNhGroupIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * ECMP nexthop for this route
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
+     * <code>string nh_group_name_ref = 7;</code>
+     * @return The bytes for nhGroupNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder() {
-      if ((nhCase_ == 7) && (nhGroupIdBuilder_ != null)) {
-        return nhGroupIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getNhGroupNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 7) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (nhCase_ == 7) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -2274,25 +2172,55 @@ private static final long serialVersionUID = 0L;
      * ECMP nexthop for this route
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
+     * <code>string nh_group_name_ref = 7;</code>
+     * @param value The nhGroupNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNhGroupIdFieldBuilder() {
-      if (nhGroupIdBuilder_ == null) {
-        if (!(nhCase_ == 7)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nhGroupIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
+    public Builder setNhGroupNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 7;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ECMP nexthop for this route
+     * </pre>
+     *
+     * <code>string nh_group_name_ref = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNhGroupNameRef() {
+      if (nhCase_ == 7) {
+        nhCase_ = 0;
         nh_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * ECMP nexthop for this route
+     * </pre>
+     *
+     * <code>string nh_group_name_ref = 7;</code>
+     * @param value The bytes for nhGroupNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNhGroupNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       nhCase_ = 7;
-      onChanged();;
-      return nhGroupIdBuilder_;
+      nh_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2472,18 +2400,16 @@ private static final long serialVersionUID = 0L;
       return vpcNhInfoBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> tunnelIdBuilder_;
     /**
      * <pre>
      * Tunnel this prefix is pointing to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     * @return Whether the tunnelId field is set.
+     * <code>string tunnel_name_ref = 9;</code>
+     * @return Whether the tunnelNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasTunnelId() {
+    public boolean hasTunnelNameRef() {
       return nhCase_ == 9;
     }
     /**
@@ -2491,21 +2417,25 @@ private static final long serialVersionUID = 0L;
      * Tunnel this prefix is pointing to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     * @return The tunnelId.
+     * <code>string tunnel_name_ref = 9;</code>
+     * @return The tunnelNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getTunnelId() {
-      if (tunnelIdBuilder_ == null) {
+    public java.lang.String getTunnelNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 9) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (nhCase_ == 9) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (nhCase_ == 9) {
-          return tunnelIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -2513,114 +2443,26 @@ private static final long serialVersionUID = 0L;
      * Tunnel this prefix is pointing to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     */
-    public Builder setTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel this prefix is pointing to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     */
-    public Builder setTunnelId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (tunnelIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel this prefix is pointing to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     */
-    public Builder mergeTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (nhCase_ == 9 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 9) {
-          tunnelIdBuilder_.mergeFrom(value);
-        }
-        tunnelIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel this prefix is pointing to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     */
-    public Builder clearTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        if (nhCase_ == 9) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 9) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        tunnelIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel this prefix is pointing to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getTunnelIdBuilder() {
-      return getTunnelIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Tunnel this prefix is pointing to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
+     * <code>string tunnel_name_ref = 9;</code>
+     * @return The bytes for tunnelNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-      if ((nhCase_ == 9) && (tunnelIdBuilder_ != null)) {
-        return tunnelIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getTunnelNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 9) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (nhCase_ == 9) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -2628,40 +2470,68 @@ private static final long serialVersionUID = 0L;
      * Tunnel this prefix is pointing to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
+     * <code>string tunnel_name_ref = 9;</code>
+     * @param value The tunnelNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getTunnelIdFieldBuilder() {
-      if (tunnelIdBuilder_ == null) {
-        if (!(nhCase_ == 9)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        tunnelIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
+    public Builder setTunnelNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 9;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tunnel this prefix is pointing to
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTunnelNameRef() {
+      if (nhCase_ == 9) {
+        nhCase_ = 0;
         nh_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tunnel this prefix is pointing to
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 9;</code>
+     * @param value The bytes for tunnelNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTunnelNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       nhCase_ = 9;
-      onChanged();;
-      return tunnelIdBuilder_;
+      nh_ = value;
+      onChanged();
+      return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> routeTableIdBuilder_;
     /**
      * <pre>
      * if next hop is a route table: used to create exceptions in hierarchal
      * routing. next hop can't point to same route table (causing rout lookup loop)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     * @return Whether the routeTableId field is set.
+     * <code>string route_table_name_ref = 10;</code>
+     * @return Whether the routeTableNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasRouteTableId() {
+    public boolean hasRouteTableNameRef() {
       return nhCase_ == 10;
     }
     /**
@@ -2670,21 +2540,25 @@ private static final long serialVersionUID = 0L;
      * routing. next hop can't point to same route table (causing rout lookup loop)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     * @return The routeTableId.
+     * <code>string route_table_name_ref = 10;</code>
+     * @return The routeTableNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
+    public java.lang.String getRouteTableNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 10) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (nhCase_ == 10) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (nhCase_ == 10) {
-          return routeTableIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -2693,119 +2567,26 @@ private static final long serialVersionUID = 0L;
      * routing. next hop can't point to same route table (causing rout lookup loop)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     */
-    public Builder setRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * if next hop is a route table: used to create exceptions in hierarchal
-     * routing. next hop can't point to same route table (causing rout lookup loop)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     */
-    public Builder setRouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (routeTableIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * if next hop is a route table: used to create exceptions in hierarchal
-     * routing. next hop can't point to same route table (causing rout lookup loop)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     */
-    public Builder mergeRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (nhCase_ == 10 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 10) {
-          routeTableIdBuilder_.mergeFrom(value);
-        }
-        routeTableIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * if next hop is a route table: used to create exceptions in hierarchal
-     * routing. next hop can't point to same route table (causing rout lookup loop)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     */
-    public Builder clearRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        if (nhCase_ == 10) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 10) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        routeTableIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * if next hop is a route table: used to create exceptions in hierarchal
-     * routing. next hop can't point to same route table (causing rout lookup loop)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getRouteTableIdBuilder() {
-      return getRouteTableIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * if next hop is a route table: used to create exceptions in hierarchal
-     * routing. next hop can't point to same route table (causing rout lookup loop)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
+     * <code>string route_table_name_ref = 10;</code>
+     * @return The bytes for routeTableNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-      if ((nhCase_ == 10) && (routeTableIdBuilder_ != null)) {
-        return routeTableIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getRouteTableNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 10) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (nhCase_ == 10) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -2814,25 +2595,57 @@ private static final long serialVersionUID = 0L;
      * routing. next hop can't point to same route table (causing rout lookup loop)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
+     * <code>string route_table_name_ref = 10;</code>
+     * @param value The routeTableNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getRouteTableIdFieldBuilder() {
-      if (routeTableIdBuilder_ == null) {
-        if (!(nhCase_ == 10)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        routeTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
+    public Builder setRouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 10;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * if next hop is a route table: used to create exceptions in hierarchal
+     * routing. next hop can't point to same route table (causing rout lookup loop)
+     * </pre>
+     *
+     * <code>string route_table_name_ref = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteTableNameRef() {
+      if (nhCase_ == 10) {
+        nhCase_ = 0;
         nh_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * if next hop is a route table: used to create exceptions in hierarchal
+     * routing. next hop can't point to same route table (causing rout lookup loop)
+     * </pre>
+     *
+     * <code>string route_table_name_ref = 10;</code>
+     * @param value The bytes for routeTableNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       nhCase_ = 10;
-      onChanged();;
-      return routeTableIdBuilder_;
+      nh_ = value;
+      onChanged();
+      return this;
     }
 
     /**

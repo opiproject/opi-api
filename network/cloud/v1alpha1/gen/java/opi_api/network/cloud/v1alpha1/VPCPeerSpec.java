@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VPCPeerSpec() {
+    vpc1NameRef_ = "";
+    vpc2NameRef_ = "";
   }
 
   @java.lang.Override
@@ -55,42 +57,15 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            vpc1NameRef_ = s;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (vpc1Id_ != null) {
-              subBuilder = vpc1Id_.toBuilder();
-            }
-            vpc1Id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vpc1Id_);
-              vpc1Id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (vpc2Id_ != null) {
-              subBuilder = vpc2Id_.toBuilder();
-            }
-            vpc2Id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vpc2Id_);
-              vpc2Id_ = subBuilder.buildPartial();
-            }
-
+            vpc2NameRef_ = s;
             break;
           }
           default: {
@@ -125,118 +100,96 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.VPCPeerSpec.class, opi_api.network.cloud.v1alpha1.VPCPeerSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int VPC1_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object vpc1NameRef_;
   /**
    * <pre>
-   * unique id/key idenitifying this VPC peering relation
+   * unique key/identifier of VPC1
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string vpc1_name_ref = 1;</code>
+   * @return The vpc1NameRef.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getVpc1NameRef() {
+    java.lang.Object ref = vpc1NameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpc1NameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * unique id/key idenitifying this VPC peering relation
+   * unique key/identifier of VPC1
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string vpc1_name_ref = 1;</code>
+   * @return The bytes for vpc1NameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique id/key idenitifying this VPC peering relation
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getVpc1NameRefBytes() {
+    java.lang.Object ref = vpc1NameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vpc1NameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int VPC1_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey vpc1Id_;
-  /**
-   * <pre>
-   * unique key/identifier of VPC1
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   * @return Whether the vpc1Id field is set.
-   */
-  @java.lang.Override
-  public boolean hasVpc1Id() {
-    return vpc1Id_ != null;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of VPC1
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   * @return The vpc1Id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpc1Id() {
-    return vpc1Id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc1Id_;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of VPC1
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpc1IdOrBuilder() {
-    return getVpc1Id();
-  }
-
-  public static final int VPC2_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey vpc2Id_;
+  public static final int VPC2_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object vpc2NameRef_;
   /**
    * <pre>
    * unique key/identifier of VPC2
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   * @return Whether the vpc2Id field is set.
+   * <code>string vpc2_name_ref = 2;</code>
+   * @return The vpc2NameRef.
    */
   @java.lang.Override
-  public boolean hasVpc2Id() {
-    return vpc2Id_ != null;
+  public java.lang.String getVpc2NameRef() {
+    java.lang.Object ref = vpc2NameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpc2NameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * unique key/identifier of VPC2
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   * @return The vpc2Id.
+   * <code>string vpc2_name_ref = 2;</code>
+   * @return The bytes for vpc2NameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpc2Id() {
-    return vpc2Id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc2Id_;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of VPC2
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpc2IdOrBuilder() {
-    return getVpc2Id();
+  public com.google.protobuf.ByteString
+      getVpc2NameRefBytes() {
+    java.lang.Object ref = vpc2NameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vpc2NameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -253,14 +206,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc1NameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vpc1NameRef_);
     }
-    if (vpc1Id_ != null) {
-      output.writeMessage(2, getVpc1Id());
-    }
-    if (vpc2Id_ != null) {
-      output.writeMessage(3, getVpc2Id());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc2NameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vpc2NameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -271,17 +221,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc1NameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vpc1NameRef_);
     }
-    if (vpc1Id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVpc1Id());
-    }
-    if (vpc2Id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getVpc2Id());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpc2NameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vpc2NameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,21 +242,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.VPCPeerSpec other = (opi_api.network.cloud.v1alpha1.VPCPeerSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasVpc1Id() != other.hasVpc1Id()) return false;
-    if (hasVpc1Id()) {
-      if (!getVpc1Id()
-          .equals(other.getVpc1Id())) return false;
-    }
-    if (hasVpc2Id() != other.hasVpc2Id()) return false;
-    if (hasVpc2Id()) {
-      if (!getVpc2Id()
-          .equals(other.getVpc2Id())) return false;
-    }
+    if (!getVpc1NameRef()
+        .equals(other.getVpc1NameRef())) return false;
+    if (!getVpc2NameRef()
+        .equals(other.getVpc2NameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,18 +257,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasVpc1Id()) {
-      hash = (37 * hash) + VPC1_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVpc1Id().hashCode();
-    }
-    if (hasVpc2Id()) {
-      hash = (37 * hash) + VPC2_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVpc2Id().hashCode();
-    }
+    hash = (37 * hash) + VPC1_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVpc1NameRef().hashCode();
+    hash = (37 * hash) + VPC2_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVpc2NameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,24 +400,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (vpc1IdBuilder_ == null) {
-        vpc1Id_ = null;
-      } else {
-        vpc1Id_ = null;
-        vpc1IdBuilder_ = null;
-      }
-      if (vpc2IdBuilder_ == null) {
-        vpc2Id_ = null;
-      } else {
-        vpc2Id_ = null;
-        vpc2IdBuilder_ = null;
-      }
+      vpc1NameRef_ = "";
+
+      vpc2NameRef_ = "";
+
       return this;
     }
 
@@ -519,21 +430,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.VPCPeerSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.VPCPeerSpec result = new opi_api.network.cloud.v1alpha1.VPCPeerSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (vpc1IdBuilder_ == null) {
-        result.vpc1Id_ = vpc1Id_;
-      } else {
-        result.vpc1Id_ = vpc1IdBuilder_.build();
-      }
-      if (vpc2IdBuilder_ == null) {
-        result.vpc2Id_ = vpc2Id_;
-      } else {
-        result.vpc2Id_ = vpc2IdBuilder_.build();
-      }
+      result.vpc1NameRef_ = vpc1NameRef_;
+      result.vpc2NameRef_ = vpc2NameRef_;
       onBuilt();
       return result;
     }
@@ -582,14 +480,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.VPCPeerSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.VPCPeerSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (!other.getVpc1NameRef().isEmpty()) {
+        vpc1NameRef_ = other.vpc1NameRef_;
+        onChanged();
       }
-      if (other.hasVpc1Id()) {
-        mergeVpc1Id(other.getVpc1Id());
-      }
-      if (other.hasVpc2Id()) {
-        mergeVpc2Id(other.getVpc2Id());
+      if (!other.getVpc2NameRef().isEmpty()) {
+        vpc2NameRef_ = other.vpc2NameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -620,208 +517,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object vpc1NameRef_ = "";
     /**
      * <pre>
-     * unique id/key idenitifying this VPC peering relation
+     * unique key/identifier of VPC1
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string vpc1_name_ref = 1;</code>
+     * @return The vpc1NameRef.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getVpc1NameRef() {
+      java.lang.Object ref = vpc1NameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpc1NameRef_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * unique id/key idenitifying this VPC peering relation
+     * unique key/identifier of VPC1
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string vpc1_name_ref = 1;</code>
+     * @return The bytes for vpc1NameRef.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVpc1NameRefBytes() {
+      java.lang.Object ref = vpc1NameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vpc1NameRef_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * unique id/key idenitifying this VPC peering relation
+     * unique key/identifier of VPC1
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string vpc1_name_ref = 1;</code>
+     * @param value The vpc1NameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setVpc1NameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vpc1NameRef_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique id/key idenitifying this VPC peering relation
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey vpc1Id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpc1IdBuilder_;
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     * @return Whether the vpc1Id field is set.
-     */
-    public boolean hasVpc1Id() {
-      return vpc1IdBuilder_ != null || vpc1Id_ != null;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     * @return The vpc1Id.
-     */
-    public opi_api.common.v1.ObjectKey getVpc1Id() {
-      if (vpc1IdBuilder_ == null) {
-        return vpc1Id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc1Id_;
-      } else {
-        return vpc1IdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     */
-    public Builder setVpc1Id(opi_api.common.v1.ObjectKey value) {
-      if (vpc1IdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        vpc1Id_ = value;
-        onChanged();
-      } else {
-        vpc1IdBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
@@ -829,239 +583,55 @@ private static final long serialVersionUID = 0L;
      * unique key/identifier of VPC1
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
+     * <code>string vpc1_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public Builder setVpc1Id(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpc1IdBuilder_ == null) {
-        vpc1Id_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpc1IdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     */
-    public Builder mergeVpc1Id(opi_api.common.v1.ObjectKey value) {
-      if (vpc1IdBuilder_ == null) {
-        if (vpc1Id_ != null) {
-          vpc1Id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(vpc1Id_).mergeFrom(value).buildPartial();
-        } else {
-          vpc1Id_ = value;
-        }
-        onChanged();
-      } else {
-        vpc1IdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     */
-    public Builder clearVpc1Id() {
-      if (vpc1IdBuilder_ == null) {
-        vpc1Id_ = null;
-        onChanged();
-      } else {
-        vpc1Id_ = null;
-        vpc1IdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpc1IdBuilder() {
+    public Builder clearVpc1NameRef() {
       
+      vpc1NameRef_ = getDefaultInstance().getVpc1NameRef();
       onChanged();
-      return getVpc1IdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * unique key/identifier of VPC1
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
+     * <code>string vpc1_name_ref = 1;</code>
+     * @param value The bytes for vpc1NameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpc1IdOrBuilder() {
-      if (vpc1IdBuilder_ != null) {
-        return vpc1IdBuilder_.getMessageOrBuilder();
-      } else {
-        return vpc1Id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc1Id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC1
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpc1IdFieldBuilder() {
-      if (vpc1IdBuilder_ == null) {
-        vpc1IdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVpc1Id(),
-                getParentForChildren(),
-                isClean());
-        vpc1Id_ = null;
-      }
-      return vpc1IdBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey vpc2Id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpc2IdBuilder_;
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     * @return Whether the vpc2Id field is set.
-     */
-    public boolean hasVpc2Id() {
-      return vpc2IdBuilder_ != null || vpc2Id_ != null;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     * @return The vpc2Id.
-     */
-    public opi_api.common.v1.ObjectKey getVpc2Id() {
-      if (vpc2IdBuilder_ == null) {
-        return vpc2Id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc2Id_;
-      } else {
-        return vpc2IdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     */
-    public Builder setVpc2Id(opi_api.common.v1.ObjectKey value) {
-      if (vpc2IdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        vpc2Id_ = value;
-        onChanged();
-      } else {
-        vpc2IdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     */
-    public Builder setVpc2Id(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpc2IdBuilder_ == null) {
-        vpc2Id_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpc2IdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     */
-    public Builder mergeVpc2Id(opi_api.common.v1.ObjectKey value) {
-      if (vpc2IdBuilder_ == null) {
-        if (vpc2Id_ != null) {
-          vpc2Id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(vpc2Id_).mergeFrom(value).buildPartial();
-        } else {
-          vpc2Id_ = value;
-        }
-        onChanged();
-      } else {
-        vpc2IdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     */
-    public Builder clearVpc2Id() {
-      if (vpc2IdBuilder_ == null) {
-        vpc2Id_ = null;
-        onChanged();
-      } else {
-        vpc2Id_ = null;
-        vpc2IdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC2
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpc2IdBuilder() {
+    public Builder setVpc1NameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       
+      vpc1NameRef_ = value;
       onChanged();
-      return getVpc2IdFieldBuilder().getBuilder();
+      return this;
     }
+
+    private java.lang.Object vpc2NameRef_ = "";
     /**
      * <pre>
      * unique key/identifier of VPC2
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
+     * <code>string vpc2_name_ref = 2;</code>
+     * @return The vpc2NameRef.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpc2IdOrBuilder() {
-      if (vpc2IdBuilder_ != null) {
-        return vpc2IdBuilder_.getMessageOrBuilder();
+    public java.lang.String getVpc2NameRef() {
+      java.lang.Object ref = vpc2NameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpc2NameRef_ = s;
+        return s;
       } else {
-        return vpc2Id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : vpc2Id_;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1069,20 +639,74 @@ private static final long serialVersionUID = 0L;
      * unique key/identifier of VPC2
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
+     * <code>string vpc2_name_ref = 2;</code>
+     * @return The bytes for vpc2NameRef.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpc2IdFieldBuilder() {
-      if (vpc2IdBuilder_ == null) {
-        vpc2IdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVpc2Id(),
-                getParentForChildren(),
-                isClean());
-        vpc2Id_ = null;
+    public com.google.protobuf.ByteString
+        getVpc2NameRefBytes() {
+      java.lang.Object ref = vpc2NameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vpc2NameRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return vpc2IdBuilder_;
+    }
+    /**
+     * <pre>
+     * unique key/identifier of VPC2
+     * </pre>
+     *
+     * <code>string vpc2_name_ref = 2;</code>
+     * @param value The vpc2NameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVpc2NameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vpc2NameRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * unique key/identifier of VPC2
+     * </pre>
+     *
+     * <code>string vpc2_name_ref = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVpc2NameRef() {
+      
+      vpc2NameRef_ = getDefaultInstance().getVpc2NameRef();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * unique key/identifier of VPC2
+     * </pre>
+     *
+     * <code>string vpc2_name_ref = 2;</code>
+     * @param value The bytes for vpc2NameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVpc2NameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      vpc2NameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

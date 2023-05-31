@@ -32,8 +32,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include <google/protobuf/timestamp.pb.h>
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_port_2eproto
@@ -567,10 +567,25 @@ class Port final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -588,7 +603,7 @@ class Port final :
       ::opi_api::network::cloud::v1alpha1::PortSpec* spec);
   ::opi_api::network::cloud::v1alpha1::PortSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.PortStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -613,6 +628,7 @@ class Port final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::PortSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::PortStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -742,40 +758,21 @@ class PortSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kPortNumberFieldNumber = 2,
-    kAdminStateFieldNumber = 3,
-    kTypeFieldNumber = 4,
-    kSpeedFieldNumber = 5,
-    kFecTypeFieldNumber = 6,
-    kDebounceTimeoutFieldNumber = 8,
-    kMtuFieldNumber = 9,
-    kPauseTypeFieldNumber = 10,
-    kAutonegEnableFieldNumber = 7,
-    kTxPauseEnFieldNumber = 11,
-    kRxPauseEnFieldNumber = 12,
-    kLoopbackModeFieldNumber = 13,
-    kLanesCountFieldNumber = 14,
+    kPortNumberFieldNumber = 1,
+    kAdminStateFieldNumber = 2,
+    kTypeFieldNumber = 3,
+    kSpeedFieldNumber = 4,
+    kFecTypeFieldNumber = 5,
+    kDebounceTimeoutFieldNumber = 7,
+    kMtuFieldNumber = 8,
+    kPauseTypeFieldNumber = 9,
+    kAutonegEnableFieldNumber = 6,
+    kTxPauseEnFieldNumber = 10,
+    kRxPauseEnFieldNumber = 11,
+    kLoopbackModeFieldNumber = 12,
+    kLanesCountFieldNumber = 13,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // int32 port_number = 2;
+  // int32 port_number = 1;
   void clear_port_number();
   int32_t port_number() const;
   void set_port_number(int32_t value);
@@ -784,7 +781,7 @@ class PortSpec final :
   void _internal_set_port_number(int32_t value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;
+  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
   void clear_admin_state();
   ::opi_api::network::cloud::v1alpha1::PortAdminState admin_state() const;
   void set_admin_state(::opi_api::network::cloud::v1alpha1::PortAdminState value);
@@ -793,7 +790,7 @@ class PortSpec final :
   void _internal_set_admin_state(::opi_api::network::cloud::v1alpha1::PortAdminState value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortType type = 4;
+  // .opi_api.network.cloud.v1alpha1.PortType type = 3;
   void clear_type();
   ::opi_api::network::cloud::v1alpha1::PortType type() const;
   void set_type(::opi_api::network::cloud::v1alpha1::PortType value);
@@ -802,7 +799,7 @@ class PortSpec final :
   void _internal_set_type(::opi_api::network::cloud::v1alpha1::PortType value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;
+  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
   void clear_speed();
   ::opi_api::network::cloud::v1alpha1::PortSpeed speed() const;
   void set_speed(::opi_api::network::cloud::v1alpha1::PortSpeed value);
@@ -811,7 +808,7 @@ class PortSpec final :
   void _internal_set_speed(::opi_api::network::cloud::v1alpha1::PortSpeed value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;
+  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   void clear_fec_type();
   ::opi_api::network::cloud::v1alpha1::PortFecType fec_type() const;
   void set_fec_type(::opi_api::network::cloud::v1alpha1::PortFecType value);
@@ -820,7 +817,7 @@ class PortSpec final :
   void _internal_set_fec_type(::opi_api::network::cloud::v1alpha1::PortFecType value);
   public:
 
-  // int32 debounce_timeout = 8;
+  // int32 debounce_timeout = 7;
   void clear_debounce_timeout();
   int32_t debounce_timeout() const;
   void set_debounce_timeout(int32_t value);
@@ -829,7 +826,7 @@ class PortSpec final :
   void _internal_set_debounce_timeout(int32_t value);
   public:
 
-  // int32 mtu = 9;
+  // int32 mtu = 8;
   void clear_mtu();
   int32_t mtu() const;
   void set_mtu(int32_t value);
@@ -838,7 +835,7 @@ class PortSpec final :
   void _internal_set_mtu(int32_t value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;
+  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
   void clear_pause_type();
   ::opi_api::network::cloud::v1alpha1::PortPauseType pause_type() const;
   void set_pause_type(::opi_api::network::cloud::v1alpha1::PortPauseType value);
@@ -847,7 +844,7 @@ class PortSpec final :
   void _internal_set_pause_type(::opi_api::network::cloud::v1alpha1::PortPauseType value);
   public:
 
-  // bool autoneg_enable = 7;
+  // bool autoneg_enable = 6;
   void clear_autoneg_enable();
   bool autoneg_enable() const;
   void set_autoneg_enable(bool value);
@@ -856,7 +853,7 @@ class PortSpec final :
   void _internal_set_autoneg_enable(bool value);
   public:
 
-  // bool tx_pause_en = 11;
+  // bool tx_pause_en = 10;
   void clear_tx_pause_en();
   bool tx_pause_en() const;
   void set_tx_pause_en(bool value);
@@ -865,7 +862,7 @@ class PortSpec final :
   void _internal_set_tx_pause_en(bool value);
   public:
 
-  // bool rx_pause_en = 12;
+  // bool rx_pause_en = 11;
   void clear_rx_pause_en();
   bool rx_pause_en() const;
   void set_rx_pause_en(bool value);
@@ -874,7 +871,7 @@ class PortSpec final :
   void _internal_set_rx_pause_en(bool value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;
+  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
   void clear_loopback_mode();
   ::opi_api::network::cloud::v1alpha1::PortLoopBackMode loopback_mode() const;
   void set_loopback_mode(::opi_api::network::cloud::v1alpha1::PortLoopBackMode value);
@@ -883,7 +880,7 @@ class PortSpec final :
   void _internal_set_loopback_mode(::opi_api::network::cloud::v1alpha1::PortLoopBackMode value);
   public:
 
-  // int32 lanes_count = 14;
+  // int32 lanes_count = 13;
   void clear_lanes_count();
   int32_t lanes_count() const;
   void set_lanes_count(int32_t value);
@@ -899,7 +896,6 @@ class PortSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
   int32_t port_number_;
   int admin_state_;
   int type_;
@@ -1857,7 +1853,58 @@ class PortLinkFSMRecord final :
 #endif  // __GNUC__
 // Port
 
-// .opi_api.network.cloud.v1alpha1.PortSpec spec = 1;
+// string name = 1;
+inline void Port::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Port::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.Port.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Port::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.Port.name)
+}
+inline std::string* Port::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.Port.name)
+  return _s;
+}
+inline const std::string& Port::_internal_name() const {
+  return name_.Get();
+}
+inline void Port::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Port::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Port::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.Port.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Port::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Port.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
 inline bool Port::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -1947,7 +1994,7 @@ inline void Port::set_allocated_spec(::opi_api::network::cloud::v1alpha1::PortSp
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Port.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
 inline bool Port::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -2041,93 +2088,7 @@ inline void Port::set_allocated_status(::opi_api::network::cloud::v1alpha1::Port
 
 // PortSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool PortSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool PortSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& PortSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& PortSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.PortSpec.id)
-  return _internal_id();
-}
-inline void PortSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.PortSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* PortSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* PortSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.PortSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* PortSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* PortSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.PortSpec.id)
-  return _msg;
-}
-inline void PortSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.PortSpec.id)
-}
-
-// int32 port_number = 2;
+// int32 port_number = 1;
 inline void PortSpec::clear_port_number() {
   port_number_ = 0;
 }
@@ -2147,7 +2108,7 @@ inline void PortSpec::set_port_number(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.port_number)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;
+// .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
 inline void PortSpec::clear_admin_state() {
   admin_state_ = 0;
 }
@@ -2167,7 +2128,7 @@ inline void PortSpec::set_admin_state(::opi_api::network::cloud::v1alpha1::PortA
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.admin_state)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortType type = 4;
+// .opi_api.network.cloud.v1alpha1.PortType type = 3;
 inline void PortSpec::clear_type() {
   type_ = 0;
 }
@@ -2187,7 +2148,7 @@ inline void PortSpec::set_type(::opi_api::network::cloud::v1alpha1::PortType val
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.type)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;
+// .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
 inline void PortSpec::clear_speed() {
   speed_ = 0;
 }
@@ -2207,7 +2168,7 @@ inline void PortSpec::set_speed(::opi_api::network::cloud::v1alpha1::PortSpeed v
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.speed)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;
+// .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
 inline void PortSpec::clear_fec_type() {
   fec_type_ = 0;
 }
@@ -2227,7 +2188,7 @@ inline void PortSpec::set_fec_type(::opi_api::network::cloud::v1alpha1::PortFecT
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.fec_type)
 }
 
-// bool autoneg_enable = 7;
+// bool autoneg_enable = 6;
 inline void PortSpec::clear_autoneg_enable() {
   autoneg_enable_ = false;
 }
@@ -2247,7 +2208,7 @@ inline void PortSpec::set_autoneg_enable(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.autoneg_enable)
 }
 
-// int32 debounce_timeout = 8;
+// int32 debounce_timeout = 7;
 inline void PortSpec::clear_debounce_timeout() {
   debounce_timeout_ = 0;
 }
@@ -2267,7 +2228,7 @@ inline void PortSpec::set_debounce_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.debounce_timeout)
 }
 
-// int32 mtu = 9;
+// int32 mtu = 8;
 inline void PortSpec::clear_mtu() {
   mtu_ = 0;
 }
@@ -2287,7 +2248,7 @@ inline void PortSpec::set_mtu(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.mtu)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;
+// .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
 inline void PortSpec::clear_pause_type() {
   pause_type_ = 0;
 }
@@ -2307,7 +2268,7 @@ inline void PortSpec::set_pause_type(::opi_api::network::cloud::v1alpha1::PortPa
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.pause_type)
 }
 
-// bool tx_pause_en = 11;
+// bool tx_pause_en = 10;
 inline void PortSpec::clear_tx_pause_en() {
   tx_pause_en_ = false;
 }
@@ -2327,7 +2288,7 @@ inline void PortSpec::set_tx_pause_en(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.tx_pause_en)
 }
 
-// bool rx_pause_en = 12;
+// bool rx_pause_en = 11;
 inline void PortSpec::clear_rx_pause_en() {
   rx_pause_en_ = false;
 }
@@ -2347,7 +2308,7 @@ inline void PortSpec::set_rx_pause_en(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.rx_pause_en)
 }
 
-// .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;
+// .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
 inline void PortSpec::clear_loopback_mode() {
   loopback_mode_ = 0;
 }
@@ -2367,7 +2328,7 @@ inline void PortSpec::set_loopback_mode(::opi_api::network::cloud::v1alpha1::Por
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.PortSpec.loopback_mode)
 }
 
-// int32 lanes_count = 14;
+// int32 lanes_count = 13;
 inline void PortSpec::clear_lanes_count() {
   lanes_count_ = 0;
 }

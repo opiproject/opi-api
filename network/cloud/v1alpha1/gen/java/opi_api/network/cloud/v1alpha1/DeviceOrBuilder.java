@@ -9,10 +9,30 @@ public interface DeviceOrBuilder extends
 
   /**
    * <pre>
+   * device's unique identifier
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * device's unique identifier
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * device's network configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface DeviceOrBuilder extends
    * device's network configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.DeviceSpec getSpec();
@@ -30,7 +50,7 @@ public interface DeviceOrBuilder extends
    * device's network configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.DeviceSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface DeviceOrBuilder extends
    * device's network status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface DeviceOrBuilder extends
    * device's network status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.DeviceStatus getStatus();
@@ -57,7 +77,7 @@ public interface DeviceOrBuilder extends
    * device's network status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.DeviceStatusOrBuilder getStatusOrBuilder();
 }

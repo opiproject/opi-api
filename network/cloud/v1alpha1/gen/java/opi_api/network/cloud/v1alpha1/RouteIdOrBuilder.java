@@ -12,52 +12,38 @@ public interface RouteIdOrBuilder extends
    * unique route id (this id is not scoped under VPC or subnet)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_id = 1;</code>
+   * @return The routeId.
    */
-  boolean hasId();
+  java.lang.String getRouteId();
   /**
    * <pre>
    * unique route id (this id is not scoped under VPC or subnet)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string route_id = 1;</code>
+   * @return The bytes for routeId.
    */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique route id (this id is not scoped under VPC or subnet)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteIdBytes();
 
   /**
    * <pre>
    * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The routeTableNameRef.
    */
-  boolean hasRouteTableId();
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getRouteTableId();
-  /**
-   * <pre>
-   * route table this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 }

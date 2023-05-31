@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr UnderlayRoute::UnderlayRoute(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct UnderlayRouteDefaultTypeInternal {
   constexpr UnderlayRouteDefaultTypeInternal()
@@ -35,11 +36,10 @@ struct UnderlayRouteDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnderlayRouteDefaultTypeInternal _UnderlayRoute_default_instance_;
 constexpr UnderlayRouteSpec::UnderlayRouteSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , route_table_id_(nullptr)
+  : route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , interface_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , dest_prefix_(nullptr)
   , next_hop_address_(nullptr)
-  , interface_id_(nullptr)
   , state_(0)
 
   , enable_admin_distance_(false)
@@ -57,7 +57,7 @@ constexpr UnderlayRouteStatus::UnderlayRouteStatus(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : dest_prefix_(nullptr)
   , next_hop_address_(nullptr)
-  , route_table_id_(0)
+  , route_table_name_ref_(0)
   , if_index_(0)
   , type_(0)
 
@@ -79,7 +79,7 @@ struct UnderlayRouteStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnderlayRouteStatusDefaultTypeInternal _UnderlayRouteStatus_default_instance_;
 constexpr UnderlayRouteLookupKey::UnderlayRouteLookupKey(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : route_table_id_(nullptr)
+  : route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , dest_prefix_(nullptr)
   , next_hop_address_(nullptr)
   , ifid_(0)
@@ -109,6 +109,7 @@ const uint32_t TableStruct_underlayroute_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRoute, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRoute, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRoute, status_),
   ~0u,  // no _has_bits_
@@ -117,21 +118,20 @@ const uint32_t TableStruct_underlayroute_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, route_table_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, dest_prefix_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, next_hop_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, state_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, enable_admin_distance_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, admin_dist_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, interface_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec, interface_name_ref_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, route_table_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, dest_prefix_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, next_hop_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus, if_index_),
@@ -148,7 +148,7 @@ const uint32_t TableStruct_underlayroute_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey, route_table_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey, dest_prefix_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey, next_hop_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey, ifid_),
@@ -156,7 +156,7 @@ const uint32_t TableStruct_underlayroute_2eproto::offsets[] PROTOBUF_SECTION_VAR
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::UnderlayRoute)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec)},
   { 22, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::UnderlayRouteStatus)},
   { 39, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::UnderlayRouteLookupKey)},
 };
@@ -170,52 +170,52 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_underlayroute_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023underlayroute.proto\022\036opi_api.network.c"
-  "loud.v1alpha1\032\020object_key.proto\032\022network"
-  "types.proto\"\225\001\n\rUnderlayRoute\022\?\n\004spec\030\001 "
-  "\001(\01321.opi_api.network.cloud.v1alpha1.Und"
-  "erlayRouteSpec\022C\n\006status\030\002 \001(\01323.opi_api"
-  ".network.cloud.v1alpha1.UnderlayRouteSta"
-  "tus\"\256\003\n\021UnderlayRouteSpec\022(\n\002id\030\001 \001(\0132\034."
-  "opi_api.common.v1.ObjectKey\0224\n\016route_tab"
-  "le_id\030\002 \001(\0132\034.opi_api.common.v1.ObjectKe"
-  "y\022D\n\013dest_prefix\030\003 \001(\0132/.opi_api.network"
+  "loud.v1alpha1\032\022networktypes.proto\032\031googl"
+  "e/api/resource.proto\"\366\001\n\rUnderlayRoute\022\014"
+  "\n\004name\030\001 \001(\t\022\?\n\004spec\030\002 \001(\01321.opi_api.net"
+  "work.cloud.v1alpha1.UnderlayRouteSpec\022C\n"
+  "\006status\030\003 \001(\01323.opi_api.network.cloud.v1"
+  "alpha1.UnderlayRouteStatus:Q\352AN\n,opi_api"
+  ".network.cloud.v1alpha1/underlayroute\022\036u"
+  "nderlayroutes/{underlayroute}\"\324\002\n\021Underl"
+  "ayRouteSpec\022\034\n\024route_table_name_ref\030\001 \001("
+  "\t\022D\n\013dest_prefix\030\002 \001(\0132/.opi_api.network"
   ".opinetcommon.v1alpha1.IPPrefix\022J\n\020next_"
-  "hop_address\030\004 \001(\01320.opi_api.network.opin"
-  "etcommon.v1alpha1.IPAddress\022@\n\005state\030\005 \001"
+  "hop_address\030\003 \001(\01320.opi_api.network.opin"
+  "etcommon.v1alpha1.IPAddress\022@\n\005state\030\004 \001"
   "(\01621.opi_api.network.opinetcommon.v1alph"
-  "a1.AdminState\022\035\n\025enable_admin_distance\030\006"
-  " \001(\010\022\022\n\nadmin_dist\030\007 \001(\005\0222\n\014interface_id"
-  "\030\010 \001(\0132\034.opi_api.common.v1.ObjectKey\"\261\003\n"
-  "\023UnderlayRouteStatus\022\026\n\016route_table_id\030\001"
-  " \001(\005\022D\n\013dest_prefix\030\002 \001(\0132/.opi_api.netw"
-  "ork.opinetcommon.v1alpha1.IPPrefix\022J\n\020ne"
-  "xt_hop_address\030\003 \001(\01320.opi_api.network.o"
-  "pinetcommon.v1alpha1.IPAddress\022\020\n\010if_ind"
-  "ex\030\005 \001(\005\022>\n\004type\030\006 \001(\01620.opi_api.network"
-  ".opinetcommon.v1alpha1.RouteType\022C\n\005prot"
-  "o\030\007 \001(\01624.opi_api.network.opinetcommon.v"
-  "1alpha1.RouteProtocol\022\013\n\003age\030\010 \001(\005\022\016\n\006me"
-  "tric\030\t \001(\005\022\021\n\tfib_route\030\n \001(\010\022\021\n\tconnect"
-  "ed\030\013 \001(\010\022\026\n\016admin_distance\030\014 \001(\005\"\263\002\n\026Und"
-  "erlayRouteLookupKey\0224\n\016route_table_id\030\001 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\022D\n\013des"
-  "t_prefix\030\002 \001(\0132/.opi_api.network.opinetc"
-  "ommon.v1alpha1.IPPrefix\022J\n\020next_hop_addr"
-  "ess\030\003 \001(\01320.opi_api.network.opinetcommon"
-  ".v1alpha1.IPAddress\022\014\n\004ifid\030\004 \001(\005\022C\n\005pro"
-  "to\030\006 \001(\01624.opi_api.network.opinetcommon."
-  "v1alpha1.RouteProtocolBs\n\036opi_api.networ"
-  "k.cloud.v1alpha1B\022UnderlayRouteProtoP\001Z;"
-  "github.com/opiproject/opi-api/network/cl"
-  "oud/v1alpha1/gen/gob\006proto3"
+  "a1.AdminState\022\035\n\025enable_admin_distance\030\005"
+  " \001(\010\022\022\n\nadmin_dist\030\006 \001(\005\022\032\n\022interface_na"
+  "me_ref\030\007 \001(\t\"\267\003\n\023UnderlayRouteStatus\022\034\n\024"
+  "route_table_name_ref\030\001 \001(\005\022D\n\013dest_prefi"
+  "x\030\002 \001(\0132/.opi_api.network.opinetcommon.v"
+  "1alpha1.IPPrefix\022J\n\020next_hop_address\030\003 \001"
+  "(\01320.opi_api.network.opinetcommon.v1alph"
+  "a1.IPAddress\022\020\n\010if_index\030\005 \001(\005\022>\n\004type\030\006"
+  " \001(\01620.opi_api.network.opinetcommon.v1al"
+  "pha1.RouteType\022C\n\005proto\030\007 \001(\01624.opi_api."
+  "network.opinetcommon.v1alpha1.RouteProto"
+  "col\022\013\n\003age\030\010 \001(\005\022\016\n\006metric\030\t \001(\005\022\021\n\tfib_"
+  "route\030\n \001(\010\022\021\n\tconnected\030\013 \001(\010\022\026\n\016admin_"
+  "distance\030\014 \001(\005\"\233\002\n\026UnderlayRouteLookupKe"
+  "y\022\034\n\024route_table_name_ref\030\001 \001(\t\022D\n\013dest_"
+  "prefix\030\002 \001(\0132/.opi_api.network.opinetcom"
+  "mon.v1alpha1.IPPrefix\022J\n\020next_hop_addres"
+  "s\030\003 \001(\01320.opi_api.network.opinetcommon.v"
+  "1alpha1.IPAddress\022\014\n\004ifid\030\004 \001(\005\022C\n\005proto"
+  "\030\006 \001(\01624.opi_api.network.opinetcommon.v1"
+  "alpha1.RouteProtocolBs\n\036opi_api.network."
+  "cloud.v1alpha1B\022UnderlayRouteProtoP\001Z;gi"
+  "thub.com/opiproject/opi-api/network/clou"
+  "d/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_underlayroute_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_underlayroute_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_underlayroute_2eproto = {
-  false, false, 1547, descriptor_table_protodef_underlayroute_2eproto, "underlayroute.proto", 
+  false, false, 1545, descriptor_table_protodef_underlayroute_2eproto, "underlayroute.proto", 
   &descriptor_table_underlayroute_2eproto_once, descriptor_table_underlayroute_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_underlayroute_2eproto::offsets,
   file_level_metadata_underlayroute_2eproto, file_level_enum_descriptors_underlayroute_2eproto, file_level_service_descriptors_underlayroute_2eproto,
@@ -259,6 +259,14 @@ UnderlayRoute::UnderlayRoute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 UnderlayRoute::UnderlayRoute(const UnderlayRoute& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec(*from.spec_);
   } else {
@@ -273,6 +281,10 @@ UnderlayRoute::UnderlayRoute(const UnderlayRoute& from)
 }
 
 inline void UnderlayRoute::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -288,6 +300,7 @@ UnderlayRoute::~UnderlayRoute() {
 
 inline void UnderlayRoute::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -308,6 +321,7 @@ void UnderlayRoute::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -325,17 +339,27 @@ const char* UnderlayRoute::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.UnderlayRoute.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -370,20 +394,30 @@ uint8_t* UnderlayRoute::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.UnderlayRoute.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -402,14 +436,21 @@ size_t UnderlayRoute::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -438,6 +479,9 @@ void UnderlayRoute::MergeFrom(const UnderlayRoute& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::UnderlayRouteSpec::MergeFrom(from._internal_spec());
   }
@@ -460,7 +504,14 @@ bool UnderlayRoute::IsInitialized() const {
 
 void UnderlayRoute::InternalSwap(UnderlayRoute* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UnderlayRoute, status_)
       + sizeof(UnderlayRoute::status_)
@@ -479,21 +530,10 @@ void UnderlayRoute::InternalSwap(UnderlayRoute* other) {
 
 class UnderlayRouteSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const UnderlayRouteSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const UnderlayRouteSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& dest_prefix(const UnderlayRouteSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& next_hop_address(const UnderlayRouteSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& interface_id(const UnderlayRouteSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-UnderlayRouteSpec::_Internal::id(const UnderlayRouteSpec* msg) {
-  return *msg->id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-UnderlayRouteSpec::_Internal::route_table_id(const UnderlayRouteSpec* msg) {
-  return *msg->route_table_id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&
 UnderlayRouteSpec::_Internal::dest_prefix(const UnderlayRouteSpec* msg) {
   return *msg->dest_prefix_;
@@ -501,22 +541,6 @@ UnderlayRouteSpec::_Internal::dest_prefix(const UnderlayRouteSpec* msg) {
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 UnderlayRouteSpec::_Internal::next_hop_address(const UnderlayRouteSpec* msg) {
   return *msg->next_hop_address_;
-}
-const ::opi_api::common::v1::ObjectKey&
-UnderlayRouteSpec::_Internal::interface_id(const UnderlayRouteSpec* msg) {
-  return *msg->interface_id_;
-}
-void UnderlayRouteSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
-void UnderlayRouteSpec::clear_route_table_id() {
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
 }
 void UnderlayRouteSpec::clear_dest_prefix() {
   if (GetArenaForAllocation() == nullptr && dest_prefix_ != nullptr) {
@@ -530,12 +554,6 @@ void UnderlayRouteSpec::clear_next_hop_address() {
   }
   next_hop_address_ = nullptr;
 }
-void UnderlayRouteSpec::clear_interface_id() {
-  if (GetArenaForAllocation() == nullptr && interface_id_ != nullptr) {
-    delete interface_id_;
-  }
-  interface_id_ = nullptr;
-}
 UnderlayRouteSpec::UnderlayRouteSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -548,15 +566,21 @@ UnderlayRouteSpec::UnderlayRouteSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 UnderlayRouteSpec::UnderlayRouteSpec(const UnderlayRouteSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
+  route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_table_name_ref().empty()) {
+    route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_table_name_ref(), 
+      GetArenaForAllocation());
   }
-  if (from._internal_has_route_table_id()) {
-    route_table_id_ = new ::opi_api::common::v1::ObjectKey(*from.route_table_id_);
-  } else {
-    route_table_id_ = nullptr;
+  interface_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_interface_name_ref().empty()) {
+    interface_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_interface_name_ref(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_dest_prefix()) {
     dest_prefix_ = new ::opi_api::network::opinetcommon::v1alpha1::IPPrefix(*from.dest_prefix_);
@@ -568,11 +592,6 @@ UnderlayRouteSpec::UnderlayRouteSpec(const UnderlayRouteSpec& from)
   } else {
     next_hop_address_ = nullptr;
   }
-  if (from._internal_has_interface_id()) {
-    interface_id_ = new ::opi_api::common::v1::ObjectKey(*from.interface_id_);
-  } else {
-    interface_id_ = nullptr;
-  }
   ::memcpy(&state_, &from.state_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_dist_) -
     reinterpret_cast<char*>(&state_)) + sizeof(admin_dist_));
@@ -580,10 +599,18 @@ UnderlayRouteSpec::UnderlayRouteSpec(const UnderlayRouteSpec& from)
 }
 
 inline void UnderlayRouteSpec::SharedCtor() {
+route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+interface_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  interface_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&dest_prefix_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&admin_dist_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(admin_dist_));
+    reinterpret_cast<char*>(&dest_prefix_)) + sizeof(admin_dist_));
 }
 
 UnderlayRouteSpec::~UnderlayRouteSpec() {
@@ -595,11 +622,10 @@ UnderlayRouteSpec::~UnderlayRouteSpec() {
 
 inline void UnderlayRouteSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete route_table_id_;
+  route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  interface_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete dest_prefix_;
   if (this != internal_default_instance()) delete next_hop_address_;
-  if (this != internal_default_instance()) delete interface_id_;
 }
 
 void UnderlayRouteSpec::ArenaDtor(void* object) {
@@ -618,14 +644,8 @@ void UnderlayRouteSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
+  route_table_name_ref_.ClearToEmpty();
+  interface_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && dest_prefix_ != nullptr) {
     delete dest_prefix_;
   }
@@ -634,10 +654,6 @@ void UnderlayRouteSpec::Clear() {
     delete next_hop_address_;
   }
   next_hop_address_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && interface_id_ != nullptr) {
-    delete interface_id_;
-  }
-  interface_id_ = nullptr;
   ::memset(&state_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&admin_dist_) -
       reinterpret_cast<char*>(&state_)) + sizeof(admin_dist_));
@@ -650,67 +666,63 @@ const char* UnderlayRouteSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string route_table_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey route_table_id = 2;
+      // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_dest_prefix(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_next_hop_address(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::opi_api::network::opinetcommon::v1alpha1::AdminState>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool enable_admin_distance = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // bool enable_admin_distance = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           enable_admin_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 admin_dist = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // int32 admin_dist = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           admin_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey interface_id = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          ptr = ctx->ParseMessage(_internal_mutable_interface_id(), ptr);
+      // string interface_name_ref = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_interface_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.interface_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -744,63 +756,59 @@ uint8_t* UnderlayRouteSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_route_table_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::route_table_id(this), target, stream);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
   if (this->_internal_has_dest_prefix()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::dest_prefix(this), target, stream);
+        2, _Internal::dest_prefix(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;
   if (this->_internal_has_next_hop_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::next_hop_address(this), target, stream);
+        3, _Internal::next_hop_address(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;
   if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_state(), target);
+      4, this->_internal_state(), target);
   }
 
-  // bool enable_admin_distance = 6;
+  // bool enable_admin_distance = 5;
   if (this->_internal_enable_admin_distance() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_enable_admin_distance(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_enable_admin_distance(), target);
   }
 
-  // int32 admin_dist = 7;
+  // int32 admin_dist = 6;
   if (this->_internal_admin_dist() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_admin_dist(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_admin_dist(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey interface_id = 8;
-  if (this->_internal_has_interface_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        8, _Internal::interface_id(this), target, stream);
+  // string interface_name_ref = 7;
+  if (!this->_internal_interface_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_interface_name_ref().data(), static_cast<int>(this->_internal_interface_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.UnderlayRouteSpec.interface_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_interface_name_ref(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -819,53 +827,46 @@ size_t UnderlayRouteSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_table_name_ref());
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
+  // string interface_name_ref = 7;
+  if (!this->_internal_interface_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *route_table_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_interface_name_ref());
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
   if (this->_internal_has_dest_prefix()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *dest_prefix_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress next_hop_address = 3;
   if (this->_internal_has_next_hop_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *next_hop_address_);
   }
 
-  // .opi_api.common.v1.ObjectKey interface_id = 8;
-  if (this->_internal_has_interface_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *interface_id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 4;
   if (this->_internal_state() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
-  // bool enable_admin_distance = 6;
+  // bool enable_admin_distance = 5;
   if (this->_internal_enable_admin_distance() != 0) {
     total_size += 1 + 1;
   }
 
-  // int32 admin_dist = 7;
+  // int32 admin_dist = 6;
   if (this->_internal_admin_dist() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_admin_dist());
   }
@@ -892,20 +893,17 @@ void UnderlayRouteSpec::MergeFrom(const UnderlayRouteSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (!from._internal_route_table_name_ref().empty()) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
-  if (from._internal_has_route_table_id()) {
-    _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+  if (!from._internal_interface_name_ref().empty()) {
+    _internal_set_interface_name_ref(from._internal_interface_name_ref());
   }
   if (from._internal_has_dest_prefix()) {
     _internal_mutable_dest_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_dest_prefix());
   }
   if (from._internal_has_next_hop_address()) {
     _internal_mutable_next_hop_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_next_hop_address());
-  }
-  if (from._internal_has_interface_id()) {
-    _internal_mutable_interface_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_interface_id());
   }
   if (from._internal_state() != 0) {
     _internal_set_state(from._internal_state());
@@ -932,13 +930,25 @@ bool UnderlayRouteSpec::IsInitialized() const {
 
 void UnderlayRouteSpec::InternalSwap(UnderlayRouteSpec* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_table_name_ref_, lhs_arena,
+      &other->route_table_name_ref_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &interface_name_ref_, lhs_arena,
+      &other->interface_name_ref_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UnderlayRouteSpec, admin_dist_)
       + sizeof(UnderlayRouteSpec::admin_dist_)
-      - PROTOBUF_FIELD_OFFSET(UnderlayRouteSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(UnderlayRouteSpec, dest_prefix_)>(
+          reinterpret_cast<char*>(&dest_prefix_),
+          reinterpret_cast<char*>(&other->dest_prefix_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnderlayRouteSpec::GetMetadata() const {
@@ -997,9 +1007,9 @@ UnderlayRouteStatus::UnderlayRouteStatus(const UnderlayRouteStatus& from)
   } else {
     next_hop_address_ = nullptr;
   }
-  ::memcpy(&route_table_id_, &from.route_table_id_,
+  ::memcpy(&route_table_name_ref_, &from.route_table_name_ref_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_distance_) -
-    reinterpret_cast<char*>(&route_table_id_)) + sizeof(admin_distance_));
+    reinterpret_cast<char*>(&route_table_name_ref_)) + sizeof(admin_distance_));
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.UnderlayRouteStatus)
 }
 
@@ -1047,9 +1057,9 @@ void UnderlayRouteStatus::Clear() {
     delete next_hop_address_;
   }
   next_hop_address_ = nullptr;
-  ::memset(&route_table_id_, 0, static_cast<size_t>(
+  ::memset(&route_table_name_ref_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&admin_distance_) -
-      reinterpret_cast<char*>(&route_table_id_)) + sizeof(admin_distance_));
+      reinterpret_cast<char*>(&route_table_name_ref_)) + sizeof(admin_distance_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1059,10 +1069,10 @@ const char* UnderlayRouteStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 route_table_id = 1;
+      // int32 route_table_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          route_table_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          route_table_name_ref_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1178,10 +1188,10 @@ uint8_t* UnderlayRouteStatus::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 route_table_id = 1;
-  if (this->_internal_route_table_id() != 0) {
+  // int32 route_table_name_ref = 1;
+  if (this->_internal_route_table_name_ref() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_route_table_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_route_table_name_ref(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
@@ -1280,9 +1290,9 @@ size_t UnderlayRouteStatus::ByteSizeLong() const {
         *next_hop_address_);
   }
 
-  // int32 route_table_id = 1;
-  if (this->_internal_route_table_id() != 0) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_route_table_id());
+  // int32 route_table_name_ref = 1;
+  if (this->_internal_route_table_name_ref() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_route_table_name_ref());
   }
 
   // int32 if_index = 5;
@@ -1355,8 +1365,8 @@ void UnderlayRouteStatus::MergeFrom(const UnderlayRouteStatus& from) {
   if (from._internal_has_next_hop_address()) {
     _internal_mutable_next_hop_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_next_hop_address());
   }
-  if (from._internal_route_table_id() != 0) {
-    _internal_set_route_table_id(from._internal_route_table_id());
+  if (from._internal_route_table_name_ref() != 0) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
   if (from._internal_if_index() != 0) {
     _internal_set_if_index(from._internal_if_index());
@@ -1417,15 +1427,10 @@ void UnderlayRouteStatus::InternalSwap(UnderlayRouteStatus* other) {
 
 class UnderlayRouteLookupKey::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const UnderlayRouteLookupKey* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& dest_prefix(const UnderlayRouteLookupKey* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& next_hop_address(const UnderlayRouteLookupKey* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-UnderlayRouteLookupKey::_Internal::route_table_id(const UnderlayRouteLookupKey* msg) {
-  return *msg->route_table_id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix&
 UnderlayRouteLookupKey::_Internal::dest_prefix(const UnderlayRouteLookupKey* msg) {
   return *msg->dest_prefix_;
@@ -1433,12 +1438,6 @@ UnderlayRouteLookupKey::_Internal::dest_prefix(const UnderlayRouteLookupKey* msg
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 UnderlayRouteLookupKey::_Internal::next_hop_address(const UnderlayRouteLookupKey* msg) {
   return *msg->next_hop_address_;
-}
-void UnderlayRouteLookupKey::clear_route_table_id() {
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
 }
 void UnderlayRouteLookupKey::clear_dest_prefix() {
   if (GetArenaForAllocation() == nullptr && dest_prefix_ != nullptr) {
@@ -1464,10 +1463,13 @@ UnderlayRouteLookupKey::UnderlayRouteLookupKey(::PROTOBUF_NAMESPACE_ID::Arena* a
 UnderlayRouteLookupKey::UnderlayRouteLookupKey(const UnderlayRouteLookupKey& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_route_table_id()) {
-    route_table_id_ = new ::opi_api::common::v1::ObjectKey(*from.route_table_id_);
-  } else {
-    route_table_id_ = nullptr;
+  route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_table_name_ref().empty()) {
+    route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_table_name_ref(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_dest_prefix()) {
     dest_prefix_ = new ::opi_api::network::opinetcommon::v1alpha1::IPPrefix(*from.dest_prefix_);
@@ -1486,10 +1488,14 @@ UnderlayRouteLookupKey::UnderlayRouteLookupKey(const UnderlayRouteLookupKey& fro
 }
 
 inline void UnderlayRouteLookupKey::SharedCtor() {
+route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&route_table_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&dest_prefix_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&proto_) -
-    reinterpret_cast<char*>(&route_table_id_)) + sizeof(proto_));
+    reinterpret_cast<char*>(&dest_prefix_)) + sizeof(proto_));
 }
 
 UnderlayRouteLookupKey::~UnderlayRouteLookupKey() {
@@ -1501,7 +1507,7 @@ UnderlayRouteLookupKey::~UnderlayRouteLookupKey() {
 
 inline void UnderlayRouteLookupKey::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete route_table_id_;
+  route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete dest_prefix_;
   if (this != internal_default_instance()) delete next_hop_address_;
 }
@@ -1522,10 +1528,7 @@ void UnderlayRouteLookupKey::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
+  route_table_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && dest_prefix_ != nullptr) {
     delete dest_prefix_;
   }
@@ -1546,10 +1549,12 @@ const char* UnderlayRouteLookupKey::_InternalParse(const char* ptr, ::PROTOBUF_N
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey route_table_id = 1;
+      // string route_table_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1616,12 +1621,14 @@ uint8_t* UnderlayRouteLookupKey::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 1;
-  if (this->_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::route_table_id(this), target, stream);
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_route_table_name_ref(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
@@ -1669,11 +1676,11 @@ size_t UnderlayRouteLookupKey::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 1;
-  if (this->_internal_has_route_table_id()) {
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *route_table_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_table_name_ref());
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.IPPrefix dest_prefix = 2;
@@ -1723,8 +1730,8 @@ void UnderlayRouteLookupKey::MergeFrom(const UnderlayRouteLookupKey& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_route_table_id()) {
-    _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+  if (!from._internal_route_table_name_ref().empty()) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
   if (from._internal_has_dest_prefix()) {
     _internal_mutable_dest_prefix()->::opi_api::network::opinetcommon::v1alpha1::IPPrefix::MergeFrom(from._internal_dest_prefix());
@@ -1754,13 +1761,20 @@ bool UnderlayRouteLookupKey::IsInitialized() const {
 
 void UnderlayRouteLookupKey::InternalSwap(UnderlayRouteLookupKey* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_table_name_ref_, lhs_arena,
+      &other->route_table_name_ref_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UnderlayRouteLookupKey, proto_)
       + sizeof(UnderlayRouteLookupKey::proto_)
-      - PROTOBUF_FIELD_OFFSET(UnderlayRouteLookupKey, route_table_id_)>(
-          reinterpret_cast<char*>(&route_table_id_),
-          reinterpret_cast<char*>(&other->route_table_id_));
+      - PROTOBUF_FIELD_OFFSET(UnderlayRouteLookupKey, dest_prefix_)>(
+          reinterpret_cast<char*>(&dest_prefix_),
+          reinterpret_cast<char*>(&other->dest_prefix_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnderlayRouteLookupKey::GetMetadata() const {

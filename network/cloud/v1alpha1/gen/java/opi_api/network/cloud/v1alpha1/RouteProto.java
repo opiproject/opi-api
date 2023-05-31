@@ -79,89 +79,85 @@ public final class RouteProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013route.proto\022\036opi_api.network.cloud.v1a" +
-      "lpha1\032\020object_key.proto\032\022networktypes.pr" +
-      "oto\"\214\001\n\nRouteTable\022<\n\004spec\030\003 \001(\0132..opi_a" +
-      "pi.network.cloud.v1alpha1.RouteTableSpec" +
-      "\022@\n\006status\030\004 \001(\01320.opi_api.network.cloud" +
-      ".v1alpha1.RouteTableStatus\"\307\001\n\016RouteTabl" +
-      "eSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Ob" +
-      "jectKey\0227\n\002af\030\002 \001(\0162+.opi_api.network.op" +
-      "inetcommon.v1alpha1.IpAf\022\027\n\017priority_ena" +
-      "ble\030\003 \001(\010\0229\n\006routes\030\004 \003(\0132).opi_api.netw" +
-      "ork.cloud.v1alpha1.RouteInfo\"p\n\tRouteInf" +
-      "o\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Object" +
-      "Key\0229\n\005attrs\030\002 \001(\0132*.opi_api.network.clo" +
-      "ud.v1alpha1.RouteAttrs\"\316\001\n\020RouteTableSta" +
-      "tus\022\021\n\tvpc_count\030\001 \001(\005\022\024\n\014subnet_count\030\002" +
-      " \001(\005\022\022\n\nvnic_count\030\003 \001(\005\022\017\n\007pool_id\030\004 \001(" +
-      "\005\022\016\n\006hw_idx\030\005 \001(\005\022 \n\030route_table_base_ad" +
-      "dress\030\006 \001(\004\022\030\n\020hw_lpm_block_idx\030\007 \001(\005\022 \n" +
-      "\030hw_lpm_rewrite_block_idx\030\010 \001(\005\"\243\005\n\nRout" +
-      "eAttrs\022?\n\006prefix\030\001 \001(\0132/.opi_api.network" +
-      ".opinetcommon.v1alpha1.IPPrefix\022?\n\013route" +
-      "_class\030\002 \001(\0162*.opi_api.network.cloud.v1a" +
-      "lpha1.RouteClass\022\026\n\016class_priority\030\003 \001(\005" +
-      "\022\020\n\010priority\030\004 \001(\005\022R\n\022overlay_nh_ip_info" +
-      "\030\005 \001(\01324.opi_api.network.cloud.v1alpha1." +
-      "OverlayNextHopIPInfoH\000\0222\n\nnexthop_id\030\006 \001" +
-      "(\0132\034.opi_api.common.v1.ObjectKeyH\000\0223\n\013nh" +
-      "_group_id\030\007 \001(\0132\034.opi_api.common.v1.Obje" +
-      "ctKeyH\000\022D\n\013vpc_nh_info\030\010 \001(\0132-.opi_api.n" +
-      "etwork.cloud.v1alpha1.VPCPeerNhInfoH\000\0221\n" +
-      "\ttunnel_id\030\t \001(\0132\034.opi_api.common.v1.Obj" +
-      "ectKeyH\000\0226\n\016route_table_id\030\n \001(\0132\034.opi_a" +
-      "pi.common.v1.ObjectKeyH\000\022\026\n\014eval_mapping" +
-      "\030\013 \001(\010H\000\022\013\n\003tos\030\014 \001(\005\022;\n\005encap\030\r \001(\0132,.o" +
-      "pi_api.network.opinetcommon.v1alpha1.Enc" +
-      "ap\022\023\n\013overlay_mac\030\016 \001(\014B\004\n\002nh\"s\n\rVPCPeer" +
-      "NhInfo\022,\n\006vpc_id\030\001 \001(\0132\034.opi_api.common." +
-      "v1.ObjectKey\0224\n\016route_table_id\030\002 \001(\0132\034.o" +
-      "pi_api.common.v1.ObjectKey\"\237\001\n\024OverlayNe" +
-      "xtHopIPInfo\022D\n\nnexthop_ip\030\001 \003(\01320.opi_ap" +
-      "i.network.opinetcommon.v1alpha1.IPAddres" +
-      "s\022\023\n\013nexthop_mac\030\002 \003(\014\022,\n\006vpc_id\030\003 \001(\0132\034" +
-      ".opi_api.common.v1.ObjectKey\"i\n\007RouteId\022" +
-      "(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe" +
-      "y\0224\n\016route_table_id\030\002 \001(\0132\034.opi_api.comm" +
-      "on.v1.ObjectKey\"}\n\005Route\0227\n\004spec\030\003 \001(\0132)" +
-      ".opi_api.network.cloud.v1alpha1.RouteSpe" +
-      "c\022;\n\006status\030\004 \001(\0132+.opi_api.network.clou" +
-      "d.v1alpha1.RouteStatus\"\246\001\n\tRouteSpec\022(\n\002" +
-      "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\0224" +
-      "\n\016route_table_id\030\002 \001(\0132\034.opi_api.common." +
-      "v1.ObjectKey\0229\n\005attrs\030\003 \001(\0132*.opi_api.ne" +
-      "twork.cloud.v1alpha1.RouteAttrs\"\r\n\013Route" +
-      "Status*q\n\nRouteClass\022\033\n\027ROUTE_CLASS_UNSP" +
-      "ECIFIED\020\000\022\030\n\024ROUTE_CLASS_INTERNET\020\001\022\027\n\023R" +
-      "OUTE_CLASS_SERVICE\020\002\022\023\n\017ROUTE_CLASS_VPC\020" +
-      "\003Bk\n\036opi_api.network.cloud.v1alpha1B\nRou" +
-      "teProtoP\001Z;github.com/opiproject/opi-api" +
-      "/network/cloud/v1alpha1/gen/gob\006proto3"
+      "lpha1\032\022networktypes.proto\032\031google/api/re" +
+      "source.proto\"\344\001\n\nRouteTable\022\014\n\004name\030\001 \001(" +
+      "\t\022<\n\004spec\030\002 \001(\0132..opi_api.network.cloud." +
+      "v1alpha1.RouteTableSpec\022@\n\006status\030\003 \001(\0132" +
+      "0.opi_api.network.cloud.v1alpha1.RouteTa" +
+      "bleStatus:H\352AE\n)opi_api.network.cloud.v1" +
+      "alpha1/routetable\022\030routetables/{routetab" +
+      "le}\"\235\001\n\016RouteTableSpec\0227\n\002af\030\001 \001(\0162+.opi" +
+      "_api.network.opinetcommon.v1alpha1.IpAf\022" +
+      "\027\n\017priority_enable\030\002 \001(\010\0229\n\006routes\030\003 \003(\013" +
+      "2).opi_api.network.cloud.v1alpha1.RouteI" +
+      "nfo\"X\n\tRouteInfo\022\020\n\010route_id\030\001 \001(\t\0229\n\005at" +
+      "trs\030\002 \001(\0132*.opi_api.network.cloud.v1alph" +
+      "a1.RouteAttrs\"\316\001\n\020RouteTableStatus\022\021\n\tvp" +
+      "c_count\030\001 \001(\005\022\024\n\014subnet_count\030\002 \001(\005\022\022\n\nv" +
+      "nic_count\030\003 \001(\005\022\017\n\007pool_id\030\004 \001(\005\022\016\n\006hw_i" +
+      "dx\030\005 \001(\005\022 \n\030route_table_base_address\030\006 \001" +
+      "(\004\022\030\n\020hw_lpm_block_idx\030\007 \001(\005\022 \n\030hw_lpm_r" +
+      "ewrite_block_idx\030\010 \001(\005\"\303\004\n\nRouteAttrs\022?\n" +
+      "\006prefix\030\001 \001(\0132/.opi_api.network.opinetco" +
+      "mmon.v1alpha1.IPPrefix\022?\n\013route_class\030\002 " +
+      "\001(\0162*.opi_api.network.cloud.v1alpha1.Rou" +
+      "teClass\022\026\n\016class_priority\030\003 \001(\005\022\020\n\010prior" +
+      "ity\030\004 \001(\005\022R\n\022overlay_nh_ip_info\030\005 \001(\01324." +
+      "opi_api.network.cloud.v1alpha1.OverlayNe" +
+      "xtHopIPInfoH\000\022\032\n\020nexthop_name_ref\030\006 \001(\tH" +
+      "\000\022\033\n\021nh_group_name_ref\030\007 \001(\tH\000\022D\n\013vpc_nh" +
+      "_info\030\010 \001(\0132-.opi_api.network.cloud.v1al" +
+      "pha1.VPCPeerNhInfoH\000\022\031\n\017tunnel_name_ref\030" +
+      "\t \001(\tH\000\022\036\n\024route_table_name_ref\030\n \001(\tH\000\022" +
+      "\026\n\014eval_mapping\030\013 \001(\010H\000\022\013\n\003tos\030\014 \001(\005\022;\n\005" +
+      "encap\030\r \001(\0132,.opi_api.network.opinetcomm" +
+      "on.v1alpha1.Encap\022\023\n\013overlay_mac\030\016 \001(\014B\004" +
+      "\n\002nh\"C\n\rVPCPeerNhInfo\022\024\n\014vpc_name_ref\030\001 " +
+      "\001(\t\022\034\n\024route_table_name_ref\030\002 \001(\t\"\207\001\n\024Ov" +
+      "erlayNextHopIPInfo\022D\n\nnexthop_ip\030\001 \003(\01320" +
+      ".opi_api.network.opinetcommon.v1alpha1.I" +
+      "PAddress\022\023\n\013nexthop_mac\030\002 \003(\014\022\024\n\014vpc_nam" +
+      "e_ref\030\003 \001(\t\"9\n\007RouteId\022\020\n\010route_id\030\001 \001(\t" +
+      "\022\034\n\024route_table_name_ref\030\002 \001(\t\"\306\001\n\005Route" +
+      "\022\014\n\004name\030\001 \001(\t\0227\n\004spec\030\002 \001(\0132).opi_api.n" +
+      "etwork.cloud.v1alpha1.RouteSpec\022;\n\006statu" +
+      "s\030\003 \001(\0132+.opi_api.network.cloud.v1alpha1" +
+      ".RouteStatus:9\352A6\n$opi_api.network.cloud" +
+      ".v1alpha1/route\022\016routes/{route}\"d\n\tRoute" +
+      "Spec\022\034\n\024route_table_name_ref\030\001 \001(\t\0229\n\005at" +
+      "trs\030\002 \001(\0132*.opi_api.network.cloud.v1alph" +
+      "a1.RouteAttrs\"\r\n\013RouteStatus*q\n\nRouteCla" +
+      "ss\022\033\n\027ROUTE_CLASS_UNSPECIFIED\020\000\022\030\n\024ROUTE" +
+      "_CLASS_INTERNET\020\001\022\027\n\023ROUTE_CLASS_SERVICE" +
+      "\020\002\022\023\n\017ROUTE_CLASS_VPC\020\003Bk\n\036opi_api.netwo" +
+      "rk.cloud.v1alpha1B\nRouteProtoP\001Z;github." +
+      "com/opiproject/opi-api/network/cloud/v1a" +
+      "lpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         });
     internal_static_opi_api_network_cloud_v1alpha1_RouteTable_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_opi_api_network_cloud_v1alpha1_RouteTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteTable_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteTableSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_network_cloud_v1alpha1_RouteTableSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteTableSpec_descriptor,
-        new java.lang.String[] { "Id", "Af", "PriorityEnable", "Routes", });
+        new java.lang.String[] { "Af", "PriorityEnable", "Routes", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_network_cloud_v1alpha1_RouteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteInfo_descriptor,
-        new java.lang.String[] { "Id", "Attrs", });
+        new java.lang.String[] { "RouteId", "Attrs", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteTableStatus_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_network_cloud_v1alpha1_RouteTableStatus_fieldAccessorTable = new
@@ -173,45 +169,50 @@ public final class RouteProto {
     internal_static_opi_api_network_cloud_v1alpha1_RouteAttrs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteAttrs_descriptor,
-        new java.lang.String[] { "Prefix", "RouteClass", "ClassPriority", "Priority", "OverlayNhIpInfo", "NexthopId", "NhGroupId", "VpcNhInfo", "TunnelId", "RouteTableId", "EvalMapping", "Tos", "Encap", "OverlayMac", "Nh", });
+        new java.lang.String[] { "Prefix", "RouteClass", "ClassPriority", "Priority", "OverlayNhIpInfo", "NexthopNameRef", "NhGroupNameRef", "VpcNhInfo", "TunnelNameRef", "RouteTableNameRef", "EvalMapping", "Tos", "Encap", "OverlayMac", "Nh", });
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerNhInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerNhInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_VPCPeerNhInfo_descriptor,
-        new java.lang.String[] { "VpcId", "RouteTableId", });
+        new java.lang.String[] { "VpcNameRef", "RouteTableNameRef", });
     internal_static_opi_api_network_cloud_v1alpha1_OverlayNextHopIPInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_opi_api_network_cloud_v1alpha1_OverlayNextHopIPInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_OverlayNextHopIPInfo_descriptor,
-        new java.lang.String[] { "NexthopIp", "NexthopMac", "VpcId", });
+        new java.lang.String[] { "NexthopIp", "NexthopMac", "VpcNameRef", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteId_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_opi_api_network_cloud_v1alpha1_RouteId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteId_descriptor,
-        new java.lang.String[] { "Id", "RouteTableId", });
+        new java.lang.String[] { "RouteId", "RouteTableNameRef", });
     internal_static_opi_api_network_cloud_v1alpha1_Route_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_opi_api_network_cloud_v1alpha1_Route_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_Route_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteSpec_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_opi_api_network_cloud_v1alpha1_RouteSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteSpec_descriptor,
-        new java.lang.String[] { "Id", "RouteTableId", "Attrs", });
+        new java.lang.String[] { "RouteTableNameRef", "Attrs", });
     internal_static_opi_api_network_cloud_v1alpha1_RouteStatus_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_opi_api_network_cloud_v1alpha1_RouteStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_RouteStatus_descriptor,
         new java.lang.String[] { });
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

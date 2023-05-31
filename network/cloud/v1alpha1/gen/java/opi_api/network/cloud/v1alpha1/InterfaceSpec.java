@@ -53,33 +53,20 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
 
             ifid_ = input.readInt32();
             break;
           }
-          case 24: {
+          case 16: {
             int rawValue = input.readEnum();
 
             adminStatus_ = rawValue;
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.network.cloud.v1alpha1.UplinkSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 4) {
+            if (ifinfoCase_ == 3) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -88,12 +75,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 4;
+            ifinfoCase_ = 3;
             break;
           }
-          case 42: {
+          case 34: {
             opi_api.network.cloud.v1alpha1.UplinkPCSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 5) {
+            if (ifinfoCase_ == 4) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -102,12 +89,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 5;
+            ifinfoCase_ = 4;
             break;
           }
-          case 50: {
+          case 42: {
             opi_api.network.cloud.v1alpha1.L3IfSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 6) {
+            if (ifinfoCase_ == 5) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -116,12 +103,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 6;
+            ifinfoCase_ = 5;
             break;
           }
-          case 58: {
+          case 50: {
             opi_api.network.cloud.v1alpha1.LoopbackIfSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 7) {
+            if (ifinfoCase_ == 6) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -130,12 +117,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 7;
+            ifinfoCase_ = 6;
             break;
           }
-          case 66: {
+          case 58: {
             opi_api.network.cloud.v1alpha1.ControlIfSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 8) {
+            if (ifinfoCase_ == 7) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -144,12 +131,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 8;
+            ifinfoCase_ = 7;
             break;
           }
-          case 74: {
+          case 66: {
             opi_api.network.cloud.v1alpha1.HostIfSpec.Builder subBuilder = null;
-            if (ifinfoCase_ == 9) {
+            if (ifinfoCase_ == 8) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_).toBuilder();
             }
             ifinfo_ =
@@ -158,7 +145,7 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_);
               ifinfo_ = subBuilder.buildPartial();
             }
-            ifinfoCase_ = 9;
+            ifinfoCase_ = 8;
             break;
           }
           default: {
@@ -198,12 +185,12 @@ private static final long serialVersionUID = 0L;
   public enum IfinfoCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    UPLINK_SPEC(4),
-    UPLINK_PC_SPEC(5),
-    L3_IF_SPEC(6),
-    LOOPBACK_IF_SPEC(7),
-    CONTROL_IF_SPEC(8),
-    HOST_IF_SPEC(9),
+    UPLINK_SPEC(3),
+    UPLINK_PC_SPEC(4),
+    L3_IF_SPEC(5),
+    LOOPBACK_IF_SPEC(6),
+    CONTROL_IF_SPEC(7),
+    HOST_IF_SPEC(8),
     IFINFO_NOT_SET(0);
     private final int value;
     private IfinfoCase(int value) {
@@ -221,12 +208,12 @@ private static final long serialVersionUID = 0L;
 
     public static IfinfoCase forNumber(int value) {
       switch (value) {
-        case 4: return UPLINK_SPEC;
-        case 5: return UPLINK_PC_SPEC;
-        case 6: return L3_IF_SPEC;
-        case 7: return LOOPBACK_IF_SPEC;
-        case 8: return CONTROL_IF_SPEC;
-        case 9: return HOST_IF_SPEC;
+        case 3: return UPLINK_SPEC;
+        case 4: return UPLINK_PC_SPEC;
+        case 5: return L3_IF_SPEC;
+        case 6: return LOOPBACK_IF_SPEC;
+        case 7: return CONTROL_IF_SPEC;
+        case 8: return HOST_IF_SPEC;
         case 0: return IFINFO_NOT_SET;
         default: return null;
       }
@@ -242,52 +229,14 @@ private static final long serialVersionUID = 0L;
         ifinfoCase_);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int IFID_FIELD_NUMBER = 2;
+  public static final int IFID_FIELD_NUMBER = 1;
   private int ifid_;
   /**
    * <pre>
    * interface number is numerical port identifier starting from 1 range [1...max-ports#]
    * </pre>
    *
-   * <code>int32 ifid = 2;</code>
+   * <code>int32 ifid = 1;</code>
    * @return The ifid.
    */
   @java.lang.Override
@@ -295,7 +244,7 @@ private static final long serialVersionUID = 0L;
     return ifid_;
   }
 
-  public static final int ADMIN_STATUS_FIELD_NUMBER = 3;
+  public static final int ADMIN_STATUS_FIELD_NUMBER = 2;
   private int adminStatus_;
   /**
    * <pre>
@@ -303,7 +252,7 @@ private static final long serialVersionUID = 0L;
    * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
    * @return The enum numeric value on the wire for adminStatus.
    */
   @java.lang.Override public int getAdminStatusValue() {
@@ -315,7 +264,7 @@ private static final long serialVersionUID = 0L;
    * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
    * @return The adminStatus.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.IfStatus getAdminStatus() {
@@ -324,30 +273,30 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.IfStatus.UNRECOGNIZED : result;
   }
 
-  public static final int UPLINK_SPEC_FIELD_NUMBER = 4;
+  public static final int UPLINK_SPEC_FIELD_NUMBER = 3;
   /**
    * <pre>
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    * @return Whether the uplinkSpec field is set.
    */
   @java.lang.Override
   public boolean hasUplinkSpec() {
-    return ifinfoCase_ == 4;
+    return ifinfoCase_ == 3;
   }
   /**
    * <pre>
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    * @return The uplinkSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UplinkSpec getUplinkSpec() {
-    if (ifinfoCase_ == 4) {
+    if (ifinfoCase_ == 3) {
        return (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
@@ -357,40 +306,40 @@ private static final long serialVersionUID = 0L;
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UplinkSpecOrBuilder getUplinkSpecOrBuilder() {
-    if (ifinfoCase_ == 4) {
+    if (ifinfoCase_ == 3) {
        return (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
   }
 
-  public static final int UPLINK_PC_SPEC_FIELD_NUMBER = 5;
+  public static final int UPLINK_PC_SPEC_FIELD_NUMBER = 4;
   /**
    * <pre>
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    * @return Whether the uplinkPcSpec field is set.
    */
   @java.lang.Override
   public boolean hasUplinkPcSpec() {
-    return ifinfoCase_ == 5;
+    return ifinfoCase_ == 4;
   }
   /**
    * <pre>
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    * @return The uplinkPcSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UplinkPCSpec getUplinkPcSpec() {
-    if (ifinfoCase_ == 5) {
+    if (ifinfoCase_ == 4) {
        return (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
@@ -400,40 +349,40 @@ private static final long serialVersionUID = 0L;
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UplinkPCSpecOrBuilder getUplinkPcSpecOrBuilder() {
-    if (ifinfoCase_ == 5) {
+    if (ifinfoCase_ == 4) {
        return (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
   }
 
-  public static final int L3_IF_SPEC_FIELD_NUMBER = 6;
+  public static final int L3_IF_SPEC_FIELD_NUMBER = 5;
   /**
    * <pre>
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    * @return Whether the l3IfSpec field is set.
    */
   @java.lang.Override
   public boolean hasL3IfSpec() {
-    return ifinfoCase_ == 6;
+    return ifinfoCase_ == 5;
   }
   /**
    * <pre>
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    * @return The l3IfSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L3IfSpec getL3IfSpec() {
-    if (ifinfoCase_ == 6) {
+    if (ifinfoCase_ == 5) {
        return (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
@@ -443,40 +392,40 @@ private static final long serialVersionUID = 0L;
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L3IfSpecOrBuilder getL3IfSpecOrBuilder() {
-    if (ifinfoCase_ == 6) {
+    if (ifinfoCase_ == 5) {
        return (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
   }
 
-  public static final int LOOPBACK_IF_SPEC_FIELD_NUMBER = 7;
+  public static final int LOOPBACK_IF_SPEC_FIELD_NUMBER = 6;
   /**
    * <pre>
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    * @return Whether the loopbackIfSpec field is set.
    */
   @java.lang.Override
   public boolean hasLoopbackIfSpec() {
-    return ifinfoCase_ == 7;
+    return ifinfoCase_ == 6;
   }
   /**
    * <pre>
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    * @return The loopbackIfSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.LoopbackIfSpec getLoopbackIfSpec() {
-    if (ifinfoCase_ == 7) {
+    if (ifinfoCase_ == 6) {
        return (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
@@ -486,40 +435,40 @@ private static final long serialVersionUID = 0L;
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.LoopbackIfSpecOrBuilder getLoopbackIfSpecOrBuilder() {
-    if (ifinfoCase_ == 7) {
+    if (ifinfoCase_ == 6) {
        return (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
   }
 
-  public static final int CONTROL_IF_SPEC_FIELD_NUMBER = 8;
+  public static final int CONTROL_IF_SPEC_FIELD_NUMBER = 7;
   /**
    * <pre>
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    * @return Whether the controlIfSpec field is set.
    */
   @java.lang.Override
   public boolean hasControlIfSpec() {
-    return ifinfoCase_ == 8;
+    return ifinfoCase_ == 7;
   }
   /**
    * <pre>
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    * @return The controlIfSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.ControlIfSpec getControlIfSpec() {
-    if (ifinfoCase_ == 8) {
+    if (ifinfoCase_ == 7) {
        return (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
@@ -529,40 +478,40 @@ private static final long serialVersionUID = 0L;
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.ControlIfSpecOrBuilder getControlIfSpecOrBuilder() {
-    if (ifinfoCase_ == 8) {
+    if (ifinfoCase_ == 7) {
        return (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
   }
 
-  public static final int HOST_IF_SPEC_FIELD_NUMBER = 9;
+  public static final int HOST_IF_SPEC_FIELD_NUMBER = 8;
   /**
    * <pre>
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    * @return Whether the hostIfSpec field is set.
    */
   @java.lang.Override
   public boolean hasHostIfSpec() {
-    return ifinfoCase_ == 9;
+    return ifinfoCase_ == 8;
   }
   /**
    * <pre>
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    * @return The hostIfSpec.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.HostIfSpec getHostIfSpec() {
-    if (ifinfoCase_ == 9) {
+    if (ifinfoCase_ == 8) {
        return (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
@@ -572,11 +521,11 @@ private static final long serialVersionUID = 0L;
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.HostIfSpecOrBuilder getHostIfSpecOrBuilder() {
-    if (ifinfoCase_ == 9) {
+    if (ifinfoCase_ == 8) {
        return (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_;
     }
     return opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
@@ -596,32 +545,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (ifid_ != 0) {
-      output.writeInt32(2, ifid_);
+      output.writeInt32(1, ifid_);
     }
     if (adminStatus_ != opi_api.network.cloud.v1alpha1.IfStatus.IF_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, adminStatus_);
+      output.writeEnum(2, adminStatus_);
+    }
+    if (ifinfoCase_ == 3) {
+      output.writeMessage(3, (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_);
     }
     if (ifinfoCase_ == 4) {
-      output.writeMessage(4, (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_);
+      output.writeMessage(4, (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_);
     }
     if (ifinfoCase_ == 5) {
-      output.writeMessage(5, (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_);
+      output.writeMessage(5, (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 6) {
-      output.writeMessage(6, (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_);
+      output.writeMessage(6, (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 7) {
-      output.writeMessage(7, (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_);
+      output.writeMessage(7, (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 8) {
-      output.writeMessage(8, (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_);
-    }
-    if (ifinfoCase_ == 9) {
-      output.writeMessage(9, (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_);
+      output.writeMessage(8, (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_);
     }
     unknownFields.writeTo(output);
   }
@@ -632,41 +578,37 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (ifid_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, ifid_);
+        .computeInt32Size(1, ifid_);
     }
     if (adminStatus_ != opi_api.network.cloud.v1alpha1.IfStatus.IF_STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, adminStatus_);
+        .computeEnumSize(2, adminStatus_);
+    }
+    if (ifinfoCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_);
     }
     if (ifinfoCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_);
+        .computeMessageSize(4, (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_);
     }
     if (ifinfoCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_);
+        .computeMessageSize(5, (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_);
+        .computeMessageSize(6, (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_);
+        .computeMessageSize(7, (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_);
     }
     if (ifinfoCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_);
-    }
-    if (ifinfoCase_ == 9) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_);
+        .computeMessageSize(8, (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -683,37 +625,32 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.InterfaceSpec other = (opi_api.network.cloud.v1alpha1.InterfaceSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (getIfid()
         != other.getIfid()) return false;
     if (adminStatus_ != other.adminStatus_) return false;
     if (!getIfinfoCase().equals(other.getIfinfoCase())) return false;
     switch (ifinfoCase_) {
-      case 4:
+      case 3:
         if (!getUplinkSpec()
             .equals(other.getUplinkSpec())) return false;
         break;
-      case 5:
+      case 4:
         if (!getUplinkPcSpec()
             .equals(other.getUplinkPcSpec())) return false;
         break;
-      case 6:
+      case 5:
         if (!getL3IfSpec()
             .equals(other.getL3IfSpec())) return false;
         break;
-      case 7:
+      case 6:
         if (!getLoopbackIfSpec()
             .equals(other.getLoopbackIfSpec())) return false;
         break;
-      case 8:
+      case 7:
         if (!getControlIfSpec()
             .equals(other.getControlIfSpec())) return false;
         break;
-      case 9:
+      case 8:
         if (!getHostIfSpec()
             .equals(other.getHostIfSpec())) return false;
         break;
@@ -731,36 +668,32 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + IFID_FIELD_NUMBER;
     hash = (53 * hash) + getIfid();
     hash = (37 * hash) + ADMIN_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + adminStatus_;
     switch (ifinfoCase_) {
-      case 4:
+      case 3:
         hash = (37 * hash) + UPLINK_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getUplinkSpec().hashCode();
         break;
-      case 5:
+      case 4:
         hash = (37 * hash) + UPLINK_PC_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getUplinkPcSpec().hashCode();
         break;
-      case 6:
+      case 5:
         hash = (37 * hash) + L3_IF_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getL3IfSpec().hashCode();
         break;
-      case 7:
+      case 6:
         hash = (37 * hash) + LOOPBACK_IF_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getLoopbackIfSpec().hashCode();
         break;
-      case 8:
+      case 7:
         hash = (37 * hash) + CONTROL_IF_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getControlIfSpec().hashCode();
         break;
-      case 9:
+      case 8:
         hash = (37 * hash) + HOST_IF_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getHostIfSpec().hashCode();
         break;
@@ -904,12 +837,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       ifid_ = 0;
 
       adminStatus_ = 0;
@@ -942,49 +869,44 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.InterfaceSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.InterfaceSpec result = new opi_api.network.cloud.v1alpha1.InterfaceSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.ifid_ = ifid_;
       result.adminStatus_ = adminStatus_;
-      if (ifinfoCase_ == 4) {
+      if (ifinfoCase_ == 3) {
         if (uplinkSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
           result.ifinfo_ = uplinkSpecBuilder_.build();
         }
       }
-      if (ifinfoCase_ == 5) {
+      if (ifinfoCase_ == 4) {
         if (uplinkPcSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
           result.ifinfo_ = uplinkPcSpecBuilder_.build();
         }
       }
-      if (ifinfoCase_ == 6) {
+      if (ifinfoCase_ == 5) {
         if (l3IfSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
           result.ifinfo_ = l3IfSpecBuilder_.build();
         }
       }
-      if (ifinfoCase_ == 7) {
+      if (ifinfoCase_ == 6) {
         if (loopbackIfSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
           result.ifinfo_ = loopbackIfSpecBuilder_.build();
         }
       }
-      if (ifinfoCase_ == 8) {
+      if (ifinfoCase_ == 7) {
         if (controlIfSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
           result.ifinfo_ = controlIfSpecBuilder_.build();
         }
       }
-      if (ifinfoCase_ == 9) {
+      if (ifinfoCase_ == 8) {
         if (hostIfSpecBuilder_ == null) {
           result.ifinfo_ = ifinfo_;
         } else {
@@ -1040,9 +962,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.InterfaceSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.InterfaceSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.getIfid() != 0) {
         setIfid(other.getIfid());
       }
@@ -1122,168 +1041,13 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * interface key
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int ifid_ ;
     /**
      * <pre>
      * interface number is numerical port identifier starting from 1 range [1...max-ports#]
      * </pre>
      *
-     * <code>int32 ifid = 2;</code>
+     * <code>int32 ifid = 1;</code>
      * @return The ifid.
      */
     @java.lang.Override
@@ -1295,7 +1059,7 @@ private static final long serialVersionUID = 0L;
      * interface number is numerical port identifier starting from 1 range [1...max-ports#]
      * </pre>
      *
-     * <code>int32 ifid = 2;</code>
+     * <code>int32 ifid = 1;</code>
      * @param value The ifid to set.
      * @return This builder for chaining.
      */
@@ -1310,7 +1074,7 @@ private static final long serialVersionUID = 0L;
      * interface number is numerical port identifier starting from 1 range [1...max-ports#]
      * </pre>
      *
-     * <code>int32 ifid = 2;</code>
+     * <code>int32 ifid = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfid() {
@@ -1327,7 +1091,7 @@ private static final long serialVersionUID = 0L;
      * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
      * @return The enum numeric value on the wire for adminStatus.
      */
     @java.lang.Override public int getAdminStatusValue() {
@@ -1339,7 +1103,7 @@ private static final long serialVersionUID = 0L;
      * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
      * @param value The enum numeric value on the wire for adminStatus to set.
      * @return This builder for chaining.
      */
@@ -1355,7 +1119,7 @@ private static final long serialVersionUID = 0L;
      * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
      * @return The adminStatus.
      */
     @java.lang.Override
@@ -1370,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
      * @param value The adminStatus to set.
      * @return This builder for chaining.
      */
@@ -1389,7 +1153,7 @@ private static final long serialVersionUID = 0L;
      * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAdminStatus() {
@@ -1406,30 +1170,30 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      * @return Whether the uplinkSpec field is set.
      */
     @java.lang.Override
     public boolean hasUplinkSpec() {
-      return ifinfoCase_ == 4;
+      return ifinfoCase_ == 3;
     }
     /**
      * <pre>
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      * @return The uplinkSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UplinkSpec getUplinkSpec() {
       if (uplinkSpecBuilder_ == null) {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           return (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           return uplinkSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
@@ -1440,7 +1204,7 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     public Builder setUplinkSpec(opi_api.network.cloud.v1alpha1.UplinkSpec value) {
       if (uplinkSpecBuilder_ == null) {
@@ -1452,7 +1216,7 @@ private static final long serialVersionUID = 0L;
       } else {
         uplinkSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 4;
+      ifinfoCase_ = 3;
       return this;
     }
     /**
@@ -1460,7 +1224,7 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     public Builder setUplinkSpec(
         opi_api.network.cloud.v1alpha1.UplinkSpec.Builder builderForValue) {
@@ -1470,7 +1234,7 @@ private static final long serialVersionUID = 0L;
       } else {
         uplinkSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 4;
+      ifinfoCase_ = 3;
       return this;
     }
     /**
@@ -1478,11 +1242,11 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     public Builder mergeUplinkSpec(opi_api.network.cloud.v1alpha1.UplinkSpec value) {
       if (uplinkSpecBuilder_ == null) {
-        if (ifinfoCase_ == 4 &&
+        if (ifinfoCase_ == 3 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.UplinkSpec.newBuilder((opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -1491,12 +1255,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           uplinkSpecBuilder_.mergeFrom(value);
         }
         uplinkSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 4;
+      ifinfoCase_ = 3;
       return this;
     }
     /**
@@ -1504,17 +1268,17 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     public Builder clearUplinkSpec() {
       if (uplinkSpecBuilder_ == null) {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -1527,7 +1291,7 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     public opi_api.network.cloud.v1alpha1.UplinkSpec.Builder getUplinkSpecBuilder() {
       return getUplinkSpecFieldBuilder().getBuilder();
@@ -1537,14 +1301,14 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UplinkSpecOrBuilder getUplinkSpecOrBuilder() {
-      if ((ifinfoCase_ == 4) && (uplinkSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 3) && (uplinkSpecBuilder_ != null)) {
         return uplinkSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 4) {
+        if (ifinfoCase_ == 3) {
           return (opi_api.network.cloud.v1alpha1.UplinkSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
@@ -1555,13 +1319,13 @@ private static final long serialVersionUID = 0L;
      * uplink specific configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.UplinkSpec, opi_api.network.cloud.v1alpha1.UplinkSpec.Builder, opi_api.network.cloud.v1alpha1.UplinkSpecOrBuilder> 
         getUplinkSpecFieldBuilder() {
       if (uplinkSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 4)) {
+        if (!(ifinfoCase_ == 3)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.UplinkSpec.getDefaultInstance();
         }
         uplinkSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1571,7 +1335,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 4;
+      ifinfoCase_ = 3;
       onChanged();;
       return uplinkSpecBuilder_;
     }
@@ -1583,30 +1347,30 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      * @return Whether the uplinkPcSpec field is set.
      */
     @java.lang.Override
     public boolean hasUplinkPcSpec() {
-      return ifinfoCase_ == 5;
+      return ifinfoCase_ == 4;
     }
     /**
      * <pre>
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      * @return The uplinkPcSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UplinkPCSpec getUplinkPcSpec() {
       if (uplinkPcSpecBuilder_ == null) {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           return (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           return uplinkPcSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
@@ -1617,7 +1381,7 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     public Builder setUplinkPcSpec(opi_api.network.cloud.v1alpha1.UplinkPCSpec value) {
       if (uplinkPcSpecBuilder_ == null) {
@@ -1629,7 +1393,7 @@ private static final long serialVersionUID = 0L;
       } else {
         uplinkPcSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 5;
+      ifinfoCase_ = 4;
       return this;
     }
     /**
@@ -1637,7 +1401,7 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     public Builder setUplinkPcSpec(
         opi_api.network.cloud.v1alpha1.UplinkPCSpec.Builder builderForValue) {
@@ -1647,7 +1411,7 @@ private static final long serialVersionUID = 0L;
       } else {
         uplinkPcSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 5;
+      ifinfoCase_ = 4;
       return this;
     }
     /**
@@ -1655,11 +1419,11 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     public Builder mergeUplinkPcSpec(opi_api.network.cloud.v1alpha1.UplinkPCSpec value) {
       if (uplinkPcSpecBuilder_ == null) {
-        if (ifinfoCase_ == 5 &&
+        if (ifinfoCase_ == 4 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.UplinkPCSpec.newBuilder((opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -1668,12 +1432,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           uplinkPcSpecBuilder_.mergeFrom(value);
         }
         uplinkPcSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 5;
+      ifinfoCase_ = 4;
       return this;
     }
     /**
@@ -1681,17 +1445,17 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     public Builder clearUplinkPcSpec() {
       if (uplinkPcSpecBuilder_ == null) {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -1704,7 +1468,7 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     public opi_api.network.cloud.v1alpha1.UplinkPCSpec.Builder getUplinkPcSpecBuilder() {
       return getUplinkPcSpecFieldBuilder().getBuilder();
@@ -1714,14 +1478,14 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UplinkPCSpecOrBuilder getUplinkPcSpecOrBuilder() {
-      if ((ifinfoCase_ == 5) && (uplinkPcSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 4) && (uplinkPcSpecBuilder_ != null)) {
         return uplinkPcSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 5) {
+        if (ifinfoCase_ == 4) {
           return (opi_api.network.cloud.v1alpha1.UplinkPCSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
@@ -1732,13 +1496,13 @@ private static final long serialVersionUID = 0L;
      * uplink port-channel configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.UplinkPCSpec, opi_api.network.cloud.v1alpha1.UplinkPCSpec.Builder, opi_api.network.cloud.v1alpha1.UplinkPCSpecOrBuilder> 
         getUplinkPcSpecFieldBuilder() {
       if (uplinkPcSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 5)) {
+        if (!(ifinfoCase_ == 4)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.UplinkPCSpec.getDefaultInstance();
         }
         uplinkPcSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1748,7 +1512,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 5;
+      ifinfoCase_ = 4;
       onChanged();;
       return uplinkPcSpecBuilder_;
     }
@@ -1760,30 +1524,30 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      * @return Whether the l3IfSpec field is set.
      */
     @java.lang.Override
     public boolean hasL3IfSpec() {
-      return ifinfoCase_ == 6;
+      return ifinfoCase_ == 5;
     }
     /**
      * <pre>
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      * @return The l3IfSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L3IfSpec getL3IfSpec() {
       if (l3IfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           return (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           return l3IfSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
@@ -1794,7 +1558,7 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     public Builder setL3IfSpec(opi_api.network.cloud.v1alpha1.L3IfSpec value) {
       if (l3IfSpecBuilder_ == null) {
@@ -1806,7 +1570,7 @@ private static final long serialVersionUID = 0L;
       } else {
         l3IfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 6;
+      ifinfoCase_ = 5;
       return this;
     }
     /**
@@ -1814,7 +1578,7 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     public Builder setL3IfSpec(
         opi_api.network.cloud.v1alpha1.L3IfSpec.Builder builderForValue) {
@@ -1824,7 +1588,7 @@ private static final long serialVersionUID = 0L;
       } else {
         l3IfSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 6;
+      ifinfoCase_ = 5;
       return this;
     }
     /**
@@ -1832,11 +1596,11 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     public Builder mergeL3IfSpec(opi_api.network.cloud.v1alpha1.L3IfSpec value) {
       if (l3IfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 6 &&
+        if (ifinfoCase_ == 5 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.L3IfSpec.newBuilder((opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -1845,12 +1609,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           l3IfSpecBuilder_.mergeFrom(value);
         }
         l3IfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 6;
+      ifinfoCase_ = 5;
       return this;
     }
     /**
@@ -1858,17 +1622,17 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     public Builder clearL3IfSpec() {
       if (l3IfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -1881,7 +1645,7 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.L3IfSpec.Builder getL3IfSpecBuilder() {
       return getL3IfSpecFieldBuilder().getBuilder();
@@ -1891,14 +1655,14 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L3IfSpecOrBuilder getL3IfSpecOrBuilder() {
-      if ((ifinfoCase_ == 6) && (l3IfSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 5) && (l3IfSpecBuilder_ != null)) {
         return l3IfSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 6) {
+        if (ifinfoCase_ == 5) {
           return (opi_api.network.cloud.v1alpha1.L3IfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
@@ -1909,13 +1673,13 @@ private static final long serialVersionUID = 0L;
      * layer3 interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.L3IfSpec, opi_api.network.cloud.v1alpha1.L3IfSpec.Builder, opi_api.network.cloud.v1alpha1.L3IfSpecOrBuilder> 
         getL3IfSpecFieldBuilder() {
       if (l3IfSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 6)) {
+        if (!(ifinfoCase_ == 5)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance();
         }
         l3IfSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1925,7 +1689,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 6;
+      ifinfoCase_ = 5;
       onChanged();;
       return l3IfSpecBuilder_;
     }
@@ -1937,30 +1701,30 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      * @return Whether the loopbackIfSpec field is set.
      */
     @java.lang.Override
     public boolean hasLoopbackIfSpec() {
-      return ifinfoCase_ == 7;
+      return ifinfoCase_ == 6;
     }
     /**
      * <pre>
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      * @return The loopbackIfSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.LoopbackIfSpec getLoopbackIfSpec() {
       if (loopbackIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           return (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           return loopbackIfSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
@@ -1971,7 +1735,7 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     public Builder setLoopbackIfSpec(opi_api.network.cloud.v1alpha1.LoopbackIfSpec value) {
       if (loopbackIfSpecBuilder_ == null) {
@@ -1983,7 +1747,7 @@ private static final long serialVersionUID = 0L;
       } else {
         loopbackIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 7;
+      ifinfoCase_ = 6;
       return this;
     }
     /**
@@ -1991,7 +1755,7 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     public Builder setLoopbackIfSpec(
         opi_api.network.cloud.v1alpha1.LoopbackIfSpec.Builder builderForValue) {
@@ -2001,7 +1765,7 @@ private static final long serialVersionUID = 0L;
       } else {
         loopbackIfSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 7;
+      ifinfoCase_ = 6;
       return this;
     }
     /**
@@ -2009,11 +1773,11 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     public Builder mergeLoopbackIfSpec(opi_api.network.cloud.v1alpha1.LoopbackIfSpec value) {
       if (loopbackIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 7 &&
+        if (ifinfoCase_ == 6 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.LoopbackIfSpec.newBuilder((opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -2022,12 +1786,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           loopbackIfSpecBuilder_.mergeFrom(value);
         }
         loopbackIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 7;
+      ifinfoCase_ = 6;
       return this;
     }
     /**
@@ -2035,17 +1799,17 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     public Builder clearLoopbackIfSpec() {
       if (loopbackIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -2058,7 +1822,7 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     public opi_api.network.cloud.v1alpha1.LoopbackIfSpec.Builder getLoopbackIfSpecBuilder() {
       return getLoopbackIfSpecFieldBuilder().getBuilder();
@@ -2068,14 +1832,14 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.LoopbackIfSpecOrBuilder getLoopbackIfSpecOrBuilder() {
-      if ((ifinfoCase_ == 7) && (loopbackIfSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 6) && (loopbackIfSpecBuilder_ != null)) {
         return loopbackIfSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 7) {
+        if (ifinfoCase_ == 6) {
           return (opi_api.network.cloud.v1alpha1.LoopbackIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
@@ -2086,13 +1850,13 @@ private static final long serialVersionUID = 0L;
      * loopback interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.LoopbackIfSpec, opi_api.network.cloud.v1alpha1.LoopbackIfSpec.Builder, opi_api.network.cloud.v1alpha1.LoopbackIfSpecOrBuilder> 
         getLoopbackIfSpecFieldBuilder() {
       if (loopbackIfSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 7)) {
+        if (!(ifinfoCase_ == 6)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.LoopbackIfSpec.getDefaultInstance();
         }
         loopbackIfSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2102,7 +1866,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 7;
+      ifinfoCase_ = 6;
       onChanged();;
       return loopbackIfSpecBuilder_;
     }
@@ -2114,30 +1878,30 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      * @return Whether the controlIfSpec field is set.
      */
     @java.lang.Override
     public boolean hasControlIfSpec() {
-      return ifinfoCase_ == 8;
+      return ifinfoCase_ == 7;
     }
     /**
      * <pre>
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      * @return The controlIfSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.ControlIfSpec getControlIfSpec() {
       if (controlIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           return (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           return controlIfSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
@@ -2148,7 +1912,7 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     public Builder setControlIfSpec(opi_api.network.cloud.v1alpha1.ControlIfSpec value) {
       if (controlIfSpecBuilder_ == null) {
@@ -2160,7 +1924,7 @@ private static final long serialVersionUID = 0L;
       } else {
         controlIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 8;
+      ifinfoCase_ = 7;
       return this;
     }
     /**
@@ -2168,7 +1932,7 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     public Builder setControlIfSpec(
         opi_api.network.cloud.v1alpha1.ControlIfSpec.Builder builderForValue) {
@@ -2178,7 +1942,7 @@ private static final long serialVersionUID = 0L;
       } else {
         controlIfSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 8;
+      ifinfoCase_ = 7;
       return this;
     }
     /**
@@ -2186,11 +1950,11 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     public Builder mergeControlIfSpec(opi_api.network.cloud.v1alpha1.ControlIfSpec value) {
       if (controlIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 8 &&
+        if (ifinfoCase_ == 7 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.ControlIfSpec.newBuilder((opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -2199,12 +1963,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           controlIfSpecBuilder_.mergeFrom(value);
         }
         controlIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 8;
+      ifinfoCase_ = 7;
       return this;
     }
     /**
@@ -2212,17 +1976,17 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     public Builder clearControlIfSpec() {
       if (controlIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -2235,7 +1999,7 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     public opi_api.network.cloud.v1alpha1.ControlIfSpec.Builder getControlIfSpecBuilder() {
       return getControlIfSpecFieldBuilder().getBuilder();
@@ -2245,14 +2009,14 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.ControlIfSpecOrBuilder getControlIfSpecOrBuilder() {
-      if ((ifinfoCase_ == 8) && (controlIfSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 7) && (controlIfSpecBuilder_ != null)) {
         return controlIfSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 8) {
+        if (ifinfoCase_ == 7) {
           return (opi_api.network.cloud.v1alpha1.ControlIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
@@ -2263,13 +2027,13 @@ private static final long serialVersionUID = 0L;
      * control interface configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.ControlIfSpec, opi_api.network.cloud.v1alpha1.ControlIfSpec.Builder, opi_api.network.cloud.v1alpha1.ControlIfSpecOrBuilder> 
         getControlIfSpecFieldBuilder() {
       if (controlIfSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 8)) {
+        if (!(ifinfoCase_ == 7)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.ControlIfSpec.getDefaultInstance();
         }
         controlIfSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2279,7 +2043,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 8;
+      ifinfoCase_ = 7;
       onChanged();;
       return controlIfSpecBuilder_;
     }
@@ -2291,30 +2055,30 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      * @return Whether the hostIfSpec field is set.
      */
     @java.lang.Override
     public boolean hasHostIfSpec() {
-      return ifinfoCase_ == 9;
+      return ifinfoCase_ == 8;
     }
     /**
      * <pre>
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      * @return The hostIfSpec.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.HostIfSpec getHostIfSpec() {
       if (hostIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           return (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
       } else {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           return hostIfSpecBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
@@ -2325,7 +2089,7 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     public Builder setHostIfSpec(opi_api.network.cloud.v1alpha1.HostIfSpec value) {
       if (hostIfSpecBuilder_ == null) {
@@ -2337,7 +2101,7 @@ private static final long serialVersionUID = 0L;
       } else {
         hostIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 9;
+      ifinfoCase_ = 8;
       return this;
     }
     /**
@@ -2345,7 +2109,7 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     public Builder setHostIfSpec(
         opi_api.network.cloud.v1alpha1.HostIfSpec.Builder builderForValue) {
@@ -2355,7 +2119,7 @@ private static final long serialVersionUID = 0L;
       } else {
         hostIfSpecBuilder_.setMessage(builderForValue.build());
       }
-      ifinfoCase_ = 9;
+      ifinfoCase_ = 8;
       return this;
     }
     /**
@@ -2363,11 +2127,11 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     public Builder mergeHostIfSpec(opi_api.network.cloud.v1alpha1.HostIfSpec value) {
       if (hostIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 9 &&
+        if (ifinfoCase_ == 8 &&
             ifinfo_ != opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance()) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.HostIfSpec.newBuilder((opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_)
               .mergeFrom(value).buildPartial();
@@ -2376,12 +2140,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           hostIfSpecBuilder_.mergeFrom(value);
         }
         hostIfSpecBuilder_.setMessage(value);
       }
-      ifinfoCase_ = 9;
+      ifinfoCase_ = 8;
       return this;
     }
     /**
@@ -2389,17 +2153,17 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     public Builder clearHostIfSpec() {
       if (hostIfSpecBuilder_ == null) {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
           onChanged();
         }
       } else {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           ifinfoCase_ = 0;
           ifinfo_ = null;
         }
@@ -2412,7 +2176,7 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     public opi_api.network.cloud.v1alpha1.HostIfSpec.Builder getHostIfSpecBuilder() {
       return getHostIfSpecFieldBuilder().getBuilder();
@@ -2422,14 +2186,14 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.HostIfSpecOrBuilder getHostIfSpecOrBuilder() {
-      if ((ifinfoCase_ == 9) && (hostIfSpecBuilder_ != null)) {
+      if ((ifinfoCase_ == 8) && (hostIfSpecBuilder_ != null)) {
         return hostIfSpecBuilder_.getMessageOrBuilder();
       } else {
-        if (ifinfoCase_ == 9) {
+        if (ifinfoCase_ == 8) {
           return (opi_api.network.cloud.v1alpha1.HostIfSpec) ifinfo_;
         }
         return opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
@@ -2440,13 +2204,13 @@ private static final long serialVersionUID = 0L;
      * host facing interface's configuration
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.HostIfSpec, opi_api.network.cloud.v1alpha1.HostIfSpec.Builder, opi_api.network.cloud.v1alpha1.HostIfSpecOrBuilder> 
         getHostIfSpecFieldBuilder() {
       if (hostIfSpecBuilder_ == null) {
-        if (!(ifinfoCase_ == 9)) {
+        if (!(ifinfoCase_ == 8)) {
           ifinfo_ = opi_api.network.cloud.v1alpha1.HostIfSpec.getDefaultInstance();
         }
         hostIfSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2456,7 +2220,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         ifinfo_ = null;
       }
-      ifinfoCase_ = 9;
+      ifinfoCase_ = 8;
       onChanged();;
       return hostIfSpecBuilder_;
     }

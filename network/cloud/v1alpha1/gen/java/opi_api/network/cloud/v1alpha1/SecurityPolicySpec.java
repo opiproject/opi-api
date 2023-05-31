@@ -58,43 +58,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
             break;
           }
-          case 24: {
+          case 16: {
             int rawValue = input.readEnum();
 
             addressFamily_ = rawValue;
             break;
           }
-          case 32: {
+          case 24: {
 
             stateless_ = input.readBool();
             break;
           }
-          case 40: {
+          case 32: {
             int rawValue = input.readEnum();
 
             defaultSecurityAction_ = rawValue;
             break;
           }
-          case 50: {
+          case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               rules_ = new java.util.ArrayList<opi_api.network.cloud.v1alpha1.SecurityRuleInfo>();
               mutable_bitField0_ |= 0x00000001;
@@ -103,7 +90,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(opi_api.network.cloud.v1alpha1.SecurityRuleInfo.parser(), extensionRegistry));
             break;
           }
-          case 56: {
+          case 48: {
             int rawValue = input.readEnum();
 
             ruleFormat_ = rawValue;
@@ -144,45 +131,7 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.SecurityPolicySpec.class, opi_api.network.cloud.v1alpha1.SecurityPolicySpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 2;
+  public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
    * <pre>
@@ -191,7 +140,7 @@ private static final long serialVersionUID = 0L;
    * - if Type is not specified, policy type defaults to TENANT policy
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -204,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * - if Type is not specified, policy type defaults to TENANT policy
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.SecurityPolicyType getType() {
@@ -213,14 +162,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.SecurityPolicyType.UNRECOGNIZED : result;
   }
 
-  public static final int ADDRESS_FAMILY_FIELD_NUMBER = 3;
+  public static final int ADDRESS_FAMILY_FIELD_NUMBER = 2;
   private int addressFamily_;
   /**
    * <pre>
    * IPv4 or IPv6 policy
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
    * @return The enum numeric value on the wire for addressFamily.
    */
   @java.lang.Override public int getAddressFamilyValue() {
@@ -231,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * IPv4 or IPv6 policy
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
    * @return The addressFamily.
    */
   @java.lang.Override public opi_api.network.opinetcommon.v1alpha1.IpAf getAddressFamily() {
@@ -240,7 +189,7 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.opinetcommon.v1alpha1.IpAf.UNRECOGNIZED : result;
   }
 
-  public static final int STATELESS_FIELD_NUMBER = 4;
+  public static final int STATELESS_FIELD_NUMBER = 3;
   private boolean stateless_;
   /**
    * <pre>
@@ -251,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * behavior is same as ACL construct
    * </pre>
    *
-   * <code>bool stateless = 4;</code>
+   * <code>bool stateless = 3;</code>
    * @return The stateless.
    */
   @java.lang.Override
@@ -259,7 +208,7 @@ private static final long serialVersionUID = 0L;
     return stateless_;
   }
 
-  public static final int DEFAULT_SECURITY_ACTION_FIELD_NUMBER = 5;
+  public static final int DEFAULT_SECURITY_ACTION_FIELD_NUMBER = 4;
   private int defaultSecurityAction_;
   /**
    * <pre>
@@ -272,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * apply and traffic is allowed in that case
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
    * @return The enum numeric value on the wire for defaultSecurityAction.
    */
   @java.lang.Override public int getDefaultSecurityActionValue() {
@@ -289,7 +238,7 @@ private static final long serialVersionUID = 0L;
    * apply and traffic is allowed in that case
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
    * @return The defaultSecurityAction.
    */
   @java.lang.Override public opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction getDefaultSecurityAction() {
@@ -298,14 +247,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction.UNRECOGNIZED : result;
   }
 
-  public static final int RULES_FIELD_NUMBER = 6;
+  public static final int RULES_FIELD_NUMBER = 5;
   private java.util.List<opi_api.network.cloud.v1alpha1.SecurityRuleInfo> rules_;
   /**
    * <pre>
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   @java.lang.Override
   public java.util.List<opi_api.network.cloud.v1alpha1.SecurityRuleInfo> getRulesList() {
@@ -316,7 +265,7 @@ private static final long serialVersionUID = 0L;
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder> 
@@ -328,7 +277,7 @@ private static final long serialVersionUID = 0L;
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   @java.lang.Override
   public int getRulesCount() {
@@ -339,7 +288,7 @@ private static final long serialVersionUID = 0L;
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.SecurityRuleInfo getRules(int index) {
@@ -350,7 +299,7 @@ private static final long serialVersionUID = 0L;
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder getRulesOrBuilder(
@@ -358,7 +307,7 @@ private static final long serialVersionUID = 0L;
     return rules_.get(index);
   }
 
-  public static final int RULE_FORMAT_FIELD_NUMBER = 7;
+  public static final int RULE_FORMAT_FIELD_NUMBER = 6;
   private int ruleFormat_;
   /**
    * <pre>
@@ -366,7 +315,7 @@ private static final long serialVersionUID = 0L;
    * or whether they are aggregated (DPU can be efficient based ont his hint)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
    * @return The enum numeric value on the wire for ruleFormat.
    */
   @java.lang.Override public int getRuleFormatValue() {
@@ -378,7 +327,7 @@ private static final long serialVersionUID = 0L;
    * or whether they are aggregated (DPU can be efficient based ont his hint)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
    * @return The ruleFormat.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PolicyRuleFormat getRuleFormat() {
@@ -401,26 +350,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.SecurityPolicyType.SECURITY_POLICY_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, type_);
+      output.writeEnum(1, type_);
     }
     if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, addressFamily_);
+      output.writeEnum(2, addressFamily_);
     }
     if (stateless_ != false) {
-      output.writeBool(4, stateless_);
+      output.writeBool(3, stateless_);
     }
     if (defaultSecurityAction_ != opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction.SECURITY_RULE_ACTION_NONE.getNumber()) {
-      output.writeEnum(5, defaultSecurityAction_);
+      output.writeEnum(4, defaultSecurityAction_);
     }
     for (int i = 0; i < rules_.size(); i++) {
-      output.writeMessage(6, rules_.get(i));
+      output.writeMessage(5, rules_.get(i));
     }
     if (ruleFormat_ != opi_api.network.cloud.v1alpha1.PolicyRuleFormat.POLICY_RULE_FORMAT_UNSPECIFIED.getNumber()) {
-      output.writeEnum(7, ruleFormat_);
+      output.writeEnum(6, ruleFormat_);
     }
     unknownFields.writeTo(output);
   }
@@ -431,33 +377,29 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.SecurityPolicyType.SECURITY_POLICY_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, type_);
+        .computeEnumSize(1, type_);
     }
     if (addressFamily_ != opi_api.network.opinetcommon.v1alpha1.IpAf.IP_AF_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, addressFamily_);
+        .computeEnumSize(2, addressFamily_);
     }
     if (stateless_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, stateless_);
+        .computeBoolSize(3, stateless_);
     }
     if (defaultSecurityAction_ != opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction.SECURITY_RULE_ACTION_NONE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, defaultSecurityAction_);
+        .computeEnumSize(4, defaultSecurityAction_);
     }
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, rules_.get(i));
+        .computeMessageSize(5, rules_.get(i));
     }
     if (ruleFormat_ != opi_api.network.cloud.v1alpha1.PolicyRuleFormat.POLICY_RULE_FORMAT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(7, ruleFormat_);
+        .computeEnumSize(6, ruleFormat_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,11 +416,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.SecurityPolicySpec other = (opi_api.network.cloud.v1alpha1.SecurityPolicySpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (type_ != other.type_) return false;
     if (addressFamily_ != other.addressFamily_) return false;
     if (getStateless()
@@ -498,10 +435,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
     hash = (37 * hash) + ADDRESS_FAMILY_FIELD_NUMBER;
@@ -655,12 +588,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       type_ = 0;
 
       addressFamily_ = 0;
@@ -704,11 +631,6 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.SecurityPolicySpec buildPartial() {
       opi_api.network.cloud.v1alpha1.SecurityPolicySpec result = new opi_api.network.cloud.v1alpha1.SecurityPolicySpec(this);
       int from_bitField0_ = bitField0_;
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.type_ = type_;
       result.addressFamily_ = addressFamily_;
       result.stateless_ = stateless_;
@@ -771,9 +693,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.SecurityPolicySpec other) {
       if (other == opi_api.network.cloud.v1alpha1.SecurityPolicySpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
@@ -845,161 +764,6 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique identifier of security policy
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int type_ = 0;
     /**
      * <pre>
@@ -1008,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * - if Type is not specified, policy type defaults to TENANT policy
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1021,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * - if Type is not specified, policy type defaults to TENANT policy
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1038,7 +802,7 @@ private static final long serialVersionUID = 0L;
      * - if Type is not specified, policy type defaults to TENANT policy
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1054,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * - if Type is not specified, policy type defaults to TENANT policy
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1074,7 +838,7 @@ private static final long serialVersionUID = 0L;
      * - if Type is not specified, policy type defaults to TENANT policy
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -1090,7 +854,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 policy
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
      * @return The enum numeric value on the wire for addressFamily.
      */
     @java.lang.Override public int getAddressFamilyValue() {
@@ -1101,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 policy
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
      * @param value The enum numeric value on the wire for addressFamily to set.
      * @return This builder for chaining.
      */
@@ -1116,7 +880,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 policy
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
      * @return The addressFamily.
      */
     @java.lang.Override
@@ -1130,7 +894,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 policy
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
      * @param value The addressFamily to set.
      * @return This builder for chaining.
      */
@@ -1148,7 +912,7 @@ private static final long serialVersionUID = 0L;
      * IPv4 or IPv6 policy
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAddressFamily() {
@@ -1168,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * behavior is same as ACL construct
      * </pre>
      *
-     * <code>bool stateless = 4;</code>
+     * <code>bool stateless = 3;</code>
      * @return The stateless.
      */
     @java.lang.Override
@@ -1184,7 +948,7 @@ private static final long serialVersionUID = 0L;
      * behavior is same as ACL construct
      * </pre>
      *
-     * <code>bool stateless = 4;</code>
+     * <code>bool stateless = 3;</code>
      * @param value The stateless to set.
      * @return This builder for chaining.
      */
@@ -1203,7 +967,7 @@ private static final long serialVersionUID = 0L;
      * behavior is same as ACL construct
      * </pre>
      *
-     * <code>bool stateless = 4;</code>
+     * <code>bool stateless = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearStateless() {
@@ -1225,7 +989,7 @@ private static final long serialVersionUID = 0L;
      * apply and traffic is allowed in that case
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
      * @return The enum numeric value on the wire for defaultSecurityAction.
      */
     @java.lang.Override public int getDefaultSecurityActionValue() {
@@ -1242,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      * apply and traffic is allowed in that case
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
      * @param value The enum numeric value on the wire for defaultSecurityAction to set.
      * @return This builder for chaining.
      */
@@ -1263,7 +1027,7 @@ private static final long serialVersionUID = 0L;
      * apply and traffic is allowed in that case
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
      * @return The defaultSecurityAction.
      */
     @java.lang.Override
@@ -1283,7 +1047,7 @@ private static final long serialVersionUID = 0L;
      * apply and traffic is allowed in that case
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
      * @param value The defaultSecurityAction to set.
      * @return This builder for chaining.
      */
@@ -1307,7 +1071,7 @@ private static final long serialVersionUID = 0L;
      * apply and traffic is allowed in that case
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDefaultSecurityAction() {
@@ -1334,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public java.util.List<opi_api.network.cloud.v1alpha1.SecurityRuleInfo> getRulesList() {
       if (rulesBuilder_ == null) {
@@ -1348,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public int getRulesCount() {
       if (rulesBuilder_ == null) {
@@ -1362,7 +1126,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfo getRules(int index) {
       if (rulesBuilder_ == null) {
@@ -1376,7 +1140,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder setRules(
         int index, opi_api.network.cloud.v1alpha1.SecurityRuleInfo value) {
@@ -1397,7 +1161,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder setRules(
         int index, opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder builderForValue) {
@@ -1415,7 +1179,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder addRules(opi_api.network.cloud.v1alpha1.SecurityRuleInfo value) {
       if (rulesBuilder_ == null) {
@@ -1435,7 +1199,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder addRules(
         int index, opi_api.network.cloud.v1alpha1.SecurityRuleInfo value) {
@@ -1456,7 +1220,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder addRules(
         opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder builderForValue) {
@@ -1474,7 +1238,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder addRules(
         int index, opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder builderForValue) {
@@ -1492,7 +1256,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder addAllRules(
         java.lang.Iterable<? extends opi_api.network.cloud.v1alpha1.SecurityRuleInfo> values) {
@@ -1511,7 +1275,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
@@ -1528,7 +1292,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public Builder removeRules(int index) {
       if (rulesBuilder_ == null) {
@@ -1545,7 +1309,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder getRulesBuilder(
         int index) {
@@ -1556,7 +1320,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder getRulesOrBuilder(
         int index) {
@@ -1570,7 +1334,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public java.util.List<? extends opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder> 
          getRulesOrBuilderList() {
@@ -1585,7 +1349,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder addRulesBuilder() {
       return getRulesFieldBuilder().addBuilder(
@@ -1596,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder addRulesBuilder(
         int index) {
@@ -1608,7 +1372,7 @@ private static final long serialVersionUID = 0L;
      * list of security rules
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
      */
     public java.util.List<opi_api.network.cloud.v1alpha1.SecurityRuleInfo.Builder> 
          getRulesBuilderList() {
@@ -1636,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * or whether they are aggregated (DPU can be efficient based ont his hint)
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
      * @return The enum numeric value on the wire for ruleFormat.
      */
     @java.lang.Override public int getRuleFormatValue() {
@@ -1648,7 +1412,7 @@ private static final long serialVersionUID = 0L;
      * or whether they are aggregated (DPU can be efficient based ont his hint)
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
      * @param value The enum numeric value on the wire for ruleFormat to set.
      * @return This builder for chaining.
      */
@@ -1664,7 +1428,7 @@ private static final long serialVersionUID = 0L;
      * or whether they are aggregated (DPU can be efficient based ont his hint)
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
      * @return The ruleFormat.
      */
     @java.lang.Override
@@ -1679,7 +1443,7 @@ private static final long serialVersionUID = 0L;
      * or whether they are aggregated (DPU can be efficient based ont his hint)
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
      * @param value The ruleFormat to set.
      * @return This builder for chaining.
      */
@@ -1698,7 +1462,7 @@ private static final long serialVersionUID = 0L;
      * or whether they are aggregated (DPU can be efficient based ont his hint)
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearRuleFormat() {

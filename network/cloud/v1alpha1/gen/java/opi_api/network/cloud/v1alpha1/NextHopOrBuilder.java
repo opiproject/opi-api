@@ -9,10 +9,30 @@ public interface NextHopOrBuilder extends
 
   /**
    * <pre>
+   * unique nexthop id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * unique nexthop id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface NextHopOrBuilder extends
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.NextHopSpec getSpec();
@@ -30,7 +50,7 @@ public interface NextHopOrBuilder extends
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface NextHopOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface NextHopOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.NextHopStatus getStatus();
@@ -57,7 +77,7 @@ public interface NextHopOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.NextHopStatusOrBuilder getStatusOrBuilder();
 }

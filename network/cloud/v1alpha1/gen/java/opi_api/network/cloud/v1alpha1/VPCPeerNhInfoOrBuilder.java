@@ -12,52 +12,38 @@ public interface VPCPeerNhInfoOrBuilder extends
    * peer VPC's id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasVpcId();
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * peer VPC's id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * peer VPC's id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   /**
    * <pre>
    * route table id in the peer VPC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The routeTableNameRef.
    */
-  boolean hasRouteTableId();
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * route table id in the peer VPC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getRouteTableId();
-  /**
-   * <pre>
-   * route table id in the peer VPC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 }

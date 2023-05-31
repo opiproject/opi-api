@@ -54,62 +54,59 @@ public final class VpcProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\tvpc.proto\022\036opi_api.network.cloud.v1alp" +
-      "ha1\032\020object_key.proto\032\022networktypes.prot" +
-      "o\"w\n\003Vpc\0225\n\004spec\030\001 \001(\0132\'.opi_api.network" +
-      ".cloud.v1alpha1.VpcSpec\0229\n\006status\030\002 \001(\0132" +
-      ").opi_api.network.cloud.v1alpha1.VpcStat" +
-      "us\"\333\004\n\007VpcSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.com" +
-      "mon.v1.ObjectKey\0225\n\004type\030\002 \001(\0162\'.opi_api" +
-      ".network.cloud.v1alpha1.VPCType\0227\n\021v4_ro" +
-      "ute_table_id\030\003 \001(\0132\034.opi_api.common.v1.O" +
-      "bjectKey\0227\n\021v6_route_table_id\030\004 \001(\0132\034.op" +
-      "i_api.common.v1.ObjectKey\022C\n\035ingress_v4_" +
-      "security_policy_id\030\005 \003(\0132\034.opi_api.commo" +
-      "n.v1.ObjectKey\022C\n\035ingress_v6_security_po" +
-      "licy_id\030\006 \003(\0132\034.opi_api.common.v1.Object" +
-      "Key\022B\n\034egress_v4_security_policy_id\030\007 \003(" +
-      "\0132\034.opi_api.common.v1.ObjectKey\022B\n\034egres" +
-      "s_v6_security_policy_id\030\010 \003(\0132\034.opi_api." +
-      "common.v1.ObjectKey\022\032\n\022virtual_router_ma" +
-      "c\030\t \001(\014\022B\n\014fabric_encap\030\n \001(\0132,.opi_api." +
-      "network.opinetcommon.v1alpha1.Encap\022\013\n\003t" +
-      "os\030\r \001(\005\"\254\001\n\tVpcStatus\022B\n\thw_handle\030\001 \001(" +
-      "\0132/.opi_api.network.opinetcommon.v1alpha" +
-      "1.HwHandle\022E\n\014bd_hw_handle\030\002 \001(\0132/.opi_a" +
-      "pi.network.opinetcommon.v1alpha1.HwHandl" +
-      "e\022\024\n\014subnet_count\030\003 \001(\005\"\203\001\n\007VPCPeer\0229\n\004s" +
-      "pec\030\001 \001(\0132+.opi_api.network.cloud.v1alph" +
-      "a1.VPCPeerSpec\022=\n\006status\030\002 \001(\0132-.opi_api" +
-      ".network.cloud.v1alpha1.VPCPeerStatus\"\225\001" +
-      "\n\013VPCPeerSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.comm" +
-      "on.v1.ObjectKey\022-\n\007vpc1_id\030\002 \001(\0132\034.opi_a" +
-      "pi.common.v1.ObjectKey\022-\n\007vpc2_id\030\003 \001(\0132" +
-      "\034.opi_api.common.v1.ObjectKey\"\017\n\rVPCPeer" +
-      "Status*e\n\007VPCType\022\030\n\024VPC_TYPE_UNSPECIFIE" +
-      "D\020\000\022\025\n\021VPC_TYPE_UNDERLAY\020\001\022\023\n\017VPC_TYPE_T" +
-      "ENANT\020\002\022\024\n\020VPC_TYPE_CONTROL\020\003Bi\n\036opi_api" +
-      ".network.cloud.v1alpha1B\010VpcProtoP\001Z;git" +
-      "hub.com/opiproject/opi-api/network/cloud" +
-      "/v1alpha1/gen/gob\006proto3"
+      "ha1\032\022networktypes.proto\032\031google/api/reso" +
+      "urce.proto\"\272\001\n\003Vpc\022\014\n\004name\030\001 \001(\t\0225\n\004spec" +
+      "\030\002 \001(\0132\'.opi_api.network.cloud.v1alpha1." +
+      "VpcSpec\0229\n\006status\030\003 \001(\0132).opi_api.networ" +
+      "k.cloud.v1alpha1.VpcStatus:3\352A0\n\"opi_api" +
+      ".network.cloud.v1alpha1/vpc\022\nvpcs/{vpc}\"" +
+      "\241\003\n\007VpcSpec\0225\n\004type\030\001 \001(\0162\'.opi_api.netw" +
+      "ork.cloud.v1alpha1.VPCType\022\037\n\027v4_route_t" +
+      "able_name_ref\030\002 \001(\t\022\037\n\027v6_route_table_na" +
+      "me_ref\030\003 \001(\t\022+\n#ingress_v4_security_poli" +
+      "cy_name_ref\030\004 \003(\t\022+\n#ingress_v6_security" +
+      "_policy_name_ref\030\005 \003(\t\022*\n\"egress_v4_secu" +
+      "rity_policy_name_ref\030\006 \003(\t\022*\n\"egress_v6_" +
+      "security_policy_name_ref\030\007 \003(\t\022\032\n\022virtua" +
+      "l_router_mac\030\010 \001(\014\022B\n\014fabric_encap\030\t \001(\013" +
+      "2,.opi_api.network.opinetcommon.v1alpha1" +
+      ".Encap\022\013\n\003tos\030\n \001(\005\"\254\001\n\tVpcStatus\022B\n\thw_" +
+      "handle\030\001 \001(\0132/.opi_api.network.opinetcom" +
+      "mon.v1alpha1.HwHandle\022E\n\014bd_hw_handle\030\002 " +
+      "\001(\0132/.opi_api.network.opinetcommon.v1alp" +
+      "ha1.HwHandle\022\024\n\014subnet_count\030\003 \001(\005\"\322\001\n\007V" +
+      "PCPeer\022\014\n\004name\030\001 \001(\t\0229\n\004spec\030\002 \001(\0132+.opi" +
+      "_api.network.cloud.v1alpha1.VPCPeerSpec\022" +
+      "=\n\006status\030\003 \001(\0132-.opi_api.network.cloud." +
+      "v1alpha1.VPCPeerStatus:?\352A<\n&opi_api.net" +
+      "work.cloud.v1alpha1/vpcpeer\022\022vpcpeers/{v" +
+      "pcpeer}\";\n\013VPCPeerSpec\022\025\n\rvpc1_name_ref\030" +
+      "\001 \001(\t\022\025\n\rvpc2_name_ref\030\002 \001(\t\"\017\n\rVPCPeerS" +
+      "tatus*e\n\007VPCType\022\030\n\024VPC_TYPE_UNSPECIFIED" +
+      "\020\000\022\025\n\021VPC_TYPE_UNDERLAY\020\001\022\023\n\017VPC_TYPE_TE" +
+      "NANT\020\002\022\024\n\020VPC_TYPE_CONTROL\020\003Bi\n\036opi_api." +
+      "network.cloud.v1alpha1B\010VpcProtoP\001Z;gith" +
+      "ub.com/opiproject/opi-api/network/cloud/" +
+      "v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         });
     internal_static_opi_api_network_cloud_v1alpha1_Vpc_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_opi_api_network_cloud_v1alpha1_Vpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_Vpc_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_VpcSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_network_cloud_v1alpha1_VpcSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_VpcSpec_descriptor,
-        new java.lang.String[] { "Id", "Type", "V4RouteTableId", "V6RouteTableId", "IngressV4SecurityPolicyId", "IngressV6SecurityPolicyId", "EgressV4SecurityPolicyId", "EgressV6SecurityPolicyId", "VirtualRouterMac", "FabricEncap", "Tos", });
+        new java.lang.String[] { "Type", "V4RouteTableNameRef", "V6RouteTableNameRef", "IngressV4SecurityPolicyNameRef", "IngressV6SecurityPolicyNameRef", "EgressV4SecurityPolicyNameRef", "EgressV6SecurityPolicyNameRef", "VirtualRouterMac", "FabricEncap", "Tos", });
     internal_static_opi_api_network_cloud_v1alpha1_VpcStatus_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_network_cloud_v1alpha1_VpcStatus_fieldAccessorTable = new
@@ -121,21 +118,26 @@ public final class VpcProto {
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_VPCPeer_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerSpec_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_VPCPeerSpec_descriptor,
-        new java.lang.String[] { "Id", "Vpc1Id", "Vpc2Id", });
+        new java.lang.String[] { "Vpc1NameRef", "Vpc2NameRef", });
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerStatus_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_network_cloud_v1alpha1_VPCPeerStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_VPCPeerStatus_descriptor,
         new java.lang.String[] { });
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

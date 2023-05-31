@@ -9,39 +9,12 @@ public interface SecurityProfileSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique identifier of security profile
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique identifier of security profile
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique identifier of security profile
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * ConnTrackEn, if set to true, will enable full connection tracking
    * if connection_tracking_enable is modified on the fly, it will take affect only
    * on sessions created thereafter and doesn't affect existing sessions
    * </pre>
    *
-   * <code>bool connection_tracking_enable = 2;</code>
+   * <code>bool connection_tracking_enable = 1;</code>
    * @return The connectionTrackingEnable.
    */
   boolean getConnectionTrackingEnable();
@@ -53,7 +26,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * turned off and can be enabled on the fly for debugging)
    * </pre>
    *
-   * <code>bool rule_stats_enable = 3;</code>
+   * <code>bool rule_stats_enable = 2;</code>
    * @return The ruleStatsEnable.
    */
   boolean getRuleStatsEnable();
@@ -66,7 +39,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * if no action is specified  in security profile, default action is "deny"
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;</code>
    * @return The enum numeric value on the wire for defaultFirewallAction.
    */
   int getDefaultFirewallActionValue();
@@ -78,7 +51,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * if no action is specified  in security profile, default action is "deny"
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;</code>
    * @return The defaultFirewallAction.
    */
   opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction getDefaultFirewallAction();
@@ -89,7 +62,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-86400, default=600
    * </pre>
    *
-   * <code>int32 tcp_idle_timeout = 5;</code>
+   * <code>int32 tcp_idle_timeout = 4;</code>
    * @return The tcpIdleTimeout.
    */
   int getTcpIdleTimeout();
@@ -99,7 +72,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-86400, default=120
    * </pre>
    *
-   * <code>int32 udp_idle_timeout = 6;</code>
+   * <code>int32 udp_idle_timeout = 5;</code>
    * @return The udpIdleTimeout.
    */
   int getUdpIdleTimeout();
@@ -109,7 +82,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-86400, default=15
    * </pre>
    *
-   * <code>int32 icmp_idle_timeout = 7;</code>
+   * <code>int32 icmp_idle_timeout = 6;</code>
    * @return The icmpIdleTimeout.
    */
   int getIcmpIdleTimeout();
@@ -119,7 +92,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-86400, default=90
    * </pre>
    *
-   * <code>int32 other_idle_timeout = 8;</code>
+   * <code>int32 other_idle_timeout = 7;</code>
    * @return The otherIdleTimeout.
    */
   int getOtherIdleTimeout();
@@ -132,7 +105,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * not completed and session moves to ESTABLISHED state by then.  range:1-60, default=10
    * </pre>
    *
-   * <code>int32 tcp_connection_setup_timeout = 9;</code>
+   * <code>int32 tcp_connection_setup_timeout = 8;</code>
    * @return The tcpConnectionSetupTimeout.
    */
   int getTcpConnectionSetupTimeout();
@@ -143,7 +116,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * 3/4way close, session gets cleaned up if this timer elapses. range:1-172800, default=120
    * </pre>
    *
-   * <code>int32 tcp_half_close_timeout = 10;</code>
+   * <code>int32 tcp_half_close_timeout = 9;</code>
    * @return The tcpHalfCloseTimeout.
    */
   int getTcpHalfCloseTimeout();
@@ -154,7 +127,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * before cleaning up the session range:1-300, default=15
    * </pre>
    *
-   * <code>int32 tcp_close_timeout = 11;</code>
+   * <code>int32 tcp_close_timeout = 10;</code>
    * @return The tcpCloseTimeout.
    */
   int getTcpCloseTimeout();
@@ -165,7 +138,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-300, default=90
    * </pre>
    *
-   * <code>int32 tcp_dorp_timeout = 12;</code>
+   * <code>int32 tcp_dorp_timeout = 11;</code>
    * @return The tcpDorpTimeout.
    */
   int getTcpDorpTimeout();
@@ -175,7 +148,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-172800, default=60
    * </pre>
    *
-   * <code>int32 udp_drop_timeout = 13;</code>
+   * <code>int32 udp_drop_timeout = 12;</code>
    * @return The udpDropTimeout.
    */
   int getUdpDropTimeout();
@@ -185,7 +158,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-300, default=30
    * </pre>
    *
-   * <code>int32 icmp_drop_timeout = 14;</code>
+   * <code>int32 icmp_drop_timeout = 13;</code>
    * @return The icmpDropTimeout.
    */
   int getIcmpDropTimeout();
@@ -195,7 +168,7 @@ public interface SecurityProfileSpecOrBuilder extends
    * range:1-300, default=60
    * </pre>
    *
-   * <code>int32 other_drop_timeout = 15;</code>
+   * <code>int32 other_drop_timeout = 14;</code>
    * @return The otherDropTimeout.
    */
   int getOtherDropTimeout();

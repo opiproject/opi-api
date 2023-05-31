@@ -12,27 +12,29 @@ public interface SecurityPolicyLookupRequestOrBuilder extends
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-   * @return Whether the policyId field is set.
+   * <code>string policy_name_ref = 1;</code>
+   * @return Whether the policyNameRef field is set.
    */
-  boolean hasPolicyId();
+  boolean hasPolicyNameRef();
   /**
    * <pre>
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-   * @return The policyId.
+   * <code>string policy_name_ref = 1;</code>
+   * @return The policyNameRef.
    */
-  opi_api.common.v1.ObjectKey getPolicyId();
+  java.lang.String getPolicyNameRef();
   /**
    * <pre>
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
+   * <code>string policy_name_ref = 1;</code>
+   * @return The bytes for policyNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getPolicyIdOrBuilder();
+  com.google.protobuf.ByteString
+      getPolicyNameRefBytes();
 
   /**
    * <pre>

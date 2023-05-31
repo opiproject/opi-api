@@ -13,29 +13,21 @@ public interface UnderlayNextHopSpecOrBuilder extends
    * are picked from this L3 interface)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   * @return Whether the l3InterfaceId field is set.
+   * <code>string interface_name_ref = 1;</code>
+   * @return The interfaceNameRef.
    */
-  boolean hasL3InterfaceId();
+  java.lang.String getInterfaceNameRef();
   /**
    * <pre>
    * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
    * are picked from this L3 interface)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   * @return The l3InterfaceId.
+   * <code>string interface_name_ref = 1;</code>
+   * @return The bytes for interfaceNameRef.
    */
-  opi_api.common.v1.ObjectKey getL3InterfaceId();
-  /**
-   * <pre>
-   * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-   * are picked from this L3 interface)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getL3InterfaceIdOrBuilder();
+  com.google.protobuf.ByteString
+      getInterfaceNameRefBytes();
 
   /**
    * <pre>

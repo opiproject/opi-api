@@ -59,17 +59,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (gettypeCase_ == 2) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) gettype_).toBuilder();
-            }
-            gettype_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) gettype_);
-              gettype_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             gettypeCase_ = 2;
+            gettype_ = s;
             break;
           }
           default: {
@@ -110,7 +102,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TYPE(1),
-    NH_ID(2),
+    NH_NAME_REF(2),
     GETTYPE_NOT_SET(0);
     private final int value;
     private GettypeCase(int value) {
@@ -129,7 +121,7 @@ private static final long serialVersionUID = 0L;
     public static GettypeCase forNumber(int value) {
       switch (value) {
         case 1: return TYPE;
-        case 2: return NH_ID;
+        case 2: return NH_NAME_REF;
         case 0: return GETTYPE_NOT_SET;
         default: return null;
       }
@@ -189,17 +181,16 @@ private static final long serialVersionUID = 0L;
     return opi_api.network.cloud.v1alpha1.NextHopType.NEXT_HOP_TYPE_UNSPECIFIED;
   }
 
-  public static final int NH_ID_FIELD_NUMBER = 2;
+  public static final int NH_NAME_REF_FIELD_NUMBER = 2;
   /**
    * <pre>
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-   * @return Whether the nhId field is set.
+   * <code>string nh_name_ref = 2;</code>
+   * @return Whether the nhNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasNhId() {
+  public boolean hasNhNameRef() {
     return gettypeCase_ == 2;
   }
   /**
@@ -207,29 +198,51 @@ private static final long serialVersionUID = 0L;
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-   * @return The nhId.
+   * <code>string nh_name_ref = 2;</code>
+   * @return The nhNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNhId() {
+  public java.lang.String getNhNameRef() {
+    java.lang.Object ref = "";
     if (gettypeCase_ == 2) {
-       return (opi_api.common.v1.ObjectKey) gettype_;
+      ref = gettype_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (gettypeCase_ == 2) {
+        gettype_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * nexthop to be retrieved
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
+   * <code>string nh_name_ref = 2;</code>
+   * @return The bytes for nhNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNhIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getNhNameRefBytes() {
+    java.lang.Object ref = "";
     if (gettypeCase_ == 2) {
-       return (opi_api.common.v1.ObjectKey) gettype_;
+      ref = gettype_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (gettypeCase_ == 2) {
+        gettype_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -250,7 +263,7 @@ private static final long serialVersionUID = 0L;
       output.writeEnum(1, ((java.lang.Integer) gettype_));
     }
     if (gettypeCase_ == 2) {
-      output.writeMessage(2, (opi_api.common.v1.ObjectKey) gettype_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gettype_);
     }
     unknownFields.writeTo(output);
   }
@@ -266,8 +279,7 @@ private static final long serialVersionUID = 0L;
         .computeEnumSize(1, ((java.lang.Integer) gettype_));
     }
     if (gettypeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (opi_api.common.v1.ObjectKey) gettype_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gettype_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -291,8 +303,8 @@ private static final long serialVersionUID = 0L;
             != other.getTypeValue()) return false;
         break;
       case 2:
-        if (!getNhId()
-            .equals(other.getNhId())) return false;
+        if (!getNhNameRef()
+            .equals(other.getNhNameRef())) return false;
         break;
       case 0:
       default:
@@ -314,8 +326,8 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getTypeValue();
         break;
       case 2:
-        hash = (37 * hash) + NH_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNhId().hashCode();
+        hash = (37 * hash) + NH_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNhNameRef().hashCode();
         break;
       case 0:
       default:
@@ -489,11 +501,7 @@ private static final long serialVersionUID = 0L;
         result.gettype_ = gettype_;
       }
       if (gettypeCase_ == 2) {
-        if (nhIdBuilder_ == null) {
-          result.gettype_ = gettype_;
-        } else {
-          result.gettype_ = nhIdBuilder_.build();
-        }
+        result.gettype_ = gettype_;
       }
       result.gettypeCase_ = gettypeCase_;
       onBuilt();
@@ -549,8 +557,10 @@ private static final long serialVersionUID = 0L;
           setTypeValue(other.getTypeValue());
           break;
         }
-        case NH_ID: {
-          mergeNhId(other.getNhId());
+        case NH_NAME_REF: {
+          gettypeCase_ = 2;
+          gettype_ = other.gettype_;
+          onChanged();
           break;
         }
         case GETTYPE_NOT_SET: {
@@ -696,18 +706,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nhIdBuilder_;
     /**
      * <pre>
      * nexthop to be retrieved
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     * @return Whether the nhId field is set.
+     * <code>string nh_name_ref = 2;</code>
+     * @return Whether the nhNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasNhId() {
+    public boolean hasNhNameRef() {
       return gettypeCase_ == 2;
     }
     /**
@@ -715,21 +723,25 @@ private static final long serialVersionUID = 0L;
      * nexthop to be retrieved
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     * @return The nhId.
+     * <code>string nh_name_ref = 2;</code>
+     * @return The nhNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNhId() {
-      if (nhIdBuilder_ == null) {
+    public java.lang.String getNhNameRef() {
+      java.lang.Object ref = "";
+      if (gettypeCase_ == 2) {
+        ref = gettype_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (gettypeCase_ == 2) {
-          return (opi_api.common.v1.ObjectKey) gettype_;
+          gettype_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (gettypeCase_ == 2) {
-          return nhIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -737,114 +749,26 @@ private static final long serialVersionUID = 0L;
      * nexthop to be retrieved
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     */
-    public Builder setNhId(opi_api.common.v1.ObjectKey value) {
-      if (nhIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        gettype_ = value;
-        onChanged();
-      } else {
-        nhIdBuilder_.setMessage(value);
-      }
-      gettypeCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop to be retrieved
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     */
-    public Builder setNhId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nhIdBuilder_ == null) {
-        gettype_ = builderForValue.build();
-        onChanged();
-      } else {
-        nhIdBuilder_.setMessage(builderForValue.build());
-      }
-      gettypeCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop to be retrieved
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     */
-    public Builder mergeNhId(opi_api.common.v1.ObjectKey value) {
-      if (nhIdBuilder_ == null) {
-        if (gettypeCase_ == 2 &&
-            gettype_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          gettype_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) gettype_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          gettype_ = value;
-        }
-        onChanged();
-      } else {
-        if (gettypeCase_ == 2) {
-          nhIdBuilder_.mergeFrom(value);
-        }
-        nhIdBuilder_.setMessage(value);
-      }
-      gettypeCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop to be retrieved
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     */
-    public Builder clearNhId() {
-      if (nhIdBuilder_ == null) {
-        if (gettypeCase_ == 2) {
-          gettypeCase_ = 0;
-          gettype_ = null;
-          onChanged();
-        }
-      } else {
-        if (gettypeCase_ == 2) {
-          gettypeCase_ = 0;
-          gettype_ = null;
-        }
-        nhIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * nexthop to be retrieved
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNhIdBuilder() {
-      return getNhIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * nexthop to be retrieved
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
+     * <code>string nh_name_ref = 2;</code>
+     * @return The bytes for nhNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNhIdOrBuilder() {
-      if ((gettypeCase_ == 2) && (nhIdBuilder_ != null)) {
-        return nhIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getNhNameRefBytes() {
+      java.lang.Object ref = "";
+      if (gettypeCase_ == 2) {
+        ref = gettype_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (gettypeCase_ == 2) {
-          return (opi_api.common.v1.ObjectKey) gettype_;
+          gettype_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -852,25 +776,55 @@ private static final long serialVersionUID = 0L;
      * nexthop to be retrieved
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nh_id = 2;</code>
+     * <code>string nh_name_ref = 2;</code>
+     * @param value The nhNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNhIdFieldBuilder() {
-      if (nhIdBuilder_ == null) {
-        if (!(gettypeCase_ == 2)) {
-          gettype_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nhIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) gettype_,
-                getParentForChildren(),
-                isClean());
+    public Builder setNhNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  gettypeCase_ = 2;
+      gettype_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * nexthop to be retrieved
+     * </pre>
+     *
+     * <code>string nh_name_ref = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNhNameRef() {
+      if (gettypeCase_ == 2) {
+        gettypeCase_ = 0;
         gettype_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * nexthop to be retrieved
+     * </pre>
+     *
+     * <code>string nh_name_ref = 2;</code>
+     * @param value The bytes for nhNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNhNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       gettypeCase_ = 2;
-      onChanged();;
-      return nhIdBuilder_;
+      gettype_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

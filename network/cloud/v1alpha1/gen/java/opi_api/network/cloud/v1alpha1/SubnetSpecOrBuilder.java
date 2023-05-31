@@ -9,64 +9,30 @@ public interface SubnetSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique identifier of the subnet
+   * virtual private cloud this subnet is belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique identifier of the subnet
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique identifier of the subnet
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * virtual private cloud this subnet is belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
-  boolean hasVpcId();
-  /**
-   * <pre>
-   * virtual private cloud this subnet is belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return The vpcId.
-   */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * virtual private cloud this subnet is belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   /**
    * <pre>
    * IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 2;</code>
    * @return Whether the v4Prefix field is set.
    */
   boolean hasV4Prefix();
@@ -75,7 +41,7 @@ public interface SubnetSpecOrBuilder extends
    * IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 2;</code>
    * @return The v4Prefix.
    */
   opi_api.network.opinetcommon.v1alpha1.IPv4Prefix getV4Prefix();
@@ -84,7 +50,7 @@ public interface SubnetSpecOrBuilder extends
    * IPv4 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv4Prefix v4_prefix = 2;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPv4PrefixOrBuilder getV4PrefixOrBuilder();
 
@@ -93,7 +59,7 @@ public interface SubnetSpecOrBuilder extends
    * IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 3;</code>
    * @return Whether the v6Prefix field is set.
    */
   boolean hasV6Prefix();
@@ -102,7 +68,7 @@ public interface SubnetSpecOrBuilder extends
    * IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 3;</code>
    * @return The v6Prefix.
    */
   opi_api.network.opinetcommon.v1alpha1.IPv6Prefix getV6Prefix();
@@ -111,7 +77,7 @@ public interface SubnetSpecOrBuilder extends
    * IPv6 prefix of this subnet, this must be a sub prefix of VPC's prefix
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPv6Prefix v6_prefix = 3;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPv6PrefixOrBuilder getV6PrefixOrBuilder();
 
@@ -123,7 +89,7 @@ public interface SubnetSpecOrBuilder extends
    *     aip.dev/not-precedent: ipv4 address is unsigned. --)
    * </pre>
    *
-   * <code>uint32 ipv4_virtual_router_ip = 5;</code>
+   * <code>uint32 ipv4_virtual_router_ip = 4;</code>
    * @return The ipv4VirtualRouterIp.
    */
   int getIpv4VirtualRouterIp();
@@ -134,7 +100,7 @@ public interface SubnetSpecOrBuilder extends
    * and packets originated by this device carry this IP as source IP
    * </pre>
    *
-   * <code>bytes ipv6_virtual_router_ip = 6;</code>
+   * <code>bytes ipv6_virtual_router_ip = 5;</code>
    * @return The ipv6VirtualRouterIp.
    */
   com.google.protobuf.ByteString getIpv6VirtualRouterIp();
@@ -145,7 +111,7 @@ public interface SubnetSpecOrBuilder extends
    * the device carry this MAC as source MAC
    * </pre>
    *
-   * <code>bytes virtual_router_mac = 7;</code>
+   * <code>bytes virtual_router_mac = 6;</code>
    * @return The virtualRouterMac.
    */
   com.google.protobuf.ByteString getVirtualRouterMac();
@@ -155,54 +121,40 @@ public interface SubnetSpecOrBuilder extends
    * identifier of the IPv4 route table to be used
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 8;</code>
-   * @return Whether the v4RouteTableId field is set.
+   * <code>string v4_route_table_name_ref = 7;</code>
+   * @return The v4RouteTableNameRef.
    */
-  boolean hasV4RouteTableId();
+  java.lang.String getV4RouteTableNameRef();
   /**
    * <pre>
    * identifier of the IPv4 route table to be used
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 8;</code>
-   * @return The v4RouteTableId.
+   * <code>string v4_route_table_name_ref = 7;</code>
+   * @return The bytes for v4RouteTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getV4RouteTableId();
-  /**
-   * <pre>
-   * identifier of the IPv4 route table to be used
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 8;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getV4RouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getV4RouteTableNameRefBytes();
 
   /**
    * <pre>
    * identifier of the IPv6 route table to be used, if any
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v6_router_table_id = 9;</code>
-   * @return Whether the v6RouterTableId field is set.
+   * <code>string v6_route_table_name_ref = 8;</code>
+   * @return The v6RouteTableNameRef.
    */
-  boolean hasV6RouterTableId();
+  java.lang.String getV6RouteTableNameRef();
   /**
    * <pre>
    * identifier of the IPv6 route table to be used, if any
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v6_router_table_id = 9;</code>
-   * @return The v6RouterTableId.
+   * <code>string v6_route_table_name_ref = 8;</code>
+   * @return The bytes for v6RouteTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getV6RouterTableId();
-  /**
-   * <pre>
-   * identifier of the IPv6 route table to be used, if any
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey v6_router_table_id = 9;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getV6RouterTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getV6RouteTableNameRefBytes();
 
   /**
    * <pre>
@@ -213,10 +165,11 @@ public interface SubnetSpecOrBuilder extends
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingess_v4_security_policy_id = 10;</code>
+   * <code>repeated string ingess_v4_security_policy_name_ref = 9;</code>
+   * @return A list containing the ingessV4SecurityPolicyNameRef.
    */
-  java.util.List<opi_api.common.v1.ObjectKey> 
-      getIngessV4SecurityPolicyIdList();
+  java.util.List<java.lang.String>
+      getIngessV4SecurityPolicyNameRefList();
   /**
    * <pre>
    * security policies per subnet:
@@ -226,9 +179,10 @@ public interface SubnetSpecOrBuilder extends
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingess_v4_security_policy_id = 10;</code>
+   * <code>repeated string ingess_v4_security_policy_name_ref = 9;</code>
+   * @return The count of ingessV4SecurityPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getIngessV4SecurityPolicyId(int index);
+  int getIngessV4SecurityPolicyNameRefCount();
   /**
    * <pre>
    * security policies per subnet:
@@ -238,9 +192,11 @@ public interface SubnetSpecOrBuilder extends
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingess_v4_security_policy_id = 10;</code>
+   * <code>repeated string ingess_v4_security_policy_name_ref = 9;</code>
+   * @param index The index of the element to return.
+   * @return The ingessV4SecurityPolicyNameRef at the given index.
    */
-  int getIngessV4SecurityPolicyIdCount();
+  java.lang.String getIngessV4SecurityPolicyNameRef(int index);
   /**
    * <pre>
    * security policies per subnet:
@@ -250,155 +206,135 @@ public interface SubnetSpecOrBuilder extends
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingess_v4_security_policy_id = 10;</code>
+   * <code>repeated string ingess_v4_security_policy_name_ref = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ingessV4SecurityPolicyNameRef at the given index.
    */
-  java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getIngessV4SecurityPolicyIdOrBuilderList();
-  /**
-   * <pre>
-   * security policies per subnet:
-   * - all vnics in this subnet will inherit the policies configured under subnet
-   * - multiple policies per vnic per direction (ingress/egress) can be specified
-   * - an implementation may limit the #policies per subnet in each direction
-   * identifier of ingress IPv4 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingess_v4_security_policy_id = 10;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIngessV4SecurityPolicyIdOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getIngessV4SecurityPolicyNameRefBytes(int index);
 
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 11;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 10;</code>
+   * @return A list containing the ingressV6SecurityPolicyNameRef.
    */
-  java.util.List<opi_api.common.v1.ObjectKey> 
-      getIngressV6SecurityPolicyIdList();
+  java.util.List<java.lang.String>
+      getIngressV6SecurityPolicyNameRefList();
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 11;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 10;</code>
+   * @return The count of ingressV6SecurityPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getIngressV6SecurityPolicyId(int index);
+  int getIngressV6SecurityPolicyNameRefCount();
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 11;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 10;</code>
+   * @param index The index of the element to return.
+   * @return The ingressV6SecurityPolicyNameRef at the given index.
    */
-  int getIngressV6SecurityPolicyIdCount();
+  java.lang.String getIngressV6SecurityPolicyNameRef(int index);
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 11;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ingressV6SecurityPolicyNameRef at the given index.
    */
-  java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getIngressV6SecurityPolicyIdOrBuilderList();
-  /**
-   * <pre>
-   * identifier of ingress IPv6 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 11;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIngressV6SecurityPolicyIdOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getIngressV6SecurityPolicyNameRefBytes(int index);
 
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 12;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 11;</code>
+   * @return A list containing the egressV4SecurityPolicyNameRef.
    */
-  java.util.List<opi_api.common.v1.ObjectKey> 
-      getEgressV4SecurityPolicyIdList();
+  java.util.List<java.lang.String>
+      getEgressV4SecurityPolicyNameRefList();
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 12;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 11;</code>
+   * @return The count of egressV4SecurityPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getEgressV4SecurityPolicyId(int index);
+  int getEgressV4SecurityPolicyNameRefCount();
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 12;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 11;</code>
+   * @param index The index of the element to return.
+   * @return The egressV4SecurityPolicyNameRef at the given index.
    */
-  int getEgressV4SecurityPolicyIdCount();
+  java.lang.String getEgressV4SecurityPolicyNameRef(int index);
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 12;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the egressV4SecurityPolicyNameRef at the given index.
    */
-  java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getEgressV4SecurityPolicyIdOrBuilderList();
-  /**
-   * <pre>
-   * identifier of egress IPv4 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 12;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getEgressV4SecurityPolicyIdOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getEgressV4SecurityPolicyNameRefBytes(int index);
 
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 13;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 12;</code>
+   * @return A list containing the egressV6SecurityPolicyNameRef.
    */
-  java.util.List<opi_api.common.v1.ObjectKey> 
-      getEgressV6SecurityPolicyIdList();
+  java.util.List<java.lang.String>
+      getEgressV6SecurityPolicyNameRefList();
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 13;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 12;</code>
+   * @return The count of egressV6SecurityPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getEgressV6SecurityPolicyId(int index);
+  int getEgressV6SecurityPolicyNameRefCount();
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 13;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 12;</code>
+   * @param index The index of the element to return.
+   * @return The egressV6SecurityPolicyNameRef at the given index.
    */
-  int getEgressV6SecurityPolicyIdCount();
+  java.lang.String getEgressV6SecurityPolicyNameRef(int index);
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 13;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 12;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the egressV6SecurityPolicyNameRef at the given index.
    */
-  java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getEgressV6SecurityPolicyIdOrBuilderList();
-  /**
-   * <pre>
-   * identifier of egress IPv6 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 13;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getEgressV6SecurityPolicyIdOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getEgressV6SecurityPolicyNameRefBytes(int index);
 
   /**
    * <pre>
@@ -418,7 +354,7 @@ public interface SubnetSpecOrBuilder extends
    *   DOT1Q encap than that of subnet
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 14;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 13;</code>
    * @return Whether the accessEncap field is set.
    */
   boolean hasAccessEncap();
@@ -440,7 +376,7 @@ public interface SubnetSpecOrBuilder extends
    *   DOT1Q encap than that of subnet
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 14;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 13;</code>
    * @return The accessEncap.
    */
   opi_api.network.opinetcommon.v1alpha1.Encap getAccessEncap();
@@ -462,7 +398,7 @@ public interface SubnetSpecOrBuilder extends
    *   DOT1Q encap than that of subnet
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 14;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap access_encap = 13;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getAccessEncapOrBuilder();
 
@@ -473,7 +409,7 @@ public interface SubnetSpecOrBuilder extends
    * this encap towards the fabric side
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 15;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 14;</code>
    * @return Whether the fabricEncap field is set.
    */
   boolean hasFabricEncap();
@@ -484,7 +420,7 @@ public interface SubnetSpecOrBuilder extends
    * this encap towards the fabric side
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 15;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 14;</code>
    * @return The fabricEncap.
    */
   opi_api.network.opinetcommon.v1alpha1.Encap getFabricEncap();
@@ -495,7 +431,7 @@ public interface SubnetSpecOrBuilder extends
    * this encap towards the fabric side
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 15;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 14;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getFabricEncapOrBuilder();
 
@@ -506,10 +442,11 @@ public interface SubnetSpecOrBuilder extends
    * HostIf is list of such VF/PFs
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey host_interface_id = 16;</code>
+   * <code>repeated string host_interface_name_ref = 15;</code>
+   * @return A list containing the hostInterfaceNameRef.
    */
-  java.util.List<opi_api.common.v1.ObjectKey> 
-      getHostInterfaceIdList();
+  java.util.List<java.lang.String>
+      getHostInterfaceNameRefList();
   /**
    * <pre>
    * when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
@@ -517,9 +454,10 @@ public interface SubnetSpecOrBuilder extends
    * HostIf is list of such VF/PFs
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey host_interface_id = 16;</code>
+   * <code>repeated string host_interface_name_ref = 15;</code>
+   * @return The count of hostInterfaceNameRef.
    */
-  opi_api.common.v1.ObjectKey getHostInterfaceId(int index);
+  int getHostInterfaceNameRefCount();
   /**
    * <pre>
    * when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
@@ -527,9 +465,11 @@ public interface SubnetSpecOrBuilder extends
    * HostIf is list of such VF/PFs
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey host_interface_id = 16;</code>
+   * <code>repeated string host_interface_name_ref = 15;</code>
+   * @param index The index of the element to return.
+   * @return The hostInterfaceNameRef at the given index.
    */
-  int getHostInterfaceIdCount();
+  java.lang.String getHostInterfaceNameRef(int index);
   /**
    * <pre>
    * when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
@@ -537,21 +477,12 @@ public interface SubnetSpecOrBuilder extends
    * HostIf is list of such VF/PFs
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey host_interface_id = 16;</code>
+   * <code>repeated string host_interface_name_ref = 15;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the hostInterfaceNameRef at the given index.
    */
-  java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getHostInterfaceIdOrBuilderList();
-  /**
-   * <pre>
-   * when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs
-   * present, subnet needs to be attached to a PF/VF (aka. host interface),
-   * HostIf is list of such VF/PFs
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey host_interface_id = 16;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getHostInterfaceIdOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getHostInterfaceNameRefBytes(int index);
 
   /**
    * <pre>
@@ -561,7 +492,7 @@ public interface SubnetSpecOrBuilder extends
    * the dataplane; tunnel objects, if configured with ToS, will override this
    * </pre>
    *
-   * <code>int32 tos = 18;</code>
+   * <code>int32 tos = 16;</code>
    * @return The tos.
    */
   int getTos();
@@ -572,7 +503,7 @@ public interface SubnetSpecOrBuilder extends
    * external endpoints via routes with some kind of NAT (e.g. 1:1 NAT, NAPT)
    * </pre>
    *
-   * <code>bool connected = 19;</code>
+   * <code>bool connected = 17;</code>
    * @return The connected.
    */
   boolean getConnected();
@@ -583,29 +514,21 @@ public interface SubnetSpecOrBuilder extends
    * if configured, is the 1st policy evaluated before other security policies on a given vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey ingress_default_sg_policy = 20;</code>
-   * @return Whether the ingressDefaultSgPolicy field is set.
+   * <code>string ingress_default_sg_policy_name_ref = 18;</code>
+   * @return The ingressDefaultSgPolicyNameRef.
    */
-  boolean hasIngressDefaultSgPolicy();
+  java.lang.String getIngressDefaultSgPolicyNameRef();
   /**
    * <pre>
    * default ingress stateful security policy for this subnet
    * if configured, is the 1st policy evaluated before other security policies on a given vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey ingress_default_sg_policy = 20;</code>
-   * @return The ingressDefaultSgPolicy.
+   * <code>string ingress_default_sg_policy_name_ref = 18;</code>
+   * @return The bytes for ingressDefaultSgPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getIngressDefaultSgPolicy();
-  /**
-   * <pre>
-   * default ingress stateful security policy for this subnet
-   * if configured, is the 1st policy evaluated before other security policies on a given vnic
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey ingress_default_sg_policy = 20;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIngressDefaultSgPolicyOrBuilder();
+  com.google.protobuf.ByteString
+      getIngressDefaultSgPolicyNameRefBytes();
 
   /**
    * <pre>
@@ -613,29 +536,21 @@ public interface SubnetSpecOrBuilder extends
    * if configured, is the 1st policy evaluated before other security polices on a given vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey egress_default_sg_policy = 21;</code>
-   * @return Whether the egressDefaultSgPolicy field is set.
+   * <code>string egress_default_sg_policy_name_ref = 19;</code>
+   * @return The egressDefaultSgPolicyNameRef.
    */
-  boolean hasEgressDefaultSgPolicy();
+  java.lang.String getEgressDefaultSgPolicyNameRef();
   /**
    * <pre>
    * default egress stateful security policy for this subnet
    * if configured, is the 1st policy evaluated before other security polices on a given vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey egress_default_sg_policy = 21;</code>
-   * @return The egressDefaultSgPolicy.
+   * <code>string egress_default_sg_policy_name_ref = 19;</code>
+   * @return The bytes for egressDefaultSgPolicyNameRef.
    */
-  opi_api.common.v1.ObjectKey getEgressDefaultSgPolicy();
-  /**
-   * <pre>
-   * default egress stateful security policy for this subnet
-   * if configured, is the 1st policy evaluated before other security polices on a given vnic
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey egress_default_sg_policy = 21;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getEgressDefaultSgPolicyOrBuilder();
+  com.google.protobuf.ByteString
+      getEgressDefaultSgPolicyNameRefBytes();
 
   /**
    * <pre>
@@ -644,7 +559,7 @@ public interface SubnetSpecOrBuilder extends
    * pod IP mappings behind it
    * </pre>
    *
-   * <code>bool remote_subnet = 22;</code>
+   * <code>bool remote_subnet = 20;</code>
    * @return The remoteSubnet.
    */
   boolean getRemoteSubnet();

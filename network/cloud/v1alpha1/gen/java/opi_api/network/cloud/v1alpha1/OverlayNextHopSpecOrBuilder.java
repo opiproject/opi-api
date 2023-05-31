@@ -12,25 +12,18 @@ public interface OverlayNextHopSpecOrBuilder extends
    * tunnel id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 1;</code>
+   * @return The tunnelNameRef.
    */
-  boolean hasTunnelId();
+  java.lang.String getTunnelNameRef();
   /**
    * <pre>
    * tunnel id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 1;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKey getTunnelId();
-  /**
-   * <pre>
-   * tunnel id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder();
+  com.google.protobuf.ByteString
+      getTunnelNameRefBytes();
 }

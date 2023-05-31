@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ctunnel.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x80\x01\n\x06Tunnel\x12\x38\n\x04spec\x18\x03 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.TunnelSpec\x12<\n\x06status\x18\x04 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.TunnelStatus\"\xf3\x04\n\nTunnelSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12,\n\x06vpc_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x42\n\x08local_ip\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x43\n\tremote_ip\x18\x04 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x38\n\x04type\x18\x05 \x01(\x0e\x32*.opi_api.network.cloud.v1alpha1.TunnelType\x12;\n\x05\x65ncap\x18\x06 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x32\n\nnexthop_id\x18\x08 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x38\n\x10nexthop_group_id\x18\t \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x31\n\ttunnel_id\x18\n \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x44\n\rdrop_next_hop\x18\x0b \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.DropNexthopH\x00\x12\x13\n\x0bmac_address\x18\x0c \x01(\x0c\x12\x0b\n\x03tos\x18\r \x01(\x05\x42\x04\n\x02nh\"\r\n\x0b\x44ropNexthop\"f\n\x0cTunnelStatus\x12\x42\n\thw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x12\n\nvnic_count\x18\x02 \x01(\x05*\xb7\x01\n\nTunnelType\x12\x1b\n\x17TUNNEL_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fTUNNEL_TYPE_IGW\x10\x01\x12\x18\n\x14TUNNEL_TYPE_WORKLOAD\x10\x02\x12\x18\n\x14TUNNEL_TYPE_INTER_DC\x10\x03\x12\x17\n\x13TUNNEL_TYPE_SERVICE\x10\x04\x12\x13\n\x0fTUNNEL_TYPE_VNF\x10\x05\x12\x15\n\x11TUNNEL_TYPE_IPSEC\x10\x06\x42l\n\x1eopi_api.network.cloud.v1alpha1B\x0bTunnelProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ctunnel.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xcb\x01\n\x06Tunnel\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x04spec\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.TunnelSpec\x12<\n\x06status\x18\x03 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.TunnelStatus:;\xea\x41\x38\n%opi_api.network.cloud.v1alpha1/tunnel\x12\x0ftunnel/{tunnel}\"\xe9\x03\n\nTunnelSpec\x12\x14\n\x0cvpc_name_ref\x18\x01 \x01(\t\x12\x42\n\x08local_ip\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x43\n\tremote_ip\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x38\n\x04type\x18\x04 \x01(\x0e\x32*.opi_api.network.cloud.v1alpha1.TunnelType\x12;\n\x05\x65ncap\x18\x05 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x1a\n\x10nexthop_name_ref\x18\x06 \x01(\tH\x00\x12 \n\x16nexthop_group_name_ref\x18\x07 \x01(\tH\x00\x12\x19\n\x0ftunnel_name_ref\x18\x08 \x01(\tH\x00\x12\x44\n\rdrop_next_hop\x18\t \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.DropNexthopH\x00\x12\x13\n\x0bmac_address\x18\n \x01(\x0c\x12\x0b\n\x03tos\x18\x0b \x01(\x05\x42\x04\n\x02nh\"\r\n\x0b\x44ropNexthop\"f\n\x0cTunnelStatus\x12\x42\n\thw_handle\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x12\n\nvnic_count\x18\x02 \x01(\x05*\xb7\x01\n\nTunnelType\x12\x1b\n\x17TUNNEL_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fTUNNEL_TYPE_IGW\x10\x01\x12\x18\n\x14TUNNEL_TYPE_WORKLOAD\x10\x02\x12\x18\n\x14TUNNEL_TYPE_INTER_DC\x10\x03\x12\x17\n\x13TUNNEL_TYPE_SERVICE\x10\x04\x12\x13\n\x0fTUNNEL_TYPE_VNF\x10\x05\x12\x15\n\x11TUNNEL_TYPE_IPSEC\x10\x06\x42l\n\x1eopi_api.network.cloud.v1alpha1B\x0bTunnelProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 _TUNNELTYPE = DESCRIPTOR.enum_types_by_name['TunnelType']
 TunnelType = enum_type_wrapper.EnumTypeWrapper(_TUNNELTYPE)
@@ -66,14 +66,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\013TunnelProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _TUNNELTYPE._serialized_start=967
-  _TUNNELTYPE._serialized_end=1150
-  _TUNNEL._serialized_start=87
-  _TUNNEL._serialized_end=215
-  _TUNNELSPEC._serialized_start=218
-  _TUNNELSPEC._serialized_end=845
-  _DROPNEXTHOP._serialized_start=847
-  _DROPNEXTHOP._serialized_end=860
-  _TUNNELSTATUS._serialized_start=862
-  _TUNNELSTATUS._serialized_end=964
+  _TUNNEL._options = None
+  _TUNNEL._serialized_options = b'\352A8\n%opi_api.network.cloud.v1alpha1/tunnel\022\017tunnel/{tunnel}'
+  _TUNNELTYPE._serialized_start=913
+  _TUNNELTYPE._serialized_end=1096
+  _TUNNEL._serialized_start=96
+  _TUNNEL._serialized_end=299
+  _TUNNELSPEC._serialized_start=302
+  _TUNNELSPEC._serialized_end=791
+  _DROPNEXTHOP._serialized_start=793
+  _DROPNEXTHOP._serialized_end=806
+  _TUNNELSTATUS._serialized_start=808
+  _TUNNELSTATUS._serialized_end=910
 # @@protoc_insertion_point(module_scope)

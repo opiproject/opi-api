@@ -117,54 +117,58 @@ public interface RouteAttrsOrBuilder extends
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-   * @return Whether the nexthopId field is set.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return Whether the nexthopNameRef field is set.
    */
-  boolean hasNexthopId();
+  boolean hasNexthopNameRef();
   /**
    * <pre>
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
-   * @return The nexthopId.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The nexthopNameRef.
    */
-  opi_api.common.v1.ObjectKey getNexthopId();
+  java.lang.String getNexthopNameRef();
   /**
    * <pre>
    * nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 6;</code>
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The bytes for nexthopNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNexthopNameRefBytes();
 
   /**
    * <pre>
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return Whether the nhGroupId field is set.
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return Whether the nhGroupNameRef field is set.
    */
-  boolean hasNhGroupId();
+  boolean hasNhGroupNameRef();
   /**
    * <pre>
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return The nhGroupId.
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return The nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKey getNhGroupId();
+  java.lang.String getNhGroupNameRef();
   /**
    * <pre>
    * ECMP nexthop for this route
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
+   * <code>string nh_group_name_ref = 7;</code>
+   * @return The bytes for nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNhGroupNameRefBytes();
 
   /**
    * <pre>
@@ -198,27 +202,29 @@ public interface RouteAttrsOrBuilder extends
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return Whether the tunnelNameRef field is set.
    */
-  boolean hasTunnelId();
+  boolean hasTunnelNameRef();
   /**
    * <pre>
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return The tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKey getTunnelId();
+  java.lang.String getTunnelNameRef();
   /**
    * <pre>
    * Tunnel this prefix is pointing to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 9;</code>
+   * <code>string tunnel_name_ref = 9;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder();
+  com.google.protobuf.ByteString
+      getTunnelNameRefBytes();
 
   /**
    * <pre>
@@ -226,29 +232,31 @@ public interface RouteAttrsOrBuilder extends
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 10;</code>
+   * @return Whether the routeTableNameRef field is set.
    */
-  boolean hasRouteTableId();
+  boolean hasRouteTableNameRef();
   /**
    * <pre>
    * if next hop is a route table: used to create exceptions in hierarchal
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 10;</code>
+   * @return The routeTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getRouteTableId();
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * if next hop is a route table: used to create exceptions in hierarchal
    * routing. next hop can't point to same route table (causing rout lookup loop)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 10;</code>
+   * <code>string route_table_name_ref = 10;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 
   /**
    * <pre>

@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr Bgp::Bgp(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct BgpDefaultTypeInternal {
   constexpr BgpDefaultTypeInternal()
@@ -35,8 +36,7 @@ struct BgpDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BgpDefaultTypeInternal _Bgp_default_instance_;
 constexpr BgpSpec::BgpSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , local_asn_(0u)
+  : local_asn_(0u)
   , router_id_(0u)
   , cluster_id_(0u)
   , disable_(false)
@@ -69,7 +69,8 @@ struct BgpStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BgpStatusDefaultTypeInternal _BgpStatus_default_instance_;
 constexpr BGPPeer::BGPPeer(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct BGPPeerDefaultTypeInternal {
   constexpr BGPPeerDefaultTypeInternal()
@@ -83,7 +84,6 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerDefaultTypeInternal _BGP
 constexpr BGPPeerSpec::BGPPeerSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(nullptr)
   , local_address_(nullptr)
   , peer_addr_(nullptr)
   , state_(0)
@@ -172,7 +172,8 @@ struct BGPPeerStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerStatusDefaultTypeInternal _BGPPeerStatus_default_instance_;
 constexpr BGPPeerAf::BGPPeerAf(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , state_(nullptr){}
 struct BGPPeerAfDefaultTypeInternal {
   constexpr BGPPeerAfDefaultTypeInternal()
@@ -185,8 +186,7 @@ struct BGPPeerAfDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BGPPeerAfDefaultTypeInternal _BGPPeerAf_default_instance_;
 constexpr BGPPeerAfSpec::BGPPeerAfSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , local_addr_(nullptr)
+  : local_addr_(nullptr)
   , peer_addr_(nullptr)
   , afi_(0)
 
@@ -387,6 +387,7 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Bgp, status_),
   ~0u,  // no _has_bits_
@@ -395,7 +396,6 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, local_asn_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, router_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BgpSpec, cluster_id_),
@@ -418,6 +418,7 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeer, status_),
   ~0u,  // no _has_bits_
@@ -426,7 +427,6 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, state_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, local_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerSpec, peer_addr_),
@@ -500,6 +500,7 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAf, state_),
   ~0u,  // no _has_bits_
@@ -508,7 +509,6 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, local_addr_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, peer_addr_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec, afi_),
@@ -630,13 +630,13 @@ const uint32_t TableStruct_bgp_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Bgp)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BgpSpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BgpSpec)},
   { 20, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BgpStatus)},
   { 31, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeer)},
-  { 39, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerSpec)},
+  { 40, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerSpec)},
   { 60, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerStatus)},
   { 113, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerAf)},
-  { 121, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec)},
+  { 122, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec)},
   { 137, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus)},
   { 148, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefix)},
   { 156, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::BGPNLRIPrefixSpec)},
@@ -668,239 +668,242 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_bgp_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\tbgp.proto\022\036opi_api.network.cloud.v1alp"
-  "ha1\032\020object_key.proto\032\022networktypes.prot"
-  "o\"w\n\003Bgp\0225\n\004spec\030\001 \001(\0132\'.opi_api.network"
-  ".cloud.v1alpha1.BgpSpec\0229\n\006status\030\002 \001(\0132"
-  ").opi_api.network.cloud.v1alpha1.BgpStat"
-  "us\"\243\001\n\007BgpSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.com"
-  "mon.v1.ObjectKey\022\021\n\tlocal_asn\030\002 \001(\r\022\021\n\tr"
-  "outer_id\030\003 \001(\007\022\022\n\ncluster_id\030\004 \001(\007\022\017\n\007di"
-  "sable\030\005 \001(\010\022#\n\033suppress_default_resoluti"
-  "on\030\006 \001(\010\"\276\001\n\tBgpStatus\022@\n\noper_state\030\001 \001"
+  "ha1\032\022networktypes.proto\032\031google/api/reso"
+  "urce.proto\"\272\001\n\003Bgp\022\014\n\004name\030\001 \001(\t\0225\n\004spec"
+  "\030\002 \001(\0132\'.opi_api.network.cloud.v1alpha1."
+  "BgpSpec\0229\n\006status\030\003 \001(\0132).opi_api.networ"
+  "k.cloud.v1alpha1.BgpStatus:3\352A0\n\"opi_api"
+  ".network.cloud.v1alpha1/bgp\022\nbgps/{bgp}\""
+  "y\n\007BgpSpec\022\021\n\tlocal_asn\030\001 \001(\r\022\021\n\trouter_"
+  "id\030\002 \001(\007\022\022\n\ncluster_id\030\003 \001(\007\022\017\n\007disable\030"
+  "\004 \001(\010\022#\n\033suppress_default_resolution\030\005 \001"
+  "(\010\"\276\001\n\tBgpStatus\022@\n\noper_state\030\001 \001(\0162,.o"
+  "pi_api.network.cloud.v1alpha1.BGPOperSta"
+  "te\022 \n\030adj_rib_out_routes_count\030\002 \001(\005\022#\n\033"
+  "peak_num_adj_rib_out_routes\030\003 \001(\005\022\025\n\rrem"
+  "_delaytime\030\004 \001(\005\022\021\n\ttable_ver\030\005 \001(\005\"\322\001\n\007"
+  "BGPPeer\022\014\n\004name\030\001 \001(\t\0229\n\004spec\030\002 \001(\0132+.op"
+  "i_api.network.cloud.v1alpha1.BGPPeerSpec"
+  "\022=\n\006status\030\003 \001(\0132-.opi_api.network.cloud"
+  ".v1alpha1.BGPPeerStatus:\?\352A<\n&opi_api.ne"
+  "twork.cloud.v1alpha1/bgppeer\022\022bgppeers/{"
+  "bgppeer}\"\352\003\n\013BGPPeerSpec\022@\n\005state\030\001 \001(\0162"
+  "1.opi_api.network.opinetcommon.v1alpha1."
+  "AdminState\022G\n\rlocal_address\030\002 \001(\01320.opi_"
+  "api.network.opinetcommon.v1alpha1.IPAddr"
+  "ess\022C\n\tpeer_addr\030\003 \001(\01320.opi_api.network"
+  ".opinetcommon.v1alpha1.IPAddress\022\022\n\nremo"
+  "te_asn\030\004 \001(\r\022\021\n\tsend_comm\030\005 \001(\010\022\025\n\rsend_"
+  "ext_comm\030\006 \001(\010\022B\n\trr_client\030\007 \001(\0162/.opi_"
+  "api.network.cloud.v1alpha1.BGPPeerRRClie"
+  "nt\022\025\n\rconnect_retry\030\010 \001(\005\022\020\n\010holdtime\030\t "
+  "\001(\005\022\022\n\nkeep_alive\030\n \001(\005\022\020\n\010password\030\013 \001("
+  "\014\022\013\n\003ttl\030\014 \001(\005\022\025\n\ridle_holdtime\030\r \001(\005\022\026\n"
+  "\016allow_local_as\030\016 \001(\005\"\340\013\n\rBGPPeerStatus\022"
+  "J\n\rsession_state\030\001 \001(\01623.opi_api.network"
+  ".cloud.v1alpha1.BGPPeerSessionState\022O\n\022p"
+  "rev_session_state\030\002 \001(\01623.opi_api.networ"
+  "k.cloud.v1alpha1.BGPPeerSessionState\022\027\n\017"
+  "last_error_rcvd\030\003 \001(\014\022\027\n\017last_error_sent"
+  "\030\004 \001(\014\022D\n\nlocal_addr\030\005 \001(\01320.opi_api.net"
+  "work.opinetcommon.v1alpha1.IPAddress\022\020\n\010"
+  "holdtime\030\006 \001(\005\022\021\n\tkeepalive\030\007 \001(\005\022\021\n\tcap"
+  "s_sent\030\010 \001(\005\022\021\n\tcaps_rcvd\030\t \001(\005\022\020\n\010caps_"
+  "neg\030\n \001(\005\022H\n\023sel_local_addr_type\030\013 \001(\0162+"
+  ".opi_api.network.cloud.v1alpha1.BGPAddrT"
+  "ype\022\036\n\026incoming_notifications\030\014 \001(\005\022\036\n\026o"
+  "utbound_notifications\030\r \001(\005\022\030\n\020incoming_"
+  "updates\030\016 \001(\005\022\030\n\020outgoing_updates\030\017 \001(\005\022"
+  "\033\n\023incoming_keepalives\030\020 \001(\005\022\033\n\023outgoing"
+  "_keepalives\030\021 \001(\005\022\032\n\022incoming_refreshes\030"
+  "\022 \001(\005\022\032\n\022outgoing_refreshes\030\023 \001(\005\022\037\n\027inc"
+  "oming_total_messages\030\024 \001(\005\022\037\n\027outgoing_t"
+  "otal_messages\030\025 \001(\005\022\033\n\023fsm_est_transitio"
+  "ns\030\026 \001(\005\022\033\n\023connect_retry_count\030\027 \001(\005\022\016\n"
+  "\006peergr\030\030 \001(\005\022\026\n\016stale_pathtime\030\031 \001(\005\022\027\n"
+  "\017orf_entry_count\030\032 \001(\005\022\031\n\021rcvd_msg_elpst"
+  "ime\030\033 \001(\005\022\027\n\017route_refr_sent\030\034 \001(\005\022\027\n\017ro"
+  "ute_refr_rcvd\030\035 \001(\005\022\027\n\017incoming_prfxes\030\036"
+  " \001(\005\022\027\n\017outgoing_prfxes\030\037 \001(\005\022\"\n\032outgoin"
+  "g_prfxes_advertised\030  \001(\005\022\031\n\021connect_ret"
+  "ry_int\030! \001(\005\022 \n\030outgoing_update_elpstime"
+  "\030\" \001(\005\022\036\n\026outgoing_prfxes_denied\030# \001(\005\022\037"
+  "\n\027outgoing_prfxes_imp_wdr\030$ \001(\005\022\037\n\027outgo"
+  "ing_prfxes_exp_wdr\030% \001(\005\022\037\n\027incoming_prf"
+  "xes_imp_wdr\030& \001(\005\022\037\n\027incoming_prfxes_exp"
+  "_wdr\030\' \001(\005\022\031\n\021received_holdtime\030( \001(\005\022\033\n"
+  "\023fsm_establishedtime\030) \001(\005\022!\n\031incoming_u"
+  "pdates_elpstime\030* \001(\005\022\026\n\016incoming_opens\030"
+  "+ \001(\005\022\026\n\016outgoing_opens\030, \001(\005\022\022\n\npeer_in"
+  "dex\030- \001(\005\022\013\n\003ttl\030. \001(\005\022@\n\noper_state\030/ \001"
   "(\0162,.opi_api.network.cloud.v1alpha1.BGPO"
-  "perState\022 \n\030adj_rib_out_routes_count\030\002 \001"
-  "(\005\022#\n\033peak_num_adj_rib_out_routes\030\003 \001(\005\022"
-  "\025\n\rrem_delaytime\030\004 \001(\005\022\021\n\ttable_ver\030\005 \001("
-  "\005\"\203\001\n\007BGPPeer\0229\n\004spec\030\001 \001(\0132+.opi_api.ne"
-  "twork.cloud.v1alpha1.BGPPeerSpec\022=\n\006stat"
-  "us\030\002 \001(\0132-.opi_api.network.cloud.v1alpha"
-  "1.BGPPeerStatus\"\224\004\n\013BGPPeerSpec\022(\n\002id\030\001 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\022@\n\005sta"
-  "te\030\002 \001(\01621.opi_api.network.opinetcommon."
-  "v1alpha1.AdminState\022G\n\rlocal_address\030\003 \001"
+  "perState\"\335\001\n\tBGPPeerAf\022\014\n\004name\030\001 \001(\t\022;\n\004"
+  "spec\030\002 \001(\0132-.opi_api.network.cloud.v1alp"
+  "ha1.BGPPeerAfSpec\022>\n\005state\030\003 \001(\0132/.opi_a"
+  "pi.network.cloud.v1alpha1.BGPPeerAfStatu"
+  "s:E\352AB\n(opi_api.network.cloud.v1alpha1/b"
+  "gppeeraf\022\026bgppeerafs/{bgppeeraf}\"\370\002\n\rBGP"
+  "PeerAfSpec\022D\n\nlocal_addr\030\001 \001(\01320.opi_api"
+  ".network.opinetcommon.v1alpha1.IPAddress"
+  "\022C\n\tpeer_addr\030\002 \001(\01320.opi_api.network.op"
+  "inetcommon.v1alpha1.IPAddress\0223\n\003afi\030\003 \001"
+  "(\0162&.opi_api.network.cloud.v1alpha1.BGPA"
+  "fi\0225\n\004safi\030\004 \001(\0162\'.opi_api.network.cloud"
+  ".v1alpha1.BGPSafi\022\024\n\014nexthop_self\030\005 \001(\010\022"
+  "\024\n\014default_orig\030\006 \001(\010\022\022\n\nlocal_port\030\007 \001("
+  "\005\022\023\n\013remote_port\030\010 \001(\005\022\033\n\023local_addr_sco"
+  "pe_id\030\t \001(\005\"\365\001\n\017BGPPeerAfStatus\022\024\n\014updat"
+  "e_group\030\001 \001(\005\022\033\n\023local_addr_scope_id\030\002 \001"
+  "(\005\022\025\n\rroute_refresh\030\003 \001(\010\022M\n\020add_path_ca"
+  "p_neg\030\004 \001(\01623.opi_api.network.cloud.v1al"
+  "pha1.BgpAddPathCapNegCap\022I\n\020reflector_cl"
+  "ient\030\005 \001(\0162/.opi_api.network.cloud.v1alp"
+  "ha1.BGPPeerRRClient\"\224\001\n\rBGPNLRIPrefix\022\?\n"
+  "\004spec\030\001 \001(\01321.opi_api.network.cloud.v1al"
+  "pha1.BGPNLRIPrefixSpec\022B\n\005state\030\002 \001(\01323."
+  "opi_api.network.cloud.v1alpha1.BGPNLRIPr"
+  "efixStatus\"\217\002\n\021BGPNLRIPrefixSpec\0223\n\003afi\030"
+  "\001 \001(\0162&.opi_api.network.cloud.v1alpha1.B"
+  "GPAfi\0225\n\004safi\030\002 \001(\0162\'.opi_api.network.cl"
+  "oud.v1alpha1.BGPSafi\022\016\n\006prefix\030\003 \001(\014\022\022\n\n"
+  "prefix_len\030\004 \001(\005\022=\n\014route_source\030\005 \001(\0162\'"
+  ".opi_api.network.cloud.v1alpha1.NLRISrc\022"
+  "\032\n\022route_source_index\030\006 \001(\005\022\017\n\007path_id\030\007"
+  " \001(\005\"\274\007\n\023BGPNLRIPrefixStatus\0223\n\003afi\030\001 \001("
+  "\0162&.opi_api.network.cloud.v1alpha1.BGPAf"
+  "i\0225\n\004safi\030\002 \001(\0162\'.opi_api.network.cloud."
+  "v1alpha1.BGPSafi\022\016\n\006prefix\030\003 \001(\014\022\022\n\npref"
+  "ix_len\030\004 \001(\005\022=\n\014route_source\030\005 \001(\0162\'.opi"
+  "_api.network.cloud.v1alpha1.NLRISrc\022\032\n\022r"
+  "oute_source_index\030\006 \001(\005\022\017\n\007path_id\030\007 \001(\005"
+  "\022\022\n\nbest_route\030\010 \001(\010\022\023\n\013as_path_str\030\t \001("
+  "\014\022\024\n\014path_orig_id\030\n \001(\014\022\025\n\rnext_hop_addr"
+  "\030\013 \001(\014\022:\n\007as_size\030\014 \001(\0162).opi_api.networ"
+  "k.cloud.v1alpha1.BgpAsSize\022\022\n\necmp_route"
+  "\030\r \001(\010\022C\n\tpeer_addr\030\016 \001(\01320.opi_api.netw"
+  "ork.opinetcommon.v1alpha1.IPAddress\022\032\n\022f"
+  "lap_stats_flapcnt\030\017 \001(\005\022\032\n\022flap_stats_su"
+  "pprsd\030\020 \001(\010\022B\n\tis_active\030\021 \001(\0162/.opi_api"
+  ".network.cloud.v1alpha1.BgpNlriIsActive\022"
+  "\r\n\005stale\030\022 \001(\010\022\026\n\016flap_starttime\030\023 \001(\005\022F"
+  "\n\017reason_not_best\030\024 \001(\0162-.opi_api.networ"
+  "k.cloud.v1alpha1.BGPRsnNotBest\022\020\n\010ext_co"
+  "mm\030\025 \003(\014\022\014\n\004comm\030\026 \003(\014\022\022\n\nlocal_pref\030\027 \001"
+  "(\005\022=\n\006origin\030\030 \001(\0162-.opi_api.network.clo"
+  "ud.v1alpha1.BGPOriginAttr\022\023\n\013med_present"
+  "\030\031 \001(\010\022\013\n\003med\030\032 \001(\r\022>\n\tpeer_type\030\033 \001(\0162+"
+  ".opi_api.network.cloud.v1alpha1.BGPPeerT"
+  "ype\"\341\001\n\023BGPNLRIPrefixFilter\022\020\n\010ext_comm\030"
+  "\001 \001(\014\022\014\n\004vnid\030\002 \001(\005\022\022\n\nroute_type\030\003 \001(\005\022"
+  "B\n\010next_hop\030\004 \001(\01320.opi_api.network.opin"
+  "etcommon.v1alpha1.IPAddress\022D\n\nip_addres"
+  "s\030\005 \001(\01320.opi_api.network.opinetcommon.v"
+  "1alpha1.IPAddress\022\014\n\004best\030\006 \001(\010\"\222\001\n\014BGPA"
+  "djRibOut\022>\n\004spec\030\001 \001(\01320.opi_api.network"
+  ".cloud.v1alpha1.BGPAdjRibOutSpec\022B\n\006stat"
+  "us\030\002 \001(\01322.opi_api.network.cloud.v1alpha"
+  "1.BGPAdjRibOutStatus\"\022\n\020BGPAdjRibOutSpec"
+  "\"\276\003\n\022BGPAdjRibOutStatus\022C\n\tpeer_addr\030\001 \001"
   "(\01320.opi_api.network.opinetcommon.v1alph"
-  "a1.IPAddress\022C\n\tpeer_addr\030\004 \001(\01320.opi_ap"
-  "i.network.opinetcommon.v1alpha1.IPAddres"
-  "s\022\022\n\nremote_asn\030\005 \001(\r\022\021\n\tsend_comm\030\006 \001(\010"
-  "\022\025\n\rsend_ext_comm\030\007 \001(\010\022B\n\trr_client\030\010 \001"
-  "(\0162/.opi_api.network.cloud.v1alpha1.BGPP"
-  "eerRRClient\022\025\n\rconnect_retry\030\t \001(\005\022\020\n\010ho"
-  "ldtime\030\n \001(\005\022\022\n\nkeep_alive\030\013 \001(\005\022\020\n\010pass"
-  "word\030\014 \001(\014\022\013\n\003ttl\030\r \001(\005\022\025\n\ridle_holdtime"
-  "\030\016 \001(\005\022\026\n\016allow_local_as\030\017 \001(\005\"\340\013\n\rBGPPe"
-  "erStatus\022J\n\rsession_state\030\001 \001(\01623.opi_ap"
-  "i.network.cloud.v1alpha1.BGPPeerSessionS"
-  "tate\022O\n\022prev_session_state\030\002 \001(\01623.opi_a"
-  "pi.network.cloud.v1alpha1.BGPPeerSession"
-  "State\022\027\n\017last_error_rcvd\030\003 \001(\014\022\027\n\017last_e"
-  "rror_sent\030\004 \001(\014\022D\n\nlocal_addr\030\005 \001(\01320.op"
-  "i_api.network.opinetcommon.v1alpha1.IPAd"
-  "dress\022\020\n\010holdtime\030\006 \001(\005\022\021\n\tkeepalive\030\007 \001"
-  "(\005\022\021\n\tcaps_sent\030\010 \001(\005\022\021\n\tcaps_rcvd\030\t \001(\005"
-  "\022\020\n\010caps_neg\030\n \001(\005\022H\n\023sel_local_addr_typ"
-  "e\030\013 \001(\0162+.opi_api.network.cloud.v1alpha1"
-  ".BGPAddrType\022\036\n\026incoming_notifications\030\014"
-  " \001(\005\022\036\n\026outbound_notifications\030\r \001(\005\022\030\n\020"
-  "incoming_updates\030\016 \001(\005\022\030\n\020outgoing_updat"
-  "es\030\017 \001(\005\022\033\n\023incoming_keepalives\030\020 \001(\005\022\033\n"
-  "\023outgoing_keepalives\030\021 \001(\005\022\032\n\022incoming_r"
-  "efreshes\030\022 \001(\005\022\032\n\022outgoing_refreshes\030\023 \001"
-  "(\005\022\037\n\027incoming_total_messages\030\024 \001(\005\022\037\n\027o"
-  "utgoing_total_messages\030\025 \001(\005\022\033\n\023fsm_est_"
-  "transitions\030\026 \001(\005\022\033\n\023connect_retry_count"
-  "\030\027 \001(\005\022\016\n\006peergr\030\030 \001(\005\022\026\n\016stale_pathtime"
-  "\030\031 \001(\005\022\027\n\017orf_entry_count\030\032 \001(\005\022\031\n\021rcvd_"
-  "msg_elpstime\030\033 \001(\005\022\027\n\017route_refr_sent\030\034 "
-  "\001(\005\022\027\n\017route_refr_rcvd\030\035 \001(\005\022\027\n\017incoming"
-  "_prfxes\030\036 \001(\005\022\027\n\017outgoing_prfxes\030\037 \001(\005\022\""
-  "\n\032outgoing_prfxes_advertised\030  \001(\005\022\031\n\021co"
-  "nnect_retry_int\030! \001(\005\022 \n\030outgoing_update"
-  "_elpstime\030\" \001(\005\022\036\n\026outgoing_prfxes_denie"
-  "d\030# \001(\005\022\037\n\027outgoing_prfxes_imp_wdr\030$ \001(\005"
-  "\022\037\n\027outgoing_prfxes_exp_wdr\030% \001(\005\022\037\n\027inc"
-  "oming_prfxes_imp_wdr\030& \001(\005\022\037\n\027incoming_p"
-  "rfxes_exp_wdr\030\' \001(\005\022\031\n\021received_holdtime"
-  "\030( \001(\005\022\033\n\023fsm_establishedtime\030) \001(\005\022!\n\031i"
-  "ncoming_updates_elpstime\030* \001(\005\022\026\n\016incomi"
-  "ng_opens\030+ \001(\005\022\026\n\016outgoing_opens\030, \001(\005\022\022"
-  "\n\npeer_index\030- \001(\005\022\013\n\003ttl\030. \001(\005\022@\n\noper_"
-  "state\030/ \001(\0162,.opi_api.network.cloud.v1al"
-  "pha1.BGPOperState\"\210\001\n\tBGPPeerAf\022;\n\004spec\030"
-  "\001 \001(\0132-.opi_api.network.cloud.v1alpha1.B"
-  "GPPeerAfSpec\022>\n\005state\030\002 \001(\0132/.opi_api.ne"
-  "twork.cloud.v1alpha1.BGPPeerAfStatus\"\242\003\n"
-  "\rBGPPeerAfSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.com"
-  "mon.v1.ObjectKey\022D\n\nlocal_addr\030\002 \001(\01320.o"
-  "pi_api.network.opinetcommon.v1alpha1.IPA"
-  "ddress\022C\n\tpeer_addr\030\003 \001(\01320.opi_api.netw"
-  "ork.opinetcommon.v1alpha1.IPAddress\0223\n\003a"
-  "fi\030\004 \001(\0162&.opi_api.network.cloud.v1alpha"
-  "1.BGPAfi\0225\n\004safi\030\005 \001(\0162\'.opi_api.network"
-  ".cloud.v1alpha1.BGPSafi\022\024\n\014nexthop_self\030"
-  "\006 \001(\010\022\024\n\014default_orig\030\007 \001(\010\022\022\n\nlocal_por"
-  "t\030\010 \001(\005\022\023\n\013remote_port\030\t \001(\005\022\033\n\023local_ad"
-  "dr_scope_id\030\n \001(\005\"\365\001\n\017BGPPeerAfStatus\022\024\n"
-  "\014update_group\030\001 \001(\005\022\033\n\023local_addr_scope_"
-  "id\030\002 \001(\005\022\025\n\rroute_refresh\030\003 \001(\010\022M\n\020add_p"
-  "ath_cap_neg\030\004 \001(\01623.opi_api.network.clou"
-  "d.v1alpha1.BgpAddPathCapNegCap\022I\n\020reflec"
-  "tor_client\030\005 \001(\0162/.opi_api.network.cloud"
-  ".v1alpha1.BGPPeerRRClient\"\224\001\n\rBGPNLRIPre"
-  "fix\022\?\n\004spec\030\001 \001(\01321.opi_api.network.clou"
-  "d.v1alpha1.BGPNLRIPrefixSpec\022B\n\005state\030\002 "
-  "\001(\01323.opi_api.network.cloud.v1alpha1.BGP"
-  "NLRIPrefixStatus\"\217\002\n\021BGPNLRIPrefixSpec\0223"
-  "\n\003afi\030\001 \001(\0162&.opi_api.network.cloud.v1al"
-  "pha1.BGPAfi\0225\n\004safi\030\002 \001(\0162\'.opi_api.netw"
-  "ork.cloud.v1alpha1.BGPSafi\022\016\n\006prefix\030\003 \001"
-  "(\014\022\022\n\nprefix_len\030\004 \001(\005\022=\n\014route_source\030\005"
-  " \001(\0162\'.opi_api.network.cloud.v1alpha1.NL"
-  "RISrc\022\032\n\022route_source_index\030\006 \001(\005\022\017\n\007pat"
-  "h_id\030\007 \001(\005\"\274\007\n\023BGPNLRIPrefixStatus\0223\n\003af"
-  "i\030\001 \001(\0162&.opi_api.network.cloud.v1alpha1"
-  ".BGPAfi\0225\n\004safi\030\002 \001(\0162\'.opi_api.network."
-  "cloud.v1alpha1.BGPSafi\022\016\n\006prefix\030\003 \001(\014\022\022"
-  "\n\nprefix_len\030\004 \001(\005\022=\n\014route_source\030\005 \001(\016"
-  "2\'.opi_api.network.cloud.v1alpha1.NLRISr"
-  "c\022\032\n\022route_source_index\030\006 \001(\005\022\017\n\007path_id"
-  "\030\007 \001(\005\022\022\n\nbest_route\030\010 \001(\010\022\023\n\013as_path_st"
-  "r\030\t \001(\014\022\024\n\014path_orig_id\030\n \001(\014\022\025\n\rnext_ho"
-  "p_addr\030\013 \001(\014\022:\n\007as_size\030\014 \001(\0162).opi_api."
-  "network.cloud.v1alpha1.BgpAsSize\022\022\n\necmp"
-  "_route\030\r \001(\010\022C\n\tpeer_addr\030\016 \001(\01320.opi_ap"
-  "i.network.opinetcommon.v1alpha1.IPAddres"
-  "s\022\032\n\022flap_stats_flapcnt\030\017 \001(\005\022\032\n\022flap_st"
-  "ats_supprsd\030\020 \001(\010\022B\n\tis_active\030\021 \001(\0162/.o"
-  "pi_api.network.cloud.v1alpha1.BgpNlriIsA"
-  "ctive\022\r\n\005stale\030\022 \001(\010\022\026\n\016flap_starttime\030\023"
-  " \001(\005\022F\n\017reason_not_best\030\024 \001(\0162-.opi_api."
-  "network.cloud.v1alpha1.BGPRsnNotBest\022\020\n\010"
-  "ext_comm\030\025 \003(\014\022\014\n\004comm\030\026 \003(\014\022\022\n\nlocal_pr"
-  "ef\030\027 \001(\005\022=\n\006origin\030\030 \001(\0162-.opi_api.netwo"
-  "rk.cloud.v1alpha1.BGPOriginAttr\022\023\n\013med_p"
-  "resent\030\031 \001(\010\022\013\n\003med\030\032 \001(\r\022>\n\tpeer_type\030\033"
-  " \001(\0162+.opi_api.network.cloud.v1alpha1.BG"
-  "PPeerType\"\341\001\n\023BGPNLRIPrefixFilter\022\020\n\010ext"
-  "_comm\030\001 \001(\014\022\014\n\004vnid\030\002 \001(\005\022\022\n\nroute_type\030"
-  "\003 \001(\005\022B\n\010next_hop\030\004 \001(\01320.opi_api.networ"
-  "k.opinetcommon.v1alpha1.IPAddress\022D\n\nip_"
-  "address\030\005 \001(\01320.opi_api.network.opinetco"
-  "mmon.v1alpha1.IPAddress\022\014\n\004best\030\006 \001(\010\"\222\001"
-  "\n\014BGPAdjRibOut\022>\n\004spec\030\001 \001(\01320.opi_api.n"
-  "etwork.cloud.v1alpha1.BGPAdjRibOutSpec\022B"
-  "\n\006status\030\002 \001(\01322.opi_api.network.cloud.v"
-  "1alpha1.BGPAdjRibOutStatus\"\022\n\020BGPAdjRibO"
-  "utSpec\"\276\003\n\022BGPAdjRibOutStatus\022C\n\tpeer_ad"
-  "dr\030\001 \001(\01320.opi_api.network.opinetcommon."
-  "v1alpha1.IPAddress\0223\n\003afi\030\002 \001(\0162&.opi_ap"
-  "i.network.cloud.v1alpha1.BGPAfi\0225\n\004safi\030"
-  "\003 \001(\0162\'.opi_api.network.cloud.v1alpha1.B"
-  "GPSafi\022\016\n\006prefix\030\004 \001(\014\022\022\n\nprefix_len\030\005 \001"
-  "(\005\022@\n\005state\030\006 \001(\01621.opi_api.network.clou"
-  "d.v1alpha1.BgpAroAdvertState\022:\n\007as_size\030"
-  "\007 \001(\0162).opi_api.network.cloud.v1alpha1.B"
-  "gpAsSize\022\023\n\013as_path_str\030\010 \001(\014\022\014\n\004comm\030\t "
-  "\003(\014\022\020\n\010ext_comm\030\n \003(\014\022\023\n\013med_present\030\013 \001"
-  "(\010\022\013\n\003med\030\014 \001(\r*X\n\006BGPAfi\022\027\n\023BGP_AFI_UNS"
-  "PECIFIED\020\000\022\020\n\014BGP_AFI_IPV4\020\001\022\020\n\014BGP_AFI_"
-  "IPV6\020\002\022\021\n\rBGP_AFI_L2VPN\020\031*L\n\007BGPSafi\022\030\n\024"
-  "BGP_SAFI_UNSPECIFIED\020\000\022\024\n\020BGP_SAFI_UNICA"
-  "ST\020\001\022\021\n\rBGP_SAFI_EVPN\020F*l\n\017BGPPeerRRClie"
-  "nt\022\"\n\036BGP_PEER_RR_CLIENT_UNSPECIFIED\020\000\022\026"
-  "\n\022BGP_PEER_RR_CLIENT\020\001\022\035\n\031BGP_PEER_RR_ME"
-  "SHED_CLIENT\020\002*\232\002\n\023BGPPeerSessionState\022&\n"
-  "\"BGP_PEER_SESSION_STATE_UNSPECIFIED\020\000\022\037\n"
-  "\033BGP_PEER_SESSION_STATE_IDLE\020\001\022\"\n\036BGP_PE"
-  "ER_SESSION_STATE_CONNECT\020\002\022!\n\035BGP_PEER_S"
-  "ESSION_STATE_ACTIVE\020\003\022#\n\037BGP_PEER_SESSIO"
-  "N_STATE_OPENSENT\020\004\022&\n\"BGP_PEER_SESSION_S"
-  "TATE_OPENCONFIRM\020\005\022&\n\"BGP_PEER_SESSION_S"
-  "TATE_ESTABLISHED\020\006*_\n\tBgpAsSize\022\033\n\027BGP_A"
-  "S_SIZE_UNSPECIFIED\020\000\022\031\n\025BGP_AS_SIZE_TWO_"
-  "OCTET\020\001\022\032\n\026BGP_AS_SIZE_FOUR_OCTET\020\002*\320\004\n\013"
-  "BGPAddrType\022\035\n\031BGP_ADDR_TYPE_UNSPECIFIED"
-  "\020\000\022\026\n\022BGP_ADDR_TYPE_IPV4\020\001\022\026\n\022BGP_ADDR_T"
-  "YPE_IPV6\020\002\022\026\n\022BGP_ADDR_TYPE_NSAP\020\003\022\026\n\022BG"
-  "P_ADDR_TYPE_HDLC\020\004\022\031\n\025BGP_ADDR_TYPE_BBN1"
-  "822\020\005\022\031\n\025BGP_ADDR_TYPE_IEEE802\020\006\022\026\n\022BGP_"
-  "ADDR_TYPE_E163\020\007\022\026\n\022BGP_ADDR_TYPE_E164\020\010"
-  "\022\025\n\021BGP_ADDR_TYPE_F69\020\t\022\026\n\022BGP_ADDR_TYPE"
-  "_X121\020\n\022\025\n\021BGP_ADDR_TYPE_IPX\020\013\022\033\n\027BGP_AD"
-  "DR_TYPE_APPLETALK\020\014\022\032\n\026BGP_ADDR_TYPE_DEC"
-  "NETIV\020\r\022\033\n\027BGP_ADDR_TYPE_BANYANVIN\020\016\022\033\n\027"
-  "BGP_ADDR_TYPE_E164_NSAP\020\017\022\032\n\026BGP_ADDR_TY"
-  "PE_IPV4_TNA\020\020\022\032\n\026BGP_ADDR_TYPE_IPV6_TNA\020"
-  "\021\022\032\n\026BGP_ADDR_TYPE_NSAP_TNA\020\022\022\032\n\026BGP_ADD"
-  "R_TYPE_VPN_IPV4\020\023\022\032\n\026BGP_ADDR_TYPE_VPN_I"
-  "PV6\020\024\022\027\n\023BGP_ADDR_TYPE_L2VPN\020\031*\271\001\n\014BGPOp"
-  "erState\022\036\n\032BGP_OPER_STATE_UNSPECIFIED\020\000\022"
-  "\025\n\021BGP_OPER_STATE_UP\020\001\022\027\n\023BGP_OPER_STATE"
-  "_DOWN\020\002\022\033\n\027BGP_OPER_STATE_GOING_UP\020\003\022\035\n\031"
-  "BGP_OPER_STATE_GOING_DOWN\020\004\022\035\n\031BGP_OPER_"
-  "STATE_ACT_FAILED\020\005*\275\001\n\023BgpAddPathCapNegC"
-  "ap\022\033\n\027BGP_ADD_PATH_SR_DISABLE\020\000\022\033\n\027BGP_A"
-  "DD_PATH_SR_RECEIVE\020\001\022\030\n\024BGP_ADD_PATH_SR_"
-  "SEND\020\002\022\030\n\024BGP_ADD_PATH_SR_BOTH\020\003\022\033\n\027BGP_"
-  "ADD_PATH_SR_INHERIT\020\004\022\033\n\027BGP_ADD_PATH_SR"
-  "_UNKNOWN\020\005*\334\001\n\024BGPClearRouteOptions\022\'\n#B"
-  "GP_CLEAR_ROUTE_OPTIONS_UNSPECIFIED\020\000\022 \n\034"
-  "BGP_CLEAR_ROUTE_OPTIONS_HARD\020\001\022&\n\"BGP_CL"
-  "EAR_ROUTE_OPTIONS_REFRESH_IN\020\002\022\'\n#BGP_CL"
-  "EAR_ROUTE_OPTIONS_REFRESH_OUT\020\003\022(\n$BGP_C"
-  "LEAR_ROUTE_OPTIONS_REFRESH_BOTH\020\004*[\n\007NLR"
-  "ISrc\022\030\n\024NLRI_SRC_UNSPECIFIED\020\000\022\021\n\rNLRI_S"
-  "RC_PEER\020\001\022\020\n\014NLRI_SRC_AFM\020\002\022\021\n\rNLRI_SRC_"
-  "SELF\020\003*\231\001\n\017BgpNlriIsActive\022\"\n\036BGP_NLRI_I"
-  "S_ACTIVE_UNSPECIFIED\020\000\022\"\n\036BGP_NLRI_IS_AC"
-  "TIVE_NOT_TRACKED\020\001\022\037\n\033BGP_NLRI_IS_ACTIVE"
-  "_INACTIVE\020\002\022\035\n\031BGP_NLRI_IS_ACTIVE_ACTIVE"
-  "\020\003*\246\004\n\rBGPRsnNotBest\022\035\n\031BGP_REASON_NOT_C"
-  "ONSIDERED\020\000\022\034\n\030BGP_REASON_ROUTE_IS_BEST\020"
-  "\001\022\025\n\021BGP_REASON_WEIGHT\020\002\022\031\n\025BGP_REASON_L"
-  "OCAL_PREF\020\003\022\037\n\033BGP_REASON_LCL_ORIG_PRFRR"
-  "ED\020\004\022\032\n\026BGP_REASON_AS_PATH_LEN\020\005\022\025\n\021BGP_"
-  "REASON_ORIGIN\020\006\022\022\n\016BGP_REASON_MED\020\007\022\035\n\031B"
-  "GP_REASON_LOCAL_ORIG_TIE\020\010\022\037\n\033BGP_REASON"
-  "_EBGP_V_IBGP_PEER\020\t\022\035\n\031BGP_REASON_ADMIN_"
-  "DISTANCE\020\n\022\037\n\033BGP_REASON_PATH_TO_NEXT_CS"
-  "T\020\013\022\034\n\030BGP_REASON_PREF_EXISTING\020\014\022\031\n\025BGP"
-  "_REASON_IDENTIFIER\020\r\022\032\n\026BGP_REASON_CLUST"
-  "ER_LEN\020\016\022\035\n\031BGP_REASON_PEER_ADDR_TYPE\020\017\022"
-  "\030\n\024BGP_REASON_PEER_ADDR\020\020\022\030\n\024BGP_REASON_"
-  "PEER_PORT\020\021\022\026\n\022BGP_REASON_PATH_ID\020\022*\202\001\n\r"
-  "BGPOriginAttr\022\037\n\033BGP_ORIGIN_ATTR_UNSPECI"
-  "FIED\020\000\022\027\n\023BGP_ORIGIN_ATTR_IGP\020\001\022\027\n\023BGP_O"
-  "RIGIN_ATTR_EGP\020\002\022\036\n\032BGP_ORIGIN_ATTR_INCO"
-  "MPLETE\020\003*t\n\013BGPPeerType\022\035\n\031BGP_PEER_TYPE"
-  "_UNSPECIFIED\020\000\022\026\n\022BGP_PEER_TYPE_NONE\020\001\022\026"
-  "\n\022BGP_PEER_TYPE_IBGP\020\002\022\026\n\022BGP_PEER_TYPE_"
-  "EBGP\020\003*\324\001\n\021BgpAroAdvertState\022$\n BGP_ARO_"
-  "ADVERT_STATE_UNSPECIFIED\020\000\022#\n\037BGP_ARO_AD"
-  "VERT_STATE_ADVERTISED\020\001\022#\n\037BGP_ARO_ADVER"
-  "T_STATE_SUPPRESSED\020\002\022+\n\'BGP_ARO_ADVERT_S"
-  "TATE_PENDING_WITHDRAWAL\020\003\022\"\n\036BGP_ARO_ADV"
-  "ERT_STATE_WITHDRAWN\020\004Bi\n\036opi_api.network"
-  ".cloud.v1alpha1B\010BGPProtoP\001Z;github.com/"
-  "opiproject/opi-api/network/cloud/v1alpha"
-  "1/gen/gob\006proto3"
+  "a1.IPAddress\0223\n\003afi\030\002 \001(\0162&.opi_api.netw"
+  "ork.cloud.v1alpha1.BGPAfi\0225\n\004safi\030\003 \001(\0162"
+  "\'.opi_api.network.cloud.v1alpha1.BGPSafi"
+  "\022\016\n\006prefix\030\004 \001(\014\022\022\n\nprefix_len\030\005 \001(\005\022@\n\005"
+  "state\030\006 \001(\01621.opi_api.network.cloud.v1al"
+  "pha1.BgpAroAdvertState\022:\n\007as_size\030\007 \001(\0162"
+  ").opi_api.network.cloud.v1alpha1.BgpAsSi"
+  "ze\022\023\n\013as_path_str\030\010 \001(\014\022\014\n\004comm\030\t \003(\014\022\020\n"
+  "\010ext_comm\030\n \003(\014\022\023\n\013med_present\030\013 \001(\010\022\013\n\003"
+  "med\030\014 \001(\r*X\n\006BGPAfi\022\027\n\023BGP_AFI_UNSPECIFI"
+  "ED\020\000\022\020\n\014BGP_AFI_IPV4\020\001\022\020\n\014BGP_AFI_IPV6\020\002"
+  "\022\021\n\rBGP_AFI_L2VPN\020\031*L\n\007BGPSafi\022\030\n\024BGP_SA"
+  "FI_UNSPECIFIED\020\000\022\024\n\020BGP_SAFI_UNICAST\020\001\022\021"
+  "\n\rBGP_SAFI_EVPN\020F*l\n\017BGPPeerRRClient\022\"\n\036"
+  "BGP_PEER_RR_CLIENT_UNSPECIFIED\020\000\022\026\n\022BGP_"
+  "PEER_RR_CLIENT\020\001\022\035\n\031BGP_PEER_RR_MESHED_C"
+  "LIENT\020\002*\232\002\n\023BGPPeerSessionState\022&\n\"BGP_P"
+  "EER_SESSION_STATE_UNSPECIFIED\020\000\022\037\n\033BGP_P"
+  "EER_SESSION_STATE_IDLE\020\001\022\"\n\036BGP_PEER_SES"
+  "SION_STATE_CONNECT\020\002\022!\n\035BGP_PEER_SESSION"
+  "_STATE_ACTIVE\020\003\022#\n\037BGP_PEER_SESSION_STAT"
+  "E_OPENSENT\020\004\022&\n\"BGP_PEER_SESSION_STATE_O"
+  "PENCONFIRM\020\005\022&\n\"BGP_PEER_SESSION_STATE_E"
+  "STABLISHED\020\006*_\n\tBgpAsSize\022\033\n\027BGP_AS_SIZE"
+  "_UNSPECIFIED\020\000\022\031\n\025BGP_AS_SIZE_TWO_OCTET\020"
+  "\001\022\032\n\026BGP_AS_SIZE_FOUR_OCTET\020\002*\320\004\n\013BGPAdd"
+  "rType\022\035\n\031BGP_ADDR_TYPE_UNSPECIFIED\020\000\022\026\n\022"
+  "BGP_ADDR_TYPE_IPV4\020\001\022\026\n\022BGP_ADDR_TYPE_IP"
+  "V6\020\002\022\026\n\022BGP_ADDR_TYPE_NSAP\020\003\022\026\n\022BGP_ADDR"
+  "_TYPE_HDLC\020\004\022\031\n\025BGP_ADDR_TYPE_BBN1822\020\005\022"
+  "\031\n\025BGP_ADDR_TYPE_IEEE802\020\006\022\026\n\022BGP_ADDR_T"
+  "YPE_E163\020\007\022\026\n\022BGP_ADDR_TYPE_E164\020\010\022\025\n\021BG"
+  "P_ADDR_TYPE_F69\020\t\022\026\n\022BGP_ADDR_TYPE_X121\020"
+  "\n\022\025\n\021BGP_ADDR_TYPE_IPX\020\013\022\033\n\027BGP_ADDR_TYP"
+  "E_APPLETALK\020\014\022\032\n\026BGP_ADDR_TYPE_DECNETIV\020"
+  "\r\022\033\n\027BGP_ADDR_TYPE_BANYANVIN\020\016\022\033\n\027BGP_AD"
+  "DR_TYPE_E164_NSAP\020\017\022\032\n\026BGP_ADDR_TYPE_IPV"
+  "4_TNA\020\020\022\032\n\026BGP_ADDR_TYPE_IPV6_TNA\020\021\022\032\n\026B"
+  "GP_ADDR_TYPE_NSAP_TNA\020\022\022\032\n\026BGP_ADDR_TYPE"
+  "_VPN_IPV4\020\023\022\032\n\026BGP_ADDR_TYPE_VPN_IPV6\020\024\022"
+  "\027\n\023BGP_ADDR_TYPE_L2VPN\020\031*\271\001\n\014BGPOperStat"
+  "e\022\036\n\032BGP_OPER_STATE_UNSPECIFIED\020\000\022\025\n\021BGP"
+  "_OPER_STATE_UP\020\001\022\027\n\023BGP_OPER_STATE_DOWN\020"
+  "\002\022\033\n\027BGP_OPER_STATE_GOING_UP\020\003\022\035\n\031BGP_OP"
+  "ER_STATE_GOING_DOWN\020\004\022\035\n\031BGP_OPER_STATE_"
+  "ACT_FAILED\020\005*\275\001\n\023BgpAddPathCapNegCap\022\033\n\027"
+  "BGP_ADD_PATH_SR_DISABLE\020\000\022\033\n\027BGP_ADD_PAT"
+  "H_SR_RECEIVE\020\001\022\030\n\024BGP_ADD_PATH_SR_SEND\020\002"
+  "\022\030\n\024BGP_ADD_PATH_SR_BOTH\020\003\022\033\n\027BGP_ADD_PA"
+  "TH_SR_INHERIT\020\004\022\033\n\027BGP_ADD_PATH_SR_UNKNO"
+  "WN\020\005*\334\001\n\024BGPClearRouteOptions\022\'\n#BGP_CLE"
+  "AR_ROUTE_OPTIONS_UNSPECIFIED\020\000\022 \n\034BGP_CL"
+  "EAR_ROUTE_OPTIONS_HARD\020\001\022&\n\"BGP_CLEAR_RO"
+  "UTE_OPTIONS_REFRESH_IN\020\002\022\'\n#BGP_CLEAR_RO"
+  "UTE_OPTIONS_REFRESH_OUT\020\003\022(\n$BGP_CLEAR_R"
+  "OUTE_OPTIONS_REFRESH_BOTH\020\004*[\n\007NLRISrc\022\030"
+  "\n\024NLRI_SRC_UNSPECIFIED\020\000\022\021\n\rNLRI_SRC_PEE"
+  "R\020\001\022\020\n\014NLRI_SRC_AFM\020\002\022\021\n\rNLRI_SRC_SELF\020\003"
+  "*\231\001\n\017BgpNlriIsActive\022\"\n\036BGP_NLRI_IS_ACTI"
+  "VE_UNSPECIFIED\020\000\022\"\n\036BGP_NLRI_IS_ACTIVE_N"
+  "OT_TRACKED\020\001\022\037\n\033BGP_NLRI_IS_ACTIVE_INACT"
+  "IVE\020\002\022\035\n\031BGP_NLRI_IS_ACTIVE_ACTIVE\020\003*\246\004\n"
+  "\rBGPRsnNotBest\022\035\n\031BGP_REASON_NOT_CONSIDE"
+  "RED\020\000\022\034\n\030BGP_REASON_ROUTE_IS_BEST\020\001\022\025\n\021B"
+  "GP_REASON_WEIGHT\020\002\022\031\n\025BGP_REASON_LOCAL_P"
+  "REF\020\003\022\037\n\033BGP_REASON_LCL_ORIG_PRFRRED\020\004\022\032"
+  "\n\026BGP_REASON_AS_PATH_LEN\020\005\022\025\n\021BGP_REASON"
+  "_ORIGIN\020\006\022\022\n\016BGP_REASON_MED\020\007\022\035\n\031BGP_REA"
+  "SON_LOCAL_ORIG_TIE\020\010\022\037\n\033BGP_REASON_EBGP_"
+  "V_IBGP_PEER\020\t\022\035\n\031BGP_REASON_ADMIN_DISTAN"
+  "CE\020\n\022\037\n\033BGP_REASON_PATH_TO_NEXT_CST\020\013\022\034\n"
+  "\030BGP_REASON_PREF_EXISTING\020\014\022\031\n\025BGP_REASO"
+  "N_IDENTIFIER\020\r\022\032\n\026BGP_REASON_CLUSTER_LEN"
+  "\020\016\022\035\n\031BGP_REASON_PEER_ADDR_TYPE\020\017\022\030\n\024BGP"
+  "_REASON_PEER_ADDR\020\020\022\030\n\024BGP_REASON_PEER_P"
+  "ORT\020\021\022\026\n\022BGP_REASON_PATH_ID\020\022*\202\001\n\rBGPOri"
+  "ginAttr\022\037\n\033BGP_ORIGIN_ATTR_UNSPECIFIED\020\000"
+  "\022\027\n\023BGP_ORIGIN_ATTR_IGP\020\001\022\027\n\023BGP_ORIGIN_"
+  "ATTR_EGP\020\002\022\036\n\032BGP_ORIGIN_ATTR_INCOMPLETE"
+  "\020\003*t\n\013BGPPeerType\022\035\n\031BGP_PEER_TYPE_UNSPE"
+  "CIFIED\020\000\022\026\n\022BGP_PEER_TYPE_NONE\020\001\022\026\n\022BGP_"
+  "PEER_TYPE_IBGP\020\002\022\026\n\022BGP_PEER_TYPE_EBGP\020\003"
+  "*\324\001\n\021BgpAroAdvertState\022$\n BGP_ARO_ADVERT"
+  "_STATE_UNSPECIFIED\020\000\022#\n\037BGP_ARO_ADVERT_S"
+  "TATE_ADVERTISED\020\001\022#\n\037BGP_ARO_ADVERT_STAT"
+  "E_SUPPRESSED\020\002\022+\n\'BGP_ARO_ADVERT_STATE_P"
+  "ENDING_WITHDRAWAL\020\003\022\"\n\036BGP_ARO_ADVERT_ST"
+  "ATE_WITHDRAWN\020\004Bi\n\036opi_api.network.cloud"
+  ".v1alpha1B\010BGPProtoP\001Z;github.com/opipro"
+  "ject/opi-api/network/cloud/v1alpha1/gen/"
+  "gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bgp_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bgp_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bgp_2eproto = {
-  false, false, 9016, descriptor_table_protodef_bgp_2eproto, "bgp.proto", 
+  false, false, 9130, descriptor_table_protodef_bgp_2eproto, "bgp.proto", 
   &descriptor_table_bgp_2eproto_once, descriptor_table_bgp_2eproto_deps, 2, 16,
   schemas, file_default_instances, TableStruct_bgp_2eproto::offsets,
   file_level_metadata_bgp_2eproto, file_level_enum_descriptors_bgp_2eproto, file_level_service_descriptors_bgp_2eproto,
@@ -1223,6 +1226,14 @@ Bgp::Bgp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Bgp::Bgp(const Bgp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::BgpSpec(*from.spec_);
   } else {
@@ -1237,6 +1248,10 @@ Bgp::Bgp(const Bgp& from)
 }
 
 inline void Bgp::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -1252,6 +1267,7 @@ Bgp::~Bgp() {
 
 inline void Bgp::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -1272,6 +1288,7 @@ void Bgp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -1289,17 +1306,27 @@ const char* Bgp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Bgp.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BgpStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -1334,20 +1361,30 @@ uint8_t* Bgp::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.Bgp.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1366,14 +1403,21 @@ size_t Bgp::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1402,6 +1446,9 @@ void Bgp::MergeFrom(const Bgp& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BgpSpec::MergeFrom(from._internal_spec());
   }
@@ -1424,7 +1471,14 @@ bool Bgp::IsInitialized() const {
 
 void Bgp::InternalSwap(Bgp* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Bgp, status_)
       + sizeof(Bgp::status_)
@@ -1443,19 +1497,8 @@ void Bgp::InternalSwap(Bgp* other) {
 
 class BgpSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const BgpSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-BgpSpec::_Internal::id(const BgpSpec* msg) {
-  return *msg->id_;
-}
-void BgpSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
 BgpSpec::BgpSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1468,11 +1511,6 @@ BgpSpec::BgpSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 BgpSpec::BgpSpec(const BgpSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   ::memcpy(&local_asn_, &from.local_asn_,
     static_cast<size_t>(reinterpret_cast<char*>(&suppress_default_resolution_) -
     reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
@@ -1481,9 +1519,9 @@ BgpSpec::BgpSpec(const BgpSpec& from)
 
 inline void BgpSpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&local_asn_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&suppress_default_resolution_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(suppress_default_resolution_));
+    reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
 }
 
 BgpSpec::~BgpSpec() {
@@ -1495,7 +1533,6 @@ BgpSpec::~BgpSpec() {
 
 inline void BgpSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
 }
 
 void BgpSpec::ArenaDtor(void* object) {
@@ -1514,10 +1551,6 @@ void BgpSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   ::memset(&local_asn_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&suppress_default_resolution_) -
       reinterpret_cast<char*>(&local_asn_)) + sizeof(suppress_default_resolution_));
@@ -1530,49 +1563,41 @@ const char* BgpSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // uint32 local_asn = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 local_asn = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           local_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // fixed32 router_id = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+      // fixed32 router_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
           router_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
           ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // fixed32 cluster_id = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+      // fixed32 cluster_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
           cluster_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
           ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // bool disable = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // bool disable = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           disable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool suppress_default_resolution = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // bool suppress_default_resolution = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           suppress_default_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
@@ -1607,42 +1632,34 @@ uint8_t* BgpSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // uint32 local_asn = 2;
+  // uint32 local_asn = 1;
   if (this->_internal_local_asn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_local_asn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_local_asn(), target);
   }
 
-  // fixed32 router_id = 3;
+  // fixed32 router_id = 2;
   if (this->_internal_router_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(3, this->_internal_router_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(2, this->_internal_router_id(), target);
   }
 
-  // fixed32 cluster_id = 4;
+  // fixed32 cluster_id = 3;
   if (this->_internal_cluster_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(4, this->_internal_cluster_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(3, this->_internal_cluster_id(), target);
   }
 
-  // bool disable = 5;
+  // bool disable = 4;
   if (this->_internal_disable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_disable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_disable(), target);
   }
 
-  // bool suppress_default_resolution = 6;
+  // bool suppress_default_resolution = 5;
   if (this->_internal_suppress_default_resolution() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_suppress_default_resolution(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_suppress_default_resolution(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1661,34 +1678,27 @@ size_t BgpSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // uint32 local_asn = 2;
+  // uint32 local_asn = 1;
   if (this->_internal_local_asn() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_local_asn());
   }
 
-  // fixed32 router_id = 3;
+  // fixed32 router_id = 2;
   if (this->_internal_router_id() != 0) {
     total_size += 1 + 4;
   }
 
-  // fixed32 cluster_id = 4;
+  // fixed32 cluster_id = 3;
   if (this->_internal_cluster_id() != 0) {
     total_size += 1 + 4;
   }
 
-  // bool disable = 5;
+  // bool disable = 4;
   if (this->_internal_disable() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool suppress_default_resolution = 6;
+  // bool suppress_default_resolution = 5;
   if (this->_internal_suppress_default_resolution() != 0) {
     total_size += 1 + 1;
   }
@@ -1715,9 +1725,6 @@ void BgpSpec::MergeFrom(const BgpSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_local_asn() != 0) {
     _internal_set_local_asn(from._internal_local_asn());
   }
@@ -1753,9 +1760,9 @@ void BgpSpec::InternalSwap(BgpSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BgpSpec, suppress_default_resolution_)
       + sizeof(BgpSpec::suppress_default_resolution_)
-      - PROTOBUF_FIELD_OFFSET(BgpSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(BgpSpec, local_asn_)>(
+          reinterpret_cast<char*>(&local_asn_),
+          reinterpret_cast<char*>(&other->local_asn_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BgpSpec::GetMetadata() const {
@@ -2073,6 +2080,14 @@ BGPPeer::BGPPeer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 BGPPeer::BGPPeer(const BGPPeer& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerSpec(*from.spec_);
   } else {
@@ -2087,6 +2102,10 @@ BGPPeer::BGPPeer(const BGPPeer& from)
 }
 
 inline void BGPPeer::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -2102,6 +2121,7 @@ BGPPeer::~BGPPeer() {
 
 inline void BGPPeer::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -2122,6 +2142,7 @@ void BGPPeer::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -2139,17 +2160,27 @@ const char* BGPPeer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeer.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -2184,20 +2215,30 @@ uint8_t* BGPPeer::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.BGPPeer.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2216,14 +2257,21 @@ size_t BGPPeer::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2252,6 +2300,9 @@ void BGPPeer::MergeFrom(const BGPPeer& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerSpec::MergeFrom(from._internal_spec());
   }
@@ -2274,7 +2325,14 @@ bool BGPPeer::IsInitialized() const {
 
 void BGPPeer::InternalSwap(BGPPeer* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BGPPeer, status_)
       + sizeof(BGPPeer::status_)
@@ -2293,15 +2351,10 @@ void BGPPeer::InternalSwap(BGPPeer* other) {
 
 class BGPPeerSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const BGPPeerSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& local_address(const BGPPeerSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& peer_addr(const BGPPeerSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-BGPPeerSpec::_Internal::id(const BGPPeerSpec* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerSpec::_Internal::local_address(const BGPPeerSpec* msg) {
   return *msg->local_address_;
@@ -2309,12 +2362,6 @@ BGPPeerSpec::_Internal::local_address(const BGPPeerSpec* msg) {
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerSpec::_Internal::peer_addr(const BGPPeerSpec* msg) {
   return *msg->peer_addr_;
-}
-void BGPPeerSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 void BGPPeerSpec::clear_local_address() {
   if (GetArenaForAllocation() == nullptr && local_address_ != nullptr) {
@@ -2348,11 +2395,6 @@ BGPPeerSpec::BGPPeerSpec(const BGPPeerSpec& from)
     password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_password(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   if (from._internal_has_local_address()) {
     local_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_address_);
   } else {
@@ -2375,9 +2417,9 @@ password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
   password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&local_address_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&allow_local_as_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(allow_local_as_));
+    reinterpret_cast<char*>(&local_address_)) + sizeof(allow_local_as_));
 }
 
 BGPPeerSpec::~BGPPeerSpec() {
@@ -2390,7 +2432,6 @@ BGPPeerSpec::~BGPPeerSpec() {
 inline void BGPPeerSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete local_address_;
   if (this != internal_default_instance()) delete peer_addr_;
 }
@@ -2412,10 +2453,6 @@ void BGPPeerSpec::Clear() {
   (void) cached_has_bits;
 
   password_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && local_address_ != nullptr) {
     delete local_address_;
   }
@@ -2436,124 +2473,116 @@ const char* BGPPeerSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::opi_api::network::opinetcommon::v1alpha1::AdminState>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_local_address(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_peer_addr(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 remote_asn = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // uint32 remote_asn = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           remote_asn_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool send_comm = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // bool send_comm = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           send_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool send_ext_comm = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // bool send_ext_comm = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           send_ext_comm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+      // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_rr_client(static_cast<::opi_api::network::cloud::v1alpha1::BGPPeerRRClient>(val));
         } else
           goto handle_unusual;
         continue;
-      // int32 connect_retry = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // int32 connect_retry = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           connect_retry_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 holdtime = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // int32 holdtime = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 keep_alive = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+      // int32 keep_alive = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           keep_alive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bytes password = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+      // bytes password = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_password();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 ttl = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+      // int32 ttl = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           ttl_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 idle_holdtime = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+      // int32 idle_holdtime = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
           idle_holdtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 allow_local_as = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+      // int32 allow_local_as = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
           allow_local_as_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -2588,102 +2617,94 @@ uint8_t* BGPPeerSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
   if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_state(), target);
+      1, this->_internal_state(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
   if (this->_internal_has_local_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::local_address(this), target, stream);
+        2, _Internal::local_address(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
   if (this->_internal_has_peer_addr()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::peer_addr(this), target, stream);
+        3, _Internal::peer_addr(this), target, stream);
   }
 
-  // uint32 remote_asn = 5;
+  // uint32 remote_asn = 4;
   if (this->_internal_remote_asn() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_remote_asn(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_remote_asn(), target);
   }
 
-  // bool send_comm = 6;
+  // bool send_comm = 5;
   if (this->_internal_send_comm() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_send_comm(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_send_comm(), target);
   }
 
-  // bool send_ext_comm = 7;
+  // bool send_ext_comm = 6;
   if (this->_internal_send_ext_comm() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_send_ext_comm(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_send_ext_comm(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
   if (this->_internal_rr_client() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_rr_client(), target);
+      7, this->_internal_rr_client(), target);
   }
 
-  // int32 connect_retry = 9;
+  // int32 connect_retry = 8;
   if (this->_internal_connect_retry() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_connect_retry(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_connect_retry(), target);
   }
 
-  // int32 holdtime = 10;
+  // int32 holdtime = 9;
   if (this->_internal_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_holdtime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_holdtime(), target);
   }
 
-  // int32 keep_alive = 11;
+  // int32 keep_alive = 10;
   if (this->_internal_keep_alive() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(11, this->_internal_keep_alive(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_keep_alive(), target);
   }
 
-  // bytes password = 12;
+  // bytes password = 11;
   if (!this->_internal_password().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        12, this->_internal_password(), target);
+        11, this->_internal_password(), target);
   }
 
-  // int32 ttl = 13;
+  // int32 ttl = 12;
   if (this->_internal_ttl() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_ttl(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_ttl(), target);
   }
 
-  // int32 idle_holdtime = 14;
+  // int32 idle_holdtime = 13;
   if (this->_internal_idle_holdtime() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_idle_holdtime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_idle_holdtime(), target);
   }
 
-  // int32 allow_local_as = 15;
+  // int32 allow_local_as = 14;
   if (this->_internal_allow_local_as() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_allow_local_as(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_allow_local_as(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2702,87 +2723,80 @@ size_t BGPPeerSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes password = 12;
+  // bytes password = 11;
   if (!this->_internal_password().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_password());
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
   if (this->_internal_has_local_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *local_address_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *peer_addr_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
   if (this->_internal_state() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
-  // uint32 remote_asn = 5;
+  // uint32 remote_asn = 4;
   if (this->_internal_remote_asn() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_remote_asn());
   }
 
-  // bool send_comm = 6;
+  // bool send_comm = 5;
   if (this->_internal_send_comm() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool send_ext_comm = 7;
+  // bool send_ext_comm = 6;
   if (this->_internal_send_ext_comm() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
   if (this->_internal_rr_client() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_rr_client());
   }
 
-  // int32 connect_retry = 9;
+  // int32 connect_retry = 8;
   if (this->_internal_connect_retry() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_connect_retry());
   }
 
-  // int32 holdtime = 10;
+  // int32 holdtime = 9;
   if (this->_internal_holdtime() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_holdtime());
   }
 
-  // int32 keep_alive = 11;
+  // int32 keep_alive = 10;
   if (this->_internal_keep_alive() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_keep_alive());
   }
 
-  // int32 ttl = 13;
+  // int32 ttl = 12;
   if (this->_internal_ttl() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_ttl());
   }
 
-  // int32 idle_holdtime = 14;
+  // int32 idle_holdtime = 13;
   if (this->_internal_idle_holdtime() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_idle_holdtime());
   }
 
-  // int32 allow_local_as = 15;
+  // int32 allow_local_as = 14;
   if (this->_internal_allow_local_as() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_allow_local_as());
   }
@@ -2811,9 +2825,6 @@ void BGPPeerSpec::MergeFrom(const BGPPeerSpec& from) {
 
   if (!from._internal_password().empty()) {
     _internal_set_password(from._internal_password());
-  }
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
   }
   if (from._internal_has_local_address()) {
     _internal_mutable_local_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_address());
@@ -2881,9 +2892,9 @@ void BGPPeerSpec::InternalSwap(BGPPeerSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BGPPeerSpec, allow_local_as_)
       + sizeof(BGPPeerSpec::allow_local_as_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(BGPPeerSpec, local_address_)>(
+          reinterpret_cast<char*>(&local_address_),
+          reinterpret_cast<char*>(&other->local_address_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerSpec::GetMetadata() const {
@@ -4267,6 +4278,14 @@ BGPPeerAf::BGPPeerAf(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 BGPPeerAf::BGPPeerAf(const BGPPeerAf& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec(*from.spec_);
   } else {
@@ -4281,6 +4300,10 @@ BGPPeerAf::BGPPeerAf(const BGPPeerAf& from)
 }
 
 inline void BGPPeerAf::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&state_) -
@@ -4296,6 +4319,7 @@ BGPPeerAf::~BGPPeerAf() {
 
 inline void BGPPeerAf::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete state_;
 }
@@ -4316,6 +4340,7 @@ void BGPPeerAf::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -4333,17 +4358,27 @@ const char* BGPPeerAf::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.BGPPeerAf.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_state(), ptr);
           CHK_(ptr);
         } else
@@ -4378,20 +4413,30 @@ uint8_t* BGPPeerAf::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.BGPPeerAf.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
   if (this->_internal_has_state()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::state(this), target, stream);
+        3, _Internal::state(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4410,14 +4455,21 @@ size_t BGPPeerAf::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
   if (this->_internal_has_state()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4446,6 +4498,9 @@ void BGPPeerAf::MergeFrom(const BGPPeerAf& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec::MergeFrom(from._internal_spec());
   }
@@ -4468,7 +4523,14 @@ bool BGPPeerAf::IsInitialized() const {
 
 void BGPPeerAf::InternalSwap(BGPPeerAf* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BGPPeerAf, state_)
       + sizeof(BGPPeerAf::state_)
@@ -4487,15 +4549,10 @@ void BGPPeerAf::InternalSwap(BGPPeerAf* other) {
 
 class BGPPeerAfSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const BGPPeerAfSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& local_addr(const BGPPeerAfSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& peer_addr(const BGPPeerAfSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-BGPPeerAfSpec::_Internal::id(const BGPPeerAfSpec* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerAfSpec::_Internal::local_addr(const BGPPeerAfSpec* msg) {
   return *msg->local_addr_;
@@ -4503,12 +4560,6 @@ BGPPeerAfSpec::_Internal::local_addr(const BGPPeerAfSpec* msg) {
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 BGPPeerAfSpec::_Internal::peer_addr(const BGPPeerAfSpec* msg) {
   return *msg->peer_addr_;
-}
-void BGPPeerAfSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 void BGPPeerAfSpec::clear_local_addr() {
   if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
@@ -4534,11 +4585,6 @@ BGPPeerAfSpec::BGPPeerAfSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 BGPPeerAfSpec::BGPPeerAfSpec(const BGPPeerAfSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   if (from._internal_has_local_addr()) {
     local_addr_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.local_addr_);
   } else {
@@ -4557,9 +4603,9 @@ BGPPeerAfSpec::BGPPeerAfSpec(const BGPPeerAfSpec& from)
 
 inline void BGPPeerAfSpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&local_addr_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&local_addr_scope_id_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(local_addr_scope_id_));
+    reinterpret_cast<char*>(&local_addr_)) + sizeof(local_addr_scope_id_));
 }
 
 BGPPeerAfSpec::~BGPPeerAfSpec() {
@@ -4571,7 +4617,6 @@ BGPPeerAfSpec::~BGPPeerAfSpec() {
 
 inline void BGPPeerAfSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete local_addr_;
   if (this != internal_default_instance()) delete peer_addr_;
 }
@@ -4592,10 +4637,6 @@ void BGPPeerAfSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && local_addr_ != nullptr) {
     delete local_addr_;
   }
@@ -4616,83 +4657,75 @@ const char* BGPPeerAfSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_local_addr(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_peer_addr(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_afi(static_cast<::opi_api::network::cloud::v1alpha1::BGPAfi>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_safi(static_cast<::opi_api::network::cloud::v1alpha1::BGPSafi>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool nexthop_self = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // bool nexthop_self = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           nexthop_self_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool default_orig = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // bool default_orig = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           default_orig_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 local_port = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+      // int32 local_port = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           local_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 remote_port = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // int32 remote_port = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           remote_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 local_addr_scope_id = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // int32 local_addr_scope_id = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           local_addr_scope_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4727,72 +4760,64 @@ uint8_t* BGPPeerAfSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   if (this->_internal_has_local_addr()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::local_addr(this), target, stream);
+        1, _Internal::local_addr(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   if (this->_internal_has_peer_addr()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::peer_addr(this), target, stream);
+        2, _Internal::peer_addr(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;
+  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
   if (this->_internal_afi() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_afi(), target);
+      3, this->_internal_afi(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;
+  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
   if (this->_internal_safi() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_safi(), target);
+      4, this->_internal_safi(), target);
   }
 
-  // bool nexthop_self = 6;
+  // bool nexthop_self = 5;
   if (this->_internal_nexthop_self() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_nexthop_self(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_nexthop_self(), target);
   }
 
-  // bool default_orig = 7;
+  // bool default_orig = 6;
   if (this->_internal_default_orig() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_default_orig(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_default_orig(), target);
   }
 
-  // int32 local_port = 8;
+  // int32 local_port = 7;
   if (this->_internal_local_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_local_port(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_local_port(), target);
   }
 
-  // int32 remote_port = 9;
+  // int32 remote_port = 8;
   if (this->_internal_remote_port() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_remote_port(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_remote_port(), target);
   }
 
-  // int32 local_addr_scope_id = 10;
+  // int32 local_addr_scope_id = 9;
   if (this->_internal_local_addr_scope_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_local_addr_scope_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_local_addr_scope_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4811,60 +4836,53 @@ size_t BGPPeerAfSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   if (this->_internal_has_local_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *local_addr_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   if (this->_internal_has_peer_addr()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *peer_addr_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;
+  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
   if (this->_internal_afi() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_afi());
   }
 
-  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;
+  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
   if (this->_internal_safi() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_safi());
   }
 
-  // bool nexthop_self = 6;
+  // bool nexthop_self = 5;
   if (this->_internal_nexthop_self() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool default_orig = 7;
+  // bool default_orig = 6;
   if (this->_internal_default_orig() != 0) {
     total_size += 1 + 1;
   }
 
-  // int32 local_port = 8;
+  // int32 local_port = 7;
   if (this->_internal_local_port() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_local_port());
   }
 
-  // int32 remote_port = 9;
+  // int32 remote_port = 8;
   if (this->_internal_remote_port() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_remote_port());
   }
 
-  // int32 local_addr_scope_id = 10;
+  // int32 local_addr_scope_id = 9;
   if (this->_internal_local_addr_scope_id() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_local_addr_scope_id());
   }
@@ -4891,9 +4909,6 @@ void BGPPeerAfSpec::MergeFrom(const BGPPeerAfSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_has_local_addr()) {
     _internal_mutable_local_addr()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_local_addr());
   }
@@ -4941,9 +4956,9 @@ void BGPPeerAfSpec::InternalSwap(BGPPeerAfSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, local_addr_scope_id_)
       + sizeof(BGPPeerAfSpec::local_addr_scope_id_)
-      - PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(BGPPeerAfSpec, local_addr_)>(
+          reinterpret_cast<char*>(&local_addr_),
+          reinterpret_cast<char*>(&other->local_addr_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BGPPeerAfSpec::GetMetadata() const {

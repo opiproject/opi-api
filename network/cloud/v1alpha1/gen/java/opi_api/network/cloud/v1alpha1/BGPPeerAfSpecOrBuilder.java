@@ -9,37 +9,10 @@ public interface BGPPeerAfSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique key/identifier of peer AF config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique key/identifier of peer AF config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique key/identifier of peer AF config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * BGP local IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;</code>
    * @return Whether the localAddr field is set.
    */
   boolean hasLocalAddr();
@@ -48,7 +21,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP local IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;</code>
    * @return The localAddr.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getLocalAddr();
@@ -57,7 +30,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP local IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalAddrOrBuilder();
 
@@ -66,7 +39,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;</code>
    * @return Whether the peerAddr field is set.
    */
   boolean hasPeerAddr();
@@ -75,7 +48,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;</code>
    * @return The peerAddr.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getPeerAddr();
@@ -84,7 +57,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPeerAddrOrBuilder();
 
@@ -93,7 +66,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP address family
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;</code>
    * @return The enum numeric value on the wire for afi.
    */
   int getAfiValue();
@@ -102,7 +75,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP address family
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;</code>
    * @return The afi.
    */
   opi_api.network.cloud.v1alpha1.BGPAfi getAfi();
@@ -112,7 +85,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP sub-address family
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;</code>
    * @return The enum numeric value on the wire for safi.
    */
   int getSafiValue();
@@ -121,7 +94,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * BGP sub-address family
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;</code>
    * @return The safi.
    */
   opi_api.network.cloud.v1alpha1.BGPSafi getSafi();
@@ -131,7 +104,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * enforce this router to set self as next-hop for advertised routes
    * </pre>
    *
-   * <code>bool nexthop_self = 6;</code>
+   * <code>bool nexthop_self = 5;</code>
    * @return The nexthopSelf.
    */
   boolean getNexthopSelf();
@@ -141,7 +114,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * originate a default route to this peer
    * </pre>
    *
-   * <code>bool default_orig = 7;</code>
+   * <code>bool default_orig = 6;</code>
    * @return The defaultOrig.
    */
   boolean getDefaultOrig();
@@ -151,7 +124,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * The local port configured for the peering session
    * </pre>
    *
-   * <code>int32 local_port = 8;</code>
+   * <code>int32 local_port = 7;</code>
    * @return The localPort.
    */
   int getLocalPort();
@@ -161,7 +134,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * The remote port configured for the peering session
    * </pre>
    *
-   * <code>int32 remote_port = 9;</code>
+   * <code>int32 remote_port = 8;</code>
    * @return The remotePort.
    */
   int getRemotePort();
@@ -175,7 +148,7 @@ public interface BGPPeerAfSpecOrBuilder extends
    * peer is reachable
    * </pre>
    *
-   * <code>int32 local_addr_scope_id = 10;</code>
+   * <code>int32 local_addr_scope_id = 9;</code>
    * @return The localAddrScopeId.
    */
   int getLocalAddrScopeId();

@@ -58,86 +58,73 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
 
             portNumber_ = input.readInt32();
             break;
           }
-          case 24: {
+          case 16: {
             int rawValue = input.readEnum();
 
             adminState_ = rawValue;
             break;
           }
-          case 32: {
+          case 24: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
             break;
           }
-          case 40: {
+          case 32: {
             int rawValue = input.readEnum();
 
             speed_ = rawValue;
             break;
           }
-          case 48: {
+          case 40: {
             int rawValue = input.readEnum();
 
             fecType_ = rawValue;
             break;
           }
-          case 56: {
+          case 48: {
 
             autonegEnable_ = input.readBool();
             break;
           }
-          case 64: {
+          case 56: {
 
             debounceTimeout_ = input.readInt32();
             break;
           }
-          case 72: {
+          case 64: {
 
             mtu_ = input.readInt32();
             break;
           }
-          case 80: {
+          case 72: {
             int rawValue = input.readEnum();
 
             pauseType_ = rawValue;
             break;
           }
-          case 88: {
+          case 80: {
 
             txPauseEn_ = input.readBool();
             break;
           }
-          case 96: {
+          case 88: {
 
             rxPauseEn_ = input.readBool();
             break;
           }
-          case 104: {
+          case 96: {
             int rawValue = input.readEnum();
 
             loopbackMode_ = rawValue;
             break;
           }
-          case 112: {
+          case 104: {
 
             lanesCount_ = input.readInt32();
             break;
@@ -174,52 +161,14 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.PortSpec.class, opi_api.network.cloud.v1alpha1.PortSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int PORT_NUMBER_FIELD_NUMBER = 2;
+  public static final int PORT_NUMBER_FIELD_NUMBER = 1;
   private int portNumber_;
   /**
    * <pre>
    * port number is numerical port identifier starting from 1
    * </pre>
    *
-   * <code>int32 port_number = 2;</code>
+   * <code>int32 port_number = 1;</code>
    * @return The portNumber.
    */
   @java.lang.Override
@@ -227,14 +176,14 @@ private static final long serialVersionUID = 0L;
     return portNumber_;
   }
 
-  public static final int ADMIN_STATE_FIELD_NUMBER = 3;
+  public static final int ADMIN_STATE_FIELD_NUMBER = 2;
   private int adminState_;
   /**
    * <pre>
    * port admin state
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
    * @return The enum numeric value on the wire for adminState.
    */
   @java.lang.Override public int getAdminStateValue() {
@@ -245,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * port admin state
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
    * @return The adminState.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortAdminState getAdminState() {
@@ -254,14 +203,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortAdminState.UNRECOGNIZED : result;
   }
 
-  public static final int TYPE_FIELD_NUMBER = 4;
+  public static final int TYPE_FIELD_NUMBER = 3;
   private int type_;
   /**
    * <pre>
    * type of port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -272,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * type of port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortType getType() {
@@ -281,14 +230,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortType.UNRECOGNIZED : result;
   }
 
-  public static final int SPEED_FIELD_NUMBER = 5;
+  public static final int SPEED_FIELD_NUMBER = 4;
   private int speed_;
   /**
    * <pre>
    * operational speed of the port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
    * @return The enum numeric value on the wire for speed.
    */
   @java.lang.Override public int getSpeedValue() {
@@ -299,7 +248,7 @@ private static final long serialVersionUID = 0L;
    * operational speed of the port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
    * @return The speed.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortSpeed getSpeed() {
@@ -308,14 +257,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortSpeed.UNRECOGNIZED : result;
   }
 
-  public static final int FEC_TYPE_FIELD_NUMBER = 6;
+  public static final int FEC_TYPE_FIELD_NUMBER = 5;
   private int fecType_;
   /**
    * <pre>
    * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
    * @return The enum numeric value on the wire for fecType.
    */
   @java.lang.Override public int getFecTypeValue() {
@@ -326,7 +275,7 @@ private static final long serialVersionUID = 0L;
    * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
    * @return The fecType.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortFecType getFecType() {
@@ -335,14 +284,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortFecType.UNRECOGNIZED : result;
   }
 
-  public static final int AUTONEG_ENABLE_FIELD_NUMBER = 7;
+  public static final int AUTONEG_ENABLE_FIELD_NUMBER = 6;
   private boolean autonegEnable_;
   /**
    * <pre>
    * set AutoNegEn to true to enable auto negotiation
    * </pre>
    *
-   * <code>bool autoneg_enable = 7;</code>
+   * <code>bool autoneg_enable = 6;</code>
    * @return The autonegEnable.
    */
   @java.lang.Override
@@ -350,14 +299,14 @@ private static final long serialVersionUID = 0L;
     return autonegEnable_;
   }
 
-  public static final int DEBOUNCE_TIMEOUT_FIELD_NUMBER = 8;
+  public static final int DEBOUNCE_TIMEOUT_FIELD_NUMBER = 7;
   private int debounceTimeout_;
   /**
    * <pre>
    * values for link debounce timeout in msec (default = 0 ms)
    * </pre>
    *
-   * <code>int32 debounce_timeout = 8;</code>
+   * <code>int32 debounce_timeout = 7;</code>
    * @return The debounceTimeout.
    */
   @java.lang.Override
@@ -365,14 +314,14 @@ private static final long serialVersionUID = 0L;
     return debounceTimeout_;
   }
 
-  public static final int MTU_FIELD_NUMBER = 9;
+  public static final int MTU_FIELD_NUMBER = 8;
   private int mtu_;
   /**
    * <pre>
    * MTU size in bytes (64 to 9216)
    * </pre>
    *
-   * <code>int32 mtu = 9;</code>
+   * <code>int32 mtu = 8;</code>
    * @return The mtu.
    */
   @java.lang.Override
@@ -380,14 +329,14 @@ private static final long serialVersionUID = 0L;
     return mtu_;
   }
 
-  public static final int PAUSE_TYPE_FIELD_NUMBER = 10;
+  public static final int PAUSE_TYPE_FIELD_NUMBER = 9;
   private int pauseType_;
   /**
    * <pre>
    * pause type - PFC or Link Level or Disable
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
    * @return The enum numeric value on the wire for pauseType.
    */
   @java.lang.Override public int getPauseTypeValue() {
@@ -398,7 +347,7 @@ private static final long serialVersionUID = 0L;
    * pause type - PFC or Link Level or Disable
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
    * @return The pauseType.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortPauseType getPauseType() {
@@ -407,14 +356,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortPauseType.UNRECOGNIZED : result;
   }
 
-  public static final int TX_PAUSE_EN_FIELD_NUMBER = 11;
+  public static final int TX_PAUSE_EN_FIELD_NUMBER = 10;
   private boolean txPauseEn_;
   /**
    * <pre>
    * MAC TX pause enable
    * </pre>
    *
-   * <code>bool tx_pause_en = 11;</code>
+   * <code>bool tx_pause_en = 10;</code>
    * @return The txPauseEn.
    */
   @java.lang.Override
@@ -422,14 +371,14 @@ private static final long serialVersionUID = 0L;
     return txPauseEn_;
   }
 
-  public static final int RX_PAUSE_EN_FIELD_NUMBER = 12;
+  public static final int RX_PAUSE_EN_FIELD_NUMBER = 11;
   private boolean rxPauseEn_;
   /**
    * <pre>
    * MAC RX pause enable
    * </pre>
    *
-   * <code>bool rx_pause_en = 12;</code>
+   * <code>bool rx_pause_en = 11;</code>
    * @return The rxPauseEn.
    */
   @java.lang.Override
@@ -437,14 +386,14 @@ private static final long serialVersionUID = 0L;
     return rxPauseEn_;
   }
 
-  public static final int LOOPBACK_MODE_FIELD_NUMBER = 13;
+  public static final int LOOPBACK_MODE_FIELD_NUMBER = 12;
   private int loopbackMode_;
   /**
    * <pre>
    * port loopback mode - MAC or PHY 
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
    * @return The enum numeric value on the wire for loopbackMode.
    */
   @java.lang.Override public int getLoopbackModeValue() {
@@ -455,7 +404,7 @@ private static final long serialVersionUID = 0L;
    * port loopback mode - MAC or PHY 
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
    * @return The loopbackMode.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.PortLoopBackMode getLoopbackMode() {
@@ -464,14 +413,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.PortLoopBackMode.UNRECOGNIZED : result;
   }
 
-  public static final int LANES_COUNT_FIELD_NUMBER = 14;
+  public static final int LANES_COUNT_FIELD_NUMBER = 13;
   private int lanesCount_;
   /**
    * <pre>
    * number of serdes lanes for port (range: 1-4)
    * </pre>
    *
-   * <code>int32 lanes_count = 14;</code>
+   * <code>int32 lanes_count = 13;</code>
    * @return The lanesCount.
    */
   @java.lang.Override
@@ -493,47 +442,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (portNumber_ != 0) {
-      output.writeInt32(2, portNumber_);
+      output.writeInt32(1, portNumber_);
     }
     if (adminState_ != opi_api.network.cloud.v1alpha1.PortAdminState.PORT_ADMIN_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, adminState_);
+      output.writeEnum(2, adminState_);
     }
     if (type_ != opi_api.network.cloud.v1alpha1.PortType.PORT_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, type_);
+      output.writeEnum(3, type_);
     }
     if (speed_ != opi_api.network.cloud.v1alpha1.PortSpeed.PORT_SPEED_UNSPECIFIED.getNumber()) {
-      output.writeEnum(5, speed_);
+      output.writeEnum(4, speed_);
     }
     if (fecType_ != opi_api.network.cloud.v1alpha1.PortFecType.PORT_FEC_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(6, fecType_);
+      output.writeEnum(5, fecType_);
     }
     if (autonegEnable_ != false) {
-      output.writeBool(7, autonegEnable_);
+      output.writeBool(6, autonegEnable_);
     }
     if (debounceTimeout_ != 0) {
-      output.writeInt32(8, debounceTimeout_);
+      output.writeInt32(7, debounceTimeout_);
     }
     if (mtu_ != 0) {
-      output.writeInt32(9, mtu_);
+      output.writeInt32(8, mtu_);
     }
     if (pauseType_ != opi_api.network.cloud.v1alpha1.PortPauseType.PORT_PAUSE_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(10, pauseType_);
+      output.writeEnum(9, pauseType_);
     }
     if (txPauseEn_ != false) {
-      output.writeBool(11, txPauseEn_);
+      output.writeBool(10, txPauseEn_);
     }
     if (rxPauseEn_ != false) {
-      output.writeBool(12, rxPauseEn_);
+      output.writeBool(11, rxPauseEn_);
     }
     if (loopbackMode_ != opi_api.network.cloud.v1alpha1.PortLoopBackMode.PORT_LOOP_BACK_MODE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(13, loopbackMode_);
+      output.writeEnum(12, loopbackMode_);
     }
     if (lanesCount_ != 0) {
-      output.writeInt32(14, lanesCount_);
+      output.writeInt32(13, lanesCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -544,61 +490,57 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (portNumber_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, portNumber_);
+        .computeInt32Size(1, portNumber_);
     }
     if (adminState_ != opi_api.network.cloud.v1alpha1.PortAdminState.PORT_ADMIN_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, adminState_);
+        .computeEnumSize(2, adminState_);
     }
     if (type_ != opi_api.network.cloud.v1alpha1.PortType.PORT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, type_);
+        .computeEnumSize(3, type_);
     }
     if (speed_ != opi_api.network.cloud.v1alpha1.PortSpeed.PORT_SPEED_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, speed_);
+        .computeEnumSize(4, speed_);
     }
     if (fecType_ != opi_api.network.cloud.v1alpha1.PortFecType.PORT_FEC_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, fecType_);
+        .computeEnumSize(5, fecType_);
     }
     if (autonegEnable_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, autonegEnable_);
+        .computeBoolSize(6, autonegEnable_);
     }
     if (debounceTimeout_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, debounceTimeout_);
+        .computeInt32Size(7, debounceTimeout_);
     }
     if (mtu_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, mtu_);
+        .computeInt32Size(8, mtu_);
     }
     if (pauseType_ != opi_api.network.cloud.v1alpha1.PortPauseType.PORT_PAUSE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, pauseType_);
+        .computeEnumSize(9, pauseType_);
     }
     if (txPauseEn_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, txPauseEn_);
+        .computeBoolSize(10, txPauseEn_);
     }
     if (rxPauseEn_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(12, rxPauseEn_);
+        .computeBoolSize(11, rxPauseEn_);
     }
     if (loopbackMode_ != opi_api.network.cloud.v1alpha1.PortLoopBackMode.PORT_LOOP_BACK_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(13, loopbackMode_);
+        .computeEnumSize(12, loopbackMode_);
     }
     if (lanesCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(14, lanesCount_);
+        .computeInt32Size(13, lanesCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -615,11 +557,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.PortSpec other = (opi_api.network.cloud.v1alpha1.PortSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (getPortNumber()
         != other.getPortNumber()) return false;
     if (adminState_ != other.adminState_) return false;
@@ -651,10 +588,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + PORT_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getPortNumber();
     hash = (37 * hash) + ADMIN_STATE_FIELD_NUMBER;
@@ -821,12 +754,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       portNumber_ = 0;
 
       adminState_ = 0;
@@ -879,11 +806,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.PortSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.PortSpec result = new opi_api.network.cloud.v1alpha1.PortSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.portNumber_ = portNumber_;
       result.adminState_ = adminState_;
       result.type_ = type_;
@@ -945,9 +867,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.PortSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.PortSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.getPortNumber() != 0) {
         setPortNumber(other.getPortNumber());
       }
@@ -1016,168 +935,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique port id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int portNumber_ ;
     /**
      * <pre>
      * port number is numerical port identifier starting from 1
      * </pre>
      *
-     * <code>int32 port_number = 2;</code>
+     * <code>int32 port_number = 1;</code>
      * @return The portNumber.
      */
     @java.lang.Override
@@ -1189,7 +953,7 @@ private static final long serialVersionUID = 0L;
      * port number is numerical port identifier starting from 1
      * </pre>
      *
-     * <code>int32 port_number = 2;</code>
+     * <code>int32 port_number = 1;</code>
      * @param value The portNumber to set.
      * @return This builder for chaining.
      */
@@ -1204,7 +968,7 @@ private static final long serialVersionUID = 0L;
      * port number is numerical port identifier starting from 1
      * </pre>
      *
-     * <code>int32 port_number = 2;</code>
+     * <code>int32 port_number = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearPortNumber() {
@@ -1220,7 +984,7 @@ private static final long serialVersionUID = 0L;
      * port admin state
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
      * @return The enum numeric value on the wire for adminState.
      */
     @java.lang.Override public int getAdminStateValue() {
@@ -1231,7 +995,7 @@ private static final long serialVersionUID = 0L;
      * port admin state
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
      * @param value The enum numeric value on the wire for adminState to set.
      * @return This builder for chaining.
      */
@@ -1246,7 +1010,7 @@ private static final long serialVersionUID = 0L;
      * port admin state
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
      * @return The adminState.
      */
     @java.lang.Override
@@ -1260,7 +1024,7 @@ private static final long serialVersionUID = 0L;
      * port admin state
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
      * @param value The adminState to set.
      * @return This builder for chaining.
      */
@@ -1278,7 +1042,7 @@ private static final long serialVersionUID = 0L;
      * port admin state
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAdminState() {
@@ -1294,7 +1058,7 @@ private static final long serialVersionUID = 0L;
      * type of port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1305,7 +1069,7 @@ private static final long serialVersionUID = 0L;
      * type of port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1320,7 +1084,7 @@ private static final long serialVersionUID = 0L;
      * type of port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1334,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * type of port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1352,7 +1116,7 @@ private static final long serialVersionUID = 0L;
      * type of port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -1368,7 +1132,7 @@ private static final long serialVersionUID = 0L;
      * operational speed of the port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
      * @return The enum numeric value on the wire for speed.
      */
     @java.lang.Override public int getSpeedValue() {
@@ -1379,7 +1143,7 @@ private static final long serialVersionUID = 0L;
      * operational speed of the port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
      * @param value The enum numeric value on the wire for speed to set.
      * @return This builder for chaining.
      */
@@ -1394,7 +1158,7 @@ private static final long serialVersionUID = 0L;
      * operational speed of the port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
      * @return The speed.
      */
     @java.lang.Override
@@ -1408,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * operational speed of the port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
      * @param value The speed to set.
      * @return This builder for chaining.
      */
@@ -1426,7 +1190,7 @@ private static final long serialVersionUID = 0L;
      * operational speed of the port
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearSpeed() {
@@ -1442,7 +1206,7 @@ private static final long serialVersionUID = 0L;
      * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
      * @return The enum numeric value on the wire for fecType.
      */
     @java.lang.Override public int getFecTypeValue() {
@@ -1453,7 +1217,7 @@ private static final long serialVersionUID = 0L;
      * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
      * @param value The enum numeric value on the wire for fecType to set.
      * @return This builder for chaining.
      */
@@ -1468,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
      * @return The fecType.
      */
     @java.lang.Override
@@ -1482,7 +1246,7 @@ private static final long serialVersionUID = 0L;
      * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
      * @param value The fecType to set.
      * @return This builder for chaining.
      */
@@ -1500,7 +1264,7 @@ private static final long serialVersionUID = 0L;
      * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearFecType() {
@@ -1516,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * set AutoNegEn to true to enable auto negotiation
      * </pre>
      *
-     * <code>bool autoneg_enable = 7;</code>
+     * <code>bool autoneg_enable = 6;</code>
      * @return The autonegEnable.
      */
     @java.lang.Override
@@ -1528,7 +1292,7 @@ private static final long serialVersionUID = 0L;
      * set AutoNegEn to true to enable auto negotiation
      * </pre>
      *
-     * <code>bool autoneg_enable = 7;</code>
+     * <code>bool autoneg_enable = 6;</code>
      * @param value The autonegEnable to set.
      * @return This builder for chaining.
      */
@@ -1543,7 +1307,7 @@ private static final long serialVersionUID = 0L;
      * set AutoNegEn to true to enable auto negotiation
      * </pre>
      *
-     * <code>bool autoneg_enable = 7;</code>
+     * <code>bool autoneg_enable = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearAutonegEnable() {
@@ -1559,7 +1323,7 @@ private static final long serialVersionUID = 0L;
      * values for link debounce timeout in msec (default = 0 ms)
      * </pre>
      *
-     * <code>int32 debounce_timeout = 8;</code>
+     * <code>int32 debounce_timeout = 7;</code>
      * @return The debounceTimeout.
      */
     @java.lang.Override
@@ -1571,7 +1335,7 @@ private static final long serialVersionUID = 0L;
      * values for link debounce timeout in msec (default = 0 ms)
      * </pre>
      *
-     * <code>int32 debounce_timeout = 8;</code>
+     * <code>int32 debounce_timeout = 7;</code>
      * @param value The debounceTimeout to set.
      * @return This builder for chaining.
      */
@@ -1586,7 +1350,7 @@ private static final long serialVersionUID = 0L;
      * values for link debounce timeout in msec (default = 0 ms)
      * </pre>
      *
-     * <code>int32 debounce_timeout = 8;</code>
+     * <code>int32 debounce_timeout = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearDebounceTimeout() {
@@ -1602,7 +1366,7 @@ private static final long serialVersionUID = 0L;
      * MTU size in bytes (64 to 9216)
      * </pre>
      *
-     * <code>int32 mtu = 9;</code>
+     * <code>int32 mtu = 8;</code>
      * @return The mtu.
      */
     @java.lang.Override
@@ -1614,7 +1378,7 @@ private static final long serialVersionUID = 0L;
      * MTU size in bytes (64 to 9216)
      * </pre>
      *
-     * <code>int32 mtu = 9;</code>
+     * <code>int32 mtu = 8;</code>
      * @param value The mtu to set.
      * @return This builder for chaining.
      */
@@ -1629,7 +1393,7 @@ private static final long serialVersionUID = 0L;
      * MTU size in bytes (64 to 9216)
      * </pre>
      *
-     * <code>int32 mtu = 9;</code>
+     * <code>int32 mtu = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
@@ -1645,7 +1409,7 @@ private static final long serialVersionUID = 0L;
      * pause type - PFC or Link Level or Disable
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
      * @return The enum numeric value on the wire for pauseType.
      */
     @java.lang.Override public int getPauseTypeValue() {
@@ -1656,7 +1420,7 @@ private static final long serialVersionUID = 0L;
      * pause type - PFC or Link Level or Disable
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
      * @param value The enum numeric value on the wire for pauseType to set.
      * @return This builder for chaining.
      */
@@ -1671,7 +1435,7 @@ private static final long serialVersionUID = 0L;
      * pause type - PFC or Link Level or Disable
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
      * @return The pauseType.
      */
     @java.lang.Override
@@ -1685,7 +1449,7 @@ private static final long serialVersionUID = 0L;
      * pause type - PFC or Link Level or Disable
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
      * @param value The pauseType to set.
      * @return This builder for chaining.
      */
@@ -1703,7 +1467,7 @@ private static final long serialVersionUID = 0L;
      * pause type - PFC or Link Level or Disable
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearPauseType() {
@@ -1719,7 +1483,7 @@ private static final long serialVersionUID = 0L;
      * MAC TX pause enable
      * </pre>
      *
-     * <code>bool tx_pause_en = 11;</code>
+     * <code>bool tx_pause_en = 10;</code>
      * @return The txPauseEn.
      */
     @java.lang.Override
@@ -1731,7 +1495,7 @@ private static final long serialVersionUID = 0L;
      * MAC TX pause enable
      * </pre>
      *
-     * <code>bool tx_pause_en = 11;</code>
+     * <code>bool tx_pause_en = 10;</code>
      * @param value The txPauseEn to set.
      * @return This builder for chaining.
      */
@@ -1746,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * MAC TX pause enable
      * </pre>
      *
-     * <code>bool tx_pause_en = 11;</code>
+     * <code>bool tx_pause_en = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearTxPauseEn() {
@@ -1762,7 +1526,7 @@ private static final long serialVersionUID = 0L;
      * MAC RX pause enable
      * </pre>
      *
-     * <code>bool rx_pause_en = 12;</code>
+     * <code>bool rx_pause_en = 11;</code>
      * @return The rxPauseEn.
      */
     @java.lang.Override
@@ -1774,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * MAC RX pause enable
      * </pre>
      *
-     * <code>bool rx_pause_en = 12;</code>
+     * <code>bool rx_pause_en = 11;</code>
      * @param value The rxPauseEn to set.
      * @return This builder for chaining.
      */
@@ -1789,7 +1553,7 @@ private static final long serialVersionUID = 0L;
      * MAC RX pause enable
      * </pre>
      *
-     * <code>bool rx_pause_en = 12;</code>
+     * <code>bool rx_pause_en = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearRxPauseEn() {
@@ -1805,7 +1569,7 @@ private static final long serialVersionUID = 0L;
      * port loopback mode - MAC or PHY 
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
      * @return The enum numeric value on the wire for loopbackMode.
      */
     @java.lang.Override public int getLoopbackModeValue() {
@@ -1816,7 +1580,7 @@ private static final long serialVersionUID = 0L;
      * port loopback mode - MAC or PHY 
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
      * @param value The enum numeric value on the wire for loopbackMode to set.
      * @return This builder for chaining.
      */
@@ -1831,7 +1595,7 @@ private static final long serialVersionUID = 0L;
      * port loopback mode - MAC or PHY 
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
      * @return The loopbackMode.
      */
     @java.lang.Override
@@ -1845,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      * port loopback mode - MAC or PHY 
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
      * @param value The loopbackMode to set.
      * @return This builder for chaining.
      */
@@ -1863,7 +1627,7 @@ private static final long serialVersionUID = 0L;
      * port loopback mode - MAC or PHY 
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearLoopbackMode() {
@@ -1879,7 +1643,7 @@ private static final long serialVersionUID = 0L;
      * number of serdes lanes for port (range: 1-4)
      * </pre>
      *
-     * <code>int32 lanes_count = 14;</code>
+     * <code>int32 lanes_count = 13;</code>
      * @return The lanesCount.
      */
     @java.lang.Override
@@ -1891,7 +1655,7 @@ private static final long serialVersionUID = 0L;
      * number of serdes lanes for port (range: 1-4)
      * </pre>
      *
-     * <code>int32 lanes_count = 14;</code>
+     * <code>int32 lanes_count = 13;</code>
      * @param value The lanesCount to set.
      * @return This builder for chaining.
      */
@@ -1906,7 +1670,7 @@ private static final long serialVersionUID = 0L;
      * number of serdes lanes for port (range: 1-4)
      * </pre>
      *
-     * <code>int32 lanes_count = 14;</code>
+     * <code>int32 lanes_count = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearLanesCount() {

@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TunnelSpec() {
+    vpcNameRef_ = "";
     type_ = 0;
     macAddress_ = com.google.protobuf.ByteString.EMPTY;
   }
@@ -58,32 +59,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            vpcNameRef_ = s;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (vpcId_ != null) {
-              subBuilder = vpcId_.toBuilder();
-            }
-            vpcId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vpcId_);
-              vpcId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (localIp_ != null) {
               subBuilder = localIp_.toBuilder();
@@ -96,7 +77,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (remoteIp_ != null) {
               subBuilder = remoteIp_.toBuilder();
@@ -109,13 +90,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 40: {
+          case 32: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
             break;
           }
-          case 50: {
+          case 42: {
             opi_api.network.opinetcommon.v1alpha1.Encap.Builder subBuilder = null;
             if (encap_ != null) {
               subBuilder = encap_.toBuilder();
@@ -128,51 +109,27 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            nhCase_ = 6;
+            nh_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            nhCase_ = 7;
+            nh_ = s;
+            break;
+          }
           case 66: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 8) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             nhCase_ = 8;
+            nh_ = s;
             break;
           }
           case 74: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 9) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
-            nhCase_ = 9;
-            break;
-          }
-          case 82: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (nhCase_ == 10) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) nh_).toBuilder();
-            }
-            nh_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) nh_);
-              nh_ = subBuilder.buildPartial();
-            }
-            nhCase_ = 10;
-            break;
-          }
-          case 90: {
             opi_api.network.cloud.v1alpha1.DropNexthop.Builder subBuilder = null;
-            if (nhCase_ == 11) {
+            if (nhCase_ == 9) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.DropNexthop) nh_).toBuilder();
             }
             nh_ =
@@ -181,15 +138,15 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.DropNexthop) nh_);
               nh_ = subBuilder.buildPartial();
             }
-            nhCase_ = 11;
+            nhCase_ = 9;
             break;
           }
-          case 98: {
+          case 82: {
 
             macAddress_ = input.readBytes();
             break;
           }
-          case 104: {
+          case 88: {
 
             tos_ = input.readInt32();
             break;
@@ -231,10 +188,10 @@ private static final long serialVersionUID = 0L;
   public enum NhCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    NEXTHOP_ID(8),
-    NEXTHOP_GROUP_ID(9),
-    TUNNEL_ID(10),
-    DROP_NEXT_HOP(11),
+    NEXTHOP_NAME_REF(6),
+    NEXTHOP_GROUP_NAME_REF(7),
+    TUNNEL_NAME_REF(8),
+    DROP_NEXT_HOP(9),
     NH_NOT_SET(0);
     private final int value;
     private NhCase(int value) {
@@ -252,10 +209,10 @@ private static final long serialVersionUID = 0L;
 
     public static NhCase forNumber(int value) {
       switch (value) {
-        case 8: return NEXTHOP_ID;
-        case 9: return NEXTHOP_GROUP_ID;
-        case 10: return TUNNEL_ID;
-        case 11: return DROP_NEXT_HOP;
+        case 6: return NEXTHOP_NAME_REF;
+        case 7: return NEXTHOP_GROUP_NAME_REF;
+        case 8: return TUNNEL_NAME_REF;
+        case 9: return DROP_NEXT_HOP;
         case 0: return NH_NOT_SET;
         default: return null;
       }
@@ -271,90 +228,60 @@ private static final long serialVersionUID = 0L;
         nhCase_);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int VPC_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object vpcNameRef_;
   /**
    * <pre>
-   * unique tunnel identifier
+   * virtual private cloud this is tunnel belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getVpcNameRef() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpcNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * unique tunnel identifier
+   * virtual private cloud this is tunnel belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique tunnel identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getVpcNameRefBytes() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vpcNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int VPC_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey vpcId_;
-  /**
-   * <pre>
-   * virtual private cloud this is tunnel belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return Whether the vpcId field is set.
-   */
-  @java.lang.Override
-  public boolean hasVpcId() {
-    return vpcId_ != null;
-  }
-  /**
-   * <pre>
-   * virtual private cloud this is tunnel belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   * @return The vpcId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpcId() {
-    return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-  }
-  /**
-   * <pre>
-   * virtual private cloud this is tunnel belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-    return getVpcId();
-  }
-
-  public static final int LOCAL_IP_FIELD_NUMBER = 3;
+  public static final int LOCAL_IP_FIELD_NUMBER = 2;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress localIp_;
   /**
    * <pre>
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    * @return Whether the localIp field is set.
    */
   @java.lang.Override
@@ -366,7 +293,7 @@ private static final long serialVersionUID = 0L;
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    * @return The localIp.
    */
   @java.lang.Override
@@ -378,21 +305,21 @@ private static final long serialVersionUID = 0L;
    * local IP of the tunnel (used as outer SIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalIpOrBuilder() {
     return getLocalIp();
   }
 
-  public static final int REMOTE_IP_FIELD_NUMBER = 4;
+  public static final int REMOTE_IP_FIELD_NUMBER = 3;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress remoteIp_;
   /**
    * <pre>
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    * @return Whether the remoteIp field is set.
    */
   @java.lang.Override
@@ -404,7 +331,7 @@ private static final long serialVersionUID = 0L;
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    * @return The remoteIp.
    */
   @java.lang.Override
@@ -416,21 +343,21 @@ private static final long serialVersionUID = 0L;
    * remote IP of the tunnel (used as outer DIP in tunneled packets)
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getRemoteIpOrBuilder() {
     return getRemoteIp();
   }
 
-  public static final int TYPE_FIELD_NUMBER = 5;
+  public static final int TYPE_FIELD_NUMBER = 4;
   private int type_;
   /**
    * <pre>
    * type of the tunnel
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -441,7 +368,7 @@ private static final long serialVersionUID = 0L;
    * type of the tunnel
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.TunnelType getType() {
@@ -450,14 +377,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.TunnelType.UNRECOGNIZED : result;
   }
 
-  public static final int ENCAP_FIELD_NUMBER = 6;
+  public static final int ENCAP_FIELD_NUMBER = 5;
   private opi_api.network.opinetcommon.v1alpha1.Encap encap_;
   /**
    * <pre>
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    * @return Whether the encap field is set.
    */
   @java.lang.Override
@@ -469,7 +396,7 @@ private static final long serialVersionUID = 0L;
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    * @return The encap.
    */
   @java.lang.Override
@@ -481,164 +408,227 @@ private static final long serialVersionUID = 0L;
    * encap used while sending traffic to this tunnel
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder() {
     return getEncap();
   }
 
-  public static final int NEXTHOP_ID_FIELD_NUMBER = 8;
+  public static final int NEXTHOP_NAME_REF_FIELD_NUMBER = 6;
   /**
    * <pre>
    * underlay nexthop for this tunnel
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-   * @return Whether the nexthopId field is set.
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return Whether the nexthopNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasNexthopId() {
+  public boolean hasNexthopNameRef() {
+    return nhCase_ == 6;
+  }
+  /**
+   * <pre>
+   * underlay nexthop for this tunnel
+   * </pre>
+   *
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The nexthopNameRef.
+   */
+  public java.lang.String getNexthopNameRef() {
+    java.lang.Object ref = "";
+    if (nhCase_ == 6) {
+      ref = nh_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 6) {
+        nh_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * underlay nexthop for this tunnel
+   * </pre>
+   *
+   * <code>string nexthop_name_ref = 6;</code>
+   * @return The bytes for nexthopNameRef.
+   */
+  public com.google.protobuf.ByteString
+      getNexthopNameRefBytes() {
+    java.lang.Object ref = "";
+    if (nhCase_ == 6) {
+      ref = nh_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 6) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NEXTHOP_GROUP_NAME_REF_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * underlay nexthop group for this tunnel
+   * </pre>
+   *
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return Whether the nexthopGroupNameRef field is set.
+   */
+  public boolean hasNexthopGroupNameRef() {
+    return nhCase_ == 7;
+  }
+  /**
+   * <pre>
+   * underlay nexthop group for this tunnel
+   * </pre>
+   *
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return The nexthopGroupNameRef.
+   */
+  public java.lang.String getNexthopGroupNameRef() {
+    java.lang.Object ref = "";
+    if (nhCase_ == 7) {
+      ref = nh_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 7) {
+        nh_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * underlay nexthop group for this tunnel
+   * </pre>
+   *
+   * <code>string nexthop_group_name_ref = 7;</code>
+   * @return The bytes for nexthopGroupNameRef.
+   */
+  public com.google.protobuf.ByteString
+      getNexthopGroupNameRefBytes() {
+    java.lang.Object ref = "";
+    if (nhCase_ == 7) {
+      ref = nh_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 7) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TUNNEL_NAME_REF_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * a tunnel can point to another tunnel for double encap
+   * - supported combinations of double encap is platform specific
+   * - unsupported combination of cascading tunnels would result in configuration failure
+   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
+   * </pre>
+   *
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return Whether the tunnelNameRef field is set.
+   */
+  public boolean hasTunnelNameRef() {
     return nhCase_ == 8;
   }
   /**
    * <pre>
-   * underlay nexthop for this tunnel
+   * a tunnel can point to another tunnel for double encap
+   * - supported combinations of double encap is platform specific
+   * - unsupported combination of cascading tunnels would result in configuration failure
+   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-   * @return The nexthopId.
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return The tunnelNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNexthopId() {
+  public java.lang.String getTunnelNameRef() {
+    java.lang.Object ref = "";
     if (nhCase_ == 8) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (nhCase_ == 8) {
+        nh_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
-   * underlay nexthop for this tunnel
+   * a tunnel can point to another tunnel for double encap
+   * - supported combinations of double encap is platform specific
+   * - unsupported combination of cascading tunnels would result in configuration failure
+   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
+   * <code>string tunnel_name_ref = 8;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getTunnelNameRefBytes() {
+    java.lang.Object ref = "";
     if (nhCase_ == 8) {
-       return (opi_api.common.v1.ObjectKey) nh_;
+      ref = nh_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (nhCase_ == 8) {
+        nh_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int NEXTHOP_GROUP_ID_FIELD_NUMBER = 9;
-  /**
-   * <pre>
-   * underlay nexthop group for this tunnel
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-   * @return Whether the nexthopGroupId field is set.
-   */
-  @java.lang.Override
-  public boolean hasNexthopGroupId() {
-    return nhCase_ == 9;
-  }
-  /**
-   * <pre>
-   * underlay nexthop group for this tunnel
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-   * @return The nexthopGroupId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNexthopGroupId() {
-    if (nhCase_ == 9) {
-       return (opi_api.common.v1.ObjectKey) nh_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * underlay nexthop group for this tunnel
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNexthopGroupIdOrBuilder() {
-    if (nhCase_ == 9) {
-       return (opi_api.common.v1.ObjectKey) nh_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-
-  public static final int TUNNEL_ID_FIELD_NUMBER = 10;
-  /**
-   * <pre>
-   * a tunnel can point to another tunnel for double encap
-   * - supported combinations of double encap is platform specific
-   * - unsupported combination of cascading tunnels would result in configuration failure
-   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-   * @return Whether the tunnelId field is set.
-   */
-  @java.lang.Override
-  public boolean hasTunnelId() {
-    return nhCase_ == 10;
-  }
-  /**
-   * <pre>
-   * a tunnel can point to another tunnel for double encap
-   * - supported combinations of double encap is platform specific
-   * - unsupported combination of cascading tunnels would result in configuration failure
-   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-   * @return The tunnelId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getTunnelId() {
-    if (nhCase_ == 10) {
-       return (opi_api.common.v1.ObjectKey) nh_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * a tunnel can point to another tunnel for double encap
-   * - supported combinations of double encap is platform specific
-   * - unsupported combination of cascading tunnels would result in configuration failure
-   * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-    if (nhCase_ == 10) {
-       return (opi_api.common.v1.ObjectKey) nh_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-
-  public static final int DROP_NEXT_HOP_FIELD_NUMBER = 11;
+  public static final int DROP_NEXT_HOP_FIELD_NUMBER = 9;
   /**
    * <pre>
    * DropNexthop is used to explicitly drop traffic destined to this tunnel
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    * @return Whether the dropNextHop field is set.
    */
   @java.lang.Override
   public boolean hasDropNextHop() {
-    return nhCase_ == 11;
+    return nhCase_ == 9;
   }
   /**
    * <pre>
@@ -646,12 +636,12 @@ private static final long serialVersionUID = 0L;
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    * @return The dropNextHop.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.DropNexthop getDropNextHop() {
-    if (nhCase_ == 11) {
+    if (nhCase_ == 9) {
        return (opi_api.network.cloud.v1alpha1.DropNexthop) nh_;
     }
     return opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
@@ -662,17 +652,17 @@ private static final long serialVersionUID = 0L;
    * even when there is reachability, this is administrative override
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.DropNexthopOrBuilder getDropNextHopOrBuilder() {
-    if (nhCase_ == 11) {
+    if (nhCase_ == 9) {
        return (opi_api.network.cloud.v1alpha1.DropNexthop) nh_;
     }
     return opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 12;
+  public static final int MAC_ADDRESS_FIELD_NUMBER = 10;
   private com.google.protobuf.ByteString macAddress_;
   /**
    * <pre>
@@ -680,7 +670,7 @@ private static final long serialVersionUID = 0L;
    * set to zero if dataplane is expected to resolve this
    * </pre>
    *
-   * <code>bytes mac_address = 12;</code>
+   * <code>bytes mac_address = 10;</code>
    * @return The macAddress.
    */
   @java.lang.Override
@@ -688,7 +678,7 @@ private static final long serialVersionUID = 0L;
     return macAddress_;
   }
 
-  public static final int TOS_FIELD_NUMBER = 13;
+  public static final int TOS_FIELD_NUMBER = 11;
   private int tos_;
   /**
    * <pre>
@@ -702,7 +692,7 @@ private static final long serialVersionUID = 0L;
    * in vpc and subnet objects
    * </pre>
    *
-   * <code>int32 tos = 13;</code>
+   * <code>int32 tos = 11;</code>
    * @return The tos.
    */
   @java.lang.Override
@@ -724,41 +714,38 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
-    if (vpcId_ != null) {
-      output.writeMessage(2, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vpcNameRef_);
     }
     if (localIp_ != null) {
-      output.writeMessage(3, getLocalIp());
+      output.writeMessage(2, getLocalIp());
     }
     if (remoteIp_ != null) {
-      output.writeMessage(4, getRemoteIp());
+      output.writeMessage(3, getRemoteIp());
     }
     if (type_ != opi_api.network.cloud.v1alpha1.TunnelType.TUNNEL_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(5, type_);
+      output.writeEnum(4, type_);
     }
     if (encap_ != null) {
-      output.writeMessage(6, getEncap());
+      output.writeMessage(5, getEncap());
+    }
+    if (nhCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nh_);
+    }
+    if (nhCase_ == 7) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nh_);
     }
     if (nhCase_ == 8) {
-      output.writeMessage(8, (opi_api.common.v1.ObjectKey) nh_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, nh_);
     }
     if (nhCase_ == 9) {
-      output.writeMessage(9, (opi_api.common.v1.ObjectKey) nh_);
-    }
-    if (nhCase_ == 10) {
-      output.writeMessage(10, (opi_api.common.v1.ObjectKey) nh_);
-    }
-    if (nhCase_ == 11) {
-      output.writeMessage(11, (opi_api.network.cloud.v1alpha1.DropNexthop) nh_);
+      output.writeMessage(9, (opi_api.network.cloud.v1alpha1.DropNexthop) nh_);
     }
     if (!macAddress_.isEmpty()) {
-      output.writeBytes(12, macAddress_);
+      output.writeBytes(10, macAddress_);
     }
     if (tos_ != 0) {
-      output.writeInt32(13, tos_);
+      output.writeInt32(11, tos_);
     }
     unknownFields.writeTo(output);
   }
@@ -769,53 +756,45 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
-    if (vpcId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vpcNameRef_);
     }
     if (localIp_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLocalIp());
+        .computeMessageSize(2, getLocalIp());
     }
     if (remoteIp_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getRemoteIp());
+        .computeMessageSize(3, getRemoteIp());
     }
     if (type_ != opi_api.network.cloud.v1alpha1.TunnelType.TUNNEL_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, type_);
+        .computeEnumSize(4, type_);
     }
     if (encap_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getEncap());
+        .computeMessageSize(5, getEncap());
+    }
+    if (nhCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nh_);
+    }
+    if (nhCase_ == 7) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nh_);
     }
     if (nhCase_ == 8) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (opi_api.common.v1.ObjectKey) nh_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, nh_);
     }
     if (nhCase_ == 9) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (opi_api.common.v1.ObjectKey) nh_);
-    }
-    if (nhCase_ == 10) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (opi_api.common.v1.ObjectKey) nh_);
-    }
-    if (nhCase_ == 11) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, (opi_api.network.cloud.v1alpha1.DropNexthop) nh_);
+        .computeMessageSize(9, (opi_api.network.cloud.v1alpha1.DropNexthop) nh_);
     }
     if (!macAddress_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(12, macAddress_);
+        .computeBytesSize(10, macAddress_);
     }
     if (tos_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, tos_);
+        .computeInt32Size(11, tos_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -832,16 +811,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.TunnelSpec other = (opi_api.network.cloud.v1alpha1.TunnelSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasVpcId() != other.hasVpcId()) return false;
-    if (hasVpcId()) {
-      if (!getVpcId()
-          .equals(other.getVpcId())) return false;
-    }
+    if (!getVpcNameRef()
+        .equals(other.getVpcNameRef())) return false;
     if (hasLocalIp() != other.hasLocalIp()) return false;
     if (hasLocalIp()) {
       if (!getLocalIp()
@@ -864,19 +835,19 @@ private static final long serialVersionUID = 0L;
         != other.getTos()) return false;
     if (!getNhCase().equals(other.getNhCase())) return false;
     switch (nhCase_) {
+      case 6:
+        if (!getNexthopNameRef()
+            .equals(other.getNexthopNameRef())) return false;
+        break;
+      case 7:
+        if (!getNexthopGroupNameRef()
+            .equals(other.getNexthopGroupNameRef())) return false;
+        break;
       case 8:
-        if (!getNexthopId()
-            .equals(other.getNexthopId())) return false;
+        if (!getTunnelNameRef()
+            .equals(other.getTunnelNameRef())) return false;
         break;
       case 9:
-        if (!getNexthopGroupId()
-            .equals(other.getNexthopGroupId())) return false;
-        break;
-      case 10:
-        if (!getTunnelId()
-            .equals(other.getTunnelId())) return false;
-        break;
-      case 11:
         if (!getDropNextHop()
             .equals(other.getDropNextHop())) return false;
         break;
@@ -894,14 +865,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasVpcId()) {
-      hash = (37 * hash) + VPC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVpcId().hashCode();
-    }
+    hash = (37 * hash) + VPC_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVpcNameRef().hashCode();
     if (hasLocalIp()) {
       hash = (37 * hash) + LOCAL_IP_FIELD_NUMBER;
       hash = (53 * hash) + getLocalIp().hashCode();
@@ -921,19 +886,19 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TOS_FIELD_NUMBER;
     hash = (53 * hash) + getTos();
     switch (nhCase_) {
+      case 6:
+        hash = (37 * hash) + NEXTHOP_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNexthopNameRef().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + NEXTHOP_GROUP_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNexthopGroupNameRef().hashCode();
+        break;
       case 8:
-        hash = (37 * hash) + NEXTHOP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNexthopId().hashCode();
+        hash = (37 * hash) + TUNNEL_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getTunnelNameRef().hashCode();
         break;
       case 9:
-        hash = (37 * hash) + NEXTHOP_GROUP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNexthopGroupId().hashCode();
-        break;
-      case 10:
-        hash = (37 * hash) + TUNNEL_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTunnelId().hashCode();
-        break;
-      case 11:
         hash = (37 * hash) + DROP_NEXT_HOP_FIELD_NUMBER;
         hash = (53 * hash) + getDropNextHop().hashCode();
         break;
@@ -1080,18 +1045,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
+      vpcNameRef_ = "";
+
       if (localIpBuilder_ == null) {
         localIp_ = null;
       } else {
@@ -1144,16 +1099,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.TunnelSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.TunnelSpec result = new opi_api.network.cloud.v1alpha1.TunnelSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (vpcIdBuilder_ == null) {
-        result.vpcId_ = vpcId_;
-      } else {
-        result.vpcId_ = vpcIdBuilder_.build();
-      }
+      result.vpcNameRef_ = vpcNameRef_;
       if (localIpBuilder_ == null) {
         result.localIp_ = localIp_;
       } else {
@@ -1170,28 +1116,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.encap_ = encapBuilder_.build();
       }
+      if (nhCase_ == 6) {
+        result.nh_ = nh_;
+      }
+      if (nhCase_ == 7) {
+        result.nh_ = nh_;
+      }
       if (nhCase_ == 8) {
-        if (nexthopIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = nexthopIdBuilder_.build();
-        }
+        result.nh_ = nh_;
       }
       if (nhCase_ == 9) {
-        if (nexthopGroupIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = nexthopGroupIdBuilder_.build();
-        }
-      }
-      if (nhCase_ == 10) {
-        if (tunnelIdBuilder_ == null) {
-          result.nh_ = nh_;
-        } else {
-          result.nh_ = tunnelIdBuilder_.build();
-        }
-      }
-      if (nhCase_ == 11) {
         if (dropNextHopBuilder_ == null) {
           result.nh_ = nh_;
         } else {
@@ -1249,11 +1183,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.TunnelSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.TunnelSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
-      if (other.hasVpcId()) {
-        mergeVpcId(other.getVpcId());
+      if (!other.getVpcNameRef().isEmpty()) {
+        vpcNameRef_ = other.vpcNameRef_;
+        onChanged();
       }
       if (other.hasLocalIp()) {
         mergeLocalIp(other.getLocalIp());
@@ -1274,16 +1206,22 @@ private static final long serialVersionUID = 0L;
         setTos(other.getTos());
       }
       switch (other.getNhCase()) {
-        case NEXTHOP_ID: {
-          mergeNexthopId(other.getNexthopId());
+        case NEXTHOP_NAME_REF: {
+          nhCase_ = 6;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
-        case NEXTHOP_GROUP_ID: {
-          mergeNexthopGroupId(other.getNexthopGroupId());
+        case NEXTHOP_GROUP_NAME_REF: {
+          nhCase_ = 7;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
-        case TUNNEL_ID: {
-          mergeTunnelId(other.getTunnelId());
+        case TUNNEL_NAME_REF: {
+          nhCase_ = 8;
+          nh_ = other.nh_;
+          onChanged();
           break;
         }
         case DROP_NEXT_HOP: {
@@ -1338,208 +1276,65 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object vpcNameRef_ = "";
     /**
      * <pre>
-     * unique tunnel identifier
+     * virtual private cloud this is tunnel belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The vpcNameRef.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getVpcNameRef() {
+      java.lang.Object ref = vpcNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpcNameRef_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * unique tunnel identifier
+     * virtual private cloud this is tunnel belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The bytes for vpcNameRef.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVpcNameRefBytes() {
+      java.lang.Object ref = vpcNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vpcNameRef_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * unique tunnel identifier
+     * virtual private cloud this is tunnel belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setVpcNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vpcNameRef_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique tunnel identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey vpcId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpcIdBuilder_;
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     * @return Whether the vpcId field is set.
-     */
-    public boolean hasVpcId() {
-      return vpcIdBuilder_ != null || vpcId_ != null;
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     * @return The vpcId.
-     */
-    public opi_api.common.v1.ObjectKey getVpcId() {
-      if (vpcIdBuilder_ == null) {
-        return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-      } else {
-        return vpcIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     */
-    public Builder setVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        vpcId_ = value;
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
@@ -1547,105 +1342,34 @@ private static final long serialVersionUID = 0L;
      * virtual private cloud this is tunnel belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public Builder setVpcId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     */
-    public Builder mergeVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (vpcId_ != null) {
-          vpcId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(vpcId_).mergeFrom(value).buildPartial();
-        } else {
-          vpcId_ = value;
-        }
-        onChanged();
-      } else {
-        vpcIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     */
-    public Builder clearVpcId() {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-        onChanged();
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpcIdBuilder() {
+    public Builder clearVpcNameRef() {
       
+      vpcNameRef_ = getDefaultInstance().getVpcNameRef();
       onChanged();
-      return getVpcIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * virtual private cloud this is tunnel belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The bytes for vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-      if (vpcIdBuilder_ != null) {
-        return vpcIdBuilder_.getMessageOrBuilder();
-      } else {
-        return vpcId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-      }
-    }
-    /**
-     * <pre>
-     * virtual private cloud this is tunnel belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpcIdFieldBuilder() {
-      if (vpcIdBuilder_ == null) {
-        vpcIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVpcId(),
-                getParentForChildren(),
-                isClean());
-        vpcId_ = null;
-      }
-      return vpcIdBuilder_;
+    public Builder setVpcNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      vpcNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.opinetcommon.v1alpha1.IPAddress localIp_;
@@ -1656,7 +1380,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      * @return Whether the localIp field is set.
      */
     public boolean hasLocalIp() {
@@ -1667,7 +1391,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      * @return The localIp.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getLocalIp() {
@@ -1682,7 +1406,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public Builder setLocalIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (localIpBuilder_ == null) {
@@ -1702,7 +1426,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public Builder setLocalIp(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1720,7 +1444,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public Builder mergeLocalIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (localIpBuilder_ == null) {
@@ -1742,7 +1466,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public Builder clearLocalIp() {
       if (localIpBuilder_ == null) {
@@ -1760,7 +1484,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getLocalIpBuilder() {
       
@@ -1772,7 +1496,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalIpOrBuilder() {
       if (localIpBuilder_ != null) {
@@ -1787,7 +1511,7 @@ private static final long serialVersionUID = 0L;
      * local IP of the tunnel (used as outer SIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_ip = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1811,7 +1535,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      * @return Whether the remoteIp field is set.
      */
     public boolean hasRemoteIp() {
@@ -1822,7 +1546,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      * @return The remoteIp.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getRemoteIp() {
@@ -1837,7 +1561,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public Builder setRemoteIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (remoteIpBuilder_ == null) {
@@ -1857,7 +1581,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public Builder setRemoteIp(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1875,7 +1599,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public Builder mergeRemoteIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (remoteIpBuilder_ == null) {
@@ -1897,7 +1621,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public Builder clearRemoteIp() {
       if (remoteIpBuilder_ == null) {
@@ -1915,7 +1639,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getRemoteIpBuilder() {
       
@@ -1927,7 +1651,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getRemoteIpOrBuilder() {
       if (remoteIpBuilder_ != null) {
@@ -1942,7 +1666,7 @@ private static final long serialVersionUID = 0L;
      * remote IP of the tunnel (used as outer DIP in tunneled packets)
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress remote_ip = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1964,7 +1688,7 @@ private static final long serialVersionUID = 0L;
      * type of the tunnel
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1975,7 +1699,7 @@ private static final long serialVersionUID = 0L;
      * type of the tunnel
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1990,7 +1714,7 @@ private static final long serialVersionUID = 0L;
      * type of the tunnel
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -2004,7 +1728,7 @@ private static final long serialVersionUID = 0L;
      * type of the tunnel
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -2022,7 +1746,7 @@ private static final long serialVersionUID = 0L;
      * type of the tunnel
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 5;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.TunnelType type = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -2040,7 +1764,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      * @return Whether the encap field is set.
      */
     public boolean hasEncap() {
@@ -2051,7 +1775,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      * @return The encap.
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap getEncap() {
@@ -2066,7 +1790,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public Builder setEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (encapBuilder_ == null) {
@@ -2086,7 +1810,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public Builder setEncap(
         opi_api.network.opinetcommon.v1alpha1.Encap.Builder builderForValue) {
@@ -2104,7 +1828,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public Builder mergeEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (encapBuilder_ == null) {
@@ -2126,7 +1850,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public Builder clearEncap() {
       if (encapBuilder_ == null) {
@@ -2144,7 +1868,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap.Builder getEncapBuilder() {
       
@@ -2156,7 +1880,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder() {
       if (encapBuilder_ != null) {
@@ -2171,7 +1895,7 @@ private static final long serialVersionUID = 0L;
      * encap used while sending traffic to this tunnel
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 6;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.Encap, opi_api.network.opinetcommon.v1alpha1.Encap.Builder, opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder> 
@@ -2187,562 +1911,385 @@ private static final long serialVersionUID = 0L;
       return encapBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nexthopIdBuilder_;
     /**
      * <pre>
      * underlay nexthop for this tunnel
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     * @return Whether the nexthopId field is set.
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return Whether the nexthopNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasNexthopId() {
+    public boolean hasNexthopNameRef() {
+      return nhCase_ == 6;
+    }
+    /**
+     * <pre>
+     * underlay nexthop for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return The nexthopNameRef.
+     */
+    @java.lang.Override
+    public java.lang.String getNexthopNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 6) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (nhCase_ == 6) {
+          nh_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * underlay nexthop for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return The bytes for nexthopNameRef.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNexthopNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 6) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (nhCase_ == 6) {
+          nh_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * underlay nexthop for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @param value The nexthopNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNexthopNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 6;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * underlay nexthop for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNexthopNameRef() {
+      if (nhCase_ == 6) {
+        nhCase_ = 0;
+        nh_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * underlay nexthop for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_name_ref = 6;</code>
+     * @param value The bytes for nexthopNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNexthopNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      nhCase_ = 6;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @return Whether the nexthopGroupNameRef field is set.
+     */
+    @java.lang.Override
+    public boolean hasNexthopGroupNameRef() {
+      return nhCase_ == 7;
+    }
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @return The nexthopGroupNameRef.
+     */
+    @java.lang.Override
+    public java.lang.String getNexthopGroupNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 7) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (nhCase_ == 7) {
+          nh_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @return The bytes for nexthopGroupNameRef.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNexthopGroupNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 7) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (nhCase_ == 7) {
+          nh_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @param value The nexthopGroupNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNexthopGroupNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 7;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNexthopGroupNameRef() {
+      if (nhCase_ == 7) {
+        nhCase_ = 0;
+        nh_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * underlay nexthop group for this tunnel
+     * </pre>
+     *
+     * <code>string nexthop_group_name_ref = 7;</code>
+     * @param value The bytes for nexthopGroupNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNexthopGroupNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      nhCase_ = 7;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 8;</code>
+     * @return Whether the tunnelNameRef field is set.
+     */
+    @java.lang.Override
+    public boolean hasTunnelNameRef() {
       return nhCase_ == 8;
     }
     /**
      * <pre>
-     * underlay nexthop for this tunnel
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     * @return The nexthopId.
+     * <code>string tunnel_name_ref = 8;</code>
+     * @return The tunnelNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNexthopId() {
-      if (nexthopIdBuilder_ == null) {
+    public java.lang.String getTunnelNameRef() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 8) {
+        ref = nh_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (nhCase_ == 8) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (nhCase_ == 8) {
-          return nexthopIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * underlay nexthop for this tunnel
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     */
-    public Builder setNexthopId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        nexthopIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     */
-    public Builder setNexthopId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nexthopIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        nexthopIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     */
-    public Builder mergeNexthopId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopIdBuilder_ == null) {
-        if (nhCase_ == 8 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 8) {
-          nexthopIdBuilder_.mergeFrom(value);
-        }
-        nexthopIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     */
-    public Builder clearNexthopId() {
-      if (nexthopIdBuilder_ == null) {
-        if (nhCase_ == 8) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 8) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        nexthopIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNexthopIdBuilder() {
-      return getNexthopIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * underlay nexthop for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
+     * <code>string tunnel_name_ref = 8;</code>
+     * @return The bytes for tunnelNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNexthopIdOrBuilder() {
-      if ((nhCase_ == 8) && (nexthopIdBuilder_ != null)) {
-        return nexthopIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getTunnelNameRefBytes() {
+      java.lang.Object ref = "";
+      if (nhCase_ == 8) {
+        ref = nh_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (nhCase_ == 8) {
-          return (opi_api.common.v1.ObjectKey) nh_;
+          nh_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
      * <pre>
-     * underlay nexthop for this tunnel
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_id = 8;</code>
+     * <code>string tunnel_name_ref = 8;</code>
+     * @param value The tunnelNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNexthopIdFieldBuilder() {
-      if (nexthopIdBuilder_ == null) {
-        if (!(nhCase_ == 8)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nexthopIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
+    public Builder setTunnelNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  nhCase_ = 8;
+      nh_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTunnelNameRef() {
+      if (nhCase_ == 8) {
+        nhCase_ = 0;
         nh_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * a tunnel can point to another tunnel for double encap
+     * - supported combinations of double encap is platform specific
+     * - unsupported combination of cascading tunnels would result in configuration failure
+     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 8;</code>
+     * @param value The bytes for tunnelNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTunnelNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       nhCase_ = 8;
-      onChanged();;
-      return nexthopIdBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nexthopGroupIdBuilder_;
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     * @return Whether the nexthopGroupId field is set.
-     */
-    @java.lang.Override
-    public boolean hasNexthopGroupId() {
-      return nhCase_ == 9;
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     * @return The nexthopGroupId.
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNexthopGroupId() {
-      if (nexthopGroupIdBuilder_ == null) {
-        if (nhCase_ == 9) {
-          return (opi_api.common.v1.ObjectKey) nh_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      } else {
-        if (nhCase_ == 9) {
-          return nexthopGroupIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    public Builder setNexthopGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopGroupIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        nexthopGroupIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 9;
+      nh_ = value;
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    public Builder setNexthopGroupId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nexthopGroupIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        nexthopGroupIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    public Builder mergeNexthopGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nexthopGroupIdBuilder_ == null) {
-        if (nhCase_ == 9 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 9) {
-          nexthopGroupIdBuilder_.mergeFrom(value);
-        }
-        nexthopGroupIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    public Builder clearNexthopGroupId() {
-      if (nexthopGroupIdBuilder_ == null) {
-        if (nhCase_ == 9) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 9) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        nexthopGroupIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNexthopGroupIdBuilder() {
-      return getNexthopGroupIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNexthopGroupIdOrBuilder() {
-      if ((nhCase_ == 9) && (nexthopGroupIdBuilder_ != null)) {
-        return nexthopGroupIdBuilder_.getMessageOrBuilder();
-      } else {
-        if (nhCase_ == 9) {
-          return (opi_api.common.v1.ObjectKey) nh_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * underlay nexthop group for this tunnel
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nexthop_group_id = 9;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNexthopGroupIdFieldBuilder() {
-      if (nexthopGroupIdBuilder_ == null) {
-        if (!(nhCase_ == 9)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nexthopGroupIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
-        nh_ = null;
-      }
-      nhCase_ = 9;
-      onChanged();;
-      return nexthopGroupIdBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> tunnelIdBuilder_;
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     * @return Whether the tunnelId field is set.
-     */
-    @java.lang.Override
-    public boolean hasTunnelId() {
-      return nhCase_ == 10;
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     * @return The tunnelId.
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKey getTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        if (nhCase_ == 10) {
-          return (opi_api.common.v1.ObjectKey) nh_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      } else {
-        if (nhCase_ == 10) {
-          return tunnelIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    public Builder setTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nh_ = value;
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    public Builder setTunnelId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (tunnelIdBuilder_ == null) {
-        nh_ = builderForValue.build();
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(builderForValue.build());
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    public Builder mergeTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (nhCase_ == 10 &&
-            nh_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          nh_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) nh_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          nh_ = value;
-        }
-        onChanged();
-      } else {
-        if (nhCase_ == 10) {
-          tunnelIdBuilder_.mergeFrom(value);
-        }
-        tunnelIdBuilder_.setMessage(value);
-      }
-      nhCase_ = 10;
-      return this;
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    public Builder clearTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        if (nhCase_ == 10) {
-          nhCase_ = 0;
-          nh_ = null;
-          onChanged();
-        }
-      } else {
-        if (nhCase_ == 10) {
-          nhCase_ = 0;
-          nh_ = null;
-        }
-        tunnelIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getTunnelIdBuilder() {
-      return getTunnelIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-      if ((nhCase_ == 10) && (tunnelIdBuilder_ != null)) {
-        return tunnelIdBuilder_.getMessageOrBuilder();
-      } else {
-        if (nhCase_ == 10) {
-          return (opi_api.common.v1.ObjectKey) nh_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * a tunnel can point to another tunnel for double encap
-     * - supported combinations of double encap is platform specific
-     * - unsupported combination of cascading tunnels would result in configuration failure
-     * -  when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 10;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getTunnelIdFieldBuilder() {
-      if (tunnelIdBuilder_ == null) {
-        if (!(nhCase_ == 10)) {
-          nh_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        tunnelIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) nh_,
-                getParentForChildren(),
-                isClean());
-        nh_ = null;
-      }
-      nhCase_ = 10;
-      onChanged();;
-      return tunnelIdBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2753,12 +2300,12 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      * @return Whether the dropNextHop field is set.
      */
     @java.lang.Override
     public boolean hasDropNextHop() {
-      return nhCase_ == 11;
+      return nhCase_ == 9;
     }
     /**
      * <pre>
@@ -2766,18 +2313,18 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      * @return The dropNextHop.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.DropNexthop getDropNextHop() {
       if (dropNextHopBuilder_ == null) {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           return (opi_api.network.cloud.v1alpha1.DropNexthop) nh_;
         }
         return opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
       } else {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           return dropNextHopBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
@@ -2789,7 +2336,7 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     public Builder setDropNextHop(opi_api.network.cloud.v1alpha1.DropNexthop value) {
       if (dropNextHopBuilder_ == null) {
@@ -2801,7 +2348,7 @@ private static final long serialVersionUID = 0L;
       } else {
         dropNextHopBuilder_.setMessage(value);
       }
-      nhCase_ = 11;
+      nhCase_ = 9;
       return this;
     }
     /**
@@ -2810,7 +2357,7 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     public Builder setDropNextHop(
         opi_api.network.cloud.v1alpha1.DropNexthop.Builder builderForValue) {
@@ -2820,7 +2367,7 @@ private static final long serialVersionUID = 0L;
       } else {
         dropNextHopBuilder_.setMessage(builderForValue.build());
       }
-      nhCase_ = 11;
+      nhCase_ = 9;
       return this;
     }
     /**
@@ -2829,11 +2376,11 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     public Builder mergeDropNextHop(opi_api.network.cloud.v1alpha1.DropNexthop value) {
       if (dropNextHopBuilder_ == null) {
-        if (nhCase_ == 11 &&
+        if (nhCase_ == 9 &&
             nh_ != opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance()) {
           nh_ = opi_api.network.cloud.v1alpha1.DropNexthop.newBuilder((opi_api.network.cloud.v1alpha1.DropNexthop) nh_)
               .mergeFrom(value).buildPartial();
@@ -2842,12 +2389,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           dropNextHopBuilder_.mergeFrom(value);
         }
         dropNextHopBuilder_.setMessage(value);
       }
-      nhCase_ = 11;
+      nhCase_ = 9;
       return this;
     }
     /**
@@ -2856,17 +2403,17 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     public Builder clearDropNextHop() {
       if (dropNextHopBuilder_ == null) {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           nhCase_ = 0;
           nh_ = null;
           onChanged();
         }
       } else {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           nhCase_ = 0;
           nh_ = null;
         }
@@ -2880,7 +2427,7 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     public opi_api.network.cloud.v1alpha1.DropNexthop.Builder getDropNextHopBuilder() {
       return getDropNextHopFieldBuilder().getBuilder();
@@ -2891,14 +2438,14 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.DropNexthopOrBuilder getDropNextHopOrBuilder() {
-      if ((nhCase_ == 11) && (dropNextHopBuilder_ != null)) {
+      if ((nhCase_ == 9) && (dropNextHopBuilder_ != null)) {
         return dropNextHopBuilder_.getMessageOrBuilder();
       } else {
-        if (nhCase_ == 11) {
+        if (nhCase_ == 9) {
           return (opi_api.network.cloud.v1alpha1.DropNexthop) nh_;
         }
         return opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
@@ -2910,13 +2457,13 @@ private static final long serialVersionUID = 0L;
      * even when there is reachability, this is administrative override
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 11;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.DropNexthop drop_next_hop = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.DropNexthop, opi_api.network.cloud.v1alpha1.DropNexthop.Builder, opi_api.network.cloud.v1alpha1.DropNexthopOrBuilder> 
         getDropNextHopFieldBuilder() {
       if (dropNextHopBuilder_ == null) {
-        if (!(nhCase_ == 11)) {
+        if (!(nhCase_ == 9)) {
           nh_ = opi_api.network.cloud.v1alpha1.DropNexthop.getDefaultInstance();
         }
         dropNextHopBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2926,7 +2473,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         nh_ = null;
       }
-      nhCase_ = 11;
+      nhCase_ = 9;
       onChanged();;
       return dropNextHopBuilder_;
     }
@@ -2938,7 +2485,7 @@ private static final long serialVersionUID = 0L;
      * set to zero if dataplane is expected to resolve this
      * </pre>
      *
-     * <code>bytes mac_address = 12;</code>
+     * <code>bytes mac_address = 10;</code>
      * @return The macAddress.
      */
     @java.lang.Override
@@ -2951,7 +2498,7 @@ private static final long serialVersionUID = 0L;
      * set to zero if dataplane is expected to resolve this
      * </pre>
      *
-     * <code>bytes mac_address = 12;</code>
+     * <code>bytes mac_address = 10;</code>
      * @param value The macAddress to set.
      * @return This builder for chaining.
      */
@@ -2970,7 +2517,7 @@ private static final long serialVersionUID = 0L;
      * set to zero if dataplane is expected to resolve this
      * </pre>
      *
-     * <code>bytes mac_address = 12;</code>
+     * <code>bytes mac_address = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
@@ -2993,7 +2540,7 @@ private static final long serialVersionUID = 0L;
      * in vpc and subnet objects
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 11;</code>
      * @return The tos.
      */
     @java.lang.Override
@@ -3012,7 +2559,7 @@ private static final long serialVersionUID = 0L;
      * in vpc and subnet objects
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 11;</code>
      * @param value The tos to set.
      * @return This builder for chaining.
      */
@@ -3034,7 +2581,7 @@ private static final long serialVersionUID = 0L;
      * in vpc and subnet objects
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearTos() {

@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            routeTableId_ = input.readInt32();
+            routeTableNameRef_ = input.readInt32();
             break;
           }
           case 18: {
@@ -159,19 +159,19 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.UnderlayRouteStatus.class, opi_api.network.cloud.v1alpha1.UnderlayRouteStatus.Builder.class);
   }
 
-  public static final int ROUTE_TABLE_ID_FIELD_NUMBER = 1;
-  private int routeTableId_;
+  public static final int ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 1;
+  private int routeTableNameRef_;
   /**
    * <pre>
    * route table id this route belongs to
    * </pre>
    *
-   * <code>int32 route_table_id = 1;</code>
-   * @return The routeTableId.
+   * <code>int32 route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
   @java.lang.Override
-  public int getRouteTableId() {
-    return routeTableId_;
+  public int getRouteTableNameRef() {
+    return routeTableNameRef_;
   }
 
   public static final int DEST_PREFIX_FIELD_NUMBER = 2;
@@ -408,8 +408,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (routeTableId_ != 0) {
-      output.writeInt32(1, routeTableId_);
+    if (routeTableNameRef_ != 0) {
+      output.writeInt32(1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
       output.writeMessage(2, getDestPrefix());
@@ -450,9 +450,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (routeTableId_ != 0) {
+    if (routeTableNameRef_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, routeTableId_);
+        .computeInt32Size(1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -509,8 +509,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.UnderlayRouteStatus other = (opi_api.network.cloud.v1alpha1.UnderlayRouteStatus) obj;
 
-    if (getRouteTableId()
-        != other.getRouteTableId()) return false;
+    if (getRouteTableNameRef()
+        != other.getRouteTableNameRef()) return false;
     if (hasDestPrefix() != other.hasDestPrefix()) return false;
     if (hasDestPrefix()) {
       if (!getDestPrefix()
@@ -546,8 +546,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ROUTE_TABLE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRouteTableId();
+    hash = (37 * hash) + ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteTableNameRef();
     if (hasDestPrefix()) {
       hash = (37 * hash) + DEST_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getDestPrefix().hashCode();
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      routeTableId_ = 0;
+      routeTableNameRef_ = 0;
 
       if (destPrefixBuilder_ == null) {
         destPrefix_ = null;
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayRouteStatus buildPartial() {
       opi_api.network.cloud.v1alpha1.UnderlayRouteStatus result = new opi_api.network.cloud.v1alpha1.UnderlayRouteStatus(this);
-      result.routeTableId_ = routeTableId_;
+      result.routeTableNameRef_ = routeTableNameRef_;
       if (destPrefixBuilder_ == null) {
         result.destPrefix_ = destPrefix_;
       } else {
@@ -834,8 +834,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.UnderlayRouteStatus other) {
       if (other == opi_api.network.cloud.v1alpha1.UnderlayRouteStatus.getDefaultInstance()) return this;
-      if (other.getRouteTableId() != 0) {
-        setRouteTableId(other.getRouteTableId());
+      if (other.getRouteTableNameRef() != 0) {
+        setRouteTableNameRef(other.getRouteTableNameRef());
       }
       if (other.hasDestPrefix()) {
         mergeDestPrefix(other.getDestPrefix());
@@ -896,31 +896,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int routeTableId_ ;
+    private int routeTableNameRef_ ;
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>int32 route_table_id = 1;</code>
-     * @return The routeTableId.
+     * <code>int32 route_table_name_ref = 1;</code>
+     * @return The routeTableNameRef.
      */
     @java.lang.Override
-    public int getRouteTableId() {
-      return routeTableId_;
+    public int getRouteTableNameRef() {
+      return routeTableNameRef_;
     }
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>int32 route_table_id = 1;</code>
-     * @param value The routeTableId to set.
+     * <code>int32 route_table_name_ref = 1;</code>
+     * @param value The routeTableNameRef to set.
      * @return This builder for chaining.
      */
-    public Builder setRouteTableId(int value) {
+    public Builder setRouteTableNameRef(int value) {
       
-      routeTableId_ = value;
+      routeTableNameRef_ = value;
       onChanged();
       return this;
     }
@@ -929,12 +929,12 @@ private static final long serialVersionUID = 0L;
      * route table id this route belongs to
      * </pre>
      *
-     * <code>int32 route_table_id = 1;</code>
+     * <code>int32 route_table_name_ref = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRouteTableId() {
+    public Builder clearRouteTableNameRef() {
       
-      routeTableId_ = 0;
+      routeTableNameRef_ = 0;
       onChanged();
       return this;
     }

@@ -9,39 +9,12 @@ public interface SecurityPolicySpecOrBuilder extends
 
   /**
    * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique identifier of security policy
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * SecurityPolicyType is either TENANT or UNDERLAY (aka. infra) policy
    * - only one instance of UNDERLAY policy is allowed (or makes sense)
    * - if Type is not specified, policy type defaults to TENANT policy
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -52,7 +25,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * - if Type is not specified, policy type defaults to TENANT policy
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;</code>
    * @return The type.
    */
   opi_api.network.cloud.v1alpha1.SecurityPolicyType getType();
@@ -62,7 +35,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * IPv4 or IPv6 policy
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
    * @return The enum numeric value on the wire for addressFamily.
    */
   int getAddressFamilyValue();
@@ -71,7 +44,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * IPv4 or IPv6 policy
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;</code>
    * @return The addressFamily.
    */
   opi_api.network.opinetcommon.v1alpha1.IpAf getAddressFamily();
@@ -85,7 +58,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * behavior is same as ACL construct
    * </pre>
    *
-   * <code>bool stateless = 4;</code>
+   * <code>bool stateless = 3;</code>
    * @return The stateless.
    */
   boolean getStateless();
@@ -101,7 +74,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * apply and traffic is allowed in that case
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
    * @return The enum numeric value on the wire for defaultSecurityAction.
    */
   int getDefaultSecurityActionValue();
@@ -116,7 +89,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * apply and traffic is allowed in that case
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;</code>
    * @return The defaultSecurityAction.
    */
   opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction getDefaultSecurityAction();
@@ -126,7 +99,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   java.util.List<opi_api.network.cloud.v1alpha1.SecurityRuleInfo> 
       getRulesList();
@@ -135,7 +108,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   opi_api.network.cloud.v1alpha1.SecurityRuleInfo getRules(int index);
   /**
@@ -143,7 +116,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   int getRulesCount();
   /**
@@ -151,7 +124,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   java.util.List<? extends opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder> 
       getRulesOrBuilderList();
@@ -160,7 +133,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * list of security rules
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;</code>
    */
   opi_api.network.cloud.v1alpha1.SecurityRuleInfoOrBuilder getRulesOrBuilder(
       int index);
@@ -171,7 +144,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * or whether they are aggregated (DPU can be efficient based ont his hint)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
    * @return The enum numeric value on the wire for ruleFormat.
    */
   int getRuleFormatValue();
@@ -181,7 +154,7 @@ public interface SecurityPolicySpecOrBuilder extends
    * or whether they are aggregated (DPU can be efficient based ont his hint)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;</code>
    * @return The ruleFormat.
    */
   opi_api.network.cloud.v1alpha1.PolicyRuleFormat getRuleFormat();

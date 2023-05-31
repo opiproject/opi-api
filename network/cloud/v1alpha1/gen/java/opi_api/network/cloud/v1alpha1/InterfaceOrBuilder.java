@@ -9,10 +9,30 @@ public interface InterfaceOrBuilder extends
 
   /**
    * <pre>
+   * interface key
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * interface key
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface InterfaceOrBuilder extends
    * interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.InterfaceSpec getSpec();
@@ -30,7 +50,7 @@ public interface InterfaceOrBuilder extends
    * interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.InterfaceSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface InterfaceOrBuilder extends
    * interface status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface InterfaceOrBuilder extends
    * interface status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.InterfaceStatus getStatus();
@@ -57,7 +77,7 @@ public interface InterfaceOrBuilder extends
    * interface status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.InterfaceStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.InterfaceStatusOrBuilder getStatusOrBuilder();
 }

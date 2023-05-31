@@ -59,7 +59,8 @@ struct DeviceCapabilitiesNetworkPolicyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceCapabilitiesNetworkPolicyDefaultTypeInternal _DeviceCapabilitiesNetworkPolicy_default_instance_;
 constexpr Device::Device(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct DeviceDefaultTypeInternal {
   constexpr DeviceDefaultTypeInternal()
@@ -74,7 +75,6 @@ constexpr DeviceSpec::DeviceSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : mac_addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , systemname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(nullptr)
   , ipv4_address_(nullptr)
   , ipv6_address_(nullptr)
   , gateway_ip_(nullptr)
@@ -204,6 +204,7 @@ const uint32_t TableStruct_device_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Device, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Device, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Device, status_),
   ~0u,  // no _has_bits_
@@ -212,7 +213,6 @@ const uint32_t TableStruct_device_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeviceSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeviceSpec, ipv4_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeviceSpec, ipv6_address_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DeviceSpec, mac_addr_),
@@ -279,7 +279,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceCapabilitiesDynamicRouting)},
   { 15, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceCapabilitiesNetworkPolicy)},
   { 22, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Device)},
-  { 30, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceSpec)},
+  { 31, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceSpec)},
   { 45, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PCIeFunctionsSpec)},
   { 53, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::MgmtNetworkSpec)},
   { 64, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::DeviceStatus)},
@@ -302,65 +302,66 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_device_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014device.proto\022\036opi_api.network.cloud.v1"
-  "alpha1\032\020object_key.proto\032\022networktypes.p"
-  "roto\032\037google/protobuf/timestamp.proto\"\331\001"
-  "\n\022DeviceCapabilities\022]\n\023routing_capabilt"
-  "ies\030\001 \001(\0132@.opi_api.network.cloud.v1alph"
-  "a1.DeviceCapabilitiesDynamicRouting\022d\n\033n"
-  "etwork_policy_capabilities\030\002 \001(\0132\?.opi_a"
-  "pi.network.cloud.v1alpha1.DeviceCapabili"
-  "tiesNetworkPolicy\"8\n DeviceCapabilitiesD"
-  "ynamicRouting\022\024\n\014underlay_bgp\030\001 \001(\010\"8\n\037D"
-  "eviceCapabilitiesNetworkPolicy\022\025\n\rcompac"
-  "t_rules\030\001 \001(\010\"\200\001\n\006Device\0228\n\004spec\030\001 \001(\0132*"
-  ".opi_api.network.cloud.v1alpha1.DeviceSp"
-  "ec\022<\n\006status\030\002 \001(\0132,.opi_api.network.clo"
-  "ud.v1alpha1.DeviceStatus\"\352\003\n\nDeviceSpec\022"
-  "(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe"
-  "y\022F\n\014ipv4_address\030\002 \001(\01320.opi_api.networ"
-  "k.opinetcommon.v1alpha1.IPAddress\022F\n\014ipv"
-  "6_address\030\003 \001(\01320.opi_api.network.opinet"
-  "common.v1alpha1.IPAddress\022\020\n\010mac_addr\030\004 "
-  "\001(\014\022D\n\ngateway_ip\030\005 \001(\01320.opi_api.networ"
-  "k.opinetcommon.v1alpha1.IPAddress\022I\n\016pci"
-  "e_functions\030\006 \001(\01321.opi_api.network.clou"
-  "d.v1alpha1.PCIeFunctionsSpec\022\037\n\027overlay_"
-  "routing_enabled\030\007 \001(\010\022\022\n\nsystemname\030\010 \001("
-  "\t\022J\n\021mgmt_network_spec\030\t \001(\0132/.opi_api.n"
-  "etwork.cloud.v1alpha1.MgmtNetworkSpec\"7\n"
-  "\021PCIeFunctionsSpec\022\020\n\010pf_count\030\005 \001(\005\022\020\n\010"
-  "vf_count\030\006 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n\014ll"
-  "dp_mgmt_ip\030\001 \001(\01320.opi_api.network.opine"
-  "tcommon.v1alpha1.IPAddress\022A\n\007mgmt_ip\030\002 "
-  "\001(\01320.opi_api.network.opinetcommon.v1alp"
-  "ha1.IPAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngateway_i"
-  "p\030\004 \001(\01320.opi_api.network.opinetcommon.v"
-  "1alpha1.IPAddress\022\023\n\013gateway_mac\030\005 \001(\014\"\322"
-  "\002\n\014DeviceStatus\022\023\n\013description\030\001 \001(\t\022\032\n\022"
-  "system_mac_address\030\002 \001(\014\022\021\n\tvendor_id\030\003 "
-  "\001(\t\022\021\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030\005 \001"
-  "(\t\022\027\n\017pcie_port_count\030\006 \001(\005\022\022\n\nport_coun"
-  "t\030\007 \001(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pipeli"
-  "ne\030\t \001(\t\022D\n\017critical_events\030\n \003(\0132+.opi_"
-  "api.network.cloud.v1alpha1.SystemEvent\022;"
-  "\n\006alerts\030\013 \003(\0132+.opi_api.network.cloud.v"
-  "1alpha1.SystemAlert\"X\n\013SystemEvent\022.\n\nev"
-  "ent_time\030\001 \001(\0132\032.google.protobuf.Timesta"
-  "mp\022\031\n\021event_description\030\002 \001(\t\"X\n\013SystemA"
-  "lert\022.\n\nalert_time\030\001 \001(\0132\032.google.protob"
-  "uf.Timestamp\022\031\n\021alert_description\030\002 \001(\tB"
-  "l\n\036opi_api.network.cloud.v1alpha1B\013Devic"
-  "eProtoP\001Z;github.com/opiproject/opi-api/"
-  "network/cloud/v1alpha1/gen/gob\006proto3"
+  "alpha1\032\022networktypes.proto\032\037google/proto"
+  "buf/timestamp.proto\032\031google/api/resource"
+  ".proto\"\331\001\n\022DeviceCapabilities\022]\n\023routing"
+  "_capabilties\030\001 \001(\0132@.opi_api.network.clo"
+  "ud.v1alpha1.DeviceCapabilitiesDynamicRou"
+  "ting\022d\n\033network_policy_capabilities\030\002 \001("
+  "\0132\?.opi_api.network.cloud.v1alpha1.Devic"
+  "eCapabilitiesNetworkPolicy\"8\n DeviceCapa"
+  "bilitiesDynamicRouting\022\024\n\014underlay_bgp\030\001"
+  " \001(\010\"8\n\037DeviceCapabilitiesNetworkPolicy\022"
+  "\025\n\rcompact_rules\030\001 \001(\010\"\314\001\n\006Device\022\014\n\004nam"
+  "e\030\001 \001(\t\0228\n\004spec\030\002 \001(\0132*.opi_api.network."
+  "cloud.v1alpha1.DeviceSpec\022<\n\006status\030\003 \001("
+  "\0132,.opi_api.network.cloud.v1alpha1.Devic"
+  "eStatus:<\352A9\n%opi_api.network.cloud.v1al"
+  "pha1/device\022\020devices/{device}\"\300\003\n\nDevice"
+  "Spec\022F\n\014ipv4_address\030\001 \001(\01320.opi_api.net"
+  "work.opinetcommon.v1alpha1.IPAddress\022F\n\014"
+  "ipv6_address\030\002 \001(\01320.opi_api.network.opi"
+  "netcommon.v1alpha1.IPAddress\022\020\n\010mac_addr"
+  "\030\003 \001(\014\022D\n\ngateway_ip\030\004 \001(\01320.opi_api.net"
+  "work.opinetcommon.v1alpha1.IPAddress\022I\n\016"
+  "pcie_functions\030\005 \001(\01321.opi_api.network.c"
+  "loud.v1alpha1.PCIeFunctionsSpec\022\037\n\027overl"
+  "ay_routing_enabled\030\006 \001(\010\022\022\n\nsystemname\030\007"
+  " \001(\t\022J\n\021mgmt_network_spec\030\010 \001(\0132/.opi_ap"
+  "i.network.cloud.v1alpha1.MgmtNetworkSpec"
+  "\"7\n\021PCIeFunctionsSpec\022\020\n\010pf_count\030\001 \001(\005\022"
+  "\020\n\010vf_count\030\002 \001(\005\"\205\002\n\017MgmtNetworkSpec\022F\n"
+  "\014lldp_mgmt_ip\030\001 \001(\01320.opi_api.network.op"
+  "inetcommon.v1alpha1.IPAddress\022A\n\007mgmt_ip"
+  "\030\002 \001(\01320.opi_api.network.opinetcommon.v1"
+  "alpha1.IPAddress\022\014\n\004vlan\030\003 \001(\005\022D\n\ngatewa"
+  "y_ip\030\004 \001(\01320.opi_api.network.opinetcommo"
+  "n.v1alpha1.IPAddress\022\023\n\013gateway_mac\030\005 \001("
+  "\014\"\322\002\n\014DeviceStatus\022\023\n\013description\030\001 \001(\t\022"
+  "\032\n\022system_mac_address\030\002 \001(\014\022\021\n\tvendor_id"
+  "\030\003 \001(\t\022\021\n\tchip_type\030\004 \001(\t\022\022\n\nos_version\030"
+  "\005 \001(\t\022\027\n\017pcie_port_count\030\006 \001(\005\022\022\n\nport_c"
+  "ount\030\007 \001(\005\022\025\n\rhost_if_count\030\010 \001(\005\022\020\n\010pip"
+  "eline\030\t \001(\t\022D\n\017critical_events\030\n \003(\0132+.o"
+  "pi_api.network.cloud.v1alpha1.SystemEven"
+  "t\022;\n\006alerts\030\013 \003(\0132+.opi_api.network.clou"
+  "d.v1alpha1.SystemAlert\"X\n\013SystemEvent\022.\n"
+  "\nevent_time\030\001 \001(\0132\032.google.protobuf.Time"
+  "stamp\022\031\n\021event_description\030\002 \001(\t\"X\n\013Syst"
+  "emAlert\022.\n\nalert_time\030\001 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\022\031\n\021alert_description\030\002 \001"
+  "(\tBl\n\036opi_api.network.cloud.v1alpha1B\013De"
+  "viceProtoP\001Z;github.com/opiproject/opi-a"
+  "pi/network/cloud/v1alpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_2eproto_deps[3] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_device_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_2eproto = {
-  false, false, 2037, descriptor_table_protodef_device_2eproto, "device.proto", 
+  false, false, 2080, descriptor_table_protodef_device_2eproto, "device.proto", 
   &descriptor_table_device_2eproto_once, descriptor_table_device_2eproto_deps, 3, 10,
   schemas, file_default_instances, TableStruct_device_2eproto::offsets,
   file_level_metadata_device_2eproto, file_level_enum_descriptors_device_2eproto, file_level_service_descriptors_device_2eproto,
@@ -1004,6 +1005,14 @@ Device::Device(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Device::Device(const Device& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::DeviceSpec(*from.spec_);
   } else {
@@ -1018,6 +1027,10 @@ Device::Device(const Device& from)
 }
 
 inline void Device::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -1033,6 +1046,7 @@ Device::~Device() {
 
 inline void Device::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -1053,6 +1067,7 @@ void Device::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -1070,17 +1085,27 @@ const char* Device::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Device.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -1115,20 +1140,30 @@ uint8_t* Device::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.Device.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1147,14 +1182,21 @@ size_t Device::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.DeviceSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.DeviceStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1183,6 +1225,9 @@ void Device::MergeFrom(const Device& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::DeviceSpec::MergeFrom(from._internal_spec());
   }
@@ -1205,7 +1250,14 @@ bool Device::IsInitialized() const {
 
 void Device::InternalSwap(Device* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Device, status_)
       + sizeof(Device::status_)
@@ -1224,7 +1276,6 @@ void Device::InternalSwap(Device* other) {
 
 class DeviceSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const DeviceSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& ipv4_address(const DeviceSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& ipv6_address(const DeviceSpec* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::IPAddress& gateway_ip(const DeviceSpec* msg);
@@ -1232,10 +1283,6 @@ class DeviceSpec::_Internal {
   static const ::opi_api::network::cloud::v1alpha1::MgmtNetworkSpec& mgmt_network_spec(const DeviceSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-DeviceSpec::_Internal::id(const DeviceSpec* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::opinetcommon::v1alpha1::IPAddress&
 DeviceSpec::_Internal::ipv4_address(const DeviceSpec* msg) {
   return *msg->ipv4_address_;
@@ -1255,12 +1302,6 @@ DeviceSpec::_Internal::pcie_functions(const DeviceSpec* msg) {
 const ::opi_api::network::cloud::v1alpha1::MgmtNetworkSpec&
 DeviceSpec::_Internal::mgmt_network_spec(const DeviceSpec* msg) {
   return *msg->mgmt_network_spec_;
-}
-void DeviceSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 void DeviceSpec::clear_ipv4_address() {
   if (GetArenaForAllocation() == nullptr && ipv4_address_ != nullptr) {
@@ -1308,11 +1349,6 @@ DeviceSpec::DeviceSpec(const DeviceSpec& from)
     systemname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_systemname(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   if (from._internal_has_ipv4_address()) {
     ipv4_address_ = new ::opi_api::network::opinetcommon::v1alpha1::IPAddress(*from.ipv4_address_);
   } else {
@@ -1352,9 +1388,9 @@ systemname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
   systemname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&ipv4_address_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&overlay_routing_enabled_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(overlay_routing_enabled_));
+    reinterpret_cast<char*>(&ipv4_address_)) + sizeof(overlay_routing_enabled_));
 }
 
 DeviceSpec::~DeviceSpec() {
@@ -1368,7 +1404,6 @@ inline void DeviceSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   mac_addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   systemname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete ipv4_address_;
   if (this != internal_default_instance()) delete ipv6_address_;
   if (this != internal_default_instance()) delete gateway_ip_;
@@ -1394,10 +1429,6 @@ void DeviceSpec::Clear() {
 
   mac_addr_.ClearToEmpty();
   systemname_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   if (GetArenaForAllocation() == nullptr && ipv4_address_ != nullptr) {
     delete ipv4_address_;
   }
@@ -1428,66 +1459,58 @@ const char* DeviceSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_ipv4_address(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_ipv6_address(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bytes mac_addr = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // bytes mac_addr = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_mac_addr();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_gateway_ip(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+      // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_pcie_functions(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool overlay_routing_enabled = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // bool overlay_routing_enabled = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           overlay_routing_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string systemname = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+      // string systemname = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_systemname();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.DeviceSpec.systemname"));
@@ -1495,9 +1518,9 @@ const char* DeviceSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+      // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_mgmt_network_spec(), ptr);
           CHK_(ptr);
         } else
@@ -1532,74 +1555,66 @@ uint8_t* DeviceSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
   if (this->_internal_has_ipv4_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::ipv4_address(this), target, stream);
+        1, _Internal::ipv4_address(this), target, stream);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
   if (this->_internal_has_ipv6_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::ipv6_address(this), target, stream);
+        2, _Internal::ipv6_address(this), target, stream);
   }
 
-  // bytes mac_addr = 4;
+  // bytes mac_addr = 3;
   if (!this->_internal_mac_addr().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_mac_addr(), target);
+        3, this->_internal_mac_addr(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
   if (this->_internal_has_gateway_ip()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::gateway_ip(this), target, stream);
+        4, _Internal::gateway_ip(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;
+  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;
   if (this->_internal_has_pcie_functions()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::pcie_functions(this), target, stream);
+        5, _Internal::pcie_functions(this), target, stream);
   }
 
-  // bool overlay_routing_enabled = 7;
+  // bool overlay_routing_enabled = 6;
   if (this->_internal_overlay_routing_enabled() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_overlay_routing_enabled(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_overlay_routing_enabled(), target);
   }
 
-  // string systemname = 8;
+  // string systemname = 7;
   if (!this->_internal_systemname().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_systemname().data(), static_cast<int>(this->_internal_systemname().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.network.cloud.v1alpha1.DeviceSpec.systemname");
     target = stream->WriteStringMaybeAliased(
-        8, this->_internal_systemname(), target);
+        7, this->_internal_systemname(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;
+  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;
   if (this->_internal_has_mgmt_network_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::mgmt_network_spec(this), target, stream);
+        8, _Internal::mgmt_network_spec(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1618,63 +1633,56 @@ size_t DeviceSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes mac_addr = 4;
+  // bytes mac_addr = 3;
   if (!this->_internal_mac_addr().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_mac_addr());
   }
 
-  // string systemname = 8;
+  // string systemname = 7;
   if (!this->_internal_systemname().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_systemname());
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;
   if (this->_internal_has_ipv4_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ipv4_address_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;
   if (this->_internal_has_ipv6_address()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ipv6_address_);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;
   if (this->_internal_has_gateway_ip()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *gateway_ip_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;
+  // .opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;
   if (this->_internal_has_pcie_functions()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pcie_functions_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;
+  // .opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;
   if (this->_internal_has_mgmt_network_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *mgmt_network_spec_);
   }
 
-  // bool overlay_routing_enabled = 7;
+  // bool overlay_routing_enabled = 6;
   if (this->_internal_overlay_routing_enabled() != 0) {
     total_size += 1 + 1;
   }
@@ -1706,9 +1714,6 @@ void DeviceSpec::MergeFrom(const DeviceSpec& from) {
   }
   if (!from._internal_systemname().empty()) {
     _internal_set_systemname(from._internal_systemname());
-  }
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
   }
   if (from._internal_has_ipv4_address()) {
     _internal_mutable_ipv4_address()->::opi_api::network::opinetcommon::v1alpha1::IPAddress::MergeFrom(from._internal_ipv4_address());
@@ -1760,9 +1765,9 @@ void DeviceSpec::InternalSwap(DeviceSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DeviceSpec, overlay_routing_enabled_)
       + sizeof(DeviceSpec::overlay_routing_enabled_)
-      - PROTOBUF_FIELD_OFFSET(DeviceSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(DeviceSpec, ipv4_address_)>(
+          reinterpret_cast<char*>(&ipv4_address_),
+          reinterpret_cast<char*>(&other->ipv4_address_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeviceSpec::GetMetadata() const {
@@ -1841,17 +1846,17 @@ const char* PCIeFunctionsSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 pf_count = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // int32 pf_count = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           pf_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 vf_count = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // int32 vf_count = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           vf_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -1886,16 +1891,16 @@ uint8_t* PCIeFunctionsSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 pf_count = 5;
+  // int32 pf_count = 1;
   if (this->_internal_pf_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_pf_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_pf_count(), target);
   }
 
-  // int32 vf_count = 6;
+  // int32 vf_count = 2;
   if (this->_internal_vf_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_vf_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_vf_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1914,12 +1919,12 @@ size_t PCIeFunctionsSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 pf_count = 5;
+  // int32 pf_count = 1;
   if (this->_internal_pf_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_pf_count());
   }
 
-  // int32 vf_count = 6;
+  // int32 vf_count = 2;
   if (this->_internal_vf_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vf_count());
   }

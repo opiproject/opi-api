@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SecurityRuleSpec() {
+    securityPolicyNameRef_ = "";
   }
 
   @java.lang.Override
@@ -53,32 +54,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            securityPolicyNameRef_ = s;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (securityPolicyId_ != null) {
-              subBuilder = securityPolicyId_.toBuilder();
-            }
-            securityPolicyId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(securityPolicyId_);
-              securityPolicyId_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
             opi_api.network.cloud.v1alpha1.SecurityRuleAttrs.Builder subBuilder = null;
             if (attrs_ != null) {
               subBuilder = attrs_.toBuilder();
@@ -123,90 +104,60 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.SecurityRuleSpec.class, opi_api.network.cloud.v1alpha1.SecurityRuleSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int SECURITY_POLICY_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object securityPolicyNameRef_;
   /**
    * <pre>
-   * unique identifier of security rule
+   * security policy this rule belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string security_policy_name_ref = 1;</code>
+   * @return The securityPolicyNameRef.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getSecurityPolicyNameRef() {
+    java.lang.Object ref = securityPolicyNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      securityPolicyNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * unique identifier of security rule
+   * security policy this rule belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string security_policy_name_ref = 1;</code>
+   * @return The bytes for securityPolicyNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique identifier of security rule
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getSecurityPolicyNameRefBytes() {
+    java.lang.Object ref = securityPolicyNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      securityPolicyNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int SECURITY_POLICY_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey securityPolicyId_;
-  /**
-   * <pre>
-   * security policy this rule belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   * @return Whether the securityPolicyId field is set.
-   */
-  @java.lang.Override
-  public boolean hasSecurityPolicyId() {
-    return securityPolicyId_ != null;
-  }
-  /**
-   * <pre>
-   * security policy this rule belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   * @return The securityPolicyId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSecurityPolicyId() {
-    return securityPolicyId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : securityPolicyId_;
-  }
-  /**
-   * <pre>
-   * security policy this rule belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSecurityPolicyIdOrBuilder() {
-    return getSecurityPolicyId();
-  }
-
-  public static final int ATTRS_FIELD_NUMBER = 3;
+  public static final int ATTRS_FIELD_NUMBER = 2;
   private opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs_;
   /**
    * <pre>
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    * @return Whether the attrs field is set.
    */
   @java.lang.Override
@@ -218,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    * @return The attrs.
    */
   @java.lang.Override
@@ -230,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * rule information
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.SecurityRuleAttrsOrBuilder getAttrsOrBuilder() {
@@ -251,14 +202,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
-    if (securityPolicyId_ != null) {
-      output.writeMessage(2, getSecurityPolicyId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityPolicyNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, securityPolicyNameRef_);
     }
     if (attrs_ != null) {
-      output.writeMessage(3, getAttrs());
+      output.writeMessage(2, getAttrs());
     }
     unknownFields.writeTo(output);
   }
@@ -269,17 +217,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
-    if (securityPolicyId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSecurityPolicyId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityPolicyNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, securityPolicyNameRef_);
     }
     if (attrs_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getAttrs());
+        .computeMessageSize(2, getAttrs());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -296,16 +239,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.SecurityRuleSpec other = (opi_api.network.cloud.v1alpha1.SecurityRuleSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasSecurityPolicyId() != other.hasSecurityPolicyId()) return false;
-    if (hasSecurityPolicyId()) {
-      if (!getSecurityPolicyId()
-          .equals(other.getSecurityPolicyId())) return false;
-    }
+    if (!getSecurityPolicyNameRef()
+        .equals(other.getSecurityPolicyNameRef())) return false;
     if (hasAttrs() != other.hasAttrs()) return false;
     if (hasAttrs()) {
       if (!getAttrs()
@@ -322,14 +257,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasSecurityPolicyId()) {
-      hash = (37 * hash) + SECURITY_POLICY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSecurityPolicyId().hashCode();
-    }
+    hash = (37 * hash) + SECURITY_POLICY_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSecurityPolicyNameRef().hashCode();
     if (hasAttrs()) {
       hash = (37 * hash) + ATTRS_FIELD_NUMBER;
       hash = (53 * hash) + getAttrs().hashCode();
@@ -471,18 +400,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (securityPolicyIdBuilder_ == null) {
-        securityPolicyId_ = null;
-      } else {
-        securityPolicyId_ = null;
-        securityPolicyIdBuilder_ = null;
-      }
+      securityPolicyNameRef_ = "";
+
       if (attrsBuilder_ == null) {
         attrs_ = null;
       } else {
@@ -515,16 +434,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.SecurityRuleSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.SecurityRuleSpec result = new opi_api.network.cloud.v1alpha1.SecurityRuleSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (securityPolicyIdBuilder_ == null) {
-        result.securityPolicyId_ = securityPolicyId_;
-      } else {
-        result.securityPolicyId_ = securityPolicyIdBuilder_.build();
-      }
+      result.securityPolicyNameRef_ = securityPolicyNameRef_;
       if (attrsBuilder_ == null) {
         result.attrs_ = attrs_;
       } else {
@@ -578,11 +488,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.SecurityRuleSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.SecurityRuleSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
-      if (other.hasSecurityPolicyId()) {
-        mergeSecurityPolicyId(other.getSecurityPolicyId());
+      if (!other.getSecurityPolicyNameRef().isEmpty()) {
+        securityPolicyNameRef_ = other.securityPolicyNameRef_;
+        onChanged();
       }
       if (other.hasAttrs()) {
         mergeAttrs(other.getAttrs());
@@ -616,208 +524,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object securityPolicyNameRef_ = "";
     /**
      * <pre>
-     * unique identifier of security rule
+     * security policy this rule belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string security_policy_name_ref = 1;</code>
+     * @return The securityPolicyNameRef.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getSecurityPolicyNameRef() {
+      java.lang.Object ref = securityPolicyNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        securityPolicyNameRef_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * unique identifier of security rule
+     * security policy this rule belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string security_policy_name_ref = 1;</code>
+     * @return The bytes for securityPolicyNameRef.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSecurityPolicyNameRefBytes() {
+      java.lang.Object ref = securityPolicyNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        securityPolicyNameRef_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * unique identifier of security rule
+     * security policy this rule belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string security_policy_name_ref = 1;</code>
+     * @param value The securityPolicyNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setSecurityPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      securityPolicyNameRef_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique identifier of security rule
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey securityPolicyId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> securityPolicyIdBuilder_;
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     * @return Whether the securityPolicyId field is set.
-     */
-    public boolean hasSecurityPolicyId() {
-      return securityPolicyIdBuilder_ != null || securityPolicyId_ != null;
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     * @return The securityPolicyId.
-     */
-    public opi_api.common.v1.ObjectKey getSecurityPolicyId() {
-      if (securityPolicyIdBuilder_ == null) {
-        return securityPolicyId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : securityPolicyId_;
-      } else {
-        return securityPolicyIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     */
-    public Builder setSecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (securityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        securityPolicyId_ = value;
-        onChanged();
-      } else {
-        securityPolicyIdBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
@@ -825,105 +590,34 @@ private static final long serialVersionUID = 0L;
      * security policy this rule belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
+     * <code>string security_policy_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public Builder setSecurityPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (securityPolicyIdBuilder_ == null) {
-        securityPolicyId_ = builderForValue.build();
-        onChanged();
-      } else {
-        securityPolicyIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     */
-    public Builder mergeSecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (securityPolicyIdBuilder_ == null) {
-        if (securityPolicyId_ != null) {
-          securityPolicyId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(securityPolicyId_).mergeFrom(value).buildPartial();
-        } else {
-          securityPolicyId_ = value;
-        }
-        onChanged();
-      } else {
-        securityPolicyIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     */
-    public Builder clearSecurityPolicyId() {
-      if (securityPolicyIdBuilder_ == null) {
-        securityPolicyId_ = null;
-        onChanged();
-      } else {
-        securityPolicyId_ = null;
-        securityPolicyIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSecurityPolicyIdBuilder() {
+    public Builder clearSecurityPolicyNameRef() {
       
+      securityPolicyNameRef_ = getDefaultInstance().getSecurityPolicyNameRef();
       onChanged();
-      return getSecurityPolicyIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * security policy this rule belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
+     * <code>string security_policy_name_ref = 1;</code>
+     * @param value The bytes for securityPolicyNameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSecurityPolicyIdOrBuilder() {
-      if (securityPolicyIdBuilder_ != null) {
-        return securityPolicyIdBuilder_.getMessageOrBuilder();
-      } else {
-        return securityPolicyId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : securityPolicyId_;
-      }
-    }
-    /**
-     * <pre>
-     * security policy this rule belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey security_policy_id = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSecurityPolicyIdFieldBuilder() {
-      if (securityPolicyIdBuilder_ == null) {
-        securityPolicyIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSecurityPolicyId(),
-                getParentForChildren(),
-                isClean());
-        securityPolicyId_ = null;
-      }
-      return securityPolicyIdBuilder_;
+    public Builder setSecurityPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      securityPolicyNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs_;
@@ -934,7 +628,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      * @return Whether the attrs field is set.
      */
     public boolean hasAttrs() {
@@ -945,7 +639,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      * @return The attrs.
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleAttrs getAttrs() {
@@ -960,7 +654,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public Builder setAttrs(opi_api.network.cloud.v1alpha1.SecurityRuleAttrs value) {
       if (attrsBuilder_ == null) {
@@ -980,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public Builder setAttrs(
         opi_api.network.cloud.v1alpha1.SecurityRuleAttrs.Builder builderForValue) {
@@ -998,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public Builder mergeAttrs(opi_api.network.cloud.v1alpha1.SecurityRuleAttrs value) {
       if (attrsBuilder_ == null) {
@@ -1020,7 +714,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public Builder clearAttrs() {
       if (attrsBuilder_ == null) {
@@ -1038,7 +732,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleAttrs.Builder getAttrsBuilder() {
       
@@ -1050,7 +744,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.SecurityRuleAttrsOrBuilder getAttrsOrBuilder() {
       if (attrsBuilder_ != null) {
@@ -1065,7 +759,7 @@ private static final long serialVersionUID = 0L;
      * rule information
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.SecurityRuleAttrs, opi_api.network.cloud.v1alpha1.SecurityRuleAttrs.Builder, opi_api.network.cloud.v1alpha1.SecurityRuleAttrsOrBuilder> 

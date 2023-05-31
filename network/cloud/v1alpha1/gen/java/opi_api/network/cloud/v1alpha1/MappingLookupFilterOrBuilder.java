@@ -162,27 +162,29 @@ public interface MappingLookupFilterOrBuilder extends
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 8;</code>
+   * @return Whether the vpcNameRef field is set.
    */
-  boolean hasVpcId();
+  boolean hasVpcNameRef();
   /**
    * <pre>
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 8;</code>
+   * @return The vpcNameRef.
    */
-  opi_api.common.v1.ObjectKey getVpcId();
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
+   * <code>string vpc_name_ref = 8;</code>
+   * @return The bytes for vpcNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   public opi_api.network.cloud.v1alpha1.MappingLookupFilter.IpOrMacCase getIpOrMacCase();
 }

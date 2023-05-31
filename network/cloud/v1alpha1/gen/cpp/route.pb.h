@@ -33,8 +33,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include "networktypes.pb.h"
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_route_2eproto
@@ -267,10 +267,25 @@ class RouteTable final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 3,
-    kStatusFieldNumber = 4,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -288,7 +303,7 @@ class RouteTable final :
       ::opi_api::network::cloud::v1alpha1::RouteTableSpec* spec);
   ::opi_api::network::cloud::v1alpha1::RouteTableSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -313,6 +328,7 @@ class RouteTable final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::RouteTableSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::RouteTableStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -442,12 +458,11 @@ class RouteTableSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRoutesFieldNumber = 4,
-    kIdFieldNumber = 1,
-    kAfFieldNumber = 2,
-    kPriorityEnableFieldNumber = 3,
+    kRoutesFieldNumber = 3,
+    kAfFieldNumber = 1,
+    kPriorityEnableFieldNumber = 2,
   };
-  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;
+  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;
   int routes_size() const;
   private:
   int _internal_routes_size() const;
@@ -465,25 +480,7 @@ class RouteTableSpec final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::RouteInfo >&
       routes() const;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
   void clear_af();
   ::opi_api::network::opinetcommon::v1alpha1::IpAf af() const;
   void set_af(::opi_api::network::opinetcommon::v1alpha1::IpAf value);
@@ -492,7 +489,7 @@ class RouteTableSpec final :
   void _internal_set_af(::opi_api::network::opinetcommon::v1alpha1::IpAf value);
   public:
 
-  // bool priority_enable = 3;
+  // bool priority_enable = 2;
   void clear_priority_enable();
   bool priority_enable() const;
   void set_priority_enable(bool value);
@@ -509,7 +506,6 @@ class RouteTableSpec final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::RouteInfo > routes_;
-  ::opi_api::common::v1::ObjectKey* id_;
   int af_;
   bool priority_enable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -639,26 +635,22 @@ class RouteInfo final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kRouteIdFieldNumber = 1,
     kAttrsFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // string route_id = 1;
+  void clear_route_id();
+  const std::string& route_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_id();
+  PROTOBUF_NODISCARD std::string* release_route_id();
+  void set_allocated_route_id(std::string* route_id);
   private:
-  bool _internal_has_id() const;
+  const std::string& _internal_route_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_id(const std::string& value);
+  std::string* _internal_mutable_route_id();
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
   // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
   bool has_attrs() const;
@@ -685,7 +677,7 @@ class RouteInfo final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_id_;
   ::opi_api::network::cloud::v1alpha1::RouteAttrs* attrs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_route_2eproto;
@@ -960,11 +952,11 @@ class RouteAttrs final :
   }
   enum NhCase {
     kOverlayNhIpInfo = 5,
-    kNexthopId = 6,
-    kNhGroupId = 7,
+    kNexthopNameRef = 6,
+    kNhGroupNameRef = 7,
     kVpcNhInfo = 8,
-    kTunnelId = 9,
-    kRouteTableId = 10,
+    kTunnelNameRef = 9,
+    kRouteTableNameRef = 10,
     kEvalMapping = 11,
     NH_NOT_SET = 0,
   };
@@ -1056,11 +1048,11 @@ class RouteAttrs final :
     kPriorityFieldNumber = 4,
     kTosFieldNumber = 12,
     kOverlayNhIpInfoFieldNumber = 5,
-    kNexthopIdFieldNumber = 6,
-    kNhGroupIdFieldNumber = 7,
+    kNexthopNameRefFieldNumber = 6,
+    kNhGroupNameRefFieldNumber = 7,
     kVpcNhInfoFieldNumber = 8,
-    kTunnelIdFieldNumber = 9,
-    kRouteTableIdFieldNumber = 10,
+    kTunnelNameRefFieldNumber = 9,
+    kRouteTableNameRefFieldNumber = 10,
     kEvalMappingFieldNumber = 11,
   };
   // bytes overlay_mac = 14;
@@ -1167,41 +1159,41 @@ class RouteAttrs final :
       ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo* overlay_nh_ip_info);
   ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo* unsafe_arena_release_overlay_nh_ip_info();
 
-  // .opi_api.common.v1.ObjectKey nexthop_id = 6;
-  bool has_nexthop_id() const;
+  // string nexthop_name_ref = 6;
+  bool has_nexthop_name_ref() const;
   private:
-  bool _internal_has_nexthop_id() const;
+  bool _internal_has_nexthop_name_ref() const;
   public:
-  void clear_nexthop_id();
-  const ::opi_api::common::v1::ObjectKey& nexthop_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_nexthop_id();
-  ::opi_api::common::v1::ObjectKey* mutable_nexthop_id();
-  void set_allocated_nexthop_id(::opi_api::common::v1::ObjectKey* nexthop_id);
+  void clear_nexthop_name_ref();
+  const std::string& nexthop_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nexthop_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nexthop_name_ref();
+  PROTOBUF_NODISCARD std::string* release_nexthop_name_ref();
+  void set_allocated_nexthop_name_ref(std::string* nexthop_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_nexthop_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_nexthop_id();
+  const std::string& _internal_nexthop_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nexthop_name_ref(const std::string& value);
+  std::string* _internal_mutable_nexthop_name_ref();
   public:
-  void unsafe_arena_set_allocated_nexthop_id(
-      ::opi_api::common::v1::ObjectKey* nexthop_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_nexthop_id();
 
-  // .opi_api.common.v1.ObjectKey nh_group_id = 7;
-  bool has_nh_group_id() const;
+  // string nh_group_name_ref = 7;
+  bool has_nh_group_name_ref() const;
   private:
-  bool _internal_has_nh_group_id() const;
+  bool _internal_has_nh_group_name_ref() const;
   public:
-  void clear_nh_group_id();
-  const ::opi_api::common::v1::ObjectKey& nh_group_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_nh_group_id();
-  ::opi_api::common::v1::ObjectKey* mutable_nh_group_id();
-  void set_allocated_nh_group_id(::opi_api::common::v1::ObjectKey* nh_group_id);
+  void clear_nh_group_name_ref();
+  const std::string& nh_group_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nh_group_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nh_group_name_ref();
+  PROTOBUF_NODISCARD std::string* release_nh_group_name_ref();
+  void set_allocated_nh_group_name_ref(std::string* nh_group_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_nh_group_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_nh_group_id();
+  const std::string& _internal_nh_group_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nh_group_name_ref(const std::string& value);
+  std::string* _internal_mutable_nh_group_name_ref();
   public:
-  void unsafe_arena_set_allocated_nh_group_id(
-      ::opi_api::common::v1::ObjectKey* nh_group_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_nh_group_id();
 
   // .opi_api.network.cloud.v1alpha1.VPCPeerNhInfo vpc_nh_info = 8;
   bool has_vpc_nh_info() const;
@@ -1221,41 +1213,41 @@ class RouteAttrs final :
       ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo* vpc_nh_info);
   ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo* unsafe_arena_release_vpc_nh_info();
 
-  // .opi_api.common.v1.ObjectKey tunnel_id = 9;
-  bool has_tunnel_id() const;
+  // string tunnel_name_ref = 9;
+  bool has_tunnel_name_ref() const;
   private:
-  bool _internal_has_tunnel_id() const;
+  bool _internal_has_tunnel_name_ref() const;
   public:
-  void clear_tunnel_id();
-  const ::opi_api::common::v1::ObjectKey& tunnel_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_tunnel_id();
-  ::opi_api::common::v1::ObjectKey* mutable_tunnel_id();
-  void set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id);
+  void clear_tunnel_name_ref();
+  const std::string& tunnel_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_tunnel_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_tunnel_name_ref();
+  PROTOBUF_NODISCARD std::string* release_tunnel_name_ref();
+  void set_allocated_tunnel_name_ref(std::string* tunnel_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_tunnel_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_tunnel_id();
+  const std::string& _internal_tunnel_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_tunnel_name_ref(const std::string& value);
+  std::string* _internal_mutable_tunnel_name_ref();
   public:
-  void unsafe_arena_set_allocated_tunnel_id(
-      ::opi_api::common::v1::ObjectKey* tunnel_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_tunnel_id();
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 10;
-  bool has_route_table_id() const;
+  // string route_table_name_ref = 10;
+  bool has_route_table_name_ref() const;
   private:
-  bool _internal_has_route_table_id() const;
+  bool _internal_has_route_table_name_ref() const;
   public:
-  void clear_route_table_id();
-  const ::opi_api::common::v1::ObjectKey& route_table_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_route_table_id();
-  ::opi_api::common::v1::ObjectKey* mutable_route_table_id();
-  void set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id);
+  void clear_route_table_name_ref();
+  const std::string& route_table_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_table_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_table_name_ref();
+  PROTOBUF_NODISCARD std::string* release_route_table_name_ref();
+  void set_allocated_route_table_name_ref(std::string* route_table_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_route_table_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_route_table_id();
+  const std::string& _internal_route_table_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_table_name_ref(const std::string& value);
+  std::string* _internal_mutable_route_table_name_ref();
   public:
-  void unsafe_arena_set_allocated_route_table_id(
-      ::opi_api::common::v1::ObjectKey* route_table_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_route_table_id();
 
   // bool eval_mapping = 11;
   bool has_eval_mapping() const;
@@ -1276,11 +1268,11 @@ class RouteAttrs final :
  private:
   class _Internal;
   void set_has_overlay_nh_ip_info();
-  void set_has_nexthop_id();
-  void set_has_nh_group_id();
+  void set_has_nexthop_name_ref();
+  void set_has_nh_group_name_ref();
   void set_has_vpc_nh_info();
-  void set_has_tunnel_id();
-  void set_has_route_table_id();
+  void set_has_tunnel_name_ref();
+  void set_has_route_table_name_ref();
   void set_has_eval_mapping();
 
   inline bool has_nh() const;
@@ -1300,11 +1292,11 @@ class RouteAttrs final :
     constexpr NhUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo* overlay_nh_ip_info_;
-    ::opi_api::common::v1::ObjectKey* nexthop_id_;
-    ::opi_api::common::v1::ObjectKey* nh_group_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nexthop_name_ref_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nh_group_name_ref_;
     ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo* vpc_nh_info_;
-    ::opi_api::common::v1::ObjectKey* tunnel_id_;
-    ::opi_api::common::v1::ObjectKey* route_table_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tunnel_name_ref_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_table_name_ref_;
     bool eval_mapping_;
   } nh_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1436,44 +1428,36 @@ class VPCPeerNhInfo final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVpcIdFieldNumber = 1,
-    kRouteTableIdFieldNumber = 2,
+    kVpcNameRefFieldNumber = 1,
+    kRouteTableNameRefFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  bool has_vpc_id() const;
+  // string vpc_name_ref = 1;
+  void clear_vpc_name_ref();
+  const std::string& vpc_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_vpc_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vpc_name_ref();
+  PROTOBUF_NODISCARD std::string* release_vpc_name_ref();
+  void set_allocated_vpc_name_ref(std::string* vpc_name_ref);
   private:
-  bool _internal_has_vpc_id() const;
+  const std::string& _internal_vpc_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vpc_name_ref(const std::string& value);
+  std::string* _internal_mutable_vpc_name_ref();
   public:
-  void clear_vpc_id();
-  const ::opi_api::common::v1::ObjectKey& vpc_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_vpc_id();
-  ::opi_api::common::v1::ObjectKey* mutable_vpc_id();
-  void set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_vpc_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_vpc_id();
-  public:
-  void unsafe_arena_set_allocated_vpc_id(
-      ::opi_api::common::v1::ObjectKey* vpc_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_vpc_id();
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  bool has_route_table_id() const;
+  // string route_table_name_ref = 2;
+  void clear_route_table_name_ref();
+  const std::string& route_table_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_table_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_table_name_ref();
+  PROTOBUF_NODISCARD std::string* release_route_table_name_ref();
+  void set_allocated_route_table_name_ref(std::string* route_table_name_ref);
   private:
-  bool _internal_has_route_table_id() const;
+  const std::string& _internal_route_table_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_table_name_ref(const std::string& value);
+  std::string* _internal_mutable_route_table_name_ref();
   public:
-  void clear_route_table_id();
-  const ::opi_api::common::v1::ObjectKey& route_table_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_route_table_id();
-  ::opi_api::common::v1::ObjectKey* mutable_route_table_id();
-  void set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_route_table_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_route_table_id();
-  public:
-  void unsafe_arena_set_allocated_route_table_id(
-      ::opi_api::common::v1::ObjectKey* route_table_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_route_table_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo)
  private:
@@ -1482,8 +1466,8 @@ class VPCPeerNhInfo final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* vpc_id_;
-  ::opi_api::common::v1::ObjectKey* route_table_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vpc_name_ref_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_table_name_ref_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_route_2eproto;
 };
@@ -1613,7 +1597,7 @@ class OverlayNextHopIPInfo final :
   enum : int {
     kNexthopIpFieldNumber = 1,
     kNexthopMacFieldNumber = 2,
-    kVpcIdFieldNumber = 3,
+    kVpcNameRefFieldNumber = 3,
   };
   // repeated .opi_api.network.opinetcommon.v1alpha1.IPAddress nexthop_ip = 1;
   int nexthop_ip_size() const;
@@ -1657,23 +1641,19 @@ class OverlayNextHopIPInfo final :
   std::string* _internal_add_nexthop_mac();
   public:
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 3;
-  bool has_vpc_id() const;
+  // string vpc_name_ref = 3;
+  void clear_vpc_name_ref();
+  const std::string& vpc_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_vpc_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vpc_name_ref();
+  PROTOBUF_NODISCARD std::string* release_vpc_name_ref();
+  void set_allocated_vpc_name_ref(std::string* vpc_name_ref);
   private:
-  bool _internal_has_vpc_id() const;
+  const std::string& _internal_vpc_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vpc_name_ref(const std::string& value);
+  std::string* _internal_mutable_vpc_name_ref();
   public:
-  void clear_vpc_id();
-  const ::opi_api::common::v1::ObjectKey& vpc_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_vpc_id();
-  ::opi_api::common::v1::ObjectKey* mutable_vpc_id();
-  void set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_vpc_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_vpc_id();
-  public:
-  void unsafe_arena_set_allocated_vpc_id(
-      ::opi_api::common::v1::ObjectKey* vpc_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_vpc_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo)
  private:
@@ -1684,7 +1664,7 @@ class OverlayNextHopIPInfo final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::opinetcommon::v1alpha1::IPAddress > nexthop_ip_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> nexthop_mac_;
-  ::opi_api::common::v1::ObjectKey* vpc_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vpc_name_ref_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_route_2eproto;
 };
@@ -1812,44 +1792,36 @@ class RouteId final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kRouteTableIdFieldNumber = 2,
+    kRouteIdFieldNumber = 1,
+    kRouteTableNameRefFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // string route_id = 1;
+  void clear_route_id();
+  const std::string& route_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_id();
+  PROTOBUF_NODISCARD std::string* release_route_id();
+  void set_allocated_route_id(std::string* route_id);
   private:
-  bool _internal_has_id() const;
+  const std::string& _internal_route_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_id(const std::string& value);
+  std::string* _internal_mutable_route_id();
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  bool has_route_table_id() const;
+  // string route_table_name_ref = 2;
+  void clear_route_table_name_ref();
+  const std::string& route_table_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_table_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_table_name_ref();
+  PROTOBUF_NODISCARD std::string* release_route_table_name_ref();
+  void set_allocated_route_table_name_ref(std::string* route_table_name_ref);
   private:
-  bool _internal_has_route_table_id() const;
+  const std::string& _internal_route_table_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_table_name_ref(const std::string& value);
+  std::string* _internal_mutable_route_table_name_ref();
   public:
-  void clear_route_table_id();
-  const ::opi_api::common::v1::ObjectKey& route_table_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_route_table_id();
-  ::opi_api::common::v1::ObjectKey* mutable_route_table_id();
-  void set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_route_table_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_route_table_id();
-  public:
-  void unsafe_arena_set_allocated_route_table_id(
-      ::opi_api::common::v1::ObjectKey* route_table_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_route_table_id();
 
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.RouteId)
  private:
@@ -1858,8 +1830,8 @@ class RouteId final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
-  ::opi_api::common::v1::ObjectKey* route_table_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_table_name_ref_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_route_2eproto;
 };
@@ -1987,10 +1959,25 @@ class Route final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 3,
-    kStatusFieldNumber = 4,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -2008,7 +1995,7 @@ class Route final :
       ::opi_api::network::cloud::v1alpha1::RouteSpec* spec);
   ::opi_api::network::cloud::v1alpha1::RouteSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2033,6 +2020,7 @@ class Route final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::RouteSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::RouteStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2162,47 +2150,24 @@ class RouteSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kRouteTableIdFieldNumber = 2,
-    kAttrsFieldNumber = 3,
+    kRouteTableNameRefFieldNumber = 1,
+    kAttrsFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // string route_table_name_ref = 1;
+  void clear_route_table_name_ref();
+  const std::string& route_table_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_route_table_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_route_table_name_ref();
+  PROTOBUF_NODISCARD std::string* release_route_table_name_ref();
+  void set_allocated_route_table_name_ref(std::string* route_table_name_ref);
   private:
-  bool _internal_has_id() const;
+  const std::string& _internal_route_table_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_route_table_name_ref(const std::string& value);
+  std::string* _internal_mutable_route_table_name_ref();
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  bool has_route_table_id() const;
-  private:
-  bool _internal_has_route_table_id() const;
-  public:
-  void clear_route_table_id();
-  const ::opi_api::common::v1::ObjectKey& route_table_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_route_table_id();
-  ::opi_api::common::v1::ObjectKey* mutable_route_table_id();
-  void set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_route_table_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_route_table_id();
-  public:
-  void unsafe_arena_set_allocated_route_table_id(
-      ::opi_api::common::v1::ObjectKey* route_table_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_route_table_id();
-
-  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
   bool has_attrs() const;
   private:
   bool _internal_has_attrs() const;
@@ -2227,8 +2192,7 @@ class RouteSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
-  ::opi_api::common::v1::ObjectKey* route_table_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr route_table_name_ref_;
   ::opi_api::network::cloud::v1alpha1::RouteAttrs* attrs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_route_2eproto;
@@ -2362,7 +2326,58 @@ class RouteStatus final :
 #endif  // __GNUC__
 // RouteTable
 
-// .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;
+// string name = 1;
+inline void RouteTable::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& RouteTable::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteTable.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteTable::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteTable.name)
+}
+inline std::string* RouteTable::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteTable.name)
+  return _s;
+}
+inline const std::string& RouteTable::_internal_name() const {
+  return name_.Get();
+}
+inline void RouteTable::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteTable::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteTable::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteTable.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RouteTable::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteTable.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;
 inline bool RouteTable::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -2452,7 +2467,7 @@ inline void RouteTable::set_allocated_spec(::opi_api::network::cloud::v1alpha1::
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteTable.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;
+// .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;
 inline bool RouteTable::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -2546,93 +2561,7 @@ inline void RouteTable::set_allocated_status(::opi_api::network::cloud::v1alpha1
 
 // RouteTableSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool RouteTableSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool RouteTableSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& RouteTableSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& RouteTableSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteTableSpec.id)
-  return _internal_id();
-}
-inline void RouteTableSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteTableSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteTableSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteTableSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteTableSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteTableSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteTableSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteTableSpec.id)
-  return _msg;
-}
-inline void RouteTableSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteTableSpec.id)
-}
-
-// .opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;
+// .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
 inline void RouteTableSpec::clear_af() {
   af_ = 0;
 }
@@ -2652,7 +2581,7 @@ inline void RouteTableSpec::set_af(::opi_api::network::opinetcommon::v1alpha1::I
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteTableSpec.af)
 }
 
-// bool priority_enable = 3;
+// bool priority_enable = 2;
 inline void RouteTableSpec::clear_priority_enable() {
   priority_enable_ = false;
 }
@@ -2672,7 +2601,7 @@ inline void RouteTableSpec::set_priority_enable(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteTableSpec.priority_enable)
 }
 
-// repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;
+// repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;
 inline int RouteTableSpec::_internal_routes_size() const {
   return routes_.size();
 }
@@ -2716,90 +2645,55 @@ RouteTableSpec::routes() const {
 
 // RouteInfo
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool RouteInfo::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// string route_id = 1;
+inline void RouteInfo::clear_route_id() {
+  route_id_.ClearToEmpty();
 }
-inline bool RouteInfo::has_id() const {
-  return _internal_has_id();
+inline const std::string& RouteInfo::route_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteInfo.route_id)
+  return _internal_route_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteInfo::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteInfo::set_route_id(ArgT0&& arg0, ArgT... args) {
+ 
+ route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteInfo.route_id)
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteInfo::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteInfo.id)
-  return _internal_id();
+inline std::string* RouteInfo::mutable_route_id() {
+  std::string* _s = _internal_mutable_route_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteInfo.route_id)
+  return _s;
 }
-inline void RouteInfo::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
+inline const std::string& RouteInfo::_internal_route_id() const {
+  return route_id_.Get();
+}
+inline void RouteInfo::_internal_set_route_id(const std::string& value) {
+  
+  route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteInfo::_internal_mutable_route_id() {
+  
+  return route_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteInfo::release_route_id() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteInfo.route_id)
+  return route_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RouteInfo::set_allocated_route_id(std::string* route_id) {
+  if (route_id != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteInfo.id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteInfo::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  route_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), route_id,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (route_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteInfo::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteInfo.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteInfo::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteInfo::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteInfo.id)
-  return _msg;
-}
-inline void RouteInfo::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteInfo.id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteInfo.route_id)
 }
 
 // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
@@ -3280,136 +3174,168 @@ inline ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo* RouteAttrs::mu
   return _msg;
 }
 
-// .opi_api.common.v1.ObjectKey nexthop_id = 6;
-inline bool RouteAttrs::_internal_has_nexthop_id() const {
-  return nh_case() == kNexthopId;
+// string nexthop_name_ref = 6;
+inline bool RouteAttrs::_internal_has_nexthop_name_ref() const {
+  return nh_case() == kNexthopNameRef;
 }
-inline bool RouteAttrs::has_nexthop_id() const {
-  return _internal_has_nexthop_id();
+inline bool RouteAttrs::has_nexthop_name_ref() const {
+  return _internal_has_nexthop_name_ref();
 }
-inline void RouteAttrs::set_has_nexthop_id() {
-  _oneof_case_[0] = kNexthopId;
+inline void RouteAttrs::set_has_nexthop_name_ref() {
+  _oneof_case_[0] = kNexthopNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::release_nexthop_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-  if (_internal_has_nexthop_id()) {
+inline void RouteAttrs::clear_nexthop_name_ref() {
+  if (_internal_has_nexthop_name_ref()) {
+    nh_.nexthop_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_nh();
-      ::opi_api::common::v1::ObjectKey* temp = nh_.nexthop_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    nh_.nexthop_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::_internal_nexthop_id() const {
-  return _internal_has_nexthop_id()
-      ? *nh_.nexthop_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& RouteAttrs::nexthop_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref)
+  return _internal_nexthop_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::nexthop_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-  return _internal_nexthop_id();
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::unsafe_arena_release_nexthop_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-  if (_internal_has_nexthop_id()) {
-    clear_has_nh();
-    ::opi_api::common::v1::ObjectKey* temp = nh_.nexthop_id_;
-    nh_.nexthop_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void RouteAttrs::unsafe_arena_set_allocated_nexthop_id(::opi_api::common::v1::ObjectKey* nexthop_id) {
-  clear_nh();
-  if (nexthop_id) {
-    set_has_nexthop_id();
-    nh_.nexthop_id_ = nexthop_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::_internal_mutable_nexthop_id() {
-  if (!_internal_has_nexthop_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void RouteAttrs::set_nexthop_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_nexthop_name_ref()) {
     clear_nh();
-    set_has_nexthop_id();
-    nh_.nexthop_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_nexthop_name_ref();
+    nh_.nexthop_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return nh_.nexthop_id_;
+  nh_.nexthop_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::mutable_nexthop_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_nexthop_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-  return _msg;
+inline std::string* RouteAttrs::mutable_nexthop_name_ref() {
+  std::string* _s = _internal_mutable_nexthop_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref)
+  return _s;
+}
+inline const std::string& RouteAttrs::_internal_nexthop_name_ref() const {
+  if (_internal_has_nexthop_name_ref()) {
+    return nh_.nexthop_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void RouteAttrs::_internal_set_nexthop_name_ref(const std::string& value) {
+  if (!_internal_has_nexthop_name_ref()) {
+    clear_nh();
+    set_has_nexthop_name_ref();
+    nh_.nexthop_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  nh_.nexthop_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::_internal_mutable_nexthop_name_ref() {
+  if (!_internal_has_nexthop_name_ref()) {
+    clear_nh();
+    set_has_nexthop_name_ref();
+    nh_.nexthop_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return nh_.nexthop_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::release_nexthop_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref)
+  if (_internal_has_nexthop_name_ref()) {
+    clear_has_nh();
+    return nh_.nexthop_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void RouteAttrs::set_allocated_nexthop_name_ref(std::string* nexthop_name_ref) {
+  if (has_nh()) {
+    clear_nh();
+  }
+  if (nexthop_name_ref != nullptr) {
+    set_has_nexthop_name_ref();
+    nh_.nexthop_name_ref_.UnsafeSetDefault(nexthop_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(nexthop_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref)
 }
 
-// .opi_api.common.v1.ObjectKey nh_group_id = 7;
-inline bool RouteAttrs::_internal_has_nh_group_id() const {
-  return nh_case() == kNhGroupId;
+// string nh_group_name_ref = 7;
+inline bool RouteAttrs::_internal_has_nh_group_name_ref() const {
+  return nh_case() == kNhGroupNameRef;
 }
-inline bool RouteAttrs::has_nh_group_id() const {
-  return _internal_has_nh_group_id();
+inline bool RouteAttrs::has_nh_group_name_ref() const {
+  return _internal_has_nh_group_name_ref();
 }
-inline void RouteAttrs::set_has_nh_group_id() {
-  _oneof_case_[0] = kNhGroupId;
+inline void RouteAttrs::set_has_nh_group_name_ref() {
+  _oneof_case_[0] = kNhGroupNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::release_nh_group_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-  if (_internal_has_nh_group_id()) {
+inline void RouteAttrs::clear_nh_group_name_ref() {
+  if (_internal_has_nh_group_name_ref()) {
+    nh_.nh_group_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_nh();
-      ::opi_api::common::v1::ObjectKey* temp = nh_.nh_group_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    nh_.nh_group_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::_internal_nh_group_id() const {
-  return _internal_has_nh_group_id()
-      ? *nh_.nh_group_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& RouteAttrs::nh_group_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref)
+  return _internal_nh_group_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::nh_group_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-  return _internal_nh_group_id();
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::unsafe_arena_release_nh_group_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-  if (_internal_has_nh_group_id()) {
-    clear_has_nh();
-    ::opi_api::common::v1::ObjectKey* temp = nh_.nh_group_id_;
-    nh_.nh_group_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void RouteAttrs::unsafe_arena_set_allocated_nh_group_id(::opi_api::common::v1::ObjectKey* nh_group_id) {
-  clear_nh();
-  if (nh_group_id) {
-    set_has_nh_group_id();
-    nh_.nh_group_id_ = nh_group_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::_internal_mutable_nh_group_id() {
-  if (!_internal_has_nh_group_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void RouteAttrs::set_nh_group_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_nh_group_name_ref()) {
     clear_nh();
-    set_has_nh_group_id();
-    nh_.nh_group_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_nh_group_name_ref();
+    nh_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return nh_.nh_group_id_;
+  nh_.nh_group_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::mutable_nh_group_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_nh_group_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-  return _msg;
+inline std::string* RouteAttrs::mutable_nh_group_name_ref() {
+  std::string* _s = _internal_mutable_nh_group_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref)
+  return _s;
+}
+inline const std::string& RouteAttrs::_internal_nh_group_name_ref() const {
+  if (_internal_has_nh_group_name_ref()) {
+    return nh_.nh_group_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void RouteAttrs::_internal_set_nh_group_name_ref(const std::string& value) {
+  if (!_internal_has_nh_group_name_ref()) {
+    clear_nh();
+    set_has_nh_group_name_ref();
+    nh_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  nh_.nh_group_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::_internal_mutable_nh_group_name_ref() {
+  if (!_internal_has_nh_group_name_ref()) {
+    clear_nh();
+    set_has_nh_group_name_ref();
+    nh_.nh_group_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return nh_.nh_group_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::release_nh_group_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref)
+  if (_internal_has_nh_group_name_ref()) {
+    clear_has_nh();
+    return nh_.nh_group_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void RouteAttrs::set_allocated_nh_group_name_ref(std::string* nh_group_name_ref) {
+  if (has_nh()) {
+    clear_nh();
+  }
+  if (nh_group_name_ref != nullptr) {
+    set_has_nh_group_name_ref();
+    nh_.nh_group_name_ref_.UnsafeSetDefault(nh_group_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(nh_group_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref)
 }
 
 // .opi_api.network.cloud.v1alpha1.VPCPeerNhInfo vpc_nh_info = 8;
@@ -3486,136 +3412,168 @@ inline ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo* RouteAttrs::mutable_v
   return _msg;
 }
 
-// .opi_api.common.v1.ObjectKey tunnel_id = 9;
-inline bool RouteAttrs::_internal_has_tunnel_id() const {
-  return nh_case() == kTunnelId;
+// string tunnel_name_ref = 9;
+inline bool RouteAttrs::_internal_has_tunnel_name_ref() const {
+  return nh_case() == kTunnelNameRef;
 }
-inline bool RouteAttrs::has_tunnel_id() const {
-  return _internal_has_tunnel_id();
+inline bool RouteAttrs::has_tunnel_name_ref() const {
+  return _internal_has_tunnel_name_ref();
 }
-inline void RouteAttrs::set_has_tunnel_id() {
-  _oneof_case_[0] = kTunnelId;
+inline void RouteAttrs::set_has_tunnel_name_ref() {
+  _oneof_case_[0] = kTunnelNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::release_tunnel_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-  if (_internal_has_tunnel_id()) {
+inline void RouteAttrs::clear_tunnel_name_ref() {
+  if (_internal_has_tunnel_name_ref()) {
+    nh_.tunnel_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_nh();
-      ::opi_api::common::v1::ObjectKey* temp = nh_.tunnel_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    nh_.tunnel_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::_internal_tunnel_id() const {
-  return _internal_has_tunnel_id()
-      ? *nh_.tunnel_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& RouteAttrs::tunnel_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref)
+  return _internal_tunnel_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::tunnel_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-  return _internal_tunnel_id();
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::unsafe_arena_release_tunnel_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-  if (_internal_has_tunnel_id()) {
-    clear_has_nh();
-    ::opi_api::common::v1::ObjectKey* temp = nh_.tunnel_id_;
-    nh_.tunnel_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void RouteAttrs::unsafe_arena_set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id) {
-  clear_nh();
-  if (tunnel_id) {
-    set_has_tunnel_id();
-    nh_.tunnel_id_ = tunnel_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::_internal_mutable_tunnel_id() {
-  if (!_internal_has_tunnel_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void RouteAttrs::set_tunnel_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_tunnel_name_ref()) {
     clear_nh();
-    set_has_tunnel_id();
-    nh_.tunnel_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_tunnel_name_ref();
+    nh_.tunnel_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return nh_.tunnel_id_;
+  nh_.tunnel_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::mutable_tunnel_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_tunnel_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-  return _msg;
+inline std::string* RouteAttrs::mutable_tunnel_name_ref() {
+  std::string* _s = _internal_mutable_tunnel_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref)
+  return _s;
+}
+inline const std::string& RouteAttrs::_internal_tunnel_name_ref() const {
+  if (_internal_has_tunnel_name_ref()) {
+    return nh_.tunnel_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void RouteAttrs::_internal_set_tunnel_name_ref(const std::string& value) {
+  if (!_internal_has_tunnel_name_ref()) {
+    clear_nh();
+    set_has_tunnel_name_ref();
+    nh_.tunnel_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  nh_.tunnel_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::_internal_mutable_tunnel_name_ref() {
+  if (!_internal_has_tunnel_name_ref()) {
+    clear_nh();
+    set_has_tunnel_name_ref();
+    nh_.tunnel_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return nh_.tunnel_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::release_tunnel_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref)
+  if (_internal_has_tunnel_name_ref()) {
+    clear_has_nh();
+    return nh_.tunnel_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void RouteAttrs::set_allocated_tunnel_name_ref(std::string* tunnel_name_ref) {
+  if (has_nh()) {
+    clear_nh();
+  }
+  if (tunnel_name_ref != nullptr) {
+    set_has_tunnel_name_ref();
+    nh_.tunnel_name_ref_.UnsafeSetDefault(tunnel_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(tunnel_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref)
 }
 
-// .opi_api.common.v1.ObjectKey route_table_id = 10;
-inline bool RouteAttrs::_internal_has_route_table_id() const {
-  return nh_case() == kRouteTableId;
+// string route_table_name_ref = 10;
+inline bool RouteAttrs::_internal_has_route_table_name_ref() const {
+  return nh_case() == kRouteTableNameRef;
 }
-inline bool RouteAttrs::has_route_table_id() const {
-  return _internal_has_route_table_id();
+inline bool RouteAttrs::has_route_table_name_ref() const {
+  return _internal_has_route_table_name_ref();
 }
-inline void RouteAttrs::set_has_route_table_id() {
-  _oneof_case_[0] = kRouteTableId;
+inline void RouteAttrs::set_has_route_table_name_ref() {
+  _oneof_case_[0] = kRouteTableNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::release_route_table_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-  if (_internal_has_route_table_id()) {
+inline void RouteAttrs::clear_route_table_name_ref() {
+  if (_internal_has_route_table_name_ref()) {
+    nh_.route_table_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_nh();
-      ::opi_api::common::v1::ObjectKey* temp = nh_.route_table_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    nh_.route_table_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::_internal_route_table_id() const {
-  return _internal_has_route_table_id()
-      ? *nh_.route_table_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& RouteAttrs::route_table_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref)
+  return _internal_route_table_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteAttrs::route_table_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-  return _internal_route_table_id();
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::unsafe_arena_release_route_table_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-  if (_internal_has_route_table_id()) {
-    clear_has_nh();
-    ::opi_api::common::v1::ObjectKey* temp = nh_.route_table_id_;
-    nh_.route_table_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void RouteAttrs::unsafe_arena_set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id) {
-  clear_nh();
-  if (route_table_id) {
-    set_has_route_table_id();
-    nh_.route_table_id_ = route_table_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::_internal_mutable_route_table_id() {
-  if (!_internal_has_route_table_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void RouteAttrs::set_route_table_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_route_table_name_ref()) {
     clear_nh();
-    set_has_route_table_id();
-    nh_.route_table_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_route_table_name_ref();
+    nh_.route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return nh_.route_table_id_;
+  nh_.route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* RouteAttrs::mutable_route_table_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_route_table_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-  return _msg;
+inline std::string* RouteAttrs::mutable_route_table_name_ref() {
+  std::string* _s = _internal_mutable_route_table_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref)
+  return _s;
+}
+inline const std::string& RouteAttrs::_internal_route_table_name_ref() const {
+  if (_internal_has_route_table_name_ref()) {
+    return nh_.route_table_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void RouteAttrs::_internal_set_route_table_name_ref(const std::string& value) {
+  if (!_internal_has_route_table_name_ref()) {
+    clear_nh();
+    set_has_route_table_name_ref();
+    nh_.route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  nh_.route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::_internal_mutable_route_table_name_ref() {
+  if (!_internal_has_route_table_name_ref()) {
+    clear_nh();
+    set_has_route_table_name_ref();
+    nh_.route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return nh_.route_table_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteAttrs::release_route_table_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref)
+  if (_internal_has_route_table_name_ref()) {
+    clear_has_nh();
+    return nh_.route_table_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void RouteAttrs::set_allocated_route_table_name_ref(std::string* route_table_name_ref) {
+  if (has_nh()) {
+    clear_nh();
+  }
+  if (route_table_name_ref != nullptr) {
+    set_has_route_table_name_ref();
+    nh_.route_table_name_ref_.UnsafeSetDefault(route_table_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(route_table_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref)
 }
 
 // bool eval_mapping = 11;
@@ -3826,176 +3784,106 @@ inline RouteAttrs::NhCase RouteAttrs::nh_case() const {
 
 // VPCPeerNhInfo
 
-// .opi_api.common.v1.ObjectKey vpc_id = 1;
-inline bool VPCPeerNhInfo::_internal_has_vpc_id() const {
-  return this != internal_default_instance() && vpc_id_ != nullptr;
+// string vpc_name_ref = 1;
+inline void VPCPeerNhInfo::clear_vpc_name_ref() {
+  vpc_name_ref_.ClearToEmpty();
 }
-inline bool VPCPeerNhInfo::has_vpc_id() const {
-  return _internal_has_vpc_id();
+inline const std::string& VPCPeerNhInfo::vpc_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref)
+  return _internal_vpc_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& VPCPeerNhInfo::_internal_vpc_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = vpc_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VPCPeerNhInfo::set_vpc_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& VPCPeerNhInfo::vpc_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_id)
-  return _internal_vpc_id();
+inline std::string* VPCPeerNhInfo::mutable_vpc_name_ref() {
+  std::string* _s = _internal_mutable_vpc_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref)
+  return _s;
 }
-inline void VPCPeerNhInfo::unsafe_arena_set_allocated_vpc_id(
-    ::opi_api::common::v1::ObjectKey* vpc_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  vpc_id_ = vpc_id;
-  if (vpc_id) {
+inline const std::string& VPCPeerNhInfo::_internal_vpc_name_ref() const {
+  return vpc_name_ref_.Get();
+}
+inline void VPCPeerNhInfo::_internal_set_vpc_name_ref(const std::string& value) {
+  
+  vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* VPCPeerNhInfo::_internal_mutable_vpc_name_ref() {
+  
+  return vpc_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* VPCPeerNhInfo::release_vpc_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref)
+  return vpc_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void VPCPeerNhInfo::set_allocated_vpc_name_ref(std::string* vpc_name_ref) {
+  if (vpc_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_id)
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::release_vpc_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  vpc_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vpc_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (vpc_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::unsafe_arena_release_vpc_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::_internal_mutable_vpc_id() {
-  
-  if (vpc_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    vpc_id_ = p;
-  }
-  return vpc_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::mutable_vpc_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_vpc_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_id)
-  return _msg;
-}
-inline void VPCPeerNhInfo::set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  if (vpc_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id));
-    if (message_arena != submessage_arena) {
-      vpc_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vpc_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  vpc_id_ = vpc_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref)
 }
 
-// .opi_api.common.v1.ObjectKey route_table_id = 2;
-inline bool VPCPeerNhInfo::_internal_has_route_table_id() const {
-  return this != internal_default_instance() && route_table_id_ != nullptr;
+// string route_table_name_ref = 2;
+inline void VPCPeerNhInfo::clear_route_table_name_ref() {
+  route_table_name_ref_.ClearToEmpty();
 }
-inline bool VPCPeerNhInfo::has_route_table_id() const {
-  return _internal_has_route_table_id();
+inline const std::string& VPCPeerNhInfo::route_table_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref)
+  return _internal_route_table_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& VPCPeerNhInfo::_internal_route_table_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = route_table_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VPCPeerNhInfo::set_route_table_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& VPCPeerNhInfo::route_table_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_id)
-  return _internal_route_table_id();
+inline std::string* VPCPeerNhInfo::mutable_route_table_name_ref() {
+  std::string* _s = _internal_mutable_route_table_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref)
+  return _s;
 }
-inline void VPCPeerNhInfo::unsafe_arena_set_allocated_route_table_id(
-    ::opi_api::common::v1::ObjectKey* route_table_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  route_table_id_ = route_table_id;
-  if (route_table_id) {
+inline const std::string& VPCPeerNhInfo::_internal_route_table_name_ref() const {
+  return route_table_name_ref_.Get();
+}
+inline void VPCPeerNhInfo::_internal_set_route_table_name_ref(const std::string& value) {
+  
+  route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* VPCPeerNhInfo::_internal_mutable_route_table_name_ref() {
+  
+  return route_table_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* VPCPeerNhInfo::release_route_table_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref)
+  return route_table_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void VPCPeerNhInfo::set_allocated_route_table_name_ref(std::string* route_table_name_ref) {
+  if (route_table_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_id)
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::release_route_table_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  route_table_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), route_table_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (route_table_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::unsafe_arena_release_route_table_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::_internal_mutable_route_table_id() {
-  
-  if (route_table_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    route_table_id_ = p;
-  }
-  return route_table_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* VPCPeerNhInfo::mutable_route_table_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_route_table_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_id)
-  return _msg;
-}
-inline void VPCPeerNhInfo::set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  if (route_table_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id));
-    if (message_arena != submessage_arena) {
-      route_table_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, route_table_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  route_table_id_ = route_table_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref)
 }
 
 // -------------------------------------------------------------------
@@ -4114,273 +4002,219 @@ OverlayNextHopIPInfo::mutable_nexthop_mac() {
   return &nexthop_mac_;
 }
 
-// .opi_api.common.v1.ObjectKey vpc_id = 3;
-inline bool OverlayNextHopIPInfo::_internal_has_vpc_id() const {
-  return this != internal_default_instance() && vpc_id_ != nullptr;
+// string vpc_name_ref = 3;
+inline void OverlayNextHopIPInfo::clear_vpc_name_ref() {
+  vpc_name_ref_.ClearToEmpty();
 }
-inline bool OverlayNextHopIPInfo::has_vpc_id() const {
-  return _internal_has_vpc_id();
+inline const std::string& OverlayNextHopIPInfo::vpc_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref)
+  return _internal_vpc_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& OverlayNextHopIPInfo::_internal_vpc_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = vpc_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void OverlayNextHopIPInfo::set_vpc_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& OverlayNextHopIPInfo::vpc_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_id)
-  return _internal_vpc_id();
+inline std::string* OverlayNextHopIPInfo::mutable_vpc_name_ref() {
+  std::string* _s = _internal_mutable_vpc_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref)
+  return _s;
 }
-inline void OverlayNextHopIPInfo::unsafe_arena_set_allocated_vpc_id(
-    ::opi_api::common::v1::ObjectKey* vpc_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  vpc_id_ = vpc_id;
-  if (vpc_id) {
+inline const std::string& OverlayNextHopIPInfo::_internal_vpc_name_ref() const {
+  return vpc_name_ref_.Get();
+}
+inline void OverlayNextHopIPInfo::_internal_set_vpc_name_ref(const std::string& value) {
+  
+  vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* OverlayNextHopIPInfo::_internal_mutable_vpc_name_ref() {
+  
+  return vpc_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* OverlayNextHopIPInfo::release_vpc_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref)
+  return vpc_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void OverlayNextHopIPInfo::set_allocated_vpc_name_ref(std::string* vpc_name_ref) {
+  if (vpc_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_id)
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopIPInfo::release_vpc_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  vpc_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vpc_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (vpc_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopIPInfo::unsafe_arena_release_vpc_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = vpc_id_;
-  vpc_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopIPInfo::_internal_mutable_vpc_id() {
-  
-  if (vpc_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    vpc_id_ = p;
-  }
-  return vpc_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* OverlayNextHopIPInfo::mutable_vpc_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_vpc_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_id)
-  return _msg;
-}
-inline void OverlayNextHopIPInfo::set_allocated_vpc_id(::opi_api::common::v1::ObjectKey* vpc_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id_);
-  }
-  if (vpc_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vpc_id));
-    if (message_arena != submessage_arena) {
-      vpc_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vpc_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  vpc_id_ = vpc_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref)
 }
 
 // -------------------------------------------------------------------
 
 // RouteId
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool RouteId::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// string route_id = 1;
+inline void RouteId::clear_route_id() {
+  route_id_.ClearToEmpty();
 }
-inline bool RouteId::has_id() const {
-  return _internal_has_id();
+inline const std::string& RouteId::route_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteId.route_id)
+  return _internal_route_id();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteId::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteId::set_route_id(ArgT0&& arg0, ArgT... args) {
+ 
+ route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteId.route_id)
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteId::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteId.id)
-  return _internal_id();
+inline std::string* RouteId::mutable_route_id() {
+  std::string* _s = _internal_mutable_route_id();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteId.route_id)
+  return _s;
 }
-inline void RouteId::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
+inline const std::string& RouteId::_internal_route_id() const {
+  return route_id_.Get();
+}
+inline void RouteId::_internal_set_route_id(const std::string& value) {
+  
+  route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteId::_internal_mutable_route_id() {
+  
+  return route_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteId::release_route_id() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteId.route_id)
+  return route_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RouteId::set_allocated_route_id(std::string* route_id) {
+  if (route_id != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  route_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), route_id,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (route_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteId.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteId.id)
-  return _msg;
-}
-inline void RouteId::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.route_id)
 }
 
-// .opi_api.common.v1.ObjectKey route_table_id = 2;
-inline bool RouteId::_internal_has_route_table_id() const {
-  return this != internal_default_instance() && route_table_id_ != nullptr;
+// string route_table_name_ref = 2;
+inline void RouteId::clear_route_table_name_ref() {
+  route_table_name_ref_.ClearToEmpty();
 }
-inline bool RouteId::has_route_table_id() const {
-  return _internal_has_route_table_id();
+inline const std::string& RouteId::route_table_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref)
+  return _internal_route_table_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteId::_internal_route_table_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = route_table_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteId::set_route_table_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteId::route_table_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteId.route_table_id)
-  return _internal_route_table_id();
+inline std::string* RouteId::mutable_route_table_name_ref() {
+  std::string* _s = _internal_mutable_route_table_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref)
+  return _s;
 }
-inline void RouteId::unsafe_arena_set_allocated_route_table_id(
-    ::opi_api::common::v1::ObjectKey* route_table_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  route_table_id_ = route_table_id;
-  if (route_table_id) {
+inline const std::string& RouteId::_internal_route_table_name_ref() const {
+  return route_table_name_ref_.Get();
+}
+inline void RouteId::_internal_set_route_table_name_ref(const std::string& value) {
+  
+  route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteId::_internal_mutable_route_table_name_ref() {
+  
+  return route_table_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteId::release_route_table_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref)
+  return route_table_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RouteId::set_allocated_route_table_name_ref(std::string* route_table_name_ref) {
+  if (route_table_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.route_table_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::release_route_table_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  route_table_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), route_table_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (route_table_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::unsafe_arena_release_route_table_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteId.route_table_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::_internal_mutable_route_table_id() {
-  
-  if (route_table_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    route_table_id_ = p;
-  }
-  return route_table_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteId::mutable_route_table_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_route_table_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteId.route_table_id)
-  return _msg;
-}
-inline void RouteId::set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  if (route_table_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id));
-    if (message_arena != submessage_arena) {
-      route_table_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, route_table_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  route_table_id_ = route_table_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.route_table_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref)
 }
 
 // -------------------------------------------------------------------
 
 // Route
 
-// .opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;
+// string name = 1;
+inline void Route::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Route::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.Route.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Route::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.Route.name)
+}
+inline std::string* Route::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.Route.name)
+  return _s;
+}
+inline const std::string& Route::_internal_name() const {
+  return name_.Get();
+}
+inline void Route::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Route::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Route::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.Route.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Route::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Route.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;
 inline bool Route::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -4470,7 +4304,7 @@ inline void Route::set_allocated_spec(::opi_api::network::cloud::v1alpha1::Route
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Route.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.RouteStatus status = 4;
+// .opi_api.network.cloud.v1alpha1.RouteStatus status = 3;
 inline bool Route::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -4564,179 +4398,58 @@ inline void Route::set_allocated_status(::opi_api::network::cloud::v1alpha1::Rou
 
 // RouteSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool RouteSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// string route_table_name_ref = 1;
+inline void RouteSpec::clear_route_table_name_ref() {
+  route_table_name_ref_.ClearToEmpty();
 }
-inline bool RouteSpec::has_id() const {
-  return _internal_has_id();
+inline const std::string& RouteSpec::route_table_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref)
+  return _internal_route_table_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RouteSpec::set_route_table_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& RouteSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteSpec.id)
-  return _internal_id();
+inline std::string* RouteSpec::mutable_route_table_name_ref() {
+  std::string* _s = _internal_mutable_route_table_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref)
+  return _s;
 }
-inline void RouteSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
+inline const std::string& RouteSpec::_internal_route_table_name_ref() const {
+  return route_table_name_ref_.Get();
+}
+inline void RouteSpec::_internal_set_route_table_name_ref(const std::string& value) {
+  
+  route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* RouteSpec::_internal_mutable_route_table_name_ref() {
+  
+  return route_table_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* RouteSpec::release_route_table_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref)
+  return route_table_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void RouteSpec::set_allocated_route_table_name_ref(std::string* route_table_name_ref) {
+  if (route_table_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  route_table_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), route_table_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (route_table_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteSpec.id)
-  return _msg;
-}
-inline void RouteSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteSpec.id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref)
 }
 
-// .opi_api.common.v1.ObjectKey route_table_id = 2;
-inline bool RouteSpec::_internal_has_route_table_id() const {
-  return this != internal_default_instance() && route_table_id_ != nullptr;
-}
-inline bool RouteSpec::has_route_table_id() const {
-  return _internal_has_route_table_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& RouteSpec::_internal_route_table_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = route_table_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& RouteSpec::route_table_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_id)
-  return _internal_route_table_id();
-}
-inline void RouteSpec::unsafe_arena_set_allocated_route_table_id(
-    ::opi_api::common::v1::ObjectKey* route_table_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  route_table_id_ = route_table_id;
-  if (route_table_id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_id)
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::release_route_table_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::unsafe_arena_release_route_table_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = route_table_id_;
-  route_table_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::_internal_mutable_route_table_id() {
-  
-  if (route_table_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    route_table_id_ = p;
-  }
-  return route_table_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* RouteSpec::mutable_route_table_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_route_table_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_id)
-  return _msg;
-}
-inline void RouteSpec::set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id_);
-  }
-  if (route_table_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id));
-    if (message_arena != submessage_arena) {
-      route_table_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, route_table_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  route_table_id_ = route_table_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteSpec.route_table_id)
-}
-
-// .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;
+// .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
 inline bool RouteSpec::_internal_has_attrs() const {
   return this != internal_default_instance() && attrs_ != nullptr;
 }

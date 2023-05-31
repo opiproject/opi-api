@@ -54,17 +54,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (lookupInfoCase_ == 1) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) lookupInfo_).toBuilder();
-            }
-            lookupInfo_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) lookupInfo_);
-              lookupInfo_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             lookupInfoCase_ = 1;
+            lookupInfo_ = s;
             break;
           }
           case 18: {
@@ -135,27 +127,20 @@ private static final long serialVersionUID = 0L;
      * vnic uuid
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     * @return Whether the vnicId field is set.
+     * <code>string vnic_name_ref = 1;</code>
+     * @return The vnicNameRef.
      */
-    boolean hasVnicId();
+    java.lang.String getVnicNameRef();
     /**
      * <pre>
      * vnic uuid
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     * @return The vnicId.
+     * <code>string vnic_name_ref = 1;</code>
+     * @return The bytes for vnicNameRef.
      */
-    opi_api.common.v1.ObjectKey getVnicId();
-    /**
-     * <pre>
-     * vnic uuid
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     */
-    opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder();
+    com.google.protobuf.ByteString
+        getVnicNameRefBytes();
 
     /**
      * <pre>
@@ -213,6 +198,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private VnicLookupInfo() {
+      vnicNameRef_ = "";
       policyDirection_ = 0;
       addressFamily_ = 0;
     }
@@ -248,16 +234,9 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-              if (vnicId_ != null) {
-                subBuilder = vnicId_.toBuilder();
-              }
-              vnicId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vnicId_);
-                vnicId_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              vnicNameRef_ = s;
               break;
             }
             case 16: {
@@ -304,42 +283,50 @@ private static final long serialVersionUID = 0L;
               opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.class, opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.Builder.class);
     }
 
-    public static final int VNIC_ID_FIELD_NUMBER = 1;
-    private opi_api.common.v1.ObjectKey vnicId_;
+    public static final int VNIC_NAME_REF_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vnicNameRef_;
     /**
      * <pre>
      * vnic uuid
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     * @return Whether the vnicId field is set.
+     * <code>string vnic_name_ref = 1;</code>
+     * @return The vnicNameRef.
      */
     @java.lang.Override
-    public boolean hasVnicId() {
-      return vnicId_ != null;
+    public java.lang.String getVnicNameRef() {
+      java.lang.Object ref = vnicNameRef_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vnicNameRef_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * vnic uuid
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     * @return The vnicId.
+     * <code>string vnic_name_ref = 1;</code>
+     * @return The bytes for vnicNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getVnicId() {
-      return vnicId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vnicId_;
-    }
-    /**
-     * <pre>
-     * vnic uuid
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder() {
-      return getVnicId();
+    public com.google.protobuf.ByteString
+        getVnicNameRefBytes() {
+      java.lang.Object ref = vnicNameRef_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vnicNameRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int POLICY_DIRECTION_FIELD_NUMBER = 2;
@@ -410,8 +397,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (vnicId_ != null) {
-        output.writeMessage(1, getVnicId());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vnicNameRef_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vnicNameRef_);
       }
       if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, policyDirection_);
@@ -428,9 +415,8 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (vnicId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getVnicId());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vnicNameRef_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vnicNameRef_);
       }
       if (policyDirection_ != opi_api.network.opinetcommon.v1alpha1.PolicyDir.POLICY_DIR_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -455,11 +441,8 @@ private static final long serialVersionUID = 0L;
       }
       opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo other = (opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo) obj;
 
-      if (hasVnicId() != other.hasVnicId()) return false;
-      if (hasVnicId()) {
-        if (!getVnicId()
-            .equals(other.getVnicId())) return false;
-      }
+      if (!getVnicNameRef()
+          .equals(other.getVnicNameRef())) return false;
       if (policyDirection_ != other.policyDirection_) return false;
       if (addressFamily_ != other.addressFamily_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -473,10 +456,8 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasVnicId()) {
-        hash = (37 * hash) + VNIC_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getVnicId().hashCode();
-      }
+      hash = (37 * hash) + VNIC_NAME_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getVnicNameRef().hashCode();
       hash = (37 * hash) + POLICY_DIRECTION_FIELD_NUMBER;
       hash = (53 * hash) + policyDirection_;
       hash = (37 * hash) + ADDRESS_FAMILY_FIELD_NUMBER;
@@ -619,12 +600,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (vnicIdBuilder_ == null) {
-          vnicId_ = null;
-        } else {
-          vnicId_ = null;
-          vnicIdBuilder_ = null;
-        }
+        vnicNameRef_ = "";
+
         policyDirection_ = 0;
 
         addressFamily_ = 0;
@@ -655,11 +632,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo buildPartial() {
         opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo result = new opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo(this);
-        if (vnicIdBuilder_ == null) {
-          result.vnicId_ = vnicId_;
-        } else {
-          result.vnicId_ = vnicIdBuilder_.build();
-        }
+        result.vnicNameRef_ = vnicNameRef_;
         result.policyDirection_ = policyDirection_;
         result.addressFamily_ = addressFamily_;
         onBuilt();
@@ -710,8 +683,9 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo other) {
         if (other == opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.getDefaultInstance()) return this;
-        if (other.hasVnicId()) {
-          mergeVnicId(other.getVnicId());
+        if (!other.getVnicNameRef().isEmpty()) {
+          vnicNameRef_ = other.vnicNameRef_;
+          onChanged();
         }
         if (other.policyDirection_ != 0) {
           setPolicyDirectionValue(other.getPolicyDirectionValue());
@@ -748,33 +722,25 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private opi_api.common.v1.ObjectKey vnicId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vnicIdBuilder_;
+      private java.lang.Object vnicNameRef_ = "";
       /**
        * <pre>
        * vnic uuid
        * </pre>
        *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-       * @return Whether the vnicId field is set.
+       * <code>string vnic_name_ref = 1;</code>
+       * @return The vnicNameRef.
        */
-      public boolean hasVnicId() {
-        return vnicIdBuilder_ != null || vnicId_ != null;
-      }
-      /**
-       * <pre>
-       * vnic uuid
-       * </pre>
-       *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-       * @return The vnicId.
-       */
-      public opi_api.common.v1.ObjectKey getVnicId() {
-        if (vnicIdBuilder_ == null) {
-          return vnicId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vnicId_;
+      public java.lang.String getVnicNameRef() {
+        java.lang.Object ref = vnicNameRef_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vnicNameRef_ = s;
+          return s;
         } else {
-          return vnicIdBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -782,125 +748,74 @@ private static final long serialVersionUID = 0L;
        * vnic uuid
        * </pre>
        *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
+       * <code>string vnic_name_ref = 1;</code>
+       * @return The bytes for vnicNameRef.
        */
-      public Builder setVnicId(opi_api.common.v1.ObjectKey value) {
-        if (vnicIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vnicId_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getVnicNameRefBytes() {
+        java.lang.Object ref = vnicNameRef_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vnicNameRef_ = b;
+          return b;
         } else {
-          vnicIdBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
        * vnic uuid
        * </pre>
        *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
+       * <code>string vnic_name_ref = 1;</code>
+       * @param value The vnicNameRef to set.
+       * @return This builder for chaining.
        */
-      public Builder setVnicId(
-          opi_api.common.v1.ObjectKey.Builder builderForValue) {
-        if (vnicIdBuilder_ == null) {
-          vnicId_ = builderForValue.build();
-          onChanged();
-        } else {
-          vnicIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * vnic uuid
-       * </pre>
-       *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-       */
-      public Builder mergeVnicId(opi_api.common.v1.ObjectKey value) {
-        if (vnicIdBuilder_ == null) {
-          if (vnicId_ != null) {
-            vnicId_ =
-              opi_api.common.v1.ObjectKey.newBuilder(vnicId_).mergeFrom(value).buildPartial();
-          } else {
-            vnicId_ = value;
-          }
-          onChanged();
-        } else {
-          vnicIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * vnic uuid
-       * </pre>
-       *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-       */
-      public Builder clearVnicId() {
-        if (vnicIdBuilder_ == null) {
-          vnicId_ = null;
-          onChanged();
-        } else {
-          vnicId_ = null;
-          vnicIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * vnic uuid
-       * </pre>
-       *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
-       */
-      public opi_api.common.v1.ObjectKey.Builder getVnicIdBuilder() {
-        
+      public Builder setVnicNameRef(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        vnicNameRef_ = value;
         onChanged();
-        return getVnicIdFieldBuilder().getBuilder();
+        return this;
       }
       /**
        * <pre>
        * vnic uuid
        * </pre>
        *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
+       * <code>string vnic_name_ref = 1;</code>
+       * @return This builder for chaining.
        */
-      public opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder() {
-        if (vnicIdBuilder_ != null) {
-          return vnicIdBuilder_.getMessageOrBuilder();
-        } else {
-          return vnicId_ == null ?
-              opi_api.common.v1.ObjectKey.getDefaultInstance() : vnicId_;
-        }
+      public Builder clearVnicNameRef() {
+        
+        vnicNameRef_ = getDefaultInstance().getVnicNameRef();
+        onChanged();
+        return this;
       }
       /**
        * <pre>
        * vnic uuid
        * </pre>
        *
-       * <code>.opi_api.common.v1.ObjectKey vnic_id = 1;</code>
+       * <code>string vnic_name_ref = 1;</code>
+       * @param value The bytes for vnicNameRef to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-          getVnicIdFieldBuilder() {
-        if (vnicIdBuilder_ == null) {
-          vnicIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                  getVnicId(),
-                  getParentForChildren(),
-                  isClean());
-          vnicId_ = null;
-        }
-        return vnicIdBuilder_;
+      public Builder setVnicNameRefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        vnicNameRef_ = value;
+        onChanged();
+        return this;
       }
 
       private int policyDirection_ = 0;
@@ -1108,7 +1023,7 @@ private static final long serialVersionUID = 0L;
   public enum LookupInfoCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    POLICY_ID(1),
+    POLICY_NAME_REF(1),
     VNIC_LOOKUP_INFO(2),
     LOOKUPINFO_NOT_SET(0);
     private final int value;
@@ -1127,7 +1042,7 @@ private static final long serialVersionUID = 0L;
 
     public static LookupInfoCase forNumber(int value) {
       switch (value) {
-        case 1: return POLICY_ID;
+        case 1: return POLICY_NAME_REF;
         case 2: return VNIC_LOOKUP_INFO;
         case 0: return LOOKUPINFO_NOT_SET;
         default: return null;
@@ -1144,17 +1059,16 @@ private static final long serialVersionUID = 0L;
         lookupInfoCase_);
   }
 
-  public static final int POLICY_ID_FIELD_NUMBER = 1;
+  public static final int POLICY_NAME_REF_FIELD_NUMBER = 1;
   /**
    * <pre>
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-   * @return Whether the policyId field is set.
+   * <code>string policy_name_ref = 1;</code>
+   * @return Whether the policyNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasPolicyId() {
+  public boolean hasPolicyNameRef() {
     return lookupInfoCase_ == 1;
   }
   /**
@@ -1162,29 +1076,51 @@ private static final long serialVersionUID = 0L;
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-   * @return The policyId.
+   * <code>string policy_name_ref = 1;</code>
+   * @return The policyNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getPolicyId() {
+  public java.lang.String getPolicyNameRef() {
+    java.lang.Object ref = "";
     if (lookupInfoCase_ == 1) {
-       return (opi_api.common.v1.ObjectKey) lookupInfo_;
+      ref = lookupInfo_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (lookupInfoCase_ == 1) {
+        lookupInfo_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * security policy uuid to do the lookup in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
+   * <code>string policy_name_ref = 1;</code>
+   * @return The bytes for policyNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getPolicyIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getPolicyNameRefBytes() {
+    java.lang.Object ref = "";
     if (lookupInfoCase_ == 1) {
-       return (opi_api.common.v1.ObjectKey) lookupInfo_;
+      ref = lookupInfo_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (lookupInfoCase_ == 1) {
+        lookupInfo_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VNIC_LOOKUP_INFO_FIELD_NUMBER = 2;
@@ -1283,7 +1219,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (lookupInfoCase_ == 1) {
-      output.writeMessage(1, (opi_api.common.v1.ObjectKey) lookupInfo_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, lookupInfo_);
     }
     if (lookupInfoCase_ == 2) {
       output.writeMessage(2, (opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo) lookupInfo_);
@@ -1301,8 +1237,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (lookupInfoCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (opi_api.common.v1.ObjectKey) lookupInfo_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, lookupInfo_);
     }
     if (lookupInfoCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
@@ -1335,8 +1270,8 @@ private static final long serialVersionUID = 0L;
     if (!getLookupInfoCase().equals(other.getLookupInfoCase())) return false;
     switch (lookupInfoCase_) {
       case 1:
-        if (!getPolicyId()
-            .equals(other.getPolicyId())) return false;
+        if (!getPolicyNameRef()
+            .equals(other.getPolicyNameRef())) return false;
         break;
       case 2:
         if (!getVnicLookupInfo()
@@ -1362,8 +1297,8 @@ private static final long serialVersionUID = 0L;
     }
     switch (lookupInfoCase_) {
       case 1:
-        hash = (37 * hash) + POLICY_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getPolicyId().hashCode();
+        hash = (37 * hash) + POLICY_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getPolicyNameRef().hashCode();
         break;
       case 2:
         hash = (37 * hash) + VNIC_LOOKUP_INFO_FIELD_NUMBER;
@@ -1545,11 +1480,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest buildPartial() {
       opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest result = new opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest(this);
       if (lookupInfoCase_ == 1) {
-        if (policyIdBuilder_ == null) {
-          result.lookupInfo_ = lookupInfo_;
-        } else {
-          result.lookupInfo_ = policyIdBuilder_.build();
-        }
+        result.lookupInfo_ = lookupInfo_;
       }
       if (lookupInfoCase_ == 2) {
         if (vnicLookupInfoBuilder_ == null) {
@@ -1616,8 +1547,10 @@ private static final long serialVersionUID = 0L;
         mergeMatchFields(other.getMatchFields());
       }
       switch (other.getLookupInfoCase()) {
-        case POLICY_ID: {
-          mergePolicyId(other.getPolicyId());
+        case POLICY_NAME_REF: {
+          lookupInfoCase_ = 1;
+          lookupInfo_ = other.lookupInfo_;
+          onChanged();
           break;
         }
         case VNIC_LOOKUP_INFO: {
@@ -1672,18 +1605,16 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> policyIdBuilder_;
     /**
      * <pre>
      * security policy uuid to do the lookup in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     * @return Whether the policyId field is set.
+     * <code>string policy_name_ref = 1;</code>
+     * @return Whether the policyNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasPolicyId() {
+    public boolean hasPolicyNameRef() {
       return lookupInfoCase_ == 1;
     }
     /**
@@ -1691,21 +1622,25 @@ private static final long serialVersionUID = 0L;
      * security policy uuid to do the lookup in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     * @return The policyId.
+     * <code>string policy_name_ref = 1;</code>
+     * @return The policyNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getPolicyId() {
-      if (policyIdBuilder_ == null) {
+    public java.lang.String getPolicyNameRef() {
+      java.lang.Object ref = "";
+      if (lookupInfoCase_ == 1) {
+        ref = lookupInfo_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (lookupInfoCase_ == 1) {
-          return (opi_api.common.v1.ObjectKey) lookupInfo_;
+          lookupInfo_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (lookupInfoCase_ == 1) {
-          return policyIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1713,114 +1648,26 @@ private static final long serialVersionUID = 0L;
      * security policy uuid to do the lookup in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     */
-    public Builder setPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (policyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        lookupInfo_ = value;
-        onChanged();
-      } else {
-        policyIdBuilder_.setMessage(value);
-      }
-      lookupInfoCase_ = 1;
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy uuid to do the lookup in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     */
-    public Builder setPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (policyIdBuilder_ == null) {
-        lookupInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        policyIdBuilder_.setMessage(builderForValue.build());
-      }
-      lookupInfoCase_ = 1;
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy uuid to do the lookup in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     */
-    public Builder mergePolicyId(opi_api.common.v1.ObjectKey value) {
-      if (policyIdBuilder_ == null) {
-        if (lookupInfoCase_ == 1 &&
-            lookupInfo_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          lookupInfo_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) lookupInfo_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          lookupInfo_ = value;
-        }
-        onChanged();
-      } else {
-        if (lookupInfoCase_ == 1) {
-          policyIdBuilder_.mergeFrom(value);
-        }
-        policyIdBuilder_.setMessage(value);
-      }
-      lookupInfoCase_ = 1;
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy uuid to do the lookup in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     */
-    public Builder clearPolicyId() {
-      if (policyIdBuilder_ == null) {
-        if (lookupInfoCase_ == 1) {
-          lookupInfoCase_ = 0;
-          lookupInfo_ = null;
-          onChanged();
-        }
-      } else {
-        if (lookupInfoCase_ == 1) {
-          lookupInfoCase_ = 0;
-          lookupInfo_ = null;
-        }
-        policyIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * security policy uuid to do the lookup in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getPolicyIdBuilder() {
-      return getPolicyIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * security policy uuid to do the lookup in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
+     * <code>string policy_name_ref = 1;</code>
+     * @return The bytes for policyNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getPolicyIdOrBuilder() {
-      if ((lookupInfoCase_ == 1) && (policyIdBuilder_ != null)) {
-        return policyIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getPolicyNameRefBytes() {
+      java.lang.Object ref = "";
+      if (lookupInfoCase_ == 1) {
+        ref = lookupInfo_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (lookupInfoCase_ == 1) {
-          return (opi_api.common.v1.ObjectKey) lookupInfo_;
+          lookupInfo_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -1828,25 +1675,55 @@ private static final long serialVersionUID = 0L;
      * security policy uuid to do the lookup in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey policy_id = 1;</code>
+     * <code>string policy_name_ref = 1;</code>
+     * @param value The policyNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getPolicyIdFieldBuilder() {
-      if (policyIdBuilder_ == null) {
-        if (!(lookupInfoCase_ == 1)) {
-          lookupInfo_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        policyIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) lookupInfo_,
-                getParentForChildren(),
-                isClean());
+    public Builder setPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  lookupInfoCase_ = 1;
+      lookupInfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * security policy uuid to do the lookup in
+     * </pre>
+     *
+     * <code>string policy_name_ref = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyNameRef() {
+      if (lookupInfoCase_ == 1) {
+        lookupInfoCase_ = 0;
         lookupInfo_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * security policy uuid to do the lookup in
+     * </pre>
+     *
+     * <code>string policy_name_ref = 1;</code>
+     * @param value The bytes for policyNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       lookupInfoCase_ = 1;
-      onChanged();;
-      return policyIdBuilder_;
+      lookupInfo_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

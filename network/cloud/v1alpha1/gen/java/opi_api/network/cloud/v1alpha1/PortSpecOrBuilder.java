@@ -9,37 +9,10 @@ public interface PortSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique port id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * port number is numerical port identifier starting from 1
    * </pre>
    *
-   * <code>int32 port_number = 2;</code>
+   * <code>int32 port_number = 1;</code>
    * @return The portNumber.
    */
   int getPortNumber();
@@ -49,7 +22,7 @@ public interface PortSpecOrBuilder extends
    * port admin state
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
    * @return The enum numeric value on the wire for adminState.
    */
   int getAdminStateValue();
@@ -58,7 +31,7 @@ public interface PortSpecOrBuilder extends
    * port admin state
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;</code>
    * @return The adminState.
    */
   opi_api.network.cloud.v1alpha1.PortAdminState getAdminState();
@@ -68,7 +41,7 @@ public interface PortSpecOrBuilder extends
    * type of port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -77,7 +50,7 @@ public interface PortSpecOrBuilder extends
    * type of port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortType type = 3;</code>
    * @return The type.
    */
   opi_api.network.cloud.v1alpha1.PortType getType();
@@ -87,7 +60,7 @@ public interface PortSpecOrBuilder extends
    * operational speed of the port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
    * @return The enum numeric value on the wire for speed.
    */
   int getSpeedValue();
@@ -96,7 +69,7 @@ public interface PortSpecOrBuilder extends
    * operational speed of the port
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;</code>
    * @return The speed.
    */
   opi_api.network.cloud.v1alpha1.PortSpeed getSpeed();
@@ -106,7 +79,7 @@ public interface PortSpecOrBuilder extends
    * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
    * @return The enum numeric value on the wire for fecType.
    */
   int getFecTypeValue();
@@ -115,7 +88,7 @@ public interface PortSpecOrBuilder extends
    * Forward Error Correction (FEC) type - ReedSolomon (RS), Firecode (FC) or None
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;</code>
    * @return The fecType.
    */
   opi_api.network.cloud.v1alpha1.PortFecType getFecType();
@@ -125,7 +98,7 @@ public interface PortSpecOrBuilder extends
    * set AutoNegEn to true to enable auto negotiation
    * </pre>
    *
-   * <code>bool autoneg_enable = 7;</code>
+   * <code>bool autoneg_enable = 6;</code>
    * @return The autonegEnable.
    */
   boolean getAutonegEnable();
@@ -135,7 +108,7 @@ public interface PortSpecOrBuilder extends
    * values for link debounce timeout in msec (default = 0 ms)
    * </pre>
    *
-   * <code>int32 debounce_timeout = 8;</code>
+   * <code>int32 debounce_timeout = 7;</code>
    * @return The debounceTimeout.
    */
   int getDebounceTimeout();
@@ -145,7 +118,7 @@ public interface PortSpecOrBuilder extends
    * MTU size in bytes (64 to 9216)
    * </pre>
    *
-   * <code>int32 mtu = 9;</code>
+   * <code>int32 mtu = 8;</code>
    * @return The mtu.
    */
   int getMtu();
@@ -155,7 +128,7 @@ public interface PortSpecOrBuilder extends
    * pause type - PFC or Link Level or Disable
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
    * @return The enum numeric value on the wire for pauseType.
    */
   int getPauseTypeValue();
@@ -164,7 +137,7 @@ public interface PortSpecOrBuilder extends
    * pause type - PFC or Link Level or Disable
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;</code>
    * @return The pauseType.
    */
   opi_api.network.cloud.v1alpha1.PortPauseType getPauseType();
@@ -174,7 +147,7 @@ public interface PortSpecOrBuilder extends
    * MAC TX pause enable
    * </pre>
    *
-   * <code>bool tx_pause_en = 11;</code>
+   * <code>bool tx_pause_en = 10;</code>
    * @return The txPauseEn.
    */
   boolean getTxPauseEn();
@@ -184,7 +157,7 @@ public interface PortSpecOrBuilder extends
    * MAC RX pause enable
    * </pre>
    *
-   * <code>bool rx_pause_en = 12;</code>
+   * <code>bool rx_pause_en = 11;</code>
    * @return The rxPauseEn.
    */
   boolean getRxPauseEn();
@@ -194,7 +167,7 @@ public interface PortSpecOrBuilder extends
    * port loopback mode - MAC or PHY 
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
    * @return The enum numeric value on the wire for loopbackMode.
    */
   int getLoopbackModeValue();
@@ -203,7 +176,7 @@ public interface PortSpecOrBuilder extends
    * port loopback mode - MAC or PHY 
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;</code>
    * @return The loopbackMode.
    */
   opi_api.network.cloud.v1alpha1.PortLoopBackMode getLoopbackMode();
@@ -213,7 +186,7 @@ public interface PortSpecOrBuilder extends
    * number of serdes lanes for port (range: 1-4)
    * </pre>
    *
-   * <code>int32 lanes_count = 14;</code>
+   * <code>int32 lanes_count = 13;</code>
    * @return The lanesCount.
    */
   int getLanesCount();

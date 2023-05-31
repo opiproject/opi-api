@@ -9,37 +9,10 @@ public interface DeviceSpecOrBuilder extends
 
   /**
    * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    * @return Whether the ipv4Address field is set.
    */
   boolean hasIpv4Address();
@@ -48,7 +21,7 @@ public interface DeviceSpecOrBuilder extends
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    * @return The ipv4Address.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getIpv4Address();
@@ -57,7 +30,7 @@ public interface DeviceSpecOrBuilder extends
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv4AddressOrBuilder();
 
@@ -66,7 +39,7 @@ public interface DeviceSpecOrBuilder extends
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
@@ -75,7 +48,7 @@ public interface DeviceSpecOrBuilder extends
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    * @return The ipv6Address.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getIpv6Address();
@@ -84,7 +57,7 @@ public interface DeviceSpecOrBuilder extends
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv6AddressOrBuilder();
 
@@ -93,7 +66,7 @@ public interface DeviceSpecOrBuilder extends
    * device's mac address - for outer ethernet header
    * </pre>
    *
-   * <code>bytes mac_addr = 4;</code>
+   * <code>bytes mac_addr = 3;</code>
    * @return The macAddr.
    */
   com.google.protobuf.ByteString getMacAddr();
@@ -103,7 +76,7 @@ public interface DeviceSpecOrBuilder extends
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    * @return Whether the gatewayIp field is set.
    */
   boolean hasGatewayIp();
@@ -112,7 +85,7 @@ public interface DeviceSpecOrBuilder extends
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    * @return The gatewayIp.
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddress getGatewayIp();
@@ -121,7 +94,7 @@ public interface DeviceSpecOrBuilder extends
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    */
   opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getGatewayIpOrBuilder();
 
@@ -130,7 +103,7 @@ public interface DeviceSpecOrBuilder extends
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    * @return Whether the pcieFunctions field is set.
    */
   boolean hasPcieFunctions();
@@ -139,7 +112,7 @@ public interface DeviceSpecOrBuilder extends
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    * @return The pcieFunctions.
    */
   opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec getPcieFunctions();
@@ -148,7 +121,7 @@ public interface DeviceSpecOrBuilder extends
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    */
   opi_api.network.cloud.v1alpha1.PCIeFunctionsSpecOrBuilder getPcieFunctionsOrBuilder();
 
@@ -157,7 +130,7 @@ public interface DeviceSpecOrBuilder extends
    * ovelay routing
    * </pre>
    *
-   * <code>bool overlay_routing_enabled = 7;</code>
+   * <code>bool overlay_routing_enabled = 6;</code>
    * @return The overlayRoutingEnabled.
    */
   boolean getOverlayRoutingEnabled();
@@ -167,7 +140,7 @@ public interface DeviceSpecOrBuilder extends
    * system name is used as named identifier in protocols (e.g. LLDP)
    * </pre>
    *
-   * <code>string systemname = 8;</code>
+   * <code>string systemname = 7;</code>
    * @return The systemname.
    */
   java.lang.String getSystemname();
@@ -176,7 +149,7 @@ public interface DeviceSpecOrBuilder extends
    * system name is used as named identifier in protocols (e.g. LLDP)
    * </pre>
    *
-   * <code>string systemname = 8;</code>
+   * <code>string systemname = 7;</code>
    * @return The bytes for systemname.
    */
   com.google.protobuf.ByteString
@@ -187,7 +160,7 @@ public interface DeviceSpecOrBuilder extends
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    * @return Whether the mgmtNetworkSpec field is set.
    */
   boolean hasMgmtNetworkSpec();
@@ -196,7 +169,7 @@ public interface DeviceSpecOrBuilder extends
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    * @return The mgmtNetworkSpec.
    */
   opi_api.network.cloud.v1alpha1.MgmtNetworkSpec getMgmtNetworkSpec();
@@ -205,7 +178,7 @@ public interface DeviceSpecOrBuilder extends
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    */
   opi_api.network.cloud.v1alpha1.MgmtNetworkSpecOrBuilder getMgmtNetworkSpecOrBuilder();
 }

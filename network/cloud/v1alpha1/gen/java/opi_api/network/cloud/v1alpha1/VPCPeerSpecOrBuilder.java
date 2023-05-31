@@ -9,82 +9,41 @@ public interface VPCPeerSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique id/key idenitifying this VPC peering relation
+   * unique key/identifier of VPC1
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string vpc1_name_ref = 1;</code>
+   * @return The vpc1NameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique id/key idenitifying this VPC peering relation
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique id/key idenitifying this VPC peering relation
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getVpc1NameRef();
   /**
    * <pre>
    * unique key/identifier of VPC1
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   * @return Whether the vpc1Id field is set.
+   * <code>string vpc1_name_ref = 1;</code>
+   * @return The bytes for vpc1NameRef.
    */
-  boolean hasVpc1Id();
-  /**
-   * <pre>
-   * unique key/identifier of VPC1
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   * @return The vpc1Id.
-   */
-  opi_api.common.v1.ObjectKey getVpc1Id();
-  /**
-   * <pre>
-   * unique key/identifier of VPC1
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc1_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpc1IdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpc1NameRefBytes();
 
   /**
    * <pre>
    * unique key/identifier of VPC2
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   * @return Whether the vpc2Id field is set.
+   * <code>string vpc2_name_ref = 2;</code>
+   * @return The vpc2NameRef.
    */
-  boolean hasVpc2Id();
+  java.lang.String getVpc2NameRef();
   /**
    * <pre>
    * unique key/identifier of VPC2
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   * @return The vpc2Id.
+   * <code>string vpc2_name_ref = 2;</code>
+   * @return The bytes for vpc2NameRef.
    */
-  opi_api.common.v1.ObjectKey getVpc2Id();
-  /**
-   * <pre>
-   * unique key/identifier of VPC2
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc2_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpc2IdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpc2NameRefBytes();
 }

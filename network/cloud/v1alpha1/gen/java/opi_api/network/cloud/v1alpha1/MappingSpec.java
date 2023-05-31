@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MappingSpec() {
+    subnetNameRef_ = "";
     macAddr_ = com.google.protobuf.ByteString.EMPTY;
     tags_ = emptyIntList();
     type_ = 0;
@@ -58,21 +59,8 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
             opi_api.network.cloud.v1alpha1.L3MappingKey.Builder subBuilder = null;
-            if (macOrIpCase_ == 2) {
+            if (macOrIpCase_ == 1) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_).toBuilder();
             }
             macOrIp_ =
@@ -81,12 +69,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_);
               macOrIp_ = subBuilder.buildPartial();
             }
-            macOrIpCase_ = 2;
+            macOrIpCase_ = 1;
             break;
           }
-          case 26: {
+          case 18: {
             opi_api.network.cloud.v1alpha1.L2MappingKey.Builder subBuilder = null;
-            if (macOrIpCase_ == 3) {
+            if (macOrIpCase_ == 2) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_).toBuilder();
             }
             macOrIp_ =
@@ -95,70 +83,39 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_);
               macOrIp_ = subBuilder.buildPartial();
             }
-            macOrIpCase_ = 3;
+            macOrIpCase_ = 2;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            subnetNameRef_ = s;
             break;
           }
           case 34: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (subnetId_ != null) {
-              subBuilder = subnetId_.toBuilder();
-            }
-            subnetId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(subnetId_);
-              subnetId_ = subBuilder.buildPartial();
-            }
-
+            java.lang.String s = input.readStringRequireUtf8();
+            dstinfoCase_ = 4;
+            dstinfo_ = s;
             break;
           }
           case 42: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (dstinfoCase_ == 5) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) dstinfo_).toBuilder();
-            }
-            dstinfo_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) dstinfo_);
-              dstinfo_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             dstinfoCase_ = 5;
+            dstinfo_ = s;
             break;
           }
           case 50: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (dstinfoCase_ == 6) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) dstinfo_).toBuilder();
-            }
-            dstinfo_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) dstinfo_);
-              dstinfo_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             dstinfoCase_ = 6;
+            dstinfo_ = s;
             break;
           }
           case 58: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (dstinfoCase_ == 7) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) dstinfo_).toBuilder();
-            }
-            dstinfo_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) dstinfo_);
-              dstinfo_ = subBuilder.buildPartial();
-            }
-            dstinfoCase_ = 7;
-            break;
-          }
-          case 66: {
 
             macAddr_ = input.readBytes();
             break;
           }
-          case 74: {
+          case 66: {
             opi_api.network.opinetcommon.v1alpha1.Encap.Builder subBuilder = null;
             if (encap_ != null) {
               subBuilder = encap_.toBuilder();
@@ -171,7 +128,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 82: {
+          case 74: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (publicIp_ != null) {
               subBuilder = publicIp_.toBuilder();
@@ -184,7 +141,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 88: {
+          case 80: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               tags_ = newIntList();
               mutable_bitField0_ |= 0x00000001;
@@ -192,7 +149,7 @@ private static final long serialVersionUID = 0L;
             tags_.addInt(input.readUInt32());
             break;
           }
-          case 90: {
+          case 82: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -205,7 +162,7 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case 96: {
+          case 88: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
@@ -251,8 +208,8 @@ private static final long serialVersionUID = 0L;
   public enum MacOrIpCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    IP_KEY(2),
-    MAC_KEY(3),
+    IP_KEY(1),
+    MAC_KEY(2),
     MACORIP_NOT_SET(0);
     private final int value;
     private MacOrIpCase(int value) {
@@ -270,8 +227,8 @@ private static final long serialVersionUID = 0L;
 
     public static MacOrIpCase forNumber(int value) {
       switch (value) {
-        case 2: return IP_KEY;
-        case 3: return MAC_KEY;
+        case 1: return IP_KEY;
+        case 2: return MAC_KEY;
         case 0: return MACORIP_NOT_SET;
         default: return null;
       }
@@ -292,9 +249,9 @@ private static final long serialVersionUID = 0L;
   public enum DstinfoCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    VNIC_ID(5),
-    TUNNEL_ID(6),
-    NH_GROUP_ID(7),
+    VNIC_NAME_REF(4),
+    TUNNEL_NAME_REF(5),
+    NH_GROUP_NAME_REF(6),
     DSTINFO_NOT_SET(0);
     private final int value;
     private DstinfoCase(int value) {
@@ -312,9 +269,9 @@ private static final long serialVersionUID = 0L;
 
     public static DstinfoCase forNumber(int value) {
       switch (value) {
-        case 5: return VNIC_ID;
-        case 6: return TUNNEL_ID;
-        case 7: return NH_GROUP_ID;
+        case 4: return VNIC_NAME_REF;
+        case 5: return TUNNEL_NAME_REF;
+        case 6: return NH_GROUP_NAME_REF;
         case 0: return DSTINFO_NOT_SET;
         default: return null;
       }
@@ -330,68 +287,30 @@ private static final long serialVersionUID = 0L;
         dstinfoCase_);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique mapping id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int IP_KEY_FIELD_NUMBER = 2;
+  public static final int IP_KEY_FIELD_NUMBER = 1;
   /**
    * <pre>
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    * @return Whether the ipKey field is set.
    */
   @java.lang.Override
   public boolean hasIpKey() {
-    return macOrIpCase_ == 2;
+    return macOrIpCase_ == 1;
   }
   /**
    * <pre>
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    * @return The ipKey.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L3MappingKey getIpKey() {
-    if (macOrIpCase_ == 2) {
+    if (macOrIpCase_ == 1) {
        return (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_;
     }
     return opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
@@ -401,40 +320,40 @@ private static final long serialVersionUID = 0L;
    * IP mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L3MappingKeyOrBuilder getIpKeyOrBuilder() {
-    if (macOrIpCase_ == 2) {
+    if (macOrIpCase_ == 1) {
        return (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_;
     }
     return opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
   }
 
-  public static final int MAC_KEY_FIELD_NUMBER = 3;
+  public static final int MAC_KEY_FIELD_NUMBER = 2;
   /**
    * <pre>
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    * @return Whether the macKey field is set.
    */
   @java.lang.Override
   public boolean hasMacKey() {
-    return macOrIpCase_ == 3;
+    return macOrIpCase_ == 2;
   }
   /**
    * <pre>
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    * @return The macKey.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L2MappingKey getMacKey() {
-    if (macOrIpCase_ == 3) {
+    if (macOrIpCase_ == 2) {
        return (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_;
     }
     return opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
@@ -444,101 +363,170 @@ private static final long serialVersionUID = 0L;
    * MAC mapping key
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.L2MappingKeyOrBuilder getMacKeyOrBuilder() {
-    if (macOrIpCase_ == 3) {
+    if (macOrIpCase_ == 2) {
        return (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_;
     }
     return opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
   }
 
-  public static final int SUBNET_ID_FIELD_NUMBER = 4;
-  private opi_api.common.v1.ObjectKey subnetId_;
+  public static final int SUBNET_NAME_REF_FIELD_NUMBER = 3;
+  private volatile java.lang.Object subnetNameRef_;
   /**
    * <pre>
    * subnet this mapping is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   * @return Whether the subnetId field is set.
+   * <code>string subnet_name_ref = 3;</code>
+   * @return The subnetNameRef.
    */
   @java.lang.Override
-  public boolean hasSubnetId() {
-    return subnetId_ != null;
+  public java.lang.String getSubnetNameRef() {
+    java.lang.Object ref = subnetNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subnetNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * subnet this mapping is in
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   * @return The subnetId.
+   * <code>string subnet_name_ref = 3;</code>
+   * @return The bytes for subnetNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSubnetId() {
-    return subnetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
-  }
-  /**
-   * <pre>
-   * subnet this mapping is in
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder() {
-    return getSubnetId();
+  public com.google.protobuf.ByteString
+      getSubnetNameRefBytes() {
+    java.lang.Object ref = subnetNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      subnetNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int VNIC_ID_FIELD_NUMBER = 5;
+  public static final int VNIC_NAME_REF_FIELD_NUMBER = 4;
   /**
    * <pre>
    * if IP is that of local vnic, corresponding vnic id
    * this is mandatory attribute for local IP mappings
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-   * @return Whether the vnicId field is set.
+   * <code>string vnic_name_ref = 4;</code>
+   * @return Whether the vnicNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasVnicId() {
+  public boolean hasVnicNameRef() {
+    return dstinfoCase_ == 4;
+  }
+  /**
+   * <pre>
+   * if IP is that of local vnic, corresponding vnic id
+   * this is mandatory attribute for local IP mappings
+   * </pre>
+   *
+   * <code>string vnic_name_ref = 4;</code>
+   * @return The vnicNameRef.
+   */
+  public java.lang.String getVnicNameRef() {
+    java.lang.Object ref = "";
+    if (dstinfoCase_ == 4) {
+      ref = dstinfo_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (dstinfoCase_ == 4) {
+        dstinfo_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * if IP is that of local vnic, corresponding vnic id
+   * this is mandatory attribute for local IP mappings
+   * </pre>
+   *
+   * <code>string vnic_name_ref = 4;</code>
+   * @return The bytes for vnicNameRef.
+   */
+  public com.google.protobuf.ByteString
+      getVnicNameRefBytes() {
+    java.lang.Object ref = "";
+    if (dstinfoCase_ == 4) {
+      ref = dstinfo_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (dstinfoCase_ == 4) {
+        dstinfo_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TUNNEL_NAME_REF_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Tunnel ID of the remote TEP for remote mapping
+   * this is mandatory attribute for remote MAC/IP mappings for
+   * non-ECMP cases
+   * </pre>
+   *
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return Whether the tunnelNameRef field is set.
+   */
+  public boolean hasTunnelNameRef() {
     return dstinfoCase_ == 5;
   }
   /**
    * <pre>
-   * if IP is that of local vnic, corresponding vnic id
-   * this is mandatory attribute for local IP mappings
+   * Tunnel ID of the remote TEP for remote mapping
+   * this is mandatory attribute for remote MAC/IP mappings for
+   * non-ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-   * @return The vnicId.
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return The tunnelNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVnicId() {
+  public java.lang.String getTunnelNameRef() {
+    java.lang.Object ref = "";
     if (dstinfoCase_ == 5) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
+      ref = dstinfo_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * if IP is that of local vnic, corresponding vnic id
-   * this is mandatory attribute for local IP mappings
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder() {
-    if (dstinfoCase_ == 5) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (dstinfoCase_ == 5) {
+        dstinfo_ = s;
+      }
+      return s;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
   }
-
-  public static final int TUNNEL_ID_FIELD_NUMBER = 6;
   /**
    * <pre>
    * Tunnel ID of the remote TEP for remote mapping
@@ -546,101 +534,103 @@ private static final long serialVersionUID = 0L;
    * non-ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 5;</code>
+   * @return The bytes for tunnelNameRef.
    */
-  @java.lang.Override
-  public boolean hasTunnelId() {
+  public com.google.protobuf.ByteString
+      getTunnelNameRefBytes() {
+    java.lang.Object ref = "";
+    if (dstinfoCase_ == 5) {
+      ref = dstinfo_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (dstinfoCase_ == 5) {
+        dstinfo_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NH_GROUP_NAME_REF_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * overlay nexthop/TEP group for remote mappings
+   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+   * </pre>
+   *
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return Whether the nhGroupNameRef field is set.
+   */
+  public boolean hasNhGroupNameRef() {
     return dstinfoCase_ == 6;
   }
   /**
    * <pre>
-   * Tunnel ID of the remote TEP for remote mapping
-   * this is mandatory attribute for remote MAC/IP mappings for
-   * non-ECMP cases
+   * overlay nexthop/TEP group for remote mappings
+   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-   * @return The tunnelId.
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return The nhGroupNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getTunnelId() {
+  public java.lang.String getNhGroupNameRef() {
+    java.lang.Object ref = "";
     if (dstinfoCase_ == 6) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
+      ref = dstinfo_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (dstinfoCase_ == 6) {
+        dstinfo_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
-   * Tunnel ID of the remote TEP for remote mapping
-   * this is mandatory attribute for remote MAC/IP mappings for
-   * non-ECMP cases
+   * overlay nexthop/TEP group for remote mappings
+   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
+   * <code>string nh_group_name_ref = 6;</code>
+   * @return The bytes for nhGroupNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getNhGroupNameRefBytes() {
+    java.lang.Object ref = "";
     if (dstinfoCase_ == 6) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
+      ref = dstinfo_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (dstinfoCase_ == 6) {
+        dstinfo_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int NH_GROUP_ID_FIELD_NUMBER = 7;
-  /**
-   * <pre>
-   * overlay nexthop/TEP group for remote mappings
-   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return Whether the nhGroupId field is set.
-   */
-  @java.lang.Override
-  public boolean hasNhGroupId() {
-    return dstinfoCase_ == 7;
-  }
-  /**
-   * <pre>
-   * overlay nexthop/TEP group for remote mappings
-   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   * @return The nhGroupId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getNhGroupId() {
-    if (dstinfoCase_ == 7) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * overlay nexthop/TEP group for remote mappings
-   * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder() {
-    if (dstinfoCase_ == 7) {
-       return (opi_api.common.v1.ObjectKey) dstinfo_;
-    }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
-  }
-
-  public static final int MAC_ADDR_FIELD_NUMBER = 8;
+  public static final int MAC_ADDR_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString macAddr_;
   /**
    * <pre>
    * overlay MAC address of this mapping
    * </pre>
    *
-   * <code>bytes mac_addr = 8;</code>
+   * <code>bytes mac_addr = 7;</code>
    * @return The macAddr.
    */
   @java.lang.Override
@@ -648,14 +638,14 @@ private static final long serialVersionUID = 0L;
     return macAddr_;
   }
 
-  public static final int ENCAP_FIELD_NUMBER = 9;
+  public static final int ENCAP_FIELD_NUMBER = 8;
   private opi_api.network.opinetcommon.v1alpha1.Encap encap_;
   /**
    * <pre>
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    * @return Whether the encap field is set.
    */
   @java.lang.Override
@@ -667,7 +657,7 @@ private static final long serialVersionUID = 0L;
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    * @return The encap.
    */
   @java.lang.Override
@@ -679,21 +669,21 @@ private static final long serialVersionUID = 0L;
    * fabric encap information specific to this mapping, if any
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder() {
     return getEncap();
   }
 
-  public static final int PUBLIC_IP_FIELD_NUMBER = 10;
+  public static final int PUBLIC_IP_FIELD_NUMBER = 9;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress publicIp_;
   /**
    * <pre>
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    * @return Whether the publicIp field is set.
    */
   @java.lang.Override
@@ -705,7 +695,7 @@ private static final long serialVersionUID = 0L;
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    * @return The publicIp.
    */
   @java.lang.Override
@@ -717,14 +707,14 @@ private static final long serialVersionUID = 0L;
    * public IP, if overlay IP has corresponding public IP
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPublicIpOrBuilder() {
     return getPublicIp();
   }
 
-  public static final int TAGS_FIELD_NUMBER = 11;
+  public static final int TAGS_FIELD_NUMBER = 10;
   private com.google.protobuf.Internal.IntList tags_;
   /**
    * <pre>
@@ -735,7 +725,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @return A list containing the tags.
    */
   @java.lang.Override
@@ -752,7 +742,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @return The count of tags.
    */
   public int getTagsCount() {
@@ -767,7 +757,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
    * </pre>
    *
-   * <code>repeated uint32 tags = 11;</code>
+   * <code>repeated uint32 tags = 10;</code>
    * @param index The index of the element to return.
    * @return The tags at the given index.
    */
@@ -776,14 +766,14 @@ private static final long serialVersionUID = 0L;
   }
   private int tagsMemoizedSerializedSize = -1;
 
-  public static final int TYPE_FIELD_NUMBER = 12;
+  public static final int TYPE_FIELD_NUMBER = 11;
   private int type_;
   /**
    * <pre>
    * type of the IP mapping endpoint, default is vpc mapping
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -794,7 +784,7 @@ private static final long serialVersionUID = 0L;
    * type of the IP mapping endpoint, default is vpc mapping
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.MappingType getType() {
@@ -818,45 +808,42 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (macOrIpCase_ == 1) {
+      output.writeMessage(1, (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_);
     }
     if (macOrIpCase_ == 2) {
-      output.writeMessage(2, (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_);
+      output.writeMessage(2, (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_);
     }
-    if (macOrIpCase_ == 3) {
-      output.writeMessage(3, (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subnetNameRef_);
     }
-    if (subnetId_ != null) {
-      output.writeMessage(4, getSubnetId());
+    if (dstinfoCase_ == 4) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dstinfo_);
     }
     if (dstinfoCase_ == 5) {
-      output.writeMessage(5, (opi_api.common.v1.ObjectKey) dstinfo_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dstinfo_);
     }
     if (dstinfoCase_ == 6) {
-      output.writeMessage(6, (opi_api.common.v1.ObjectKey) dstinfo_);
-    }
-    if (dstinfoCase_ == 7) {
-      output.writeMessage(7, (opi_api.common.v1.ObjectKey) dstinfo_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, dstinfo_);
     }
     if (!macAddr_.isEmpty()) {
-      output.writeBytes(8, macAddr_);
+      output.writeBytes(7, macAddr_);
     }
     if (encap_ != null) {
-      output.writeMessage(9, getEncap());
+      output.writeMessage(8, getEncap());
     }
     if (publicIp_ != null) {
-      output.writeMessage(10, getPublicIp());
+      output.writeMessage(9, getPublicIp());
     }
     if (getTagsList().size() > 0) {
-      output.writeUInt32NoTag(90);
+      output.writeUInt32NoTag(82);
       output.writeUInt32NoTag(tagsMemoizedSerializedSize);
     }
     for (int i = 0; i < tags_.size(); i++) {
       output.writeUInt32NoTag(tags_.getInt(i));
     }
     if (type_ != opi_api.network.cloud.v1alpha1.MappingType.MAPPING_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(12, type_);
+      output.writeEnum(11, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -867,45 +854,37 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
+    if (macOrIpCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+        .computeMessageSize(1, (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_);
     }
     if (macOrIpCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_);
+        .computeMessageSize(2, (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_);
     }
-    if (macOrIpCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subnetNameRef_);
     }
-    if (subnetId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getSubnetId());
+    if (dstinfoCase_ == 4) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dstinfo_);
     }
     if (dstinfoCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (opi_api.common.v1.ObjectKey) dstinfo_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dstinfo_);
     }
     if (dstinfoCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (opi_api.common.v1.ObjectKey) dstinfo_);
-    }
-    if (dstinfoCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (opi_api.common.v1.ObjectKey) dstinfo_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, dstinfo_);
     }
     if (!macAddr_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(8, macAddr_);
+        .computeBytesSize(7, macAddr_);
     }
     if (encap_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getEncap());
+        .computeMessageSize(8, getEncap());
     }
     if (publicIp_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getPublicIp());
+        .computeMessageSize(9, getPublicIp());
     }
     {
       int dataSize = 0;
@@ -923,7 +902,7 @@ private static final long serialVersionUID = 0L;
     }
     if (type_ != opi_api.network.cloud.v1alpha1.MappingType.MAPPING_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(12, type_);
+        .computeEnumSize(11, type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -940,16 +919,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.MappingSpec other = (opi_api.network.cloud.v1alpha1.MappingSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasSubnetId() != other.hasSubnetId()) return false;
-    if (hasSubnetId()) {
-      if (!getSubnetId()
-          .equals(other.getSubnetId())) return false;
-    }
+    if (!getSubnetNameRef()
+        .equals(other.getSubnetNameRef())) return false;
     if (!getMacAddr()
         .equals(other.getMacAddr())) return false;
     if (hasEncap() != other.hasEncap()) return false;
@@ -967,11 +938,11 @@ private static final long serialVersionUID = 0L;
     if (type_ != other.type_) return false;
     if (!getMacOrIpCase().equals(other.getMacOrIpCase())) return false;
     switch (macOrIpCase_) {
-      case 2:
+      case 1:
         if (!getIpKey()
             .equals(other.getIpKey())) return false;
         break;
-      case 3:
+      case 2:
         if (!getMacKey()
             .equals(other.getMacKey())) return false;
         break;
@@ -980,17 +951,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDstinfoCase().equals(other.getDstinfoCase())) return false;
     switch (dstinfoCase_) {
+      case 4:
+        if (!getVnicNameRef()
+            .equals(other.getVnicNameRef())) return false;
+        break;
       case 5:
-        if (!getVnicId()
-            .equals(other.getVnicId())) return false;
+        if (!getTunnelNameRef()
+            .equals(other.getTunnelNameRef())) return false;
         break;
       case 6:
-        if (!getTunnelId()
-            .equals(other.getTunnelId())) return false;
-        break;
-      case 7:
-        if (!getNhGroupId()
-            .equals(other.getNhGroupId())) return false;
+        if (!getNhGroupNameRef()
+            .equals(other.getNhGroupNameRef())) return false;
         break;
       case 0:
       default:
@@ -1006,14 +977,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasSubnetId()) {
-      hash = (37 * hash) + SUBNET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSubnetId().hashCode();
-    }
+    hash = (37 * hash) + SUBNET_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSubnetNameRef().hashCode();
     hash = (37 * hash) + MAC_ADDR_FIELD_NUMBER;
     hash = (53 * hash) + getMacAddr().hashCode();
     if (hasEncap()) {
@@ -1031,11 +996,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
     switch (macOrIpCase_) {
-      case 2:
+      case 1:
         hash = (37 * hash) + IP_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getIpKey().hashCode();
         break;
-      case 3:
+      case 2:
         hash = (37 * hash) + MAC_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getMacKey().hashCode();
         break;
@@ -1043,17 +1008,17 @@ private static final long serialVersionUID = 0L;
       default:
     }
     switch (dstinfoCase_) {
+      case 4:
+        hash = (37 * hash) + VNIC_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getVnicNameRef().hashCode();
+        break;
       case 5:
-        hash = (37 * hash) + VNIC_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getVnicId().hashCode();
+        hash = (37 * hash) + TUNNEL_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getTunnelNameRef().hashCode();
         break;
       case 6:
-        hash = (37 * hash) + TUNNEL_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTunnelId().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + NH_GROUP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNhGroupId().hashCode();
+        hash = (37 * hash) + NH_GROUP_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getNhGroupNameRef().hashCode();
         break;
       case 0:
       default:
@@ -1196,18 +1161,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = null;
-      } else {
-        subnetId_ = null;
-        subnetIdBuilder_ = null;
-      }
+      subnetNameRef_ = "";
+
       macAddr_ = com.google.protobuf.ByteString.EMPTY;
 
       if (encapBuilder_ == null) {
@@ -1257,50 +1212,29 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.MappingSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.MappingSpec result = new opi_api.network.cloud.v1alpha1.MappingSpec(this);
       int from_bitField0_ = bitField0_;
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (macOrIpCase_ == 2) {
+      if (macOrIpCase_ == 1) {
         if (ipKeyBuilder_ == null) {
           result.macOrIp_ = macOrIp_;
         } else {
           result.macOrIp_ = ipKeyBuilder_.build();
         }
       }
-      if (macOrIpCase_ == 3) {
+      if (macOrIpCase_ == 2) {
         if (macKeyBuilder_ == null) {
           result.macOrIp_ = macOrIp_;
         } else {
           result.macOrIp_ = macKeyBuilder_.build();
         }
       }
-      if (subnetIdBuilder_ == null) {
-        result.subnetId_ = subnetId_;
-      } else {
-        result.subnetId_ = subnetIdBuilder_.build();
+      result.subnetNameRef_ = subnetNameRef_;
+      if (dstinfoCase_ == 4) {
+        result.dstinfo_ = dstinfo_;
       }
       if (dstinfoCase_ == 5) {
-        if (vnicIdBuilder_ == null) {
-          result.dstinfo_ = dstinfo_;
-        } else {
-          result.dstinfo_ = vnicIdBuilder_.build();
-        }
+        result.dstinfo_ = dstinfo_;
       }
       if (dstinfoCase_ == 6) {
-        if (tunnelIdBuilder_ == null) {
-          result.dstinfo_ = dstinfo_;
-        } else {
-          result.dstinfo_ = tunnelIdBuilder_.build();
-        }
-      }
-      if (dstinfoCase_ == 7) {
-        if (nhGroupIdBuilder_ == null) {
-          result.dstinfo_ = dstinfo_;
-        } else {
-          result.dstinfo_ = nhGroupIdBuilder_.build();
-        }
+        result.dstinfo_ = dstinfo_;
       }
       result.macAddr_ = macAddr_;
       if (encapBuilder_ == null) {
@@ -1369,11 +1303,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.MappingSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.MappingSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
-      if (other.hasSubnetId()) {
-        mergeSubnetId(other.getSubnetId());
+      if (!other.getSubnetNameRef().isEmpty()) {
+        subnetNameRef_ = other.subnetNameRef_;
+        onChanged();
       }
       if (other.getMacAddr() != com.google.protobuf.ByteString.EMPTY) {
         setMacAddr(other.getMacAddr());
@@ -1411,16 +1343,22 @@ private static final long serialVersionUID = 0L;
         }
       }
       switch (other.getDstinfoCase()) {
-        case VNIC_ID: {
-          mergeVnicId(other.getVnicId());
+        case VNIC_NAME_REF: {
+          dstinfoCase_ = 4;
+          dstinfo_ = other.dstinfo_;
+          onChanged();
           break;
         }
-        case TUNNEL_ID: {
-          mergeTunnelId(other.getTunnelId());
+        case TUNNEL_NAME_REF: {
+          dstinfoCase_ = 5;
+          dstinfo_ = other.dstinfo_;
+          onChanged();
           break;
         }
-        case NH_GROUP_ID: {
-          mergeNhGroupId(other.getNhGroupId());
+        case NH_GROUP_NAME_REF: {
+          dstinfoCase_ = 6;
+          dstinfo_ = other.dstinfo_;
+          onChanged();
           break;
         }
         case DSTINFO_NOT_SET: {
@@ -1487,161 +1425,6 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique mapping id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.L3MappingKey, opi_api.network.cloud.v1alpha1.L3MappingKey.Builder, opi_api.network.cloud.v1alpha1.L3MappingKeyOrBuilder> ipKeyBuilder_;
     /**
@@ -1649,30 +1432,30 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      * @return Whether the ipKey field is set.
      */
     @java.lang.Override
     public boolean hasIpKey() {
-      return macOrIpCase_ == 2;
+      return macOrIpCase_ == 1;
     }
     /**
      * <pre>
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      * @return The ipKey.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L3MappingKey getIpKey() {
       if (ipKeyBuilder_ == null) {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           return (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_;
         }
         return opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
       } else {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           return ipKeyBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
@@ -1683,7 +1466,7 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     public Builder setIpKey(opi_api.network.cloud.v1alpha1.L3MappingKey value) {
       if (ipKeyBuilder_ == null) {
@@ -1695,7 +1478,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ipKeyBuilder_.setMessage(value);
       }
-      macOrIpCase_ = 2;
+      macOrIpCase_ = 1;
       return this;
     }
     /**
@@ -1703,7 +1486,7 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     public Builder setIpKey(
         opi_api.network.cloud.v1alpha1.L3MappingKey.Builder builderForValue) {
@@ -1713,7 +1496,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ipKeyBuilder_.setMessage(builderForValue.build());
       }
-      macOrIpCase_ = 2;
+      macOrIpCase_ = 1;
       return this;
     }
     /**
@@ -1721,11 +1504,11 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     public Builder mergeIpKey(opi_api.network.cloud.v1alpha1.L3MappingKey value) {
       if (ipKeyBuilder_ == null) {
-        if (macOrIpCase_ == 2 &&
+        if (macOrIpCase_ == 1 &&
             macOrIp_ != opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance()) {
           macOrIp_ = opi_api.network.cloud.v1alpha1.L3MappingKey.newBuilder((opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_)
               .mergeFrom(value).buildPartial();
@@ -1734,12 +1517,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           ipKeyBuilder_.mergeFrom(value);
         }
         ipKeyBuilder_.setMessage(value);
       }
-      macOrIpCase_ = 2;
+      macOrIpCase_ = 1;
       return this;
     }
     /**
@@ -1747,17 +1530,17 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     public Builder clearIpKey() {
       if (ipKeyBuilder_ == null) {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           macOrIpCase_ = 0;
           macOrIp_ = null;
           onChanged();
         }
       } else {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           macOrIpCase_ = 0;
           macOrIp_ = null;
         }
@@ -1770,7 +1553,7 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     public opi_api.network.cloud.v1alpha1.L3MappingKey.Builder getIpKeyBuilder() {
       return getIpKeyFieldBuilder().getBuilder();
@@ -1780,14 +1563,14 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L3MappingKeyOrBuilder getIpKeyOrBuilder() {
-      if ((macOrIpCase_ == 2) && (ipKeyBuilder_ != null)) {
+      if ((macOrIpCase_ == 1) && (ipKeyBuilder_ != null)) {
         return ipKeyBuilder_.getMessageOrBuilder();
       } else {
-        if (macOrIpCase_ == 2) {
+        if (macOrIpCase_ == 1) {
           return (opi_api.network.cloud.v1alpha1.L3MappingKey) macOrIp_;
         }
         return opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
@@ -1798,13 +1581,13 @@ private static final long serialVersionUID = 0L;
      * IP mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L3MappingKey ip_key = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.L3MappingKey, opi_api.network.cloud.v1alpha1.L3MappingKey.Builder, opi_api.network.cloud.v1alpha1.L3MappingKeyOrBuilder> 
         getIpKeyFieldBuilder() {
       if (ipKeyBuilder_ == null) {
-        if (!(macOrIpCase_ == 2)) {
+        if (!(macOrIpCase_ == 1)) {
           macOrIp_ = opi_api.network.cloud.v1alpha1.L3MappingKey.getDefaultInstance();
         }
         ipKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1814,7 +1597,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         macOrIp_ = null;
       }
-      macOrIpCase_ = 2;
+      macOrIpCase_ = 1;
       onChanged();;
       return ipKeyBuilder_;
     }
@@ -1826,30 +1609,30 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      * @return Whether the macKey field is set.
      */
     @java.lang.Override
     public boolean hasMacKey() {
-      return macOrIpCase_ == 3;
+      return macOrIpCase_ == 2;
     }
     /**
      * <pre>
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      * @return The macKey.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L2MappingKey getMacKey() {
       if (macKeyBuilder_ == null) {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           return (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_;
         }
         return opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
       } else {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           return macKeyBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
@@ -1860,7 +1643,7 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     public Builder setMacKey(opi_api.network.cloud.v1alpha1.L2MappingKey value) {
       if (macKeyBuilder_ == null) {
@@ -1872,7 +1655,7 @@ private static final long serialVersionUID = 0L;
       } else {
         macKeyBuilder_.setMessage(value);
       }
-      macOrIpCase_ = 3;
+      macOrIpCase_ = 2;
       return this;
     }
     /**
@@ -1880,7 +1663,7 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     public Builder setMacKey(
         opi_api.network.cloud.v1alpha1.L2MappingKey.Builder builderForValue) {
@@ -1890,7 +1673,7 @@ private static final long serialVersionUID = 0L;
       } else {
         macKeyBuilder_.setMessage(builderForValue.build());
       }
-      macOrIpCase_ = 3;
+      macOrIpCase_ = 2;
       return this;
     }
     /**
@@ -1898,11 +1681,11 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     public Builder mergeMacKey(opi_api.network.cloud.v1alpha1.L2MappingKey value) {
       if (macKeyBuilder_ == null) {
-        if (macOrIpCase_ == 3 &&
+        if (macOrIpCase_ == 2 &&
             macOrIp_ != opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance()) {
           macOrIp_ = opi_api.network.cloud.v1alpha1.L2MappingKey.newBuilder((opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_)
               .mergeFrom(value).buildPartial();
@@ -1911,12 +1694,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           macKeyBuilder_.mergeFrom(value);
         }
         macKeyBuilder_.setMessage(value);
       }
-      macOrIpCase_ = 3;
+      macOrIpCase_ = 2;
       return this;
     }
     /**
@@ -1924,17 +1707,17 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     public Builder clearMacKey() {
       if (macKeyBuilder_ == null) {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           macOrIpCase_ = 0;
           macOrIp_ = null;
           onChanged();
         }
       } else {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           macOrIpCase_ = 0;
           macOrIp_ = null;
         }
@@ -1947,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.L2MappingKey.Builder getMacKeyBuilder() {
       return getMacKeyFieldBuilder().getBuilder();
@@ -1957,14 +1740,14 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.L2MappingKeyOrBuilder getMacKeyOrBuilder() {
-      if ((macOrIpCase_ == 3) && (macKeyBuilder_ != null)) {
+      if ((macOrIpCase_ == 2) && (macKeyBuilder_ != null)) {
         return macKeyBuilder_.getMessageOrBuilder();
       } else {
-        if (macOrIpCase_ == 3) {
+        if (macOrIpCase_ == 2) {
           return (opi_api.network.cloud.v1alpha1.L2MappingKey) macOrIp_;
         }
         return opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
@@ -1975,13 +1758,13 @@ private static final long serialVersionUID = 0L;
      * MAC mapping key
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.L2MappingKey mac_key = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.L2MappingKey, opi_api.network.cloud.v1alpha1.L2MappingKey.Builder, opi_api.network.cloud.v1alpha1.L2MappingKeyOrBuilder> 
         getMacKeyFieldBuilder() {
       if (macKeyBuilder_ == null) {
-        if (!(macOrIpCase_ == 3)) {
+        if (!(macOrIpCase_ == 2)) {
           macOrIp_ = opi_api.network.cloud.v1alpha1.L2MappingKey.getDefaultInstance();
         }
         macKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1991,38 +1774,30 @@ private static final long serialVersionUID = 0L;
                 isClean());
         macOrIp_ = null;
       }
-      macOrIpCase_ = 3;
+      macOrIpCase_ = 2;
       onChanged();;
       return macKeyBuilder_;
     }
 
-    private opi_api.common.v1.ObjectKey subnetId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> subnetIdBuilder_;
+    private java.lang.Object subnetNameRef_ = "";
     /**
      * <pre>
      * subnet this mapping is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-     * @return Whether the subnetId field is set.
+     * <code>string subnet_name_ref = 3;</code>
+     * @return The subnetNameRef.
      */
-    public boolean hasSubnetId() {
-      return subnetIdBuilder_ != null || subnetId_ != null;
-    }
-    /**
-     * <pre>
-     * subnet this mapping is in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-     * @return The subnetId.
-     */
-    public opi_api.common.v1.ObjectKey getSubnetId() {
-      if (subnetIdBuilder_ == null) {
-        return subnetId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
+    public java.lang.String getSubnetNameRef() {
+      java.lang.Object ref = subnetNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetNameRef_ = s;
+        return s;
       } else {
-        return subnetIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -2030,315 +1805,245 @@ private static final long serialVersionUID = 0L;
      * subnet this mapping is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
+     * <code>string subnet_name_ref = 3;</code>
+     * @return The bytes for subnetNameRef.
      */
-    public Builder setSubnetId(opi_api.common.v1.ObjectKey value) {
-      if (subnetIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        subnetId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSubnetNameRefBytes() {
+      java.lang.Object ref = subnetNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subnetNameRef_ = b;
+        return b;
       } else {
-        subnetIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * subnet this mapping is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
+     * <code>string subnet_name_ref = 3;</code>
+     * @param value The subnetNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setSubnetId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = builderForValue.build();
-        onChanged();
-      } else {
-        subnetIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet this mapping is in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-     */
-    public Builder mergeSubnetId(opi_api.common.v1.ObjectKey value) {
-      if (subnetIdBuilder_ == null) {
-        if (subnetId_ != null) {
-          subnetId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(subnetId_).mergeFrom(value).buildPartial();
-        } else {
-          subnetId_ = value;
-        }
-        onChanged();
-      } else {
-        subnetIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet this mapping is in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-     */
-    public Builder clearSubnetId() {
-      if (subnetIdBuilder_ == null) {
-        subnetId_ = null;
-        onChanged();
-      } else {
-        subnetId_ = null;
-        subnetIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * subnet this mapping is in
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSubnetIdBuilder() {
-      
+    public Builder setSubnetNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      subnetNameRef_ = value;
       onChanged();
-      return getSubnetIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * subnet this mapping is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
+     * <code>string subnet_name_ref = 3;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder() {
-      if (subnetIdBuilder_ != null) {
-        return subnetIdBuilder_.getMessageOrBuilder();
-      } else {
-        return subnetId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : subnetId_;
-      }
+    public Builder clearSubnetNameRef() {
+      
+      subnetNameRef_ = getDefaultInstance().getSubnetNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * subnet this mapping is in
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey subnet_id = 4;</code>
+     * <code>string subnet_name_ref = 3;</code>
+     * @param value The bytes for subnetNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSubnetIdFieldBuilder() {
-      if (subnetIdBuilder_ == null) {
-        subnetIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSubnetId(),
-                getParentForChildren(),
-                isClean());
-        subnetId_ = null;
-      }
-      return subnetIdBuilder_;
+    public Builder setSubnetNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      subnetNameRef_ = value;
+      onChanged();
+      return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vnicIdBuilder_;
     /**
      * <pre>
      * if IP is that of local vnic, corresponding vnic id
      * this is mandatory attribute for local IP mappings
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     * @return Whether the vnicId field is set.
+     * <code>string vnic_name_ref = 4;</code>
+     * @return Whether the vnicNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasVnicId() {
+    public boolean hasVnicNameRef() {
+      return dstinfoCase_ == 4;
+    }
+    /**
+     * <pre>
+     * if IP is that of local vnic, corresponding vnic id
+     * this is mandatory attribute for local IP mappings
+     * </pre>
+     *
+     * <code>string vnic_name_ref = 4;</code>
+     * @return The vnicNameRef.
+     */
+    @java.lang.Override
+    public java.lang.String getVnicNameRef() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 4) {
+        ref = dstinfo_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (dstinfoCase_ == 4) {
+          dstinfo_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * if IP is that of local vnic, corresponding vnic id
+     * this is mandatory attribute for local IP mappings
+     * </pre>
+     *
+     * <code>string vnic_name_ref = 4;</code>
+     * @return The bytes for vnicNameRef.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVnicNameRefBytes() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 4) {
+        ref = dstinfo_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (dstinfoCase_ == 4) {
+          dstinfo_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * if IP is that of local vnic, corresponding vnic id
+     * this is mandatory attribute for local IP mappings
+     * </pre>
+     *
+     * <code>string vnic_name_ref = 4;</code>
+     * @param value The vnicNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVnicNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  dstinfoCase_ = 4;
+      dstinfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * if IP is that of local vnic, corresponding vnic id
+     * this is mandatory attribute for local IP mappings
+     * </pre>
+     *
+     * <code>string vnic_name_ref = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVnicNameRef() {
+      if (dstinfoCase_ == 4) {
+        dstinfoCase_ = 0;
+        dstinfo_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * if IP is that of local vnic, corresponding vnic id
+     * this is mandatory attribute for local IP mappings
+     * </pre>
+     *
+     * <code>string vnic_name_ref = 4;</code>
+     * @param value The bytes for vnicNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVnicNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      dstinfoCase_ = 4;
+      dstinfo_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Tunnel ID of the remote TEP for remote mapping
+     * this is mandatory attribute for remote MAC/IP mappings for
+     * non-ECMP cases
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 5;</code>
+     * @return Whether the tunnelNameRef field is set.
+     */
+    @java.lang.Override
+    public boolean hasTunnelNameRef() {
       return dstinfoCase_ == 5;
     }
     /**
      * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
+     * Tunnel ID of the remote TEP for remote mapping
+     * this is mandatory attribute for remote MAC/IP mappings for
+     * non-ECMP cases
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     * @return The vnicId.
+     * <code>string tunnel_name_ref = 5;</code>
+     * @return The tunnelNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getVnicId() {
-      if (vnicIdBuilder_ == null) {
+    public java.lang.String getTunnelNameRef() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 5) {
+        ref = dstinfo_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (dstinfoCase_ == 5) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
+          dstinfo_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (dstinfoCase_ == 5) {
-          return vnicIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    public Builder setVnicId(opi_api.common.v1.ObjectKey value) {
-      if (vnicIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        dstinfo_ = value;
-        onChanged();
-      } else {
-        vnicIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    public Builder setVnicId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vnicIdBuilder_ == null) {
-        dstinfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        vnicIdBuilder_.setMessage(builderForValue.build());
-      }
-      dstinfoCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    public Builder mergeVnicId(opi_api.common.v1.ObjectKey value) {
-      if (vnicIdBuilder_ == null) {
-        if (dstinfoCase_ == 5 &&
-            dstinfo_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) dstinfo_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          dstinfo_ = value;
-        }
-        onChanged();
-      } else {
-        if (dstinfoCase_ == 5) {
-          vnicIdBuilder_.mergeFrom(value);
-        }
-        vnicIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    public Builder clearVnicId() {
-      if (vnicIdBuilder_ == null) {
-        if (dstinfoCase_ == 5) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-          onChanged();
-        }
-      } else {
-        if (dstinfoCase_ == 5) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-        }
-        vnicIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVnicIdBuilder() {
-      return getVnicIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getVnicIdOrBuilder() {
-      if ((dstinfoCase_ == 5) && (vnicIdBuilder_ != null)) {
-        return vnicIdBuilder_.getMessageOrBuilder();
-      } else {
-        if (dstinfoCase_ == 5) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * if IP is that of local vnic, corresponding vnic id
-     * this is mandatory attribute for local IP mappings
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vnic_id = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVnicIdFieldBuilder() {
-      if (vnicIdBuilder_ == null) {
-        if (!(dstinfoCase_ == 5)) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        vnicIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) dstinfo_,
-                getParentForChildren(),
-                isClean());
-        dstinfo_ = null;
-      }
-      dstinfoCase_ = 5;
-      onChanged();;
-      return vnicIdBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> tunnelIdBuilder_;
     /**
      * <pre>
      * Tunnel ID of the remote TEP for remote mapping
@@ -2346,376 +2051,215 @@ private static final long serialVersionUID = 0L;
      * non-ECMP cases
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     * @return Whether the tunnelId field is set.
+     * <code>string tunnel_name_ref = 5;</code>
+     * @return The bytes for tunnelNameRef.
      */
     @java.lang.Override
-    public boolean hasTunnelId() {
+    public com.google.protobuf.ByteString
+        getTunnelNameRefBytes() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 5) {
+        ref = dstinfo_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (dstinfoCase_ == 5) {
+          dstinfo_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Tunnel ID of the remote TEP for remote mapping
+     * this is mandatory attribute for remote MAC/IP mappings for
+     * non-ECMP cases
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 5;</code>
+     * @param value The tunnelNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTunnelNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  dstinfoCase_ = 5;
+      dstinfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tunnel ID of the remote TEP for remote mapping
+     * this is mandatory attribute for remote MAC/IP mappings for
+     * non-ECMP cases
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTunnelNameRef() {
+      if (dstinfoCase_ == 5) {
+        dstinfoCase_ = 0;
+        dstinfo_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tunnel ID of the remote TEP for remote mapping
+     * this is mandatory attribute for remote MAC/IP mappings for
+     * non-ECMP cases
+     * </pre>
+     *
+     * <code>string tunnel_name_ref = 5;</code>
+     * @param value The bytes for tunnelNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTunnelNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      dstinfoCase_ = 5;
+      dstinfo_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+     * </pre>
+     *
+     * <code>string nh_group_name_ref = 6;</code>
+     * @return Whether the nhGroupNameRef field is set.
+     */
+    @java.lang.Override
+    public boolean hasNhGroupNameRef() {
       return dstinfoCase_ == 6;
     }
     /**
      * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     * @return The tunnelId.
+     * <code>string nh_group_name_ref = 6;</code>
+     * @return The nhGroupNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getTunnelId() {
-      if (tunnelIdBuilder_ == null) {
+    public java.lang.String getNhGroupNameRef() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 6) {
+        ref = dstinfo_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (dstinfoCase_ == 6) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
+          dstinfo_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (dstinfoCase_ == 6) {
-          return tunnelIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     */
-    public Builder setTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        dstinfo_ = value;
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     */
-    public Builder setTunnelId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (tunnelIdBuilder_ == null) {
-        dstinfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(builderForValue.build());
-      }
-      dstinfoCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     */
-    public Builder mergeTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (dstinfoCase_ == 6 &&
-            dstinfo_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) dstinfo_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          dstinfo_ = value;
-        }
-        onChanged();
-      } else {
-        if (dstinfoCase_ == 6) {
-          tunnelIdBuilder_.mergeFrom(value);
-        }
-        tunnelIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     */
-    public Builder clearTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        if (dstinfoCase_ == 6) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-          onChanged();
-        }
-      } else {
-        if (dstinfoCase_ == 6) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-        }
-        tunnelIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getTunnelIdBuilder() {
-      return getTunnelIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
+     * <code>string nh_group_name_ref = 6;</code>
+     * @return The bytes for nhGroupNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-      if ((dstinfoCase_ == 6) && (tunnelIdBuilder_ != null)) {
-        return tunnelIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getNhGroupNameRefBytes() {
+      java.lang.Object ref = "";
+      if (dstinfoCase_ == 6) {
+        ref = dstinfo_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (dstinfoCase_ == 6) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
+          dstinfo_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
      * <pre>
-     * Tunnel ID of the remote TEP for remote mapping
-     * this is mandatory attribute for remote MAC/IP mappings for
-     * non-ECMP cases
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 6;</code>
+     * <code>string nh_group_name_ref = 6;</code>
+     * @param value The nhGroupNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getTunnelIdFieldBuilder() {
-      if (tunnelIdBuilder_ == null) {
-        if (!(dstinfoCase_ == 6)) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        tunnelIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) dstinfo_,
-                getParentForChildren(),
-                isClean());
+    public Builder setNhGroupNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  dstinfoCase_ = 6;
+      dstinfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+     * </pre>
+     *
+     * <code>string nh_group_name_ref = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNhGroupNameRef() {
+      if (dstinfoCase_ == 6) {
+        dstinfoCase_ = 0;
         dstinfo_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * overlay nexthop/TEP group for remote mappings
+     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
+     * </pre>
+     *
+     * <code>string nh_group_name_ref = 6;</code>
+     * @param value The bytes for nhGroupNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNhGroupNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       dstinfoCase_ = 6;
-      onChanged();;
-      return tunnelIdBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> nhGroupIdBuilder_;
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     * @return Whether the nhGroupId field is set.
-     */
-    @java.lang.Override
-    public boolean hasNhGroupId() {
-      return dstinfoCase_ == 7;
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     * @return The nhGroupId.
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKey getNhGroupId() {
-      if (nhGroupIdBuilder_ == null) {
-        if (dstinfoCase_ == 7) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      } else {
-        if (dstinfoCase_ == 7) {
-          return nhGroupIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder setNhGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nhGroupIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        dstinfo_ = value;
-        onChanged();
-      } else {
-        nhGroupIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 7;
+      dstinfo_ = value;
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder setNhGroupId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (nhGroupIdBuilder_ == null) {
-        dstinfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        nhGroupIdBuilder_.setMessage(builderForValue.build());
-      }
-      dstinfoCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder mergeNhGroupId(opi_api.common.v1.ObjectKey value) {
-      if (nhGroupIdBuilder_ == null) {
-        if (dstinfoCase_ == 7 &&
-            dstinfo_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) dstinfo_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          dstinfo_ = value;
-        }
-        onChanged();
-      } else {
-        if (dstinfoCase_ == 7) {
-          nhGroupIdBuilder_.mergeFrom(value);
-        }
-        nhGroupIdBuilder_.setMessage(value);
-      }
-      dstinfoCase_ = 7;
-      return this;
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public Builder clearNhGroupId() {
-      if (nhGroupIdBuilder_ == null) {
-        if (dstinfoCase_ == 7) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-          onChanged();
-        }
-      } else {
-        if (dstinfoCase_ == 7) {
-          dstinfoCase_ = 0;
-          dstinfo_ = null;
-        }
-        nhGroupIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getNhGroupIdBuilder() {
-      return getNhGroupIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getNhGroupIdOrBuilder() {
-      if ((dstinfoCase_ == 7) && (nhGroupIdBuilder_ != null)) {
-        return nhGroupIdBuilder_.getMessageOrBuilder();
-      } else {
-        if (dstinfoCase_ == 7) {
-          return (opi_api.common.v1.ObjectKey) dstinfo_;
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * overlay nexthop/TEP group for remote mappings
-     * this is mandatory attribute for remote MAC/IP mappings for ECMP cases
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey nh_group_id = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getNhGroupIdFieldBuilder() {
-      if (nhGroupIdBuilder_ == null) {
-        if (!(dstinfoCase_ == 7)) {
-          dstinfo_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        nhGroupIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) dstinfo_,
-                getParentForChildren(),
-                isClean());
-        dstinfo_ = null;
-      }
-      dstinfoCase_ = 7;
-      onChanged();;
-      return nhGroupIdBuilder_;
     }
 
     private com.google.protobuf.ByteString macAddr_ = com.google.protobuf.ByteString.EMPTY;
@@ -2724,7 +2268,7 @@ private static final long serialVersionUID = 0L;
      * overlay MAC address of this mapping
      * </pre>
      *
-     * <code>bytes mac_addr = 8;</code>
+     * <code>bytes mac_addr = 7;</code>
      * @return The macAddr.
      */
     @java.lang.Override
@@ -2736,7 +2280,7 @@ private static final long serialVersionUID = 0L;
      * overlay MAC address of this mapping
      * </pre>
      *
-     * <code>bytes mac_addr = 8;</code>
+     * <code>bytes mac_addr = 7;</code>
      * @param value The macAddr to set.
      * @return This builder for chaining.
      */
@@ -2754,7 +2298,7 @@ private static final long serialVersionUID = 0L;
      * overlay MAC address of this mapping
      * </pre>
      *
-     * <code>bytes mac_addr = 8;</code>
+     * <code>bytes mac_addr = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearMacAddr() {
@@ -2772,7 +2316,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      * @return Whether the encap field is set.
      */
     public boolean hasEncap() {
@@ -2783,7 +2327,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      * @return The encap.
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap getEncap() {
@@ -2798,7 +2342,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public Builder setEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (encapBuilder_ == null) {
@@ -2818,7 +2362,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public Builder setEncap(
         opi_api.network.opinetcommon.v1alpha1.Encap.Builder builderForValue) {
@@ -2836,7 +2380,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public Builder mergeEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (encapBuilder_ == null) {
@@ -2858,7 +2402,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public Builder clearEncap() {
       if (encapBuilder_ == null) {
@@ -2876,7 +2420,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap.Builder getEncapBuilder() {
       
@@ -2888,7 +2432,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getEncapOrBuilder() {
       if (encapBuilder_ != null) {
@@ -2903,7 +2447,7 @@ private static final long serialVersionUID = 0L;
      * fabric encap information specific to this mapping, if any
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 9;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap encap = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.Encap, opi_api.network.opinetcommon.v1alpha1.Encap.Builder, opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder> 
@@ -2927,7 +2471,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      * @return Whether the publicIp field is set.
      */
     public boolean hasPublicIp() {
@@ -2938,7 +2482,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      * @return The publicIp.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getPublicIp() {
@@ -2953,7 +2497,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public Builder setPublicIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (publicIpBuilder_ == null) {
@@ -2973,7 +2517,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public Builder setPublicIp(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -2991,7 +2535,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public Builder mergePublicIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (publicIpBuilder_ == null) {
@@ -3013,7 +2557,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public Builder clearPublicIp() {
       if (publicIpBuilder_ == null) {
@@ -3031,7 +2575,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getPublicIpBuilder() {
       
@@ -3043,7 +2587,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPublicIpOrBuilder() {
       if (publicIpBuilder_ != null) {
@@ -3058,7 +2602,7 @@ private static final long serialVersionUID = 0L;
      * public IP, if overlay IP has corresponding public IP
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress public_ip = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -3090,7 +2634,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @return A list containing the tags.
      */
     public java.util.List<java.lang.Integer>
@@ -3107,7 +2651,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
@@ -3122,7 +2666,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -3138,7 +2682,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @param index The index to set the value at.
      * @param value The tags to set.
      * @return This builder for chaining.
@@ -3159,7 +2703,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @param value The tags to add.
      * @return This builder for chaining.
      */
@@ -3178,7 +2722,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @param values The tags to add.
      * @return This builder for chaining.
      */
@@ -3199,7 +2743,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: the allowed values need it to be uint32. --)
      * </pre>
      *
-     * <code>repeated uint32 tags = 11;</code>
+     * <code>repeated uint32 tags = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearTags() {
@@ -3215,7 +2759,7 @@ private static final long serialVersionUID = 0L;
      * type of the IP mapping endpoint, default is vpc mapping
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -3226,7 +2770,7 @@ private static final long serialVersionUID = 0L;
      * type of the IP mapping endpoint, default is vpc mapping
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -3241,7 +2785,7 @@ private static final long serialVersionUID = 0L;
      * type of the IP mapping endpoint, default is vpc mapping
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -3255,7 +2799,7 @@ private static final long serialVersionUID = 0L;
      * type of the IP mapping endpoint, default is vpc mapping
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -3273,7 +2817,7 @@ private static final long serialVersionUID = 0L;
      * type of the IP mapping endpoint, default is vpc mapping
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 12;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MappingType type = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {

@@ -92,25 +92,18 @@ public interface VnicStatusOrBuilder extends
    * secondary vnic of (primary) vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   * @return Whether the secondaryVnicId field is set.
+   * <code>string secondary_vnic_name_ref = 11;</code>
+   * @return The secondaryVnicNameRef.
    */
-  boolean hasSecondaryVnicId();
+  java.lang.String getSecondaryVnicNameRef();
   /**
    * <pre>
    * secondary vnic of (primary) vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   * @return The secondaryVnicId.
+   * <code>string secondary_vnic_name_ref = 11;</code>
+   * @return The bytes for secondaryVnicNameRef.
    */
-  opi_api.common.v1.ObjectKey getSecondaryVnicId();
-  /**
-   * <pre>
-   * secondary vnic of (primary) vnic
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSecondaryVnicIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSecondaryVnicNameRefBytes();
 }

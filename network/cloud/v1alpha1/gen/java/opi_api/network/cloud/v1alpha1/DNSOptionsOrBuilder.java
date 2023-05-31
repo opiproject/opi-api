@@ -24,10 +24,10 @@ public interface DNSOptionsOrBuilder extends
    * name exceeding 255 bytes are dropped
    * </pre>
    *
-   * <code>bool drop_large_domain_name_messages = 2;</code>
-   * @return The dropLargeDomainNameMessages.
+   * <code>bool drop_large_domain_name_ref = 2;</code>
+   * @return The dropLargeDomainNameRef.
    */
-  boolean getDropLargeDomainNameMessages();
+  boolean getDropLargeDomainNameRef();
 
   /**
    * <pre>

@@ -21,10 +21,12 @@ private static final long serialVersionUID = 0L;
   }
   private VpcSpec() {
     type_ = 0;
-    ingressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-    ingressV6SecurityPolicyId_ = java.util.Collections.emptyList();
-    egressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-    egressV6SecurityPolicyId_ = java.util.Collections.emptyList();
+    v4RouteTableNameRef_ = "";
+    v6RouteTableNameRef_ = "";
+    ingressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ingressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    egressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    egressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     virtualRouterMac_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -59,93 +61,66 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
             break;
           }
-          case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (v4RouteTableId_ != null) {
-              subBuilder = v4RouteTableId_.toBuilder();
-            }
-            v4RouteTableId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(v4RouteTableId_);
-              v4RouteTableId_ = subBuilder.buildPartial();
-            }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
+            v4RouteTableNameRef_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            v6RouteTableNameRef_ = s;
             break;
           }
           case 34: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (v6RouteTableId_ != null) {
-              subBuilder = v6RouteTableId_.toBuilder();
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              ingressV4SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
             }
-            v6RouteTableId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(v6RouteTableId_);
-              v6RouteTableId_ = subBuilder.buildPartial();
-            }
-
+            ingressV4SecurityPolicyNameRef_.add(s);
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              ingressV4SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>();
-              mutable_bitField0_ |= 0x00000001;
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              ingressV6SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
             }
-            ingressV4SecurityPolicyId_.add(
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry));
+            ingressV6SecurityPolicyNameRef_.add(s);
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              ingressV6SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>();
-              mutable_bitField0_ |= 0x00000002;
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              egressV4SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
             }
-            ingressV6SecurityPolicyId_.add(
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry));
+            egressV4SecurityPolicyNameRef_.add(s);
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              egressV4SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>();
-              mutable_bitField0_ |= 0x00000004;
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              egressV6SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
             }
-            egressV4SecurityPolicyId_.add(
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry));
+            egressV6SecurityPolicyNameRef_.add(s);
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              egressV6SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            egressV6SecurityPolicyId_.add(
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry));
-            break;
-          }
-          case 74: {
 
             virtualRouterMac_ = input.readBytes();
             break;
           }
-          case 82: {
+          case 74: {
             opi_api.network.opinetcommon.v1alpha1.Encap.Builder subBuilder = null;
             if (fabricEncap_ != null) {
               subBuilder = fabricEncap_.toBuilder();
@@ -158,7 +133,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 104: {
+          case 80: {
 
             tos_ = input.readInt32();
             break;
@@ -179,16 +154,16 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        ingressV4SecurityPolicyId_ = java.util.Collections.unmodifiableList(ingressV4SecurityPolicyId_);
+        ingressV4SecurityPolicyNameRef_ = ingressV4SecurityPolicyNameRef_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        ingressV6SecurityPolicyId_ = java.util.Collections.unmodifiableList(ingressV6SecurityPolicyId_);
+        ingressV6SecurityPolicyNameRef_ = ingressV6SecurityPolicyNameRef_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        egressV4SecurityPolicyId_ = java.util.Collections.unmodifiableList(egressV4SecurityPolicyId_);
+        egressV4SecurityPolicyNameRef_ = egressV4SecurityPolicyNameRef_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        egressV6SecurityPolicyId_ = java.util.Collections.unmodifiableList(egressV6SecurityPolicyId_);
+        egressV6SecurityPolicyNameRef_ = egressV6SecurityPolicyNameRef_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -207,52 +182,14 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.VpcSpec.class, opi_api.network.cloud.v1alpha1.VpcSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique key/identifier of VPC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of VPC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of VPC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 2;
+  public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
    * <pre>
    * type of the VPC
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -263,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * type of the VPC
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.VPCType getType() {
@@ -272,8 +209,8 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.VPCType.UNRECOGNIZED : result;
   }
 
-  public static final int V4_ROUTE_TABLE_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey v4RouteTableId_;
+  public static final int V4_ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object v4RouteTableNameRef_;
   /**
    * <pre>
    * identifier of the IPv4 route table to be used and this route table is
@@ -281,12 +218,21 @@ private static final long serialVersionUID = 0L;
    * table explicitly
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-   * @return Whether the v4RouteTableId field is set.
+   * <code>string v4_route_table_name_ref = 2;</code>
+   * @return The v4RouteTableNameRef.
    */
   @java.lang.Override
-  public boolean hasV4RouteTableId() {
-    return v4RouteTableId_ != null;
+  public java.lang.String getV4RouteTableNameRef() {
+    java.lang.Object ref = v4RouteTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      v4RouteTableNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
@@ -295,29 +241,26 @@ private static final long serialVersionUID = 0L;
    * table explicitly
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-   * @return The v4RouteTableId.
+   * <code>string v4_route_table_name_ref = 2;</code>
+   * @return The bytes for v4RouteTableNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getV4RouteTableId() {
-    return v4RouteTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : v4RouteTableId_;
-  }
-  /**
-   * <pre>
-   * identifier of the IPv4 route table to be used and this route table is
-   * inherited by the subnets under this VPC, if they are created with no route
-   * table explicitly
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getV4RouteTableIdOrBuilder() {
-    return getV4RouteTableId();
+  public com.google.protobuf.ByteString
+      getV4RouteTableNameRefBytes() {
+    java.lang.Object ref = v4RouteTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      v4RouteTableNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int V6_ROUTE_TABLE_ID_FIELD_NUMBER = 4;
-  private opi_api.common.v1.ObjectKey v6RouteTableId_;
+  public static final int V6_ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 3;
+  private volatile java.lang.Object v6RouteTableNameRef_;
   /**
    * <pre>
    * identifier of the IPv6 route table to be used, if any and this route table
@@ -325,26 +268,21 @@ private static final long serialVersionUID = 0L;
    * route table explicitly
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-   * @return Whether the v6RouteTableId field is set.
+   * <code>string v6_route_table_name_ref = 3;</code>
+   * @return The v6RouteTableNameRef.
    */
   @java.lang.Override
-  public boolean hasV6RouteTableId() {
-    return v6RouteTableId_ != null;
-  }
-  /**
-   * <pre>
-   * identifier of the IPv6 route table to be used, if any and this route table
-   * is inherited by the subnets under this VPC, if they are created with no
-   * route table explicitly
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-   * @return The v6RouteTableId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getV6RouteTableId() {
-    return v6RouteTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : v6RouteTableId_;
+  public java.lang.String getV6RouteTableNameRef() {
+    java.lang.Object ref = v6RouteTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      v6RouteTableNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
@@ -353,15 +291,26 @@ private static final long serialVersionUID = 0L;
    * route table explicitly
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
+   * <code>string v6_route_table_name_ref = 3;</code>
+   * @return The bytes for v6RouteTableNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getV6RouteTableIdOrBuilder() {
-    return getV6RouteTableId();
+  public com.google.protobuf.ByteString
+      getV6RouteTableNameRefBytes() {
+    java.lang.Object ref = v6RouteTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      v6RouteTableNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int INGRESS_V4_SECURITY_POLICY_ID_FIELD_NUMBER = 5;
-  private java.util.List<opi_api.common.v1.ObjectKey> ingressV4SecurityPolicyId_;
+  public static final int INGRESS_V4_SECURITY_POLICY_NAME_REF_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList ingressV4SecurityPolicyNameRef_;
   /**
    * <pre>
    * For various security policies
@@ -371,42 +320,12 @@ private static final long serialVersionUID = 0L;
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+   * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+   * @return A list containing the ingressV4SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<opi_api.common.v1.ObjectKey> getIngressV4SecurityPolicyIdList() {
-    return ingressV4SecurityPolicyId_;
-  }
-  /**
-   * <pre>
-   * For various security policies
-   * - all vnics in this VPC will inherit the policies configured under VPC
-   * - there can be multiple policies per vnic per direction (ingress/egress)
-   * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-   * identifier of ingress IPv4 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getIngressV4SecurityPolicyIdOrBuilderList() {
-    return ingressV4SecurityPolicyId_;
-  }
-  /**
-   * <pre>
-   * For various security policies
-   * - all vnics in this VPC will inherit the policies configured under VPC
-   * - there can be multiple policies per vnic per direction (ingress/egress)
-   * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-   * identifier of ingress IPv4 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-   */
-  @java.lang.Override
-  public int getIngressV4SecurityPolicyIdCount() {
-    return ingressV4SecurityPolicyId_.size();
+  public com.google.protobuf.ProtocolStringList
+      getIngressV4SecurityPolicyNameRefList() {
+    return ingressV4SecurityPolicyNameRef_;
   }
   /**
    * <pre>
@@ -417,11 +336,11 @@ private static final long serialVersionUID = 0L;
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+   * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+   * @return The count of ingressV4SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getIngressV4SecurityPolicyId(int index) {
-    return ingressV4SecurityPolicyId_.get(index);
+  public int getIngressV4SecurityPolicyNameRefCount() {
+    return ingressV4SecurityPolicyNameRef_.size();
   }
   /**
    * <pre>
@@ -432,195 +351,185 @@ private static final long serialVersionUID = 0L;
    * identifier of ingress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+   * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+   * @param index The index of the element to return.
+   * @return The ingressV4SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIngressV4SecurityPolicyIdOrBuilder(
-      int index) {
-    return ingressV4SecurityPolicyId_.get(index);
+  public java.lang.String getIngressV4SecurityPolicyNameRef(int index) {
+    return ingressV4SecurityPolicyNameRef_.get(index);
+  }
+  /**
+   * <pre>
+   * For various security policies
+   * - all vnics in this VPC will inherit the policies configured under VPC
+   * - there can be multiple policies per vnic per direction (ingress/egress)
+   * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
+   * identifier of ingress IPv4 security policy to be enforced
+   * </pre>
+   *
+   * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ingressV4SecurityPolicyNameRef at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getIngressV4SecurityPolicyNameRefBytes(int index) {
+    return ingressV4SecurityPolicyNameRef_.getByteString(index);
   }
 
-  public static final int INGRESS_V6_SECURITY_POLICY_ID_FIELD_NUMBER = 6;
-  private java.util.List<opi_api.common.v1.ObjectKey> ingressV6SecurityPolicyId_;
+  public static final int INGRESS_V6_SECURITY_POLICY_NAME_REF_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList ingressV6SecurityPolicyNameRef_;
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+   * @return A list containing the ingressV6SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<opi_api.common.v1.ObjectKey> getIngressV6SecurityPolicyIdList() {
-    return ingressV6SecurityPolicyId_;
+  public com.google.protobuf.ProtocolStringList
+      getIngressV6SecurityPolicyNameRefList() {
+    return ingressV6SecurityPolicyNameRef_;
   }
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+   * @return The count of ingressV6SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getIngressV6SecurityPolicyIdOrBuilderList() {
-    return ingressV6SecurityPolicyId_;
+  public int getIngressV6SecurityPolicyNameRefCount() {
+    return ingressV6SecurityPolicyNameRef_.size();
   }
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+   * @param index The index of the element to return.
+   * @return The ingressV6SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public int getIngressV6SecurityPolicyIdCount() {
-    return ingressV6SecurityPolicyId_.size();
+  public java.lang.String getIngressV6SecurityPolicyNameRef(int index) {
+    return ingressV6SecurityPolicyNameRef_.get(index);
   }
   /**
    * <pre>
    * identifier of ingress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+   * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ingressV6SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getIngressV6SecurityPolicyId(int index) {
-    return ingressV6SecurityPolicyId_.get(index);
-  }
-  /**
-   * <pre>
-   * identifier of ingress IPv6 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIngressV6SecurityPolicyIdOrBuilder(
-      int index) {
-    return ingressV6SecurityPolicyId_.get(index);
+  public com.google.protobuf.ByteString
+      getIngressV6SecurityPolicyNameRefBytes(int index) {
+    return ingressV6SecurityPolicyNameRef_.getByteString(index);
   }
 
-  public static final int EGRESS_V4_SECURITY_POLICY_ID_FIELD_NUMBER = 7;
-  private java.util.List<opi_api.common.v1.ObjectKey> egressV4SecurityPolicyId_;
+  public static final int EGRESS_V4_SECURITY_POLICY_NAME_REF_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList egressV4SecurityPolicyNameRef_;
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+   * @return A list containing the egressV4SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<opi_api.common.v1.ObjectKey> getEgressV4SecurityPolicyIdList() {
-    return egressV4SecurityPolicyId_;
+  public com.google.protobuf.ProtocolStringList
+      getEgressV4SecurityPolicyNameRefList() {
+    return egressV4SecurityPolicyNameRef_;
   }
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+   * @return The count of egressV4SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getEgressV4SecurityPolicyIdOrBuilderList() {
-    return egressV4SecurityPolicyId_;
+  public int getEgressV4SecurityPolicyNameRefCount() {
+    return egressV4SecurityPolicyNameRef_.size();
   }
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+   * @param index The index of the element to return.
+   * @return The egressV4SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public int getEgressV4SecurityPolicyIdCount() {
-    return egressV4SecurityPolicyId_.size();
+  public java.lang.String getEgressV4SecurityPolicyNameRef(int index) {
+    return egressV4SecurityPolicyNameRef_.get(index);
   }
   /**
    * <pre>
    * identifier of egress IPv4 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+   * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the egressV4SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getEgressV4SecurityPolicyId(int index) {
-    return egressV4SecurityPolicyId_.get(index);
-  }
-  /**
-   * <pre>
-   * identifier of egress IPv4 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getEgressV4SecurityPolicyIdOrBuilder(
-      int index) {
-    return egressV4SecurityPolicyId_.get(index);
+  public com.google.protobuf.ByteString
+      getEgressV4SecurityPolicyNameRefBytes(int index) {
+    return egressV4SecurityPolicyNameRef_.getByteString(index);
   }
 
-  public static final int EGRESS_V6_SECURITY_POLICY_ID_FIELD_NUMBER = 8;
-  private java.util.List<opi_api.common.v1.ObjectKey> egressV6SecurityPolicyId_;
+  public static final int EGRESS_V6_SECURITY_POLICY_NAME_REF_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList egressV6SecurityPolicyNameRef_;
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+   * @return A list containing the egressV6SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<opi_api.common.v1.ObjectKey> getEgressV6SecurityPolicyIdList() {
-    return egressV6SecurityPolicyId_;
+  public com.google.protobuf.ProtocolStringList
+      getEgressV6SecurityPolicyNameRefList() {
+    return egressV6SecurityPolicyNameRef_;
   }
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+   * @return The count of egressV6SecurityPolicyNameRef.
    */
-  @java.lang.Override
-  public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-      getEgressV6SecurityPolicyIdOrBuilderList() {
-    return egressV6SecurityPolicyId_;
+  public int getEgressV6SecurityPolicyNameRefCount() {
+    return egressV6SecurityPolicyNameRef_.size();
   }
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+   * @param index The index of the element to return.
+   * @return The egressV6SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public int getEgressV6SecurityPolicyIdCount() {
-    return egressV6SecurityPolicyId_.size();
+  public java.lang.String getEgressV6SecurityPolicyNameRef(int index) {
+    return egressV6SecurityPolicyNameRef_.get(index);
   }
   /**
    * <pre>
    * identifier of egress IPv6 security policy to be enforced
    * </pre>
    *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+   * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the egressV6SecurityPolicyNameRef at the given index.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getEgressV6SecurityPolicyId(int index) {
-    return egressV6SecurityPolicyId_.get(index);
-  }
-  /**
-   * <pre>
-   * identifier of egress IPv6 security policy to be enforced
-   * </pre>
-   *
-   * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getEgressV6SecurityPolicyIdOrBuilder(
-      int index) {
-    return egressV6SecurityPolicyId_.get(index);
+  public com.google.protobuf.ByteString
+      getEgressV6SecurityPolicyNameRefBytes(int index) {
+    return egressV6SecurityPolicyNameRef_.getByteString(index);
   }
 
-  public static final int VIRTUAL_ROUTER_MAC_FIELD_NUMBER = 9;
+  public static final int VIRTUAL_ROUTER_MAC_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString virtualRouterMac_;
   /**
    * <pre>
@@ -628,7 +537,7 @@ private static final long serialVersionUID = 0L;
    * VPC carry this MAC as source MAC
    * </pre>
    *
-   * <code>bytes virtual_router_mac = 9;</code>
+   * <code>bytes virtual_router_mac = 8;</code>
    * @return The virtualRouterMac.
    */
   @java.lang.Override
@@ -636,7 +545,7 @@ private static final long serialVersionUID = 0L;
     return virtualRouterMac_;
   }
 
-  public static final int FABRIC_ENCAP_FIELD_NUMBER = 10;
+  public static final int FABRIC_ENCAP_FIELD_NUMBER = 9;
   private opi_api.network.opinetcommon.v1alpha1.Encap fabricEncap_;
   /**
    * <pre>
@@ -645,7 +554,7 @@ private static final long serialVersionUID = 0L;
    * for other types of VPCs user need not provide fabric encap and will be unused when provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
    * @return Whether the fabricEncap field is set.
    */
   @java.lang.Override
@@ -659,7 +568,7 @@ private static final long serialVersionUID = 0L;
    * for other types of VPCs user need not provide fabric encap and will be unused when provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
    * @return The fabricEncap.
    */
   @java.lang.Override
@@ -673,14 +582,14 @@ private static final long serialVersionUID = 0L;
    * for other types of VPCs user need not provide fabric encap and will be unused when provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getFabricEncapOrBuilder() {
     return getFabricEncap();
   }
 
-  public static final int TOS_FIELD_NUMBER = 13;
+  public static final int TOS_FIELD_NUMBER = 10;
   private int tos_;
   /**
    * <pre>
@@ -694,7 +603,7 @@ private static final long serialVersionUID = 0L;
    * - tunnel objects, if configured with tos, will override this tos value
    * </pre>
    *
-   * <code>int32 tos = 13;</code>
+   * <code>int32 tos = 10;</code>
    * @return The tos.
    */
   @java.lang.Override
@@ -716,38 +625,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.VPCType.VPC_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, type_);
+      output.writeEnum(1, type_);
     }
-    if (v4RouteTableId_ != null) {
-      output.writeMessage(3, getV4RouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(v4RouteTableNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, v4RouteTableNameRef_);
     }
-    if (v6RouteTableId_ != null) {
-      output.writeMessage(4, getV6RouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(v6RouteTableNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, v6RouteTableNameRef_);
     }
-    for (int i = 0; i < ingressV4SecurityPolicyId_.size(); i++) {
-      output.writeMessage(5, ingressV4SecurityPolicyId_.get(i));
+    for (int i = 0; i < ingressV4SecurityPolicyNameRef_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ingressV4SecurityPolicyNameRef_.getRaw(i));
     }
-    for (int i = 0; i < ingressV6SecurityPolicyId_.size(); i++) {
-      output.writeMessage(6, ingressV6SecurityPolicyId_.get(i));
+    for (int i = 0; i < ingressV6SecurityPolicyNameRef_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ingressV6SecurityPolicyNameRef_.getRaw(i));
     }
-    for (int i = 0; i < egressV4SecurityPolicyId_.size(); i++) {
-      output.writeMessage(7, egressV4SecurityPolicyId_.get(i));
+    for (int i = 0; i < egressV4SecurityPolicyNameRef_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, egressV4SecurityPolicyNameRef_.getRaw(i));
     }
-    for (int i = 0; i < egressV6SecurityPolicyId_.size(); i++) {
-      output.writeMessage(8, egressV6SecurityPolicyId_.get(i));
+    for (int i = 0; i < egressV6SecurityPolicyNameRef_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, egressV6SecurityPolicyNameRef_.getRaw(i));
     }
     if (!virtualRouterMac_.isEmpty()) {
-      output.writeBytes(9, virtualRouterMac_);
+      output.writeBytes(8, virtualRouterMac_);
     }
     if (fabricEncap_ != null) {
-      output.writeMessage(10, getFabricEncap());
+      output.writeMessage(9, getFabricEncap());
     }
     if (tos_ != 0) {
-      output.writeInt32(13, tos_);
+      output.writeInt32(10, tos_);
     }
     unknownFields.writeTo(output);
   }
@@ -758,49 +664,59 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.VPCType.VPC_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, type_);
+        .computeEnumSize(1, type_);
     }
-    if (v4RouteTableId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getV4RouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(v4RouteTableNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, v4RouteTableNameRef_);
     }
-    if (v6RouteTableId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getV6RouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(v6RouteTableNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, v6RouteTableNameRef_);
     }
-    for (int i = 0; i < ingressV4SecurityPolicyId_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, ingressV4SecurityPolicyId_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < ingressV4SecurityPolicyNameRef_.size(); i++) {
+        dataSize += computeStringSizeNoTag(ingressV4SecurityPolicyNameRef_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIngressV4SecurityPolicyNameRefList().size();
     }
-    for (int i = 0; i < ingressV6SecurityPolicyId_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, ingressV6SecurityPolicyId_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < ingressV6SecurityPolicyNameRef_.size(); i++) {
+        dataSize += computeStringSizeNoTag(ingressV6SecurityPolicyNameRef_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIngressV6SecurityPolicyNameRefList().size();
     }
-    for (int i = 0; i < egressV4SecurityPolicyId_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, egressV4SecurityPolicyId_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < egressV4SecurityPolicyNameRef_.size(); i++) {
+        dataSize += computeStringSizeNoTag(egressV4SecurityPolicyNameRef_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEgressV4SecurityPolicyNameRefList().size();
     }
-    for (int i = 0; i < egressV6SecurityPolicyId_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, egressV6SecurityPolicyId_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < egressV6SecurityPolicyNameRef_.size(); i++) {
+        dataSize += computeStringSizeNoTag(egressV6SecurityPolicyNameRef_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEgressV6SecurityPolicyNameRefList().size();
     }
     if (!virtualRouterMac_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(9, virtualRouterMac_);
+        .computeBytesSize(8, virtualRouterMac_);
     }
     if (fabricEncap_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getFabricEncap());
+        .computeMessageSize(9, getFabricEncap());
     }
     if (tos_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, tos_);
+        .computeInt32Size(10, tos_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -817,30 +733,19 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.VpcSpec other = (opi_api.network.cloud.v1alpha1.VpcSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (type_ != other.type_) return false;
-    if (hasV4RouteTableId() != other.hasV4RouteTableId()) return false;
-    if (hasV4RouteTableId()) {
-      if (!getV4RouteTableId()
-          .equals(other.getV4RouteTableId())) return false;
-    }
-    if (hasV6RouteTableId() != other.hasV6RouteTableId()) return false;
-    if (hasV6RouteTableId()) {
-      if (!getV6RouteTableId()
-          .equals(other.getV6RouteTableId())) return false;
-    }
-    if (!getIngressV4SecurityPolicyIdList()
-        .equals(other.getIngressV4SecurityPolicyIdList())) return false;
-    if (!getIngressV6SecurityPolicyIdList()
-        .equals(other.getIngressV6SecurityPolicyIdList())) return false;
-    if (!getEgressV4SecurityPolicyIdList()
-        .equals(other.getEgressV4SecurityPolicyIdList())) return false;
-    if (!getEgressV6SecurityPolicyIdList()
-        .equals(other.getEgressV6SecurityPolicyIdList())) return false;
+    if (!getV4RouteTableNameRef()
+        .equals(other.getV4RouteTableNameRef())) return false;
+    if (!getV6RouteTableNameRef()
+        .equals(other.getV6RouteTableNameRef())) return false;
+    if (!getIngressV4SecurityPolicyNameRefList()
+        .equals(other.getIngressV4SecurityPolicyNameRefList())) return false;
+    if (!getIngressV6SecurityPolicyNameRefList()
+        .equals(other.getIngressV6SecurityPolicyNameRefList())) return false;
+    if (!getEgressV4SecurityPolicyNameRefList()
+        .equals(other.getEgressV4SecurityPolicyNameRefList())) return false;
+    if (!getEgressV6SecurityPolicyNameRefList()
+        .equals(other.getEgressV6SecurityPolicyNameRefList())) return false;
     if (!getVirtualRouterMac()
         .equals(other.getVirtualRouterMac())) return false;
     if (hasFabricEncap() != other.hasFabricEncap()) return false;
@@ -861,35 +766,27 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
-    if (hasV4RouteTableId()) {
-      hash = (37 * hash) + V4_ROUTE_TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getV4RouteTableId().hashCode();
+    hash = (37 * hash) + V4_ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getV4RouteTableNameRef().hashCode();
+    hash = (37 * hash) + V6_ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getV6RouteTableNameRef().hashCode();
+    if (getIngressV4SecurityPolicyNameRefCount() > 0) {
+      hash = (37 * hash) + INGRESS_V4_SECURITY_POLICY_NAME_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getIngressV4SecurityPolicyNameRefList().hashCode();
     }
-    if (hasV6RouteTableId()) {
-      hash = (37 * hash) + V6_ROUTE_TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getV6RouteTableId().hashCode();
+    if (getIngressV6SecurityPolicyNameRefCount() > 0) {
+      hash = (37 * hash) + INGRESS_V6_SECURITY_POLICY_NAME_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getIngressV6SecurityPolicyNameRefList().hashCode();
     }
-    if (getIngressV4SecurityPolicyIdCount() > 0) {
-      hash = (37 * hash) + INGRESS_V4_SECURITY_POLICY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getIngressV4SecurityPolicyIdList().hashCode();
+    if (getEgressV4SecurityPolicyNameRefCount() > 0) {
+      hash = (37 * hash) + EGRESS_V4_SECURITY_POLICY_NAME_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getEgressV4SecurityPolicyNameRefList().hashCode();
     }
-    if (getIngressV6SecurityPolicyIdCount() > 0) {
-      hash = (37 * hash) + INGRESS_V6_SECURITY_POLICY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getIngressV6SecurityPolicyIdList().hashCode();
-    }
-    if (getEgressV4SecurityPolicyIdCount() > 0) {
-      hash = (37 * hash) + EGRESS_V4_SECURITY_POLICY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEgressV4SecurityPolicyIdList().hashCode();
-    }
-    if (getEgressV6SecurityPolicyIdCount() > 0) {
-      hash = (37 * hash) + EGRESS_V6_SECURITY_POLICY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEgressV6SecurityPolicyIdList().hashCode();
+    if (getEgressV6SecurityPolicyNameRefCount() > 0) {
+      hash = (37 * hash) + EGRESS_V6_SECURITY_POLICY_NAME_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getEgressV6SecurityPolicyNameRefList().hashCode();
     }
     hash = (37 * hash) + VIRTUAL_ROUTER_MAC_FIELD_NUMBER;
     hash = (53 * hash) + getVirtualRouterMac().hashCode();
@@ -1031,59 +928,25 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getIngressV4SecurityPolicyIdFieldBuilder();
-        getIngressV6SecurityPolicyIdFieldBuilder();
-        getEgressV4SecurityPolicyIdFieldBuilder();
-        getEgressV6SecurityPolicyIdFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       type_ = 0;
 
-      if (v4RouteTableIdBuilder_ == null) {
-        v4RouteTableId_ = null;
-      } else {
-        v4RouteTableId_ = null;
-        v4RouteTableIdBuilder_ = null;
-      }
-      if (v6RouteTableIdBuilder_ == null) {
-        v6RouteTableId_ = null;
-      } else {
-        v6RouteTableId_ = null;
-        v6RouteTableIdBuilder_ = null;
-      }
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ingressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.clear();
-      }
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ingressV6SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.clear();
-      }
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        egressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      } else {
-        egressV4SecurityPolicyIdBuilder_.clear();
-      }
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        egressV6SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      } else {
-        egressV6SecurityPolicyIdBuilder_.clear();
-      }
+      v4RouteTableNameRef_ = "";
+
+      v6RouteTableNameRef_ = "";
+
+      ingressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ingressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      egressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      egressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       virtualRouterMac_ = com.google.protobuf.ByteString.EMPTY;
 
       if (fabricEncapBuilder_ == null) {
@@ -1121,58 +984,29 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.VpcSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.VpcSpec result = new opi_api.network.cloud.v1alpha1.VpcSpec(this);
       int from_bitField0_ = bitField0_;
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.type_ = type_;
-      if (v4RouteTableIdBuilder_ == null) {
-        result.v4RouteTableId_ = v4RouteTableId_;
-      } else {
-        result.v4RouteTableId_ = v4RouteTableIdBuilder_.build();
+      result.v4RouteTableNameRef_ = v4RouteTableNameRef_;
+      result.v6RouteTableNameRef_ = v6RouteTableNameRef_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        ingressV4SecurityPolicyNameRef_ = ingressV4SecurityPolicyNameRef_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
-      if (v6RouteTableIdBuilder_ == null) {
-        result.v6RouteTableId_ = v6RouteTableId_;
-      } else {
-        result.v6RouteTableId_ = v6RouteTableIdBuilder_.build();
+      result.ingressV4SecurityPolicyNameRef_ = ingressV4SecurityPolicyNameRef_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        ingressV6SecurityPolicyNameRef_ = ingressV6SecurityPolicyNameRef_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          ingressV4SecurityPolicyId_ = java.util.Collections.unmodifiableList(ingressV4SecurityPolicyId_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.ingressV4SecurityPolicyId_ = ingressV4SecurityPolicyId_;
-      } else {
-        result.ingressV4SecurityPolicyId_ = ingressV4SecurityPolicyIdBuilder_.build();
+      result.ingressV6SecurityPolicyNameRef_ = ingressV6SecurityPolicyNameRef_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        egressV4SecurityPolicyNameRef_ = egressV4SecurityPolicyNameRef_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          ingressV6SecurityPolicyId_ = java.util.Collections.unmodifiableList(ingressV6SecurityPolicyId_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.ingressV6SecurityPolicyId_ = ingressV6SecurityPolicyId_;
-      } else {
-        result.ingressV6SecurityPolicyId_ = ingressV6SecurityPolicyIdBuilder_.build();
+      result.egressV4SecurityPolicyNameRef_ = egressV4SecurityPolicyNameRef_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        egressV6SecurityPolicyNameRef_ = egressV6SecurityPolicyNameRef_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          egressV4SecurityPolicyId_ = java.util.Collections.unmodifiableList(egressV4SecurityPolicyId_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.egressV4SecurityPolicyId_ = egressV4SecurityPolicyId_;
-      } else {
-        result.egressV4SecurityPolicyId_ = egressV4SecurityPolicyIdBuilder_.build();
-      }
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          egressV6SecurityPolicyId_ = java.util.Collections.unmodifiableList(egressV6SecurityPolicyId_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.egressV6SecurityPolicyId_ = egressV6SecurityPolicyId_;
-      } else {
-        result.egressV6SecurityPolicyId_ = egressV6SecurityPolicyIdBuilder_.build();
-      }
+      result.egressV6SecurityPolicyNameRef_ = egressV6SecurityPolicyNameRef_;
       result.virtualRouterMac_ = virtualRouterMac_;
       if (fabricEncapBuilder_ == null) {
         result.fabricEncap_ = fabricEncap_;
@@ -1228,121 +1062,56 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.VpcSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.VpcSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
-      if (other.hasV4RouteTableId()) {
-        mergeV4RouteTableId(other.getV4RouteTableId());
+      if (!other.getV4RouteTableNameRef().isEmpty()) {
+        v4RouteTableNameRef_ = other.v4RouteTableNameRef_;
+        onChanged();
       }
-      if (other.hasV6RouteTableId()) {
-        mergeV6RouteTableId(other.getV6RouteTableId());
+      if (!other.getV6RouteTableNameRef().isEmpty()) {
+        v6RouteTableNameRef_ = other.v6RouteTableNameRef_;
+        onChanged();
       }
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        if (!other.ingressV4SecurityPolicyId_.isEmpty()) {
-          if (ingressV4SecurityPolicyId_.isEmpty()) {
-            ingressV4SecurityPolicyId_ = other.ingressV4SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureIngressV4SecurityPolicyIdIsMutable();
-            ingressV4SecurityPolicyId_.addAll(other.ingressV4SecurityPolicyId_);
-          }
-          onChanged();
+      if (!other.ingressV4SecurityPolicyNameRef_.isEmpty()) {
+        if (ingressV4SecurityPolicyNameRef_.isEmpty()) {
+          ingressV4SecurityPolicyNameRef_ = other.ingressV4SecurityPolicyNameRef_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureIngressV4SecurityPolicyNameRefIsMutable();
+          ingressV4SecurityPolicyNameRef_.addAll(other.ingressV4SecurityPolicyNameRef_);
         }
-      } else {
-        if (!other.ingressV4SecurityPolicyId_.isEmpty()) {
-          if (ingressV4SecurityPolicyIdBuilder_.isEmpty()) {
-            ingressV4SecurityPolicyIdBuilder_.dispose();
-            ingressV4SecurityPolicyIdBuilder_ = null;
-            ingressV4SecurityPolicyId_ = other.ingressV4SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            ingressV4SecurityPolicyIdBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIngressV4SecurityPolicyIdFieldBuilder() : null;
-          } else {
-            ingressV4SecurityPolicyIdBuilder_.addAllMessages(other.ingressV4SecurityPolicyId_);
-          }
-        }
+        onChanged();
       }
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        if (!other.ingressV6SecurityPolicyId_.isEmpty()) {
-          if (ingressV6SecurityPolicyId_.isEmpty()) {
-            ingressV6SecurityPolicyId_ = other.ingressV6SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureIngressV6SecurityPolicyIdIsMutable();
-            ingressV6SecurityPolicyId_.addAll(other.ingressV6SecurityPolicyId_);
-          }
-          onChanged();
+      if (!other.ingressV6SecurityPolicyNameRef_.isEmpty()) {
+        if (ingressV6SecurityPolicyNameRef_.isEmpty()) {
+          ingressV6SecurityPolicyNameRef_ = other.ingressV6SecurityPolicyNameRef_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureIngressV6SecurityPolicyNameRefIsMutable();
+          ingressV6SecurityPolicyNameRef_.addAll(other.ingressV6SecurityPolicyNameRef_);
         }
-      } else {
-        if (!other.ingressV6SecurityPolicyId_.isEmpty()) {
-          if (ingressV6SecurityPolicyIdBuilder_.isEmpty()) {
-            ingressV6SecurityPolicyIdBuilder_.dispose();
-            ingressV6SecurityPolicyIdBuilder_ = null;
-            ingressV6SecurityPolicyId_ = other.ingressV6SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            ingressV6SecurityPolicyIdBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIngressV6SecurityPolicyIdFieldBuilder() : null;
-          } else {
-            ingressV6SecurityPolicyIdBuilder_.addAllMessages(other.ingressV6SecurityPolicyId_);
-          }
-        }
+        onChanged();
       }
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        if (!other.egressV4SecurityPolicyId_.isEmpty()) {
-          if (egressV4SecurityPolicyId_.isEmpty()) {
-            egressV4SecurityPolicyId_ = other.egressV4SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureEgressV4SecurityPolicyIdIsMutable();
-            egressV4SecurityPolicyId_.addAll(other.egressV4SecurityPolicyId_);
-          }
-          onChanged();
+      if (!other.egressV4SecurityPolicyNameRef_.isEmpty()) {
+        if (egressV4SecurityPolicyNameRef_.isEmpty()) {
+          egressV4SecurityPolicyNameRef_ = other.egressV4SecurityPolicyNameRef_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureEgressV4SecurityPolicyNameRefIsMutable();
+          egressV4SecurityPolicyNameRef_.addAll(other.egressV4SecurityPolicyNameRef_);
         }
-      } else {
-        if (!other.egressV4SecurityPolicyId_.isEmpty()) {
-          if (egressV4SecurityPolicyIdBuilder_.isEmpty()) {
-            egressV4SecurityPolicyIdBuilder_.dispose();
-            egressV4SecurityPolicyIdBuilder_ = null;
-            egressV4SecurityPolicyId_ = other.egressV4SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            egressV4SecurityPolicyIdBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEgressV4SecurityPolicyIdFieldBuilder() : null;
-          } else {
-            egressV4SecurityPolicyIdBuilder_.addAllMessages(other.egressV4SecurityPolicyId_);
-          }
-        }
+        onChanged();
       }
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        if (!other.egressV6SecurityPolicyId_.isEmpty()) {
-          if (egressV6SecurityPolicyId_.isEmpty()) {
-            egressV6SecurityPolicyId_ = other.egressV6SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureEgressV6SecurityPolicyIdIsMutable();
-            egressV6SecurityPolicyId_.addAll(other.egressV6SecurityPolicyId_);
-          }
-          onChanged();
+      if (!other.egressV6SecurityPolicyNameRef_.isEmpty()) {
+        if (egressV6SecurityPolicyNameRef_.isEmpty()) {
+          egressV6SecurityPolicyNameRef_ = other.egressV6SecurityPolicyNameRef_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureEgressV6SecurityPolicyNameRefIsMutable();
+          egressV6SecurityPolicyNameRef_.addAll(other.egressV6SecurityPolicyNameRef_);
         }
-      } else {
-        if (!other.egressV6SecurityPolicyId_.isEmpty()) {
-          if (egressV6SecurityPolicyIdBuilder_.isEmpty()) {
-            egressV6SecurityPolicyIdBuilder_.dispose();
-            egressV6SecurityPolicyIdBuilder_ = null;
-            egressV6SecurityPolicyId_ = other.egressV6SecurityPolicyId_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            egressV6SecurityPolicyIdBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEgressV6SecurityPolicyIdFieldBuilder() : null;
-          } else {
-            egressV6SecurityPolicyIdBuilder_.addAllMessages(other.egressV6SecurityPolicyId_);
-          }
-        }
+        onChanged();
       }
       if (other.getVirtualRouterMac() != com.google.protobuf.ByteString.EMPTY) {
         setVirtualRouterMac(other.getVirtualRouterMac());
@@ -1383,168 +1152,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of VPC
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int type_ = 0;
     /**
      * <pre>
      * type of the VPC
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1555,7 +1169,7 @@ private static final long serialVersionUID = 0L;
      * type of the VPC
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1570,7 +1184,7 @@ private static final long serialVersionUID = 0L;
      * type of the VPC
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1584,7 +1198,7 @@ private static final long serialVersionUID = 0L;
      * type of the VPC
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1602,7 +1216,7 @@ private static final long serialVersionUID = 0L;
      * type of the VPC
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.VPCType type = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -1612,9 +1226,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey v4RouteTableId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> v4RouteTableIdBuilder_;
+    private java.lang.Object v4RouteTableNameRef_ = "";
     /**
      * <pre>
      * identifier of the IPv4 route table to be used and this route table is
@@ -1622,27 +1234,19 @@ private static final long serialVersionUID = 0L;
      * table explicitly
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     * @return Whether the v4RouteTableId field is set.
+     * <code>string v4_route_table_name_ref = 2;</code>
+     * @return The v4RouteTableNameRef.
      */
-    public boolean hasV4RouteTableId() {
-      return v4RouteTableIdBuilder_ != null || v4RouteTableId_ != null;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv4 route table to be used and this route table is
-     * inherited by the subnets under this VPC, if they are created with no route
-     * table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     * @return The v4RouteTableId.
-     */
-    public opi_api.common.v1.ObjectKey getV4RouteTableId() {
-      if (v4RouteTableIdBuilder_ == null) {
-        return v4RouteTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : v4RouteTableId_;
+    public java.lang.String getV4RouteTableNameRef() {
+      java.lang.Object ref = v4RouteTableNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        v4RouteTableNameRef_ = s;
+        return s;
       } else {
-        return v4RouteTableIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1652,20 +1256,21 @@ private static final long serialVersionUID = 0L;
      * table explicitly
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
+     * <code>string v4_route_table_name_ref = 2;</code>
+     * @return The bytes for v4RouteTableNameRef.
      */
-    public Builder setV4RouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (v4RouteTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        v4RouteTableId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getV4RouteTableNameRefBytes() {
+      java.lang.Object ref = v4RouteTableNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        v4RouteTableNameRef_ = b;
+        return b;
       } else {
-        v4RouteTableIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
@@ -1674,76 +1279,19 @@ private static final long serialVersionUID = 0L;
      * table explicitly
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
+     * <code>string v4_route_table_name_ref = 2;</code>
+     * @param value The v4RouteTableNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setV4RouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (v4RouteTableIdBuilder_ == null) {
-        v4RouteTableId_ = builderForValue.build();
-        onChanged();
-      } else {
-        v4RouteTableIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv4 route table to be used and this route table is
-     * inherited by the subnets under this VPC, if they are created with no route
-     * table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     */
-    public Builder mergeV4RouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (v4RouteTableIdBuilder_ == null) {
-        if (v4RouteTableId_ != null) {
-          v4RouteTableId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(v4RouteTableId_).mergeFrom(value).buildPartial();
-        } else {
-          v4RouteTableId_ = value;
-        }
-        onChanged();
-      } else {
-        v4RouteTableIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv4 route table to be used and this route table is
-     * inherited by the subnets under this VPC, if they are created with no route
-     * table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     */
-    public Builder clearV4RouteTableId() {
-      if (v4RouteTableIdBuilder_ == null) {
-        v4RouteTableId_ = null;
-        onChanged();
-      } else {
-        v4RouteTableId_ = null;
-        v4RouteTableIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv4 route table to be used and this route table is
-     * inherited by the subnets under this VPC, if they are created with no route
-     * table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getV4RouteTableIdBuilder() {
-      
+    public Builder setV4RouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      v4RouteTableNameRef_ = value;
       onChanged();
-      return getV4RouteTableIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
@@ -1752,224 +1300,151 @@ private static final long serialVersionUID = 0L;
      * table explicitly
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
+     * <code>string v4_route_table_name_ref = 2;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getV4RouteTableIdOrBuilder() {
-      if (v4RouteTableIdBuilder_ != null) {
-        return v4RouteTableIdBuilder_.getMessageOrBuilder();
-      } else {
-        return v4RouteTableId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : v4RouteTableId_;
-      }
-    }
-    /**
-     * <pre>
-     * identifier of the IPv4 route table to be used and this route table is
-     * inherited by the subnets under this VPC, if they are created with no route
-     * table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v4_route_table_id = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getV4RouteTableIdFieldBuilder() {
-      if (v4RouteTableIdBuilder_ == null) {
-        v4RouteTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getV4RouteTableId(),
-                getParentForChildren(),
-                isClean());
-        v4RouteTableId_ = null;
-      }
-      return v4RouteTableIdBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey v6RouteTableId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> v6RouteTableIdBuilder_;
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     * @return Whether the v6RouteTableId field is set.
-     */
-    public boolean hasV6RouteTableId() {
-      return v6RouteTableIdBuilder_ != null || v6RouteTableId_ != null;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     * @return The v6RouteTableId.
-     */
-    public opi_api.common.v1.ObjectKey getV6RouteTableId() {
-      if (v6RouteTableIdBuilder_ == null) {
-        return v6RouteTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : v6RouteTableId_;
-      } else {
-        return v6RouteTableIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    public Builder setV6RouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (v6RouteTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        v6RouteTableId_ = value;
-        onChanged();
-      } else {
-        v6RouteTableIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    public Builder setV6RouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (v6RouteTableIdBuilder_ == null) {
-        v6RouteTableId_ = builderForValue.build();
-        onChanged();
-      } else {
-        v6RouteTableIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    public Builder mergeV6RouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (v6RouteTableIdBuilder_ == null) {
-        if (v6RouteTableId_ != null) {
-          v6RouteTableId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(v6RouteTableId_).mergeFrom(value).buildPartial();
-        } else {
-          v6RouteTableId_ = value;
-        }
-        onChanged();
-      } else {
-        v6RouteTableIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    public Builder clearV6RouteTableId() {
-      if (v6RouteTableIdBuilder_ == null) {
-        v6RouteTableId_ = null;
-        onChanged();
-      } else {
-        v6RouteTableId_ = null;
-        v6RouteTableIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getV6RouteTableIdBuilder() {
+    public Builder clearV4RouteTableNameRef() {
       
+      v4RouteTableNameRef_ = getDefaultInstance().getV4RouteTableNameRef();
       onChanged();
-      return getV6RouteTableIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
+     * identifier of the IPv4 route table to be used and this route table is
+     * inherited by the subnets under this VPC, if they are created with no route
+     * table explicitly
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
+     * <code>string v4_route_table_name_ref = 2;</code>
+     * @param value The bytes for v4RouteTableNameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getV6RouteTableIdOrBuilder() {
-      if (v6RouteTableIdBuilder_ != null) {
-        return v6RouteTableIdBuilder_.getMessageOrBuilder();
-      } else {
-        return v6RouteTableId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : v6RouteTableId_;
-      }
-    }
-    /**
-     * <pre>
-     * identifier of the IPv6 route table to be used, if any and this route table
-     * is inherited by the subnets under this VPC, if they are created with no
-     * route table explicitly
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey v6_route_table_id = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getV6RouteTableIdFieldBuilder() {
-      if (v6RouteTableIdBuilder_ == null) {
-        v6RouteTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getV6RouteTableId(),
-                getParentForChildren(),
-                isClean());
-        v6RouteTableId_ = null;
-      }
-      return v6RouteTableIdBuilder_;
+    public Builder setV4RouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      v4RouteTableNameRef_ = value;
+      onChanged();
+      return this;
     }
 
-    private java.util.List<opi_api.common.v1.ObjectKey> ingressV4SecurityPolicyId_ =
-      java.util.Collections.emptyList();
-    private void ensureIngressV4SecurityPolicyIdIsMutable() {
+    private java.lang.Object v6RouteTableNameRef_ = "";
+    /**
+     * <pre>
+     * identifier of the IPv6 route table to be used, if any and this route table
+     * is inherited by the subnets under this VPC, if they are created with no
+     * route table explicitly
+     * </pre>
+     *
+     * <code>string v6_route_table_name_ref = 3;</code>
+     * @return The v6RouteTableNameRef.
+     */
+    public java.lang.String getV6RouteTableNameRef() {
+      java.lang.Object ref = v6RouteTableNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        v6RouteTableNameRef_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * identifier of the IPv6 route table to be used, if any and this route table
+     * is inherited by the subnets under this VPC, if they are created with no
+     * route table explicitly
+     * </pre>
+     *
+     * <code>string v6_route_table_name_ref = 3;</code>
+     * @return The bytes for v6RouteTableNameRef.
+     */
+    public com.google.protobuf.ByteString
+        getV6RouteTableNameRefBytes() {
+      java.lang.Object ref = v6RouteTableNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        v6RouteTableNameRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * identifier of the IPv6 route table to be used, if any and this route table
+     * is inherited by the subnets under this VPC, if they are created with no
+     * route table explicitly
+     * </pre>
+     *
+     * <code>string v6_route_table_name_ref = 3;</code>
+     * @param value The v6RouteTableNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setV6RouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      v6RouteTableNameRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * identifier of the IPv6 route table to be used, if any and this route table
+     * is inherited by the subnets under this VPC, if they are created with no
+     * route table explicitly
+     * </pre>
+     *
+     * <code>string v6_route_table_name_ref = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearV6RouteTableNameRef() {
+      
+      v6RouteTableNameRef_ = getDefaultInstance().getV6RouteTableNameRef();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * identifier of the IPv6 route table to be used, if any and this route table
+     * is inherited by the subnets under this VPC, if they are created with no
+     * route table explicitly
+     * </pre>
+     *
+     * <code>string v6_route_table_name_ref = 3;</code>
+     * @param value The bytes for v6RouteTableNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setV6RouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      v6RouteTableNameRef_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList ingressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureIngressV4SecurityPolicyNameRefIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        ingressV4SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>(ingressV4SecurityPolicyId_);
+        ingressV4SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList(ingressV4SecurityPolicyNameRef_);
         bitField0_ |= 0x00000001;
        }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> ingressV4SecurityPolicyIdBuilder_;
-
     /**
      * <pre>
      * For various security policies
@@ -1979,14 +1454,12 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @return A list containing the ingressV4SecurityPolicyNameRef.
      */
-    public java.util.List<opi_api.common.v1.ObjectKey> getIngressV4SecurityPolicyIdList() {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(ingressV4SecurityPolicyId_);
-      } else {
-        return ingressV4SecurityPolicyIdBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getIngressV4SecurityPolicyNameRefList() {
+      return ingressV4SecurityPolicyNameRef_.getUnmodifiableView();
     }
     /**
      * <pre>
@@ -1997,14 +1470,11 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @return The count of ingressV4SecurityPolicyNameRef.
      */
-    public int getIngressV4SecurityPolicyIdCount() {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        return ingressV4SecurityPolicyId_.size();
-      } else {
-        return ingressV4SecurityPolicyIdBuilder_.getCount();
-      }
+    public int getIngressV4SecurityPolicyNameRefCount() {
+      return ingressV4SecurityPolicyNameRef_.size();
     }
     /**
      * <pre>
@@ -2015,14 +1485,12 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param index The index of the element to return.
+     * @return The ingressV4SecurityPolicyNameRef at the given index.
      */
-    public opi_api.common.v1.ObjectKey getIngressV4SecurityPolicyId(int index) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        return ingressV4SecurityPolicyId_.get(index);
-      } else {
-        return ingressV4SecurityPolicyIdBuilder_.getMessage(index);
-      }
+    public java.lang.String getIngressV4SecurityPolicyNameRef(int index) {
+      return ingressV4SecurityPolicyNameRef_.get(index);
     }
     /**
      * <pre>
@@ -2033,20 +1501,36 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ingressV4SecurityPolicyNameRef at the given index.
      */
-    public Builder setIngressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.set(index, value);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.setMessage(index, value);
-      }
+    public com.google.protobuf.ByteString
+        getIngressV4SecurityPolicyNameRefBytes(int index) {
+      return ingressV4SecurityPolicyNameRef_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * For various security policies
+     * - all vnics in this VPC will inherit the policies configured under VPC
+     * - there can be multiple policies per vnic per direction (ingress/egress)
+     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
+     * identifier of ingress IPv4 security policy to be enforced
+     * </pre>
+     *
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The ingressV4SecurityPolicyNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIngressV4SecurityPolicyNameRef(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIngressV4SecurityPolicyNameRefIsMutable();
+      ingressV4SecurityPolicyNameRef_.set(index, value);
+      onChanged();
       return this;
     }
     /**
@@ -2058,17 +1542,18 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param value The ingressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder setIngressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addIngressV4SecurityPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIngressV4SecurityPolicyNameRefIsMutable();
+      ingressV4SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
     }
     /**
@@ -2080,19 +1565,16 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param values The ingressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addIngressV4SecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.add(value);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.addMessage(value);
-      }
+    public Builder addAllIngressV4SecurityPolicyNameRef(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureIngressV4SecurityPolicyNameRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, ingressV4SecurityPolicyNameRef_);
+      onChanged();
       return this;
     }
     /**
@@ -2104,20 +1586,13 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @return This builder for chaining.
      */
-    public Builder addIngressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.add(index, value);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.addMessage(index, value);
-      }
+    public Builder clearIngressV4SecurityPolicyNameRef() {
+      ingressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -2129,292 +1604,95 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
+     * <code>repeated string ingress_v4_security_policy_name_ref = 4;</code>
+     * @param value The bytes of the ingressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addIngressV4SecurityPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.add(builderForValue.build());
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addIngressV4SecurityPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureIngressV4SecurityPolicyNameRefIsMutable();
+      ingressV4SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public Builder addIngressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public Builder addAllIngressV4SecurityPolicyId(
-        java.lang.Iterable<? extends opi_api.common.v1.ObjectKey> values) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, ingressV4SecurityPolicyId_);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public Builder clearIngressV4SecurityPolicyId() {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ingressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public Builder removeIngressV4SecurityPolicyId(int index) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV4SecurityPolicyIdIsMutable();
-        ingressV4SecurityPolicyId_.remove(index);
-        onChanged();
-      } else {
-        ingressV4SecurityPolicyIdBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIngressV4SecurityPolicyIdBuilder(
-        int index) {
-      return getIngressV4SecurityPolicyIdFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIngressV4SecurityPolicyIdOrBuilder(
-        int index) {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        return ingressV4SecurityPolicyId_.get(index);  } else {
-        return ingressV4SecurityPolicyIdBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-         getIngressV4SecurityPolicyIdOrBuilderList() {
-      if (ingressV4SecurityPolicyIdBuilder_ != null) {
-        return ingressV4SecurityPolicyIdBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(ingressV4SecurityPolicyId_);
-      }
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addIngressV4SecurityPolicyIdBuilder() {
-      return getIngressV4SecurityPolicyIdFieldBuilder().addBuilder(
-          opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addIngressV4SecurityPolicyIdBuilder(
-        int index) {
-      return getIngressV4SecurityPolicyIdFieldBuilder().addBuilder(
-          index, opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * For various security policies
-     * - all vnics in this VPC will inherit the policies configured under VPC
-     * - there can be multiple policies per vnic per direction (ingress/egress)
-     * - vpc policy in each direction is to be aggregated to contain all rules in a given direction
-     * identifier of ingress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v4_security_policy_id = 5;</code>
-     */
-    public java.util.List<opi_api.common.v1.ObjectKey.Builder> 
-         getIngressV4SecurityPolicyIdBuilderList() {
-      return getIngressV4SecurityPolicyIdFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIngressV4SecurityPolicyIdFieldBuilder() {
-      if (ingressV4SecurityPolicyIdBuilder_ == null) {
-        ingressV4SecurityPolicyIdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                ingressV4SecurityPolicyId_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        ingressV4SecurityPolicyId_ = null;
-      }
-      return ingressV4SecurityPolicyIdBuilder_;
     }
 
-    private java.util.List<opi_api.common.v1.ObjectKey> ingressV6SecurityPolicyId_ =
-      java.util.Collections.emptyList();
-    private void ensureIngressV6SecurityPolicyIdIsMutable() {
+    private com.google.protobuf.LazyStringList ingressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureIngressV6SecurityPolicyNameRefIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        ingressV6SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>(ingressV6SecurityPolicyId_);
+        ingressV6SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList(ingressV6SecurityPolicyNameRef_);
         bitField0_ |= 0x00000002;
        }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> ingressV6SecurityPolicyIdBuilder_;
-
     /**
      * <pre>
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @return A list containing the ingressV6SecurityPolicyNameRef.
      */
-    public java.util.List<opi_api.common.v1.ObjectKey> getIngressV6SecurityPolicyIdList() {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(ingressV6SecurityPolicyId_);
-      } else {
-        return ingressV6SecurityPolicyIdBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getIngressV6SecurityPolicyNameRefList() {
+      return ingressV6SecurityPolicyNameRef_.getUnmodifiableView();
     }
     /**
      * <pre>
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @return The count of ingressV6SecurityPolicyNameRef.
      */
-    public int getIngressV6SecurityPolicyIdCount() {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        return ingressV6SecurityPolicyId_.size();
-      } else {
-        return ingressV6SecurityPolicyIdBuilder_.getCount();
-      }
+    public int getIngressV6SecurityPolicyNameRefCount() {
+      return ingressV6SecurityPolicyNameRef_.size();
     }
     /**
      * <pre>
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param index The index of the element to return.
+     * @return The ingressV6SecurityPolicyNameRef at the given index.
      */
-    public opi_api.common.v1.ObjectKey getIngressV6SecurityPolicyId(int index) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        return ingressV6SecurityPolicyId_.get(index);
-      } else {
-        return ingressV6SecurityPolicyIdBuilder_.getMessage(index);
-      }
+    public java.lang.String getIngressV6SecurityPolicyNameRef(int index) {
+      return ingressV6SecurityPolicyNameRef_.get(index);
     }
     /**
      * <pre>
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ingressV6SecurityPolicyNameRef at the given index.
      */
-    public Builder setIngressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.set(index, value);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.setMessage(index, value);
-      }
+    public com.google.protobuf.ByteString
+        getIngressV6SecurityPolicyNameRefBytes(int index) {
+      return ingressV6SecurityPolicyNameRef_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * identifier of ingress IPv6 security policy to be enforced
+     * </pre>
+     *
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The ingressV6SecurityPolicyNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIngressV6SecurityPolicyNameRef(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIngressV6SecurityPolicyNameRefIsMutable();
+      ingressV6SecurityPolicyNameRef_.set(index, value);
+      onChanged();
       return this;
     }
     /**
@@ -2422,17 +1700,18 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param value The ingressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder setIngressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addIngressV6SecurityPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIngressV6SecurityPolicyNameRefIsMutable();
+      ingressV6SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
     }
     /**
@@ -2440,19 +1719,16 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param values The ingressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addIngressV6SecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.add(value);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.addMessage(value);
-      }
+    public Builder addAllIngressV6SecurityPolicyNameRef(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureIngressV6SecurityPolicyNameRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, ingressV6SecurityPolicyNameRef_);
+      onChanged();
       return this;
     }
     /**
@@ -2460,20 +1736,13 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @return This builder for chaining.
      */
-    public Builder addIngressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.add(index, value);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.addMessage(index, value);
-      }
+    public Builder clearIngressV6SecurityPolicyNameRef() {
+      ingressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
       return this;
     }
     /**
@@ -2481,252 +1750,95 @@ private static final long serialVersionUID = 0L;
      * identifier of ingress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
+     * <code>repeated string ingress_v6_security_policy_name_ref = 5;</code>
+     * @param value The bytes of the ingressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addIngressV6SecurityPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.add(builderForValue.build());
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addIngressV6SecurityPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureIngressV6SecurityPolicyNameRefIsMutable();
+      ingressV6SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public Builder addIngressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public Builder addAllIngressV6SecurityPolicyId(
-        java.lang.Iterable<? extends opi_api.common.v1.ObjectKey> values) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, ingressV6SecurityPolicyId_);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public Builder clearIngressV6SecurityPolicyId() {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ingressV6SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public Builder removeIngressV6SecurityPolicyId(int index) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ensureIngressV6SecurityPolicyIdIsMutable();
-        ingressV6SecurityPolicyId_.remove(index);
-        onChanged();
-      } else {
-        ingressV6SecurityPolicyIdBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIngressV6SecurityPolicyIdBuilder(
-        int index) {
-      return getIngressV6SecurityPolicyIdFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIngressV6SecurityPolicyIdOrBuilder(
-        int index) {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        return ingressV6SecurityPolicyId_.get(index);  } else {
-        return ingressV6SecurityPolicyIdBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-         getIngressV6SecurityPolicyIdOrBuilderList() {
-      if (ingressV6SecurityPolicyIdBuilder_ != null) {
-        return ingressV6SecurityPolicyIdBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(ingressV6SecurityPolicyId_);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addIngressV6SecurityPolicyIdBuilder() {
-      return getIngressV6SecurityPolicyIdFieldBuilder().addBuilder(
-          opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addIngressV6SecurityPolicyIdBuilder(
-        int index) {
-      return getIngressV6SecurityPolicyIdFieldBuilder().addBuilder(
-          index, opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of ingress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey ingress_v6_security_policy_id = 6;</code>
-     */
-    public java.util.List<opi_api.common.v1.ObjectKey.Builder> 
-         getIngressV6SecurityPolicyIdBuilderList() {
-      return getIngressV6SecurityPolicyIdFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIngressV6SecurityPolicyIdFieldBuilder() {
-      if (ingressV6SecurityPolicyIdBuilder_ == null) {
-        ingressV6SecurityPolicyIdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                ingressV6SecurityPolicyId_,
-                ((bitField0_ & 0x00000002) != 0),
-                getParentForChildren(),
-                isClean());
-        ingressV6SecurityPolicyId_ = null;
-      }
-      return ingressV6SecurityPolicyIdBuilder_;
     }
 
-    private java.util.List<opi_api.common.v1.ObjectKey> egressV4SecurityPolicyId_ =
-      java.util.Collections.emptyList();
-    private void ensureEgressV4SecurityPolicyIdIsMutable() {
+    private com.google.protobuf.LazyStringList egressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEgressV4SecurityPolicyNameRefIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
-        egressV4SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>(egressV4SecurityPolicyId_);
+        egressV4SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList(egressV4SecurityPolicyNameRef_);
         bitField0_ |= 0x00000004;
        }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> egressV4SecurityPolicyIdBuilder_;
-
     /**
      * <pre>
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @return A list containing the egressV4SecurityPolicyNameRef.
      */
-    public java.util.List<opi_api.common.v1.ObjectKey> getEgressV4SecurityPolicyIdList() {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(egressV4SecurityPolicyId_);
-      } else {
-        return egressV4SecurityPolicyIdBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getEgressV4SecurityPolicyNameRefList() {
+      return egressV4SecurityPolicyNameRef_.getUnmodifiableView();
     }
     /**
      * <pre>
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @return The count of egressV4SecurityPolicyNameRef.
      */
-    public int getEgressV4SecurityPolicyIdCount() {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        return egressV4SecurityPolicyId_.size();
-      } else {
-        return egressV4SecurityPolicyIdBuilder_.getCount();
-      }
+    public int getEgressV4SecurityPolicyNameRefCount() {
+      return egressV4SecurityPolicyNameRef_.size();
     }
     /**
      * <pre>
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param index The index of the element to return.
+     * @return The egressV4SecurityPolicyNameRef at the given index.
      */
-    public opi_api.common.v1.ObjectKey getEgressV4SecurityPolicyId(int index) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        return egressV4SecurityPolicyId_.get(index);
-      } else {
-        return egressV4SecurityPolicyIdBuilder_.getMessage(index);
-      }
+    public java.lang.String getEgressV4SecurityPolicyNameRef(int index) {
+      return egressV4SecurityPolicyNameRef_.get(index);
     }
     /**
      * <pre>
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the egressV4SecurityPolicyNameRef at the given index.
      */
-    public Builder setEgressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.set(index, value);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.setMessage(index, value);
-      }
+    public com.google.protobuf.ByteString
+        getEgressV4SecurityPolicyNameRefBytes(int index) {
+      return egressV4SecurityPolicyNameRef_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * identifier of egress IPv4 security policy to be enforced
+     * </pre>
+     *
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The egressV4SecurityPolicyNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEgressV4SecurityPolicyNameRef(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEgressV4SecurityPolicyNameRefIsMutable();
+      egressV4SecurityPolicyNameRef_.set(index, value);
+      onChanged();
       return this;
     }
     /**
@@ -2734,17 +1846,18 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param value The egressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder setEgressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addEgressV4SecurityPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEgressV4SecurityPolicyNameRefIsMutable();
+      egressV4SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
     }
     /**
@@ -2752,19 +1865,16 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param values The egressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addEgressV4SecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.add(value);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.addMessage(value);
-      }
+    public Builder addAllEgressV4SecurityPolicyNameRef(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEgressV4SecurityPolicyNameRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, egressV4SecurityPolicyNameRef_);
+      onChanged();
       return this;
     }
     /**
@@ -2772,20 +1882,13 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @return This builder for chaining.
      */
-    public Builder addEgressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.add(index, value);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.addMessage(index, value);
-      }
+    public Builder clearEgressV4SecurityPolicyNameRef() {
+      egressV4SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
       return this;
     }
     /**
@@ -2793,252 +1896,95 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv4 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
+     * <code>repeated string egress_v4_security_policy_name_ref = 6;</code>
+     * @param value The bytes of the egressV4SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addEgressV4SecurityPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.add(builderForValue.build());
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addEgressV4SecurityPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEgressV4SecurityPolicyNameRefIsMutable();
+      egressV4SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public Builder addEgressV4SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public Builder addAllEgressV4SecurityPolicyId(
-        java.lang.Iterable<? extends opi_api.common.v1.ObjectKey> values) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, egressV4SecurityPolicyId_);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public Builder clearEgressV4SecurityPolicyId() {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        egressV4SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public Builder removeEgressV4SecurityPolicyId(int index) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV4SecurityPolicyIdIsMutable();
-        egressV4SecurityPolicyId_.remove(index);
-        onChanged();
-      } else {
-        egressV4SecurityPolicyIdBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getEgressV4SecurityPolicyIdBuilder(
-        int index) {
-      return getEgressV4SecurityPolicyIdFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getEgressV4SecurityPolicyIdOrBuilder(
-        int index) {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        return egressV4SecurityPolicyId_.get(index);  } else {
-        return egressV4SecurityPolicyIdBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-         getEgressV4SecurityPolicyIdOrBuilderList() {
-      if (egressV4SecurityPolicyIdBuilder_ != null) {
-        return egressV4SecurityPolicyIdBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(egressV4SecurityPolicyId_);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addEgressV4SecurityPolicyIdBuilder() {
-      return getEgressV4SecurityPolicyIdFieldBuilder().addBuilder(
-          opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addEgressV4SecurityPolicyIdBuilder(
-        int index) {
-      return getEgressV4SecurityPolicyIdFieldBuilder().addBuilder(
-          index, opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv4 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v4_security_policy_id = 7;</code>
-     */
-    public java.util.List<opi_api.common.v1.ObjectKey.Builder> 
-         getEgressV4SecurityPolicyIdBuilderList() {
-      return getEgressV4SecurityPolicyIdFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getEgressV4SecurityPolicyIdFieldBuilder() {
-      if (egressV4SecurityPolicyIdBuilder_ == null) {
-        egressV4SecurityPolicyIdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                egressV4SecurityPolicyId_,
-                ((bitField0_ & 0x00000004) != 0),
-                getParentForChildren(),
-                isClean());
-        egressV4SecurityPolicyId_ = null;
-      }
-      return egressV4SecurityPolicyIdBuilder_;
     }
 
-    private java.util.List<opi_api.common.v1.ObjectKey> egressV6SecurityPolicyId_ =
-      java.util.Collections.emptyList();
-    private void ensureEgressV6SecurityPolicyIdIsMutable() {
+    private com.google.protobuf.LazyStringList egressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEgressV6SecurityPolicyNameRefIsMutable() {
       if (!((bitField0_ & 0x00000008) != 0)) {
-        egressV6SecurityPolicyId_ = new java.util.ArrayList<opi_api.common.v1.ObjectKey>(egressV6SecurityPolicyId_);
+        egressV6SecurityPolicyNameRef_ = new com.google.protobuf.LazyStringArrayList(egressV6SecurityPolicyNameRef_);
         bitField0_ |= 0x00000008;
        }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> egressV6SecurityPolicyIdBuilder_;
-
     /**
      * <pre>
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @return A list containing the egressV6SecurityPolicyNameRef.
      */
-    public java.util.List<opi_api.common.v1.ObjectKey> getEgressV6SecurityPolicyIdList() {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(egressV6SecurityPolicyId_);
-      } else {
-        return egressV6SecurityPolicyIdBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getEgressV6SecurityPolicyNameRefList() {
+      return egressV6SecurityPolicyNameRef_.getUnmodifiableView();
     }
     /**
      * <pre>
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @return The count of egressV6SecurityPolicyNameRef.
      */
-    public int getEgressV6SecurityPolicyIdCount() {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        return egressV6SecurityPolicyId_.size();
-      } else {
-        return egressV6SecurityPolicyIdBuilder_.getCount();
-      }
+    public int getEgressV6SecurityPolicyNameRefCount() {
+      return egressV6SecurityPolicyNameRef_.size();
     }
     /**
      * <pre>
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param index The index of the element to return.
+     * @return The egressV6SecurityPolicyNameRef at the given index.
      */
-    public opi_api.common.v1.ObjectKey getEgressV6SecurityPolicyId(int index) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        return egressV6SecurityPolicyId_.get(index);
-      } else {
-        return egressV6SecurityPolicyIdBuilder_.getMessage(index);
-      }
+    public java.lang.String getEgressV6SecurityPolicyNameRef(int index) {
+      return egressV6SecurityPolicyNameRef_.get(index);
     }
     /**
      * <pre>
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the egressV6SecurityPolicyNameRef at the given index.
      */
-    public Builder setEgressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.set(index, value);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.setMessage(index, value);
-      }
+    public com.google.protobuf.ByteString
+        getEgressV6SecurityPolicyNameRefBytes(int index) {
+      return egressV6SecurityPolicyNameRef_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * identifier of egress IPv6 security policy to be enforced
+     * </pre>
+     *
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The egressV6SecurityPolicyNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEgressV6SecurityPolicyNameRef(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEgressV6SecurityPolicyNameRefIsMutable();
+      egressV6SecurityPolicyNameRef_.set(index, value);
+      onChanged();
       return this;
     }
     /**
@@ -3046,17 +1992,18 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param value The egressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder setEgressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addEgressV6SecurityPolicyNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEgressV6SecurityPolicyNameRefIsMutable();
+      egressV6SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
     }
     /**
@@ -3064,19 +2011,16 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param values The egressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addEgressV6SecurityPolicyId(opi_api.common.v1.ObjectKey value) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.add(value);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.addMessage(value);
-      }
+    public Builder addAllEgressV6SecurityPolicyNameRef(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEgressV6SecurityPolicyNameRefIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, egressV6SecurityPolicyNameRef_);
+      onChanged();
       return this;
     }
     /**
@@ -3084,20 +2028,13 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @return This builder for chaining.
      */
-    public Builder addEgressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey value) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.add(index, value);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.addMessage(index, value);
-      }
+    public Builder clearEgressV6SecurityPolicyNameRef() {
+      egressV6SecurityPolicyNameRef_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
       return this;
     }
     /**
@@ -3105,177 +2042,20 @@ private static final long serialVersionUID = 0L;
      * identifier of egress IPv6 security policy to be enforced
      * </pre>
      *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
+     * <code>repeated string egress_v6_security_policy_name_ref = 7;</code>
+     * @param value The bytes of the egressV6SecurityPolicyNameRef to add.
+     * @return This builder for chaining.
      */
-    public Builder addEgressV6SecurityPolicyId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.add(builderForValue.build());
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addEgressV6SecurityPolicyNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEgressV6SecurityPolicyNameRefIsMutable();
+      egressV6SecurityPolicyNameRef_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public Builder addEgressV6SecurityPolicyId(
-        int index, opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public Builder addAllEgressV6SecurityPolicyId(
-        java.lang.Iterable<? extends opi_api.common.v1.ObjectKey> values) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, egressV6SecurityPolicyId_);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public Builder clearEgressV6SecurityPolicyId() {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        egressV6SecurityPolicyId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public Builder removeEgressV6SecurityPolicyId(int index) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        ensureEgressV6SecurityPolicyIdIsMutable();
-        egressV6SecurityPolicyId_.remove(index);
-        onChanged();
-      } else {
-        egressV6SecurityPolicyIdBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getEgressV6SecurityPolicyIdBuilder(
-        int index) {
-      return getEgressV6SecurityPolicyIdFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getEgressV6SecurityPolicyIdOrBuilder(
-        int index) {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        return egressV6SecurityPolicyId_.get(index);  } else {
-        return egressV6SecurityPolicyIdBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public java.util.List<? extends opi_api.common.v1.ObjectKeyOrBuilder> 
-         getEgressV6SecurityPolicyIdOrBuilderList() {
-      if (egressV6SecurityPolicyIdBuilder_ != null) {
-        return egressV6SecurityPolicyIdBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(egressV6SecurityPolicyId_);
-      }
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addEgressV6SecurityPolicyIdBuilder() {
-      return getEgressV6SecurityPolicyIdFieldBuilder().addBuilder(
-          opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder addEgressV6SecurityPolicyIdBuilder(
-        int index) {
-      return getEgressV6SecurityPolicyIdFieldBuilder().addBuilder(
-          index, opi_api.common.v1.ObjectKey.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * identifier of egress IPv6 security policy to be enforced
-     * </pre>
-     *
-     * <code>repeated .opi_api.common.v1.ObjectKey egress_v6_security_policy_id = 8;</code>
-     */
-    public java.util.List<opi_api.common.v1.ObjectKey.Builder> 
-         getEgressV6SecurityPolicyIdBuilderList() {
-      return getEgressV6SecurityPolicyIdFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getEgressV6SecurityPolicyIdFieldBuilder() {
-      if (egressV6SecurityPolicyIdBuilder_ == null) {
-        egressV6SecurityPolicyIdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                egressV6SecurityPolicyId_,
-                ((bitField0_ & 0x00000008) != 0),
-                getParentForChildren(),
-                isClean());
-        egressV6SecurityPolicyId_ = null;
-      }
-      return egressV6SecurityPolicyIdBuilder_;
     }
 
     private com.google.protobuf.ByteString virtualRouterMac_ = com.google.protobuf.ByteString.EMPTY;
@@ -3285,7 +2065,7 @@ private static final long serialVersionUID = 0L;
      * VPC carry this MAC as source MAC
      * </pre>
      *
-     * <code>bytes virtual_router_mac = 9;</code>
+     * <code>bytes virtual_router_mac = 8;</code>
      * @return The virtualRouterMac.
      */
     @java.lang.Override
@@ -3298,7 +2078,7 @@ private static final long serialVersionUID = 0L;
      * VPC carry this MAC as source MAC
      * </pre>
      *
-     * <code>bytes virtual_router_mac = 9;</code>
+     * <code>bytes virtual_router_mac = 8;</code>
      * @param value The virtualRouterMac to set.
      * @return This builder for chaining.
      */
@@ -3317,7 +2097,7 @@ private static final long serialVersionUID = 0L;
      * VPC carry this MAC as source MAC
      * </pre>
      *
-     * <code>bytes virtual_router_mac = 9;</code>
+     * <code>bytes virtual_router_mac = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearVirtualRouterMac() {
@@ -3337,7 +2117,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      * @return Whether the fabricEncap field is set.
      */
     public boolean hasFabricEncap() {
@@ -3350,7 +2130,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      * @return The fabricEncap.
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap getFabricEncap() {
@@ -3367,7 +2147,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public Builder setFabricEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (fabricEncapBuilder_ == null) {
@@ -3389,7 +2169,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public Builder setFabricEncap(
         opi_api.network.opinetcommon.v1alpha1.Encap.Builder builderForValue) {
@@ -3409,7 +2189,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public Builder mergeFabricEncap(opi_api.network.opinetcommon.v1alpha1.Encap value) {
       if (fabricEncapBuilder_ == null) {
@@ -3433,7 +2213,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public Builder clearFabricEncap() {
       if (fabricEncapBuilder_ == null) {
@@ -3453,7 +2233,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.Encap.Builder getFabricEncapBuilder() {
       
@@ -3467,7 +2247,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder getFabricEncapOrBuilder() {
       if (fabricEncapBuilder_ != null) {
@@ -3484,7 +2264,7 @@ private static final long serialVersionUID = 0L;
      * for other types of VPCs user need not provide fabric encap and will be unused when provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 10;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.Encap fabric_encap = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.Encap, opi_api.network.opinetcommon.v1alpha1.Encap.Builder, opi_api.network.opinetcommon.v1alpha1.EncapOrBuilder> 
@@ -3513,7 +2293,7 @@ private static final long serialVersionUID = 0L;
      * - tunnel objects, if configured with tos, will override this tos value
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 10;</code>
      * @return The tos.
      */
     @java.lang.Override
@@ -3532,7 +2312,7 @@ private static final long serialVersionUID = 0L;
      * - tunnel objects, if configured with tos, will override this tos value
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 10;</code>
      * @param value The tos to set.
      * @return This builder for chaining.
      */
@@ -3554,7 +2334,7 @@ private static final long serialVersionUID = 0L;
      * - tunnel objects, if configured with tos, will override this tos value
      * </pre>
      *
-     * <code>int32 tos = 13;</code>
+     * <code>int32 tos = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearTos() {

@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr SecurityPolicy::SecurityPolicy(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct SecurityPolicyDefaultTypeInternal {
   constexpr SecurityPolicyDefaultTypeInternal()
@@ -36,7 +37,6 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityPolicyDefaultTypeIntern
 constexpr SecurityPolicySpec::SecurityPolicySpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : rules_()
-  , id_(nullptr)
   , type_(0)
 
   , address_family_(0)
@@ -57,7 +57,7 @@ struct SecurityPolicySpecDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityPolicySpecDefaultTypeInternal _SecurityPolicySpec_default_instance_;
 constexpr SecurityRuleInfo::SecurityRuleInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
+  : rule_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , attrs_(nullptr){}
 struct SecurityRuleInfoDefaultTypeInternal {
   constexpr SecurityRuleInfoDefaultTypeInternal()
@@ -100,7 +100,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FTPOptionsDefaultTypeInternal _
 constexpr DNSOptions::DNSOptions(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : drop_multi_query_messages_(false)
-  , drop_large_domain_name_messages_(false)
+  , drop_large_domain_name_ref_(false)
   , drop_long_label_messages_(false)
   , drop_multi_zone_messages_(false)
   , response_timeout_(0)
@@ -173,7 +173,8 @@ struct SecurityPolicyStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityPolicyStatusDefaultTypeInternal _SecurityPolicyStatus_default_instance_;
 constexpr SecurityRule::SecurityRule(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct SecurityRuleDefaultTypeInternal {
   constexpr SecurityRuleDefaultTypeInternal()
@@ -186,8 +187,7 @@ struct SecurityRuleDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityRuleDefaultTypeInternal _SecurityRule_default_instance_;
 constexpr SecurityRuleSpec::SecurityRuleSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , security_policy_id_(nullptr)
+  : security_policy_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , attrs_(nullptr){}
 struct SecurityRuleSpecDefaultTypeInternal {
   constexpr SecurityRuleSpecDefaultTypeInternal()
@@ -211,7 +211,8 @@ struct SecurityRuleStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityRuleStatusDefaultTypeInternal _SecurityRuleStatus_default_instance_;
 constexpr SecurityProfile::SecurityProfile(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct SecurityProfileDefaultTypeInternal {
   constexpr SecurityProfileDefaultTypeInternal()
@@ -224,8 +225,7 @@ struct SecurityProfileDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityProfileDefaultTypeInternal _SecurityProfile_default_instance_;
 constexpr SecurityProfileSpec::SecurityProfileSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , connection_tracking_enable_(false)
+  : connection_tracking_enable_(false)
   , rule_stats_enable_(false)
   , default_firewall_action_(0)
 
@@ -284,7 +284,7 @@ struct PolicyLookupMatchDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PolicyLookupMatchDefaultTypeInternal _PolicyLookupMatch_default_instance_;
 constexpr SecurityPolicyLookupRequest_VnicLookupInfo::SecurityPolicyLookupRequest_VnicLookupInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vnic_id_(nullptr)
+  : vnic_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , policy_direction_(0)
 
   , address_family_(0)
@@ -344,6 +344,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicy, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicy, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicy, status_),
   ~0u,  // no _has_bits_
@@ -352,7 +353,6 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec, type_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec, address_family_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec, stateless_),
@@ -365,7 +365,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleInfo, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleInfo, rule_name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleInfo, attrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs, _internal_metadata_),
@@ -392,7 +392,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, drop_multi_query_messages_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, drop_large_domain_name_messages_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, drop_large_domain_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, drop_long_label_messages_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, drop_multi_zone_messages_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::DNSOptions, response_timeout_),
@@ -443,6 +443,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRule, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRule, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRule, status_),
   ~0u,  // no _has_bits_
@@ -451,8 +452,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec, security_policy_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec, security_policy_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec, attrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityRuleStatus, _internal_metadata_),
@@ -466,6 +466,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfile, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfile, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfile, status_),
   ~0u,  // no _has_bits_
@@ -474,7 +475,6 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec, connection_tracking_enable_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec, rule_stats_enable_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec, default_firewall_action_),
@@ -516,7 +516,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo, vnic_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo, vnic_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo, policy_direction_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo, address_family_),
   ~0u,  // no _has_bits_
@@ -543,7 +543,7 @@ const uint32_t TableStruct_networkpolicy_2eproto::offsets[] PROTOBUF_SECTION_VAR
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityPolicy)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityPolicySpec)},
   { 21, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRuleInfo)},
   { 29, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs)},
   { 40, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::FTPOptions)},
@@ -553,10 +553,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 73, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::ALGSpec)},
   { 86, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityPolicyStatus)},
   { 99, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRule)},
-  { 107, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec)},
+  { 108, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRuleSpec)},
   { 116, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityRuleStatus)},
   { 122, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityProfile)},
-  { 130, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec)},
+  { 131, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityProfileSpec)},
   { 151, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityProfileStatus)},
   { 157, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PolicyLookupMatch)},
   { 172, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo)},
@@ -589,132 +589,134 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_networkpolicy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023networkpolicy.proto\022\036opi_api.network.c"
-  "loud.v1alpha1\032\020object_key.proto\032\022network"
-  "types.proto\"\230\001\n\016SecurityPolicy\022@\n\004spec\030\001"
-  " \001(\01322.opi_api.network.cloud.v1alpha1.Se"
-  "curityPolicySpec\022D\n\006status\030\002 \001(\01324.opi_a"
+  "loud.v1alpha1\032\022networktypes.proto\032\031googl"
+  "e/api/resource.proto\"\374\001\n\016SecurityPolicy\022"
+  "\014\n\004name\030\001 \001(\t\022@\n\004spec\030\002 \001(\01322.opi_api.ne"
+  "twork.cloud.v1alpha1.SecurityPolicySpec\022"
+  "D\n\006status\030\003 \001(\01324.opi_api.network.cloud."
+  "v1alpha1.SecurityPolicyStatus:T\352AQ\n-opi_"
+  "api.network.cloud.v1alpha1/securitypolic"
+  "y\022 securitypolicys/{securitypolicy}\"\222\003\n\022"
+  "SecurityPolicySpec\022@\n\004type\030\001 \001(\01622.opi_a"
   "pi.network.cloud.v1alpha1.SecurityPolicy"
-  "Status\"\274\003\n\022SecurityPolicySpec\022(\n\002id\030\001 \001("
-  "\0132\034.opi_api.common.v1.ObjectKey\022@\n\004type\030"
-  "\002 \001(\01622.opi_api.network.cloud.v1alpha1.S"
-  "ecurityPolicyType\022C\n\016address_family\030\003 \001("
-  "\0162+.opi_api.network.opinetcommon.v1alpha"
-  "1.IpAf\022\021\n\tstateless\030\004 \001(\010\022Z\n\027default_sec"
-  "urity_action\030\005 \001(\01629.opi_api.network.opi"
-  "netcommon.v1alpha1.SecurityRuleAction\022\?\n"
-  "\005rules\030\006 \003(\01320.opi_api.network.cloud.v1a"
-  "lpha1.SecurityRuleInfo\022E\n\013rule_format\030\007 "
-  "\001(\01620.opi_api.network.cloud.v1alpha1.Pol"
-  "icyRuleFormat\"~\n\020SecurityRuleInfo\022(\n\002id\030"
-  "\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022@\n\005a"
-  "ttrs\030\002 \001(\01321.opi_api.network.cloud.v1alp"
-  "ha1.SecurityRuleAttrs\"\201\002\n\021SecurityRuleAt"
-  "trs\022\020\n\010priority\030\001 \001(\005\022\?\n\005match\030\002 \001(\01320.o"
-  "pi_api.network.opinetcommon.v1alpha1.Rul"
-  "eMatch\022I\n\006action\030\003 \001(\01629.opi_api.network"
-  ".opinetcommon.v1alpha1.SecurityRuleActio"
-  "n\022\023\n\013terminating\030\004 \001(\010\0229\n\010alg_spec\030\005 \001(\013"
-  "2\'.opi_api.network.cloud.v1alpha1.ALGSpe"
-  "c\"\'\n\nFTPOptions\022\031\n\021allow_ip_mismatch\030\001 \001"
-  "(\010\"\322\001\n\nDNSOptions\022!\n\031drop_multi_query_me"
-  "ssages\030\001 \001(\010\022\'\n\037drop_large_domain_name_m"
-  "essages\030\002 \001(\010\022 \n\030drop_long_label_message"
-  "s\030\003 \001(\010\022 \n\030drop_multi_zone_messages\030\004 \001("
-  "\010\022\030\n\020response_timeout\030\005 \001(\005\022\032\n\022max_messa"
-  "ge_length\030\006 \001(\005\"\"\n\014MSRPCOptions\022\022\n\nprogr"
-  "am_id\030\001 \003(\014\"#\n\rSunRPCOptions\022\022\n\nprogram_"
-  "id\030\001 \003(\014\"\377\002\n\007ALGSpec\0229\n\010alg_type\030\001 \001(\0162\'"
-  ".opi_api.network.cloud.v1alpha1.ALGType\022"
-  "\024\n\014idle_timeout\030\002 \001(\005\022A\n\013ftp_options\030\003 \001"
-  "(\0132*.opi_api.network.cloud.v1alpha1.FTPO"
-  "ptionsH\000\022A\n\013dns_options\030\004 \001(\0132*.opi_api."
-  "network.cloud.v1alpha1.DNSOptionsH\000\022E\n\rm"
-  "srpc_options\030\005 \001(\0132,.opi_api.network.clo"
-  "ud.v1alpha1.MSRPCOptionsH\000\022G\n\016sunrpc_opt"
-  "ions\030\006 \001(\0132-.opi_api.network.cloud.v1alp"
-  "ha1.SunRPCOptionsH\000B\r\n\013alg_options\"\221\002\n\024S"
-  "ecurityPolicyStatus\022\022\n\nrule_count\030\001 \001(\005\022"
-  "\021\n\tvpc_count\030\002 \001(\005\022\024\n\014subnet_count\030\003 \001(\005"
-  "\022\022\n\nvnic_count\030\004 \001(\005\022G\n\016hw_pool_handle\030\005"
-  " \001(\0132/.opi_api.network.opinetcommon.v1al"
-  "pha1.HwHandle\022B\n\thw_handle\030\006 \001(\0132/.opi_a"
-  "pi.network.opinetcommon.v1alpha1.HwHandl"
-  "e\022\033\n\023policy_base_address\030\007 \001(\004\"\222\001\n\014Secur"
-  "ityRule\022>\n\004spec\030\001 \001(\01320.opi_api.network."
-  "cloud.v1alpha1.SecurityRuleSpec\022B\n\006statu"
-  "s\030\002 \001(\01322.opi_api.network.cloud.v1alpha1"
-  ".SecurityRuleStatus\"\270\001\n\020SecurityRuleSpec"
-  "\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectK"
-  "ey\0228\n\022security_policy_id\030\002 \001(\0132\034.opi_api"
-  ".common.v1.ObjectKey\022@\n\005attrs\030\003 \001(\01321.op"
-  "i_api.network.cloud.v1alpha1.SecurityRul"
-  "eAttrs\"\024\n\022SecurityRuleStatus\"\233\001\n\017Securit"
-  "yProfile\022A\n\004spec\030\001 \001(\01323.opi_api.network"
-  ".cloud.v1alpha1.SecurityProfileSpec\022E\n\006s"
-  "tatus\030\002 \001(\01325.opi_api.network.cloud.v1al"
-  "pha1.SecurityProfileStatus\"\221\004\n\023SecurityP"
-  "rofileSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.common."
-  "v1.ObjectKey\022\"\n\032connection_tracking_enab"
-  "le\030\002 \001(\010\022\031\n\021rule_stats_enable\030\003 \001(\010\022Z\n\027d"
-  "efault_firewall_action\030\004 \001(\01629.opi_api.n"
-  "etwork.opinetcommon.v1alpha1.SecurityRul"
-  "eAction\022\030\n\020tcp_idle_timeout\030\005 \001(\005\022\030\n\020udp"
-  "_idle_timeout\030\006 \001(\005\022\031\n\021icmp_idle_timeout"
-  "\030\007 \001(\005\022\032\n\022other_idle_timeout\030\010 \001(\005\022$\n\034tc"
-  "p_connection_setup_timeout\030\t \001(\005\022\036\n\026tcp_"
-  "half_close_timeout\030\n \001(\005\022\031\n\021tcp_close_ti"
-  "meout\030\013 \001(\005\022\030\n\020tcp_dorp_timeout\030\014 \001(\005\022\030\n"
-  "\020udp_drop_timeout\030\r \001(\005\022\031\n\021icmp_drop_tim"
-  "eout\030\016 \001(\005\022\032\n\022other_drop_timeout\030\017 \001(\005\"\027"
-  "\n\025SecurityProfileStatus\"\270\002\n\021PolicyLookup"
-  "Match\022C\n\tsource_ip\030\001 \001(\01320.opi_api.netwo"
-  "rk.opinetcommon.v1alpha1.IPAddress\022\023\n\013so"
-  "urce_tags\030\002 \003(\r\022H\n\016destination_ip\030\003 \001(\0132"
-  "0.opi_api.network.opinetcommon.v1alpha1."
-  "IPAddress\022\030\n\020destination_tags\030\004 \003(\r\022\020\n\010p"
-  "rotocol\030\005 \001(\005\022\023\n\013source_port\030\006 \001(\005\022\030\n\020de"
-  "stination_port\030\007 \001(\005\022\021\n\ticmp_type\030\010 \001(\005\022"
-  "\021\n\ticmp_code\030\t \001(\005\"\343\003\n\033SecurityPolicyLoo"
-  "kupRequest\0221\n\tpolicy_id\030\001 \001(\0132\034.opi_api."
-  "common.v1.ObjectKeyH\000\022f\n\020vnic_lookup_inf"
-  "o\030\002 \001(\0132J.opi_api.network.cloud.v1alpha1"
-  ".SecurityPolicyLookupRequest.VnicLookupI"
-  "nfoH\000\022G\n\014match_fields\030\003 \001(\01321.opi_api.ne"
-  "twork.cloud.v1alpha1.PolicyLookupMatch\032\320"
-  "\001\n\016VnicLookupInfo\022-\n\007vnic_id\030\001 \001(\0132\034.opi"
-  "_api.common.v1.ObjectKey\022J\n\020policy_direc"
-  "tion\030\002 \001(\01620.opi_api.network.opinetcommo"
-  "n.v1alpha1.PolicyDir\022C\n\016address_family\030\003"
-  " \001(\0162+.opi_api.network.opinetcommon.v1al"
-  "pha1.IpAfB\r\n\013lookup_info\"\212\002\n\022PolicyLooku"
-  "pResult\022G\n\016rule_hw_handle\030\001 \001(\0132/.opi_ap"
+  "Type\022C\n\016address_family\030\002 \001(\0162+.opi_api.n"
+  "etwork.opinetcommon.v1alpha1.IpAf\022\021\n\tsta"
+  "teless\030\003 \001(\010\022Z\n\027default_security_action\030"
+  "\004 \001(\01629.opi_api.network.opinetcommon.v1a"
+  "lpha1.SecurityRuleAction\022\?\n\005rules\030\005 \003(\0132"
+  "0.opi_api.network.cloud.v1alpha1.Securit"
+  "yRuleInfo\022E\n\013rule_format\030\006 \001(\01620.opi_api"
+  ".network.cloud.v1alpha1.PolicyRuleFormat"
+  "\"g\n\020SecurityRuleInfo\022\021\n\trule_name\030\001 \001(\t\022"
+  "@\n\005attrs\030\002 \001(\01321.opi_api.network.cloud.v"
+  "1alpha1.SecurityRuleAttrs\"\201\002\n\021SecurityRu"
+  "leAttrs\022\020\n\010priority\030\001 \001(\005\022\?\n\005match\030\002 \001(\013"
+  "20.opi_api.network.opinetcommon.v1alpha1"
+  ".RuleMatch\022I\n\006action\030\003 \001(\01629.opi_api.net"
+  "work.opinetcommon.v1alpha1.SecurityRuleA"
+  "ction\022\023\n\013terminating\030\004 \001(\010\0229\n\010alg_spec\030\005"
+  " \001(\0132\'.opi_api.network.cloud.v1alpha1.AL"
+  "GSpec\"\'\n\nFTPOptions\022\031\n\021allow_ip_mismatch"
+  "\030\001 \001(\010\"\315\001\n\nDNSOptions\022!\n\031drop_multi_quer"
+  "y_messages\030\001 \001(\010\022\"\n\032drop_large_domain_na"
+  "me_ref\030\002 \001(\010\022 \n\030drop_long_label_messages"
+  "\030\003 \001(\010\022 \n\030drop_multi_zone_messages\030\004 \001(\010"
+  "\022\030\n\020response_timeout\030\005 \001(\005\022\032\n\022max_messag"
+  "e_length\030\006 \001(\005\"\"\n\014MSRPCOptions\022\022\n\nprogra"
+  "m_id\030\001 \003(\014\"#\n\rSunRPCOptions\022\022\n\nprogram_i"
+  "d\030\001 \003(\014\"\377\002\n\007ALGSpec\0229\n\010alg_type\030\001 \001(\0162\'."
+  "opi_api.network.cloud.v1alpha1.ALGType\022\024"
+  "\n\014idle_timeout\030\002 \001(\005\022A\n\013ftp_options\030\003 \001("
+  "\0132*.opi_api.network.cloud.v1alpha1.FTPOp"
+  "tionsH\000\022A\n\013dns_options\030\004 \001(\0132*.opi_api.n"
+  "etwork.cloud.v1alpha1.DNSOptionsH\000\022E\n\rms"
+  "rpc_options\030\005 \001(\0132,.opi_api.network.clou"
+  "d.v1alpha1.MSRPCOptionsH\000\022G\n\016sunrpc_opti"
+  "ons\030\006 \001(\0132-.opi_api.network.cloud.v1alph"
+  "a1.SunRPCOptionsH\000B\r\n\013alg_options\"\221\002\n\024Se"
+  "curityPolicyStatus\022\022\n\nrule_count\030\001 \001(\005\022\021"
+  "\n\tvpc_count\030\002 \001(\005\022\024\n\014subnet_count\030\003 \001(\005\022"
+  "\022\n\nvnic_count\030\004 \001(\005\022G\n\016hw_pool_handle\030\005 "
+  "\001(\0132/.opi_api.network.opinetcommon.v1alp"
+  "ha1.HwHandle\022B\n\thw_handle\030\006 \001(\0132/.opi_ap"
   "i.network.opinetcommon.v1alpha1.HwHandle"
-  "\022\020\n\010priority\030\002 \001(\005\022I\n\006action\030\003 \001(\01629.opi"
-  "_api.network.opinetcommon.v1alpha1.Secur"
-  "ityRuleAction\0229\n\010alg_type\030\004 \001(\0162\'.opi_ap"
-  "i.network.cloud.v1alpha1.ALGType\022\023\n\013term"
-  "inating\030\005 \001(\010*~\n\022SecurityPolicyType\022$\n S"
-  "ECURITY_POLICY_TYPE_UNSPECIFIED\020\000\022!\n\035SEC"
-  "URITY_POLICY_TYPE_UNDERLAY\020\001\022\037\n\033SECURITY"
-  "_POLICY_TYPE_TENANT\020\002*\226\001\n\007ALGType\022\030\n\024ALG"
-  "_TYPE_UNSPECIFIED\020\000\022\021\n\rALG_TYPE_TFTP\020\001\022\020"
-  "\n\014ALG_TYPE_FTP\020\002\022\020\n\014ALG_TYPE_DNS\020\003\022\023\n\017AL"
-  "G_TYPE_SUNRPC\020\004\022\022\n\016ALG_TYPE_MSRPC\020\005\022\021\n\rA"
-  "LG_TYPE_RTSP\020\006*x\n\020PolicyRuleFormat\022\"\n\036PO"
-  "LICY_RULE_FORMAT_UNSPECIFIED\020\000\022 \n\034POLICY"
-  "_RULE_FORMAT_FLATTENED\020\001\022\036\n\032POLICY_RULE_"
-  "FORMAT_COMPACT\020\002Bs\n\036opi_api.network.clou"
-  "d.v1alpha1B\022NetworkPolicyProtoP\001Z;github"
-  ".com/opiproject/opi-api/network/cloud/v1"
-  "alpha1/gen/gob\006proto3"
+  "\022\033\n\023policy_base_address\030\007 \001(\004\"\360\001\n\014Securi"
+  "tyRule\022\014\n\004name\030\001 \001(\t\022>\n\004spec\030\002 \001(\01320.opi"
+  "_api.network.cloud.v1alpha1.SecurityRule"
+  "Spec\022B\n\006status\030\003 \001(\01322.opi_api.network.c"
+  "loud.v1alpha1.SecurityRuleStatus:N\352AK\n+o"
+  "pi_api.network.cloud.v1alpha1/securityru"
+  "le\022\034securityrules/{securityrule}\"v\n\020Secu"
+  "rityRuleSpec\022 \n\030security_policy_name_ref"
+  "\030\001 \001(\t\022@\n\005attrs\030\002 \001(\01321.opi_api.network."
+  "cloud.v1alpha1.SecurityRuleAttrs\"\024\n\022Secu"
+  "rityRuleStatus\"\202\002\n\017SecurityProfile\022\014\n\004na"
+  "me\030\001 \001(\t\022A\n\004spec\030\002 \001(\01323.opi_api.network"
+  ".cloud.v1alpha1.SecurityProfileSpec\022E\n\006s"
+  "tatus\030\003 \001(\01325.opi_api.network.cloud.v1al"
+  "pha1.SecurityProfileStatus:W\352AT\n.opi_api"
+  ".network.cloud.v1alpha1/securityprofile\022"
+  "\"securityprofiles/{securityprofile}\"\347\003\n\023"
+  "SecurityProfileSpec\022\"\n\032connection_tracki"
+  "ng_enable\030\001 \001(\010\022\031\n\021rule_stats_enable\030\002 \001"
+  "(\010\022Z\n\027default_firewall_action\030\003 \001(\01629.op"
+  "i_api.network.opinetcommon.v1alpha1.Secu"
+  "rityRuleAction\022\030\n\020tcp_idle_timeout\030\004 \001(\005"
+  "\022\030\n\020udp_idle_timeout\030\005 \001(\005\022\031\n\021icmp_idle_"
+  "timeout\030\006 \001(\005\022\032\n\022other_idle_timeout\030\007 \001("
+  "\005\022$\n\034tcp_connection_setup_timeout\030\010 \001(\005\022"
+  "\036\n\026tcp_half_close_timeout\030\t \001(\005\022\031\n\021tcp_c"
+  "lose_timeout\030\n \001(\005\022\030\n\020tcp_dorp_timeout\030\013"
+  " \001(\005\022\030\n\020udp_drop_timeout\030\014 \001(\005\022\031\n\021icmp_d"
+  "rop_timeout\030\r \001(\005\022\032\n\022other_drop_timeout\030"
+  "\016 \001(\005\"\027\n\025SecurityProfileStatus\"\270\002\n\021Polic"
+  "yLookupMatch\022C\n\tsource_ip\030\001 \001(\01320.opi_ap"
+  "i.network.opinetcommon.v1alpha1.IPAddres"
+  "s\022\023\n\013source_tags\030\002 \003(\r\022H\n\016destination_ip"
+  "\030\003 \001(\01320.opi_api.network.opinetcommon.v1"
+  "alpha1.IPAddress\022\030\n\020destination_tags\030\004 \003"
+  "(\r\022\020\n\010protocol\030\005 \001(\005\022\023\n\013source_port\030\006 \001("
+  "\005\022\030\n\020destination_port\030\007 \001(\005\022\021\n\ticmp_type"
+  "\030\010 \001(\005\022\021\n\ticmp_code\030\t \001(\005\"\263\003\n\033SecurityPo"
+  "licyLookupRequest\022\031\n\017policy_name_ref\030\001 \001"
+  "(\tH\000\022f\n\020vnic_lookup_info\030\002 \001(\0132J.opi_api"
+  ".network.cloud.v1alpha1.SecurityPolicyLo"
+  "okupRequest.VnicLookupInfoH\000\022G\n\014match_fi"
+  "elds\030\003 \001(\01321.opi_api.network.cloud.v1alp"
+  "ha1.PolicyLookupMatch\032\270\001\n\016VnicLookupInfo"
+  "\022\025\n\rvnic_name_ref\030\001 \001(\t\022J\n\020policy_direct"
+  "ion\030\002 \001(\01620.opi_api.network.opinetcommon"
+  ".v1alpha1.PolicyDir\022C\n\016address_family\030\003 "
+  "\001(\0162+.opi_api.network.opinetcommon.v1alp"
+  "ha1.IpAfB\r\n\013lookup_info\"\212\002\n\022PolicyLookup"
+  "Result\022G\n\016rule_hw_handle\030\001 \001(\0132/.opi_api"
+  ".network.opinetcommon.v1alpha1.HwHandle\022"
+  "\020\n\010priority\030\002 \001(\005\022I\n\006action\030\003 \001(\01629.opi_"
+  "api.network.opinetcommon.v1alpha1.Securi"
+  "tyRuleAction\0229\n\010alg_type\030\004 \001(\0162\'.opi_api"
+  ".network.cloud.v1alpha1.ALGType\022\023\n\013termi"
+  "nating\030\005 \001(\010*~\n\022SecurityPolicyType\022$\n SE"
+  "CURITY_POLICY_TYPE_UNSPECIFIED\020\000\022!\n\035SECU"
+  "RITY_POLICY_TYPE_UNDERLAY\020\001\022\037\n\033SECURITY_"
+  "POLICY_TYPE_TENANT\020\002*\226\001\n\007ALGType\022\030\n\024ALG_"
+  "TYPE_UNSPECIFIED\020\000\022\021\n\rALG_TYPE_TFTP\020\001\022\020\n"
+  "\014ALG_TYPE_FTP\020\002\022\020\n\014ALG_TYPE_DNS\020\003\022\023\n\017ALG"
+  "_TYPE_SUNRPC\020\004\022\022\n\016ALG_TYPE_MSRPC\020\005\022\021\n\rAL"
+  "G_TYPE_RTSP\020\006*x\n\020PolicyRuleFormat\022\"\n\036POL"
+  "ICY_RULE_FORMAT_UNSPECIFIED\020\000\022 \n\034POLICY_"
+  "RULE_FORMAT_FLATTENED\020\001\022\036\n\032POLICY_RULE_F"
+  "ORMAT_COMPACT\020\002Bs\n\036opi_api.network.cloud"
+  ".v1alpha1B\022NetworkPolicyProtoP\001Z;github."
+  "com/opiproject/opi-api/network/cloud/v1a"
+  "lpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_networkpolicy_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_networkpolicy_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_networkpolicy_2eproto = {
-  false, false, 4741, descriptor_table_protodef_networkpolicy_2eproto, "networkpolicy.proto", 
+  false, false, 4820, descriptor_table_protodef_networkpolicy_2eproto, "networkpolicy.proto", 
   &descriptor_table_networkpolicy_2eproto_once, descriptor_table_networkpolicy_2eproto_deps, 2, 20,
   schemas, file_default_instances, TableStruct_networkpolicy_2eproto::offsets,
   file_level_metadata_networkpolicy_2eproto, file_level_enum_descriptors_networkpolicy_2eproto, file_level_service_descriptors_networkpolicy_2eproto,
@@ -807,6 +809,14 @@ SecurityPolicy::SecurityPolicy(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityPolicy::SecurityPolicy(const SecurityPolicy& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::SecurityPolicySpec(*from.spec_);
   } else {
@@ -821,6 +831,10 @@ SecurityPolicy::SecurityPolicy(const SecurityPolicy& from)
 }
 
 inline void SecurityPolicy::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -836,6 +850,7 @@ SecurityPolicy::~SecurityPolicy() {
 
 inline void SecurityPolicy::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -856,6 +871,7 @@ void SecurityPolicy::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -873,17 +889,27 @@ const char* SecurityPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityPolicy.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -918,20 +944,30 @@ uint8_t* SecurityPolicy::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityPolicy.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -950,14 +986,21 @@ size_t SecurityPolicy::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -986,6 +1029,9 @@ void SecurityPolicy::MergeFrom(const SecurityPolicy& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::SecurityPolicySpec::MergeFrom(from._internal_spec());
   }
@@ -1008,7 +1054,14 @@ bool SecurityPolicy::IsInitialized() const {
 
 void SecurityPolicy::InternalSwap(SecurityPolicy* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityPolicy, status_)
       + sizeof(SecurityPolicy::status_)
@@ -1027,19 +1080,8 @@ void SecurityPolicy::InternalSwap(SecurityPolicy* other) {
 
 class SecurityPolicySpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const SecurityPolicySpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityPolicySpec::_Internal::id(const SecurityPolicySpec* msg) {
-  return *msg->id_;
-}
-void SecurityPolicySpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
 SecurityPolicySpec::SecurityPolicySpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
@@ -1054,11 +1096,6 @@ SecurityPolicySpec::SecurityPolicySpec(const SecurityPolicySpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       rules_(from.rules_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   ::memcpy(&type_, &from.type_,
     static_cast<size_t>(reinterpret_cast<char*>(&rule_format_) -
     reinterpret_cast<char*>(&type_)) + sizeof(rule_format_));
@@ -1067,9 +1104,9 @@ SecurityPolicySpec::SecurityPolicySpec(const SecurityPolicySpec& from)
 
 inline void SecurityPolicySpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&rule_format_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(rule_format_));
+    reinterpret_cast<char*>(&type_)) + sizeof(rule_format_));
 }
 
 SecurityPolicySpec::~SecurityPolicySpec() {
@@ -1081,7 +1118,6 @@ SecurityPolicySpec::~SecurityPolicySpec() {
 
 inline void SecurityPolicySpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
 }
 
 void SecurityPolicySpec::ArenaDtor(void* object) {
@@ -1101,10 +1137,6 @@ void SecurityPolicySpec::Clear() {
   (void) cached_has_bits;
 
   rules_.Clear();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   ::memset(&type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&rule_format_) -
       reinterpret_cast<char*>(&type_)) + sizeof(rule_format_));
@@ -1117,65 +1149,57 @@ const char* SecurityPolicySpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::opi_api::network::cloud::v1alpha1::SecurityPolicyType>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_address_family(static_cast<::opi_api::network::opinetcommon::v1alpha1::IpAf>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool stateless = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // bool stateless = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           stateless_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_default_security_action(static_cast<::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction>(val));
         } else
           goto handle_unusual;
         continue;
-      // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+      // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_rules(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_rule_format(static_cast<::opi_api::network::cloud::v1alpha1::PolicyRuleFormat>(val));
@@ -1211,54 +1235,46 @@ uint8_t* SecurityPolicySpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_type(), target);
+      1, this->_internal_type(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;
   if (this->_internal_address_family() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_address_family(), target);
+      2, this->_internal_address_family(), target);
   }
 
-  // bool stateless = 4;
+  // bool stateless = 3;
   if (this->_internal_stateless() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_stateless(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_stateless(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
   if (this->_internal_default_security_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_default_security_action(), target);
+      4, this->_internal_default_security_action(), target);
   }
 
-  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;
+  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_rules_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, this->_internal_rules(i), target, stream);
+      InternalWriteMessage(5, this->_internal_rules(i), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;
+  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;
   if (this->_internal_rule_format() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_rule_format(), target);
+      6, this->_internal_rule_format(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1277,44 +1293,37 @@ size_t SecurityPolicySpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;
+  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;
   total_size += 1UL * this->_internal_rules_size();
   for (const auto& msg : this->rules_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;
   if (this->_internal_address_family() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_address_family());
   }
 
-  // bool stateless = 4;
+  // bool stateless = 3;
   if (this->_internal_stateless() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
   if (this->_internal_default_security_action() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_default_security_action());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;
+  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;
   if (this->_internal_rule_format() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_rule_format());
@@ -1343,9 +1352,6 @@ void SecurityPolicySpec::MergeFrom(const SecurityPolicySpec& from) {
   (void) cached_has_bits;
 
   rules_.MergeFrom(from.rules_);
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
@@ -1382,9 +1388,9 @@ void SecurityPolicySpec::InternalSwap(SecurityPolicySpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityPolicySpec, rule_format_)
       + sizeof(SecurityPolicySpec::rule_format_)
-      - PROTOBUF_FIELD_OFFSET(SecurityPolicySpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(SecurityPolicySpec, type_)>(
+          reinterpret_cast<char*>(&type_),
+          reinterpret_cast<char*>(&other->type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SecurityPolicySpec::GetMetadata() const {
@@ -1397,23 +1403,12 @@ void SecurityPolicySpec::InternalSwap(SecurityPolicySpec* other) {
 
 class SecurityRuleInfo::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const SecurityRuleInfo* msg);
   static const ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs& attrs(const SecurityRuleInfo* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityRuleInfo::_Internal::id(const SecurityRuleInfo* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs&
 SecurityRuleInfo::_Internal::attrs(const SecurityRuleInfo* msg) {
   return *msg->attrs_;
-}
-void SecurityRuleInfo::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 SecurityRuleInfo::SecurityRuleInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1427,10 +1422,13 @@ SecurityRuleInfo::SecurityRuleInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityRuleInfo::SecurityRuleInfo(const SecurityRuleInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
+  rule_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    rule_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_rule_name().empty()) {
+    rule_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rule_name(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_attrs()) {
     attrs_ = new ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs(*from.attrs_);
@@ -1441,10 +1439,11 @@ SecurityRuleInfo::SecurityRuleInfo(const SecurityRuleInfo& from)
 }
 
 inline void SecurityRuleInfo::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&attrs_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(attrs_));
+rule_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rule_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+attrs_ = nullptr;
 }
 
 SecurityRuleInfo::~SecurityRuleInfo() {
@@ -1456,7 +1455,7 @@ SecurityRuleInfo::~SecurityRuleInfo() {
 
 inline void SecurityRuleInfo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
+  rule_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete attrs_;
 }
 
@@ -1476,10 +1475,7 @@ void SecurityRuleInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
+  rule_name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && attrs_ != nullptr) {
     delete attrs_;
   }
@@ -1493,10 +1489,12 @@ const char* SecurityRuleInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string rule_name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_rule_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1538,12 +1536,14 @@ uint8_t* SecurityRuleInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string rule_name = 1;
+  if (!this->_internal_rule_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rule_name().data(), static_cast<int>(this->_internal_rule_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_rule_name(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
@@ -1570,11 +1570,11 @@ size_t SecurityRuleInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string rule_name = 1;
+  if (!this->_internal_rule_name().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_rule_name());
   }
 
   // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
@@ -1606,8 +1606,8 @@ void SecurityRuleInfo::MergeFrom(const SecurityRuleInfo& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (!from._internal_rule_name().empty()) {
+    _internal_set_rule_name(from._internal_rule_name());
   }
   if (from._internal_has_attrs()) {
     _internal_mutable_attrs()->::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs::MergeFrom(from._internal_attrs());
@@ -1628,13 +1628,15 @@ bool SecurityRuleInfo::IsInitialized() const {
 
 void SecurityRuleInfo::InternalSwap(SecurityRuleInfo* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SecurityRuleInfo, attrs_)
-      + sizeof(SecurityRuleInfo::attrs_)
-      - PROTOBUF_FIELD_OFFSET(SecurityRuleInfo, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rule_name_, lhs_arena,
+      &other->rule_name_, rhs_arena
+  );
+  swap(attrs_, other->attrs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SecurityRuleInfo::GetMetadata() const {
@@ -2224,10 +2226,10 @@ const char* DNSOptions::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
-      // bool drop_large_domain_name_messages = 2;
+      // bool drop_large_domain_name_ref = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          drop_large_domain_name_messages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          drop_large_domain_name_ref_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2299,10 +2301,10 @@ uint8_t* DNSOptions::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_drop_multi_query_messages(), target);
   }
 
-  // bool drop_large_domain_name_messages = 2;
-  if (this->_internal_drop_large_domain_name_messages() != 0) {
+  // bool drop_large_domain_name_ref = 2;
+  if (this->_internal_drop_large_domain_name_ref() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_drop_large_domain_name_messages(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_drop_large_domain_name_ref(), target);
   }
 
   // bool drop_long_label_messages = 3;
@@ -2350,8 +2352,8 @@ size_t DNSOptions::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  // bool drop_large_domain_name_messages = 2;
-  if (this->_internal_drop_large_domain_name_messages() != 0) {
+  // bool drop_large_domain_name_ref = 2;
+  if (this->_internal_drop_large_domain_name_ref() != 0) {
     total_size += 1 + 1;
   }
 
@@ -2400,8 +2402,8 @@ void DNSOptions::MergeFrom(const DNSOptions& from) {
   if (from._internal_drop_multi_query_messages() != 0) {
     _internal_set_drop_multi_query_messages(from._internal_drop_multi_query_messages());
   }
-  if (from._internal_drop_large_domain_name_messages() != 0) {
-    _internal_set_drop_large_domain_name_messages(from._internal_drop_large_domain_name_messages());
+  if (from._internal_drop_large_domain_name_ref() != 0) {
+    _internal_set_drop_large_domain_name_ref(from._internal_drop_large_domain_name_ref());
   }
   if (from._internal_drop_long_label_messages() != 0) {
     _internal_set_drop_long_label_messages(from._internal_drop_long_label_messages());
@@ -3693,6 +3695,14 @@ SecurityRule::SecurityRule(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityRule::SecurityRule(const SecurityRule& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::SecurityRuleSpec(*from.spec_);
   } else {
@@ -3707,6 +3717,10 @@ SecurityRule::SecurityRule(const SecurityRule& from)
 }
 
 inline void SecurityRule::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -3722,6 +3736,7 @@ SecurityRule::~SecurityRule() {
 
 inline void SecurityRule::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -3742,6 +3757,7 @@ void SecurityRule::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -3759,17 +3775,27 @@ const char* SecurityRule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityRule.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -3804,20 +3830,30 @@ uint8_t* SecurityRule::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityRule.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3836,14 +3872,21 @@ size_t SecurityRule::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3872,6 +3915,9 @@ void SecurityRule::MergeFrom(const SecurityRule& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::SecurityRuleSpec::MergeFrom(from._internal_spec());
   }
@@ -3894,7 +3940,14 @@ bool SecurityRule::IsInitialized() const {
 
 void SecurityRule::InternalSwap(SecurityRule* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityRule, status_)
       + sizeof(SecurityRule::status_)
@@ -3913,34 +3966,12 @@ void SecurityRule::InternalSwap(SecurityRule* other) {
 
 class SecurityRuleSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const SecurityRuleSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& security_policy_id(const SecurityRuleSpec* msg);
   static const ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs& attrs(const SecurityRuleSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityRuleSpec::_Internal::id(const SecurityRuleSpec* msg) {
-  return *msg->id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-SecurityRuleSpec::_Internal::security_policy_id(const SecurityRuleSpec* msg) {
-  return *msg->security_policy_id_;
-}
 const ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs&
 SecurityRuleSpec::_Internal::attrs(const SecurityRuleSpec* msg) {
   return *msg->attrs_;
-}
-void SecurityRuleSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
-void SecurityRuleSpec::clear_security_policy_id() {
-  if (GetArenaForAllocation() == nullptr && security_policy_id_ != nullptr) {
-    delete security_policy_id_;
-  }
-  security_policy_id_ = nullptr;
 }
 SecurityRuleSpec::SecurityRuleSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3954,15 +3985,13 @@ SecurityRuleSpec::SecurityRuleSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityRuleSpec::SecurityRuleSpec(const SecurityRuleSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
-  if (from._internal_has_security_policy_id()) {
-    security_policy_id_ = new ::opi_api::common::v1::ObjectKey(*from.security_policy_id_);
-  } else {
-    security_policy_id_ = nullptr;
+  security_policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    security_policy_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_security_policy_name_ref().empty()) {
+    security_policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_security_policy_name_ref(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_attrs()) {
     attrs_ = new ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs(*from.attrs_);
@@ -3973,10 +4002,11 @@ SecurityRuleSpec::SecurityRuleSpec(const SecurityRuleSpec& from)
 }
 
 inline void SecurityRuleSpec::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&attrs_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(attrs_));
+security_policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  security_policy_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+attrs_ = nullptr;
 }
 
 SecurityRuleSpec::~SecurityRuleSpec() {
@@ -3988,8 +4018,7 @@ SecurityRuleSpec::~SecurityRuleSpec() {
 
 inline void SecurityRuleSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete security_policy_id_;
+  security_policy_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete attrs_;
 }
 
@@ -4009,14 +4038,7 @@ void SecurityRuleSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && security_policy_id_ != nullptr) {
-    delete security_policy_id_;
-  }
-  security_policy_id_ = nullptr;
+  security_policy_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && attrs_ != nullptr) {
     delete attrs_;
   }
@@ -4030,25 +4052,19 @@ const char* SecurityRuleSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string security_policy_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_security_policy_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey security_policy_id = 2;
+      // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_security_policy_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_attrs(), ptr);
           CHK_(ptr);
         } else
@@ -4083,28 +4099,22 @@ uint8_t* SecurityRuleSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string security_policy_name_ref = 1;
+  if (!this->_internal_security_policy_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_security_policy_name_ref().data(), static_cast<int>(this->_internal_security_policy_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_security_policy_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey security_policy_id = 2;
-  if (this->_internal_has_security_policy_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::security_policy_id(this), target, stream);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
   if (this->_internal_has_attrs()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::attrs(this), target, stream);
+        2, _Internal::attrs(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4123,21 +4133,14 @@ size_t SecurityRuleSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string security_policy_name_ref = 1;
+  if (!this->_internal_security_policy_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_security_policy_name_ref());
   }
 
-  // .opi_api.common.v1.ObjectKey security_policy_id = 2;
-  if (this->_internal_has_security_policy_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *security_policy_id_);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
   if (this->_internal_has_attrs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4166,11 +4169,8 @@ void SecurityRuleSpec::MergeFrom(const SecurityRuleSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
-  if (from._internal_has_security_policy_id()) {
-    _internal_mutable_security_policy_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_security_policy_id());
+  if (!from._internal_security_policy_name_ref().empty()) {
+    _internal_set_security_policy_name_ref(from._internal_security_policy_name_ref());
   }
   if (from._internal_has_attrs()) {
     _internal_mutable_attrs()->::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs::MergeFrom(from._internal_attrs());
@@ -4191,13 +4191,15 @@ bool SecurityRuleSpec::IsInitialized() const {
 
 void SecurityRuleSpec::InternalSwap(SecurityRuleSpec* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SecurityRuleSpec, attrs_)
-      + sizeof(SecurityRuleSpec::attrs_)
-      - PROTOBUF_FIELD_OFFSET(SecurityRuleSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &security_policy_name_ref_, lhs_arena,
+      &other->security_policy_name_ref_, rhs_arena
+  );
+  swap(attrs_, other->attrs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SecurityRuleSpec::GetMetadata() const {
@@ -4273,6 +4275,14 @@ SecurityProfile::SecurityProfile(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityProfile::SecurityProfile(const SecurityProfile& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::SecurityProfileSpec(*from.spec_);
   } else {
@@ -4287,6 +4297,10 @@ SecurityProfile::SecurityProfile(const SecurityProfile& from)
 }
 
 inline void SecurityProfile::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -4302,6 +4316,7 @@ SecurityProfile::~SecurityProfile() {
 
 inline void SecurityProfile::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -4322,6 +4337,7 @@ void SecurityProfile::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -4339,17 +4355,27 @@ const char* SecurityProfile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityProfile.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -4384,20 +4410,30 @@ uint8_t* SecurityProfile::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityProfile.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4416,14 +4452,21 @@ size_t SecurityProfile::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4452,6 +4495,9 @@ void SecurityProfile::MergeFrom(const SecurityProfile& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::SecurityProfileSpec::MergeFrom(from._internal_spec());
   }
@@ -4474,7 +4520,14 @@ bool SecurityProfile::IsInitialized() const {
 
 void SecurityProfile::InternalSwap(SecurityProfile* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityProfile, status_)
       + sizeof(SecurityProfile::status_)
@@ -4493,19 +4546,8 @@ void SecurityProfile::InternalSwap(SecurityProfile* other) {
 
 class SecurityProfileSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const SecurityProfileSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityProfileSpec::_Internal::id(const SecurityProfileSpec* msg) {
-  return *msg->id_;
-}
-void SecurityProfileSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
 SecurityProfileSpec::SecurityProfileSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -4518,11 +4560,6 @@ SecurityProfileSpec::SecurityProfileSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SecurityProfileSpec::SecurityProfileSpec(const SecurityProfileSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   ::memcpy(&connection_tracking_enable_, &from.connection_tracking_enable_,
     static_cast<size_t>(reinterpret_cast<char*>(&other_drop_timeout_) -
     reinterpret_cast<char*>(&connection_tracking_enable_)) + sizeof(other_drop_timeout_));
@@ -4531,9 +4568,9 @@ SecurityProfileSpec::SecurityProfileSpec(const SecurityProfileSpec& from)
 
 inline void SecurityProfileSpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&connection_tracking_enable_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&other_drop_timeout_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(other_drop_timeout_));
+    reinterpret_cast<char*>(&connection_tracking_enable_)) + sizeof(other_drop_timeout_));
 }
 
 SecurityProfileSpec::~SecurityProfileSpec() {
@@ -4545,7 +4582,6 @@ SecurityProfileSpec::~SecurityProfileSpec() {
 
 inline void SecurityProfileSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
 }
 
 void SecurityProfileSpec::ArenaDtor(void* object) {
@@ -4564,10 +4600,6 @@ void SecurityProfileSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   ::memset(&connection_tracking_enable_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&other_drop_timeout_) -
       reinterpret_cast<char*>(&connection_tracking_enable_)) + sizeof(other_drop_timeout_));
@@ -4580,122 +4612,114 @@ const char* SecurityProfileSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // bool connection_tracking_enable = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool connection_tracking_enable = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           connection_tracking_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool rule_stats_enable = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // bool rule_stats_enable = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           rule_stats_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_default_firewall_action(static_cast<::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction>(val));
         } else
           goto handle_unusual;
         continue;
-      // int32 tcp_idle_timeout = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // int32 tcp_idle_timeout = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           tcp_idle_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 udp_idle_timeout = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // int32 udp_idle_timeout = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           udp_idle_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 icmp_idle_timeout = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // int32 icmp_idle_timeout = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           icmp_idle_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 other_idle_timeout = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+      // int32 other_idle_timeout = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           other_idle_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 tcp_connection_setup_timeout = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // int32 tcp_connection_setup_timeout = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           tcp_connection_setup_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 tcp_half_close_timeout = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // int32 tcp_half_close_timeout = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           tcp_half_close_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 tcp_close_timeout = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+      // int32 tcp_close_timeout = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           tcp_close_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 tcp_dorp_timeout = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+      // int32 tcp_dorp_timeout = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           tcp_dorp_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 udp_drop_timeout = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+      // int32 udp_drop_timeout = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           udp_drop_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 icmp_drop_timeout = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+      // int32 icmp_drop_timeout = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
           icmp_drop_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 other_drop_timeout = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+      // int32 other_drop_timeout = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
           other_drop_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4730,97 +4754,89 @@ uint8_t* SecurityProfileSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // bool connection_tracking_enable = 2;
+  // bool connection_tracking_enable = 1;
   if (this->_internal_connection_tracking_enable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_connection_tracking_enable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_connection_tracking_enable(), target);
   }
 
-  // bool rule_stats_enable = 3;
+  // bool rule_stats_enable = 2;
   if (this->_internal_rule_stats_enable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_rule_stats_enable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_rule_stats_enable(), target);
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
   if (this->_internal_default_firewall_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_default_firewall_action(), target);
+      3, this->_internal_default_firewall_action(), target);
   }
 
-  // int32 tcp_idle_timeout = 5;
+  // int32 tcp_idle_timeout = 4;
   if (this->_internal_tcp_idle_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_tcp_idle_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_tcp_idle_timeout(), target);
   }
 
-  // int32 udp_idle_timeout = 6;
+  // int32 udp_idle_timeout = 5;
   if (this->_internal_udp_idle_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_udp_idle_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_udp_idle_timeout(), target);
   }
 
-  // int32 icmp_idle_timeout = 7;
+  // int32 icmp_idle_timeout = 6;
   if (this->_internal_icmp_idle_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_icmp_idle_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_icmp_idle_timeout(), target);
   }
 
-  // int32 other_idle_timeout = 8;
+  // int32 other_idle_timeout = 7;
   if (this->_internal_other_idle_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_other_idle_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_other_idle_timeout(), target);
   }
 
-  // int32 tcp_connection_setup_timeout = 9;
+  // int32 tcp_connection_setup_timeout = 8;
   if (this->_internal_tcp_connection_setup_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_tcp_connection_setup_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_tcp_connection_setup_timeout(), target);
   }
 
-  // int32 tcp_half_close_timeout = 10;
+  // int32 tcp_half_close_timeout = 9;
   if (this->_internal_tcp_half_close_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_tcp_half_close_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_tcp_half_close_timeout(), target);
   }
 
-  // int32 tcp_close_timeout = 11;
+  // int32 tcp_close_timeout = 10;
   if (this->_internal_tcp_close_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(11, this->_internal_tcp_close_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_tcp_close_timeout(), target);
   }
 
-  // int32 tcp_dorp_timeout = 12;
+  // int32 tcp_dorp_timeout = 11;
   if (this->_internal_tcp_dorp_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_tcp_dorp_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(11, this->_internal_tcp_dorp_timeout(), target);
   }
 
-  // int32 udp_drop_timeout = 13;
+  // int32 udp_drop_timeout = 12;
   if (this->_internal_udp_drop_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_udp_drop_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(12, this->_internal_udp_drop_timeout(), target);
   }
 
-  // int32 icmp_drop_timeout = 14;
+  // int32 icmp_drop_timeout = 13;
   if (this->_internal_icmp_drop_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_icmp_drop_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_icmp_drop_timeout(), target);
   }
 
-  // int32 other_drop_timeout = 15;
+  // int32 other_drop_timeout = 14;
   if (this->_internal_other_drop_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_other_drop_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_other_drop_timeout(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4839,80 +4855,73 @@ size_t SecurityProfileSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // bool connection_tracking_enable = 2;
+  // bool connection_tracking_enable = 1;
   if (this->_internal_connection_tracking_enable() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool rule_stats_enable = 3;
+  // bool rule_stats_enable = 2;
   if (this->_internal_rule_stats_enable() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
   if (this->_internal_default_firewall_action() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_default_firewall_action());
   }
 
-  // int32 tcp_idle_timeout = 5;
+  // int32 tcp_idle_timeout = 4;
   if (this->_internal_tcp_idle_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tcp_idle_timeout());
   }
 
-  // int32 udp_idle_timeout = 6;
+  // int32 udp_idle_timeout = 5;
   if (this->_internal_udp_idle_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_udp_idle_timeout());
   }
 
-  // int32 icmp_idle_timeout = 7;
+  // int32 icmp_idle_timeout = 6;
   if (this->_internal_icmp_idle_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_icmp_idle_timeout());
   }
 
-  // int32 other_idle_timeout = 8;
+  // int32 other_idle_timeout = 7;
   if (this->_internal_other_idle_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_other_idle_timeout());
   }
 
-  // int32 tcp_connection_setup_timeout = 9;
+  // int32 tcp_connection_setup_timeout = 8;
   if (this->_internal_tcp_connection_setup_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tcp_connection_setup_timeout());
   }
 
-  // int32 tcp_half_close_timeout = 10;
+  // int32 tcp_half_close_timeout = 9;
   if (this->_internal_tcp_half_close_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tcp_half_close_timeout());
   }
 
-  // int32 tcp_close_timeout = 11;
+  // int32 tcp_close_timeout = 10;
   if (this->_internal_tcp_close_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tcp_close_timeout());
   }
 
-  // int32 tcp_dorp_timeout = 12;
+  // int32 tcp_dorp_timeout = 11;
   if (this->_internal_tcp_dorp_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_tcp_dorp_timeout());
   }
 
-  // int32 udp_drop_timeout = 13;
+  // int32 udp_drop_timeout = 12;
   if (this->_internal_udp_drop_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_udp_drop_timeout());
   }
 
-  // int32 icmp_drop_timeout = 14;
+  // int32 icmp_drop_timeout = 13;
   if (this->_internal_icmp_drop_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_icmp_drop_timeout());
   }
 
-  // int32 other_drop_timeout = 15;
+  // int32 other_drop_timeout = 14;
   if (this->_internal_other_drop_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_other_drop_timeout());
   }
@@ -4939,9 +4948,6 @@ void SecurityProfileSpec::MergeFrom(const SecurityProfileSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_connection_tracking_enable() != 0) {
     _internal_set_connection_tracking_enable(from._internal_connection_tracking_enable());
   }
@@ -5004,9 +5010,9 @@ void SecurityProfileSpec::InternalSwap(SecurityProfileSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityProfileSpec, other_drop_timeout_)
       + sizeof(SecurityProfileSpec::other_drop_timeout_)
-      - PROTOBUF_FIELD_OFFSET(SecurityProfileSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(SecurityProfileSpec, connection_tracking_enable_)>(
+          reinterpret_cast<char*>(&connection_tracking_enable_),
+          reinterpret_cast<char*>(&other->connection_tracking_enable_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SecurityProfileSpec::GetMetadata() const {
@@ -5510,19 +5516,8 @@ void PolicyLookupMatch::InternalSwap(PolicyLookupMatch* other) {
 
 class SecurityPolicyLookupRequest_VnicLookupInfo::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& vnic_id(const SecurityPolicyLookupRequest_VnicLookupInfo* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityPolicyLookupRequest_VnicLookupInfo::_Internal::vnic_id(const SecurityPolicyLookupRequest_VnicLookupInfo* msg) {
-  return *msg->vnic_id_;
-}
-void SecurityPolicyLookupRequest_VnicLookupInfo::clear_vnic_id() {
-  if (GetArenaForAllocation() == nullptr && vnic_id_ != nullptr) {
-    delete vnic_id_;
-  }
-  vnic_id_ = nullptr;
-}
 SecurityPolicyLookupRequest_VnicLookupInfo::SecurityPolicyLookupRequest_VnicLookupInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -5535,10 +5530,13 @@ SecurityPolicyLookupRequest_VnicLookupInfo::SecurityPolicyLookupRequest_VnicLook
 SecurityPolicyLookupRequest_VnicLookupInfo::SecurityPolicyLookupRequest_VnicLookupInfo(const SecurityPolicyLookupRequest_VnicLookupInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_vnic_id()) {
-    vnic_id_ = new ::opi_api::common::v1::ObjectKey(*from.vnic_id_);
-  } else {
-    vnic_id_ = nullptr;
+  vnic_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vnic_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_vnic_name_ref().empty()) {
+    vnic_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vnic_name_ref(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&policy_direction_, &from.policy_direction_,
     static_cast<size_t>(reinterpret_cast<char*>(&address_family_) -
@@ -5547,10 +5545,14 @@ SecurityPolicyLookupRequest_VnicLookupInfo::SecurityPolicyLookupRequest_VnicLook
 }
 
 inline void SecurityPolicyLookupRequest_VnicLookupInfo::SharedCtor() {
+vnic_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vnic_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vnic_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&policy_direction_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&address_family_) -
-    reinterpret_cast<char*>(&vnic_id_)) + sizeof(address_family_));
+    reinterpret_cast<char*>(&policy_direction_)) + sizeof(address_family_));
 }
 
 SecurityPolicyLookupRequest_VnicLookupInfo::~SecurityPolicyLookupRequest_VnicLookupInfo() {
@@ -5562,7 +5564,7 @@ SecurityPolicyLookupRequest_VnicLookupInfo::~SecurityPolicyLookupRequest_VnicLoo
 
 inline void SecurityPolicyLookupRequest_VnicLookupInfo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete vnic_id_;
+  vnic_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SecurityPolicyLookupRequest_VnicLookupInfo::ArenaDtor(void* object) {
@@ -5581,10 +5583,7 @@ void SecurityPolicyLookupRequest_VnicLookupInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && vnic_id_ != nullptr) {
-    delete vnic_id_;
-  }
-  vnic_id_ = nullptr;
+  vnic_name_ref_.ClearToEmpty();
   ::memset(&policy_direction_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&address_family_) -
       reinterpret_cast<char*>(&policy_direction_)) + sizeof(address_family_));
@@ -5597,10 +5596,12 @@ const char* SecurityPolicyLookupRequest_VnicLookupInfo::_InternalParse(const cha
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey vnic_id = 1;
+      // string vnic_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vnic_id(), ptr);
+          auto str = _internal_mutable_vnic_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5652,12 +5653,14 @@ uint8_t* SecurityPolicyLookupRequest_VnicLookupInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vnic_id = 1;
-  if (this->_internal_has_vnic_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::vnic_id(this), target, stream);
+  // string vnic_name_ref = 1;
+  if (!this->_internal_vnic_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vnic_name_ref().data(), static_cast<int>(this->_internal_vnic_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_vnic_name_ref(), target);
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
@@ -5690,11 +5693,11 @@ size_t SecurityPolicyLookupRequest_VnicLookupInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vnic_id = 1;
-  if (this->_internal_has_vnic_id()) {
+  // string vnic_name_ref = 1;
+  if (!this->_internal_vnic_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vnic_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vnic_name_ref());
   }
 
   // .opi_api.network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
@@ -5731,8 +5734,8 @@ void SecurityPolicyLookupRequest_VnicLookupInfo::MergeFrom(const SecurityPolicyL
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_vnic_id()) {
-    _internal_mutable_vnic_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vnic_id());
+  if (!from._internal_vnic_name_ref().empty()) {
+    _internal_set_vnic_name_ref(from._internal_vnic_name_ref());
   }
   if (from._internal_policy_direction() != 0) {
     _internal_set_policy_direction(from._internal_policy_direction());
@@ -5756,13 +5759,20 @@ bool SecurityPolicyLookupRequest_VnicLookupInfo::IsInitialized() const {
 
 void SecurityPolicyLookupRequest_VnicLookupInfo::InternalSwap(SecurityPolicyLookupRequest_VnicLookupInfo* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vnic_name_ref_, lhs_arena,
+      &other->vnic_name_ref_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SecurityPolicyLookupRequest_VnicLookupInfo, address_family_)
       + sizeof(SecurityPolicyLookupRequest_VnicLookupInfo::address_family_)
-      - PROTOBUF_FIELD_OFFSET(SecurityPolicyLookupRequest_VnicLookupInfo, vnic_id_)>(
-          reinterpret_cast<char*>(&vnic_id_),
-          reinterpret_cast<char*>(&other->vnic_id_));
+      - PROTOBUF_FIELD_OFFSET(SecurityPolicyLookupRequest_VnicLookupInfo, policy_direction_)>(
+          reinterpret_cast<char*>(&policy_direction_),
+          reinterpret_cast<char*>(&other->policy_direction_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SecurityPolicyLookupRequest_VnicLookupInfo::GetMetadata() const {
@@ -5775,15 +5785,10 @@ void SecurityPolicyLookupRequest_VnicLookupInfo::InternalSwap(SecurityPolicyLook
 
 class SecurityPolicyLookupRequest::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& policy_id(const SecurityPolicyLookupRequest* msg);
   static const ::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo& vnic_lookup_info(const SecurityPolicyLookupRequest* msg);
   static const ::opi_api::network::cloud::v1alpha1::PolicyLookupMatch& match_fields(const SecurityPolicyLookupRequest* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-SecurityPolicyLookupRequest::_Internal::policy_id(const SecurityPolicyLookupRequest* msg) {
-  return *msg->lookup_info_.policy_id_;
-}
 const ::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo&
 SecurityPolicyLookupRequest::_Internal::vnic_lookup_info(const SecurityPolicyLookupRequest* msg) {
   return *msg->lookup_info_.vnic_lookup_info_;
@@ -5791,31 +5796,6 @@ SecurityPolicyLookupRequest::_Internal::vnic_lookup_info(const SecurityPolicyLoo
 const ::opi_api::network::cloud::v1alpha1::PolicyLookupMatch&
 SecurityPolicyLookupRequest::_Internal::match_fields(const SecurityPolicyLookupRequest* msg) {
   return *msg->match_fields_;
-}
-void SecurityPolicyLookupRequest::set_allocated_policy_id(::opi_api::common::v1::ObjectKey* policy_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_lookup_info();
-  if (policy_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(policy_id));
-    if (message_arena != submessage_arena) {
-      policy_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, policy_id, submessage_arena);
-    }
-    set_has_policy_id();
-    lookup_info_.policy_id_ = policy_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-}
-void SecurityPolicyLookupRequest::clear_policy_id() {
-  if (_internal_has_policy_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete lookup_info_.policy_id_;
-    }
-    clear_has_lookup_info();
-  }
 }
 void SecurityPolicyLookupRequest::set_allocated_vnic_lookup_info(::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo* vnic_lookup_info) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -5851,8 +5831,8 @@ SecurityPolicyLookupRequest::SecurityPolicyLookupRequest(const SecurityPolicyLoo
   }
   clear_has_lookup_info();
   switch (from.lookup_info_case()) {
-    case kPolicyId: {
-      _internal_mutable_policy_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_policy_id());
+    case kPolicyNameRef: {
+      _internal_set_policy_name_ref(from._internal_policy_name_ref());
       break;
     }
     case kVnicLookupInfo: {
@@ -5899,10 +5879,8 @@ void SecurityPolicyLookupRequest::SetCachedSize(int size) const {
 void SecurityPolicyLookupRequest::clear_lookup_info() {
 // @@protoc_insertion_point(one_of_clear_start:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest)
   switch (lookup_info_case()) {
-    case kPolicyId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete lookup_info_.policy_id_;
-      }
+    case kPolicyNameRef: {
+      lookup_info_.policy_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kVnicLookupInfo: {
@@ -5939,10 +5917,12 @@ const char* SecurityPolicyLookupRequest::_InternalParse(const char* ptr, ::PROTO
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey policy_id = 1;
+      // string policy_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_policy_id(), ptr);
+          auto str = _internal_mutable_policy_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5992,12 +5972,14 @@ uint8_t* SecurityPolicyLookupRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey policy_id = 1;
-  if (_internal_has_policy_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::policy_id(this), target, stream);
+  // string policy_name_ref = 1;
+  if (_internal_has_policy_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_policy_name_ref().data(), static_cast<int>(this->_internal_policy_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_policy_name_ref(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo vnic_lookup_info = 2;
@@ -6040,11 +6022,11 @@ size_t SecurityPolicyLookupRequest::ByteSizeLong() const {
   }
 
   switch (lookup_info_case()) {
-    // .opi_api.common.v1.ObjectKey policy_id = 1;
-    case kPolicyId: {
+    // string policy_name_ref = 1;
+    case kPolicyNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *lookup_info_.policy_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_policy_name_ref());
       break;
     }
     // .opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo vnic_lookup_info = 2;
@@ -6084,8 +6066,8 @@ void SecurityPolicyLookupRequest::MergeFrom(const SecurityPolicyLookupRequest& f
     _internal_mutable_match_fields()->::opi_api::network::cloud::v1alpha1::PolicyLookupMatch::MergeFrom(from._internal_match_fields());
   }
   switch (from.lookup_info_case()) {
-    case kPolicyId: {
-      _internal_mutable_policy_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_policy_id());
+    case kPolicyNameRef: {
+      _internal_set_policy_name_ref(from._internal_policy_name_ref());
       break;
     }
     case kVnicLookupInfo: {

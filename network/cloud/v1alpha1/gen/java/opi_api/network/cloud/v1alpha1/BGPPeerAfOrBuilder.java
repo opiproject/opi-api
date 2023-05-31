@@ -9,10 +9,30 @@ public interface BGPPeerAfOrBuilder extends
 
   /**
    * <pre>
+   * unique key/identifier of peer AF config
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * unique key/identifier of peer AF config
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface BGPPeerAfOrBuilder extends
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.BGPPeerAfSpec getSpec();
@@ -30,7 +50,7 @@ public interface BGPPeerAfOrBuilder extends
    * configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.BGPPeerAfSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface BGPPeerAfOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
@@ -48,7 +68,7 @@ public interface BGPPeerAfOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;</code>
    * @return The state.
    */
   opi_api.network.cloud.v1alpha1.BGPPeerAfStatus getState();
@@ -57,7 +77,7 @@ public interface BGPPeerAfOrBuilder extends
    * status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.BGPPeerAfStatusOrBuilder getStateOrBuilder();
 }

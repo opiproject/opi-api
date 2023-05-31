@@ -119,17 +119,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (ipOrMacCase_ == 8) {
-              subBuilder = ((opi_api.common.v1.ObjectKey) ipOrMac_).toBuilder();
-            }
-            ipOrMac_ =
-                input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((opi_api.common.v1.ObjectKey) ipOrMac_);
-              ipOrMac_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             ipOrMacCase_ = 8;
+            ipOrMac_ = s;
             break;
           }
           default: {
@@ -173,7 +165,7 @@ private static final long serialVersionUID = 0L;
     MAC_KEY(5),
     IP_ADDRESS(6),
     MAC_ADDRESS(7),
-    VPC_ID(8),
+    VPC_NAME_REF(8),
     IPORMAC_NOT_SET(0);
     private final int value;
     private IpOrMacCase(int value) {
@@ -195,7 +187,7 @@ private static final long serialVersionUID = 0L;
         case 5: return MAC_KEY;
         case 6: return IP_ADDRESS;
         case 7: return MAC_ADDRESS;
-        case 8: return VPC_ID;
+        case 8: return VPC_NAME_REF;
         case 0: return IPORMAC_NOT_SET;
         default: return null;
       }
@@ -440,17 +432,16 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.ByteString.EMPTY;
   }
 
-  public static final int VPC_ID_FIELD_NUMBER = 8;
+  public static final int VPC_NAME_REF_FIELD_NUMBER = 8;
   /**
    * <pre>
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 8;</code>
+   * @return Whether the vpcNameRef field is set.
    */
-  @java.lang.Override
-  public boolean hasVpcId() {
+  public boolean hasVpcNameRef() {
     return ipOrMacCase_ == 8;
   }
   /**
@@ -458,29 +449,51 @@ private static final long serialVersionUID = 0L;
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 8;</code>
+   * @return The vpcNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpcId() {
+  public java.lang.String getVpcNameRef() {
+    java.lang.Object ref = "";
     if (ipOrMacCase_ == 8) {
-       return (opi_api.common.v1.ObjectKey) ipOrMac_;
+      ref = ipOrMac_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (ipOrMacCase_ == 8) {
+        ipOrMac_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * VPC id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
+   * <code>string vpc_name_ref = 8;</code>
+   * @return The bytes for vpcNameRef.
    */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
+  public com.google.protobuf.ByteString
+      getVpcNameRefBytes() {
+    java.lang.Object ref = "";
     if (ipOrMacCase_ == 8) {
-       return (opi_api.common.v1.ObjectKey) ipOrMac_;
+      ref = ipOrMac_;
     }
-    return opi_api.common.v1.ObjectKey.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (ipOrMacCase_ == 8) {
+        ipOrMac_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -520,7 +533,7 @@ private static final long serialVersionUID = 0L;
           7, (com.google.protobuf.ByteString) ipOrMac_);
     }
     if (ipOrMacCase_ == 8) {
-      output.writeMessage(8, (opi_api.common.v1.ObjectKey) ipOrMac_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, ipOrMac_);
     }
     unknownFields.writeTo(output);
   }
@@ -561,8 +574,7 @@ private static final long serialVersionUID = 0L;
             7, (com.google.protobuf.ByteString) ipOrMac_);
     }
     if (ipOrMacCase_ == 8) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (opi_api.common.v1.ObjectKey) ipOrMac_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, ipOrMac_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -602,8 +614,8 @@ private static final long serialVersionUID = 0L;
             .equals(other.getMacAddress())) return false;
         break;
       case 8:
-        if (!getVpcId()
-            .equals(other.getVpcId())) return false;
+        if (!getVpcNameRef()
+            .equals(other.getVpcNameRef())) return false;
         break;
       case 0:
       default:
@@ -644,8 +656,8 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getMacAddress().hashCode();
         break;
       case 8:
-        hash = (37 * hash) + VPC_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getVpcId().hashCode();
+        hash = (37 * hash) + VPC_NAME_REF_FIELD_NUMBER;
+        hash = (53 * hash) + getVpcNameRef().hashCode();
         break;
       case 0:
       default:
@@ -849,11 +861,7 @@ private static final long serialVersionUID = 0L;
         result.ipOrMac_ = ipOrMac_;
       }
       if (ipOrMacCase_ == 8) {
-        if (vpcIdBuilder_ == null) {
-          result.ipOrMac_ = ipOrMac_;
-        } else {
-          result.ipOrMac_ = vpcIdBuilder_.build();
-        }
+        result.ipOrMac_ = ipOrMac_;
       }
       result.ipOrMacCase_ = ipOrMacCase_;
       onBuilt();
@@ -930,8 +938,10 @@ private static final long serialVersionUID = 0L;
           setMacAddress(other.getMacAddress());
           break;
         }
-        case VPC_ID: {
-          mergeVpcId(other.getVpcId());
+        case VPC_NAME_REF: {
+          ipOrMacCase_ = 8;
+          ipOrMac_ = other.ipOrMac_;
+          onChanged();
           break;
         }
         case IPORMAC_NOT_SET: {
@@ -1769,18 +1779,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpcIdBuilder_;
     /**
      * <pre>
      * VPC id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     * @return Whether the vpcId field is set.
+     * <code>string vpc_name_ref = 8;</code>
+     * @return Whether the vpcNameRef field is set.
      */
     @java.lang.Override
-    public boolean hasVpcId() {
+    public boolean hasVpcNameRef() {
       return ipOrMacCase_ == 8;
     }
     /**
@@ -1788,21 +1796,25 @@ private static final long serialVersionUID = 0L;
      * VPC id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     * @return The vpcId.
+     * <code>string vpc_name_ref = 8;</code>
+     * @return The vpcNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKey getVpcId() {
-      if (vpcIdBuilder_ == null) {
+    public java.lang.String getVpcNameRef() {
+      java.lang.Object ref = "";
+      if (ipOrMacCase_ == 8) {
+        ref = ipOrMac_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (ipOrMacCase_ == 8) {
-          return (opi_api.common.v1.ObjectKey) ipOrMac_;
+          ipOrMac_ = s;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return s;
       } else {
-        if (ipOrMacCase_ == 8) {
-          return vpcIdBuilder_.getMessage();
-        }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1810,114 +1822,26 @@ private static final long serialVersionUID = 0L;
      * VPC id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     */
-    public Builder setVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ipOrMac_ = value;
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(value);
-      }
-      ipOrMacCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * VPC id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     */
-    public Builder setVpcId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpcIdBuilder_ == null) {
-        ipOrMac_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(builderForValue.build());
-      }
-      ipOrMacCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * VPC id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     */
-    public Builder mergeVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (ipOrMacCase_ == 8 &&
-            ipOrMac_ != opi_api.common.v1.ObjectKey.getDefaultInstance()) {
-          ipOrMac_ = opi_api.common.v1.ObjectKey.newBuilder((opi_api.common.v1.ObjectKey) ipOrMac_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          ipOrMac_ = value;
-        }
-        onChanged();
-      } else {
-        if (ipOrMacCase_ == 8) {
-          vpcIdBuilder_.mergeFrom(value);
-        }
-        vpcIdBuilder_.setMessage(value);
-      }
-      ipOrMacCase_ = 8;
-      return this;
-    }
-    /**
-     * <pre>
-     * VPC id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     */
-    public Builder clearVpcId() {
-      if (vpcIdBuilder_ == null) {
-        if (ipOrMacCase_ == 8) {
-          ipOrMacCase_ = 0;
-          ipOrMac_ = null;
-          onChanged();
-        }
-      } else {
-        if (ipOrMacCase_ == 8) {
-          ipOrMacCase_ = 0;
-          ipOrMac_ = null;
-        }
-        vpcIdBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * VPC id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpcIdBuilder() {
-      return getVpcIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * VPC id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
+     * <code>string vpc_name_ref = 8;</code>
+     * @return The bytes for vpcNameRef.
      */
     @java.lang.Override
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-      if ((ipOrMacCase_ == 8) && (vpcIdBuilder_ != null)) {
-        return vpcIdBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getVpcNameRefBytes() {
+      java.lang.Object ref = "";
+      if (ipOrMacCase_ == 8) {
+        ref = ipOrMac_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (ipOrMacCase_ == 8) {
-          return (opi_api.common.v1.ObjectKey) ipOrMac_;
+          ipOrMac_ = b;
         }
-        return opi_api.common.v1.ObjectKey.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -1925,25 +1849,55 @@ private static final long serialVersionUID = 0L;
      * VPC id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 8;</code>
+     * <code>string vpc_name_ref = 8;</code>
+     * @param value The vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpcIdFieldBuilder() {
-      if (vpcIdBuilder_ == null) {
-        if (!(ipOrMacCase_ == 8)) {
-          ipOrMac_ = opi_api.common.v1.ObjectKey.getDefaultInstance();
-        }
-        vpcIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                (opi_api.common.v1.ObjectKey) ipOrMac_,
-                getParentForChildren(),
-                isClean());
+    public Builder setVpcNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ipOrMacCase_ = 8;
+      ipOrMac_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * VPC id
+     * </pre>
+     *
+     * <code>string vpc_name_ref = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVpcNameRef() {
+      if (ipOrMacCase_ == 8) {
+        ipOrMacCase_ = 0;
         ipOrMac_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * VPC id
+     * </pre>
+     *
+     * <code>string vpc_name_ref = 8;</code>
+     * @param value The bytes for vpcNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVpcNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ipOrMacCase_ = 8;
-      onChanged();;
-      return vpcIdBuilder_;
+      ipOrMac_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

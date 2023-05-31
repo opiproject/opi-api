@@ -55,26 +55,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
             int rawValue = input.readEnum();
 
             state_ = rawValue;
             break;
           }
-          case 26: {
+          case 18: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (localAddress_ != null) {
               subBuilder = localAddress_.toBuilder();
@@ -87,7 +74,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (peerAddr_ != null) {
               subBuilder = peerAddr_.toBuilder();
@@ -100,58 +87,58 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 40: {
+          case 32: {
 
             remoteAsn_ = input.readUInt32();
             break;
           }
-          case 48: {
+          case 40: {
 
             sendComm_ = input.readBool();
             break;
           }
-          case 56: {
+          case 48: {
 
             sendExtComm_ = input.readBool();
             break;
           }
-          case 64: {
+          case 56: {
             int rawValue = input.readEnum();
 
             rrClient_ = rawValue;
             break;
           }
-          case 72: {
+          case 64: {
 
             connectRetry_ = input.readInt32();
             break;
           }
-          case 80: {
+          case 72: {
 
             holdtime_ = input.readInt32();
             break;
           }
-          case 88: {
+          case 80: {
 
             keepAlive_ = input.readInt32();
             break;
           }
-          case 98: {
+          case 90: {
 
             password_ = input.readBytes();
             break;
           }
-          case 104: {
+          case 96: {
 
             ttl_ = input.readInt32();
             break;
           }
-          case 112: {
+          case 104: {
 
             idleHoldtime_ = input.readInt32();
             break;
           }
-          case 120: {
+          case 112: {
 
             allowLocalAs_ = input.readInt32();
             break;
@@ -188,45 +175,7 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.BGPPeerSpec.class, opi_api.network.cloud.v1alpha1.BGPPeerSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique key/identifier of peer
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of peer
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of peer
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int STATE_FIELD_NUMBER = 2;
+  public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
    * <pre>
@@ -235,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * TCP connections attempts from neighbor
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -248,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * TCP connections attempts from neighbor
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
    * @return The state.
    */
   @java.lang.Override public opi_api.network.opinetcommon.v1alpha1.AdminState getState() {
@@ -257,7 +206,7 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.opinetcommon.v1alpha1.AdminState.UNRECOGNIZED : result;
   }
 
-  public static final int LOCAL_ADDRESS_FIELD_NUMBER = 3;
+  public static final int LOCAL_ADDRESS_FIELD_NUMBER = 2;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress localAddress_;
   /**
    * <pre>
@@ -265,7 +214,7 @@ private static final long serialVersionUID = 0L;
    * session if an all 0 IP address is provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
    * @return Whether the localAddress field is set.
    */
   @java.lang.Override
@@ -278,7 +227,7 @@ private static final long serialVersionUID = 0L;
    * session if an all 0 IP address is provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
    * @return The localAddress.
    */
   @java.lang.Override
@@ -291,21 +240,21 @@ private static final long serialVersionUID = 0L;
    * session if an all 0 IP address is provided
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalAddressOrBuilder() {
     return getLocalAddress();
   }
 
-  public static final int PEER_ADDR_FIELD_NUMBER = 4;
+  public static final int PEER_ADDR_FIELD_NUMBER = 3;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress peerAddr_;
   /**
    * <pre>
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
    * @return Whether the peerAddr field is set.
    */
   @java.lang.Override
@@ -317,7 +266,7 @@ private static final long serialVersionUID = 0L;
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
    * @return The peerAddr.
    */
   @java.lang.Override
@@ -329,14 +278,14 @@ private static final long serialVersionUID = 0L;
    * BGP peer IP address
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPeerAddrOrBuilder() {
     return getPeerAddr();
   }
 
-  public static final int REMOTE_ASN_FIELD_NUMBER = 5;
+  public static final int REMOTE_ASN_FIELD_NUMBER = 4;
   private int remoteAsn_;
   /**
    * <pre>
@@ -345,7 +294,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
    * </pre>
    *
-   * <code>uint32 remote_asn = 5;</code>
+   * <code>uint32 remote_asn = 4;</code>
    * @return The remoteAsn.
    */
   @java.lang.Override
@@ -353,14 +302,14 @@ private static final long serialVersionUID = 0L;
     return remoteAsn_;
   }
 
-  public static final int SEND_COMM_FIELD_NUMBER = 6;
+  public static final int SEND_COMM_FIELD_NUMBER = 5;
   private boolean sendComm_;
   /**
    * <pre>
    * send regular community attributes to neighbor
    * </pre>
    *
-   * <code>bool send_comm = 6;</code>
+   * <code>bool send_comm = 5;</code>
    * @return The sendComm.
    */
   @java.lang.Override
@@ -368,14 +317,14 @@ private static final long serialVersionUID = 0L;
     return sendComm_;
   }
 
-  public static final int SEND_EXT_COMM_FIELD_NUMBER = 7;
+  public static final int SEND_EXT_COMM_FIELD_NUMBER = 6;
   private boolean sendExtComm_;
   /**
    * <pre>
    * send extended community attributes to neighbor
    * </pre>
    *
-   * <code>bool send_ext_comm = 7;</code>
+   * <code>bool send_ext_comm = 6;</code>
    * @return The sendExtComm.
    */
   @java.lang.Override
@@ -383,14 +332,14 @@ private static final long serialVersionUID = 0L;
     return sendExtComm_;
   }
 
-  public static final int RR_CLIENT_FIELD_NUMBER = 8;
+  public static final int RR_CLIENT_FIELD_NUMBER = 7;
   private int rrClient_;
   /**
    * <pre>
    * peer is a route reflector client
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
    * @return The enum numeric value on the wire for rrClient.
    */
   @java.lang.Override public int getRrClientValue() {
@@ -401,7 +350,7 @@ private static final long serialVersionUID = 0L;
    * peer is a route reflector client
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
    * @return The rrClient.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.BGPPeerRRClient getRrClient() {
@@ -410,14 +359,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.BGPPeerRRClient.UNRECOGNIZED : result;
   }
 
-  public static final int CONNECT_RETRY_FIELD_NUMBER = 9;
+  public static final int CONNECT_RETRY_FIELD_NUMBER = 8;
   private int connectRetry_;
   /**
    * <pre>
    * BGP session connect-retry timer in seconds
    * </pre>
    *
-   * <code>int32 connect_retry = 9;</code>
+   * <code>int32 connect_retry = 8;</code>
    * @return The connectRetry.
    */
   @java.lang.Override
@@ -425,14 +374,14 @@ private static final long serialVersionUID = 0L;
     return connectRetry_;
   }
 
-  public static final int HOLDTIME_FIELD_NUMBER = 10;
+  public static final int HOLDTIME_FIELD_NUMBER = 9;
   private int holdtime_;
   /**
    * <pre>
    * BGP session configured holdtime timer in seconds
    * </pre>
    *
-   * <code>int32 holdtime = 10;</code>
+   * <code>int32 holdtime = 9;</code>
    * @return The holdtime.
    */
   @java.lang.Override
@@ -440,14 +389,14 @@ private static final long serialVersionUID = 0L;
     return holdtime_;
   }
 
-  public static final int KEEP_ALIVE_FIELD_NUMBER = 11;
+  public static final int KEEP_ALIVE_FIELD_NUMBER = 10;
   private int keepAlive_;
   /**
    * <pre>
    * BGP session configured keepalive timer in seconds
    * </pre>
    *
-   * <code>int32 keep_alive = 11;</code>
+   * <code>int32 keep_alive = 10;</code>
    * @return The keepAlive.
    */
   @java.lang.Override
@@ -455,14 +404,14 @@ private static final long serialVersionUID = 0L;
     return keepAlive_;
   }
 
-  public static final int PASSWORD_FIELD_NUMBER = 12;
+  public static final int PASSWORD_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString password_;
   /**
    * <pre>
    * MD5 authentication
    * </pre>
    *
-   * <code>bytes password = 12;</code>
+   * <code>bytes password = 11;</code>
    * @return The password.
    */
   @java.lang.Override
@@ -470,7 +419,7 @@ private static final long serialVersionUID = 0L;
     return password_;
   }
 
-  public static final int TTL_FIELD_NUMBER = 13;
+  public static final int TTL_FIELD_NUMBER = 12;
   private int ttl_;
   /**
    * <pre>
@@ -480,7 +429,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: ttl is not a duration. --)
    * </pre>
    *
-   * <code>int32 ttl = 13;</code>
+   * <code>int32 ttl = 12;</code>
    * @return The ttl.
    */
   @java.lang.Override
@@ -488,14 +437,14 @@ private static final long serialVersionUID = 0L;
     return ttl_;
   }
 
-  public static final int IDLE_HOLDTIME_FIELD_NUMBER = 14;
+  public static final int IDLE_HOLDTIME_FIELD_NUMBER = 13;
   private int idleHoldtime_;
   /**
    * <pre>
    * IdleHoldTime in seconds, range:1-32767, default 15
    * </pre>
    *
-   * <code>int32 idle_holdtime = 14;</code>
+   * <code>int32 idle_holdtime = 13;</code>
    * @return The idleHoldtime.
    */
   @java.lang.Override
@@ -503,7 +452,7 @@ private static final long serialVersionUID = 0L;
     return idleHoldtime_;
   }
 
-  public static final int ALLOW_LOCAL_AS_FIELD_NUMBER = 15;
+  public static final int ALLOW_LOCAL_AS_FIELD_NUMBER = 14;
   private int allowLocalAs_;
   /**
    * <pre>
@@ -513,7 +462,7 @@ private static final long serialVersionUID = 0L;
    * range:0-255, default 0
    * </pre>
    *
-   * <code>int32 allow_local_as = 15;</code>
+   * <code>int32 allow_local_as = 14;</code>
    * @return The allowLocalAs.
    */
   @java.lang.Override
@@ -535,50 +484,47 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (state_ != opi_api.network.opinetcommon.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, state_);
+      output.writeEnum(1, state_);
     }
     if (localAddress_ != null) {
-      output.writeMessage(3, getLocalAddress());
+      output.writeMessage(2, getLocalAddress());
     }
     if (peerAddr_ != null) {
-      output.writeMessage(4, getPeerAddr());
+      output.writeMessage(3, getPeerAddr());
     }
     if (remoteAsn_ != 0) {
-      output.writeUInt32(5, remoteAsn_);
+      output.writeUInt32(4, remoteAsn_);
     }
     if (sendComm_ != false) {
-      output.writeBool(6, sendComm_);
+      output.writeBool(5, sendComm_);
     }
     if (sendExtComm_ != false) {
-      output.writeBool(7, sendExtComm_);
+      output.writeBool(6, sendExtComm_);
     }
     if (rrClient_ != opi_api.network.cloud.v1alpha1.BGPPeerRRClient.BGP_PEER_RR_CLIENT_UNSPECIFIED.getNumber()) {
-      output.writeEnum(8, rrClient_);
+      output.writeEnum(7, rrClient_);
     }
     if (connectRetry_ != 0) {
-      output.writeInt32(9, connectRetry_);
+      output.writeInt32(8, connectRetry_);
     }
     if (holdtime_ != 0) {
-      output.writeInt32(10, holdtime_);
+      output.writeInt32(9, holdtime_);
     }
     if (keepAlive_ != 0) {
-      output.writeInt32(11, keepAlive_);
+      output.writeInt32(10, keepAlive_);
     }
     if (!password_.isEmpty()) {
-      output.writeBytes(12, password_);
+      output.writeBytes(11, password_);
     }
     if (ttl_ != 0) {
-      output.writeInt32(13, ttl_);
+      output.writeInt32(12, ttl_);
     }
     if (idleHoldtime_ != 0) {
-      output.writeInt32(14, idleHoldtime_);
+      output.writeInt32(13, idleHoldtime_);
     }
     if (allowLocalAs_ != 0) {
-      output.writeInt32(15, allowLocalAs_);
+      output.writeInt32(14, allowLocalAs_);
     }
     unknownFields.writeTo(output);
   }
@@ -589,65 +535,61 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (state_ != opi_api.network.opinetcommon.v1alpha1.AdminState.ADMIN_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, state_);
+        .computeEnumSize(1, state_);
     }
     if (localAddress_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLocalAddress());
+        .computeMessageSize(2, getLocalAddress());
     }
     if (peerAddr_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getPeerAddr());
+        .computeMessageSize(3, getPeerAddr());
     }
     if (remoteAsn_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(5, remoteAsn_);
+        .computeUInt32Size(4, remoteAsn_);
     }
     if (sendComm_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, sendComm_);
+        .computeBoolSize(5, sendComm_);
     }
     if (sendExtComm_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, sendExtComm_);
+        .computeBoolSize(6, sendExtComm_);
     }
     if (rrClient_ != opi_api.network.cloud.v1alpha1.BGPPeerRRClient.BGP_PEER_RR_CLIENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8, rrClient_);
+        .computeEnumSize(7, rrClient_);
     }
     if (connectRetry_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, connectRetry_);
+        .computeInt32Size(8, connectRetry_);
     }
     if (holdtime_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(10, holdtime_);
+        .computeInt32Size(9, holdtime_);
     }
     if (keepAlive_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, keepAlive_);
+        .computeInt32Size(10, keepAlive_);
     }
     if (!password_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(12, password_);
+        .computeBytesSize(11, password_);
     }
     if (ttl_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, ttl_);
+        .computeInt32Size(12, ttl_);
     }
     if (idleHoldtime_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(14, idleHoldtime_);
+        .computeInt32Size(13, idleHoldtime_);
     }
     if (allowLocalAs_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(15, allowLocalAs_);
+        .computeInt32Size(14, allowLocalAs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -664,11 +606,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.BGPPeerSpec other = (opi_api.network.cloud.v1alpha1.BGPPeerSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (state_ != other.state_) return false;
     if (hasLocalAddress() != other.hasLocalAddress()) return false;
     if (hasLocalAddress()) {
@@ -712,10 +649,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     if (hasLocalAddress()) {
@@ -887,12 +820,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       state_ = 0;
 
       if (localAddressBuilder_ == null) {
@@ -955,11 +882,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.BGPPeerSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.BGPPeerSpec result = new opi_api.network.cloud.v1alpha1.BGPPeerSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.state_ = state_;
       if (localAddressBuilder_ == null) {
         result.localAddress_ = localAddress_;
@@ -1030,9 +952,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.BGPPeerSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.BGPPeerSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -1104,161 +1023,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of peer
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int state_ = 0;
     /**
      * <pre>
@@ -1267,7 +1031,7 @@ private static final long serialVersionUID = 0L;
      * TCP connections attempts from neighbor
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -1280,7 +1044,7 @@ private static final long serialVersionUID = 0L;
      * TCP connections attempts from neighbor
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -1297,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * TCP connections attempts from neighbor
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -1313,7 +1077,7 @@ private static final long serialVersionUID = 0L;
      * TCP connections attempts from neighbor
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
@@ -1333,7 +1097,7 @@ private static final long serialVersionUID = 0L;
      * TCP connections attempts from neighbor
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
@@ -1352,7 +1116,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      * @return Whether the localAddress field is set.
      */
     public boolean hasLocalAddress() {
@@ -1364,7 +1128,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      * @return The localAddress.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getLocalAddress() {
@@ -1380,7 +1144,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public Builder setLocalAddress(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (localAddressBuilder_ == null) {
@@ -1401,7 +1165,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public Builder setLocalAddress(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1420,7 +1184,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public Builder mergeLocalAddress(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (localAddressBuilder_ == null) {
@@ -1443,7 +1207,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public Builder clearLocalAddress() {
       if (localAddressBuilder_ == null) {
@@ -1462,7 +1226,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getLocalAddressBuilder() {
       
@@ -1475,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getLocalAddressOrBuilder() {
       if (localAddressBuilder_ != null) {
@@ -1491,7 +1255,7 @@ private static final long serialVersionUID = 0L;
      * session if an all 0 IP address is provided
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1515,7 +1279,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      * @return Whether the peerAddr field is set.
      */
     public boolean hasPeerAddr() {
@@ -1526,7 +1290,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      * @return The peerAddr.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getPeerAddr() {
@@ -1541,7 +1305,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public Builder setPeerAddr(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (peerAddrBuilder_ == null) {
@@ -1561,7 +1325,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public Builder setPeerAddr(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1579,7 +1343,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public Builder mergePeerAddr(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (peerAddrBuilder_ == null) {
@@ -1601,7 +1365,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public Builder clearPeerAddr() {
       if (peerAddrBuilder_ == null) {
@@ -1619,7 +1383,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getPeerAddrBuilder() {
       
@@ -1631,7 +1395,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getPeerAddrOrBuilder() {
       if (peerAddrBuilder_ != null) {
@@ -1646,7 +1410,7 @@ private static final long serialVersionUID = 0L;
      * BGP peer IP address
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1670,7 +1434,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 remote_asn = 5;</code>
+     * <code>uint32 remote_asn = 4;</code>
      * @return The remoteAsn.
      */
     @java.lang.Override
@@ -1684,7 +1448,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 remote_asn = 5;</code>
+     * <code>uint32 remote_asn = 4;</code>
      * @param value The remoteAsn to set.
      * @return This builder for chaining.
      */
@@ -1701,7 +1465,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 remote_asn = 5;</code>
+     * <code>uint32 remote_asn = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearRemoteAsn() {
@@ -1717,7 +1481,7 @@ private static final long serialVersionUID = 0L;
      * send regular community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_comm = 6;</code>
+     * <code>bool send_comm = 5;</code>
      * @return The sendComm.
      */
     @java.lang.Override
@@ -1729,7 +1493,7 @@ private static final long serialVersionUID = 0L;
      * send regular community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_comm = 6;</code>
+     * <code>bool send_comm = 5;</code>
      * @param value The sendComm to set.
      * @return This builder for chaining.
      */
@@ -1744,7 +1508,7 @@ private static final long serialVersionUID = 0L;
      * send regular community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_comm = 6;</code>
+     * <code>bool send_comm = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearSendComm() {
@@ -1760,7 +1524,7 @@ private static final long serialVersionUID = 0L;
      * send extended community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_ext_comm = 7;</code>
+     * <code>bool send_ext_comm = 6;</code>
      * @return The sendExtComm.
      */
     @java.lang.Override
@@ -1772,7 +1536,7 @@ private static final long serialVersionUID = 0L;
      * send extended community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_ext_comm = 7;</code>
+     * <code>bool send_ext_comm = 6;</code>
      * @param value The sendExtComm to set.
      * @return This builder for chaining.
      */
@@ -1787,7 +1551,7 @@ private static final long serialVersionUID = 0L;
      * send extended community attributes to neighbor
      * </pre>
      *
-     * <code>bool send_ext_comm = 7;</code>
+     * <code>bool send_ext_comm = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearSendExtComm() {
@@ -1803,7 +1567,7 @@ private static final long serialVersionUID = 0L;
      * peer is a route reflector client
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
      * @return The enum numeric value on the wire for rrClient.
      */
     @java.lang.Override public int getRrClientValue() {
@@ -1814,7 +1578,7 @@ private static final long serialVersionUID = 0L;
      * peer is a route reflector client
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
      * @param value The enum numeric value on the wire for rrClient to set.
      * @return This builder for chaining.
      */
@@ -1829,7 +1593,7 @@ private static final long serialVersionUID = 0L;
      * peer is a route reflector client
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
      * @return The rrClient.
      */
     @java.lang.Override
@@ -1843,7 +1607,7 @@ private static final long serialVersionUID = 0L;
      * peer is a route reflector client
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
      * @param value The rrClient to set.
      * @return This builder for chaining.
      */
@@ -1861,7 +1625,7 @@ private static final long serialVersionUID = 0L;
      * peer is a route reflector client
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearRrClient() {
@@ -1877,7 +1641,7 @@ private static final long serialVersionUID = 0L;
      * BGP session connect-retry timer in seconds
      * </pre>
      *
-     * <code>int32 connect_retry = 9;</code>
+     * <code>int32 connect_retry = 8;</code>
      * @return The connectRetry.
      */
     @java.lang.Override
@@ -1889,7 +1653,7 @@ private static final long serialVersionUID = 0L;
      * BGP session connect-retry timer in seconds
      * </pre>
      *
-     * <code>int32 connect_retry = 9;</code>
+     * <code>int32 connect_retry = 8;</code>
      * @param value The connectRetry to set.
      * @return This builder for chaining.
      */
@@ -1904,7 +1668,7 @@ private static final long serialVersionUID = 0L;
      * BGP session connect-retry timer in seconds
      * </pre>
      *
-     * <code>int32 connect_retry = 9;</code>
+     * <code>int32 connect_retry = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectRetry() {
@@ -1920,7 +1684,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured holdtime timer in seconds
      * </pre>
      *
-     * <code>int32 holdtime = 10;</code>
+     * <code>int32 holdtime = 9;</code>
      * @return The holdtime.
      */
     @java.lang.Override
@@ -1932,7 +1696,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured holdtime timer in seconds
      * </pre>
      *
-     * <code>int32 holdtime = 10;</code>
+     * <code>int32 holdtime = 9;</code>
      * @param value The holdtime to set.
      * @return This builder for chaining.
      */
@@ -1947,7 +1711,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured holdtime timer in seconds
      * </pre>
      *
-     * <code>int32 holdtime = 10;</code>
+     * <code>int32 holdtime = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearHoldtime() {
@@ -1963,7 +1727,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured keepalive timer in seconds
      * </pre>
      *
-     * <code>int32 keep_alive = 11;</code>
+     * <code>int32 keep_alive = 10;</code>
      * @return The keepAlive.
      */
     @java.lang.Override
@@ -1975,7 +1739,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured keepalive timer in seconds
      * </pre>
      *
-     * <code>int32 keep_alive = 11;</code>
+     * <code>int32 keep_alive = 10;</code>
      * @param value The keepAlive to set.
      * @return This builder for chaining.
      */
@@ -1990,7 +1754,7 @@ private static final long serialVersionUID = 0L;
      * BGP session configured keepalive timer in seconds
      * </pre>
      *
-     * <code>int32 keep_alive = 11;</code>
+     * <code>int32 keep_alive = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearKeepAlive() {
@@ -2006,7 +1770,7 @@ private static final long serialVersionUID = 0L;
      * MD5 authentication
      * </pre>
      *
-     * <code>bytes password = 12;</code>
+     * <code>bytes password = 11;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -2018,7 +1782,7 @@ private static final long serialVersionUID = 0L;
      * MD5 authentication
      * </pre>
      *
-     * <code>bytes password = 12;</code>
+     * <code>bytes password = 11;</code>
      * @param value The password to set.
      * @return This builder for chaining.
      */
@@ -2036,7 +1800,7 @@ private static final long serialVersionUID = 0L;
      * MD5 authentication
      * </pre>
      *
-     * <code>bytes password = 12;</code>
+     * <code>bytes password = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
@@ -2055,7 +1819,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: ttl is not a duration. --)
      * </pre>
      *
-     * <code>int32 ttl = 13;</code>
+     * <code>int32 ttl = 12;</code>
      * @return The ttl.
      */
     @java.lang.Override
@@ -2070,7 +1834,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: ttl is not a duration. --)
      * </pre>
      *
-     * <code>int32 ttl = 13;</code>
+     * <code>int32 ttl = 12;</code>
      * @param value The ttl to set.
      * @return This builder for chaining.
      */
@@ -2088,7 +1852,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: ttl is not a duration. --)
      * </pre>
      *
-     * <code>int32 ttl = 13;</code>
+     * <code>int32 ttl = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearTtl() {
@@ -2104,7 +1868,7 @@ private static final long serialVersionUID = 0L;
      * IdleHoldTime in seconds, range:1-32767, default 15
      * </pre>
      *
-     * <code>int32 idle_holdtime = 14;</code>
+     * <code>int32 idle_holdtime = 13;</code>
      * @return The idleHoldtime.
      */
     @java.lang.Override
@@ -2116,7 +1880,7 @@ private static final long serialVersionUID = 0L;
      * IdleHoldTime in seconds, range:1-32767, default 15
      * </pre>
      *
-     * <code>int32 idle_holdtime = 14;</code>
+     * <code>int32 idle_holdtime = 13;</code>
      * @param value The idleHoldtime to set.
      * @return This builder for chaining.
      */
@@ -2131,7 +1895,7 @@ private static final long serialVersionUID = 0L;
      * IdleHoldTime in seconds, range:1-32767, default 15
      * </pre>
      *
-     * <code>int32 idle_holdtime = 14;</code>
+     * <code>int32 idle_holdtime = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearIdleHoldtime() {
@@ -2150,7 +1914,7 @@ private static final long serialVersionUID = 0L;
      * range:0-255, default 0
      * </pre>
      *
-     * <code>int32 allow_local_as = 15;</code>
+     * <code>int32 allow_local_as = 14;</code>
      * @return The allowLocalAs.
      */
     @java.lang.Override
@@ -2165,7 +1929,7 @@ private static final long serialVersionUID = 0L;
      * range:0-255, default 0
      * </pre>
      *
-     * <code>int32 allow_local_as = 15;</code>
+     * <code>int32 allow_local_as = 14;</code>
      * @param value The allowLocalAs to set.
      * @return This builder for chaining.
      */
@@ -2183,7 +1947,7 @@ private static final long serialVersionUID = 0L;
      * range:0-255, default 0
      * </pre>
      *
-     * <code>int32 allow_local_as = 15;</code>
+     * <code>int32 allow_local_as = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowLocalAs() {

@@ -9,37 +9,10 @@ public interface NextHopGroupSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * type of the nexthop
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -48,7 +21,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * type of the nexthop
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
    * @return The type.
    */
   opi_api.network.cloud.v1alpha1.NextHopGroupType getType();
@@ -58,7 +31,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   java.util.List<opi_api.network.cloud.v1alpha1.NextHopSpec> 
       getMembersList();
@@ -67,7 +40,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.NextHopSpec getMembers(int index);
   /**
@@ -75,7 +48,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   int getMembersCount();
   /**
@@ -83,7 +56,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   java.util.List<? extends opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder> 
       getMembersOrBuilderList();
@@ -92,7 +65,7 @@ public interface NextHopGroupSpecOrBuilder extends
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder getMembersOrBuilder(
       int index);

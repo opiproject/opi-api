@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr RouteTable::RouteTable(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct RouteTableDefaultTypeInternal {
   constexpr RouteTableDefaultTypeInternal()
@@ -36,7 +37,6 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RouteTableDefaultTypeInternal _
 constexpr RouteTableSpec::RouteTableSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : routes_()
-  , id_(nullptr)
   , af_(0)
 
   , priority_enable_(false){}
@@ -51,7 +51,7 @@ struct RouteTableSpecDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RouteTableSpecDefaultTypeInternal _RouteTableSpec_default_instance_;
 constexpr RouteInfo::RouteInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
+  : route_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , attrs_(nullptr){}
 struct RouteInfoDefaultTypeInternal {
   constexpr RouteInfoDefaultTypeInternal()
@@ -103,8 +103,8 @@ struct RouteAttrsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RouteAttrsDefaultTypeInternal _RouteAttrs_default_instance_;
 constexpr VPCPeerNhInfo::VPCPeerNhInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vpc_id_(nullptr)
-  , route_table_id_(nullptr){}
+  : vpc_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct VPCPeerNhInfoDefaultTypeInternal {
   constexpr VPCPeerNhInfoDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -118,7 +118,7 @@ constexpr OverlayNextHopIPInfo::OverlayNextHopIPInfo(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : nexthop_ip_()
   , nexthop_mac_()
-  , vpc_id_(nullptr){}
+  , vpc_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct OverlayNextHopIPInfoDefaultTypeInternal {
   constexpr OverlayNextHopIPInfoDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -130,8 +130,8 @@ struct OverlayNextHopIPInfoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OverlayNextHopIPInfoDefaultTypeInternal _OverlayNextHopIPInfo_default_instance_;
 constexpr RouteId::RouteId(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , route_table_id_(nullptr){}
+  : route_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct RouteIdDefaultTypeInternal {
   constexpr RouteIdDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -143,7 +143,8 @@ struct RouteIdDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RouteIdDefaultTypeInternal _RouteId_default_instance_;
 constexpr Route::Route(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct RouteDefaultTypeInternal {
   constexpr RouteDefaultTypeInternal()
@@ -156,8 +157,7 @@ struct RouteDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RouteDefaultTypeInternal _Route_default_instance_;
 constexpr RouteSpec::RouteSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , route_table_id_(nullptr)
+  : route_table_name_ref_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , attrs_(nullptr){}
 struct RouteSpecDefaultTypeInternal {
   constexpr RouteSpecDefaultTypeInternal()
@@ -194,6 +194,7 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTable, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTable, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTable, status_),
   ~0u,  // no _has_bits_
@@ -202,7 +203,6 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTableSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTableSpec, af_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTableSpec, priority_enable_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTableSpec, routes_),
@@ -212,7 +212,7 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteInfo, id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteInfo, route_id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteInfo, attrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteTableStatus, _internal_metadata_),
@@ -255,8 +255,8 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo, vpc_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo, vpc_name_ref_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo, route_table_name_ref_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -265,21 +265,22 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo, nexthop_ip_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo, nexthop_mac_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo, vpc_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo, vpc_name_ref_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteId, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteId, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteId, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteId, route_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteId, route_table_name_ref_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Route, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Route, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Route, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Route, status_),
   ~0u,  // no _has_bits_
@@ -288,8 +289,7 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteSpec, id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteSpec, route_table_id_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteSpec, route_table_name_ref_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteSpec, attrs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::RouteStatus, _internal_metadata_),
@@ -300,7 +300,7 @@ const uint32_t TableStruct_route_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteTable)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteTableSpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteTableSpec)},
   { 18, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteInfo)},
   { 26, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteTableStatus)},
   { 40, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteAttrs)},
@@ -308,7 +308,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 69, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo)},
   { 78, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteId)},
   { 86, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Route)},
-  { 94, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteSpec)},
+  { 95, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteSpec)},
   { 103, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::RouteStatus)},
 };
 
@@ -328,72 +328,68 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_route_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\013route.proto\022\036opi_api.network.cloud.v1a"
-  "lpha1\032\020object_key.proto\032\022networktypes.pr"
-  "oto\"\214\001\n\nRouteTable\022<\n\004spec\030\003 \001(\0132..opi_a"
-  "pi.network.cloud.v1alpha1.RouteTableSpec"
-  "\022@\n\006status\030\004 \001(\01320.opi_api.network.cloud"
-  ".v1alpha1.RouteTableStatus\"\307\001\n\016RouteTabl"
-  "eSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Ob"
-  "jectKey\0227\n\002af\030\002 \001(\0162+.opi_api.network.op"
-  "inetcommon.v1alpha1.IpAf\022\027\n\017priority_ena"
-  "ble\030\003 \001(\010\0229\n\006routes\030\004 \003(\0132).opi_api.netw"
-  "ork.cloud.v1alpha1.RouteInfo\"p\n\tRouteInf"
-  "o\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Object"
-  "Key\0229\n\005attrs\030\002 \001(\0132*.opi_api.network.clo"
-  "ud.v1alpha1.RouteAttrs\"\316\001\n\020RouteTableSta"
-  "tus\022\021\n\tvpc_count\030\001 \001(\005\022\024\n\014subnet_count\030\002"
-  " \001(\005\022\022\n\nvnic_count\030\003 \001(\005\022\017\n\007pool_id\030\004 \001("
-  "\005\022\016\n\006hw_idx\030\005 \001(\005\022 \n\030route_table_base_ad"
-  "dress\030\006 \001(\004\022\030\n\020hw_lpm_block_idx\030\007 \001(\005\022 \n"
-  "\030hw_lpm_rewrite_block_idx\030\010 \001(\005\"\243\005\n\nRout"
-  "eAttrs\022\?\n\006prefix\030\001 \001(\0132/.opi_api.network"
-  ".opinetcommon.v1alpha1.IPPrefix\022\?\n\013route"
-  "_class\030\002 \001(\0162*.opi_api.network.cloud.v1a"
-  "lpha1.RouteClass\022\026\n\016class_priority\030\003 \001(\005"
-  "\022\020\n\010priority\030\004 \001(\005\022R\n\022overlay_nh_ip_info"
-  "\030\005 \001(\01324.opi_api.network.cloud.v1alpha1."
-  "OverlayNextHopIPInfoH\000\0222\n\nnexthop_id\030\006 \001"
-  "(\0132\034.opi_api.common.v1.ObjectKeyH\000\0223\n\013nh"
-  "_group_id\030\007 \001(\0132\034.opi_api.common.v1.Obje"
-  "ctKeyH\000\022D\n\013vpc_nh_info\030\010 \001(\0132-.opi_api.n"
-  "etwork.cloud.v1alpha1.VPCPeerNhInfoH\000\0221\n"
-  "\ttunnel_id\030\t \001(\0132\034.opi_api.common.v1.Obj"
-  "ectKeyH\000\0226\n\016route_table_id\030\n \001(\0132\034.opi_a"
-  "pi.common.v1.ObjectKeyH\000\022\026\n\014eval_mapping"
-  "\030\013 \001(\010H\000\022\013\n\003tos\030\014 \001(\005\022;\n\005encap\030\r \001(\0132,.o"
-  "pi_api.network.opinetcommon.v1alpha1.Enc"
-  "ap\022\023\n\013overlay_mac\030\016 \001(\014B\004\n\002nh\"s\n\rVPCPeer"
-  "NhInfo\022,\n\006vpc_id\030\001 \001(\0132\034.opi_api.common."
-  "v1.ObjectKey\0224\n\016route_table_id\030\002 \001(\0132\034.o"
-  "pi_api.common.v1.ObjectKey\"\237\001\n\024OverlayNe"
-  "xtHopIPInfo\022D\n\nnexthop_ip\030\001 \003(\01320.opi_ap"
-  "i.network.opinetcommon.v1alpha1.IPAddres"
-  "s\022\023\n\013nexthop_mac\030\002 \003(\014\022,\n\006vpc_id\030\003 \001(\0132\034"
-  ".opi_api.common.v1.ObjectKey\"i\n\007RouteId\022"
-  "(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKe"
-  "y\0224\n\016route_table_id\030\002 \001(\0132\034.opi_api.comm"
-  "on.v1.ObjectKey\"}\n\005Route\0227\n\004spec\030\003 \001(\0132)"
-  ".opi_api.network.cloud.v1alpha1.RouteSpe"
-  "c\022;\n\006status\030\004 \001(\0132+.opi_api.network.clou"
-  "d.v1alpha1.RouteStatus\"\246\001\n\tRouteSpec\022(\n\002"
-  "id\030\001 \001(\0132\034.opi_api.common.v1.ObjectKey\0224"
-  "\n\016route_table_id\030\002 \001(\0132\034.opi_api.common."
-  "v1.ObjectKey\0229\n\005attrs\030\003 \001(\0132*.opi_api.ne"
-  "twork.cloud.v1alpha1.RouteAttrs\"\r\n\013Route"
-  "Status*q\n\nRouteClass\022\033\n\027ROUTE_CLASS_UNSP"
-  "ECIFIED\020\000\022\030\n\024ROUTE_CLASS_INTERNET\020\001\022\027\n\023R"
-  "OUTE_CLASS_SERVICE\020\002\022\023\n\017ROUTE_CLASS_VPC\020"
-  "\003Bk\n\036opi_api.network.cloud.v1alpha1B\nRou"
-  "teProtoP\001Z;github.com/opiproject/opi-api"
-  "/network/cloud/v1alpha1/gen/gob\006proto3"
+  "lpha1\032\022networktypes.proto\032\031google/api/re"
+  "source.proto\"\344\001\n\nRouteTable\022\014\n\004name\030\001 \001("
+  "\t\022<\n\004spec\030\002 \001(\0132..opi_api.network.cloud."
+  "v1alpha1.RouteTableSpec\022@\n\006status\030\003 \001(\0132"
+  "0.opi_api.network.cloud.v1alpha1.RouteTa"
+  "bleStatus:H\352AE\n)opi_api.network.cloud.v1"
+  "alpha1/routetable\022\030routetables/{routetab"
+  "le}\"\235\001\n\016RouteTableSpec\0227\n\002af\030\001 \001(\0162+.opi"
+  "_api.network.opinetcommon.v1alpha1.IpAf\022"
+  "\027\n\017priority_enable\030\002 \001(\010\0229\n\006routes\030\003 \003(\013"
+  "2).opi_api.network.cloud.v1alpha1.RouteI"
+  "nfo\"X\n\tRouteInfo\022\020\n\010route_id\030\001 \001(\t\0229\n\005at"
+  "trs\030\002 \001(\0132*.opi_api.network.cloud.v1alph"
+  "a1.RouteAttrs\"\316\001\n\020RouteTableStatus\022\021\n\tvp"
+  "c_count\030\001 \001(\005\022\024\n\014subnet_count\030\002 \001(\005\022\022\n\nv"
+  "nic_count\030\003 \001(\005\022\017\n\007pool_id\030\004 \001(\005\022\016\n\006hw_i"
+  "dx\030\005 \001(\005\022 \n\030route_table_base_address\030\006 \001"
+  "(\004\022\030\n\020hw_lpm_block_idx\030\007 \001(\005\022 \n\030hw_lpm_r"
+  "ewrite_block_idx\030\010 \001(\005\"\303\004\n\nRouteAttrs\022\?\n"
+  "\006prefix\030\001 \001(\0132/.opi_api.network.opinetco"
+  "mmon.v1alpha1.IPPrefix\022\?\n\013route_class\030\002 "
+  "\001(\0162*.opi_api.network.cloud.v1alpha1.Rou"
+  "teClass\022\026\n\016class_priority\030\003 \001(\005\022\020\n\010prior"
+  "ity\030\004 \001(\005\022R\n\022overlay_nh_ip_info\030\005 \001(\01324."
+  "opi_api.network.cloud.v1alpha1.OverlayNe"
+  "xtHopIPInfoH\000\022\032\n\020nexthop_name_ref\030\006 \001(\tH"
+  "\000\022\033\n\021nh_group_name_ref\030\007 \001(\tH\000\022D\n\013vpc_nh"
+  "_info\030\010 \001(\0132-.opi_api.network.cloud.v1al"
+  "pha1.VPCPeerNhInfoH\000\022\031\n\017tunnel_name_ref\030"
+  "\t \001(\tH\000\022\036\n\024route_table_name_ref\030\n \001(\tH\000\022"
+  "\026\n\014eval_mapping\030\013 \001(\010H\000\022\013\n\003tos\030\014 \001(\005\022;\n\005"
+  "encap\030\r \001(\0132,.opi_api.network.opinetcomm"
+  "on.v1alpha1.Encap\022\023\n\013overlay_mac\030\016 \001(\014B\004"
+  "\n\002nh\"C\n\rVPCPeerNhInfo\022\024\n\014vpc_name_ref\030\001 "
+  "\001(\t\022\034\n\024route_table_name_ref\030\002 \001(\t\"\207\001\n\024Ov"
+  "erlayNextHopIPInfo\022D\n\nnexthop_ip\030\001 \003(\01320"
+  ".opi_api.network.opinetcommon.v1alpha1.I"
+  "PAddress\022\023\n\013nexthop_mac\030\002 \003(\014\022\024\n\014vpc_nam"
+  "e_ref\030\003 \001(\t\"9\n\007RouteId\022\020\n\010route_id\030\001 \001(\t"
+  "\022\034\n\024route_table_name_ref\030\002 \001(\t\"\306\001\n\005Route"
+  "\022\014\n\004name\030\001 \001(\t\0227\n\004spec\030\002 \001(\0132).opi_api.n"
+  "etwork.cloud.v1alpha1.RouteSpec\022;\n\006statu"
+  "s\030\003 \001(\0132+.opi_api.network.cloud.v1alpha1"
+  ".RouteStatus:9\352A6\n$opi_api.network.cloud"
+  ".v1alpha1/route\022\016routes/{route}\"d\n\tRoute"
+  "Spec\022\034\n\024route_table_name_ref\030\001 \001(\t\0229\n\005at"
+  "trs\030\002 \001(\0132*.opi_api.network.cloud.v1alph"
+  "a1.RouteAttrs\"\r\n\013RouteStatus*q\n\nRouteCla"
+  "ss\022\033\n\027ROUTE_CLASS_UNSPECIFIED\020\000\022\030\n\024ROUTE"
+  "_CLASS_INTERNET\020\001\022\027\n\023ROUTE_CLASS_SERVICE"
+  "\020\002\022\023\n\017ROUTE_CLASS_VPC\020\003Bk\n\036opi_api.netwo"
+  "rk.cloud.v1alpha1B\nRouteProtoP\001Z;github."
+  "com/opiproject/opi-api/network/cloud/v1a"
+  "lpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_route_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_networktypes_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_route_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_route_2eproto = {
-  false, false, 2358, descriptor_table_protodef_route_2eproto, "route.proto", 
+  false, false, 2180, descriptor_table_protodef_route_2eproto, "route.proto", 
   &descriptor_table_route_2eproto_once, descriptor_table_route_2eproto_deps, 2, 11,
   schemas, file_default_instances, TableStruct_route_2eproto::offsets,
   file_level_metadata_route_2eproto, file_level_enum_descriptors_route_2eproto, file_level_service_descriptors_route_2eproto,
@@ -453,6 +449,14 @@ RouteTable::RouteTable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RouteTable::RouteTable(const RouteTable& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::RouteTableSpec(*from.spec_);
   } else {
@@ -467,6 +471,10 @@ RouteTable::RouteTable(const RouteTable& from)
 }
 
 inline void RouteTable::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -482,6 +490,7 @@ RouteTable::~RouteTable() {
 
 inline void RouteTable::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -502,6 +511,7 @@ void RouteTable::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -519,17 +529,27 @@ const char* RouteTable::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteTable.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -564,20 +584,30 @@ uint8_t* RouteTable::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteTable.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -596,14 +626,21 @@ size_t RouteTable::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -632,6 +669,9 @@ void RouteTable::MergeFrom(const RouteTable& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::RouteTableSpec::MergeFrom(from._internal_spec());
   }
@@ -654,7 +694,14 @@ bool RouteTable::IsInitialized() const {
 
 void RouteTable::InternalSwap(RouteTable* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RouteTable, status_)
       + sizeof(RouteTable::status_)
@@ -673,19 +720,8 @@ void RouteTable::InternalSwap(RouteTable* other) {
 
 class RouteTableSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const RouteTableSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-RouteTableSpec::_Internal::id(const RouteTableSpec* msg) {
-  return *msg->id_;
-}
-void RouteTableSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
 RouteTableSpec::RouteTableSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
@@ -700,11 +736,6 @@ RouteTableSpec::RouteTableSpec(const RouteTableSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       routes_(from.routes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   ::memcpy(&af_, &from.af_,
     static_cast<size_t>(reinterpret_cast<char*>(&priority_enable_) -
     reinterpret_cast<char*>(&af_)) + sizeof(priority_enable_));
@@ -713,9 +744,9 @@ RouteTableSpec::RouteTableSpec(const RouteTableSpec& from)
 
 inline void RouteTableSpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&af_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&priority_enable_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(priority_enable_));
+    reinterpret_cast<char*>(&af_)) + sizeof(priority_enable_));
 }
 
 RouteTableSpec::~RouteTableSpec() {
@@ -727,7 +758,6 @@ RouteTableSpec::~RouteTableSpec() {
 
 inline void RouteTableSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
 }
 
 void RouteTableSpec::ArenaDtor(void* object) {
@@ -747,10 +777,6 @@ void RouteTableSpec::Clear() {
   (void) cached_has_bits;
 
   routes_.Clear();
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   ::memset(&af_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&priority_enable_) -
       reinterpret_cast<char*>(&af_)) + sizeof(priority_enable_));
@@ -763,41 +789,33 @@ const char* RouteTableSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_af(static_cast<::opi_api::network::opinetcommon::v1alpha1::IpAf>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool priority_enable = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // bool priority_enable = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           priority_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_routes(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -830,33 +848,25 @@ uint8_t* RouteTableSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
   if (this->_internal_af() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_af(), target);
+      1, this->_internal_af(), target);
   }
 
-  // bool priority_enable = 3;
+  // bool priority_enable = 2;
   if (this->_internal_priority_enable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_priority_enable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_priority_enable(), target);
   }
 
-  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;
+  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_routes_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_routes(i), target, stream);
+      InternalWriteMessage(3, this->_internal_routes(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -875,27 +885,20 @@ size_t RouteTableSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 4;
+  // repeated .opi_api.network.cloud.v1alpha1.RouteInfo routes = 3;
   total_size += 1UL * this->_internal_routes_size();
   for (const auto& msg : this->routes_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf af = 1;
   if (this->_internal_af() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_af());
   }
 
-  // bool priority_enable = 3;
+  // bool priority_enable = 2;
   if (this->_internal_priority_enable() != 0) {
     total_size += 1 + 1;
   }
@@ -923,9 +926,6 @@ void RouteTableSpec::MergeFrom(const RouteTableSpec& from) {
   (void) cached_has_bits;
 
   routes_.MergeFrom(from.routes_);
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_af() != 0) {
     _internal_set_af(from._internal_af());
   }
@@ -953,9 +953,9 @@ void RouteTableSpec::InternalSwap(RouteTableSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RouteTableSpec, priority_enable_)
       + sizeof(RouteTableSpec::priority_enable_)
-      - PROTOBUF_FIELD_OFFSET(RouteTableSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(RouteTableSpec, af_)>(
+          reinterpret_cast<char*>(&af_),
+          reinterpret_cast<char*>(&other->af_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteTableSpec::GetMetadata() const {
@@ -968,23 +968,12 @@ void RouteTableSpec::InternalSwap(RouteTableSpec* other) {
 
 class RouteInfo::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const RouteInfo* msg);
   static const ::opi_api::network::cloud::v1alpha1::RouteAttrs& attrs(const RouteInfo* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-RouteInfo::_Internal::id(const RouteInfo* msg) {
-  return *msg->id_;
-}
 const ::opi_api::network::cloud::v1alpha1::RouteAttrs&
 RouteInfo::_Internal::attrs(const RouteInfo* msg) {
   return *msg->attrs_;
-}
-void RouteInfo::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
 }
 RouteInfo::RouteInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -998,10 +987,13 @@ RouteInfo::RouteInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RouteInfo::RouteInfo(const RouteInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
+  route_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_id().empty()) {
+    route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_id(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_attrs()) {
     attrs_ = new ::opi_api::network::cloud::v1alpha1::RouteAttrs(*from.attrs_);
@@ -1012,10 +1004,11 @@ RouteInfo::RouteInfo(const RouteInfo& from)
 }
 
 inline void RouteInfo::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&attrs_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(attrs_));
+route_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+attrs_ = nullptr;
 }
 
 RouteInfo::~RouteInfo() {
@@ -1027,7 +1020,7 @@ RouteInfo::~RouteInfo() {
 
 inline void RouteInfo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
+  route_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete attrs_;
 }
 
@@ -1047,10 +1040,7 @@ void RouteInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
+  route_id_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && attrs_ != nullptr) {
     delete attrs_;
   }
@@ -1064,10 +1054,12 @@ const char* RouteInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string route_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_route_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteInfo.route_id"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1109,12 +1101,14 @@ uint8_t* RouteInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string route_id = 1;
+  if (!this->_internal_route_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_id().data(), static_cast<int>(this->_internal_route_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteInfo.route_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_route_id(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
@@ -1141,11 +1135,11 @@ size_t RouteInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string route_id = 1;
+  if (!this->_internal_route_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_id());
   }
 
   // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
@@ -1177,8 +1171,8 @@ void RouteInfo::MergeFrom(const RouteInfo& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (!from._internal_route_id().empty()) {
+    _internal_set_route_id(from._internal_route_id());
   }
   if (from._internal_has_attrs()) {
     _internal_mutable_attrs()->::opi_api::network::cloud::v1alpha1::RouteAttrs::MergeFrom(from._internal_attrs());
@@ -1199,13 +1193,15 @@ bool RouteInfo::IsInitialized() const {
 
 void RouteInfo::InternalSwap(RouteInfo* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RouteInfo, attrs_)
-      + sizeof(RouteInfo::attrs_)
-      - PROTOBUF_FIELD_OFFSET(RouteInfo, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_id_, lhs_arena,
+      &other->route_id_, rhs_arena
+  );
+  swap(attrs_, other->attrs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteInfo::GetMetadata() const {
@@ -1564,11 +1560,7 @@ class RouteAttrs::_Internal {
  public:
   static const ::opi_api::network::opinetcommon::v1alpha1::IPPrefix& prefix(const RouteAttrs* msg);
   static const ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo& overlay_nh_ip_info(const RouteAttrs* msg);
-  static const ::opi_api::common::v1::ObjectKey& nexthop_id(const RouteAttrs* msg);
-  static const ::opi_api::common::v1::ObjectKey& nh_group_id(const RouteAttrs* msg);
   static const ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo& vpc_nh_info(const RouteAttrs* msg);
-  static const ::opi_api::common::v1::ObjectKey& tunnel_id(const RouteAttrs* msg);
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const RouteAttrs* msg);
   static const ::opi_api::network::opinetcommon::v1alpha1::Encap& encap(const RouteAttrs* msg);
 };
 
@@ -1580,25 +1572,9 @@ const ::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo&
 RouteAttrs::_Internal::overlay_nh_ip_info(const RouteAttrs* msg) {
   return *msg->nh_.overlay_nh_ip_info_;
 }
-const ::opi_api::common::v1::ObjectKey&
-RouteAttrs::_Internal::nexthop_id(const RouteAttrs* msg) {
-  return *msg->nh_.nexthop_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-RouteAttrs::_Internal::nh_group_id(const RouteAttrs* msg) {
-  return *msg->nh_.nh_group_id_;
-}
 const ::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo&
 RouteAttrs::_Internal::vpc_nh_info(const RouteAttrs* msg) {
   return *msg->nh_.vpc_nh_info_;
-}
-const ::opi_api::common::v1::ObjectKey&
-RouteAttrs::_Internal::tunnel_id(const RouteAttrs* msg) {
-  return *msg->nh_.tunnel_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-RouteAttrs::_Internal::route_table_id(const RouteAttrs* msg) {
-  return *msg->nh_.route_table_id_;
 }
 const ::opi_api::network::opinetcommon::v1alpha1::Encap&
 RouteAttrs::_Internal::encap(const RouteAttrs* msg) {
@@ -1625,56 +1601,6 @@ void RouteAttrs::set_allocated_overlay_nh_ip_info(::opi_api::network::cloud::v1a
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.overlay_nh_ip_info)
 }
-void RouteAttrs::set_allocated_nexthop_id(::opi_api::common::v1::ObjectKey* nexthop_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_nh();
-  if (nexthop_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nexthop_id));
-    if (message_arena != submessage_arena) {
-      nexthop_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, nexthop_id, submessage_arena);
-    }
-    set_has_nexthop_id();
-    nh_.nexthop_id_ = nexthop_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_id)
-}
-void RouteAttrs::clear_nexthop_id() {
-  if (_internal_has_nexthop_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete nh_.nexthop_id_;
-    }
-    clear_has_nh();
-  }
-}
-void RouteAttrs::set_allocated_nh_group_id(::opi_api::common::v1::ObjectKey* nh_group_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_nh();
-  if (nh_group_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nh_group_id));
-    if (message_arena != submessage_arena) {
-      nh_group_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, nh_group_id, submessage_arena);
-    }
-    set_has_nh_group_id();
-    nh_.nh_group_id_ = nh_group_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_id)
-}
-void RouteAttrs::clear_nh_group_id() {
-  if (_internal_has_nh_group_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete nh_.nh_group_id_;
-    }
-    clear_has_nh();
-  }
-}
 void RouteAttrs::set_allocated_vpc_nh_info(::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo* vpc_nh_info) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_nh();
@@ -1689,56 +1615,6 @@ void RouteAttrs::set_allocated_vpc_nh_info(::opi_api::network::cloud::v1alpha1::
     nh_.vpc_nh_info_ = vpc_nh_info;
   }
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.vpc_nh_info)
-}
-void RouteAttrs::set_allocated_tunnel_id(::opi_api::common::v1::ObjectKey* tunnel_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_nh();
-  if (tunnel_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tunnel_id));
-    if (message_arena != submessage_arena) {
-      tunnel_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tunnel_id, submessage_arena);
-    }
-    set_has_tunnel_id();
-    nh_.tunnel_id_ = tunnel_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_id)
-}
-void RouteAttrs::clear_tunnel_id() {
-  if (_internal_has_tunnel_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete nh_.tunnel_id_;
-    }
-    clear_has_nh();
-  }
-}
-void RouteAttrs::set_allocated_route_table_id(::opi_api::common::v1::ObjectKey* route_table_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_nh();
-  if (route_table_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(route_table_id));
-    if (message_arena != submessage_arena) {
-      route_table_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, route_table_id, submessage_arena);
-    }
-    set_has_route_table_id();
-    nh_.route_table_id_ = route_table_id;
-  }
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_id)
-}
-void RouteAttrs::clear_route_table_id() {
-  if (_internal_has_route_table_id()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete nh_.route_table_id_;
-    }
-    clear_has_nh();
-  }
 }
 void RouteAttrs::clear_encap() {
   if (GetArenaForAllocation() == nullptr && encap_ != nullptr) {
@@ -1785,24 +1661,24 @@ RouteAttrs::RouteAttrs(const RouteAttrs& from)
       _internal_mutable_overlay_nh_ip_info()->::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo::MergeFrom(from._internal_overlay_nh_ip_info());
       break;
     }
-    case kNexthopId: {
-      _internal_mutable_nexthop_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nexthop_id());
+    case kNexthopNameRef: {
+      _internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
       break;
     }
-    case kNhGroupId: {
-      _internal_mutable_nh_group_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nh_group_id());
+    case kNhGroupNameRef: {
+      _internal_set_nh_group_name_ref(from._internal_nh_group_name_ref());
       break;
     }
     case kVpcNhInfo: {
       _internal_mutable_vpc_nh_info()->::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo::MergeFrom(from._internal_vpc_nh_info());
       break;
     }
-    case kTunnelId: {
-      _internal_mutable_tunnel_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_tunnel_id());
+    case kTunnelNameRef: {
+      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
-    case kRouteTableId: {
-      _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+    case kRouteTableNameRef: {
+      _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
       break;
     }
     case kEvalMapping: {
@@ -1864,16 +1740,12 @@ void RouteAttrs::clear_nh() {
       }
       break;
     }
-    case kNexthopId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete nh_.nexthop_id_;
-      }
+    case kNexthopNameRef: {
+      nh_.nexthop_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
-    case kNhGroupId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete nh_.nh_group_id_;
-      }
+    case kNhGroupNameRef: {
+      nh_.nh_group_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kVpcNhInfo: {
@@ -1882,16 +1754,12 @@ void RouteAttrs::clear_nh() {
       }
       break;
     }
-    case kTunnelId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete nh_.tunnel_id_;
-      }
+    case kTunnelNameRef: {
+      nh_.tunnel_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
-    case kRouteTableId: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete nh_.route_table_id_;
-      }
+    case kRouteTableNameRef: {
+      nh_.route_table_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
       break;
     }
     case kEvalMapping: {
@@ -1975,18 +1843,22 @@ const char* RouteAttrs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey nexthop_id = 6;
+      // string nexthop_name_ref = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_nexthop_id(), ptr);
+          auto str = _internal_mutable_nexthop_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey nh_group_id = 7;
+      // string nh_group_name_ref = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_nh_group_id(), ptr);
+          auto str = _internal_mutable_nh_group_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1999,18 +1871,22 @@ const char* RouteAttrs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey tunnel_id = 9;
+      // string tunnel_name_ref = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tunnel_id(), ptr);
+          auto str = _internal_mutable_tunnel_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey route_table_id = 10;
+      // string route_table_name_ref = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2112,20 +1988,24 @@ uint8_t* RouteAttrs::_InternalSerialize(
         5, _Internal::overlay_nh_ip_info(this), target, stream);
   }
 
-  // .opi_api.common.v1.ObjectKey nexthop_id = 6;
-  if (_internal_has_nexthop_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::nexthop_id(this), target, stream);
+  // string nexthop_name_ref = 6;
+  if (_internal_has_nexthop_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nexthop_name_ref().data(), static_cast<int>(this->_internal_nexthop_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteAttrs.nexthop_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_nexthop_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey nh_group_id = 7;
-  if (_internal_has_nh_group_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::nh_group_id(this), target, stream);
+  // string nh_group_name_ref = 7;
+  if (_internal_has_nh_group_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nh_group_name_ref().data(), static_cast<int>(this->_internal_nh_group_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteAttrs.nh_group_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_nh_group_name_ref(), target);
   }
 
   // .opi_api.network.cloud.v1alpha1.VPCPeerNhInfo vpc_nh_info = 8;
@@ -2136,20 +2016,24 @@ uint8_t* RouteAttrs::_InternalSerialize(
         8, _Internal::vpc_nh_info(this), target, stream);
   }
 
-  // .opi_api.common.v1.ObjectKey tunnel_id = 9;
-  if (_internal_has_tunnel_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        9, _Internal::tunnel_id(this), target, stream);
+  // string tunnel_name_ref = 9;
+  if (_internal_has_tunnel_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tunnel_name_ref().data(), static_cast<int>(this->_internal_tunnel_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteAttrs.tunnel_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_tunnel_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 10;
-  if (_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        10, _Internal::route_table_id(this), target, stream);
+  // string route_table_name_ref = 10;
+  if (_internal_has_route_table_name_ref()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteAttrs.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_route_table_name_ref(), target);
   }
 
   // bool eval_mapping = 11;
@@ -2244,18 +2128,18 @@ size_t RouteAttrs::ByteSizeLong() const {
           *nh_.overlay_nh_ip_info_);
       break;
     }
-    // .opi_api.common.v1.ObjectKey nexthop_id = 6;
-    case kNexthopId: {
+    // string nexthop_name_ref = 6;
+    case kNexthopNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *nh_.nexthop_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_nexthop_name_ref());
       break;
     }
-    // .opi_api.common.v1.ObjectKey nh_group_id = 7;
-    case kNhGroupId: {
+    // string nh_group_name_ref = 7;
+    case kNhGroupNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *nh_.nh_group_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_nh_group_name_ref());
       break;
     }
     // .opi_api.network.cloud.v1alpha1.VPCPeerNhInfo vpc_nh_info = 8;
@@ -2265,18 +2149,18 @@ size_t RouteAttrs::ByteSizeLong() const {
           *nh_.vpc_nh_info_);
       break;
     }
-    // .opi_api.common.v1.ObjectKey tunnel_id = 9;
-    case kTunnelId: {
+    // string tunnel_name_ref = 9;
+    case kTunnelNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *nh_.tunnel_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_tunnel_name_ref());
       break;
     }
-    // .opi_api.common.v1.ObjectKey route_table_id = 10;
-    case kRouteTableId: {
+    // string route_table_name_ref = 10;
+    case kRouteTableNameRef: {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *nh_.route_table_id_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_route_table_name_ref());
       break;
     }
     // bool eval_mapping = 11;
@@ -2336,24 +2220,24 @@ void RouteAttrs::MergeFrom(const RouteAttrs& from) {
       _internal_mutable_overlay_nh_ip_info()->::opi_api::network::cloud::v1alpha1::OverlayNextHopIPInfo::MergeFrom(from._internal_overlay_nh_ip_info());
       break;
     }
-    case kNexthopId: {
-      _internal_mutable_nexthop_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nexthop_id());
+    case kNexthopNameRef: {
+      _internal_set_nexthop_name_ref(from._internal_nexthop_name_ref());
       break;
     }
-    case kNhGroupId: {
-      _internal_mutable_nh_group_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_nh_group_id());
+    case kNhGroupNameRef: {
+      _internal_set_nh_group_name_ref(from._internal_nh_group_name_ref());
       break;
     }
     case kVpcNhInfo: {
       _internal_mutable_vpc_nh_info()->::opi_api::network::cloud::v1alpha1::VPCPeerNhInfo::MergeFrom(from._internal_vpc_nh_info());
       break;
     }
-    case kTunnelId: {
-      _internal_mutable_tunnel_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_tunnel_id());
+    case kTunnelNameRef: {
+      _internal_set_tunnel_name_ref(from._internal_tunnel_name_ref());
       break;
     }
-    case kRouteTableId: {
-      _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+    case kRouteTableNameRef: {
+      _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
       break;
     }
     case kEvalMapping: {
@@ -2408,30 +2292,8 @@ void RouteAttrs::InternalSwap(RouteAttrs* other) {
 
 class VPCPeerNhInfo::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& vpc_id(const VPCPeerNhInfo* msg);
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const VPCPeerNhInfo* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-VPCPeerNhInfo::_Internal::vpc_id(const VPCPeerNhInfo* msg) {
-  return *msg->vpc_id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-VPCPeerNhInfo::_Internal::route_table_id(const VPCPeerNhInfo* msg) {
-  return *msg->route_table_id_;
-}
-void VPCPeerNhInfo::clear_vpc_id() {
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
-}
-void VPCPeerNhInfo::clear_route_table_id() {
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
-}
 VPCPeerNhInfo::VPCPeerNhInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2444,24 +2306,34 @@ VPCPeerNhInfo::VPCPeerNhInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VPCPeerNhInfo::VPCPeerNhInfo(const VPCPeerNhInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_vpc_id()) {
-    vpc_id_ = new ::opi_api::common::v1::ObjectKey(*from.vpc_id_);
-  } else {
-    vpc_id_ = nullptr;
+  vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_vpc_name_ref().empty()) {
+    vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vpc_name_ref(), 
+      GetArenaForAllocation());
   }
-  if (from._internal_has_route_table_id()) {
-    route_table_id_ = new ::opi_api::common::v1::ObjectKey(*from.route_table_id_);
-  } else {
-    route_table_id_ = nullptr;
+  route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_table_name_ref().empty()) {
+    route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_table_name_ref(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.VPCPeerNhInfo)
 }
 
 inline void VPCPeerNhInfo::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vpc_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&route_table_id_) -
-    reinterpret_cast<char*>(&vpc_id_)) + sizeof(route_table_id_));
+vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 VPCPeerNhInfo::~VPCPeerNhInfo() {
@@ -2473,8 +2345,8 @@ VPCPeerNhInfo::~VPCPeerNhInfo() {
 
 inline void VPCPeerNhInfo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete vpc_id_;
-  if (this != internal_default_instance()) delete route_table_id_;
+  vpc_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void VPCPeerNhInfo::ArenaDtor(void* object) {
@@ -2493,14 +2365,8 @@ void VPCPeerNhInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
+  vpc_name_ref_.ClearToEmpty();
+  route_table_name_ref_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2510,18 +2376,22 @@ const char* VPCPeerNhInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey vpc_id = 1;
+      // string vpc_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vpc_id(), ptr);
+          auto str = _internal_mutable_vpc_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey route_table_id = 2;
+      // string route_table_name_ref = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2555,20 +2425,24 @@ uint8_t* VPCPeerNhInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  if (this->_internal_has_vpc_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::vpc_id(this), target, stream);
+  // string vpc_name_ref = 1;
+  if (!this->_internal_vpc_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vpc_name_ref().data(), static_cast<int>(this->_internal_vpc_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.vpc_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_vpc_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::route_table_id(this), target, stream);
+  // string route_table_name_ref = 2;
+  if (!this->_internal_route_table_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.VPCPeerNhInfo.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_route_table_name_ref(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2587,18 +2461,18 @@ size_t VPCPeerNhInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 1;
-  if (this->_internal_has_vpc_id()) {
+  // string vpc_name_ref = 1;
+  if (!this->_internal_vpc_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vpc_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vpc_name_ref());
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
+  // string route_table_name_ref = 2;
+  if (!this->_internal_route_table_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *route_table_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_table_name_ref());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2623,11 +2497,11 @@ void VPCPeerNhInfo::MergeFrom(const VPCPeerNhInfo& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_vpc_id()) {
-    _internal_mutable_vpc_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vpc_id());
+  if (!from._internal_vpc_name_ref().empty()) {
+    _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
   }
-  if (from._internal_has_route_table_id()) {
-    _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+  if (!from._internal_route_table_name_ref().empty()) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2645,13 +2519,19 @@ bool VPCPeerNhInfo::IsInitialized() const {
 
 void VPCPeerNhInfo::InternalSwap(VPCPeerNhInfo* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VPCPeerNhInfo, route_table_id_)
-      + sizeof(VPCPeerNhInfo::route_table_id_)
-      - PROTOBUF_FIELD_OFFSET(VPCPeerNhInfo, vpc_id_)>(
-          reinterpret_cast<char*>(&vpc_id_),
-          reinterpret_cast<char*>(&other->vpc_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vpc_name_ref_, lhs_arena,
+      &other->vpc_name_ref_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_table_name_ref_, lhs_arena,
+      &other->route_table_name_ref_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VPCPeerNhInfo::GetMetadata() const {
@@ -2664,21 +2544,10 @@ void VPCPeerNhInfo::InternalSwap(VPCPeerNhInfo* other) {
 
 class OverlayNextHopIPInfo::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& vpc_id(const OverlayNextHopIPInfo* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-OverlayNextHopIPInfo::_Internal::vpc_id(const OverlayNextHopIPInfo* msg) {
-  return *msg->vpc_id_;
-}
 void OverlayNextHopIPInfo::clear_nexthop_ip() {
   nexthop_ip_.Clear();
-}
-void OverlayNextHopIPInfo::clear_vpc_id() {
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
 }
 OverlayNextHopIPInfo::OverlayNextHopIPInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2696,16 +2565,22 @@ OverlayNextHopIPInfo::OverlayNextHopIPInfo(const OverlayNextHopIPInfo& from)
       nexthop_ip_(from.nexthop_ip_),
       nexthop_mac_(from.nexthop_mac_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_vpc_id()) {
-    vpc_id_ = new ::opi_api::common::v1::ObjectKey(*from.vpc_id_);
-  } else {
-    vpc_id_ = nullptr;
+  vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_vpc_name_ref().empty()) {
+    vpc_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vpc_name_ref(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo)
 }
 
 inline void OverlayNextHopIPInfo::SharedCtor() {
-vpc_id_ = nullptr;
+vpc_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vpc_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 OverlayNextHopIPInfo::~OverlayNextHopIPInfo() {
@@ -2717,7 +2592,7 @@ OverlayNextHopIPInfo::~OverlayNextHopIPInfo() {
 
 inline void OverlayNextHopIPInfo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete vpc_id_;
+  vpc_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void OverlayNextHopIPInfo::ArenaDtor(void* object) {
@@ -2738,10 +2613,7 @@ void OverlayNextHopIPInfo::Clear() {
 
   nexthop_ip_.Clear();
   nexthop_mac_.Clear();
-  if (GetArenaForAllocation() == nullptr && vpc_id_ != nullptr) {
-    delete vpc_id_;
-  }
-  vpc_id_ = nullptr;
+  vpc_name_ref_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2778,10 +2650,12 @@ const char* OverlayNextHopIPInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey vpc_id = 3;
+      // string vpc_name_ref = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vpc_id(), ptr);
+          auto str = _internal_mutable_vpc_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2829,12 +2703,14 @@ uint8_t* OverlayNextHopIPInfo::_InternalSerialize(
     target = stream->WriteBytes(2, s, target);
   }
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 3;
-  if (this->_internal_has_vpc_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::vpc_id(this), target, stream);
+  // string vpc_name_ref = 3;
+  if (!this->_internal_vpc_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_vpc_name_ref().data(), static_cast<int>(this->_internal_vpc_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfo.vpc_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_vpc_name_ref(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2868,11 +2744,11 @@ size_t OverlayNextHopIPInfo::ByteSizeLong() const {
       nexthop_mac_.Get(i));
   }
 
-  // .opi_api.common.v1.ObjectKey vpc_id = 3;
-  if (this->_internal_has_vpc_id()) {
+  // string vpc_name_ref = 3;
+  if (!this->_internal_vpc_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vpc_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_vpc_name_ref());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2899,8 +2775,8 @@ void OverlayNextHopIPInfo::MergeFrom(const OverlayNextHopIPInfo& from) {
 
   nexthop_ip_.MergeFrom(from.nexthop_ip_);
   nexthop_mac_.MergeFrom(from.nexthop_mac_);
-  if (from._internal_has_vpc_id()) {
-    _internal_mutable_vpc_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_vpc_id());
+  if (!from._internal_vpc_name_ref().empty()) {
+    _internal_set_vpc_name_ref(from._internal_vpc_name_ref());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2918,10 +2794,16 @@ bool OverlayNextHopIPInfo::IsInitialized() const {
 
 void OverlayNextHopIPInfo::InternalSwap(OverlayNextHopIPInfo* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   nexthop_ip_.InternalSwap(&other->nexthop_ip_);
   nexthop_mac_.InternalSwap(&other->nexthop_mac_);
-  swap(vpc_id_, other->vpc_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vpc_name_ref_, lhs_arena,
+      &other->vpc_name_ref_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OverlayNextHopIPInfo::GetMetadata() const {
@@ -2934,30 +2816,8 @@ void OverlayNextHopIPInfo::InternalSwap(OverlayNextHopIPInfo* other) {
 
 class RouteId::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const RouteId* msg);
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const RouteId* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-RouteId::_Internal::id(const RouteId* msg) {
-  return *msg->id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-RouteId::_Internal::route_table_id(const RouteId* msg) {
-  return *msg->route_table_id_;
-}
-void RouteId::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
-void RouteId::clear_route_table_id() {
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
-}
 RouteId::RouteId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2970,24 +2830,34 @@ RouteId::RouteId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RouteId::RouteId(const RouteId& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
+  route_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_id().empty()) {
+    route_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_id(), 
+      GetArenaForAllocation());
   }
-  if (from._internal_has_route_table_id()) {
-    route_table_id_ = new ::opi_api::common::v1::ObjectKey(*from.route_table_id_);
-  } else {
-    route_table_id_ = nullptr;
+  route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_table_name_ref().empty()) {
+    route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_table_name_ref(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.network.cloud.v1alpha1.RouteId)
 }
 
 inline void RouteId::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&route_table_id_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(route_table_id_));
+route_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RouteId::~RouteId() {
@@ -2999,8 +2869,8 @@ RouteId::~RouteId() {
 
 inline void RouteId::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete route_table_id_;
+  route_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void RouteId::ArenaDtor(void* object) {
@@ -3019,14 +2889,8 @@ void RouteId::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
+  route_id_.ClearToEmpty();
+  route_table_name_ref_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3036,18 +2900,22 @@ const char* RouteId::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string route_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_route_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteId.route_id"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey route_table_id = 2;
+      // string route_table_name_ref = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3081,20 +2949,24 @@ uint8_t* RouteId::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string route_id = 1;
+  if (!this->_internal_route_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_id().data(), static_cast<int>(this->_internal_route_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteId.route_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_route_id(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::route_table_id(this), target, stream);
+  // string route_table_name_ref = 2;
+  if (!this->_internal_route_table_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteId.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_route_table_name_ref(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3113,18 +2985,18 @@ size_t RouteId::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string route_id = 1;
+  if (!this->_internal_route_id().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_id());
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
+  // string route_table_name_ref = 2;
+  if (!this->_internal_route_table_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *route_table_id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_table_name_ref());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3149,11 +3021,11 @@ void RouteId::MergeFrom(const RouteId& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
+  if (!from._internal_route_id().empty()) {
+    _internal_set_route_id(from._internal_route_id());
   }
-  if (from._internal_has_route_table_id()) {
-    _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+  if (!from._internal_route_table_name_ref().empty()) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3171,13 +3043,19 @@ bool RouteId::IsInitialized() const {
 
 void RouteId::InternalSwap(RouteId* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RouteId, route_table_id_)
-      + sizeof(RouteId::route_table_id_)
-      - PROTOBUF_FIELD_OFFSET(RouteId, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_id_, lhs_arena,
+      &other->route_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_table_name_ref_, lhs_arena,
+      &other->route_table_name_ref_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteId::GetMetadata() const {
@@ -3214,6 +3092,14 @@ Route::Route(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Route::Route(const Route& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::RouteSpec(*from.spec_);
   } else {
@@ -3228,6 +3114,10 @@ Route::Route(const Route& from)
 }
 
 inline void Route::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -3243,6 +3133,7 @@ Route::~Route() {
 
 inline void Route::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -3263,6 +3154,7 @@ void Route::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -3280,17 +3172,27 @@ const char* Route::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Route.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.RouteStatus status = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // .opi_api.network.cloud.v1alpha1.RouteStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -3325,20 +3227,30 @@ uint8_t* Route::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.Route.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3357,14 +3269,21 @@ size_t Route::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 3;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.RouteSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 4;
+  // .opi_api.network.cloud.v1alpha1.RouteStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3393,6 +3312,9 @@ void Route::MergeFrom(const Route& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::RouteSpec::MergeFrom(from._internal_spec());
   }
@@ -3415,7 +3337,14 @@ bool Route::IsInitialized() const {
 
 void Route::InternalSwap(Route* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Route, status_)
       + sizeof(Route::status_)
@@ -3434,34 +3363,12 @@ void Route::InternalSwap(Route* other) {
 
 class RouteSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const RouteSpec* msg);
-  static const ::opi_api::common::v1::ObjectKey& route_table_id(const RouteSpec* msg);
   static const ::opi_api::network::cloud::v1alpha1::RouteAttrs& attrs(const RouteSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-RouteSpec::_Internal::id(const RouteSpec* msg) {
-  return *msg->id_;
-}
-const ::opi_api::common::v1::ObjectKey&
-RouteSpec::_Internal::route_table_id(const RouteSpec* msg) {
-  return *msg->route_table_id_;
-}
 const ::opi_api::network::cloud::v1alpha1::RouteAttrs&
 RouteSpec::_Internal::attrs(const RouteSpec* msg) {
   return *msg->attrs_;
-}
-void RouteSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
-void RouteSpec::clear_route_table_id() {
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
 }
 RouteSpec::RouteSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3475,15 +3382,13 @@ RouteSpec::RouteSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RouteSpec::RouteSpec(const RouteSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
-  if (from._internal_has_route_table_id()) {
-    route_table_id_ = new ::opi_api::common::v1::ObjectKey(*from.route_table_id_);
-  } else {
-    route_table_id_ = nullptr;
+  route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_route_table_name_ref().empty()) {
+    route_table_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_route_table_name_ref(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_attrs()) {
     attrs_ = new ::opi_api::network::cloud::v1alpha1::RouteAttrs(*from.attrs_);
@@ -3494,10 +3399,11 @@ RouteSpec::RouteSpec(const RouteSpec& from)
 }
 
 inline void RouteSpec::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&attrs_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(attrs_));
+route_table_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  route_table_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+attrs_ = nullptr;
 }
 
 RouteSpec::~RouteSpec() {
@@ -3509,8 +3415,7 @@ RouteSpec::~RouteSpec() {
 
 inline void RouteSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete route_table_id_;
+  route_table_name_ref_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete attrs_;
 }
 
@@ -3530,14 +3435,7 @@ void RouteSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && route_table_id_ != nullptr) {
-    delete route_table_id_;
-  }
-  route_table_id_ = nullptr;
+  route_table_name_ref_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && attrs_ != nullptr) {
     delete attrs_;
   }
@@ -3551,25 +3449,19 @@ const char* RouteSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // string route_table_name_ref = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
+          auto str = _internal_mutable_route_table_name_ref();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref"));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.ObjectKey route_table_id = 2;
+      // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_route_table_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_attrs(), ptr);
           CHK_(ptr);
         } else
@@ -3604,28 +3496,22 @@ uint8_t* RouteSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_route_table_name_ref().data(), static_cast<int>(this->_internal_route_table_name_ref().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.RouteSpec.route_table_name_ref");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_route_table_name_ref(), target);
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::route_table_id(this), target, stream);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
   if (this->_internal_has_attrs()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::attrs(this), target, stream);
+        2, _Internal::attrs(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3644,21 +3530,14 @@ size_t RouteSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
+  // string route_table_name_ref = 1;
+  if (!this->_internal_route_table_name_ref().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_route_table_name_ref());
   }
 
-  // .opi_api.common.v1.ObjectKey route_table_id = 2;
-  if (this->_internal_has_route_table_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *route_table_id_);
-  }
-
-  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;
   if (this->_internal_has_attrs()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3687,11 +3566,8 @@ void RouteSpec::MergeFrom(const RouteSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
-  if (from._internal_has_route_table_id()) {
-    _internal_mutable_route_table_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_route_table_id());
+  if (!from._internal_route_table_name_ref().empty()) {
+    _internal_set_route_table_name_ref(from._internal_route_table_name_ref());
   }
   if (from._internal_has_attrs()) {
     _internal_mutable_attrs()->::opi_api::network::cloud::v1alpha1::RouteAttrs::MergeFrom(from._internal_attrs());
@@ -3712,13 +3588,15 @@ bool RouteSpec::IsInitialized() const {
 
 void RouteSpec::InternalSwap(RouteSpec* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RouteSpec, attrs_)
-      + sizeof(RouteSpec::attrs_)
-      - PROTOBUF_FIELD_OFFSET(RouteSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &route_table_name_ref_, lhs_arena,
+      &other->route_table_name_ref_, rhs_arena
+  );
+  swap(attrs_, other->attrs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RouteSpec::GetMetadata() const {

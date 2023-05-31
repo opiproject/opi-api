@@ -55,19 +55,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (ipv4Address_ != null) {
               subBuilder = ipv4Address_.toBuilder();
@@ -80,7 +67,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (ipv6Address_ != null) {
               subBuilder = ipv6Address_.toBuilder();
@@ -93,12 +80,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
+          case 26: {
 
             macAddr_ = input.readBytes();
             break;
           }
-          case 42: {
+          case 34: {
             opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder subBuilder = null;
             if (gatewayIp_ != null) {
               subBuilder = gatewayIp_.toBuilder();
@@ -111,7 +98,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 50: {
+          case 42: {
             opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.Builder subBuilder = null;
             if (pcieFunctions_ != null) {
               subBuilder = pcieFunctions_.toBuilder();
@@ -124,18 +111,18 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 56: {
+          case 48: {
 
             overlayRoutingEnabled_ = input.readBool();
             break;
           }
-          case 66: {
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
             systemname_ = s;
             break;
           }
-          case 74: {
+          case 66: {
             opi_api.network.cloud.v1alpha1.MgmtNetworkSpec.Builder subBuilder = null;
             if (mgmtNetworkSpec_ != null) {
               subBuilder = mgmtNetworkSpec_.toBuilder();
@@ -180,52 +167,14 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.DeviceSpec.class, opi_api.network.cloud.v1alpha1.DeviceSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * object's unique identifier
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int IPV4_ADDRESS_FIELD_NUMBER = 2;
+  public static final int IPV4_ADDRESS_FIELD_NUMBER = 1;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4Address_;
   /**
    * <pre>
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    * @return Whether the ipv4Address field is set.
    */
   @java.lang.Override
@@ -237,7 +186,7 @@ private static final long serialVersionUID = 0L;
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    * @return The ipv4Address.
    */
   @java.lang.Override
@@ -249,21 +198,21 @@ private static final long serialVersionUID = 0L;
    * underlay ipv4 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv4AddressOrBuilder() {
     return getIpv4Address();
   }
 
-  public static final int IPV6_ADDRESS_FIELD_NUMBER = 3;
+  public static final int IPV6_ADDRESS_FIELD_NUMBER = 2;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6Address_;
   /**
    * <pre>
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    * @return Whether the ipv6Address field is set.
    */
   @java.lang.Override
@@ -275,7 +224,7 @@ private static final long serialVersionUID = 0L;
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    * @return The ipv6Address.
    */
   @java.lang.Override
@@ -287,21 +236,21 @@ private static final long serialVersionUID = 0L;
    * underlay ipv6 address for tunnel initiation/termination
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv6AddressOrBuilder() {
     return getIpv6Address();
   }
 
-  public static final int MAC_ADDR_FIELD_NUMBER = 4;
+  public static final int MAC_ADDR_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString macAddr_;
   /**
    * <pre>
    * device's mac address - for outer ethernet header
    * </pre>
    *
-   * <code>bytes mac_addr = 4;</code>
+   * <code>bytes mac_addr = 3;</code>
    * @return The macAddr.
    */
   @java.lang.Override
@@ -309,14 +258,14 @@ private static final long serialVersionUID = 0L;
     return macAddr_;
   }
 
-  public static final int GATEWAY_IP_FIELD_NUMBER = 5;
+  public static final int GATEWAY_IP_FIELD_NUMBER = 4;
   private opi_api.network.opinetcommon.v1alpha1.IPAddress gatewayIp_;
   /**
    * <pre>
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    * @return Whether the gatewayIp field is set.
    */
   @java.lang.Override
@@ -328,7 +277,7 @@ private static final long serialVersionUID = 0L;
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    * @return The gatewayIp.
    */
   @java.lang.Override
@@ -340,21 +289,21 @@ private static final long serialVersionUID = 0L;
    * IP address of the underlay gateway in the underlay
    * </pre>
    *
-   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
    */
   @java.lang.Override
   public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getGatewayIpOrBuilder() {
     return getGatewayIp();
   }
 
-  public static final int PCIE_FUNCTIONS_FIELD_NUMBER = 6;
+  public static final int PCIE_FUNCTIONS_FIELD_NUMBER = 5;
   private opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcieFunctions_;
   /**
    * <pre>
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    * @return Whether the pcieFunctions field is set.
    */
   @java.lang.Override
@@ -366,7 +315,7 @@ private static final long serialVersionUID = 0L;
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    * @return The pcieFunctions.
    */
   @java.lang.Override
@@ -378,21 +327,21 @@ private static final long serialVersionUID = 0L;
    * number and type of pcie functions exposed
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.PCIeFunctionsSpecOrBuilder getPcieFunctionsOrBuilder() {
     return getPcieFunctions();
   }
 
-  public static final int OVERLAY_ROUTING_ENABLED_FIELD_NUMBER = 7;
+  public static final int OVERLAY_ROUTING_ENABLED_FIELD_NUMBER = 6;
   private boolean overlayRoutingEnabled_;
   /**
    * <pre>
    * ovelay routing
    * </pre>
    *
-   * <code>bool overlay_routing_enabled = 7;</code>
+   * <code>bool overlay_routing_enabled = 6;</code>
    * @return The overlayRoutingEnabled.
    */
   @java.lang.Override
@@ -400,14 +349,14 @@ private static final long serialVersionUID = 0L;
     return overlayRoutingEnabled_;
   }
 
-  public static final int SYSTEMNAME_FIELD_NUMBER = 8;
+  public static final int SYSTEMNAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object systemname_;
   /**
    * <pre>
    * system name is used as named identifier in protocols (e.g. LLDP)
    * </pre>
    *
-   * <code>string systemname = 8;</code>
+   * <code>string systemname = 7;</code>
    * @return The systemname.
    */
   @java.lang.Override
@@ -428,7 +377,7 @@ private static final long serialVersionUID = 0L;
    * system name is used as named identifier in protocols (e.g. LLDP)
    * </pre>
    *
-   * <code>string systemname = 8;</code>
+   * <code>string systemname = 7;</code>
    * @return The bytes for systemname.
    */
   @java.lang.Override
@@ -446,14 +395,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MGMT_NETWORK_SPEC_FIELD_NUMBER = 9;
+  public static final int MGMT_NETWORK_SPEC_FIELD_NUMBER = 8;
   private opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmtNetworkSpec_;
   /**
    * <pre>
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    * @return Whether the mgmtNetworkSpec field is set.
    */
   @java.lang.Override
@@ -465,7 +414,7 @@ private static final long serialVersionUID = 0L;
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    * @return The mgmtNetworkSpec.
    */
   @java.lang.Override
@@ -477,7 +426,7 @@ private static final long serialVersionUID = 0L;
    * management network details
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.MgmtNetworkSpecOrBuilder getMgmtNetworkSpecOrBuilder() {
@@ -498,32 +447,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (ipv4Address_ != null) {
-      output.writeMessage(2, getIpv4Address());
+      output.writeMessage(1, getIpv4Address());
     }
     if (ipv6Address_ != null) {
-      output.writeMessage(3, getIpv6Address());
+      output.writeMessage(2, getIpv6Address());
     }
     if (!macAddr_.isEmpty()) {
-      output.writeBytes(4, macAddr_);
+      output.writeBytes(3, macAddr_);
     }
     if (gatewayIp_ != null) {
-      output.writeMessage(5, getGatewayIp());
+      output.writeMessage(4, getGatewayIp());
     }
     if (pcieFunctions_ != null) {
-      output.writeMessage(6, getPcieFunctions());
+      output.writeMessage(5, getPcieFunctions());
     }
     if (overlayRoutingEnabled_ != false) {
-      output.writeBool(7, overlayRoutingEnabled_);
+      output.writeBool(6, overlayRoutingEnabled_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemname_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, systemname_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, systemname_);
     }
     if (mgmtNetworkSpec_ != null) {
-      output.writeMessage(9, getMgmtNetworkSpec());
+      output.writeMessage(8, getMgmtNetworkSpec());
     }
     unknownFields.writeTo(output);
   }
@@ -534,40 +480,36 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (ipv4Address_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getIpv4Address());
+        .computeMessageSize(1, getIpv4Address());
     }
     if (ipv6Address_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getIpv6Address());
+        .computeMessageSize(2, getIpv6Address());
     }
     if (!macAddr_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, macAddr_);
+        .computeBytesSize(3, macAddr_);
     }
     if (gatewayIp_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getGatewayIp());
+        .computeMessageSize(4, getGatewayIp());
     }
     if (pcieFunctions_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getPcieFunctions());
+        .computeMessageSize(5, getPcieFunctions());
     }
     if (overlayRoutingEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, overlayRoutingEnabled_);
+        .computeBoolSize(6, overlayRoutingEnabled_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(systemname_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, systemname_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, systemname_);
     }
     if (mgmtNetworkSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMgmtNetworkSpec());
+        .computeMessageSize(8, getMgmtNetworkSpec());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -584,11 +526,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.DeviceSpec other = (opi_api.network.cloud.v1alpha1.DeviceSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (hasIpv4Address() != other.hasIpv4Address()) return false;
     if (hasIpv4Address()) {
       if (!getIpv4Address()
@@ -631,10 +568,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     if (hasIpv4Address()) {
       hash = (37 * hash) + IPV4_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpv4Address().hashCode();
@@ -799,12 +732,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       if (ipv4AddressBuilder_ == null) {
         ipv4Address_ = null;
       } else {
@@ -867,11 +794,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.DeviceSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.DeviceSpec result = new opi_api.network.cloud.v1alpha1.DeviceSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       if (ipv4AddressBuilder_ == null) {
         result.ipv4Address_ = ipv4Address_;
       } else {
@@ -948,9 +870,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.DeviceSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.DeviceSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.hasIpv4Address()) {
         mergeIpv4Address(other.getIpv4Address());
       }
@@ -1005,161 +924,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * object's unique identifier
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4Address_;
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> ipv4AddressBuilder_;
@@ -1168,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      * @return Whether the ipv4Address field is set.
      */
     public boolean hasIpv4Address() {
@@ -1179,7 +943,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      * @return The ipv4Address.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getIpv4Address() {
@@ -1194,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public Builder setIpv4Address(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (ipv4AddressBuilder_ == null) {
@@ -1214,7 +978,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public Builder setIpv4Address(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1232,7 +996,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public Builder mergeIpv4Address(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (ipv4AddressBuilder_ == null) {
@@ -1254,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public Builder clearIpv4Address() {
       if (ipv4AddressBuilder_ == null) {
@@ -1272,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getIpv4AddressBuilder() {
       
@@ -1284,7 +1048,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv4AddressOrBuilder() {
       if (ipv4AddressBuilder_ != null) {
@@ -1299,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv4 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 2;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv4_address = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1323,7 +1087,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      * @return Whether the ipv6Address field is set.
      */
     public boolean hasIpv6Address() {
@@ -1334,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      * @return The ipv6Address.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getIpv6Address() {
@@ -1349,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public Builder setIpv6Address(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (ipv6AddressBuilder_ == null) {
@@ -1369,7 +1133,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public Builder setIpv6Address(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1387,7 +1151,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public Builder mergeIpv6Address(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (ipv6AddressBuilder_ == null) {
@@ -1409,7 +1173,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public Builder clearIpv6Address() {
       if (ipv6AddressBuilder_ == null) {
@@ -1427,7 +1191,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getIpv6AddressBuilder() {
       
@@ -1439,7 +1203,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getIpv6AddressOrBuilder() {
       if (ipv6AddressBuilder_ != null) {
@@ -1454,7 +1218,7 @@ private static final long serialVersionUID = 0L;
      * underlay ipv6 address for tunnel initiation/termination
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 3;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress ipv6_address = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1476,7 +1240,7 @@ private static final long serialVersionUID = 0L;
      * device's mac address - for outer ethernet header
      * </pre>
      *
-     * <code>bytes mac_addr = 4;</code>
+     * <code>bytes mac_addr = 3;</code>
      * @return The macAddr.
      */
     @java.lang.Override
@@ -1488,7 +1252,7 @@ private static final long serialVersionUID = 0L;
      * device's mac address - for outer ethernet header
      * </pre>
      *
-     * <code>bytes mac_addr = 4;</code>
+     * <code>bytes mac_addr = 3;</code>
      * @param value The macAddr to set.
      * @return This builder for chaining.
      */
@@ -1506,7 +1270,7 @@ private static final long serialVersionUID = 0L;
      * device's mac address - for outer ethernet header
      * </pre>
      *
-     * <code>bytes mac_addr = 4;</code>
+     * <code>bytes mac_addr = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMacAddr() {
@@ -1524,7 +1288,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      * @return Whether the gatewayIp field is set.
      */
     public boolean hasGatewayIp() {
@@ -1535,7 +1299,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      * @return The gatewayIp.
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress getGatewayIp() {
@@ -1550,7 +1314,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public Builder setGatewayIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (gatewayIpBuilder_ == null) {
@@ -1570,7 +1334,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public Builder setGatewayIp(
         opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder builderForValue) {
@@ -1588,7 +1352,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public Builder mergeGatewayIp(opi_api.network.opinetcommon.v1alpha1.IPAddress value) {
       if (gatewayIpBuilder_ == null) {
@@ -1610,7 +1374,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public Builder clearGatewayIp() {
       if (gatewayIpBuilder_ == null) {
@@ -1628,7 +1392,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder getGatewayIpBuilder() {
       
@@ -1640,7 +1404,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     public opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder getGatewayIpOrBuilder() {
       if (gatewayIpBuilder_ != null) {
@@ -1655,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * IP address of the underlay gateway in the underlay
      * </pre>
      *
-     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 5;</code>
+     * <code>.opi_api.network.opinetcommon.v1alpha1.IPAddress gateway_ip = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.opinetcommon.v1alpha1.IPAddress, opi_api.network.opinetcommon.v1alpha1.IPAddress.Builder, opi_api.network.opinetcommon.v1alpha1.IPAddressOrBuilder> 
@@ -1679,7 +1443,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      * @return Whether the pcieFunctions field is set.
      */
     public boolean hasPcieFunctions() {
@@ -1690,7 +1454,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      * @return The pcieFunctions.
      */
     public opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec getPcieFunctions() {
@@ -1705,7 +1469,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public Builder setPcieFunctions(opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec value) {
       if (pcieFunctionsBuilder_ == null) {
@@ -1725,7 +1489,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public Builder setPcieFunctions(
         opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.Builder builderForValue) {
@@ -1743,7 +1507,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public Builder mergePcieFunctions(opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec value) {
       if (pcieFunctionsBuilder_ == null) {
@@ -1765,7 +1529,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public Builder clearPcieFunctions() {
       if (pcieFunctionsBuilder_ == null) {
@@ -1783,7 +1547,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.Builder getPcieFunctionsBuilder() {
       
@@ -1795,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     public opi_api.network.cloud.v1alpha1.PCIeFunctionsSpecOrBuilder getPcieFunctionsOrBuilder() {
       if (pcieFunctionsBuilder_ != null) {
@@ -1810,7 +1574,7 @@ private static final long serialVersionUID = 0L;
      * number and type of pcie functions exposed
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 6;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec pcie_functions = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec, opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.Builder, opi_api.network.cloud.v1alpha1.PCIeFunctionsSpecOrBuilder> 
@@ -1832,7 +1596,7 @@ private static final long serialVersionUID = 0L;
      * ovelay routing
      * </pre>
      *
-     * <code>bool overlay_routing_enabled = 7;</code>
+     * <code>bool overlay_routing_enabled = 6;</code>
      * @return The overlayRoutingEnabled.
      */
     @java.lang.Override
@@ -1844,7 +1608,7 @@ private static final long serialVersionUID = 0L;
      * ovelay routing
      * </pre>
      *
-     * <code>bool overlay_routing_enabled = 7;</code>
+     * <code>bool overlay_routing_enabled = 6;</code>
      * @param value The overlayRoutingEnabled to set.
      * @return This builder for chaining.
      */
@@ -1859,7 +1623,7 @@ private static final long serialVersionUID = 0L;
      * ovelay routing
      * </pre>
      *
-     * <code>bool overlay_routing_enabled = 7;</code>
+     * <code>bool overlay_routing_enabled = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearOverlayRoutingEnabled() {
@@ -1875,7 +1639,7 @@ private static final long serialVersionUID = 0L;
      * system name is used as named identifier in protocols (e.g. LLDP)
      * </pre>
      *
-     * <code>string systemname = 8;</code>
+     * <code>string systemname = 7;</code>
      * @return The systemname.
      */
     public java.lang.String getSystemname() {
@@ -1895,7 +1659,7 @@ private static final long serialVersionUID = 0L;
      * system name is used as named identifier in protocols (e.g. LLDP)
      * </pre>
      *
-     * <code>string systemname = 8;</code>
+     * <code>string systemname = 7;</code>
      * @return The bytes for systemname.
      */
     public com.google.protobuf.ByteString
@@ -1916,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * system name is used as named identifier in protocols (e.g. LLDP)
      * </pre>
      *
-     * <code>string systemname = 8;</code>
+     * <code>string systemname = 7;</code>
      * @param value The systemname to set.
      * @return This builder for chaining.
      */
@@ -1935,7 +1699,7 @@ private static final long serialVersionUID = 0L;
      * system name is used as named identifier in protocols (e.g. LLDP)
      * </pre>
      *
-     * <code>string systemname = 8;</code>
+     * <code>string systemname = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearSystemname() {
@@ -1949,7 +1713,7 @@ private static final long serialVersionUID = 0L;
      * system name is used as named identifier in protocols (e.g. LLDP)
      * </pre>
      *
-     * <code>string systemname = 8;</code>
+     * <code>string systemname = 7;</code>
      * @param value The bytes for systemname to set.
      * @return This builder for chaining.
      */
@@ -1973,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      * @return Whether the mgmtNetworkSpec field is set.
      */
     public boolean hasMgmtNetworkSpec() {
@@ -1984,7 +1748,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      * @return The mgmtNetworkSpec.
      */
     public opi_api.network.cloud.v1alpha1.MgmtNetworkSpec getMgmtNetworkSpec() {
@@ -1999,7 +1763,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public Builder setMgmtNetworkSpec(opi_api.network.cloud.v1alpha1.MgmtNetworkSpec value) {
       if (mgmtNetworkSpecBuilder_ == null) {
@@ -2019,7 +1783,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public Builder setMgmtNetworkSpec(
         opi_api.network.cloud.v1alpha1.MgmtNetworkSpec.Builder builderForValue) {
@@ -2037,7 +1801,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public Builder mergeMgmtNetworkSpec(opi_api.network.cloud.v1alpha1.MgmtNetworkSpec value) {
       if (mgmtNetworkSpecBuilder_ == null) {
@@ -2059,7 +1823,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public Builder clearMgmtNetworkSpec() {
       if (mgmtNetworkSpecBuilder_ == null) {
@@ -2077,7 +1841,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public opi_api.network.cloud.v1alpha1.MgmtNetworkSpec.Builder getMgmtNetworkSpecBuilder() {
       
@@ -2089,7 +1853,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     public opi_api.network.cloud.v1alpha1.MgmtNetworkSpecOrBuilder getMgmtNetworkSpecOrBuilder() {
       if (mgmtNetworkSpecBuilder_ != null) {
@@ -2104,7 +1868,7 @@ private static final long serialVersionUID = 0L;
      * management network details
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 9;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec mgmt_network_spec = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.MgmtNetworkSpec, opi_api.network.cloud.v1alpha1.MgmtNetworkSpec.Builder, opi_api.network.cloud.v1alpha1.MgmtNetworkSpecOrBuilder> 

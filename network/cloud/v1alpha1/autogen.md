@@ -506,6 +506,7 @@ BGP peer object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique key/identifier of peer |
 | spec | [BGPPeerSpec](#opi_api-network-cloud-v1alpha1-BGPPeerSpec) |  | bgp peer configuration |
 | status | [BGPPeerStatus](#opi_api-network-cloud-v1alpha1-BGPPeerStatus) |  | bgp peer status |
 
@@ -522,6 +523,7 @@ BGP peer AF object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique key/identifier of peer AF config |
 | spec | [BGPPeerAfSpec](#opi_api-network-cloud-v1alpha1-BGPPeerAfSpec) |  | configuration |
 | state | [BGPPeerAfStatus](#opi_api-network-cloud-v1alpha1-BGPPeerAfStatus) |  | status |
 
@@ -538,7 +540,6 @@ BGP peer AF configurations
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of peer AF config |
 | local_addr | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | BGP local IP address |
 | peer_addr | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | BGP peer IP address |
 | afi | [BGPAfi](#opi_api-network-cloud-v1alpha1-BGPAfi) |  | BGP address family |
@@ -581,7 +582,6 @@ BGP peer configurations
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of peer |
 | state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | peer enable/disable admin state. if peer is not enabled then local router must not initiate connections to the neighbor and must not respond to TCP connections attempts from neighbor |
 | local_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | BGP local IP address. control plane chooses the local IP address of the session if an all 0 IP address is provided |
 | peer_addr | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | BGP peer IP address |
@@ -671,6 +671,7 @@ BGP object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique key/identifier of BGP config |
 | spec | [BgpSpec](#opi_api-network-cloud-v1alpha1-BgpSpec) |  | BGP Configuration |
 | status | [BgpStatus](#opi_api-network-cloud-v1alpha1-BgpStatus) |  | BGP Status |
 
@@ -687,7 +688,6 @@ BGP configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of BGP config |
 | local_asn | [uint32](#uint32) |  | the local autonomous system number (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use uint32 per BGP spec. --) |
 | router_id | [fixed32](#fixed32) |  | router ID for this bgp instance (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use fixed32 per BGP spec. --) |
 | cluster_id | [fixed32](#fixed32) |  | cluster ID of the local router. router ID will be used as cluster ID if cluster ID is not configured or configured to zero (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: must use fixed32 per BGP spec. --) |
@@ -3032,6 +3032,7 @@ device level network configuration and status
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | device&#39;s unique identifier |
 | spec | [DeviceSpec](#opi_api-network-cloud-v1alpha1-DeviceSpec) |  | device&#39;s network configuration |
 | status | [DeviceStatus](#opi_api-network-cloud-v1alpha1-DeviceStatus) |  | device&#39;s network status |
 
@@ -3066,7 +3067,7 @@ device capabilities for dynamic routing
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| underlay_bgp | [bool](#bool) |  | device is capable of doing bgp routing for the underlay |
+| underlay_bgp | [bool](#bool) |  | device is capable of doing device routing for the underlay |
 
 
 
@@ -3096,7 +3097,6 @@ device&#39;s network configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | object&#39;s unique identifier |
 | ipv4_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | underlay ipv4 address for tunnel initiation/termination |
 | ipv6_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | underlay ipv6 address for tunnel initiation/termination |
 | mac_addr | [bytes](#bytes) |  | device&#39;s mac address - for outer ethernet header |
@@ -3298,6 +3298,7 @@ interface - ethernet interface (layer2 and layer3 configuration)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | interface key |
 | spec | [InterfaceSpec](#opi_api-network-cloud-v1alpha1-InterfaceSpec) |  | interface configuration |
 | status | [InterfaceStatus](#opi_api-network-cloud-v1alpha1-InterfaceStatus) |  | interface status |
 
@@ -3314,7 +3315,6 @@ InterfaceSpec is used to add or update of an interface
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | interface key |
 | ifid | [int32](#int32) |  | interface number is numerical port identifier starting from 1 range [1...max-ports#] |
 | admin_status | [IfStatus](#opi_api-network-cloud-v1alpha1-IfStatus) |  | admin state - default up for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra |
 | uplink_spec | [UplinkSpec](#opi_api-network-cloud-v1alpha1-UplinkSpec) |  | uplink specific configuration |
@@ -3356,9 +3356,9 @@ L3 interface configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | vpc/vrf this L3 interface belongs to |
-| port_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Physical port of this L3 interface |
+| vpc_name_ref | [string](#string) |  | vpc/vrf this L3 interface belongs to |
 | prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) | repeated | IP address, prefix of this L3 interface |
+| port_name_ref | [string](#string) |  | Physical port of this L3 interface |
 | encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | encap used for packet rewrites if this is a L3 sub interface |
 | mac_address | [bytes](#bytes) |  | MAC address of this L3 interface; can be set only once |
 
@@ -3438,7 +3438,7 @@ Uplink configuration; interface type IF_TYPE_UPLINK
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| port_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | physical port id corresponding to this interface |
+| port_name_ref | [string](#string) |  | physical port id corresponding to this interface |
 | native_vlanid | [int32](#int32) |  | native vlan-id, untagged rx/tx vlan id |
 
 
@@ -3502,7 +3502,7 @@ L2MappingKey is the 2nd-ary key of the remote MAC mapping
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subnet_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subnet id of this MAC |
+| subnet_name_ref | [string](#string) |  | subnet id of this MAC |
 | mac_address | [bytes](#bytes) |  | MAC address of this mapping |
 
 
@@ -3518,7 +3518,7 @@ L3MappingKey is the 2nd-ary key of the remote IP mapping
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | virtual private cloud of the IP mapping |
+| vpc_name_ref | [string](#string) |  | virtual private cloud of the IP mapping |
 | ip_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | private/overlay IP of the mapping |
 
 
@@ -3534,6 +3534,7 @@ mapping object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique mapping id |
 | spec | [MappingSpec](#opi_api-network-cloud-v1alpha1-MappingSpec) |  | configuration |
 | status | [MappingStatus](#opi_api-network-cloud-v1alpha1-MappingStatus) |  | status |
 
@@ -3557,7 +3558,7 @@ Filter criteria for a mapping lookup api
 | mac_key | [L2MappingKey](#opi_api-network-cloud-v1alpha1-L2MappingKey) |  | MAC mapping key |
 | ip_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | IP address |
 | mac_address | [bytes](#bytes) |  | MAC address |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | VPC id |
+| vpc_name_ref | [string](#string) |  | VPC id |
 
 
 
@@ -3573,13 +3574,12 @@ NOTE: Mapping is either on the local host/TEP or remote TEP
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique mapping id |
 | ip_key | [L3MappingKey](#opi_api-network-cloud-v1alpha1-L3MappingKey) |  | IP mapping key |
 | mac_key | [L2MappingKey](#opi_api-network-cloud-v1alpha1-L2MappingKey) |  | MAC mapping key |
-| subnet_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | subnet this mapping is in |
-| vnic_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | if IP is that of local vnic, corresponding vnic id this is mandatory attribute for local IP mappings |
-| tunnel_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Tunnel ID of the remote TEP for remote mapping this is mandatory attribute for remote MAC/IP mappings for non-ECMP cases |
-| nh_group_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | overlay nexthop/TEP group for remote mappings this is mandatory attribute for remote MAC/IP mappings for ECMP cases |
+| subnet_name_ref | [string](#string) |  | subnet this mapping is in |
+| vnic_name_ref | [string](#string) |  | if IP is that of local vnic, corresponding vnic id this is mandatory attribute for local IP mappings |
+| tunnel_name_ref | [string](#string) |  | Tunnel ID of the remote TEP for remote mapping this is mandatory attribute for remote MAC/IP mappings for non-ECMP cases |
+| nh_group_name_ref | [string](#string) |  | overlay nexthop/TEP group for remote mappings this is mandatory attribute for remote MAC/IP mappings for ECMP cases |
 | mac_addr | [bytes](#bytes) |  | overlay MAC address of this mapping |
 | encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | fabric encap information specific to this mapping, if any |
 | public_ip | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | public IP, if overlay IP has corresponding public IP |
@@ -3684,7 +3684,7 @@ these options are applicable to DNS request messages only
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | drop_multi_query_messages | [bool](#bool) |  | when DropMultiQueryMessage is set, drop DNS query messages that contain more than one DNS query in same packet |
-| drop_large_domain_name_messages | [bool](#bool) |  | when DropLargeDomainNameMessage is set, DNS mwessages containing domain name exceeding 255 bytes are dropped |
+| drop_large_domain_name_ref | [bool](#bool) |  | when DropLargeDomainNameMessage is set, DNS mwessages containing domain name exceeding 255 bytes are dropped |
 | drop_long_label_messages | [bool](#bool) |  | when DropLongLabelMessage is set, DNS messages containing labels exceeding 63 bytes are dropped |
 | drop_multi_zone_messages | [bool](#bool) |  | when DropMultiZoneMessagesis set, DNS messages containing more than one zone are dropped |
 | response_timeout | [int32](#int32) |  | DNS session will be closed if response is not seen for a DNS query within ResponseTimeout seconds, default 60 |
@@ -3775,6 +3775,7 @@ security policy object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique identifier of security policy |
 | spec | [SecurityPolicySpec](#opi_api-network-cloud-v1alpha1-SecurityPolicySpec) |  | configuration |
 | status | [SecurityPolicyStatus](#opi_api-network-cloud-v1alpha1-SecurityPolicyStatus) |  | status |
 
@@ -3792,7 +3793,7 @@ lookup criteria
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | security policy uuid to do the lookup in |
+| policy_name_ref | [string](#string) |  | security policy uuid to do the lookup in |
 | vnic_lookup_info | [SecurityPolicyLookupRequest.VnicLookupInfo](#opi_api-network-cloud-v1alpha1-SecurityPolicyLookupRequest-VnicLookupInfo) |  | vnic specific policies will be evaluated when vnic info is provided |
 | match_fields | [PolicyLookupMatch](#opi_api-network-cloud-v1alpha1-PolicyLookupMatch) |  | packet match fields |
 
@@ -3810,7 +3811,7 @@ evaluate all the policies and return the results
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vnic_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | vnic uuid |
+| vnic_name_ref | [string](#string) |  | vnic uuid |
 | policy_direction | [opi_api.network.opinetcommon.v1alpha1.PolicyDir](#opi_api-network-opinetcommon-v1alpha1-PolicyDir) |  | policy evaluation direction |
 | address_family | [opi_api.network.opinetcommon.v1alpha1.IpAf](#opi_api-network-opinetcommon-v1alpha1-IpAf) |  | IPv4 or IPv6 policy |
 
@@ -3827,7 +3828,6 @@ security policy configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique identifier of security policy |
 | type | [SecurityPolicyType](#opi_api-network-cloud-v1alpha1-SecurityPolicyType) |  | SecurityPolicyType is either TENANT or UNDERLAY (aka. infra) policy - only one instance of UNDERLAY policy is allowed (or makes sense) - if Type is not specified, policy type defaults to TENANT policy |
 | address_family | [opi_api.network.opinetcommon.v1alpha1.IpAf](#opi_api-network-opinetcommon-v1alpha1-IpAf) |  | IPv4 or IPv6 policy |
 | stateless | [bool](#bool) |  | when Stateless attribute is set on a policy, the policy is applied for traffic in both directions before deciding the final action of the flow when Stateless is set to false, the policy behavior is same as Network Security Group (NSG) construct whereas if Stateless is set to true, the behavior is same as ACL construct |
@@ -3869,6 +3869,7 @@ security profile object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique identifier of security profile |
 | spec | [SecurityProfileSpec](#opi_api-network-cloud-v1alpha1-SecurityProfileSpec) |  | configuration |
 | status | [SecurityProfileStatus](#opi_api-network-cloud-v1alpha1-SecurityProfileStatus) |  | status |
 
@@ -3889,7 +3890,6 @@ security profile - defaults for network security behavior
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique identifier of security profile |
 | connection_tracking_enable | [bool](#bool) |  | ConnTrackEn, if set to true, will enable full connection tracking if connection_tracking_enable is modified on the fly, it will take affect only on sessions created thereafter and doesn&#39;t affect existing sessions |
 | rule_stats_enable | [bool](#bool) |  | rule_stats_enable, if set to true, will enable per security policy rule statistics feature in the datapath (by default rule stats functionality is turned off and can be enabled on the fly for debugging) |
 | default_firewall_action | [opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction](#opi_api-network-opinetcommon-v1alpha1-SecurityRuleAction) |  | default_firewall_action is the action taken by the smartnic when policies are configured on the subnet or vnic, no rule matches and default action for policy is none this will have effect iff policy is attached on either vnic or subnet. if no action is specified in security profile, default action is &#34;deny&#34; |
@@ -3928,6 +3928,7 @@ security rule object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique identifier of security rule |
 | spec | [SecurityRuleSpec](#opi_api-network-cloud-v1alpha1-SecurityRuleSpec) |  | configuration |
 | status | [SecurityRuleStatus](#opi_api-network-cloud-v1alpha1-SecurityRuleStatus) |  | status |
 
@@ -3963,7 +3964,7 @@ SecurityRuleInfo is a single rule in the security policy
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | rule id needed if incremental rule ADD/DEL/UPD functionality is needed |
+| rule_name | [string](#string) |  | rule id needed for incremental rule ADD/DEL/UPD (-- api-linter: core::0122::name-suffix=disabled aip.dev/not-precedent: security rule info is user assigned name for each rule. --) |
 | attrs | [SecurityRuleAttrs](#opi_api-network-cloud-v1alpha1-SecurityRuleAttrs) |  | rule attributes |
 
 
@@ -3979,8 +3980,7 @@ security rule configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique identifier of security rule |
-| security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | security policy this rule belongs to |
+| security_policy_name_ref | [string](#string) |  | security policy this rule belongs to |
 | attrs | [SecurityRuleAttrs](#opi_api-network-cloud-v1alpha1-SecurityRuleAttrs) |  | rule information |
 
 
@@ -4083,7 +4083,7 @@ IP nexthop information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | egress VRF id |
+| vpc_name_ref | [string](#string) |  | egress VRF id |
 | ip_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | nexthop&#39;s IP address |
 | vlan | [int32](#int32) |  | egress vlan |
 | mac | [bytes](#bytes) |  | mac address |
@@ -4101,6 +4101,7 @@ nexthop object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique nexthop id |
 | spec | [NextHopSpec](#opi_api-network-cloud-v1alpha1-NextHopSpec) |  | configuration |
 | status | [NextHopStatus](#opi_api-network-cloud-v1alpha1-NextHopStatus) |  | status |
 
@@ -4117,6 +4118,7 @@ nexthop group object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique nexthop group id |
 | spec | [NextHopGroupSpec](#opi_api-network-cloud-v1alpha1-NextHopGroupSpec) |  | configuration |
 | status | [NextHopGroupStatus](#opi_api-network-cloud-v1alpha1-NextHopGroupStatus) |  | status |
 
@@ -4134,7 +4136,7 @@ nexthop group lookup request
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | type | [NextHopGroupType](#opi_api-network-cloud-v1alpha1-NextHopGroupType) |  | retrieve based on the group type |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | retreive based on nh id |
+| nh_group_name_ref | [string](#string) |  | retreive based on nh id |
 
 
 
@@ -4149,7 +4151,6 @@ nexthop group specification - a nextgroup consists of bunch of nexthops
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique nexthop group id |
 | type | [NextHopGroupType](#opi_api-network-cloud-v1alpha1-NextHopGroupType) |  | type of the nexthop |
 | members | [NextHopSpec](#opi_api-network-cloud-v1alpha1-NextHopSpec) | repeated | zero or more member nexthops or nexthop groups |
 
@@ -4183,7 +4184,7 @@ nexthop get request
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | type | [NextHopType](#opi_api-network-cloud-v1alpha1-NextHopType) |  | nexthop type to be retrieved |
-| nh_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | nexthop to be retrieved |
+| nh_name_ref | [string](#string) |  | nexthop to be retrieved |
 
 
 
@@ -4198,7 +4199,6 @@ nexthop specification
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique nexthop id |
 | overlay_nh_info | [OverlayNextHopSpec](#opi_api-network-cloud-v1alpha1-OverlayNextHopSpec) |  | Tunnel/TEP member is used for overlay routing |
 | underlay_nh_info | [UnderlayNextHopSpec](#opi_api-network-cloud-v1alpha1-UnderlayNextHopSpec) |  | Underlay nexthop info is used for a resolved underlay IP |
 | ip_nh_info | [IPNextHopSpec](#opi_api-network-cloud-v1alpha1-IPNextHopSpec) |  | Indirectly resolve to the next hop of another IP |
@@ -4233,7 +4233,7 @@ Overlay nexthop information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| tunnel_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | tunnel id |
+| tunnel_name_ref | [string](#string) |  | tunnel id |
 
 
 
@@ -4263,7 +4263,7 @@ Underlay nexthop information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| l3_interface_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port are picked from this L3 interface) |
+| interface_name_ref | [string](#string) |  | L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port are picked from this L3 interface) |
 | underlay_nh_mac | [bytes](#bytes) |  | underlay_nh_mac is the outer DMAC in case of VxLAN fabric |
 
 
@@ -4338,6 +4338,7 @@ link level configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique port id |
 | spec | [PortSpec](#opi_api-network-cloud-v1alpha1-PortSpec) |  | port configuration |
 | status | [PortStatus](#opi_api-network-cloud-v1alpha1-PortStatus) |  | status of port |
 
@@ -4390,7 +4391,6 @@ port configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique port id |
 | port_number | [int32](#int32) |  | port number is numerical port identifier starting from 1 |
 | admin_state | [PortAdminState](#opi_api-network-cloud-v1alpha1-PortAdminState) |  | port admin state |
 | type | [PortType](#opi_api-network-cloud-v1alpha1-PortType) |  | type of port |
@@ -4695,7 +4695,7 @@ route. Overlay destination could be the destinaton TEP or a service node
 | ----- | ---- | ----- | ----------- |
 | nexthop_ip | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) | repeated | overlay nexthop IP list |
 | nexthop_mac | [bytes](#bytes) | repeated | overlay MAC (DMAC inner) to be used when corresponding to the overlay nexthop IP picked |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set |
+| vpc_name_ref | [string](#string) |  | if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set |
 
 
 
@@ -4710,6 +4710,7 @@ route object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique route table id |
 | spec | [RouteSpec](#opi_api-network-cloud-v1alpha1-RouteSpec) |  | route configuration |
 | status | [RouteStatus](#opi_api-network-cloud-v1alpha1-RouteStatus) |  | route status |
 
@@ -4738,11 +4739,11 @@ then the lookup is done according to the longest prefix match.
 | class_priority | [int32](#int32) |  | priority of the route class this route belongs to (range: 0-15) route table must have set priority_enable to true for this to take effect |
 | priority | [int32](#int32) |  | priority of the route within the class. Priority behavior: - lower the numerical value, higher the priority in the datapath - a route table MUST have either all the routes with priority set or no priority set on all the routes - if multiple routes have same priority, route with longest prefix length will take effect - if no priority value is set (i.e. 0) then route priority is computed as 128 - &lt;prefix length&gt;, so longer prefixes will have higher precedence over shorter ones giving regular LPM semantics - Priority attribute on the route is used only when PriorityEn is set to true on the corresponding routing table - range:0-1023 |
 | overlay_nh_ip_info | [OverlayNextHopIPInfo](#opi_api-network-cloud-v1alpha1-OverlayNextHopIPInfo) |  | overlay IP nexthop information for this route |
-| nexthop_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | nexthop for this route |
-| nh_group_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | ECMP nexthop for this route |
+| nexthop_name_ref | [string](#string) |  | nexthop for this route |
+| nh_group_name_ref | [string](#string) |  | ECMP nexthop for this route |
 | vpc_nh_info | [VPCPeerNhInfo](#opi_api-network-cloud-v1alpha1-VPCPeerNhInfo) |  | peer&#39;s VPC nexthop info, in case of VPC peering |
-| tunnel_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | Tunnel this prefix is pointing to |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | if next hop is a route table: used to create exceptions in hierarchal routing. next hop can&#39;t point to same route table (causing rout lookup loop) |
+| tunnel_name_ref | [string](#string) |  | Tunnel this prefix is pointing to |
+| route_table_name_ref | [string](#string) |  | if next hop is a route table: used to create exceptions in hierarchal routing. next hop can&#39;t point to same route table (causing rout lookup loop) |
 | eval_mapping | [bool](#bool) |  | EvalMapping is set in cases where mapping lookup result will provided the forwarding information, this is useful to punch holes in some routes that encompass sub-prefixes that require different forwarding behavior e.g. 10.1.0.0/16 -&gt; Tunnel-X 10.1.1.0/24 -&gt; EvalMapping |
 | tos | [int32](#int32) |  | the ToS value (range: 0-255) configured on the route will override ToS configuration in vpc, subnet and tunnel objects |
 | encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | override encap for this route (from what is programmed for a subnet or a vpc) |
@@ -4761,8 +4762,8 @@ route identifier
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique route id (this id is not scoped under VPC or subnet) |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route table this route belongs to |
+| route_id | [string](#string) |  | unique route id (this id is not scoped under VPC or subnet) |
+| route_table_name_ref | [string](#string) |  | route table this route belongs to |
 
 
 
@@ -4777,7 +4778,7 @@ route configuration information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique id of this specific route (used for specific route update) |
+| route_id | [string](#string) |  | unique id of this specific route (used for specific route update) |
 | attrs | [RouteAttrs](#opi_api-network-cloud-v1alpha1-RouteAttrs) |  | route attributes |
 
 
@@ -4793,8 +4794,7 @@ route specification
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | globally unique route table id |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route table this route belongs to |
+| route_table_name_ref | [string](#string) |  | route table this route belongs to |
 | attrs | [RouteAttrs](#opi_api-network-cloud-v1alpha1-RouteAttrs) |  | route configuration |
 
 
@@ -4820,6 +4820,7 @@ route table object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique route table id |
 | spec | [RouteTableSpec](#opi_api-network-cloud-v1alpha1-RouteTableSpec) |  | route table configuration |
 | status | [RouteTableStatus](#opi_api-network-cloud-v1alpha1-RouteTableStatus) |  | route table status |
 
@@ -4838,7 +4839,6 @@ Individual routes within the route table can be updated using Route object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | globally unique route table id |
 | af | [opi_api.network.opinetcommon.v1alpha1.IpAf](#opi_api-network-opinetcommon-v1alpha1-IpAf) |  | IP address family |
 | priority_enable | [bool](#bool) |  | enable or disable priority based routing for the route table |
 | routes | [RouteInfo](#opi_api-network-cloud-v1alpha1-RouteInfo) | repeated | all routes in this route table In a given route table, same prefix must not appear more than once. For multipathing, use nexthop group instead |
@@ -4880,8 +4880,8 @@ lookup in the route table.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | peer VPC&#39;s id |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route table id in the peer VPC |
+| vpc_name_ref | [string](#string) |  | peer VPC&#39;s id |
+| route_table_name_ref | [string](#string) |  | route table id in the peer VPC |
 
 
 
@@ -4926,6 +4926,7 @@ subnet object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique identifier of the subnet |
 | spec | [SubnetSpec](#opi_api-network-cloud-v1alpha1-SubnetSpec) |  | configuration |
 | status | [SubnetStatus](#opi_api-network-cloud-v1alpha1-SubnetStatus) |  | status |
 
@@ -4942,26 +4943,25 @@ SubnetSpec captures subnet specific configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique identifier of the subnet |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | virtual private cloud this subnet is belongs to |
+| vpc_name_ref | [string](#string) |  | virtual private cloud this subnet is belongs to |
 | v4_prefix | [opi_api.network.opinetcommon.v1alpha1.IPv4Prefix](#opi_api-network-opinetcommon-v1alpha1-IPv4Prefix) |  | IPv4 prefix of this subnet, this must be a sub prefix of VPC&#39;s prefix |
 | v6_prefix | [opi_api.network.opinetcommon.v1alpha1.IPv6Prefix](#opi_api-network-opinetcommon-v1alpha1-IPv6Prefix) |  | IPv6 prefix of this subnet, this must be a sub prefix of VPC&#39;s prefix |
 | ipv4_virtual_router_ip | [uint32](#uint32) |  | IPv4 Virtual Router (VR) IP of this subnet, this IP is owned by the device and packets originated by this device carry this IP as source IP (-- api-linter: core::0141::forbidden-types=disabled aip.dev/not-precedent: ipv4 address is unsigned. --) |
 | ipv6_virtual_router_ip | [bytes](#bytes) |  | Ipv6 Virtual Router (VR) IP of this subnet, this IP is owned by the device and packets originated by this device carry this IP as source IP |
 | virtual_router_mac | [bytes](#bytes) |  | Virtual Router (VR) MAC address, any packets originated or routed by the device carry this MAC as source MAC |
-| v4_route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv4 route table to be used |
-| v6_router_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv6 route table to be used, if any |
-| ingess_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | security policies per subnet: - all vnics in this subnet will inherit the policies configured under subnet - multiple policies per vnic per direction (ingress/egress) can be specified - an implementation may limit the #policies per subnet in each direction identifier of ingress IPv4 security policy to be enforced |
-| ingress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of ingress IPv6 security policy to be enforced |
-| egress_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv4 security policy to be enforced |
-| egress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv6 security policy to be enforced |
+| v4_route_table_name_ref | [string](#string) |  | identifier of the IPv4 route table to be used |
+| v6_route_table_name_ref | [string](#string) |  | identifier of the IPv6 route table to be used, if any |
+| ingess_v4_security_policy_name_ref | [string](#string) | repeated | security policies per subnet: - all vnics in this subnet will inherit the policies configured under subnet - multiple policies per vnic per direction (ingress/egress) can be specified - an implementation may limit the #policies per subnet in each direction identifier of ingress IPv4 security policy to be enforced |
+| ingress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of ingress IPv6 security policy to be enforced |
+| egress_v4_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv4 security policy to be enforced |
+| egress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv6 security policy to be enforced |
 | access_encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | AccessEncap is either ENCAP_TYPE_NONE (untagged) or ENCAP_TYPE_DOT1Q and when AccessEncap is ENCAP_TYPE_DOT1Q, multiple vnics can send traffic with same DOT1Q tag, in which case vnics are identified with their MAC or IP based on the datapath in addition to the DOT1Q tag - when subnet&#39;s AccessEncap is ENCAP_TYPE_NONE, vnics can also be identified by the encap of their own (e.g. VLAN as VNIC or QinQ as VNIC etc.) - when subnet&#39;s AccessEncap is ENCAP_TYPE_DOT1Q, it is expected that all traffic from vnics in that subnet is transmitted with this encap (so vnics can be configured with VnicEncap as ENCAP_TYPE_NONE, so they inherit the subnet&#39;s encap) - it is also possible to have subnet encap as ENCAP_TYPE_DOT1Q with certain tag value but some vnic&#39;s in that subnet to have different DOT1Q encap than that of subnet |
 | fabric_encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | encapped traffic coming with the specified encap from fabric side will be mapped to this subnet and traffic from workloads in this subnet will carry this encap towards the fabric side |
-| host_interface_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs present, subnet needs to be attached to a PF/VF (aka. host interface), HostIf is list of such VF/PFs |
+| host_interface_name_ref | [string](#string) | repeated | when operating in DEVICE_OPER_MODE_HOST mode with multiple host PFs/VFs present, subnet needs to be attached to a PF/VF (aka. host interface), HostIf is list of such VF/PFs |
 | tos | [int32](#int32) |  | ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer header or in the Traffic Class field of IPv6 outer header, this value, if non-zero, will be used as-is (i.e., not interpreted) during encap time by the dataplane; tunnel objects, if configured with ToS, will override this |
 | connected | [bool](#bool) |  | a subnet is marked connected if vnics in this subnet can communicate with external endpoints via routes with some kind of NAT (e.g. 1:1 NAT, NAPT) |
-| ingress_default_sg_policy | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | default ingress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security policies on a given vnic |
-| egress_default_sg_policy | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | default egress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security polices on a given vnic |
+| ingress_default_sg_policy_name_ref | [string](#string) |  | default ingress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security policies on a given vnic |
+| egress_default_sg_policy_name_ref | [string](#string) |  | default egress stateful security policy for this subnet if configured, is the 1st policy evaluated before other security polices on a given vnic |
 | remote_subnet | [bool](#bool) |  | remote_subnet, if set, indicates that the subnet does not have any IP mappings in local pod and such subnets are used to program all remote pod IP mappings behind it |
 
 
@@ -5019,6 +5019,7 @@ tunnel object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique tunnel identifier |
 | spec | [TunnelSpec](#opi_api-network-cloud-v1alpha1-TunnelSpec) |  | configuration |
 | status | [TunnelStatus](#opi_api-network-cloud-v1alpha1-TunnelStatus) |  | operational status |
 
@@ -5038,15 +5039,14 @@ have different tunnel type
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique tunnel identifier |
-| vpc_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | virtual private cloud this is tunnel belongs to |
+| vpc_name_ref | [string](#string) |  | virtual private cloud this is tunnel belongs to |
 | local_ip | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | local IP of the tunnel (used as outer SIP in tunneled packets) |
 | remote_ip | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | remote IP of the tunnel (used as outer DIP in tunneled packets) |
 | type | [TunnelType](#opi_api-network-cloud-v1alpha1-TunnelType) |  | type of the tunnel |
 | encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | encap used while sending traffic to this tunnel |
-| nexthop_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | underlay nexthop for this tunnel |
-| nexthop_group_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | underlay nexthop group for this tunnel |
-| tunnel_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | a tunnel can point to another tunnel for double encap - supported combinations of double encap is platform specific - unsupported combination of cascading tunnels would result in configuration failure - when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode |
+| nexthop_name_ref | [string](#string) |  | underlay nexthop for this tunnel |
+| nexthop_group_name_ref | [string](#string) |  | underlay nexthop group for this tunnel |
+| tunnel_name_ref | [string](#string) |  | a tunnel can point to another tunnel for double encap - supported combinations of double encap is platform specific - unsupported combination of cascading tunnels would result in configuration failure - when tunnel points to another IPSEC tunnel, it is similar to IPSEC tunnel mode |
 | drop_next_hop | [DropNexthop](#opi_api-network-cloud-v1alpha1-DropNexthop) |  | DropNexthop is used to explicitly drop traffic destined to this tunnel even when there is reachability, this is administrative override |
 | mac_address | [bytes](#bytes) |  | MAC address of the remote IP (i.e., remote side of the tunnel) set to zero if dataplane is expected to resolve this |
 | tos | [int32](#int32) |  | when ToS is configured on a tunnel object, all traffic destined to the tunnel will carry dscp value as configured. ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer header or in the Traffic Class field of IPv6 outer header, this value, if non-zero, will be used as-is (i.e., not interpreted) during encap time by the dataplane. The ToS value configured on the tunnel will override ToS configuration in vpc and subnet objects |
@@ -5113,6 +5113,7 @@ Underlay Route can be static or dynamic underlay route
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | route&#39;s unique id |
 | spec | [UnderlayRouteSpec](#opi_api-network-cloud-v1alpha1-UnderlayRouteSpec) |  | Underlayroute configuration (can specify fields to query route for get operations) |
 | status | [UnderlayRouteStatus](#opi_api-network-cloud-v1alpha1-UnderlayRouteStatus) |  | UnderlayRoute status |
 
@@ -5129,7 +5130,7 @@ UnderlayRouteLookupKey can be used to query one or more routes based on various 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route table id this route belongs to |
+| route_table_name_ref | [string](#string) |  | route table id this route belongs to |
 | dest_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | destination address |
 | next_hop_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | next-hop address |
 | ifid | [int32](#int32) |  | interface index, if the next-hop is an interface |
@@ -5148,14 +5149,13 @@ control plane static route configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route&#39;s unique id |
-| route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | route table id this route belongs to |
+| route_table_name_ref | [string](#string) |  | route table id this route belongs to |
 | dest_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | destination address |
 | next_hop_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | next-hop address |
 | state | [opi_api.network.opinetcommon.v1alpha1.AdminState](#opi_api-network-opinetcommon-v1alpha1-AdminState) |  | route is enabled or not |
 | enable_admin_distance | [bool](#bool) |  | enable/disable admin distance |
 | admin_dist | [int32](#int32) |  | admin distance set for a static route vs. what a routing protocol computes it for the dynamic route. |
-| interface_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | interface ID, if this route is configured on RR |
+| interface_name_ref | [string](#string) |  | interface ID, if this route is configured on RR |
 
 
 
@@ -5170,7 +5170,7 @@ Underlay Route status for a control plane static or dynamic route
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| route_table_id | [int32](#int32) |  | route table id this route belongs to |
+| route_table_name_ref | [int32](#int32) |  | route table id this route belongs to |
 | dest_prefix | [opi_api.network.opinetcommon.v1alpha1.IPPrefix](#opi_api-network-opinetcommon-v1alpha1-IPPrefix) |  | destination address |
 | next_hop_address | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | next-hop address |
 | if_index | [int32](#int32) |  | interface index, if the next-hop is an interface |
@@ -5214,6 +5214,7 @@ VNIC represents a different abstraction from that of a port or interface object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique vnic id |
 | spec | [VnicSpec](#opi_api-network-cloud-v1alpha1-VnicSpec) |  | vnic configuration |
 | status | [VnicStatus](#opi_api-network-cloud-v1alpha1-VnicStatus) |  | vnic status |
 
@@ -5230,27 +5231,26 @@ vnic configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique vnic id |
-| subnet_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | id of the subnet this vnic belongs to |
+| subnet_name_ref | [string](#string) |  | id of the subnet this vnic belongs to |
 | vnic_encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | vnic encap information to be used while sending packets to this vnic |
 | mac_address | [bytes](#bytes) |  | overlay MAC of this VNIC |
 | source_guard_enable | [bool](#bool) |  | enable or disable reverse path checks while rx/tx traffic from/to this vnic |
 | fabric_encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | fabric encap information to be used for traffic originated from this vnic |
 | vnf | [bool](#bool) |  | VNFs (virtual network functions are workloads that implement network features such as firewalls, virtual switches/bridges, security monitoring, etc. since VNFs are devices in the middle, they can rx/tx traffic on behalf of other workloads to allow for source/destination checks, and exceptions that of a mapping |
-| ingress_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of ingress IPv4 security policy to be enforced |
-| ingress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of ingress IPv6 security policy to be enforced |
-| egress_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv4 security policy to be enforced |
-| egress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv6 security policy to be enforced |
-| host_if_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | if VNIC Is attahced to a PF/VF, this identifies the corresponding interface object |
-| tunnel_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | when operating in DEVICE_OPER_MODE_SMART_SWITCH, vnic can be behind a tunnel between the host and the DSC |
+| ingress_v4_security_policy_name_ref | [string](#string) | repeated | identifier of ingress IPv4 security policy to be enforced |
+| ingress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of ingress IPv6 security policy to be enforced |
+| egress_v4_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv4 security policy to be enforced |
+| egress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv6 security policy to be enforced |
+| host_if_name_ref | [string](#string) |  | if VNIC Is attahced to a PF/VF, this identifies the corresponding interface object |
+| tunnel_name_ref | [string](#string) |  | when operating in DEVICE_OPER_MODE_SMART_SWITCH, vnic can be behind a tunnel between the host and the DSC |
 | max_sessions | [int32](#int32) |  | max_sessions, if set, is total number of active sessions (across all protocols) allowed from/to this vnic; zero means unlimited |
 | public_mac_address | [bytes](#bytes) |  | guest workload&#39;s MAC in rx/tx direction is rewritten with this mac if non zero |
 | allow_internet_access | [bool](#bool) |  | if allow_internet_access is set to false and traffic from the vnic hits a route of class ROUTE_CLASS_INTERNET, then traffic is dropped. To allow Internet connectivity for the vnic, AllowInternetAccess must be set to true |
 | max_cps | [int32](#int32) |  | max_cps, if non-zero, is the maximum no. of connections per second (cps) allowed for this vnic and if cps exceeds this configured limit all new connections will get dropped; zero means unlimited |
 | cps_burst | [int32](#int32) |  | CPS burst to be absorbed when CPS exceeds MaxCPS; zero means no burst is allowed |
-| primary_vnic_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | multiple vnics can be created with same MAC but only of them can be primary VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and secondary vnic can have one or more local IP mappings behind them |
-| v4_route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv4 route table to be used |
-| v6_route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv6 route table to be used, if any |
+| primary_vnic_name_ref | [string](#string) |  | multiple vnics can be created with same MAC but only of them can be primary VNIC and all 2nd-ary vnics refer to the primary vnic, both primary and secondary vnic can have one or more local IP mappings behind them |
+| v4_route_table_name_ref | [string](#string) |  | identifier of the IPv4 route table to be used |
+| v6_route_table_name_ref | [string](#string) |  | identifier of the IPv6 route table to be used, if any |
 | service_ip | [opi_api.network.opinetcommon.v1alpha1.IPAddress](#opi_api-network-opinetcommon-v1alpha1-IPAddress) |  | vnic if assigned a VIP in the underlay, can be used as outer encap source IP, if configured, for traffic going to certain vpc private service endpoints |
 | max_tcp_sessions | [int32](#int32) |  | max_tcp_sessions is the maximum number of TCP sessions allowed from/to this vnic, if it is non-zero; zero implies no limit |
 | max_udp_sessions | [int32](#int32) |  | max_udp_sessions is the maximum number of UDP sessions allowed from/to this vnic, if it is non-zero; zero implies no limit |
@@ -5278,7 +5278,7 @@ operational status of Vnic, if any
 | hw_idx | [int32](#int32) |  | h/w id of the vnic |
 | nexthop_hw_idx | [int32](#int32) |  | nexthop h/w id |
 | cps_copp_hw_idx | [int32](#int32) |  | ARM cpu bound policer hw_idx for CPS rate limiting |
-| secondary_vnic_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | secondary vnic of (primary) vnic |
+| secondary_vnic_name_ref | [string](#string) |  | secondary vnic of (primary) vnic |
 
 
 
@@ -5309,6 +5309,7 @@ Virtual Private Cloud Peer (aka. pairing) object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique id/key idenitifying this VPC peering relation |
 | spec | [VPCPeerSpec](#opi_api-network-cloud-v1alpha1-VPCPeerSpec) |  | configuration |
 | status | [VPCPeerStatus](#opi_api-network-cloud-v1alpha1-VPCPeerStatus) |  | status |
 
@@ -5327,9 +5328,8 @@ the vpc peering is commutative relation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique id/key idenitifying this VPC peering relation |
-| vpc1_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of VPC1 |
-| vpc2_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of VPC2 |
+| vpc1_name_ref | [string](#string) |  | unique key/identifier of VPC1 |
+| vpc2_name_ref | [string](#string) |  | unique key/identifier of VPC2 |
 
 
 
@@ -5354,6 +5354,7 @@ Virtual Private Cloud object
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | unique key/identifier of VPC |
 | spec | [VpcSpec](#opi_api-network-cloud-v1alpha1-VpcSpec) |  | configuration |
 | status | [VpcStatus](#opi_api-network-cloud-v1alpha1-VpcStatus) |  | status |
 
@@ -5370,14 +5371,13 @@ VpcSpec captures VPC configuration
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | unique key/identifier of VPC |
 | type | [VPCType](#opi_api-network-cloud-v1alpha1-VPCType) |  | type of the VPC |
-| v4_route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv4 route table to be used and this route table is inherited by the subnets under this VPC, if they are created with no route table explicitly |
-| v6_route_table_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) |  | identifier of the IPv6 route table to be used, if any and this route table is inherited by the subnets under this VPC, if they are created with no route table explicitly |
-| ingress_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | For various security policies - all vnics in this VPC will inherit the policies configured under VPC - there can be multiple policies per vnic per direction (ingress/egress) - vpc policy in each direction is to be aggregated to contain all rules in a given direction identifier of ingress IPv4 security policy to be enforced |
-| ingress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of ingress IPv6 security policy to be enforced |
-| egress_v4_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv4 security policy to be enforced |
-| egress_v6_security_policy_id | [opi_api.common.v1.ObjectKey](#opi_api-common-v1-ObjectKey) | repeated | identifier of egress IPv6 security policy to be enforced |
+| v4_route_table_name_ref | [string](#string) |  | identifier of the IPv4 route table to be used and this route table is inherited by the subnets under this VPC, if they are created with no route table explicitly |
+| v6_route_table_name_ref | [string](#string) |  | identifier of the IPv6 route table to be used, if any and this route table is inherited by the subnets under this VPC, if they are created with no route table explicitly |
+| ingress_v4_security_policy_name_ref | [string](#string) | repeated | For various security policies - all vnics in this VPC will inherit the policies configured under VPC - there can be multiple policies per vnic per direction (ingress/egress) - vpc policy in each direction is to be aggregated to contain all rules in a given direction identifier of ingress IPv4 security policy to be enforced |
+| ingress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of ingress IPv6 security policy to be enforced |
+| egress_v4_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv4 security policy to be enforced |
+| egress_v6_security_policy_name_ref | [string](#string) | repeated | identifier of egress IPv6 security policy to be enforced |
 | virtual_router_mac | [bytes](#bytes) |  | Virtual Router (VR) MAC address, any packets originated or routed in this VPC carry this MAC as source MAC |
 | fabric_encap | [opi_api.network.opinetcommon.v1alpha1.Encap](#opi_api-network-opinetcommon-v1alpha1-Encap) |  | encapped traffic coming with the specified encap from fabric side will be mapped to this VPC. FabricEncap is needed only for VPCs of type VPC_TYPE_TENANT, for other types of VPCs user need not provide fabric encap and will be unused when provided |
 | tos | [int32](#int32) |  | ToS field is 1 byte value that is populated in the DSCP field of IPv4 outer header or in the Traffic Class field of IPv6 outer header, this value, if non-zero, will be used as-is (i.e., not interpreted) during encap time by the dataplane - subnets under this VPC don&#39;t inherit this ToS value, subnets need to be explicitly configured with same ToS value as that of VPC or potentially different ToS value of their own - tunnel objects, if configured with tos, will override this tos value |

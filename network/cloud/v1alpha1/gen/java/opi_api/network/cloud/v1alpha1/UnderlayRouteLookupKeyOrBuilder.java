@@ -12,27 +12,20 @@ public interface UnderlayRouteLookupKeyOrBuilder extends
    * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
-  boolean hasRouteTableId();
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  opi_api.common.v1.ObjectKey getRouteTableId();
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 
   /**
    * <pre>

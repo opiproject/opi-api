@@ -9,10 +9,30 @@ public interface BGPPeerOrBuilder extends
 
   /**
    * <pre>
+   * unique key/identifier of peer
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * unique key/identifier of peer
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * bgp peer configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface BGPPeerOrBuilder extends
    * bgp peer configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.BGPPeerSpec getSpec();
@@ -30,7 +50,7 @@ public interface BGPPeerOrBuilder extends
    * bgp peer configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.BGPPeerSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface BGPPeerOrBuilder extends
    * bgp peer status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface BGPPeerOrBuilder extends
    * bgp peer status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.BGPPeerStatus getStatus();
@@ -57,7 +77,7 @@ public interface BGPPeerOrBuilder extends
    * bgp peer status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.BGPPeerStatusOrBuilder getStatusOrBuilder();
 }

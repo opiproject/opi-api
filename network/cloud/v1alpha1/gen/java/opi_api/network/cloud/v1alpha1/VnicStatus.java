@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VnicStatus() {
+    secondaryVnicNameRef_ = "";
   }
 
   @java.lang.Override
@@ -68,16 +69,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (secondaryVnicId_ != null) {
-              subBuilder = secondaryVnicId_.toBuilder();
-            }
-            secondaryVnicId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(secondaryVnicId_);
-              secondaryVnicId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            secondaryVnicNameRef_ = s;
             break;
           }
           case 104: {
@@ -257,42 +251,50 @@ private static final long serialVersionUID = 0L;
     return cpsCoppHwIdx_;
   }
 
-  public static final int SECONDARY_VNIC_ID_FIELD_NUMBER = 11;
-  private opi_api.common.v1.ObjectKey secondaryVnicId_;
+  public static final int SECONDARY_VNIC_NAME_REF_FIELD_NUMBER = 11;
+  private volatile java.lang.Object secondaryVnicNameRef_;
   /**
    * <pre>
    * secondary vnic of (primary) vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   * @return Whether the secondaryVnicId field is set.
+   * <code>string secondary_vnic_name_ref = 11;</code>
+   * @return The secondaryVnicNameRef.
    */
   @java.lang.Override
-  public boolean hasSecondaryVnicId() {
-    return secondaryVnicId_ != null;
+  public java.lang.String getSecondaryVnicNameRef() {
+    java.lang.Object ref = secondaryVnicNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secondaryVnicNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * secondary vnic of (primary) vnic
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   * @return The secondaryVnicId.
+   * <code>string secondary_vnic_name_ref = 11;</code>
+   * @return The bytes for secondaryVnicNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getSecondaryVnicId() {
-    return secondaryVnicId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : secondaryVnicId_;
-  }
-  /**
-   * <pre>
-   * secondary vnic of (primary) vnic
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getSecondaryVnicIdOrBuilder() {
-    return getSecondaryVnicId();
+  public com.google.protobuf.ByteString
+      getSecondaryVnicNameRefBytes() {
+    java.lang.Object ref = secondaryVnicNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      secondaryVnicNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,8 +320,8 @@ private static final long serialVersionUID = 0L;
     if (cpsCoppHwIdx_ != 0) {
       output.writeInt32(10, cpsCoppHwIdx_);
     }
-    if (secondaryVnicId_ != null) {
-      output.writeMessage(11, getSecondaryVnicId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryVnicNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, secondaryVnicNameRef_);
     }
     if (maxSessionLimitHit_ != false) {
       output.writeBool(13, maxSessionLimitHit_);
@@ -357,9 +359,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, cpsCoppHwIdx_);
     }
-    if (secondaryVnicId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getSecondaryVnicId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryVnicNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, secondaryVnicNameRef_);
     }
     if (maxSessionLimitHit_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -412,11 +413,8 @@ private static final long serialVersionUID = 0L;
         != other.getNexthopHwIdx()) return false;
     if (getCpsCoppHwIdx()
         != other.getCpsCoppHwIdx()) return false;
-    if (hasSecondaryVnicId() != other.hasSecondaryVnicId()) return false;
-    if (hasSecondaryVnicId()) {
-      if (!getSecondaryVnicId()
-          .equals(other.getSecondaryVnicId())) return false;
-    }
+    if (!getSecondaryVnicNameRef()
+        .equals(other.getSecondaryVnicNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -449,10 +447,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getNexthopHwIdx();
     hash = (37 * hash) + CPS_COPP_HW_IDX_FIELD_NUMBER;
     hash = (53 * hash) + getCpsCoppHwIdx();
-    if (hasSecondaryVnicId()) {
-      hash = (37 * hash) + SECONDARY_VNIC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSecondaryVnicId().hashCode();
-    }
+    hash = (37 * hash) + SECONDARY_VNIC_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getSecondaryVnicNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -606,12 +602,8 @@ private static final long serialVersionUID = 0L;
 
       cpsCoppHwIdx_ = 0;
 
-      if (secondaryVnicIdBuilder_ == null) {
-        secondaryVnicId_ = null;
-      } else {
-        secondaryVnicId_ = null;
-        secondaryVnicIdBuilder_ = null;
-      }
+      secondaryVnicNameRef_ = "";
+
       return this;
     }
 
@@ -646,11 +638,7 @@ private static final long serialVersionUID = 0L;
       result.hwIdx_ = hwIdx_;
       result.nexthopHwIdx_ = nexthopHwIdx_;
       result.cpsCoppHwIdx_ = cpsCoppHwIdx_;
-      if (secondaryVnicIdBuilder_ == null) {
-        result.secondaryVnicId_ = secondaryVnicId_;
-      } else {
-        result.secondaryVnicId_ = secondaryVnicIdBuilder_.build();
-      }
+      result.secondaryVnicNameRef_ = secondaryVnicNameRef_;
       onBuilt();
       return result;
     }
@@ -723,8 +711,9 @@ private static final long serialVersionUID = 0L;
       if (other.getCpsCoppHwIdx() != 0) {
         setCpsCoppHwIdx(other.getCpsCoppHwIdx());
       }
-      if (other.hasSecondaryVnicId()) {
-        mergeSecondaryVnicId(other.getSecondaryVnicId());
+      if (!other.getSecondaryVnicNameRef().isEmpty()) {
+        secondaryVnicNameRef_ = other.secondaryVnicNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1099,33 +1088,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey secondaryVnicId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> secondaryVnicIdBuilder_;
+    private java.lang.Object secondaryVnicNameRef_ = "";
     /**
      * <pre>
      * secondary vnic of (primary) vnic
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-     * @return Whether the secondaryVnicId field is set.
+     * <code>string secondary_vnic_name_ref = 11;</code>
+     * @return The secondaryVnicNameRef.
      */
-    public boolean hasSecondaryVnicId() {
-      return secondaryVnicIdBuilder_ != null || secondaryVnicId_ != null;
-    }
-    /**
-     * <pre>
-     * secondary vnic of (primary) vnic
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-     * @return The secondaryVnicId.
-     */
-    public opi_api.common.v1.ObjectKey getSecondaryVnicId() {
-      if (secondaryVnicIdBuilder_ == null) {
-        return secondaryVnicId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : secondaryVnicId_;
+    public java.lang.String getSecondaryVnicNameRef() {
+      java.lang.Object ref = secondaryVnicNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondaryVnicNameRef_ = s;
+        return s;
       } else {
-        return secondaryVnicIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1133,125 +1114,74 @@ private static final long serialVersionUID = 0L;
      * secondary vnic of (primary) vnic
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
+     * <code>string secondary_vnic_name_ref = 11;</code>
+     * @return The bytes for secondaryVnicNameRef.
      */
-    public Builder setSecondaryVnicId(opi_api.common.v1.ObjectKey value) {
-      if (secondaryVnicIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        secondaryVnicId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getSecondaryVnicNameRefBytes() {
+      java.lang.Object ref = secondaryVnicNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secondaryVnicNameRef_ = b;
+        return b;
       } else {
-        secondaryVnicIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * secondary vnic of (primary) vnic
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
+     * <code>string secondary_vnic_name_ref = 11;</code>
+     * @param value The secondaryVnicNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setSecondaryVnicId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (secondaryVnicIdBuilder_ == null) {
-        secondaryVnicId_ = builderForValue.build();
-        onChanged();
-      } else {
-        secondaryVnicIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * secondary vnic of (primary) vnic
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-     */
-    public Builder mergeSecondaryVnicId(opi_api.common.v1.ObjectKey value) {
-      if (secondaryVnicIdBuilder_ == null) {
-        if (secondaryVnicId_ != null) {
-          secondaryVnicId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(secondaryVnicId_).mergeFrom(value).buildPartial();
-        } else {
-          secondaryVnicId_ = value;
-        }
-        onChanged();
-      } else {
-        secondaryVnicIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * secondary vnic of (primary) vnic
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-     */
-    public Builder clearSecondaryVnicId() {
-      if (secondaryVnicIdBuilder_ == null) {
-        secondaryVnicId_ = null;
-        onChanged();
-      } else {
-        secondaryVnicId_ = null;
-        secondaryVnicIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * secondary vnic of (primary) vnic
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getSecondaryVnicIdBuilder() {
-      
+    public Builder setSecondaryVnicNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      secondaryVnicNameRef_ = value;
       onChanged();
-      return getSecondaryVnicIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * secondary vnic of (primary) vnic
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
+     * <code>string secondary_vnic_name_ref = 11;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getSecondaryVnicIdOrBuilder() {
-      if (secondaryVnicIdBuilder_ != null) {
-        return secondaryVnicIdBuilder_.getMessageOrBuilder();
-      } else {
-        return secondaryVnicId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : secondaryVnicId_;
-      }
+    public Builder clearSecondaryVnicNameRef() {
+      
+      secondaryVnicNameRef_ = getDefaultInstance().getSecondaryVnicNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * secondary vnic of (primary) vnic
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey secondary_vnic_id = 11;</code>
+     * <code>string secondary_vnic_name_ref = 11;</code>
+     * @param value The bytes for secondaryVnicNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getSecondaryVnicIdFieldBuilder() {
-      if (secondaryVnicIdBuilder_ == null) {
-        secondaryVnicIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getSecondaryVnicId(),
-                getParentForChildren(),
-                isClean());
-        secondaryVnicId_ = null;
-      }
-      return secondaryVnicIdBuilder_;
+    public Builder setSecondaryVnicNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      secondaryVnicNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

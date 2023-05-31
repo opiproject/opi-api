@@ -12,27 +12,20 @@ public interface L2MappingKeyOrBuilder extends
    * subnet id of this MAC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   * @return Whether the subnetId field is set.
+   * <code>string subnet_name_ref = 1;</code>
+   * @return The subnetNameRef.
    */
-  boolean hasSubnetId();
+  java.lang.String getSubnetNameRef();
   /**
    * <pre>
    * subnet id of this MAC
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   * @return The subnetId.
+   * <code>string subnet_name_ref = 1;</code>
+   * @return The bytes for subnetNameRef.
    */
-  opi_api.common.v1.ObjectKey getSubnetId();
-  /**
-   * <pre>
-   * subnet id of this MAC
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey subnet_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getSubnetIdOrBuilder();
+  com.google.protobuf.ByteString
+      getSubnetNameRefBytes();
 
   /**
    * <pre>

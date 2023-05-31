@@ -33,8 +33,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include "networktypes.pb.h"
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_bgp_2eproto
@@ -704,10 +704,25 @@ class Bgp final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -725,7 +740,7 @@ class Bgp final :
       ::opi_api::network::cloud::v1alpha1::BgpSpec* spec);
   ::opi_api::network::cloud::v1alpha1::BgpSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -750,6 +765,7 @@ class Bgp final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::BgpSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::BgpStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -879,32 +895,13 @@ class BgpSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kLocalAsnFieldNumber = 2,
-    kRouterIdFieldNumber = 3,
-    kClusterIdFieldNumber = 4,
-    kDisableFieldNumber = 5,
-    kSuppressDefaultResolutionFieldNumber = 6,
+    kLocalAsnFieldNumber = 1,
+    kRouterIdFieldNumber = 2,
+    kClusterIdFieldNumber = 3,
+    kDisableFieldNumber = 4,
+    kSuppressDefaultResolutionFieldNumber = 5,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // uint32 local_asn = 2;
+  // uint32 local_asn = 1;
   void clear_local_asn();
   uint32_t local_asn() const;
   void set_local_asn(uint32_t value);
@@ -913,7 +910,7 @@ class BgpSpec final :
   void _internal_set_local_asn(uint32_t value);
   public:
 
-  // fixed32 router_id = 3;
+  // fixed32 router_id = 2;
   void clear_router_id();
   uint32_t router_id() const;
   void set_router_id(uint32_t value);
@@ -922,7 +919,7 @@ class BgpSpec final :
   void _internal_set_router_id(uint32_t value);
   public:
 
-  // fixed32 cluster_id = 4;
+  // fixed32 cluster_id = 3;
   void clear_cluster_id();
   uint32_t cluster_id() const;
   void set_cluster_id(uint32_t value);
@@ -931,7 +928,7 @@ class BgpSpec final :
   void _internal_set_cluster_id(uint32_t value);
   public:
 
-  // bool disable = 5;
+  // bool disable = 4;
   void clear_disable();
   bool disable() const;
   void set_disable(bool value);
@@ -940,7 +937,7 @@ class BgpSpec final :
   void _internal_set_disable(bool value);
   public:
 
-  // bool suppress_default_resolution = 6;
+  // bool suppress_default_resolution = 5;
   void clear_suppress_default_resolution();
   bool suppress_default_resolution() const;
   void set_suppress_default_resolution(bool value);
@@ -956,7 +953,6 @@ class BgpSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
   uint32_t local_asn_;
   uint32_t router_id_;
   uint32_t cluster_id_;
@@ -1279,10 +1275,25 @@ class BGPPeer final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -1300,7 +1311,7 @@ class BGPPeer final :
       ::opi_api::network::cloud::v1alpha1::BGPPeerSpec* spec);
   ::opi_api::network::cloud::v1alpha1::BGPPeerSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -1325,6 +1336,7 @@ class BGPPeer final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::BGPPeerSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::BGPPeerStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1454,23 +1466,22 @@ class BGPPeerSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPasswordFieldNumber = 12,
-    kIdFieldNumber = 1,
-    kLocalAddressFieldNumber = 3,
-    kPeerAddrFieldNumber = 4,
-    kStateFieldNumber = 2,
-    kRemoteAsnFieldNumber = 5,
-    kSendCommFieldNumber = 6,
-    kSendExtCommFieldNumber = 7,
-    kRrClientFieldNumber = 8,
-    kConnectRetryFieldNumber = 9,
-    kHoldtimeFieldNumber = 10,
-    kKeepAliveFieldNumber = 11,
-    kTtlFieldNumber = 13,
-    kIdleHoldtimeFieldNumber = 14,
-    kAllowLocalAsFieldNumber = 15,
+    kPasswordFieldNumber = 11,
+    kLocalAddressFieldNumber = 2,
+    kPeerAddrFieldNumber = 3,
+    kStateFieldNumber = 1,
+    kRemoteAsnFieldNumber = 4,
+    kSendCommFieldNumber = 5,
+    kSendExtCommFieldNumber = 6,
+    kRrClientFieldNumber = 7,
+    kConnectRetryFieldNumber = 8,
+    kHoldtimeFieldNumber = 9,
+    kKeepAliveFieldNumber = 10,
+    kTtlFieldNumber = 12,
+    kIdleHoldtimeFieldNumber = 13,
+    kAllowLocalAsFieldNumber = 14,
   };
-  // bytes password = 12;
+  // bytes password = 11;
   void clear_password();
   const std::string& password() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1484,25 +1495,7 @@ class BGPPeerSpec final :
   std::string* _internal_mutable_password();
   public:
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
   bool has_local_address() const;
   private:
   bool _internal_has_local_address() const;
@@ -1520,7 +1513,7 @@ class BGPPeerSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* local_address);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_local_address();
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
   bool has_peer_addr() const;
   private:
   bool _internal_has_peer_addr() const;
@@ -1538,7 +1531,7 @@ class BGPPeerSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* peer_addr);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_peer_addr();
 
-  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
   void clear_state();
   ::opi_api::network::opinetcommon::v1alpha1::AdminState state() const;
   void set_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
@@ -1547,7 +1540,7 @@ class BGPPeerSpec final :
   void _internal_set_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
   public:
 
-  // uint32 remote_asn = 5;
+  // uint32 remote_asn = 4;
   void clear_remote_asn();
   uint32_t remote_asn() const;
   void set_remote_asn(uint32_t value);
@@ -1556,7 +1549,7 @@ class BGPPeerSpec final :
   void _internal_set_remote_asn(uint32_t value);
   public:
 
-  // bool send_comm = 6;
+  // bool send_comm = 5;
   void clear_send_comm();
   bool send_comm() const;
   void set_send_comm(bool value);
@@ -1565,7 +1558,7 @@ class BGPPeerSpec final :
   void _internal_set_send_comm(bool value);
   public:
 
-  // bool send_ext_comm = 7;
+  // bool send_ext_comm = 6;
   void clear_send_ext_comm();
   bool send_ext_comm() const;
   void set_send_ext_comm(bool value);
@@ -1574,7 +1567,7 @@ class BGPPeerSpec final :
   void _internal_set_send_ext_comm(bool value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
   void clear_rr_client();
   ::opi_api::network::cloud::v1alpha1::BGPPeerRRClient rr_client() const;
   void set_rr_client(::opi_api::network::cloud::v1alpha1::BGPPeerRRClient value);
@@ -1583,7 +1576,7 @@ class BGPPeerSpec final :
   void _internal_set_rr_client(::opi_api::network::cloud::v1alpha1::BGPPeerRRClient value);
   public:
 
-  // int32 connect_retry = 9;
+  // int32 connect_retry = 8;
   void clear_connect_retry();
   int32_t connect_retry() const;
   void set_connect_retry(int32_t value);
@@ -1592,7 +1585,7 @@ class BGPPeerSpec final :
   void _internal_set_connect_retry(int32_t value);
   public:
 
-  // int32 holdtime = 10;
+  // int32 holdtime = 9;
   void clear_holdtime();
   int32_t holdtime() const;
   void set_holdtime(int32_t value);
@@ -1601,7 +1594,7 @@ class BGPPeerSpec final :
   void _internal_set_holdtime(int32_t value);
   public:
 
-  // int32 keep_alive = 11;
+  // int32 keep_alive = 10;
   void clear_keep_alive();
   int32_t keep_alive() const;
   void set_keep_alive(int32_t value);
@@ -1610,7 +1603,7 @@ class BGPPeerSpec final :
   void _internal_set_keep_alive(int32_t value);
   public:
 
-  // int32 ttl = 13;
+  // int32 ttl = 12;
   void clear_ttl();
   int32_t ttl() const;
   void set_ttl(int32_t value);
@@ -1619,7 +1612,7 @@ class BGPPeerSpec final :
   void _internal_set_ttl(int32_t value);
   public:
 
-  // int32 idle_holdtime = 14;
+  // int32 idle_holdtime = 13;
   void clear_idle_holdtime();
   int32_t idle_holdtime() const;
   void set_idle_holdtime(int32_t value);
@@ -1628,7 +1621,7 @@ class BGPPeerSpec final :
   void _internal_set_idle_holdtime(int32_t value);
   public:
 
-  // int32 allow_local_as = 15;
+  // int32 allow_local_as = 14;
   void clear_allow_local_as();
   int32_t allow_local_as() const;
   void set_allow_local_as(int32_t value);
@@ -1645,7 +1638,6 @@ class BGPPeerSpec final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
-  ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* local_address_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* peer_addr_;
   int state_;
@@ -2457,10 +2449,25 @@ class BGPPeerAf final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStateFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStateFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -2478,7 +2485,7 @@ class BGPPeerAf final :
       ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec* spec);
   ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;
+  // .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
   bool has_state() const;
   private:
   bool _internal_has_state() const;
@@ -2503,6 +2510,7 @@ class BGPPeerAf final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::BGPPeerAfSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::BGPPeerAfStatus* state_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2632,36 +2640,17 @@ class BGPPeerAfSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kLocalAddrFieldNumber = 2,
-    kPeerAddrFieldNumber = 3,
-    kAfiFieldNumber = 4,
-    kSafiFieldNumber = 5,
-    kNexthopSelfFieldNumber = 6,
-    kDefaultOrigFieldNumber = 7,
-    kLocalPortFieldNumber = 8,
-    kRemotePortFieldNumber = 9,
-    kLocalAddrScopeIdFieldNumber = 10,
+    kLocalAddrFieldNumber = 1,
+    kPeerAddrFieldNumber = 2,
+    kAfiFieldNumber = 3,
+    kSafiFieldNumber = 4,
+    kNexthopSelfFieldNumber = 5,
+    kDefaultOrigFieldNumber = 6,
+    kLocalPortFieldNumber = 7,
+    kRemotePortFieldNumber = 8,
+    kLocalAddrScopeIdFieldNumber = 9,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
   bool has_local_addr() const;
   private:
   bool _internal_has_local_addr() const;
@@ -2679,7 +2668,7 @@ class BGPPeerAfSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* local_addr);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_local_addr();
 
-  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
   bool has_peer_addr() const;
   private:
   bool _internal_has_peer_addr() const;
@@ -2697,7 +2686,7 @@ class BGPPeerAfSpec final :
       ::opi_api::network::opinetcommon::v1alpha1::IPAddress* peer_addr);
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* unsafe_arena_release_peer_addr();
 
-  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;
+  // .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
   void clear_afi();
   ::opi_api::network::cloud::v1alpha1::BGPAfi afi() const;
   void set_afi(::opi_api::network::cloud::v1alpha1::BGPAfi value);
@@ -2706,7 +2695,7 @@ class BGPPeerAfSpec final :
   void _internal_set_afi(::opi_api::network::cloud::v1alpha1::BGPAfi value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;
+  // .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
   void clear_safi();
   ::opi_api::network::cloud::v1alpha1::BGPSafi safi() const;
   void set_safi(::opi_api::network::cloud::v1alpha1::BGPSafi value);
@@ -2715,7 +2704,7 @@ class BGPPeerAfSpec final :
   void _internal_set_safi(::opi_api::network::cloud::v1alpha1::BGPSafi value);
   public:
 
-  // bool nexthop_self = 6;
+  // bool nexthop_self = 5;
   void clear_nexthop_self();
   bool nexthop_self() const;
   void set_nexthop_self(bool value);
@@ -2724,7 +2713,7 @@ class BGPPeerAfSpec final :
   void _internal_set_nexthop_self(bool value);
   public:
 
-  // bool default_orig = 7;
+  // bool default_orig = 6;
   void clear_default_orig();
   bool default_orig() const;
   void set_default_orig(bool value);
@@ -2733,7 +2722,7 @@ class BGPPeerAfSpec final :
   void _internal_set_default_orig(bool value);
   public:
 
-  // int32 local_port = 8;
+  // int32 local_port = 7;
   void clear_local_port();
   int32_t local_port() const;
   void set_local_port(int32_t value);
@@ -2742,7 +2731,7 @@ class BGPPeerAfSpec final :
   void _internal_set_local_port(int32_t value);
   public:
 
-  // int32 remote_port = 9;
+  // int32 remote_port = 8;
   void clear_remote_port();
   int32_t remote_port() const;
   void set_remote_port(int32_t value);
@@ -2751,7 +2740,7 @@ class BGPPeerAfSpec final :
   void _internal_set_remote_port(int32_t value);
   public:
 
-  // int32 local_addr_scope_id = 10;
+  // int32 local_addr_scope_id = 9;
   void clear_local_addr_scope_id();
   int32_t local_addr_scope_id() const;
   void set_local_addr_scope_id(int32_t value);
@@ -2767,7 +2756,6 @@ class BGPPeerAfSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* local_addr_;
   ::opi_api::network::opinetcommon::v1alpha1::IPAddress* peer_addr_;
   int afi_;
@@ -4697,7 +4685,58 @@ class BGPAdjRibOutStatus final :
 #endif  // __GNUC__
 // Bgp
 
-// .opi_api.network.cloud.v1alpha1.BgpSpec spec = 1;
+// string name = 1;
+inline void Bgp::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Bgp::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.Bgp.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Bgp::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.Bgp.name)
+}
+inline std::string* Bgp::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.Bgp.name)
+  return _s;
+}
+inline const std::string& Bgp::_internal_name() const {
+  return name_.Get();
+}
+inline void Bgp::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Bgp::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Bgp::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.Bgp.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Bgp::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Bgp.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.BgpSpec spec = 2;
 inline bool Bgp::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -4787,7 +4826,7 @@ inline void Bgp::set_allocated_spec(::opi_api::network::cloud::v1alpha1::BgpSpec
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.Bgp.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.BgpStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.BgpStatus status = 3;
 inline bool Bgp::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -4881,93 +4920,7 @@ inline void Bgp::set_allocated_status(::opi_api::network::cloud::v1alpha1::BgpSt
 
 // BgpSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool BgpSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool BgpSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& BgpSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& BgpSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.BgpSpec.id)
-  return _internal_id();
-}
-inline void BgpSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.BgpSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* BgpSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BgpSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.BgpSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BgpSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* BgpSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.BgpSpec.id)
-  return _msg;
-}
-inline void BgpSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BgpSpec.id)
-}
-
-// uint32 local_asn = 2;
+// uint32 local_asn = 1;
 inline void BgpSpec::clear_local_asn() {
   local_asn_ = 0u;
 }
@@ -4987,7 +4940,7 @@ inline void BgpSpec::set_local_asn(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BgpSpec.local_asn)
 }
 
-// fixed32 router_id = 3;
+// fixed32 router_id = 2;
 inline void BgpSpec::clear_router_id() {
   router_id_ = 0u;
 }
@@ -5007,7 +4960,7 @@ inline void BgpSpec::set_router_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BgpSpec.router_id)
 }
 
-// fixed32 cluster_id = 4;
+// fixed32 cluster_id = 3;
 inline void BgpSpec::clear_cluster_id() {
   cluster_id_ = 0u;
 }
@@ -5027,7 +4980,7 @@ inline void BgpSpec::set_cluster_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BgpSpec.cluster_id)
 }
 
-// bool disable = 5;
+// bool disable = 4;
 inline void BgpSpec::clear_disable() {
   disable_ = false;
 }
@@ -5047,7 +5000,7 @@ inline void BgpSpec::set_disable(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BgpSpec.disable)
 }
 
-// bool suppress_default_resolution = 6;
+// bool suppress_default_resolution = 5;
 inline void BgpSpec::clear_suppress_default_resolution() {
   suppress_default_resolution_ = false;
 }
@@ -5175,7 +5128,58 @@ inline void BgpStatus::set_table_ver(int32_t value) {
 
 // BGPPeer
 
-// .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 1;
+// string name = 1;
+inline void BGPPeer::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& BGPPeer::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.BGPPeer.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BGPPeer::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeer.name)
+}
+inline std::string* BGPPeer::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.BGPPeer.name)
+  return _s;
+}
+inline const std::string& BGPPeer::_internal_name() const {
+  return name_.Get();
+}
+inline void BGPPeer::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* BGPPeer::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* BGPPeer::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.BGPPeer.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void BGPPeer::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeer.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.BGPPeerSpec spec = 2;
 inline bool BGPPeer::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -5265,7 +5269,7 @@ inline void BGPPeer::set_allocated_spec(::opi_api::network::cloud::v1alpha1::BGP
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeer.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.BGPPeerStatus status = 3;
 inline bool BGPPeer::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -5359,93 +5363,7 @@ inline void BGPPeer::set_allocated_status(::opi_api::network::cloud::v1alpha1::B
 
 // BGPPeerSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool BGPPeerSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool BGPPeerSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& BGPPeerSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& BGPPeerSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.BGPPeerSpec.id)
-  return _internal_id();
-}
-inline void BGPPeerSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.BGPPeerSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.BGPPeerSpec.id)
-  return _msg;
-}
-inline void BGPPeerSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerSpec.id)
-}
-
-// .opi_api.network.opinetcommon.v1alpha1.AdminState state = 2;
+// .opi_api.network.opinetcommon.v1alpha1.AdminState state = 1;
 inline void BGPPeerSpec::clear_state() {
   state_ = 0;
 }
@@ -5465,7 +5383,7 @@ inline void BGPPeerSpec::set_state(::opi_api::network::opinetcommon::v1alpha1::A
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.state)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 3;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress local_address = 2;
 inline bool BGPPeerSpec::_internal_has_local_address() const {
   return this != internal_default_instance() && local_address_ != nullptr;
 }
@@ -5551,7 +5469,7 @@ inline void BGPPeerSpec::set_allocated_local_address(::opi_api::network::opinetc
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerSpec.local_address)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 4;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
 inline bool BGPPeerSpec::_internal_has_peer_addr() const {
   return this != internal_default_instance() && peer_addr_ != nullptr;
 }
@@ -5637,7 +5555,7 @@ inline void BGPPeerSpec::set_allocated_peer_addr(::opi_api::network::opinetcommo
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerSpec.peer_addr)
 }
 
-// uint32 remote_asn = 5;
+// uint32 remote_asn = 4;
 inline void BGPPeerSpec::clear_remote_asn() {
   remote_asn_ = 0u;
 }
@@ -5657,7 +5575,7 @@ inline void BGPPeerSpec::set_remote_asn(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.remote_asn)
 }
 
-// bool send_comm = 6;
+// bool send_comm = 5;
 inline void BGPPeerSpec::clear_send_comm() {
   send_comm_ = false;
 }
@@ -5677,7 +5595,7 @@ inline void BGPPeerSpec::set_send_comm(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.send_comm)
 }
 
-// bool send_ext_comm = 7;
+// bool send_ext_comm = 6;
 inline void BGPPeerSpec::clear_send_ext_comm() {
   send_ext_comm_ = false;
 }
@@ -5697,7 +5615,7 @@ inline void BGPPeerSpec::set_send_ext_comm(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.send_ext_comm)
 }
 
-// .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 8;
+// .opi_api.network.cloud.v1alpha1.BGPPeerRRClient rr_client = 7;
 inline void BGPPeerSpec::clear_rr_client() {
   rr_client_ = 0;
 }
@@ -5717,7 +5635,7 @@ inline void BGPPeerSpec::set_rr_client(::opi_api::network::cloud::v1alpha1::BGPP
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.rr_client)
 }
 
-// int32 connect_retry = 9;
+// int32 connect_retry = 8;
 inline void BGPPeerSpec::clear_connect_retry() {
   connect_retry_ = 0;
 }
@@ -5737,7 +5655,7 @@ inline void BGPPeerSpec::set_connect_retry(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.connect_retry)
 }
 
-// int32 holdtime = 10;
+// int32 holdtime = 9;
 inline void BGPPeerSpec::clear_holdtime() {
   holdtime_ = 0;
 }
@@ -5757,7 +5675,7 @@ inline void BGPPeerSpec::set_holdtime(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.holdtime)
 }
 
-// int32 keep_alive = 11;
+// int32 keep_alive = 10;
 inline void BGPPeerSpec::clear_keep_alive() {
   keep_alive_ = 0;
 }
@@ -5777,7 +5695,7 @@ inline void BGPPeerSpec::set_keep_alive(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.keep_alive)
 }
 
-// bytes password = 12;
+// bytes password = 11;
 inline void BGPPeerSpec::clear_password() {
   password_.ClearToEmpty();
 }
@@ -5828,7 +5746,7 @@ inline void BGPPeerSpec::set_allocated_password(std::string* password) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerSpec.password)
 }
 
-// int32 ttl = 13;
+// int32 ttl = 12;
 inline void BGPPeerSpec::clear_ttl() {
   ttl_ = 0;
 }
@@ -5848,7 +5766,7 @@ inline void BGPPeerSpec::set_ttl(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.ttl)
 }
 
-// int32 idle_holdtime = 14;
+// int32 idle_holdtime = 13;
 inline void BGPPeerSpec::clear_idle_holdtime() {
   idle_holdtime_ = 0;
 }
@@ -5868,7 +5786,7 @@ inline void BGPPeerSpec::set_idle_holdtime(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerSpec.idle_holdtime)
 }
 
-// int32 allow_local_as = 15;
+// int32 allow_local_as = 14;
 inline void BGPPeerSpec::clear_allow_local_as() {
   allow_local_as_ = 0;
 }
@@ -6964,7 +6882,58 @@ inline void BGPPeerStatus::set_oper_state(::opi_api::network::cloud::v1alpha1::B
 
 // BGPPeerAf
 
-// .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 1;
+// string name = 1;
+inline void BGPPeerAf::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& BGPPeerAf::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.BGPPeerAf.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BGPPeerAf::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAf.name)
+}
+inline std::string* BGPPeerAf::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.BGPPeerAf.name)
+  return _s;
+}
+inline const std::string& BGPPeerAf::_internal_name() const {
+  return name_.Get();
+}
+inline void BGPPeerAf::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* BGPPeerAf::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* BGPPeerAf::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.BGPPeerAf.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void BGPPeerAf::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAf.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.BGPPeerAfSpec spec = 2;
 inline bool BGPPeerAf::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -7054,7 +7023,7 @@ inline void BGPPeerAf::set_allocated_spec(::opi_api::network::cloud::v1alpha1::B
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAf.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 2;
+// .opi_api.network.cloud.v1alpha1.BGPPeerAfStatus state = 3;
 inline bool BGPPeerAf::_internal_has_state() const {
   return this != internal_default_instance() && state_ != nullptr;
 }
@@ -7148,93 +7117,7 @@ inline void BGPPeerAf::set_allocated_state(::opi_api::network::cloud::v1alpha1::
 
 // BGPPeerAfSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool BGPPeerAfSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool BGPPeerAfSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& BGPPeerAfSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& BGPPeerAfSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.id)
-  return _internal_id();
-}
-inline void BGPPeerAfSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerAfSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerAfSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerAfSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* BGPPeerAfSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.id)
-  return _msg;
-}
-inline void BGPPeerAfSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.id)
-}
-
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 2;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress local_addr = 1;
 inline bool BGPPeerAfSpec::_internal_has_local_addr() const {
   return this != internal_default_instance() && local_addr_ != nullptr;
 }
@@ -7320,7 +7203,7 @@ inline void BGPPeerAfSpec::set_allocated_local_addr(::opi_api::network::opinetco
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.local_addr)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 3;
+// .opi_api.network.opinetcommon.v1alpha1.IPAddress peer_addr = 2;
 inline bool BGPPeerAfSpec::_internal_has_peer_addr() const {
   return this != internal_default_instance() && peer_addr_ != nullptr;
 }
@@ -7406,7 +7289,7 @@ inline void BGPPeerAfSpec::set_allocated_peer_addr(::opi_api::network::opinetcom
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.peer_addr)
 }
 
-// .opi_api.network.cloud.v1alpha1.BGPAfi afi = 4;
+// .opi_api.network.cloud.v1alpha1.BGPAfi afi = 3;
 inline void BGPPeerAfSpec::clear_afi() {
   afi_ = 0;
 }
@@ -7426,7 +7309,7 @@ inline void BGPPeerAfSpec::set_afi(::opi_api::network::cloud::v1alpha1::BGPAfi v
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.afi)
 }
 
-// .opi_api.network.cloud.v1alpha1.BGPSafi safi = 5;
+// .opi_api.network.cloud.v1alpha1.BGPSafi safi = 4;
 inline void BGPPeerAfSpec::clear_safi() {
   safi_ = 0;
 }
@@ -7446,7 +7329,7 @@ inline void BGPPeerAfSpec::set_safi(::opi_api::network::cloud::v1alpha1::BGPSafi
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.safi)
 }
 
-// bool nexthop_self = 6;
+// bool nexthop_self = 5;
 inline void BGPPeerAfSpec::clear_nexthop_self() {
   nexthop_self_ = false;
 }
@@ -7466,7 +7349,7 @@ inline void BGPPeerAfSpec::set_nexthop_self(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.nexthop_self)
 }
 
-// bool default_orig = 7;
+// bool default_orig = 6;
 inline void BGPPeerAfSpec::clear_default_orig() {
   default_orig_ = false;
 }
@@ -7486,7 +7369,7 @@ inline void BGPPeerAfSpec::set_default_orig(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.default_orig)
 }
 
-// int32 local_port = 8;
+// int32 local_port = 7;
 inline void BGPPeerAfSpec::clear_local_port() {
   local_port_ = 0;
 }
@@ -7506,7 +7389,7 @@ inline void BGPPeerAfSpec::set_local_port(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.local_port)
 }
 
-// int32 remote_port = 9;
+// int32 remote_port = 8;
 inline void BGPPeerAfSpec::clear_remote_port() {
   remote_port_ = 0;
 }
@@ -7526,7 +7409,7 @@ inline void BGPPeerAfSpec::set_remote_port(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.BGPPeerAfSpec.remote_port)
 }
 
-// int32 local_addr_scope_id = 10;
+// int32 local_addr_scope_id = 9;
 inline void BGPPeerAfSpec::clear_local_addr_scope_id() {
   local_addr_scope_id_ = 0;
 }

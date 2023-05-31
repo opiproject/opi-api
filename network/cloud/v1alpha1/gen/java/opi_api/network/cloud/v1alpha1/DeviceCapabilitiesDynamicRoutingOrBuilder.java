@@ -9,7 +9,7 @@ public interface DeviceCapabilitiesDynamicRoutingOrBuilder extends
 
   /**
    * <pre>
-   * device is capable of doing bgp routing for the underlay
+   * device is capable of doing device routing for the underlay
    * </pre>
    *
    * <code>bool underlay_bgp = 1;</code>

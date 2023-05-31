@@ -33,8 +33,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "object_key.pb.h"
 #include "networktypes.pb.h"
+#include "google/api/resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_networkpolicy_2eproto
@@ -358,10 +358,25 @@ class SecurityPolicy final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -379,7 +394,7 @@ class SecurityPolicy final :
       ::opi_api::network::cloud::v1alpha1::SecurityPolicySpec* spec);
   ::opi_api::network::cloud::v1alpha1::SecurityPolicySpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -404,6 +419,7 @@ class SecurityPolicy final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::SecurityPolicySpec* spec_;
   ::opi_api::network::cloud::v1alpha1::SecurityPolicyStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -533,15 +549,14 @@ class SecurityPolicySpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRulesFieldNumber = 6,
-    kIdFieldNumber = 1,
-    kTypeFieldNumber = 2,
-    kAddressFamilyFieldNumber = 3,
-    kStatelessFieldNumber = 4,
-    kDefaultSecurityActionFieldNumber = 5,
-    kRuleFormatFieldNumber = 7,
+    kRulesFieldNumber = 5,
+    kTypeFieldNumber = 1,
+    kAddressFamilyFieldNumber = 2,
+    kStatelessFieldNumber = 3,
+    kDefaultSecurityActionFieldNumber = 4,
+    kRuleFormatFieldNumber = 6,
   };
-  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;
+  // repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;
   int rules_size() const;
   private:
   int _internal_rules_size() const;
@@ -559,25 +574,7 @@ class SecurityPolicySpec final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::SecurityRuleInfo >&
       rules() const;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;
   void clear_type();
   ::opi_api::network::cloud::v1alpha1::SecurityPolicyType type() const;
   void set_type(::opi_api::network::cloud::v1alpha1::SecurityPolicyType value);
@@ -586,7 +583,7 @@ class SecurityPolicySpec final :
   void _internal_set_type(::opi_api::network::cloud::v1alpha1::SecurityPolicyType value);
   public:
 
-  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;
+  // .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;
   void clear_address_family();
   ::opi_api::network::opinetcommon::v1alpha1::IpAf address_family() const;
   void set_address_family(::opi_api::network::opinetcommon::v1alpha1::IpAf value);
@@ -595,7 +592,7 @@ class SecurityPolicySpec final :
   void _internal_set_address_family(::opi_api::network::opinetcommon::v1alpha1::IpAf value);
   public:
 
-  // bool stateless = 4;
+  // bool stateless = 3;
   void clear_stateless();
   bool stateless() const;
   void set_stateless(bool value);
@@ -604,7 +601,7 @@ class SecurityPolicySpec final :
   void _internal_set_stateless(bool value);
   public:
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
   void clear_default_security_action();
   ::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction default_security_action() const;
   void set_default_security_action(::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction value);
@@ -613,7 +610,7 @@ class SecurityPolicySpec final :
   void _internal_set_default_security_action(::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction value);
   public:
 
-  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;
+  // .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;
   void clear_rule_format();
   ::opi_api::network::cloud::v1alpha1::PolicyRuleFormat rule_format() const;
   void set_rule_format(::opi_api::network::cloud::v1alpha1::PolicyRuleFormat value);
@@ -630,7 +627,6 @@ class SecurityPolicySpec final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::opi_api::network::cloud::v1alpha1::SecurityRuleInfo > rules_;
-  ::opi_api::common::v1::ObjectKey* id_;
   int type_;
   int address_family_;
   bool stateless_;
@@ -763,26 +759,22 @@ class SecurityRuleInfo final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
+    kRuleNameFieldNumber = 1,
     kAttrsFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // string rule_name = 1;
+  void clear_rule_name();
+  const std::string& rule_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rule_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rule_name();
+  PROTOBUF_NODISCARD std::string* release_rule_name();
+  void set_allocated_rule_name(std::string* rule_name);
   private:
-  bool _internal_has_id() const;
+  const std::string& _internal_rule_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rule_name(const std::string& value);
+  std::string* _internal_mutable_rule_name();
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
   // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
   bool has_attrs() const;
@@ -809,7 +801,7 @@ class SecurityRuleInfo final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rule_name_;
   ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs* attrs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_networkpolicy_2eproto;
@@ -1293,7 +1285,7 @@ class DNSOptions final :
 
   enum : int {
     kDropMultiQueryMessagesFieldNumber = 1,
-    kDropLargeDomainNameMessagesFieldNumber = 2,
+    kDropLargeDomainNameRefFieldNumber = 2,
     kDropLongLabelMessagesFieldNumber = 3,
     kDropMultiZoneMessagesFieldNumber = 4,
     kResponseTimeoutFieldNumber = 5,
@@ -1308,13 +1300,13 @@ class DNSOptions final :
   void _internal_set_drop_multi_query_messages(bool value);
   public:
 
-  // bool drop_large_domain_name_messages = 2;
-  void clear_drop_large_domain_name_messages();
-  bool drop_large_domain_name_messages() const;
-  void set_drop_large_domain_name_messages(bool value);
+  // bool drop_large_domain_name_ref = 2;
+  void clear_drop_large_domain_name_ref();
+  bool drop_large_domain_name_ref() const;
+  void set_drop_large_domain_name_ref(bool value);
   private:
-  bool _internal_drop_large_domain_name_messages() const;
-  void _internal_set_drop_large_domain_name_messages(bool value);
+  bool _internal_drop_large_domain_name_ref() const;
+  void _internal_set_drop_large_domain_name_ref(bool value);
   public:
 
   // bool drop_long_label_messages = 3;
@@ -1361,7 +1353,7 @@ class DNSOptions final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   bool drop_multi_query_messages_;
-  bool drop_large_domain_name_messages_;
+  bool drop_large_domain_name_ref_;
   bool drop_long_label_messages_;
   bool drop_multi_zone_messages_;
   int32_t response_timeout_;
@@ -2305,10 +2297,25 @@ class SecurityRule final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -2326,7 +2333,7 @@ class SecurityRule final :
       ::opi_api::network::cloud::v1alpha1::SecurityRuleSpec* spec);
   ::opi_api::network::cloud::v1alpha1::SecurityRuleSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2351,6 +2358,7 @@ class SecurityRule final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::SecurityRuleSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::SecurityRuleStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2480,47 +2488,24 @@ class SecurityRuleSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kSecurityPolicyIdFieldNumber = 2,
-    kAttrsFieldNumber = 3,
+    kSecurityPolicyNameRefFieldNumber = 1,
+    kAttrsFieldNumber = 2,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
+  // string security_policy_name_ref = 1;
+  void clear_security_policy_name_ref();
+  const std::string& security_policy_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_security_policy_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_security_policy_name_ref();
+  PROTOBUF_NODISCARD std::string* release_security_policy_name_ref();
+  void set_allocated_security_policy_name_ref(std::string* security_policy_name_ref);
   private:
-  bool _internal_has_id() const;
+  const std::string& _internal_security_policy_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_security_policy_name_ref(const std::string& value);
+  std::string* _internal_mutable_security_policy_name_ref();
   public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
 
-  // .opi_api.common.v1.ObjectKey security_policy_id = 2;
-  bool has_security_policy_id() const;
-  private:
-  bool _internal_has_security_policy_id() const;
-  public:
-  void clear_security_policy_id();
-  const ::opi_api::common::v1::ObjectKey& security_policy_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_security_policy_id();
-  ::opi_api::common::v1::ObjectKey* mutable_security_policy_id();
-  void set_allocated_security_policy_id(::opi_api::common::v1::ObjectKey* security_policy_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_security_policy_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_security_policy_id();
-  public:
-  void unsafe_arena_set_allocated_security_policy_id(
-      ::opi_api::common::v1::ObjectKey* security_policy_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_security_policy_id();
-
-  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;
+  // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
   bool has_attrs() const;
   private:
   bool _internal_has_attrs() const;
@@ -2545,8 +2530,7 @@ class SecurityRuleSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
-  ::opi_api::common::v1::ObjectKey* security_policy_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr security_policy_name_ref_;
   ::opi_api::network::cloud::v1alpha1::SecurityRuleAttrs* attrs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_networkpolicy_2eproto;
@@ -2793,10 +2777,25 @@ class SecurityProfile final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpecFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSpecFieldNumber = 2,
+    kStatusFieldNumber = 3,
   };
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 1;
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 2;
   bool has_spec() const;
   private:
   bool _internal_has_spec() const;
@@ -2814,7 +2813,7 @@ class SecurityProfile final :
       ::opi_api::network::cloud::v1alpha1::SecurityProfileSpec* spec);
   ::opi_api::network::cloud::v1alpha1::SecurityProfileSpec* unsafe_arena_release_spec();
 
-  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 3;
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -2839,6 +2838,7 @@ class SecurityProfile final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::network::cloud::v1alpha1::SecurityProfileSpec* spec_;
   ::opi_api::network::cloud::v1alpha1::SecurityProfileStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2968,41 +2968,22 @@ class SecurityProfileSpec final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kConnectionTrackingEnableFieldNumber = 2,
-    kRuleStatsEnableFieldNumber = 3,
-    kDefaultFirewallActionFieldNumber = 4,
-    kTcpIdleTimeoutFieldNumber = 5,
-    kUdpIdleTimeoutFieldNumber = 6,
-    kIcmpIdleTimeoutFieldNumber = 7,
-    kOtherIdleTimeoutFieldNumber = 8,
-    kTcpConnectionSetupTimeoutFieldNumber = 9,
-    kTcpHalfCloseTimeoutFieldNumber = 10,
-    kTcpCloseTimeoutFieldNumber = 11,
-    kTcpDorpTimeoutFieldNumber = 12,
-    kUdpDropTimeoutFieldNumber = 13,
-    kIcmpDropTimeoutFieldNumber = 14,
-    kOtherDropTimeoutFieldNumber = 15,
+    kConnectionTrackingEnableFieldNumber = 1,
+    kRuleStatsEnableFieldNumber = 2,
+    kDefaultFirewallActionFieldNumber = 3,
+    kTcpIdleTimeoutFieldNumber = 4,
+    kUdpIdleTimeoutFieldNumber = 5,
+    kIcmpIdleTimeoutFieldNumber = 6,
+    kOtherIdleTimeoutFieldNumber = 7,
+    kTcpConnectionSetupTimeoutFieldNumber = 8,
+    kTcpHalfCloseTimeoutFieldNumber = 9,
+    kTcpCloseTimeoutFieldNumber = 10,
+    kTcpDorpTimeoutFieldNumber = 11,
+    kUdpDropTimeoutFieldNumber = 12,
+    kIcmpDropTimeoutFieldNumber = 13,
+    kOtherDropTimeoutFieldNumber = 14,
   };
-  // .opi_api.common.v1.ObjectKey id = 1;
-  bool has_id() const;
-  private:
-  bool _internal_has_id() const;
-  public:
-  void clear_id();
-  const ::opi_api::common::v1::ObjectKey& id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_id();
-  ::opi_api::common::v1::ObjectKey* mutable_id();
-  void set_allocated_id(::opi_api::common::v1::ObjectKey* id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_id();
-  public:
-  void unsafe_arena_set_allocated_id(
-      ::opi_api::common::v1::ObjectKey* id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_id();
-
-  // bool connection_tracking_enable = 2;
+  // bool connection_tracking_enable = 1;
   void clear_connection_tracking_enable();
   bool connection_tracking_enable() const;
   void set_connection_tracking_enable(bool value);
@@ -3011,7 +2992,7 @@ class SecurityProfileSpec final :
   void _internal_set_connection_tracking_enable(bool value);
   public:
 
-  // bool rule_stats_enable = 3;
+  // bool rule_stats_enable = 2;
   void clear_rule_stats_enable();
   bool rule_stats_enable() const;
   void set_rule_stats_enable(bool value);
@@ -3020,7 +3001,7 @@ class SecurityProfileSpec final :
   void _internal_set_rule_stats_enable(bool value);
   public:
 
-  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+  // .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
   void clear_default_firewall_action();
   ::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction default_firewall_action() const;
   void set_default_firewall_action(::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction value);
@@ -3029,7 +3010,7 @@ class SecurityProfileSpec final :
   void _internal_set_default_firewall_action(::opi_api::network::opinetcommon::v1alpha1::SecurityRuleAction value);
   public:
 
-  // int32 tcp_idle_timeout = 5;
+  // int32 tcp_idle_timeout = 4;
   void clear_tcp_idle_timeout();
   int32_t tcp_idle_timeout() const;
   void set_tcp_idle_timeout(int32_t value);
@@ -3038,7 +3019,7 @@ class SecurityProfileSpec final :
   void _internal_set_tcp_idle_timeout(int32_t value);
   public:
 
-  // int32 udp_idle_timeout = 6;
+  // int32 udp_idle_timeout = 5;
   void clear_udp_idle_timeout();
   int32_t udp_idle_timeout() const;
   void set_udp_idle_timeout(int32_t value);
@@ -3047,7 +3028,7 @@ class SecurityProfileSpec final :
   void _internal_set_udp_idle_timeout(int32_t value);
   public:
 
-  // int32 icmp_idle_timeout = 7;
+  // int32 icmp_idle_timeout = 6;
   void clear_icmp_idle_timeout();
   int32_t icmp_idle_timeout() const;
   void set_icmp_idle_timeout(int32_t value);
@@ -3056,7 +3037,7 @@ class SecurityProfileSpec final :
   void _internal_set_icmp_idle_timeout(int32_t value);
   public:
 
-  // int32 other_idle_timeout = 8;
+  // int32 other_idle_timeout = 7;
   void clear_other_idle_timeout();
   int32_t other_idle_timeout() const;
   void set_other_idle_timeout(int32_t value);
@@ -3065,7 +3046,7 @@ class SecurityProfileSpec final :
   void _internal_set_other_idle_timeout(int32_t value);
   public:
 
-  // int32 tcp_connection_setup_timeout = 9;
+  // int32 tcp_connection_setup_timeout = 8;
   void clear_tcp_connection_setup_timeout();
   int32_t tcp_connection_setup_timeout() const;
   void set_tcp_connection_setup_timeout(int32_t value);
@@ -3074,7 +3055,7 @@ class SecurityProfileSpec final :
   void _internal_set_tcp_connection_setup_timeout(int32_t value);
   public:
 
-  // int32 tcp_half_close_timeout = 10;
+  // int32 tcp_half_close_timeout = 9;
   void clear_tcp_half_close_timeout();
   int32_t tcp_half_close_timeout() const;
   void set_tcp_half_close_timeout(int32_t value);
@@ -3083,7 +3064,7 @@ class SecurityProfileSpec final :
   void _internal_set_tcp_half_close_timeout(int32_t value);
   public:
 
-  // int32 tcp_close_timeout = 11;
+  // int32 tcp_close_timeout = 10;
   void clear_tcp_close_timeout();
   int32_t tcp_close_timeout() const;
   void set_tcp_close_timeout(int32_t value);
@@ -3092,7 +3073,7 @@ class SecurityProfileSpec final :
   void _internal_set_tcp_close_timeout(int32_t value);
   public:
 
-  // int32 tcp_dorp_timeout = 12;
+  // int32 tcp_dorp_timeout = 11;
   void clear_tcp_dorp_timeout();
   int32_t tcp_dorp_timeout() const;
   void set_tcp_dorp_timeout(int32_t value);
@@ -3101,7 +3082,7 @@ class SecurityProfileSpec final :
   void _internal_set_tcp_dorp_timeout(int32_t value);
   public:
 
-  // int32 udp_drop_timeout = 13;
+  // int32 udp_drop_timeout = 12;
   void clear_udp_drop_timeout();
   int32_t udp_drop_timeout() const;
   void set_udp_drop_timeout(int32_t value);
@@ -3110,7 +3091,7 @@ class SecurityProfileSpec final :
   void _internal_set_udp_drop_timeout(int32_t value);
   public:
 
-  // int32 icmp_drop_timeout = 14;
+  // int32 icmp_drop_timeout = 13;
   void clear_icmp_drop_timeout();
   int32_t icmp_drop_timeout() const;
   void set_icmp_drop_timeout(int32_t value);
@@ -3119,7 +3100,7 @@ class SecurityProfileSpec final :
   void _internal_set_icmp_drop_timeout(int32_t value);
   public:
 
-  // int32 other_drop_timeout = 15;
+  // int32 other_drop_timeout = 14;
   void clear_other_drop_timeout();
   int32_t other_drop_timeout() const;
   void set_other_drop_timeout(int32_t value);
@@ -3135,7 +3116,6 @@ class SecurityProfileSpec final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* id_;
   bool connection_tracking_enable_;
   bool rule_stats_enable_;
   int default_firewall_action_;
@@ -3675,27 +3655,23 @@ class SecurityPolicyLookupRequest_VnicLookupInfo final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVnicIdFieldNumber = 1,
+    kVnicNameRefFieldNumber = 1,
     kPolicyDirectionFieldNumber = 2,
     kAddressFamilyFieldNumber = 3,
   };
-  // .opi_api.common.v1.ObjectKey vnic_id = 1;
-  bool has_vnic_id() const;
+  // string vnic_name_ref = 1;
+  void clear_vnic_name_ref();
+  const std::string& vnic_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_vnic_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_vnic_name_ref();
+  PROTOBUF_NODISCARD std::string* release_vnic_name_ref();
+  void set_allocated_vnic_name_ref(std::string* vnic_name_ref);
   private:
-  bool _internal_has_vnic_id() const;
+  const std::string& _internal_vnic_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_vnic_name_ref(const std::string& value);
+  std::string* _internal_mutable_vnic_name_ref();
   public:
-  void clear_vnic_id();
-  const ::opi_api::common::v1::ObjectKey& vnic_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_vnic_id();
-  ::opi_api::common::v1::ObjectKey* mutable_vnic_id();
-  void set_allocated_vnic_id(::opi_api::common::v1::ObjectKey* vnic_id);
-  private:
-  const ::opi_api::common::v1::ObjectKey& _internal_vnic_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_vnic_id();
-  public:
-  void unsafe_arena_set_allocated_vnic_id(
-      ::opi_api::common::v1::ObjectKey* vnic_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_vnic_id();
 
   // .opi_api.network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
   void clear_policy_direction();
@@ -3722,7 +3698,7 @@ class SecurityPolicyLookupRequest_VnicLookupInfo final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::opi_api::common::v1::ObjectKey* vnic_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vnic_name_ref_;
   int policy_direction_;
   int address_family_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3774,7 +3750,7 @@ class SecurityPolicyLookupRequest final :
     return *internal_default_instance();
   }
   enum LookupInfoCase {
-    kPolicyId = 1,
+    kPolicyNameRef = 1,
     kVnicLookupInfo = 2,
     LOOKUP_INFO_NOT_SET = 0,
   };
@@ -3861,7 +3837,7 @@ class SecurityPolicyLookupRequest final :
 
   enum : int {
     kMatchFieldsFieldNumber = 3,
-    kPolicyIdFieldNumber = 1,
+    kPolicyNameRefFieldNumber = 1,
     kVnicLookupInfoFieldNumber = 2,
   };
   // .opi_api.network.cloud.v1alpha1.PolicyLookupMatch match_fields = 3;
@@ -3882,23 +3858,23 @@ class SecurityPolicyLookupRequest final :
       ::opi_api::network::cloud::v1alpha1::PolicyLookupMatch* match_fields);
   ::opi_api::network::cloud::v1alpha1::PolicyLookupMatch* unsafe_arena_release_match_fields();
 
-  // .opi_api.common.v1.ObjectKey policy_id = 1;
-  bool has_policy_id() const;
+  // string policy_name_ref = 1;
+  bool has_policy_name_ref() const;
   private:
-  bool _internal_has_policy_id() const;
+  bool _internal_has_policy_name_ref() const;
   public:
-  void clear_policy_id();
-  const ::opi_api::common::v1::ObjectKey& policy_id() const;
-  PROTOBUF_NODISCARD ::opi_api::common::v1::ObjectKey* release_policy_id();
-  ::opi_api::common::v1::ObjectKey* mutable_policy_id();
-  void set_allocated_policy_id(::opi_api::common::v1::ObjectKey* policy_id);
+  void clear_policy_name_ref();
+  const std::string& policy_name_ref() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_policy_name_ref(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_policy_name_ref();
+  PROTOBUF_NODISCARD std::string* release_policy_name_ref();
+  void set_allocated_policy_name_ref(std::string* policy_name_ref);
   private:
-  const ::opi_api::common::v1::ObjectKey& _internal_policy_id() const;
-  ::opi_api::common::v1::ObjectKey* _internal_mutable_policy_id();
+  const std::string& _internal_policy_name_ref() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_policy_name_ref(const std::string& value);
+  std::string* _internal_mutable_policy_name_ref();
   public:
-  void unsafe_arena_set_allocated_policy_id(
-      ::opi_api::common::v1::ObjectKey* policy_id);
-  ::opi_api::common::v1::ObjectKey* unsafe_arena_release_policy_id();
 
   // .opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo vnic_lookup_info = 2;
   bool has_vnic_lookup_info() const;
@@ -3923,7 +3899,7 @@ class SecurityPolicyLookupRequest final :
   // @@protoc_insertion_point(class_scope:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest)
  private:
   class _Internal;
-  void set_has_policy_id();
+  void set_has_policy_name_ref();
   void set_has_vnic_lookup_info();
 
   inline bool has_lookup_info() const;
@@ -3936,7 +3912,7 @@ class SecurityPolicyLookupRequest final :
   union LookupInfoUnion {
     constexpr LookupInfoUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::opi_api::common::v1::ObjectKey* policy_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr policy_name_ref_;
     ::opi_api::network::cloud::v1alpha1::SecurityPolicyLookupRequest_VnicLookupInfo* vnic_lookup_info_;
   } lookup_info_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4154,7 +4130,58 @@ class PolicyLookupResult final :
 #endif  // __GNUC__
 // SecurityPolicy
 
-// .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 1;
+// string name = 1;
+inline void SecurityPolicy::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& SecurityPolicy::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicy.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityPolicy::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicy.name)
+}
+inline std::string* SecurityPolicy::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicy.name)
+  return _s;
+}
+inline const std::string& SecurityPolicy::_internal_name() const {
+  return name_.Get();
+}
+inline void SecurityPolicy::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicy::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicy::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicy.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityPolicy::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicy.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.SecurityPolicySpec spec = 2;
 inline bool SecurityPolicy::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -4244,7 +4271,7 @@ inline void SecurityPolicy::set_allocated_spec(::opi_api::network::cloud::v1alph
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicy.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.SecurityPolicyStatus status = 3;
 inline bool SecurityPolicy::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -4338,93 +4365,7 @@ inline void SecurityPolicy::set_allocated_status(::opi_api::network::cloud::v1al
 
 // SecurityPolicySpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool SecurityPolicySpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool SecurityPolicySpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicySpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicySpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.id)
-  return _internal_id();
-}
-inline void SecurityPolicySpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicySpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicySpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicySpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicySpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.id)
-  return _msg;
-}
-inline void SecurityPolicySpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.id)
-}
-
-// .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 2;
+// .opi_api.network.cloud.v1alpha1.SecurityPolicyType type = 1;
 inline void SecurityPolicySpec::clear_type() {
   type_ = 0;
 }
@@ -4444,7 +4385,7 @@ inline void SecurityPolicySpec::set_type(::opi_api::network::cloud::v1alpha1::Se
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.type)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 3;
+// .opi_api.network.opinetcommon.v1alpha1.IpAf address_family = 2;
 inline void SecurityPolicySpec::clear_address_family() {
   address_family_ = 0;
 }
@@ -4464,7 +4405,7 @@ inline void SecurityPolicySpec::set_address_family(::opi_api::network::opinetcom
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.address_family)
 }
 
-// bool stateless = 4;
+// bool stateless = 3;
 inline void SecurityPolicySpec::clear_stateless() {
   stateless_ = false;
 }
@@ -4484,7 +4425,7 @@ inline void SecurityPolicySpec::set_stateless(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.stateless)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 5;
+// .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_security_action = 4;
 inline void SecurityPolicySpec::clear_default_security_action() {
   default_security_action_ = 0;
 }
@@ -4504,7 +4445,7 @@ inline void SecurityPolicySpec::set_default_security_action(::opi_api::network::
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicySpec.default_security_action)
 }
 
-// repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 6;
+// repeated .opi_api.network.cloud.v1alpha1.SecurityRuleInfo rules = 5;
 inline int SecurityPolicySpec::_internal_rules_size() const {
   return rules_.size();
 }
@@ -4544,7 +4485,7 @@ SecurityPolicySpec::rules() const {
   return rules_;
 }
 
-// .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 7;
+// .opi_api.network.cloud.v1alpha1.PolicyRuleFormat rule_format = 6;
 inline void SecurityPolicySpec::clear_rule_format() {
   rule_format_ = 0;
 }
@@ -4568,90 +4509,55 @@ inline void SecurityPolicySpec::set_rule_format(::opi_api::network::cloud::v1alp
 
 // SecurityRuleInfo
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool SecurityRuleInfo::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// string rule_name = 1;
+inline void SecurityRuleInfo::clear_rule_name() {
+  rule_name_.ClearToEmpty();
 }
-inline bool SecurityRuleInfo::has_id() const {
-  return _internal_has_id();
+inline const std::string& SecurityRuleInfo::rule_name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name)
+  return _internal_rule_name();
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleInfo::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityRuleInfo::set_rule_name(ArgT0&& arg0, ArgT... args) {
+ 
+ rule_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name)
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleInfo::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.id)
-  return _internal_id();
+inline std::string* SecurityRuleInfo::mutable_rule_name() {
+  std::string* _s = _internal_mutable_rule_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name)
+  return _s;
 }
-inline void SecurityRuleInfo::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
+inline const std::string& SecurityRuleInfo::_internal_rule_name() const {
+  return rule_name_.Get();
+}
+inline void SecurityRuleInfo::_internal_set_rule_name(const std::string& value) {
+  
+  rule_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityRuleInfo::_internal_mutable_rule_name() {
+  
+  return rule_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityRuleInfo::release_rule_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name)
+  return rule_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityRuleInfo::set_allocated_rule_name(std::string* rule_name) {
+  if (rule_name != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleInfo::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  rule_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rule_name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rule_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rule_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleInfo::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleInfo::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleInfo::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.id)
-  return _msg;
-}
-inline void SecurityRuleInfo::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleInfo.rule_name)
 }
 
 // .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
@@ -5032,24 +4938,24 @@ inline void DNSOptions::set_drop_multi_query_messages(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DNSOptions.drop_multi_query_messages)
 }
 
-// bool drop_large_domain_name_messages = 2;
-inline void DNSOptions::clear_drop_large_domain_name_messages() {
-  drop_large_domain_name_messages_ = false;
+// bool drop_large_domain_name_ref = 2;
+inline void DNSOptions::clear_drop_large_domain_name_ref() {
+  drop_large_domain_name_ref_ = false;
 }
-inline bool DNSOptions::_internal_drop_large_domain_name_messages() const {
-  return drop_large_domain_name_messages_;
+inline bool DNSOptions::_internal_drop_large_domain_name_ref() const {
+  return drop_large_domain_name_ref_;
 }
-inline bool DNSOptions::drop_large_domain_name_messages() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DNSOptions.drop_large_domain_name_messages)
-  return _internal_drop_large_domain_name_messages();
+inline bool DNSOptions::drop_large_domain_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.DNSOptions.drop_large_domain_name_ref)
+  return _internal_drop_large_domain_name_ref();
 }
-inline void DNSOptions::_internal_set_drop_large_domain_name_messages(bool value) {
+inline void DNSOptions::_internal_set_drop_large_domain_name_ref(bool value) {
   
-  drop_large_domain_name_messages_ = value;
+  drop_large_domain_name_ref_ = value;
 }
-inline void DNSOptions::set_drop_large_domain_name_messages(bool value) {
-  _internal_set_drop_large_domain_name_messages(value);
-  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DNSOptions.drop_large_domain_name_messages)
+inline void DNSOptions::set_drop_large_domain_name_ref(bool value) {
+  _internal_set_drop_large_domain_name_ref(value);
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.DNSOptions.drop_large_domain_name_ref)
 }
 
 // bool drop_long_label_messages = 3;
@@ -5919,7 +5825,58 @@ inline void SecurityPolicyStatus::set_policy_base_address(uint64_t value) {
 
 // SecurityRule
 
-// .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 1;
+// string name = 1;
+inline void SecurityRule::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& SecurityRule::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRule.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityRule::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityRule.name)
+}
+inline std::string* SecurityRule::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRule.name)
+  return _s;
+}
+inline const std::string& SecurityRule::_internal_name() const {
+  return name_.Get();
+}
+inline void SecurityRule::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityRule::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityRule::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRule.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityRule::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRule.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.SecurityRuleSpec spec = 2;
 inline bool SecurityRule::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -6009,7 +5966,7 @@ inline void SecurityRule::set_allocated_spec(::opi_api::network::cloud::v1alpha1
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRule.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.SecurityRuleStatus status = 3;
 inline bool SecurityRule::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -6103,179 +6060,58 @@ inline void SecurityRule::set_allocated_status(::opi_api::network::cloud::v1alph
 
 // SecurityRuleSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool SecurityRuleSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// string security_policy_name_ref = 1;
+inline void SecurityRuleSpec::clear_security_policy_name_ref() {
+  security_policy_name_ref_.ClearToEmpty();
 }
-inline bool SecurityRuleSpec::has_id() const {
-  return _internal_has_id();
+inline const std::string& SecurityRuleSpec::security_policy_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref)
+  return _internal_security_policy_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityRuleSpec::set_security_policy_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ security_policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.id)
-  return _internal_id();
+inline std::string* SecurityRuleSpec::mutable_security_policy_name_ref() {
+  std::string* _s = _internal_mutable_security_policy_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref)
+  return _s;
 }
-inline void SecurityRuleSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
+inline const std::string& SecurityRuleSpec::_internal_security_policy_name_ref() const {
+  return security_policy_name_ref_.Get();
+}
+inline void SecurityRuleSpec::_internal_set_security_policy_name_ref(const std::string& value) {
+  
+  security_policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityRuleSpec::_internal_mutable_security_policy_name_ref() {
+  
+  return security_policy_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityRuleSpec::release_security_policy_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref)
+  return security_policy_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityRuleSpec::set_allocated_security_policy_name_ref(std::string* security_policy_name_ref) {
+  if (security_policy_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  security_policy_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), security_policy_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (security_policy_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    security_policy_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.id)
-  return _msg;
-}
-inline void SecurityRuleSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_name_ref)
 }
 
-// .opi_api.common.v1.ObjectKey security_policy_id = 2;
-inline bool SecurityRuleSpec::_internal_has_security_policy_id() const {
-  return this != internal_default_instance() && security_policy_id_ != nullptr;
-}
-inline bool SecurityRuleSpec::has_security_policy_id() const {
-  return _internal_has_security_policy_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleSpec::_internal_security_policy_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = security_policy_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityRuleSpec::security_policy_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_id)
-  return _internal_security_policy_id();
-}
-inline void SecurityRuleSpec::unsafe_arena_set_allocated_security_policy_id(
-    ::opi_api::common::v1::ObjectKey* security_policy_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(security_policy_id_);
-  }
-  security_policy_id_ = security_policy_id;
-  if (security_policy_id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::release_security_policy_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = security_policy_id_;
-  security_policy_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::unsafe_arena_release_security_policy_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = security_policy_id_;
-  security_policy_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::_internal_mutable_security_policy_id() {
-  
-  if (security_policy_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    security_policy_id_ = p;
-  }
-  return security_policy_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityRuleSpec::mutable_security_policy_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_security_policy_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_id)
-  return _msg;
-}
-inline void SecurityRuleSpec::set_allocated_security_policy_id(::opi_api::common::v1::ObjectKey* security_policy_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(security_policy_id_);
-  }
-  if (security_policy_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(security_policy_id));
-    if (message_arena != submessage_arena) {
-      security_policy_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, security_policy_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  security_policy_id_ = security_policy_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityRuleSpec.security_policy_id)
-}
-
-// .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 3;
+// .opi_api.network.cloud.v1alpha1.SecurityRuleAttrs attrs = 2;
 inline bool SecurityRuleSpec::_internal_has_attrs() const {
   return this != internal_default_instance() && attrs_ != nullptr;
 }
@@ -6373,7 +6209,58 @@ inline void SecurityRuleSpec::set_allocated_attrs(::opi_api::network::cloud::v1a
 
 // SecurityProfile
 
-// .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 1;
+// string name = 1;
+inline void SecurityProfile::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& SecurityProfile::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityProfile.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityProfile::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfile.name)
+}
+inline std::string* SecurityProfile::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityProfile.name)
+  return _s;
+}
+inline const std::string& SecurityProfile::_internal_name() const {
+  return name_.Get();
+}
+inline void SecurityProfile::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityProfile::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityProfile::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityProfile.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityProfile::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityProfile.name)
+}
+
+// .opi_api.network.cloud.v1alpha1.SecurityProfileSpec spec = 2;
 inline bool SecurityProfile::_internal_has_spec() const {
   return this != internal_default_instance() && spec_ != nullptr;
 }
@@ -6463,7 +6350,7 @@ inline void SecurityProfile::set_allocated_spec(::opi_api::network::cloud::v1alp
   // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityProfile.spec)
 }
 
-// .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 2;
+// .opi_api.network.cloud.v1alpha1.SecurityProfileStatus status = 3;
 inline bool SecurityProfile::_internal_has_status() const {
   return this != internal_default_instance() && status_ != nullptr;
 }
@@ -6557,93 +6444,7 @@ inline void SecurityProfile::set_allocated_status(::opi_api::network::cloud::v1a
 
 // SecurityProfileSpec
 
-// .opi_api.common.v1.ObjectKey id = 1;
-inline bool SecurityProfileSpec::_internal_has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline bool SecurityProfileSpec::has_id() const {
-  return _internal_has_id();
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityProfileSpec::_internal_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
-}
-inline const ::opi_api::common::v1::ObjectKey& SecurityProfileSpec::id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.id)
-  return _internal_id();
-}
-inline void SecurityProfileSpec::unsafe_arena_set_allocated_id(
-    ::opi_api::common::v1::ObjectKey* id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  id_ = id;
-  if (id) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityProfileSpec::release_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityProfileSpec::unsafe_arena_release_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityProfileSpec::_internal_mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    id_ = p;
-  }
-  return id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityProfileSpec::mutable_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.id)
-  return _msg;
-}
-inline void SecurityProfileSpec::set_allocated_id(::opi_api::common::v1::ObjectKey* id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(id_);
-  }
-  if (id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(id));
-    if (message_arena != submessage_arena) {
-      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.id)
-}
-
-// bool connection_tracking_enable = 2;
+// bool connection_tracking_enable = 1;
 inline void SecurityProfileSpec::clear_connection_tracking_enable() {
   connection_tracking_enable_ = false;
 }
@@ -6663,7 +6464,7 @@ inline void SecurityProfileSpec::set_connection_tracking_enable(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.connection_tracking_enable)
 }
 
-// bool rule_stats_enable = 3;
+// bool rule_stats_enable = 2;
 inline void SecurityProfileSpec::clear_rule_stats_enable() {
   rule_stats_enable_ = false;
 }
@@ -6683,7 +6484,7 @@ inline void SecurityProfileSpec::set_rule_stats_enable(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.rule_stats_enable)
 }
 
-// .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 4;
+// .opi_api.network.opinetcommon.v1alpha1.SecurityRuleAction default_firewall_action = 3;
 inline void SecurityProfileSpec::clear_default_firewall_action() {
   default_firewall_action_ = 0;
 }
@@ -6703,7 +6504,7 @@ inline void SecurityProfileSpec::set_default_firewall_action(::opi_api::network:
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.default_firewall_action)
 }
 
-// int32 tcp_idle_timeout = 5;
+// int32 tcp_idle_timeout = 4;
 inline void SecurityProfileSpec::clear_tcp_idle_timeout() {
   tcp_idle_timeout_ = 0;
 }
@@ -6723,7 +6524,7 @@ inline void SecurityProfileSpec::set_tcp_idle_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.tcp_idle_timeout)
 }
 
-// int32 udp_idle_timeout = 6;
+// int32 udp_idle_timeout = 5;
 inline void SecurityProfileSpec::clear_udp_idle_timeout() {
   udp_idle_timeout_ = 0;
 }
@@ -6743,7 +6544,7 @@ inline void SecurityProfileSpec::set_udp_idle_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.udp_idle_timeout)
 }
 
-// int32 icmp_idle_timeout = 7;
+// int32 icmp_idle_timeout = 6;
 inline void SecurityProfileSpec::clear_icmp_idle_timeout() {
   icmp_idle_timeout_ = 0;
 }
@@ -6763,7 +6564,7 @@ inline void SecurityProfileSpec::set_icmp_idle_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.icmp_idle_timeout)
 }
 
-// int32 other_idle_timeout = 8;
+// int32 other_idle_timeout = 7;
 inline void SecurityProfileSpec::clear_other_idle_timeout() {
   other_idle_timeout_ = 0;
 }
@@ -6783,7 +6584,7 @@ inline void SecurityProfileSpec::set_other_idle_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.other_idle_timeout)
 }
 
-// int32 tcp_connection_setup_timeout = 9;
+// int32 tcp_connection_setup_timeout = 8;
 inline void SecurityProfileSpec::clear_tcp_connection_setup_timeout() {
   tcp_connection_setup_timeout_ = 0;
 }
@@ -6803,7 +6604,7 @@ inline void SecurityProfileSpec::set_tcp_connection_setup_timeout(int32_t value)
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.tcp_connection_setup_timeout)
 }
 
-// int32 tcp_half_close_timeout = 10;
+// int32 tcp_half_close_timeout = 9;
 inline void SecurityProfileSpec::clear_tcp_half_close_timeout() {
   tcp_half_close_timeout_ = 0;
 }
@@ -6823,7 +6624,7 @@ inline void SecurityProfileSpec::set_tcp_half_close_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.tcp_half_close_timeout)
 }
 
-// int32 tcp_close_timeout = 11;
+// int32 tcp_close_timeout = 10;
 inline void SecurityProfileSpec::clear_tcp_close_timeout() {
   tcp_close_timeout_ = 0;
 }
@@ -6843,7 +6644,7 @@ inline void SecurityProfileSpec::set_tcp_close_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.tcp_close_timeout)
 }
 
-// int32 tcp_dorp_timeout = 12;
+// int32 tcp_dorp_timeout = 11;
 inline void SecurityProfileSpec::clear_tcp_dorp_timeout() {
   tcp_dorp_timeout_ = 0;
 }
@@ -6863,7 +6664,7 @@ inline void SecurityProfileSpec::set_tcp_dorp_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.tcp_dorp_timeout)
 }
 
-// int32 udp_drop_timeout = 13;
+// int32 udp_drop_timeout = 12;
 inline void SecurityProfileSpec::clear_udp_drop_timeout() {
   udp_drop_timeout_ = 0;
 }
@@ -6883,7 +6684,7 @@ inline void SecurityProfileSpec::set_udp_drop_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.udp_drop_timeout)
 }
 
-// int32 icmp_drop_timeout = 14;
+// int32 icmp_drop_timeout = 13;
 inline void SecurityProfileSpec::clear_icmp_drop_timeout() {
   icmp_drop_timeout_ = 0;
 }
@@ -6903,7 +6704,7 @@ inline void SecurityProfileSpec::set_icmp_drop_timeout(int32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityProfileSpec.icmp_drop_timeout)
 }
 
-// int32 other_drop_timeout = 15;
+// int32 other_drop_timeout = 14;
 inline void SecurityProfileSpec::clear_other_drop_timeout() {
   other_drop_timeout_ = 0;
 }
@@ -7301,90 +7102,55 @@ inline void PolicyLookupMatch::set_icmp_code(int32_t value) {
 
 // SecurityPolicyLookupRequest_VnicLookupInfo
 
-// .opi_api.common.v1.ObjectKey vnic_id = 1;
-inline bool SecurityPolicyLookupRequest_VnicLookupInfo::_internal_has_vnic_id() const {
-  return this != internal_default_instance() && vnic_id_ != nullptr;
+// string vnic_name_ref = 1;
+inline void SecurityPolicyLookupRequest_VnicLookupInfo::clear_vnic_name_ref() {
+  vnic_name_ref_.ClearToEmpty();
 }
-inline bool SecurityPolicyLookupRequest_VnicLookupInfo::has_vnic_id() const {
-  return _internal_has_vnic_id();
+inline const std::string& SecurityPolicyLookupRequest_VnicLookupInfo::vnic_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref)
+  return _internal_vnic_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicyLookupRequest_VnicLookupInfo::_internal_vnic_id() const {
-  const ::opi_api::common::v1::ObjectKey* p = vnic_id_;
-  return p != nullptr ? *p : reinterpret_cast<const ::opi_api::common::v1::ObjectKey&>(
-      ::opi_api::common::v1::_ObjectKey_default_instance_);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SecurityPolicyLookupRequest_VnicLookupInfo::set_vnic_name_ref(ArgT0&& arg0, ArgT... args) {
+ 
+ vnic_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref)
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicyLookupRequest_VnicLookupInfo::vnic_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_id)
-  return _internal_vnic_id();
+inline std::string* SecurityPolicyLookupRequest_VnicLookupInfo::mutable_vnic_name_ref() {
+  std::string* _s = _internal_mutable_vnic_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref)
+  return _s;
 }
-inline void SecurityPolicyLookupRequest_VnicLookupInfo::unsafe_arena_set_allocated_vnic_id(
-    ::opi_api::common::v1::ObjectKey* vnic_id) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vnic_id_);
-  }
-  vnic_id_ = vnic_id;
-  if (vnic_id) {
+inline const std::string& SecurityPolicyLookupRequest_VnicLookupInfo::_internal_vnic_name_ref() const {
+  return vnic_name_ref_.Get();
+}
+inline void SecurityPolicyLookupRequest_VnicLookupInfo::_internal_set_vnic_name_ref(const std::string& value) {
+  
+  vnic_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicyLookupRequest_VnicLookupInfo::_internal_mutable_vnic_name_ref() {
+  
+  return vnic_name_ref_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicyLookupRequest_VnicLookupInfo::release_vnic_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref)
+  return vnic_name_ref_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void SecurityPolicyLookupRequest_VnicLookupInfo::set_allocated_vnic_name_ref(std::string* vnic_name_ref) {
+  if (vnic_name_ref != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest_VnicLookupInfo::release_vnic_id() {
-  
-  ::opi_api::common::v1::ObjectKey* temp = vnic_id_;
-  vnic_id_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  vnic_name_ref_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vnic_name_ref,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (vnic_name_ref_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    vnic_name_ref_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest_VnicLookupInfo::unsafe_arena_release_vnic_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_id)
-  
-  ::opi_api::common::v1::ObjectKey* temp = vnic_id_;
-  vnic_id_ = nullptr;
-  return temp;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest_VnicLookupInfo::_internal_mutable_vnic_id() {
-  
-  if (vnic_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::opi_api::common::v1::ObjectKey>(GetArenaForAllocation());
-    vnic_id_ = p;
-  }
-  return vnic_id_;
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest_VnicLookupInfo::mutable_vnic_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_vnic_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_id)
-  return _msg;
-}
-inline void SecurityPolicyLookupRequest_VnicLookupInfo::set_allocated_vnic_id(::opi_api::common::v1::ObjectKey* vnic_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vnic_id_);
-  }
-  if (vnic_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vnic_id));
-    if (message_arena != submessage_arena) {
-      vnic_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vnic_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  vnic_id_ = vnic_id;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_id)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo.vnic_name_ref)
 }
 
 // .opi_api.network.opinetcommon.v1alpha1.PolicyDir policy_direction = 2;
@@ -7431,70 +7197,86 @@ inline void SecurityPolicyLookupRequest_VnicLookupInfo::set_address_family(::opi
 
 // SecurityPolicyLookupRequest
 
-// .opi_api.common.v1.ObjectKey policy_id = 1;
-inline bool SecurityPolicyLookupRequest::_internal_has_policy_id() const {
-  return lookup_info_case() == kPolicyId;
+// string policy_name_ref = 1;
+inline bool SecurityPolicyLookupRequest::_internal_has_policy_name_ref() const {
+  return lookup_info_case() == kPolicyNameRef;
 }
-inline bool SecurityPolicyLookupRequest::has_policy_id() const {
-  return _internal_has_policy_id();
+inline bool SecurityPolicyLookupRequest::has_policy_name_ref() const {
+  return _internal_has_policy_name_ref();
 }
-inline void SecurityPolicyLookupRequest::set_has_policy_id() {
-  _oneof_case_[0] = kPolicyId;
+inline void SecurityPolicyLookupRequest::set_has_policy_name_ref() {
+  _oneof_case_[0] = kPolicyNameRef;
 }
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest::release_policy_id() {
-  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-  if (_internal_has_policy_id()) {
+inline void SecurityPolicyLookupRequest::clear_policy_name_ref() {
+  if (_internal_has_policy_name_ref()) {
+    lookup_info_.policy_name_ref_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
     clear_has_lookup_info();
-      ::opi_api::common::v1::ObjectKey* temp = lookup_info_.policy_id_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    lookup_info_.policy_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
   }
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicyLookupRequest::_internal_policy_id() const {
-  return _internal_has_policy_id()
-      ? *lookup_info_.policy_id_
-      : reinterpret_cast< ::opi_api::common::v1::ObjectKey&>(::opi_api::common::v1::_ObjectKey_default_instance_);
+inline const std::string& SecurityPolicyLookupRequest::policy_name_ref() const {
+  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref)
+  return _internal_policy_name_ref();
 }
-inline const ::opi_api::common::v1::ObjectKey& SecurityPolicyLookupRequest::policy_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-  return _internal_policy_id();
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest::unsafe_arena_release_policy_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-  if (_internal_has_policy_id()) {
-    clear_has_lookup_info();
-    ::opi_api::common::v1::ObjectKey* temp = lookup_info_.policy_id_;
-    lookup_info_.policy_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void SecurityPolicyLookupRequest::unsafe_arena_set_allocated_policy_id(::opi_api::common::v1::ObjectKey* policy_id) {
-  clear_lookup_info();
-  if (policy_id) {
-    set_has_policy_id();
-    lookup_info_.policy_id_ = policy_id;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-}
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest::_internal_mutable_policy_id() {
-  if (!_internal_has_policy_id()) {
+template <typename ArgT0, typename... ArgT>
+inline void SecurityPolicyLookupRequest::set_policy_name_ref(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_policy_name_ref()) {
     clear_lookup_info();
-    set_has_policy_id();
-    lookup_info_.policy_id_ = CreateMaybeMessage< ::opi_api::common::v1::ObjectKey >(GetArenaForAllocation());
+    set_has_policy_name_ref();
+    lookup_info_.policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return lookup_info_.policy_id_;
+  lookup_info_.policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref)
 }
-inline ::opi_api::common::v1::ObjectKey* SecurityPolicyLookupRequest::mutable_policy_id() {
-  ::opi_api::common::v1::ObjectKey* _msg = _internal_mutable_policy_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_id)
-  return _msg;
+inline std::string* SecurityPolicyLookupRequest::mutable_policy_name_ref() {
+  std::string* _s = _internal_mutable_policy_name_ref();
+  // @@protoc_insertion_point(field_mutable:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref)
+  return _s;
+}
+inline const std::string& SecurityPolicyLookupRequest::_internal_policy_name_ref() const {
+  if (_internal_has_policy_name_ref()) {
+    return lookup_info_.policy_name_ref_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void SecurityPolicyLookupRequest::_internal_set_policy_name_ref(const std::string& value) {
+  if (!_internal_has_policy_name_ref()) {
+    clear_lookup_info();
+    set_has_policy_name_ref();
+    lookup_info_.policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  lookup_info_.policy_name_ref_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicyLookupRequest::_internal_mutable_policy_name_ref() {
+  if (!_internal_has_policy_name_ref()) {
+    clear_lookup_info();
+    set_has_policy_name_ref();
+    lookup_info_.policy_name_ref_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return lookup_info_.policy_name_ref_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* SecurityPolicyLookupRequest::release_policy_name_ref() {
+  // @@protoc_insertion_point(field_release:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref)
+  if (_internal_has_policy_name_ref()) {
+    clear_has_lookup_info();
+    return lookup_info_.policy_name_ref_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void SecurityPolicyLookupRequest::set_allocated_policy_name_ref(std::string* policy_name_ref) {
+  if (has_lookup_info()) {
+    clear_lookup_info();
+  }
+  if (policy_name_ref != nullptr) {
+    set_has_policy_name_ref();
+    lookup_info_.policy_name_ref_.UnsafeSetDefault(policy_name_ref);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(policy_name_ref);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.policy_name_ref)
 }
 
 // .opi_api.network.cloud.v1alpha1.SecurityPolicyLookupRequest.VnicLookupInfo vnic_lookup_info = 2;

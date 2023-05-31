@@ -52,12 +52,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 40: {
+          case 8: {
 
             pfCount_ = input.readInt32();
             break;
           }
-          case 48: {
+          case 16: {
 
             vfCount_ = input.readInt32();
             break;
@@ -94,14 +94,14 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.class, opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec.Builder.class);
   }
 
-  public static final int PF_COUNT_FIELD_NUMBER = 5;
+  public static final int PF_COUNT_FIELD_NUMBER = 1;
   private int pfCount_;
   /**
    * <pre>
    * number of physical functions
    * </pre>
    *
-   * <code>int32 pf_count = 5;</code>
+   * <code>int32 pf_count = 1;</code>
    * @return The pfCount.
    */
   @java.lang.Override
@@ -109,14 +109,14 @@ private static final long serialVersionUID = 0L;
     return pfCount_;
   }
 
-  public static final int VF_COUNT_FIELD_NUMBER = 6;
+  public static final int VF_COUNT_FIELD_NUMBER = 2;
   private int vfCount_;
   /**
    * <pre>
    * number of virtual functions
    * </pre>
    *
-   * <code>int32 vf_count = 6;</code>
+   * <code>int32 vf_count = 2;</code>
    * @return The vfCount.
    */
   @java.lang.Override
@@ -139,10 +139,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (pfCount_ != 0) {
-      output.writeInt32(5, pfCount_);
+      output.writeInt32(1, pfCount_);
     }
     if (vfCount_ != 0) {
-      output.writeInt32(6, vfCount_);
+      output.writeInt32(2, vfCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -155,11 +155,11 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (pfCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, pfCount_);
+        .computeInt32Size(1, pfCount_);
     }
     if (vfCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, vfCount_);
+        .computeInt32Size(2, vfCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
      * number of physical functions
      * </pre>
      *
-     * <code>int32 pf_count = 5;</code>
+     * <code>int32 pf_count = 1;</code>
      * @return The pfCount.
      */
     @java.lang.Override
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
      * number of physical functions
      * </pre>
      *
-     * <code>int32 pf_count = 5;</code>
+     * <code>int32 pf_count = 1;</code>
      * @param value The pfCount to set.
      * @return This builder for chaining.
      */
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
      * number of physical functions
      * </pre>
      *
-     * <code>int32 pf_count = 5;</code>
+     * <code>int32 pf_count = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearPfCount() {
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
      * number of virtual functions
      * </pre>
      *
-     * <code>int32 vf_count = 6;</code>
+     * <code>int32 vf_count = 2;</code>
      * @return The vfCount.
      */
     @java.lang.Override
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
      * number of virtual functions
      * </pre>
      *
-     * <code>int32 vf_count = 6;</code>
+     * <code>int32 vf_count = 2;</code>
      * @param value The vfCount to set.
      * @return This builder for chaining.
      */
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
      * number of virtual functions
      * </pre>
      *
-     * <code>int32 vf_count = 6;</code>
+     * <code>int32 vf_count = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearVfCount() {

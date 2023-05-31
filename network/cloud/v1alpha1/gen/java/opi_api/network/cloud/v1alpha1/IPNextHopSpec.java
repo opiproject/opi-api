@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private IPNextHopSpec() {
+    vpcNameRef_ = "";
     mac_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -54,16 +55,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (vpcId_ != null) {
-              subBuilder = vpcId_.toBuilder();
-            }
-            vpcId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vpcId_);
-              vpcId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            vpcNameRef_ = s;
             break;
           }
           case 18: {
@@ -121,42 +115,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.IPNextHopSpec.class, opi_api.network.cloud.v1alpha1.IPNextHopSpec.Builder.class);
   }
 
-  public static final int VPC_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey vpcId_;
+  public static final int VPC_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object vpcNameRef_;
   /**
    * <pre>
    * egress VRF id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
   @java.lang.Override
-  public boolean hasVpcId() {
-    return vpcId_ != null;
+  public java.lang.String getVpcNameRef() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpcNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * egress VRF id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpcId() {
-    return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-  }
-  /**
-   * <pre>
-   * egress VRF id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-    return getVpcId();
+  public com.google.protobuf.ByteString
+      getVpcNameRefBytes() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vpcNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 2;
@@ -241,8 +243,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (vpcId_ != null) {
-      output.writeMessage(1, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vpcNameRef_);
     }
     if (ipAddress_ != null) {
       output.writeMessage(2, getIpAddress());
@@ -262,9 +264,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (vpcId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vpcNameRef_);
     }
     if (ipAddress_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -293,11 +294,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.IPNextHopSpec other = (opi_api.network.cloud.v1alpha1.IPNextHopSpec) obj;
 
-    if (hasVpcId() != other.hasVpcId()) return false;
-    if (hasVpcId()) {
-      if (!getVpcId()
-          .equals(other.getVpcId())) return false;
-    }
+    if (!getVpcNameRef()
+        .equals(other.getVpcNameRef())) return false;
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress()
@@ -318,10 +316,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasVpcId()) {
-      hash = (37 * hash) + VPC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVpcId().hashCode();
-    }
+    hash = (37 * hash) + VPC_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVpcNameRef().hashCode();
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddress().hashCode();
@@ -467,12 +463,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
+      vpcNameRef_ = "";
+
       if (ipAddressBuilder_ == null) {
         ipAddress_ = null;
       } else {
@@ -509,11 +501,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.IPNextHopSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.IPNextHopSpec result = new opi_api.network.cloud.v1alpha1.IPNextHopSpec(this);
-      if (vpcIdBuilder_ == null) {
-        result.vpcId_ = vpcId_;
-      } else {
-        result.vpcId_ = vpcIdBuilder_.build();
-      }
+      result.vpcNameRef_ = vpcNameRef_;
       if (ipAddressBuilder_ == null) {
         result.ipAddress_ = ipAddress_;
       } else {
@@ -569,8 +557,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.IPNextHopSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance()) return this;
-      if (other.hasVpcId()) {
-        mergeVpcId(other.getVpcId());
+      if (!other.getVpcNameRef().isEmpty()) {
+        vpcNameRef_ = other.vpcNameRef_;
+        onChanged();
       }
       if (other.hasIpAddress()) {
         mergeIpAddress(other.getIpAddress());
@@ -610,33 +599,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey vpcId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpcIdBuilder_;
+    private java.lang.Object vpcNameRef_ = "";
     /**
      * <pre>
      * egress VRF id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     * @return Whether the vpcId field is set.
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The vpcNameRef.
      */
-    public boolean hasVpcId() {
-      return vpcIdBuilder_ != null || vpcId_ != null;
-    }
-    /**
-     * <pre>
-     * egress VRF id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     * @return The vpcId.
-     */
-    public opi_api.common.v1.ObjectKey getVpcId() {
-      if (vpcIdBuilder_ == null) {
-        return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
+    public java.lang.String getVpcNameRef() {
+      java.lang.Object ref = vpcNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpcNameRef_ = s;
+        return s;
       } else {
-        return vpcIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -644,125 +625,74 @@ private static final long serialVersionUID = 0L;
      * egress VRF id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The bytes for vpcNameRef.
      */
-    public Builder setVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        vpcId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVpcNameRefBytes() {
+      java.lang.Object ref = vpcNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vpcNameRef_ = b;
+        return b;
       } else {
-        vpcIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * egress VRF id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setVpcId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * egress VRF id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public Builder mergeVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (vpcId_ != null) {
-          vpcId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(vpcId_).mergeFrom(value).buildPartial();
-        } else {
-          vpcId_ = value;
-        }
-        onChanged();
-      } else {
-        vpcIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * egress VRF id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public Builder clearVpcId() {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-        onChanged();
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * egress VRF id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpcIdBuilder() {
-      
+    public Builder setVpcNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vpcNameRef_ = value;
       onChanged();
-      return getVpcIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * egress VRF id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-      if (vpcIdBuilder_ != null) {
-        return vpcIdBuilder_.getMessageOrBuilder();
-      } else {
-        return vpcId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-      }
+    public Builder clearVpcNameRef() {
+      
+      vpcNameRef_ = getDefaultInstance().getVpcNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * egress VRF id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The bytes for vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpcIdFieldBuilder() {
-      if (vpcIdBuilder_ == null) {
-        vpcIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVpcId(),
-                getParentForChildren(),
-                isClean());
-        vpcId_ = null;
-      }
-      return vpcIdBuilder_;
+    public Builder setVpcNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      vpcNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.opinetcommon.v1alpha1.IPAddress ipAddress_;

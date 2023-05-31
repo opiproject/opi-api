@@ -12,54 +12,20 @@ public interface L3IfSpecOrBuilder extends
    * vpc/vrf this L3 interface belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasVpcId();
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * vpc/vrf this L3 interface belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * vpc/vrf this L3 interface belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
-
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   * @return Whether the portId field is set.
-   */
-  boolean hasPortId();
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   * @return The portId.
-   */
-  opi_api.common.v1.ObjectKey getPortId();
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getPortIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   /**
    * <pre>
@@ -104,6 +70,26 @@ public interface L3IfSpecOrBuilder extends
    */
   opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getPrefixOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Physical port of this L3 interface
+   * </pre>
+   *
+   * <code>string port_name_ref = 3;</code>
+   * @return The portNameRef.
+   */
+  java.lang.String getPortNameRef();
+  /**
+   * <pre>
+   * Physical port of this L3 interface
+   * </pre>
+   *
+   * <code>string port_name_ref = 3;</code>
+   * @return The bytes for portNameRef.
+   */
+  com.google.protobuf.ByteString
+      getPortNameRefBytes();
 
   /**
    * <pre>

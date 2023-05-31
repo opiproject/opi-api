@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private OverlayNextHopSpec() {
+    tunnelNameRef_ = "";
   }
 
   @java.lang.Override
@@ -53,16 +54,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (tunnelId_ != null) {
-              subBuilder = tunnelId_.toBuilder();
-            }
-            tunnelId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tunnelId_);
-              tunnelId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            tunnelNameRef_ = s;
             break;
           }
           default: {
@@ -97,42 +91,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.class, opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder.class);
   }
 
-  public static final int TUNNEL_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey tunnelId_;
+  public static final int TUNNEL_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object tunnelNameRef_;
   /**
    * <pre>
    * tunnel id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   * @return Whether the tunnelId field is set.
+   * <code>string tunnel_name_ref = 1;</code>
+   * @return The tunnelNameRef.
    */
   @java.lang.Override
-  public boolean hasTunnelId() {
-    return tunnelId_ != null;
+  public java.lang.String getTunnelNameRef() {
+    java.lang.Object ref = tunnelNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tunnelNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * tunnel id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   * @return The tunnelId.
+   * <code>string tunnel_name_ref = 1;</code>
+   * @return The bytes for tunnelNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getTunnelId() {
-    return tunnelId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : tunnelId_;
-  }
-  /**
-   * <pre>
-   * tunnel id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-    return getTunnelId();
+  public com.google.protobuf.ByteString
+      getTunnelNameRefBytes() {
+    java.lang.Object ref = tunnelNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tunnelNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -149,8 +151,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (tunnelId_ != null) {
-      output.writeMessage(1, getTunnelId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tunnelNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tunnelNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -161,9 +163,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (tunnelId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTunnelId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tunnelNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tunnelNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,11 +181,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.OverlayNextHopSpec other = (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) obj;
 
-    if (hasTunnelId() != other.hasTunnelId()) return false;
-    if (hasTunnelId()) {
-      if (!getTunnelId()
-          .equals(other.getTunnelId())) return false;
-    }
+    if (!getTunnelNameRef()
+        .equals(other.getTunnelNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,10 +194,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasTunnelId()) {
-      hash = (37 * hash) + TUNNEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTunnelId().hashCode();
-    }
+    hash = (37 * hash) + TUNNEL_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getTunnelNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -337,12 +333,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tunnelIdBuilder_ == null) {
-        tunnelId_ = null;
-      } else {
-        tunnelId_ = null;
-        tunnelIdBuilder_ = null;
-      }
+      tunnelNameRef_ = "";
+
       return this;
     }
 
@@ -369,11 +361,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.OverlayNextHopSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.OverlayNextHopSpec result = new opi_api.network.cloud.v1alpha1.OverlayNextHopSpec(this);
-      if (tunnelIdBuilder_ == null) {
-        result.tunnelId_ = tunnelId_;
-      } else {
-        result.tunnelId_ = tunnelIdBuilder_.build();
-      }
+      result.tunnelNameRef_ = tunnelNameRef_;
       onBuilt();
       return result;
     }
@@ -422,8 +410,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.OverlayNextHopSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance()) return this;
-      if (other.hasTunnelId()) {
-        mergeTunnelId(other.getTunnelId());
+      if (!other.getTunnelNameRef().isEmpty()) {
+        tunnelNameRef_ = other.tunnelNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -454,33 +443,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey tunnelId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> tunnelIdBuilder_;
+    private java.lang.Object tunnelNameRef_ = "";
     /**
      * <pre>
      * tunnel id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-     * @return Whether the tunnelId field is set.
+     * <code>string tunnel_name_ref = 1;</code>
+     * @return The tunnelNameRef.
      */
-    public boolean hasTunnelId() {
-      return tunnelIdBuilder_ != null || tunnelId_ != null;
-    }
-    /**
-     * <pre>
-     * tunnel id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-     * @return The tunnelId.
-     */
-    public opi_api.common.v1.ObjectKey getTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        return tunnelId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : tunnelId_;
+    public java.lang.String getTunnelNameRef() {
+      java.lang.Object ref = tunnelNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tunnelNameRef_ = s;
+        return s;
       } else {
-        return tunnelIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -488,125 +469,74 @@ private static final long serialVersionUID = 0L;
      * tunnel id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
+     * <code>string tunnel_name_ref = 1;</code>
+     * @return The bytes for tunnelNameRef.
      */
-    public Builder setTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        tunnelId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getTunnelNameRefBytes() {
+      java.lang.Object ref = tunnelNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tunnelNameRef_ = b;
+        return b;
       } else {
-        tunnelIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * tunnel id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
+     * <code>string tunnel_name_ref = 1;</code>
+     * @param value The tunnelNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setTunnelId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (tunnelIdBuilder_ == null) {
-        tunnelId_ = builderForValue.build();
-        onChanged();
-      } else {
-        tunnelIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * tunnel id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-     */
-    public Builder mergeTunnelId(opi_api.common.v1.ObjectKey value) {
-      if (tunnelIdBuilder_ == null) {
-        if (tunnelId_ != null) {
-          tunnelId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(tunnelId_).mergeFrom(value).buildPartial();
-        } else {
-          tunnelId_ = value;
-        }
-        onChanged();
-      } else {
-        tunnelIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * tunnel id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-     */
-    public Builder clearTunnelId() {
-      if (tunnelIdBuilder_ == null) {
-        tunnelId_ = null;
-        onChanged();
-      } else {
-        tunnelId_ = null;
-        tunnelIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * tunnel id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getTunnelIdBuilder() {
-      
+    public Builder setTunnelNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      tunnelNameRef_ = value;
       onChanged();
-      return getTunnelIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * tunnel id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
+     * <code>string tunnel_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getTunnelIdOrBuilder() {
-      if (tunnelIdBuilder_ != null) {
-        return tunnelIdBuilder_.getMessageOrBuilder();
-      } else {
-        return tunnelId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : tunnelId_;
-      }
+    public Builder clearTunnelNameRef() {
+      
+      tunnelNameRef_ = getDefaultInstance().getTunnelNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * tunnel id
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey tunnel_id = 1;</code>
+     * <code>string tunnel_name_ref = 1;</code>
+     * @param value The bytes for tunnelNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getTunnelIdFieldBuilder() {
-      if (tunnelIdBuilder_ == null) {
-        tunnelIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getTunnelId(),
-                getParentForChildren(),
-                isClean());
-        tunnelId_ = null;
-      }
-      return tunnelIdBuilder_;
+    public Builder setTunnelNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      tunnelNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

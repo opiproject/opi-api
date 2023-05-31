@@ -12,11 +12,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nvnic.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"z\n\x04Vnic\x12\x36\n\x04spec\x18\x01 \x01(\x0b\x32(.opi_api.network.cloud.v1alpha1.VnicSpec\x12:\n\x06status\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.VnicStatus\"\xfc\x08\n\x08VnicSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\tsubnet_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12@\n\nvnic_encap\x18\x03 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x13\n\x0bmac_address\x18\x04 \x01(\x0c\x12\x1b\n\x13source_guard_enable\x18\x05 \x01(\x08\x12\x42\n\x0c\x66\x61\x62ric_encap\x18\x06 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x0b\n\x03vnf\x18\x07 \x01(\x08\x12\x43\n\x1dingress_v4_security_policy_id\x18\x08 \x03(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x43\n\x1dingress_v6_security_policy_id\x18\t \x03(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x42\n\x1c\x65gress_v4_security_policy_id\x18\n \x03(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x42\n\x1c\x65gress_v6_security_policy_id\x18\x0b \x03(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x32\n\nhost_if_id\x18\x0c \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x31\n\ttunnel_id\x18\x0f \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x14\n\x0cmax_sessions\x18\x14 \x01(\x05\x12\x1a\n\x12public_mac_address\x18\x19 \x01(\x0c\x12\x1d\n\x15\x61llow_internet_access\x18\x1c \x01(\x08\x12\x0f\n\x07max_cps\x18\x1d \x01(\x05\x12\x11\n\tcps_burst\x18\x1e \x01(\x05\x12\x35\n\x0fprimary_vnic_id\x18  \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x37\n\x11v4_route_table_id\x18! \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x37\n\x11v6_route_table_id\x18\" \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x44\n\nservice_ip\x18$ \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x18\n\x10max_tcp_sessions\x18& \x01(\x05\x12\x18\n\x10max_udp_sessions\x18\' \x01(\x05\x12\x19\n\x11max_icmp_sessions\x18( \x01(\x05\x12\x1a\n\x12max_other_sessions\x18) \x01(\x05\x42\x08\n\x06ifinfo\"\xb4\x02\n\nVnicStatus\x12\x1d\n\x15max_session_limit_hit\x18\r \x01(\x08\x12!\n\x19max_tcp_session_limit_hit\x18\x0e \x01(\x08\x12!\n\x19max_udp_session_limit_hit\x18\x0f \x01(\x08\x12\"\n\x1amax_icmp_session_limit_hit\x18\x10 \x01(\x08\x12#\n\x1bmax_other_session_limit_hit\x18\x11 \x01(\x08\x12\x0e\n\x06hw_idx\x18\x01 \x01(\x05\x12\x16\n\x0enexthop_hw_idx\x18\x02 \x01(\x05\x12\x17\n\x0f\x63ps_copp_hw_idx\x18\n \x01(\x05\x12\x37\n\x11secondary_vnic_id\x18\x0b \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyBj\n\x1eopi_api.network.cloud.v1alpha1B\tVnicProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nvnic.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xbf\x01\n\x04Vnic\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x36\n\x04spec\x18\x02 \x01(\x0b\x32(.opi_api.network.cloud.v1alpha1.VnicSpec\x12:\n\x06status\x18\x03 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.VnicStatus:5\xea\x41\x32\n#opi_api.network.cloud.v1alpha1/vnic\x12\x0bvnic/{vnic}\"\xe2\x06\n\x08VnicSpec\x12\x17\n\x0fsubnet_name_ref\x18\x01 \x01(\t\x12@\n\nvnic_encap\x18\x02 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x13\n\x0bmac_address\x18\x03 \x01(\x0c\x12\x1b\n\x13source_guard_enable\x18\x04 \x01(\x08\x12\x42\n\x0c\x66\x61\x62ric_encap\x18\x05 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x0b\n\x03vnf\x18\x06 \x01(\x08\x12+\n#ingress_v4_security_policy_name_ref\x18\x07 \x03(\t\x12+\n#ingress_v6_security_policy_name_ref\x18\x08 \x03(\t\x12*\n\"egress_v4_security_policy_name_ref\x18\t \x03(\t\x12*\n\"egress_v6_security_policy_name_ref\x18\n \x03(\t\x12\x1a\n\x10host_if_name_ref\x18\x0b \x01(\tH\x00\x12\x19\n\x0ftunnel_name_ref\x18\x0c \x01(\tH\x00\x12\x14\n\x0cmax_sessions\x18\r \x01(\x05\x12\x1a\n\x12public_mac_address\x18\x0e \x01(\x0c\x12\x1d\n\x15\x61llow_internet_access\x18\x0f \x01(\x08\x12\x0f\n\x07max_cps\x18\x10 \x01(\x05\x12\x11\n\tcps_burst\x18\x11 \x01(\x05\x12\x1d\n\x15primary_vnic_name_ref\x18\x12 \x01(\t\x12\x1f\n\x17v4_route_table_name_ref\x18\x13 \x01(\t\x12\x1f\n\x17v6_route_table_name_ref\x18\x14 \x01(\t\x12\x44\n\nservice_ip\x18\x15 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x18\n\x10max_tcp_sessions\x18\x16 \x01(\x05\x12\x18\n\x10max_udp_sessions\x18\x17 \x01(\x05\x12\x19\n\x11max_icmp_sessions\x18\x18 \x01(\x05\x12\x1a\n\x12max_other_sessions\x18\x19 \x01(\x05\x42\x08\n\x06ifinfo\"\x9c\x02\n\nVnicStatus\x12\x1d\n\x15max_session_limit_hit\x18\r \x01(\x08\x12!\n\x19max_tcp_session_limit_hit\x18\x0e \x01(\x08\x12!\n\x19max_udp_session_limit_hit\x18\x0f \x01(\x08\x12\"\n\x1amax_icmp_session_limit_hit\x18\x10 \x01(\x08\x12#\n\x1bmax_other_session_limit_hit\x18\x11 \x01(\x08\x12\x0e\n\x06hw_idx\x18\x01 \x01(\x05\x12\x16\n\x0enexthop_hw_idx\x18\x02 \x01(\x05\x12\x17\n\x0f\x63ps_copp_hw_idx\x18\n \x01(\x05\x12\x1f\n\x17secondary_vnic_name_ref\x18\x0b \x01(\tBj\n\x1eopi_api.network.cloud.v1alpha1B\tVnicProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -48,10 +48,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\tVnicProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _VNIC._serialized_start=84
-  _VNIC._serialized_end=206
-  _VNICSPEC._serialized_start=209
-  _VNICSPEC._serialized_end=1357
-  _VNICSTATUS._serialized_start=1360
-  _VNICSTATUS._serialized_end=1668
+  _VNIC._options = None
+  _VNIC._serialized_options = b'\352A2\n#opi_api.network.cloud.v1alpha1/vnic\022\013vnic/{vnic}'
+  _VNIC._serialized_start=94
+  _VNIC._serialized_end=285
+  _VNICSPEC._serialized_start=288
+  _VNICSPEC._serialized_end=1154
+  _VNICSTATUS._serialized_start=1157
+  _VNICSTATUS._serialized_end=1441
 # @@protoc_insertion_point(module_scope)

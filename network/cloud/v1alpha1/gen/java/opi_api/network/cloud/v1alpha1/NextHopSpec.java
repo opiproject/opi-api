@@ -53,21 +53,8 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
             opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder subBuilder = null;
-            if (nhinfoCase_ == 2) {
+            if (nhinfoCase_ == 1) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_).toBuilder();
             }
             nhinfo_ =
@@ -76,12 +63,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_);
               nhinfo_ = subBuilder.buildPartial();
             }
-            nhinfoCase_ = 2;
+            nhinfoCase_ = 1;
             break;
           }
-          case 26: {
+          case 18: {
             opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.Builder subBuilder = null;
-            if (nhinfoCase_ == 3) {
+            if (nhinfoCase_ == 2) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_).toBuilder();
             }
             nhinfo_ =
@@ -90,12 +77,12 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_);
               nhinfo_ = subBuilder.buildPartial();
             }
-            nhinfoCase_ = 3;
+            nhinfoCase_ = 2;
             break;
           }
-          case 34: {
+          case 26: {
             opi_api.network.cloud.v1alpha1.IPNextHopSpec.Builder subBuilder = null;
-            if (nhinfoCase_ == 4) {
+            if (nhinfoCase_ == 3) {
               subBuilder = ((opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_).toBuilder();
             }
             nhinfo_ =
@@ -104,7 +91,7 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom((opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_);
               nhinfo_ = subBuilder.buildPartial();
             }
-            nhinfoCase_ = 4;
+            nhinfoCase_ = 3;
             break;
           }
           default: {
@@ -144,9 +131,9 @@ private static final long serialVersionUID = 0L;
   public enum NhinfoCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    OVERLAY_NH_INFO(2),
-    UNDERLAY_NH_INFO(3),
-    IP_NH_INFO(4),
+    OVERLAY_NH_INFO(1),
+    UNDERLAY_NH_INFO(2),
+    IP_NH_INFO(3),
     NHINFO_NOT_SET(0);
     private final int value;
     private NhinfoCase(int value) {
@@ -164,9 +151,9 @@ private static final long serialVersionUID = 0L;
 
     public static NhinfoCase forNumber(int value) {
       switch (value) {
-        case 2: return OVERLAY_NH_INFO;
-        case 3: return UNDERLAY_NH_INFO;
-        case 4: return IP_NH_INFO;
+        case 1: return OVERLAY_NH_INFO;
+        case 2: return UNDERLAY_NH_INFO;
+        case 3: return IP_NH_INFO;
         case 0: return NHINFO_NOT_SET;
         default: return null;
       }
@@ -182,68 +169,30 @@ private static final long serialVersionUID = 0L;
         nhinfoCase_);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int OVERLAY_NH_INFO_FIELD_NUMBER = 2;
+  public static final int OVERLAY_NH_INFO_FIELD_NUMBER = 1;
   /**
    * <pre>
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    * @return Whether the overlayNhInfo field is set.
    */
   @java.lang.Override
   public boolean hasOverlayNhInfo() {
-    return nhinfoCase_ == 2;
+    return nhinfoCase_ == 1;
   }
   /**
    * <pre>
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    * @return The overlayNhInfo.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.OverlayNextHopSpec getOverlayNhInfo() {
-    if (nhinfoCase_ == 2) {
+    if (nhinfoCase_ == 1) {
        return (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
@@ -253,40 +202,40 @@ private static final long serialVersionUID = 0L;
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.OverlayNextHopSpecOrBuilder getOverlayNhInfoOrBuilder() {
-    if (nhinfoCase_ == 2) {
+    if (nhinfoCase_ == 1) {
        return (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
   }
 
-  public static final int UNDERLAY_NH_INFO_FIELD_NUMBER = 3;
+  public static final int UNDERLAY_NH_INFO_FIELD_NUMBER = 2;
   /**
    * <pre>
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    * @return Whether the underlayNhInfo field is set.
    */
   @java.lang.Override
   public boolean hasUnderlayNhInfo() {
-    return nhinfoCase_ == 3;
+    return nhinfoCase_ == 2;
   }
   /**
    * <pre>
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    * @return The underlayNhInfo.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec getUnderlayNhInfo() {
-    if (nhinfoCase_ == 3) {
+    if (nhinfoCase_ == 2) {
        return (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
@@ -296,40 +245,40 @@ private static final long serialVersionUID = 0L;
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecOrBuilder getUnderlayNhInfoOrBuilder() {
-    if (nhinfoCase_ == 3) {
+    if (nhinfoCase_ == 2) {
        return (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
   }
 
-  public static final int IP_NH_INFO_FIELD_NUMBER = 4;
+  public static final int IP_NH_INFO_FIELD_NUMBER = 3;
   /**
    * <pre>
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    * @return Whether the ipNhInfo field is set.
    */
   @java.lang.Override
   public boolean hasIpNhInfo() {
-    return nhinfoCase_ == 4;
+    return nhinfoCase_ == 3;
   }
   /**
    * <pre>
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    * @return The ipNhInfo.
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.IPNextHopSpec getIpNhInfo() {
-    if (nhinfoCase_ == 4) {
+    if (nhinfoCase_ == 3) {
        return (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
@@ -339,11 +288,11 @@ private static final long serialVersionUID = 0L;
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.IPNextHopSpecOrBuilder getIpNhInfoOrBuilder() {
-    if (nhinfoCase_ == 4) {
+    if (nhinfoCase_ == 3) {
        return (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_;
     }
     return opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
@@ -363,17 +312,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (nhinfoCase_ == 1) {
+      output.writeMessage(1, (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_);
     }
     if (nhinfoCase_ == 2) {
-      output.writeMessage(2, (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_);
+      output.writeMessage(2, (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_);
     }
     if (nhinfoCase_ == 3) {
-      output.writeMessage(3, (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_);
-    }
-    if (nhinfoCase_ == 4) {
-      output.writeMessage(4, (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_);
+      output.writeMessage(3, (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_);
     }
     unknownFields.writeTo(output);
   }
@@ -384,21 +330,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
+    if (nhinfoCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+        .computeMessageSize(1, (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_);
     }
     if (nhinfoCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_);
+        .computeMessageSize(2, (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_);
     }
     if (nhinfoCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_);
-    }
-    if (nhinfoCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_);
+        .computeMessageSize(3, (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -415,22 +357,17 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.NextHopSpec other = (opi_api.network.cloud.v1alpha1.NextHopSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (!getNhinfoCase().equals(other.getNhinfoCase())) return false;
     switch (nhinfoCase_) {
-      case 2:
+      case 1:
         if (!getOverlayNhInfo()
             .equals(other.getOverlayNhInfo())) return false;
         break;
-      case 3:
+      case 2:
         if (!getUnderlayNhInfo()
             .equals(other.getUnderlayNhInfo())) return false;
         break;
-      case 4:
+      case 3:
         if (!getIpNhInfo()
             .equals(other.getIpNhInfo())) return false;
         break;
@@ -448,20 +385,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     switch (nhinfoCase_) {
-      case 2:
+      case 1:
         hash = (37 * hash) + OVERLAY_NH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getOverlayNhInfo().hashCode();
         break;
-      case 3:
+      case 2:
         hash = (37 * hash) + UNDERLAY_NH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getUnderlayNhInfo().hashCode();
         break;
-      case 4:
+      case 3:
         hash = (37 * hash) + IP_NH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getIpNhInfo().hashCode();
         break;
@@ -605,12 +538,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       nhinfoCase_ = 0;
       nhinfo_ = null;
       return this;
@@ -639,26 +566,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.NextHopSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.NextHopSpec result = new opi_api.network.cloud.v1alpha1.NextHopSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (nhinfoCase_ == 2) {
+      if (nhinfoCase_ == 1) {
         if (overlayNhInfoBuilder_ == null) {
           result.nhinfo_ = nhinfo_;
         } else {
           result.nhinfo_ = overlayNhInfoBuilder_.build();
         }
       }
-      if (nhinfoCase_ == 3) {
+      if (nhinfoCase_ == 2) {
         if (underlayNhInfoBuilder_ == null) {
           result.nhinfo_ = nhinfo_;
         } else {
           result.nhinfo_ = underlayNhInfoBuilder_.build();
         }
       }
-      if (nhinfoCase_ == 4) {
+      if (nhinfoCase_ == 3) {
         if (ipNhInfoBuilder_ == null) {
           result.nhinfo_ = nhinfo_;
         } else {
@@ -714,9 +636,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.NextHopSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.NextHopSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       switch (other.getNhinfoCase()) {
         case OVERLAY_NH_INFO: {
           mergeOverlayNhInfo(other.getOverlayNhInfo());
@@ -778,161 +697,6 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique nexthop id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.OverlayNextHopSpec, opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder, opi_api.network.cloud.v1alpha1.OverlayNextHopSpecOrBuilder> overlayNhInfoBuilder_;
     /**
@@ -940,30 +704,30 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      * @return Whether the overlayNhInfo field is set.
      */
     @java.lang.Override
     public boolean hasOverlayNhInfo() {
-      return nhinfoCase_ == 2;
+      return nhinfoCase_ == 1;
     }
     /**
      * <pre>
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      * @return The overlayNhInfo.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.OverlayNextHopSpec getOverlayNhInfo() {
       if (overlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           return (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
       } else {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           return overlayNhInfoBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
@@ -974,7 +738,7 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     public Builder setOverlayNhInfo(opi_api.network.cloud.v1alpha1.OverlayNextHopSpec value) {
       if (overlayNhInfoBuilder_ == null) {
@@ -986,7 +750,7 @@ private static final long serialVersionUID = 0L;
       } else {
         overlayNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 2;
+      nhinfoCase_ = 1;
       return this;
     }
     /**
@@ -994,7 +758,7 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     public Builder setOverlayNhInfo(
         opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder builderForValue) {
@@ -1004,7 +768,7 @@ private static final long serialVersionUID = 0L;
       } else {
         overlayNhInfoBuilder_.setMessage(builderForValue.build());
       }
-      nhinfoCase_ = 2;
+      nhinfoCase_ = 1;
       return this;
     }
     /**
@@ -1012,11 +776,11 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     public Builder mergeOverlayNhInfo(opi_api.network.cloud.v1alpha1.OverlayNextHopSpec value) {
       if (overlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 2 &&
+        if (nhinfoCase_ == 1 &&
             nhinfo_ != opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance()) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.newBuilder((opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_)
               .mergeFrom(value).buildPartial();
@@ -1025,12 +789,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           overlayNhInfoBuilder_.mergeFrom(value);
         }
         overlayNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 2;
+      nhinfoCase_ = 1;
       return this;
     }
     /**
@@ -1038,17 +802,17 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     public Builder clearOverlayNhInfo() {
       if (overlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
           onChanged();
         }
       } else {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
         }
@@ -1061,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     public opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder getOverlayNhInfoBuilder() {
       return getOverlayNhInfoFieldBuilder().getBuilder();
@@ -1071,14 +835,14 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.OverlayNextHopSpecOrBuilder getOverlayNhInfoOrBuilder() {
-      if ((nhinfoCase_ == 2) && (overlayNhInfoBuilder_ != null)) {
+      if ((nhinfoCase_ == 1) && (overlayNhInfoBuilder_ != null)) {
         return overlayNhInfoBuilder_.getMessageOrBuilder();
       } else {
-        if (nhinfoCase_ == 2) {
+        if (nhinfoCase_ == 1) {
           return (opi_api.network.cloud.v1alpha1.OverlayNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
@@ -1089,13 +853,13 @@ private static final long serialVersionUID = 0L;
      * Tunnel/TEP member is used for overlay routing
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.OverlayNextHopSpec, opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.Builder, opi_api.network.cloud.v1alpha1.OverlayNextHopSpecOrBuilder> 
         getOverlayNhInfoFieldBuilder() {
       if (overlayNhInfoBuilder_ == null) {
-        if (!(nhinfoCase_ == 2)) {
+        if (!(nhinfoCase_ == 1)) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.OverlayNextHopSpec.getDefaultInstance();
         }
         overlayNhInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1105,7 +869,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         nhinfo_ = null;
       }
-      nhinfoCase_ = 2;
+      nhinfoCase_ = 1;
       onChanged();;
       return overlayNhInfoBuilder_;
     }
@@ -1117,30 +881,30 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      * @return Whether the underlayNhInfo field is set.
      */
     @java.lang.Override
     public boolean hasUnderlayNhInfo() {
-      return nhinfoCase_ == 3;
+      return nhinfoCase_ == 2;
     }
     /**
      * <pre>
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      * @return The underlayNhInfo.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec getUnderlayNhInfo() {
       if (underlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           return (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
       } else {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           return underlayNhInfoBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
@@ -1151,7 +915,7 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     public Builder setUnderlayNhInfo(opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec value) {
       if (underlayNhInfoBuilder_ == null) {
@@ -1163,7 +927,7 @@ private static final long serialVersionUID = 0L;
       } else {
         underlayNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 3;
+      nhinfoCase_ = 2;
       return this;
     }
     /**
@@ -1171,7 +935,7 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     public Builder setUnderlayNhInfo(
         opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.Builder builderForValue) {
@@ -1181,7 +945,7 @@ private static final long serialVersionUID = 0L;
       } else {
         underlayNhInfoBuilder_.setMessage(builderForValue.build());
       }
-      nhinfoCase_ = 3;
+      nhinfoCase_ = 2;
       return this;
     }
     /**
@@ -1189,11 +953,11 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     public Builder mergeUnderlayNhInfo(opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec value) {
       if (underlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 3 &&
+        if (nhinfoCase_ == 2 &&
             nhinfo_ != opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance()) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.newBuilder((opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_)
               .mergeFrom(value).buildPartial();
@@ -1202,12 +966,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           underlayNhInfoBuilder_.mergeFrom(value);
         }
         underlayNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 3;
+      nhinfoCase_ = 2;
       return this;
     }
     /**
@@ -1215,17 +979,17 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     public Builder clearUnderlayNhInfo() {
       if (underlayNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
           onChanged();
         }
       } else {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
         }
@@ -1238,7 +1002,7 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.Builder getUnderlayNhInfoBuilder() {
       return getUnderlayNhInfoFieldBuilder().getBuilder();
@@ -1248,14 +1012,14 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecOrBuilder getUnderlayNhInfoOrBuilder() {
-      if ((nhinfoCase_ == 3) && (underlayNhInfoBuilder_ != null)) {
+      if ((nhinfoCase_ == 2) && (underlayNhInfoBuilder_ != null)) {
         return underlayNhInfoBuilder_.getMessageOrBuilder();
       } else {
-        if (nhinfoCase_ == 3) {
+        if (nhinfoCase_ == 2) {
           return (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
@@ -1266,13 +1030,13 @@ private static final long serialVersionUID = 0L;
      * Underlay nexthop info is used for a resolved underlay IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec, opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.Builder, opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecOrBuilder> 
         getUnderlayNhInfoFieldBuilder() {
       if (underlayNhInfoBuilder_ == null) {
-        if (!(nhinfoCase_ == 3)) {
+        if (!(nhinfoCase_ == 2)) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance();
         }
         underlayNhInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1282,7 +1046,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         nhinfo_ = null;
       }
-      nhinfoCase_ = 3;
+      nhinfoCase_ = 2;
       onChanged();;
       return underlayNhInfoBuilder_;
     }
@@ -1294,30 +1058,30 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      * @return Whether the ipNhInfo field is set.
      */
     @java.lang.Override
     public boolean hasIpNhInfo() {
-      return nhinfoCase_ == 4;
+      return nhinfoCase_ == 3;
     }
     /**
      * <pre>
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      * @return The ipNhInfo.
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.IPNextHopSpec getIpNhInfo() {
       if (ipNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           return (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
       } else {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           return ipNhInfoBuilder_.getMessage();
         }
         return opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
@@ -1328,7 +1092,7 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     public Builder setIpNhInfo(opi_api.network.cloud.v1alpha1.IPNextHopSpec value) {
       if (ipNhInfoBuilder_ == null) {
@@ -1340,7 +1104,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ipNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 4;
+      nhinfoCase_ = 3;
       return this;
     }
     /**
@@ -1348,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     public Builder setIpNhInfo(
         opi_api.network.cloud.v1alpha1.IPNextHopSpec.Builder builderForValue) {
@@ -1358,7 +1122,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ipNhInfoBuilder_.setMessage(builderForValue.build());
       }
-      nhinfoCase_ = 4;
+      nhinfoCase_ = 3;
       return this;
     }
     /**
@@ -1366,11 +1130,11 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     public Builder mergeIpNhInfo(opi_api.network.cloud.v1alpha1.IPNextHopSpec value) {
       if (ipNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 4 &&
+        if (nhinfoCase_ == 3 &&
             nhinfo_ != opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance()) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.IPNextHopSpec.newBuilder((opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_)
               .mergeFrom(value).buildPartial();
@@ -1379,12 +1143,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       } else {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           ipNhInfoBuilder_.mergeFrom(value);
         }
         ipNhInfoBuilder_.setMessage(value);
       }
-      nhinfoCase_ = 4;
+      nhinfoCase_ = 3;
       return this;
     }
     /**
@@ -1392,17 +1156,17 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     public Builder clearIpNhInfo() {
       if (ipNhInfoBuilder_ == null) {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
           onChanged();
         }
       } else {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           nhinfoCase_ = 0;
           nhinfo_ = null;
         }
@@ -1415,7 +1179,7 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     public opi_api.network.cloud.v1alpha1.IPNextHopSpec.Builder getIpNhInfoBuilder() {
       return getIpNhInfoFieldBuilder().getBuilder();
@@ -1425,14 +1189,14 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.IPNextHopSpecOrBuilder getIpNhInfoOrBuilder() {
-      if ((nhinfoCase_ == 4) && (ipNhInfoBuilder_ != null)) {
+      if ((nhinfoCase_ == 3) && (ipNhInfoBuilder_ != null)) {
         return ipNhInfoBuilder_.getMessageOrBuilder();
       } else {
-        if (nhinfoCase_ == 4) {
+        if (nhinfoCase_ == 3) {
           return (opi_api.network.cloud.v1alpha1.IPNextHopSpec) nhinfo_;
         }
         return opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
@@ -1443,13 +1207,13 @@ private static final long serialVersionUID = 0L;
      * Indirectly resolve to the next hop of another IP
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.network.cloud.v1alpha1.IPNextHopSpec, opi_api.network.cloud.v1alpha1.IPNextHopSpec.Builder, opi_api.network.cloud.v1alpha1.IPNextHopSpecOrBuilder> 
         getIpNhInfoFieldBuilder() {
       if (ipNhInfoBuilder_ == null) {
-        if (!(nhinfoCase_ == 4)) {
+        if (!(nhinfoCase_ == 3)) {
           nhinfo_ = opi_api.network.cloud.v1alpha1.IPNextHopSpec.getDefaultInstance();
         }
         ipNhInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1459,7 +1223,7 @@ private static final long serialVersionUID = 0L;
                 isClean());
         nhinfo_ = null;
       }
-      nhinfoCase_ = 4;
+      nhinfoCase_ = 3;
       onChanged();;
       return ipNhInfoBuilder_;
     }

@@ -12,27 +12,20 @@ public interface IPNextHopSpecOrBuilder extends
    * egress VRF id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasVpcId();
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * egress VRF id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * egress VRF id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 
   /**
    * <pre>

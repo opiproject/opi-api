@@ -124,149 +124,151 @@ public final class NetworkPolicyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023networkpolicy.proto\022\036opi_api.network.c" +
-      "loud.v1alpha1\032\020object_key.proto\032\022network" +
-      "types.proto\"\230\001\n\016SecurityPolicy\022@\n\004spec\030\001" +
-      " \001(\01322.opi_api.network.cloud.v1alpha1.Se" +
-      "curityPolicySpec\022D\n\006status\030\002 \001(\01324.opi_a" +
+      "loud.v1alpha1\032\022networktypes.proto\032\031googl" +
+      "e/api/resource.proto\"\374\001\n\016SecurityPolicy\022" +
+      "\014\n\004name\030\001 \001(\t\022@\n\004spec\030\002 \001(\01322.opi_api.ne" +
+      "twork.cloud.v1alpha1.SecurityPolicySpec\022" +
+      "D\n\006status\030\003 \001(\01324.opi_api.network.cloud." +
+      "v1alpha1.SecurityPolicyStatus:T\352AQ\n-opi_" +
+      "api.network.cloud.v1alpha1/securitypolic" +
+      "y\022 securitypolicys/{securitypolicy}\"\222\003\n\022" +
+      "SecurityPolicySpec\022@\n\004type\030\001 \001(\01622.opi_a" +
       "pi.network.cloud.v1alpha1.SecurityPolicy" +
-      "Status\"\274\003\n\022SecurityPolicySpec\022(\n\002id\030\001 \001(" +
-      "\0132\034.opi_api.common.v1.ObjectKey\022@\n\004type\030" +
-      "\002 \001(\01622.opi_api.network.cloud.v1alpha1.S" +
-      "ecurityPolicyType\022C\n\016address_family\030\003 \001(" +
-      "\0162+.opi_api.network.opinetcommon.v1alpha" +
-      "1.IpAf\022\021\n\tstateless\030\004 \001(\010\022Z\n\027default_sec" +
-      "urity_action\030\005 \001(\01629.opi_api.network.opi" +
-      "netcommon.v1alpha1.SecurityRuleAction\022?\n" +
-      "\005rules\030\006 \003(\01320.opi_api.network.cloud.v1a" +
-      "lpha1.SecurityRuleInfo\022E\n\013rule_format\030\007 " +
-      "\001(\01620.opi_api.network.cloud.v1alpha1.Pol" +
-      "icyRuleFormat\"~\n\020SecurityRuleInfo\022(\n\002id\030" +
-      "\001 \001(\0132\034.opi_api.common.v1.ObjectKey\022@\n\005a" +
-      "ttrs\030\002 \001(\01321.opi_api.network.cloud.v1alp" +
-      "ha1.SecurityRuleAttrs\"\201\002\n\021SecurityRuleAt" +
-      "trs\022\020\n\010priority\030\001 \001(\005\022?\n\005match\030\002 \001(\01320.o" +
-      "pi_api.network.opinetcommon.v1alpha1.Rul" +
-      "eMatch\022I\n\006action\030\003 \001(\01629.opi_api.network" +
-      ".opinetcommon.v1alpha1.SecurityRuleActio" +
-      "n\022\023\n\013terminating\030\004 \001(\010\0229\n\010alg_spec\030\005 \001(\013" +
-      "2\'.opi_api.network.cloud.v1alpha1.ALGSpe" +
-      "c\"\'\n\nFTPOptions\022\031\n\021allow_ip_mismatch\030\001 \001" +
-      "(\010\"\322\001\n\nDNSOptions\022!\n\031drop_multi_query_me" +
-      "ssages\030\001 \001(\010\022\'\n\037drop_large_domain_name_m" +
-      "essages\030\002 \001(\010\022 \n\030drop_long_label_message" +
-      "s\030\003 \001(\010\022 \n\030drop_multi_zone_messages\030\004 \001(" +
-      "\010\022\030\n\020response_timeout\030\005 \001(\005\022\032\n\022max_messa" +
-      "ge_length\030\006 \001(\005\"\"\n\014MSRPCOptions\022\022\n\nprogr" +
-      "am_id\030\001 \003(\014\"#\n\rSunRPCOptions\022\022\n\nprogram_" +
-      "id\030\001 \003(\014\"\377\002\n\007ALGSpec\0229\n\010alg_type\030\001 \001(\0162\'" +
-      ".opi_api.network.cloud.v1alpha1.ALGType\022" +
-      "\024\n\014idle_timeout\030\002 \001(\005\022A\n\013ftp_options\030\003 \001" +
-      "(\0132*.opi_api.network.cloud.v1alpha1.FTPO" +
-      "ptionsH\000\022A\n\013dns_options\030\004 \001(\0132*.opi_api." +
-      "network.cloud.v1alpha1.DNSOptionsH\000\022E\n\rm" +
-      "srpc_options\030\005 \001(\0132,.opi_api.network.clo" +
-      "ud.v1alpha1.MSRPCOptionsH\000\022G\n\016sunrpc_opt" +
-      "ions\030\006 \001(\0132-.opi_api.network.cloud.v1alp" +
-      "ha1.SunRPCOptionsH\000B\r\n\013alg_options\"\221\002\n\024S" +
-      "ecurityPolicyStatus\022\022\n\nrule_count\030\001 \001(\005\022" +
-      "\021\n\tvpc_count\030\002 \001(\005\022\024\n\014subnet_count\030\003 \001(\005" +
-      "\022\022\n\nvnic_count\030\004 \001(\005\022G\n\016hw_pool_handle\030\005" +
-      " \001(\0132/.opi_api.network.opinetcommon.v1al" +
-      "pha1.HwHandle\022B\n\thw_handle\030\006 \001(\0132/.opi_a" +
-      "pi.network.opinetcommon.v1alpha1.HwHandl" +
-      "e\022\033\n\023policy_base_address\030\007 \001(\004\"\222\001\n\014Secur" +
-      "ityRule\022>\n\004spec\030\001 \001(\01320.opi_api.network." +
-      "cloud.v1alpha1.SecurityRuleSpec\022B\n\006statu" +
-      "s\030\002 \001(\01322.opi_api.network.cloud.v1alpha1" +
-      ".SecurityRuleStatus\"\270\001\n\020SecurityRuleSpec" +
-      "\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.ObjectK" +
-      "ey\0228\n\022security_policy_id\030\002 \001(\0132\034.opi_api" +
-      ".common.v1.ObjectKey\022@\n\005attrs\030\003 \001(\01321.op" +
-      "i_api.network.cloud.v1alpha1.SecurityRul" +
-      "eAttrs\"\024\n\022SecurityRuleStatus\"\233\001\n\017Securit" +
-      "yProfile\022A\n\004spec\030\001 \001(\01323.opi_api.network" +
-      ".cloud.v1alpha1.SecurityProfileSpec\022E\n\006s" +
-      "tatus\030\002 \001(\01325.opi_api.network.cloud.v1al" +
-      "pha1.SecurityProfileStatus\"\221\004\n\023SecurityP" +
-      "rofileSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.common." +
-      "v1.ObjectKey\022\"\n\032connection_tracking_enab" +
-      "le\030\002 \001(\010\022\031\n\021rule_stats_enable\030\003 \001(\010\022Z\n\027d" +
-      "efault_firewall_action\030\004 \001(\01629.opi_api.n" +
-      "etwork.opinetcommon.v1alpha1.SecurityRul" +
-      "eAction\022\030\n\020tcp_idle_timeout\030\005 \001(\005\022\030\n\020udp" +
-      "_idle_timeout\030\006 \001(\005\022\031\n\021icmp_idle_timeout" +
-      "\030\007 \001(\005\022\032\n\022other_idle_timeout\030\010 \001(\005\022$\n\034tc" +
-      "p_connection_setup_timeout\030\t \001(\005\022\036\n\026tcp_" +
-      "half_close_timeout\030\n \001(\005\022\031\n\021tcp_close_ti" +
-      "meout\030\013 \001(\005\022\030\n\020tcp_dorp_timeout\030\014 \001(\005\022\030\n" +
-      "\020udp_drop_timeout\030\r \001(\005\022\031\n\021icmp_drop_tim" +
-      "eout\030\016 \001(\005\022\032\n\022other_drop_timeout\030\017 \001(\005\"\027" +
-      "\n\025SecurityProfileStatus\"\270\002\n\021PolicyLookup" +
-      "Match\022C\n\tsource_ip\030\001 \001(\01320.opi_api.netwo" +
-      "rk.opinetcommon.v1alpha1.IPAddress\022\023\n\013so" +
-      "urce_tags\030\002 \003(\r\022H\n\016destination_ip\030\003 \001(\0132" +
-      "0.opi_api.network.opinetcommon.v1alpha1." +
-      "IPAddress\022\030\n\020destination_tags\030\004 \003(\r\022\020\n\010p" +
-      "rotocol\030\005 \001(\005\022\023\n\013source_port\030\006 \001(\005\022\030\n\020de" +
-      "stination_port\030\007 \001(\005\022\021\n\ticmp_type\030\010 \001(\005\022" +
-      "\021\n\ticmp_code\030\t \001(\005\"\343\003\n\033SecurityPolicyLoo" +
-      "kupRequest\0221\n\tpolicy_id\030\001 \001(\0132\034.opi_api." +
-      "common.v1.ObjectKeyH\000\022f\n\020vnic_lookup_inf" +
-      "o\030\002 \001(\0132J.opi_api.network.cloud.v1alpha1" +
-      ".SecurityPolicyLookupRequest.VnicLookupI" +
-      "nfoH\000\022G\n\014match_fields\030\003 \001(\01321.opi_api.ne" +
-      "twork.cloud.v1alpha1.PolicyLookupMatch\032\320" +
-      "\001\n\016VnicLookupInfo\022-\n\007vnic_id\030\001 \001(\0132\034.opi" +
-      "_api.common.v1.ObjectKey\022J\n\020policy_direc" +
-      "tion\030\002 \001(\01620.opi_api.network.opinetcommo" +
-      "n.v1alpha1.PolicyDir\022C\n\016address_family\030\003" +
-      " \001(\0162+.opi_api.network.opinetcommon.v1al" +
-      "pha1.IpAfB\r\n\013lookup_info\"\212\002\n\022PolicyLooku" +
-      "pResult\022G\n\016rule_hw_handle\030\001 \001(\0132/.opi_ap" +
+      "Type\022C\n\016address_family\030\002 \001(\0162+.opi_api.n" +
+      "etwork.opinetcommon.v1alpha1.IpAf\022\021\n\tsta" +
+      "teless\030\003 \001(\010\022Z\n\027default_security_action\030" +
+      "\004 \001(\01629.opi_api.network.opinetcommon.v1a" +
+      "lpha1.SecurityRuleAction\022?\n\005rules\030\005 \003(\0132" +
+      "0.opi_api.network.cloud.v1alpha1.Securit" +
+      "yRuleInfo\022E\n\013rule_format\030\006 \001(\01620.opi_api" +
+      ".network.cloud.v1alpha1.PolicyRuleFormat" +
+      "\"g\n\020SecurityRuleInfo\022\021\n\trule_name\030\001 \001(\t\022" +
+      "@\n\005attrs\030\002 \001(\01321.opi_api.network.cloud.v" +
+      "1alpha1.SecurityRuleAttrs\"\201\002\n\021SecurityRu" +
+      "leAttrs\022\020\n\010priority\030\001 \001(\005\022?\n\005match\030\002 \001(\013" +
+      "20.opi_api.network.opinetcommon.v1alpha1" +
+      ".RuleMatch\022I\n\006action\030\003 \001(\01629.opi_api.net" +
+      "work.opinetcommon.v1alpha1.SecurityRuleA" +
+      "ction\022\023\n\013terminating\030\004 \001(\010\0229\n\010alg_spec\030\005" +
+      " \001(\0132\'.opi_api.network.cloud.v1alpha1.AL" +
+      "GSpec\"\'\n\nFTPOptions\022\031\n\021allow_ip_mismatch" +
+      "\030\001 \001(\010\"\315\001\n\nDNSOptions\022!\n\031drop_multi_quer" +
+      "y_messages\030\001 \001(\010\022\"\n\032drop_large_domain_na" +
+      "me_ref\030\002 \001(\010\022 \n\030drop_long_label_messages" +
+      "\030\003 \001(\010\022 \n\030drop_multi_zone_messages\030\004 \001(\010" +
+      "\022\030\n\020response_timeout\030\005 \001(\005\022\032\n\022max_messag" +
+      "e_length\030\006 \001(\005\"\"\n\014MSRPCOptions\022\022\n\nprogra" +
+      "m_id\030\001 \003(\014\"#\n\rSunRPCOptions\022\022\n\nprogram_i" +
+      "d\030\001 \003(\014\"\377\002\n\007ALGSpec\0229\n\010alg_type\030\001 \001(\0162\'." +
+      "opi_api.network.cloud.v1alpha1.ALGType\022\024" +
+      "\n\014idle_timeout\030\002 \001(\005\022A\n\013ftp_options\030\003 \001(" +
+      "\0132*.opi_api.network.cloud.v1alpha1.FTPOp" +
+      "tionsH\000\022A\n\013dns_options\030\004 \001(\0132*.opi_api.n" +
+      "etwork.cloud.v1alpha1.DNSOptionsH\000\022E\n\rms" +
+      "rpc_options\030\005 \001(\0132,.opi_api.network.clou" +
+      "d.v1alpha1.MSRPCOptionsH\000\022G\n\016sunrpc_opti" +
+      "ons\030\006 \001(\0132-.opi_api.network.cloud.v1alph" +
+      "a1.SunRPCOptionsH\000B\r\n\013alg_options\"\221\002\n\024Se" +
+      "curityPolicyStatus\022\022\n\nrule_count\030\001 \001(\005\022\021" +
+      "\n\tvpc_count\030\002 \001(\005\022\024\n\014subnet_count\030\003 \001(\005\022" +
+      "\022\n\nvnic_count\030\004 \001(\005\022G\n\016hw_pool_handle\030\005 " +
+      "\001(\0132/.opi_api.network.opinetcommon.v1alp" +
+      "ha1.HwHandle\022B\n\thw_handle\030\006 \001(\0132/.opi_ap" +
       "i.network.opinetcommon.v1alpha1.HwHandle" +
-      "\022\020\n\010priority\030\002 \001(\005\022I\n\006action\030\003 \001(\01629.opi" +
-      "_api.network.opinetcommon.v1alpha1.Secur" +
-      "ityRuleAction\0229\n\010alg_type\030\004 \001(\0162\'.opi_ap" +
-      "i.network.cloud.v1alpha1.ALGType\022\023\n\013term" +
-      "inating\030\005 \001(\010*~\n\022SecurityPolicyType\022$\n S" +
-      "ECURITY_POLICY_TYPE_UNSPECIFIED\020\000\022!\n\035SEC" +
-      "URITY_POLICY_TYPE_UNDERLAY\020\001\022\037\n\033SECURITY" +
-      "_POLICY_TYPE_TENANT\020\002*\226\001\n\007ALGType\022\030\n\024ALG" +
-      "_TYPE_UNSPECIFIED\020\000\022\021\n\rALG_TYPE_TFTP\020\001\022\020" +
-      "\n\014ALG_TYPE_FTP\020\002\022\020\n\014ALG_TYPE_DNS\020\003\022\023\n\017AL" +
-      "G_TYPE_SUNRPC\020\004\022\022\n\016ALG_TYPE_MSRPC\020\005\022\021\n\rA" +
-      "LG_TYPE_RTSP\020\006*x\n\020PolicyRuleFormat\022\"\n\036PO" +
-      "LICY_RULE_FORMAT_UNSPECIFIED\020\000\022 \n\034POLICY" +
-      "_RULE_FORMAT_FLATTENED\020\001\022\036\n\032POLICY_RULE_" +
-      "FORMAT_COMPACT\020\002Bs\n\036opi_api.network.clou" +
-      "d.v1alpha1B\022NetworkPolicyProtoP\001Z;github" +
-      ".com/opiproject/opi-api/network/cloud/v1" +
-      "alpha1/gen/gob\006proto3"
+      "\022\033\n\023policy_base_address\030\007 \001(\004\"\360\001\n\014Securi" +
+      "tyRule\022\014\n\004name\030\001 \001(\t\022>\n\004spec\030\002 \001(\01320.opi" +
+      "_api.network.cloud.v1alpha1.SecurityRule" +
+      "Spec\022B\n\006status\030\003 \001(\01322.opi_api.network.c" +
+      "loud.v1alpha1.SecurityRuleStatus:N\352AK\n+o" +
+      "pi_api.network.cloud.v1alpha1/securityru" +
+      "le\022\034securityrules/{securityrule}\"v\n\020Secu" +
+      "rityRuleSpec\022 \n\030security_policy_name_ref" +
+      "\030\001 \001(\t\022@\n\005attrs\030\002 \001(\01321.opi_api.network." +
+      "cloud.v1alpha1.SecurityRuleAttrs\"\024\n\022Secu" +
+      "rityRuleStatus\"\202\002\n\017SecurityProfile\022\014\n\004na" +
+      "me\030\001 \001(\t\022A\n\004spec\030\002 \001(\01323.opi_api.network" +
+      ".cloud.v1alpha1.SecurityProfileSpec\022E\n\006s" +
+      "tatus\030\003 \001(\01325.opi_api.network.cloud.v1al" +
+      "pha1.SecurityProfileStatus:W\352AT\n.opi_api" +
+      ".network.cloud.v1alpha1/securityprofile\022" +
+      "\"securityprofiles/{securityprofile}\"\347\003\n\023" +
+      "SecurityProfileSpec\022\"\n\032connection_tracki" +
+      "ng_enable\030\001 \001(\010\022\031\n\021rule_stats_enable\030\002 \001" +
+      "(\010\022Z\n\027default_firewall_action\030\003 \001(\01629.op" +
+      "i_api.network.opinetcommon.v1alpha1.Secu" +
+      "rityRuleAction\022\030\n\020tcp_idle_timeout\030\004 \001(\005" +
+      "\022\030\n\020udp_idle_timeout\030\005 \001(\005\022\031\n\021icmp_idle_" +
+      "timeout\030\006 \001(\005\022\032\n\022other_idle_timeout\030\007 \001(" +
+      "\005\022$\n\034tcp_connection_setup_timeout\030\010 \001(\005\022" +
+      "\036\n\026tcp_half_close_timeout\030\t \001(\005\022\031\n\021tcp_c" +
+      "lose_timeout\030\n \001(\005\022\030\n\020tcp_dorp_timeout\030\013" +
+      " \001(\005\022\030\n\020udp_drop_timeout\030\014 \001(\005\022\031\n\021icmp_d" +
+      "rop_timeout\030\r \001(\005\022\032\n\022other_drop_timeout\030" +
+      "\016 \001(\005\"\027\n\025SecurityProfileStatus\"\270\002\n\021Polic" +
+      "yLookupMatch\022C\n\tsource_ip\030\001 \001(\01320.opi_ap" +
+      "i.network.opinetcommon.v1alpha1.IPAddres" +
+      "s\022\023\n\013source_tags\030\002 \003(\r\022H\n\016destination_ip" +
+      "\030\003 \001(\01320.opi_api.network.opinetcommon.v1" +
+      "alpha1.IPAddress\022\030\n\020destination_tags\030\004 \003" +
+      "(\r\022\020\n\010protocol\030\005 \001(\005\022\023\n\013source_port\030\006 \001(" +
+      "\005\022\030\n\020destination_port\030\007 \001(\005\022\021\n\ticmp_type" +
+      "\030\010 \001(\005\022\021\n\ticmp_code\030\t \001(\005\"\263\003\n\033SecurityPo" +
+      "licyLookupRequest\022\031\n\017policy_name_ref\030\001 \001" +
+      "(\tH\000\022f\n\020vnic_lookup_info\030\002 \001(\0132J.opi_api" +
+      ".network.cloud.v1alpha1.SecurityPolicyLo" +
+      "okupRequest.VnicLookupInfoH\000\022G\n\014match_fi" +
+      "elds\030\003 \001(\01321.opi_api.network.cloud.v1alp" +
+      "ha1.PolicyLookupMatch\032\270\001\n\016VnicLookupInfo" +
+      "\022\025\n\rvnic_name_ref\030\001 \001(\t\022J\n\020policy_direct" +
+      "ion\030\002 \001(\01620.opi_api.network.opinetcommon" +
+      ".v1alpha1.PolicyDir\022C\n\016address_family\030\003 " +
+      "\001(\0162+.opi_api.network.opinetcommon.v1alp" +
+      "ha1.IpAfB\r\n\013lookup_info\"\212\002\n\022PolicyLookup" +
+      "Result\022G\n\016rule_hw_handle\030\001 \001(\0132/.opi_api" +
+      ".network.opinetcommon.v1alpha1.HwHandle\022" +
+      "\020\n\010priority\030\002 \001(\005\022I\n\006action\030\003 \001(\01629.opi_" +
+      "api.network.opinetcommon.v1alpha1.Securi" +
+      "tyRuleAction\0229\n\010alg_type\030\004 \001(\0162\'.opi_api" +
+      ".network.cloud.v1alpha1.ALGType\022\023\n\013termi" +
+      "nating\030\005 \001(\010*~\n\022SecurityPolicyType\022$\n SE" +
+      "CURITY_POLICY_TYPE_UNSPECIFIED\020\000\022!\n\035SECU" +
+      "RITY_POLICY_TYPE_UNDERLAY\020\001\022\037\n\033SECURITY_" +
+      "POLICY_TYPE_TENANT\020\002*\226\001\n\007ALGType\022\030\n\024ALG_" +
+      "TYPE_UNSPECIFIED\020\000\022\021\n\rALG_TYPE_TFTP\020\001\022\020\n" +
+      "\014ALG_TYPE_FTP\020\002\022\020\n\014ALG_TYPE_DNS\020\003\022\023\n\017ALG" +
+      "_TYPE_SUNRPC\020\004\022\022\n\016ALG_TYPE_MSRPC\020\005\022\021\n\rAL" +
+      "G_TYPE_RTSP\020\006*x\n\020PolicyRuleFormat\022\"\n\036POL" +
+      "ICY_RULE_FORMAT_UNSPECIFIED\020\000\022 \n\034POLICY_" +
+      "RULE_FORMAT_FLATTENED\020\001\022\036\n\032POLICY_RULE_F" +
+      "ORMAT_COMPACT\020\002Bs\n\036opi_api.network.cloud" +
+      ".v1alpha1B\022NetworkPolicyProtoP\001Z;github." +
+      "com/opiproject/opi-api/network/cloud/v1a" +
+      "lpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicy_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicy_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicySpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicySpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicySpec_descriptor,
-        new java.lang.String[] { "Id", "Type", "AddressFamily", "Stateless", "DefaultSecurityAction", "Rules", "RuleFormat", });
+        new java.lang.String[] { "Type", "AddressFamily", "Stateless", "DefaultSecurityAction", "Rules", "RuleFormat", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleInfo_descriptor,
-        new java.lang.String[] { "Id", "Attrs", });
+        new java.lang.String[] { "RuleName", "Attrs", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleAttrs_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleAttrs_fieldAccessorTable = new
@@ -284,7 +286,7 @@ public final class NetworkPolicyProto {
     internal_static_opi_api_network_cloud_v1alpha1_DNSOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_DNSOptions_descriptor,
-        new java.lang.String[] { "DropMultiQueryMessages", "DropLargeDomainNameMessages", "DropLongLabelMessages", "DropMultiZoneMessages", "ResponseTimeout", "MaxMessageLength", });
+        new java.lang.String[] { "DropMultiQueryMessages", "DropLargeDomainNameRef", "DropLongLabelMessages", "DropMultiZoneMessages", "ResponseTimeout", "MaxMessageLength", });
     internal_static_opi_api_network_cloud_v1alpha1_MSRPCOptions_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_opi_api_network_cloud_v1alpha1_MSRPCOptions_fieldAccessorTable = new
@@ -314,13 +316,13 @@ public final class NetworkPolicyProto {
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityRule_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleSpec_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleSpec_descriptor,
-        new java.lang.String[] { "Id", "SecurityPolicyId", "Attrs", });
+        new java.lang.String[] { "SecurityPolicyNameRef", "Attrs", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleStatus_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityRuleStatus_fieldAccessorTable = new
@@ -332,13 +334,13 @@ public final class NetworkPolicyProto {
     internal_static_opi_api_network_cloud_v1alpha1_SecurityProfile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityProfile_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityProfileSpec_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityProfileSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityProfileSpec_descriptor,
-        new java.lang.String[] { "Id", "ConnectionTrackingEnable", "RuleStatsEnable", "DefaultFirewallAction", "TcpIdleTimeout", "UdpIdleTimeout", "IcmpIdleTimeout", "OtherIdleTimeout", "TcpConnectionSetupTimeout", "TcpHalfCloseTimeout", "TcpCloseTimeout", "TcpDorpTimeout", "UdpDropTimeout", "IcmpDropTimeout", "OtherDropTimeout", });
+        new java.lang.String[] { "ConnectionTrackingEnable", "RuleStatsEnable", "DefaultFirewallAction", "TcpIdleTimeout", "UdpIdleTimeout", "IcmpIdleTimeout", "OtherIdleTimeout", "TcpConnectionSetupTimeout", "TcpHalfCloseTimeout", "TcpCloseTimeout", "TcpDorpTimeout", "UdpDropTimeout", "IcmpDropTimeout", "OtherDropTimeout", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityProfileStatus_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityProfileStatus_fieldAccessorTable = new
@@ -356,21 +358,26 @@ public final class NetworkPolicyProto {
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_descriptor,
-        new java.lang.String[] { "PolicyId", "VnicLookupInfo", "MatchFields", "LookupInfo", });
+        new java.lang.String[] { "PolicyNameRef", "VnicLookupInfo", "MatchFields", "LookupInfo", });
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_VnicLookupInfo_descriptor =
       internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_descriptor.getNestedTypes().get(0);
     internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_VnicLookupInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_SecurityPolicyLookupRequest_VnicLookupInfo_descriptor,
-        new java.lang.String[] { "VnicId", "PolicyDirection", "AddressFamily", });
+        new java.lang.String[] { "VnicNameRef", "PolicyDirection", "AddressFamily", });
     internal_static_opi_api_network_cloud_v1alpha1_PolicyLookupResult_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_opi_api_network_cloud_v1alpha1_PolicyLookupResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_PolicyLookupResult_descriptor,
         new java.lang.String[] { "RuleHwHandle", "Priority", "Action", "AlgType", "Terminating", });
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

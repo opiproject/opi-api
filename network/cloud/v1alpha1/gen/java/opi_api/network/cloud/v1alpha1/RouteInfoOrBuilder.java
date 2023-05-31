@@ -12,27 +12,20 @@ public interface RouteInfoOrBuilder extends
    * unique id of this specific route (used for specific route update)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_id = 1;</code>
+   * @return The routeId.
    */
-  boolean hasId();
+  java.lang.String getRouteId();
   /**
    * <pre>
    * unique id of this specific route (used for specific route update)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string route_id = 1;</code>
+   * @return The bytes for routeId.
    */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique id of this specific route (used for specific route update)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteIdBytes();
 
   /**
    * <pre>

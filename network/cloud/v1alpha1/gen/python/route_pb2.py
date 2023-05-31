@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0broute.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x8c\x01\n\nRouteTable\x12<\n\x04spec\x18\x03 \x01(\x0b\x32..opi_api.network.cloud.v1alpha1.RouteTableSpec\x12@\n\x06status\x18\x04 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.RouteTableStatus\"\xc7\x01\n\x0eRouteTableSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x37\n\x02\x61\x66\x18\x02 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAf\x12\x17\n\x0fpriority_enable\x18\x03 \x01(\x08\x12\x39\n\x06routes\x18\x04 \x03(\x0b\x32).opi_api.network.cloud.v1alpha1.RouteInfo\"p\n\tRouteInfo\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x39\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.RouteAttrs\"\xce\x01\n\x10RouteTableStatus\x12\x11\n\tvpc_count\x18\x01 \x01(\x05\x12\x14\n\x0csubnet_count\x18\x02 \x01(\x05\x12\x12\n\nvnic_count\x18\x03 \x01(\x05\x12\x0f\n\x07pool_id\x18\x04 \x01(\x05\x12\x0e\n\x06hw_idx\x18\x05 \x01(\x05\x12 \n\x18route_table_base_address\x18\x06 \x01(\x04\x12\x18\n\x10hw_lpm_block_idx\x18\x07 \x01(\x05\x12 \n\x18hw_lpm_rewrite_block_idx\x18\x08 \x01(\x05\"\xa3\x05\n\nRouteAttrs\x12?\n\x06prefix\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12?\n\x0broute_class\x18\x02 \x01(\x0e\x32*.opi_api.network.cloud.v1alpha1.RouteClass\x12\x16\n\x0e\x63lass_priority\x18\x03 \x01(\x05\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12R\n\x12overlay_nh_ip_info\x18\x05 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfoH\x00\x12\x32\n\nnexthop_id\x18\x06 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x33\n\x0bnh_group_id\x18\x07 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x44\n\x0bvpc_nh_info\x18\x08 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.VPCPeerNhInfoH\x00\x12\x31\n\ttunnel_id\x18\t \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x36\n\x0eroute_table_id\x18\n \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x12\x16\n\x0c\x65val_mapping\x18\x0b \x01(\x08H\x00\x12\x0b\n\x03tos\x18\x0c \x01(\x05\x12;\n\x05\x65ncap\x18\r \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x13\n\x0boverlay_mac\x18\x0e \x01(\x0c\x42\x04\n\x02nh\"s\n\rVPCPeerNhInfo\x12,\n\x06vpc_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x34\n\x0eroute_table_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"\x9f\x01\n\x14OverlayNextHopIPInfo\x12\x44\n\nnexthop_ip\x18\x01 \x03(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bnexthop_mac\x18\x02 \x03(\x0c\x12,\n\x06vpc_id\x18\x03 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"i\n\x07RouteId\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x34\n\x0eroute_table_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\"}\n\x05Route\x12\x37\n\x04spec\x18\x03 \x01(\x0b\x32).opi_api.network.cloud.v1alpha1.RouteSpec\x12;\n\x06status\x18\x04 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.RouteStatus\"\xa6\x01\n\tRouteSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x34\n\x0eroute_table_id\x18\x02 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x39\n\x05\x61ttrs\x18\x03 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.RouteAttrs\"\r\n\x0bRouteStatus*q\n\nRouteClass\x12\x1b\n\x17ROUTE_CLASS_UNSPECIFIED\x10\x00\x12\x18\n\x14ROUTE_CLASS_INTERNET\x10\x01\x12\x17\n\x13ROUTE_CLASS_SERVICE\x10\x02\x12\x13\n\x0fROUTE_CLASS_VPC\x10\x03\x42k\n\x1eopi_api.network.cloud.v1alpha1B\nRouteProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0broute.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xe4\x01\n\nRouteTable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12<\n\x04spec\x18\x02 \x01(\x0b\x32..opi_api.network.cloud.v1alpha1.RouteTableSpec\x12@\n\x06status\x18\x03 \x01(\x0b\x32\x30.opi_api.network.cloud.v1alpha1.RouteTableStatus:H\xea\x41\x45\n)opi_api.network.cloud.v1alpha1/routetable\x12\x18routetables/{routetable}\"\x9d\x01\n\x0eRouteTableSpec\x12\x37\n\x02\x61\x66\x18\x01 \x01(\x0e\x32+.opi_api.network.opinetcommon.v1alpha1.IpAf\x12\x17\n\x0fpriority_enable\x18\x02 \x01(\x08\x12\x39\n\x06routes\x18\x03 \x03(\x0b\x32).opi_api.network.cloud.v1alpha1.RouteInfo\"X\n\tRouteInfo\x12\x10\n\x08route_id\x18\x01 \x01(\t\x12\x39\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.RouteAttrs\"\xce\x01\n\x10RouteTableStatus\x12\x11\n\tvpc_count\x18\x01 \x01(\x05\x12\x14\n\x0csubnet_count\x18\x02 \x01(\x05\x12\x12\n\nvnic_count\x18\x03 \x01(\x05\x12\x0f\n\x07pool_id\x18\x04 \x01(\x05\x12\x0e\n\x06hw_idx\x18\x05 \x01(\x05\x12 \n\x18route_table_base_address\x18\x06 \x01(\x04\x12\x18\n\x10hw_lpm_block_idx\x18\x07 \x01(\x05\x12 \n\x18hw_lpm_rewrite_block_idx\x18\x08 \x01(\x05\"\xc3\x04\n\nRouteAttrs\x12?\n\x06prefix\x18\x01 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.IPPrefix\x12?\n\x0broute_class\x18\x02 \x01(\x0e\x32*.opi_api.network.cloud.v1alpha1.RouteClass\x12\x16\n\x0e\x63lass_priority\x18\x03 \x01(\x05\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12R\n\x12overlay_nh_ip_info\x18\x05 \x01(\x0b\x32\x34.opi_api.network.cloud.v1alpha1.OverlayNextHopIPInfoH\x00\x12\x1a\n\x10nexthop_name_ref\x18\x06 \x01(\tH\x00\x12\x1b\n\x11nh_group_name_ref\x18\x07 \x01(\tH\x00\x12\x44\n\x0bvpc_nh_info\x18\x08 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.VPCPeerNhInfoH\x00\x12\x19\n\x0ftunnel_name_ref\x18\t \x01(\tH\x00\x12\x1e\n\x14route_table_name_ref\x18\n \x01(\tH\x00\x12\x16\n\x0c\x65val_mapping\x18\x0b \x01(\x08H\x00\x12\x0b\n\x03tos\x18\x0c \x01(\x05\x12;\n\x05\x65ncap\x18\r \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x13\n\x0boverlay_mac\x18\x0e \x01(\x0c\x42\x04\n\x02nh\"C\n\rVPCPeerNhInfo\x12\x14\n\x0cvpc_name_ref\x18\x01 \x01(\t\x12\x1c\n\x14route_table_name_ref\x18\x02 \x01(\t\"\x87\x01\n\x14OverlayNextHopIPInfo\x12\x44\n\nnexthop_ip\x18\x01 \x03(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bnexthop_mac\x18\x02 \x03(\x0c\x12\x14\n\x0cvpc_name_ref\x18\x03 \x01(\t\"9\n\x07RouteId\x12\x10\n\x08route_id\x18\x01 \x01(\t\x12\x1c\n\x14route_table_name_ref\x18\x02 \x01(\t\"\xc6\x01\n\x05Route\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x37\n\x04spec\x18\x02 \x01(\x0b\x32).opi_api.network.cloud.v1alpha1.RouteSpec\x12;\n\x06status\x18\x03 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.RouteStatus:9\xea\x41\x36\n$opi_api.network.cloud.v1alpha1/route\x12\x0eroutes/{route}\"d\n\tRouteSpec\x12\x1c\n\x14route_table_name_ref\x18\x01 \x01(\t\x12\x39\n\x05\x61ttrs\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.RouteAttrs\"\r\n\x0bRouteStatus*q\n\nRouteClass\x12\x1b\n\x17ROUTE_CLASS_UNSPECIFIED\x10\x00\x12\x18\n\x14ROUTE_CLASS_INTERNET\x10\x01\x12\x17\n\x13ROUTE_CLASS_SERVICE\x10\x02\x12\x13\n\x0fROUTE_CLASS_VPC\x10\x03\x42k\n\x1eopi_api.network.cloud.v1alpha1B\nRouteProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 _ROUTECLASS = DESCRIPTOR.enum_types_by_name['RouteClass']
 RouteClass = enum_type_wrapper.EnumTypeWrapper(_ROUTECLASS)
@@ -119,28 +119,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\nRouteProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _ROUTECLASS._serialized_start=2128
-  _ROUTECLASS._serialized_end=2241
-  _ROUTETABLE._serialized_start=86
-  _ROUTETABLE._serialized_end=226
-  _ROUTETABLESPEC._serialized_start=229
-  _ROUTETABLESPEC._serialized_end=428
-  _ROUTEINFO._serialized_start=430
-  _ROUTEINFO._serialized_end=542
-  _ROUTETABLESTATUS._serialized_start=545
-  _ROUTETABLESTATUS._serialized_end=751
-  _ROUTEATTRS._serialized_start=754
-  _ROUTEATTRS._serialized_end=1429
-  _VPCPEERNHINFO._serialized_start=1431
-  _VPCPEERNHINFO._serialized_end=1546
-  _OVERLAYNEXTHOPIPINFO._serialized_start=1549
-  _OVERLAYNEXTHOPIPINFO._serialized_end=1708
-  _ROUTEID._serialized_start=1710
-  _ROUTEID._serialized_end=1815
-  _ROUTE._serialized_start=1817
-  _ROUTE._serialized_end=1942
-  _ROUTESPEC._serialized_start=1945
-  _ROUTESPEC._serialized_end=2111
-  _ROUTESTATUS._serialized_start=2113
-  _ROUTESTATUS._serialized_end=2126
+  _ROUTETABLE._options = None
+  _ROUTETABLE._serialized_options = b'\352AE\n)opi_api.network.cloud.v1alpha1/routetable\022\030routetables/{routetable}'
+  _ROUTE._options = None
+  _ROUTE._serialized_options = b'\352A6\n$opi_api.network.cloud.v1alpha1/route\022\016routes/{route}'
+  _ROUTECLASS._serialized_start=1950
+  _ROUTECLASS._serialized_end=2063
+  _ROUTETABLE._serialized_start=95
+  _ROUTETABLE._serialized_end=323
+  _ROUTETABLESPEC._serialized_start=326
+  _ROUTETABLESPEC._serialized_end=483
+  _ROUTEINFO._serialized_start=485
+  _ROUTEINFO._serialized_end=573
+  _ROUTETABLESTATUS._serialized_start=576
+  _ROUTETABLESTATUS._serialized_end=782
+  _ROUTEATTRS._serialized_start=785
+  _ROUTEATTRS._serialized_end=1364
+  _VPCPEERNHINFO._serialized_start=1366
+  _VPCPEERNHINFO._serialized_end=1433
+  _OVERLAYNEXTHOPIPINFO._serialized_start=1436
+  _OVERLAYNEXTHOPIPINFO._serialized_end=1571
+  _ROUTEID._serialized_start=1573
+  _ROUTEID._serialized_end=1630
+  _ROUTE._serialized_start=1633
+  _ROUTE._serialized_end=1831
+  _ROUTESPEC._serialized_start=1833
+  _ROUTESPEC._serialized_end=1933
+  _ROUTESTATUS._serialized_start=1935
+  _ROUTESTATUS._serialized_end=1948
 # @@protoc_insertion_point(module_scope)

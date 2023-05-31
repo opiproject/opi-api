@@ -9,10 +9,30 @@ public interface UnderlayRouteOrBuilder extends
 
   /**
    * <pre>
+   * route's unique id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * route's unique id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * Underlayroute configuration (can specify fields to query route for get operations)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface UnderlayRouteOrBuilder extends
    * Underlayroute configuration (can specify fields to query route for get operations)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.UnderlayRouteSpec getSpec();
@@ -30,7 +50,7 @@ public interface UnderlayRouteOrBuilder extends
    * Underlayroute configuration (can specify fields to query route for get operations)
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 1;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.UnderlayRouteSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface UnderlayRouteOrBuilder extends
    * UnderlayRoute status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface UnderlayRouteOrBuilder extends
    * UnderlayRoute status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.UnderlayRouteStatus getStatus();
@@ -57,7 +77,7 @@ public interface UnderlayRouteOrBuilder extends
    * UnderlayRoute status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayRouteStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.UnderlayRouteStatusOrBuilder getStatusOrBuilder();
 }

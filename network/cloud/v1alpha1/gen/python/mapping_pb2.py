@@ -13,11 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rmapping.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\"\x83\x01\n\x07Mapping\x12\x39\n\x04spec\x18\x01 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.MappingSpec\x12=\n\x06status\x18\x02 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.MappingStatus\"\xf7\x04\n\x0bMappingSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12>\n\x06ip_key\x18\x02 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L3MappingKeyH\x00\x12?\n\x07mac_key\x18\x03 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L2MappingKeyH\x00\x12/\n\tsubnet_id\x18\x04 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12/\n\x07vnic_id\x18\x05 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x01\x12\x31\n\ttunnel_id\x18\x06 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x01\x12\x33\n\x0bnh_group_id\x18\x07 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x01\x12\x10\n\x08mac_addr\x18\x08 \x01(\x0c\x12;\n\x05\x65ncap\x18\t \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x43\n\tpublic_ip\x18\n \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04tags\x18\x0b \x03(\r\x12\x39\n\x04type\x18\x0c \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.MappingTypeB\x0b\n\tmac_or_ipB\t\n\x07\x64stinfo\"\xc0\x02\n\rMappingStatus\x12\x18\n\x10public_nat_index\x18\x01 \x01(\x05\x12\x19\n\x11private_nat_index\x18\x02 \x01(\x05\x12\x43\n\ttunnel_ip\x18\x03 \x03(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12O\n\x16svc_port_map_hw_handle\x18\x04 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12M\n\x14vnf_tunnel_hw_handle\x18\x05 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x15\n\rrewrite_index\x18\x06 \x01(\x05\"\x82\x01\n\x0cL3MappingKey\x12,\n\x06vpc_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x44\n\nip_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\"T\n\x0cL2MappingKey\x12/\n\tsubnet_id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x13\n\x0bmac_address\x18\x02 \x01(\x0c\"\xbe\x03\n\x13MappingLookupFilter\x12\r\n\x05local\x18\x01 \x01(\x08\x12@\n\x08key_type\x18\x02 \x01(\x0e\x32..opi_api.network.cloud.v1alpha1.MappingKeyType\x12\x39\n\x04type\x18\x03 \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.MappingType\x12>\n\x06ip_key\x18\x04 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L3MappingKeyH\x00\x12?\n\x07mac_key\x18\x05 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L2MappingKeyH\x00\x12\x46\n\nip_address\x18\x06 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddressH\x00\x12\x15\n\x0bmac_address\x18\x07 \x01(\x0cH\x00\x12.\n\x06vpc_id\x18\x08 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKeyH\x00\x42\x0b\n\tip_or_mac*t\n\x0bMappingType\x12\x1c\n\x18MAPPING_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10MAPPING_TYPE_VPC\x10\x01\x12\x18\n\x14MAPPING_TYPE_SERVICE\x10\x02\x12\x17\n\x13MAPPING_TYPE_LB_VIP\x10\x03*d\n\x0eMappingKeyType\x12 \n\x1cMAPPING_KEY_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MAPPING_KEY_TYPE_L2\x10\x01\x12\x17\n\x13MAPPING_KEY_TYPE_L3\x10\x02\x42m\n\x1eopi_api.network.cloud.v1alpha1B\x0cMappingProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rmapping.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x19google/api/resource.proto\"\xd2\x01\n\x07Mapping\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x39\n\x04spec\x18\x02 \x01(\x0b\x32+.opi_api.network.cloud.v1alpha1.MappingSpec\x12=\n\x06status\x18\x03 \x01(\x0b\x32-.opi_api.network.cloud.v1alpha1.MappingStatus:?\xea\x41<\n&opi_api.network.cloud.v1alpha1/mapping\x12\x12mappings/{mapping}\"\xed\x03\n\x0bMappingSpec\x12>\n\x06ip_key\x18\x01 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L3MappingKeyH\x00\x12?\n\x07mac_key\x18\x02 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L2MappingKeyH\x00\x12\x17\n\x0fsubnet_name_ref\x18\x03 \x01(\t\x12\x17\n\rvnic_name_ref\x18\x04 \x01(\tH\x01\x12\x19\n\x0ftunnel_name_ref\x18\x05 \x01(\tH\x01\x12\x1b\n\x11nh_group_name_ref\x18\x06 \x01(\tH\x01\x12\x10\n\x08mac_addr\x18\x07 \x01(\x0c\x12;\n\x05\x65ncap\x18\x08 \x01(\x0b\x32,.opi_api.network.opinetcommon.v1alpha1.Encap\x12\x43\n\tpublic_ip\x18\t \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04tags\x18\n \x03(\r\x12\x39\n\x04type\x18\x0b \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.MappingTypeB\x0b\n\tmac_or_ipB\t\n\x07\x64stinfo\"\xc0\x02\n\rMappingStatus\x12\x18\n\x10public_nat_index\x18\x01 \x01(\x05\x12\x19\n\x11private_nat_index\x18\x02 \x01(\x05\x12\x43\n\ttunnel_ip\x18\x03 \x03(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12O\n\x16svc_port_map_hw_handle\x18\x04 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12M\n\x14vnf_tunnel_hw_handle\x18\x05 \x01(\x0b\x32/.opi_api.network.opinetcommon.v1alpha1.HwHandle\x12\x15\n\rrewrite_index\x18\x06 \x01(\x05\"j\n\x0cL3MappingKey\x12\x14\n\x0cvpc_name_ref\x18\x01 \x01(\t\x12\x44\n\nip_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\"<\n\x0cL2MappingKey\x12\x17\n\x0fsubnet_name_ref\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\x0c\"\xa6\x03\n\x13MappingLookupFilter\x12\r\n\x05local\x18\x01 \x01(\x08\x12@\n\x08key_type\x18\x02 \x01(\x0e\x32..opi_api.network.cloud.v1alpha1.MappingKeyType\x12\x39\n\x04type\x18\x03 \x01(\x0e\x32+.opi_api.network.cloud.v1alpha1.MappingType\x12>\n\x06ip_key\x18\x04 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L3MappingKeyH\x00\x12?\n\x07mac_key\x18\x05 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.L2MappingKeyH\x00\x12\x46\n\nip_address\x18\x06 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddressH\x00\x12\x15\n\x0bmac_address\x18\x07 \x01(\x0cH\x00\x12\x16\n\x0cvpc_name_ref\x18\x08 \x01(\tH\x00\x42\x0b\n\tip_or_mac*t\n\x0bMappingType\x12\x1c\n\x18MAPPING_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10MAPPING_TYPE_VPC\x10\x01\x12\x18\n\x14MAPPING_TYPE_SERVICE\x10\x02\x12\x17\n\x13MAPPING_TYPE_LB_VIP\x10\x03*d\n\x0eMappingKeyType\x12 \n\x1cMAPPING_KEY_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13MAPPING_KEY_TYPE_L2\x10\x01\x12\x17\n\x13MAPPING_KEY_TYPE_L3\x10\x02\x42m\n\x1eopi_api.network.cloud.v1alpha1B\x0cMappingProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 _MAPPINGTYPE = DESCRIPTOR.enum_types_by_name['MappingType']
 MappingType = enum_type_wrapper.EnumTypeWrapper(_MAPPINGTYPE)
@@ -84,20 +84,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\014MappingProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _MAPPINGTYPE._serialized_start=1846
-  _MAPPINGTYPE._serialized_end=1962
-  _MAPPINGKEYTYPE._serialized_start=1964
-  _MAPPINGKEYTYPE._serialized_end=2064
-  _MAPPING._serialized_start=88
-  _MAPPING._serialized_end=219
-  _MAPPINGSPEC._serialized_start=222
-  _MAPPINGSPEC._serialized_end=853
-  _MAPPINGSTATUS._serialized_start=856
-  _MAPPINGSTATUS._serialized_end=1176
-  _L3MAPPINGKEY._serialized_start=1179
-  _L3MAPPINGKEY._serialized_end=1309
-  _L2MAPPINGKEY._serialized_start=1311
-  _L2MAPPINGKEY._serialized_end=1395
-  _MAPPINGLOOKUPFILTER._serialized_start=1398
-  _MAPPINGLOOKUPFILTER._serialized_end=1844
+  _MAPPING._options = None
+  _MAPPING._serialized_options = b'\352A<\n&opi_api.network.cloud.v1alpha1/mapping\022\022mappings/{mapping}'
+  _MAPPINGTYPE._serialized_start=1723
+  _MAPPINGTYPE._serialized_end=1839
+  _MAPPINGKEYTYPE._serialized_start=1841
+  _MAPPINGKEYTYPE._serialized_end=1941
+  _MAPPING._serialized_start=97
+  _MAPPING._serialized_end=307
+  _MAPPINGSPEC._serialized_start=310
+  _MAPPINGSPEC._serialized_end=803
+  _MAPPINGSTATUS._serialized_start=806
+  _MAPPINGSTATUS._serialized_end=1126
+  _L3MAPPINGKEY._serialized_start=1128
+  _L3MAPPINGKEY._serialized_end=1234
+  _L2MAPPINGKEY._serialized_start=1236
+  _L2MAPPINGKEY._serialized_end=1296
+  _MAPPINGLOOKUPFILTER._serialized_start=1299
+  _MAPPINGLOOKUPFILTER._serialized_end=1721
 # @@protoc_insertion_point(module_scope)

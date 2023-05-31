@@ -40,27 +40,29 @@ public interface NextHopGroupLookupOrBuilder extends
    * retreive based on nh id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 2;</code>
-   * @return Whether the id field is set.
+   * <code>string nh_group_name_ref = 2;</code>
+   * @return Whether the nhGroupNameRef field is set.
    */
-  boolean hasId();
+  boolean hasNhGroupNameRef();
   /**
    * <pre>
    * retreive based on nh id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 2;</code>
-   * @return The id.
+   * <code>string nh_group_name_ref = 2;</code>
+   * @return The nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKey getId();
+  java.lang.String getNhGroupNameRef();
   /**
    * <pre>
    * retreive based on nh id
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 2;</code>
+   * <code>string nh_group_name_ref = 2;</code>
+   * @return The bytes for nhGroupNameRef.
    */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
+  com.google.protobuf.ByteString
+      getNhGroupNameRefBytes();
 
   public opi_api.network.cloud.v1alpha1.NextHopGroupLookup.GettypeCase getGettypeCase();
 }

@@ -9,10 +9,30 @@ public interface RouteTableOrBuilder extends
 
   /**
    * <pre>
+   * unique route table id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * unique route table id
+   * </pre>
+   *
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * route table configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;</code>
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
@@ -21,7 +41,7 @@ public interface RouteTableOrBuilder extends
    * route table configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;</code>
    * @return The spec.
    */
   opi_api.network.cloud.v1alpha1.RouteTableSpec getSpec();
@@ -30,7 +50,7 @@ public interface RouteTableOrBuilder extends
    * route table configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableSpec spec = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteTableSpecOrBuilder getSpecOrBuilder();
 
@@ -39,7 +59,7 @@ public interface RouteTableOrBuilder extends
    * route table status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -48,7 +68,7 @@ public interface RouteTableOrBuilder extends
    * route table status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;</code>
    * @return The status.
    */
   opi_api.network.cloud.v1alpha1.RouteTableStatus getStatus();
@@ -57,7 +77,7 @@ public interface RouteTableOrBuilder extends
    * route table status
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteTableStatus status = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteTableStatusOrBuilder getStatusOrBuilder();
 }

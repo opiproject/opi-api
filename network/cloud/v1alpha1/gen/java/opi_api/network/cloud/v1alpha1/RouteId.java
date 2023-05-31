@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RouteId() {
+    routeId_ = "";
+    routeTableNameRef_ = "";
   }
 
   @java.lang.Override
@@ -53,29 +55,15 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            routeId_ = s;
             break;
           }
           case 18: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (routeTableId_ != null) {
-              subBuilder = routeTableId_.toBuilder();
-            }
-            routeTableId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(routeTableId_);
-              routeTableId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            routeTableNameRef_ = s;
             break;
           }
           default: {
@@ -110,80 +98,96 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.RouteId.class, opi_api.network.cloud.v1alpha1.RouteId.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int ROUTE_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object routeId_;
   /**
    * <pre>
    * unique route id (this id is not scoped under VPC or subnet)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_id = 1;</code>
+   * @return The routeId.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getRouteId() {
+    java.lang.Object ref = routeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeId_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * unique route id (this id is not scoped under VPC or subnet)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string route_id = 1;</code>
+   * @return The bytes for routeId.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique route id (this id is not scoped under VPC or subnet)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getRouteIdBytes() {
+    java.lang.Object ref = routeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int ROUTE_TABLE_ID_FIELD_NUMBER = 2;
-  private opi_api.common.v1.ObjectKey routeTableId_;
+  public static final int ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object routeTableNameRef_;
   /**
    * <pre>
    * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The routeTableNameRef.
    */
   @java.lang.Override
-  public boolean hasRouteTableId() {
-    return routeTableId_ != null;
+  public java.lang.String getRouteTableNameRef() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeTableNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 2;</code>
+   * @return The bytes for routeTableNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getRouteTableId() {
-    return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-  }
-  /**
-   * <pre>
-   * route table this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-    return getRouteTableId();
+  public com.google.protobuf.ByteString
+      getRouteTableNameRefBytes() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeTableNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -200,11 +204,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, routeId_);
     }
-    if (routeTableId_ != null) {
-      output.writeMessage(2, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, routeTableNameRef_);
     }
     unknownFields.writeTo(output);
   }
@@ -215,13 +219,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, routeId_);
     }
-    if (routeTableId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, routeTableNameRef_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,16 +240,10 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.RouteId other = (opi_api.network.cloud.v1alpha1.RouteId) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
-    if (hasRouteTableId() != other.hasRouteTableId()) return false;
-    if (hasRouteTableId()) {
-      if (!getRouteTableId()
-          .equals(other.getRouteTableId())) return false;
-    }
+    if (!getRouteId()
+        .equals(other.getRouteId())) return false;
+    if (!getRouteTableNameRef()
+        .equals(other.getRouteTableNameRef())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -259,14 +255,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasRouteTableId()) {
-      hash = (37 * hash) + ROUTE_TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRouteTableId().hashCode();
-    }
+    hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteId().hashCode();
+    hash = (37 * hash) + ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteTableNameRef().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -404,18 +396,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
+      routeId_ = "";
+
+      routeTableNameRef_ = "";
+
       return this;
     }
 
@@ -442,16 +426,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.RouteId buildPartial() {
       opi_api.network.cloud.v1alpha1.RouteId result = new opi_api.network.cloud.v1alpha1.RouteId(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
-      if (routeTableIdBuilder_ == null) {
-        result.routeTableId_ = routeTableId_;
-      } else {
-        result.routeTableId_ = routeTableIdBuilder_.build();
-      }
+      result.routeId_ = routeId_;
+      result.routeTableNameRef_ = routeTableNameRef_;
       onBuilt();
       return result;
     }
@@ -500,11 +476,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.RouteId other) {
       if (other == opi_api.network.cloud.v1alpha1.RouteId.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (!other.getRouteId().isEmpty()) {
+        routeId_ = other.routeId_;
+        onChanged();
       }
-      if (other.hasRouteTableId()) {
-        mergeRouteTableId(other.getRouteTableId());
+      if (!other.getRouteTableNameRef().isEmpty()) {
+        routeTableNameRef_ = other.routeTableNameRef_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -535,33 +513,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object routeId_ = "";
     /**
      * <pre>
      * unique route id (this id is not scoped under VPC or subnet)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string route_id = 1;</code>
+     * @return The routeId.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique route id (this id is not scoped under VPC or subnet)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getRouteId() {
+      java.lang.Object ref = routeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeId_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -569,259 +539,95 @@ private static final long serialVersionUID = 0L;
      * unique route id (this id is not scoped under VPC or subnet)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @return The bytes for routeId.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getRouteIdBytes() {
+      java.lang.Object ref = routeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeId_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * unique route id (this id is not scoped under VPC or subnet)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @param value The routeId to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique route id (this id is not scoped under VPC or subnet)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique route id (this id is not scoped under VPC or subnet)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique route id (this id is not scoped under VPC or subnet)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setRouteId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      routeId_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * unique route id (this id is not scoped under VPC or subnet)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique route id (this id is not scoped under VPC or subnet)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey routeTableId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> routeTableIdBuilder_;
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     * @return Whether the routeTableId field is set.
-     */
-    public boolean hasRouteTableId() {
-      return routeTableIdBuilder_ != null || routeTableId_ != null;
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     * @return The routeTableId.
-     */
-    public opi_api.common.v1.ObjectKey getRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-      } else {
-        return routeTableIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder setRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        routeTableId_ = value;
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder setRouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = builderForValue.build();
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder mergeRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (routeTableId_ != null) {
-          routeTableId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(routeTableId_).mergeFrom(value).buildPartial();
-        } else {
-          routeTableId_ = value;
-        }
-        onChanged();
-      } else {
-        routeTableIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public Builder clearRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-        onChanged();
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getRouteTableIdBuilder() {
+    public Builder clearRouteId() {
       
+      routeId_ = getDefaultInstance().getRouteId();
       onChanged();
-      return getRouteTableIdFieldBuilder().getBuilder();
+      return this;
     }
+    /**
+     * <pre>
+     * unique route id (this id is not scoped under VPC or subnet)
+     * </pre>
+     *
+     * <code>string route_id = 1;</code>
+     * @param value The bytes for routeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      routeId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object routeTableNameRef_ = "";
     /**
      * <pre>
      * route table this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
+     * <code>string route_table_name_ref = 2;</code>
+     * @return The routeTableNameRef.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-      if (routeTableIdBuilder_ != null) {
-        return routeTableIdBuilder_.getMessageOrBuilder();
+    public java.lang.String getRouteTableNameRef() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeTableNameRef_ = s;
+        return s;
       } else {
-        return routeTableId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -829,20 +635,74 @@ private static final long serialVersionUID = 0L;
      * route table this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
+     * <code>string route_table_name_ref = 2;</code>
+     * @return The bytes for routeTableNameRef.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getRouteTableIdFieldBuilder() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getRouteTableId(),
-                getParentForChildren(),
-                isClean());
-        routeTableId_ = null;
+    public com.google.protobuf.ByteString
+        getRouteTableNameRefBytes() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeTableNameRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return routeTableIdBuilder_;
+    }
+    /**
+     * <pre>
+     * route table this route belongs to
+     * </pre>
+     *
+     * <code>string route_table_name_ref = 2;</code>
+     * @param value The routeTableNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      routeTableNameRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * route table this route belongs to
+     * </pre>
+     *
+     * <code>string route_table_name_ref = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteTableNameRef() {
+      
+      routeTableNameRef_ = getDefaultInstance().getRouteTableNameRef();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * route table this route belongs to
+     * </pre>
+     *
+     * <code>string route_table_name_ref = 2;</code>
+     * @param value The bytes for routeTableNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      routeTableNameRef_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

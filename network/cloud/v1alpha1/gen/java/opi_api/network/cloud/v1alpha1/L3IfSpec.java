@@ -20,7 +20,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private L3IfSpec() {
+    vpcNameRef_ = "";
     prefix_ = java.util.Collections.emptyList();
+    portNameRef_ = "";
     macAddress_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -56,16 +58,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (vpcId_ != null) {
-              subBuilder = vpcId_.toBuilder();
-            }
-            vpcId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vpcId_);
-              vpcId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            vpcNameRef_ = s;
             break;
           }
           case 18: {
@@ -78,16 +73,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (portId_ != null) {
-              subBuilder = portId_.toBuilder();
-            }
-            portId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(portId_);
-              portId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            portNameRef_ = s;
             break;
           }
           case 34: {
@@ -143,80 +131,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.L3IfSpec.class, opi_api.network.cloud.v1alpha1.L3IfSpec.Builder.class);
   }
 
-  public static final int VPC_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey vpcId_;
+  public static final int VPC_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object vpcNameRef_;
   /**
    * <pre>
    * vpc/vrf this L3 interface belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The vpcNameRef.
    */
   @java.lang.Override
-  public boolean hasVpcId() {
-    return vpcId_ != null;
+  public java.lang.String getVpcNameRef() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpcNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * vpc/vrf this L3 interface belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 1;</code>
+   * @return The bytes for vpcNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getVpcId() {
-    return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-  }
-  /**
-   * <pre>
-   * vpc/vrf this L3 interface belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-    return getVpcId();
-  }
-
-  public static final int PORT_ID_FIELD_NUMBER = 3;
-  private opi_api.common.v1.ObjectKey portId_;
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   * @return Whether the portId field is set.
-   */
-  @java.lang.Override
-  public boolean hasPortId() {
-    return portId_ != null;
-  }
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   * @return The portId.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getPortId() {
-    return portId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : portId_;
-  }
-  /**
-   * <pre>
-   * Physical port of this L3 interface
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getPortIdOrBuilder() {
-    return getPortId();
+  public com.google.protobuf.ByteString
+      getVpcNameRefBytes() {
+    java.lang.Object ref = vpcNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      vpcNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PREFIX_FIELD_NUMBER = 2;
@@ -277,6 +235,52 @@ private static final long serialVersionUID = 0L;
   public opi_api.network.opinetcommon.v1alpha1.IPPrefixOrBuilder getPrefixOrBuilder(
       int index) {
     return prefix_.get(index);
+  }
+
+  public static final int PORT_NAME_REF_FIELD_NUMBER = 3;
+  private volatile java.lang.Object portNameRef_;
+  /**
+   * <pre>
+   * Physical port of this L3 interface
+   * </pre>
+   *
+   * <code>string port_name_ref = 3;</code>
+   * @return The portNameRef.
+   */
+  @java.lang.Override
+  public java.lang.String getPortNameRef() {
+    java.lang.Object ref = portNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      portNameRef_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Physical port of this L3 interface
+   * </pre>
+   *
+   * <code>string port_name_ref = 3;</code>
+   * @return The bytes for portNameRef.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPortNameRefBytes() {
+    java.lang.Object ref = portNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      portNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ENCAP_FIELD_NUMBER = 4;
@@ -346,14 +350,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (vpcId_ != null) {
-      output.writeMessage(1, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vpcNameRef_);
     }
     for (int i = 0; i < prefix_.size(); i++) {
       output.writeMessage(2, prefix_.get(i));
     }
-    if (portId_ != null) {
-      output.writeMessage(3, getPortId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, portNameRef_);
     }
     if (encap_ != null) {
       output.writeMessage(4, getEncap());
@@ -370,17 +374,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (vpcId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getVpcId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vpcNameRef_);
     }
     for (int i = 0; i < prefix_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, prefix_.get(i));
     }
-    if (portId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getPortId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(portNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, portNameRef_);
     }
     if (encap_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -405,18 +407,12 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.L3IfSpec other = (opi_api.network.cloud.v1alpha1.L3IfSpec) obj;
 
-    if (hasVpcId() != other.hasVpcId()) return false;
-    if (hasVpcId()) {
-      if (!getVpcId()
-          .equals(other.getVpcId())) return false;
-    }
-    if (hasPortId() != other.hasPortId()) return false;
-    if (hasPortId()) {
-      if (!getPortId()
-          .equals(other.getPortId())) return false;
-    }
+    if (!getVpcNameRef()
+        .equals(other.getVpcNameRef())) return false;
     if (!getPrefixList()
         .equals(other.getPrefixList())) return false;
+    if (!getPortNameRef()
+        .equals(other.getPortNameRef())) return false;
     if (hasEncap() != other.hasEncap()) return false;
     if (hasEncap()) {
       if (!getEncap()
@@ -435,18 +431,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasVpcId()) {
-      hash = (37 * hash) + VPC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getVpcId().hashCode();
-    }
-    if (hasPortId()) {
-      hash = (37 * hash) + PORT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPortId().hashCode();
-    }
+    hash = (37 * hash) + VPC_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getVpcNameRef().hashCode();
     if (getPrefixCount() > 0) {
       hash = (37 * hash) + PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getPrefixList().hashCode();
     }
+    hash = (37 * hash) + PORT_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getPortNameRef().hashCode();
     if (hasEncap()) {
       hash = (37 * hash) + ENCAP_FIELD_NUMBER;
       hash = (53 * hash) + getEncap().hashCode();
@@ -591,24 +583,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
-      if (portIdBuilder_ == null) {
-        portId_ = null;
-      } else {
-        portId_ = null;
-        portIdBuilder_ = null;
-      }
+      vpcNameRef_ = "";
+
       if (prefixBuilder_ == null) {
         prefix_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         prefixBuilder_.clear();
       }
+      portNameRef_ = "";
+
       if (encapBuilder_ == null) {
         encap_ = null;
       } else {
@@ -644,16 +628,7 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.L3IfSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.L3IfSpec result = new opi_api.network.cloud.v1alpha1.L3IfSpec(this);
       int from_bitField0_ = bitField0_;
-      if (vpcIdBuilder_ == null) {
-        result.vpcId_ = vpcId_;
-      } else {
-        result.vpcId_ = vpcIdBuilder_.build();
-      }
-      if (portIdBuilder_ == null) {
-        result.portId_ = portId_;
-      } else {
-        result.portId_ = portIdBuilder_.build();
-      }
+      result.vpcNameRef_ = vpcNameRef_;
       if (prefixBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           prefix_ = java.util.Collections.unmodifiableList(prefix_);
@@ -663,6 +638,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.prefix_ = prefixBuilder_.build();
       }
+      result.portNameRef_ = portNameRef_;
       if (encapBuilder_ == null) {
         result.encap_ = encap_;
       } else {
@@ -717,11 +693,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.L3IfSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.L3IfSpec.getDefaultInstance()) return this;
-      if (other.hasVpcId()) {
-        mergeVpcId(other.getVpcId());
-      }
-      if (other.hasPortId()) {
-        mergePortId(other.getPortId());
+      if (!other.getVpcNameRef().isEmpty()) {
+        vpcNameRef_ = other.vpcNameRef_;
+        onChanged();
       }
       if (prefixBuilder_ == null) {
         if (!other.prefix_.isEmpty()) {
@@ -748,6 +722,10 @@ private static final long serialVersionUID = 0L;
             prefixBuilder_.addAllMessages(other.prefix_);
           }
         }
+      }
+      if (!other.getPortNameRef().isEmpty()) {
+        portNameRef_ = other.portNameRef_;
+        onChanged();
       }
       if (other.hasEncap()) {
         mergeEncap(other.getEncap());
@@ -785,33 +763,25 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private opi_api.common.v1.ObjectKey vpcId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> vpcIdBuilder_;
+    private java.lang.Object vpcNameRef_ = "";
     /**
      * <pre>
      * vpc/vrf this L3 interface belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     * @return Whether the vpcId field is set.
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The vpcNameRef.
      */
-    public boolean hasVpcId() {
-      return vpcIdBuilder_ != null || vpcId_ != null;
-    }
-    /**
-     * <pre>
-     * vpc/vrf this L3 interface belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     * @return The vpcId.
-     */
-    public opi_api.common.v1.ObjectKey getVpcId() {
-      if (vpcIdBuilder_ == null) {
-        return vpcId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
+    public java.lang.String getVpcNameRef() {
+      java.lang.Object ref = vpcNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpcNameRef_ = s;
+        return s;
       } else {
-        return vpcIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -819,280 +789,74 @@ private static final long serialVersionUID = 0L;
      * vpc/vrf this L3 interface belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return The bytes for vpcNameRef.
      */
-    public Builder setVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        vpcId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getVpcNameRefBytes() {
+      java.lang.Object ref = vpcNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vpcNameRef_ = b;
+        return b;
       } else {
-        vpcIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * vpc/vrf this L3 interface belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setVpcId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = builderForValue.build();
-        onChanged();
-      } else {
-        vpcIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * vpc/vrf this L3 interface belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public Builder mergeVpcId(opi_api.common.v1.ObjectKey value) {
-      if (vpcIdBuilder_ == null) {
-        if (vpcId_ != null) {
-          vpcId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(vpcId_).mergeFrom(value).buildPartial();
-        } else {
-          vpcId_ = value;
-        }
-        onChanged();
-      } else {
-        vpcIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * vpc/vrf this L3 interface belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public Builder clearVpcId() {
-      if (vpcIdBuilder_ == null) {
-        vpcId_ = null;
-        onChanged();
-      } else {
-        vpcId_ = null;
-        vpcIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * vpc/vrf this L3 interface belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getVpcIdBuilder() {
-      
+    public Builder setVpcNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vpcNameRef_ = value;
       onChanged();
-      return getVpcIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * vpc/vrf this L3 interface belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder() {
-      if (vpcIdBuilder_ != null) {
-        return vpcIdBuilder_.getMessageOrBuilder();
-      } else {
-        return vpcId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : vpcId_;
-      }
-    }
-    /**
-     * <pre>
-     * vpc/vrf this L3 interface belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey vpc_id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getVpcIdFieldBuilder() {
-      if (vpcIdBuilder_ == null) {
-        vpcIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getVpcId(),
-                getParentForChildren(),
-                isClean());
-        vpcId_ = null;
-      }
-      return vpcIdBuilder_;
-    }
-
-    private opi_api.common.v1.ObjectKey portId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> portIdBuilder_;
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     * @return Whether the portId field is set.
-     */
-    public boolean hasPortId() {
-      return portIdBuilder_ != null || portId_ != null;
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     * @return The portId.
-     */
-    public opi_api.common.v1.ObjectKey getPortId() {
-      if (portIdBuilder_ == null) {
-        return portId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : portId_;
-      } else {
-        return portIdBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    public Builder setPortId(opi_api.common.v1.ObjectKey value) {
-      if (portIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        portId_ = value;
-        onChanged();
-      } else {
-        portIdBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    public Builder setPortId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (portIdBuilder_ == null) {
-        portId_ = builderForValue.build();
-        onChanged();
-      } else {
-        portIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    public Builder mergePortId(opi_api.common.v1.ObjectKey value) {
-      if (portIdBuilder_ == null) {
-        if (portId_ != null) {
-          portId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(portId_).mergeFrom(value).buildPartial();
-        } else {
-          portId_ = value;
-        }
-        onChanged();
-      } else {
-        portIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    public Builder clearPortId() {
-      if (portIdBuilder_ == null) {
-        portId_ = null;
-        onChanged();
-      } else {
-        portId_ = null;
-        portIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getPortIdBuilder() {
+    public Builder clearVpcNameRef() {
       
+      vpcNameRef_ = getDefaultInstance().getVpcNameRef();
       onChanged();
-      return getPortIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * Physical port of this L3 interface
+     * vpc/vrf this L3 interface belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
+     * <code>string vpc_name_ref = 1;</code>
+     * @param value The bytes for vpcNameRef to set.
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getPortIdOrBuilder() {
-      if (portIdBuilder_ != null) {
-        return portIdBuilder_.getMessageOrBuilder();
-      } else {
-        return portId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : portId_;
-      }
-    }
-    /**
-     * <pre>
-     * Physical port of this L3 interface
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey port_id = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getPortIdFieldBuilder() {
-      if (portIdBuilder_ == null) {
-        portIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getPortId(),
-                getParentForChildren(),
-                isClean());
-        portId_ = null;
-      }
-      return portIdBuilder_;
+    public Builder setVpcNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      vpcNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private java.util.List<opi_api.network.opinetcommon.v1alpha1.IPPrefix> prefix_ =
@@ -1405,6 +1169,102 @@ private static final long serialVersionUID = 0L;
         prefix_ = null;
       }
       return prefixBuilder_;
+    }
+
+    private java.lang.Object portNameRef_ = "";
+    /**
+     * <pre>
+     * Physical port of this L3 interface
+     * </pre>
+     *
+     * <code>string port_name_ref = 3;</code>
+     * @return The portNameRef.
+     */
+    public java.lang.String getPortNameRef() {
+      java.lang.Object ref = portNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        portNameRef_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Physical port of this L3 interface
+     * </pre>
+     *
+     * <code>string port_name_ref = 3;</code>
+     * @return The bytes for portNameRef.
+     */
+    public com.google.protobuf.ByteString
+        getPortNameRefBytes() {
+      java.lang.Object ref = portNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        portNameRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Physical port of this L3 interface
+     * </pre>
+     *
+     * <code>string port_name_ref = 3;</code>
+     * @param value The portNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPortNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      portNameRef_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Physical port of this L3 interface
+     * </pre>
+     *
+     * <code>string port_name_ref = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPortNameRef() {
+      
+      portNameRef_ = getDefaultInstance().getPortNameRef();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Physical port of this L3 interface
+     * </pre>
+     *
+     * <code>string port_name_ref = 3;</code>
+     * @param value The bytes for portNameRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPortNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      portNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.opinetcommon.v1alpha1.Encap encap_;

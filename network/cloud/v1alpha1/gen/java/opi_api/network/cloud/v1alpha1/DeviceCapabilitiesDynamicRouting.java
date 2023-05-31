@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
   private boolean underlayBgp_;
   /**
    * <pre>
-   * device is capable of doing bgp routing for the underlay
+   * device is capable of doing device routing for the underlay
    * </pre>
    *
    * <code>bool underlay_bgp = 1;</code>
@@ -414,7 +414,7 @@ private static final long serialVersionUID = 0L;
     private boolean underlayBgp_ ;
     /**
      * <pre>
-     * device is capable of doing bgp routing for the underlay
+     * device is capable of doing device routing for the underlay
      * </pre>
      *
      * <code>bool underlay_bgp = 1;</code>
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * device is capable of doing bgp routing for the underlay
+     * device is capable of doing device routing for the underlay
      * </pre>
      *
      * <code>bool underlay_bgp = 1;</code>
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * device is capable of doing bgp routing for the underlay
+     * device is capable of doing device routing for the underlay
      * </pre>
      *
      * <code>bool underlay_bgp = 1;</code>

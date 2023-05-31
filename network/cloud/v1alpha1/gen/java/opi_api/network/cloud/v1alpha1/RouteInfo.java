@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RouteInfo() {
+    routeId_ = "";
   }
 
   @java.lang.Override
@@ -53,16 +54,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            routeId_ = s;
             break;
           }
           case 18: {
@@ -110,42 +104,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.RouteInfo.class, opi_api.network.cloud.v1alpha1.RouteInfo.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
+  public static final int ROUTE_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object routeId_;
   /**
    * <pre>
    * unique id of this specific route (used for specific route update)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_id = 1;</code>
+   * @return The routeId.
    */
   @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
+  public java.lang.String getRouteId() {
+    java.lang.Object ref = routeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeId_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * unique id of this specific route (used for specific route update)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
+   * <code>string route_id = 1;</code>
+   * @return The bytes for routeId.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique id of this specific route (used for specific route update)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
+  public com.google.protobuf.ByteString
+      getRouteIdBytes() {
+    java.lang.Object ref = routeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ATTRS_FIELD_NUMBER = 2;
@@ -200,8 +202,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, routeId_);
     }
     if (attrs_ != null) {
       output.writeMessage(2, getAttrs());
@@ -215,9 +217,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, routeId_);
     }
     if (attrs_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -238,11 +239,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.RouteInfo other = (opi_api.network.cloud.v1alpha1.RouteInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
+    if (!getRouteId()
+        .equals(other.getRouteId())) return false;
     if (hasAttrs() != other.hasAttrs()) return false;
     if (hasAttrs()) {
       if (!getAttrs()
@@ -259,10 +257,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
+    hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteId().hashCode();
     if (hasAttrs()) {
       hash = (37 * hash) + ATTRS_FIELD_NUMBER;
       hash = (53 * hash) + getAttrs().hashCode();
@@ -404,12 +400,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
+      routeId_ = "";
+
       if (attrsBuilder_ == null) {
         attrs_ = null;
       } else {
@@ -442,11 +434,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.RouteInfo buildPartial() {
       opi_api.network.cloud.v1alpha1.RouteInfo result = new opi_api.network.cloud.v1alpha1.RouteInfo(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
+      result.routeId_ = routeId_;
       if (attrsBuilder_ == null) {
         result.attrs_ = attrs_;
       } else {
@@ -500,8 +488,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.RouteInfo other) {
       if (other == opi_api.network.cloud.v1alpha1.RouteInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
+      if (!other.getRouteId().isEmpty()) {
+        routeId_ = other.routeId_;
+        onChanged();
       }
       if (other.hasAttrs()) {
         mergeAttrs(other.getAttrs());
@@ -535,33 +524,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
+    private java.lang.Object routeId_ = "";
     /**
      * <pre>
      * unique id of this specific route (used for specific route update)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
+     * <code>string route_id = 1;</code>
+     * @return The routeId.
      */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique id of this specific route (used for specific route update)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
+    public java.lang.String getRouteId() {
+      java.lang.Object ref = routeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeId_ = s;
+        return s;
       } else {
-        return idBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -569,125 +550,74 @@ private static final long serialVersionUID = 0L;
      * unique id of this specific route (used for specific route update)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @return The bytes for routeId.
      */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getRouteIdBytes() {
+      java.lang.Object ref = routeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeId_ = b;
+        return b;
       } else {
-        idBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * unique id of this specific route (used for specific route update)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @param value The routeId to set.
+     * @return This builder for chaining.
      */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id of this specific route (used for specific route update)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id of this specific route (used for specific route update)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique id of this specific route (used for specific route update)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
+    public Builder setRouteId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      routeId_ = value;
       onChanged();
-      return getIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * unique id of this specific route (used for specific route update)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
+    public Builder clearRouteId() {
+      
+      routeId_ = getDefaultInstance().getRouteId();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * unique id of this specific route (used for specific route update)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
+     * <code>string route_id = 1;</code>
+     * @param value The bytes for routeId to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
+    public Builder setRouteIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      routeId_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.cloud.v1alpha1.RouteAttrs attrs_;

@@ -9,64 +9,30 @@ public interface RouteSpecOrBuilder extends
 
   /**
    * <pre>
-   * globally unique route table id
+   * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
-  boolean hasId();
-  /**
-   * <pre>
-   * globally unique route table id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * globally unique route table id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
+  java.lang.String getRouteTableNameRef();
   /**
    * <pre>
    * route table this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The bytes for routeTableNameRef.
    */
-  boolean hasRouteTableId();
-  /**
-   * <pre>
-   * route table this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   * @return The routeTableId.
-   */
-  opi_api.common.v1.ObjectKey getRouteTableId();
-  /**
-   * <pre>
-   * route table this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 2;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder();
+  com.google.protobuf.ByteString
+      getRouteTableNameRefBytes();
 
   /**
    * <pre>
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;</code>
    * @return Whether the attrs field is set.
    */
   boolean hasAttrs();
@@ -75,7 +41,7 @@ public interface RouteSpecOrBuilder extends
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;</code>
    * @return The attrs.
    */
   opi_api.network.cloud.v1alpha1.RouteAttrs getAttrs();
@@ -84,7 +50,7 @@ public interface RouteSpecOrBuilder extends
    * route configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.RouteAttrs attrs = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.RouteAttrsOrBuilder getAttrsOrBuilder();
 }

@@ -12,12 +12,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import object_key_pb2 as object__key__pb2
 import networktypes_pb2 as networktypes__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x64\x65vice.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x10object_key.proto\x1a\x12networktypes.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd9\x01\n\x12\x44\x65viceCapabilities\x12]\n\x13routing_capabilties\x18\x01 \x01(\x0b\x32@.opi_api.network.cloud.v1alpha1.DeviceCapabilitiesDynamicRouting\x12\x64\n\x1bnetwork_policy_capabilities\x18\x02 \x01(\x0b\x32?.opi_api.network.cloud.v1alpha1.DeviceCapabilitiesNetworkPolicy\"8\n DeviceCapabilitiesDynamicRouting\x12\x14\n\x0cunderlay_bgp\x18\x01 \x01(\x08\"8\n\x1f\x44\x65viceCapabilitiesNetworkPolicy\x12\x15\n\rcompact_rules\x18\x01 \x01(\x08\"\x80\x01\n\x06\x44\x65vice\x12\x38\n\x04spec\x18\x01 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.DeviceSpec\x12<\n\x06status\x18\x02 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.DeviceStatus\"\xea\x03\n\nDeviceSpec\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.opi_api.common.v1.ObjectKey\x12\x46\n\x0cipv4_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x46\n\x0cipv6_address\x18\x03 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x10\n\x08mac_addr\x18\x04 \x01(\x0c\x12\x44\n\ngateway_ip\x18\x05 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12I\n\x0epcie_functions\x18\x06 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec\x12\x1f\n\x17overlay_routing_enabled\x18\x07 \x01(\x08\x12\x12\n\nsystemname\x18\x08 \x01(\t\x12J\n\x11mgmt_network_spec\x18\t \x01(\x0b\x32/.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec\"7\n\x11PCIeFunctionsSpec\x12\x10\n\x08pf_count\x18\x05 \x01(\x05\x12\x10\n\x08vf_count\x18\x06 \x01(\x05\"\x85\x02\n\x0fMgmtNetworkSpec\x12\x46\n\x0clldp_mgmt_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x41\n\x07mgmt_ip\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04vlan\x18\x03 \x01(\x05\x12\x44\n\ngateway_ip\x18\x04 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bgateway_mac\x18\x05 \x01(\x0c\"\xd2\x02\n\x0c\x44\x65viceStatus\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x1a\n\x12system_mac_address\x18\x02 \x01(\x0c\x12\x11\n\tvendor_id\x18\x03 \x01(\t\x12\x11\n\tchip_type\x18\x04 \x01(\t\x12\x12\n\nos_version\x18\x05 \x01(\t\x12\x17\n\x0fpcie_port_count\x18\x06 \x01(\x05\x12\x12\n\nport_count\x18\x07 \x01(\x05\x12\x15\n\rhost_if_count\x18\x08 \x01(\x05\x12\x10\n\x08pipeline\x18\t \x01(\t\x12\x44\n\x0f\x63ritical_events\x18\n \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.SystemEvent\x12;\n\x06\x61lerts\x18\x0b \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.SystemAlert\"X\n\x0bSystemEvent\x12.\n\nevent_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11\x65vent_description\x18\x02 \x01(\t\"X\n\x0bSystemAlert\x12.\n\nalert_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11\x61lert_description\x18\x02 \x01(\tBl\n\x1eopi_api.network.cloud.v1alpha1B\x0b\x44\x65viceProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x64\x65vice.proto\x12\x1eopi_api.network.cloud.v1alpha1\x1a\x12networktypes.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x19google/api/resource.proto\"\xd9\x01\n\x12\x44\x65viceCapabilities\x12]\n\x13routing_capabilties\x18\x01 \x01(\x0b\x32@.opi_api.network.cloud.v1alpha1.DeviceCapabilitiesDynamicRouting\x12\x64\n\x1bnetwork_policy_capabilities\x18\x02 \x01(\x0b\x32?.opi_api.network.cloud.v1alpha1.DeviceCapabilitiesNetworkPolicy\"8\n DeviceCapabilitiesDynamicRouting\x12\x14\n\x0cunderlay_bgp\x18\x01 \x01(\x08\"8\n\x1f\x44\x65viceCapabilitiesNetworkPolicy\x12\x15\n\rcompact_rules\x18\x01 \x01(\x08\"\xcc\x01\n\x06\x44\x65vice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x04spec\x18\x02 \x01(\x0b\x32*.opi_api.network.cloud.v1alpha1.DeviceSpec\x12<\n\x06status\x18\x03 \x01(\x0b\x32,.opi_api.network.cloud.v1alpha1.DeviceStatus:<\xea\x41\x39\n%opi_api.network.cloud.v1alpha1/device\x12\x10\x64\x65vices/{device}\"\xc0\x03\n\nDeviceSpec\x12\x46\n\x0cipv4_address\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x46\n\x0cipv6_address\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x10\n\x08mac_addr\x18\x03 \x01(\x0c\x12\x44\n\ngateway_ip\x18\x04 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12I\n\x0epcie_functions\x18\x05 \x01(\x0b\x32\x31.opi_api.network.cloud.v1alpha1.PCIeFunctionsSpec\x12\x1f\n\x17overlay_routing_enabled\x18\x06 \x01(\x08\x12\x12\n\nsystemname\x18\x07 \x01(\t\x12J\n\x11mgmt_network_spec\x18\x08 \x01(\x0b\x32/.opi_api.network.cloud.v1alpha1.MgmtNetworkSpec\"7\n\x11PCIeFunctionsSpec\x12\x10\n\x08pf_count\x18\x01 \x01(\x05\x12\x10\n\x08vf_count\x18\x02 \x01(\x05\"\x85\x02\n\x0fMgmtNetworkSpec\x12\x46\n\x0clldp_mgmt_ip\x18\x01 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x41\n\x07mgmt_ip\x18\x02 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x0c\n\x04vlan\x18\x03 \x01(\x05\x12\x44\n\ngateway_ip\x18\x04 \x01(\x0b\x32\x30.opi_api.network.opinetcommon.v1alpha1.IPAddress\x12\x13\n\x0bgateway_mac\x18\x05 \x01(\x0c\"\xd2\x02\n\x0c\x44\x65viceStatus\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x1a\n\x12system_mac_address\x18\x02 \x01(\x0c\x12\x11\n\tvendor_id\x18\x03 \x01(\t\x12\x11\n\tchip_type\x18\x04 \x01(\t\x12\x12\n\nos_version\x18\x05 \x01(\t\x12\x17\n\x0fpcie_port_count\x18\x06 \x01(\x05\x12\x12\n\nport_count\x18\x07 \x01(\x05\x12\x15\n\rhost_if_count\x18\x08 \x01(\x05\x12\x10\n\x08pipeline\x18\t \x01(\t\x12\x44\n\x0f\x63ritical_events\x18\n \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.SystemEvent\x12;\n\x06\x61lerts\x18\x0b \x03(\x0b\x32+.opi_api.network.cloud.v1alpha1.SystemAlert\"X\n\x0bSystemEvent\x12.\n\nevent_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11\x65vent_description\x18\x02 \x01(\t\"X\n\x0bSystemAlert\x12.\n\nalert_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11\x61lert_description\x18\x02 \x01(\tBl\n\x1eopi_api.network.cloud.v1alpha1B\x0b\x44\x65viceProtoP\x01Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/gob\x06proto3')
 
 
 
@@ -105,24 +105,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036opi_api.network.cloud.v1alpha1B\013DeviceProtoP\001Z;github.com/opiproject/opi-api/network/cloud/v1alpha1/gen/go'
-  _DEVICECAPABILITIES._serialized_start=120
-  _DEVICECAPABILITIES._serialized_end=337
-  _DEVICECAPABILITIESDYNAMICROUTING._serialized_start=339
-  _DEVICECAPABILITIESDYNAMICROUTING._serialized_end=395
-  _DEVICECAPABILITIESNETWORKPOLICY._serialized_start=397
-  _DEVICECAPABILITIESNETWORKPOLICY._serialized_end=453
-  _DEVICE._serialized_start=456
-  _DEVICE._serialized_end=584
-  _DEVICESPEC._serialized_start=587
-  _DEVICESPEC._serialized_end=1077
-  _PCIEFUNCTIONSSPEC._serialized_start=1079
-  _PCIEFUNCTIONSSPEC._serialized_end=1134
-  _MGMTNETWORKSPEC._serialized_start=1137
-  _MGMTNETWORKSPEC._serialized_end=1398
-  _DEVICESTATUS._serialized_start=1401
-  _DEVICESTATUS._serialized_end=1739
-  _SYSTEMEVENT._serialized_start=1741
-  _SYSTEMEVENT._serialized_end=1829
-  _SYSTEMALERT._serialized_start=1831
-  _SYSTEMALERT._serialized_end=1919
+  _DEVICE._options = None
+  _DEVICE._serialized_options = b'\352A9\n%opi_api.network.cloud.v1alpha1/device\022\020devices/{device}'
+  _DEVICECAPABILITIES._serialized_start=129
+  _DEVICECAPABILITIES._serialized_end=346
+  _DEVICECAPABILITIESDYNAMICROUTING._serialized_start=348
+  _DEVICECAPABILITIESDYNAMICROUTING._serialized_end=404
+  _DEVICECAPABILITIESNETWORKPOLICY._serialized_start=406
+  _DEVICECAPABILITIESNETWORKPOLICY._serialized_end=462
+  _DEVICE._serialized_start=465
+  _DEVICE._serialized_end=669
+  _DEVICESPEC._serialized_start=672
+  _DEVICESPEC._serialized_end=1120
+  _PCIEFUNCTIONSSPEC._serialized_start=1122
+  _PCIEFUNCTIONSSPEC._serialized_end=1177
+  _MGMTNETWORKSPEC._serialized_start=1180
+  _MGMTNETWORKSPEC._serialized_end=1441
+  _DEVICESTATUS._serialized_start=1444
+  _DEVICESTATUS._serialized_end=1782
+  _SYSTEMEVENT._serialized_start=1784
+  _SYSTEMEVENT._serialized_end=1872
+  _SYSTEMALERT._serialized_start=1874
+  _SYSTEMALERT._serialized_end=1962
 # @@protoc_insertion_point(module_scope)

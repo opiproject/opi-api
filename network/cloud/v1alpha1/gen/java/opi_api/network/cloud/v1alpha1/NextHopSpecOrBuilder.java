@@ -9,37 +9,10 @@ public interface NextHopSpecOrBuilder extends
 
   /**
    * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * unique nexthop id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    * @return Whether the overlayNhInfo field is set.
    */
   boolean hasOverlayNhInfo();
@@ -48,7 +21,7 @@ public interface NextHopSpecOrBuilder extends
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    * @return The overlayNhInfo.
    */
   opi_api.network.cloud.v1alpha1.OverlayNextHopSpec getOverlayNhInfo();
@@ -57,7 +30,7 @@ public interface NextHopSpecOrBuilder extends
    * Tunnel/TEP member is used for overlay routing
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.OverlayNextHopSpec overlay_nh_info = 1;</code>
    */
   opi_api.network.cloud.v1alpha1.OverlayNextHopSpecOrBuilder getOverlayNhInfoOrBuilder();
 
@@ -66,7 +39,7 @@ public interface NextHopSpecOrBuilder extends
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    * @return Whether the underlayNhInfo field is set.
    */
   boolean hasUnderlayNhInfo();
@@ -75,7 +48,7 @@ public interface NextHopSpecOrBuilder extends
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    * @return The underlayNhInfo.
    */
   opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec getUnderlayNhInfo();
@@ -84,7 +57,7 @@ public interface NextHopSpecOrBuilder extends
    * Underlay nexthop info is used for a resolved underlay IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec underlay_nh_info = 2;</code>
    */
   opi_api.network.cloud.v1alpha1.UnderlayNextHopSpecOrBuilder getUnderlayNhInfoOrBuilder();
 
@@ -93,7 +66,7 @@ public interface NextHopSpecOrBuilder extends
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    * @return Whether the ipNhInfo field is set.
    */
   boolean hasIpNhInfo();
@@ -102,7 +75,7 @@ public interface NextHopSpecOrBuilder extends
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    * @return The ipNhInfo.
    */
   opi_api.network.cloud.v1alpha1.IPNextHopSpec getIpNhInfo();
@@ -111,7 +84,7 @@ public interface NextHopSpecOrBuilder extends
    * Indirectly resolve to the next hop of another IP
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IPNextHopSpec ip_nh_info = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.IPNextHopSpecOrBuilder getIpNhInfoOrBuilder();
 

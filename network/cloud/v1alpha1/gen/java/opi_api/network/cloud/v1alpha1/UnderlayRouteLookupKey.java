@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UnderlayRouteLookupKey() {
+    routeTableNameRef_ = "";
     proto_ = 0;
   }
 
@@ -54,16 +55,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (routeTableId_ != null) {
-              subBuilder = routeTableId_.toBuilder();
-            }
-            routeTableId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(routeTableId_);
-              routeTableId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            routeTableNameRef_ = s;
             break;
           }
           case 18: {
@@ -135,42 +129,50 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey.class, opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey.Builder.class);
   }
 
-  public static final int ROUTE_TABLE_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey routeTableId_;
+  public static final int ROUTE_TABLE_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object routeTableNameRef_;
   /**
    * <pre>
    * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   * @return Whether the routeTableId field is set.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The routeTableNameRef.
    */
   @java.lang.Override
-  public boolean hasRouteTableId() {
-    return routeTableId_ != null;
+  public java.lang.String getRouteTableNameRef() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeTableNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * route table id this route belongs to
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   * @return The routeTableId.
+   * <code>string route_table_name_ref = 1;</code>
+   * @return The bytes for routeTableNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getRouteTableId() {
-    return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-  }
-  /**
-   * <pre>
-   * route table id this route belongs to
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-    return getRouteTableId();
+  public com.google.protobuf.ByteString
+      getRouteTableNameRefBytes() {
+    java.lang.Object ref = routeTableNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeTableNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DEST_PREFIX_FIELD_NUMBER = 2;
@@ -305,8 +307,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (routeTableId_ != null) {
-      output.writeMessage(1, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
       output.writeMessage(2, getDestPrefix());
@@ -329,9 +331,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (routeTableId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getRouteTableId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeTableNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, routeTableNameRef_);
     }
     if (destPrefix_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -364,11 +365,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey other = (opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey) obj;
 
-    if (hasRouteTableId() != other.hasRouteTableId()) return false;
-    if (hasRouteTableId()) {
-      if (!getRouteTableId()
-          .equals(other.getRouteTableId())) return false;
-    }
+    if (!getRouteTableNameRef()
+        .equals(other.getRouteTableNameRef())) return false;
     if (hasDestPrefix() != other.hasDestPrefix()) return false;
     if (hasDestPrefix()) {
       if (!getDestPrefix()
@@ -393,10 +391,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasRouteTableId()) {
-      hash = (37 * hash) + ROUTE_TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRouteTableId().hashCode();
-    }
+    hash = (37 * hash) + ROUTE_TABLE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getRouteTableNameRef().hashCode();
     if (hasDestPrefix()) {
       hash = (37 * hash) + DEST_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getDestPrefix().hashCode();
@@ -546,12 +542,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
+      routeTableNameRef_ = "";
+
       if (destPrefixBuilder_ == null) {
         destPrefix_ = null;
       } else {
@@ -594,11 +586,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey buildPartial() {
       opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey result = new opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey(this);
-      if (routeTableIdBuilder_ == null) {
-        result.routeTableId_ = routeTableId_;
-      } else {
-        result.routeTableId_ = routeTableIdBuilder_.build();
-      }
+      result.routeTableNameRef_ = routeTableNameRef_;
       if (destPrefixBuilder_ == null) {
         result.destPrefix_ = destPrefix_;
       } else {
@@ -659,8 +647,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey other) {
       if (other == opi_api.network.cloud.v1alpha1.UnderlayRouteLookupKey.getDefaultInstance()) return this;
-      if (other.hasRouteTableId()) {
-        mergeRouteTableId(other.getRouteTableId());
+      if (!other.getRouteTableNameRef().isEmpty()) {
+        routeTableNameRef_ = other.routeTableNameRef_;
+        onChanged();
       }
       if (other.hasDestPrefix()) {
         mergeDestPrefix(other.getDestPrefix());
@@ -703,33 +692,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey routeTableId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> routeTableIdBuilder_;
+    private java.lang.Object routeTableNameRef_ = "";
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-     * @return Whether the routeTableId field is set.
+     * <code>string route_table_name_ref = 1;</code>
+     * @return The routeTableNameRef.
      */
-    public boolean hasRouteTableId() {
-      return routeTableIdBuilder_ != null || routeTableId_ != null;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-     * @return The routeTableId.
-     */
-    public opi_api.common.v1.ObjectKey getRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        return routeTableId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
+    public java.lang.String getRouteTableNameRef() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeTableNameRef_ = s;
+        return s;
       } else {
-        return routeTableIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -737,125 +718,74 @@ private static final long serialVersionUID = 0L;
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @return The bytes for routeTableNameRef.
      */
-    public Builder setRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        routeTableId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getRouteTableNameRefBytes() {
+      java.lang.Object ref = routeTableNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeTableNameRef_ = b;
+        return b;
       } else {
-        routeTableIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @param value The routeTableNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setRouteTableId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = builderForValue.build();
-        onChanged();
-      } else {
-        routeTableIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-     */
-    public Builder mergeRouteTableId(opi_api.common.v1.ObjectKey value) {
-      if (routeTableIdBuilder_ == null) {
-        if (routeTableId_ != null) {
-          routeTableId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(routeTableId_).mergeFrom(value).buildPartial();
-        } else {
-          routeTableId_ = value;
-        }
-        onChanged();
-      } else {
-        routeTableIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-     */
-    public Builder clearRouteTableId() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableId_ = null;
-        onChanged();
-      } else {
-        routeTableId_ = null;
-        routeTableIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * route table id this route belongs to
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getRouteTableIdBuilder() {
-      
+    public Builder setRouteTableNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      routeTableNameRef_ = value;
       onChanged();
-      return getRouteTableIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getRouteTableIdOrBuilder() {
-      if (routeTableIdBuilder_ != null) {
-        return routeTableIdBuilder_.getMessageOrBuilder();
-      } else {
-        return routeTableId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : routeTableId_;
-      }
+    public Builder clearRouteTableNameRef() {
+      
+      routeTableNameRef_ = getDefaultInstance().getRouteTableNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * route table id this route belongs to
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey route_table_id = 1;</code>
+     * <code>string route_table_name_ref = 1;</code>
+     * @param value The bytes for routeTableNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getRouteTableIdFieldBuilder() {
-      if (routeTableIdBuilder_ == null) {
-        routeTableIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getRouteTableId(),
-                getParentForChildren(),
-                isClean());
-        routeTableId_ = null;
-      }
-      return routeTableIdBuilder_;
+    public Builder setRouteTableNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      routeTableNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private opi_api.network.opinetcommon.v1alpha1.IPPrefix destPrefix_;

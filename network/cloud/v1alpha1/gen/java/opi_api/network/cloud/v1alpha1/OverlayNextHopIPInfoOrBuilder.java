@@ -88,25 +88,18 @@ public interface OverlayNextHopIPInfoOrBuilder extends
    * if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 3;</code>
-   * @return Whether the vpcId field is set.
+   * <code>string vpc_name_ref = 3;</code>
+   * @return The vpcNameRef.
    */
-  boolean hasVpcId();
+  java.lang.String getVpcNameRef();
   /**
    * <pre>
    * if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 3;</code>
-   * @return The vpcId.
+   * <code>string vpc_name_ref = 3;</code>
+   * @return The bytes for vpcNameRef.
    */
-  opi_api.common.v1.ObjectKey getVpcId();
-  /**
-   * <pre>
-   * if next hop IP (e.g. a mapping entry) is in another/peer VPC, vpc_id is set
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey vpc_id = 3;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getVpcIdOrBuilder();
+  com.google.protobuf.ByteString
+      getVpcNameRefBytes();
 }

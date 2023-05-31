@@ -9,37 +9,10 @@ public interface InterfaceSpecOrBuilder extends
 
   /**
    * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  opi_api.common.v1.ObjectKey getId();
-  /**
-   * <pre>
-   * interface key
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder();
-
-  /**
-   * <pre>
    * interface number is numerical port identifier starting from 1 range [1...max-ports#]
    * </pre>
    *
-   * <code>int32 ifid = 2;</code>
+   * <code>int32 ifid = 1;</code>
    * @return The ifid.
    */
   int getIfid();
@@ -50,7 +23,7 @@ public interface InterfaceSpecOrBuilder extends
    * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
    * @return The enum numeric value on the wire for adminStatus.
    */
   int getAdminStatusValue();
@@ -60,7 +33,7 @@ public interface InterfaceSpecOrBuilder extends
    * for host facing interfaces (PF/VFs) it will drop the traffic to/from cloud infra
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 3;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.IfStatus admin_status = 2;</code>
    * @return The adminStatus.
    */
   opi_api.network.cloud.v1alpha1.IfStatus getAdminStatus();
@@ -70,7 +43,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    * @return Whether the uplinkSpec field is set.
    */
   boolean hasUplinkSpec();
@@ -79,7 +52,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    * @return The uplinkSpec.
    */
   opi_api.network.cloud.v1alpha1.UplinkSpec getUplinkSpec();
@@ -88,7 +61,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink specific configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 4;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkSpec uplink_spec = 3;</code>
    */
   opi_api.network.cloud.v1alpha1.UplinkSpecOrBuilder getUplinkSpecOrBuilder();
 
@@ -97,7 +70,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    * @return Whether the uplinkPcSpec field is set.
    */
   boolean hasUplinkPcSpec();
@@ -106,7 +79,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    * @return The uplinkPcSpec.
    */
   opi_api.network.cloud.v1alpha1.UplinkPCSpec getUplinkPcSpec();
@@ -115,7 +88,7 @@ public interface InterfaceSpecOrBuilder extends
    * uplink port-channel configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 5;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.UplinkPCSpec uplink_pc_spec = 4;</code>
    */
   opi_api.network.cloud.v1alpha1.UplinkPCSpecOrBuilder getUplinkPcSpecOrBuilder();
 
@@ -124,7 +97,7 @@ public interface InterfaceSpecOrBuilder extends
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    * @return Whether the l3IfSpec field is set.
    */
   boolean hasL3IfSpec();
@@ -133,7 +106,7 @@ public interface InterfaceSpecOrBuilder extends
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    * @return The l3IfSpec.
    */
   opi_api.network.cloud.v1alpha1.L3IfSpec getL3IfSpec();
@@ -142,7 +115,7 @@ public interface InterfaceSpecOrBuilder extends
    * layer3 interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 6;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.L3IfSpec l3_if_spec = 5;</code>
    */
   opi_api.network.cloud.v1alpha1.L3IfSpecOrBuilder getL3IfSpecOrBuilder();
 
@@ -151,7 +124,7 @@ public interface InterfaceSpecOrBuilder extends
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    * @return Whether the loopbackIfSpec field is set.
    */
   boolean hasLoopbackIfSpec();
@@ -160,7 +133,7 @@ public interface InterfaceSpecOrBuilder extends
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    * @return The loopbackIfSpec.
    */
   opi_api.network.cloud.v1alpha1.LoopbackIfSpec getLoopbackIfSpec();
@@ -169,7 +142,7 @@ public interface InterfaceSpecOrBuilder extends
    * loopback interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 7;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.LoopbackIfSpec loopback_if_spec = 6;</code>
    */
   opi_api.network.cloud.v1alpha1.LoopbackIfSpecOrBuilder getLoopbackIfSpecOrBuilder();
 
@@ -178,7 +151,7 @@ public interface InterfaceSpecOrBuilder extends
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    * @return Whether the controlIfSpec field is set.
    */
   boolean hasControlIfSpec();
@@ -187,7 +160,7 @@ public interface InterfaceSpecOrBuilder extends
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    * @return The controlIfSpec.
    */
   opi_api.network.cloud.v1alpha1.ControlIfSpec getControlIfSpec();
@@ -196,7 +169,7 @@ public interface InterfaceSpecOrBuilder extends
    * control interface configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 8;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.ControlIfSpec control_if_spec = 7;</code>
    */
   opi_api.network.cloud.v1alpha1.ControlIfSpecOrBuilder getControlIfSpecOrBuilder();
 
@@ -205,7 +178,7 @@ public interface InterfaceSpecOrBuilder extends
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    * @return Whether the hostIfSpec field is set.
    */
   boolean hasHostIfSpec();
@@ -214,7 +187,7 @@ public interface InterfaceSpecOrBuilder extends
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    * @return The hostIfSpec.
    */
   opi_api.network.cloud.v1alpha1.HostIfSpec getHostIfSpec();
@@ -223,7 +196,7 @@ public interface InterfaceSpecOrBuilder extends
    * host facing interface's configuration
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 9;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.HostIfSpec host_if_spec = 8;</code>
    */
   opi_api.network.cloud.v1alpha1.HostIfSpecOrBuilder getHostIfSpecOrBuilder();
 

@@ -12,7 +12,7 @@ public interface PCIeFunctionsSpecOrBuilder extends
    * number of physical functions
    * </pre>
    *
-   * <code>int32 pf_count = 5;</code>
+   * <code>int32 pf_count = 1;</code>
    * @return The pfCount.
    */
   int getPfCount();
@@ -22,7 +22,7 @@ public interface PCIeFunctionsSpecOrBuilder extends
    * number of virtual functions
    * </pre>
    *
-   * <code>int32 vf_count = 6;</code>
+   * <code>int32 vf_count = 2;</code>
    * @return The vfCount.
    */
   int getVfCount();

@@ -52,40 +52,27 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
 
             localAsn_ = input.readUInt32();
             break;
           }
-          case 29: {
+          case 21: {
 
             routerId_ = input.readFixed32();
             break;
           }
-          case 37: {
+          case 29: {
 
             clusterId_ = input.readFixed32();
             break;
           }
-          case 40: {
+          case 32: {
 
             disable_ = input.readBool();
             break;
           }
-          case 48: {
+          case 40: {
 
             suppressDefaultResolution_ = input.readBool();
             break;
@@ -122,45 +109,7 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.BgpSpec.class, opi_api.network.cloud.v1alpha1.BgpSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique key/identifier of BGP config
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int LOCAL_ASN_FIELD_NUMBER = 2;
+  public static final int LOCAL_ASN_FIELD_NUMBER = 1;
   private int localAsn_;
   /**
    * <pre>
@@ -169,7 +118,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
    * </pre>
    *
-   * <code>uint32 local_asn = 2;</code>
+   * <code>uint32 local_asn = 1;</code>
    * @return The localAsn.
    */
   @java.lang.Override
@@ -177,7 +126,7 @@ private static final long serialVersionUID = 0L;
     return localAsn_;
   }
 
-  public static final int ROUTER_ID_FIELD_NUMBER = 3;
+  public static final int ROUTER_ID_FIELD_NUMBER = 2;
   private int routerId_;
   /**
    * <pre>
@@ -186,7 +135,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
    * </pre>
    *
-   * <code>fixed32 router_id = 3;</code>
+   * <code>fixed32 router_id = 2;</code>
    * @return The routerId.
    */
   @java.lang.Override
@@ -194,7 +143,7 @@ private static final long serialVersionUID = 0L;
     return routerId_;
   }
 
-  public static final int CLUSTER_ID_FIELD_NUMBER = 4;
+  public static final int CLUSTER_ID_FIELD_NUMBER = 3;
   private int clusterId_;
   /**
    * <pre>
@@ -204,7 +153,7 @@ private static final long serialVersionUID = 0L;
    *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
    * </pre>
    *
-   * <code>fixed32 cluster_id = 4;</code>
+   * <code>fixed32 cluster_id = 3;</code>
    * @return The clusterId.
    */
   @java.lang.Override
@@ -212,14 +161,14 @@ private static final long serialVersionUID = 0L;
     return clusterId_;
   }
 
-  public static final int DISABLE_FIELD_NUMBER = 5;
+  public static final int DISABLE_FIELD_NUMBER = 4;
   private boolean disable_;
   /**
    * <pre>
    * disable/enable BGP
    * </pre>
    *
-   * <code>bool disable = 5;</code>
+   * <code>bool disable = 4;</code>
    * @return The disable.
    */
   @java.lang.Override
@@ -227,7 +176,7 @@ private static final long serialVersionUID = 0L;
     return disable_;
   }
 
-  public static final int SUPPRESS_DEFAULT_RESOLUTION_FIELD_NUMBER = 6;
+  public static final int SUPPRESS_DEFAULT_RESOLUTION_FIELD_NUMBER = 5;
   private boolean suppressDefaultResolution_;
   /**
    * <pre>
@@ -235,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * changing this will deactivate and activate the routing stack RIB
    * </pre>
    *
-   * <code>bool suppress_default_resolution = 6;</code>
+   * <code>bool suppress_default_resolution = 5;</code>
    * @return The suppressDefaultResolution.
    */
   @java.lang.Override
@@ -257,23 +206,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (localAsn_ != 0) {
-      output.writeUInt32(2, localAsn_);
+      output.writeUInt32(1, localAsn_);
     }
     if (routerId_ != 0) {
-      output.writeFixed32(3, routerId_);
+      output.writeFixed32(2, routerId_);
     }
     if (clusterId_ != 0) {
-      output.writeFixed32(4, clusterId_);
+      output.writeFixed32(3, clusterId_);
     }
     if (disable_ != false) {
-      output.writeBool(5, disable_);
+      output.writeBool(4, disable_);
     }
     if (suppressDefaultResolution_ != false) {
-      output.writeBool(6, suppressDefaultResolution_);
+      output.writeBool(5, suppressDefaultResolution_);
     }
     unknownFields.writeTo(output);
   }
@@ -284,29 +230,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (localAsn_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, localAsn_);
+        .computeUInt32Size(1, localAsn_);
     }
     if (routerId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFixed32Size(3, routerId_);
+        .computeFixed32Size(2, routerId_);
     }
     if (clusterId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFixed32Size(4, clusterId_);
+        .computeFixed32Size(3, clusterId_);
     }
     if (disable_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, disable_);
+        .computeBoolSize(4, disable_);
     }
     if (suppressDefaultResolution_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, suppressDefaultResolution_);
+        .computeBoolSize(5, suppressDefaultResolution_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -323,11 +265,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.BgpSpec other = (opi_api.network.cloud.v1alpha1.BgpSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (getLocalAsn()
         != other.getLocalAsn()) return false;
     if (getRouterId()
@@ -349,10 +286,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + LOCAL_ASN_FIELD_NUMBER;
     hash = (53 * hash) + getLocalAsn();
     hash = (37 * hash) + ROUTER_ID_FIELD_NUMBER;
@@ -502,12 +435,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       localAsn_ = 0;
 
       routerId_ = 0;
@@ -544,11 +471,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.BgpSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.BgpSpec result = new opi_api.network.cloud.v1alpha1.BgpSpec(this);
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.localAsn_ = localAsn_;
       result.routerId_ = routerId_;
       result.clusterId_ = clusterId_;
@@ -602,9 +524,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.BgpSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.BgpSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.getLocalAsn() != 0) {
         setLocalAsn(other.getLocalAsn());
       }
@@ -649,161 +568,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique key/identifier of BGP config
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int localAsn_ ;
     /**
      * <pre>
@@ -812,7 +576,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 local_asn = 2;</code>
+     * <code>uint32 local_asn = 1;</code>
      * @return The localAsn.
      */
     @java.lang.Override
@@ -826,7 +590,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 local_asn = 2;</code>
+     * <code>uint32 local_asn = 1;</code>
      * @param value The localAsn to set.
      * @return This builder for chaining.
      */
@@ -843,7 +607,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use uint32 per BGP spec. --)
      * </pre>
      *
-     * <code>uint32 local_asn = 2;</code>
+     * <code>uint32 local_asn = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearLocalAsn() {
@@ -861,7 +625,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 router_id = 3;</code>
+     * <code>fixed32 router_id = 2;</code>
      * @return The routerId.
      */
     @java.lang.Override
@@ -875,7 +639,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 router_id = 3;</code>
+     * <code>fixed32 router_id = 2;</code>
      * @param value The routerId to set.
      * @return This builder for chaining.
      */
@@ -892,7 +656,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 router_id = 3;</code>
+     * <code>fixed32 router_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearRouterId() {
@@ -911,7 +675,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 cluster_id = 4;</code>
+     * <code>fixed32 cluster_id = 3;</code>
      * @return The clusterId.
      */
     @java.lang.Override
@@ -926,7 +690,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 cluster_id = 4;</code>
+     * <code>fixed32 cluster_id = 3;</code>
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -944,7 +708,7 @@ private static final long serialVersionUID = 0L;
      *     aip.dev/not-precedent: must use fixed32 per BGP spec. --)
      * </pre>
      *
-     * <code>fixed32 cluster_id = 4;</code>
+     * <code>fixed32 cluster_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearClusterId() {
@@ -960,7 +724,7 @@ private static final long serialVersionUID = 0L;
      * disable/enable BGP
      * </pre>
      *
-     * <code>bool disable = 5;</code>
+     * <code>bool disable = 4;</code>
      * @return The disable.
      */
     @java.lang.Override
@@ -972,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * disable/enable BGP
      * </pre>
      *
-     * <code>bool disable = 5;</code>
+     * <code>bool disable = 4;</code>
      * @param value The disable to set.
      * @return This builder for chaining.
      */
@@ -987,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * disable/enable BGP
      * </pre>
      *
-     * <code>bool disable = 5;</code>
+     * <code>bool disable = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDisable() {
@@ -1004,7 +768,7 @@ private static final long serialVersionUID = 0L;
      * changing this will deactivate and activate the routing stack RIB
      * </pre>
      *
-     * <code>bool suppress_default_resolution = 6;</code>
+     * <code>bool suppress_default_resolution = 5;</code>
      * @return The suppressDefaultResolution.
      */
     @java.lang.Override
@@ -1017,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * changing this will deactivate and activate the routing stack RIB
      * </pre>
      *
-     * <code>bool suppress_default_resolution = 6;</code>
+     * <code>bool suppress_default_resolution = 5;</code>
      * @param value The suppressDefaultResolution to set.
      * @return This builder for chaining.
      */
@@ -1033,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * changing this will deactivate and activate the routing stack RIB
      * </pre>
      *
-     * <code>bool suppress_default_resolution = 6;</code>
+     * <code>bool suppress_default_resolution = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearSuppressDefaultResolution() {

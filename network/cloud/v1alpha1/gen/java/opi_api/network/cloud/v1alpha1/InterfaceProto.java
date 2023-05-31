@@ -89,94 +89,93 @@ public final class InterfaceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\017interface.proto\022\036opi_api.network.cloud" +
-      ".v1alpha1\032\020object_key.proto\032\022networktype" +
-      "s.proto\"\211\001\n\tInterface\022;\n\004spec\030\001 \001(\0132-.op" +
-      "i_api.network.cloud.v1alpha1.InterfaceSp" +
-      "ec\022?\n\006status\030\002 \001(\0132/.opi_api.network.clo" +
-      "ud.v1alpha1.InterfaceStatus\"\266\004\n\rInterfac" +
-      "eSpec\022(\n\002id\030\001 \001(\0132\034.opi_api.common.v1.Ob" +
-      "jectKey\022\014\n\004ifid\030\002 \001(\005\022>\n\014admin_status\030\003 " +
-      "\001(\0162(.opi_api.network.cloud.v1alpha1.IfS" +
-      "tatus\022A\n\013uplink_spec\030\004 \001(\0132*.opi_api.net" +
-      "work.cloud.v1alpha1.UplinkSpecH\000\022F\n\016upli" +
-      "nk_pc_spec\030\005 \001(\0132,.opi_api.network.cloud" +
-      ".v1alpha1.UplinkPCSpecH\000\022>\n\nl3_if_spec\030\006" +
-      " \001(\0132(.opi_api.network.cloud.v1alpha1.L3" +
-      "IfSpecH\000\022J\n\020loopback_if_spec\030\007 \001(\0132..opi" +
-      "_api.network.cloud.v1alpha1.LoopbackIfSp" +
-      "ecH\000\022H\n\017control_if_spec\030\010 \001(\0132-.opi_api." +
-      "network.cloud.v1alpha1.ControlIfSpecH\000\022B" +
-      "\n\014host_if_spec\030\t \001(\0132*.opi_api.network.c" +
-      "loud.v1alpha1.HostIfSpecH\000B\010\n\006ifinfo\"R\n\n" +
-      "UplinkSpec\022-\n\007port_id\030\001 \001(\0132\034.opi_api.co" +
-      "mmon.v1.ObjectKey\022\025\n\rnative_vlanid\030\002 \001(\005" +
-      "\"B\n\014UplinkPCSpec\022\033\n\023member_ifids_bitmap\030" +
-      "\001 \001(\004\022\025\n\rnative_vlanid\030\002 \001(\005\"\372\001\n\010L3IfSpe" +
-      "c\022,\n\006vpc_id\030\001 \001(\0132\034.opi_api.common.v1.Ob" +
-      "jectKey\022-\n\007port_id\030\003 \001(\0132\034.opi_api.commo" +
-      "n.v1.ObjectKey\022?\n\006prefix\030\002 \003(\0132/.opi_api" +
-      ".network.opinetcommon.v1alpha1.IPPrefix\022" +
-      ";\n\005encap\030\004 \001(\0132,.opi_api.network.opinetc" +
-      "ommon.v1alpha1.Encap\022\023\n\013mac_address\030\005 \001(" +
-      "\014\".\n\014BGPCommunity\022\013\n\003asn\030\001 \001(\005\022\021\n\tcommun" +
-      "ity\030\002 \001(\005\"\224\001\n\016LoopbackIfSpec\022?\n\006prefix\030\001" +
-      " \001(\0132/.opi_api.network.opinetcommon.v1al" +
-      "pha1.IPPrefix\022A\n\013communities\030\002 \003(\0132,.opi" +
-      "_api.network.cloud.v1alpha1.BGPCommunity" +
-      "\"e\n\rControlIfSpec\022?\n\006prefix\030\001 \001(\0132/.opi_" +
-      "api.network.opinetcommon.v1alpha1.IPPref" +
-      "ix\022\023\n\013mac_address\030\002 \001(\014\"a\n\nHostIfSpec\022\n\n" +
-      "\002vf\030\001 \001(\010\022\"\n\032enable_connection_tracking\030" +
-      "\002 \001(\010\022\023\n\013mac_address\030\003 \001(\014\022\016\n\006ifname\030\004 \001" +
-      "(\t\";\n\016UplinkIfStatus\022\021\n\thw_if_idx\030\001 \001(\005\022" +
-      "\026\n\016hw_port_number\030\002 \001(\005\"\"\n\020LoopbackIfSta" +
-      "tus\022\016\n\006ifname\030\001 \001(\t\"\202\001\n\014HostIfStatus\022\023\n\013" +
-      "hw_if_idxes\030\001 \003(\014\022\023\n\013mac_address\030\002 \001(\014\0228" +
-      "\n\006status\030\003 \001(\0162(.opi_api.network.cloud.v" +
-      "1alpha1.IfStatus\022\016\n\006ifname\030\004 \001(\t\"\322\002\n\017Int" +
-      "erfaceStatus\022\020\n\010if_index\030\001 \001(\r\022=\n\013oper_s" +
-      "tatus\030\002 \001(\0162(.opi_api.network.cloud.v1al" +
-      "pha1.IfStatus\022J\n\020uplink_if_status\030\003 \001(\0132" +
-      "..opi_api.network.cloud.v1alpha1.UplinkI" +
-      "fStatusH\000\022N\n\022loopback_if_status\030\004 \001(\01320." +
-      "opi_api.network.cloud.v1alpha1.LoopbackI" +
-      "fStatusH\000\022F\n\016host_if_status\030\005 \001(\0132,.opi_" +
-      "api.network.cloud.v1alpha1.HostIfStatusH" +
-      "\000B\n\n\010ifstatus*\231\001\n\006IfType\022\027\n\023IF_TYPE_UNSP" +
-      "ECIFIED\020\000\022\022\n\016IF_TYPE_UPLINK\020\001\022\025\n\021IF_TYPE" +
-      "_UPLINK_PC\020\002\022\016\n\nIF_TYPE_L3\020\003\022\024\n\020IF_TYPE_" +
-      "LOOPBACK\020\004\022\023\n\017IF_TYPE_CONTROL\020\005\022\020\n\014IF_TY" +
-      "PE_HOST\020\006*K\n\010IfStatus\022\031\n\025IF_STATUS_UNSPE" +
-      "CIFIED\020\000\022\020\n\014IF_STATUS_UP\020\001\022\022\n\016IF_STATUS_" +
-      "DOWN\020\002Bo\n\036opi_api.network.cloud.v1alpha1" +
-      "B\016InterfaceProtoP\001Z;github.com/opiprojec" +
-      "t/opi-api/network/cloud/v1alpha1/gen/gob" +
-      "\006proto3"
+      ".v1alpha1\032\022networktypes.proto\032\031google/ap" +
+      "i/resource.proto\"\336\001\n\tInterface\022\014\n\004name\030\001" +
+      " \001(\t\022;\n\004spec\030\002 \001(\0132-.opi_api.network.clo" +
+      "ud.v1alpha1.InterfaceSpec\022?\n\006status\030\003 \001(" +
+      "\0132/.opi_api.network.cloud.v1alpha1.Inter" +
+      "faceStatus:E\352AB\n(opi_api.network.cloud.v" +
+      "1alpha1/interface\022\026interfaces/{interface" +
+      "}\"\214\004\n\rInterfaceSpec\022\014\n\004ifid\030\001 \001(\005\022>\n\014adm" +
+      "in_status\030\002 \001(\0162(.opi_api.network.cloud." +
+      "v1alpha1.IfStatus\022A\n\013uplink_spec\030\003 \001(\0132*" +
+      ".opi_api.network.cloud.v1alpha1.UplinkSp" +
+      "ecH\000\022F\n\016uplink_pc_spec\030\004 \001(\0132,.opi_api.n" +
+      "etwork.cloud.v1alpha1.UplinkPCSpecH\000\022>\n\n" +
+      "l3_if_spec\030\005 \001(\0132(.opi_api.network.cloud" +
+      ".v1alpha1.L3IfSpecH\000\022J\n\020loopback_if_spec" +
+      "\030\006 \001(\0132..opi_api.network.cloud.v1alpha1." +
+      "LoopbackIfSpecH\000\022H\n\017control_if_spec\030\007 \001(" +
+      "\0132-.opi_api.network.cloud.v1alpha1.Contr" +
+      "olIfSpecH\000\022B\n\014host_if_spec\030\010 \001(\0132*.opi_a" +
+      "pi.network.cloud.v1alpha1.HostIfSpecH\000B\010" +
+      "\n\006ifinfo\":\n\nUplinkSpec\022\025\n\rport_name_ref\030" +
+      "\001 \001(\t\022\025\n\rnative_vlanid\030\002 \001(\005\"B\n\014UplinkPC" +
+      "Spec\022\033\n\023member_ifids_bitmap\030\001 \001(\004\022\025\n\rnat" +
+      "ive_vlanid\030\002 \001(\005\"\312\001\n\010L3IfSpec\022\024\n\014vpc_nam" +
+      "e_ref\030\001 \001(\t\022?\n\006prefix\030\002 \003(\0132/.opi_api.ne" +
+      "twork.opinetcommon.v1alpha1.IPPrefix\022\025\n\r" +
+      "port_name_ref\030\003 \001(\t\022;\n\005encap\030\004 \001(\0132,.opi" +
+      "_api.network.opinetcommon.v1alpha1.Encap" +
+      "\022\023\n\013mac_address\030\005 \001(\014\".\n\014BGPCommunity\022\013\n" +
+      "\003asn\030\001 \001(\005\022\021\n\tcommunity\030\002 \001(\005\"\224\001\n\016Loopba" +
+      "ckIfSpec\022?\n\006prefix\030\001 \001(\0132/.opi_api.netwo" +
+      "rk.opinetcommon.v1alpha1.IPPrefix\022A\n\013com" +
+      "munities\030\002 \003(\0132,.opi_api.network.cloud.v" +
+      "1alpha1.BGPCommunity\"e\n\rControlIfSpec\022?\n" +
+      "\006prefix\030\001 \001(\0132/.opi_api.network.opinetco" +
+      "mmon.v1alpha1.IPPrefix\022\023\n\013mac_address\030\002 " +
+      "\001(\014\"a\n\nHostIfSpec\022\n\n\002vf\030\001 \001(\010\022\"\n\032enable_" +
+      "connection_tracking\030\002 \001(\010\022\023\n\013mac_address" +
+      "\030\003 \001(\014\022\016\n\006ifname\030\004 \001(\t\";\n\016UplinkIfStatus" +
+      "\022\021\n\thw_if_idx\030\001 \001(\005\022\026\n\016hw_port_number\030\002 " +
+      "\001(\005\"\"\n\020LoopbackIfStatus\022\016\n\006ifname\030\001 \001(\t\"" +
+      "\202\001\n\014HostIfStatus\022\023\n\013hw_if_idxes\030\001 \003(\014\022\023\n" +
+      "\013mac_address\030\002 \001(\014\0228\n\006status\030\003 \001(\0162(.opi" +
+      "_api.network.cloud.v1alpha1.IfStatus\022\016\n\006" +
+      "ifname\030\004 \001(\t\"\322\002\n\017InterfaceStatus\022\020\n\010if_i" +
+      "ndex\030\001 \001(\r\022=\n\013oper_status\030\002 \001(\0162(.opi_ap" +
+      "i.network.cloud.v1alpha1.IfStatus\022J\n\020upl" +
+      "ink_if_status\030\003 \001(\0132..opi_api.network.cl" +
+      "oud.v1alpha1.UplinkIfStatusH\000\022N\n\022loopbac" +
+      "k_if_status\030\004 \001(\01320.opi_api.network.clou" +
+      "d.v1alpha1.LoopbackIfStatusH\000\022F\n\016host_if" +
+      "_status\030\005 \001(\0132,.opi_api.network.cloud.v1" +
+      "alpha1.HostIfStatusH\000B\n\n\010ifstatus*\231\001\n\006If" +
+      "Type\022\027\n\023IF_TYPE_UNSPECIFIED\020\000\022\022\n\016IF_TYPE" +
+      "_UPLINK\020\001\022\025\n\021IF_TYPE_UPLINK_PC\020\002\022\016\n\nIF_T" +
+      "YPE_L3\020\003\022\024\n\020IF_TYPE_LOOPBACK\020\004\022\023\n\017IF_TYP" +
+      "E_CONTROL\020\005\022\020\n\014IF_TYPE_HOST\020\006*K\n\010IfStatu" +
+      "s\022\031\n\025IF_STATUS_UNSPECIFIED\020\000\022\020\n\014IF_STATU" +
+      "S_UP\020\001\022\022\n\016IF_STATUS_DOWN\020\002Bo\n\036opi_api.ne" +
+      "twork.cloud.v1alpha1B\016InterfaceProtoP\001Z;" +
+      "github.com/opiproject/opi-api/network/cl" +
+      "oud/v1alpha1/gen/gob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          opi_api.common.v1.ObjectKeyProto.getDescriptor(),
           opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         });
     internal_static_opi_api_network_cloud_v1alpha1_Interface_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_opi_api_network_cloud_v1alpha1_Interface_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_Interface_descriptor,
-        new java.lang.String[] { "Spec", "Status", });
+        new java.lang.String[] { "Name", "Spec", "Status", });
     internal_static_opi_api_network_cloud_v1alpha1_InterfaceSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_network_cloud_v1alpha1_InterfaceSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_InterfaceSpec_descriptor,
-        new java.lang.String[] { "Id", "Ifid", "AdminStatus", "UplinkSpec", "UplinkPcSpec", "L3IfSpec", "LoopbackIfSpec", "ControlIfSpec", "HostIfSpec", "Ifinfo", });
+        new java.lang.String[] { "Ifid", "AdminStatus", "UplinkSpec", "UplinkPcSpec", "L3IfSpec", "LoopbackIfSpec", "ControlIfSpec", "HostIfSpec", "Ifinfo", });
     internal_static_opi_api_network_cloud_v1alpha1_UplinkSpec_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_opi_api_network_cloud_v1alpha1_UplinkSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_UplinkSpec_descriptor,
-        new java.lang.String[] { "PortId", "NativeVlanid", });
+        new java.lang.String[] { "PortNameRef", "NativeVlanid", });
     internal_static_opi_api_network_cloud_v1alpha1_UplinkPCSpec_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_opi_api_network_cloud_v1alpha1_UplinkPCSpec_fieldAccessorTable = new
@@ -188,7 +187,7 @@ public final class InterfaceProto {
     internal_static_opi_api_network_cloud_v1alpha1_L3IfSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_L3IfSpec_descriptor,
-        new java.lang.String[] { "VpcId", "PortId", "Prefix", "Encap", "MacAddress", });
+        new java.lang.String[] { "VpcNameRef", "Prefix", "PortNameRef", "Encap", "MacAddress", });
     internal_static_opi_api_network_cloud_v1alpha1_BGPCommunity_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_opi_api_network_cloud_v1alpha1_BGPCommunity_fieldAccessorTable = new
@@ -237,8 +236,13 @@ public final class InterfaceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_network_cloud_v1alpha1_InterfaceStatus_descriptor,
         new java.lang.String[] { "IfIndex", "OperStatus", "UplinkIfStatus", "LoopbackIfStatus", "HostIfStatus", "Ifstatus", });
-    opi_api.common.v1.ObjectKeyProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     opi_api.network.opinetcommon.v1alpha1.NetworkTypesProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

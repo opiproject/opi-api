@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UnderlayNextHopSpec() {
+    interfaceNameRef_ = "";
     underlayNhMac_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -54,16 +55,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (l3InterfaceId_ != null) {
-              subBuilder = l3InterfaceId_.toBuilder();
-            }
-            l3InterfaceId_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(l3InterfaceId_);
-              l3InterfaceId_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            interfaceNameRef_ = s;
             break;
           }
           case 18: {
@@ -103,20 +97,29 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.class, opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.Builder.class);
   }
 
-  public static final int L3_INTERFACE_ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey l3InterfaceId_;
+  public static final int INTERFACE_NAME_REF_FIELD_NUMBER = 1;
+  private volatile java.lang.Object interfaceNameRef_;
   /**
    * <pre>
    * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
    * are picked from this L3 interface)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   * @return Whether the l3InterfaceId field is set.
+   * <code>string interface_name_ref = 1;</code>
+   * @return The interfaceNameRef.
    */
   @java.lang.Override
-  public boolean hasL3InterfaceId() {
-    return l3InterfaceId_ != null;
+  public java.lang.String getInterfaceNameRef() {
+    java.lang.Object ref = interfaceNameRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interfaceNameRef_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
@@ -124,24 +127,22 @@ private static final long serialVersionUID = 0L;
    * are picked from this L3 interface)
    * </pre>
    *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   * @return The l3InterfaceId.
+   * <code>string interface_name_ref = 1;</code>
+   * @return The bytes for interfaceNameRef.
    */
   @java.lang.Override
-  public opi_api.common.v1.ObjectKey getL3InterfaceId() {
-    return l3InterfaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : l3InterfaceId_;
-  }
-  /**
-   * <pre>
-   * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-   * are picked from this L3 interface)
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getL3InterfaceIdOrBuilder() {
-    return getL3InterfaceId();
+  public com.google.protobuf.ByteString
+      getInterfaceNameRefBytes() {
+    java.lang.Object ref = interfaceNameRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interfaceNameRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int UNDERLAY_NH_MAC_FIELD_NUMBER = 2;
@@ -173,8 +174,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (l3InterfaceId_ != null) {
-      output.writeMessage(1, getL3InterfaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interfaceNameRef_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, interfaceNameRef_);
     }
     if (!underlayNhMac_.isEmpty()) {
       output.writeBytes(2, underlayNhMac_);
@@ -188,9 +189,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (l3InterfaceId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getL3InterfaceId());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interfaceNameRef_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, interfaceNameRef_);
     }
     if (!underlayNhMac_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
@@ -211,11 +211,8 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec other = (opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec) obj;
 
-    if (hasL3InterfaceId() != other.hasL3InterfaceId()) return false;
-    if (hasL3InterfaceId()) {
-      if (!getL3InterfaceId()
-          .equals(other.getL3InterfaceId())) return false;
-    }
+    if (!getInterfaceNameRef()
+        .equals(other.getInterfaceNameRef())) return false;
     if (!getUnderlayNhMac()
         .equals(other.getUnderlayNhMac())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -229,10 +226,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasL3InterfaceId()) {
-      hash = (37 * hash) + L3_INTERFACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getL3InterfaceId().hashCode();
-    }
+    hash = (37 * hash) + INTERFACE_NAME_REF_FIELD_NUMBER;
+    hash = (53 * hash) + getInterfaceNameRef().hashCode();
     hash = (37 * hash) + UNDERLAY_NH_MAC_FIELD_NUMBER;
     hash = (53 * hash) + getUnderlayNhMac().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -372,12 +367,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (l3InterfaceIdBuilder_ == null) {
-        l3InterfaceId_ = null;
-      } else {
-        l3InterfaceId_ = null;
-        l3InterfaceIdBuilder_ = null;
-      }
+      interfaceNameRef_ = "";
+
       underlayNhMac_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -406,11 +397,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec result = new opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec(this);
-      if (l3InterfaceIdBuilder_ == null) {
-        result.l3InterfaceId_ = l3InterfaceId_;
-      } else {
-        result.l3InterfaceId_ = l3InterfaceIdBuilder_.build();
-      }
+      result.interfaceNameRef_ = interfaceNameRef_;
       result.underlayNhMac_ = underlayNhMac_;
       onBuilt();
       return result;
@@ -460,8 +447,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.UnderlayNextHopSpec.getDefaultInstance()) return this;
-      if (other.hasL3InterfaceId()) {
-        mergeL3InterfaceId(other.getL3InterfaceId());
+      if (!other.getInterfaceNameRef().isEmpty()) {
+        interfaceNameRef_ = other.interfaceNameRef_;
+        onChanged();
       }
       if (other.getUnderlayNhMac() != com.google.protobuf.ByteString.EMPTY) {
         setUnderlayNhMac(other.getUnderlayNhMac());
@@ -495,35 +483,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private opi_api.common.v1.ObjectKey l3InterfaceId_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> l3InterfaceIdBuilder_;
+    private java.lang.Object interfaceNameRef_ = "";
     /**
      * <pre>
      * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
      * are picked from this L3 interface)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-     * @return Whether the l3InterfaceId field is set.
+     * <code>string interface_name_ref = 1;</code>
+     * @return The interfaceNameRef.
      */
-    public boolean hasL3InterfaceId() {
-      return l3InterfaceIdBuilder_ != null || l3InterfaceId_ != null;
-    }
-    /**
-     * <pre>
-     * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-     * are picked from this L3 interface)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-     * @return The l3InterfaceId.
-     */
-    public opi_api.common.v1.ObjectKey getL3InterfaceId() {
-      if (l3InterfaceIdBuilder_ == null) {
-        return l3InterfaceId_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : l3InterfaceId_;
+    public java.lang.String getInterfaceNameRef() {
+      java.lang.Object ref = interfaceNameRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interfaceNameRef_ = s;
+        return s;
       } else {
-        return l3InterfaceIdBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -532,20 +511,21 @@ private static final long serialVersionUID = 0L;
      * are picked from this L3 interface)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
+     * <code>string interface_name_ref = 1;</code>
+     * @return The bytes for interfaceNameRef.
      */
-    public Builder setL3InterfaceId(opi_api.common.v1.ObjectKey value) {
-      if (l3InterfaceIdBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        l3InterfaceId_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getInterfaceNameRefBytes() {
+      java.lang.Object ref = interfaceNameRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interfaceNameRef_ = b;
+        return b;
       } else {
-        l3InterfaceIdBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
@@ -553,73 +533,19 @@ private static final long serialVersionUID = 0L;
      * are picked from this L3 interface)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
+     * <code>string interface_name_ref = 1;</code>
+     * @param value The interfaceNameRef to set.
+     * @return This builder for chaining.
      */
-    public Builder setL3InterfaceId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (l3InterfaceIdBuilder_ == null) {
-        l3InterfaceId_ = builderForValue.build();
-        onChanged();
-      } else {
-        l3InterfaceIdBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-     * are picked from this L3 interface)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-     */
-    public Builder mergeL3InterfaceId(opi_api.common.v1.ObjectKey value) {
-      if (l3InterfaceIdBuilder_ == null) {
-        if (l3InterfaceId_ != null) {
-          l3InterfaceId_ =
-            opi_api.common.v1.ObjectKey.newBuilder(l3InterfaceId_).mergeFrom(value).buildPartial();
-        } else {
-          l3InterfaceId_ = value;
-        }
-        onChanged();
-      } else {
-        l3InterfaceIdBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-     * are picked from this L3 interface)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-     */
-    public Builder clearL3InterfaceId() {
-      if (l3InterfaceIdBuilder_ == null) {
-        l3InterfaceId_ = null;
-        onChanged();
-      } else {
-        l3InterfaceId_ = null;
-        l3InterfaceIdBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * L3 interface of this nexthop (outer SMAC, vlan tag and outgoing port
-     * are picked from this L3 interface)
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getL3InterfaceIdBuilder() {
-      
+    public Builder setInterfaceNameRef(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      interfaceNameRef_ = value;
       onChanged();
-      return getL3InterfaceIdFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
@@ -627,15 +553,14 @@ private static final long serialVersionUID = 0L;
      * are picked from this L3 interface)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
+     * <code>string interface_name_ref = 1;</code>
+     * @return This builder for chaining.
      */
-    public opi_api.common.v1.ObjectKeyOrBuilder getL3InterfaceIdOrBuilder() {
-      if (l3InterfaceIdBuilder_ != null) {
-        return l3InterfaceIdBuilder_.getMessageOrBuilder();
-      } else {
-        return l3InterfaceId_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : l3InterfaceId_;
-      }
+    public Builder clearInterfaceNameRef() {
+      
+      interfaceNameRef_ = getDefaultInstance().getInterfaceNameRef();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
@@ -643,20 +568,20 @@ private static final long serialVersionUID = 0L;
      * are picked from this L3 interface)
      * </pre>
      *
-     * <code>.opi_api.common.v1.ObjectKey l3_interface_id = 1;</code>
+     * <code>string interface_name_ref = 1;</code>
+     * @param value The bytes for interfaceNameRef to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getL3InterfaceIdFieldBuilder() {
-      if (l3InterfaceIdBuilder_ == null) {
-        l3InterfaceIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getL3InterfaceId(),
-                getParentForChildren(),
-                isClean());
-        l3InterfaceId_ = null;
-      }
-      return l3InterfaceIdBuilder_;
+    public Builder setInterfaceNameRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      interfaceNameRef_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.ByteString underlayNhMac_ = com.google.protobuf.ByteString.EMPTY;

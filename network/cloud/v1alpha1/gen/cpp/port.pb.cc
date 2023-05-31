@@ -22,7 +22,8 @@ namespace cloud {
 namespace v1alpha1 {
 constexpr Port::Port(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : spec_(nullptr)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , spec_(nullptr)
   , status_(nullptr){}
 struct PortDefaultTypeInternal {
   constexpr PortDefaultTypeInternal()
@@ -35,8 +36,7 @@ struct PortDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PortDefaultTypeInternal _Port_default_instance_;
 constexpr PortSpec::PortSpec(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(nullptr)
-  , port_number_(0)
+  : port_number_(0)
   , admin_state_(0)
 
   , type_(0)
@@ -160,6 +160,7 @@ const uint32_t TableStruct_port_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, spec_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::Port, status_),
   ~0u,  // no _has_bits_
@@ -168,7 +169,6 @@ const uint32_t TableStruct_port_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, id_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, port_number_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, admin_state_),
   PROTOBUF_FIELD_OFFSET(::opi_api::network::cloud::v1alpha1::PortSpec, type_),
@@ -238,7 +238,7 @@ const uint32_t TableStruct_port_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::Port)},
-  { 8, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortSpec)},
+  { 9, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortSpec)},
   { 28, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortStatus)},
   { 41, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortLinkStatus)},
   { 52, -1, -1, sizeof(::opi_api::network::cloud::v1alpha1::PortXcvrStatus)},
@@ -256,143 +256,144 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_port_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\nport.proto\022\036opi_api.network.cloud.v1al"
-  "pha1\032\020object_key.proto\032\037google/protobuf/"
-  "timestamp.proto\"z\n\004Port\0226\n\004spec\030\001 \001(\0132(."
-  "opi_api.network.cloud.v1alpha1.PortSpec\022"
-  ":\n\006status\030\002 \001(\0132*.opi_api.network.cloud."
-  "v1alpha1.PortStatus\"\311\004\n\010PortSpec\022(\n\002id\030\001"
-  " \001(\0132\034.opi_api.common.v1.ObjectKey\022\023\n\013po"
-  "rt_number\030\002 \001(\005\022C\n\013admin_state\030\003 \001(\0162..o"
-  "pi_api.network.cloud.v1alpha1.PortAdminS"
-  "tate\0226\n\004type\030\004 \001(\0162(.opi_api.network.clo"
-  "ud.v1alpha1.PortType\0228\n\005speed\030\005 \001(\0162).op"
-  "i_api.network.cloud.v1alpha1.PortSpeed\022="
-  "\n\010fec_type\030\006 \001(\0162+.opi_api.network.cloud"
-  ".v1alpha1.PortFecType\022\026\n\016autoneg_enable\030"
-  "\007 \001(\010\022\030\n\020debounce_timeout\030\010 \001(\005\022\013\n\003mtu\030\t"
-  " \001(\005\022A\n\npause_type\030\n \001(\0162-.opi_api.netwo"
-  "rk.cloud.v1alpha1.PortPauseType\022\023\n\013tx_pa"
-  "use_en\030\013 \001(\010\022\023\n\013rx_pause_en\030\014 \001(\010\022G\n\rloo"
-  "pback_mode\030\r \001(\01620.opi_api.network.cloud"
-  ".v1alpha1.PortLoopBackMode\022\023\n\013lanes_coun"
-  "t\030\016 \001(\005\"\317\002\n\nPortStatus\022\020\n\010if_index\030\001 \001(\r"
-  "\022C\n\013link_status\030\002 \001(\0132..opi_api.network."
-  "cloud.v1alpha1.PortLinkStatus\022C\n\013xcvr_st"
-  "atus\030\003 \001(\0132..opi_api.network.cloud.v1alp"
-  "ha1.PortXcvrStatus\022>\n\tfsm_state\030\004 \001(\0162+."
-  "opi_api.network.cloud.v1alpha1.PortLinkF"
-  "SM\022\016\n\006mac_id\030\005 \001(\005\022\016\n\006mac_ch\030\006 \001(\005\022E\n\nfs"
-  "m_record\030\007 \003(\01321.opi_api.network.cloud.v"
-  "1alpha1.PortLinkFSMRecord\"\372\001\n\016PortLinkSt"
-  "atus\022A\n\noper_state\030\001 \001(\0162-.opi_api.netwo"
-  "rk.cloud.v1alpha1.PortOperState\022=\n\nport_"
-  "speed\030\002 \001(\0162).opi_api.network.cloud.v1al"
-  "pha1.PortSpeed\022\022\n\nautoneg_en\030\003 \001(\010\022\023\n\013la"
-  "nes_count\030\004 \001(\005\022=\n\010fec_type\030\005 \001(\0162+.opi_"
-  "api.network.cloud.v1alpha1.PortFecType\"\260"
-  "\003\n\016PortXcvrStatus\022\014\n\004port\030\001 \001(\005\022<\n\005state"
-  "\030\002 \001(\0162-.opi_api.network.cloud.v1alpha1."
-  "PortXcvrState\0228\n\003pid\030\003 \001(\0162+.opi_api.net"
-  "work.cloud.v1alpha1.PortXcvrPid\022=\n\nmedia"
-  "_type\030\004 \001(\0162).opi_api.network.cloud.v1al"
-  "pha1.MediaType\022\022\n\nxcvr_sprom\030\005 \001(\014\022\022\n\nve"
-  "ndorname\030\006 \001(\t\022\022\n\nvendor_oui\030\007 \001(\t\022\025\n\ren"
-  "coding_type\030\010 \001(\005\022\025\n\rserial_number\030\t \001(\t"
-  "\022\023\n\013part_number\030\n \001(\t\022\020\n\010revision\030\013 \001(\t\022"
-  "\023\n\013temperature\030\014 \001(\005\022\030\n\020warn_temperature"
-  "\030\r \001(\005\022\031\n\021alarm_temperature\030\016 \001(\005\"\225\001\n\021Po"
-  "rtLinkFSMRecord\022>\n\tfsm_state\030\001 \001(\0162+.opi"
-  "_api.network.cloud.v1alpha1.PortLinkFSM\022"
-  ".\n\nstate_time\030\002 \001(\0132\032.google.protobuf.Ti"
-  "mestamp\022\020\n\010duration\030\003 \001(\t*f\n\016PortAdminSt"
-  "ate\022 \n\034PORT_ADMIN_STATE_UNSPECIFIED\020\000\022\031\n"
-  "\025PORT_ADMIN_STATE_DOWN\020\001\022\027\n\023PORT_ADMIN_S"
-  "TATE_UP\020\002*\257\001\n\rPortXcvrState\022\037\n\033PORT_XCVR"
-  "_STATE_UNSPECIFIED\020\000\022\034\n\030PORT_XCVR_STATE_"
-  "INSERTED\020\001\022\033\n\027PORT_XCVR_STATE_PENDING\020\002\022"
-  "\036\n\032PORT_XCVR_STATE_SPROM_READ\020\003\022\"\n\036PORT_"
-  "XCVR_STATE_SPROM_READ_ERR\020\004*\370\010\n\013PortXcvr"
-  "Pid\022\035\n\031PORT_XCVR_PID_UNSPECIFIED\020\000\022\037\n\033PO"
-  "RT_XCVR_PID_QSFP_100G_CR4\020\001\022\"\n\036PORT_XCVR"
-  "_PID_QSFP_40GBASE_CR4\020\002\022\"\n\036PORT_XCVR_PID"
-  "_SFP_25GBASE_CR_S\020\003\022\"\n\036PORT_XCVR_PID_SFP"
-  "_25GBASE_CR_L\020\004\022\"\n\036PORT_XCVR_PID_SFP_25G"
-  "BASE_CR_N\020\005\022!\n\035PORT_XCVR_PID_QSFP_50G_CR"
-  "2_FC\020\006\022\036\n\032PORT_XCVR_PID_QSFP_50G_CR2\020\007\022\037"
-  "\n\033PORT_XCVR_PID_QSFP_200G_CR4\020\010\022\037\n\033PORT_"
-  "XCVR_PID_QSFP_100G_AOC\0202\022\037\n\033PORT_XCVR_PI"
-  "D_QSFP_100G_ACC\0203\022\037\n\033PORT_XCVR_PID_QSFP_"
-  "100G_SR4\0204\022\037\n\033PORT_XCVR_PID_QSFP_100G_LR"
-  "4\0205\022\037\n\033PORT_XCVR_PID_QSFP_100G_ER4\0206\022\"\n\036"
-  "PORT_XCVR_PID_QSFP_40GBASE_ER4\0207\022\"\n\036PORT"
-  "_XCVR_PID_QSFP_40GBASE_SR4\0208\022\"\n\036PORT_XCV"
-  "R_PID_QSFP_40GBASE_LR4\0209\022\"\n\036PORT_XCVR_PI"
-  "D_QSFP_40GBASE_AOC\020:\022 \n\034PORT_XCVR_PID_SF"
-  "P_25GBASE_SR\020;\022 \n\034PORT_XCVR_PID_SFP_25GB"
-  "ASE_LR\020<\022 \n\034PORT_XCVR_PID_SFP_25GBASE_ER"
-  "\020=\022!\n\035PORT_XCVR_PID_SFP_25GBASE_AOC\020>\022 \n"
-  "\034PORT_XCVR_PID_SFP_10GBASE_SR\020\?\022 \n\034PORT_"
-  "XCVR_PID_SFP_10GBASE_LR\020@\022!\n\035PORT_XCVR_P"
-  "ID_SFP_10GBASE_LRM\020A\022 \n\034PORT_XCVR_PID_SF"
-  "P_10GBASE_ER\020B\022!\n\035PORT_XCVR_PID_SFP_10GB"
-  "ASE_AOC\020C\022 \n\034PORT_XCVR_PID_SFP_10GBASE_C"
-  "U\020D\022!\n\035PORT_XCVR_PID_QSFP_100G_CWDM4\020E\022 "
-  "\n\034PORT_XCVR_PID_QSFP_100G_PSM4\020F\022!\n\035PORT"
-  "_XCVR_PID_SFP_25GBASE_ACC\020G\022\037\n\033PORT_XCVR"
-  "_PID_SFP_10GBASE_T\020H\022 \n\034PORT_XCVR_PID_SF"
-  "P_1000BASE_T\020I*T\n\tMediaType\022\032\n\026MEDIA_TYP"
-  "E_UNSPECIFIED\020\000\022\025\n\021MEDIA_TYPE_COPPER\020\001\022\024"
-  "\n\020MEDIA_TYPE_FIBER\020\002*b\n\rPortOperState\022\037\n"
-  "\033PORT_OPER_STATE_UNSPECIFIED\020\000\022\026\n\022PORT_O"
-  "PER_STATE_UP\020\001\022\030\n\024PORT_OPER_STATE_DOWN\020\002"
-  "*c\n\rPortPauseType\022\037\n\033PORT_PAUSE_TYPE_UNS"
-  "PECIFIED\020\000\022\030\n\024PORT_PAUSE_TYPE_LINK\020\001\022\027\n\023"
-  "PORT_PAUSE_TYPE_PFC\020\002*\266\006\n\013PortLinkFSM\022\035\n"
-  "\031PORT_LINK_FSM_UNSPECIFIED\020\000\022\031\n\025PORT_LIN"
-  "K_FSM_ENABLED\020\001\022\030\n\024PORT_LINK_FSM_AN_CFG\020"
-  "\002\022\035\n\031PORT_LINK_FSM_AN_DISABLED\020\003\022\032\n\026PORT"
-  "_LINK_FSM_AN_START\020\004\022\"\n\036PORT_LINK_FSM_AN"
-  "_SIGNAL_DETECT\020\005\022\035\n\031PORT_LINK_FSM_AN_WAI"
-  "T_HCD\020\006\022\035\n\031PORT_LINK_FSM_AN_COMPLETE\020\007\022\034"
-  "\n\030PORT_LINK_FSM_SERDES_CFG\020\010\022!\n\035PORT_LIN"
-  "K_FSM_WAIT_SERDES_RDY\020\t\022\031\n\025PORT_LINK_FSM"
-  "_MAC_CFG\020\n\022\037\n\033PORT_LINK_FSM_SIGNAL_DETEC"
-  "T\020\013\022\037\n\033PORT_LINK_FSM_AN_DFE_TUNING\020\014\022\034\n\030"
-  "PORT_LINK_FSM_DFE_TUNING\020\r\022\036\n\032PORT_LINK_"
-  "FSM_DFE_DISABLED\020\016\022 \n\034PORT_LINK_FSM_DFE_"
-  "START_ICAL\020\017\022\037\n\033PORT_LINK_FSM_DFE_WAIT_I"
-  "CAL\020\020\022 \n\034PORT_LINK_FSM_DFE_START_PCAL\020\021\022"
-  "\037\n\033PORT_LINK_FSM_DFE_WAIT_PCAL\020\022\022%\n!PORT"
-  "_LINK_FSM_DFE_PCAL_CONTINUOUS\020\023\022)\n%PORT_"
-  "LINK_FSM_CLEAR_MAC_REMOTE_FAULTS\020\024\022\037\n\033PO"
-  "RT_LINK_FSM_WAIT_MAC_SYNC\020\025\022\'\n#PORT_LINK"
-  "_FSM_WAIT_MAC_FAULTS_CLEAR\020\026\022\"\n\036PORT_LIN"
-  "K_FSM_WAIT_PHY_LINK_UP\020\027\022\024\n\020PORT_LINK_FS"
-  "M_UP\020\030*q\n\020PortLoopBackMode\022#\n\037PORT_LOOP_"
-  "BACK_MODE_UNSPECIFIED\020\000\022\033\n\027PORT_LOOP_BAC"
-  "K_MODE_MAC\020\001\022\033\n\027PORT_LOOP_BACK_MODE_PHY\020"
-  "\002*X\n\013PortFecType\022\035\n\031PORT_FEC_TYPE_UNSPEC"
-  "IFIED\020\000\022\024\n\020PORT_FEC_TYPE_FC\020\001\022\024\n\020PORT_FE"
-  "C_TYPE_RS\020\002*P\n\010PortType\022\031\n\025PORT_TYPE_UNS"
-  "PECIFIED\020\000\022\021\n\rPORT_TYPE_ETH\020\001\022\026\n\022PORT_TY"
-  "PE_ETH_MGMT\020\002*\362\001\n\tPortSpeed\022\032\n\026PORT_SPEE"
-  "D_UNSPECIFIED\020\000\022\022\n\016PORT_SPEED_10M\020\001\022\023\n\017P"
-  "ORT_SPEED_100M\020\002\022\021\n\rPORT_SPEED_1G\020\003\022\022\n\016P"
-  "ORT_SPEED_10G\020\004\022\022\n\016PORT_SPEED_25G\020\005\022\022\n\016P"
-  "ORT_SPEED_40G\020\006\022\022\n\016PORT_SPEED_50G\020\007\022\023\n\017P"
-  "ORT_SPEED_100G\020\010\022\023\n\017PORT_SPEED_200G\020\t\022\023\n"
-  "\017PORT_SPEED_400G\020\nBj\n\036opi_api.network.cl"
-  "oud.v1alpha1B\tPortProtoP\001Z;github.com/op"
-  "iproject/opi-api/network/cloud/v1alpha1/"
-  "gen/gob\006proto3"
+  "pha1\032\037google/protobuf/timestamp.proto\032\031g"
+  "oogle/api/resource.proto\"\300\001\n\004Port\022\014\n\004nam"
+  "e\030\001 \001(\t\0226\n\004spec\030\002 \001(\0132(.opi_api.network."
+  "cloud.v1alpha1.PortSpec\022:\n\006status\030\003 \001(\0132"
+  "*.opi_api.network.cloud.v1alpha1.PortSta"
+  "tus:6\352A3\n#opi_api.network.cloud.v1alpha1"
+  "/port\022\014ports/{port}\"\237\004\n\010PortSpec\022\023\n\013port"
+  "_number\030\001 \001(\005\022C\n\013admin_state\030\002 \001(\0162..opi"
+  "_api.network.cloud.v1alpha1.PortAdminSta"
+  "te\0226\n\004type\030\003 \001(\0162(.opi_api.network.cloud"
+  ".v1alpha1.PortType\0228\n\005speed\030\004 \001(\0162).opi_"
+  "api.network.cloud.v1alpha1.PortSpeed\022=\n\010"
+  "fec_type\030\005 \001(\0162+.opi_api.network.cloud.v"
+  "1alpha1.PortFecType\022\026\n\016autoneg_enable\030\006 "
+  "\001(\010\022\030\n\020debounce_timeout\030\007 \001(\005\022\013\n\003mtu\030\010 \001"
+  "(\005\022A\n\npause_type\030\t \001(\0162-.opi_api.network"
+  ".cloud.v1alpha1.PortPauseType\022\023\n\013tx_paus"
+  "e_en\030\n \001(\010\022\023\n\013rx_pause_en\030\013 \001(\010\022G\n\rloopb"
+  "ack_mode\030\014 \001(\01620.opi_api.network.cloud.v"
+  "1alpha1.PortLoopBackMode\022\023\n\013lanes_count\030"
+  "\r \001(\005\"\317\002\n\nPortStatus\022\020\n\010if_index\030\001 \001(\r\022C"
+  "\n\013link_status\030\002 \001(\0132..opi_api.network.cl"
+  "oud.v1alpha1.PortLinkStatus\022C\n\013xcvr_stat"
+  "us\030\003 \001(\0132..opi_api.network.cloud.v1alpha"
+  "1.PortXcvrStatus\022>\n\tfsm_state\030\004 \001(\0162+.op"
+  "i_api.network.cloud.v1alpha1.PortLinkFSM"
+  "\022\016\n\006mac_id\030\005 \001(\005\022\016\n\006mac_ch\030\006 \001(\005\022E\n\nfsm_"
+  "record\030\007 \003(\01321.opi_api.network.cloud.v1a"
+  "lpha1.PortLinkFSMRecord\"\372\001\n\016PortLinkStat"
+  "us\022A\n\noper_state\030\001 \001(\0162-.opi_api.network"
+  ".cloud.v1alpha1.PortOperState\022=\n\nport_sp"
+  "eed\030\002 \001(\0162).opi_api.network.cloud.v1alph"
+  "a1.PortSpeed\022\022\n\nautoneg_en\030\003 \001(\010\022\023\n\013lane"
+  "s_count\030\004 \001(\005\022=\n\010fec_type\030\005 \001(\0162+.opi_ap"
+  "i.network.cloud.v1alpha1.PortFecType\"\260\003\n"
+  "\016PortXcvrStatus\022\014\n\004port\030\001 \001(\005\022<\n\005state\030\002"
+  " \001(\0162-.opi_api.network.cloud.v1alpha1.Po"
+  "rtXcvrState\0228\n\003pid\030\003 \001(\0162+.opi_api.netwo"
+  "rk.cloud.v1alpha1.PortXcvrPid\022=\n\nmedia_t"
+  "ype\030\004 \001(\0162).opi_api.network.cloud.v1alph"
+  "a1.MediaType\022\022\n\nxcvr_sprom\030\005 \001(\014\022\022\n\nvend"
+  "orname\030\006 \001(\t\022\022\n\nvendor_oui\030\007 \001(\t\022\025\n\renco"
+  "ding_type\030\010 \001(\005\022\025\n\rserial_number\030\t \001(\t\022\023"
+  "\n\013part_number\030\n \001(\t\022\020\n\010revision\030\013 \001(\t\022\023\n"
+  "\013temperature\030\014 \001(\005\022\030\n\020warn_temperature\030\r"
+  " \001(\005\022\031\n\021alarm_temperature\030\016 \001(\005\"\225\001\n\021Port"
+  "LinkFSMRecord\022>\n\tfsm_state\030\001 \001(\0162+.opi_a"
+  "pi.network.cloud.v1alpha1.PortLinkFSM\022.\n"
+  "\nstate_time\030\002 \001(\0132\032.google.protobuf.Time"
+  "stamp\022\020\n\010duration\030\003 \001(\t*f\n\016PortAdminStat"
+  "e\022 \n\034PORT_ADMIN_STATE_UNSPECIFIED\020\000\022\031\n\025P"
+  "ORT_ADMIN_STATE_DOWN\020\001\022\027\n\023PORT_ADMIN_STA"
+  "TE_UP\020\002*\257\001\n\rPortXcvrState\022\037\n\033PORT_XCVR_S"
+  "TATE_UNSPECIFIED\020\000\022\034\n\030PORT_XCVR_STATE_IN"
+  "SERTED\020\001\022\033\n\027PORT_XCVR_STATE_PENDING\020\002\022\036\n"
+  "\032PORT_XCVR_STATE_SPROM_READ\020\003\022\"\n\036PORT_XC"
+  "VR_STATE_SPROM_READ_ERR\020\004*\370\010\n\013PortXcvrPi"
+  "d\022\035\n\031PORT_XCVR_PID_UNSPECIFIED\020\000\022\037\n\033PORT"
+  "_XCVR_PID_QSFP_100G_CR4\020\001\022\"\n\036PORT_XCVR_P"
+  "ID_QSFP_40GBASE_CR4\020\002\022\"\n\036PORT_XCVR_PID_S"
+  "FP_25GBASE_CR_S\020\003\022\"\n\036PORT_XCVR_PID_SFP_2"
+  "5GBASE_CR_L\020\004\022\"\n\036PORT_XCVR_PID_SFP_25GBA"
+  "SE_CR_N\020\005\022!\n\035PORT_XCVR_PID_QSFP_50G_CR2_"
+  "FC\020\006\022\036\n\032PORT_XCVR_PID_QSFP_50G_CR2\020\007\022\037\n\033"
+  "PORT_XCVR_PID_QSFP_200G_CR4\020\010\022\037\n\033PORT_XC"
+  "VR_PID_QSFP_100G_AOC\0202\022\037\n\033PORT_XCVR_PID_"
+  "QSFP_100G_ACC\0203\022\037\n\033PORT_XCVR_PID_QSFP_10"
+  "0G_SR4\0204\022\037\n\033PORT_XCVR_PID_QSFP_100G_LR4\020"
+  "5\022\037\n\033PORT_XCVR_PID_QSFP_100G_ER4\0206\022\"\n\036PO"
+  "RT_XCVR_PID_QSFP_40GBASE_ER4\0207\022\"\n\036PORT_X"
+  "CVR_PID_QSFP_40GBASE_SR4\0208\022\"\n\036PORT_XCVR_"
+  "PID_QSFP_40GBASE_LR4\0209\022\"\n\036PORT_XCVR_PID_"
+  "QSFP_40GBASE_AOC\020:\022 \n\034PORT_XCVR_PID_SFP_"
+  "25GBASE_SR\020;\022 \n\034PORT_XCVR_PID_SFP_25GBAS"
+  "E_LR\020<\022 \n\034PORT_XCVR_PID_SFP_25GBASE_ER\020="
+  "\022!\n\035PORT_XCVR_PID_SFP_25GBASE_AOC\020>\022 \n\034P"
+  "ORT_XCVR_PID_SFP_10GBASE_SR\020\?\022 \n\034PORT_XC"
+  "VR_PID_SFP_10GBASE_LR\020@\022!\n\035PORT_XCVR_PID"
+  "_SFP_10GBASE_LRM\020A\022 \n\034PORT_XCVR_PID_SFP_"
+  "10GBASE_ER\020B\022!\n\035PORT_XCVR_PID_SFP_10GBAS"
+  "E_AOC\020C\022 \n\034PORT_XCVR_PID_SFP_10GBASE_CU\020"
+  "D\022!\n\035PORT_XCVR_PID_QSFP_100G_CWDM4\020E\022 \n\034"
+  "PORT_XCVR_PID_QSFP_100G_PSM4\020F\022!\n\035PORT_X"
+  "CVR_PID_SFP_25GBASE_ACC\020G\022\037\n\033PORT_XCVR_P"
+  "ID_SFP_10GBASE_T\020H\022 \n\034PORT_XCVR_PID_SFP_"
+  "1000BASE_T\020I*T\n\tMediaType\022\032\n\026MEDIA_TYPE_"
+  "UNSPECIFIED\020\000\022\025\n\021MEDIA_TYPE_COPPER\020\001\022\024\n\020"
+  "MEDIA_TYPE_FIBER\020\002*b\n\rPortOperState\022\037\n\033P"
+  "ORT_OPER_STATE_UNSPECIFIED\020\000\022\026\n\022PORT_OPE"
+  "R_STATE_UP\020\001\022\030\n\024PORT_OPER_STATE_DOWN\020\002*c"
+  "\n\rPortPauseType\022\037\n\033PORT_PAUSE_TYPE_UNSPE"
+  "CIFIED\020\000\022\030\n\024PORT_PAUSE_TYPE_LINK\020\001\022\027\n\023PO"
+  "RT_PAUSE_TYPE_PFC\020\002*\266\006\n\013PortLinkFSM\022\035\n\031P"
+  "ORT_LINK_FSM_UNSPECIFIED\020\000\022\031\n\025PORT_LINK_"
+  "FSM_ENABLED\020\001\022\030\n\024PORT_LINK_FSM_AN_CFG\020\002\022"
+  "\035\n\031PORT_LINK_FSM_AN_DISABLED\020\003\022\032\n\026PORT_L"
+  "INK_FSM_AN_START\020\004\022\"\n\036PORT_LINK_FSM_AN_S"
+  "IGNAL_DETECT\020\005\022\035\n\031PORT_LINK_FSM_AN_WAIT_"
+  "HCD\020\006\022\035\n\031PORT_LINK_FSM_AN_COMPLETE\020\007\022\034\n\030"
+  "PORT_LINK_FSM_SERDES_CFG\020\010\022!\n\035PORT_LINK_"
+  "FSM_WAIT_SERDES_RDY\020\t\022\031\n\025PORT_LINK_FSM_M"
+  "AC_CFG\020\n\022\037\n\033PORT_LINK_FSM_SIGNAL_DETECT\020"
+  "\013\022\037\n\033PORT_LINK_FSM_AN_DFE_TUNING\020\014\022\034\n\030PO"
+  "RT_LINK_FSM_DFE_TUNING\020\r\022\036\n\032PORT_LINK_FS"
+  "M_DFE_DISABLED\020\016\022 \n\034PORT_LINK_FSM_DFE_ST"
+  "ART_ICAL\020\017\022\037\n\033PORT_LINK_FSM_DFE_WAIT_ICA"
+  "L\020\020\022 \n\034PORT_LINK_FSM_DFE_START_PCAL\020\021\022\037\n"
+  "\033PORT_LINK_FSM_DFE_WAIT_PCAL\020\022\022%\n!PORT_L"
+  "INK_FSM_DFE_PCAL_CONTINUOUS\020\023\022)\n%PORT_LI"
+  "NK_FSM_CLEAR_MAC_REMOTE_FAULTS\020\024\022\037\n\033PORT"
+  "_LINK_FSM_WAIT_MAC_SYNC\020\025\022\'\n#PORT_LINK_F"
+  "SM_WAIT_MAC_FAULTS_CLEAR\020\026\022\"\n\036PORT_LINK_"
+  "FSM_WAIT_PHY_LINK_UP\020\027\022\024\n\020PORT_LINK_FSM_"
+  "UP\020\030*q\n\020PortLoopBackMode\022#\n\037PORT_LOOP_BA"
+  "CK_MODE_UNSPECIFIED\020\000\022\033\n\027PORT_LOOP_BACK_"
+  "MODE_MAC\020\001\022\033\n\027PORT_LOOP_BACK_MODE_PHY\020\002*"
+  "X\n\013PortFecType\022\035\n\031PORT_FEC_TYPE_UNSPECIF"
+  "IED\020\000\022\024\n\020PORT_FEC_TYPE_FC\020\001\022\024\n\020PORT_FEC_"
+  "TYPE_RS\020\002*P\n\010PortType\022\031\n\025PORT_TYPE_UNSPE"
+  "CIFIED\020\000\022\021\n\rPORT_TYPE_ETH\020\001\022\026\n\022PORT_TYPE"
+  "_ETH_MGMT\020\002*\362\001\n\tPortSpeed\022\032\n\026PORT_SPEED_"
+  "UNSPECIFIED\020\000\022\022\n\016PORT_SPEED_10M\020\001\022\023\n\017POR"
+  "T_SPEED_100M\020\002\022\021\n\rPORT_SPEED_1G\020\003\022\022\n\016POR"
+  "T_SPEED_10G\020\004\022\022\n\016PORT_SPEED_25G\020\005\022\022\n\016POR"
+  "T_SPEED_40G\020\006\022\022\n\016PORT_SPEED_50G\020\007\022\023\n\017POR"
+  "T_SPEED_100G\020\010\022\023\n\017PORT_SPEED_200G\020\t\022\023\n\017P"
+  "ORT_SPEED_400G\020\nBj\n\036opi_api.network.clou"
+  "d.v1alpha1B\tPortProtoP\001Z;github.com/opip"
+  "roject/opi-api/network/cloud/v1alpha1/ge"
+  "n/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_port_2eproto_deps[2] = {
+  &::descriptor_table_google_2fapi_2fresource_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
-  &::descriptor_table_object_5fkey_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_port_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_port_2eproto = {
-  false, false, 5174, descriptor_table_protodef_port_2eproto, "port.proto", 
+  false, false, 5212, descriptor_table_protodef_port_2eproto, "port.proto", 
   &descriptor_table_port_2eproto_once, descriptor_table_port_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_port_2eproto::offsets,
   file_level_metadata_port_2eproto, file_level_enum_descriptors_port_2eproto, file_level_service_descriptors_port_2eproto,
@@ -663,6 +664,14 @@ Port::Port(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Port::Port(const Port& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_spec()) {
     spec_ = new ::opi_api::network::cloud::v1alpha1::PortSpec(*from.spec_);
   } else {
@@ -677,6 +686,10 @@ Port::Port(const Port& from)
 }
 
 inline void Port::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&spec_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
@@ -692,6 +705,7 @@ Port::~Port() {
 
 inline void Port::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete spec_;
   if (this != internal_default_instance()) delete status_;
 }
@@ -712,6 +726,7 @@ void Port::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && spec_ != nullptr) {
     delete spec_;
   }
@@ -729,17 +744,27 @@ const char* Port::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.network.cloud.v1alpha1.PortSpec spec = 1;
+      // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.network.cloud.v1alpha1.Port.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_spec(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+      // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
         } else
@@ -774,20 +799,30 @@ uint8_t* Port::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.network.cloud.v1alpha1.Port.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
   if (this->_internal_has_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::spec(this), target, stream);
+        2, _Internal::spec(this), target, stream);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
   if (this->_internal_has_status()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::status(this), target, stream);
+        3, _Internal::status(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -806,14 +841,21 @@ size_t Port::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 1;
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // .opi_api.network.cloud.v1alpha1.PortSpec spec = 2;
   if (this->_internal_has_spec()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *spec_);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortStatus status = 2;
+  // .opi_api.network.cloud.v1alpha1.PortStatus status = 3;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -842,6 +884,9 @@ void Port::MergeFrom(const Port& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (from._internal_has_spec()) {
     _internal_mutable_spec()->::opi_api::network::cloud::v1alpha1::PortSpec::MergeFrom(from._internal_spec());
   }
@@ -864,7 +909,14 @@ bool Port::IsInitialized() const {
 
 void Port::InternalSwap(Port* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Port, status_)
       + sizeof(Port::status_)
@@ -883,19 +935,8 @@ void Port::InternalSwap(Port* other) {
 
 class PortSpec::_Internal {
  public:
-  static const ::opi_api::common::v1::ObjectKey& id(const PortSpec* msg);
 };
 
-const ::opi_api::common::v1::ObjectKey&
-PortSpec::_Internal::id(const PortSpec* msg) {
-  return *msg->id_;
-}
-void PortSpec::clear_id() {
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
-}
 PortSpec::PortSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -908,11 +949,6 @@ PortSpec::PortSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 PortSpec::PortSpec(const PortSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_id()) {
-    id_ = new ::opi_api::common::v1::ObjectKey(*from.id_);
-  } else {
-    id_ = nullptr;
-  }
   ::memcpy(&port_number_, &from.port_number_,
     static_cast<size_t>(reinterpret_cast<char*>(&lanes_count_) -
     reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
@@ -921,9 +957,9 @@ PortSpec::PortSpec(const PortSpec& from)
 
 inline void PortSpec::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&port_number_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&lanes_count_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(lanes_count_));
+    reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
 }
 
 PortSpec::~PortSpec() {
@@ -935,7 +971,6 @@ PortSpec::~PortSpec() {
 
 inline void PortSpec::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete id_;
 }
 
 void PortSpec::ArenaDtor(void* object) {
@@ -954,10 +989,6 @@ void PortSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && id_ != nullptr) {
-    delete id_;
-  }
-  id_ = nullptr;
   ::memset(&port_number_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&lanes_count_) -
       reinterpret_cast<char*>(&port_number_)) + sizeof(lanes_count_));
@@ -970,119 +1001,111 @@ const char* PortSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .opi_api.common.v1.ObjectKey id = 1;
+      // int32 port_number = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 port_number = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           port_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_admin_state(static_cast<::opi_api::network::cloud::v1alpha1::PortAdminState>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortType type = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // .opi_api.network.cloud.v1alpha1.PortType type = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::opi_api::network::cloud::v1alpha1::PortType>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_speed(static_cast<::opi_api::network::cloud::v1alpha1::PortSpeed>(val));
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_fec_type(static_cast<::opi_api::network::cloud::v1alpha1::PortFecType>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool autoneg_enable = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+      // bool autoneg_enable = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           autoneg_enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 debounce_timeout = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+      // int32 debounce_timeout = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           debounce_timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 mtu = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // int32 mtu = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           mtu_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_pause_type(static_cast<::opi_api::network::cloud::v1alpha1::PortPauseType>(val));
         } else
           goto handle_unusual;
         continue;
-      // bool tx_pause_en = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+      // bool tx_pause_en = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           tx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bool rx_pause_en = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+      // bool rx_pause_en = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           rx_pause_en_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+      // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_loopback_mode(static_cast<::opi_api::network::cloud::v1alpha1::PortLoopBackMode>(val));
         } else
           goto handle_unusual;
         continue;
-      // int32 lanes_count = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+      // int32 lanes_count = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
           lanes_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -1117,96 +1140,88 @@ uint8_t* PortSpec::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::id(this), target, stream);
-  }
-
-  // int32 port_number = 2;
+  // int32 port_number = 1;
   if (this->_internal_port_number() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_port_number(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_port_number(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;
+  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
   if (this->_internal_admin_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_admin_state(), target);
+      2, this->_internal_admin_state(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortType type = 4;
+  // .opi_api.network.cloud.v1alpha1.PortType type = 3;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_type(), target);
+      3, this->_internal_type(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;
+  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
   if (this->_internal_speed() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_speed(), target);
+      4, this->_internal_speed(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;
+  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      6, this->_internal_fec_type(), target);
+      5, this->_internal_fec_type(), target);
   }
 
-  // bool autoneg_enable = 7;
+  // bool autoneg_enable = 6;
   if (this->_internal_autoneg_enable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_autoneg_enable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_autoneg_enable(), target);
   }
 
-  // int32 debounce_timeout = 8;
+  // int32 debounce_timeout = 7;
   if (this->_internal_debounce_timeout() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_debounce_timeout(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_debounce_timeout(), target);
   }
 
-  // int32 mtu = 9;
+  // int32 mtu = 8;
   if (this->_internal_mtu() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(9, this->_internal_mtu(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_mtu(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;
+  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
   if (this->_internal_pause_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      10, this->_internal_pause_type(), target);
+      9, this->_internal_pause_type(), target);
   }
 
-  // bool tx_pause_en = 11;
+  // bool tx_pause_en = 10;
   if (this->_internal_tx_pause_en() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_tx_pause_en(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(10, this->_internal_tx_pause_en(), target);
   }
 
-  // bool rx_pause_en = 12;
+  // bool rx_pause_en = 11;
   if (this->_internal_rx_pause_en() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(12, this->_internal_rx_pause_en(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_rx_pause_en(), target);
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;
+  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
   if (this->_internal_loopback_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      13, this->_internal_loopback_mode(), target);
+      12, this->_internal_loopback_mode(), target);
   }
 
-  // int32 lanes_count = 14;
+  // int32 lanes_count = 13;
   if (this->_internal_lanes_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_lanes_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(13, this->_internal_lanes_count(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1225,80 +1240,73 @@ size_t PortSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .opi_api.common.v1.ObjectKey id = 1;
-  if (this->_internal_has_id()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *id_);
-  }
-
-  // int32 port_number = 2;
+  // int32 port_number = 1;
   if (this->_internal_port_number() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_port_number());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 3;
+  // .opi_api.network.cloud.v1alpha1.PortAdminState admin_state = 2;
   if (this->_internal_admin_state() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_admin_state());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortType type = 4;
+  // .opi_api.network.cloud.v1alpha1.PortType type = 3;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 5;
+  // .opi_api.network.cloud.v1alpha1.PortSpeed speed = 4;
   if (this->_internal_speed() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_speed());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 6;
+  // .opi_api.network.cloud.v1alpha1.PortFecType fec_type = 5;
   if (this->_internal_fec_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_fec_type());
   }
 
-  // int32 debounce_timeout = 8;
+  // int32 debounce_timeout = 7;
   if (this->_internal_debounce_timeout() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_debounce_timeout());
   }
 
-  // int32 mtu = 9;
+  // int32 mtu = 8;
   if (this->_internal_mtu() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mtu());
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 10;
+  // .opi_api.network.cloud.v1alpha1.PortPauseType pause_type = 9;
   if (this->_internal_pause_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_pause_type());
   }
 
-  // bool autoneg_enable = 7;
+  // bool autoneg_enable = 6;
   if (this->_internal_autoneg_enable() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool tx_pause_en = 11;
+  // bool tx_pause_en = 10;
   if (this->_internal_tx_pause_en() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool rx_pause_en = 12;
+  // bool rx_pause_en = 11;
   if (this->_internal_rx_pause_en() != 0) {
     total_size += 1 + 1;
   }
 
-  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 13;
+  // .opi_api.network.cloud.v1alpha1.PortLoopBackMode loopback_mode = 12;
   if (this->_internal_loopback_mode() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_loopback_mode());
   }
 
-  // int32 lanes_count = 14;
+  // int32 lanes_count = 13;
   if (this->_internal_lanes_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_lanes_count());
   }
@@ -1325,9 +1333,6 @@ void PortSpec::MergeFrom(const PortSpec& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_id()) {
-    _internal_mutable_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_id());
-  }
   if (from._internal_port_number() != 0) {
     _internal_set_port_number(from._internal_port_number());
   }
@@ -1387,9 +1392,9 @@ void PortSpec::InternalSwap(PortSpec* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PortSpec, lanes_count_)
       + sizeof(PortSpec::lanes_count_)
-      - PROTOBUF_FIELD_OFFSET(PortSpec, id_)>(
-          reinterpret_cast<char*>(&id_),
-          reinterpret_cast<char*>(&other->id_));
+      - PROTOBUF_FIELD_OFFSET(PortSpec, port_number_)>(
+          reinterpret_cast<char*>(&port_number_),
+          reinterpret_cast<char*>(&other->port_number_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PortSpec::GetMetadata() const {

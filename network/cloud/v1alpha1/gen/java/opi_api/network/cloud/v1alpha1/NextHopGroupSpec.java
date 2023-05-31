@@ -55,26 +55,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            opi_api.common.v1.ObjectKey.Builder subBuilder = null;
-            if (id_ != null) {
-              subBuilder = id_.toBuilder();
-            }
-            id_ = input.readMessage(opi_api.common.v1.ObjectKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(id_);
-              id_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 16: {
+          case 8: {
             int rawValue = input.readEnum();
 
             type_ = rawValue;
             break;
           }
-          case 26: {
+          case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               members_ = new java.util.ArrayList<opi_api.network.cloud.v1alpha1.NextHopSpec>();
               mutable_bitField0_ |= 0x00000001;
@@ -118,52 +105,14 @@ private static final long serialVersionUID = 0L;
             opi_api.network.cloud.v1alpha1.NextHopGroupSpec.class, opi_api.network.cloud.v1alpha1.NextHopGroupSpec.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private opi_api.common.v1.ObjectKey id_;
-  /**
-   * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return id_ != null;
-  }
-  /**
-   * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKey getId() {
-    return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-  }
-  /**
-   * <pre>
-   * unique nexthop group id
-   * </pre>
-   *
-   * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-   */
-  @java.lang.Override
-  public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-    return getId();
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 2;
+  public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
    * <pre>
    * type of the nexthop
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
@@ -174,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * type of the nexthop
    * </pre>
    *
-   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+   * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
    * @return The type.
    */
   @java.lang.Override public opi_api.network.cloud.v1alpha1.NextHopGroupType getType() {
@@ -183,14 +132,14 @@ private static final long serialVersionUID = 0L;
     return result == null ? opi_api.network.cloud.v1alpha1.NextHopGroupType.UNRECOGNIZED : result;
   }
 
-  public static final int MEMBERS_FIELD_NUMBER = 3;
+  public static final int MEMBERS_FIELD_NUMBER = 2;
   private java.util.List<opi_api.network.cloud.v1alpha1.NextHopSpec> members_;
   /**
    * <pre>
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   @java.lang.Override
   public java.util.List<opi_api.network.cloud.v1alpha1.NextHopSpec> getMembersList() {
@@ -201,7 +150,7 @@ private static final long serialVersionUID = 0L;
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder> 
@@ -213,7 +162,7 @@ private static final long serialVersionUID = 0L;
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   @java.lang.Override
   public int getMembersCount() {
@@ -224,7 +173,7 @@ private static final long serialVersionUID = 0L;
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.NextHopSpec getMembers(int index) {
@@ -235,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * zero or more member nexthops or nexthop groups
    * </pre>
    *
-   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+   * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
    */
   @java.lang.Override
   public opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder getMembersOrBuilder(
@@ -257,14 +206,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != null) {
-      output.writeMessage(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.NextHopGroupType.NEXT_HOP_GROUP_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, type_);
+      output.writeEnum(1, type_);
     }
     for (int i = 0; i < members_.size(); i++) {
-      output.writeMessage(3, members_.get(i));
+      output.writeMessage(2, members_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -275,17 +221,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getId());
-    }
     if (type_ != opi_api.network.cloud.v1alpha1.NextHopGroupType.NEXT_HOP_GROUP_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, type_);
+        .computeEnumSize(1, type_);
     }
     for (int i = 0; i < members_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, members_.get(i));
+        .computeMessageSize(2, members_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,11 +244,6 @@ private static final long serialVersionUID = 0L;
     }
     opi_api.network.cloud.v1alpha1.NextHopGroupSpec other = (opi_api.network.cloud.v1alpha1.NextHopGroupSpec) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId()
-          .equals(other.getId())) return false;
-    }
     if (type_ != other.type_) return false;
     if (!getMembersList()
         .equals(other.getMembersList())) return false;
@@ -321,10 +258,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-    }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
     if (getMembersCount() > 0) {
@@ -469,12 +402,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idBuilder_ == null) {
-        id_ = null;
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
       type_ = 0;
 
       if (membersBuilder_ == null) {
@@ -510,11 +437,6 @@ private static final long serialVersionUID = 0L;
     public opi_api.network.cloud.v1alpha1.NextHopGroupSpec buildPartial() {
       opi_api.network.cloud.v1alpha1.NextHopGroupSpec result = new opi_api.network.cloud.v1alpha1.NextHopGroupSpec(this);
       int from_bitField0_ = bitField0_;
-      if (idBuilder_ == null) {
-        result.id_ = id_;
-      } else {
-        result.id_ = idBuilder_.build();
-      }
       result.type_ = type_;
       if (membersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -573,9 +495,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(opi_api.network.cloud.v1alpha1.NextHopGroupSpec other) {
       if (other == opi_api.network.cloud.v1alpha1.NextHopGroupSpec.getDefaultInstance()) return this;
-      if (other.hasId()) {
-        mergeId(other.getId());
-      }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
@@ -635,168 +554,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private opi_api.common.v1.ObjectKey id_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> idBuilder_;
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return idBuilder_ != null || id_ != null;
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     * @return The id.
-     */
-    public opi_api.common.v1.ObjectKey getId() {
-      if (idBuilder_ == null) {
-        return id_ == null ? opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      } else {
-        return idBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        id_ = value;
-        onChanged();
-      } else {
-        idBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder setId(
-        opi_api.common.v1.ObjectKey.Builder builderForValue) {
-      if (idBuilder_ == null) {
-        id_ = builderForValue.build();
-        onChanged();
-      } else {
-        idBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder mergeId(opi_api.common.v1.ObjectKey value) {
-      if (idBuilder_ == null) {
-        if (id_ != null) {
-          id_ =
-            opi_api.common.v1.ObjectKey.newBuilder(id_).mergeFrom(value).buildPartial();
-        } else {
-          id_ = value;
-        }
-        onChanged();
-      } else {
-        idBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public Builder clearId() {
-      if (idBuilder_ == null) {
-        id_ = null;
-        onChanged();
-      } else {
-        id_ = null;
-        idBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKey.Builder getIdBuilder() {
-      
-      onChanged();
-      return getIdFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    public opi_api.common.v1.ObjectKeyOrBuilder getIdOrBuilder() {
-      if (idBuilder_ != null) {
-        return idBuilder_.getMessageOrBuilder();
-      } else {
-        return id_ == null ?
-            opi_api.common.v1.ObjectKey.getDefaultInstance() : id_;
-      }
-    }
-    /**
-     * <pre>
-     * unique nexthop group id
-     * </pre>
-     *
-     * <code>.opi_api.common.v1.ObjectKey id = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder> 
-        getIdFieldBuilder() {
-      if (idBuilder_ == null) {
-        idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            opi_api.common.v1.ObjectKey, opi_api.common.v1.ObjectKey.Builder, opi_api.common.v1.ObjectKeyOrBuilder>(
-                getId(),
-                getParentForChildren(),
-                isClean());
-        id_ = null;
-      }
-      return idBuilder_;
-    }
-
     private int type_ = 0;
     /**
      * <pre>
      * type of the nexthop
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -807,7 +571,7 @@ private static final long serialVersionUID = 0L;
      * type of the nexthop
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -822,7 +586,7 @@ private static final long serialVersionUID = 0L;
      * type of the nexthop
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -836,7 +600,7 @@ private static final long serialVersionUID = 0L;
      * type of the nexthop
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -854,7 +618,7 @@ private static final long serialVersionUID = 0L;
      * type of the nexthop
      * </pre>
      *
-     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 2;</code>
+     * <code>.opi_api.network.cloud.v1alpha1.NextHopGroupType type = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -881,7 +645,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public java.util.List<opi_api.network.cloud.v1alpha1.NextHopSpec> getMembersList() {
       if (membersBuilder_ == null) {
@@ -895,7 +659,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public int getMembersCount() {
       if (membersBuilder_ == null) {
@@ -909,7 +673,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.NextHopSpec getMembers(int index) {
       if (membersBuilder_ == null) {
@@ -923,7 +687,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder setMembers(
         int index, opi_api.network.cloud.v1alpha1.NextHopSpec value) {
@@ -944,7 +708,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder setMembers(
         int index, opi_api.network.cloud.v1alpha1.NextHopSpec.Builder builderForValue) {
@@ -962,7 +726,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder addMembers(opi_api.network.cloud.v1alpha1.NextHopSpec value) {
       if (membersBuilder_ == null) {
@@ -982,7 +746,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder addMembers(
         int index, opi_api.network.cloud.v1alpha1.NextHopSpec value) {
@@ -1003,7 +767,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder addMembers(
         opi_api.network.cloud.v1alpha1.NextHopSpec.Builder builderForValue) {
@@ -1021,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder addMembers(
         int index, opi_api.network.cloud.v1alpha1.NextHopSpec.Builder builderForValue) {
@@ -1039,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder addAllMembers(
         java.lang.Iterable<? extends opi_api.network.cloud.v1alpha1.NextHopSpec> values) {
@@ -1058,7 +822,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder clearMembers() {
       if (membersBuilder_ == null) {
@@ -1075,7 +839,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public Builder removeMembers(int index) {
       if (membersBuilder_ == null) {
@@ -1092,7 +856,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.NextHopSpec.Builder getMembersBuilder(
         int index) {
@@ -1103,7 +867,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder getMembersOrBuilder(
         int index) {
@@ -1117,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public java.util.List<? extends opi_api.network.cloud.v1alpha1.NextHopSpecOrBuilder> 
          getMembersOrBuilderList() {
@@ -1132,7 +896,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.NextHopSpec.Builder addMembersBuilder() {
       return getMembersFieldBuilder().addBuilder(
@@ -1143,7 +907,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public opi_api.network.cloud.v1alpha1.NextHopSpec.Builder addMembersBuilder(
         int index) {
@@ -1155,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * zero or more member nexthops or nexthop groups
      * </pre>
      *
-     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 3;</code>
+     * <code>repeated .opi_api.network.cloud.v1alpha1.NextHopSpec members = 2;</code>
      */
     public java.util.List<opi_api.network.cloud.v1alpha1.NextHopSpec.Builder> 
          getMembersBuilderList() {
