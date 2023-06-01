@@ -765,7 +765,7 @@ message CreateDeviceRequest {
 // Delete device request
 message DeleteDeviceRequest {
     // device id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
     ];
@@ -805,7 +805,7 @@ message ListDevicesResponse {
 
 // Get device request
 message GetDeviceRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Device"
     ];
@@ -842,7 +842,7 @@ message ListPortsResponse {
 
 // Get port request
 message GetPortRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Port"
     ];
@@ -868,7 +868,7 @@ message CreateVnicRequest {
 // Delete vnic request
 message DeleteVnicRequest {
     // vnic id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
     ];
@@ -908,7 +908,7 @@ message ListVnicsResponse {
 
 // Get vnic request
 message GetVnicRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vnic"
     ];
@@ -933,7 +933,7 @@ message CreateInterfaceRequest {
 // Delete interface request
 message DeleteInterfaceRequest {
     // interface id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
     ];
@@ -973,7 +973,7 @@ message ListInterfacesResponse {
 
 // Get interface request
 message GetInterfaceRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Interface"
     ];
@@ -999,7 +999,7 @@ message CreateRouteTableRequest {
 // Delete routetable request
 message DeleteRouteTableRequest {
     // routetable id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
     ];
@@ -1039,7 +1039,7 @@ message ListRouteTablesResponse {
 
 // Get routetable request
 message GetRouteTableRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/RouteTable"
     ];
@@ -1065,7 +1065,7 @@ message CreateRouteRequest {
 // Delete route request
 message DeleteRouteRequest {
     // route id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
     ];
@@ -1105,7 +1105,7 @@ message ListRoutesResponse {
 
 // Get route request
 message GetRouteRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Route"
     ];
@@ -1131,7 +1131,7 @@ message CreateUnderlayRouteRequest {
 // Delete underlayroute request
 message DeleteUnderlayRouteRequest {
     // underlayroute id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
     ];
@@ -1171,7 +1171,7 @@ message ListUnderlayRoutesResponse {
 
 // Get underlayroute request
 message GetUnderlayRouteRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/UnderlayRoute"
     ];
@@ -1197,7 +1197,7 @@ message CreateBgpRequest {
 // Delete bgp request
 message DeleteBgpRequest {
     // bgp id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
@@ -1237,7 +1237,7 @@ message ListBgpsResponse {
 
 // Get bgp request
 message GetBgpRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Bgp"
     ];
@@ -1263,7 +1263,7 @@ message CreateBGPPeerRequest {
 // Delete bgppeer request
 message DeleteBGPPeerRequest {
     // bgppeer id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
     ];
@@ -1303,7 +1303,7 @@ message ListBGPPeersResponse {
 
 // Get bgppeer request
 message GetBGPPeerRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeer"
     ];
@@ -1329,7 +1329,7 @@ message CreateBGPPeerAfRequest {
 // Delete bgppeeraf request
 message DeleteBGPPeerAfRequest {
     // bgppeeraf id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
     ];
@@ -1369,7 +1369,7 @@ message ListBGPPeerAfsResponse {
 
 // Get bgppeeraf request
 message GetBGPPeerAfRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/BGPPeerAf"
     ];
@@ -1395,7 +1395,7 @@ message CreateMappingRequest {
 // Delete mapping request
 message DeleteMappingRequest {
     // mapping id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
     ];
@@ -1435,7 +1435,7 @@ message ListMappingsResponse {
 
 // Get mapping request
 message GetMappingRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Mapping"
     ];
@@ -1461,7 +1461,7 @@ message CreateNextHopRequest {
 // Delete nexthop request
 message DeleteNextHopRequest {
     // nexthop id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
     ];
@@ -1501,7 +1501,7 @@ message ListNextHopsResponse {
 
 // Get nexthop request
 message GetNextHopRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHop"
     ];
@@ -1527,7 +1527,7 @@ message CreateNextHopGroupRequest {
 // Delete nexthopgroup request
 message DeleteNextHopGroupRequest {
     // nexthopgroup id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
     ];
@@ -1567,7 +1567,7 @@ message ListNextHopGroupsResponse {
 
 // Get nexthopgroup request
 message GetNextHopGroupRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/NextHopGroup"
     ];
@@ -1593,7 +1593,7 @@ message CreateSubnetRequest {
 // Delete subnet request
 message DeleteSubnetRequest {
     // subnet id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
     ];
@@ -1633,7 +1633,7 @@ message ListSubnetsResponse {
 
 // Get subnet request
 message GetSubnetRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Subnet"
     ];
@@ -1659,7 +1659,7 @@ message CreateTunnelRequest {
 // Delete Tunnel request
 message DeleteTunnelRequest {
     // tunnel id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
     ];
@@ -1699,7 +1699,7 @@ message ListTunnelsResponse {
 
 // Get Tunnel request
 message GetTunnelRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Tunnel"
     ];
@@ -1725,7 +1725,7 @@ message CreateVpcRequest {
 // Delete vpc request
 message DeleteVpcRequest {
     // vpc id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
     ];
@@ -1765,7 +1765,7 @@ message ListVpcsResponse {
 
 // Get vpc request
 message GetVpcRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/Vpc"
     ];
@@ -1791,7 +1791,7 @@ message CreateVPCPeerRequest {
 // Delete vpcpeer request
 message DeleteVPCPeerRequest {
     // vpcpeer id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
     ];
@@ -1831,7 +1831,7 @@ message ListVPCPeersResponse {
 
 // Get vpcpeer request
 message GetVPCPeerRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/VPCPeer"
     ];
@@ -1857,7 +1857,7 @@ message CreateSecurityPolicyRequest {
 // Delete securitypolicy request
 message DeleteSecurityPolicyRequest {
     // securitypolicy id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
     ];
@@ -1897,7 +1897,7 @@ message ListSecurityPolicysResponse {
 
 // Get securitypolicy request
 message GetSecurityPolicyRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityPolicy"
     ];
@@ -1923,7 +1923,7 @@ message CreateSecurityRuleRequest {
 // Delete securityrule request
 message DeleteSecurityRuleRequest {
     // securityrule id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
     ];
@@ -1963,7 +1963,7 @@ message ListSecurityRulesResponse {
 
 // Get securityrule request
 message GetSecurityRuleRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityRule"
     ];
@@ -1989,7 +1989,7 @@ message CreateSecurityProfileRequest {
 // Delete securityprofile request
 message DeleteSecurityProfileRequest {
     // securityprofile id
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
     ];
@@ -2029,7 +2029,7 @@ message ListSecurityProfilesResponse {
 
 // Get securityprofile request
 message GetSecurityProfileRequest {
-    string id = 1 [
+    string name = 1 [
         (google.api.field_behavior) = REQUIRED,
         (google.api.resource_reference).type = "opi_api.network.v1alpha1/SecurityProfile"
     ];
