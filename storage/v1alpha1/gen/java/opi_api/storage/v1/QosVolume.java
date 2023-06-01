@@ -70,26 +70,26 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
-            if (limitMin_ != null) {
-              subBuilder = limitMin_.toBuilder();
+            if (minLimit_ != null) {
+              subBuilder = minLimit_.toBuilder();
             }
-            limitMin_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
+            minLimit_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(limitMin_);
-              limitMin_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(minLimit_);
+              minLimit_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 34: {
             opi_api.storage.v1.QosLimit.Builder subBuilder = null;
-            if (limitMax_ != null) {
-              subBuilder = limitMax_.toBuilder();
+            if (maxLimit_ != null) {
+              subBuilder = maxLimit_.toBuilder();
             }
-            limitMax_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
+            maxLimit_ = input.readMessage(opi_api.storage.v1.QosLimit.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(limitMax_);
-              limitMax_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(maxLimit_);
+              maxLimit_ = subBuilder.buildPartial();
             }
 
             break;
@@ -214,56 +214,56 @@ private static final long serialVersionUID = 0L;
     return getVolumeId();
   }
 
-  public static final int LIMIT_MIN_FIELD_NUMBER = 3;
-  private opi_api.storage.v1.QosLimit limitMin_;
+  public static final int MIN_LIMIT_FIELD_NUMBER = 3;
+  private opi_api.storage.v1.QosLimit minLimit_;
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-   * @return Whether the limitMin field is set.
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return Whether the minLimit field is set.
    */
   @java.lang.Override
-  public boolean hasLimitMin() {
-    return limitMin_ != null;
+  public boolean hasMinLimit() {
+    return minLimit_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-   * @return The limitMin.
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return The minLimit.
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimit getLimitMin() {
-    return limitMin_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMin_;
+  public opi_api.storage.v1.QosLimit getMinLimit() {
+    return minLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimitOrBuilder getLimitMinOrBuilder() {
-    return getLimitMin();
+  public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
+    return getMinLimit();
   }
 
-  public static final int LIMIT_MAX_FIELD_NUMBER = 4;
-  private opi_api.storage.v1.QosLimit limitMax_;
+  public static final int MAX_LIMIT_FIELD_NUMBER = 4;
+  private opi_api.storage.v1.QosLimit maxLimit_;
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-   * @return Whether the limitMax field is set.
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return Whether the maxLimit field is set.
    */
   @java.lang.Override
-  public boolean hasLimitMax() {
-    return limitMax_ != null;
+  public boolean hasMaxLimit() {
+    return maxLimit_ != null;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-   * @return The limitMax.
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return The maxLimit.
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimit getLimitMax() {
-    return limitMax_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMax_;
+  public opi_api.storage.v1.QosLimit getMaxLimit() {
+    return maxLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
   }
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
    */
   @java.lang.Override
-  public opi_api.storage.v1.QosLimitOrBuilder getLimitMaxOrBuilder() {
-    return getLimitMax();
+  public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
+    return getMaxLimit();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -286,11 +286,11 @@ private static final long serialVersionUID = 0L;
     if (volumeId_ != null) {
       output.writeMessage(2, getVolumeId());
     }
-    if (limitMin_ != null) {
-      output.writeMessage(3, getLimitMin());
+    if (minLimit_ != null) {
+      output.writeMessage(3, getMinLimit());
     }
-    if (limitMax_ != null) {
-      output.writeMessage(4, getLimitMax());
+    if (maxLimit_ != null) {
+      output.writeMessage(4, getMaxLimit());
     }
     unknownFields.writeTo(output);
   }
@@ -308,13 +308,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getVolumeId());
     }
-    if (limitMin_ != null) {
+    if (minLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLimitMin());
+        .computeMessageSize(3, getMinLimit());
     }
-    if (limitMax_ != null) {
+    if (maxLimit_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getLimitMax());
+        .computeMessageSize(4, getMaxLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,15 +338,15 @@ private static final long serialVersionUID = 0L;
       if (!getVolumeId()
           .equals(other.getVolumeId())) return false;
     }
-    if (hasLimitMin() != other.hasLimitMin()) return false;
-    if (hasLimitMin()) {
-      if (!getLimitMin()
-          .equals(other.getLimitMin())) return false;
+    if (hasMinLimit() != other.hasMinLimit()) return false;
+    if (hasMinLimit()) {
+      if (!getMinLimit()
+          .equals(other.getMinLimit())) return false;
     }
-    if (hasLimitMax() != other.hasLimitMax()) return false;
-    if (hasLimitMax()) {
-      if (!getLimitMax()
-          .equals(other.getLimitMax())) return false;
+    if (hasMaxLimit() != other.hasMaxLimit()) return false;
+    if (hasMaxLimit()) {
+      if (!getMaxLimit()
+          .equals(other.getMaxLimit())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -365,13 +365,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVolumeId().hashCode();
     }
-    if (hasLimitMin()) {
-      hash = (37 * hash) + LIMIT_MIN_FIELD_NUMBER;
-      hash = (53 * hash) + getLimitMin().hashCode();
+    if (hasMinLimit()) {
+      hash = (37 * hash) + MIN_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getMinLimit().hashCode();
     }
-    if (hasLimitMax()) {
-      hash = (37 * hash) + LIMIT_MAX_FIELD_NUMBER;
-      hash = (53 * hash) + getLimitMax().hashCode();
+    if (hasMaxLimit()) {
+      hash = (37 * hash) + MAX_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxLimit().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -514,17 +514,17 @@ private static final long serialVersionUID = 0L;
         volumeId_ = null;
         volumeIdBuilder_ = null;
       }
-      if (limitMinBuilder_ == null) {
-        limitMin_ = null;
+      if (minLimitBuilder_ == null) {
+        minLimit_ = null;
       } else {
-        limitMin_ = null;
-        limitMinBuilder_ = null;
+        minLimit_ = null;
+        minLimitBuilder_ = null;
       }
-      if (limitMaxBuilder_ == null) {
-        limitMax_ = null;
+      if (maxLimitBuilder_ == null) {
+        maxLimit_ = null;
       } else {
-        limitMax_ = null;
-        limitMaxBuilder_ = null;
+        maxLimit_ = null;
+        maxLimitBuilder_ = null;
       }
       return this;
     }
@@ -558,15 +558,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.volumeId_ = volumeIdBuilder_.build();
       }
-      if (limitMinBuilder_ == null) {
-        result.limitMin_ = limitMin_;
+      if (minLimitBuilder_ == null) {
+        result.minLimit_ = minLimit_;
       } else {
-        result.limitMin_ = limitMinBuilder_.build();
+        result.minLimit_ = minLimitBuilder_.build();
       }
-      if (limitMaxBuilder_ == null) {
-        result.limitMax_ = limitMax_;
+      if (maxLimitBuilder_ == null) {
+        result.maxLimit_ = maxLimit_;
       } else {
-        result.limitMax_ = limitMaxBuilder_.build();
+        result.maxLimit_ = maxLimitBuilder_.build();
       }
       onBuilt();
       return result;
@@ -623,11 +623,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasVolumeId()) {
         mergeVolumeId(other.getVolumeId());
       }
-      if (other.hasLimitMin()) {
-        mergeLimitMin(other.getLimitMin());
+      if (other.hasMinLimit()) {
+        mergeMinLimit(other.getMinLimit());
       }
-      if (other.hasLimitMax()) {
-        mergeLimitMax(other.getLimitMax());
+      if (other.hasMaxLimit()) {
+        mergeMaxLimit(other.getMaxLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -919,242 +919,242 @@ private static final long serialVersionUID = 0L;
       return volumeIdBuilder_;
     }
 
-    private opi_api.storage.v1.QosLimit limitMin_;
+    private opi_api.storage.v1.QosLimit minLimit_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> limitMinBuilder_;
+        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> minLimitBuilder_;
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-     * @return Whether the limitMin field is set.
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * @return Whether the minLimit field is set.
      */
-    public boolean hasLimitMin() {
-      return limitMinBuilder_ != null || limitMin_ != null;
+    public boolean hasMinLimit() {
+      return minLimitBuilder_ != null || minLimit_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-     * @return The limitMin.
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+     * @return The minLimit.
      */
-    public opi_api.storage.v1.QosLimit getLimitMin() {
-      if (limitMinBuilder_ == null) {
-        return limitMin_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMin_;
+    public opi_api.storage.v1.QosLimit getMinLimit() {
+      if (minLimitBuilder_ == null) {
+        return minLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
       } else {
-        return limitMinBuilder_.getMessage();
+        return minLimitBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public Builder setLimitMin(opi_api.storage.v1.QosLimit value) {
-      if (limitMinBuilder_ == null) {
+    public Builder setMinLimit(opi_api.storage.v1.QosLimit value) {
+      if (minLimitBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        limitMin_ = value;
+        minLimit_ = value;
         onChanged();
       } else {
-        limitMinBuilder_.setMessage(value);
+        minLimitBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public Builder setLimitMin(
+    public Builder setMinLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
-      if (limitMinBuilder_ == null) {
-        limitMin_ = builderForValue.build();
+      if (minLimitBuilder_ == null) {
+        minLimit_ = builderForValue.build();
         onChanged();
       } else {
-        limitMinBuilder_.setMessage(builderForValue.build());
+        minLimitBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public Builder mergeLimitMin(opi_api.storage.v1.QosLimit value) {
-      if (limitMinBuilder_ == null) {
-        if (limitMin_ != null) {
-          limitMin_ =
-            opi_api.storage.v1.QosLimit.newBuilder(limitMin_).mergeFrom(value).buildPartial();
+    public Builder mergeMinLimit(opi_api.storage.v1.QosLimit value) {
+      if (minLimitBuilder_ == null) {
+        if (minLimit_ != null) {
+          minLimit_ =
+            opi_api.storage.v1.QosLimit.newBuilder(minLimit_).mergeFrom(value).buildPartial();
         } else {
-          limitMin_ = value;
+          minLimit_ = value;
         }
         onChanged();
       } else {
-        limitMinBuilder_.mergeFrom(value);
+        minLimitBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public Builder clearLimitMin() {
-      if (limitMinBuilder_ == null) {
-        limitMin_ = null;
+    public Builder clearMinLimit() {
+      if (minLimitBuilder_ == null) {
+        minLimit_ = null;
         onChanged();
       } else {
-        limitMin_ = null;
-        limitMinBuilder_ = null;
+        minLimit_ = null;
+        minLimitBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public opi_api.storage.v1.QosLimit.Builder getLimitMinBuilder() {
+    public opi_api.storage.v1.QosLimit.Builder getMinLimitBuilder() {
       
       onChanged();
-      return getLimitMinFieldBuilder().getBuilder();
+      return getMinLimitFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
-    public opi_api.storage.v1.QosLimitOrBuilder getLimitMinOrBuilder() {
-      if (limitMinBuilder_ != null) {
-        return limitMinBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder() {
+      if (minLimitBuilder_ != null) {
+        return minLimitBuilder_.getMessageOrBuilder();
       } else {
-        return limitMin_ == null ?
-            opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMin_;
+        return minLimit_ == null ?
+            opi_api.storage.v1.QosLimit.getDefaultInstance() : minLimit_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+     * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
-        getLimitMinFieldBuilder() {
-      if (limitMinBuilder_ == null) {
-        limitMinBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getMinLimitFieldBuilder() {
+      if (minLimitBuilder_ == null) {
+        minLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder>(
-                getLimitMin(),
+                getMinLimit(),
                 getParentForChildren(),
                 isClean());
-        limitMin_ = null;
+        minLimit_ = null;
       }
-      return limitMinBuilder_;
+      return minLimitBuilder_;
     }
 
-    private opi_api.storage.v1.QosLimit limitMax_;
+    private opi_api.storage.v1.QosLimit maxLimit_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> limitMaxBuilder_;
+        opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> maxLimitBuilder_;
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-     * @return Whether the limitMax field is set.
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * @return Whether the maxLimit field is set.
      */
-    public boolean hasLimitMax() {
-      return limitMaxBuilder_ != null || limitMax_ != null;
+    public boolean hasMaxLimit() {
+      return maxLimitBuilder_ != null || maxLimit_ != null;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-     * @return The limitMax.
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+     * @return The maxLimit.
      */
-    public opi_api.storage.v1.QosLimit getLimitMax() {
-      if (limitMaxBuilder_ == null) {
-        return limitMax_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMax_;
+    public opi_api.storage.v1.QosLimit getMaxLimit() {
+      if (maxLimitBuilder_ == null) {
+        return maxLimit_ == null ? opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
       } else {
-        return limitMaxBuilder_.getMessage();
+        return maxLimitBuilder_.getMessage();
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public Builder setLimitMax(opi_api.storage.v1.QosLimit value) {
-      if (limitMaxBuilder_ == null) {
+    public Builder setMaxLimit(opi_api.storage.v1.QosLimit value) {
+      if (maxLimitBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        limitMax_ = value;
+        maxLimit_ = value;
         onChanged();
       } else {
-        limitMaxBuilder_.setMessage(value);
+        maxLimitBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public Builder setLimitMax(
+    public Builder setMaxLimit(
         opi_api.storage.v1.QosLimit.Builder builderForValue) {
-      if (limitMaxBuilder_ == null) {
-        limitMax_ = builderForValue.build();
+      if (maxLimitBuilder_ == null) {
+        maxLimit_ = builderForValue.build();
         onChanged();
       } else {
-        limitMaxBuilder_.setMessage(builderForValue.build());
+        maxLimitBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public Builder mergeLimitMax(opi_api.storage.v1.QosLimit value) {
-      if (limitMaxBuilder_ == null) {
-        if (limitMax_ != null) {
-          limitMax_ =
-            opi_api.storage.v1.QosLimit.newBuilder(limitMax_).mergeFrom(value).buildPartial();
+    public Builder mergeMaxLimit(opi_api.storage.v1.QosLimit value) {
+      if (maxLimitBuilder_ == null) {
+        if (maxLimit_ != null) {
+          maxLimit_ =
+            opi_api.storage.v1.QosLimit.newBuilder(maxLimit_).mergeFrom(value).buildPartial();
         } else {
-          limitMax_ = value;
+          maxLimit_ = value;
         }
         onChanged();
       } else {
-        limitMaxBuilder_.mergeFrom(value);
+        maxLimitBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public Builder clearLimitMax() {
-      if (limitMaxBuilder_ == null) {
-        limitMax_ = null;
+    public Builder clearMaxLimit() {
+      if (maxLimitBuilder_ == null) {
+        maxLimit_ = null;
         onChanged();
       } else {
-        limitMax_ = null;
-        limitMaxBuilder_ = null;
+        maxLimit_ = null;
+        maxLimitBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public opi_api.storage.v1.QosLimit.Builder getLimitMaxBuilder() {
+    public opi_api.storage.v1.QosLimit.Builder getMaxLimitBuilder() {
       
       onChanged();
-      return getLimitMaxFieldBuilder().getBuilder();
+      return getMaxLimitFieldBuilder().getBuilder();
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
-    public opi_api.storage.v1.QosLimitOrBuilder getLimitMaxOrBuilder() {
-      if (limitMaxBuilder_ != null) {
-        return limitMaxBuilder_.getMessageOrBuilder();
+    public opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder() {
+      if (maxLimitBuilder_ != null) {
+        return maxLimitBuilder_.getMessageOrBuilder();
       } else {
-        return limitMax_ == null ?
-            opi_api.storage.v1.QosLimit.getDefaultInstance() : limitMax_;
+        return maxLimit_ == null ?
+            opi_api.storage.v1.QosLimit.getDefaultInstance() : maxLimit_;
       }
     }
     /**
-     * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+     * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder> 
-        getLimitMaxFieldBuilder() {
-      if (limitMaxBuilder_ == null) {
-        limitMaxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getMaxLimitFieldBuilder() {
+      if (maxLimitBuilder_ == null) {
+        maxLimitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             opi_api.storage.v1.QosLimit, opi_api.storage.v1.QosLimit.Builder, opi_api.storage.v1.QosLimitOrBuilder>(
-                getLimitMax(),
+                getMaxLimit(),
                 getParentForChildren(),
                 isClean());
-        limitMax_ = null;
+        maxLimit_ = null;
       }
-      return limitMaxBuilder_;
+      return maxLimitBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

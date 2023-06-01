@@ -23,8 +23,8 @@ constexpr QosVolume::QosVolume(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , volume_id_(nullptr)
-  , limit_min_(nullptr)
-  , limit_max_(nullptr){}
+  , min_limit_(nullptr)
+  , max_limit_(nullptr){}
 struct QosVolumeDefaultTypeInternal {
   constexpr QosVolumeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -153,8 +153,8 @@ const uint32_t TableStruct_middleend_5fqos_5fvolume_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, volume_id_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, limit_min_),
-  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, limit_max_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, min_limit_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::QosVolume, max_limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::CreateQosVolumeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -252,8 +252,8 @@ const char descriptor_table_protodef_middleend_5fqos_5fvolume_2eproto[] PROTOBUF
   "le/api/field_behavior.proto\032 google/prot"
   "obuf/field_mask.proto\"\345\001\n\tQosVolume\022\014\n\004n"
   "ame\030\001 \001(\t\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api.c"
-  "ommon.v1.ObjectKey\022/\n\tlimit_min\030\003 \001(\0132\034."
-  "opi_api.storage.v1.QosLimit\022/\n\tlimit_max"
+  "ommon.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034."
+  "opi_api.storage.v1.QosLimit\022/\n\tmax_limit"
   "\030\004 \001(\0132\034.opi_api.storage.v1.QosLimit:7\352A"
   "4\n storage.opiproject.org/QosVolume\022\020vol"
   "umes/{volume}\"g\n\026CreateQosVolumeRequest\022"
@@ -335,8 +335,8 @@ namespace v1 {
 class QosVolume::_Internal {
  public:
   static const ::opi_api::common::v1::ObjectKey& volume_id(const QosVolume* msg);
-  static const ::opi_api::storage::v1::QosLimit& limit_min(const QosVolume* msg);
-  static const ::opi_api::storage::v1::QosLimit& limit_max(const QosVolume* msg);
+  static const ::opi_api::storage::v1::QosLimit& min_limit(const QosVolume* msg);
+  static const ::opi_api::storage::v1::QosLimit& max_limit(const QosVolume* msg);
 };
 
 const ::opi_api::common::v1::ObjectKey&
@@ -344,12 +344,12 @@ QosVolume::_Internal::volume_id(const QosVolume* msg) {
   return *msg->volume_id_;
 }
 const ::opi_api::storage::v1::QosLimit&
-QosVolume::_Internal::limit_min(const QosVolume* msg) {
-  return *msg->limit_min_;
+QosVolume::_Internal::min_limit(const QosVolume* msg) {
+  return *msg->min_limit_;
 }
 const ::opi_api::storage::v1::QosLimit&
-QosVolume::_Internal::limit_max(const QosVolume* msg) {
-  return *msg->limit_max_;
+QosVolume::_Internal::max_limit(const QosVolume* msg) {
+  return *msg->max_limit_;
 }
 void QosVolume::clear_volume_id() {
   if (GetArenaForAllocation() == nullptr && volume_id_ != nullptr) {
@@ -357,17 +357,17 @@ void QosVolume::clear_volume_id() {
   }
   volume_id_ = nullptr;
 }
-void QosVolume::clear_limit_min() {
-  if (GetArenaForAllocation() == nullptr && limit_min_ != nullptr) {
-    delete limit_min_;
+void QosVolume::clear_min_limit() {
+  if (GetArenaForAllocation() == nullptr && min_limit_ != nullptr) {
+    delete min_limit_;
   }
-  limit_min_ = nullptr;
+  min_limit_ = nullptr;
 }
-void QosVolume::clear_limit_max() {
-  if (GetArenaForAllocation() == nullptr && limit_max_ != nullptr) {
-    delete limit_max_;
+void QosVolume::clear_max_limit() {
+  if (GetArenaForAllocation() == nullptr && max_limit_ != nullptr) {
+    delete max_limit_;
   }
-  limit_max_ = nullptr;
+  max_limit_ = nullptr;
 }
 QosVolume::QosVolume(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -394,15 +394,15 @@ QosVolume::QosVolume(const QosVolume& from)
   } else {
     volume_id_ = nullptr;
   }
-  if (from._internal_has_limit_min()) {
-    limit_min_ = new ::opi_api::storage::v1::QosLimit(*from.limit_min_);
+  if (from._internal_has_min_limit()) {
+    min_limit_ = new ::opi_api::storage::v1::QosLimit(*from.min_limit_);
   } else {
-    limit_min_ = nullptr;
+    min_limit_ = nullptr;
   }
-  if (from._internal_has_limit_max()) {
-    limit_max_ = new ::opi_api::storage::v1::QosLimit(*from.limit_max_);
+  if (from._internal_has_max_limit()) {
+    max_limit_ = new ::opi_api::storage::v1::QosLimit(*from.max_limit_);
   } else {
-    limit_max_ = nullptr;
+    max_limit_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:opi_api.storage.v1.QosVolume)
 }
@@ -414,8 +414,8 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&volume_id_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&limit_max_) -
-    reinterpret_cast<char*>(&volume_id_)) + sizeof(limit_max_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&max_limit_) -
+    reinterpret_cast<char*>(&volume_id_)) + sizeof(max_limit_));
 }
 
 QosVolume::~QosVolume() {
@@ -429,8 +429,8 @@ inline void QosVolume::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete volume_id_;
-  if (this != internal_default_instance()) delete limit_min_;
-  if (this != internal_default_instance()) delete limit_max_;
+  if (this != internal_default_instance()) delete min_limit_;
+  if (this != internal_default_instance()) delete max_limit_;
 }
 
 void QosVolume::ArenaDtor(void* object) {
@@ -454,14 +454,14 @@ void QosVolume::Clear() {
     delete volume_id_;
   }
   volume_id_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && limit_min_ != nullptr) {
-    delete limit_min_;
+  if (GetArenaForAllocation() == nullptr && min_limit_ != nullptr) {
+    delete min_limit_;
   }
-  limit_min_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && limit_max_ != nullptr) {
-    delete limit_max_;
+  min_limit_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && max_limit_ != nullptr) {
+    delete max_limit_;
   }
-  limit_max_ = nullptr;
+  max_limit_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -489,18 +489,18 @@ const char* QosVolume::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.QosLimit limit_min = 3;
+      // .opi_api.storage.v1.QosLimit min_limit = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_limit_min(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_min_limit(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.storage.v1.QosLimit limit_max = 4;
+      // .opi_api.storage.v1.QosLimit max_limit = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_limit_max(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_max_limit(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -552,20 +552,20 @@ uint8_t* QosVolume::_InternalSerialize(
         2, _Internal::volume_id(this), target, stream);
   }
 
-  // .opi_api.storage.v1.QosLimit limit_min = 3;
-  if (this->_internal_has_limit_min()) {
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  if (this->_internal_has_min_limit()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::limit_min(this), target, stream);
+        3, _Internal::min_limit(this), target, stream);
   }
 
-  // .opi_api.storage.v1.QosLimit limit_max = 4;
-  if (this->_internal_has_limit_max()) {
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  if (this->_internal_has_max_limit()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::limit_max(this), target, stream);
+        4, _Internal::max_limit(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -598,18 +598,18 @@ size_t QosVolume::ByteSizeLong() const {
         *volume_id_);
   }
 
-  // .opi_api.storage.v1.QosLimit limit_min = 3;
-  if (this->_internal_has_limit_min()) {
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  if (this->_internal_has_min_limit()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *limit_min_);
+        *min_limit_);
   }
 
-  // .opi_api.storage.v1.QosLimit limit_max = 4;
-  if (this->_internal_has_limit_max()) {
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  if (this->_internal_has_max_limit()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *limit_max_);
+        *max_limit_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -640,11 +640,11 @@ void QosVolume::MergeFrom(const QosVolume& from) {
   if (from._internal_has_volume_id()) {
     _internal_mutable_volume_id()->::opi_api::common::v1::ObjectKey::MergeFrom(from._internal_volume_id());
   }
-  if (from._internal_has_limit_min()) {
-    _internal_mutable_limit_min()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_limit_min());
+  if (from._internal_has_min_limit()) {
+    _internal_mutable_min_limit()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_min_limit());
   }
-  if (from._internal_has_limit_max()) {
-    _internal_mutable_limit_max()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_limit_max());
+  if (from._internal_has_max_limit()) {
+    _internal_mutable_max_limit()->::opi_api::storage::v1::QosLimit::MergeFrom(from._internal_max_limit());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -671,8 +671,8 @@ void QosVolume::InternalSwap(QosVolume* other) {
       &other->name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(QosVolume, limit_max_)
-      + sizeof(QosVolume::limit_max_)
+      PROTOBUF_FIELD_OFFSET(QosVolume, max_limit_)
+      + sizeof(QosVolume::max_limit_)
       - PROTOBUF_FIELD_OFFSET(QosVolume, volume_id_)>(
           reinterpret_cast<char*>(&volume_id_),
           reinterpret_cast<char*>(&other->volume_id_));

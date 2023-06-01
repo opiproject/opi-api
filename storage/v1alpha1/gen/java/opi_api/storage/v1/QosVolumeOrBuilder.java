@@ -59,32 +59,32 @@ public interface QosVolumeOrBuilder extends
   opi_api.common.v1.ObjectKeyOrBuilder getVolumeIdOrBuilder();
 
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-   * @return Whether the limitMin field is set.
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return Whether the minLimit field is set.
    */
-  boolean hasLimitMin();
+  boolean hasMinLimit();
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
-   * @return The limitMin.
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
+   * @return The minLimit.
    */
-  opi_api.storage.v1.QosLimit getLimitMin();
+  opi_api.storage.v1.QosLimit getMinLimit();
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_min = 3;</code>
+   * <code>.opi_api.storage.v1.QosLimit min_limit = 3;</code>
    */
-  opi_api.storage.v1.QosLimitOrBuilder getLimitMinOrBuilder();
+  opi_api.storage.v1.QosLimitOrBuilder getMinLimitOrBuilder();
 
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-   * @return Whether the limitMax field is set.
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return Whether the maxLimit field is set.
    */
-  boolean hasLimitMax();
+  boolean hasMaxLimit();
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
-   * @return The limitMax.
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
+   * @return The maxLimit.
    */
-  opi_api.storage.v1.QosLimit getLimitMax();
+  opi_api.storage.v1.QosLimit getMaxLimit();
   /**
-   * <code>.opi_api.storage.v1.QosLimit limit_max = 4;</code>
+   * <code>.opi_api.storage.v1.QosLimit max_limit = 4;</code>
    */
-  opi_api.storage.v1.QosLimitOrBuilder getLimitMaxOrBuilder();
+  opi_api.storage.v1.QosLimitOrBuilder getMaxLimitOrBuilder();
 }

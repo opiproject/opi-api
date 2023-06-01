@@ -76,8 +76,8 @@ public final class MiddleendQosVolumeProto {
       "le/api/field_behavior.proto\032 google/prot" +
       "obuf/field_mask.proto\"\345\001\n\tQosVolume\022\014\n\004n" +
       "ame\030\001 \001(\t\022/\n\tvolume_id\030\002 \001(\0132\034.opi_api.c" +
-      "ommon.v1.ObjectKey\022/\n\tlimit_min\030\003 \001(\0132\034." +
-      "opi_api.storage.v1.QosLimit\022/\n\tlimit_max" +
+      "ommon.v1.ObjectKey\022/\n\tmin_limit\030\003 \001(\0132\034." +
+      "opi_api.storage.v1.QosLimit\022/\n\tmax_limit" +
       "\030\004 \001(\0132\034.opi_api.storage.v1.QosLimit:7\352A" +
       "4\n storage.opiproject.org/QosVolume\022\020vol" +
       "umes/{volume}\"g\n\026CreateQosVolumeRequest\022" +
@@ -144,7 +144,7 @@ public final class MiddleendQosVolumeProto {
     internal_static_opi_api_storage_v1_QosVolume_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_opi_api_storage_v1_QosVolume_descriptor,
-        new java.lang.String[] { "Name", "VolumeId", "LimitMin", "LimitMax", });
+        new java.lang.String[] { "Name", "VolumeId", "MinLimit", "MaxLimit", });
     internal_static_opi_api_storage_v1_CreateQosVolumeRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_opi_api_storage_v1_CreateQosVolumeRequest_fieldAccessorTable = new

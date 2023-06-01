@@ -235,8 +235,8 @@ class QosVolume final :
   enum : int {
     kNameFieldNumber = 1,
     kVolumeIdFieldNumber = 2,
-    kLimitMinFieldNumber = 3,
-    kLimitMaxFieldNumber = 4,
+    kMinLimitFieldNumber = 3,
+    kMaxLimitFieldNumber = 4,
   };
   // string name = 1;
   void clear_name();
@@ -270,41 +270,41 @@ class QosVolume final :
       ::opi_api::common::v1::ObjectKey* volume_id);
   ::opi_api::common::v1::ObjectKey* unsafe_arena_release_volume_id();
 
-  // .opi_api.storage.v1.QosLimit limit_min = 3;
-  bool has_limit_min() const;
+  // .opi_api.storage.v1.QosLimit min_limit = 3;
+  bool has_min_limit() const;
   private:
-  bool _internal_has_limit_min() const;
+  bool _internal_has_min_limit() const;
   public:
-  void clear_limit_min();
-  const ::opi_api::storage::v1::QosLimit& limit_min() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_limit_min();
-  ::opi_api::storage::v1::QosLimit* mutable_limit_min();
-  void set_allocated_limit_min(::opi_api::storage::v1::QosLimit* limit_min);
+  void clear_min_limit();
+  const ::opi_api::storage::v1::QosLimit& min_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_min_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_min_limit();
+  void set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit);
   private:
-  const ::opi_api::storage::v1::QosLimit& _internal_limit_min() const;
-  ::opi_api::storage::v1::QosLimit* _internal_mutable_limit_min();
+  const ::opi_api::storage::v1::QosLimit& _internal_min_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_min_limit();
   public:
-  void unsafe_arena_set_allocated_limit_min(
-      ::opi_api::storage::v1::QosLimit* limit_min);
-  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_limit_min();
+  void unsafe_arena_set_allocated_min_limit(
+      ::opi_api::storage::v1::QosLimit* min_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_min_limit();
 
-  // .opi_api.storage.v1.QosLimit limit_max = 4;
-  bool has_limit_max() const;
+  // .opi_api.storage.v1.QosLimit max_limit = 4;
+  bool has_max_limit() const;
   private:
-  bool _internal_has_limit_max() const;
+  bool _internal_has_max_limit() const;
   public:
-  void clear_limit_max();
-  const ::opi_api::storage::v1::QosLimit& limit_max() const;
-  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_limit_max();
-  ::opi_api::storage::v1::QosLimit* mutable_limit_max();
-  void set_allocated_limit_max(::opi_api::storage::v1::QosLimit* limit_max);
+  void clear_max_limit();
+  const ::opi_api::storage::v1::QosLimit& max_limit() const;
+  PROTOBUF_NODISCARD ::opi_api::storage::v1::QosLimit* release_max_limit();
+  ::opi_api::storage::v1::QosLimit* mutable_max_limit();
+  void set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit);
   private:
-  const ::opi_api::storage::v1::QosLimit& _internal_limit_max() const;
-  ::opi_api::storage::v1::QosLimit* _internal_mutable_limit_max();
+  const ::opi_api::storage::v1::QosLimit& _internal_max_limit() const;
+  ::opi_api::storage::v1::QosLimit* _internal_mutable_max_limit();
   public:
-  void unsafe_arena_set_allocated_limit_max(
-      ::opi_api::storage::v1::QosLimit* limit_max);
-  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_limit_max();
+  void unsafe_arena_set_allocated_max_limit(
+      ::opi_api::storage::v1::QosLimit* max_limit);
+  ::opi_api::storage::v1::QosLimit* unsafe_arena_release_max_limit();
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.QosVolume)
  private:
@@ -315,8 +315,8 @@ class QosVolume final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::opi_api::common::v1::ObjectKey* volume_id_;
-  ::opi_api::storage::v1::QosLimit* limit_min_;
-  ::opi_api::storage::v1::QosLimit* limit_max_;
+  ::opi_api::storage::v1::QosLimit* min_limit_;
+  ::opi_api::storage::v1::QosLimit* max_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_middleend_5fqos_5fvolume_2eproto;
 };
@@ -1806,39 +1806,39 @@ inline void QosVolume::set_allocated_volume_id(::opi_api::common::v1::ObjectKey*
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.volume_id)
 }
 
-// .opi_api.storage.v1.QosLimit limit_min = 3;
-inline bool QosVolume::_internal_has_limit_min() const {
-  return this != internal_default_instance() && limit_min_ != nullptr;
+// .opi_api.storage.v1.QosLimit min_limit = 3;
+inline bool QosVolume::_internal_has_min_limit() const {
+  return this != internal_default_instance() && min_limit_ != nullptr;
 }
-inline bool QosVolume::has_limit_min() const {
-  return _internal_has_limit_min();
+inline bool QosVolume::has_min_limit() const {
+  return _internal_has_min_limit();
 }
-inline const ::opi_api::storage::v1::QosLimit& QosVolume::_internal_limit_min() const {
-  const ::opi_api::storage::v1::QosLimit* p = limit_min_;
+inline const ::opi_api::storage::v1::QosLimit& QosVolume::_internal_min_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = min_limit_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
       ::opi_api::storage::v1::_QosLimit_default_instance_);
 }
-inline const ::opi_api::storage::v1::QosLimit& QosVolume::limit_min() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.limit_min)
-  return _internal_limit_min();
+inline const ::opi_api::storage::v1::QosLimit& QosVolume::min_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.min_limit)
+  return _internal_min_limit();
 }
-inline void QosVolume::unsafe_arena_set_allocated_limit_min(
-    ::opi_api::storage::v1::QosLimit* limit_min) {
+inline void QosVolume::unsafe_arena_set_allocated_min_limit(
+    ::opi_api::storage::v1::QosLimit* min_limit) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_min_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
   }
-  limit_min_ = limit_min;
-  if (limit_min) {
+  min_limit_ = min_limit;
+  if (min_limit) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.QosVolume.limit_min)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.QosVolume.min_limit)
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::release_limit_min() {
+inline ::opi_api::storage::v1::QosLimit* QosVolume::release_min_limit() {
   
-  ::opi_api::storage::v1::QosLimit* temp = limit_min_;
-  limit_min_ = nullptr;
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1850,81 +1850,81 @@ inline ::opi_api::storage::v1::QosLimit* QosVolume::release_limit_min() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::unsafe_arena_release_limit_min() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.limit_min)
+inline ::opi_api::storage::v1::QosLimit* QosVolume::unsafe_arena_release_min_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.min_limit)
   
-  ::opi_api::storage::v1::QosLimit* temp = limit_min_;
-  limit_min_ = nullptr;
+  ::opi_api::storage::v1::QosLimit* temp = min_limit_;
+  min_limit_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::_internal_mutable_limit_min() {
+inline ::opi_api::storage::v1::QosLimit* QosVolume::_internal_mutable_min_limit() {
   
-  if (limit_min_ == nullptr) {
+  if (min_limit_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
-    limit_min_ = p;
+    min_limit_ = p;
   }
-  return limit_min_;
+  return min_limit_;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::mutable_limit_min() {
-  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_limit_min();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.limit_min)
+inline ::opi_api::storage::v1::QosLimit* QosVolume::mutable_min_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_min_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.min_limit)
   return _msg;
 }
-inline void QosVolume::set_allocated_limit_min(::opi_api::storage::v1::QosLimit* limit_min) {
+inline void QosVolume::set_allocated_min_limit(::opi_api::storage::v1::QosLimit* min_limit) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_min_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit_);
   }
-  if (limit_min) {
+  if (min_limit) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_min));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(min_limit));
     if (message_arena != submessage_arena) {
-      limit_min = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, limit_min, submessage_arena);
+      min_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, min_limit, submessage_arena);
     }
     
   } else {
     
   }
-  limit_min_ = limit_min;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.limit_min)
+  min_limit_ = min_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.min_limit)
 }
 
-// .opi_api.storage.v1.QosLimit limit_max = 4;
-inline bool QosVolume::_internal_has_limit_max() const {
-  return this != internal_default_instance() && limit_max_ != nullptr;
+// .opi_api.storage.v1.QosLimit max_limit = 4;
+inline bool QosVolume::_internal_has_max_limit() const {
+  return this != internal_default_instance() && max_limit_ != nullptr;
 }
-inline bool QosVolume::has_limit_max() const {
-  return _internal_has_limit_max();
+inline bool QosVolume::has_max_limit() const {
+  return _internal_has_max_limit();
 }
-inline const ::opi_api::storage::v1::QosLimit& QosVolume::_internal_limit_max() const {
-  const ::opi_api::storage::v1::QosLimit* p = limit_max_;
+inline const ::opi_api::storage::v1::QosLimit& QosVolume::_internal_max_limit() const {
+  const ::opi_api::storage::v1::QosLimit* p = max_limit_;
   return p != nullptr ? *p : reinterpret_cast<const ::opi_api::storage::v1::QosLimit&>(
       ::opi_api::storage::v1::_QosLimit_default_instance_);
 }
-inline const ::opi_api::storage::v1::QosLimit& QosVolume::limit_max() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.limit_max)
-  return _internal_limit_max();
+inline const ::opi_api::storage::v1::QosLimit& QosVolume::max_limit() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.QosVolume.max_limit)
+  return _internal_max_limit();
 }
-inline void QosVolume::unsafe_arena_set_allocated_limit_max(
-    ::opi_api::storage::v1::QosLimit* limit_max) {
+inline void QosVolume::unsafe_arena_set_allocated_max_limit(
+    ::opi_api::storage::v1::QosLimit* max_limit) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_max_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
   }
-  limit_max_ = limit_max;
-  if (limit_max) {
+  max_limit_ = max_limit;
+  if (max_limit) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.QosVolume.limit_max)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:opi_api.storage.v1.QosVolume.max_limit)
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::release_limit_max() {
+inline ::opi_api::storage::v1::QosLimit* QosVolume::release_max_limit() {
   
-  ::opi_api::storage::v1::QosLimit* temp = limit_max_;
-  limit_max_ = nullptr;
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1936,46 +1936,46 @@ inline ::opi_api::storage::v1::QosLimit* QosVolume::release_limit_max() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::unsafe_arena_release_limit_max() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.limit_max)
+inline ::opi_api::storage::v1::QosLimit* QosVolume::unsafe_arena_release_max_limit() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.QosVolume.max_limit)
   
-  ::opi_api::storage::v1::QosLimit* temp = limit_max_;
-  limit_max_ = nullptr;
+  ::opi_api::storage::v1::QosLimit* temp = max_limit_;
+  max_limit_ = nullptr;
   return temp;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::_internal_mutable_limit_max() {
+inline ::opi_api::storage::v1::QosLimit* QosVolume::_internal_mutable_max_limit() {
   
-  if (limit_max_ == nullptr) {
+  if (max_limit_ == nullptr) {
     auto* p = CreateMaybeMessage<::opi_api::storage::v1::QosLimit>(GetArenaForAllocation());
-    limit_max_ = p;
+    max_limit_ = p;
   }
-  return limit_max_;
+  return max_limit_;
 }
-inline ::opi_api::storage::v1::QosLimit* QosVolume::mutable_limit_max() {
-  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_limit_max();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.limit_max)
+inline ::opi_api::storage::v1::QosLimit* QosVolume::mutable_max_limit() {
+  ::opi_api::storage::v1::QosLimit* _msg = _internal_mutable_max_limit();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.QosVolume.max_limit)
   return _msg;
 }
-inline void QosVolume::set_allocated_limit_max(::opi_api::storage::v1::QosLimit* limit_max) {
+inline void QosVolume::set_allocated_max_limit(::opi_api::storage::v1::QosLimit* max_limit) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_max_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit_);
   }
-  if (limit_max) {
+  if (max_limit) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(limit_max));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(max_limit));
     if (message_arena != submessage_arena) {
-      limit_max = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, limit_max, submessage_arena);
+      max_limit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, max_limit, submessage_arena);
     }
     
   } else {
     
   }
-  limit_max_ = limit_max;
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.limit_max)
+  max_limit_ = max_limit;
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.QosVolume.max_limit)
 }
 
 // -------------------------------------------------------------------
