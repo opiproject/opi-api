@@ -113,7 +113,7 @@ public interface StateOrBuilder extends
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
    * @return The enum numeric value on the wire for adminState.
    */
   int getAdminStateValue();
@@ -122,10 +122,10 @@ public interface StateOrBuilder extends
    * Admin State
    * </pre>
    *
-   * <code>.opi_api.network.v1alpha1.OcAdminState admin_state = 8;</code>
+   * <code>.opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;</code>
    * @return The adminState.
    */
-  opi_api.network.v1alpha1.OcAdminState getAdminState();
+  opi_api.network.opinetcommon.v1alpha1.AdminState getAdminState();
 
   /**
    * <pre>

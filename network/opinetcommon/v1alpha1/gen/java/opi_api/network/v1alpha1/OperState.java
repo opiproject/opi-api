@@ -207,7 +207,7 @@ public enum OperState
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return opi_api.network.v1alpha1.OpenconfigInterfacesProto.getDescriptor().getEnumTypes().get(2);
+    return opi_api.network.v1alpha1.OpenconfigInterfacesProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final OperState[] VALUES = values();

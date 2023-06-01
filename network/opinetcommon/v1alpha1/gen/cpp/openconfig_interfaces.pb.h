@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "networktypes.pb.h"
 #include "google/api/client.pb.h"
 #include "google/api/resource.pb.h"
 #include "google/api/annotations.pb.h"
@@ -152,33 +153,6 @@ inline bool InterfaceType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, InterfaceType* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<InterfaceType>(
     InterfaceType_descriptor(), name, value);
-}
-enum OcAdminState : int {
-  OC_ADMIN_STATE_UNSPECIFIED = 0,
-  OC_ADMIN_STATE_UP = 1,
-  OC_ADMIN_STATE_DOWN = 2,
-  OC_ADMIN_STATE_TESTING = 3,
-  OcAdminState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  OcAdminState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool OcAdminState_IsValid(int value);
-constexpr OcAdminState OcAdminState_MIN = OC_ADMIN_STATE_UNSPECIFIED;
-constexpr OcAdminState OcAdminState_MAX = OC_ADMIN_STATE_TESTING;
-constexpr int OcAdminState_ARRAYSIZE = OcAdminState_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OcAdminState_descriptor();
-template<typename T>
-inline const std::string& OcAdminState_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, OcAdminState>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function OcAdminState_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    OcAdminState_descriptor(), enum_t_value);
-}
-inline bool OcAdminState_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OcAdminState* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OcAdminState>(
-    OcAdminState_descriptor(), name, value);
 }
 enum OperState : int {
   OPER_STATE_UNSPECIFIED = 0,
@@ -967,13 +941,13 @@ class State final :
   void _internal_set_ifindex(uint32_t value);
   public:
 
-  // .opi_api.network.v1alpha1.OcAdminState admin_state = 8;
+  // .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
   void clear_admin_state();
-  ::opi_api::network::v1alpha1::OcAdminState admin_state() const;
-  void set_admin_state(::opi_api::network::v1alpha1::OcAdminState value);
+  ::opi_api::network::opinetcommon::v1alpha1::AdminState admin_state() const;
+  void set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
   private:
-  ::opi_api::network::v1alpha1::OcAdminState _internal_admin_state() const;
-  void _internal_set_admin_state(::opi_api::network::v1alpha1::OcAdminState value);
+  ::opi_api::network::opinetcommon::v1alpha1::AdminState _internal_admin_state() const;
+  void _internal_set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value);
   public:
 
   // bool loopback_mode = 4;
@@ -3745,22 +3719,22 @@ inline void State::set_ifindex(uint32_t value) {
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.ifindex)
 }
 
-// .opi_api.network.v1alpha1.OcAdminState admin_state = 8;
+// .opi_api.network.opinetcommon.v1alpha1.AdminState admin_state = 8;
 inline void State::clear_admin_state() {
   admin_state_ = 0;
 }
-inline ::opi_api::network::v1alpha1::OcAdminState State::_internal_admin_state() const {
-  return static_cast< ::opi_api::network::v1alpha1::OcAdminState >(admin_state_);
+inline ::opi_api::network::opinetcommon::v1alpha1::AdminState State::_internal_admin_state() const {
+  return static_cast< ::opi_api::network::opinetcommon::v1alpha1::AdminState >(admin_state_);
 }
-inline ::opi_api::network::v1alpha1::OcAdminState State::admin_state() const {
+inline ::opi_api::network::opinetcommon::v1alpha1::AdminState State::admin_state() const {
   // @@protoc_insertion_point(field_get:opi_api.network.v1alpha1.State.admin_state)
   return _internal_admin_state();
 }
-inline void State::_internal_set_admin_state(::opi_api::network::v1alpha1::OcAdminState value) {
+inline void State::_internal_set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value) {
   
   admin_state_ = value;
 }
-inline void State::set_admin_state(::opi_api::network::v1alpha1::OcAdminState value) {
+inline void State::set_admin_state(::opi_api::network::opinetcommon::v1alpha1::AdminState value) {
   _internal_set_admin_state(value);
   // @@protoc_insertion_point(field_set:opi_api.network.v1alpha1.State.admin_state)
 }
@@ -5483,11 +5457,6 @@ template <> struct is_proto_enum< ::opi_api::network::v1alpha1::InterfaceType> :
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::v1alpha1::InterfaceType>() {
   return ::opi_api::network::v1alpha1::InterfaceType_descriptor();
-}
-template <> struct is_proto_enum< ::opi_api::network::v1alpha1::OcAdminState> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::opi_api::network::v1alpha1::OcAdminState>() {
-  return ::opi_api::network::v1alpha1::OcAdminState_descriptor();
 }
 template <> struct is_proto_enum< ::opi_api::network::v1alpha1::OperState> : ::std::true_type {};
 template <>

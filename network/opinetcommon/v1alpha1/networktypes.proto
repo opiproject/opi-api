@@ -287,6 +287,8 @@ enum AdminState {
   ADMIN_STATE_ENABLE      = 1;
   // disable
   ADMIN_STATE_DISABLE     = 2;
+  // testing
+  ADMIN_STATE_TESTING     = 3;
 }
 
 // direction in which policy is enforced

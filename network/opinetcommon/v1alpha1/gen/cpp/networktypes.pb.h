@@ -284,12 +284,13 @@ enum AdminState : int {
   ADMIN_STATE_UNSPECIFIED = 0,
   ADMIN_STATE_ENABLE = 1,
   ADMIN_STATE_DISABLE = 2,
+  ADMIN_STATE_TESTING = 3,
   AdminState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   AdminState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool AdminState_IsValid(int value);
 constexpr AdminState AdminState_MIN = ADMIN_STATE_UNSPECIFIED;
-constexpr AdminState AdminState_MAX = ADMIN_STATE_DISABLE;
+constexpr AdminState AdminState_MAX = ADMIN_STATE_TESTING;
 constexpr int AdminState_ARRAYSIZE = AdminState_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AdminState_descriptor();

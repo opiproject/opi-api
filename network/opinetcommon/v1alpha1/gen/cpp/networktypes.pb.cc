@@ -578,20 +578,21 @@ const char descriptor_table_protodef_networktypes_2eproto[] PROTOBUF_SECTION_VAR
   "E_REMOTE\020\004*|\n\rRouteProtocol\022\036\n\032ROUTE_PRO"
   "TOCOL_UNSPECIFIED\020\000\022\030\n\024ROUTE_PROTOCOL_LO"
   "CAL\020\001\022\031\n\025ROUTE_PROTOCOL_STATIC\020\002\022\026\n\022ROUT"
-  "E_PROTOCOL_BGP\020\003*Z\n\nAdminState\022\033\n\027ADMIN_"
+  "E_PROTOCOL_BGP\020\003*s\n\nAdminState\022\033\n\027ADMIN_"
   "STATE_UNSPECIFIED\020\000\022\026\n\022ADMIN_STATE_ENABL"
-  "E\020\001\022\027\n\023ADMIN_STATE_DISABLE\020\002*V\n\tPolicyDi"
-  "r\022\032\n\026POLICY_DIR_UNSPECIFIED\020\000\022\026\n\022POLICY_"
-  "DIR_INGRESS\020\001\022\025\n\021POLICY_DIR_EGRESS\020\002*/\n\r"
-  "WildcardMatch\022\016\n\nMATCH_NONE\020\000\022\016\n\tMATCH_A"
-  "NY\020\200\002B\200\001\n%opi_api.network.opinetcommon.v"
-  "1alpha1B\021NetworkTypesProtoP\001ZBgithub.com"
-  "/opiproject/opi-api/network/opinetcommon"
-  "/v1alpha1/gen/gob\006proto3"
+  "E\020\001\022\027\n\023ADMIN_STATE_DISABLE\020\002\022\027\n\023ADMIN_ST"
+  "ATE_TESTING\020\003*V\n\tPolicyDir\022\032\n\026POLICY_DIR"
+  "_UNSPECIFIED\020\000\022\026\n\022POLICY_DIR_INGRESS\020\001\022\025"
+  "\n\021POLICY_DIR_EGRESS\020\002*/\n\rWildcardMatch\022\016"
+  "\n\nMATCH_NONE\020\000\022\016\n\tMATCH_ANY\020\200\002B\200\001\n%opi_a"
+  "pi.network.opinetcommon.v1alpha1B\021Networ"
+  "kTypesProtoP\001ZBgithub.com/opiproject/opi"
+  "-api/network/opinetcommon/v1alpha1/gen/g"
+  "ob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_networktypes_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_networktypes_2eproto = {
-  false, false, 3904, descriptor_table_protodef_networktypes_2eproto, "networktypes.proto", 
+  false, false, 3929, descriptor_table_protodef_networktypes_2eproto, "networktypes.proto", 
   &descriptor_table_networktypes_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_networktypes_2eproto::offsets,
   file_level_metadata_networktypes_2eproto, file_level_enum_descriptors_networktypes_2eproto, file_level_service_descriptors_networktypes_2eproto,
@@ -695,6 +696,7 @@ bool AdminState_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
       return true;
     default:
       return false;

@@ -13,6 +13,7 @@ option java_outer_classname = "OpenconfigInterfacesProto";
 
 option go_package = "github.com/opiproject/opi-api/network/v1alpha1/gen/go";
 
+import "networktypes.proto";
 import "google/api/client.proto";
 import "google/api/resource.proto";
 import "google/api/annotations.proto";
@@ -126,7 +127,7 @@ message State {
     // Interface Index
     uint32 ifindex = 7;
     // Admin State
-    OcAdminState admin_state = 8;
+    network.opinetcommon.v1alpha1.AdminState admin_state = 8;
     // Operational State
     OperState oper_state = 9;
     // Last Change
@@ -255,17 +256,6 @@ enum InterfaceType {
     LOOPBACK = 2;
 }
 
-// Admin State Enumeration
-enum OcAdminState {
-    // Unspecified
-    OC_ADMIN_STATE_UNSPECIFIED = 0;
-    // Up
-    OC_ADMIN_STATE_UP = 1;
-    // Down
-    OC_ADMIN_STATE_DOWN = 2;
-    // Testing
-    OC_ADMIN_STATE_TESTING = 3;
-}
 // Operational State Enumeration
 enum OperState {
     // Unspecified

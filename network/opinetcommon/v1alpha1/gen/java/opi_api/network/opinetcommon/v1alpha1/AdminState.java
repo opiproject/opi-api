@@ -36,6 +36,14 @@ public enum AdminState
    * <code>ADMIN_STATE_DISABLE = 2;</code>
    */
   ADMIN_STATE_DISABLE(2),
+  /**
+   * <pre>
+   * testing
+   * </pre>
+   *
+   * <code>ADMIN_STATE_TESTING = 3;</code>
+   */
+  ADMIN_STATE_TESTING(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -63,6 +71,14 @@ public enum AdminState
    * <code>ADMIN_STATE_DISABLE = 2;</code>
    */
   public static final int ADMIN_STATE_DISABLE_VALUE = 2;
+  /**
+   * <pre>
+   * testing
+   * </pre>
+   *
+   * <code>ADMIN_STATE_TESTING = 3;</code>
+   */
+  public static final int ADMIN_STATE_TESTING_VALUE = 3;
 
 
   public final int getNumber() {
@@ -92,6 +108,7 @@ public enum AdminState
       case 0: return ADMIN_STATE_UNSPECIFIED;
       case 1: return ADMIN_STATE_ENABLE;
       case 2: return ADMIN_STATE_DISABLE;
+      case 3: return ADMIN_STATE_TESTING;
       default: return null;
     }
   }
